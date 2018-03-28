@@ -43,6 +43,7 @@
     unsigned long long _audioSourceType;
     _Bool _hasSetupGraph;
     _Bool _useCustomizedSEI;
+    _Bool _allowsRealTimeVoicePowerLevel;
     _Bool _debugMode;
     _Bool _autoAppleEstimateBitrate;
     _Bool _autoAppleReducesLatency;
@@ -108,7 +109,7 @@
 - (long long)uploadedKByte;
 - (void)debugLog:(id)arg1;
 - (void)setErrorCodes:(id)arg1 withRetryCount:(unsigned long long)arg2;
-- (id)statusLogForEndLive;
+- (id)statusLogWithStopReason:(long long)arg1;
 - (void)reportStreamerLogDataWhenStatusChanged:(id)arg1 withError:(int)arg2;
 - (void)reportStreamerLogData;
 - (void)updateStat:(id)arg1;
@@ -116,6 +117,7 @@
 - (void)startStatisticsTimer;
 - (void)addVideoBufferSource:(struct __CVBuffer *)arg1;
 - (void)addAudioBufferSource:(char *)arg1 size:(unsigned long long)arg2 frames:(int)arg3;
+- (float)getVoicePowerLevelOfMicSource;
 - (void)addEncodersAndPacketizers;
 - (void)removeEncodersAndPacketizers;
 - (void)pauseOutput;
@@ -124,7 +126,7 @@
 - (void)setDefaultFilter;
 - (void)mixPaused:(_Bool)arg1;
 - (void)endRtmpSession;
-- (void)stop;
+- (void)stopWithReason:(long long)arg1;
 - (void)startSessionInternal:(id)arg1 streamKey:(id)arg2;
 - (void)startRtmpSessionWithURL:(id)arg1;
 - (void)dealloc;

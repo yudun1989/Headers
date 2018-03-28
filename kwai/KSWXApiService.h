@@ -18,6 +18,7 @@
 @interface KSWXApiService : NSObject <KSWXApiServiceDelegate, KSURLHandler, WXApiDelegate, KSThirdPartyOAuth, KSActivity>
 {
     _Bool _loginRequestSent;
+    _Bool _shareRequestSent;
     _Bool _onceEnterBackgroundAfterRequestSent;
     int _buyStatus;
     id <KSWXApiServiceDelegate> _delegate;
@@ -39,6 +40,7 @@
 + (_Bool)isNativeAvailable;
 + (id)shareService;
 @property(nonatomic) _Bool onceEnterBackgroundAfterRequestSent; // @synthesize onceEnterBackgroundAfterRequestSent=_onceEnterBackgroundAfterRequestSent;
+@property(nonatomic) _Bool shareRequestSent; // @synthesize shareRequestSent=_shareRequestSent;
 @property(nonatomic) _Bool loginRequestSent; // @synthesize loginRequestSent=_loginRequestSent;
 @property(retain, nonatomic) NSArray *avaliableWXAppIds; // @synthesize avaliableWXAppIds=_avaliableWXAppIds;
 @property(copy, nonatomic) CDUnknownBlockType buyOnCancel; // @synthesize buyOnCancel=_buyOnCancel;

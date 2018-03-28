@@ -29,6 +29,7 @@
 - (id)shareText;
 - (id)commentText;
 - (id)likeText;
+- (void)setElementsHidden:(_Bool)arg1;
 - (void)commentsInfoChanged;
 - (void)followStateChanged:(_Bool)arg1 isRequesting:(_Bool)arg2 showAnimation:(_Bool)arg3;
 - (void)likeStateChanged:(_Bool)arg1 showAnimation:(_Bool)arg2;

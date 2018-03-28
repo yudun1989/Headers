@@ -12,6 +12,7 @@
 }
 
 @property(nonatomic) long long cameraPosition; // @synthesize cameraPosition=_cameraPosition;
+- (void)setSensorRotate:(float)arg1;
 - (void)onCameraPositionChanged:(_Bool)arg1;
 - (void)processSampleBuffer:(struct opaqueCMSampleBuffer *)arg1 fromConnection:(id)arg2;
 - (id)init;

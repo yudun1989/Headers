@@ -13,12 +13,10 @@
     NSDictionary *_wifiInfo;
     TencentLBSReachability *_internetReachability;
     NSOperationQueue *_queue;
-    id _reachabilityObserver;
 }
 
 + (id)captiveWifiInfo;
 + (id)sharedInstance;
-@property(retain, nonatomic) id reachabilityObserver; // @synthesize reachabilityObserver=_reachabilityObserver;
 @property(retain, nonatomic) NSOperationQueue *queue; // @synthesize queue=_queue;
 @property(retain, nonatomic) TencentLBSReachability *internetReachability; // @synthesize internetReachability=_internetReachability;
 @property(retain) NSDictionary *wifiInfo; // @synthesize wifiInfo=_wifiInfo;

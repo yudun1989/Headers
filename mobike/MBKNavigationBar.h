@@ -6,7 +6,7 @@
 
 #import <UIKit/UIView.h>
 
-@class NSString, UIButton, UIColor, UILabel;
+@class NSString, UIButton, UIColor, UIFont, UILabel;
 
 @interface MBKNavigationBar : UIView
 {
@@ -25,6 +25,7 @@
     UIColor *_barButtonDisabledTitleColor;
     UIColor *_barButtonHighlightedTitleColor;
     UIColor *_titleColor;
+    UIFont *_titleFont;
     UILabel *_subTitleLabel;
     UIView *_textTitleView;
     UIView *_bottomLine;
@@ -33,6 +34,7 @@
 @property(retain, nonatomic) UIView *bottomLine; // @synthesize bottomLine=_bottomLine;
 @property(retain, nonatomic) UIView *textTitleView; // @synthesize textTitleView=_textTitleView;
 @property(nonatomic) __weak UILabel *subTitleLabel; // @synthesize subTitleLabel=_subTitleLabel;
+@property(retain, nonatomic) UIFont *titleFont; // @synthesize titleFont=_titleFont;
 @property(retain, nonatomic) UIColor *titleColor; // @synthesize titleColor=_titleColor;
 @property(retain, nonatomic) UIColor *barButtonHighlightedTitleColor; // @synthesize barButtonHighlightedTitleColor=_barButtonHighlightedTitleColor;
 @property(retain, nonatomic) UIColor *barButtonDisabledTitleColor; // @synthesize barButtonDisabledTitleColor=_barButtonDisabledTitleColor;

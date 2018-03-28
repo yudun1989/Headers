@@ -6,13 +6,13 @@
 
 #import <UIKit/UIView.h>
 
-#import "CAAnimationDelegate-Protocol.h"
+#import "POPAnimationDelegate-Protocol.h"
 #import "UIGestureRecognizerDelegate-Protocol.h"
 
 @class MBKBaseViewController, MSWeakTimer, NSString, OperationCardConfig, UIButton, UIImageView, UILabel, UITapGestureRecognizer;
 @protocol activitionCardDelegate;
 
-@interface activitionCard : UIView <UIGestureRecognizerDelegate, CAAnimationDelegate>
+@interface activitionCard : UIView <UIGestureRecognizerDelegate, POPAnimationDelegate>
 {
     UIButton *closeButton;
     id <activitionCardDelegate> _delegate;
@@ -40,8 +40,10 @@
 @property(retain, nonatomic) OperationCardConfig *activityInfos; // @synthesize activityInfos=_activityInfos;
 @property id <activitionCardDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
-- (void)animationDidStop:(id)arg1 finished:(_Bool)arg2;
-- (void)animationDidStart:(id)arg1;
+- (void)dismissAnimation;
+- (void)showAnimation;
+- (void)pop_animationDidStart:(id)arg1;
+- (void)pop_animationDidReachToValue:(id)arg1;
 - (_Bool)gestureRecognizer:(id)arg1 shouldReceiveTouch:(id)arg2;
 - (void)unShow;
 - (void)stopAliveTimer;

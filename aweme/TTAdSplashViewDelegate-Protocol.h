@@ -9,9 +9,9 @@
 @class TTAdSplashView;
 
 @protocol TTAdSplashViewDelegate <NSObject>
-- (void)splashViewActionNineBoxIndex:(long long)arg1;
-- (void)splashViewClickBackgroundAction;
-- (void)splashViewWithAction;
+- (void)splashViewClickNineBoxIndex:(long long)arg1;
+- (void)splashViewClickBackground;
+- (void)splashViewClickBanner;
 - (void)splashViewShowFinished:(TTAdSplashView *)arg1;
 @end
 

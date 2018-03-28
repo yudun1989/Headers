@@ -45,8 +45,8 @@
 - (void)viewDidDisappear:(_Bool)arg1;
 - (void)viewDidAppear:(_Bool)arg1;
 - (void)viewDidLoad;
-- (void)viewDidLayoutSubviews;
 - (id)initWithNibName:(id)arg1 bundle:(id)arg2;
+- (void)dealloc;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

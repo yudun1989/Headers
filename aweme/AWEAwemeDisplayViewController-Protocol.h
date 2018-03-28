@@ -13,6 +13,7 @@
 @protocol AWEAwemeDisplayViewController <NSObject, AWEAwemePlayVideoDelegate>
 @property(nonatomic) __weak id <AWEAwemePlayInteractionDelegate> interactionDelegate;
 @property(retain, nonatomic) AWEAwemeModel *model;
+@property(copy, nonatomic) NSString *originEntryEnterMethod;
 @property(retain, nonatomic) NSString *referString;
 @property(retain, nonatomic) NSNumber *clickEnter;
 

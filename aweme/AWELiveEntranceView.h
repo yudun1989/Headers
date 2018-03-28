@@ -7,10 +7,11 @@
 #import <UIKit/UIView.h>
 
 #import "AWEGrowingTextViewDelegate-Protocol.h"
+#import "AWELiveEntranceViewProtocol-Protocol.h"
 
 @class AWEGrowingTextView, CAGradientLayer, NSString, UIButton;
 
-@interface AWELiveEntranceView : UIView <AWEGrowingTextViewDelegate>
+@interface AWELiveEntranceView : UIView <AWEGrowingTextViewDelegate, AWELiveEntranceViewProtocol>
 {
     UIView *_keyboardMaskView;
     CAGradientLayer *_bottomGradientLayer;
@@ -21,14 +22,18 @@
     UIButton *_wechatBtn;
     UIButton *_weiboBtn;
     UIButton *_startLiveBtn;
+    UIButton *_cameraSwapButton;
     long long _mode;
     long long _shareType;
     CDUnknownBlockType _keyboardChangeBlock;
+    UIButton *_backButton;
 }
 
+@property(retain, nonatomic) UIButton *backButton; // @synthesize backButton=_backButton;
 @property(copy, nonatomic) CDUnknownBlockType keyboardChangeBlock; // @synthesize keyboardChangeBlock=_keyboardChangeBlock;
 @property(nonatomic) long long shareType; // @synthesize shareType=_shareType;
 @property(nonatomic) long long mode; // @synthesize mode=_mode;
+@property(retain, nonatomic) UIButton *cameraSwapButton; // @synthesize cameraSwapButton=_cameraSwapButton;
 @property(retain, nonatomic) UIButton *startLiveBtn; // @synthesize startLiveBtn=_startLiveBtn;
 @property(retain, nonatomic) UIButton *weiboBtn; // @synthesize weiboBtn=_weiboBtn;
 @property(retain, nonatomic) UIButton *wechatBtn; // @synthesize wechatBtn=_wechatBtn;
@@ -62,6 +67,12 @@
 - (void)setupUI;
 - (void)dealloc;
 - (id)initWithFrame:(struct CGRect)arg1;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly, copy) NSString *description;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
 
 @end
 

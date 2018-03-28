@@ -10,7 +10,7 @@
 #import "UICollectionViewDataSource-Protocol.h"
 #import "UICollectionViewDelegate-Protocol.h"
 
-@class MBKCardBuyCellModel, Mobike_ViewController, NSIndexPath, NSString, UICollectionView, UICollectionViewFlowLayout, UILabel;
+@class MBKBaseViewController, MBKCardBuyCellModel, NSIndexPath, NSString, UICollectionView, UICollectionViewFlowLayout, UILabel;
 
 @interface MBKCardBuyCell : UITableViewCell <UICollectionViewDelegate, UICollectionViewDataSource, MBKViewProtocol>
 {
@@ -42,7 +42,7 @@
 - (void)awakeFromNib;
 
 // Remaining properties
-@property(nonatomic) __weak Mobike_ViewController *controller;
+@property(nonatomic) __weak MBKBaseViewController *controller;
 @property(readonly, copy) NSString *debugDescription;
 @property(readonly, copy) NSString *description;
 @property(readonly) unsigned long long hash;

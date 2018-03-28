@@ -12,6 +12,7 @@
 {
     _Bool _allowsPreview;
     _Bool _useCustomizedSEI;
+    _Bool _allowsRealTimeVoicePowerLevel;
     NSURL *_rtmpURL;
     unsigned long long _audioSource;
     long long _aspectMode;
@@ -23,6 +24,7 @@
 
 + (struct CGSize)suggestedFullScreenVideoSize;
 + (id)defaultConfiguration;
+@property(nonatomic) _Bool allowsRealTimeVoicePowerLevel; // @synthesize allowsRealTimeVoicePowerLevel=_allowsRealTimeVoicePowerLevel;
 @property(nonatomic) long long contentType; // @synthesize contentType=_contentType;
 @property(nonatomic) _Bool useCustomizedSEI; // @synthesize useCustomizedSEI=_useCustomizedSEI;
 @property(nonatomic) _Bool allowsPreview; // @synthesize allowsPreview=_allowsPreview;

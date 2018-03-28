@@ -29,14 +29,12 @@
     NSArray *_layers;
     UIView *_gestureView;
     FMManager *_manager;
-    double _currentTime;
     double _lastFrameTime;
 }
 
 + (id)sceneWithResource:(id)arg1 materialProvider:(id)arg2;
 @property(nonatomic) _Bool isPausing; // @synthesize isPausing=_isPausing;
 @property(nonatomic) double lastFrameTime; // @synthesize lastFrameTime=_lastFrameTime;
-@property(nonatomic) double currentTime; // @synthesize currentTime=_currentTime;
 @property(retain, nonatomic) FMManager *manager; // @synthesize manager=_manager;
 @property(nonatomic) UIView *gestureView; // @synthesize gestureView=_gestureView;
 @property(retain, nonatomic) NSArray *layers; // @synthesize layers=_layers;

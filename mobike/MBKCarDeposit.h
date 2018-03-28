@@ -6,9 +6,11 @@
 
 #import <objc/NSObject.h>
 
+#import "MJCoding-Protocol.h"
+
 @class NSString;
 
-@interface MBKCarDeposit : NSObject
+@interface MBKCarDeposit : NSObject <MJCoding>
 {
     _Bool _isShareCarDepositVisibleForUser;
     NSString *_deposit;
@@ -19,6 +21,15 @@
 @property(nonatomic) _Bool isShareCarDepositVisibleForUser; // @synthesize isShareCarDepositVisibleForUser=_isShareCarDepositVisibleForUser;
 @property(copy, nonatomic) NSString *deposit; // @synthesize deposit=_deposit;
 - (void).cxx_destruct;
+- (void)encodeWithCoder:(id)arg1;
+- (id)initWithCoder:(id)arg1;
+- (id)copyWithZone:(id)arg1;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly, copy) NSString *description;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
 
 @end
 

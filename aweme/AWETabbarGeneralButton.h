@@ -14,6 +14,7 @@
     _Bool _enableRefresh;
     _Bool _enableIndicator;
     long long _status;
+    long long _feedStatus;
     UIView *_selectedIndicator;
     UIImageView *_loadingImageView;
     UIView<AWETabbarInnerView> *_innerView;
@@ -25,12 +26,14 @@
 @property(retain, nonatomic) UIImageView *loadingImageView; // @synthesize loadingImageView=_loadingImageView;
 @property(retain, nonatomic) UIView *selectedIndicator; // @synthesize selectedIndicator=_selectedIndicator;
 @property(nonatomic) _Bool enableRefresh; // @synthesize enableRefresh=_enableRefresh;
+- (long long)feedStatus;
 - (long long)status;
 - (void).cxx_destruct;
 - (void)refreshWithInnerView:(id)arg1;
 - (void)enableRefreshMode:(_Bool)arg1 animated:(_Bool)arg2;
 - (void)renderCurrentStatusAnimated:(_Bool)arg1;
 - (void)setStatus:(long long)arg1;
+- (void)setFeedStatus:(long long)arg1;
 - (double)indicatorWidth;
 - (void)layoutSubviews;
 - (_Bool)selectedStatus;

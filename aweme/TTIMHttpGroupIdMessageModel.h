@@ -7,16 +7,16 @@
 #import "JSONModel.h"
 
 @class NSArray, NSString;
-@protocol TTIMHttpChatMessageModel;
+@protocol TTIMHttpChatMessageModel><Optional;
 
 @interface TTIMHttpGroupIdMessageModel : JSONModel
 {
     NSString *_groupID;
-    NSArray<TTIMHttpChatMessageModel> *_messages;
+    NSArray<TTIMHttpChatMessageModel><Optional> *_messages;
 }
 
 + (id)keyMapper;
-@property(copy, nonatomic) NSArray<TTIMHttpChatMessageModel> *messages; // @synthesize messages=_messages;
+@property(copy, nonatomic) NSArray<TTIMHttpChatMessageModel><Optional> *messages; // @synthesize messages=_messages;
 @property(copy, nonatomic) NSString *groupID; // @synthesize groupID=_groupID;
 - (void).cxx_destruct;
 - (id)transformToPBModel;

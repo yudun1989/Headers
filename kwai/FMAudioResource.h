@@ -10,6 +10,7 @@
 
 @interface FMAudioResource : NSObject
 {
+    _Bool _audioDefault;
     _Bool _requireFace;
     int _loop;
     int _trigger;
@@ -21,6 +22,7 @@
 @property(nonatomic) int trigger; // @synthesize trigger=_trigger;
 @property(nonatomic) _Bool requireFace; // @synthesize requireFace=_requireFace;
 @property(nonatomic) int loop; // @synthesize loop=_loop;
+@property(nonatomic) _Bool audioDefault; // @synthesize audioDefault=_audioDefault;
 - (void).cxx_destruct;
 
 @end

@@ -7,6 +7,8 @@
 #import <UIKit/UIImage.h>
 
 @interface UIImage (Rounded)
+- (id)perfectlyRoundedImageWithBorderInset:(long long)arg1 borderLineWidth:(long long)arg2 borderColor:(id)arg3;
+- (id)perfectlyRoundedImageWithBorderLineWidth:(long long)arg1 borderColor:(id)arg2;
 - (id)perfectlyRoundedImageWithBorderSize:(long long)arg1;
 - (id)roundedCornerImage:(long long)arg1 borderSize:(long long)arg2;
 @end

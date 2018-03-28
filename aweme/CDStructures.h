@@ -193,11 +193,6 @@ struct AuthCredentials {
     struct basic_string<unsigned short, base::string16_char_traits, std::__1::allocator<unsigned short>> _field2;
 };
 
-struct BTDEdgeInsets {
-    double top;
-    double left;
-};
-
 struct BindStateBase;
 
 struct CATransform3D {
@@ -247,11 +242,6 @@ struct CGRect {
 struct CGSize {
     double width;
     double height;
-};
-
-struct CGVector {
-    double _field1;
-    double _field2;
 };
 
 struct CLLocationCoordinate2D {
@@ -646,12 +636,14 @@ struct MediaWriter {
 struct MicSource {
     CDUnknownFunctionPointerType *_field1;
     struct weak_ptr<videocore::iOS::MicSource> _field2;
-    id _field3;
-    struct OpaqueAudioComponentInstance *_field4;
-    struct OpaqueAudioComponent *_field5;
-    double _field6;
-    int _field7;
-    struct weak_ptr<videocore::IOutput> _field8;
+    _Bool _field3;
+    float _field4;
+    id _field5;
+    struct OpaqueAudioComponentInstance *_field6;
+    struct OpaqueAudioComponent *_field7;
+    double _field8;
+    int _field9;
+    struct weak_ptr<videocore::IOutput> _field10;
 };
 
 struct NSDictionary {
@@ -1632,7 +1624,7 @@ struct __sFILE;
 struct __shared_weak_count;
 
 struct __tree_end_node<std::__1::__tree_node_base<void *>*> {
-    struct __tree_node_base<void *> *__left_;
+    struct __tree_node_base<void *> *_field1;
 };
 
 struct _channel_group_t {
@@ -1784,18 +1776,6 @@ struct map<const void *, std::__1::unique_ptr<base::SupportsUserData::Data, std:
 };
 
 struct map<std::__1::basic_string<char>, std::__1::basic_string<char>, std::__1::less<std::__1::basic_string<char>>, std::__1::allocator<std::__1::pair<const std::__1::basic_string<char>, std::__1::basic_string<char>>>>;
-
-struct map<std::__1::basic_string<char>, void *, std::__1::less<std::__1::basic_string<char>>, std::__1::allocator<std::__1::pair<const std::__1::basic_string<char>, void *>>> {
-    struct __tree<std::__1::__value_type<std::__1::basic_string<char>, void *>, std::__1::__map_value_compare<std::__1::basic_string<char>, std::__1::__value_type<std::__1::basic_string<char>, void *>, std::__1::less<std::__1::basic_string<char>>, true>, std::__1::allocator<std::__1::__value_type<std::__1::basic_string<char>, void *>>> {
-        struct __tree_end_node<std::__1::__tree_node_base<void *>*> *__begin_node_;
-        struct __compressed_pair<std::__1::__tree_end_node<std::__1::__tree_node_base<void *>*>, std::__1::allocator<std::__1::__tree_node<std::__1::__value_type<std::__1::basic_string<char>, void *>, void *>>> {
-            struct __tree_end_node<std::__1::__tree_node_base<void *>*> __first_;
-        } __pair1_;
-        struct __compressed_pair<unsigned long, std::__1::__map_value_compare<std::__1::basic_string<char>, std::__1::__value_type<std::__1::basic_string<char>, void *>, std::__1::less<std::__1::basic_string<char>>, true>> {
-            unsigned long long __first_;
-        } __pair3_;
-    } __tree_;
-};
 
 struct objc_method_description {
     SEL _field1;

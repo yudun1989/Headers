@@ -23,6 +23,9 @@
 + (void)load;
 @property(retain, nonatomic) UITableView *tableView; // @synthesize tableView=_tableView;
 - (void).cxx_destruct;
+- (void)forceQuitWithHint;
+- (id)mqttEnabledStatusDescriptionFromSavedValue:(id)arg1;
+- (void)mqttEnabledSetting;
 - (void)openArbitraryURL;
 - (void)alertView:(id)arg1 clickedButtonAtIndex:(long long)arg2;
 - (void)_pickLockType;

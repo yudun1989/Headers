@@ -36,6 +36,7 @@
 - (long long)collectionView:(id)arg1 numberOfItemsInSection:(long long)arg2;
 @property(nonatomic) _Bool separatorHidden; // @dynamic separatorHidden;
 - (void)viewDidLoad;
+- (void)dealloc;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

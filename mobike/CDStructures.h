@@ -818,11 +818,6 @@ struct JavaDataOutput {
     id _field1;
 };
 
-struct LGSideMenuSwipeGestureRange {
-    double left;
-    double right;
-};
-
 struct LOT_Subpath {
     int _field1;
     double _field2;
@@ -1367,6 +1362,11 @@ struct STLRange<const std::__1::vector<int, std::__1::allocator<int>>> {
 struct STLRange<const std::__1::vector<unsigned int, std::__1::allocator<unsigned int>>> {
     struct __wrap_iter<const unsigned int *> _field1;
     struct __wrap_iter<const unsigned int *> _field2;
+};
+
+struct SearchApi {
+    Class _field1;
+    id _field2;
 };
 
 struct ServiceAreaInfo {

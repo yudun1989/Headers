@@ -7,6 +7,8 @@
 #import <UIKit/UIFont.h>
 
 @interface UIFont (AWEAdditions)
++ (id)awe_systemFontOfSize:(double)arg1 weight:(long long)arg2;
++ (double)_transformFontWeight:(long long)arg1;
 + (id)awe_boldItalicFontWithSize:(double)arg1;
 @end
 

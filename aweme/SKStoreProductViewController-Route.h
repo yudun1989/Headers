@@ -7,6 +7,8 @@
 #import <StoreKit/SKStoreProductViewController.h>
 
 @interface SKStoreProductViewController (Route)
++ (void)processWithAppID:(id)arg1;
++ (id)getAppIDFromParam:(id)arg1;
 + (void)load;
 - (void)setAssociatedDelegate:(id)arg1;
 @end

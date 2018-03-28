@@ -16,6 +16,7 @@
     NSString *_signature;
     long long _latestChatTimestamp;
     NSString *_requestID;
+    NSString *_customID;
     NSString *_url1;
     NSString *_url2;
     NSString *_url3;
@@ -28,6 +29,7 @@
 @property(copy, nonatomic) NSString *url3; // @synthesize url3=_url3;
 @property(copy, nonatomic) NSString *url2; // @synthesize url2=_url2;
 @property(copy, nonatomic) NSString *url1; // @synthesize url1=_url1;
+@property(copy, nonatomic) NSString *customID; // @synthesize customID=_customID;
 @property(copy, nonatomic) NSString *requestID; // @synthesize requestID=_requestID;
 @property(nonatomic) long long latestChatTimestamp; // @synthesize latestChatTimestamp=_latestChatTimestamp;
 @property(copy, nonatomic) NSString *signature; // @synthesize signature=_signature;

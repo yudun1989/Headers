@@ -6,11 +6,11 @@
 
 #import "NSObject-Protocol.h"
 
-@class AWELiveDiggRequestModel, NSNumber, NSString, TTHttpTask;
+@class AWELiveDiggRequestModel, NSDictionary, NSNumber, NSString, TTHttpTask;
 
 @protocol AWELiveRequestProtocol <NSObject>
 + (void)getHotRoomCountWithFinishBlock:(void (^)(NSError *, AWELiveHotRoomCountResponseModel *))arg1;
-+ (void)getHotRoomListCount:(long long)arg1 cursor:(long long)arg2 finishBlock:(void (^)(NSError *, AWELiveHotRoomFeedResponseModel *))arg3;
++ (void)getHotRoomListWithParams:(NSDictionary *)arg1 finishBlock:(void (^)(NSError *, AWELiveHotRoomFeedResponseModel *))arg2;
 + (void)getRoomTopUserList:(NSNumber *)arg1 offset:(long long)arg2 count:(long long)arg3 withCoin:(_Bool)arg4 finishBlock:(void (^)(NSError *, AWELiveRoomTopUserListReponseModel *))arg5;
 + (void)sendBarrage:(NSNumber *)arg1 content:(NSString *)arg2 finishBlock:(void (^)(NSError *, AWELiveSendPresentResponseModel *))arg3;
 + (void)sendPresent:(NSNumber *)arg1 presentID:(NSNumber *)arg2 count:(long long)arg3 finishBlock:(void (^)(NSError *, AWELiveSendPresentResponseModel *))arg4;

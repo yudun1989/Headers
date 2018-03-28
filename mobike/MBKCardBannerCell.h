@@ -8,7 +8,7 @@
 
 #import "MBKViewProtocol-Protocol.h"
 
-@class MBKCardBannerCellModel, Mobike_ViewController, NSString, UIImageView;
+@class MBKBaseViewController, MBKCardBannerCellModel, NSString, UIImageView;
 
 @interface MBKCardBannerCell : UITableViewCell <MBKViewProtocol>
 {
@@ -29,7 +29,7 @@
 - (void)awakeFromNib;
 
 // Remaining properties
-@property(nonatomic) __weak Mobike_ViewController *controller;
+@property(nonatomic) __weak MBKBaseViewController *controller;
 @property(readonly, copy) NSString *debugDescription;
 @property(readonly, copy) NSString *description;
 @property(readonly) unsigned long long hash;

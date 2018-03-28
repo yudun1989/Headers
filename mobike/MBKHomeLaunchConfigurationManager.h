@@ -12,15 +12,20 @@
 {
     _Bool _configurationHasUpdated;
     _Bool _loading;
+    _Bool _manuallyEnabledSpockTab;
     MBKHomeLaunchConfiguration *_configuration;
 }
 
 + (id)sharedInstance;
 + (void)load;
+@property(nonatomic) _Bool manuallyEnabledSpockTab; // @synthesize manuallyEnabledSpockTab=_manuallyEnabledSpockTab;
 @property(nonatomic) _Bool loading; // @synthesize loading=_loading;
 @property(nonatomic) _Bool configurationHasUpdated; // @synthesize configurationHasUpdated=_configurationHasUpdated;
 @property(retain, nonatomic) MBKHomeLaunchConfiguration *configuration; // @synthesize configuration=_configuration;
 - (void).cxx_destruct;
+- (_Bool)addSpockTabManuallyIfNeeded;
+@property(readonly, nonatomic) MBKHomeLaunchConfiguration *defaultConfiguration;
+- (id)generateASpockTab;
 - (void)sendNotification;
 - (void)updateConfigurationWithUser:(id)arg1;
 - (void)loadConfiguration;

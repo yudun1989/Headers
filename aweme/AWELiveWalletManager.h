@@ -10,6 +10,8 @@
 {
 }
 
++ (void)getMyWalletPassportWithFinishBlock:(CDUnknownBlockType)arg1;
++ (void)getMyWalletResponseWithFinishBlock:(CDUnknownBlockType)arg1;
 + (void)getMyWalletWithFinishBlock:(CDUnknownBlockType)arg1;
 
 @end

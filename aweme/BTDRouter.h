@@ -13,7 +13,8 @@
     NSMutableDictionary *_routeMap;
 }
 
-+ (_Bool)tranferToURLString:(id)arg1;
++ (id)encode:(id)arg1;
++ (_Bool)tranferToURLStringWithFormat:(id)arg1;
 + (_Bool)tranferToURLString:(id)arg1 completion:(CDUnknownBlockType)arg2;
 + (_Bool)tranferToURLString:(id)arg1 fromViewController:(id)arg2;
 + (_Bool)tranferToURLString:(id)arg1 fromViewController:(id)arg2 completion:(CDUnknownBlockType)arg3;

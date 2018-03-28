@@ -11,11 +11,12 @@
 
 @interface _MBKRideHailingOrderStatusMonitor : NSObject
 {
+    _Bool _intervalReseted;
     NSString *_orderId;
     double _interval;
     id <_MBKRideHailingOrderStatusMonitorDelegate> _delegate;
     NSMutableArray *_subscribers;
-    NSObject<OS_dispatch_source> *_timer;
+    NSObject<OS_dispatch_source> *_source;
     long long _status;
     MBKCarHailingOrder *_order;
 }
@@ -23,9 +24,10 @@
 + (id)new;
 @property(retain, nonatomic) MBKCarHailingOrder *order; // @synthesize order=_order;
 @property(nonatomic) long long status; // @synthesize status=_status;
-@property(retain, nonatomic) NSObject<OS_dispatch_source> *timer; // @synthesize timer=_timer;
+@property(retain, nonatomic) NSObject<OS_dispatch_source> *source; // @synthesize source=_source;
 @property(retain, nonatomic) NSMutableArray *subscribers; // @synthesize subscribers=_subscribers;
 @property(nonatomic) __weak id <_MBKRideHailingOrderStatusMonitorDelegate> delegate; // @synthesize delegate=_delegate;
+@property(nonatomic) _Bool intervalReseted; // @synthesize intervalReseted=_intervalReseted;
 @property(nonatomic) double interval; // @synthesize interval=_interval;
 @property(copy, nonatomic) NSString *orderId; // @synthesize orderId=_orderId;
 - (void).cxx_destruct;

@@ -6,12 +6,13 @@
 
 #import "KSSelectForMailViewController.h"
 
+#import "KSFunsFollowCellDelegate-Protocol.h"
 #import "KSOwnerFollowDataSourceDelegate-Protocol.h"
 #import "UIAlertViewDelegate-Protocol.h"
 
 @class KSFollowEachOtherModel, KSOwnerFollowDataSource, NSString, UIView;
 
-@interface KSOwnerFollowViewController : KSSelectForMailViewController <KSOwnerFollowDataSourceDelegate, UIAlertViewDelegate>
+@interface KSOwnerFollowViewController : KSSelectForMailViewController <KSOwnerFollowDataSourceDelegate, UIAlertViewDelegate, KSFunsFollowCellDelegate>
 {
     _Bool _isEditingRemarkname;
     _Bool _configTableViewWithAnimated;
@@ -28,15 +29,19 @@
 - (void)logWithElementAction:(int)arg1 elementName:(id)arg2 filterPackageName:(id)arg3 filterPackageSwitchState:(_Bool)arg4;
 - (void)logWithElementAction:(int)arg1 elementName:(id)arg2 userId:(id)arg3 index:(long long)arg4;
 - (id)ksuShowMetaData;
+- (void)openUserProfileViewControllerWithTableView:(id)arg1 atIndexPath:(id)arg2;
 - (void)reloadDataAndShowLoading:(_Bool)arg1 showErrorAtTop:(_Bool)arg2 ignoreCache:(_Bool)arg3;
 - (void)didChangeFollowedUser:(id)arg1;
 - (void)configMenu;
 - (void)didTapRightNavigationButton:(id)arg1;
 - (id)dataSource;
+- (void)didTapBtnWithCell:(id)arg1 index:(long long)arg2;
+- (void)funsFollowCell:(id)arg1 didTapUserHeaderViewWithUser:(id)arg2;
 - (void)ownerFollowDataSource:(id)arg1 isShowAllFollowers:(_Bool)arg2 followEachOtherDataSourceNeedsReloadFromSever:(_Bool)arg3;
 - (void)searchBarCancelButtonClicked:(id)arg1;
 - (_Bool)searchBarShouldBeginEditing:(id)arg1;
 - (void)tableView:(id)arg1 didSelectRowAtIndexPath:(id)arg2;
+- (void)tableView:(id)arg1 willDisplayCell:(id)arg2 forRowAtIndexPath:(id)arg3;
 - (double)barHeight;
 - (void)configTableViews;
 - (_Bool)ks_shouldHandleBackPanGestureRecognizer:(id)arg1;

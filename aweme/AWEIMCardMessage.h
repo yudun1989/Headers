@@ -14,12 +14,16 @@
     AWEIMUser *_user;
     NSString *_itemId;
     AWEURLModel *_coverURL;
+    long long _coverHeight;
+    long long _coverWidth;
     NSString *_contentName;
     AWEURLModel *_contentThumb;
 }
 
 @property(retain, nonatomic) AWEURLModel *contentThumb; // @synthesize contentThumb=_contentThumb;
 @property(copy, nonatomic) NSString *contentName; // @synthesize contentName=_contentName;
+@property(nonatomic) long long coverWidth; // @synthesize coverWidth=_coverWidth;
+@property(nonatomic) long long coverHeight; // @synthesize coverHeight=_coverHeight;
 @property(copy, nonatomic) AWEURLModel *coverURL; // @synthesize coverURL=_coverURL;
 @property(copy, nonatomic) NSString *itemId; // @synthesize itemId=_itemId;
 @property(copy, nonatomic) AWEIMUser *user; // @synthesize user=_user;

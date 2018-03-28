@@ -13,7 +13,8 @@
 @interface KSRefreshAnimatableView : UIView <KSRefreshControlAnimatable>
 {
     UIImage *_loadingImage;
-    UIColor *_stokeColor;
+    UIColor *_strokeColor;
+    double _strokeWidth;
     unsigned long long _state;
     CADisplayLink *_displayLink;
     double _draggingProgress;
@@ -36,7 +37,8 @@
 @property(nonatomic) double draggingProgress; // @synthesize draggingProgress=_draggingProgress;
 @property(retain, nonatomic) CADisplayLink *displayLink; // @synthesize displayLink=_displayLink;
 @property(nonatomic) unsigned long long state; // @synthesize state=_state;
-@property(retain, nonatomic) UIColor *stokeColor; // @synthesize stokeColor=_stokeColor;
+@property(nonatomic) double strokeWidth; // @synthesize strokeWidth=_strokeWidth;
+@property(retain, nonatomic) UIColor *strokeColor; // @synthesize strokeColor=_strokeColor;
 @property(retain, nonatomic) UIImage *loadingImage; // @synthesize loadingImage=_loadingImage;
 - (void).cxx_destruct;
 - (void)drawLoadingImageWithRotateProgress:(double)arg1;

@@ -22,9 +22,11 @@
     NSString *_picPremium;
     NSString *_picBig;
     NSString *_picHuge;
+    NSNumber *_appleMusicID;
 }
 
 + (id)JSONKeyPathsByPropertyKey;
+@property(retain, nonatomic) NSNumber *appleMusicID; // @synthesize appleMusicID=_appleMusicID;
 @property(nonatomic) _Bool hasEdited; // @synthesize hasEdited=_hasEdited;
 @property(copy, nonatomic) NSString *picHuge; // @synthesize picHuge=_picHuge;
 @property(copy, nonatomic) NSString *picBig; // @synthesize picBig=_picBig;

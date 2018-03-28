@@ -19,6 +19,7 @@
 
 @interface KSShareViewController : KSShareBaseViewController <KSURLPortalAnnotation, KSAtFriendsViewControllerDelegate, UITextViewDelegate, UITableViewDelegate, KSPoiPickerDelegate, KSShareButtonBarDelegate, KSSharePrivacyBarDelegate, KSShareCustomSettingViewControllerDelegate>
 {
+    UIView *_secondCenterBarView;
     KSPoiListDataSource *_cachedLocationDataSource;
     _Bool _isInChina;
     _Bool _forceOpenMusicTag;
@@ -103,6 +104,7 @@
 @property(retain, nonatomic) KSMusicItem *defaultMusic; // @synthesize defaultMusic=_defaultMusic;
 - (void).cxx_destruct;
 - (void)didTapPreviewImage:(id)arg1;
+- (id)getNewSepLineView;
 - (id)secondCenterBar;
 - (id)firstCenterBar;
 - (void)poiPicker:(id)arg1 didSelectPoi:(id)arg2;

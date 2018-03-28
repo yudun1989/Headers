@@ -8,14 +8,11 @@
 
 #import "KSGPURenderer-Protocol.h"
 
-@class GLProgram, KSGPU2DTextureAtlas, NSArray, NSString;
+@class GLProgram, KSLiveHeartsEmitterCell, KSLiveHeartsRenderInfo, NSArray, NSString, UIImage;
 
 @interface KSLiveHeartsRenderer : KSGPUBaseRenderer <KSGPURenderer>
 {
-    struct vector<KSLiveHeartGPUInstance, std::__1::allocator<KSLiveHeartGPUInstance>> _GPUInstances;
-    struct list<KSLiveHeartInstance *, std::__1::allocator<KSLiveHeartInstance *>> _instanceCells;
     struct list<KSLiveHeartInstance *, std::__1::allocator<KSLiveHeartInstance *>> _cachedInstanceCells;
-    KSGPU2DTextureAtlas *_textureAtlas;
     GLProgram *_displayProgram;
     unsigned int _modelVBO;
     unsigned int _instanceVBO;
@@ -30,19 +27,30 @@
     unsigned int _projectionMatrixUniform;
     union _GLKMatrix4 _projectionMatrix;
     _Bool _needsClearHearts;
-    NSArray *_emitterCells;
+    KSLiveHeartsEmitterCell *_myLikeCell;
+    KSLiveHeartsEmitterCell *_otherLikeCell;
+    UIImage *_userAvatar;
     double _maxAlpha;
+    KSLiveHeartsRenderInfo *_avatarRenderInfo;
+    KSLiveHeartsRenderInfo *_heartsRenderInfo;
+    NSArray *_renderInfos;
     struct CGPoint _emitterPosition;
     struct CGPoint _emitterPositionRange;
 }
 
+@property(retain, nonatomic) NSArray *renderInfos; // @synthesize renderInfos=_renderInfos;
+@property(retain, nonatomic) KSLiveHeartsRenderInfo *heartsRenderInfo; // @synthesize heartsRenderInfo=_heartsRenderInfo;
+@property(retain, nonatomic) KSLiveHeartsRenderInfo *avatarRenderInfo; // @synthesize avatarRenderInfo=_avatarRenderInfo;
 @property _Bool needsClearHearts; // @synthesize needsClearHearts=_needsClearHearts;
 @property(nonatomic) double maxAlpha; // @synthesize maxAlpha=_maxAlpha;
 @property(nonatomic) struct CGPoint emitterPositionRange; // @synthesize emitterPositionRange=_emitterPositionRange;
 @property(nonatomic) struct CGPoint emitterPosition; // @synthesize emitterPosition=_emitterPosition;
-@property(retain, nonatomic) NSArray *emitterCells; // @synthesize emitterCells=_emitterCells;
+@property(retain, nonatomic) UIImage *userAvatar; // @synthesize userAvatar=_userAvatar;
+@property(retain, nonatomic) KSLiveHeartsEmitterCell *otherLikeCell; // @synthesize otherLikeCell=_otherLikeCell;
+@property(retain, nonatomic) KSLiveHeartsEmitterCell *myLikeCell; // @synthesize myLikeCell=_myLikeCell;
 - (id).cxx_construct;
 - (void).cxx_destruct;
+- (void)renderWithTexture:(id)arg1 GPUInstances:(vector_6be6f145 *)arg2 instanceCount:(unsigned long long)arg3;
 - (void)render;
 - (_Bool)needsUpdateContents;
 - (void)updateWithTime:(double)arg1;

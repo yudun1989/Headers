@@ -26,7 +26,7 @@
     NSMutableArray *_displayedCommentIDs;
     KSFeedCommentsModel *_commentsModel;
     NSDate *_enterCommentDate;
-    NSString *_newExpTag;
+    NSString *_replacedExpTag;
     struct CGSize _playerDisplayRectSize;
 }
 
@@ -37,7 +37,7 @@
 + (void)updateFeed:(struct KS_feed *)arg1 photoStatus:(id)arg2 completion:(CDUnknownBlockType)arg3;
 + (void)ensureGetJpegCoverBlockForFeed:(id)arg1;
 + (void)unlikeFeed:(id)arg1 refer:(id)arg2 completion:(CDUnknownBlockType)arg3;
-@property(copy, nonatomic) NSString *newExpTag; // @synthesize newExpTag=_newExpTag;
+@property(copy, nonatomic) NSString *replacedExpTag; // @synthesize replacedExpTag=_replacedExpTag;
 @property(retain, nonatomic) NSDate *enterCommentDate; // @synthesize enterCommentDate=_enterCommentDate;
 @property(retain, nonatomic) KSFeedCommentsModel *commentsModel; // @synthesize commentsModel=_commentsModel;
 @property(readonly, nonatomic) NSMutableArray *displayedCommentIDs; // @synthesize displayedCommentIDs=_displayedCommentIDs;
@@ -69,7 +69,7 @@
 - (void)hate:(_Bool)arg1 anchorURL:(id)arg2 completion:(CDUnknownBlockType)arg3;
 - (void)like:(_Bool)arg1 anchorURL:(id)arg2 completion:(CDUnknownBlockType)arg3;
 - (void)follow:(_Bool)arg1 params:(id)arg2 completion:(CDUnknownBlockType)arg3;
-- (id)newPhotoPackage;
+- (id)createPhotoPackage;
 - (id)initWithFeed:(struct KS_feed *)arg1 rootCommentID:(id)arg2 commentID:(id)arg3 fromPush:(_Bool)arg4;
 - (id)initWithFeed:(struct KS_feed *)arg1 rootCommentID:(id)arg2 commentID:(id)arg3;
 - (id)initWithFeed:(struct KS_feed *)arg1;

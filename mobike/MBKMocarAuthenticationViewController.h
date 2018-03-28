@@ -20,6 +20,8 @@
 - (void).cxx_destruct;
 - (void)faceliveCheck:(id)arg1;
 - (void)foreignBtnAction:(id)arg1;
+- (void)gotoManualReview;
+- (void)manualReviewAlert;
 - (void)commitBtnClick:(id)arg1;
 - (void)buildUI;
 - (void)addNavigationBar;

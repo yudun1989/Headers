@@ -14,6 +14,7 @@
     NSNumber *_cmd;
 }
 
++ (_Bool)propertyIsOptional:(id)arg1;
 + (id)keyMapper;
 @property(retain, nonatomic) NSNumber *cmd; // @synthesize cmd=_cmd;
 @property(copy, nonatomic) NSDictionary *result; // @synthesize result=_result;

@@ -6,12 +6,13 @@
 
 #import <UIKit/UIView.h>
 
-@class MBKMoCarAddressView, MBKMoCarCarInfoModel, MBKMoCarCheckCarInfoView, UIActivityIndicatorView, UIButton;
+@class MBKMoCarAddressView, MBKMoCarCarInfoModel, MBKMoCarCheckCarInfoView, MBKMoCarParkingInfoModel, UIActivityIndicatorView, UIButton;
 
 @interface MBKMoCarCheckCardView : UIView
 {
     CDUnknownBlockType _confirmRebackCarBlock;
     MBKMoCarCarInfoModel *_dataModel;
+    MBKMoCarParkingInfoModel *_carParkingLocation;
     MBKMoCarCheckCarInfoView *_checkCarInfoView;
     UIButton *_confirmRebackCarBtn;
     MBKMoCarAddressView *_topAddressView;
@@ -22,6 +23,7 @@
 @property(retain, nonatomic) MBKMoCarAddressView *topAddressView; // @synthesize topAddressView=_topAddressView;
 @property(retain, nonatomic) UIButton *confirmRebackCarBtn; // @synthesize confirmRebackCarBtn=_confirmRebackCarBtn;
 @property(retain, nonatomic) MBKMoCarCheckCarInfoView *checkCarInfoView; // @synthesize checkCarInfoView=_checkCarInfoView;
+@property(retain, nonatomic) MBKMoCarParkingInfoModel *carParkingLocation; // @synthesize carParkingLocation=_carParkingLocation;
 @property(retain, nonatomic) MBKMoCarCarInfoModel *dataModel; // @synthesize dataModel=_dataModel;
 @property(copy, nonatomic) CDUnknownBlockType confirmRebackCarBlock; // @synthesize confirmRebackCarBlock=_confirmRebackCarBlock;
 - (void).cxx_destruct;

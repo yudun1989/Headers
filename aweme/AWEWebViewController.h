@@ -15,11 +15,12 @@
 
 @class AWEProgressLoadingView, IESUIWebView, NSString, UIButton, UILabel, UIProgressView, UITapGestureRecognizer, UIView;
 
-@interface AWEWebViewController : UIViewController <UIImagePickerControllerDelegate, UINavigationControllerDelegate, BTDRouterViewControllerProtocol, UIWebViewDelegate, UIGestureRecognizerDelegate, AWEUserMessage>
+@interface AWEWebViewController : UIViewController <UIImagePickerControllerDelegate, UINavigationControllerDelegate, UIWebViewDelegate, UIGestureRecognizerDelegate, AWEUserMessage, BTDRouterViewControllerProtocol>
 {
     _Bool _hideNavigationBar;
     _Bool _hideStatusBar;
     _Bool _ignoreCachePolicy;
+    _Bool _forceDarkStyle;
     _Bool _isLocalResource;
     _Bool _isAds;
     NSString *_requestURL;
@@ -29,6 +30,7 @@
     UILabel *_navigationTitleLabel;
     UIProgressView *_progressView;
     AWEProgressLoadingView *_indicator;
+    long long _creativeID;
     double _clickTimeStamp;
     UITapGestureRecognizer *_webTapGesture;
     UIButton *_closeButton;
@@ -41,6 +43,7 @@
 @property(retain, nonatomic) UIButton *closeButton; // @synthesize closeButton=_closeButton;
 @property(retain, nonatomic) UITapGestureRecognizer *webTapGesture; // @synthesize webTapGesture=_webTapGesture;
 @property(nonatomic) double clickTimeStamp; // @synthesize clickTimeStamp=_clickTimeStamp;
+@property(nonatomic) long long creativeID; // @synthesize creativeID=_creativeID;
 @property(nonatomic) _Bool isAds; // @synthesize isAds=_isAds;
 @property(nonatomic) _Bool isLocalResource; // @synthesize isLocalResource=_isLocalResource;
 @property(retain, nonatomic) AWEProgressLoadingView *indicator; // @synthesize indicator=_indicator;
@@ -48,6 +51,7 @@
 @property(retain, nonatomic) UILabel *navigationTitleLabel; // @synthesize navigationTitleLabel=_navigationTitleLabel;
 @property(retain, nonatomic) UIView *navigationHeaderView; // @synthesize navigationHeaderView=_navigationHeaderView;
 @property(retain, nonatomic) IESUIWebView *webView; // @synthesize webView=_webView;
+@property(nonatomic) _Bool forceDarkStyle; // @synthesize forceDarkStyle=_forceDarkStyle;
 @property(nonatomic) _Bool ignoreCachePolicy; // @synthesize ignoreCachePolicy=_ignoreCachePolicy;
 @property(nonatomic) _Bool hideStatusBar; // @synthesize hideStatusBar=_hideStatusBar;
 @property(nonatomic) _Bool hideNavigationBar; // @synthesize hideNavigationBar=_hideNavigationBar;
@@ -72,12 +76,11 @@
 - (_Bool)webView:(id)arg1 shouldStartLoadWithRequest:(id)arg2 navigationType:(long long)arg3;
 - (void)closeWebView;
 - (void)backButtonClicked;
-- (void)viewSafeAreaInsetsDidChange;
 - (void)dealloc;
 - (void)viewDidLoad;
 - (id)initWithRequestURLString:(id)arg1 webViewTitle:(id)arg2;
 - (id)init;
-- (id)initWithRouterParamDict:(id)arg1;
+- (_Bool)configWithRouterParamDict:(id)arg1;
 - (id)pickerController;
 - (void)setPickerController:(id)arg1;
 - (id)type;

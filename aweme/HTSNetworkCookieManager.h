@@ -17,6 +17,7 @@
 + (id)sharedInstance;
 - (void).cxx_destruct;
 - (void)_updateSharedCookie:(id)arg1 withUnionDomains:(id)arg2;
+- (id)sharedCookies;
 - (void)_updateSharedCookiesWithUnionDomain;
 - (void)preprocessWithResponse:(id)arg1;
 - (void)preprocessWithRequestURL:(id)arg1;

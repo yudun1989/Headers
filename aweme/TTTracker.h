@@ -6,16 +6,16 @@
 
 #import <Foundation/NSObject.h>
 
-@class NSDate, NSDictionary, NSString, NSTimer;
+@class NSDictionary, NSString, NSTimer;
 @protocol OS_dispatch_queue;
 
 @interface TTTracker : NSObject
 {
     NSObject<OS_dispatch_queue> *_trackHookQueue;
-    NSDate *_timerCreateDate;
     NSDictionary *_logHookDict;
     NSString *_appID;
     NSString *_channel;
+    NSString *_appName;
     CDUnknownBlockType _configParamsBlock;
     CDUnknownBlockType _transferBlock;
     CDUnknownBlockType _customHeaderBlock;
@@ -39,7 +39,7 @@
 + (void)event:(id)arg1 label:(id)arg2 value:(id)arg3 extValue:(id)arg4 extValue2:(id)arg5 dict:(id)arg6;
 + (void)event:(id)arg1 label:(id)arg2 value:(id)arg3 extValue:(id)arg4 extValue2:(id)arg5;
 + (void)event:(id)arg1;
-+ (void)startWithAppID:(id)arg1 channel:(id)arg2;
++ (void)startWithAppID:(id)arg1 channel:(id)arg2 appName:(id)arg3;
 + (id)sharedInstance;
 @property(retain, nonatomic) NSTimer *trackerTimer; // @synthesize trackerTimer=_trackerTimer;
 @property(copy, nonatomic) CDUnknownBlockType customEventBlock; // @synthesize customEventBlock=_customEventBlock;
@@ -47,6 +47,7 @@
 @property(copy, nonatomic) CDUnknownBlockType customHeaderBlock; // @synthesize customHeaderBlock=_customHeaderBlock;
 @property(copy, nonatomic) CDUnknownBlockType transferBlock; // @synthesize transferBlock=_transferBlock;
 @property(copy, nonatomic) CDUnknownBlockType configParamsBlock; // @synthesize configParamsBlock=_configParamsBlock;
+@property(copy, nonatomic) NSString *appName; // @synthesize appName=_appName;
 @property(copy, nonatomic) NSString *channel; // @synthesize channel=_channel;
 @property(copy, nonatomic) NSString *appID; // @synthesize appID=_appID;
 - (void).cxx_destruct;
@@ -65,7 +66,7 @@
 - (void)startTrackerCleanerTimer;
 - (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void *)arg4;
 - (void)reportStartupEvent;
-- (void)_startWithAppID:(id)arg1 channel:(id)arg2;
+- (void)_startWithAppID:(id)arg1 channel:(id)arg2 appName:(id)arg3;
 - (id)configParams;
 @property(copy, nonatomic) NSDictionary *logHookDict; // @synthesize logHookDict=_logHookDict;
 - (id)init;

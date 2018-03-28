@@ -32,7 +32,7 @@
 - (long long)tableView:(id)arg1 numberOfRowsInSection:(long long)arg2;
 - (void)_configData;
 - (void)viewDidLoad;
-- (id)initWithRouterParamDict:(id)arg1;
+- (_Bool)configWithRouterParamDict:(id)arg1;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

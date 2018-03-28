@@ -16,8 +16,6 @@
     _Bool _shareGuideIsAnimating;
     _Bool _alreadyShowAdOperationGuide;
     _Bool _adOperationGuideShowing;
-    _Bool _canShowRedPacket;
-    _Bool _canGrabRedPacket;
     NSString *_referString;
     AWEAwemeModel *_model;
     AWEAwemePlayInteractionViewController *_viewController;
@@ -27,8 +25,6 @@
 
 @property(retain, nonatomic) AWEAwemePlayInteractionRouter *router; // @synthesize router=_router;
 @property(retain, nonatomic) AWEAwemePlayInteractionInteractor *interactor; // @synthesize interactor=_interactor;
-@property(nonatomic) _Bool canGrabRedPacket; // @synthesize canGrabRedPacket=_canGrabRedPacket;
-@property(nonatomic) _Bool canShowRedPacket; // @synthesize canShowRedPacket=_canShowRedPacket;
 @property(nonatomic) _Bool adOperationGuideShowing; // @synthesize adOperationGuideShowing=_adOperationGuideShowing;
 @property(nonatomic) _Bool alreadyShowAdOperationGuide; // @synthesize alreadyShowAdOperationGuide=_alreadyShowAdOperationGuide;
 @property(nonatomic) _Bool shareGuideIsAnimating; // @synthesize shareGuideIsAnimating=_shareGuideIsAnimating;
@@ -38,6 +34,7 @@
 @property(retain, nonatomic) NSString *referString; // @synthesize referString=_referString;
 - (void).cxx_destruct;
 - (void)didTurnAweme:(id)arg1 toPrivateType:(unsigned long long)arg2;
+- (void)handleVideo:(id)arg1 accept:(_Bool)arg2;
 - (void)onTabBarDidChangeNotification:(id)arg1;
 - (void)onSyncCommercialGoodsNotification:(id)arg1;
 - (void)onSyncLiveUserNotification:(id)arg1;
@@ -47,7 +44,6 @@
 - (void)onCommentTotalCountNotification:(id)arg1;
 - (void)onCommentDeleteNotification:(id)arg1;
 - (void)onCommentAddNotification:(id)arg1;
-- (void)openRedPacketWithCompletionBlock:(CDUnknownBlockType)arg1;
 - (void)closeAdOperationGuide;
 - (void)showAdOperationGuide;
 - (void)playShareGuideAnimationWithFinishBlock:(CDUnknownBlockType)arg1;
@@ -55,8 +51,6 @@
 - (void)setPureMode:(_Bool)arg1 animated:(_Bool)arg2;
 - (void)willSetPureModeBlock:(_Bool)arg1;
 - (id)view;
-- (void)removeRedPacketView;
-- (void)updateRedPacketView;
 - (void)updateShoppingCartView;
 - (void)updateLiveMark;
 - (void)updateDynamicLabel;
@@ -69,10 +63,14 @@
 - (void)updateDiggCount;
 - (void)playDislikeAnimation;
 - (void)playLikeAnimation;
+- (void)_onRelationLabelClicked_IMP:(id)arg1;
+- (void)enterDiggedUser:(id)arg1;
+- (void)showOSTListWithVC:(id)arg1;
 - (void)_onMusicInfoViewClicked_IMP:(id)arg1;
+- (void)onOriginalFlagLabelClicked_IMP:(id)arg1;
+- (void)onOriginalFlagLabelClicked:(id)arg1;
 - (void)enterMusicDetail:(id)arg1;
 - (_Bool)onVideoPlayerViewSingleClicked:(id)arg1;
-- (void)showRedPacket;
 - (void)onVideoPlayerViewDoubleClicked:(id)arg1;
 - (void)onDescriptionLabelClicked:(id)arg1 url:(id)arg2;
 - (void)onAdDescriptionClicked:(id)arg1;
@@ -88,7 +86,6 @@
 - (void)onChallengeLabelClicked:(id)arg1;
 - (void)_onMusicButtonClicked_IMP:(id)arg1;
 - (void)onMusicButtonClicked:(id)arg1;
-- (void)onRedPacketShareButtonClicked:(id)arg1 itemID:(id)arg2;
 - (void)onShareButtonClicked:(id)arg1;
 - (void)onCommentButtonClicked:(id)arg1;
 - (void)onLikeButtonClicked:(id)arg1;

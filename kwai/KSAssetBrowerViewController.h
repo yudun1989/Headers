@@ -46,6 +46,7 @@
 - (void)_updateSelectButton;
 - (void)didReceiveMemoryWarning;
 - (void)viewDidLoad;
+- (void)dealloc;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

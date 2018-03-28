@@ -12,6 +12,8 @@
 }
 
 @property(nonatomic) struct CLLocationCoordinate2D coordinate; // @synthesize coordinate;
+- (id)associatedRoutePolyline;
+- (void)setAssociatedRoutePolyline:(id)arg1;
 
 @end
 

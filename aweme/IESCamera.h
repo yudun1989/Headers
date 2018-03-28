@@ -36,7 +36,6 @@
     _Bool _shouldReplay;
     _Bool _captureImageProcessed;
     _Bool _isVideoRecorded;
-    _Bool _bLivelyMode;
     _Bool _bNeedChangeConfig;
     _Bool _isFlashMode;
     _Bool _shouldCaptureImage;
@@ -70,6 +69,8 @@
     HTSCameraKit *_videoCamera;
     HTSCameraConfiguration *_cameraConfigure;
     HTSCameraConfiguration *_livelyCameraConfigure;
+    long long _cameraConfigMode;
+    NSString *_sessionPreset;
     HTSGLPreview *_videoPreviewView;
     HTSGLCropFilter *_cropFilter;
     HTSCameraWriter *_videoWriter;
@@ -116,7 +117,8 @@
 @property(retain, nonatomic) HTSGLCropFilter *cropFilter; // @synthesize cropFilter=_cropFilter;
 @property(retain, nonatomic) HTSGLPreview *videoPreviewView; // @synthesize videoPreviewView=_videoPreviewView;
 @property _Bool bNeedChangeConfig; // @synthesize bNeedChangeConfig=_bNeedChangeConfig;
-@property _Bool bLivelyMode; // @synthesize bLivelyMode=_bLivelyMode;
+@property(retain, nonatomic) NSString *sessionPreset; // @synthesize sessionPreset=_sessionPreset;
+@property long long cameraConfigMode; // @synthesize cameraConfigMode=_cameraConfigMode;
 @property(retain, nonatomic) HTSCameraConfiguration *livelyCameraConfigure; // @synthesize livelyCameraConfigure=_livelyCameraConfigure;
 @property(retain, nonatomic) HTSCameraConfiguration *cameraConfigure; // @synthesize cameraConfigure=_cameraConfigure;
 @property(retain, nonatomic) HTSCameraKit *videoCamera; // @synthesize videoCamera=_videoCamera;
@@ -195,6 +197,7 @@
 @property(nonatomic) unsigned long long frameRate; // @synthesize frameRate=_frameRate;
 - (void)setBitRate:(unsigned long long)arg1;
 @property(readonly, nonatomic) _Bool isCameraStablizationSupport;
+- (void)setDropFrame:(_Bool)arg1;
 - (id)fetchCaptureImage;
 - (void)captureSourcePhotoAsImageWithCompletionHandler:(CDUnknownBlockType)arg1 afterProcess:(_Bool)arg2;
 - (void)captureSourcePhotoAsImageWithCompletionHandler:(CDUnknownBlockType)arg1;
@@ -250,7 +253,7 @@
 - (void)startMotionDetect;
 - (void)releaseEffectManager;
 - (void)dealloc;
-- (void)changeToLivelyConfiguration:(_Bool)arg1;
+- (void)changeConfigureMode:(long long)arg1 sessionPreset:(id)arg2;
 - (void)resetPreviewWithView:(id)arg1 previewType:(long long)arg2;
 - (void)trackRecordParam;
 - (id)initWithView:(id)arg1 previewType:(long long)arg2 videoData:(id)arg3 TTFaceDetectEnable:(_Bool)arg4 stickerDocumentPath:(id)arg5;

@@ -38,7 +38,7 @@
 - (void)viewWillLayoutSubviews;
 - (void)viewDidLoad;
 - (id)init;
-- (id)initWithRouterParamDict:(id)arg1;
+- (_Bool)configWithRouterParamDict:(id)arg1;
 - (void)dealloc;
 
 // Remaining properties

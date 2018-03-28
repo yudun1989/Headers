@@ -8,7 +8,7 @@
 
 #import "AWEFeedMessage-Protocol.h"
 
-@class AWEAwemeDiggHintView, AWEBubble, AWEScreenMaskGuideView, NSString, UIImageView, UILabel, UITableView, UIView;
+@class AWEAwemeDiggHintView, AWEBubble, NSString, UIImageView, UILabel, UITableView, UIView;
 
 @interface AWEFeedGuideManager : NSObject <AWEFeedMessage>
 {
@@ -26,13 +26,11 @@
     UILabel *_slideUpDownHintLabel;
     UITableView *_tableView;
     long long _screenBounceAnimationTimes;
-    AWEScreenMaskGuideView *_redPacketGuideView;
     struct CGPoint _originOffSet;
 }
 
 + (id)sharedInstance;
 @property(nonatomic) _Bool enableGuideEnhance; // @synthesize enableGuideEnhance=_enableGuideEnhance;
-@property(retain, nonatomic) AWEScreenMaskGuideView *redPacketGuideView; // @synthesize redPacketGuideView=_redPacketGuideView;
 @property(nonatomic) struct CGPoint originOffSet; // @synthesize originOffSet=_originOffSet;
 @property(nonatomic) long long screenBounceAnimationTimes; // @synthesize screenBounceAnimationTimes=_screenBounceAnimationTimes;
 @property(retain, nonatomic) UITableView *tableView; // @synthesize tableView=_tableView;

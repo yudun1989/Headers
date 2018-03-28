@@ -6,7 +6,7 @@
 
 #import <UIKit/UIView.h>
 
-@class AWELiveEndFooterView, AWELiveEndRecommendView, AWELiveRoomModel, NSString, UIButton, UIImageView, UILabel;
+@class AWELiveEndCountView, AWELiveEndFooterView, AWELiveEndRecommendView, AWELiveRoomModel, NSString, UIButton, UIImageView, UILabel;
 
 @interface AWELiveEndView : UIView
 {
@@ -22,8 +22,10 @@
     UIImageView *_backgroundView;
     AWELiveRoomModel *_roomModel;
     NSString *_userIdForTranfor;
+    AWELiveEndCountView *_liveEndCountView;
 }
 
+@property(retain, nonatomic) AWELiveEndCountView *liveEndCountView; // @synthesize liveEndCountView=_liveEndCountView;
 @property(retain, nonatomic) NSString *userIdForTranfor; // @synthesize userIdForTranfor=_userIdForTranfor;
 @property(retain, nonatomic) AWELiveRoomModel *roomModel; // @synthesize roomModel=_roomModel;
 @property(retain, nonatomic) UIImageView *backgroundView; // @synthesize backgroundView=_backgroundView;

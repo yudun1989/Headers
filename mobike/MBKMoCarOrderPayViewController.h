@@ -24,7 +24,8 @@
 - (void).cxx_destruct;
 - (void)addNavigationBar;
 - (void)goToRootCtl;
-- (void)showPriceSuccessView;
+- (void)showPriceSuccessView:(id)arg1;
+- (void)gotoPay:(id)arg1;
 - (void)setupSubViews;
 - (void)didReceiveMemoryWarning;
 - (void)viewDidLoad;

@@ -33,15 +33,14 @@
 - (void)selectAsset:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)filterImage:(id)arg1 error:(id)arg2 completion:(CDUnknownBlockType)arg3;
 - (void)filterVideoUrlAsset:(id)arg1 md5:(id)arg2 error:(id)arg3 completion:(CDUnknownBlockType)arg4;
-- (long long)reverseIndex:(long long)arg1;
 - (id)collectionView:(id)arg1 cellForItemAtIndexPath:(id)arg2;
 - (long long)collectionView:(id)arg1 numberOfItemsInSection:(long long)arg2;
 - (void)collectionView:(id)arg1 didSelectItemAtIndexPath:(id)arg2;
 - (void)clickToSetup;
 - (_Bool)prefersStatusBarHidden;
-- (_Bool)prefersNavigationBarHidden;
-- (void)viewWillAppear:(_Bool)arg1;
+- (void)checkAuthorizationAndReload;
 - (void)viewDidLoad;
+- (void)p_reload;
 - (void)reloadData;
 - (void)showBlankViewIfNeededWithPermission:(_Bool)arg1;
 - (id)initWithType:(unsigned long long)arg1 isEliteVersion:(_Bool)arg2 completion:(CDUnknownBlockType)arg3;

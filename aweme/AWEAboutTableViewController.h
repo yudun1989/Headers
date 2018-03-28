@@ -13,12 +13,12 @@
     UITableViewCell *_versionTableViewCell;
     UITableViewCell *_visitAmeTableViewCell;
     UITableViewCell *_ameMailTableViewCell;
-    UITableViewCell *_ameQQTableViewCell;
+    UITableViewCell *_ameOfficialCommunityTableViewCell;
     UIView *_topGapView;
 }
 
 @property(retain, nonatomic) UIView *topGapView; // @synthesize topGapView=_topGapView;
-@property(retain, nonatomic) UITableViewCell *ameQQTableViewCell; // @synthesize ameQQTableViewCell=_ameQQTableViewCell;
+@property(retain, nonatomic) UITableViewCell *ameOfficialCommunityTableViewCell; // @synthesize ameOfficialCommunityTableViewCell=_ameOfficialCommunityTableViewCell;
 @property(retain, nonatomic) UITableViewCell *ameMailTableViewCell; // @synthesize ameMailTableViewCell=_ameMailTableViewCell;
 @property(retain, nonatomic) UITableViewCell *visitAmeTableViewCell; // @synthesize visitAmeTableViewCell=_visitAmeTableViewCell;
 @property(retain, nonatomic) UITableViewCell *versionTableViewCell; // @synthesize versionTableViewCell=_versionTableViewCell;
@@ -31,6 +31,7 @@
 - (long long)numberOfSectionsInTableView:(id)arg1;
 - (double)tableView:(id)arg1 heightForRowAtIndexPath:(id)arg2;
 - (void)tableView:(id)arg1 didSelectRowAtIndexPath:(id)arg2;
+- (void)backBtnClick;
 - (void)viewWillAppear:(_Bool)arg1;
 - (void)viewDidLoad;
 

@@ -6,18 +6,11 @@
 
 #import <objc/NSObject.h>
 
-@class MBKHomeLaunchConfiguration, NSArray;
-
 @interface MBKHomeTabBuilder : NSObject
 {
-    MBKHomeLaunchConfiguration *_configuration;
-    NSArray *_tabViewControllers;
 }
 
-@property(retain, nonatomic) NSArray *tabViewControllers; // @synthesize tabViewControllers=_tabViewControllers;
-@property(retain, nonatomic) MBKHomeLaunchConfiguration *configuration; // @synthesize configuration=_configuration;
-- (void).cxx_destruct;
-- (id)tabViewControllersByConfiguration:(id)arg1;
++ (id)tabsByConfiguration:(id)arg1 oldTabs:(id)arg2 defaultTabToSelect:(id *)arg3;
 
 @end
 

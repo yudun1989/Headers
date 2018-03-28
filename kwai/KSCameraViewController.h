@@ -12,7 +12,7 @@
 #import "KSMagicFaceComponentDelegate-Protocol.h"
 #import "KSMagicFaceMaterialProviderDataSource-Protocol.h"
 
-@class BFCancellationTokenSource, BFTask, FMFaceDeformFilter2, GPUImageFilter, GPUImageFilterPipeline, GPUImageOutput, GPUImageTransformFilter, GPUImageVideoCamera, GPUImageView, KSBeautySettingsViewModel, KSCameraCaptureView, KSCameraZoomControl, KSCropFilter, KSEvenlySpacedViewsContainer, KSFaceDetectionController, KSFaceDetectionRegistration, KSMagicFaceComponent, KSViewControllerPresenter, NSArray, NSLayoutConstraint, NSString, UIButton, UIImageView, UIView;
+@class BFCancellationTokenSource, BFTask, FMFaceDeformFilter2, GPUImageFilter, GPUImageFilterPipeline, GPUImageOutput, GPUImageTransformFilter, GPUImageVideoCamera, GPUImageView, KSBeautySettingsViewModel, KSCameraCaptureView, KSCameraZoomControl, KSCropFilter, KSEvenlySpacedViewsContainer, KSFaceDetectionController, KSFaceDetectionRegistration, KSMagicFaceComponent, KSVideoRecordSizeConfiguration, KSViewControllerPresenter, NSArray, NSLayoutConstraint, NSString, UIButton, UIImageView, UIView;
 @protocol KSIntensityAdjustable><GPUImageInput;
 
 @interface KSCameraViewController : KSBaseViewController <KSCameraWarmable, GPUImageVideoCameraDelegate, KSMagicFaceComponentDelegate, KSMagicFaceMaterialProviderDataSource, KSCameraZoomControlDelegate>
@@ -37,6 +37,7 @@
     UIView *_bottomButtonsGradientBackgroundView;
     UIView *_bottomViewsContainerView;
     GPUImageVideoCamera *_camera;
+    KSVideoRecordSizeConfiguration *_sizeConfig;
     KSBeautySettingsViewModel *_beautyViewModel;
     double _outputAspectRatio;
     GPUImageFilter *_cameraOutputPort;
@@ -60,11 +61,13 @@
     GPUImageTransformFilter *_beforeFilter;
     FMFaceDeformFilter2 *_deformFilter;
     GPUImageTransformFilter *_afterFilter;
+    UIImageView *_switchCameraButtonArrow;
 }
 
 + (_Bool)requiresSmoothAutoFocus;
 + (void)_initializeFocusConfigurationForDevice:(id)arg1;
 + (void)_resetFocusConfigurationForDevice:(id)arg1;
+@property(retain, nonatomic) UIImageView *switchCameraButtonArrow; // @synthesize switchCameraButtonArrow=_switchCameraButtonArrow;
 @property(retain, nonatomic) GPUImageTransformFilter *afterFilter; // @synthesize afterFilter=_afterFilter;
 @property(retain, nonatomic) FMFaceDeformFilter2 *deformFilter; // @synthesize deformFilter=_deformFilter;
 @property(retain, nonatomic) GPUImageTransformFilter *beforeFilter; // @synthesize beforeFilter=_beforeFilter;
@@ -94,6 +97,7 @@
 @property(nonatomic) double outputAspectRatio; // @synthesize outputAspectRatio=_outputAspectRatio;
 @property(readonly, nonatomic) KSBeautySettingsViewModel *beautyViewModel; // @synthesize beautyViewModel=_beautyViewModel;
 @property(readonly, nonatomic) _Bool fineControlBeautyEnabled; // @synthesize fineControlBeautyEnabled=_fineControlBeautyEnabled;
+@property(readonly, nonatomic) KSVideoRecordSizeConfiguration *sizeConfig; // @synthesize sizeConfig=_sizeConfig;
 @property(retain, nonatomic) GPUImageVideoCamera *camera; // @synthesize camera=_camera;
 - (void).cxx_destruct;
 - (void)logAction:(id)arg1 detail:(id)arg2;
@@ -147,7 +151,6 @@
 - (void)_drawFocusFrameAtPoint:(struct CGPoint)arg1;
 - (struct CGPoint)_convertToPointOfInterestFromViewCoordinates:(struct CGPoint)arg1;
 - (void)_updateInputCameraZoomFactor:(double)arg1;
-- (void)updateCameraPosition:(_Bool)arg1;
 - (void)updateCameraTorchMode:(_Bool)arg1;
 - (void)updateBeautifyButtonHiddenStatus;
 - (_Bool)shouldShowBeautifyButton;
@@ -159,6 +162,8 @@
 - (void)didChangeCameraZoomFactor:(id)arg1;
 - (void)didPinchContent:(id)arg1;
 - (void)didSwipeUpContent:(id)arg1;
+- (id)_cameraSwitchAnimationTask:(_Bool)arg1;
+- (id)_cameraSwitchTask:(_Bool)arg1;
 - (void)didClickCameraSwitchButton:(id)arg1;
 - (void)willDismissBeautyViewController;
 - (void)dismissBeautyViewController;
@@ -167,6 +172,7 @@
 - (void)didClickBeautifyButton:(id)arg1;
 - (void)didClickTorchModeSwitchButton:(id)arg1;
 - (void)didClickCloseButton:(id)arg1;
+- (void)didDoubleTapContent:(id)arg1;
 - (void)didTapContent:(id)arg1;
 @property(readonly, nonatomic) UIView *bottomButtonsGradientBackgroundView; // @synthesize bottomButtonsGradientBackgroundView=_bottomButtonsGradientBackgroundView;
 @property(readonly, nonatomic) UIView *bottomViewsContainerView; // @synthesize bottomViewsContainerView=_bottomViewsContainerView;

@@ -9,9 +9,9 @@
 @class TTAdSplashControllerView, TTAdSplashModel;
 
 @protocol TTAdSplashControllerViewDelegate <NSObject>
-- (void)splashViewWithAction:(TTAdSplashModel *)arg1 nineBoxIndex:(long long)arg2;
-- (void)splashControllerViewClickBackgroundAction:(TTAdSplashModel *)arg1;
-- (void)splashControllerViewWithAction:(TTAdSplashModel *)arg1;
+- (void)splashViewClickNineBoxIndex:(TTAdSplashModel *)arg1 index:(long long)arg2;
+- (void)splashViewClickBackground:(TTAdSplashModel *)arg1;
+- (void)splashViewClickBanner:(TTAdSplashModel *)arg1;
 - (void)splashControllerViewShowFinished:(TTAdSplashControllerView *)arg1 animation:(_Bool)arg2;
 @end
 

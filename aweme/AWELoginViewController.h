@@ -14,7 +14,6 @@
 
 @interface AWELoginViewController : UIViewController <UIGestureRecognizerDelegate, BTDRouterViewControllerProtocol, UIViewControllerTransitioningDelegate>
 {
-    _Bool _isFromRedPacket;
     AWELoginGradientView *_backgroundView;
     UILabel *_hintLabel;
     AWEPhoneNumberInputView *_phoneNumberInputView;
@@ -31,7 +30,6 @@
     NSString *_captchaValue;
     NSString *_enterFrom;
     NSString *_hintText;
-    unsigned long long _redPacketType;
     AWERegisterViewController *_registerViewController;
     AWELoginWithPhoneNumberViewController *_passwordViewController;
 }
@@ -39,9 +37,7 @@
 + (void)load;
 @property(retain, nonatomic) AWELoginWithPhoneNumberViewController *passwordViewController; // @synthesize passwordViewController=_passwordViewController;
 @property(retain, nonatomic) AWERegisterViewController *registerViewController; // @synthesize registerViewController=_registerViewController;
-@property(nonatomic) unsigned long long redPacketType; // @synthesize redPacketType=_redPacketType;
 @property(retain, nonatomic) NSString *hintText; // @synthesize hintText=_hintText;
-@property(nonatomic) _Bool isFromRedPacket; // @synthesize isFromRedPacket=_isFromRedPacket;
 @property(copy, nonatomic) NSString *enterFrom; // @synthesize enterFrom=_enterFrom;
 @property(copy, nonatomic) NSString *captchaValue; // @synthesize captchaValue=_captchaValue;
 @property(retain, nonatomic) AWELoginButton *nextButton; // @synthesize nextButton=_nextButton;
@@ -84,6 +80,7 @@
 - (void)viewDidLoad;
 - (id)init;
 - (id)initWithRouterParamDict:(id)arg1;
+- (_Bool)configWithRouterParamDict:(id)arg1;
 - (void)dealloc;
 
 // Remaining properties

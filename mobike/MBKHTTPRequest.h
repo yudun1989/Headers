@@ -8,7 +8,7 @@
 
 #import "MBKPropertyDeserializerAnchor-Protocol.h"
 
-@class NSDictionary, NSString, NSURLSessionTask;
+@class NSData, NSDictionary, NSString, NSURLSessionTask;
 
 @interface MBKHTTPRequest : MBKRequest <MBKPropertyDeserializerAnchor>
 {
@@ -21,12 +21,14 @@
     NSString *_downloadPath;
     NSURLSessionTask *_URLSessionTask;
     CDUnknownBlockType _constructingBodyBlock;
+    NSData *_HTTPBody;
     CDUnknownBlockType _downloadProgressBlock;
 }
 
 @property(copy, nonatomic) CDUnknownBlockType downloadProgressBlock; // @synthesize downloadProgressBlock=_downloadProgressBlock;
-@property(copy, nonatomic) CDUnknownBlockType constructingBodyBlock; // @synthesize constructingBodyBlock=_constructingBodyBlock;
 @property(nonatomic) _Bool shouldRebuildRequestSerializer; // @synthesize shouldRebuildRequestSerializer=_shouldRebuildRequestSerializer;
+@property(copy, nonatomic) NSData *HTTPBody; // @synthesize HTTPBody=_HTTPBody;
+@property(copy, nonatomic) CDUnknownBlockType constructingBodyBlock; // @synthesize constructingBodyBlock=_constructingBodyBlock;
 @property(retain, nonatomic) NSURLSessionTask *URLSessionTask; // @synthesize URLSessionTask=_URLSessionTask;
 @property(copy, nonatomic) NSString *downloadPath; // @synthesize downloadPath=_downloadPath;
 @property(retain, nonatomic) NSDictionary *headerField; // @synthesize headerField=_headerField;

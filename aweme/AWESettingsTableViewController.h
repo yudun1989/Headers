@@ -6,31 +6,24 @@
 
 #import <UIKit/UITableViewController.h>
 
+#import "AWESettingTableViewCellDelegate-Protocol.h"
 #import "AWEUserMessage-Protocol.h"
 #import "BTDRouterViewControllerProtocol-Protocol.h"
 
-@class AWEProgressLoadingView, AWESettingTableViewCell, NSArray, NSMutableArray, NSString, UIButton, UILabel, UIView;
+@class AWEProgressLoadingView, AWESettingTableViewModel, NSString, UIButton, UILabel, UIView;
 
-@interface AWESettingsTableViewController : UITableViewController <AWEUserMessage, BTDRouterViewControllerProtocol>
+@interface AWESettingsTableViewController : UITableViewController <AWEUserMessage, AWESettingTableViewCellDelegate, BTDRouterViewControllerProtocol>
 {
     UIView *_topGapView;
     UILabel *_versionLabel;
     UIView *_userInfoView;
     UIButton *_buttonAdvancedSetting;
     AWEProgressLoadingView *_clearProgressView;
-    NSArray *_cellTitleArray;
-    NSMutableArray *_cellArray;
-    AWESettingTableViewCell *_changeLanguageCell;
-    AWESettingTableViewCell *_logOutCell;
-    AWESettingTableViewCell *_cleanCacheCell;
+    AWESettingTableViewModel *_tableViewModel;
 }
 
 + (void)load;
-@property(retain, nonatomic) AWESettingTableViewCell *cleanCacheCell; // @synthesize cleanCacheCell=_cleanCacheCell;
-@property(retain, nonatomic) AWESettingTableViewCell *logOutCell; // @synthesize logOutCell=_logOutCell;
-@property(retain, nonatomic) AWESettingTableViewCell *changeLanguageCell; // @synthesize changeLanguageCell=_changeLanguageCell;
-@property(retain, nonatomic) NSMutableArray *cellArray; // @synthesize cellArray=_cellArray;
-@property(copy, nonatomic) NSArray *cellTitleArray; // @synthesize cellTitleArray=_cellTitleArray;
+@property(retain, nonatomic) AWESettingTableViewModel *tableViewModel; // @synthesize tableViewModel=_tableViewModel;
 @property(retain, nonatomic) AWEProgressLoadingView *clearProgressView; // @synthesize clearProgressView=_clearProgressView;
 @property(retain, nonatomic) UIButton *buttonAdvancedSetting; // @synthesize buttonAdvancedSetting=_buttonAdvancedSetting;
 @property(retain, nonatomic) UIView *userInfoView; // @synthesize userInfoView=_userInfoView;
@@ -44,29 +37,36 @@
 - (void)tapCleanCacheCell;
 - (void)tapChanegeLanguageCell;
 - (void)tapAboutAmeCell;
+- (void)tapAntiFatigueLockCell;
 - (void)tapPushSettingCell;
 - (void)tapUserServiceCell;
 - (void)tapFeedBackCell;
 - (void)tapAccountManageCell;
 - (void)logoutAction:(id)arg1;
+- (void)tapDisciplineTreaty;
 - (void)tapPrivacySettingCell;
+- (void)switchDynamicCover:(id)arg1;
 - (void)didLabelTapped:(id)arg1;
 - (void)uidLabelTapped:(id)arg1;
 - (void)showUserInfo;
 - (void)didFinishLogout;
+- (void)settingTableViewCell:(id)arg1 didPressButton:(id)arg2;
+- (void)settingTableViewCell:(id)arg1 didChangeSwitch:(id)arg2;
 - (void)scrollViewDidScroll:(id)arg1;
+- (void)tableView:(id)arg1 didSelectRowAtIndexPath:(id)arg2;
 - (double)tableView:(id)arg1 heightForRowAtIndexPath:(id)arg2;
 - (double)tableView:(id)arg1 heightForFooterInSection:(long long)arg2;
 - (id)tableView:(id)arg1 viewForFooterInSection:(long long)arg2;
+- (double)tableView:(id)arg1 heightForHeaderInSection:(long long)arg2;
+- (id)tableView:(id)arg1 viewForHeaderInSection:(long long)arg2;
 - (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;
 - (long long)tableView:(id)arg1 numberOfRowsInSection:(long long)arg2;
 - (long long)numberOfSectionsInTableView:(id)arg1;
-- (_Bool)prefersNavigationBarHidden;
 - (void)updateCurrentLanguageLabel;
 - (void)viewWillDisappear:(_Bool)arg1;
 - (void)viewWillAppear:(_Bool)arg1;
 - (void)viewDidLoad;
-- (id)initWithRouterParamDict:(id)arg1;
+- (_Bool)configWithRouterParamDict:(id)arg1;
 - (id)initWithStyle:(long long)arg1;
 - (void)dealloc;
 

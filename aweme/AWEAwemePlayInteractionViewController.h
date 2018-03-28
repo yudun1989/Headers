@@ -11,12 +11,11 @@
 #import "AWEShareGuideDelegate-Protocol.h"
 #import "TTTAttributedLabelDelegate-Protocol.h"
 
-@class AWEAdOperationGuideView, AWEAwemeModel, AWEAwemeMusicInfoView, AWEAwemePlayDislikeViewController, AWEAwemePlayInteractionPresenter, AWEBubble, AWEButton, AWECommentListViewController, AWEDynamicLabel, AWEFeedLearnMoreView, AWEFeedLiveMarkView, AWEFeedTagsView, AWEFeedVideoButton, AWELoadingAndVolumeView, AWEMarkView, AWEMusicAnimationView, AWEMusicCoverButton, AWERedPacketView, LOTAnimationView, MPVolumeView, NSString, NSTimer, TTTAttributedLabel, UILabel, UILongPressGestureRecognizer, UITextView, UIView;
+@class AWEAdOperationGuideView, AWEAntiAddictedNoticeBarView, AWEAwemeModel, AWEAwemeMusicInfoView, AWEAwemePlayDislikeViewController, AWEAwemePlayInteractionPresenter, AWEBubble, AWEButton, AWECommentListViewController, AWEDynamicLabel, AWEFeedLearnMoreView, AWEFeedLiveMarkView, AWEFeedTagsView, AWEFeedVideoButton, AWEJudgeVideoView, AWELoadingAndVolumeView, AWEMarkView, AWEMusicAnimationView, AWEMusicCoverButton, LOTAnimationView, MPVolumeView, NSString, NSTimer, TTTAttributedLabel, UILabel, UILongPressGestureRecognizer, UITextView, UIView;
 @protocol AWEAwemePlayVideoDelegate, AWEGoodsListViewProtocol;
 
 @interface AWEAwemePlayInteractionViewController : UIViewController <AWEPreviewable, TTTAttributedLabelDelegate, AWEShareGuideDelegate, AWEAwemePlayInteractionDelegate>
 {
-    _Bool _isRedPacketShowed;
     _Bool _showFollowStatus;
     _Bool _pureMode;
     _Bool _hasStickerShow;
@@ -26,7 +25,6 @@
     id <AWEAwemePlayVideoDelegate> _videoDelegate;
     double _controlOffset;
     CDUnknownBlockType _pureModeBlock;
-    AWERedPacketView *_redPacketView;
     NSTimer *_timer;
     AWEAwemePlayInteractionPresenter *_presenter;
     AWEFeedVideoButton *_shoppingCartButton;
@@ -44,6 +42,7 @@
     AWEMarkView *_poiButton;
     AWEButton *_authorButton;
     UILabel *_authorLabel;
+    LOTAnimationView *_antiAddictedTagView;
     AWEFeedTagsView *_tagsView;
     AWEDynamicLabel *_dynamicLabel;
     UITextView *_adDescriptionTextView;
@@ -58,8 +57,14 @@
     id <AWEGoodsListViewProtocol> _goodsCollectionVC;
     AWEFeedLearnMoreView *_learnMoreView;
     AWEAdOperationGuideView *_adOperationView;
+    AWEAntiAddictedNoticeBarView *_antiAddictedNoticeBarView;
+    UITextView *_badContentNoticeView;
+    AWEJudgeVideoView *_judgeVideoView;
 }
 
+@property(retain, nonatomic) AWEJudgeVideoView *judgeVideoView; // @synthesize judgeVideoView=_judgeVideoView;
+@property(retain, nonatomic) UITextView *badContentNoticeView; // @synthesize badContentNoticeView=_badContentNoticeView;
+@property(retain, nonatomic) AWEAntiAddictedNoticeBarView *antiAddictedNoticeBarView; // @synthesize antiAddictedNoticeBarView=_antiAddictedNoticeBarView;
 @property(retain, nonatomic) AWEAdOperationGuideView *adOperationView; // @synthesize adOperationView=_adOperationView;
 @property(retain, nonatomic) AWEFeedLearnMoreView *learnMoreView; // @synthesize learnMoreView=_learnMoreView;
 @property(retain, nonatomic) id <AWEGoodsListViewProtocol> goodsCollectionVC; // @synthesize goodsCollectionVC=_goodsCollectionVC;
@@ -74,6 +79,7 @@
 @property(retain, nonatomic) UITextView *adDescriptionTextView; // @synthesize adDescriptionTextView=_adDescriptionTextView;
 @property(retain, nonatomic) AWEDynamicLabel *dynamicLabel; // @synthesize dynamicLabel=_dynamicLabel;
 @property(retain, nonatomic) AWEFeedTagsView *tagsView; // @synthesize tagsView=_tagsView;
+@property(retain, nonatomic) LOTAnimationView *antiAddictedTagView; // @synthesize antiAddictedTagView=_antiAddictedTagView;
 @property(retain, nonatomic) UILabel *authorLabel; // @synthesize authorLabel=_authorLabel;
 @property(retain, nonatomic) AWEButton *authorButton; // @synthesize authorButton=_authorButton;
 @property(retain, nonatomic) AWEMarkView *poiButton; // @synthesize poiButton=_poiButton;
@@ -91,7 +97,6 @@
 @property(retain, nonatomic) AWEFeedVideoButton *shoppingCartButton; // @synthesize shoppingCartButton=_shoppingCartButton;
 @property(retain, nonatomic) AWEAwemePlayInteractionPresenter *presenter; // @synthesize presenter=_presenter;
 @property(retain, nonatomic) NSTimer *timer; // @synthesize timer=_timer;
-@property(retain, nonatomic) AWERedPacketView *redPacketView; // @synthesize redPacketView=_redPacketView;
 @property(nonatomic) _Bool hasStickerShow; // @synthesize hasStickerShow=_hasStickerShow;
 @property(copy, nonatomic) CDUnknownBlockType pureModeBlock; // @synthesize pureModeBlock=_pureModeBlock;
 @property(nonatomic) double controlOffset; // @synthesize controlOffset=_controlOffset;
@@ -101,9 +106,9 @@
 @property(nonatomic) _Bool pureMode; // @synthesize pureMode=_pureMode;
 @property(nonatomic) _Bool showFollowStatus; // @synthesize showFollowStatus=_showFollowStatus;
 @property(readonly, nonatomic) long long mediaType; // @synthesize mediaType=_mediaType;
-@property(nonatomic) _Bool isRedPacketShowed; // @synthesize isRedPacketShowed=_isRedPacketShowed;
 - (void).cxx_destruct;
 - (void)attributedLabel:(id)arg1 didSelectLinkWithURL:(id)arg2;
+- (void)showOSTListWithVC:(id)arg1;
 - (void)refreshGoodsPanelWithNotificationObject:(id)arg1;
 - (void)refreshCommentPanelWithNotificationObject:(id)arg1;
 - (void)showDislikeOnVideo;
@@ -114,6 +119,8 @@
 - (void)onLearnMoreViewClicked:(id)arg1;
 - (_Bool)onVideoPlayerViewSingleClicked:(id)arg1;
 - (void)onVideoPlayerViewDoubleClicked:(id)arg1;
+- (void)hideJudgeVideoView;
+- (void)showJudgeVideoView;
 @property(readonly, nonatomic) long long type;
 - (void)setHide:(_Bool)arg1;
 - (void)setPureMode:(_Bool)arg1 animated:(_Bool)arg2;
@@ -127,6 +134,8 @@
 - (void)closeAdOperationGuide;
 - (void)showAdOperationGuide;
 - (void)showLearnMoreView;
+- (void)hideNoticeBarView;
+- (void)checkIfShouldShowNoticeBarView;
 - (void)showEnterMusicHint;
 - (void)showAdOperationViewWithPlayTimes:(long long)arg1;
 - (void)showShareHintWithPlayTimes:(long long)arg1;
@@ -148,7 +157,10 @@
 - (void)updateLayout;
 - (void)updateAllSubViews;
 - (void)setVolume:(float)arg1;
+- (void)updateJudgeVideoView;
+- (void)updateBadContentView;
 - (void)setDescriptionTextViewContent;
+- (void)updateAntiAddictedTagView;
 - (void)updateDynamicLabel;
 - (void)updateTagsView;
 - (void)updateShareButton;
@@ -179,10 +191,6 @@
 - (void)playDiscoverGuideAnimation;
 - (void)stopMusicAnimations;
 - (void)playMusicAnimations;
-- (void)removeRedPacketView;
-- (void)redPacketContentShow:(id)arg1;
-- (void)redPacketShowAnimation;
-- (void)enableGrabRedPacket:(_Bool)arg1;
 - (void)updatePlayProgressWithTime:(double)arg1 totalDuration:(double)arg2;
 - (void)stopLoadingAnimation;
 - (void)playLoadingAnimation;

@@ -8,6 +8,7 @@
 
 @interface UILabel (LocalizationsPlus)
 + (void)load;
+- (void)alp_setTextAlignment:(long long)arg1;
 - (_Bool)alp_disableLocalizations;
 - (void)alp_setAttributedText:(id)arg1;
 - (void)alp_setText:(id)arg1;

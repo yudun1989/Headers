@@ -28,7 +28,7 @@
 - (id)getSnapShotOfLoadingBar;
 - (void)showErrorWithMessage:(id)arg1;
 - (void)mbkRidingStatusManager:(id)arg1 EnterRidingStatusWithModel:(id)arg2;
-- (void)mbkRidingStatusManager:(id)arg1 UpdateUnlockingStatusWithModel:(id)arg2 error:(id)arg3;
+- (void)mbkRidingStatusManager:(id)arg1 UpdateUnlockingStatusWith_depracatedModel:(id)arg2 bikeModel:(id)arg3 error:(id)arg4;
 - (void)mbkRidingStatusManager:(id)arg1 EnterUnlockingStatusWithModel:(id)arg2;
 - (void)removeRidingSubscriber;
 - (void)setupRidingSubscriber;

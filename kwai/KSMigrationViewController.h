@@ -4,27 +4,30 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-#import <UIKit/UIViewController.h>
+#import "KSBaseViewController.h"
 
-@class UIButton, UIImageView, UILabel;
+@class KSMigrationKwaiConfig, UIButton, UIImageView, UILabel;
 
-@interface KSMigrationViewController : UIViewController
+@interface KSMigrationViewController : KSBaseViewController
 {
-    UIImageView *_logoImageView;
-    UILabel *_earthLabel;
-    UILabel *_diamondLabel;
-    UIButton *_switchBtn;
-    UIImageView *_appNameImg;
+    KSMigrationKwaiConfig *_config;
+    UILabel *_p_titleLabel;
+    UIImageView *_contentImageView;
+    UIButton *_actionButton;
+    UIButton *_dismissButton;
 }
 
-@property(nonatomic) __weak UIImageView *appNameImg; // @synthesize appNameImg=_appNameImg;
-@property(nonatomic) __weak UIButton *switchBtn; // @synthesize switchBtn=_switchBtn;
-@property(nonatomic) __weak UILabel *diamondLabel; // @synthesize diamondLabel=_diamondLabel;
-@property(nonatomic) __weak UILabel *earthLabel; // @synthesize earthLabel=_earthLabel;
-@property(nonatomic) __weak UIImageView *logoImageView; // @synthesize logoImageView=_logoImageView;
+@property(nonatomic) __weak UIButton *dismissButton; // @synthesize dismissButton=_dismissButton;
+@property(nonatomic) __weak UIButton *actionButton; // @synthesize actionButton=_actionButton;
+@property(nonatomic) __weak UIImageView *contentImageView; // @synthesize contentImageView=_contentImageView;
+@property(nonatomic) __weak UILabel *p_titleLabel; // @synthesize p_titleLabel=_p_titleLabel;
+@property(retain, nonatomic) KSMigrationKwaiConfig *config; // @synthesize config=_config;
 - (void).cxx_destruct;
-- (void)btnSwitchClick:(id)arg1;
+- (void)onClickDismiss:(id)arg1;
+- (void)onClickAction:(id)arg1;
+- (void)updateUI;
 - (void)viewDidLoad;
+- (id)ksuShowMetaData;
 - (id)init;
 
 @end

@@ -38,6 +38,8 @@
     _Bool _enableFanstopFlameEntrance;
     _Bool _enableProfileFanstopEntance;
     _Bool _hasShownFansTopBubble;
+    _Bool _enablePrivacyNewsSetting;
+    _Bool _hasShownPrivacyNewsTip;
     _Bool _notRecommendToContactsOption;
     _Bool _notRecommendToQQFriendsOption;
     _Bool _enableOpenFriend;
@@ -115,8 +117,6 @@
     NSString *_myInvitationCode;
     NSNumber *_relationAliasModifyTime;
     NSNumber *_searchSuggestInterval;
-    long long _migrationGuideType;
-    NSString *_migrationGuideAppIcon;
     KSBeautyCustomizedSettings *_beautyCustomizedSettings;
     NSNumber *_slidePreloadSize;
     struct CGSize _adIconSize;
@@ -133,8 +133,6 @@
 @property(copy, nonatomic) KSBeautyCustomizedSettings *beautyCustomizedSettings; // @synthesize beautyCustomizedSettings=_beautyCustomizedSettings;
 @property(nonatomic) _Bool hasBindPhone; // @synthesize hasBindPhone=_hasBindPhone;
 @property(nonatomic) _Bool disableUseDepositCoupon; // @synthesize disableUseDepositCoupon=_disableUseDepositCoupon;
-@property(retain, nonatomic) NSString *migrationGuideAppIcon; // @synthesize migrationGuideAppIcon=_migrationGuideAppIcon;
-@property(nonatomic) long long migrationGuideType; // @synthesize migrationGuideType=_migrationGuideType;
 @property(nonatomic) _Bool disableAccountAppeal; // @synthesize disableAccountAppeal=_disableAccountAppeal;
 @property(nonatomic) _Bool enableTaoPass; // @synthesize enableTaoPass=_enableTaoPass;
 @property(retain, nonatomic) NSNumber *searchSuggestInterval; // @synthesize searchSuggestInterval=_searchSuggestInterval;
@@ -172,6 +170,8 @@
 @property(nonatomic) _Bool enableOpenFriend; // @synthesize enableOpenFriend=_enableOpenFriend;
 @property(nonatomic) _Bool notRecommendToQQFriendsOption; // @synthesize notRecommendToQQFriendsOption=_notRecommendToQQFriendsOption;
 @property(nonatomic) _Bool notRecommendToContactsOption; // @synthesize notRecommendToContactsOption=_notRecommendToContactsOption;
+@property(nonatomic) _Bool hasShownPrivacyNewsTip; // @synthesize hasShownPrivacyNewsTip=_hasShownPrivacyNewsTip;
+@property(nonatomic) _Bool enablePrivacyNewsSetting; // @synthesize enablePrivacyNewsSetting=_enablePrivacyNewsSetting;
 @property(retain, nonatomic) NSString *fansTopPromoteText; // @synthesize fansTopPromoteText=_fansTopPromoteText;
 @property(nonatomic) _Bool hasShownFansTopBubble; // @synthesize hasShownFansTopBubble=_hasShownFansTopBubble;
 @property(retain, nonatomic) NSString *profileFanstopEntranceName; // @synthesize profileFanstopEntranceName=_profileFanstopEntranceName;

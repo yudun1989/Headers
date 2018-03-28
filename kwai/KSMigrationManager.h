@@ -8,17 +8,23 @@
 
 #import "SKStoreProductViewControllerDelegate-Protocol.h"
 
-@class NSString;
+@class KSMigrationGuideResponse, NSString;
 
 @interface KSMigrationManager : NSObject <SKStoreProductViewControllerDelegate>
 {
+    KSMigrationGuideResponse *_migrationGuide;
 }
 
 + (_Bool)isLanguageTH;
 + (void)showKwaiStoreOnViewController:(id)arg1;
-+ (void)showOnViewControllerIfNeeded:(id)arg1;
++ (_Bool)showOnViewControllerIfNeeded:(id)arg1 forType:(unsigned long long)arg2;
++ (void)showAlertInVC:(id)arg1 withConfig:(id)arg2;
++ (void)showFullSreenInVC:(id)arg1 withConfig:(id)arg2;
 + (id)sharedKSMigrationManager;
+@property(retain, nonatomic) KSMigrationGuideResponse *migrationGuide; // @synthesize migrationGuide=_migrationGuide;
+- (void).cxx_destruct;
 - (void)productViewControllerDidFinish:(id)arg1;
+- (void)fetchConfig;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

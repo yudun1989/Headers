@@ -117,6 +117,7 @@
 - (void)preparePlayerResource;
 - (void)reloadData;
 - (void)postPlayerLog;
+- (id)loadQOSInfoForPlayer:(id)arg1;
 - (void)clearPauseDate;
 - (void)recordPauseDate;
 - (void)hidePictureIcon;

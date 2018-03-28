@@ -7,6 +7,7 @@
 #import <UIKit/UIViewController.h>
 
 #import "AWEFollowActionDelegate-Protocol.h"
+#import "AWEPrivateAccountInfoViewControllerDelegate-Protocol.h"
 #import "AWEStoryCubeDismissControllerProtocol-Protocol.h"
 #import "AWEUserMessage-Protocol.h"
 #import "AWEUserWorkViewControllerDelegate-Protocol.h"
@@ -14,15 +15,16 @@
 #import "BTDRouterViewControllerProtocol-Protocol.h"
 #import "UIGestureRecognizerDelegate-Protocol.h"
 
-@class AWEAdOpenGuideView, AWEAwemeModel, AWEDetailFansCollectionViewController, AWELikeWorkViewController, AWEOriginalSoundTrackViewController, AWEPostWorkViewController, AWEStoryWorkViewController, AWEUserDetailHeaderView, AWEUserDetailNavView, AWEUserDetailTabView, AWEUserModel, NSDictionary, NSNumber, NSString;
+@class AWEAdOpenGuideView, AWEAwemeModel, AWECompanyChallengeViewController, AWEDetailFansCollectionViewController, AWELikeWorkViewController, AWEOriginalSoundTrackViewController, AWEPostWorkViewController, AWEPrivateAccountInfoViewController, AWEStoryWorkViewController, AWEUserDetailHeaderView, AWEUserDetailNavView, AWEUserDetailTabView, AWEUserModel, NSDictionary, NSNumber, NSString;
 
-@interface AWEUserDetailViewController : UIViewController <UIGestureRecognizerDelegate, AWEUserWorkViewControllerDelegate, AWEUserMessage, AWEVideosCollectionViewAnimationDelegate, AWEFollowActionDelegate, BTDRouterViewControllerProtocol, AWEStoryCubeDismissControllerProtocol>
+@interface AWEUserDetailViewController : UIViewController <UIGestureRecognizerDelegate, AWEUserWorkViewControllerDelegate, AWEUserMessage, AWEVideosCollectionViewAnimationDelegate, AWEFollowActionDelegate, AWEPrivateAccountInfoViewControllerDelegate, BTDRouterViewControllerProtocol, AWEStoryCubeDismissControllerProtocol>
 {
     _Bool _firstLayoutHeader;
     _Bool _needFollow;
     _Bool _didTrackEntrance;
     _Bool _isAdOpenGuideAnimating;
     _Bool _shouldRefreshFansView;
+    _Bool _isAlreadyEndedLive;
     NSString *_userID;
     AWEAwemeModel *_model;
     AWEUserDetailNavView *_navView;
@@ -31,9 +33,11 @@
     AWEPostWorkViewController *_postVC;
     AWELikeWorkViewController *_likeVC;
     AWEStoryWorkViewController *_storyVC;
+    AWEPrivateAccountInfoViewController *_privateAccountInfoVC;
     AWEAdOpenGuideView *_adOpenGuideView;
     AWEOriginalSoundTrackViewController *_ostVC;
     AWEDetailFansCollectionViewController *_fansVC;
+    AWECompanyChallengeViewController *_corpChallengeVC;
     NSString *_referString;
     NSString *_enterFrom;
     NSString *_enterFromItemID;
@@ -45,11 +49,14 @@
     long long _lastContentOffset;
     long long _fromAwemeType;
     NSString *_liveEnterPosition;
+    long long _profileType;
 }
 
 + (void)load;
+@property(nonatomic) long long profileType; // @synthesize profileType=_profileType;
 @property(retain, nonatomic) NSString *liveEnterPosition; // @synthesize liveEnterPosition=_liveEnterPosition;
 @property(nonatomic) long long fromAwemeType; // @synthesize fromAwemeType=_fromAwemeType;
+@property(nonatomic) _Bool isAlreadyEndedLive; // @synthesize isAlreadyEndedLive=_isAlreadyEndedLive;
 @property(nonatomic) _Bool shouldRefreshFansView; // @synthesize shouldRefreshFansView=_shouldRefreshFansView;
 @property(nonatomic) _Bool isAdOpenGuideAnimating; // @synthesize isAdOpenGuideAnimating=_isAdOpenGuideAnimating;
 @property(nonatomic) long long lastContentOffset; // @synthesize lastContentOffset=_lastContentOffset;
@@ -64,9 +71,11 @@
 @property(copy, nonatomic) NSString *enterFromItemID; // @synthesize enterFromItemID=_enterFromItemID;
 @property(copy, nonatomic) NSString *enterFrom; // @synthesize enterFrom=_enterFrom;
 @property(copy, nonatomic) NSString *referString; // @synthesize referString=_referString;
+@property(retain, nonatomic) AWECompanyChallengeViewController *corpChallengeVC; // @synthesize corpChallengeVC=_corpChallengeVC;
 @property(retain, nonatomic) AWEDetailFansCollectionViewController *fansVC; // @synthesize fansVC=_fansVC;
 @property(retain, nonatomic) AWEOriginalSoundTrackViewController *ostVC; // @synthesize ostVC=_ostVC;
 @property(retain, nonatomic) AWEAdOpenGuideView *adOpenGuideView; // @synthesize adOpenGuideView=_adOpenGuideView;
+@property(retain, nonatomic) AWEPrivateAccountInfoViewController *privateAccountInfoVC; // @synthesize privateAccountInfoVC=_privateAccountInfoVC;
 @property(retain, nonatomic) AWEStoryWorkViewController *storyVC; // @synthesize storyVC=_storyVC;
 @property(retain, nonatomic) AWELikeWorkViewController *likeVC; // @synthesize likeVC=_likeVC;
 @property(retain, nonatomic) AWEPostWorkViewController *postVC; // @synthesize postVC=_postVC;
@@ -83,6 +92,7 @@
 - (void)viewControllerDidCancelTranstion;
 - (void)viewControllerWillCancelTransition;
 - (void)viewControllerWillBeginTransition;
+- (void)liveAlreadyEndedNotification:(id)arg1;
 - (void)liveBlockAudienceNotication:(id)arg1;
 - (void)removeObservers;
 - (void)_addObervers;
@@ -90,13 +100,17 @@
 - (void)shareOtherProfileTriggerd;
 - (void)relationActionTriggered;
 - (id)transitionViewForOffset:(long long)arg1;
+- (Class)_getHeaderViewClass;
 - (_Bool)prefersStatusBarHidden;
 - (void)_refreshHeaderFrame:(struct CGRect)arg1;
 - (void)viewWillLayoutSubviews;
 - (void)_closeAdOpenGuide;
 - (void)_showAdOpenGuide;
+- (_Bool)showPrivateAccountInfoView;
+- (void)refreshCompanyInfoAlphaIfNeeded:(double)arg1;
 - (void)_refreshHeaderViewAlpha;
 - (void)_refreshHeaderViewAfterFetchUser:(id)arg1;
+- (void)updateCorpChallengeViewIfNeeded;
 - (void)addFansControllerIfNeeded;
 - (void)_removeController:(id)arg1;
 - (void)_addController:(id)arg1;
@@ -105,7 +119,9 @@
 - (void)_setupUI;
 - (void)backBtnClicked:(id)arg1;
 - (void)downloadApp:(id)arg1;
-- (void)showWeiboPage;
+- (void)gotoToutiaoHomePage;
+- (void)gotoWeiboHomePage;
+- (void)gotoBindedAppHomePage;
 - (void)shareProfile;
 - (void)relationBtnClicked:(id)arg1;
 - (void)animateChildVCs;
@@ -113,23 +129,26 @@
 - (void)showFansViewWithAnimated:(_Bool)arg1;
 - (void)configureHeaderFansView;
 - (_Bool)needShowFansView;
-- (void)_updateFakeFollowStatus:(_Bool)arg1;
+- (void)_updateFakeFollowStatus:(long long)arg1;
 - (void)_switchFollowStatus;
 - (void)_refreshAdGuideViewWithOffset:(double)arg1;
 - (double)headerHeight;
 - (void)workViewController:(id)arg1 didScroll:(struct CGPoint)arg2;
+- (void)privateAccountInfoViewController:(id)arg1 didScroll:(struct CGPoint)arg2;
+- (void)updateHeaderViewFrameWithOffset:(struct CGPoint)arg1;
 - (void)didFinishUpdateAwemeUser;
 - (void)didFinishUnBlockUser:(id)arg1 status:(long long)arg2;
 - (void)didFinishBlockUser:(id)arg1 status:(long long)arg2;
 - (void)didFinishUnFollowUser:(id)arg1 status:(long long)arg2 error:(id)arg3;
 - (void)didFinishFollowUser:(id)arg1 status:(long long)arg2 error:(id)arg3;
 - (void)_trackEntrance;
+- (void)_replaceHeaderViewIfNeeded;
 - (void)_refreshUserData;
 - (void)viewDidAppear:(_Bool)arg1;
 - (void)viewWillAppear:(_Bool)arg1;
 - (void)viewDidLoad;
 - (void)dealloc;
-- (id)initWithRouterParamDict:(id)arg1;
+- (_Bool)configWithRouterParamDict:(id)arg1;
 - (id)init;
 
 // Remaining properties

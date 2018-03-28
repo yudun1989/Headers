@@ -12,16 +12,16 @@
 
 @interface KSUIJKPlayerView : UIImageView <KSPlayerView>
 {
-    _Bool _isPredownload;
     _Bool _hasCacheBeforePlay;
     _Bool _shouldLoop;
     _Bool _snapshotWhenPauseOrStop;
     _Bool _hasPlayed;
     _Bool _isSetURL;
     _Bool _pausedByResignActive;
+    _Bool _isPredownload;
     float _rate;
-    long long _prefetchSize;
     unsigned long long _status;
+    long long _prefetchSize;
     NSString *_path;
     NSString *_cacheKey;
     NSString *_dnsResolveHost;
@@ -54,15 +54,16 @@
     NSString *_videoMetaData;
     NSTimer *_debugTimer;
     CDUnknownBlockType _downloaderProgressBlock;
-    CDUnknownBlockType _downloadeCompletionBlock;
+    CDUnknownBlockType _downloaderCompletionBlock;
     CDStruct_e83c9415 _playRange;
 }
 
-@property(copy, nonatomic) CDUnknownBlockType downloadeCompletionBlock; // @synthesize downloadeCompletionBlock=_downloadeCompletionBlock;
+@property(nonatomic) _Bool isPredownload; // @synthesize isPredownload=_isPredownload;
+@property(copy, nonatomic) CDUnknownBlockType downloaderCompletionBlock; // @synthesize downloaderCompletionBlock=_downloaderCompletionBlock;
 @property(copy, nonatomic) CDUnknownBlockType downloaderProgressBlock; // @synthesize downloaderProgressBlock=_downloaderProgressBlock;
 @property(nonatomic) _Bool pausedByResignActive; // @synthesize pausedByResignActive=_pausedByResignActive;
 @property(retain, nonatomic) NSTimer *debugTimer; // @synthesize debugTimer=_debugTimer;
-@property(copy, nonatomic) NSString *videoMetaData; // @synthesize videoMetaData=_videoMetaData;
+@property(copy) NSString *videoMetaData; // @synthesize videoMetaData=_videoMetaData;
 @property(retain, nonatomic) UIProgressView *playProgressView; // @synthesize playProgressView=_playProgressView;
 @property(retain, nonatomic) UITextView *debugInfoTextView; // @synthesize debugInfoTextView=_debugInfoTextView;
 @property(retain, nonatomic) QCFHostResolver *hostResolver; // @synthesize hostResolver=_hostResolver;
@@ -98,8 +99,8 @@
 @property(retain, nonatomic) NSString *cacheKey; // @synthesize cacheKey=_cacheKey;
 @property(retain, nonatomic) NSString *path; // @synthesize path=_path;
 @property(nonatomic) _Bool shouldLoop; // @synthesize shouldLoop=_shouldLoop;
+@property(nonatomic) long long prefetchSize; // @synthesize prefetchSize=_prefetchSize;
 @property(nonatomic) unsigned long long status; // @synthesize status=_status;
-@property(readonly, nonatomic) long long prefetchSize; // @synthesize prefetchSize=_prefetchSize;
 @property(readonly, nonatomic) _Bool hasCacheBeforePlay; // @synthesize hasCacheBeforePlay=_hasCacheBeforePlay;
 - (void).cxx_destruct;
 - (void)showDebugInfo:(id)arg1;

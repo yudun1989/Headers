@@ -12,6 +12,7 @@
 
 + (void)bindWeibo:(id)arg1 completion:(CDUnknownBlockType)arg2;
 + (void)updateUserProfile:(id)arg1 completion:(CDUnknownBlockType)arg2;
++ (void)uploadWebpImage:(id)arg1 completion:(CDUnknownBlockType)arg2;
 + (void)uploadImage:(id)arg1 completion:(CDUnknownBlockType)arg2;
 
 @end

@@ -11,13 +11,14 @@
 }
 
 + (id)encryptString:(id)arg1;
++ (id)httpURL4CMDType:(unsigned long long)arg1;
++ (id)imServerURL;
 + (id)decodeJSONResponse:(id)arg1;
 + (id)decodeOnlyHttpJSONResponse:(id)arg1 type:(unsigned long long)arg2;
 + (_Bool)sendMsgByHttp:(id)arg1;
 + (_Bool)sendMsgItem:(id)arg1;
 + (_Bool)sendOnlyHttpItem:(id)arg1;
 + (void)sendOnlyHttpRequest:(id)arg1 withBlock:(CDUnknownBlockType)arg2;
-+ (id)messageLoadMoreRequestURL;
 
 @end
 

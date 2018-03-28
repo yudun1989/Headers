@@ -30,6 +30,7 @@
 @property(retain, nonatomic) NSObject<KSAttachmentAudioMedia> *media; // @synthesize media=_media;
 @property(nonatomic) long long trimDuration; // @synthesize trimDuration=_trimDuration;
 - (void).cxx_destruct;
+- (unsigned long long)_sceneType;
 - (id)_currentMusicPreviewTool;
 - (id)_myMusicListViewControllerWithChannel:(id)arg1;
 - (id)_usedMusicListViewControllerWithChannel:(id)arg1;

@@ -24,6 +24,7 @@
 - (void)loadReportTypesWithType:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)reportWithType:(unsigned long long)arg1 objectID:(id)arg2 ownerID:(id)arg3;
 - (void)reportPiratedMusicWithID:(id)arg1 completion:(CDUnknownBlockType)arg2;
+- (void)recordReportSuccess;
 - (void)reportWithType:(unsigned long long)arg1 objectID:(id)arg2 ownerID:(id)arg3 reason:(long long)arg4 completion:(CDUnknownBlockType)arg5;
 - (void)presentActionSheetWithType:(unsigned long long)arg1 objectID:(id)arg2 ownerID:(id)arg3 beforeReport:(CDUnknownBlockType)arg4 beforeCancel:(CDUnknownBlockType)arg5 completion:(CDUnknownBlockType)arg6;
 - (void)presentActionSheetWithType:(unsigned long long)arg1 objectID:(id)arg2 ownerID:(id)arg3 completion:(CDUnknownBlockType)arg4;

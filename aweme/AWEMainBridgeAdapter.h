@@ -25,6 +25,7 @@
 + (void)updateSensetimeLicense;
 + (void)createBodydance;
 + (void)recoveryBackUpIfNeed;
++ (void)createDuetVideoWithAweme:(id)arg1;
 + (void)createVideoWithChallenge:(id)arg1 suggestedMusic:(id)arg2;
 + (void)createVideoWithChallenge:(id)arg1;
 + (void)createVideoWithMusic:(id)arg1 groupID:(id)arg2;

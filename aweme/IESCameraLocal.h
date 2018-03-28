@@ -59,6 +59,8 @@
     HTSCameraKit *_videoCamera;
     HTSCameraConfiguration *_cameraConfigure;
     HTSCameraConfiguration *_livelyCameraConfigure;
+    long long _cameraConfigMode;
+    NSString *_sessionPreset;
     HTSGLPreview *_videoPreviewView;
     HTSGLCropFilter *_cropFilter;
     IESCameraWriter *_videoWriter;
@@ -104,6 +106,8 @@
 @property(retain, nonatomic) HTSGLPreview *videoPreviewView; // @synthesize videoPreviewView=_videoPreviewView;
 @property _Bool bNeedChangeConfig; // @synthesize bNeedChangeConfig=_bNeedChangeConfig;
 @property _Bool bLivelyMode; // @synthesize bLivelyMode=_bLivelyMode;
+@property(retain, nonatomic) NSString *sessionPreset; // @synthesize sessionPreset=_sessionPreset;
+@property long long cameraConfigMode; // @synthesize cameraConfigMode=_cameraConfigMode;
 @property(retain, nonatomic) HTSCameraConfiguration *livelyCameraConfigure; // @synthesize livelyCameraConfigure=_livelyCameraConfigure;
 @property(retain, nonatomic) HTSCameraConfiguration *cameraConfigure; // @synthesize cameraConfigure=_cameraConfigure;
 @property(retain, nonatomic) HTSCameraKit *videoCamera; // @synthesize videoCamera=_videoCamera;
@@ -230,7 +234,7 @@
 - (void)pauseCameraCapture;
 - (void)resumeCameraCapture;
 - (void)enablePreview;
-- (void)changeToLivelyConfiguration:(_Bool)arg1;
+- (void)changeConfigureMode:(long long)arg1 sessionPreset:(id)arg2;
 - (void)startVideoCapture;
 - (void)startAudioCapture;
 - (void)storyStartVideoCapture;

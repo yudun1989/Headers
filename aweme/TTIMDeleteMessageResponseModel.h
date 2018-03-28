@@ -19,7 +19,7 @@
 }
 
 + (id)keyMapper;
-@property(retain, nonatomic) NSString<Optional> *deleteMessageId; // @synthesize deleteMessageId=_deleteMessageId;
+@property(copy, nonatomic) NSString<Optional> *deleteMessageId; // @synthesize deleteMessageId=_deleteMessageId;
 @property(retain, nonatomic) TTIMHttpDeliveSilenceModel<Optional> *deliveSilence; // @synthesize deliveSilence=_deliveSilence;
 @property(retain, nonatomic) NSNumber<Optional> *statusCode; // @synthesize statusCode=_statusCode;
 @property(copy, nonatomic) NSString *seqId; // @synthesize seqId=_seqId;

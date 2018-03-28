@@ -27,6 +27,7 @@
 @property(copy, nonatomic) CDUnknownBlockType avatarPressed; // @synthesize avatarPressed=_avatarPressed;
 @property(retain, nonatomic) KSAnimatedFollowButton *followButton; // @synthesize followButton=_followButton;
 - (void).cxx_destruct;
+- (id)_avatarTapGesture;
 - (void)followStateChanged:(_Bool)arg1 isRequesting:(_Bool)arg2 showAnimation:(_Bool)arg3;
 - (void)_setupSubviews;
 - (id)initWithFeed:(id)arg1;

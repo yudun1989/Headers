@@ -19,7 +19,10 @@
 @property(nonatomic) _Bool isRefreshNewData; // @synthesize isRefreshNewData=_isRefreshNewData;
 @property(retain, nonatomic) AWELiveHotRoomFeedResponseModel *responseModel; // @synthesize responseModel=_responseModel;
 - (void).cxx_destruct;
-- (void)loadMoreHotFeedListWithFinishBlock:(CDUnknownBlockType)arg1;
+- (id)_getAccessType;
+- (id)_getLocation;
+- (id)_getParams:(_Bool)arg1 isLoadMore:(_Bool)arg2;
+- (void)loadMoreHotFeedListWithIsFromLiveDetail:(_Bool)arg1 finishBlock:(CDUnknownBlockType)arg2;
 - (void)refreshHotRoomFeedListWithFinishBlock:(CDUnknownBlockType)arg1;
 - (void)fetchHotRoomFeedListWithFinishBlock:(CDUnknownBlockType)arg1;
 - (id)init;

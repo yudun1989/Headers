@@ -18,7 +18,6 @@
     MMPOISearchContext *_poiContext;
 }
 
-+ (_Bool)isLocationServiceEnabled;
 + (id)shared;
 + (CDStruct_02837cd9)mapRectWithOverLayers:(id)arg1;
 + (id)poiSearchWith:(id)arg1 completion:(CDUnknownBlockType)arg2;
@@ -30,6 +29,7 @@
 + (id)getCityCodeBy:(struct CLLocationCoordinate2D)arg1 result:(CDUnknownBlockType)arg2;
 + (id)reverseGeoCode:(struct CLLocationCoordinate2D)arg1 result:(CDUnknownBlockType)arg2;
 + (id)walkPlanFrom:(struct CLLocationCoordinate2D)arg1 to:(struct CLLocationCoordinate2D)arg2 completion:(CDUnknownBlockType)arg3;
++ (struct CLLocationCoordinate2D)validatedCoordinate:(struct CLLocationCoordinate2D)arg1 defaultValue:(struct CLLocationCoordinate2D)arg2;
 + (_Bool)validCoordinate:(struct CLLocationCoordinate2D)arg1;
 @property(retain, nonatomic) MMPOISearchContext *poiContext; // @synthesize poiContext=_poiContext;
 @property(retain, nonatomic) MMSuggestionSearchContext *sugContext; // @synthesize sugContext=_sugContext;

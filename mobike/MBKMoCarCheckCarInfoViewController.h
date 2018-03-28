@@ -29,7 +29,6 @@
 - (void)addNavigationBar;
 - (void)didReceiveMemoryWarning;
 - (void)viewDidLoad;
-- (void)dealloc;
 
 @end
 

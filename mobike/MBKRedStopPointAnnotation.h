@@ -10,7 +10,6 @@
 
 @interface MBKRedStopPointAnnotation : MBKPOIAnnotaion
 {
-    _Bool _isAutoClicked;
     MBKRedStopPointAnnotationView *_view;
     unsigned long long _uerDidInParkingState;
     NSMutableDictionary *_paramsDictionary;
@@ -18,7 +17,6 @@
 
 @property(retain, nonatomic) NSMutableDictionary *paramsDictionary; // @synthesize paramsDictionary=_paramsDictionary;
 @property(nonatomic) unsigned long long uerDidInParkingState; // @synthesize uerDidInParkingState=_uerDidInParkingState;
-@property(nonatomic) _Bool isAutoClicked; // @synthesize isAutoClicked=_isAutoClicked;
 @property(nonatomic) __weak MBKRedStopPointAnnotationView *view; // @synthesize view=_view;
 - (void).cxx_destruct;
 - (id)initWith:(id)arg1;

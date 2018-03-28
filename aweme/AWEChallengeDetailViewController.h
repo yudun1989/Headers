@@ -20,6 +20,7 @@
     _Bool _isFollowingInCurrentView;
     NSString *_challengeId;
     NSString *_hashtagName;
+    NSString *_authorID;
     AWEChallengeModel *_model;
     NSArray *_audioArray;
     NSString *_groupID;
@@ -51,6 +52,7 @@
 @property(retain, nonatomic) NSString *groupID; // @synthesize groupID=_groupID;
 @property(retain, nonatomic) NSArray *audioArray; // @synthesize audioArray=_audioArray;
 @property(retain, nonatomic) AWEChallengeModel *model; // @synthesize model=_model;
+@property(retain, nonatomic) NSString *authorID; // @synthesize authorID=_authorID;
 @property(retain, nonatomic) NSString *hashtagName; // @synthesize hashtagName=_hashtagName;
 @property(retain, nonatomic) NSString *challengeId; // @synthesize challengeId=_challengeId;
 - (void).cxx_destruct;
@@ -83,7 +85,7 @@
 - (void)viewDidAppear:(_Bool)arg1;
 - (void)viewWillDisappear:(_Bool)arg1;
 - (void)viewWillAppear:(_Bool)arg1;
-- (id)initWithRouterParamDict:(id)arg1;
+- (_Bool)configWithRouterParamDict:(id)arg1;
 - (id)init;
 - (void)dealloc;
 

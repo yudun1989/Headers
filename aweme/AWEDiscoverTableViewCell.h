@@ -6,6 +6,7 @@
 
 #import <UIKit/UITableViewCell.h>
 
+#import "AWEDiscoverCellTopViewDelegate-Protocol.h"
 #import "AWEPreviewable-Protocol.h"
 #import "AWEVideosCollectionViewAnimationDelegate-Protocol.h"
 #import "UICollectionViewDataSource-Protocol.h"
@@ -14,7 +15,7 @@
 
 @class AWEDiscoverCategoryModel, AWEDiscoverCellTopView, AWEDiscoverCollectionViewFooter, NSString, UICollectionView, UIImageView, UIView;
 
-@interface AWEDiscoverTableViewCell : UITableViewCell <UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout, AWEPreviewable, AWEVideosCollectionViewAnimationDelegate>
+@interface AWEDiscoverTableViewCell : UITableViewCell <UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout, AWEDiscoverCellTopViewDelegate, AWEPreviewable, AWEVideosCollectionViewAnimationDelegate>
 {
     _Bool _isTransfering;
     UICollectionView *_collectionView;
@@ -48,6 +49,7 @@
 - (void)collectionView:(id)arg1 didSelectItemAtIndexPath:(id)arg2;
 - (void)scrollViewDidEndDragging:(id)arg1 willDecelerate:(_Bool)arg2;
 - (void)scrollViewDidScroll:(id)arg1;
+- (void)discoverCellTopViewDidTap:(id)arg1;
 - (void)makeSepLineShow:(_Bool)arg1;
 - (void)refreshWithPlaceholderModel:(id)arg1;
 - (void)refreshWithModel:(id)arg1;

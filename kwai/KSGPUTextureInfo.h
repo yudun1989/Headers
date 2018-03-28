@@ -6,7 +6,7 @@
 
 #import <objc/NSObject.h>
 
-@class EAGLContext;
+@class EAGLContext, UIImage;
 
 @interface KSGPUTextureInfo : NSObject
 {
@@ -15,8 +15,10 @@
     unsigned int _target;
     unsigned int _width;
     unsigned int _height;
+    UIImage *_image;
 }
 
+@property(readonly, nonatomic) UIImage *image; // @synthesize image=_image;
 @property(readonly) unsigned int height; // @synthesize height=_height;
 @property(readonly) unsigned int width; // @synthesize width=_width;
 @property(readonly) unsigned int target; // @synthesize target=_target;

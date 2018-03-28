@@ -16,7 +16,7 @@
 #import "UITableViewDataSource-Protocol.h"
 #import "UITableViewDelegate-Protocol.h"
 
-@class AWEDetailCommentInputView, AWEFeedTransition, AWEListDataController, AWEProgressLoadingView, NSString, UITableView, UIView;
+@class AWEDetailCommentInputView, AWEFeedTransition, AWEListDataController, AWEProgressLoadingView, NSDictionary, NSString, UITableView, UIView;
 
 @interface AWEAwemeDetailTableViewController : UIViewController <UITableViewDelegate, UITableViewDataSource, BTDRouterViewControllerProtocol, AWEUserMessage, AWEAwemeDeletionMessage, HTSAccountMessage, AWECustomTransitionDelegate, AWEVideosCollectionViewDetailAnimationDelegate, AWEDetailCommentInputViewDelegate>
 {
@@ -25,10 +25,12 @@
     _Bool _needPreFetch;
     _Bool _processingLogin;
     CDUnknownBlockType _dataControllerChangedBlock;
+    NSString *_originEntryEnterMethod;
     AWEListDataController *_dataController;
     NSString *_initialIDs;
     long long _initialIndex;
     NSString *_referString;
+    NSDictionary *_logExtraDict;
     UITableView *_tableView;
     UIView *_returnView;
     AWEDetailCommentInputView *_commentInputView;
@@ -41,15 +43,18 @@
 @property(retain, nonatomic) AWEDetailCommentInputView *commentInputView; // @synthesize commentInputView=_commentInputView;
 @property(retain, nonatomic) UIView *returnView; // @synthesize returnView=_returnView;
 @property(retain, nonatomic) UITableView *tableView; // @synthesize tableView=_tableView;
+@property(copy, nonatomic) NSDictionary *logExtraDict; // @synthesize logExtraDict=_logExtraDict;
 @property(nonatomic) _Bool needPreFetch; // @synthesize needPreFetch=_needPreFetch;
 @property(nonatomic) _Bool isAppearingOnAir; // @synthesize isAppearingOnAir=_isAppearingOnAir;
 @property(copy, nonatomic) NSString *referString; // @synthesize referString=_referString;
 @property(nonatomic) long long initialIndex; // @synthesize initialIndex=_initialIndex;
 @property(copy, nonatomic) NSString *initialIDs; // @synthesize initialIDs=_initialIDs;
 @property(retain, nonatomic) AWEListDataController *dataController; // @synthesize dataController=_dataController;
+@property(copy, nonatomic) NSString *originEntryEnterMethod; // @synthesize originEntryEnterMethod=_originEntryEnterMethod;
 @property(copy, nonatomic) CDUnknownBlockType dataControllerChangedBlock; // @synthesize dataControllerChangedBlock=_dataControllerChangedBlock;
 - (void).cxx_destruct;
 - (id)awemeModelWithIndex:(long long)arg1;
+- (void)preloadImageForAweme:(id)arg1;
 - (void)preloadCoverImageWithIndexPath:(id)arg1;
 - (void)commentInputView:(id)arg1 didChangeHeightWithDiff:(double)arg2;
 - (_Bool)commentInputViewShouldReturn:(id)arg1;
@@ -82,6 +87,7 @@
 - (void)_doVideoPrefetch;
 - (void)_cancelVideoPrefetch;
 - (void)scrollViewWillBeginDragging:(id)arg1;
+- (void)videoVoteFinished;
 - (void)videoDownloadFinished;
 - (void)_onScrollDidEnd;
 - (void)scrollViewDidEndDragging:(id)arg1 willDecelerate:(_Bool)arg2;
@@ -108,6 +114,7 @@
 - (void)initialFetchWithIDs:(id)arg1;
 - (void)addLoadMoreIfNeeded;
 - (void)viewWillTransitionToSize:(struct CGSize)arg1 withTransitionCoordinator:(id)arg2;
+- (long long)preferredStatusBarStyle;
 - (_Bool)prefersStatusBarHidden;
 - (void)viewDidDisappear:(_Bool)arg1;
 - (void)viewWillDisappear:(_Bool)arg1;
@@ -115,8 +122,9 @@
 - (void)viewWillAppear:(_Bool)arg1;
 - (void)viewDidLoad;
 - (id)initWithDataController:(id)arg1 IDs:(id)arg2 initialIndex:(long long)arg3 referString:(id)arg4;
+- (id)initWithDataController:(id)arg1 initialIndex:(long long)arg2 referString:(id)arg3 logExtraDict:(id)arg4;
 - (id)initWithDataController:(id)arg1 initialIndex:(long long)arg2 referString:(id)arg3;
-- (id)initWithRouterParamDict:(id)arg1;
+- (_Bool)configWithRouterParamDict:(id)arg1;
 - (id)init;
 - (void)dealloc;
 

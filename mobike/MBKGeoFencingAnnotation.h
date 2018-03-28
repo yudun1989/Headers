@@ -8,7 +8,7 @@
 
 #import "MBKAnnotationAssocaitaionProtocol-Protocol.h"
 
-@class MBKGeoFencingAnnotationView, MBKGeoFencingPolygon, NSString;
+@class MBKGeoFencingAnnotationView, MBKGeoFencingPolygon, MMPolyline, NSString;
 @protocol MMOverlay;
 
 @interface MBKGeoFencingAnnotation : MMPointAnnotation <MBKAnnotationAssocaitaionProtocol>
@@ -26,6 +26,7 @@
 - (id)initWithCoord:(struct CLLocationCoordinate2D)arg1;
 
 // Remaining properties
+@property(nonatomic) __weak MMPolyline *associatedRoutePolyline;
 @property(readonly, copy) NSString *debugDescription;
 @property(readonly, copy) NSString *description;
 @property(readonly) unsigned long long hash;

@@ -6,47 +6,31 @@
 
 #import "MMAnnotationView.h"
 
-@class CustomCalloutView, NSMutableDictionary, PointHelpModel, UILabel, UIView;
-@protocol PointHelpDelegate;
+#import "MBKAnnotationViewProtocol-Protocol.h"
+#import "_TtP23MBKCoreRidingAnnotation25MBKIconImageCacheProtocol_-Protocol.h"
 
-@interface CustomPointView : MMAnnotationView
+@class CustomCalloutView, NSMutableDictionary, NSString, UIImage, UIView;
+
+@interface CustomPointView : MMAnnotationView <_TtP23MBKCoreRidingAnnotation25MBKIconImageCacheProtocol_, MBKAnnotationViewProtocol>
 {
-    _Bool _shortestDistance;
-    _Bool _isDragMap;
     _Bool _selected;
-    _Bool _isNewMark;
-    _Bool _reverseSign;
     UIView *infoWindow;
     long long _animationType;
     CustomCalloutView *_calloutView;
-    PointHelpModel *_ptModel;
-    id <PointHelpDelegate> _delegate;
     long long _bikesType;
-    UILabel *_label;
     id _target;
     NSMutableDictionary *_paramsDictionary;
 }
 
 @property(retain, nonatomic) NSMutableDictionary *paramsDictionary; // @synthesize paramsDictionary=_paramsDictionary;
-@property(nonatomic) _Bool reverseSign; // @synthesize reverseSign=_reverseSign;
-@property(nonatomic) _Bool isNewMark; // @synthesize isNewMark=_isNewMark;
 @property(nonatomic) __weak id target; // @synthesize target=_target;
-@property(retain, nonatomic) UILabel *label; // @synthesize label=_label;
 @property(nonatomic) long long bikesType; // @synthesize bikesType=_bikesType;
 @property(nonatomic) _Bool selected; // @synthesize selected=_selected;
-@property(nonatomic) __weak id <PointHelpDelegate> delegate; // @synthesize delegate=_delegate;
-@property(retain, nonatomic) PointHelpModel *ptModel; // @synthesize ptModel=_ptModel;
 @property(retain, nonatomic) CustomCalloutView *calloutView; // @synthesize calloutView=_calloutView;
-@property(nonatomic) _Bool isDragMap; // @synthesize isDragMap=_isDragMap;
-@property(nonatomic) _Bool shortestDistance; // @synthesize shortestDistance=_shortestDistance;
 @property(nonatomic) long long animationType; // @synthesize animationType=_animationType;
 @property(retain, nonatomic) UIView *infoWindow; // @synthesize infoWindow;
 - (void).cxx_destruct;
-- (void)dealloc;
-- (void)layoutSubviews;
-- (id)getImageUrl:(id)arg1 placeholderImage:(id)arg2;
-- (void)pointHelpBtnAction:(id)arg1;
-- (void)showPointHelp:(_Bool)arg1;
+- (void)setImageOfUrl:(id)arg1 fallBackImageName:(id)arg2;
 - (_Bool)pointInside:(struct CGPoint)arg1 withEvent:(id)arg2;
 - (void)unSelectedPopAnnotationWithOriginSize:(struct CGSize)arg1 finalSize:(struct CGSize)arg2;
 - (void)selectedPopAnnotationWithOriginSize:(struct CGSize)arg1 finalSize:(struct CGSize)arg2;
@@ -55,10 +39,19 @@
 - (void)updateAnnotation:(id)arg1 animationType:(long long)arg2 withTarget:(id)arg3;
 - (void)updateAnnotation:(id)arg1 animationType:(long long)arg2 withTarget:(id)arg3 delay:(double)arg4;
 - (void)updateAnnotation:(id)arg1 withTarget:(id)arg2 delay:(double)arg3;
-- (void)setSelected:(_Bool)arg1 animated:(_Bool)arg2;
+- (_Bool)isClosestBikeTipShown;
+- (_Bool)showClosestBikeTip;
 - (void)autoChangeMark;
 - (void)updateAnnotation:(id)arg1 withTarget:(id)arg2;
+- (_Bool)shouldUseCustomIconImage;
 - (id)initWithAnnotation:(id)arg1 reuseIdentifier:(id)arg2;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly, copy) NSString *description;
+@property(readonly) unsigned long long hash;
+@property(retain, nonatomic) UIImage *image;
+@property(readonly) Class superclass;
 
 @end
 

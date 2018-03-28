@@ -6,15 +6,18 @@
 
 #import "MBKMobikeRequest.h"
 
+@class NSString;
+
 @interface MBKAuthStationCanAsStartRequest : MBKMobikeRequest
 {
-    long long _applicationId;
+    NSString *_applicationId;
     long long _stationId;
 }
 
 @property(nonatomic) long long stationId; // @synthesize stationId=_stationId;
-@property(nonatomic) long long applicationId; // @synthesize applicationId=_applicationId;
-- (id)initWith:(long long)arg1 stationId:(long long)arg2;
+@property(copy, nonatomic) NSString *applicationId; // @synthesize applicationId=_applicationId;
+- (void).cxx_destruct;
+- (id)initWith:(id)arg1 stationId:(long long)arg2;
 
 @end
 

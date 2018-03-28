@@ -11,10 +11,13 @@
 @interface TTUploadSwitchRequestParam : TTBaseRequestParam
 {
     NSString *_notice;
+    NSString *_uploadSwithPath;
 }
 
+@property(copy, nonatomic) NSString *uploadSwithPath; // @synthesize uploadSwithPath=_uploadSwithPath;
 @property(copy, nonatomic) NSString *notice; // @synthesize notice=_notice;
 - (void).cxx_destruct;
+- (id)init;
 
 @end
 

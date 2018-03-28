@@ -38,7 +38,7 @@
 - (void)_fetchData;
 - (void)viewDidAppear:(_Bool)arg1;
 - (void)viewDidLoad;
-- (id)initWithRouterParamDict:(id)arg1;
+- (_Bool)configWithRouterParamDict:(id)arg1;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

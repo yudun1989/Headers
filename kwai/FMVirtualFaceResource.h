@@ -12,18 +12,16 @@
 {
     _Bool _cull;
     _Bool _requireFace;
-    _Bool _enableSSAA;
-    _Bool _enableMSAA;
     int _smoothLevel;
     int _trigger;
     NSString *_faceName;
     NSString *_modelName;
     NSString *_blend;
+    NSString *_threeDConfigFileName;
 }
 
 + (id)objectWithKeyValues:(id)arg1;
-@property(nonatomic) _Bool enableMSAA; // @synthesize enableMSAA=_enableMSAA;
-@property(nonatomic) _Bool enableSSAA; // @synthesize enableSSAA=_enableSSAA;
+@property(retain, nonatomic) NSString *threeDConfigFileName; // @synthesize threeDConfigFileName=_threeDConfigFileName;
 @property(readonly, nonatomic) int trigger; // @synthesize trigger=_trigger;
 @property(nonatomic) _Bool requireFace; // @synthesize requireFace=_requireFace;
 @property(retain, nonatomic) NSString *blend; // @synthesize blend=_blend;

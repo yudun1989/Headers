@@ -12,9 +12,11 @@
 {
     NSString *_nickname;
     NSString *_labelInfo;
+    NSString *_userID;
 }
 
 + (id)JSONKeyPathsByPropertyKey;
+@property(copy, nonatomic) NSString *userID; // @synthesize userID=_userID;
 @property(copy, nonatomic) NSString *labelInfo; // @synthesize labelInfo=_labelInfo;
 @property(copy, nonatomic) NSString *nickname; // @synthesize nickname=_nickname;
 - (void).cxx_destruct;

@@ -6,11 +6,9 @@
 
 #import <UIKit/UIViewController.h>
 
-#import "AWEMediaBigAnimationProtocol-Protocol.h"
+@class UIImage;
 
-@class NSString, UIImage;
-
-@interface AWEVideoEditViewController : UIViewController <AWEMediaBigAnimationProtocol>
+@interface AWEVideoEditViewController : UIViewController
 {
     UIImage *_coverImage;
 }
@@ -21,12 +19,6 @@
 - (id)mediaBigButtonsContainerSnap;
 - (id)mediaBigMediaSnap;
 - (void)refreshPublishInfo;
-
-// Remaining properties
-@property(readonly, copy) NSString *debugDescription;
-@property(readonly, copy) NSString *description;
-@property(readonly) unsigned long long hash;
-@property(readonly) Class superclass;
 
 @end
 

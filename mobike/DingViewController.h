@@ -82,6 +82,7 @@
 - (void)setupController;
 - (void)onTapPayMethond:(long long)arg1;
 - (void)rechargeInstructionAction:(id)arg1;
+- (id)thirdTypeAttributedString:(id)arg1 length:(long long)arg2;
 - (id)attributedString:(id)arg1 length:(long long)arg2;
 - (void)layoutPayMethods;
 - (void)setupView;

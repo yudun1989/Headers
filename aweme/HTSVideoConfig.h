@@ -12,6 +12,7 @@
     long long _videoMinSeconds;
     long long _standardVideoMaxSeconds;
     long long _videoSelectableMaxSeconds;
+    long long _musicMaxSeconds;
     unsigned long long _beautifyType;
     long long _videoMaxSeconds;
 }
@@ -21,6 +22,7 @@
 @property(nonatomic) _Bool isLongVideoEnaled; // @synthesize isLongVideoEnaled=_isLongVideoEnaled;
 @property(nonatomic) long long videoMaxSeconds; // @synthesize videoMaxSeconds=_videoMaxSeconds;
 @property(nonatomic) unsigned long long beautifyType; // @synthesize beautifyType=_beautifyType;
+@property(nonatomic) long long musicMaxSeconds; // @synthesize musicMaxSeconds=_musicMaxSeconds;
 @property(nonatomic) long long videoSelectableMaxSeconds; // @synthesize videoSelectableMaxSeconds=_videoSelectableMaxSeconds;
 @property(nonatomic) long long standardVideoMaxSeconds; // @synthesize standardVideoMaxSeconds=_standardVideoMaxSeconds;
 @property(nonatomic) long long videoMinSeconds; // @synthesize videoMinSeconds=_videoMinSeconds;

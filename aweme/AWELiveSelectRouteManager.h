@@ -32,14 +32,17 @@
 - (void)applicationWillEnterForeground:(id)arg1;
 - (void)_removeObservers;
 - (void)_addObservers;
+- (void)_checkOverTimeHostsWithCompletion:(CDUnknownBlockType)arg1;
 - (void)_timerTick;
 - (void)_stopTimer;
 - (void)_startTimer;
 - (void)_resetSelectingRoute;
 - (void)_startSpeedTestWithHost:(id)arg1 ipArray:(id)arg2 completion:(CDUnknownBlockType)arg3;
-- (void)_startSelectingRouteWithHostArray:(id)arg1;
+- (void)_startSelectingRouteWithHostArray:(id)arg1 finishCompletion:(CDUnknownBlockType)arg2;
 - (long long)dnsTimeForUrl:(id)arg1;
 - (id)convertHostUrlToIPUrl:(id)arg1;
+- (void)_switchCDNNodeWithOriginUrl:(id)arg1 host:(id)arg2 completion:(CDUnknownBlockType)arg3;
+- (void)switchCDNNodeWithOriginUrl:(id)arg1 host:(id)arg2 completion:(CDUnknownBlockType)arg3;
 - (void)startSelectingRoute:(id)arg1;
 - (void)setup;
 - (void)dealloc;

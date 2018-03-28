@@ -13,6 +13,7 @@
 @interface MBKBalanceCellModel : NSObject <MBKViewModelProtocol>
 {
     _Bool _rechargeButtonEnable;
+    _Bool _hiddenLine;
     NSString *_titleString;
     NSString *_balanceString;
     NSString *_rechargeString;
@@ -25,6 +26,7 @@
 
 @property(nonatomic) unsigned long long status; // @synthesize status=_status;
 @property(nonatomic) unsigned long long classify; // @synthesize classify=_classify;
+@property(nonatomic) _Bool hiddenLine; // @synthesize hiddenLine=_hiddenLine;
 @property(nonatomic) _Bool rechargeButtonEnable; // @synthesize rechargeButtonEnable=_rechargeButtonEnable;
 @property(retain, nonatomic) UIColor *buttonColor; // @synthesize buttonColor=_buttonColor;
 @property(retain, nonatomic) UIColor *buttonTextcolor; // @synthesize buttonTextcolor=_buttonTextcolor;

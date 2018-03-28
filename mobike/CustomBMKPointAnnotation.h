@@ -8,7 +8,7 @@
 
 #import "MBKAnnotationAssocaitaionProtocol-Protocol.h"
 
-@class CustomPointView, NSMutableDictionary, NSString;
+@class CustomPointView, MMPolyline, NSMutableDictionary, NSString;
 @protocol MMOverlay;
 
 @interface CustomBMKPointAnnotation : MMPointAnnotation <MBKAnnotationAssocaitaionProtocol>
@@ -31,6 +31,7 @@
 - (id)init;
 
 // Remaining properties
+@property(nonatomic) __weak MMPolyline *associatedRoutePolyline;
 @property(readonly, copy) NSString *debugDescription;
 @property(readonly, copy) NSString *description;
 @property(readonly) unsigned long long hash;

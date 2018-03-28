@@ -22,6 +22,7 @@
 - (void)setScalingMode:(long long)arg1;
 - (void)setRotateType:(long long)arg1;
 - (void)resetPlayer;
+- (void)layoutSubviews;
 - (void)setPlayer:(id)arg1 scaleMode:(long long)arg2 rotateType:(long long)arg3;
 - (void)dealloc;
 - (id)initWithFrame:(struct CGRect)arg1;

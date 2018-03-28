@@ -15,6 +15,7 @@
     NSObject<OS_dispatch_queue> *_terminateTrackIDQueue;
     NSObject<OS_dispatch_semaphore> *_sessionIDLock;
     _Bool _isTerminating;
+    _Bool _isBackgroundLaunching;
     NSString *_sessionID;
     NSString *_terminateTrackID;
     NSMutableDictionary *_sessionStartedTimestamps;
@@ -22,6 +23,7 @@
 }
 
 + (id)sharedHandler;
+@property _Bool isBackgroundLaunching; // @synthesize isBackgroundLaunching=_isBackgroundLaunching;
 @property _Bool isTerminating; // @synthesize isTerminating=_isTerminating;
 @property(nonatomic) unsigned long long launchFrom; // @synthesize launchFrom=_launchFrom;
 @property(retain, nonatomic) NSMutableDictionary *sessionStartedTimestamps; // @synthesize sessionStartedTimestamps=_sessionStartedTimestamps;

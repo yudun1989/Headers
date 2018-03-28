@@ -110,12 +110,11 @@
 - (long long)numberOfSectionsInTableView:(id)arg1;
 - (void)_addObserver;
 - (void)setStatusBarBackgroundColor:(id)arg1;
-- (_Bool)prefersNavigationBarHidden;
 - (_Bool)prefersStatusBarHidden;
 - (void)viewWillDisappear:(_Bool)arg1;
 - (void)viewWillAppear:(_Bool)arg1;
 - (void)viewDidLoad;
-- (id)initWithRouterParamDict:(id)arg1;
+- (_Bool)configWithRouterParamDict:(id)arg1;
 - (id)initWithStyle:(long long)arg1;
 
 // Remaining properties

@@ -18,6 +18,7 @@
     AWEBubble *_delayGuideBubble;
     _Bool _isDirectRecord;
     _Bool _hasShowEffectReminder;
+    _Bool _isDuet;
     AWEAnimatedButton *_backButton;
     AWEButton *_completeButton;
     AWEFlashModeSwitchButton *_torchSwitchButton;
@@ -55,6 +56,7 @@
 @property(retain, nonatomic) AWEARGestureGuideView *arGestureGuideView; // @synthesize arGestureGuideView=_arGestureGuideView;
 @property(retain, nonatomic) AWEARInitialGuideView *arInitialGuideView; // @synthesize arInitialGuideView=_arInitialGuideView;
 @property(retain, nonatomic) LOTAnimationView *effectReminderView; // @synthesize effectReminderView=_effectReminderView;
+@property(nonatomic) _Bool isDuet; // @synthesize isDuet=_isDuet;
 @property(nonatomic) _Bool hasShowEffectReminder; // @synthesize hasShowEffectReminder=_hasShowEffectReminder;
 @property(nonatomic) _Bool isDirectRecord; // @synthesize isDirectRecord=_isDirectRecord;
 @property(retain, nonatomic) NSMutableSet *viewsNeedsHidden; // @synthesize viewsNeedsHidden=_viewsNeedsHidden;
@@ -125,9 +127,13 @@
 - (void)addFilterTipView;
 - (void)addBottomToolButtons;
 - (void)addTopToolButtons;
+- (id)addMusicButtonWith:(id)arg1;
+- (id)addButton:(id)arg1 label:(id)arg2 lastItem:(id)arg3;
+- (id)addSideToolLayoutFor:(id)arg1 label:(id)arg2 lastItem:(id)arg3;
+- (id)addSideToolButton:(id)arg1 with:(id)arg2;
 - (void)addSideToolButtons;
 - (void)addNavigationButtons;
-- (id)initWithShowMusicEffect:(_Bool)arg1 isDirectRecord:(_Bool)arg2;
+- (id)initWithParamater:(id)arg1;
 - (void)dealloc;
 
 // Remaining properties

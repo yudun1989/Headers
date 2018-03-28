@@ -15,7 +15,6 @@
 
 @property(retain, nonatomic) NSArray *groupIdArray; // @synthesize groupIdArray=_groupIdArray;
 - (void).cxx_destruct;
-- (unsigned long long)responseType;
 - (id)params;
 - (id)url;
 - (id)method;

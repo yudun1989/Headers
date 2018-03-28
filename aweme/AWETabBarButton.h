@@ -13,6 +13,7 @@
     long long _index;
     long long _validIndex;
     long long _status;
+    long long _feedStatus;
     AWETabBarController *_tabBarController;
     long long _type;
     UIViewController *_viewController;
@@ -24,6 +25,7 @@
 @property(nonatomic) __weak UIViewController *viewController; // @synthesize viewController=_viewController;
 @property(nonatomic) long long type; // @synthesize type=_type;
 @property(nonatomic) __weak AWETabBarController *tabBarController; // @synthesize tabBarController=_tabBarController;
+@property(nonatomic) long long feedStatus; // @synthesize feedStatus=_feedStatus;
 @property(nonatomic) long long status; // @synthesize status=_status;
 @property(nonatomic) long long validIndex; // @synthesize validIndex=_validIndex;
 @property(nonatomic) long long index; // @synthesize index=_index;

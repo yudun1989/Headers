@@ -37,6 +37,7 @@
 - (void)dismissWithCompletion:(CDUnknownBlockType)arg1;
 - (void)showWithCompletion:(CDUnknownBlockType)arg1;
 - (void)viewDidLoad;
+- (void)dealloc;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

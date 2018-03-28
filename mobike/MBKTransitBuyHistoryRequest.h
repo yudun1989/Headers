@@ -6,18 +6,21 @@
 
 #import "MBKMobikeRequest.h"
 
+@class NSString;
+
 @interface MBKTransitBuyHistoryRequest : MBKMobikeRequest
 {
     _Bool _isStart;
     int _page;
     int _pageSize;
-    long long _applicationId;
+    NSString *_applicationId;
 }
 
 @property(nonatomic) int pageSize; // @synthesize pageSize=_pageSize;
 @property(nonatomic) int page; // @synthesize page=_page;
 @property(nonatomic) _Bool isStart; // @synthesize isStart=_isStart;
-@property(nonatomic) long long applicationId; // @synthesize applicationId=_applicationId;
+@property(copy, nonatomic) NSString *applicationId; // @synthesize applicationId=_applicationId;
+- (void).cxx_destruct;
 - (id)init;
 
 @end

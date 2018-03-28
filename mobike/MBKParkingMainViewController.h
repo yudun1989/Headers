@@ -11,7 +11,7 @@
 #import "MBKParkingPannelViewControllerDelegate-Protocol.h"
 #import "MBKRidingStatusProtocol-Protocol.h"
 
-@class AnimatedAnnotation, BMKMapTip, MBKNearbyOnRidingRequest, MBKPOISearchViewController, MBKParkingMainSearchView, MBKParkingPanvelViewController, MBKRedAreaRequest, MBKRegionPoiView, MBKRidingStatusSubscriber, MBKRoutesModel, MBKUserPaymentBonus, MMAnnotationView, NSMutableArray, NSString;
+@class BMKMapTip, MBKNearbyOnRidingRequest, MBKPOISearchViewController, MBKParkingMainSearchView, MBKParkingPanvelViewController, MBKPinAnnotation, MBKRedAreaRequest, MBKRegionPoiView, MBKRidingStatusSubscriber, MBKRoutesModel, MBKUserPaymentBonus, MMAnnotationView, NSMutableArray, NSString;
 
 @interface MBKParkingMainViewController : MBKMapViewController <MBKRidingStatusProtocol, MBKBannerClickedDelegate, MBKParkingPannelViewControllerDelegate, MBKMainToScanQRTransitionAnimationProtocol>
 {
@@ -28,7 +28,7 @@
     NSString *weChatFreeStatus;
     MBKRedAreaRequest *_redAreaRequest;
     MBKNearbyOnRidingRequest *_mplRequest;
-    AnimatedAnnotation *_animatedAnnotation;
+    MBKPinAnnotation *_animatedAnnotation;
     BMKMapTip *_locationTip;
     MBKParkingMainSearchView *_mainSearchView;
     MBKPOISearchViewController *_poiSearchController;
@@ -61,7 +61,7 @@
 @property(retain, nonatomic) MBKPOISearchViewController *poiSearchController; // @synthesize poiSearchController=_poiSearchController;
 @property(retain, nonatomic) MBKParkingMainSearchView *mainSearchView; // @synthesize mainSearchView=_mainSearchView;
 @property(retain, nonatomic) BMKMapTip *locationTip; // @synthesize locationTip=_locationTip;
-@property(retain, nonatomic) AnimatedAnnotation *animatedAnnotation; // @synthesize animatedAnnotation=_animatedAnnotation;
+@property(retain, nonatomic) MBKPinAnnotation *animatedAnnotation; // @synthesize animatedAnnotation=_animatedAnnotation;
 - (void).cxx_destruct;
 - (void)presentPenaltyWebViewController;
 - (id)snapshotOfUnlockButtonView;
@@ -74,7 +74,7 @@
 - (void)bannerClicked:(id)arg1;
 - (long long)preferredStatusBarStyle;
 - (void)setStatusBarBackgroundColor:(id)arg1;
-- (void)mbkRidingStatusManager:(id)arg1 UpdateUnlockingStatusWithModel:(id)arg2 error:(id)arg3;
+- (void)mbkRidingStatusManager:(id)arg1 UpdateUnlockingStatusWith_depracatedModel:(id)arg2 bikeModel:(id)arg3 error:(id)arg4;
 - (void)mbkRidingStatusManager:(id)arg1 UnlockProcedureTringWithModel:(id)arg2 error:(id)arg3;
 - (void)setupRidingSubscriber;
 - (void)refreshCalloutDistance:(int)arg1 duration:(int)arg2;
@@ -102,6 +102,8 @@
 - (void)presentScanQRCodeViewController;
 - (void)presentAuthenticationViewController;
 - (void)presentMemberSelectViewController;
+- (void)presentLoginViewController;
+- (void)presentLoginViewControllerAnimated:(_Bool)arg1;
 - (void)autonymProgressMethod;
 - (void)mapContext:(id)arg1 didTapAtCoordinate:(struct CLLocationCoordinate2D)arg2;
 - (void)mapContext:(id)arg1 didDeselectAnnotationView:(id)arg2;

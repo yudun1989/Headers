@@ -9,7 +9,7 @@
 #import "MBKViewProtocol-Protocol.h"
 #import "UIGestureRecognizerDelegate-Protocol.h"
 
-@class MBKMembershipInfoModel, Mobike_ViewController, NSString, UIImageView, UILabel, UITapGestureRecognizer;
+@class MBKBaseViewController, MBKMembershipInfoModel, NSString, UIImageView, UILabel, UITapGestureRecognizer;
 
 @interface MBKMembershipInfo : UIView <MBKViewProtocol, UIGestureRecognizerDelegate>
 {
@@ -36,7 +36,7 @@
 - (void)drawRect:(struct CGRect)arg1;
 
 // Remaining properties
-@property(nonatomic) __weak Mobike_ViewController *controller;
+@property(nonatomic) __weak MBKBaseViewController *controller;
 @property(readonly, copy) NSString *debugDescription;
 @property(readonly, copy) NSString *description;
 @property(readonly) unsigned long long hash;

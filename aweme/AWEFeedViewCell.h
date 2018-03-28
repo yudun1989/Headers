@@ -19,7 +19,6 @@
 @property(retain, nonatomic) AWEFeedCellViewController *viewController; // @synthesize viewController=_viewController;
 @property(nonatomic) long long indexPath; // @synthesize indexPath=_indexPath;
 - (void).cxx_destruct;
-- (void)setStopByShowingHint:(_Bool)arg1;
 - (void)_removeChildVC;
 - (void)_addChildVC;
 - (void)prepareForReuse;

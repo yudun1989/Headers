@@ -6,23 +6,25 @@
 
 #import "AWELiveInteractViewController.h"
 
+#import "AWELiveAnchorViewControllerProtocol-Protocol.h"
 #import "AWELiveFilterViewControllerDelegate-Protocol.h"
 #import "AWELiveRecordViewControllerDelegate-Protocol.h"
 #import "AWEStickerPickerDelegate-Protocol.h"
 #import "CAAnimationDelegate-Protocol.h"
 #import "UIGestureRecognizerDelegate-Protocol.h"
 
-@class AWEFilterModel, AWELiveAnchorBottomView, AWELiveAnchorToolView, AWELiveDiggCollectionViewController, AWELiveFilterTipView, AWELiveFilterViewController, AWELiveRecordViewController, AWELiveSilenceListViewController, AWELiveSwitchFilterTipAnimator, NSString, TTHttpTask, UISwipeGestureRecognizer, UIViewController;
+@class AWEFilterModel, AWELiveAnchorBottomView, AWELiveAnchorToolView, AWELiveDiggCollectionViewController, AWELiveFilterTipView, AWELiveFilterViewController, AWELiveRecordViewController, AWELiveSilenceListViewController, AWELiveSwitchFilterTipAnimator, NSString, UIButton, UISwipeGestureRecognizer, UIViewController;
 @protocol AWEStickerPicker;
 
-@interface AWELiveAnchorViewController : AWELiveInteractViewController <AWEStickerPickerDelegate, AWELiveFilterViewControllerDelegate, UIGestureRecognizerDelegate, AWELiveRecordViewControllerDelegate, CAAnimationDelegate>
+@interface AWELiveAnchorViewController : AWELiveInteractViewController <AWEStickerPickerDelegate, AWELiveFilterViewControllerDelegate, UIGestureRecognizerDelegate, AWELiveRecordViewControllerDelegate, CAAnimationDelegate, AWELiveAnchorViewControllerProtocol>
 {
     _Bool _hasShownCountDown;
     _Bool _hasUpdateRoomStatePlay;
     _Bool _hasShowFinishView;
+    _Bool _isDuringHeartRequesting;
+    AWEFilterModel *_currentFilter;
     AWELiveAnchorBottomView *_bottomView;
     AWELiveRecordViewController *_recordVC;
-    AWEFilterModel *_currentFilter;
     AWELiveAnchorToolView *_bottomToolView;
     UIViewController<AWEStickerPicker> *_stickerVC;
     AWELiveFilterViewController *_filterVC;
@@ -30,19 +32,20 @@
     AWELiveSilenceListViewController *_silenceListVC;
     AWELiveSwitchFilterTipAnimator *_filterTipAnimator;
     AWELiveDiggCollectionViewController *_diggVC;
+    UIButton *_switchCDNBtn;
     long long _heartBeatCount;
     long long _heartFailedTimestamp;
     UISwipeGestureRecognizer *_leftSwipeFilterGesture;
     UISwipeGestureRecognizer *_rightSwipeFilterGesture;
-    TTHttpTask *_heartBeatTask;
 }
 
-@property(retain, nonatomic) TTHttpTask *heartBeatTask; // @synthesize heartBeatTask=_heartBeatTask;
 @property(retain, nonatomic) UISwipeGestureRecognizer *rightSwipeFilterGesture; // @synthesize rightSwipeFilterGesture=_rightSwipeFilterGesture;
 @property(retain, nonatomic) UISwipeGestureRecognizer *leftSwipeFilterGesture; // @synthesize leftSwipeFilterGesture=_leftSwipeFilterGesture;
+@property(nonatomic) _Bool isDuringHeartRequesting; // @synthesize isDuringHeartRequesting=_isDuringHeartRequesting;
 @property(nonatomic) long long heartFailedTimestamp; // @synthesize heartFailedTimestamp=_heartFailedTimestamp;
 @property(nonatomic) long long heartBeatCount; // @synthesize heartBeatCount=_heartBeatCount;
 @property(nonatomic) _Bool hasShowFinishView; // @synthesize hasShowFinishView=_hasShowFinishView;
+@property(retain, nonatomic) UIButton *switchCDNBtn; // @synthesize switchCDNBtn=_switchCDNBtn;
 @property(retain, nonatomic) AWELiveDiggCollectionViewController *diggVC; // @synthesize diggVC=_diggVC;
 @property(retain, nonatomic) AWELiveSwitchFilterTipAnimator *filterTipAnimator; // @synthesize filterTipAnimator=_filterTipAnimator;
 @property(retain, nonatomic) AWELiveSilenceListViewController *silenceListVC; // @synthesize silenceListVC=_silenceListVC;
@@ -50,9 +53,9 @@
 @property(retain, nonatomic) AWELiveFilterViewController *filterVC; // @synthesize filterVC=_filterVC;
 @property(retain, nonatomic) UIViewController<AWEStickerPicker> *stickerVC; // @synthesize stickerVC=_stickerVC;
 @property(retain, nonatomic) AWELiveAnchorToolView *bottomToolView; // @synthesize bottomToolView=_bottomToolView;
-@property(retain, nonatomic) AWEFilterModel *currentFilter; // @synthesize currentFilter=_currentFilter;
 @property(retain, nonatomic) AWELiveRecordViewController *recordVC; // @synthesize recordVC=_recordVC;
 @property(retain, nonatomic) AWELiveAnchorBottomView *bottomView; // @synthesize bottomView=_bottomView;
+@property(nonatomic) __weak AWEFilterModel *currentFilter; // @synthesize currentFilter=_currentFilter;
 - (void).cxx_destruct;
 - (void)setShutdown:(_Bool)arg1;
 - (void)layoutSubViewsFrame;
@@ -61,6 +64,7 @@
 - (void)showFilterGuideTip;
 - (void)animationDidStop:(id)arg1 finished:(_Bool)arg2;
 - (void)configInteractionEnable:(_Bool)arg1;
+- (void)cdnBtnClicked:(id)arg1;
 - (void)forbidBtnClicked;
 - (void)showCommentInput;
 - (void)giftListPush;
@@ -98,6 +102,8 @@
 - (void)exitRoomForNotConnected;
 - (void)showFinishView;
 - (void)exitRoom;
+- (id)getLiveRecordVC;
+- (id)getLiveStreamer;
 - (void)configWithCamera:(id)arg1 preview:(id)arg2;
 - (void)_startRecordRelation;
 - (void)viewSafeAreaInsetsDidChange;

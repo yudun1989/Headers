@@ -16,10 +16,12 @@
     NSString *_name;
     NSNumber *_activityID;
     long long _status;
+    NSString *_currency;
 }
 
 + (id)statusJSONTransformer;
 + (id)JSONKeyPathsByPropertyKey;
+@property(retain, nonatomic) NSString *currency; // @synthesize currency=_currency;
 @property(nonatomic) long long status; // @synthesize status=_status;
 @property(retain, nonatomic) NSNumber *activityID; // @synthesize activityID=_activityID;
 @property(retain, nonatomic) NSString *name; // @synthesize name=_name;

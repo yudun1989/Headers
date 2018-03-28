@@ -6,28 +6,25 @@
 
 #import "GPUImageFilter.h"
 
-@class CGECVUtilTexture, CGECVUtilTextureWithFramebuffer, FMPoseFeature, KSMetalRender, NSArray, NSString;
+@class FMPoseFeature, KSMetalRender, NSArray, NSString;
 @protocol FMPoseDeferedFacesDelegate, FMPoseEstimationDelegate;
 
 @interface FMPoseEstimationFilter : GPUImageFilter
 {
-    struct TextureDrawer *_drawer;
     FMPoseFeature *_poseFeature;
     int _maskID;
     NSArray *_currentFaces;
     _Bool _useDeferredOutput;
+    _Bool _metalRenderResult;
     int _rotation;
     id <FMPoseEstimationDelegate> _poseEstimationDelegate;
     id <FMPoseDeferedFacesDelegate> _poseDeferedFacesDelegate;
     NSString *_type;
     KSMetalRender *_ksMetalRender;
-    CGECVUtilTextureWithFramebuffer *_utilTextureInput;
-    CGECVUtilTexture *_utilTextureOutput;
 }
 
-@property(retain, nonatomic) CGECVUtilTexture *utilTextureOutput; // @synthesize utilTextureOutput=_utilTextureOutput;
-@property(retain, nonatomic) CGECVUtilTextureWithFramebuffer *utilTextureInput; // @synthesize utilTextureInput=_utilTextureInput;
 @property(retain, nonatomic) KSMetalRender *ksMetalRender; // @synthesize ksMetalRender=_ksMetalRender;
+@property(nonatomic) _Bool metalRenderResult; // @synthesize metalRenderResult=_metalRenderResult;
 @property(nonatomic) int rotation; // @synthesize rotation=_rotation;
 @property(retain, nonatomic) NSString *type; // @synthesize type=_type;
 @property(nonatomic) __weak id <FMPoseDeferedFacesDelegate> poseDeferedFacesDelegate; // @synthesize poseDeferedFacesDelegate=_poseDeferedFacesDelegate;
@@ -39,7 +36,7 @@
 - (void)calcPose:(const float *)arg1 textureCoordinates:(const float *)arg2;
 - (void)dealloc;
 - (void)setDemoType:(id)arg1;
-- (_Bool)setupWithMetal:(id)arg1 model:(id)arg2 upperModel:(id)arg3 poseIndex:(id)arg4 config:(id)arg5;
+- (void)setupWithMetal:(id)arg1 model:(id)arg2 upperModel:(id)arg3 poseIndex:(id)arg4 config:(id)arg5;
 - (id)initWithMetal:(id)arg1 model:(id)arg2 upperModel:(id)arg3 poseIndex:(id)arg4 config:(id)arg5;
 
 @end

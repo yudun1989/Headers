@@ -6,7 +6,7 @@
 
 #import <UIKit/UICollectionViewCell.h>
 
-@class AWEAwemeModel, CAGradientLayer, UIButton, UIImageView, YYAnimatedImageView;
+@class AWEAwemeModel, AWEVideoLabelView, CAGradientLayer, UIButton, UIImageView, YYAnimatedImageView;
 
 @interface AWEUserWorkCollectionViewCell : UICollectionViewCell
 {
@@ -15,6 +15,7 @@
     UIImageView *_stateImageView;
     UIButton *_numberBtn;
     UIImageView *_privacyIconImageView;
+    AWEVideoLabelView *_topLabel;
     UIImageView *_mediaTypeView;
     long long _type;
     AWEAwemeModel *_model;
@@ -27,6 +28,7 @@
 @property(retain, nonatomic) AWEAwemeModel *model; // @synthesize model=_model;
 @property(nonatomic) long long type; // @synthesize type=_type;
 @property(retain, nonatomic) UIImageView *mediaTypeView; // @synthesize mediaTypeView=_mediaTypeView;
+@property(retain, nonatomic) AWEVideoLabelView *topLabel; // @synthesize topLabel=_topLabel;
 @property(retain, nonatomic) UIImageView *privacyIconImageView; // @synthesize privacyIconImageView=_privacyIconImageView;
 @property(retain, nonatomic) UIButton *numberBtn; // @synthesize numberBtn=_numberBtn;
 @property(retain, nonatomic) UIImageView *stateImageView; // @synthesize stateImageView=_stateImageView;

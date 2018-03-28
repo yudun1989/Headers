@@ -26,14 +26,13 @@
 @property(retain, nonatomic) NSNumber *count; // @synthesize count=_count;
 @property(retain, nonatomic) NSNumber *svrIndex; // @synthesize svrIndex=_svrIndex;
 @property(retain, nonatomic) NSNumber *svrId; // @synthesize svrId=_svrId;
-@property(retain, nonatomic) NSString *groupId; // @synthesize groupId=_groupId;
+@property(copy, nonatomic) NSString *groupId; // @synthesize groupId=_groupId;
 @property(retain, nonatomic) NSNumber *userId; // @synthesize userId=_userId;
 @property(retain, nonatomic) NSNumber *deviceId; // @synthesize deviceId=_deviceId;
 @property(retain, nonatomic) NSNumber *appId; // @synthesize appId=_appId;
 - (void).cxx_destruct;
-- (unsigned long long)responseType;
+- (unsigned long long)httpCMDType;
 - (id)params;
-- (id)url;
 - (id)method;
 
 @end

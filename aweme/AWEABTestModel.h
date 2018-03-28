@@ -9,7 +9,6 @@
 @interface AWEABTestModel : AWEBaseApiModel
 {
     _Bool _showStoryEntranceAfterLaunch;
-    _Bool _showLiveMarkInDetail;
     _Bool _isDirectRecord;
     _Bool _insertPushVideo;
     _Bool _isOwnFaceDetectEnabled;
@@ -28,7 +27,12 @@
     _Bool _forbiddenBuiltinLicense;
     _Bool _forbiddenBuiltinInhouseLicense;
     _Bool _enableFollowingFeedNumStyle;
+    _Bool _enableAntiAddictedRelieveAweme;
+    _Bool _enableAntiAddictedNotice;
+    _Bool _showToutiaoEntrance;
+    _Bool _mf_forceLandToForYou;
     _Bool _photoEditEnabled;
+    _Bool _useChromeNetForTarget;
     unsigned long long _shareButtonStyle;
     unsigned long long _i18nShareButtonStyle;
     unsigned long long _shareGuide;
@@ -41,9 +45,11 @@
     unsigned long long _feedStyle;
     unsigned long long _nearbyStyle;
     unsigned long long _followFeedType;
-    long long _feedLongScreenAdaptiveStyle;
     long long _shareVideoToIMAdStyle;
     long long _fantasyEntranceStyle;
+    long long _timeLockLimitation;
+    long long _timeLockExpiration;
+    long long _feedLongScreenAdaptiveStyle;
     unsigned long long _videoRecordBitrateCategory;
 }
 
@@ -55,8 +61,16 @@
 + (id)i18nShareButtonStyleJSONTransformer;
 + (id)shareButtonStyleJSONTransformer;
 + (id)JSONKeyPathsByPropertyKey;
+@property(nonatomic) _Bool useChromeNetForTarget; // @synthesize useChromeNetForTarget=_useChromeNetForTarget;
 @property(nonatomic) unsigned long long videoRecordBitrateCategory; // @synthesize videoRecordBitrateCategory=_videoRecordBitrateCategory;
 @property(nonatomic) _Bool photoEditEnabled; // @synthesize photoEditEnabled=_photoEditEnabled;
+@property(nonatomic) long long feedLongScreenAdaptiveStyle; // @synthesize feedLongScreenAdaptiveStyle=_feedLongScreenAdaptiveStyle;
+@property(nonatomic) _Bool mf_forceLandToForYou; // @synthesize mf_forceLandToForYou=_mf_forceLandToForYou;
+@property(nonatomic) long long timeLockExpiration; // @synthesize timeLockExpiration=_timeLockExpiration;
+@property(nonatomic) long long timeLockLimitation; // @synthesize timeLockLimitation=_timeLockLimitation;
+@property(nonatomic) _Bool showToutiaoEntrance; // @synthesize showToutiaoEntrance=_showToutiaoEntrance;
+@property(nonatomic) _Bool enableAntiAddictedNotice; // @synthesize enableAntiAddictedNotice=_enableAntiAddictedNotice;
+@property(nonatomic) _Bool enableAntiAddictedRelieveAweme; // @synthesize enableAntiAddictedRelieveAweme=_enableAntiAddictedRelieveAweme;
 @property(nonatomic) _Bool enableFollowingFeedNumStyle; // @synthesize enableFollowingFeedNumStyle=_enableFollowingFeedNumStyle;
 @property(nonatomic) long long fantasyEntranceStyle; // @synthesize fantasyEntranceStyle=_fantasyEntranceStyle;
 @property(nonatomic) _Bool forbiddenBuiltinInhouseLicense; // @synthesize forbiddenBuiltinInhouseLicense=_forbiddenBuiltinInhouseLicense;
@@ -65,7 +79,6 @@
 @property(nonatomic) long long shareVideoToIMAdStyle; // @synthesize shareVideoToIMAdStyle=_shareVideoToIMAdStyle;
 @property(nonatomic) _Bool enableVideoPrepareProtect; // @synthesize enableVideoPrepareProtect=_enableVideoPrepareProtect;
 @property(nonatomic) _Bool enableCleanTabbar; // @synthesize enableCleanTabbar=_enableCleanTabbar;
-@property(nonatomic) long long feedLongScreenAdaptiveStyle; // @synthesize feedLongScreenAdaptiveStyle=_feedLongScreenAdaptiveStyle;
 @property(nonatomic) _Bool i18nAttractUserWithoutLogin; // @synthesize i18nAttractUserWithoutLogin=_i18nAttractUserWithoutLogin;
 @property(nonatomic) _Bool enableLoginFeedback; // @synthesize enableLoginFeedback=_enableLoginFeedback;
 @property(nonatomic) unsigned long long followFeedType; // @synthesize followFeedType=_followFeedType;
@@ -88,7 +101,6 @@
 @property(nonatomic) long long shareGuideThreshold; // @synthesize shareGuideThreshold=_shareGuideThreshold;
 @property(nonatomic) unsigned long long shareGuide; // @synthesize shareGuide=_shareGuide;
 @property(nonatomic) _Bool isDirectRecord; // @synthesize isDirectRecord=_isDirectRecord;
-@property(nonatomic) _Bool showLiveMarkInDetail; // @synthesize showLiveMarkInDetail=_showLiveMarkInDetail;
 @property(nonatomic) unsigned long long i18nShareButtonStyle; // @synthesize i18nShareButtonStyle=_i18nShareButtonStyle;
 @property(nonatomic) unsigned long long shareButtonStyle; // @synthesize shareButtonStyle=_shareButtonStyle;
 @property(nonatomic) _Bool showStoryEntranceAfterLaunch; // @synthesize showStoryEntranceAfterLaunch=_showStoryEntranceAfterLaunch;

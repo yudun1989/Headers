@@ -17,8 +17,12 @@
     NSString *_package;
     NSString *_notice;
     NSString *_os;
+    NSString *_appRegion;
+    NSString *_appLaunguage;
 }
 
+@property(copy, nonatomic) NSString *appLaunguage; // @synthesize appLaunguage=_appLaunguage;
+@property(copy, nonatomic) NSString *appRegion; // @synthesize appRegion=_appRegion;
 @property(copy, nonatomic) NSString *os; // @synthesize os=_os;
 @property(copy, nonatomic) NSString *notice; // @synthesize notice=_notice;
 @property(copy, nonatomic) NSString *package; // @synthesize package=_package;

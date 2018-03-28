@@ -17,6 +17,7 @@
 // Remaining properties
 @property(nonatomic) int environment; // @dynamic environment;
 @property(copy, nonatomic) NSString *fromUserId; // @dynamic fromUserId;
+@property(nonatomic) int messageType; // @dynamic messageType;
 @property(nonatomic) int resultCode; // @dynamic resultCode;
 @property(nonatomic) long long sendTimestamp; // @dynamic sendTimestamp;
 

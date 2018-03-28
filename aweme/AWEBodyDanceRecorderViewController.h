@@ -52,6 +52,10 @@
 @property(retain, nonatomic) AWEBodyDanceManager *manager; // @synthesize manager=_manager;
 @property(retain, nonatomic) IESMediaTranscoder *transcoder; // @synthesize transcoder=_transcoder;
 - (void).cxx_destruct;
+- (void)camera:(id)arg1 didStopVideoCaptureWithError:(id)arg2;
+- (void)camera:(id)arg1 didStartVideoRecordingWithError:(id)arg2;
+- (void)camera:(id)arg1 didStartVideoCaptureWithError:(id)arg2;
+- (void)camera:(id)arg1 didPauseVideoRecordingWithError:(id)arg2;
 - (void)appDidBecomeActiveNotification;
 - (void)appWillResignActiveNotification;
 - (void)audioPlayerDidFinishPlaying:(id)arg1 successfully:(_Bool)arg2;

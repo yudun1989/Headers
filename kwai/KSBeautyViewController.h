@@ -54,6 +54,7 @@
 - (void)viewDidLoad;
 - (void)loadView;
 - (id)initWithSettingsViewModel:(id)arg1;
+- (void)dealloc;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

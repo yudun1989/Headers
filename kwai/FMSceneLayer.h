@@ -39,7 +39,6 @@
     CMMotionManager *_motionManager;
 }
 
-+ (id)urlAudioRecognizationFileName:(id)arg1;
 + (id)sceneWithResource:(id)arg1 materialProvider:(id)arg2 layerName:(id)arg3;
 @property(retain, nonatomic) CMMotionManager *motionManager; // @synthesize motionManager=_motionManager;
 @property(retain, nonatomic) FMPoseFeature *poseFeature; // @synthesize poseFeature=_poseFeature;

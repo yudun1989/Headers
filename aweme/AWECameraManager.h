@@ -20,6 +20,7 @@
 @property(nonatomic) _Bool shouldPreventNewRecordController; // @synthesize shouldPreventNewRecordController=_shouldPreventNewRecordController;
 @property(retain, nonatomic) IESCamera *camera; // @synthesize camera=_camera;
 - (void).cxx_destruct;
+- (id)createCameraWithView:(id)arg1 videoData:(id)arg2 stickerDocumentPath:(id)arg3 cameraType:(long long)arg4;
 - (id)createCameraWithView:(id)arg1 videoData:(id)arg2 stickerDocumentPath:(id)arg3;
 - (void)releaseCurrentCamera;
 - (id)init;

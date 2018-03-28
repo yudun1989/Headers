@@ -6,13 +6,13 @@
 
 #import "JSONModel.h"
 
-@class NSNumber, TTIMHttpDeliveSilenceModel, TTIMHttpSessionDeleteModel;
+@class NSNumber, NSString, TTIMHttpDeliveSilenceModel, TTIMHttpSessionDeleteModel;
 @protocol Optional;
 
 @interface TTIMHttpSessionDeleteResponseModel : JSONModel
 {
     NSNumber *_cmd;
-    NSNumber *_seqId;
+    NSString *_seqId;
     NSNumber<Optional> *_statusCode;
     TTIMHttpDeliveSilenceModel<Optional> *_deliveSilence;
     TTIMHttpSessionDeleteModel<Optional> *_sessionDeleteModel;
@@ -22,7 +22,7 @@
 @property(retain, nonatomic) TTIMHttpSessionDeleteModel<Optional> *sessionDeleteModel; // @synthesize sessionDeleteModel=_sessionDeleteModel;
 @property(retain, nonatomic) TTIMHttpDeliveSilenceModel<Optional> *deliveSilence; // @synthesize deliveSilence=_deliveSilence;
 @property(retain, nonatomic) NSNumber<Optional> *statusCode; // @synthesize statusCode=_statusCode;
-@property(retain, nonatomic) NSNumber *seqId; // @synthesize seqId=_seqId;
+@property(copy, nonatomic) NSString *seqId; // @synthesize seqId=_seqId;
 @property(retain, nonatomic) NSNumber *cmd; // @synthesize cmd=_cmd;
 - (void).cxx_destruct;
 - (id)transformToPBModel;

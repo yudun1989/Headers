@@ -11,6 +11,7 @@
 @protocol KSFunsFollowCellDelegate <KSTableViewCellDelegate>
 
 @optional
+- (void)funsFollowCell:(KSFunsFollowCell *)arg1 didTapUserHeaderViewWithUser:(KSFunsFollowUser *)arg2;
 - (void)funsFollowCell:(KSFunsFollowCell *)arg1 didTapRightButton:(KSFunsFollowUser *)arg2;
 - (void)funsFollowCell:(KSFunsFollowCell *)arg1 didTapFollowWithUser:(KSFunsFollowUser *)arg2;
 @end

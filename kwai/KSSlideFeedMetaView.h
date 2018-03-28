@@ -74,9 +74,11 @@
 - (void).cxx_destruct;
 - (_Bool)_useHorizontalToolBar;
 - (void)receiveLikesButtonClick:(id)arg1;
+- (struct CGPath *)createMainPathWithWidth:(double)arg1;
+- (id)attributedString:(id)arg1 maxLineCount:(int)arg2 labelWidth:(double)arg3 spreadIndex:(unsigned long long)arg4 spreadTitle:(id)arg5;
 - (id)_foldString:(_Bool)arg1;
 - (void)_appendFoldAttribute:(_Bool)arg1 forString:(id)arg2;
-- (_Bool)_isMultiLineDetail;
+- (_Bool)_isMultiLineWithLineCount:(long long)arg1;
 - (id)_pureAttributedDetail;
 - (void)_calculateHeightsIfNeeded;
 - (struct CGSize)sizeWithString:(id)arg1 prefixImage:(id)arg2 maxWidth:(double)arg3;

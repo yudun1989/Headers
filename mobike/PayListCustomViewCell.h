@@ -16,6 +16,7 @@
     long long _ridingBalanceSend;
     long long _redpacketBalance;
     long long _shouldPayCount;
+    long long _thirdTypeBalance;
     UIImageView *_payImageView;
     UILabel *_payTitleLabel;
     UILabel *_paySubTitleLabel;
@@ -36,6 +37,7 @@
 @property(retain, nonatomic) UILabel *paySubTitleLabel; // @synthesize paySubTitleLabel=_paySubTitleLabel;
 @property(retain, nonatomic) UILabel *payTitleLabel; // @synthesize payTitleLabel=_payTitleLabel;
 @property(retain, nonatomic) UIImageView *payImageView; // @synthesize payImageView=_payImageView;
+@property(nonatomic) long long thirdTypeBalance; // @synthesize thirdTypeBalance=_thirdTypeBalance;
 @property(nonatomic) long long shouldPayCount; // @synthesize shouldPayCount=_shouldPayCount;
 @property(nonatomic) long long redpacketBalance; // @synthesize redpacketBalance=_redpacketBalance;
 @property(nonatomic) long long ridingBalanceSend; // @synthesize ridingBalanceSend=_ridingBalanceSend;

@@ -8,7 +8,6 @@
 
 @interface UIViewController (MBKAdapter)
 - (long long)netStatusCurrent;
-- (_Bool)validCoordinate:(struct CLLocationCoordinate2D)arg1;
 - (_Bool)checkNetWork;
 - (void)checkNetWorkAndShowNotice;
 - (void)showTipsInWindow:(id)arg1;

@@ -6,7 +6,7 @@
 
 #import <objc/NSObject.h>
 
-@class FMAREnvironmentParticleResource, FMARResource, FMARTrackingResource, FMAudioRecognizationResource, FMAudioResource, FMBlendResource, FMCameraResource, FMComprehensiveExtResource, FMComprehensiveResource, FMCoverResource, FMDelayResource, FMFaceBeautifyOptions, FMFaceStretchResource, FMFeedforwardProcessResource, FMFilterManagerRandom, FMFlappyResource, FMFlappyScoreResource, FMImitationShowResource, FMNeuralResource, FMPaintResource, FMRippleResource, FMSkyResource, FMSmoothingResource, FMSwapPicResource, FMSwapResource, FMVirtualFaceResource, FMVoiceChangeResource, NSArray, NSDictionary, NSString;
+@class FMAREnvironmentParticleResource, FMARResource, FMARTrackingResource, FMAudioRecognizationResource, FMAudioResource, FMBlendResource, FMCameraResource, FMComprehensiveExtResource, FMComprehensiveResource, FMCoverResource, FMDelayResource, FMFaceBeautifyOptions, FMFaceStretchResource, FMFeedforwardProcessResource, FMFilterManagerRandom, FMFlappyResource, FMFlappyScoreResource, FMImitationShowResource, FMNeuralResource, FMPaintResource, FMRippleResource, FMSkyResource, FMSmoothingResource, FMSwapPicResource, FMSwapResource, FMVirtualFaceResource, FMVoiceChangeResource, NSArray, NSDictionary, NSMutableDictionary, NSString;
 
 @interface FMResource : NSObject
 {
@@ -24,6 +24,7 @@
     _Bool _resetWhenRecord;
     _Bool _preferCPUDeformVersion;
     _Bool _disableAnimation2dEulerRotation;
+    _Bool _useLegacyFilters;
     _Bool _middleScale;
     _Bool _erasure;
     _Bool _isBeatEffect;
@@ -39,6 +40,7 @@
     NSString *_captureVideoKey;
     NSDictionary *_localeTips;
     NSArray *_filters;
+    NSDictionary *_rawKeyValues;
     NSDictionary *_resourceDictionary;
     FMFilterManagerRandom *_random;
     NSDictionary *_filterManagerResourceDic;
@@ -76,6 +78,7 @@
     NSDictionary *_poseEstimationResource;
     NSDictionary *_hairClipResource;
     NSDictionary *_handGestureResource;
+    NSMutableDictionary *_scriptCtr;
     FMAudioRecognizationResource *_audioRecognizationResource;
     struct CGSize _resolutionSize;
 }
@@ -95,6 +98,7 @@
 @property(nonatomic) int cgeWrapperStrictMode; // @synthesize cgeWrapperStrictMode=_cgeWrapperStrictMode;
 @property(nonatomic) _Bool isBeatEffect; // @synthesize isBeatEffect=_isBeatEffect;
 @property(nonatomic) _Bool erasure; // @synthesize erasure=_erasure;
+@property(retain, nonatomic) NSMutableDictionary *scriptCtr; // @synthesize scriptCtr=_scriptCtr;
 @property(retain, nonatomic) NSDictionary *handGestureResource; // @synthesize handGestureResource=_handGestureResource;
 @property(retain, nonatomic) NSDictionary *hairClipResource; // @synthesize hairClipResource=_hairClipResource;
 @property(retain, nonatomic) NSDictionary *poseEstimationResource; // @synthesize poseEstimationResource=_poseEstimationResource;
@@ -132,9 +136,11 @@
 @property(retain, nonatomic) NSDictionary *filterManagerResourceDic; // @synthesize filterManagerResourceDic=_filterManagerResourceDic;
 @property(retain, nonatomic) FMFilterManagerRandom *random; // @synthesize random=_random;
 @property(retain, nonatomic) NSDictionary *resourceDictionary; // @synthesize resourceDictionary=_resourceDictionary;
+@property(retain, nonatomic) NSDictionary *rawKeyValues; // @synthesize rawKeyValues=_rawKeyValues;
 @property(retain, nonatomic) NSArray *filters; // @synthesize filters=_filters;
 @property(retain, nonatomic) NSDictionary *localeTips; // @synthesize localeTips=_localeTips;
 @property(nonatomic) _Bool middleScale; // @synthesize middleScale=_middleScale;
+@property(nonatomic) _Bool useLegacyFilters; // @synthesize useLegacyFilters=_useLegacyFilters;
 @property(nonatomic) _Bool disableAnimation2dEulerRotation; // @synthesize disableAnimation2dEulerRotation=_disableAnimation2dEulerRotation;
 @property(nonatomic) _Bool preferCPUDeformVersion; // @synthesize preferCPUDeformVersion=_preferCPUDeformVersion;
 @property(nonatomic) _Bool resetWhenRecord; // @synthesize resetWhenRecord=_resetWhenRecord;

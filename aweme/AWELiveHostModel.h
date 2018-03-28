@@ -16,12 +16,15 @@
     long long _resolvingTime;
 }
 
++ (id)replaceHostWithIp:(id)arg1 domain:(id)arg2 ofUrl:(id)arg3;
++ (id)replaceHostWithIp:(id)arg1 ofUrl:(id)arg2;
 @property(nonatomic) long long resolvingTime; // @synthesize resolvingTime=_resolvingTime;
 @property(nonatomic) double lastResolvingTime; // @synthesize lastResolvingTime=_lastResolvingTime;
 @property(retain, nonatomic) NSArray *ipArray; // @synthesize ipArray=_ipArray;
 @property(copy, nonatomic) NSString *host; // @synthesize host=_host;
 - (void).cxx_destruct;
 - (void)sortIPArray;
+- (id)recommendIPExceptHost:(id)arg1;
 - (id)recommendIP;
 
 @end

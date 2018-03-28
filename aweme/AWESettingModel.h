@@ -8,7 +8,7 @@
 
 #import "MTLJSONSerializing-Protocol.h"
 
-@class AWEAdsControlSettings, AWEAppStoreRateParameters, AWEGlobalTips, NSArray, NSNumber, NSString;
+@class AWEAdsControlSettings, AWEAppStoreRateParameters, AWEGlobalTips, NSArray, NSDictionary, NSNumber, NSString;
 
 @interface AWESettingModel : MTLModel <MTLJSONSerializing>
 {
@@ -22,6 +22,7 @@
     _Bool _enableVirtualPhoneNumber;
     _Bool _enableVideoPreload;
     _Bool _enableVideoPreloadInCellularNetworks;
+    _Bool _closeFantasy;
     _Bool _closeMixWhenNotWearingEarphone;
     _Bool _liveUseB612;
     _Bool _showOriginalMusicianShareStyle;
@@ -30,6 +31,8 @@
     _Bool _enableHardDecode;
     _Bool _useTTUploadSDK;
     _Bool _useNewAudiovideoSync;
+    _Bool _disableAgeGate;
+    _Bool _iFantasySharkEnabled;
     long long _forceDynamicCover;
     NSNumber *_enableUserBlock;
     NSNumber *_enableEmptyTip;
@@ -59,25 +62,38 @@
     AWEAppStoreRateParameters *_appStoreParams;
     NSString *_shootingGuideChallengeID;
     NSNumber *_closeFantasyV2;
+    NSNumber *_showFollowtabFollowingLimit;
     double _liveFps;
     double _liveMinBitrate;
     double _liveMaxBitrate;
     double _liveDefaultBitrate;
     double _liveResW;
     double _liveResH;
-    long long _redPacketRetryMax;
-    long long _redPacketRetryInterval;
     NSString *_jsActLogURL;
     AWEAdsControlSettings *_adConfig;
     long long _syncToToutiao;
     NSString *_sycToToutiaoURL;
     NSArray *_videoRecordSize;
     NSArray *_videoRecordBitrate;
+    NSString *_iFantasyDeviceInfoURL;
+    NSDictionary *_iFantasyDeviceCollectionSettings;
+    long long _antiAddictedSeparation;
+    long long _antiAddictedDayTime;
+    long long _antiAddictedNightTime;
+    long long _antiAddictedNoticeBarTime;
 }
 
 + (id)adLandpageConfigJSONTransformer;
 + (id)globalTipsJSONTransformer;
 + (id)JSONKeyPathsByPropertyKey;
+@property(nonatomic) long long antiAddictedNoticeBarTime; // @synthesize antiAddictedNoticeBarTime=_antiAddictedNoticeBarTime;
+@property(nonatomic) long long antiAddictedNightTime; // @synthesize antiAddictedNightTime=_antiAddictedNightTime;
+@property(nonatomic) long long antiAddictedDayTime; // @synthesize antiAddictedDayTime=_antiAddictedDayTime;
+@property(nonatomic) long long antiAddictedSeparation; // @synthesize antiAddictedSeparation=_antiAddictedSeparation;
+@property(retain, nonatomic) NSDictionary *iFantasyDeviceCollectionSettings; // @synthesize iFantasyDeviceCollectionSettings=_iFantasyDeviceCollectionSettings;
+@property(retain, nonatomic) NSString *iFantasyDeviceInfoURL; // @synthesize iFantasyDeviceInfoURL=_iFantasyDeviceInfoURL;
+@property(nonatomic) _Bool iFantasySharkEnabled; // @synthesize iFantasySharkEnabled=_iFantasySharkEnabled;
+@property(nonatomic) _Bool disableAgeGate; // @synthesize disableAgeGate=_disableAgeGate;
 @property(nonatomic) _Bool useNewAudiovideoSync; // @synthesize useNewAudiovideoSync=_useNewAudiovideoSync;
 @property(copy, nonatomic) NSArray *videoRecordBitrate; // @synthesize videoRecordBitrate=_videoRecordBitrate;
 @property(copy, nonatomic) NSArray *videoRecordSize; // @synthesize videoRecordSize=_videoRecordSize;
@@ -90,8 +106,6 @@
 @property(retain, nonatomic) AWEAdsControlSettings *adConfig; // @synthesize adConfig=_adConfig;
 @property(copy, nonatomic) NSString *jsActLogURL; // @synthesize jsActLogURL=_jsActLogURL;
 @property(nonatomic) _Bool showOriginalMusicianShareStyle; // @synthesize showOriginalMusicianShareStyle=_showOriginalMusicianShareStyle;
-@property(nonatomic) long long redPacketRetryInterval; // @synthesize redPacketRetryInterval=_redPacketRetryInterval;
-@property(nonatomic) long long redPacketRetryMax; // @synthesize redPacketRetryMax=_redPacketRetryMax;
 @property(nonatomic) _Bool liveUseB612; // @synthesize liveUseB612=_liveUseB612;
 @property(nonatomic) _Bool closeMixWhenNotWearingEarphone; // @synthesize closeMixWhenNotWearingEarphone=_closeMixWhenNotWearingEarphone;
 @property(nonatomic) double liveResH; // @synthesize liveResH=_liveResH;
@@ -100,6 +114,8 @@
 @property(nonatomic) double liveMaxBitrate; // @synthesize liveMaxBitrate=_liveMaxBitrate;
 @property(nonatomic) double liveMinBitrate; // @synthesize liveMinBitrate=_liveMinBitrate;
 @property(nonatomic) double liveFps; // @synthesize liveFps=_liveFps;
+@property(retain, nonatomic) NSNumber *showFollowtabFollowingLimit; // @synthesize showFollowtabFollowingLimit=_showFollowtabFollowingLimit;
+@property(nonatomic) _Bool closeFantasy; // @synthesize closeFantasy=_closeFantasy;
 @property(nonatomic) _Bool enableVideoPreloadInCellularNetworks; // @synthesize enableVideoPreloadInCellularNetworks=_enableVideoPreloadInCellularNetworks;
 @property(nonatomic) _Bool enableVideoPreload; // @synthesize enableVideoPreload=_enableVideoPreload;
 @property(retain, nonatomic) NSNumber *closeFantasyV2; // @synthesize closeFantasyV2=_closeFantasyV2;

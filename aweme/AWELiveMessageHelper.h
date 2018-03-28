@@ -10,6 +10,8 @@
 {
 }
 
++ (id)fetchLivePresentModelForPresentID:(id)arg1;
++ (id)liveDisplayName:(id)arg1;
 + (void)clearStaticVariable;
 + (id)getMessageFont;
 + (id)paragraphStyle;

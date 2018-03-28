@@ -23,6 +23,7 @@
 - (void)_localSaveTarget:(id)arg1 targetID:(id)arg2;
 - (void)_reportTarget:(id)arg1 targetID:(id)arg2;
 - (void)_deleteTarget:(id)arg1 targetID:(id)arg2;
+- (void)_musicallyDuetTarget:(id)arg1 targetID:(id)arg2;
 - (void)shareWithType:(long long)arg1 targetType:(long long)arg2 target:(id)arg3 targetID:(id)arg4;
 - (void)dealloc;
 - (id)init;

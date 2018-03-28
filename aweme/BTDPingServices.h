@@ -18,9 +18,9 @@
     long long _sequenceNumber;
     NSMutableArray *_pingItems;
     double _timeoutMilliseconds;
-    long long _maximumPingTimes;
     NSString *_address;
     BTDSimplePing *_simplePing;
+    long long _maximumPingTimes;
     CDUnknownBlockType _callbackHandler;
     CDUnknownBlockType _finishHandler;
 }
@@ -30,9 +30,9 @@
 + (id)startPingAddress:(id)arg1 callbackHandler:(CDUnknownBlockType)arg2;
 @property(copy, nonatomic) CDUnknownBlockType finishHandler; // @synthesize finishHandler=_finishHandler;
 @property(copy, nonatomic) CDUnknownBlockType callbackHandler; // @synthesize callbackHandler=_callbackHandler;
+@property(nonatomic) long long maximumPingTimes; // @synthesize maximumPingTimes=_maximumPingTimes;
 @property(retain, nonatomic) BTDSimplePing *simplePing; // @synthesize simplePing=_simplePing;
 @property(copy, nonatomic) NSString *address; // @synthesize address=_address;
-@property(nonatomic) long long maximumPingTimes; // @synthesize maximumPingTimes=_maximumPingTimes;
 @property(nonatomic) double timeoutMilliseconds; // @synthesize timeoutMilliseconds=_timeoutMilliseconds;
 - (void).cxx_destruct;
 - (void)st_simplePing:(id)arg1 didFailWithError:(id)arg2;

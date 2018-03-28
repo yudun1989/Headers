@@ -35,7 +35,7 @@
 - (void).cxx_destruct;
 - (void)_setupUI;
 - (void)viewWillLayoutSubviews;
-- (id)_proceccedURLFromAtSchemeURL:(id)arg1;
+- (_Bool)_proceccedURLFromAtSchemeURL:(id)arg1;
 - (void)onVisitAt:(id)arg1;
 - (void)backBtnClicked:(id)arg1;
 - (void)_dismissEmptyView;
@@ -54,7 +54,7 @@
 - (void)viewDidAppear:(_Bool)arg1;
 - (void)viewDidLoad;
 - (void)dealloc;
-- (id)initWithRouterParamDict:(id)arg1;
+- (_Bool)configWithRouterParamDict:(id)arg1;
 - (id)init;
 
 // Remaining properties

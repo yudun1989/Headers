@@ -76,6 +76,7 @@
 - (void)viewDidAppear:(_Bool)arg1;
 - (void)viewDidLoad;
 - (void)dealloc;
+- (_Bool)configWithRouterParamDict:(id)arg1;
 - (id)initWithRouterParamDict:(id)arg1;
 
 // Remaining properties

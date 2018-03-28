@@ -4,35 +4,36 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-#import <UIKit/UIViewController.h>
+#import "KSBaseViewController.h"
 
 #import "SKStoreProductViewControllerDelegate-Protocol.h"
 
-@class NSString, UIButton, UIImageView, UILabel, UIView;
+@class KSMigrationKwaiConfig, NSString, UIButton, UIImageView, UILabel, UIView;
 
-@interface KSMigrationAlertViewController : UIViewController <SKStoreProductViewControllerDelegate>
+@interface KSMigrationAlertViewController : KSBaseViewController <SKStoreProductViewControllerDelegate>
 {
+    KSMigrationKwaiConfig *_config;
     UIView *_alertView;
-    UIImageView *_logoImageView;
-    UILabel *_earthLabel;
-    UILabel *_diamondLabel;
-    UIButton *_switchBtn;
-    UIButton *_notNowBtn;
-    UIImageView *_appNameImg;
+    UILabel *_p_titleLabel;
+    UILabel *_contentLabel;
+    UIButton *_actionButton;
+    UIImageView *_contentImageView;
+    UIButton *_dismissButton;
 }
 
-@property(nonatomic) __weak UIImageView *appNameImg; // @synthesize appNameImg=_appNameImg;
-@property(nonatomic) __weak UIButton *notNowBtn; // @synthesize notNowBtn=_notNowBtn;
-@property(nonatomic) __weak UIButton *switchBtn; // @synthesize switchBtn=_switchBtn;
-@property(nonatomic) __weak UILabel *diamondLabel; // @synthesize diamondLabel=_diamondLabel;
-@property(nonatomic) __weak UILabel *earthLabel; // @synthesize earthLabel=_earthLabel;
-@property(nonatomic) __weak UIImageView *logoImageView; // @synthesize logoImageView=_logoImageView;
+@property(nonatomic) __weak UIButton *dismissButton; // @synthesize dismissButton=_dismissButton;
+@property(nonatomic) __weak UIImageView *contentImageView; // @synthesize contentImageView=_contentImageView;
+@property(nonatomic) __weak UIButton *actionButton; // @synthesize actionButton=_actionButton;
+@property(nonatomic) __weak UILabel *contentLabel; // @synthesize contentLabel=_contentLabel;
+@property(nonatomic) __weak UILabel *p_titleLabel; // @synthesize p_titleLabel=_p_titleLabel;
 @property(nonatomic) __weak UIView *alertView; // @synthesize alertView=_alertView;
+@property(retain, nonatomic) KSMigrationKwaiConfig *config; // @synthesize config=_config;
 - (void).cxx_destruct;
-- (void)btnNotNowClick:(id)arg1;
-- (void)btnSwitchClick:(id)arg1;
+- (void)onClockAction:(id)arg1;
+- (void)onClickDismiss:(id)arg1;
 - (void)dismissAnimation:(CDUnknownBlockType)arg1;
 - (void)showAnimation;
+- (void)updateUI;
 - (void)viewDidLoad;
 - (id)init;
 

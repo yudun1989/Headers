@@ -10,6 +10,9 @@
 {
 }
 
++ (void)requestForceLockSuccess:(CDUnknownBlockType)arg1 failure:(CDUnknownBlockType)arg2;
++ (void)forceLockCompletion:(CDUnknownBlockType)arg1;
++ (void)canForceLockSuccess:(CDUnknownBlockType)arg1 failure:(CDUnknownBlockType)arg2;
 + (id)circleFetchSpockStatus;
 + (void)lockWithOrderID:(id)arg1 bikeID:(id)arg2 currentLocation:(struct CLLocationCoordinate2D)arg3 successAction:(CDUnknownBlockType)arg4 failureAction:(CDUnknownBlockType)arg5;
 

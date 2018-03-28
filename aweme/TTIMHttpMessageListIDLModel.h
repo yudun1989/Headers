@@ -19,7 +19,6 @@
 @property(copy, nonatomic) NSArray<Optional> *groupIds; // @synthesize groupIds=_groupIds;
 @property(copy, nonatomic) NSArray<TTIMHttpGroupIdMessageModel><Optional> *groupIDMessages; // @synthesize groupIDMessages=_groupIDMessages;
 - (void).cxx_destruct;
-- (id)transformToGroupPBModel;
 - (id)transformToPBModel;
 
 @end

@@ -15,6 +15,7 @@
     _Bool _showStory;
     _Bool _isCurrentUser;
     _Bool _isMusician;
+    _Bool _hiddenNumber;
     _Bool _isUserClick;
     unsigned long long _currentIndex;
     CDUnknownBlockType _tabViewClicked;
@@ -39,6 +40,7 @@
 @property(retain, nonatomic) UIButton *storyBtn; // @synthesize storyBtn=_storyBtn;
 @property(retain, nonatomic) AWEUserDetailTabButton *likeBtn; // @synthesize likeBtn=_likeBtn;
 @property(retain, nonatomic) AWEUserDetailTabButton *workBtn; // @synthesize workBtn=_workBtn;
+@property(nonatomic) _Bool hiddenNumber; // @synthesize hiddenNumber=_hiddenNumber;
 @property(copy, nonatomic) CDUnknownBlockType tabViewClicked; // @synthesize tabViewClicked=_tabViewClicked;
 @property(nonatomic) _Bool isMusician; // @synthesize isMusician=_isMusician;
 @property(nonatomic) _Bool isCurrentUser; // @synthesize isCurrentUser=_isCurrentUser;

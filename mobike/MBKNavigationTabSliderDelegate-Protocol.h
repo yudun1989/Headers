@@ -12,5 +12,6 @@
 
 @optional
 - (void)tabSlider:(MBKNavigationTabSlider *)arg1 didSelectTabAtIndex:(long long)arg2;
+- (_Bool)tabSlider:(MBKNavigationTabSlider *)arg1 canSwitchToTabAtIndex:(long long)arg2;
 @end
 

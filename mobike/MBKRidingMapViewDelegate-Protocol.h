@@ -6,20 +6,20 @@
 
 #import "NSObject-Protocol.h"
 
-@class MBKRidingMapViewController, MMAnnotationView, MMRGCSearchResult, MMUserLocation, NSError;
+@class MBKMapAndAnnotationsViewController, MMAnnotationView, MMRGCSearchResult, MMUserLocation, NSError;
 
 @protocol MBKRidingMapViewDelegate <NSObject>
 
 @optional
-- (void)mbkRidingMapViewController:(MBKRidingMapViewController *)arg1 withinAnnotationDidUpdateToAnnotation:(struct MMPointAnnotation *)arg2;
-- (struct CGRect)mbkRidingMapViewControllerDisplayInsetsEdges:(MBKRidingMapViewController *)arg1;
-- (void)mbkRidingMapViewControllerAppearanceRestore:(MBKRidingMapViewController *)arg1;
-- (void)mbkRidingMapViewController:(MBKRidingMapViewController *)arg1 didUpdateUserLocation:(MMUserLocation *)arg2;
-- (void)mbkRidingMapViewController:(MBKRidingMapViewController *)arg1 didReverseGeocodeWithResult:(MMRGCSearchResult *)arg2 error:(NSError *)arg3;
-- (void)mbkRidingMapViewController:(MBKRidingMapViewController *)arg1 didTapAtCoordinate:(struct CLLocationCoordinate2D)arg2;
-- (void)mbkRidingMapViewController:(MBKRidingMapViewController *)arg1 regionWillChangeAnimated:(_Bool)arg2 byGesture:(_Bool)arg3;
-- (void)mbkRidingMapViewController:(MBKRidingMapViewController *)arg1 regionDidChangeAnimated:(_Bool)arg2 distance:(double)arg3 byGesture:(_Bool)arg4;
-- (void)mbkRidingMapViewController:(MBKRidingMapViewController *)arg1 didDeselectAnnotationView:(MMAnnotationView *)arg2;
-- (void)mbkRidingMapViewController:(MBKRidingMapViewController *)arg1 didSelectAnnotationView:(MMAnnotationView *)arg2 fromCalloutView:(_Bool)arg3;
+- (void)mapAndAnnotationsViewController:(MBKMapAndAnnotationsViewController *)arg1 withinAnnotationDidUpdateToAnnotation:(struct MMPointAnnotation *)arg2;
+- (struct CGRect)mapAndAnnotationsViewControllerDisplayInsetsEdges:(MBKMapAndAnnotationsViewController *)arg1;
+- (void)mapAndAnnotationsViewControllerAppearanceRestore:(MBKMapAndAnnotationsViewController *)arg1;
+- (void)mapAndAnnotationsViewController:(MBKMapAndAnnotationsViewController *)arg1 didUpdateUserLocation:(MMUserLocation *)arg2;
+- (void)mapAndAnnotationsViewController:(MBKMapAndAnnotationsViewController *)arg1 didReverseGeocodeWithResult:(MMRGCSearchResult *)arg2 error:(NSError *)arg3;
+- (void)mapAndAnnotationsViewController:(MBKMapAndAnnotationsViewController *)arg1 didTapAtCoordinate:(struct CLLocationCoordinate2D)arg2;
+- (void)mapAndAnnotationsViewController:(MBKMapAndAnnotationsViewController *)arg1 regionWillChangeAnimated:(_Bool)arg2 byGesture:(_Bool)arg3;
+- (void)mapAndAnnotationsViewController:(MBKMapAndAnnotationsViewController *)arg1 regionDidChangeAnimated:(_Bool)arg2 distance:(double)arg3 byGesture:(_Bool)arg4;
+- (void)mapAndAnnotationsViewController:(MBKMapAndAnnotationsViewController *)arg1 didDeselectAnnotationView:(MMAnnotationView *)arg2;
+- (void)mapAndAnnotationsViewController:(MBKMapAndAnnotationsViewController *)arg1 didSelectAnnotationView:(MMAnnotationView *)arg2 fromCalloutView:(_Bool)arg3;
 @end
 

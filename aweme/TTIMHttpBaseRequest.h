@@ -10,9 +10,8 @@
 {
 }
 
-- (unsigned long long)responseType;
+- (unsigned long long)httpCMDType;
 - (id)params;
-- (id)url;
 - (id)method;
 
 @end

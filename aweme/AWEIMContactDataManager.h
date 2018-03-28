@@ -26,6 +26,7 @@
 @property(retain, nonatomic) AWEIMContactDownloadController *downloadController; // @synthesize downloadController=_downloadController;
 @property(nonatomic) _Bool hasFetchSucceed; // @synthesize hasFetchSucceed=_hasFetchSucceed;
 - (void).cxx_destruct;
+- (_Bool)enableMusicallyContactList;
 - (void)didFinishUnFollowUser:(id)arg1 status:(long long)arg2 error:(id)arg3;
 - (void)didFinishFollowUser:(id)arg1 status:(long long)arg2 error:(id)arg3;
 - (_Bool)_hasBeyondFetchInterval;
@@ -35,6 +36,7 @@
 - (id)_recentContactListFromContactList:(id)arg1;
 - (void)_fetchContacts:(CDUnknownBlockType)arg1;
 - (void)_fetchRemoteWholeContactAndRecentContactListWithLocalContactList:(id)arg1 completion:(CDUnknownBlockType)arg2;
+- (void)_fetchAllLocalContactList:(CDUnknownBlockType)arg1;
 - (void)_fetchLocalContactList:(CDUnknownBlockType)arg1;
 - (void)_fetchWholeContactAndRecentContactList:(CDUnknownBlockType)arg1;
 - (void)updateLatestChatTimestamp:(long long)arg1 forUser:(id)arg2;

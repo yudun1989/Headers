@@ -18,14 +18,18 @@
 {
     _Bool _hasMore;
     _Bool _isBGColorWhite;
+    _Bool _isHotType;
     NSArray *_dataList;
     AWEAwemeModel *_aweModel;
     CAShapeLayer *_baseLayer;
     UILabel *_titleLabel;
     UICollectionView *_collectionView;
     AWEIMTranspondListAlertViewController *_alertViewController;
+    NSString *_referString;
 }
 
+@property(retain, nonatomic) NSString *referString; // @synthesize referString=_referString;
+@property(nonatomic) _Bool isHotType; // @synthesize isHotType=_isHotType;
 @property(retain, nonatomic) AWEIMTranspondListAlertViewController *alertViewController; // @synthesize alertViewController=_alertViewController;
 @property(nonatomic) _Bool isBGColorWhite; // @synthesize isBGColorWhite=_isBGColorWhite;
 @property(retain, nonatomic) UICollectionView *collectionView; // @synthesize collectionView=_collectionView;
@@ -43,6 +47,7 @@
 - (id)collectionView:(id)arg1 cellForItemAtIndexPath:(id)arg2;
 - (long long)collectionView:(id)arg1 numberOfItemsInSection:(long long)arg2;
 - (void)viewDidLoad;
+- (id)initWithReferString:(id)arg1;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

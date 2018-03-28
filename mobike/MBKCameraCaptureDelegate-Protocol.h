@@ -9,6 +9,7 @@
 @class MBKCameraCapture, NSString;
 
 @protocol MBKCameraCaptureDelegate <NSObject>
+- (void)cameraCapture:(MBKCameraCapture *)arg1 authFailure:(long long)arg2;
 - (void)cameraCapture:(MBKCameraCapture *)arg1 shouldTurnLightOn:(_Bool)arg2;
 - (void)cameraCapture:(MBKCameraCapture *)arg1 didScanned:(NSString *)arg2;
 @end

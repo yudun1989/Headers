@@ -10,8 +10,9 @@
 {
 }
 
-+ (void)produceEncryptedFile;
-+ (id)wrappedApps;
++ (void)_uploadNewLogForApps:(id)arg1;
++ (void)_uploadLegacyLogForApps:(id)arg1;
++ (void)uploadInstalledAppLog;
 + (id)installedThirdPartyApps;
 
 @end

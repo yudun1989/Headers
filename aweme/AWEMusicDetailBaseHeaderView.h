@@ -23,6 +23,9 @@
 @property(nonatomic) double contentAlpha; // @synthesize contentAlpha=_contentAlpha;
 @property(nonatomic) double headerViewHeight; // @synthesize headerViewHeight=_headerViewHeight;
 - (void).cxx_destruct;
+- (void)playerWrapper:(id)arg1 didChangePlayStatus:(unsigned long long)arg2;
+- (void)pauseAudio;
+- (void)updateWithModel:(id)arg1;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

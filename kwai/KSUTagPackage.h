@@ -23,6 +23,7 @@
 @property(nonatomic) unsigned long long photoCount; // @dynamic photoCount;
 @property(retain, nonatomic) NSMutableArray *photoPackageArray; // @dynamic photoPackageArray;
 @property(readonly, nonatomic) unsigned long long photoPackageArray_Count; // @dynamic photoPackageArray_Count;
+@property(copy, nonatomic) NSString *secondaryType; // @dynamic secondaryType;
 @property(nonatomic) int type; // @dynamic type;
 
 @end

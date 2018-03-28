@@ -24,6 +24,7 @@
 }
 
 + (void)loadCachedCookies;
++ (void)saveCookiesToStorage;
 + (void)saveCookiesToUserDefault:(id)arg1;
 + (void)saveCookies;
 @property(retain, nonatomic) AWEProgressLoadingView *logoutLoadingView; // @synthesize logoutLoadingView=_logoutLoadingView;
@@ -33,6 +34,7 @@
 @property _Bool isFollowRequestOnAir; // @synthesize isFollowRequestOnAir=_isFollowRequestOnAir;
 @property(retain, nonatomic) AWEUserModel *user; // @synthesize user=_user;
 - (void).cxx_destruct;
+- (id)_showStoryKey;
 - (void)didReceiveApiResponse:(id)arg1 URL:(id)arg2;
 - (void)didCancelLogin;
 - (void)didFinishLogout;
@@ -44,8 +46,12 @@
 - (id)currentLoginUser;
 - (_Bool)clearAwemeUser;
 - (_Bool)persistAwemeUser:(id)arg1;
+- (void)turnOffPostNotificationStateWithUser:(id)arg1 completion:(CDUnknownBlockType)arg2;
+- (void)turnOnPostNotificationStateWithUser:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)unblockUser:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)blockUser:(id)arg1 completion:(CDUnknownBlockType)arg2;
+- (void)rejectUser:(id)arg1 completion:(CDUnknownBlockType)arg2;
+- (void)approveUser:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)unfollowUser:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)unfollowUser:(id)arg1;
 - (void)followUser:(id)arg1 fromPageType:(unsigned long long)arg2 completion:(CDUnknownBlockType)arg3;
@@ -55,11 +61,9 @@
 - (void)_hideLogoutHUDWithReason:(unsigned long long)arg1;
 - (void)_showLogoutHUDWithReason:(unsigned long long)arg1;
 - (void)logoutAwemeUserWithReason:(unsigned long long)arg1;
-- (id)_showStoryKey;
 - (void)_syncAwemeUser:(CDUnknownBlockType)arg1;
 - (void)syncAwemeUser:(CDUnknownBlockType)arg1;
 - (_Bool)isCurrentLoginUserWithID:(id)arg1;
-- (void)requireLoginWithTopText:(id)arg1 type:(unsigned long long)arg2 authorID:(id)arg3 enterFrom:(id)arg4 completion:(CDUnknownBlockType)arg5;
 - (void)requireLogin:(CDUnknownBlockType)arg1;
 - (void)showLogin;
 - (_Bool)showStory;

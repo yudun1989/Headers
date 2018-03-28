@@ -11,8 +11,8 @@
 
 @interface AWEIMBaseDataAssistantController : NSObject
 {
-    _Bool _hasMarkedDelete;
     _Bool _firstFetchRemote;
+    _Bool _hasMarkedDelete;
     id <AWEIMBaseDataAssistantControllerDelegate> _delegate;
     NSString *_filepath;
     AWEIMChatModel *_model;
@@ -20,13 +20,13 @@
     long long _assistantCount;
 }
 
-@property(nonatomic) _Bool firstFetchRemote; // @synthesize firstFetchRemote=_firstFetchRemote;
 @property(nonatomic) _Bool hasMarkedDelete; // @synthesize hasMarkedDelete=_hasMarkedDelete;
 @property(nonatomic) long long assistantCount; // @synthesize assistantCount=_assistantCount;
 @property(retain, nonatomic) AWEIMNotificationListDataController *dataController; // @synthesize dataController=_dataController;
 @property(retain, nonatomic) AWEIMChatModel *model; // @synthesize model=_model;
 @property(copy, nonatomic) NSString *filepath; // @synthesize filepath=_filepath;
 @property(nonatomic) __weak id <AWEIMBaseDataAssistantControllerDelegate> delegate; // @synthesize delegate=_delegate;
+@property(nonatomic) _Bool firstFetchRemote; // @synthesize firstFetchRemote=_firstFetchRemote;
 - (void).cxx_destruct;
 - (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void *)arg4;
 - (void)_removeKVO;

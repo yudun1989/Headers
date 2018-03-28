@@ -6,18 +6,18 @@
 
 #import "JSONModel.h"
 
-@class NSNumber;
+@class NSString;
 @protocol Optional;
 
 @interface TTIMHttpSessionDeleteModel : JSONModel
 {
-    NSNumber<Optional> *_svrMsgId;
-    NSNumber<Optional> *_svrIndex;
+    NSString<Optional> *_svrMsgId;
+    NSString<Optional> *_svrIndex;
 }
 
 + (id)keyMapper;
-@property(retain, nonatomic) NSNumber<Optional> *svrIndex; // @synthesize svrIndex=_svrIndex;
-@property(retain, nonatomic) NSNumber<Optional> *svrMsgId; // @synthesize svrMsgId=_svrMsgId;
+@property(copy, nonatomic) NSString<Optional> *svrIndex; // @synthesize svrIndex=_svrIndex;
+@property(copy, nonatomic) NSString<Optional> *svrMsgId; // @synthesize svrMsgId=_svrMsgId;
 - (void).cxx_destruct;
 
 @end

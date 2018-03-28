@@ -18,6 +18,7 @@
 @property(copy, nonatomic) NSString *id_p; // @dynamic id_p;
 @property(nonatomic) unsigned int index; // @dynamic index;
 @property(copy, nonatomic) NSString *name; // @dynamic name;
+@property(nonatomic) _Bool selected; // @dynamic selected;
 
 @end
 

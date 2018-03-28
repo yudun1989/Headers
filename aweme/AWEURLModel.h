@@ -25,6 +25,7 @@
 @property(retain, nonatomic) NSArray *originURLList; // @synthesize originURLList=_originURLList;
 @property(copy, nonatomic) NSString *URI; // @synthesize URI=_URI;
 - (void).cxx_destruct;
+- (id)JSONDictionaryWithoutCommonParameters;
 - (id)getURLDict;
 - (void)convertUrlListAddCommonParams;
 - (id)recommendUrl;

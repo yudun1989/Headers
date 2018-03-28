@@ -6,12 +6,13 @@
 
 #import "MBKPOIAnnotaionBaseView.h"
 
+#import "MBKAnnotationViewProtocol-Protocol.h"
+
 @class MBKMPLPointAnnotationCalloutView, NSString, UIImageView, UIView;
 
-@interface MBKMPLPointAnnotationView : MBKPOIAnnotaionBaseView
+@interface MBKMPLPointAnnotationView : MBKPOIAnnotaionBaseView <MBKAnnotationViewProtocol>
 {
     _Bool _selected;
-    _Bool _shortestDistance;
     long long _bikeCount;
     long long _mplType;
     UIView *_infoWindow;
@@ -25,7 +26,6 @@
 @property(retain, nonatomic) NSString *iconUrl; // @synthesize iconUrl=_iconUrl;
 @property(retain, nonatomic) UIImageView *back; // @synthesize back=_back;
 @property(copy, nonatomic) NSString *calloutTitle; // @synthesize calloutTitle=_calloutTitle;
-@property(nonatomic) _Bool shortestDistance; // @synthesize shortestDistance=_shortestDistance;
 @property(retain, nonatomic) UIView *infoWindow; // @synthesize infoWindow=_infoWindow;
 @property(nonatomic) long long mplType; // @synthesize mplType=_mplType;
 @property(nonatomic) _Bool selected; // @synthesize selected=_selected;
@@ -34,6 +34,12 @@
 - (void)updateAnnotationInfoWithDescription:(id)arg1;
 - (void)updateAnnotationInfoWith:(long long)arg1 duration:(long long)arg2 isCycling:(_Bool)arg3;
 - (id)initWithAnnotation:(id)arg1 reuseIdentifier:(id)arg2;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly, copy) NSString *description;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
 
 @end
 

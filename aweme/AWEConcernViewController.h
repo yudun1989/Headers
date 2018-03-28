@@ -16,12 +16,14 @@
 @interface AWEConcernViewController : UIViewController <BTDRouterViewControllerProtocol, AWEVideosCollectionViewAnimationDelegate, AWEUserMessage, AWEViewControllerRefreshable>
 {
     _Bool _isLoading;
+    _Bool _isAlreadyEndedLive;
     AWEStoryBrowserViewController *_storyBrowserViewController;
     AWEFeedCollectionViewController *_concernViewController;
     AWEGradientView *_gradientBackgroundView;
 }
 
 + (void)load;
+@property(nonatomic) _Bool isAlreadyEndedLive; // @synthesize isAlreadyEndedLive=_isAlreadyEndedLive;
 @property(retain, nonatomic) AWEGradientView *gradientBackgroundView; // @synthesize gradientBackgroundView=_gradientBackgroundView;
 @property(nonatomic) _Bool isLoading; // @synthesize isLoading=_isLoading;
 @property(retain, nonatomic) AWEFeedCollectionViewController *concernViewController; // @synthesize concernViewController=_concernViewController;
@@ -34,12 +36,16 @@
 @property(readonly, nonatomic) double headerHeight;
 - (_Bool)prefersStatusBarHidden;
 - (void)setupUI;
+- (void)_refreshForLiveEnded:(id)arg1;
+- (void)_removeObservers;
+- (void)_addObservers;
 - (void)refreshConcernControllerWithCompletionBlock:(CDUnknownBlockType)arg1 isInitialFetch:(_Bool)arg2;
 - (void)refreshStoryBrowserWithCompletionBlock:(CDUnknownBlockType)arg1;
 - (void)refreshWithCompletionBlock:(CDUnknownBlockType)arg1 isInitialFetch:(_Bool)arg2;
+- (void)viewDidAppear:(_Bool)arg1;
 - (void)viewWillAppear:(_Bool)arg1;
 - (void)viewDidLoad;
-- (id)initWithRouterParamDict:(id)arg1;
+- (_Bool)configWithRouterParamDict:(id)arg1;
 - (void)dealloc;
 - (id)init;
 

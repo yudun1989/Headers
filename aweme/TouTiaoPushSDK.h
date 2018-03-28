@@ -10,6 +10,7 @@
 {
 }
 
++ (id)loadUserDefaultsStringForKey:(id)arg1;
 + (id)_getUploadSwitchParamWithRequest:(id)arg1;
 + (id)_getUploadTokenParamWithRequest:(id)arg1;
 + (id)_getChannelParamWithRequest:(id)arg1;
@@ -20,7 +21,8 @@
 + (id)_getCommonParamDictWithRequest:(id)arg1;
 + (id)_requestParamWithRequest:(id)arg1;
 + (id)_requestUrlWithRequest:(id)arg1;
-+ (void)trackerWithRuleId:(id)arg1 clickPosition:(id)arg2 postBack:(id)arg3;
++ (void)ShowEventWithRuleId:(id)arg1 clickPosition:(id)arg2 postBack:(id)arg3;
++ (void)ClickEventWithRuleId:(id)arg1 clickPosition:(id)arg2 postBack:(id)arg3;
 + (void)sendRequestWithParam:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 
 @end

@@ -38,6 +38,7 @@
 - (void)setupContentView;
 - (void)setupMessageLabel;
 - (void)dismissAnimated:(_Bool)arg1 completionHandler:(CDUnknownBlockType)arg2;
+- (void)dismissAfter:(double)arg1 animated:(_Bool)arg2 completionHandler:(CDUnknownBlockType)arg3;
 - (void)handleTapWithPoint:(struct CGPoint)arg1;
 - (id)hitTest:(struct CGPoint)arg1 withEvent:(id)arg2;
 - (void)addClickLogWithUrlPackage:(id)arg1;

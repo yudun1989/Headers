@@ -9,6 +9,16 @@
 @class NSString;
 
 @interface NSUserDefaults (AWEExtension)
++ (_Bool)btd_firstTimeRun;
++ (_Bool)btd_everyTimeRunByType:(int)arg1;
++ (void)btd_resetEveryTimeRunDefaults;
++ (void)btd_setFirstTimeRunByKey:(id)arg1;
++ (void)btd_setNotFirstTimeRunByKey:(id)arg1;
++ (_Bool)btd_firstTimeRunByKey:(id)arg1;
++ (_Bool)btd_firstTimeRunByType:(int)arg1;
++ (void)btd_saveBoolForKey:(id)arg1 boolValue:(_Bool)arg2;
++ (_Bool)btd_boolForKey:(id)arg1;
++ (id)btd_standardStringForKey:(id)arg1;
 + (id)extensionUserDefaultsSuitName;
 + (id)extensionUserDefaults;
 @property(retain, nonatomic) NSString *awe_deviceID; // @dynamic awe_deviceID;

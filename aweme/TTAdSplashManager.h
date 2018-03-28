@@ -13,19 +13,17 @@
 @interface TTAdSplashManager : NSObject <TTAdSplashControllerViewDelegate>
 {
     double _latelyDidBecomeActiveTimeInterval;
+    _Bool _showByForground;
     _Bool _adWillShow;
     _Bool _isAdShowing;
     _Bool _ignoreFirstLaunch;
+    _Bool _finishCheck;
     TTAdSplashDownloader *_splashDownloadManager;
     long long _splashADShowType;
     long long _resouceType;
     TTAdSplashControllerView *_controllerView;
 }
 
-+ (id)recentlySSADTrackInfoList;
-+ (void)saveSSADRecentlyTrackInfoList:(id)arg1;
-+ (id)recentlySSADTrackInfo;
-+ (void)saveSSADRecentlyTrackInfo:(id)arg1;
 + (double)recentlySSADEnterBackgroundTime;
 + (void)clearSSADRecentlyEnterBackgroundTime;
 + (void)saveSSADRecentlyEnterBackgroundTime;
@@ -45,19 +43,21 @@
 + (_Bool)isCacheExistWithADModel:(id)arg1 readyType:(long long *)arg2;
 + (_Bool)isCacheExistForADModel:(id)arg1;
 + (_Bool)isSuitableADModel:(id)arg1 readyType:(long long *)arg2;
-+ (id)pickKindOfModel:(id)arg1 with:(id)arg2 area:(CDUnknownBlockType)arg3;
-+ (id)checkoutFirstLaunchModel:(id)arg1 with:(id)arg2;
-+ (id)checkoutNonfirstLaunchModel:(id)arg1 with:(id)arg2;
-+ (id)checkoutNormalLaunchModel:(id)arg1 with:(id)arg2;
++ (id)pickKindOfModel:(id)arg1 area:(CDUnknownBlockType)arg2;
++ (id)checkoutFirstLaunchModel:(id)arg1;
++ (id)checkoutNonfirstLaunchModel:(id)arg1;
++ (id)checkoutNormalLaunchModel:(id)arg1;
 + (id)splashModel;
-+ (id)pickedFitSplashModelWithTrackInfoList:(id)arg1;
++ (id)pickedFitSplashModel;
 + (id)shareInstance;
 + (void)initialize;
 @property(retain, nonatomic) TTAdSplashControllerView *controllerView; // @synthesize controllerView=_controllerView;
+@property(nonatomic) _Bool finishCheck; // @synthesize finishCheck=_finishCheck;
 @property(nonatomic) _Bool ignoreFirstLaunch; // @synthesize ignoreFirstLaunch=_ignoreFirstLaunch;
 @property(nonatomic) _Bool isAdShowing; // @synthesize isAdShowing=_isAdShowing;
 @property(nonatomic) _Bool adWillShow; // @synthesize adWillShow=_adWillShow;
-@property(nonatomic) long long resouceType; // @synthesize resouceType=_resouceType;
+@property(nonatomic) _Bool showByForground; // @synthesize showByForground=_showByForground;
+@property(readonly, nonatomic) long long resouceType; // @synthesize resouceType=_resouceType;
 @property(nonatomic) long long splashADShowType; // @synthesize splashADShowType=_splashADShowType;
 @property(retain, nonatomic) TTAdSplashDownloader *splashDownloadManager; // @synthesize splashDownloadManager=_splashDownloadManager;
 - (void).cxx_destruct;
@@ -70,12 +70,12 @@
 - (long long)todayShowCount;
 - (void)setTodaySplashShowTimes;
 - (void)splashControllerViewShowFinished:(id)arg1 animation:(_Bool)arg2;
-- (void)performActionForSplashADModel:(id)arg1 index:(long long)arg2;
-- (void)splashViewWithAction:(id)arg1 nineBoxIndex:(long long)arg2;
-- (void)splashControllerViewClickBackgroundAction:(id)arg1;
-- (void)splashControllerViewWithAction:(id)arg1;
+- (void)performActionForSplashADModel:(id)arg1 index:(long long)arg2 clickBanner:(_Bool)arg3;
+- (void)splashViewClickNineBoxIndex:(id)arg1 index:(long long)arg2;
+- (void)splashViewClickBackground:(id)arg1;
+- (void)splashViewClickBanner:(id)arg1;
 - (void)showSplashControllerViewOnKeyWindow:(id)arg1 model:(id)arg2;
-- (void)fetchADControlInfoWithExtraParameters:(id)arg1;
+- (void)fetchADControlInfo;
 - (_Bool)displaySplashOnWindow:(id)arg1 splashShowType:(long long)arg2;
 - (void)registerDelegate:(id)arg1 paramsBlock:(CDUnknownBlockType)arg2;
 - (void)dealloc;

@@ -54,7 +54,7 @@
 - (void)buildNavigationHeader;
 - (void)addBlurBackground;
 - (id)buildUserListTableView;
-- (void)buidlSearchBar;
+- (void)buildSearchBar;
 - (void)loadMoreSearchResult;
 - (void)loadMoreRecommendResult;
 - (void)refreshSearchResult;

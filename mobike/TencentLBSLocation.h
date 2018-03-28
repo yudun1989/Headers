@@ -17,8 +17,10 @@
     long long _areaStat;
     NSString *_buildingId;
     NSString *_buildingFloor;
+    long long _indoorLocationType;
     NSString *_name;
     NSString *_address;
+    long long _nationCode;
     NSString *_code;
     NSString *_nation;
     NSString *_province;
@@ -42,8 +44,10 @@
 @property(copy, nonatomic) NSString *province; // @synthesize province=_province;
 @property(copy, nonatomic) NSString *nation; // @synthesize nation=_nation;
 @property(copy, nonatomic) NSString *code; // @synthesize code=_code;
+@property(nonatomic) long long nationCode; // @synthesize nationCode=_nationCode;
 @property(copy, nonatomic) NSString *address; // @synthesize address=_address;
 @property(copy, nonatomic) NSString *name; // @synthesize name=_name;
+@property(nonatomic) long long indoorLocationType; // @synthesize indoorLocationType=_indoorLocationType;
 @property(copy, nonatomic) NSString *buildingFloor; // @synthesize buildingFloor=_buildingFloor;
 @property(copy, nonatomic) NSString *buildingId; // @synthesize buildingId=_buildingId;
 @property(nonatomic) long long areaStat; // @synthesize areaStat=_areaStat;

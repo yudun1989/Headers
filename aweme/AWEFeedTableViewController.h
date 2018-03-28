@@ -74,6 +74,7 @@
 - (void)_cancelVideoPrefetch;
 - (void)scrollViewWillBeginDragging:(id)arg1;
 - (void)scrollViewDidScroll:(id)arg1;
+- (void)videoVoteFinished;
 - (void)videoDownloadFinished;
 - (void)_onScrollDidEnd;
 - (void)scrollViewDidEndDragging:(id)arg1 willDecelerate:(_Bool)arg2;
@@ -115,8 +116,6 @@
 - (void)_trackStayTime;
 - (void)pause;
 - (void)_stop;
-- (void)_cancelStopByShowingHint;
-- (void)_stopByShowingHint;
 - (void)stop;
 - (_Bool)ifShowUploadAddressBookGuide;
 - (void)playIfActive;

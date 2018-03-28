@@ -12,7 +12,7 @@
 #import "netNoneFreshDelegate-Protocol.h"
 #import "reFundDelegate-Protocol.h"
 
-@class MBKBalanceCellModel, MBKCarDeposit, MBKCardBannerCellModel, MBKCardCellModel, MBKCardConfigModel, MBKMembershipInfo, MBKMembershipInfoModel, MBKMvpBannerCellModel, MBKMvpRenewalCellModel, MBKRefundSure, MBKTitleCellModel, MBKUserPaymentBonus, MBKWalletCardBuyCellModel, MBKWalletCellModel, NSDictionary, NSMutableArray, NSNumber, NSString, NoNetWrokViewController, UIButton, UIImageView, UILabel, UITableView, UIView, reFundDepoistInfo;
+@class MBKBalanceCellModel, MBKCarDeposit, MBKCardBannerCellModel, MBKCardCellModel, MBKCardConfigModel, MBKMembershipInfo, MBKMembershipInfoModel, MBKMvpBannerCellModel, MBKMvpRenewalCellModel, MBKRefundSure, MBKTitleCellModel, MBKUserPaymentBonus, MBKWalletCardBuyCellModel, MBKWalletCellModel, MBKWalletDisConnectCellModel, NSDictionary, NSMutableArray, NSNumber, NSString, NoNetWrokViewController, UIButton, UIImageView, UILabel, UITableView, UIView, reFundDepoistInfo;
 
 @interface MyWalletViewController : MBKMyWalletViewController <netNoneFreshDelegate, reFundDelegate, UITableViewDelegate, UITableViewDataSource, MBKMvpRenewalDelegate>
 {
@@ -49,10 +49,12 @@
     UITableView *_walletTableView;
     MBKMembershipInfo *_membershipInfo;
     MBKTitleCellModel *_titleCellModel;
+    MBKWalletDisConnectCellModel *_disconnectCellModel;
     MBKCardCellModel *_cardCellModel;
     MBKCardBannerCellModel *_cardBannerCellModel;
     MBKWalletCardBuyCellModel *_cardBuyCellModel;
-    MBKBalanceCellModel *_balanceCellModel;
+    MBKWalletCellModel *__BalanceCellModel;
+    MBKBalanceCellModel *_threeTypeCellModel;
     MBKWalletCellModel *_walletCellModel;
     MBKWalletCellModel *_weChatFreeCellModel;
     MBKWalletCellModel *_ridingLoanCellModel;
@@ -65,6 +67,7 @@
     MBKMembershipInfoModel *_membershipInfoModel;
     NSMutableArray *_walletInfoArray;
     MBKUserPaymentBonus *_paymentBonusConfig;
+    UILabel *_disconnectLabel;
 }
 
 + (void)getFreeRideTime;
@@ -73,6 +76,7 @@
 + (void)tencentFreeDeposit:(id)arg1;
 + (void)refundAction:(id)arg1 containPaySource:(_Bool)arg2 tencentCredit:(id)arg3;
 + (void)depositRefundActionIncurrentVc:(id)arg1;
+@property(retain, nonatomic) UILabel *disconnectLabel; // @synthesize disconnectLabel=_disconnectLabel;
 @property(retain, nonatomic) MBKUserPaymentBonus *paymentBonusConfig; // @synthesize paymentBonusConfig=_paymentBonusConfig;
 @property(retain, nonatomic) NSMutableArray *walletInfoArray; // @synthesize walletInfoArray=_walletInfoArray;
 @property(retain, nonatomic) MBKMembershipInfoModel *membershipInfoModel; // @synthesize membershipInfoModel=_membershipInfoModel;
@@ -85,10 +89,12 @@
 @property(retain, nonatomic) MBKWalletCellModel *ridingLoanCellModel; // @synthesize ridingLoanCellModel=_ridingLoanCellModel;
 @property(retain, nonatomic) MBKWalletCellModel *weChatFreeCellModel; // @synthesize weChatFreeCellModel=_weChatFreeCellModel;
 @property(retain, nonatomic) MBKWalletCellModel *walletCellModel; // @synthesize walletCellModel=_walletCellModel;
-@property(retain, nonatomic) MBKBalanceCellModel *balanceCellModel; // @synthesize balanceCellModel=_balanceCellModel;
+@property(retain, nonatomic) MBKBalanceCellModel *threeTypeCellModel; // @synthesize threeTypeCellModel=_threeTypeCellModel;
+@property(retain, nonatomic) MBKWalletCellModel *_BalanceCellModel; // @synthesize _BalanceCellModel=__BalanceCellModel;
 @property(retain, nonatomic) MBKWalletCardBuyCellModel *cardBuyCellModel; // @synthesize cardBuyCellModel=_cardBuyCellModel;
 @property(retain, nonatomic) MBKCardBannerCellModel *cardBannerCellModel; // @synthesize cardBannerCellModel=_cardBannerCellModel;
 @property(retain, nonatomic) MBKCardCellModel *cardCellModel; // @synthesize cardCellModel=_cardCellModel;
+@property(retain, nonatomic) MBKWalletDisConnectCellModel *disconnectCellModel; // @synthesize disconnectCellModel=_disconnectCellModel;
 @property(retain, nonatomic) MBKTitleCellModel *titleCellModel; // @synthesize titleCellModel=_titleCellModel;
 @property(retain, nonatomic) MBKMembershipInfo *membershipInfo; // @synthesize membershipInfo=_membershipInfo;
 @property(retain, nonatomic) UITableView *walletTableView; // @synthesize walletTableView=_walletTableView;
@@ -140,6 +146,7 @@
 - (void)depositRefundAction:(id)arg1;
 - (void)requestCloseWeChatFree;
 - (void)requestOpenWeChatFree;
+- (_Bool)isMochaUser;
 - (void)queryNoauthContract:(_Bool)arg1;
 - (void)jumpToMyInsurance;
 - (void)jumpToPowerBankExplain;
@@ -158,6 +165,7 @@
 - (void)requestRedPacketBalance;
 - (void)getPayway;
 - (void)getFreeRideTime;
+- (void)setUpViewWithPaymentData;
 - (void)getAcountInfo;
 - (void)loadNomal;
 - (void)refreshMembershipInfoModel:(id)arg1;
@@ -168,6 +176,8 @@
 - (void)addCarDepositCellModelWithModel:(id)arg1;
 - (void)addWeChatFreeCellModel;
 - (void)addWalletCellModel;
+- (void)refreshThreeTypeCellModel:(id)arg1;
+- (void)addThreeTypeCellModel;
 - (void)refreshBalanceCellModel;
 - (void)addMvpRenewalCellModel;
 - (void)addMvpBannerCellModel;
@@ -178,6 +188,7 @@
 - (void)addCardBannerCellModel;
 - (void)refreshCardModel:(_Bool)arg1;
 - (void)addCardModel;
+- (void)addDisConnectCellModel;
 - (void)addTitleCellModel;
 - (void)setMenberShipInfo;
 - (void)resetFrame:(id)arg1;
@@ -189,6 +200,7 @@
 - (void)registerTableViewCell;
 - (void)addRidingLoanCellModel;
 - (_Bool)isPowerBankBikeOpen;
+- (void)walletInfoArrayAddModels;
 - (void)setupView;
 - (void)setupController;
 - (void)setMoreBarButton;

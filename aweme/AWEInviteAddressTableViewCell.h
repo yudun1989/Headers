@@ -6,8 +6,7 @@
 
 #import <UIKit/UITableViewCell.h>
 
-@class CAShapeLayer, UIImageView, UILabel, UIView;
-@protocol AWEIMUnreadDotViewProtocol;
+@class AWEIMUnreadDotView, CAShapeLayer, UIImageView, UILabel, UIView;
 
 @interface AWEInviteAddressTableViewCell : UITableViewCell
 {
@@ -17,11 +16,11 @@
     UILabel *_titleLabel;
     UILabel *_subtitleLabel;
     UIImageView *_arrowView;
-    UIView<AWEIMUnreadDotViewProtocol> *_dotView;
+    AWEIMUnreadDotView *_dotView;
 }
 
 + (id)identifier;
-@property(retain, nonatomic) UIView<AWEIMUnreadDotViewProtocol> *dotView; // @synthesize dotView=_dotView;
+@property(retain, nonatomic) AWEIMUnreadDotView *dotView; // @synthesize dotView=_dotView;
 @property(retain, nonatomic) UIImageView *arrowView; // @synthesize arrowView=_arrowView;
 @property(retain, nonatomic) UILabel *subtitleLabel; // @synthesize subtitleLabel=_subtitleLabel;
 @property(retain, nonatomic) UILabel *titleLabel; // @synthesize titleLabel=_titleLabel;

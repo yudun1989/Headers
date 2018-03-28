@@ -8,10 +8,12 @@
 
 @interface MBKTopupViewController : MBKBaseViewController
 {
+    _Bool _belongThirdAcount;
     long long _type;
 }
 
-@property long long type; // @synthesize type=_type;
+@property(nonatomic) _Bool belongThirdAcount; // @synthesize belongThirdAcount=_belongThirdAcount;
+@property(nonatomic) long long type; // @synthesize type=_type;
 - (void)didReceiveMemoryWarning;
 - (void)viewDidLoad;
 

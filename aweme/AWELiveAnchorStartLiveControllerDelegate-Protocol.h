@@ -6,9 +6,10 @@
 
 #import "NSObject-Protocol.h"
 
-@class AWELiveAnchorViewController;
+@class NSObject;
+@protocol AWELiveAnchorViewControllerProtocol;
 
 @protocol AWELiveAnchorStartLiveControllerDelegate <NSObject>
-- (void)didCreateLiveRoom:(AWELiveAnchorViewController *)arg1;
+- (void)didCreateLiveRoom:(NSObject<AWELiveAnchorViewControllerProtocol> *)arg1;
 @end
 

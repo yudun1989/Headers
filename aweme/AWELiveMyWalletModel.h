@@ -10,15 +10,19 @@
 
 @interface AWELiveMyWalletModel : AWEBaseApiModel
 {
+    _Bool _canWithdraw;
     AWEUserModel *_user;
     long long _diamondCount;
     long long _totalIncome;
     long long _todayIncome;
     long long _withdrawLimit;
+    long long _withdrawalDiamond;
 }
 
 + (id)userJSONTransformer;
 + (id)JSONKeyPathsByPropertyKey;
+@property(nonatomic) _Bool canWithdraw; // @synthesize canWithdraw=_canWithdraw;
+@property(nonatomic) long long withdrawalDiamond; // @synthesize withdrawalDiamond=_withdrawalDiamond;
 @property(nonatomic) long long withdrawLimit; // @synthesize withdrawLimit=_withdrawLimit;
 @property(nonatomic) long long todayIncome; // @synthesize todayIncome=_todayIncome;
 @property(nonatomic) long long totalIncome; // @synthesize totalIncome=_totalIncome;

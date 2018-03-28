@@ -18,6 +18,7 @@
 - (_Bool)openFileAndSetupReadSource;
 - (long long)byteAvailableOnFD;
 - (id)readDataOfLength:(unsigned long long)arg1;
+- (id)description;
 - (id)initWithFileItem:(id)arg1 forConnection:(id)arg2;
 
 @end

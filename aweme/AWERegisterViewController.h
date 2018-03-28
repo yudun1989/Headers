@@ -91,7 +91,7 @@
 - (void)viewWillAppear:(_Bool)arg1;
 - (void)viewDidLoad;
 - (id)initWithPhoneNumber:(id)arg1 retryTime:(id)arg2 useType:(unsigned long long)arg3;
-- (id)initWithRouterParamDict:(id)arg1;
+- (_Bool)configWithRouterParamDict:(id)arg1;
 - (void)dealloc;
 
 // Remaining properties

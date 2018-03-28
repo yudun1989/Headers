@@ -17,6 +17,7 @@
 @property(retain, nonatomic) AWEAwemeModel *model; // @synthesize model=_model;
 @property(retain, nonatomic) NSString *referString; // @synthesize referString=_referString;
 - (void).cxx_destruct;
+- (void)enterDiggedUser;
 - (void)enterUserDetailWithEnterMethod:(id)arg1;
 - (void)enterMusicDetail;
 - (void)onLearnMoreViewClicked:(id)arg1;

@@ -28,6 +28,7 @@
 - (id)currentAccountUser;
 - (void)requestUnbind:(unsigned long long)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)requestUnbind:(unsigned long long)arg1;
+- (_Bool)platformHasActiveSession:(unsigned long long)arg1;
 - (void)requestClearAccountForAllPlatforms;
 - (void)requestBind:(unsigned long long)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)requestBind:(unsigned long long)arg1;

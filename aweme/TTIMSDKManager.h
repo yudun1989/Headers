@@ -6,11 +6,12 @@
 
 #import <Foundation/NSObject.h>
 
-@class NSMutableDictionary, NSTimer, TTIMGroupLoadMoreInfo, TTIMListenerManager, TTIMMsgGroupModel, TTIMSDKOptions, TTIMSessionModel;
+@class NSDate, NSMutableDictionary, NSTimer, TTIMGroupLoadMoreInfo, TTIMListenerManager, TTIMMsgGroupModel, TTIMSDKOptions, TTIMSessionCenter;
 @protocol TTIMDependDelegate;
 
 @interface TTIMSDKManager : NSObject
 {
+    _Bool _enableDebugLog;
     _Bool _isNeedRelogin;
     _Bool _isIMOnline;
     _Bool _serverHistoryMsgHasMore;
@@ -19,24 +20,27 @@
     long long _lastUserId;
     TTIMListenerManager *_listenerManager;
     TTIMMsgGroupModel *_groupModel;
-    TTIMSessionModel *_centerModel;
+    TTIMSessionCenter *_sessionCenter;
     NSTimer *_timer;
     NSMutableDictionary *_mLastGetGroupMsgInHasMore;
     TTIMGroupLoadMoreInfo *_groupLoadMoreInfo;
+    NSDate *_lastGetSessionListRequestDate;
 }
 
 + (id)sharedManager;
-@property(nonatomic) _Bool serverHistoryMsgHasMore; // @synthesize serverHistoryMsgHasMore=_serverHistoryMsgHasMore;
+@property(retain, nonatomic) NSDate *lastGetSessionListRequestDate; // @synthesize lastGetSessionListRequestDate=_lastGetSessionListRequestDate;
+@property _Bool serverHistoryMsgHasMore; // @synthesize serverHistoryMsgHasMore=_serverHistoryMsgHasMore;
 @property(retain, nonatomic) TTIMGroupLoadMoreInfo *groupLoadMoreInfo; // @synthesize groupLoadMoreInfo=_groupLoadMoreInfo;
-@property(retain, nonatomic) NSMutableDictionary *mLastGetGroupMsgInHasMore; // @synthesize mLastGetGroupMsgInHasMore=_mLastGetGroupMsgInHasMore;
+@property(retain) NSMutableDictionary *mLastGetGroupMsgInHasMore; // @synthesize mLastGetGroupMsgInHasMore=_mLastGetGroupMsgInHasMore;
 @property(retain, nonatomic) NSTimer *timer; // @synthesize timer=_timer;
-@property(retain, nonatomic) TTIMSessionModel *centerModel; // @synthesize centerModel=_centerModel;
+@property(retain, nonatomic) TTIMSessionCenter *sessionCenter; // @synthesize sessionCenter=_sessionCenter;
 @property(retain, nonatomic) TTIMMsgGroupModel *groupModel; // @synthesize groupModel=_groupModel;
 @property(retain, nonatomic) TTIMListenerManager *listenerManager; // @synthesize listenerManager=_listenerManager;
 @property(nonatomic) long long lastUserId; // @synthesize lastUserId=_lastUserId;
 @property(nonatomic) _Bool isIMOnline; // @synthesize isIMOnline=_isIMOnline;
 @property(nonatomic) _Bool isNeedRelogin; // @synthesize isNeedRelogin=_isNeedRelogin;
 @property(nonatomic) __weak id <TTIMDependDelegate> dependDelegate; // @synthesize dependDelegate=_dependDelegate;
+@property(nonatomic) _Bool enableDebugLog; // @synthesize enableDebugLog=_enableDebugLog;
 @property(retain, nonatomic) TTIMSDKOptions *imSDKOptions; // @synthesize imSDKOptions=_imSDKOptions;
 - (void).cxx_destruct;
 - (void)unRegisterSession:(id)arg1 listener:(id)arg2;
@@ -44,7 +48,7 @@
 - (void)queryUnReadCountForSesstion:(id)arg1 withBlock:(CDUnknownBlockType)arg2;
 - (void)queryUnReadCountForAllSessions;
 - (void)markMsgReaded:(id)arg1;
-- (void)markAllReaded:(id)arg1;
+- (void)markAllMsgAsRead:(id)arg1;
 - (void)modifySessionWithSessionId:(id)arg1 stick:(_Bool)arg2 block:(CDUnknownBlockType)arg3;
 - (void)modifySessionWithSessionId:(id)arg1 noDisturb:(_Bool)arg2 block:(CDUnknownBlockType)arg3;
 - (void)modifySessionWithSessionId:(id)arg1 applyJoin:(_Bool)arg2 block:(CDUnknownBlockType)arg3;
@@ -57,35 +61,36 @@
 - (void)queryLastMsgFromSession:(id)arg1 containDeletedMsg:(_Bool)arg2 resultBlock:(CDUnknownBlockType)arg3;
 - (void)quitFromGroup:(id)arg1 withBlock:(CDUnknownBlockType)arg2;
 - (void)deleteMember:(id)arg1 fromGroup:(id)arg2 withBlock:(CDUnknownBlockType)arg3;
+- (void)handleNotifyNewNotice:(id)arg1;
+- (void)destoryGetMsgTimer;
+- (void)setupGetMsgTimer;
 - (void)clearSessionMsg:(id)arg1;
 - (void)handleSessionDeleteResponse:(id)arg1;
 - (void)deleteSession:(id)arg1;
 - (void)sendDeleteMsg:(id)arg1;
 - (void)deleteMessage:(id)arg1;
-- (void)destoryGetMsgTimer;
-- (void)setupGetMsgTimer;
-- (void)handleGroupLoadMoreResponse:(id)arg1;
-- (void)sendGroupLoadMoreMessageWithGroupId:(id)arg1 messageId:(long long)arg2 index:(long long)arg3 count:(long long)arg4;
-- (void)insertOrUpdateForPersonGroupWithMsgs:(id)arg1;
-- (void)handleGetMsgResponse:(id)arg1;
-- (void)handleGetGroupMsgResponse:(id)arg1;
-- (void)fetchMessagesOfSession:(id)arg1;
-- (void)sendGetMsg:(id)arg1;
-- (void)sendGetMsg;
-- (void)handleGroupRefreshMessages:(id)arg1;
-- (void)refreshGroupWithId:(id)arg1;
-- (void)handleGetMultiGroupListResponse:(id)arg1;
-- (void)sendGetMultiGroupListMsgWithGroupIds:(id)arg1;
-- (void)handleGetGroupListResponse:(id)arg1;
-- (void)sendGetGroupListMsg;
-- (void)handlePrivateChatSessionListInitResponse:(id)arg1;
-- (void)sendPrivateChatSessionListInitWithIndex:(unsigned long long)arg1;
-- (void)handleNotifyNewNotice:(id)arg1;
-- (void)handleNotifyNewMsg:(id)arg1;
 - (void)updateMessage:(id)arg1;
 - (void)addMessage:(id)arg1 session:(id)arg2;
 - (void)addMessage:(id)arg1;
-- (void)handleSendGroupMsgResponse:(id)arg1;
+- (void)handleGroupLoadMoreResponse:(id)arg1;
+- (void)sendGroupLoadMoreMessageWithGroupId:(id)arg1 messageId:(long long)arg2 index:(long long)arg3 count:(long long)arg4;
+- (void)handleGetNewSessionResponse:(id)arg1;
+- (void)sendGetNewSessionWithSessionIds:(id)arg1;
+- (void)markSessionRefreshFinishedAndSendGegMsgWithSessionIds:(id)arg1;
+- (void)markSessionRefreshFinished:(id)arg1;
+- (void)processSessionRefreshedInfo:(id)arg1;
+- (void)handleSessionRefreshResponse:(id)arg1;
+- (void)sendSessionRefreshWithSessionDict:(id)arg1;
+- (void)handleGetSessionListResponse:(id)arg1;
+- (void)sendGetSessionListWithIndex:(long long)arg1 sessionType:(long long)arg2;
+- (void)sendGetSessionList;
+- (void)fetchMessagesOfSession:(id)arg1;
+- (void)handleGetMsgResponse:(id)arg1;
+- (void)__sendGetMsg:(id)arg1;
+- (void)sendGetMsg:(id)arg1;
+- (void)sendGetMsg;
+- (void)handleNotifyNewMsg:(id)arg1;
+- (void)adjustChatMsg4Resend:(id)arg1;
 - (void)handleSendMsgResponse:(id)arg1;
 - (void)sendMessage:(id)arg1 session:(id)arg2;
 - (void)sendMessage:(id)arg1;

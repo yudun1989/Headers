@@ -22,6 +22,7 @@
     _Bool _initialLoadMoreEnabled;
     UICollectionView *_collectionView;
     NSString *_userID;
+    NSString *_originEntryEnterMethod;
     id <AWEUserWorkViewControllerDelegate> _delegate;
     UILabel *_emptyLabel;
     AWEUserPostsDataManager *_dataManager;
@@ -31,6 +32,7 @@
 @property(retain, nonatomic) UILabel *emptyLabel; // @synthesize emptyLabel=_emptyLabel;
 @property(nonatomic) _Bool initialLoadMoreEnabled; // @synthesize initialLoadMoreEnabled=_initialLoadMoreEnabled;
 @property(nonatomic) __weak id <AWEUserWorkViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
+@property(copy, nonatomic) NSString *originEntryEnterMethod; // @synthesize originEntryEnterMethod=_originEntryEnterMethod;
 @property(nonatomic) _Bool fromHome; // @synthesize fromHome=_fromHome;
 @property(nonatomic) _Bool isCurrentUser; // @synthesize isCurrentUser=_isCurrentUser;
 @property(copy, nonatomic) NSString *userID; // @synthesize userID=_userID;
@@ -52,6 +54,7 @@
 - (void)scrollViewDidScroll:(id)arg1;
 - (void)_endRefreshing;
 - (void)_loadMoreData;
+- (void)updateEmptyLabelPosition;
 - (void)_refreshData;
 - (void)refreshData;
 - (void)reloadCollectionHeader;

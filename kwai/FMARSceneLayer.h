@@ -43,7 +43,7 @@
 - (_Bool)faceRequired;
 - (id)sceneFilter;
 - (id)init;
-- (void)setUpVirtualFaceProcessor:(id)arg1 enableMSAA:(_Bool)arg2 enableSSAA:(_Bool)arg3;
+- (void)setUpVirtualFaceProcessor:(id)arg1;
 - (void)setupARFilter:(id)arg1;
 
 @end

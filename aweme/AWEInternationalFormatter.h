@@ -11,12 +11,12 @@
 }
 
 + (id)numberWithFloat:(double)arg1;
++ (id)formatedFloat:(double)arg1 digit:(long long)arg2;
 + (id)dateFormatterGregorian;
 + (id)dateFormatterJapanese;
 + (id)formatedJapaneseDate:(id)arg1;
 + (id)formatedDate:(id)arg1;
-+ (id)longFormattedNumber:(long long)arg1 threshold:(long long)arg2 unit:(id)arg3;
-+ (id)longFormattedNumber:(long long)arg1 threshold:(long long)arg2;
++ (id)formatedNumber:(long long)arg1 policy:(unsigned long long)arg2;
 + (id)formatedNumber:(long long)arg1;
 
 @end

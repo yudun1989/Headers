@@ -104,7 +104,8 @@
 - (_Bool)isStablizationSupported;
 - (void)setPortrait;
 - (void)chooseCameraForHighFrameRate:(id)arg1;
-- (void)changeConfiguration:(id)arg1;
+- (void)changeConfiguration:(id)arg1 sessionPreset:(id)arg2;
+- (void)setCameraPixelFormat:(unsigned long long)arg1;
 - (id)initWithCameraConfiguration:(id)arg1;
 - (id)init;
 - (void)runSyncOnOperationQueue:(CDUnknownBlockType)arg1;

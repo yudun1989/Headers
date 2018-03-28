@@ -46,6 +46,7 @@
 - (void)scrollViewDidScroll:(id)arg1;
 - (id)actionForLayer:(id)arg1 forKey:(id)arg2;
 - (void)commonInit;
+- (void)dealloc;
 - (id)initWithFrame:(struct CGRect)arg1;
 
 // Remaining properties

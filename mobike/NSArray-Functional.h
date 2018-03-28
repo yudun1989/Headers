@@ -7,6 +7,8 @@
 #import <Foundation/NSArray.h>
 
 @interface NSArray (Functional)
+- (id)firstObjectWithCondition:(CDUnknownBlockType)arg1;
+- (_Bool)reduceBool:(_Bool)arg1 withBlock:(CDUnknownBlockType)arg2;
 - (double)reduceFloat:(double)arg1 withBlock:(CDUnknownBlockType)arg2;
 - (long long)reduceInteger:(long long)arg1 withBlock:(CDUnknownBlockType)arg2;
 - (id)reduce:(id)arg1 withBlock:(CDUnknownBlockType)arg2;

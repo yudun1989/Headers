@@ -6,7 +6,7 @@
 
 #import <objc/NSObject.h>
 
-@class NSMutableDictionary, NSString, NSURL, PointHelpModel, UIImage, UIView;
+@class NSMutableDictionary, NSString, NSURL, UIImage, UIView;
 
 @interface JTSImageInfo : NSObject
 {
@@ -20,13 +20,9 @@
     long long _referenceContentMode;
     double _referenceCornerRadius;
     NSMutableDictionary *_userInfo;
-    PointHelpModel *_ptModel;
-    NSMutableDictionary *_pointHelpDic;
     struct CGRect _referenceRect;
 }
 
-@property(copy, nonatomic) NSMutableDictionary *pointHelpDic; // @synthesize pointHelpDic=_pointHelpDic;
-@property(retain, nonatomic) PointHelpModel *ptModel; // @synthesize ptModel=_ptModel;
 @property(copy, nonatomic) NSMutableDictionary *userInfo; // @synthesize userInfo=_userInfo;
 @property(nonatomic) double referenceCornerRadius; // @synthesize referenceCornerRadius=_referenceCornerRadius;
 @property(nonatomic) long long referenceContentMode; // @synthesize referenceContentMode=_referenceContentMode;

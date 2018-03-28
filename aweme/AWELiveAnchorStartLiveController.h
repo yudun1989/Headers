@@ -6,13 +6,15 @@
 
 #import <Foundation/NSObject.h>
 
-@class AWEProgressLoadingView, AWETranslationTransitionController, BTDShareModel;
+#import "AWELiveAnchorStartLiveControllerProtocol-Protocol.h"
+
+@class AWEProgressLoadingView, AWETranslationTransitionController, BTDShareModel, NSString;
 @protocol AWELiveAnchorStartLiveControllerDelegate;
 
-@interface AWELiveAnchorStartLiveController : NSObject
+@interface AWELiveAnchorStartLiveController : NSObject <AWELiveAnchorStartLiveControllerProtocol>
 {
     _Bool _isCreatingRoom;
-    id <AWELiveAnchorStartLiveControllerDelegate> _delegate;
+    id <AWELiveAnchorStartLiveControllerDelegate> delegate;
     BTDShareModel *_shareModel;
     long long _shareType;
     AWETranslationTransitionController *_transitionDelegate;
@@ -24,7 +26,7 @@
 @property(retain, nonatomic) AWETranslationTransitionController *transitionDelegate; // @synthesize transitionDelegate=_transitionDelegate;
 @property(nonatomic) long long shareType; // @synthesize shareType=_shareType;
 @property(retain, nonatomic) BTDShareModel *shareModel; // @synthesize shareModel=_shareModel;
-@property(nonatomic) __weak id <AWELiveAnchorStartLiveControllerDelegate> delegate; // @synthesize delegate=_delegate;
+@property(nonatomic) __weak id <AWELiveAnchorStartLiveControllerDelegate> delegate; // @synthesize delegate;
 - (void).cxx_destruct;
 - (void)showVerifyAlert;
 - (void)checkNoneWifiWithCompletionBlock:(CDUnknownBlockType)arg1;
@@ -34,6 +36,12 @@
 - (void)requestCreatingLiveRoom:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)createLiveRoomWithShareText:(id)arg1 shareType:(long long)arg2;
 - (void)dealloc;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly, copy) NSString *description;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
 
 @end
 

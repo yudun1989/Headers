@@ -10,34 +10,28 @@
 
 @interface KSLiveHeartsEmitterCell : NSObject
 {
-    long long _contentIndex;
     long long _emitBucket[5];
     _Bool _enabled;
     double _birthRate;
     double _lifeTime;
-    double _emissionRange;
     NSArray *_heartIndexes;
     long long _maxNumberOfCells;
     long long _numberOfEmittedCells;
-    double _velocity;
     double _birthInterval;
     double _lastEmittingTime;
-    struct CGVector _acceleration;
+    struct CGSize _emissionRange;
 }
 
 @property(nonatomic) double lastEmittingTime; // @synthesize lastEmittingTime=_lastEmittingTime;
 @property(readonly, nonatomic) double birthInterval; // @synthesize birthInterval=_birthInterval;
-@property(nonatomic) double velocity; // @synthesize velocity=_velocity;
 @property(nonatomic) long long numberOfEmittedCells; // @synthesize numberOfEmittedCells=_numberOfEmittedCells;
 @property(nonatomic) long long maxNumberOfCells; // @synthesize maxNumberOfCells=_maxNumberOfCells;
-@property(nonatomic) struct CGVector acceleration; // @synthesize acceleration=_acceleration;
 @property(retain, nonatomic) NSArray *heartIndexes; // @synthesize heartIndexes=_heartIndexes;
-@property(nonatomic) double emissionRange; // @synthesize emissionRange=_emissionRange;
+@property(nonatomic) struct CGSize emissionRange; // @synthesize emissionRange=_emissionRange;
 @property(nonatomic) double lifeTime; // @synthesize lifeTime=_lifeTime;
 @property(nonatomic) double birthRate; // @synthesize birthRate=_birthRate;
 @property(nonatomic) _Bool enabled; // @synthesize enabled=_enabled;
 - (void).cxx_destruct;
-- (double)nextEmitterRange;
 - (long long)nextHeartIndex;
 - (id)init;
 

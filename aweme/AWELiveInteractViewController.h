@@ -15,8 +15,10 @@
 
 @interface AWELiveInteractViewController : UIViewController <AWEShareMessage, AWELiveMessageProtocol, AWELivePresentQueueManagerDelegate, AWELiveGiftListViewControllerDelegate>
 {
+    _Bool _isShowFinishView;
     _Bool _shutdown;
     _Bool _canShowRoomMessage;
+    _Bool _isFetchingTopUserList;
     long long _type;
     AWELiveRoomModel *_roomModel;
     AWELiveRoomActivityModel *_activityModel;
@@ -44,11 +46,13 @@
     struct CGRect _lastFrame;
 }
 
+@property(nonatomic) _Bool isFetchingTopUserList; // @synthesize isFetchingTopUserList=_isFetchingTopUserList;
 @property(nonatomic) struct CGRect lastFrame; // @synthesize lastFrame=_lastFrame;
 @property(retain, nonatomic) AWELiveUserProfilePopViewController *profileViewController; // @synthesize profileViewController=_profileViewController;
 @property(retain, nonatomic) AWELiveRankListViewController *rankListVC; // @synthesize rankListVC=_rankListVC;
 @property(nonatomic) _Bool canShowRoomMessage; // @synthesize canShowRoomMessage=_canShowRoomMessage;
 @property(nonatomic) _Bool shutdown; // @synthesize shutdown=_shutdown;
+@property(nonatomic) _Bool isShowFinishView; // @synthesize isShowFinishView=_isShowFinishView;
 @property(retain, nonatomic) NSTimer *roomTimer; // @synthesize roomTimer=_roomTimer;
 @property(retain, nonatomic) UIImageView *activityView; // @synthesize activityView=_activityView;
 @property(nonatomic) __weak UIViewController *parentVC; // @synthesize parentVC=_parentVC;
@@ -110,6 +114,7 @@
 - (void)roomTimerTick;
 - (void)stopRoomTimer;
 - (void)startRoomTimer;
+- (long long)preferredStatusBarStyle;
 - (_Bool)prefersStatusBarHidden;
 - (void)viewWillDisappear:(_Bool)arg1;
 - (void)viewWillAppear:(_Bool)arg1;

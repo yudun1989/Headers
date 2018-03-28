@@ -6,23 +6,29 @@
 
 #import <objc/NSObject.h>
 
-@class MBKGiftBoxMPLInfo, NSDictionary, RACTuple;
+@class MBKGiftBoxMPLInfo, MBKLocationCoordinate2D, NSDictionary;
 
 @interface MBKCurrentRidingContext : NSObject
 {
     _Bool _bikeIsNormalTypeAndHasNearbyPOIWhenUnlocking;
-    RACTuple *_lastSelectedAnnotaionIdentifer;
+    _Bool _useBlueToothInUnlocking;
+    _Bool _unlockByMqtt;
+    _Bool _lockedByMqtt;
+    MBKLocationCoordinate2D *_lastSelectedAnnotaionIdentifer;
     NSDictionary *_ridingParams;
     MBKGiftBoxMPLInfo *_giftBoxInfo;
 }
 
 + (id)sharedInstance;
+@property(nonatomic) _Bool lockedByMqtt; // @synthesize lockedByMqtt=_lockedByMqtt;
+@property(nonatomic) _Bool unlockByMqtt; // @synthesize unlockByMqtt=_unlockByMqtt;
+@property(nonatomic) _Bool useBlueToothInUnlocking; // @synthesize useBlueToothInUnlocking=_useBlueToothInUnlocking;
 @property(nonatomic) _Bool bikeIsNormalTypeAndHasNearbyPOIWhenUnlocking; // @synthesize bikeIsNormalTypeAndHasNearbyPOIWhenUnlocking=_bikeIsNormalTypeAndHasNearbyPOIWhenUnlocking;
 @property(retain, nonatomic) MBKGiftBoxMPLInfo *giftBoxInfo; // @synthesize giftBoxInfo=_giftBoxInfo;
 @property(retain, nonatomic) NSDictionary *ridingParams; // @synthesize ridingParams=_ridingParams;
 - (void).cxx_destruct;
 - (void)saveSelectedAnnotaionIdentifier:(id)arg1;
-@property(readonly, nonatomic) RACTuple *lastSelectedAnnotaionIdentifer; // @synthesize lastSelectedAnnotaionIdentifer=_lastSelectedAnnotaionIdentifer;
+@property(readonly, nonatomic) MBKLocationCoordinate2D *lastSelectedAnnotaionIdentifer; // @synthesize lastSelectedAnnotaionIdentifer=_lastSelectedAnnotaionIdentifer;
 - (_Bool)isCurrentAGiftBoxBike;
 - (_Bool)isSpockBike;
 - (_Bool)isCurrentARedPacketBike;

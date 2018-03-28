@@ -47,6 +47,7 @@
 - (void)createMicHear;
 - (void)disableMicHearInternal;
 - (void)enableMicHear:(_Bool)arg1;
+- (_Bool)isConnectBluetoothHeadset;
 - (void)processAudioSample:(struct opaqueCMSampleBuffer *)arg1;
 - (void)setPitchSemiTones:(float)arg1;
 - (_Bool)isUsingVoiceChangeEffect;

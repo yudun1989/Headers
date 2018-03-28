@@ -16,6 +16,7 @@
 + (id)transitionDelegate;
 + (void)presentViewController:(id)arg1 animated:(_Bool)arg2 completion:(CDUnknownBlockType)arg3;
 + (void)presentViewControllerCustom:(id)arg1 animated:(_Bool)arg2 completion:(CDUnknownBlockType)arg3;
++ (void)startDuetWithAweme:(id)arg1;
 + (void)startWithBackUpIfNeed;
 + (void)retrievePublishModuleFromDraft:(id)arg1 completion:(CDUnknownBlockType)arg2;
 + (void)startWithBackup:(id)arg1 completion:(CDUnknownBlockType)arg2;

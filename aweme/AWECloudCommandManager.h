@@ -12,11 +12,13 @@
 @interface AWECloudCommandManager : NSObject
 {
     NSDictionary *_networkCommonParams;
+    CDUnknownBlockType _monitorLogBlock;
     NSObject<OS_dispatch_queue> *_workQueue;
 }
 
 + (id)sharedInstance;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *workQueue; // @synthesize workQueue=_workQueue;
+@property(copy, nonatomic) CDUnknownBlockType monitorLogBlock; // @synthesize monitorLogBlock=_monitorLogBlock;
 @property(copy, nonatomic) NSDictionary *networkCommonParams; // @synthesize networkCommonParams=_networkCommonParams;
 - (void).cxx_destruct;
 - (void)_uploadFileWithName:(id)arg1 data:(id)arg2 params:(id)arg3 mimeType:(id)arg4;

@@ -12,12 +12,15 @@
 {
     UILabel *_titleLabel;
     AWEButton *_contactBtn;
+    AWEButton *_backBtn;
 }
 
+@property(retain, nonatomic) AWEButton *backBtn; // @synthesize backBtn=_backBtn;
 @property(retain, nonatomic) AWEButton *contactBtn; // @synthesize contactBtn=_contactBtn;
 @property(retain, nonatomic) UILabel *titleLabel; // @synthesize titleLabel=_titleLabel;
 - (void).cxx_destruct;
 - (void)layoutSubviews;
+- (void)backBtnClicked:(id)arg1;
 - (void)contactBtnClicked:(id)arg1;
 - (id)initWithFrame:(struct CGRect)arg1;
 

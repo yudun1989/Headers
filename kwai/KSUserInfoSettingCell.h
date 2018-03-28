@@ -14,6 +14,7 @@
 
 @interface KSUserInfoSettingCell : UITableViewCell <KSTitleSelectViewDelegate, UITextFieldDelegate>
 {
+    short _maxLength;
     KSTitleSelectView *_contentBtn;
     UITextField *_textInputView;
     UIButton *_titleBtn;
@@ -32,6 +33,7 @@
 @property(retain, nonatomic) KSUserInfoSettingItem *item; // @synthesize item=_item;
 @property(retain, nonatomic) CAAnimationlessLayer *hline; // @synthesize hline=_hline;
 @property(retain, nonatomic) CAAnimationlessLayer *vline; // @synthesize vline=_vline;
+@property(nonatomic) short maxLength; // @synthesize maxLength=_maxLength;
 @property(retain, nonatomic) NSString *emptyAlertMessage; // @synthesize emptyAlertMessage=_emptyAlertMessage;
 @property(nonatomic) __weak id <KSUserInfoSettingCellDelegate> delegate; // @synthesize delegate=_delegate;
 @property(retain, nonatomic) KSCountryInfo *countryInfo; // @synthesize countryInfo=_countryInfo;
@@ -41,6 +43,7 @@
 @property(retain, nonatomic) KSTitleSelectView *contentBtn; // @synthesize contentBtn=_contentBtn;
 - (void).cxx_destruct;
 - (void)setupDisabledCountryCodeBtn;
+- (void)setVerticalLineHidden:(_Bool)arg1;
 - (void)setBottomLineHidden:(_Bool)arg1;
 - (void)inputViewActive:(id)arg1;
 - (void)sexBtnActive;
@@ -48,6 +51,7 @@
 - (void)didTapVerifyCodeButton;
 - (void)didTapTitleBtn;
 - (void)didTapSexBtn;
+- (_Bool)textField:(id)arg1 shouldChangeCharactersInRange:(struct _NSRange)arg2 replacementString:(id)arg3;
 - (_Bool)textFieldShouldReturn:(id)arg1;
 - (void)drawWithItem:(id)arg1;
 - (void)layoutSubviews;

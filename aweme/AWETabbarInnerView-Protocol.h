@@ -11,6 +11,7 @@
 - (void)tabbarStatusDidChanged:(long long)arg1 animated:(_Bool)arg2;
 
 @optional
+- (void)feedStatusDidChange:(long long)arg1;
 - (_Bool)preferShowIndicator;
 - (_Bool)canHandleRefresh;
 @end

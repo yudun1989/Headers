@@ -10,13 +10,11 @@
 @protocol UIViewControllerAnimatedTransitioning><MBKViewControllerAnimatedTransitioningDirection, UIViewControllerInteractiveTransitioning;
 
 @interface UIViewController (MBKBase)
-+ (void)load;
 @property(readonly, nonatomic) __weak MBKNavigationViewController *mbkNavigationController;
 @property(retain, nonatomic) id <UIViewControllerInteractiveTransitioning> customInteractivePopTransition;
 @property(retain, nonatomic) id <UIViewControllerAnimatedTransitioning><MBKViewControllerAnimatedTransitioningDirection> customAnimationTransition;
 @property(nonatomic) unsigned long long animation;
 @property(copy, nonatomic) CDUnknownBlockType completionBlock;
 @property(nonatomic) _Bool disableInteractivePopGestureRecognizer;
-- (void)mbk_setTitle:(id)arg1;
 @end
 

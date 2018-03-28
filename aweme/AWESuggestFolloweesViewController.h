@@ -29,7 +29,7 @@
 - (void)buttonCloseDidClicked:(id)arg1;
 - (void)viewSafeAreaInsetsDidChange;
 - (void)buildUI;
-- (id)initWithRouterParamDict:(id)arg1;
+- (_Bool)configWithRouterParamDict:(id)arg1;
 - (void)viewWillAppear:(_Bool)arg1;
 - (void)viewDidLoad;
 - (_Bool)prefersStatusBarHidden;

@@ -17,7 +17,7 @@
 }
 
 + (id)sharedManager;
-+ (void)showRemarkNameTipIfNeededInView:(id)arg1;
++ (void)showRemarkNameTipIfNeededInView:(id)arg1 nextActionBlock:(CDUnknownBlockType)arg2;
 @property(copy, nonatomic) NSString *remarkNameMark; // @synthesize remarkNameMark=_remarkNameMark;
 @property(retain, nonatomic) NSMutableDictionary *remarkNameGlobalMap; // @synthesize remarkNameGlobalMap=_remarkNameGlobalMap;
 - (void).cxx_destruct;

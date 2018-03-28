@@ -7,7 +7,7 @@
 #import <Foundation/NSString.h>
 
 @interface NSString (MBKCreditCardValidator_Private)
-- (id)toCharArray;
-- (id)forValidation;
+- (id)mbk_toCharArray;
+- (id)mbk_forValidation;
 @end
 

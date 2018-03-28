@@ -12,15 +12,20 @@
 {
     UIView *_backView;
     TTTAttributedLabel *_titleLabel;
+    id _target;
+    SEL _selector;
 }
 
+@property(nonatomic) SEL selector; // @synthesize selector=_selector;
+@property(nonatomic) id target; // @synthesize target=_target;
 @property(retain, nonatomic) TTTAttributedLabel *titleLabel; // @synthesize titleLabel=_titleLabel;
 @property(retain, nonatomic) UIView *backView; // @synthesize backView=_backView;
 - (void).cxx_destruct;
-- (void)setlabelTitle:(id)arg1;
+- (void)addTarget:(id)arg1 action:(SEL)arg2;
+- (void)setlabelTitle:(id)arg1 subLink:(id)arg2;
 - (void)inititleLabel;
 - (void)initBackView;
-- (void)updateText:(id)arg1;
+- (void)updateText:(id)arg1 subLink:(id)arg2;
 - (id)initWithFrame:(struct CGRect)arg1;
 
 @end

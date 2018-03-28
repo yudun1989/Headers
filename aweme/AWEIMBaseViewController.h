@@ -10,18 +10,16 @@
 #import "AWEIMChatListViewControllerDelegate-Protocol.h"
 #import "BTDRouterViewControllerProtocol-Protocol.h"
 
-@class AWEBubble, AWEIMBaseNavView, AWEIMChatListViewController, AWEIMInteractListViewController, NSString;
+@class AWEIMBaseNavView, AWEIMChatListViewController, AWEIMInteractListViewController, NSString;
 
 @interface AWEIMBaseViewController : UIViewController <AWEIMBaseDataControllerDelegate, AWEIMChatListViewControllerDelegate, BTDRouterViewControllerProtocol>
 {
     AWEIMBaseNavView *_navView;
     AWEIMInteractListViewController *_interactListVC;
     AWEIMChatListViewController *_chatListVC;
-    AWEBubble *_contactBubbleView;
 }
 
 + (void)load;
-@property(retain, nonatomic) AWEBubble *contactBubbleView; // @synthesize contactBubbleView=_contactBubbleView;
 @property(retain, nonatomic) AWEIMChatListViewController *chatListVC; // @synthesize chatListVC=_chatListVC;
 @property(retain, nonatomic) AWEIMInteractListViewController *interactListVC; // @synthesize interactListVC=_interactListVC;
 @property(retain, nonatomic) AWEIMBaseNavView *navView; // @synthesize navView=_navView;
@@ -29,8 +27,6 @@
 - (void)viewWillLayoutSubviews;
 - (void)_refreshTableHeaderView;
 - (void)_setupUI;
-- (void)_removeContackBubbleView;
-- (void)showContactTipIfNeed;
 - (void)contactBtnClicked:(id)arg1;
 - (void)didTransferToChat:(id)arg1;
 - (void)willDeleteChat:(id)arg1 completion:(CDUnknownBlockType)arg2;
@@ -40,7 +36,7 @@
 - (_Bool)prefersStatusBarHidden;
 - (void)viewWillAppear:(_Bool)arg1;
 - (void)viewDidLoad;
-- (id)initWithRouterParamDict:(id)arg1;
+- (_Bool)configWithRouterParamDict:(id)arg1;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

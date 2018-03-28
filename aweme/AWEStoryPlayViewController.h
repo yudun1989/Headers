@@ -156,7 +156,7 @@
 - (id)initWithType:(unsigned long long)arg1;
 - (id)init;
 - (void)dealloc;
-- (id)initWithRouterParamDict:(id)arg1;
+- (_Bool)configWithRouterParamDict:(id)arg1;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

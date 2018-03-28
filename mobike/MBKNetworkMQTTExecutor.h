@@ -8,18 +8,28 @@
 
 #import "MQTTSessionDelegate-Protocol.h"
 
-@class MQTTSession, NSMutableDictionary, NSString;
+@class MQTTSession, NSMutableDictionary, NSRecursiveLock, NSString;
 
 @interface MBKNetworkMQTTExecutor : MBKNetworkExecutor <MQTTSessionDelegate>
 {
-    struct _opaque_pthread_mutex_t _lock;
+    _Bool _disconnectBecauseAppEnterBackground;
+    double _disconnectGraceTime;
     NSMutableDictionary *_processingRequests;
     MQTTSession *_session;
+    NSRecursiveLock *_lock;
 }
 
+@property(nonatomic) _Bool disconnectBecauseAppEnterBackground; // @synthesize disconnectBecauseAppEnterBackground=_disconnectBecauseAppEnterBackground;
+@property(retain, nonatomic) NSRecursiveLock *lock; // @synthesize lock=_lock;
 @property(retain, nonatomic) MQTTSession *session; // @synthesize session=_session;
 @property(retain, nonatomic) NSMutableDictionary *processingRequests; // @synthesize processingRequests=_processingRequests;
+@property(nonatomic) double disconnectGraceTime; // @synthesize disconnectGraceTime=_disconnectGraceTime;
 - (void).cxx_destruct;
+- (void)handlingWhenAppEnterForeground;
+- (void)handlingWhenAppEnterBackground;
+- (void)dealloc;
+- (void)setUpForBackgroundHandling;
+@property(readonly, nonatomic) _Bool isConnected;
 - (void)disconnectSession;
 - (void)connectSession;
 - (void)removeRequestFromProcessingRequests:(id)arg1;

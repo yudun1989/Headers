@@ -7,13 +7,6 @@
 #import <UIKit/UILabel.h>
 
 @interface UILabel (BTDAdditions)
-- (double)ddLineHeight:(id)arg1;
-- (double)LineHeight:(id)arg1;
-- (struct CGRect)rectForLetterAtIndex:(unsigned long long)arg1;
-- (double)widthForLastLine;
-- (long long)getLineNumbers;
-- (double)widthForLastLineCoreText;
-- (void)heightThatFitsWidth:(double)arg1;
 - (void)btd_setText:(id)arg1 withNeedHighlightedText:(id)arg2 highlightedColor:(id)arg3;
 - (void)btd_SetText:(id)arg1 lineHeight:(double)arg2;
 - (double)btd_widthWithHeight:(double)arg1;

@@ -6,7 +6,7 @@
 
 #import "AWEMusicDetailBaseHeaderView.h"
 
-@class AWEAVPlayerWrapper, AWEBodydanceRankView, AWEDynamicLabel, AWEMusicModel, AWERelatedChallengeMusicView, AWEUserCountDescView, UIButton, UIImageView, UILabel, UIView;
+@class AWEBodydanceRankView, AWEDynamicLabel, AWEMusicModel, AWERelatedChallengeMusicView, AWEUserCountDescView, UIButton, UIImageView, UILabel, UIView;
 
 @interface AWEMusicDetailHeaderView : AWEMusicDetailBaseHeaderView
 {
@@ -18,6 +18,7 @@
     AWEDynamicLabel *_descriptionLabel;
     AWEUserCountDescView *_userCountView;
     UIButton *_editTitleButton;
+    UIButton *_appleMusicButton;
     UIView *_separateLineView;
     AWERelatedChallengeMusicView *_relatedView;
     AWEMusicModel *_audioModel;
@@ -34,6 +35,7 @@
 @property(retain, nonatomic) AWEMusicModel *audioModel; // @synthesize audioModel=_audioModel;
 @property(retain, nonatomic) AWERelatedChallengeMusicView *relatedView; // @synthesize relatedView=_relatedView;
 @property(retain, nonatomic) UIView *separateLineView; // @synthesize separateLineView=_separateLineView;
+@property(retain, nonatomic) UIButton *appleMusicButton; // @synthesize appleMusicButton=_appleMusicButton;
 @property(retain, nonatomic) UIButton *editTitleButton; // @synthesize editTitleButton=_editTitleButton;
 @property(retain, nonatomic) AWEUserCountDescView *userCountView; // @synthesize userCountView=_userCountView;
 @property(retain, nonatomic) AWEDynamicLabel *descriptionLabel; // @synthesize descriptionLabel=_descriptionLabel;
@@ -56,14 +58,10 @@
 - (void)playerWrapper:(id)arg1 didChangePlayStatus:(unsigned long long)arg2;
 - (void)editTitleClick;
 - (void)ownerNicknameClick:(id)arg1;
+- (void)appleMusicClick;
 - (void)updateWithModel:(id)arg1;
-@property(nonatomic) double contentAlpha;
+- (void)setContentAlpha:(double)arg1;
 - (id)initWithFrame:(struct CGRect)arg1;
-
-// Remaining properties
-@property(retain, nonatomic) AWEAVPlayerWrapper *audioPlayer;
-@property(nonatomic) double headerViewHeight;
-@property(retain, nonatomic) AWEMusicModel *model;
 
 @end
 

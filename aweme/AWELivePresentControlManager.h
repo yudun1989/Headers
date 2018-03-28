@@ -44,6 +44,7 @@
 - (void)_mergeListA:(id)arg1 fromListB:(id)arg2;
 - (void)_dealMergingPresentList:(id)arg1 listPath:(id)arg2;
 - (void)_fetchResourceForPresent:(id)arg1 retryIndex:(long long)arg2 finishBlock:(CDUnknownBlockType)arg3;
+- (id)fetchLivePresentWithPresentID:(id)arg1;
 - (_Bool)shouldClearPresentResourceAtStartUp;
 - (void)clearResourceForPresent:(id)arg1;
 - (void)clearPresentResource;

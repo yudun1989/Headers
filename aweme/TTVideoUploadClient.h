@@ -11,7 +11,7 @@
 
 @interface TTVideoUploadClient : NSObject
 {
-    // Error parsing type: ^{TTVideoUploader=^^?^^?^^?^v^?^?^{HttpUploadClient}^{TTFileUploader}^{APPWRAPPER}^{UploadInfo}^{UploadError}{AVThread=i*^{_opaque_pthread_t}{_opaque_pthread_mutex_t=q[56c]}{_opaque_pthread_cond_t=q[40c]}{_opaque_pthread_mutex_t=q[56c]}{_opaque_pthread_cond_t=q[40c]}B^{AVProcessor}{AVTHREAD_INFO=^?^?^v}}{AVQueue<TTVideoUploader::Message *>=B^{AVNode}^{AVNode}^{AVNode}^{AVNode}^{AVNode}{_opaque_pthread_mutex_t=q[56c]}{_opaque_pthread_cond_t=q[40c]}iiiii*^{AVBufferCallback}i}i{Value=(ValueHolder=qQdB*^{map<Json::Value::CZString, Json::Value, std::__1::less<Json::Value::CZString>, std::__1::allocator<std::__1::pair<const Json::Value::CZString, Json::Value> > >})b8b1^{CommentInfo}qq}{atomic<bool>=AB}iiiiiiii{mutex={_opaque_pthread_mutex_t=q[56c]}}**********f}, name: _uploader
+    // Error parsing type: ^{TTVideoUploader=^^?^^?^^?^v^?^?^^?^{HttpUploadClient}^{TTFileUploader}^{APPWRAPPER}^?^v^{UploadInfo}^{UploadError}{AVThread=i*^{_opaque_pthread_t}{_opaque_pthread_mutex_t=q[56c]}{_opaque_pthread_cond_t=q[40c]}{_opaque_pthread_mutex_t=q[56c]}{_opaque_pthread_cond_t=q[40c]}B^{AVProcessor}{AVTHREAD_INFO=^?^?^v}}{AVQueue<TTVideoUploader::Message *>=B^{AVNode}^{AVNode}^{AVNode}^{AVNode}^{AVNode}{_opaque_pthread_mutex_t=q[56c]}{_opaque_pthread_cond_t=q[40c]}iiiii*^{AVBufferCallback}i}i{Value=(ValueHolder=qQdB*^{map<Json::Value::CZString, Json::Value, std::__1::less<Json::Value::CZString>, std::__1::allocator<std::__1::pair<const Json::Value::CZString, Json::Value> > >})b8b1^{CommentInfo}qq}{atomic<bool>=AB}iiiiiiiii{mutex={_opaque_pthread_mutex_t=q[56c]}}**********f}, name: _uploader
     _Bool _finished;
     id <TTVideoUploadClientProtocol> _delegate;
     double _coverTime;
@@ -34,6 +34,7 @@
 - (void)setMaxFailLimitEnable:(_Bool)arg1;
 - (void)setSocketNum:(long long)arg1;
 - (void)setSliceSize:(long long)arg1;
+- (void)setOpenTimeout:(double)arg1;
 - (void)setSliceTimeout:(double)arg1;
 - (void)setFileRetryCount:(long long)arg1;
 - (void)setSliceRetryCount:(long long)arg1;

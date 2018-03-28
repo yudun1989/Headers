@@ -12,17 +12,15 @@
 {
     _Bool _limitObjectSizeInMove;
     _Bool _resetTrackingOnTap;
-    _Bool _enableMSAA;
-    _Bool _enableSSAA;
     NSString *_sceneName;
     double _limitObjectDistanceMax;
     double _limitObjectDistanceMin;
     double _limitTapTargetDistanceMax;
+    NSString *_threeDConfigFileName;
 }
 
 + (id)objectWithKeyValues:(id)arg1;
-@property(nonatomic) _Bool enableSSAA; // @synthesize enableSSAA=_enableSSAA;
-@property(nonatomic) _Bool enableMSAA; // @synthesize enableMSAA=_enableMSAA;
+@property(retain, nonatomic) NSString *threeDConfigFileName; // @synthesize threeDConfigFileName=_threeDConfigFileName;
 @property(nonatomic) _Bool resetTrackingOnTap; // @synthesize resetTrackingOnTap=_resetTrackingOnTap;
 @property(nonatomic) double limitTapTargetDistanceMax; // @synthesize limitTapTargetDistanceMax=_limitTapTargetDistanceMax;
 @property(nonatomic) double limitObjectDistanceMin; // @synthesize limitObjectDistanceMin=_limitObjectDistanceMin;

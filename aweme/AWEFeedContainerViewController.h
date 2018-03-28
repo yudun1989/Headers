@@ -7,25 +7,24 @@
 #import <UIKit/UIPageViewController.h>
 
 #import "AWEFeedMessage-Protocol.h"
-#import "AWERedPacketSettingMessage-Protocol.h"
 #import "AWEReferenceTrackable-Protocol.h"
+#import "AWERegionMessage-Protocol.h"
+#import "AWESettingMessage-Protocol.h"
 #import "AWEUserMessage-Protocol.h"
 #import "AWEVideoPublishTaskMessage-Protocol.h"
 #import "AWEVideosCollectionViewAnimationDelegate-Protocol.h"
 #import "BTDRouterViewControllerProtocol-Protocol.h"
 #import "HTSAccountMessage-Protocol.h"
 
-@class AWEAnimatedButton, AWEBubble, AWEFeedCollectionViewController, AWEFeedSegmentedControl, AWEFeedStoryButton, AWEFeedTableViewController, AWEHotListDataController, AWERedPacketEntranceView, AWERedPacketInviteCodeAlertView, LOTAnimationView, NSArray, NSMutableArray, NSString, NSTimer, UIButton, UIImageView, UILabel, UIView, UIViewController;
+@class AWEAnimatedButton, AWEBubble, AWEFeedCollectionViewController, AWEFeedSegmentedControl, AWEFeedStoryButton, AWEFeedTableViewController, AWEHotListDataController, LOTAnimationView, NSArray, NSMutableArray, NSString, UIButton, UIImageView, UILabel, UIView, UIViewController;
 @protocol AWEFeedTabItemViewControllerProtocol;
 
-@interface AWEFeedContainerViewController : UIPageViewController <BTDRouterViewControllerProtocol, AWEUserMessage, HTSAccountMessage, AWEVideoPublishTaskMessage, AWERedPacketSettingMessage, AWEFeedMessage, AWEVideosCollectionViewAnimationDelegate, AWEReferenceTrackable>
+@interface AWEFeedContainerViewController : UIPageViewController <BTDRouterViewControllerProtocol, AWEUserMessage, HTSAccountMessage, AWEVideoPublishTaskMessage, AWEFeedMessage, AWESettingMessage, AWERegionMessage, AWEVideosCollectionViewAnimationDelegate, AWEReferenceTrackable>
 {
     _Bool _forbidHideStatusBar;
     _Bool _isAppear;
     _Bool _hasShowVideoRecoveryAlert;
     _Bool _processingLogin;
-    _Bool _hasShowRedPacketAlert;
-    _Bool _hasShowInviteCodeAlert;
     AWEFeedSegmentedControl *_segmentControl;
     UIView *_redDot;
     UIButton *_cameraButton;
@@ -45,18 +44,8 @@
     unsigned long long _hotFeedStyle;
     AWEFeedCollectionViewController *_freshViewController;
     long long _currentIndex;
-    AWERedPacketEntranceView *_redPacketEntranceView;
-    NSTimer *_redPacktEntranceShowTimer;
-    NSTimer *_redPacktEntranceUpdateTimer;
-    AWERedPacketInviteCodeAlertView *_redPacketInviteCodeAlertView;
 }
 
-@property(nonatomic) __weak AWERedPacketInviteCodeAlertView *redPacketInviteCodeAlertView; // @synthesize redPacketInviteCodeAlertView=_redPacketInviteCodeAlertView;
-@property(retain, nonatomic) NSTimer *redPacktEntranceUpdateTimer; // @synthesize redPacktEntranceUpdateTimer=_redPacktEntranceUpdateTimer;
-@property(retain, nonatomic) NSTimer *redPacktEntranceShowTimer; // @synthesize redPacktEntranceShowTimer=_redPacktEntranceShowTimer;
-@property(retain, nonatomic) AWERedPacketEntranceView *redPacketEntranceView; // @synthesize redPacketEntranceView=_redPacketEntranceView;
-@property(nonatomic) _Bool hasShowInviteCodeAlert; // @synthesize hasShowInviteCodeAlert=_hasShowInviteCodeAlert;
-@property(nonatomic) _Bool hasShowRedPacketAlert; // @synthesize hasShowRedPacketAlert=_hasShowRedPacketAlert;
 @property(nonatomic) _Bool processingLogin; // @synthesize processingLogin=_processingLogin;
 @property(nonatomic) _Bool hasShowVideoRecoveryAlert; // @synthesize hasShowVideoRecoveryAlert=_hasShowVideoRecoveryAlert;
 @property(nonatomic) _Bool isAppear; // @synthesize isAppear=_isAppear;
@@ -83,12 +72,6 @@
 - (void).cxx_destruct;
 - (void)didCloseStoryView;
 - (void)didOpenStoryView;
-- (void)showInviteCodeInputView;
-- (void)showInviteCodeInputViewIfNeed;
-- (void)showRedPaketAlertView;
-- (void)showRedPaketAlertViewIfNeed;
-- (void)redPacketNewUserDidChange;
-- (void)redPacketSettingDidChange;
 @property(readonly, nonatomic) UIViewController<AWEFeedTabItemViewControllerProtocol> *currentViewController;
 - (id)referString;
 - (_Bool)enableVideosCollectionViewAnimation;
@@ -136,16 +119,13 @@
 - (void)_updateFantasyEntrance;
 - (void)_addStoryButtons;
 - (void)_updateSegmentControl;
-- (void)_updateRedPacketEntranceView;
-- (void)_didTapRedPacket;
-- (id)initWithRouterParamDict:(id)arg1;
+- (_Bool)configWithRouterParamDict:(id)arg1;
 - (void)setAccessoriesHidden:(_Bool)arg1;
 - (void)dragCancellation;
 - (void)stopRefreshing;
 - (void)beginRefreshing;
 - (void)dragWithProgress:(double)arg1;
 - (void)recoveryVideoBackupIfNeed;
-- (void)showFeedBodydanceGuideIfNeeded;
 - (_Bool)ifStoryViewIsOpen;
 - (void)pause;
 - (void)playIfActive;
@@ -164,6 +144,7 @@
 - (void)_removeKVO;
 - (void)_addKVO;
 - (void)dealloc;
+- (long long)preferredStatusBarStyle;
 - (void)viewWillDisappear:(_Bool)arg1;
 - (void)viewDidAppear:(_Bool)arg1;
 - (void)viewWillAppear:(_Bool)arg1;

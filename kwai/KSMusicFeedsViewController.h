@@ -39,10 +39,12 @@
 @property(nonatomic) _Bool openCameraAfterLoad; // @synthesize openCameraAfterLoad=_openCameraAfterLoad;
 @property(retain, nonatomic) KSMusicItem *music; // @synthesize music=_music;
 - (void).cxx_destruct;
+- (id)additionalLogInfo;
 - (id)tagName;
 - (id)tagId;
 - (int)tagType;
 - (id)tagStringType;
+- (void)setupLogPackage;
 - (void)_addSingerCellShowTaskEvent:(id)arg1 cellIndex:(unsigned long long)arg2;
 - (void)_stop;
 - (void)_pause;

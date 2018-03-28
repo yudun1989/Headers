@@ -6,14 +6,15 @@
 
 #import "KSCollectionView.h"
 
-@class KSLoadingMoreCollectionViewCell, KSLoadingView, KSMessageView, KSRefreshControl, NSArray, UIActivityIndicatorView;
+@class KSLoadingMoreCollectionViewCell, KSLoadingView, KSMessageView, NSArray, UIActivityIndicatorView, UIControl;
+@protocol KSRefreshControl;
 
 @interface KSRefreshableCollectionView : KSCollectionView
 {
     _Bool _isUpdatingCollectionView;
     _Bool _fullReloadOnly;
     KSMessageView *_messageView;
-    KSRefreshControl *_ks_refreshControl;
+    UIControl<KSRefreshControl> *_ks_refreshControl;
     KSLoadingMoreCollectionViewCell *_loadingMoreCollectionViewCell;
     KSLoadingView *_loadingView;
     double _lastContentHeight;
@@ -28,7 +29,7 @@
 @property(retain, nonatomic) KSLoadingView *loadingView; // @synthesize loadingView=_loadingView;
 @property(readonly, nonatomic) _Bool isUpdatingCollectionView; // @synthesize isUpdatingCollectionView=_isUpdatingCollectionView;
 @property(retain, nonatomic) KSLoadingMoreCollectionViewCell *loadingMoreCollectionViewCell; // @synthesize loadingMoreCollectionViewCell=_loadingMoreCollectionViewCell;
-@property(retain, nonatomic) KSRefreshControl *ks_refreshControl; // @synthesize ks_refreshControl=_ks_refreshControl;
+@property(retain, nonatomic) UIControl<KSRefreshControl> *ks_refreshControl; // @synthesize ks_refreshControl=_ks_refreshControl;
 - (void).cxx_destruct;
 - (void)setupUI;
 @property(retain, nonatomic) KSMessageView *messageView; // @synthesize messageView=_messageView;

@@ -6,14 +6,14 @@
 
 #import <Foundation/NSObject.h>
 
-@class TTIMSessionModel;
+@class TTIMSessionCenter;
 
 @interface TTIMSessionReadModel : NSObject
 {
-    TTIMSessionModel *_sessionModel;
+    TTIMSessionCenter *_sessionModel;
 }
 
-@property(nonatomic) __weak TTIMSessionModel *sessionModel; // @synthesize sessionModel=_sessionModel;
+@property(nonatomic) __weak TTIMSessionCenter *sessionModel; // @synthesize sessionModel=_sessionModel;
 - (void).cxx_destruct;
 - (void)handleGetSessioinReadMsgResponse:(id)arg1;
 - (void)handleNotifyNewSessionRead;

@@ -8,33 +8,49 @@
 
 #import "FMScene-Protocol.h"
 
-@class FMResource, GPUImageFilterGroup, GPUImageFramebuffer, GPUImageOutput, NSArray, NSMutableArray, NSString;
+@class FMAudioRecognizer, FMResource, GPUImageFilterGroup, GPUImageFramebuffer, GPUImageOutput, NSArray, NSDictionary, NSMutableArray, NSMutableSet, NSString;
 @protocol FMSceneMaterialProvider><FMSceneDelegate, GPUImageInput;
 
 @interface FMManager : NSObject <FMScene>
 {
     struct CGELuaSignalGenerator *luaSignalGenerator;
+    struct cgeScriptControl *scriptControl;
     _Bool _needRefreshFilter;
     _Bool _hasTimeTrigger;
+    _Bool _didTouch;
     int _currentTriggerRandomIndex;
     int _lastTriggerType;
     int _randomValue;
     int _timeIntervalIndex;
     int _loop;
     int _gestureTrick;
+    int _lastActiveNum;
+    int _cameraPos;
+    int _audioResult;
     FMResource *_resource;
     id <FMSceneMaterialProvider><FMSceneDelegate> _materialProvider;
+    NSArray *_faces;
     GPUImageFilterGroup *_filterGroup;
     double _currentTime;
     GPUImageFramebuffer *_currentOrigframeBuffer;
+    NSDictionary *_layersMap;
     NSArray *_layers;
     NSArray *_triggerRandoms;
     NSMutableArray *_stateCache;
     double _triggerTime;
     double _filterinitTime;
+    NSMutableSet *_tmpSet;
+    FMAudioRecognizer *_audioDetector;
 }
 
++ (id)urlAudioRecognizationFileName:(id)arg1;
 + (id)fmmanagerWithResource:(id)arg1 layers:(id)arg2 provider:(id)arg3;
+@property(retain, nonatomic) FMAudioRecognizer *audioDetector; // @synthesize audioDetector=_audioDetector;
+@property(nonatomic) _Bool didTouch; // @synthesize didTouch=_didTouch;
+@property(retain, nonatomic) NSMutableSet *tmpSet; // @synthesize tmpSet=_tmpSet;
+@property(nonatomic) int audioResult; // @synthesize audioResult=_audioResult;
+@property(nonatomic) int cameraPos; // @synthesize cameraPos=_cameraPos;
+@property(nonatomic) int lastActiveNum; // @synthesize lastActiveNum=_lastActiveNum;
 @property(nonatomic) int gestureTrick; // @synthesize gestureTrick=_gestureTrick;
 @property(nonatomic) int loop; // @synthesize loop=_loop;
 @property(nonatomic) double filterinitTime; // @synthesize filterinitTime=_filterinitTime;
@@ -48,9 +64,11 @@
 @property(nonatomic) int currentTriggerRandomIndex; // @synthesize currentTriggerRandomIndex=_currentTriggerRandomIndex;
 @property(retain, nonatomic) NSArray *triggerRandoms; // @synthesize triggerRandoms=_triggerRandoms;
 @property(retain, nonatomic) NSArray *layers; // @synthesize layers=_layers;
+@property(retain, nonatomic) NSDictionary *layersMap; // @synthesize layersMap=_layersMap;
 @property(retain, nonatomic) GPUImageFramebuffer *currentOrigframeBuffer; // @synthesize currentOrigframeBuffer=_currentOrigframeBuffer;
 @property(nonatomic) double currentTime; // @synthesize currentTime=_currentTime;
 @property(retain, nonatomic) GPUImageFilterGroup *filterGroup; // @synthesize filterGroup=_filterGroup;
+@property(retain, nonatomic) NSArray *faces; // @synthesize faces=_faces;
 @property(retain, nonatomic) id <FMSceneMaterialProvider><FMSceneDelegate> materialProvider; // @synthesize materialProvider=_materialProvider;
 @property(retain, nonatomic) FMResource *resource; // @synthesize resource=_resource;
 - (void).cxx_destruct;
@@ -69,7 +87,6 @@
 - (void)touchesBegan:(id)arg1 withEvent:(id)arg2 touchPosition:(struct CGPoint)arg3;
 - (void)processSampleBuffer:(struct opaqueCMSampleBuffer *)arg1 fromConnection:(id)arg2;
 - (void)processAudioSampleBuffer:(struct opaqueCMSampleBuffer *)arg1;
-@property(retain, nonatomic) NSArray *faces;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

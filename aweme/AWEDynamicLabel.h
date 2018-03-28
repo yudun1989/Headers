@@ -6,13 +6,15 @@
 
 #import <UIKit/UILabel.h>
 
-@class NSString, UIView;
+@class NSString, UIColor, UIView;
 
 @interface AWEDynamicLabel : UILabel
 {
     _Bool _isDraw;
     NSString *_nickname;
+    UIColor *_nicknameColor;
     NSString *_labelInfo;
+    UIColor *_labelInfoColor;
     UILabel *_hollowedOutLabel1;
     UILabel *_hollowedOutLabel2;
     UIView *_containerView;
@@ -22,7 +24,9 @@
 @property(retain, nonatomic) UILabel *hollowedOutLabel2; // @synthesize hollowedOutLabel2=_hollowedOutLabel2;
 @property(retain, nonatomic) UILabel *hollowedOutLabel1; // @synthesize hollowedOutLabel1=_hollowedOutLabel1;
 @property(nonatomic) _Bool isDraw; // @synthesize isDraw=_isDraw;
+@property(retain, nonatomic) UIColor *labelInfoColor; // @synthesize labelInfoColor=_labelInfoColor;
 @property(copy, nonatomic) NSString *labelInfo; // @synthesize labelInfo=_labelInfo;
+@property(retain, nonatomic) UIColor *nicknameColor; // @synthesize nicknameColor=_nicknameColor;
 @property(copy, nonatomic) NSString *nickname; // @synthesize nickname=_nickname;
 - (void).cxx_destruct;
 - (struct CGSize)intrinsicContentSize;

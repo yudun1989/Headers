@@ -23,6 +23,9 @@
 - (id)parameterStringWithParameter1:(id)arg1 parameter2:(id)arg2;
 - (id)configureURLWithRequestParameters:(id)arg1;
 - (id)init;
+- (void)renew;
+- (id)toSignalWithoutSendError;
+- (id)toSignal;
 
 @end
 

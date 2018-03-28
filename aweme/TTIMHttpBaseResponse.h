@@ -8,10 +8,7 @@
 
 @interface TTIMHttpBaseResponse : NSObject
 {
-    unsigned long long _type;
 }
-
-@property(nonatomic) unsigned long long type; // @synthesize type=_type;
 
 @end
 

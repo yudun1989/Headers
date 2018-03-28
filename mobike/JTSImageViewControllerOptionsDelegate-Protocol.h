@@ -11,7 +11,6 @@
 @protocol JTSImageViewControllerOptionsDelegate <NSObject>
 
 @optional
-- (void)praiseDisdainProxy:(id)arg1;
 - (double)backgroundBlurRadiusForImageViewer:(JTSImageViewController *)arg1;
 - (double)alphaForBackgroundDimmingOverlayInImageViewer:(JTSImageViewController *)arg1;
 - (UIColor *)backgroundColorImageViewInImageViewer:(JTSImageViewController *)arg1;

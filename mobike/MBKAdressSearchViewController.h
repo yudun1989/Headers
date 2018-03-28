@@ -10,7 +10,7 @@
 #import "UITableViewDataSource-Protocol.h"
 #import "UITableViewDelegate-Protocol.h"
 
-@class MBKSearchBarView, NSMutableArray, NSString, UITableView;
+@class MBKLBSManager, MBKSearchBarView, MMSuggestionRequest, NSMutableArray, NSString, UITableView;
 
 @interface MBKAdressSearchViewController : MBKBaseViewController <MBKSearchBarViewDelegate, UITableViewDelegate, UITableViewDataSource>
 {
@@ -21,12 +21,17 @@
     UITableView *_listView;
     MBKSearchBarView *_searchBar;
     NSMutableArray *_resultList;
+    MBKLBSManager *_lbsManager;
+    MMSuggestionRequest *_suggestRequest;
     struct CLLocationCoordinate2D _location;
 }
 
+@property(nonatomic) __weak MMSuggestionRequest *suggestRequest; // @synthesize suggestRequest=_suggestRequest;
+@property(retain, nonatomic) MBKLBSManager *lbsManager; // @synthesize lbsManager=_lbsManager;
 @property(retain, nonatomic) NSMutableArray *resultList; // @synthesize resultList=_resultList;
 @property(retain, nonatomic) MBKSearchBarView *searchBar; // @synthesize searchBar=_searchBar;
 @property(retain, nonatomic) UITableView *listView; // @synthesize listView=_listView;
+@property(nonatomic) _Bool isHistory; // @synthesize isHistory=_isHistory;
 @property(copy, nonatomic) CDUnknownBlockType setHandler; // @synthesize setHandler=_setHandler;
 @property(copy, nonatomic) NSString *cityName; // @synthesize cityName=_cityName;
 @property(nonatomic) struct CLLocationCoordinate2D location; // @synthesize location=_location;
@@ -47,7 +52,6 @@
 - (_Bool)mbkSearchBarText:(id)arg1 shouldChangeCharactersInRange:(struct _NSRange)arg2 replacementString:(id)arg3;
 - (id)arrayFromLocalFile;
 - (void)loadLocalFile;
-- (void)didSearchTipsWithResponse:(id)arg1 err:(id)arg2;
 - (void)searchTipsByKeyword:(id)arg1;
 - (void)buildUI;
 - (void)viewWillDisappear:(_Bool)arg1;

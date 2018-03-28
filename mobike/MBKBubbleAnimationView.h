@@ -15,16 +15,19 @@
     UILabel *_bubbleTextLabel;
     UIImageView *_bubbleIconImageView;
     UIImageView *_backImageView;
+    double _dataTrafficBubbleWidth;
     MBKBubbleAnimationViewModel *_viewModel;
 }
 
 @property(retain, nonatomic) MBKBubbleAnimationViewModel *viewModel; // @synthesize viewModel=_viewModel;
+@property(nonatomic) double dataTrafficBubbleWidth; // @synthesize dataTrafficBubbleWidth=_dataTrafficBubbleWidth;
 @property(retain, nonatomic) UIImageView *backImageView; // @synthesize backImageView=_backImageView;
 @property(retain, nonatomic) UIImageView *bubbleIconImageView; // @synthesize bubbleIconImageView=_bubbleIconImageView;
 @property(retain, nonatomic) UILabel *bubbleTextLabel; // @synthesize bubbleTextLabel=_bubbleTextLabel;
 - (void).cxx_destruct;
 - (id)gradientImageWithRect:(struct CGRect)arg1 startColor:(struct CGColor *)arg2 endColor:(struct CGColor *)arg3;
 - (void)drawLinearGradient:(struct CGContext *)arg1 path:(struct CGPath *)arg2 startColor:(struct CGColor *)arg3 endColor:(struct CGColor *)arg4;
+- (void)unFoldAnimate;
 - (void)displayAnimate;
 - (void)showAdCard;
 - (void)showAdCardMethod;

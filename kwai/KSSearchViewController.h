@@ -15,7 +15,7 @@
 #import "UIScrollViewDelegate-Protocol.h"
 #import "UISearchBarDelegate-Protocol.h"
 
-@class KSBaseFeed, KSCustomSearchBar, KSNavAlertView, KSNewSearchHistoryViewController, KSSearchHeader, KSSearchRecommendTagsViewController, KSSearchRecommendUsersViewController, KSSearchSuggestionViewController, KSSearchTagsHistoryViewController, KSSearchTagsViewController, KSSearchUsersViewController, NSDictionary, NSString, UIScrollView, UIView;
+@class KSBaseFeed, KSCustomSearchBar, KSNavAlertView, KSSearchHeader, KSSearchHistoryViewController, KSSearchRecommendTagsViewController, KSSearchRecommendUsersViewController, KSSearchSuggestionViewController, KSSearchTagsHistoryViewController, KSSearchTagsViewController, KSSearchUsersViewController, NSDictionary, NSString, UIScrollView, UIView;
 @protocol NSObject;
 
 @interface KSSearchViewController : KSBaseViewController <KSURLPortalAnnotation, KSURLPortal, UIScrollViewDelegate, KSSlideableTitleSegmentedViewDelegate, UISearchBarDelegate, KSRecommendUserCellDelegate, KSSearchHeaderDelegate, KSInteractiveTransitioningToViewController>
@@ -33,7 +33,7 @@
     KSSearchRecommendUsersViewController *_recommendUserViewController;
     KSSearchUsersViewController *_searchUsersViewController;
     KSSearchTagsViewController *_searchTagsViewController;
-    KSNewSearchHistoryViewController *_userSearchHistoryVC;
+    KSSearchHistoryViewController *_userSearchHistoryVC;
     KSSearchTagsHistoryViewController *_tagSearchHistoryVC;
     KSSearchSuggestionViewController *_userSearchSuggestionVC;
     id <NSObject> _keyboardShowObserver;
@@ -49,7 +49,7 @@
 @property(retain, nonatomic) id <NSObject> keyboardShowObserver; // @synthesize keyboardShowObserver=_keyboardShowObserver;
 @property(retain, nonatomic) KSSearchSuggestionViewController *userSearchSuggestionVC; // @synthesize userSearchSuggestionVC=_userSearchSuggestionVC;
 @property(retain, nonatomic) KSSearchTagsHistoryViewController *tagSearchHistoryVC; // @synthesize tagSearchHistoryVC=_tagSearchHistoryVC;
-@property(retain, nonatomic) KSNewSearchHistoryViewController *userSearchHistoryVC; // @synthesize userSearchHistoryVC=_userSearchHistoryVC;
+@property(retain, nonatomic) KSSearchHistoryViewController *userSearchHistoryVC; // @synthesize userSearchHistoryVC=_userSearchHistoryVC;
 @property(retain, nonatomic) KSSearchTagsViewController *searchTagsViewController; // @synthesize searchTagsViewController=_searchTagsViewController;
 @property(retain, nonatomic) KSSearchUsersViewController *searchUsersViewController; // @synthesize searchUsersViewController=_searchUsersViewController;
 @property(retain, nonatomic) KSSearchRecommendUsersViewController *recommendUserViewController; // @synthesize recommendUserViewController=_recommendUserViewController;

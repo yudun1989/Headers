@@ -17,9 +17,11 @@
     long long _diamondCount;
     long long _givingCount;
     NSString *_describe;
+    NSString *_displayExchangePrice;
 }
 
 + (id)JSONKeyPathsByPropertyKey;
+@property(copy, nonatomic) NSString *displayExchangePrice; // @synthesize displayExchangePrice=_displayExchangePrice;
 @property(copy, nonatomic) NSString *describe; // @synthesize describe=_describe;
 @property(nonatomic) long long givingCount; // @synthesize givingCount=_givingCount;
 @property(nonatomic) long long diamondCount; // @synthesize diamondCount=_diamondCount;

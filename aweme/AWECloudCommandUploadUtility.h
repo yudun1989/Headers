@@ -12,7 +12,7 @@
 
 - (id)requestBodyWithData:(id)arg1 params:(id)arg2 fileName:(id)arg3 mimeType:(id)arg4;
 - (id)requestWithUrl:(id)arg1;
-- (void)uploadDataWithUrl:(id)arg1 fileName:(id)arg2 data:(id)arg3 params:(id)arg4 mimeType:(id)arg5;
+- (void)uploadDataWithUrl:(id)arg1 fileName:(id)arg2 data:(id)arg3 params:(id)arg4 mimeType:(id)arg5 completion:(CDUnknownBlockType)arg6;
 
 @end
 

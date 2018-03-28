@@ -7,33 +7,33 @@
 #import "JSONModel.h"
 
 @class NSNumber, NSString;
-@protocol Optional;
 
 @interface TTIMHttpChatMessageModel : JSONModel
 {
-    NSNumber *_svrIndex;
-    NSString *_svrMsgId;
+    NSString *_svrIndex;
+    NSString *_originCid;
     NSString *_deviceId;
+    NSString *_svrMsgId;
     NSString *_fromUser;
     NSString *_toUser;
-    NSString *_content;
-    NSNumber<Optional> *_state;
     NSNumber *_msgType;
+    NSString *_content;
     NSString *_createTime;
-    NSString *_originCid;
+    NSNumber *_state;
 }
 
++ (_Bool)propertyIsOptional:(id)arg1;
 + (id)keyMapper;
-@property(copy, nonatomic) NSString *originCid; // @synthesize originCid=_originCid;
+@property(retain, nonatomic) NSNumber *state; // @synthesize state=_state;
 @property(copy, nonatomic) NSString *createTime; // @synthesize createTime=_createTime;
-@property(retain, nonatomic) NSNumber *msgType; // @synthesize msgType=_msgType;
-@property(retain, nonatomic) NSNumber<Optional> *state; // @synthesize state=_state;
 @property(copy, nonatomic) NSString *content; // @synthesize content=_content;
+@property(retain, nonatomic) NSNumber *msgType; // @synthesize msgType=_msgType;
 @property(copy, nonatomic) NSString *toUser; // @synthesize toUser=_toUser;
 @property(copy, nonatomic) NSString *fromUser; // @synthesize fromUser=_fromUser;
-@property(copy, nonatomic) NSString *deviceId; // @synthesize deviceId=_deviceId;
 @property(copy, nonatomic) NSString *svrMsgId; // @synthesize svrMsgId=_svrMsgId;
-@property(retain, nonatomic) NSNumber *svrIndex; // @synthesize svrIndex=_svrIndex;
+@property(copy, nonatomic) NSString *deviceId; // @synthesize deviceId=_deviceId;
+@property(copy, nonatomic) NSString *originCid; // @synthesize originCid=_originCid;
+@property(copy, nonatomic) NSString *svrIndex; // @synthesize svrIndex=_svrIndex;
 - (void).cxx_destruct;
 - (id)transformToPBModel;
 

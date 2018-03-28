@@ -21,6 +21,7 @@
 @property(retain, nonatomic) AWEVideoUploadParametersResponseModel *videoUploadParameters; // @synthesize videoUploadParameters=_videoUploadParameters;
 - (void).cxx_destruct;
 - (void)eventManagerDidUpdate:(id)arg1;
+- (int)uploadCheckIfNeedTry:(long long)arg1 tryCount:(long long)arg2;
 - (void)uploadProgressDidUpdate:(long long)arg1;
 - (void)uploadDidFinish:(id)arg1 error:(id)arg2;
 - (void)startUploading;

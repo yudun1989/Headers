@@ -6,17 +6,15 @@
 
 #import <objc/NSObject.h>
 
-@class NSNumber, NSString;
+@class NSNumber;
 
 @interface MBKHomeTabConfiguration : NSObject
 {
     _Bool _selected;
     unsigned long long _serviceType;
     NSNumber *_sequence;
-    NSString *_eventName;
 }
 
-@property(copy, nonatomic) NSString *eventName; // @synthesize eventName=_eventName;
 @property(nonatomic) _Bool selected; // @synthesize selected=_selected;
 @property(copy, nonatomic) NSNumber *sequence; // @synthesize sequence=_sequence;
 @property(nonatomic) unsigned long long serviceType; // @synthesize serviceType=_serviceType;

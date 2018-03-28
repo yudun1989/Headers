@@ -30,10 +30,11 @@
 - (void)didReceiveWillResignActive:(id)arg1;
 - (void)stop;
 - (void)clear;
+- (void)creatAudio;
 - (void)playAudio;
 - (id)sceneFilter;
 - (void)setAudioRealTimeSchedule:(double)arg1;
-- (void)setFaces:(id)arg1;
+- (void)setShouldRender:(_Bool)arg1;
 - (void)setActive:(_Bool)arg1;
 - (id)init;
 - (void)dealloc;

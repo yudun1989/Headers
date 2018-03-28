@@ -42,6 +42,7 @@
 - (id)newCommentSectionControllerWithComment:(struct KS_comment *)arg1 attributeConfiguration:(id)arg2;
 - (id)createKeyboardBar;
 - (id)initWithViewModel:(id)arg1;
+- (void)dealloc;
 
 @end
 

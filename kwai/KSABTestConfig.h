@@ -36,7 +36,6 @@
     NSNumber *_enableIdcSpeedTestCrossPlatformStrategy;
     NSNumber *_enableFastPush;
     NSNumber *_enableCommentBarAlwaysShow;
-    NSNumber *_enableFaceMagicToLinesV2;
     NSNumber *_showNewPhotoToolbarIcon;
     NSNumber *_disablePrefetch;
     NSNumber *_noPrefetchTimeMs;
@@ -50,7 +49,6 @@
 }
 
 + (id)currentTestConfig;
-+ (_Bool)shouldDisplayInMultipleLines;
 @property(retain, nonatomic) NSNumber *slideBackEndPlan; // @synthesize slideBackEndPlan=_slideBackEndPlan;
 @property(retain, nonatomic) NSNumber *slideDisplayType; // @synthesize slideDisplayType=_slideDisplayType;
 @property(retain, nonatomic) NSNumber *liveIconLayoutStyle; // @synthesize liveIconLayoutStyle=_liveIconLayoutStyle;
@@ -61,7 +59,6 @@
 @property(retain, nonatomic) NSNumber *noPrefetchTimeMs; // @synthesize noPrefetchTimeMs=_noPrefetchTimeMs;
 @property(retain, nonatomic) NSNumber *disablePrefetch; // @synthesize disablePrefetch=_disablePrefetch;
 @property(retain, nonatomic) NSNumber *showNewPhotoToolbarIcon; // @synthesize showNewPhotoToolbarIcon=_showNewPhotoToolbarIcon;
-@property(retain, nonatomic) NSNumber *enableFaceMagicToLinesV2; // @synthesize enableFaceMagicToLinesV2=_enableFaceMagicToLinesV2;
 @property(retain, nonatomic) NSNumber *enableCommentBarAlwaysShow; // @synthesize enableCommentBarAlwaysShow=_enableCommentBarAlwaysShow;
 @property(retain, nonatomic) NSNumber *enableFastPush; // @synthesize enableFastPush=_enableFastPush;
 @property(retain, nonatomic) NSNumber *enableIdcSpeedTestCrossPlatformStrategy; // @synthesize enableIdcSpeedTestCrossPlatformStrategy=_enableIdcSpeedTestCrossPlatformStrategy;

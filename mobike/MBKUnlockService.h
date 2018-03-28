@@ -8,16 +8,16 @@
 
 #import "MBKCentralDelegate-Protocol.h"
 
-@class MBKBlueToothLockHelper, NSString, RACDisposable;
+@class MBKBlueToothLockHelper, MBKPollingRequest, NSString;
 
 @interface MBKUnlockService : MBKBaseService <MBKCentralDelegate>
 {
-    RACDisposable *_unlockingDisposable;
+    MBKPollingRequest *_unlockingPollingRequest;
     MBKBlueToothLockHelper *_unlockDataCentral;
 }
 
 @property(retain, nonatomic) MBKBlueToothLockHelper *unlockDataCentral; // @synthesize unlockDataCentral=_unlockDataCentral;
-@property(retain, nonatomic) RACDisposable *unlockingDisposable; // @synthesize unlockingDisposable=_unlockingDisposable;
+@property(retain, nonatomic) MBKPollingRequest *unlockingPollingRequest; // @synthesize unlockingPollingRequest=_unlockingPollingRequest;
 - (void).cxx_destruct;
 - (void)mobikeCentralUpdateState:(long long)arg1;
 - (void)mobikeScanPeripheralsTimeOut:(id)arg1;
@@ -34,8 +34,7 @@
 - (void)sendUnlockMsgCommand:(id)arg1 orderid:(id)arg2 userCoordinate:(struct CLLocationCoordinate2D)arg3 errorCode:(id)arg4 successBlock:(CDUnknownBlockType)arg5 failureBlock:(CDUnknownBlockType)arg6;
 - (void)startScanPeripheralWithOrderId:(id)arg1;
 - (void)stopUnlockingCycle;
-- (id)circleFetchUnlockStatusWith:(id)arg1 userId:(id)arg2;
-- (void)fetchUnlockStatusWithId:(id)arg1 userId:(id)arg2 successBlock:(CDUnknownBlockType)arg3 failureBlock:(CDUnknownBlockType)arg4;
+- (id)circleFetchUnlockStatusWith:(id)arg1 userId:(id)arg2 enableMQTT:(_Bool)arg3;
 - (id)checkQRCodeValided:(id)arg1;
 - (void)unlockBikeWithId:(id)arg1 bikeType:(long long)arg2 epdata:(id)arg3 time:(id)arg4 warnCodes:(id)arg5 userCoordinate:(struct CLLocationCoordinate2D)arg6 successBlock:(CDUnknownBlockType)arg7 failureBlock:(CDUnknownBlockType)arg8;
 @property(readonly, nonatomic) _Bool isBlueToothOn;

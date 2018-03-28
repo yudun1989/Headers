@@ -12,6 +12,7 @@
 {
     _Bool _enableMSAA;
     _Bool _enableSSAA;
+    _Bool _needPhotoTex;
     float _globalObjectScale;
     float _totalTransitTime;
     float _planeObjectScale;
@@ -33,6 +34,7 @@
 @property(nonatomic) float globalObjectScale; // @synthesize globalObjectScale=_globalObjectScale;
 @property(retain, nonatomic) FMARTrackingShadow *shadow; // @synthesize shadow=_shadow;
 @property(retain, nonatomic) FMARTrackingBloom *bloom; // @synthesize bloom=_bloom;
+@property(nonatomic) _Bool needPhotoTex; // @synthesize needPhotoTex=_needPhotoTex;
 @property(nonatomic) _Bool enableSSAA; // @synthesize enableSSAA=_enableSSAA;
 @property(nonatomic) _Bool enableMSAA; // @synthesize enableMSAA=_enableMSAA;
 @property(retain, nonatomic) NSString *sceneName; // @synthesize sceneName=_sceneName;

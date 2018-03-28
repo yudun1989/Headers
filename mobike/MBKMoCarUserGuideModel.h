@@ -13,10 +13,12 @@
     NSArray *_content;
     NSString *_stepNo;
     NSString *_picUrl;
+    NSString *_title;
 }
 
+@property(copy, nonatomic) NSString *title; // @synthesize title=_title;
 @property(copy, nonatomic) NSString *picUrl; // @synthesize picUrl=_picUrl;
-@property(nonatomic) NSString *stepNo; // @synthesize stepNo=_stepNo;
+@property(copy, nonatomic) NSString *stepNo; // @synthesize stepNo=_stepNo;
 @property(retain, nonatomic) NSArray *content; // @synthesize content=_content;
 - (void).cxx_destruct;
 

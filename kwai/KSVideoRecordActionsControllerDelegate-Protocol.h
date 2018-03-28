@@ -15,5 +15,8 @@
 - (long long)deviceOrientationForVideoRecordActionsController:(KSVideoRecordActionsController *)arg1;
 - (struct CGSize)videoSizeForVideoRecordActionsController:(KSVideoRecordActionsController *)arg1;
 - (NSString *)videoOutputPathForVideoRecordActionsController:(KSVideoRecordActionsController *)arg1;
+
+@optional
+- (_Bool)shouldBeginCapture;
 @end
 

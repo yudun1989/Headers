@@ -47,12 +47,11 @@
 - (void)editMusicTitleWithMusicID:(id)arg1 title:(id)arg2 completion:(CDUnknownBlockType)arg3;
 - (void)doneButtonClick:(id)arg1;
 - (void)backBtnClick:(id)arg1;
-- (_Bool)prefersNavigationBarHidden;
 - (void)viewWillDisappear:(_Bool)arg1;
 - (void)viewWillAppear:(_Bool)arg1;
 - (void)setupUI;
 - (void)viewDidLoad;
-- (id)initWithRouterParamDict:(id)arg1;
+- (_Bool)configWithRouterParamDict:(id)arg1;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

@@ -11,7 +11,7 @@
 #import "MBKScanerBottomViewDelegate-Protocol.h"
 #import "UIAlertViewDelegate-Protocol.h"
 
-@class AVCaptureVideoPreviewLayer, CardBackGroundView, MBKAudioPlayer, MBKBluetoothEnableView, MBKCameraCapture, MBKScanerBottomView, MBKScanerBoxView, NSString, NSTimer, UIButton;
+@class AVCaptureVideoPreviewLayer, CardBackGroundView, MBKAudioPlayer, MBKBluetoothEnableView, MBKCameraCapture, MBKScanerBottomView, MBKScanerBoxView, MSWeakTimer, NSString, NSTimer, UIButton;
 
 @interface MBKScanQRCodeViewController : MBKBaseViewController <MBKCameraCaptureDelegate, UIAlertViewDelegate, MBKScanerBottomViewDelegate, MBKInputEncodeViewControllerDelegate>
 {
@@ -27,10 +27,12 @@
     CardBackGroundView *_helpGuildView;
     NSTimer *_durationTimer;
     double _scanDuration;
+    MSWeakTimer *_timer;
     struct CLLocationCoordinate2D _currentCoordinate;
 }
 
 + (void)load;
+@property(retain, nonatomic) MSWeakTimer *timer; // @synthesize timer=_timer;
 @property(nonatomic) double scanDuration; // @synthesize scanDuration=_scanDuration;
 @property(retain, nonatomic) NSTimer *durationTimer; // @synthesize durationTimer=_durationTimer;
 @property(retain, nonatomic) CardBackGroundView *helpGuildView; // @synthesize helpGuildView=_helpGuildView;
@@ -47,6 +49,7 @@
 - (void).cxx_destruct;
 - (void)stopDurationTimer;
 - (void)startDurationTimer;
+- (void)cameraCapture:(id)arg1 authFailure:(long long)arg2;
 - (void)cameraCapture:(id)arg1 didScanned:(id)arg2;
 - (void)cameraCapture:(id)arg1 shouldTurnLightOn:(_Bool)arg2;
 - (void)destoryQRcode;

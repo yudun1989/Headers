@@ -28,6 +28,7 @@
 @property(retain, nonatomic) UIView *returnView; // @synthesize returnView=_returnView;
 @property(retain, nonatomic) NSString *awemeID; // @synthesize awemeID=_awemeID;
 - (void).cxx_destruct;
+- (id)privateAccountView;
 - (void)didFinishGestureTransition;
 - (void)didStartGestureTransition;
 - (void)didFinishGestureTransition:(id)arg1;
@@ -50,7 +51,7 @@
 - (void)viewWillAppear:(_Bool)arg1;
 - (void)viewDidLoad;
 - (id)init;
-- (id)initWithRouterParamDict:(id)arg1;
+- (_Bool)configWithRouterParamDict:(id)arg1;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

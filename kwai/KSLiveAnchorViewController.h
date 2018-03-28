@@ -257,6 +257,7 @@
 - (id)initWithNibName:(id)arg1 bundle:(id)arg2;
 - (void)dealloc;
 - (_Bool)_attemptSendingInvitationTo:(id)arg1;
+- (id)anchor;
 - (void)chatWithUser:(id)arg1 adminType:(short)arg2;
 - (void)showFollowingForUser:(id)arg1;
 - (void)showFollowersForUser:(id)arg1;

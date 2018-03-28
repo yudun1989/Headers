@@ -75,6 +75,7 @@
 - (void)prepareForShowAnimation;
 - (void)setCanExchangeCoins:(_Bool)arg1;
 - (void)viewDidLoad;
+- (void)dealloc;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

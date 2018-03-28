@@ -9,7 +9,7 @@
 #import "MBKSearchBarViewDelegate-Protocol.h"
 #import "MMMapContextDelegate-Protocol.h"
 
-@class AnimatedAnnotation, MBKLBSManager, MBKMoCarAddressView, MBKMoCarGetParkingPlacesRequest, MBKMocarAnnotation, MBKMocarParkLotBottomView, MBKOnMyLocationButton, MBKRegionPoiView, MBKTimer, MMRGCSearchRequest, NSArray, NSString;
+@class MBKLBSManager, MBKMoCarAddressView, MBKMoCarGetParkingPlacesRequest, MBKMocarAnnotation, MBKMocarParkLotBottomView, MBKOnMyLocationButton, MBKPinAnnotation, MBKRegionPoiView, MBKTimer, MMRGCSearchRequest, NSArray, NSString;
 
 @interface MBKMoCarParkLotSearchViewController : MBKMapViewController <MBKSearchBarViewDelegate, MMMapContextDelegate>
 {
@@ -19,7 +19,7 @@
     MBKRegionPoiView *_regionPoiView;
     MBKLBSManager *_lbsManager;
     NSArray *_parkLotAnnotations;
-    AnimatedAnnotation *_animatedAnnotation;
+    MBKPinAnnotation *_animatedAnnotation;
     NSArray *_overlays;
     MBKMoCarAddressView *_bottomView;
     MBKMocarParkLotBottomView *_parkLotBottomView;
@@ -47,7 +47,7 @@
 @property(retain, nonatomic) MBKMoCarAddressView *bottomView; // @synthesize bottomView=_bottomView;
 @property(retain, nonatomic) NSArray *overlays; // @synthesize overlays=_overlays;
 @property(nonatomic) struct CLLocationCoordinate2D lastCoordinate; // @synthesize lastCoordinate=_lastCoordinate;
-@property(retain, nonatomic) AnimatedAnnotation *animatedAnnotation; // @synthesize animatedAnnotation=_animatedAnnotation;
+@property(retain, nonatomic) MBKPinAnnotation *animatedAnnotation; // @synthesize animatedAnnotation=_animatedAnnotation;
 @property(retain, nonatomic) NSArray *parkLotAnnotations; // @synthesize parkLotAnnotations=_parkLotAnnotations;
 @property(retain, nonatomic) MBKLBSManager *lbsManager; // @synthesize lbsManager=_lbsManager;
 @property(retain, nonatomic) MBKRegionPoiView *regionPoiView; // @synthesize regionPoiView=_regionPoiView;

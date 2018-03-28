@@ -6,7 +6,7 @@
 
 #import <Foundation/NSObject.h>
 
-@protocol AWEVideoCDNRequestDelegate, AWEVideoDownloadDelegate;
+@protocol AWEVideoCDNRequestDelegate, AWEVideoDownloadDelegate, AWEVideoPlayerLoggerDelegate;
 
 @interface AWEVideoDiskCacheConfiguration : NSObject
 {
@@ -17,9 +17,11 @@
     CDUnknownBlockType _Reporter;
     id <AWEVideoCDNRequestDelegate> _CDNTrackDelegate;
     id <AWEVideoDownloadDelegate> _videoDownloadDelegate;
+    id <AWEVideoPlayerLoggerDelegate> _loggerDelegate;
 }
 
 + (id)sharedInstance;
+@property(nonatomic) __weak id <AWEVideoPlayerLoggerDelegate> loggerDelegate; // @synthesize loggerDelegate=_loggerDelegate;
 @property(nonatomic) __weak id <AWEVideoDownloadDelegate> videoDownloadDelegate; // @synthesize videoDownloadDelegate=_videoDownloadDelegate;
 @property(nonatomic) __weak id <AWEVideoCDNRequestDelegate> CDNTrackDelegate; // @synthesize CDNTrackDelegate=_CDNTrackDelegate;
 @property(copy, nonatomic) CDUnknownBlockType Reporter; // @synthesize Reporter=_Reporter;

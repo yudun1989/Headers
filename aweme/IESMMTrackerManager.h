@@ -69,8 +69,6 @@
 @property(nonatomic) float previewFpsStartTime; // @synthesize previewFpsStartTime=_previewFpsStartTime;
 - (void).cxx_destruct;
 - (void)postTracker;
-- (void)trackImpportCropVideo;
-- (void)trackRecordVideo;
 - (void)impportCropVideo:(id)arg1;
 - (void)impportCropVideoStopTime;
 - (void)impportCropVideoStartTime;
@@ -104,7 +102,6 @@
 - (void)videoEncodeType:(id)arg1;
 - (void)previewResolution:(float)arg1 height:(float)arg2;
 - (void)recordResolution:(float)arg1 height:(float)arg2;
-- (id)init;
 
 @end
 

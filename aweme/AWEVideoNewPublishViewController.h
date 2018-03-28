@@ -12,7 +12,7 @@
 #import "UITableViewDelegate-Protocol.h"
 #import "UITextViewDelegate-Protocol.h"
 
-@class AWEFansInfluenceEntranceView, AWENewPublishTableCell, AWETextInputController, AWEVideoPublishNormalTask, HTSPlayer, NSArray, NSString, UIButton, UIImageView, UITableView, UITableViewCell, UITextView, UIView;
+@class AWEFansInfluenceEntranceView, AWENewPublishTableCell, AWETextInputController, AWEVideoPublishInputSuggestionView, AWEVideoPublishNormalTask, HTSPlayer, NSArray, NSString, UIButton, UIImageView, UILabel, UITableView, UITableViewCell, UITextView, UIView, UIVisualEffectView;
 
 @interface AWEVideoNewPublishViewController : UIViewController <UITableViewDelegate, UITableViewDataSource, UITextViewDelegate, AWETextInputControllerDelegate, AWEVideosCollectionViewAnimationDelegate>
 {
@@ -38,8 +38,22 @@
     UIView *_keyboardAppearMaskView;
     UIView *_keyboardAppearMidMaskView;
     AWEFansInfluenceEntranceView *_fansEntranceView;
+    UILabel *_syncToLabel;
+    UIButton *_buttonSyncToTwitter;
+    UIButton *_buttonSyncToFacebook;
+    UIButton *_buttonSyncToYouTube;
+    UIButton *_buttonSaveAlbumTikTok;
+    AWEVideoPublishInputSuggestionView *_suggestionView;
+    UIVisualEffectView *_effectView;
 }
 
+@property(retain, nonatomic) UIVisualEffectView *effectView; // @synthesize effectView=_effectView;
+@property(retain, nonatomic) AWEVideoPublishInputSuggestionView *suggestionView; // @synthesize suggestionView=_suggestionView;
+@property(retain, nonatomic) UIButton *buttonSaveAlbumTikTok; // @synthesize buttonSaveAlbumTikTok=_buttonSaveAlbumTikTok;
+@property(retain, nonatomic) UIButton *buttonSyncToYouTube; // @synthesize buttonSyncToYouTube=_buttonSyncToYouTube;
+@property(retain, nonatomic) UIButton *buttonSyncToFacebook; // @synthesize buttonSyncToFacebook=_buttonSyncToFacebook;
+@property(retain, nonatomic) UIButton *buttonSyncToTwitter; // @synthesize buttonSyncToTwitter=_buttonSyncToTwitter;
+@property(retain, nonatomic) UILabel *syncToLabel; // @synthesize syncToLabel=_syncToLabel;
 @property(retain, nonatomic) AWEFansInfluenceEntranceView *fansEntranceView; // @synthesize fansEntranceView=_fansEntranceView;
 @property(retain, nonatomic) UIView *keyboardAppearMidMaskView; // @synthesize keyboardAppearMidMaskView=_keyboardAppearMidMaskView;
 @property(retain, nonatomic) UIView *keyboardAppearMaskView; // @synthesize keyboardAppearMaskView=_keyboardAppearMaskView;
@@ -63,6 +77,15 @@
 @property(nonatomic) _Bool shouldShowDraftReCaptureTip; // @synthesize shouldShowDraftReCaptureTip=_shouldShowDraftReCaptureTip;
 @property(retain, nonatomic) NSArray *observers; // @synthesize observers=_observers;
 - (void).cxx_destruct;
+- (void)p_buttonSyncToYouTubeClicked;
+- (void)p_buttonSyncToTwitterClicked;
+- (void)p_buttonSyncToFacebookClicked;
+- (_Bool)userWouldLikeToShareToYouTube;
+- (_Bool)userWouldLikeToShareToTwitter;
+- (_Bool)userWouldLikeToShareToFacebook;
+- (unsigned long long)userYouTubeTokenState;
+- (unsigned long long)userTwitterTokenState;
+- (unsigned long long)userFacebookTokenState;
 - (id)transitionViewForOffset:(long long)arg1;
 - (id)rootPresentingViewController;
 - (void)_removeObservers;
@@ -79,6 +102,10 @@
 - (void)showSearchLocationViewControllerIfNeeded;
 - (id)addBackButtonForDraft;
 - (id)tableFooterView;
+- (void)textInput:(id)arg1 didReplaceTextInRange:(struct _NSRange)arg2 withText:(id)arg3;
+- (void)textInput:(id)arg1 didRequestSuggestion:(id)arg2;
+- (void)textInputDidNeedClosingSuggestion:(id)arg1;
+- (void)textInputDidStartLoadingSuggestions:(id)arg1;
 - (void)textInputValueChanged:(id)arg1;
 - (void)textInputDidExceedMaxUserCount:(id)arg1;
 - (void)textInputDidExceedMaxLength:(id)arg1;

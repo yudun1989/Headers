@@ -43,7 +43,7 @@
 - (void)addressBookListRefresh:(_Bool)arg1;
 - (void)viewDidAppear:(_Bool)arg1;
 - (void)viewDidLoad;
-- (id)initWithRouterParamDict:(id)arg1;
+- (_Bool)configWithRouterParamDict:(id)arg1;
 - (id)init;
 - (void)dealloc;
 

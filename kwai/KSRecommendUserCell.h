@@ -18,7 +18,7 @@
     _Bool _hideBottomLine;
     _Bool _bottomLineFullStyle;
     UIImageView *_userHeaderView;
-    UIImageView *_vIcon;
+    UIImageView *_verifiedIcon;
     UILabel *_userNameLabel;
     UILabel *_userWordsLabel;
     KSFollowButton *_followBtn;
@@ -62,7 +62,7 @@
 @property(retain, nonatomic) KSFollowButton *followBtn; // @synthesize followBtn=_followBtn;
 @property(retain, nonatomic) UILabel *userWordsLabel; // @synthesize userWordsLabel=_userWordsLabel;
 @property(retain, nonatomic) UILabel *userNameLabel; // @synthesize userNameLabel=_userNameLabel;
-@property(retain, nonatomic) UIImageView *vIcon; // @synthesize vIcon=_vIcon;
+@property(retain, nonatomic) UIImageView *verifiedIcon; // @synthesize verifiedIcon=_verifiedIcon;
 @property(retain, nonatomic) UIImageView *userHeaderView; // @synthesize userHeaderView=_userHeaderView;
 - (void).cxx_destruct;
 - (void)recommendUserFeedView:(id)arg1 withFeed:(id)arg2;
@@ -76,9 +76,9 @@
 - (void)drawWithRecommendUser:(id)arg1;
 - (void)setHighlighted:(_Bool)arg1 animated:(_Bool)arg2;
 - (void)layoutSubviews;
-- (void)dealloc;
 - (void)addUserFeedsSubviews;
 - (void)addUserInfoSubviews;
+- (void)dealloc;
 - (id)initWithStyle:(long long)arg1 reuseIdentifier:(id)arg2;
 - (id)init;
 

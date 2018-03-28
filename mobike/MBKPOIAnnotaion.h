@@ -8,7 +8,7 @@
 
 #import "MBKAnnotationAssocaitaionProtocol-Protocol.h"
 
-@class NSString;
+@class MMPolyline, NSString;
 @protocol MBKPOIBackProtocol, MMOverlay;
 
 @interface MBKPOIAnnotaion : MMPointAnnotation <MBKAnnotationAssocaitaionProtocol>
@@ -21,6 +21,7 @@
 @property(readonly, nonatomic) id <MMOverlay> associatedOverlay;
 
 // Remaining properties
+@property(nonatomic) __weak MMPolyline *associatedRoutePolyline;
 @property(readonly, copy) NSString *debugDescription;
 @property(readonly, copy) NSString *description;
 @property(readonly) unsigned long long hash;

@@ -48,7 +48,7 @@
 - (void)viewDidAppear:(_Bool)arg1;
 - (void)buildNavigationHeader;
 - (void)viewDidLoad;
-- (id)initWithRouterParamDict:(id)arg1;
+- (_Bool)configWithRouterParamDict:(id)arg1;
 - (id)init;
 - (void)dealloc;
 

@@ -20,15 +20,18 @@
     UIButton *_followBtn;
     UIImageView *_posterView;
     UIImageView *_playView;
+    UIImageView *_imageTextView;
     AWEIMMessageStateView *_stateView;
 }
 
++ (double)getCardHeight:(id)arg1;
 + (id)_defaultPostImageForOther;
 + (id)_defaultPostImageForMe;
-+ (void)_clipContext:(struct CGContext *)arg1 sendFromMe:(_Bool)arg2;
++ (void)_clipContext:(struct CGContext *)arg1 sendFromMe:(_Bool)arg2 withHeight:(double)arg3;
 + (id)identifier;
 + (struct CGSize)contentSizeWithMesasge:(id)arg1;
 @property(retain, nonatomic) AWEIMMessageStateView *stateView; // @synthesize stateView=_stateView;
+@property(retain, nonatomic) UIImageView *imageTextView; // @synthesize imageTextView=_imageTextView;
 @property(retain, nonatomic) UIImageView *playView; // @synthesize playView=_playView;
 @property(retain, nonatomic) UIImageView *posterView; // @synthesize posterView=_posterView;
 @property(retain, nonatomic) UIButton *followBtn; // @synthesize followBtn=_followBtn;
@@ -38,6 +41,8 @@
 @property(retain, nonatomic) CAShapeLayer *bubbleLayer; // @synthesize bubbleLayer=_bubbleLayer;
 @property(retain, nonatomic) UIView *bubbleView; // @synthesize bubbleView=_bubbleView;
 - (void).cxx_destruct;
+- (double)_getCardHeight;
+- (void)_setPosterViewHeight:(id)arg1;
 - (void)layoutSubviews;
 - (void)_refreshCardFollowBtnUI;
 - (void)_refreshCardUI;

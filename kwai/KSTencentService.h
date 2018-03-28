@@ -17,6 +17,7 @@
 @interface KSTencentService : NSObject <TencentSessionDelegate, QQApiInterfaceDelegate, KSURLHandler, KSThirdPartyOAuth, KSActivity>
 {
     _Bool _loginRequestSent;
+    _Bool _shareRequestSent;
     _Bool _onceEnterBackgroundAfterRequestSent;
     TencentOAuth *_tencentOAuth;
     CDUnknownBlockType _successBlock;
@@ -34,6 +35,7 @@
 @property(copy, nonatomic) NSString *openID; // @synthesize openID=_openID;
 @property(copy, nonatomic) NSString *accessToken; // @synthesize accessToken=_accessToken;
 @property(nonatomic) _Bool onceEnterBackgroundAfterRequestSent; // @synthesize onceEnterBackgroundAfterRequestSent=_onceEnterBackgroundAfterRequestSent;
+@property(nonatomic) _Bool shareRequestSent; // @synthesize shareRequestSent=_shareRequestSent;
 @property(nonatomic) _Bool loginRequestSent; // @synthesize loginRequestSent=_loginRequestSent;
 @property(nonatomic) unsigned long long activityStatus; // @synthesize activityStatus=_activityStatus;
 @property(copy, nonatomic) CDUnknownBlockType activityCompletion; // @synthesize activityCompletion=_activityCompletion;

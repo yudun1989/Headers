@@ -9,26 +9,32 @@
 @interface MBKPollingRequest : NSObject
 {
     // Error parsing type: , name: httpPoliingInterval
-    // Error parsing type: , name: maxPollingCount
+    // Error parsing type: , name: timeoutDuration
     // Error parsing type: , name: httpRequest
     // Error parsing type: , name: mqttRequest
     // Error parsing type: , name: mqttResultType
+    // Error parsing type: , name: workingQueue
     // Error parsing type: , name: handlingBlock
     // Error parsing type: , name: cancelledBlock
     // Error parsing type: , name: httpPollingTimer
+    // Error parsing type: , name: timeoutTimer
     // Error parsing type: , name: polledCount
-    // Error parsing type: , name: started
+    // Error parsing type: , name: startTime
+    // Error parsing type: , name: running
+    // Error parsing type: , name: cycleRetainSelf
 }
 
 - (CDUnknownBlockType).cxx_destruct;
 - (id)init;
+- (void)timeoutedWithTimer:(id)arg1;
 - (void)timerFiredWithTimer:(id)arg1;
 - (void)cancel;
 - (void)start;
-- (void)setTimeoutBlock:(CDUnknownBlockType)arg1;
+- (void)setCancelledBlock:(CDUnknownBlockType)arg1;
 - (void)setHanldingBlock:(CDUnknownBlockType)arg1;
-- (id)initWithHTTPRequest:(id)arg1 MQTTRequest:(id)arg2 MQTTResultType:(long long)arg3;
-@property(nonatomic) long long maxPollingCount; // @synthesize maxPollingCount;
+- (id)initWithHTTPRequest:(id)arg1 MQTTRequest:(id)arg2 MQTTResultType:(long long)arg3 queue:(id)arg4;
+@property(nonatomic, readonly) long long polledHttpRequestCount;
+@property(nonatomic) double timeoutDuration; // @synthesize timeoutDuration;
 @property(nonatomic) double httpPoliingInterval; // @synthesize httpPoliingInterval;
 
 @end

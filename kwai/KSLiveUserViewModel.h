@@ -208,7 +208,7 @@
 - (id)init;
 - (void)dealloc;
 - (id)multiImageDownloader;
-- (void)followUser:(id)arg1 following:(_Bool)arg2 fromViewController:(id)arg3 withCompletion:(CDUnknownBlockType)arg4;
+- (void)followUser:(id)arg1 following:(_Bool)arg2 fromPage:(id)arg3 fromPageRefer:(id)arg4 withCompletion:(CDUnknownBlockType)arg5;
 - (void)removeMessageReceiver:(id)arg1;
 - (void)registerMessageReceiver:(id)arg1;
 - (void)safeInvocateReceivers:(CDUnknownBlockType)arg1;

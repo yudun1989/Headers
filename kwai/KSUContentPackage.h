@@ -6,7 +6,7 @@
 
 #import "GPBMessage.h"
 
-@class KSUAtlasPackage, KSUBannerPackage, KSUBatchEditEffectPackage, KSUBatchFeatureSwitchPackage, KSUBatchFeedShowCountPackage, KSUBatchMusicDetailPackage, KSUBatchThemePackage, KSUBatchUserPackage, KSUBatchVisitDetailPackage, KSUBeautyStatusPackage, KSUCameraRecordFeaturesStatusPackage, KSUCommentPackage, KSUCommentShowPackage, KSUCommodityDetailPackage, KSUECommerceLinkPacakge, KSUEffectPackage, KSUFeatureSwitchPackage, KSUFeaturesElementStayLengthPackage, KSUGiftPackage, KSUImportMusicFromPCPackage, KSUKSongDetailPackage, KSULiveAudiencePacakge, KSULiveBroadcastPacakge, KSULiveQuizPackage, KSULiveStreamPackage, KSULocalMusicPackage, KSULoginSourcePackage, KSUMagicFaceShowPackage, KSUMessagePackage, KSUMusicDetailPackage, KSUMusicEffectPackage, KSUOgcLiveQuizPackage, KSUPaymentPackage, KSUPersonalizationStatusPackage, KSUPhotoPackage, KSUPhotoSeekBarDragPackage, KSUPhotoShowPackage, KSUProductionEditOperationPackage, KSUProfilePackage, KSUSF2018VideoStatPackage, KSUScreenPackage, KSUSearchResultPackage, KSUSingerDetailPackage, KSUSoundEffectPackage, KSUTagPackage, KSUTagShowPackage, KSUThirdPartyBindPackage, KSUThirdPartyRecommendUserListItemPackage, KSUUserPackage, KSUVideoEditFeaturesStatusPackage, KSUVideoEditOperationPackage, KSUVideoPackage;
+@class KSUAtlasPackage, KSUBannerPackage, KSUBatchCommodityDetailPackage, KSUBatchEditEffectPackage, KSUBatchFeatureSwitchPackage, KSUBatchFeedShowCountPackage, KSUBatchMusicDetailPackage, KSUBatchThemePackage, KSUBatchUserPackage, KSUBatchVisitDetailPackage, KSUBeautyStatusPackage, KSUCameraRecordFeaturesStatusPackage, KSUCommentPackage, KSUCommentShowPackage, KSUCommodityDetailPackage, KSUECommerceLinkPacakge, KSUEffectPackage, KSUFeatureSwitchPackage, KSUFeaturesElementStayLengthPackage, KSUGiftPackage, KSUImportMusicFromPCPackage, KSUKSongDetailPackage, KSULiveAudiencePacakge, KSULiveBroadcastPacakge, KSULiveQuizPackage, KSULiveStreamPackage, KSULocalMusicPackage, KSULoginSourcePackage, KSUMagicFaceShowPackage, KSUMessagePackage, KSUMusicDetailPackage, KSUMusicEffectPackage, KSUOgcLiveQuizPackage, KSUPaymentPackage, KSUPersonalizationStatusPackage, KSUPhotoPackage, KSUPhotoSeekBarDragPackage, KSUPhotoShowPackage, KSUProductionEditOperationPackage, KSUProfilePackage, KSUSF2018VideoStatPackage, KSUScreenPackage, KSUSearchResultPackage, KSUSingerDetailPackage, KSUSoundEffectPackage, KSUTagPackage, KSUTagShowPackage, KSUThirdPartyBindPackage, KSUThirdPartyRecommendUserListItemPackage, KSUUserPackage, KSUVideoEditFeaturesStatusPackage, KSUVideoEditOperationPackage, KSUVideoPackage;
 
 @interface KSUContentPackage : GPBMessage
 {
@@ -17,6 +17,7 @@
 // Remaining properties
 @property(retain, nonatomic) KSUAtlasPackage *atlasPackage; // @dynamic atlasPackage;
 @property(retain, nonatomic) KSUBannerPackage *bannerPackage; // @dynamic bannerPackage;
+@property(retain, nonatomic) KSUBatchCommodityDetailPackage *batchCommodityDetailPackage; // @dynamic batchCommodityDetailPackage;
 @property(retain, nonatomic) KSUBatchEditEffectPackage *batchEditEffectPackage; // @dynamic batchEditEffectPackage;
 @property(retain, nonatomic) KSUBatchFeatureSwitchPackage *batchFeatureSwitchPackage; // @dynamic batchFeatureSwitchPackage;
 @property(retain, nonatomic) KSUBatchFeedShowCountPackage *batchFeedShowCountPackage; // @dynamic batchFeedShowCountPackage;
@@ -36,6 +37,7 @@
 @property(retain, nonatomic) KSUGiftPackage *giftPackage; // @dynamic giftPackage;
 @property(nonatomic) _Bool hasAtlasPackage; // @dynamic hasAtlasPackage;
 @property(nonatomic) _Bool hasBannerPackage; // @dynamic hasBannerPackage;
+@property(nonatomic) _Bool hasBatchCommodityDetailPackage; // @dynamic hasBatchCommodityDetailPackage;
 @property(nonatomic) _Bool hasBatchEditEffectPackage; // @dynamic hasBatchEditEffectPackage;
 @property(nonatomic) _Bool hasBatchFeatureSwitchPackage; // @dynamic hasBatchFeatureSwitchPackage;
 @property(nonatomic) _Bool hasBatchFeedShowCountPackage; // @dynamic hasBatchFeedShowCountPackage;

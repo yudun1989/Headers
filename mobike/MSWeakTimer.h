@@ -6,8 +6,6 @@
 
 #import <objc/NSObject.h>
 
-@protocol OS_dispatch_queue, OS_dispatch_source;
-
 @interface MSWeakTimer : NSObject
 {
     struct {
@@ -19,13 +17,13 @@
     id _target;
     SEL _selector;
     id _userInfo;
-    NSObject<OS_dispatch_queue> *_privateSerialQueue;
-    NSObject<OS_dispatch_source> *_timer;
+    struct dispatch_queue_s *_privateSerialQueue;
+    struct dispatch_source_s *_timer;
 }
 
-+ (id)scheduledTimerWithTimeInterval:(double)arg1 target:(id)arg2 selector:(SEL)arg3 userInfo:(id)arg4 repeats:(_Bool)arg5 dispatchQueue:(id)arg6;
-@property(retain, nonatomic) NSObject<OS_dispatch_source> *timer; // @synthesize timer=_timer;
-@property(retain, nonatomic) NSObject<OS_dispatch_queue> *privateSerialQueue; // @synthesize privateSerialQueue=_privateSerialQueue;
++ (id)scheduledTimerWithTimeInterval:(double)arg1 target:(id)arg2 selector:(SEL)arg3 userInfo:(id)arg4 repeats:(_Bool)arg5 dispatchQueue:(struct dispatch_queue_s *)arg6;
+@property(nonatomic) struct dispatch_source_s *timer; // @synthesize timer=_timer;
+@property(nonatomic) struct dispatch_queue_s *privateSerialQueue; // @synthesize privateSerialQueue=_privateSerialQueue;
 @property(nonatomic) _Bool repeats; // @synthesize repeats=_repeats;
 @property(retain, nonatomic) id userInfo; // @synthesize userInfo=_userInfo;
 @property(nonatomic) SEL selector; // @synthesize selector=_selector;
@@ -41,7 +39,7 @@
 - (id)description;
 - (void)dealloc;
 - (id)init;
-- (id)initWithTimeInterval:(double)arg1 target:(id)arg2 selector:(SEL)arg3 userInfo:(id)arg4 repeats:(_Bool)arg5 dispatchQueue:(id)arg6;
+- (id)initWithTimeInterval:(double)arg1 target:(id)arg2 selector:(SEL)arg3 userInfo:(id)arg4 repeats:(_Bool)arg5 dispatchQueue:(struct dispatch_queue_s *)arg6;
 
 @end
 

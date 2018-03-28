@@ -12,13 +12,16 @@
 @interface AWELivePlayerUploadLogManager : NSObject
 {
     NSObject<OS_dispatch_queue> *_executeQueue;
+    _Bool _isRequesting;
     NSString *_url;
 }
 
 + (id)sharedInstance;
+@property _Bool isRequesting; // @synthesize isRequesting=_isRequesting;
 @property(copy, nonatomic) NSString *url; // @synthesize url=_url;
 - (void).cxx_destruct;
 - (void)uploadLog:(id)arg1 streamURL:(id)arg2 type:(long long)arg3;
+- (void)reset;
 - (id)init;
 
 @end

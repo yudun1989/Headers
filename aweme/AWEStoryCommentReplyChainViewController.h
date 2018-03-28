@@ -66,6 +66,7 @@
 - (void)_refreshData;
 - (void)viewDidLoad;
 - (void)dealloc;
+- (_Bool)configWithRouterParamDict:(id)arg1;
 - (id)initWithRouterParamDict:(id)arg1;
 
 // Remaining properties

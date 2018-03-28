@@ -6,25 +6,31 @@
 
 #import "KSPopoverViewController.h"
 
+#import "UICollectionViewDataSource-Protocol.h"
+#import "UICollectionViewDelegate-Protocol.h"
+#import "UICollectionViewDelegateFlowLayout-Protocol.h"
 #import "UIGestureRecognizerDelegate-Protocol.h"
 
-@class KSLiveUserOperationView, KSLiveUserProductCollectionView, KSLiveUserProfileUserInfoView, KSLiveUserProfileViewModel, NSLayoutConstraint, NSString, UIView;
+@class KSBaseViewController, KSCollectionView, KSLiveUserOperationView, KSLiveUserProfileCollectionViewHeader, KSLiveUserProfileUserInfoView, KSLiveUserProfileViewModel, NSLayoutConstraint, NSString, UIView;
 
-@interface KSLiveUserProfileViewController : KSPopoverViewController <UIGestureRecognizerDelegate>
+@interface KSLiveUserProfileViewController : KSPopoverViewController <UIGestureRecognizerDelegate, UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout>
 {
     _Bool _viewDidLoaded;
     _Bool _viewWillDismiss;
     _Bool _spreaded;
     _Bool _spreadAnimating;
+    _Bool _descSpreaded;
     KSLiveUserProfileViewModel *_userProfileViewModel;
     CDUnknownBlockType _liveUserOperation;
     CDUnknownBlockType _liveUserProfileCheckProduct;
     CDUnknownBlockType _withUserAvaliable;
+    KSBaseViewController *_fromVC;
     UIView *_draggableContentView;
     KSLiveUserProfileUserInfoView *_userInfoView;
     KSLiveUserOperationView *_operationView;
     UIView *_productContainerView;
-    KSLiveUserProductCollectionView *_productView;
+    KSCollectionView *_productView;
+    KSLiveUserProfileCollectionViewHeader *_userDescHeader;
     NSLayoutConstraint *_infoViewHeight;
     NSLayoutConstraint *_productHeight;
     double _scrollTranslateOffset;
@@ -32,6 +38,7 @@
 }
 
 + (id)userProfileViewControllerWithUserProfileViewModel:(id)arg1;
+@property(nonatomic) _Bool descSpreaded; // @synthesize descSpreaded=_descSpreaded;
 @property(nonatomic) struct CGPoint stayContentOffset; // @synthesize stayContentOffset=_stayContentOffset;
 @property(nonatomic) double scrollTranslateOffset; // @synthesize scrollTranslateOffset=_scrollTranslateOffset;
 @property(nonatomic) _Bool spreadAnimating; // @synthesize spreadAnimating=_spreadAnimating;
@@ -40,11 +47,13 @@
 @property(nonatomic) __weak NSLayoutConstraint *infoViewHeight; // @synthesize infoViewHeight=_infoViewHeight;
 @property(nonatomic) _Bool viewWillDismiss; // @synthesize viewWillDismiss=_viewWillDismiss;
 @property(nonatomic) _Bool viewDidLoaded; // @synthesize viewDidLoaded=_viewDidLoaded;
-@property(retain, nonatomic) KSLiveUserProductCollectionView *productView; // @synthesize productView=_productView;
+@property(retain, nonatomic) KSLiveUserProfileCollectionViewHeader *userDescHeader; // @synthesize userDescHeader=_userDescHeader;
+@property(retain, nonatomic) KSCollectionView *productView; // @synthesize productView=_productView;
 @property(retain, nonatomic) UIView *productContainerView; // @synthesize productContainerView=_productContainerView;
 @property(retain, nonatomic) KSLiveUserOperationView *operationView; // @synthesize operationView=_operationView;
 @property(retain, nonatomic) KSLiveUserProfileUserInfoView *userInfoView; // @synthesize userInfoView=_userInfoView;
 @property(retain, nonatomic) UIView *draggableContentView; // @synthesize draggableContentView=_draggableContentView;
+@property(nonatomic) __weak KSBaseViewController *fromVC; // @synthesize fromVC=_fromVC;
 @property(copy, nonatomic) CDUnknownBlockType withUserAvaliable; // @synthesize withUserAvaliable=_withUserAvaliable;
 @property(copy, nonatomic) CDUnknownBlockType liveUserProfileCheckProduct; // @synthesize liveUserProfileCheckProduct=_liveUserProfileCheckProduct;
 @property(copy, nonatomic) CDUnknownBlockType liveUserOperation; // @synthesize liveUserOperation=_liveUserOperation;
@@ -55,12 +64,29 @@
 - (CDUnknownBlockType)dismissAnimation;
 - (void)layoutDidUpdate;
 - (struct KSPopoverSize)contentKeySize;
+- (void)_updateUserDesc;
+- (void)_lazyLoadVisiableCells;
 - (void)_followUser:(id)arg1 following:(_Bool)arg2;
 - (void)_clickEventWithName:(id)arg1 action:(int)arg2 index:(int)arg3;
 - (double)_userInfoHeight;
 - (void)_updateProductHeight;
 - (void)_loadMoreProductsIfNeed;
 - (void)_setUpUI;
+- (struct CGSize)collectionView:(id)arg1 layout:(id)arg2 referenceSizeForHeaderInSection:(long long)arg3;
+- (struct CGSize)collectionView:(id)arg1 layout:(id)arg2 sizeForItemAtIndexPath:(id)arg3;
+- (struct UIEdgeInsets)collectionView:(id)arg1 layout:(id)arg2 insetForSectionAtIndex:(long long)arg3;
+- (double)collectionView:(id)arg1 layout:(id)arg2 minimumInteritemSpacingForSectionAtIndex:(long long)arg3;
+- (double)collectionView:(id)arg1 layout:(id)arg2 minimumLineSpacingForSectionAtIndex:(long long)arg3;
+- (void)scrollViewDidEndDragging:(id)arg1 willDecelerate:(_Bool)arg2;
+- (void)scrollViewWillEndDragging:(id)arg1 withVelocity:(struct CGPoint)arg2 targetContentOffset:(inout struct CGPoint *)arg3;
+- (void)scrollViewDidEndDecelerating:(id)arg1;
+- (void)scrollViewWillBeginDragging:(id)arg1;
+- (void)scrollViewDidScroll:(id)arg1;
+- (void)collectionView:(id)arg1 willDisplayCell:(id)arg2 forItemAtIndexPath:(id)arg3;
+- (void)collectionView:(id)arg1 didSelectItemAtIndexPath:(id)arg2;
+- (id)collectionView:(id)arg1 viewForSupplementaryElementOfKind:(id)arg2 atIndexPath:(id)arg3;
+- (id)collectionView:(id)arg1 cellForItemAtIndexPath:(id)arg2;
+- (long long)collectionView:(id)arg1 numberOfItemsInSection:(long long)arg2;
 - (void)panGestureChanged:(id)arg1;
 - (_Bool)gestureRecognizer:(id)arg1 shouldRecognizeSimultaneouslyWithGestureRecognizer:(id)arg2;
 - (void)didReceiveDeleteFeedNotification:(id)arg1;

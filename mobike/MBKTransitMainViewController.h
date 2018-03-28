@@ -6,14 +6,20 @@
 
 #import "MBKBaseViewController.h"
 
+#import "MBKAroundLinesTapedDelegate-Protocol.h"
+#import "MBKCarCodeUserSelectionDelegate-Protocol.h"
+#import "MBKCityOrQuestionsDelegate-Protocol.h"
+#import "MBKScanTicketDelegate-Protocol.h"
+#import "MBKTapButtonsViewDelegate-Protocol.h"
 #import "MBKTransitChoseStationViewDelegate-Protocol.h"
 #import "MBKTransitPayViewDelegate-Protocol.h"
 #import "MBKTransitPurchasedViewDelegate-Protocol.h"
 
-@class HomeTopBannerModel, MBKPanelCardView, MBKTransitHelpView, MBKTransitMainViewModel, MBKTransitPayView, NSString, UIScrollView;
+@class MBKApplicationIDModel, MBKApplicationItemModel, MBKApplicationTypeItemModel, MBKAroundLinesView, MBKBubbleAnimationView, MBKBusQRCodeView, MBKCitySelectButton, MBKIconLable, MBKLunchCityAndCommonQuestionsView, MBKPanelCardView, MBKTicketsModel, MBKTransitHelpView, MBKTransitMainViewModel, MBKTransitPayView, MBKTransitTapButtonsView, NSString, UIScrollView;
 
-@interface MBKTransitMainViewController : MBKBaseViewController <MBKTransitPurchasedViewDelegate, MBKTransitChoseStationViewDelegate, MBKTransitPayViewDelegate>
+@interface MBKTransitMainViewController : MBKBaseViewController <MBKTransitPurchasedViewDelegate, MBKTransitChoseStationViewDelegate, MBKTransitPayViewDelegate, MBKTapButtonsViewDelegate, MBKCityOrQuestionsDelegate, MBKAroundLinesTapedDelegate, MBKCarCodeUserSelectionDelegate, MBKScanTicketDelegate>
 {
+    _Bool _isGoToOpenWx;
     UIScrollView *_backgroundScrollView;
     MBKPanelCardView *_bannerView;
     MBKPanelCardView *_transitPurchasedCardView;
@@ -21,15 +27,45 @@
     MBKPanelCardView *_transitTicketPriceCardView;
     MBKTransitPayView *_transitPayView;
     MBKTransitHelpView *_transitHelpView;
+    MBKTransitHelpView *_transitUseView;
+    MBKTransitTapButtonsView *_transitTapButtonsView;
+    MBKCitySelectButton *_citySelection;
+    MBKLunchCityAndCommonQuestionsView *_cityQuestions;
+    MBKBubbleAnimationView *_bubbleView;
+    MBKBusQRCodeView *_busQRCodeView;
+    MBKIconLable *_busCodeUpdatedNote;
+    MBKAroundLinesView *_aroundLines;
+    MBKApplicationItemModel *_selectCity;
     MBKTransitMainViewModel *_viewModel;
-    HomeTopBannerModel *_bannerModel;
+    MBKApplicationIDModel *_applications;
+    MBKApplicationTypeItemModel *_currentCityBusCodeModel;
+    MBKTicketsModel *_tickets;
+    long long _lastBusCodeServiceType;
+    long long _busCodeServiceType;
+    long long _serviceType;
+    double _brightnessValue;
 }
 
 + (void)setTransitStyleShadow:(id)arg1;
-+ (void)transitRefundActionIncurrentVc:(id)arg1 orderId:(id)arg2;
 + (void)load;
-@property(retain, nonatomic) HomeTopBannerModel *bannerModel; // @synthesize bannerModel=_bannerModel;
+@property(nonatomic) _Bool isGoToOpenWx; // @synthesize isGoToOpenWx=_isGoToOpenWx;
+@property(nonatomic) double brightnessValue; // @synthesize brightnessValue=_brightnessValue;
+@property(nonatomic) long long serviceType; // @synthesize serviceType=_serviceType;
+@property(nonatomic) long long busCodeServiceType; // @synthesize busCodeServiceType=_busCodeServiceType;
+@property(nonatomic) long long lastBusCodeServiceType; // @synthesize lastBusCodeServiceType=_lastBusCodeServiceType;
+@property(retain, nonatomic) MBKTicketsModel *tickets; // @synthesize tickets=_tickets;
+@property(retain, nonatomic) MBKApplicationTypeItemModel *currentCityBusCodeModel; // @synthesize currentCityBusCodeModel=_currentCityBusCodeModel;
+@property(retain, nonatomic) MBKApplicationIDModel *applications; // @synthesize applications=_applications;
 @property(retain, nonatomic) MBKTransitMainViewModel *viewModel; // @synthesize viewModel=_viewModel;
+@property(retain, nonatomic) MBKApplicationItemModel *selectCity; // @synthesize selectCity=_selectCity;
+@property(retain, nonatomic) MBKAroundLinesView *aroundLines; // @synthesize aroundLines=_aroundLines;
+@property(retain, nonatomic) MBKIconLable *busCodeUpdatedNote; // @synthesize busCodeUpdatedNote=_busCodeUpdatedNote;
+@property(retain, nonatomic) MBKBusQRCodeView *busQRCodeView; // @synthesize busQRCodeView=_busQRCodeView;
+@property(retain, nonatomic) MBKBubbleAnimationView *bubbleView; // @synthesize bubbleView=_bubbleView;
+@property(retain, nonatomic) MBKLunchCityAndCommonQuestionsView *cityQuestions; // @synthesize cityQuestions=_cityQuestions;
+@property(retain, nonatomic) MBKCitySelectButton *citySelection; // @synthesize citySelection=_citySelection;
+@property(retain, nonatomic) MBKTransitTapButtonsView *transitTapButtonsView; // @synthesize transitTapButtonsView=_transitTapButtonsView;
+@property(retain, nonatomic) MBKTransitHelpView *transitUseView; // @synthesize transitUseView=_transitUseView;
 @property(retain, nonatomic) MBKTransitHelpView *transitHelpView; // @synthesize transitHelpView=_transitHelpView;
 @property(retain, nonatomic) MBKTransitPayView *transitPayView; // @synthesize transitPayView=_transitPayView;
 @property(retain, nonatomic) MBKPanelCardView *transitTicketPriceCardView; // @synthesize transitTicketPriceCardView=_transitTicketPriceCardView;
@@ -38,27 +74,64 @@
 @property(retain, nonatomic) MBKPanelCardView *bannerView; // @synthesize bannerView=_bannerView;
 @property(retain, nonatomic) UIScrollView *backgroundScrollView; // @synthesize backgroundScrollView=_backgroundScrollView;
 - (void).cxx_destruct;
+- (void)gotoJourney;
+- (void)carCodeFresh;
+- (void)sendTicketsExpired;
+- (void)sendTicketsWith:(id)arg1 err:(id)arg2;
+- (void)goToWeChatFree:(id)arg1;
+- (id)busApplication;
+- (void)openWXFree;
+- (void)openBusCodeService;
+- (void)carCodeDidServiceType:(long long)arg1;
+- (void)aroundLinesTaped;
+- (void)didSelectCityOrQuestions:(long long)arg1;
+- (void)initCityQuestion;
+- (void)reDisplayPayButtonWithType:(long long)arg1;
+- (void)scanBusCode;
+- (void)loadTicketsAndScan;
+- (void)getTicekts;
+- (void)unLogin;
+- (void)transitdidSelectTabButton:(long long)arg1 typeModel:(id)arg2;
 - (void)didReceiveMemoryWarning;
+- (void)userUse;
+- (void)userCommon;
 - (id)transitTicketPriceView;
 - (id)transitChoseStationView;
 - (id)transitPurchasedView;
 - (void)transitPurchasedView:(id)arg1;
+- (void)presentLoginViewController;
 - (void)transitPayAction:(id)arg1;
 - (void)addressPickerViewTicketAmountChanged:(id)arg1;
 - (void)mapStationsWith:(id)arg1;
 - (void)selectedStation:(id)arg1 index:(long long)arg2;
 - (void)addressPickerView:(id)arg1 shouldSelectAtIndex:(long long)arg2;
 - (void)goMapSelectStation;
-- (void)goToSuccessWebView;
+- (void)gotoOderPaied:(id)arg1;
+- (void)goToSuccessWebViewWithOderId:(id)arg1;
 - (void)updatePayButtonStatus:(id)arg1;
 - (void)setupViewModelAndCommand;
 - (void)reloadSubViews;
+- (void)gotoCitySelection;
+- (void)citySelectionClicked:(id)arg1;
+- (void)remakeBackScrollView;
 - (void)initBackgroundScrollView;
 - (void)initTransitPayView;
 - (void)initTransitHelpView;
 - (void)initTransitLineCacheManager;
 - (void)setupView;
+- (void)viewWillDisappear:(_Bool)arg1;
 - (void)viewWillAppear:(_Bool)arg1;
+- (void)parseApplicationsWith:(id)arg1;
+- (void)getApplications;
+- (void)dealloc;
+- (void)takeScreenShot:(id)arg1;
+- (void)initBubbleView;
+- (void)setBrightLight;
+- (void)setBrightOriginal;
+- (void)applicationBecomeActive:(id)arg1;
+- (void)applicationWillResignActive:(id)arg1;
+- (void)appFromWxBecomeActive;
+- (void)initDeafalutApplication;
 - (void)viewDidLoad;
 - (id)init;
 

@@ -11,7 +11,7 @@
 }
 
 - (void)requestCancelBookingBikeWithId:(id)arg1 userId:(id)arg2 successBlock:(CDUnknownBlockType)arg3 failureBlock:(CDUnknownBlockType)arg4;
-- (void)requestBookingBikeWithId:(id)arg1 userId:(id)arg2 isactive:(_Bool)arg3 bikeType:(id)arg4 successBlock:(CDUnknownBlockType)arg5 failureBlock:(CDUnknownBlockType)arg6;
+- (void)requestBookingBikeWithId:(id)arg1 userId:(id)arg2 bikeType:(id)arg3 successBlock:(CDUnknownBlockType)arg4 failureBlock:(CDUnknownBlockType)arg5;
 - (id)init;
 
 @end

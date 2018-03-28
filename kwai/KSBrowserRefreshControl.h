@@ -22,7 +22,7 @@
     _Bool _refreshing;
     _Bool _shouldAdjustContentInset;
     _Bool _startRefreshTillEndDraging;
-    _Bool _isDraging;
+    _Bool _isDragging;
     _Bool _ignoreContentOffsetChange;
     UIView<KSRefreshControlAnimatable> *_animatingView;
     double _yTranslation;
@@ -38,7 +38,7 @@
 @property(nonatomic) double progress; // @synthesize progress=_progress;
 @property(nonatomic) _Bool ignoreContentOffsetChange; // @synthesize ignoreContentOffsetChange=_ignoreContentOffsetChange;
 @property(retain, nonatomic) UILabel *noticeLabel; // @synthesize noticeLabel=_noticeLabel;
-@property(nonatomic) _Bool isDraging; // @synthesize isDraging=_isDraging;
+@property(nonatomic) _Bool isDragging; // @synthesize isDragging=_isDragging;
 @property(nonatomic) __weak id <KSRefreshControlDelegate> delegate; // @synthesize delegate=_delegate;
 @property(nonatomic) double progressStartOffset; // @synthesize progressStartOffset=_progressStartOffset;
 @property(nonatomic) double hiddenOffset; // @synthesize hiddenOffset=_hiddenOffset;

@@ -18,6 +18,7 @@
     NSString *_initialComment;
     NSString *_itemID;
     NSString *_requestID;
+    NSString *_authorID;
     CDUnknownBlockType _saveCommentWhenDismiss;
     UITextView *_textView;
     UILabel *_placeholder;
@@ -27,6 +28,7 @@
 @property(retain, nonatomic) UITextView *textView; // @synthesize textView=_textView;
 @property(nonatomic) _Bool isShowing; // @synthesize isShowing=_isShowing;
 @property(copy, nonatomic) CDUnknownBlockType saveCommentWhenDismiss; // @synthesize saveCommentWhenDismiss=_saveCommentWhenDismiss;
+@property(copy, nonatomic) NSString *authorID; // @synthesize authorID=_authorID;
 @property(copy, nonatomic) NSString *requestID; // @synthesize requestID=_requestID;
 @property(copy, nonatomic) NSString *itemID; // @synthesize itemID=_itemID;
 @property(copy, nonatomic) NSString *initialComment; // @synthesize initialComment=_initialComment;

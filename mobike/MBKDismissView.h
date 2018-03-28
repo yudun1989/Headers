@@ -8,7 +8,7 @@
 
 #import "MBKViewProtocol-Protocol.h"
 
-@class MBKDismissViewModel, Mobike_ViewController, NSString, UIButton;
+@class MBKBaseViewController, MBKDismissViewModel, NSString, UIButton;
 
 @interface MBKDismissView : UIView <MBKViewProtocol>
 {
@@ -28,7 +28,7 @@
 - (void)configSubView;
 
 // Remaining properties
-@property(nonatomic) __weak Mobike_ViewController *controller;
+@property(nonatomic) __weak MBKBaseViewController *controller;
 @property(readonly, copy) NSString *debugDescription;
 @property(readonly, copy) NSString *description;
 @property(readonly) unsigned long long hash;

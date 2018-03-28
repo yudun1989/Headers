@@ -87,6 +87,7 @@
 - (void)_configLockScreen:(id)arg1;
 - (void)_didFetchLiveRoomInfo:(id)arg1;
 - (void)_enterRoom;
+- (void)_postLiveEndedNotification;
 - (void)_startEnterRoomForHotLive;
 - (void)_setupPreloadRoom;
 - (void)remoteControlReceivedWithEvent:(id)arg1;
@@ -95,7 +96,7 @@
 - (void)viewWillAppear:(_Bool)arg1;
 - (void)viewSafeAreaInsetsDidChange;
 - (void)viewDidLoad;
-- (id)initWithRouterParamDict:(id)arg1;
+- (_Bool)configWithRouterParamDict:(id)arg1;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

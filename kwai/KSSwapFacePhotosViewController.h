@@ -17,7 +17,7 @@
 {
     _Bool _isNewVersion;
     NSString *_pageURL;
-    UICollectionView *_collectonView;
+    UICollectionView *_collectionView;
     FMScene *_scene;
     KSMagicFaceResource *_magicFaceResource;
     UIImage *_pickedImage;
@@ -33,7 +33,7 @@
 @property(retain, nonatomic) UIImage *pickedImage; // @synthesize pickedImage=_pickedImage;
 @property(retain, nonatomic) KSMagicFaceResource *magicFaceResource; // @synthesize magicFaceResource=_magicFaceResource;
 @property(retain, nonatomic) FMScene *scene; // @synthesize scene=_scene;
-@property(retain, nonatomic) UICollectionView *collectonView; // @synthesize collectonView=_collectonView;
+@property(retain, nonatomic) UICollectionView *collectionView; // @synthesize collectionView=_collectionView;
 @property(retain, nonatomic) NSString *pageURL; // @synthesize pageURL=_pageURL;
 - (void).cxx_destruct;
 - (void)imagePickerControllerDidCancel:(id)arg1;
@@ -46,6 +46,7 @@
 - (void)setupCellItems;
 - (void)viewDidLoad;
 - (id)initWithScene:(id)arg1 magicFaceResource:(id)arg2;
+- (void)dealloc;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

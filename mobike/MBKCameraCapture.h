@@ -10,7 +10,7 @@
 #import "AVCaptureVideoDataOutputSampleBufferDelegate-Protocol.h"
 #import "UIAlertViewDelegate-Protocol.h"
 
-@class AVCaptureDevice, AVCaptureDeviceInput, AVCaptureMetadataOutput, AVCaptureSession, AVCaptureVideoDataOutput, AVCaptureVideoPreviewLayer, NSString;
+@class AVCaptureDevice, AVCaptureDeviceInput, AVCaptureMetadataOutput, AVCaptureSession, AVCaptureVideoDataOutput, AVCaptureVideoPreviewLayer, MSWeakTimer, NSString;
 @protocol MBKCameraCaptureDelegate, OS_dispatch_queue;
 
 @interface MBKCameraCapture : NSObject <UIAlertViewDelegate, AVCaptureVideoDataOutputSampleBufferDelegate, AVCaptureMetadataOutputObjectsDelegate>
@@ -26,10 +26,12 @@
     AVCaptureMetadataOutput *_metadataOutput;
     AVCaptureVideoDataOutput *_videoDataOutput;
     long long _decoderType;
+    MSWeakTimer *_timer;
     struct CGSize _previewSize;
     struct CGRect _identifyFrame;
 }
 
+@property(retain, nonatomic) MSWeakTimer *timer; // @synthesize timer=_timer;
 @property(nonatomic) struct CGRect identifyFrame; // @synthesize identifyFrame=_identifyFrame;
 @property(nonatomic) struct CGSize previewSize; // @synthesize previewSize=_previewSize;
 @property(nonatomic) long long decoderType; // @synthesize decoderType=_decoderType;
@@ -57,6 +59,7 @@
 - (void)releaseDevice;
 - (void)stopCamera;
 - (void)alertView:(id)arg1 clickedButtonAtIndex:(long long)arg2;
+- (void)sessionRunnning;
 - (void)startCamera;
 - (void)setDecoderType:(long long)arg1 previewSize:(struct CGSize)arg2 identifyFrame:(struct CGRect)arg3;
 - (void)setupQBar;

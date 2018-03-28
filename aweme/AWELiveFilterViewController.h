@@ -35,7 +35,7 @@
 @property(nonatomic) struct CGPoint lastLocation; // @synthesize lastLocation=_lastLocation;
 @property(retain, nonatomic) UIPanGestureRecognizer *panGes; // @synthesize panGes=_panGes;
 @property(retain, nonatomic) UITapGestureRecognizer *tapGes; // @synthesize tapGes=_tapGes;
-@property(nonatomic) AWEFilterModel *selectedFilter; // @synthesize selectedFilter=_selectedFilter;
+@property(retain, nonatomic) AWEFilterModel *selectedFilter; // @synthesize selectedFilter=_selectedFilter;
 @property(nonatomic) _Bool isAnimating; // @synthesize isAnimating=_isAnimating;
 @property(retain, nonatomic) UICollectionView *collectionView; // @synthesize collectionView=_collectionView;
 @property(retain, nonatomic) UIImageView *markImageView; // @synthesize markImageView=_markImageView;

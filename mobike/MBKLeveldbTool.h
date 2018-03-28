@@ -23,6 +23,7 @@
 - (_Bool)setDouble:(double)arg1 forKey:(id)arg2;
 - (_Bool)setFloat:(float)arg1 forKey:(id)arg2;
 - (_Bool)setInteger:(long long)arg1 forKey:(id)arg2;
+- (_Bool)setData:(id)arg1 forKey:(id)arg2;
 - (_Bool)setObject:(id)arg1 forKey:(id)arg2;
 - (_Bool)boolForKey:(id)arg1;
 - (double)doubleForKey:(id)arg1;

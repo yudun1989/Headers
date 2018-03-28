@@ -6,13 +6,12 @@
 
 #import "KSGPUTextureInfo.h"
 
-@class NSArray, NSDictionary, NSMutableDictionary, UIImage;
+@class NSArray, NSDictionary, NSMutableDictionary;
 
 @interface KSGPU2DTextureAtlas : KSGPUTextureInfo
 {
     NSDictionary *_config;
     NSMutableDictionary *_imageCache;
-    UIImage *_image;
     double _scale;
     NSArray *_sprites;
 }

@@ -14,6 +14,7 @@
     NSString *_cardId;
     long long _price;
     unsigned long long _payType;
+    NSString *_productType;
     MBKAbroadOBCardModel *_model;
     UILabel *_nameLabel;
     UILabel *_priceLabel;
@@ -27,6 +28,7 @@
 @property(retain, nonatomic) UILabel *nameLabel; // @synthesize nameLabel=_nameLabel;
 @property(nonatomic) _Bool hasCheckBox; // @synthesize hasCheckBox=_hasCheckBox;
 @property(retain, nonatomic) MBKAbroadOBCardModel *model; // @synthesize model=_model;
+@property(copy, nonatomic) NSString *productType; // @synthesize productType=_productType;
 @property(nonatomic) unsigned long long payType; // @synthesize payType=_payType;
 @property(nonatomic) long long price; // @synthesize price=_price;
 @property(copy, nonatomic) NSString *cardId; // @synthesize cardId=_cardId;

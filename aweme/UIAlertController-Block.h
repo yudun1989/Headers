@@ -7,6 +7,6 @@
 #import <UIKit/UIAlertController.h>
 
 @interface UIAlertController (Block)
-+ (id)showAlertWithTitle:(id)arg1 message:(id)arg2 preferredStyle:(long long)arg3 cancelButtonTitle:(id)arg4 destructiveButtonTitle:(id)arg5 otherButtonTitles:(id)arg6 tapBlock:(CDUnknownBlockType)arg7;
++ (id)btd_showAlertWithTitle:(id)arg1 message:(id)arg2 preferredStyle:(long long)arg3 cancelButtonTitle:(id)arg4 destructiveButtonTitle:(id)arg5 otherButtonTitles:(id)arg6 tapBlock:(CDUnknownBlockType)arg7;
 @end
 

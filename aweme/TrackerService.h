@@ -32,7 +32,7 @@
 - (void)trackEventData:(id)arg1;
 - (void)trackEvent:(id)arg1 attributes:(id)arg2;
 - (void)trackEvent:(id)arg1 label:(id)arg2 value:(id)arg3 extra:(id)arg4 attributes:(id)arg5;
-- (void)startWithAppID:(id)arg1 channel:(id)arg2 umengKey:(id)arg3;
+- (void)startWithAppID:(id)arg1 channel:(id)arg2 appName:(id)arg3 umengKey:(id)arg4;
 - (void)setTransferBlock:(CDUnknownBlockType)arg1;
 
 // Remaining properties

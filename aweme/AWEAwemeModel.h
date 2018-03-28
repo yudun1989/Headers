@@ -6,7 +6,7 @@
 
 #import "AWEBaseApiModel.h"
 
-@class AWEAdModel, AWEAwemeStatisticsModel, AWEAwemeStatusModel, AWEMusicModel, AWEOriginalAdModel, AWEPOIInfoModel, AWERedPacketModel, AWERelationDynamicLable, AWEShareModel, AWEURLModel, AWEUserModel, AWEVideoModel, NSArray, NSNumber, NSString, UIImage;
+@class AWEAdModel, AWEAwemeStatisticsModel, AWEAwemeStatusModel, AWELiveStreamURL, AWEMusicModel, AWEOriginalAdModel, AWEPOIInfoModel, AWERelationDynamicLable, AWERiskModel, AWEShareModel, AWEURLModel, AWEUserModel, AWEVideoModel, NSArray, NSNumber, NSString, UIImage;
 
 @interface AWEAwemeModel : AWEBaseApiModel
 {
@@ -18,7 +18,11 @@
     _Bool _isHashTag;
     _Bool _isFantasy;
     _Bool _isForbidComment;
+    _Bool _isRelieveVideo;
     _Bool _isCoverImageRquested;
+    _Bool _hasPreloadDetailImage;
+    _Bool _isPGCShow;
+    NSString *_title;
     NSString *_itemID;
     NSString *_descriptionString;
     NSString *_extra;
@@ -53,17 +57,18 @@
     AWEAdModel *_adInfo;
     AWEOriginalAdModel *_originAdInfo;
     AWERelationDynamicLable *_relationLabel;
-    AWERedPacketModel *_redPacket;
     long long _bodydanceScore;
+    AWERiskModel *_riskInfoModel;
+    AWELiveStreamURL *_liveStreamURL;
     NSArray *_images;
     NSNumber *_indexInOneResponse;
     NSNumber *_feedPullType;
     NSNumber *_fromConcernFriendIndex;
 }
 
++ (id)liveStreamURLJSONTransformer;
 + (CDUnknownBlockType)isEqualBlock;
 + (id)imagesJSONTransformer;
-+ (id)redPacketJSONTransformer;
 + (id)relationLabelJSONTransformer;
 + (id)adInfoJSONTransformer;
 + (id)awemeTypeJSONTransformer;
@@ -81,16 +86,21 @@
 + (id)authorJSONTransformer;
 + (id)musicJSONTransformer;
 + (id)shareInfoJSONTransformer;
++ (id)riskInfoModelJSONTransformer;
 + (id)JSONKeyPathsByPropertyKey;
 @property(retain, nonatomic) NSNumber *fromConcernFriendIndex; // @synthesize fromConcernFriendIndex=_fromConcernFriendIndex;
 @property(retain, nonatomic) NSNumber *feedPullType; // @synthesize feedPullType=_feedPullType;
 @property(retain, nonatomic) NSNumber *indexInOneResponse; // @synthesize indexInOneResponse=_indexInOneResponse;
 @property(retain, nonatomic) NSArray *images; // @synthesize images=_images;
+@property(retain, nonatomic) AWELiveStreamURL *liveStreamURL; // @synthesize liveStreamURL=_liveStreamURL;
+@property(nonatomic) _Bool isPGCShow; // @synthesize isPGCShow=_isPGCShow;
+@property(nonatomic) _Bool hasPreloadDetailImage; // @synthesize hasPreloadDetailImage=_hasPreloadDetailImage;
 @property(nonatomic) _Bool isCoverImageRquested; // @synthesize isCoverImageRquested=_isCoverImageRquested;
+@property(retain, nonatomic) AWERiskModel *riskInfoModel; // @synthesize riskInfoModel=_riskInfoModel;
+@property(nonatomic) _Bool isRelieveVideo; // @synthesize isRelieveVideo=_isRelieveVideo;
 @property(nonatomic) _Bool isForbidComment; // @synthesize isForbidComment=_isForbidComment;
 @property(nonatomic) _Bool isFantasy; // @synthesize isFantasy=_isFantasy;
 @property(nonatomic) long long bodydanceScore; // @synthesize bodydanceScore=_bodydanceScore;
-@property(retain, nonatomic) AWERedPacketModel *redPacket; // @synthesize redPacket=_redPacket;
 @property(retain, nonatomic) AWERelationDynamicLable *relationLabel; // @synthesize relationLabel=_relationLabel;
 @property(retain, nonatomic) AWEOriginalAdModel *originAdInfo; // @synthesize originAdInfo=_originAdInfo;
 @property(retain, nonatomic) AWEAdModel *adInfo; // @synthesize adInfo=_adInfo;
@@ -131,6 +141,7 @@
 @property(copy, nonatomic) NSString *extra; // @synthesize extra=_extra;
 @property(copy, nonatomic) NSString *descriptionString; // @synthesize descriptionString=_descriptionString;
 @property(copy, nonatomic) NSString *itemID; // @synthesize itemID=_itemID;
+@property(copy, nonatomic) NSString *title; // @synthesize title=_title;
 - (void).cxx_destruct;
 - (_Bool)isEnableComment;
 - (_Bool)isNoAccountAd;

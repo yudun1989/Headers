@@ -42,8 +42,8 @@
 - (void)dislikeVideoFromLongPress;
 - (void)dislikeVideoFromShare;
 - (void)dislikeVideoFromType:(unsigned long long)arg1;
-- (void)openRedPacketWithCompletionBlock:(CDUnknownBlockType)arg1;
 - (void)checkIfShouldShowShareAnimationWithPlayTimes:(long long)arg1;
+- (void)handleVideo:(id)arg1 accept:(_Bool)arg2;
 - (void)onDescriptionLabelClicked:(id)arg1 url:(id)arg2;
 - (void)onAdOperationViewClicked:(id)arg1;
 - (void)onLearnMoreViewClicked:(id)arg1;
@@ -51,9 +51,12 @@
 - (void)onAuthorLabelClicked:(id)arg1;
 - (void)onPoiLabelClicked:(id)arg1;
 - (void)onChallengeLabelClicked:(id)arg1;
+- (void)onOriginalFlagLabelClicked:(id)arg1;
+- (void)onMusicInfoLabelClicked:(id)arg1;
 - (void)onMusicButtonClicked:(id)arg1;
 - (_Bool)canShowDisLike;
-- (void)onRedPacketShareButtonClicked:(id)arg1 itemID:(id)arg2 referString:(id)arg3;
+- (_Bool)shouldDisableDuet;
+- (_Bool)isPrivateAccountVideo;
 - (void)onShareButtonClicked:(id)arg1;
 - (void)onCommentButtonClicked:(id)arg1;
 - (void)onLikeButtonClicked:(id)arg1;
@@ -62,6 +65,7 @@
 - (void)enterLiveRoom:(CDUnknownBlockType)arg1;
 - (void)canEnterLiveRoom:(CDUnknownBlockType)arg1;
 - (void)onUserAvatarViewClicked:(id)arg1 enterLiveRoomBlock:(CDUnknownBlockType)arg2;
+- (void)showOSTList;
 - (void)doSafeDigg;
 - (void)reset;
 - (void)dealloc;

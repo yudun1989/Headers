@@ -14,6 +14,7 @@
     RACCommand *_purchasedCommand;
     RACCommand *_priceCommand;
     RACCommand *_payCommand;
+    RACCommand *_bubbleCommand;
     MBKTransitMainModel *_transitMainModel;
     NSString *_applicationId;
     NSString *_orderId;
@@ -24,6 +25,7 @@
 @property(copy, nonatomic) NSString *orderId; // @synthesize orderId=_orderId;
 @property(copy, nonatomic) NSString *applicationId; // @synthesize applicationId=_applicationId;
 @property(retain, nonatomic) MBKTransitMainModel *transitMainModel; // @synthesize transitMainModel=_transitMainModel;
+@property(retain, nonatomic) RACCommand *bubbleCommand; // @synthesize bubbleCommand=_bubbleCommand;
 @property(retain, nonatomic) RACCommand *payCommand; // @synthesize payCommand=_payCommand;
 @property(retain, nonatomic) RACCommand *priceCommand; // @synthesize priceCommand=_priceCommand;
 @property(retain, nonatomic) RACCommand *purchasedCommand; // @synthesize purchasedCommand=_purchasedCommand;

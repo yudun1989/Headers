@@ -8,7 +8,7 @@
 
 #import "TTAdSplashViewDelegate-Protocol.h"
 
-@class NSString, TTAdSplashModel, TTAdSplashView, UIImageView;
+@class NSString, TTAdSplashModel, TTAdSplashView;
 @protocol TTAdSplashControllerViewDelegate;
 
 @interface TTAdSplashControllerView : UIView <TTAdSplashViewDelegate>
@@ -17,7 +17,7 @@
     id <TTAdSplashControllerViewDelegate> _delegate;
     TTAdSplashView *_splashView;
     TTAdSplashModel *_model;
-    UIImageView *_bgImgaeView;
+    UIView *_bgView;
     UIView *_topCover;
     struct UIEdgeInsets _safeEdgeInsets;
 }
@@ -25,16 +25,16 @@
 + (id)adSplashBgImageViewWithFrame:(struct CGRect)arg1;
 @property(nonatomic) struct UIEdgeInsets safeEdgeInsets; // @synthesize safeEdgeInsets=_safeEdgeInsets;
 @property(retain, nonatomic) UIView *topCover; // @synthesize topCover=_topCover;
-@property(retain, nonatomic) UIImageView *bgImgaeView; // @synthesize bgImgaeView=_bgImgaeView;
+@property(retain, nonatomic) UIView *bgView; // @synthesize bgView=_bgView;
 @property(retain, nonatomic) TTAdSplashModel *model; // @synthesize model=_model;
 @property(nonatomic) _Bool fullScreenShowFlag; // @synthesize fullScreenShowFlag=_fullScreenShowFlag;
 @property(retain, nonatomic) TTAdSplashView *splashView; // @synthesize splashView=_splashView;
 @property(nonatomic) __weak id <TTAdSplashControllerViewDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
 - (void)splashViewShowFinished:(id)arg1;
-- (void)splashViewClickBackgroundAction;
-- (void)splashViewActionNineBoxIndex:(long long)arg1;
-- (void)splashViewWithAction;
+- (void)splashViewClickBackground;
+- (void)splashViewClickNineBoxIndex:(long long)arg1;
+- (void)splashViewClickBanner;
 - (void)didDisappear;
 - (void)layoutSubviews;
 - (id)openActionModel;

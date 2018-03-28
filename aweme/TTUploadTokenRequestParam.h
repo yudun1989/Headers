@@ -11,10 +11,13 @@
 @interface TTUploadTokenRequestParam : TTBaseRequestParam
 {
     NSString *_token;
+    NSString *_uploadTokenPath;
 }
 
+@property(copy, nonatomic) NSString *uploadTokenPath; // @synthesize uploadTokenPath=_uploadTokenPath;
 @property(copy, nonatomic) NSString *token; // @synthesize token=_token;
 - (void).cxx_destruct;
+- (id)init;
 
 @end
 

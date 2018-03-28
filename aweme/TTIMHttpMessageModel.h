@@ -10,34 +10,30 @@
 
 @interface TTIMHttpMessageModel : JSONModel
 {
-    NSNumber *_appId;
-    NSNumber *_originCid;
-    NSNumber *_deviceId;
-    NSNumber *_svrId;
-    NSNumber *_svrIndex;
-    NSNumber *_fromId;
+    NSString *_svrIndex;
+    NSString *_svrMsgId;
+    NSString *_originCid;
+    NSString *_deviceId;
+    NSString *_fromId;
     NSString *_toId;
     NSNumber *_msgType;
-    NSNumber *_state;
     NSString *_content;
-    NSNumber *_createTime;
-    NSString *_extra;
+    NSString *_createTime;
+    NSNumber *_state;
 }
 
 + (_Bool)propertyIsOptional:(id)arg1;
 + (id)keyMapper;
-@property(retain, nonatomic) NSString *extra; // @synthesize extra=_extra;
-@property(retain, nonatomic) NSNumber *createTime; // @synthesize createTime=_createTime;
-@property(retain, nonatomic) NSString *content; // @synthesize content=_content;
 @property(retain, nonatomic) NSNumber *state; // @synthesize state=_state;
+@property(copy, nonatomic) NSString *createTime; // @synthesize createTime=_createTime;
+@property(copy, nonatomic) NSString *content; // @synthesize content=_content;
 @property(retain, nonatomic) NSNumber *msgType; // @synthesize msgType=_msgType;
-@property(retain, nonatomic) NSString *toId; // @synthesize toId=_toId;
-@property(retain, nonatomic) NSNumber *fromId; // @synthesize fromId=_fromId;
-@property(retain, nonatomic) NSNumber *svrIndex; // @synthesize svrIndex=_svrIndex;
-@property(retain, nonatomic) NSNumber *svrId; // @synthesize svrId=_svrId;
-@property(retain, nonatomic) NSNumber *deviceId; // @synthesize deviceId=_deviceId;
-@property(retain, nonatomic) NSNumber *originCid; // @synthesize originCid=_originCid;
-@property(retain, nonatomic) NSNumber *appId; // @synthesize appId=_appId;
+@property(copy, nonatomic) NSString *toId; // @synthesize toId=_toId;
+@property(copy, nonatomic) NSString *fromId; // @synthesize fromId=_fromId;
+@property(copy, nonatomic) NSString *deviceId; // @synthesize deviceId=_deviceId;
+@property(copy, nonatomic) NSString *originCid; // @synthesize originCid=_originCid;
+@property(copy, nonatomic) NSString *svrMsgId; // @synthesize svrMsgId=_svrMsgId;
+@property(copy, nonatomic) NSString *svrIndex; // @synthesize svrIndex=_svrIndex;
 - (void).cxx_destruct;
 - (id)transformToPBModel;
 

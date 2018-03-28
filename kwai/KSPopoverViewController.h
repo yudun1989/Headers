@@ -19,12 +19,10 @@
     NSArray *_contraints;
     long long _popoverType;
     CDUnknownBlockType _showCompletion;
-    CDUnknownBlockType _dismissCompletion;
 }
 
 @property(nonatomic) _Bool doingDismissAnimation; // @synthesize doingDismissAnimation=_doingDismissAnimation;
 @property(nonatomic) _Bool doingShowAnimation; // @synthesize doingShowAnimation=_doingShowAnimation;
-@property(copy, nonatomic) CDUnknownBlockType dismissCompletion; // @synthesize dismissCompletion=_dismissCompletion;
 @property(copy, nonatomic) CDUnknownBlockType showCompletion; // @synthesize showCompletion=_showCompletion;
 @property(nonatomic) long long popoverType; // @synthesize popoverType=_popoverType;
 @property(retain, nonatomic) NSArray *contraints; // @synthesize contraints=_contraints;

@@ -6,7 +6,7 @@
 
 #import <objc/NSObject.h>
 
-@class NSString;
+@class MBKMvpUserConfig, NSString;
 
 @interface MBKMvpModel : NSObject
 {
@@ -23,9 +23,11 @@
     long long _showMvpBanner;
     long long _continueBuy;
     NSString *_continueBuyMoneyContent;
+    MBKMvpUserConfig *_mvpUserConfig;
 }
 
 + (id)modelWithDic:(id)arg1;
+@property(retain, nonatomic) MBKMvpUserConfig *mvpUserConfig; // @synthesize mvpUserConfig=_mvpUserConfig;
 @property(copy, nonatomic) NSString *continueBuyMoneyContent; // @synthesize continueBuyMoneyContent=_continueBuyMoneyContent;
 @property(nonatomic) long long continueBuy; // @synthesize continueBuy=_continueBuy;
 @property(nonatomic) long long showMvpBanner; // @synthesize showMvpBanner=_showMvpBanner;

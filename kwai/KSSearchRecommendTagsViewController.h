@@ -39,7 +39,7 @@
 - (id)loadingCellAtIndexPath:(id)arg1;
 - (id)layout;
 - (void)logSelectTag:(id)arg1;
-- (id)resultPackageOfTag:(id)arg1;
+- (id)resultPackageOfTag:(id)arg1 tagIndex:(long long)arg2;
 - (void)didSelectHotTag:(id)arg1 index:(long long)arg2;
 - (id)ks_followRefer;
 - (void)model:(id)arg1 DidFailLoadWithError:(id)arg2;

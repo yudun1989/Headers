@@ -12,7 +12,9 @@
 
 + (id)sharedInstance;
 - (void)uploadImage:(id)arg1 completion:(CDUnknownBlockType)arg2;
-- (void)_postFeedbackMessage:(id)arg1 log:(id)arg2 completion:(CDUnknownBlockType)arg3;
+- (void)_postFeedbackMessage:(id)arg1 completion:(CDUnknownBlockType)arg2;
+- (void)_loadPlayerLogs:(CDUnknownBlockType)arg1;
+- (void)_loadAccountLogs:(CDUnknownBlockType)arg1;
 - (void)postFeedbackMessage:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)fetchFeedBackMessageFromRemote:(CDUnknownBlockType)arg1;
 - (void)fetchFeedbackMessageFromLocal:(CDUnknownBlockType)arg1;

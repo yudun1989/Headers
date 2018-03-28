@@ -18,6 +18,7 @@
     KSSettingItem *_privateUserItem;
     KSSettingItem *_setWatermarkItem;
     KSSettingItem *_hideLocationItem;
+    KSSettingItem *_gossipPrivateItem;
     KSSettingItem *_addCommentLimitItem;
     KSSettingItem *_mailLimitItem;
     KSSettingItem *_contactItem;
@@ -43,17 +44,15 @@
 - (void)reloadPrivateItemsSettings;
 - (void)blackListAction;
 - (id)blackListItem;
-- (id)hideToQQFooter;
 - (id)hideToQQItem;
-- (id)hideToContactFooter;
 - (id)hideToContactItem;
 - (id)mailLimitItem;
 - (id)addCommentLimitItem;
-- (id)privateUserFooterItem;
 - (id)privateUserItem;
-- (id)hideLocationFooterItem;
 - (id)hideLocationItem;
+- (id)gossipPrivateItem;
 - (id)setWatermarkItem;
+- (id)footerItemWithTitleKey:(id)arg1;
 - (void)configItems;
 - (void)viewWillAppear:(_Bool)arg1;
 - (void)viewDidLoad;

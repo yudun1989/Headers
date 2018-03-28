@@ -17,7 +17,7 @@
 - (id)splashDataDict;
 - (void)saveResponseData:(id)arg1;
 - (void)parserResult:(id)arg1 error:(id)arg2;
-- (void)startFetchADInfoWithExtraParameters:(id)arg1;
+- (void)startFetchADInfo;
 
 @end
 

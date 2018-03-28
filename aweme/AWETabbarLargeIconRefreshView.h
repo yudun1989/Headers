@@ -13,6 +13,7 @@
 - (_Bool)canHandleRefresh;
 - (void)tabbarStatusDidChanged:(long long)arg1 animated:(_Bool)arg2;
 - (id)initWithimage:(id)arg1;
+- (id)initWithimage:(id)arg1 transparentImage:(id)arg2;
 
 @end
 

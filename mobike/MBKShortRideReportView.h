@@ -6,11 +6,12 @@
 
 #import <UIKit/UIView.h>
 
-@class UIButton, UILabel;
+@class NSString, UIButton, UILabel;
 
 @interface MBKShortRideReportView : UIView
 {
     CDUnknownBlockType _faultBlock;
+    NSString *_carId;
     UIView *_reportView;
     UIView *_backgroundView;
     UILabel *_faultLabel;
@@ -23,6 +24,7 @@
 @property(retain, nonatomic) UILabel *faultLabel; // @synthesize faultLabel=_faultLabel;
 @property(retain, nonatomic) UIView *backgroundView; // @synthesize backgroundView=_backgroundView;
 @property(retain, nonatomic) UIView *reportView; // @synthesize reportView=_reportView;
+@property(copy, nonatomic) NSString *carId; // @synthesize carId=_carId;
 @property(copy, nonatomic) CDUnknownBlockType faultBlock; // @synthesize faultBlock=_faultBlock;
 - (void).cxx_destruct;
 - (void)dealloc;

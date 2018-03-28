@@ -79,6 +79,7 @@
 - (void)dealloc;
 - (id)initWithMap:(id)arg1;
 @property(readonly, copy, nonatomic) NSString *mapClassName;
+- (void)MMMapContextHooker_setDelegate:(id)arg1;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

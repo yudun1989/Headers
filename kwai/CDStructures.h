@@ -1123,6 +1123,29 @@ struct CGECommonDeformUtil {
     int _field15;
 };
 
+struct CGEFMConfig {
+    int _field1;
+    int _field2;
+    basic_string_a490aa4c _field3;
+    basic_string_a490aa4c _field4;
+    basic_string_a490aa4c _field5;
+};
+
+struct CGEFMFilter {
+    CDUnknownFunctionPointerType *_field1;
+    CDUnknownFunctionPointerType *_field2;
+    CDUnknownFunctionPointerType *_field3;
+    CDUnknownFunctionPointerType *_field4;
+    CDUnknownFunctionPointerType *_field5;
+    CDUnknownFunctionPointerType *_field6;
+    struct vector<CGE::CGEFMFilter::FBOState, std::__1::allocator<CGE::CGEFMFilter::FBOState>> _field7;
+    struct CGEFMConfig _field8;
+    struct CGECacheManager *_field9;
+    float _field10;
+    float _field11;
+    _Bool _field12;
+};
+
 struct CGEFace {
     Vec_190d90d4 outline[19];
     Vec_190d90d4 leftBrow[10];
@@ -1757,11 +1780,6 @@ struct CGSize {
     double height;
 };
 
-struct CGVector {
-    double dx;
-    double dy;
-};
-
 struct CKSAssetRenderRange {
     long long _field1;
     int _field2;
@@ -2084,6 +2102,8 @@ struct ExportOptions {
     int _field19;
 };
 
+struct FBOState;
+
 struct FBSDKLikeControlLayout {
     struct CGSize _field1;
     struct CGRect _field2;
@@ -2116,6 +2136,8 @@ struct FMFaceSpriteCorePoint {
 };
 
 struct FMFaceSpriteMaskData;
+
+struct FMHairClipFilterTexture;
 
 struct FOSkinSmootherFilter {
     CDUnknownFunctionPointerType *_vptr$CGPUImageBaseFilter;
@@ -4158,29 +4180,27 @@ struct Sprite2dInterChangeMultiple {
     int _field13;
     struct ProgramObject _field14;
     struct SharedTexture _field15;
-    _Bool _field16;
-    unsigned int _field17;
+    unsigned int _field16;
+    basic_string_a490aa4c _field17;
     basic_string_a490aa4c _field18;
-    basic_string_a490aa4c _field19;
-    vector_7545d2eb _field20;
-    struct vector<CGE::Sprite2dInterChangeMultiple::SpriteFrame, std::__1::allocator<CGE::Sprite2dInterChangeMultiple::SpriteFrame>> _field21;
-    unsigned int _field22;
+    vector_7545d2eb _field19;
+    struct vector<CGE::Sprite2dInterChangeMultiple::SpriteFrame, std::__1::allocator<CGE::Sprite2dInterChangeMultiple::SpriteFrame>> _field20;
+    unsigned int _field21;
+    double _field22;
     double _field23;
     double _field24;
-    double _field25;
+    _Bool _field25;
     _Bool _field26;
-    int _field27;
-    int _field28;
-    _Bool _field29;
-    _Bool _field30;
-    _Bool _field31;
-    CDUnknownFunctionPointerType *_field32;
-    Vec_190d90d4 _field33;
-    Vec_190d90d4 _field34;
-    Vec_190d90d4 _field35;
-    float _field36;
-    float _field37;
-    float _field38;
+    _Bool _field27;
+    _Bool _field28;
+    CDUnknownFunctionPointerType *_field29;
+    Vec_190d90d4 _field30;
+    Vec_190d90d4 _field31;
+    Vec_190d90d4 _field32;
+    float _field33;
+    float _field34;
+    float _field35;
+    _Bool _field36;
 };
 
 struct Sprite2dInterChangeMultipleWithBlend {
@@ -4199,34 +4219,32 @@ struct Sprite2dInterChangeMultipleWithBlend {
     int _field13;
     struct ProgramObject _field14;
     struct SharedTexture _field15;
-    _Bool _field16;
-    unsigned int _field17;
+    unsigned int _field16;
+    basic_string_a490aa4c _field17;
     basic_string_a490aa4c _field18;
-    basic_string_a490aa4c _field19;
-    vector_7545d2eb _field20;
-    struct vector<CGE::Sprite2dInterChangeMultiple::SpriteFrame, std::__1::allocator<CGE::Sprite2dInterChangeMultiple::SpriteFrame>> _field21;
-    unsigned int _field22;
+    vector_7545d2eb _field19;
+    struct vector<CGE::Sprite2dInterChangeMultiple::SpriteFrame, std::__1::allocator<CGE::Sprite2dInterChangeMultiple::SpriteFrame>> _field20;
+    unsigned int _field21;
+    double _field22;
     double _field23;
     double _field24;
-    double _field25;
+    _Bool _field25;
     _Bool _field26;
-    int _field27;
-    int _field28;
-    _Bool _field29;
-    _Bool _field30;
-    _Bool _field31;
-    struct vector<char, std::__1::allocator<char>> _field32;
-    struct vector<char, std::__1::allocator<char>> _field33;
-    int _field34;
-    char *_field35;
-    char *_field36;
-    CDUnknownFunctionPointerType *_field37;
-    Vec_190d90d4 _field38;
-    Vec_190d90d4 _field39;
-    Vec_190d90d4 _field40;
-    float _field41;
-    float _field42;
-    float _field43;
+    _Bool _field27;
+    _Bool _field28;
+    struct vector<char, std::__1::allocator<char>> _field29;
+    struct vector<char, std::__1::allocator<char>> _field30;
+    int _field31;
+    char *_field32;
+    char *_field33;
+    CDUnknownFunctionPointerType *_field34;
+    Vec_190d90d4 _field35;
+    Vec_190d90d4 _field36;
+    Vec_190d90d4 _field37;
+    float _field38;
+    float _field39;
+    float _field40;
+    _Bool _field41;
 };
 
 struct Sprite2dVideoBlend {
@@ -4245,16 +4263,16 @@ struct Sprite2dVideoBlend {
     int _field13;
     struct ProgramObject _field14;
     struct SharedTexture _field15;
-    _Bool _field16;
-    int _field17;
-    basic_string_a490aa4c _field18;
-    CDUnknownFunctionPointerType *_field19;
+    int _field16;
+    basic_string_a490aa4c _field17;
+    CDUnknownFunctionPointerType *_field18;
+    Vec_190d90d4 _field19;
     Vec_190d90d4 _field20;
     Vec_190d90d4 _field21;
-    Vec_190d90d4 _field22;
+    float _field22;
     float _field23;
     float _field24;
-    float _field25;
+    _Bool _field25;
 };
 
 struct SpriteFrame;
@@ -5027,6 +5045,12 @@ struct cJSON {
     char *_field8;
 };
 
+struct cgeScriptControl {
+    struct lua_State *_field1;
+    struct vector<std::__1::map<std::__1::basic_string<char>, std::__1::basic_string<char>, std::__1::less<std::__1::basic_string<char>>, std::__1::allocator<std::__1::pair<const std::__1::basic_string<char>, std::__1::basic_string<char>>>>*, std::__1::allocator<std::__1::map<std::__1::basic_string<char>, std::__1::basic_string<char>, std::__1::less<std::__1::basic_string<char>>, std::__1::allocator<std::__1::pair<const std::__1::basic_string<char>, std::__1::basic_string<char>>>>*>> _field2;
+    struct vector<std::__1::map<std::__1::basic_string<char>, std::__1::basic_string<char>, std::__1::less<std::__1::basic_string<char>>, std::__1::allocator<std::__1::pair<const std::__1::basic_string<char>, std::__1::basic_string<char>>>>*, std::__1::allocator<std::__1::map<std::__1::basic_string<char>, std::__1::basic_string<char>, std::__1::less<std::__1::basic_string<char>>, std::__1::allocator<std::__1::pair<const std::__1::basic_string<char>, std::__1::basic_string<char>>>>*>> _field3;
+};
+
 struct condition_variable {
     struct _opaque_pthread_cond_t _field1;
 };
@@ -5242,6 +5266,8 @@ struct map<std::__1::basic_string<char>, int *, std::__1::less<std::__1::basic_s
         } __pair3_;
     } __tree_;
 };
+
+struct map<std::__1::basic_string<char>, std::__1::basic_string<char>, std::__1::less<std::__1::basic_string<char>>, std::__1::allocator<std::__1::pair<const std::__1::basic_string<char>, std::__1::basic_string<char>>>>;
 
 struct map<std::__1::basic_string<char>, std::__1::function<void ()>, std::__1::less<std::__1::basic_string<char>>, std::__1::allocator<std::__1::pair<const std::__1::basic_string<char>, std::__1::function<void ()>>>> {
     struct __tree<std::__1::__value_type<std::__1::basic_string<char>, std::__1::function<void ()>>, std::__1::__map_value_compare<std::__1::basic_string<char>, std::__1::__value_type<std::__1::basic_string<char>, std::__1::function<void ()>>, std::__1::less<std::__1::basic_string<char>>, true>, std::__1::allocator<std::__1::__value_type<std::__1::basic_string<char>, std::__1::function<void ()>>>> {
@@ -5690,6 +5716,14 @@ struct vector<CGE::AnimationInterfaceAbstract<CGE::TimeActionInterfaceAbstract>*
     } _field3;
 };
 
+struct vector<CGE::CGEFMFilter::FBOState, std::__1::allocator<CGE::CGEFMFilter::FBOState>> {
+    struct FBOState *_field1;
+    struct FBOState *_field2;
+    struct __compressed_pair<CGE::CGEFMFilter::FBOState *, std::__1::allocator<CGE::CGEFMFilter::FBOState>> {
+        struct FBOState *_field1;
+    } _field3;
+};
+
 struct vector<CGE::CGEFaceDeformFullData, std::__1::allocator<CGE::CGEFaceDeformFullData>> {
     struct CGEFaceDeformFullData *__begin_;
     struct CGEFaceDeformFullData *__end_;
@@ -5908,6 +5942,14 @@ struct vector<FMFaceSpriteMaskData, std::__1::allocator<FMFaceSpriteMaskData>> {
     } __end_cap_;
 };
 
+struct vector<FMHairClipFilterTexture, std::__1::allocator<FMHairClipFilterTexture>> {
+    struct FMHairClipFilterTexture *__begin_;
+    struct FMHairClipFilterTexture *__end_;
+    struct __compressed_pair<FMHairClipFilterTexture *, std::__1::allocator<FMHairClipFilterTexture>> {
+        struct FMHairClipFilterTexture *__first_;
+    } __end_cap_;
+};
+
 struct vector<FMNormalizedFace, std::__1::allocator<FMNormalizedFace>> {
     CDStruct_183601bc *__begin_;
     CDStruct_183601bc *__end_;
@@ -6074,6 +6116,14 @@ struct vector<std::__1::basic_string<char>, std::__1::allocator<std::__1::basic_
     struct __compressed_pair<std::__1::basic_string<char>*, std::__1::allocator<std::__1::basic_string<char>>> {
         basic_string_a490aa4c *__first_;
     } __end_cap_;
+};
+
+struct vector<std::__1::map<std::__1::basic_string<char>, std::__1::basic_string<char>, std::__1::less<std::__1::basic_string<char>>, std::__1::allocator<std::__1::pair<const std::__1::basic_string<char>, std::__1::basic_string<char>>>>*, std::__1::allocator<std::__1::map<std::__1::basic_string<char>, std::__1::basic_string<char>, std::__1::less<std::__1::basic_string<char>>, std::__1::allocator<std::__1::pair<const std::__1::basic_string<char>, std::__1::basic_string<char>>>>*>> {
+    struct map<std::__1::basic_string<char>, std::__1::basic_string<char>, std::__1::less<std::__1::basic_string<char>>, std::__1::allocator<std::__1::pair<const std::__1::basic_string<char>, std::__1::basic_string<char>>>> **_field1;
+    struct map<std::__1::basic_string<char>, std::__1::basic_string<char>, std::__1::less<std::__1::basic_string<char>>, std::__1::allocator<std::__1::pair<const std::__1::basic_string<char>, std::__1::basic_string<char>>>> **_field2;
+    struct __compressed_pair<std::__1::map<std::__1::basic_string<char>, std::__1::basic_string<char>, std::__1::less<std::__1::basic_string<char>>, std::__1::allocator<std::__1::pair<const std::__1::basic_string<char>, std::__1::basic_string<char>>>>**, std::__1::allocator<std::__1::map<std::__1::basic_string<char>, std::__1::basic_string<char>, std::__1::less<std::__1::basic_string<char>>, std::__1::allocator<std::__1::pair<const std::__1::basic_string<char>, std::__1::basic_string<char>>>>*>> {
+        struct map<std::__1::basic_string<char>, std::__1::basic_string<char>, std::__1::less<std::__1::basic_string<char>>, std::__1::allocator<std::__1::pair<const std::__1::basic_string<char>, std::__1::basic_string<char>>>> **_field1;
+    } _field3;
 };
 
 struct vector<std::__1::unique_ptr<AVFrame, void (*)(AVFrame *)>, std::__1::allocator<std::__1::unique_ptr<AVFrame, void (*)(AVFrame *)>>> {
@@ -6670,6 +6720,14 @@ typedef struct vector<KSCNNPoseInfo, std::__1::allocator<KSCNNPoseInfo>> {
         struct KSCNNPoseInfo *_field1;
     } _field3;
 } vector_f96b896e;
+
+typedef struct vector<KSLiveHeartGPUInstance, std::__1::allocator<KSLiveHeartGPUInstance>> {
+    struct KSLiveHeartGPUInstance *__begin_;
+    struct KSLiveHeartGPUInstance *__end_;
+    struct __compressed_pair<KSLiveHeartGPUInstance *, std::__1::allocator<KSLiveHeartGPUInstance>> {
+        struct KSLiveHeartGPUInstance *__first_;
+    } __end_cap_;
+} vector_6be6f145;
 
 typedef struct vector<LocationRange, std::__1::allocator<LocationRange>> {
     CDStruct_183601bc *__begin_;

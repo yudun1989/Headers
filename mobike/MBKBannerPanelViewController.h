@@ -12,6 +12,7 @@
 
 @interface MBKBannerPanelViewController : MBKPanelBaseViewController <MBKRidingStatusProtocol>
 {
+    _Bool _forceHideParkingModeEnabled;
     MBKPanelCardView *_bannerViewContainer;
     MBKHomeTopPanel *_bannerView;
     MBKParkingEntranceView *_parkingEntranceView;
@@ -20,6 +21,7 @@
     MBKRidingStatusSubscriber *_subscriber;
 }
 
+@property(nonatomic) _Bool forceHideParkingModeEnabled; // @synthesize forceHideParkingModeEnabled=_forceHideParkingModeEnabled;
 @property(retain, nonatomic) MBKRidingStatusSubscriber *subscriber; // @synthesize subscriber=_subscriber;
 @property(retain, nonatomic) MASConstraint *awardedParkingEntranceToTopConstraint; // @synthesize awardedParkingEntranceToTopConstraint=_awardedParkingEntranceToTopConstraint;
 @property(retain, nonatomic) MSWeakTimer *updateTimer; // @synthesize updateTimer=_updateTimer;
@@ -29,6 +31,7 @@
 - (void).cxx_destruct;
 - (void)mbkRidingStatusManagerExitFreezingStatus:(id)arg1;
 - (void)mbkRidingStatusManagerEnterFreezingStatus:(id)arg1;
+- (void)setForceHideParkingEnteranceEnabled:(_Bool)arg1;
 - (void)removeParkingAwardEntranceView;
 - (void)addParkingAwardEntranceToVCView:(id)arg1;
 - (void)createParkingAwardEntranceWithModel:(id)arg1;

@@ -21,7 +21,6 @@
 @property(retain, nonatomic) NSNumber *applyJoin; // @synthesize applyJoin=_applyJoin;
 @property(retain, nonatomic) NSString *groupId; // @synthesize groupId=_groupId;
 - (void).cxx_destruct;
-- (unsigned long long)responseType;
 - (id)params;
 - (id)url;
 - (id)method;

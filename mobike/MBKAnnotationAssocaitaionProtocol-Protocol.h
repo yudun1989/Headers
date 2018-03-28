@@ -6,9 +6,13 @@
 
 #import "NSObject-Protocol.h"
 
+@class MMPolyline;
 @protocol MMOverlay;
 
 @protocol MBKAnnotationAssocaitaionProtocol <NSObject>
 @property(readonly, nonatomic) id <MMOverlay> associatedOverlay;
+
+@optional
+@property(nonatomic) __weak MMPolyline *associatedRoutePolyline;
 @end
 

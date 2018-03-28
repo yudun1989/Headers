@@ -8,7 +8,7 @@
 
 #import "MBKViewProtocol-Protocol.h"
 
-@class MBKBalanceCellModel, Mobike_ViewController, NSString, UIButton, UILabel;
+@class MBKBalanceCellModel, MBKBaseViewController, NSString, UIButton, UILabel;
 
 @interface MBKBalanceCell : UITableViewCell <MBKViewProtocol>
 {
@@ -16,6 +16,7 @@
     UILabel *_balanceLabel;
     UILabel *_balanceAlertLabel;
     UIButton *_rechargeButton;
+    UILabel *_lineLabel;
     MBKBalanceCellModel *_model;
     id _delegate;
 }
@@ -25,6 +26,7 @@
 + (id)reuseIdentifier;
 @property(nonatomic) __weak id delegate; // @synthesize delegate=_delegate;
 @property(retain, nonatomic) MBKBalanceCellModel *model; // @synthesize model=_model;
+@property(nonatomic) __weak UILabel *lineLabel; // @synthesize lineLabel=_lineLabel;
 @property(nonatomic) __weak UIButton *rechargeButton; // @synthesize rechargeButton=_rechargeButton;
 @property(nonatomic) __weak UILabel *balanceAlertLabel; // @synthesize balanceAlertLabel=_balanceAlertLabel;
 @property(nonatomic) __weak UILabel *balanceLabel; // @synthesize balanceLabel=_balanceLabel;
@@ -37,7 +39,7 @@
 - (void)awakeFromNib;
 
 // Remaining properties
-@property(nonatomic) __weak Mobike_ViewController *controller;
+@property(nonatomic) __weak MBKBaseViewController *controller;
 @property(readonly, copy) NSString *debugDescription;
 @property(readonly, copy) NSString *description;
 @property(readonly) unsigned long long hash;

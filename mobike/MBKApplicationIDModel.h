@@ -6,19 +6,22 @@
 
 #import <objc/NSObject.h>
 
-@class NSString;
+@class MBKApplicationItemModel, NSArray, NSString;
 
 @interface MBKApplicationIDModel : NSObject
 {
-    NSString *_cityCode;
-    NSString *_applicationName;
-    long long _applicationId;
+    NSString *_selectCityCode;
+    NSArray *_openedAppList;
+    NSArray *_notOpenedAppList;
+    MBKApplicationItemModel *_selectedApp;
 }
 
-@property(nonatomic) long long applicationId; // @synthesize applicationId=_applicationId;
-@property(copy, nonatomic) NSString *applicationName; // @synthesize applicationName=_applicationName;
-@property(copy, nonatomic) NSString *cityCode; // @synthesize cityCode=_cityCode;
+@property(retain, nonatomic) MBKApplicationItemModel *selectedApp; // @synthesize selectedApp=_selectedApp;
+@property(retain, nonatomic) NSArray *notOpenedAppList; // @synthesize notOpenedAppList=_notOpenedAppList;
+@property(retain, nonatomic) NSArray *openedAppList; // @synthesize openedAppList=_openedAppList;
+@property(copy, nonatomic) NSString *selectCityCode; // @synthesize selectCityCode=_selectCityCode;
 - (void).cxx_destruct;
+- (id)parseApplications:(id)arg1;
 - (id)initWith:(id)arg1;
 
 @end

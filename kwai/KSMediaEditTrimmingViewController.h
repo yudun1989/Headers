@@ -66,6 +66,7 @@
 - (void)viewDidLayoutSubviews;
 - (void)viewDidLoad;
 - (id)initWithProject:(id)arg1 maxTrimmingDuration:(double)arg2 minThumbnailVisibleWidth:(double)arg3;
+- (void)dealloc;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

@@ -8,7 +8,7 @@
 
 #import "MBKViewProtocol-Protocol.h"
 
-@class MBKRideOrderConfirmModel, Mobike_ViewController, NSString, TTTAttributedLabel, UIButton;
+@class MBKBaseViewController, MBKRideOrderConfirmModel, NSString, TTTAttributedLabel, UIButton;
 
 @interface MBKRideOrderConfirmTableViewCell : UITableViewCell <MBKViewProtocol>
 {
@@ -35,7 +35,7 @@
 - (id)initWithStyle:(long long)arg1 reuseIdentifier:(id)arg2;
 
 // Remaining properties
-@property(nonatomic) __weak Mobike_ViewController *controller;
+@property(nonatomic) __weak MBKBaseViewController *controller;
 @property(readonly, copy) NSString *debugDescription;
 @property(readonly, copy) NSString *description;
 @property(readonly) unsigned long long hash;

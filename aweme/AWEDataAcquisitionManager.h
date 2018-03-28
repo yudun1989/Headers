@@ -20,6 +20,7 @@
 @property(retain, nonatomic) HTSDataAcquisitionManager *acqManager; // @synthesize acqManager=_acqManager;
 - (void).cxx_destruct;
 - (void)didFinishLogin;
+- (void)acquisitionManager:(id)arg1 gyroSampleInterval:(double)arg2 uploadForScene:(id)arg3 callbackResult:(_Bool)arg4;
 - (id)nickName;
 - (id)userID;
 - (id)installChannel;

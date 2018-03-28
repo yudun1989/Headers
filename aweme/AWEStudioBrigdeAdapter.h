@@ -12,8 +12,6 @@
 
 + (void)updateLocation;
 + (void)showPOIPickerWithCompletion:(CDUnknownBlockType)arg1;
-+ (id)stickerGuideContent;
-+ (id)cachePathForVoiceURL:(id)arg1;
 + (void)shareAweme:(id)arg1 type:(long long)arg2;
 
 @end

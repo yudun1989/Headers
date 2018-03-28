@@ -14,6 +14,7 @@
 {
 }
 
+- (void)createVideoWithMusic:(id)arg1 groupID:(id)arg2;
 - (void)handleUserPromotionMsg:(id)arg1;
 - (id)getTabBarController;
 - (void)reportWithType:(unsigned long long)arg1 objectID:(id)arg2 ownerID:(id)arg3;
@@ -21,6 +22,7 @@
 - (id)getFantasyActivityMessageView;
 - (void)fetchFantasyWithCompletion:(CDUnknownBlockType)arg1;
 @property(retain, nonatomic) AWEShareServiceExtension *shareExtension;
+- (void)createVideoWithMusic:(id)arg1 groupID:(id)arg2;
 - (void)handleUserPromotionMsg:(id)arg1;
 - (id)getTabBarController;
 - (void)reportWithType:(unsigned long long)arg1 objectID:(id)arg2 ownerID:(id)arg3;

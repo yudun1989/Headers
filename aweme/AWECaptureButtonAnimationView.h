@@ -18,8 +18,10 @@
     AWEAnimatableTapModeButton *_tapAnimatableButton;
     AWEAnimatableTapModeButton *_takePictureAnimatableButton;
     long long _recordMode;
+    long long _restoredRecordMode;
 }
 
+@property(nonatomic) long long restoredRecordMode; // @synthesize restoredRecordMode=_restoredRecordMode;
 @property(nonatomic) long long recordMode; // @synthesize recordMode=_recordMode;
 @property(nonatomic) _Bool isShowingCaptureAnimating; // @synthesize isShowingCaptureAnimating=_isShowingCaptureAnimating;
 @property(retain, nonatomic) AWEAnimatableTapModeButton *takePictureAnimatableButton; // @synthesize takePictureAnimatableButton=_takePictureAnimatableButton;

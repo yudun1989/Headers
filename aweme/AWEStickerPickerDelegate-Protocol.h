@@ -6,15 +6,10 @@
 
 #import "NSObject-Protocol.h"
 
-@class AWERecordSticker, NSString;
+@class AWERecordSticker;
 
 @protocol AWEStickerPickerDelegate <NSObject>
 - (void)pickerDidFinish:(id)arg1;
 - (void)applySticker:(AWERecordSticker *)arg1 completion:(void (^)(_Bool))arg2;
-
-@optional
-- (void)configureNeedShowBonusView:(_Bool)arg1;
-- (_Bool)needShowBonusView;
-- (void)saveBlessWords:(NSString *)arg1;
 @end
 

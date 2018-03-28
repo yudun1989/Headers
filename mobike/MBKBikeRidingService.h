@@ -6,25 +6,24 @@
 
 #import "MBKBaseService.h"
 
-@class RACDisposable;
+@class MBKPollingRequest;
 
 @interface MBKBikeRidingService : MBKBaseService
 {
-    RACDisposable *_ridingDisposable;
+    MBKPollingRequest *_ridingStatusPollingRequest;
 }
 
-@property(retain, nonatomic) RACDisposable *ridingDisposable; // @synthesize ridingDisposable=_ridingDisposable;
+@property(retain, nonatomic) MBKPollingRequest *ridingStatusPollingRequest; // @synthesize ridingStatusPollingRequest=_ridingStatusPollingRequest;
 - (void).cxx_destruct;
 - (void)clearAcountCount;
 - (void)setAccountCount:(long long)arg1;
 @property(readonly, nonatomic) long long accountCount;
 - (void)addAccountCount;
-- (id)fetchRidingOrderInfoWithOrderId:(id)arg1;
+- (id)fetchRidingOrderInfoWithOrderId:(id)arg1 bikeType:(long long)arg2;
 - (void)freezeRidingBikeWithOrderId:(id)arg1 userCoordinate:(struct CLLocationCoordinate2D)arg2 phone:(id)arg3 epdata:(id)arg4 timestamp:(id)arg5 bz:(id)arg6 img:(id)arg7 successBlock:(CDUnknownBlockType)arg8 failureBlock:(CDUnknownBlockType)arg9;
 - (void)stopRidingCycle;
 - (id)circleFetchRidingStatusWithUserId:(id)arg1;
 - (void)fetchRidingStatusWithUserid:(id)arg1 successBlock:(CDUnknownBlockType)arg2 failureBlock:(CDUnknownBlockType)arg3;
-- (id)init;
 
 @end
 

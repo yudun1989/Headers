@@ -16,6 +16,7 @@
     _Bool _selectedUnfoldCell;
     _Bool _isRidingBalanceCellCouldTap;
     _Bool _isRedPocketCellCouldTap;
+    _Bool _isThirdTypeBalanceCellCouldTap;
     int _shouldPayCount;
     UITableView *_paylistTableView;
     CDUnknownBlockType _selcetBlock;
@@ -28,16 +29,23 @@
     NSIndexPath *_selectedIndex;
     NSIndexPath *_ridingBalanceIndex;
     NSIndexPath *_redpocketIndex;
+    NSIndexPath *_thirdTypeBalanceIndex;
     MBPaywayInfo *_ridingBalancePayway;
+    MBPaywayInfo *_thirdTypeBalancePayway;
     MBPaywayInfo *_redPocketpayway;
     long long _ridingBalanceReal;
     long long _ridingBalanceSend;
+    long long _thirdTypeBalance;
 }
 
+@property(nonatomic) long long thirdTypeBalance; // @synthesize thirdTypeBalance=_thirdTypeBalance;
 @property(nonatomic) long long ridingBalanceSend; // @synthesize ridingBalanceSend=_ridingBalanceSend;
 @property(nonatomic) long long ridingBalanceReal; // @synthesize ridingBalanceReal=_ridingBalanceReal;
 @property(retain, nonatomic) MBPaywayInfo *redPocketpayway; // @synthesize redPocketpayway=_redPocketpayway;
+@property(retain, nonatomic) MBPaywayInfo *thirdTypeBalancePayway; // @synthesize thirdTypeBalancePayway=_thirdTypeBalancePayway;
 @property(retain, nonatomic) MBPaywayInfo *ridingBalancePayway; // @synthesize ridingBalancePayway=_ridingBalancePayway;
+@property(nonatomic) _Bool isThirdTypeBalanceCellCouldTap; // @synthesize isThirdTypeBalanceCellCouldTap=_isThirdTypeBalanceCellCouldTap;
+@property(retain, nonatomic) NSIndexPath *thirdTypeBalanceIndex; // @synthesize thirdTypeBalanceIndex=_thirdTypeBalanceIndex;
 @property(nonatomic) _Bool isRedPocketCellCouldTap; // @synthesize isRedPocketCellCouldTap=_isRedPocketCellCouldTap;
 @property(retain, nonatomic) NSIndexPath *redpocketIndex; // @synthesize redpocketIndex=_redpocketIndex;
 @property(nonatomic) _Bool isRidingBalanceCellCouldTap; // @synthesize isRidingBalanceCellCouldTap=_isRidingBalanceCellCouldTap;
@@ -62,6 +70,7 @@
 - (double)tableView:(id)arg1 heightForFooterInSection:(long long)arg2;
 - (double)tableView:(id)arg1 heightForRowAtIndexPath:(id)arg2;
 - (void)scrollViewDidScroll:(id)arg1;
+- (void)refreshThirdTypeBalanceFold;
 - (void)refreshRidingBalanceFold;
 - (void)refreshRedPacketFold;
 - (void)handelPaywayModels:(id)arg1;

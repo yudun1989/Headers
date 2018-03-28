@@ -25,6 +25,7 @@
 + (id)valueForKeychainKey:(id)arg1 service:(id)arg2;
 + (int)setValue:(id)arg1 forKeychainKey:(id)arg2 inService:(id)arg3;
 + (id)keychainItemForKey:(id)arg1 service:(id)arg2;
++ (void)removeDeviceId;
 + (_Bool)isNewDevice;
 + (void)saveDeviceId;
 + (id)uid;

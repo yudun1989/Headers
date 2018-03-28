@@ -20,6 +20,7 @@
 @property(nonatomic) _Bool shouldIgnorePush; // @synthesize shouldIgnorePush=_shouldIgnorePush;
 - (id)previousViewController;
 - (id)rootViewController;
+- (_Bool)gestureRecognizer:(id)arg1 shouldBeRequiredToFailByGestureRecognizer:(id)arg2;
 - (_Bool)gestureRecognizerShouldBegin:(id)arg1;
 - (void)navigationController:(id)arg1 didShowViewController:(id)arg2 animated:(_Bool)arg3;
 - (id)navigationController:(id)arg1 interactionControllerForAnimationController:(id)arg2;

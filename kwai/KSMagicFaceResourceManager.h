@@ -8,7 +8,7 @@
 
 #import "KSMagicFacePickModel-Protocol.h"
 
-@class KSDiskCache, KSMagicFaceListFetcher, KSMagicFaceResourceDownloadManager, NSArray, NSDictionary, NSString;
+@class KSDiskCache, KSMagicFaceListFetcher, KSMagicFaceResourceCacheWrapper, KSMagicFaceResourceDownloadManager, NSArray, NSDictionary, NSString;
 
 @interface KSMagicFaceResourceManager : NSObject <KSMagicFacePickModel>
 {
@@ -18,11 +18,13 @@
     KSMagicFaceResourceDownloadManager *_downloadManager;
     KSMagicFaceListFetcher *_listFetcher;
     KSDiskCache *_resourceCache;
+    KSMagicFaceResourceCacheWrapper *_resourceCacheWrapper;
 }
 
 + (id)defaultManager;
 + (id)liveAnchorMagicFaceResourceManager;
 + (id)photographyMagicFaceResourceManager;
+@property(retain, nonatomic) KSMagicFaceResourceCacheWrapper *resourceCacheWrapper; // @synthesize resourceCacheWrapper=_resourceCacheWrapper;
 @property(retain, nonatomic) KSDiskCache *resourceCache; // @synthesize resourceCache=_resourceCache;
 @property(retain, nonatomic) KSMagicFaceListFetcher *listFetcher; // @synthesize listFetcher=_listFetcher;
 @property(retain, nonatomic) KSMagicFaceResourceDownloadManager *downloadManager; // @synthesize downloadManager=_downloadManager;
@@ -32,7 +34,6 @@
 - (void).cxx_destruct;
 - (void)downloadImageForResources:(id)arg1;
 - (id)resourceWithMagicFaceGroups:(id)arg1 oldResources:(id)arg2;
-- (void)removeResourceForKey:(id)arg1;
 - (id)resourceInPath:(id)arg1;
 - (id)resourcesForGroupId:(id)arg1;
 - (id)resourceOfMagicFace:(id)arg1;
@@ -43,7 +44,7 @@
 - (void)downloadResourceIfNeeded:(id)arg1;
 - (void)updateMagicFaceList;
 - (void)diskCachePurged:(id)arg1;
-- (id)initWithListFetcher:(id)arg1 cachedKey:(id)arg2 resourceCache:(id)arg3;
+- (id)initWithListFetcher:(id)arg1 cachedKey:(id)arg2 resourceCacheManager:(id)arg3;
 - (id)initWithListFetcher:(id)arg1 cachedKey:(id)arg2;
 - (void)dealloc;
 

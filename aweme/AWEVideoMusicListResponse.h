@@ -6,20 +6,23 @@
 
 #import "AWEBaseApiModel.h"
 
-@class NSArray, NSNumber;
+@class AWEVideoMusicCategoryModel, NSArray, NSNumber;
 
 @interface AWEVideoMusicListResponse : AWEBaseApiModel
 {
     NSArray *_mcList;
     NSNumber *_cursor;
     NSNumber *_hasMore;
+    AWEVideoMusicCategoryModel *_titleModel;
     NSArray *_mc_list;
     NSArray *_music_list;
 }
 
++ (id)titleModelJSONTransformer;
 + (id)JSONKeyPathsByPropertyKey;
 @property(retain, nonatomic) NSArray *music_list; // @synthesize music_list=_music_list;
 @property(retain, nonatomic) NSArray *mc_list; // @synthesize mc_list=_mc_list;
+@property(retain, nonatomic) AWEVideoMusicCategoryModel *titleModel; // @synthesize titleModel=_titleModel;
 @property(retain, nonatomic) NSNumber *hasMore; // @synthesize hasMore=_hasMore;
 @property(retain, nonatomic) NSNumber *cursor; // @synthesize cursor=_cursor;
 @property(retain, nonatomic) NSArray *mcList; // @synthesize mcList=_mcList;

@@ -10,7 +10,7 @@
 
 @interface MBKBubbleAnimationViewModel : NSObject
 {
-    unsigned long long _showType;
+    long long _showType;
     NSString *_bubbleContentStr;
     NSString *_bubbleContentColorStr;
     NSString *_bubbleIconUrlStr;
@@ -37,7 +37,7 @@
 @property(copy, nonatomic) NSString *bubbleIconUrlStr; // @synthesize bubbleIconUrlStr=_bubbleIconUrlStr;
 @property(copy, nonatomic) NSString *bubbleContentColorStr; // @synthesize bubbleContentColorStr=_bubbleContentColorStr;
 @property(copy, nonatomic) NSString *bubbleContentStr; // @synthesize bubbleContentStr=_bubbleContentStr;
-@property(nonatomic) unsigned long long showType; // @synthesize showType=_showType;
+@property(nonatomic) long long showType; // @synthesize showType=_showType;
 - (void).cxx_destruct;
 - (void)setupViewModel;
 - (id)initWithModel:(id)arg1;

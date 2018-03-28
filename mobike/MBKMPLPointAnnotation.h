@@ -10,8 +10,6 @@
 
 @interface MBKMPLPointAnnotation : MBKPOIAnnotaion
 {
-    _Bool _isNearest;
-    _Bool _isAutoClicked;
     _Bool _isParkingMode;
     int _distaceToLocation;
     MBKMPLPointAnnotationView *_view;
@@ -21,9 +19,7 @@
 
 @property(nonatomic) _Bool isParkingMode; // @synthesize isParkingMode=_isParkingMode;
 @property(nonatomic) unsigned long long userInOrOut; // @synthesize userInOrOut=_userInOrOut;
-@property(nonatomic) _Bool isAutoClicked; // @synthesize isAutoClicked=_isAutoClicked;
 @property(nonatomic) int distaceToLocation; // @synthesize distaceToLocation=_distaceToLocation;
-@property(nonatomic) _Bool isNearest; // @synthesize isNearest=_isNearest;
 @property(retain, nonatomic) NSMutableDictionary *paramsDictionary; // @synthesize paramsDictionary=_paramsDictionary;
 @property(nonatomic) __weak MBKMPLPointAnnotationView *view; // @synthesize view=_view;
 - (void).cxx_destruct;

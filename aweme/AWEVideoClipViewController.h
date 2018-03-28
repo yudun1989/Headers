@@ -121,7 +121,6 @@
 - (void)layoutVideoThumbnails;
 - (void)setupVideoPlayer;
 - (_Bool)prefersStatusBarHidden;
-- (_Bool)prefersNavigationBarHidden;
 - (void)viewWillDisappear:(_Bool)arg1;
 - (void)viewDidAppear:(_Bool)arg1;
 - (void)deCompositionVideoFile:(id)arg1 atTimes:(id)arg2 finishBlock:(CDUnknownBlockType)arg3;

@@ -37,6 +37,7 @@
 - (void)switchReverbFilter:(_Bool)arg1;
 - (void)removeReciver;
 - (void)addReciver:(long long)arg1;
+- (float)getInputVoicePowerLevel;
 - (void)recordingVoiceWithVolume:(float)arg1;
 - (_Bool)bgMusicIsPlaying;
 - (void)resumeBgMusic;

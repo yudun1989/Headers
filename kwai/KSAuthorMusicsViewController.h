@@ -32,7 +32,7 @@
 - (long long)preferredStatusBarStyle;
 - (void)viewWillAppear:(_Bool)arg1;
 - (void)viewDidLoad;
-- (id)initWithAuthorName:(id)arg1;
+- (id)initWithAuthorName:(id)arg1 sceneType:(unsigned long long)arg2;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

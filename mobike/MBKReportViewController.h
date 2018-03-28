@@ -63,8 +63,8 @@
 - (void)dealloc;
 - (void)selectedPhotoCount:(long long)arg1;
 - (_Bool)textViewShouldEndEditing:(id)arg1;
+- (_Bool)textViewShouldBeginEditing:(id)arg1;
 - (struct UIEdgeInsets)collectionView:(id)arg1 layout:(id)arg2 insetForSectionAtIndex:(long long)arg3;
-- (double)collectionView:(id)arg1 layout:(id)arg2 minimumLineSpacingForSectionAtIndex:(long long)arg3;
 - (struct CGSize)collectionView:(id)arg1 layout:(id)arg2 sizeForItemAtIndexPath:(id)arg3;
 - (void)textViewDidChange:(id)arg1;
 - (_Bool)textView:(id)arg1 shouldChangeTextInRange:(struct _NSRange)arg2 replacementText:(id)arg3;

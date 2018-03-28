@@ -19,6 +19,7 @@
     _Bool _invisible2Contacts;
     _Bool _invisible2QQ;
     _Bool _showWatermark;
+    _Bool _gossipPrivate;
     NSNumber *_messagePrivacy;
 }
 
@@ -37,6 +38,8 @@
 + (_Bool)denyComment;
 + (_Bool)privateLocation;
 + (_Bool)privateUser;
++ (_Bool)gossipPrivate;
+@property(readonly, nonatomic) _Bool gossipPrivate; // @synthesize gossipPrivate=_gossipPrivate;
 @property(nonatomic) NSNumber *messagePrivacy; // @synthesize messagePrivacy=_messagePrivacy;
 @property(readonly, nonatomic) _Bool showWatermark; // @synthesize showWatermark=_showWatermark;
 @property(nonatomic) _Bool invisible2QQ; // @synthesize invisible2QQ=_invisible2QQ;

@@ -6,7 +6,7 @@
 
 #import <UIKit/UICollectionViewCell.h>
 
-@class DTProgressView, KSMagicFacePickViewModelMagicFaceItem, NSLayoutConstraint, UIButton, UIColor, UIImageView, UILabel, UIView;
+@class DTProgressView, KSMagicFacePickViewModelMagicFaceItem, NSLayoutConstraint, UIColor, UIImageView, UILabel, UIView;
 
 @interface KSMagicFaceCollectionViewCell : UICollectionViewCell
 {
@@ -15,8 +15,7 @@
     UIColor *_progressColor;
     UIImageView *_imageView;
     UIImageView *_dotImage;
-    UIButton *_downLoadButton;
-    UILabel *_progressLabel;
+    UIImageView *_downloadIcon;
     DTProgressView *_progressBackgroundView;
     DTProgressView *_progressView;
     UIView *_contentContainer;
@@ -31,8 +30,7 @@
 @property(retain, nonatomic) UIView *contentContainer; // @synthesize contentContainer=_contentContainer;
 @property(retain, nonatomic) DTProgressView *progressView; // @synthesize progressView=_progressView;
 @property(retain, nonatomic) DTProgressView *progressBackgroundView; // @synthesize progressBackgroundView=_progressBackgroundView;
-@property(retain, nonatomic) UILabel *progressLabel; // @synthesize progressLabel=_progressLabel;
-@property(retain, nonatomic) UIButton *downLoadButton; // @synthesize downLoadButton=_downLoadButton;
+@property(retain, nonatomic) UIImageView *downloadIcon; // @synthesize downloadIcon=_downloadIcon;
 @property(retain, nonatomic) UIImageView *dotImage; // @synthesize dotImage=_dotImage;
 @property(retain, nonatomic) UIImageView *imageView; // @synthesize imageView=_imageView;
 @property(retain, nonatomic) UIColor *progressColor; // @synthesize progressColor=_progressColor;

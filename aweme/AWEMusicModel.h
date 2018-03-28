@@ -37,6 +37,7 @@
     NSString *_offlineDesc;
     NSString *_ownerId;
     NSString *_ownerNickname;
+    NSString *_appleMusicID;
     NSArray *_position;
     AWEURLModel *_bodydanceUrl;
     AWEChallengeModel *_challenge;
@@ -69,6 +70,7 @@
 @property(nonatomic) _Bool isBodydance; // @synthesize isBodydance=_isBodydance;
 @property(nonatomic) _Bool isFromImportVideo; // @synthesize isFromImportVideo=_isFromImportVideo;
 @property(retain, nonatomic) NSArray *position; // @synthesize position=_position;
+@property(copy, nonatomic) NSString *appleMusicID; // @synthesize appleMusicID=_appleMusicID;
 @property(copy, nonatomic) NSString *ownerNickname; // @synthesize ownerNickname=_ownerNickname;
 @property(copy, nonatomic) NSString *ownerId; // @synthesize ownerId=_ownerId;
 @property(copy, nonatomic) NSString *offlineDesc; // @synthesize offlineDesc=_offlineDesc;

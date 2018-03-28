@@ -6,7 +6,7 @@
 
 #import "NSObject-Protocol.h"
 
-@class Mobike_ViewController, NSString;
+@class MBKBaseViewController, NSString;
 @protocol MBKViewModelProtocol;
 
 @protocol MBKViewProtocol <NSObject>
@@ -15,7 +15,7 @@
 @optional
 + (double)viewWidth:(id <MBKViewModelProtocol>)arg1;
 + (NSString *)reuseIdentifier;
-@property(nonatomic) __weak Mobike_ViewController *controller;
+@property(nonatomic) __weak MBKBaseViewController *controller;
 - (void)viewDidSelect;
 - (void)setDelegate:(id)arg1;
 - (void)setModel:(id <MBKViewModelProtocol>)arg1;

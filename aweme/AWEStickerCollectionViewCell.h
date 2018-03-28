@@ -11,6 +11,7 @@
 @interface AWEStickerCollectionViewCell : UICollectionViewCell
 {
     _Bool _isDownloadAnimating;
+    _Bool _isUsedOnLive;
     UIImageView *_downloadImgView;
     UIView *_selectedIndicatorView;
     AWERecordSticker *_item;
@@ -22,6 +23,7 @@
 @property(retain, nonatomic) UIImageView *imageView; // @synthesize imageView=_imageView;
 @property(retain, nonatomic) UILabel *nameLabel; // @synthesize nameLabel=_nameLabel;
 @property(retain, nonatomic) UIImageView *loadingImgView; // @synthesize loadingImgView=_loadingImgView;
+@property(nonatomic) _Bool isUsedOnLive; // @synthesize isUsedOnLive=_isUsedOnLive;
 @property(nonatomic) _Bool isDownloadAnimating; // @synthesize isDownloadAnimating=_isDownloadAnimating;
 @property(retain, nonatomic) AWERecordSticker *item; // @synthesize item=_item;
 @property(retain, nonatomic) UIView *selectedIndicatorView; // @synthesize selectedIndicatorView=_selectedIndicatorView;

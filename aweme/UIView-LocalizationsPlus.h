@@ -7,6 +7,11 @@
 #import <UIKit/UIView.h>
 
 @interface UIView (LocalizationsPlus)
++ (void)load;
+@property(nonatomic) _Bool alp_disableMirror;
+@property(nonatomic) struct CGAffineTransform alp_basicTransform;
+- (id)alp_snapshotViewAfterScreenUpdates:(_Bool)arg1;
 - (void)alp_currentLanguageDidChanged;
+- (void)alp_didMoveToWindow;
 @end
 

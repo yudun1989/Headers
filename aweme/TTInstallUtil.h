@@ -16,6 +16,8 @@
 + (id)openUDID;
 + (_Bool)isUpgradeUser;
 + (id)overridableHeaderParams;
++ (id)buildQueryFromDictionary:(id)arg1;
++ (id)commonURLParameters;
 + (id)onTheFlyParameter;
 
 @end

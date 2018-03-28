@@ -6,7 +6,7 @@
 
 #import "GPBMessage.h"
 
-@class DeleteConversation, DeleteMessage, GetHistoryMessages, GetMessages, GetMessagesRead, Message, NSString, ReadMessageIds, RefreshGroupMessages;
+@class DeleteConversation, DeleteMessage, GetHistoryMessages, GetMessages, GetMessagesByIndex, GetMessagesRead, MarkRead, Message, NSString, ReadMessageIds, RefreshGroupMessages;
 
 @interface Request : GPBMessage
 {
@@ -20,12 +20,14 @@
 @property(retain, nonatomic) DeleteMessage *deleteMessage; // @dynamic deleteMessage;
 @property(retain, nonatomic) GetHistoryMessages *getHistoryMessages; // @dynamic getHistoryMessages;
 @property(retain, nonatomic) GetMessages *getMessages; // @dynamic getMessages;
+@property(retain, nonatomic) GetMessagesByIndex *getMessagesByIndex; // @dynamic getMessagesByIndex;
 @property(retain, nonatomic) GetMessagesRead *getMessagesRead; // @dynamic getMessagesRead;
 @property(nonatomic) _Bool hasCmd; // @dynamic hasCmd;
 @property(nonatomic) _Bool hasRefer; // @dynamic hasRefer;
 @property(nonatomic) _Bool hasSequenceId; // @dynamic hasSequenceId;
 @property(nonatomic) _Bool hasToken; // @dynamic hasToken;
 @property(retain, nonatomic) ReadMessageIds *markMessagesRead; // @dynamic markMessagesRead;
+@property(retain, nonatomic) MarkRead *markRead; // @dynamic markRead;
 @property(copy, nonatomic) NSString *refer; // @dynamic refer;
 @property(retain, nonatomic) RefreshGroupMessages *refreshGroupMessages; // @dynamic refreshGroupMessages;
 @property(readonly, nonatomic) int requestBodyOneOfCase; // @dynamic requestBodyOneOfCase;

@@ -13,6 +13,7 @@
 
 @interface TTIMSDKService : NSObject <TTIMDependDelegate>
 {
+    _Bool _enableDebugLog;
     id <TTIMSDKServiceDelegate> _delegate;
     long long _deviceId;
     long long _accountId;
@@ -23,6 +24,7 @@
 @property(copy, nonatomic) NSString *token; // @synthesize token=_token;
 @property(nonatomic) long long accountId; // @synthesize accountId=_accountId;
 @property(nonatomic) long long deviceId; // @synthesize deviceId=_deviceId;
+@property(nonatomic) _Bool enableDebugLog; // @synthesize enableDebugLog=_enableDebugLog;
 @property(nonatomic) __weak id <TTIMSDKServiceDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
 - (void)fetchMessagesOfSession:(id)arg1;
@@ -30,7 +32,7 @@
 - (void)queryUnReadCountForSesstion:(id)arg1 withBlock:(CDUnknownBlockType)arg2;
 - (void)queryUnReadCountForAllSessions;
 - (void)markMsgReaded:(id)arg1;
-- (void)markAllReaded:(id)arg1;
+- (void)markAllMsgAsRead:(id)arg1;
 - (void)quitFromGroup:(id)arg1 withBlock:(CDUnknownBlockType)arg2;
 - (void)deleteMember:(id)arg1 fromGroup:(id)arg2 withBlock:(CDUnknownBlockType)arg3;
 - (void)modifySessionWithSessionId:(id)arg1 stick:(_Bool)arg2 block:(CDUnknownBlockType)arg3;

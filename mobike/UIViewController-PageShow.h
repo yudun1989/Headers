@@ -9,7 +9,7 @@
 @interface UIViewController (PageShow)
 + (void)load;
 - (id)applog_fallbackPageName;
-- (void)mbk_log_viewDidDisppear:(_Bool)arg1;
+- (void)mbk_log_viewDidDisappear:(_Bool)arg1;
 - (void)mbk_log_viewWillAppear:(_Bool)arg1;
 @property(nonatomic) _Bool recordPageShow;
 @property(nonatomic) int pageCategory;

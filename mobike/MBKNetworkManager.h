@@ -40,6 +40,7 @@
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *processQueue; // @synthesize processQueue=_processQueue;
 @property(retain, nonatomic) AFHTTPSessionManager *sessionManager; // @synthesize sessionManager=_sessionManager;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) _Bool isMqttConnected;
 - (void)removeRequestFromProcessingRequests:(id)arg1;
 - (void)addRequestToProcessingRequests:(id)arg1;
 - (void)executor:(id)arg1 willExecuteRequest:(id)arg2;

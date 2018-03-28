@@ -7,6 +7,7 @@
 #import "NSObject-Protocol.h"
 
 @protocol AWEFollowActionDelegate <NSObject>
+- (_Bool)showPrivateAccountInfoView;
 - (void)shareOtherProfileTriggerd;
 - (void)relationActionTriggered;
 @end

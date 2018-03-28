@@ -10,10 +10,17 @@
 {
 }
 
++ (_Bool)isSelectMusicWhiteBackground;
++ (_Bool)disableStartUpGuide;
++ (_Bool)enablePostNotificationSwitch;
++ (_Bool)enableModernPublishUI;
 + (long long)ix_feedStyle;
 + (_Bool)ix_enableNewRecord;
 + (_Bool)isCommentBGColorWhite;
 + (unsigned long long)product;
++ (_Bool)enableDuet;
++ (_Bool)enableAppleMusic;
++ (_Bool)enablePrivateAccount;
 + (_Bool)enablePoi;
 + (_Bool)enableHashtag;
 

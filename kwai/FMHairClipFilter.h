@@ -6,38 +6,44 @@
 
 #import "GPUImageFilter.h"
 
-@class CGECVUtilTexture, CGECVUtilTextureWithFramebuffer, KSMetalRender;
+@class KSMetalRender, NSArray;
 
 @interface FMHairClipFilter : GPUImageFilter
 {
     unsigned int _maskTexture;
     struct ProgramObject *_programObject;
-    struct TextureDrawer *_drawer;
+    struct vector<FMHairClipFilterTexture, std::__1::allocator<FMHairClipFilterTexture>> _uniformTextures;
     struct CGRect rtMaskRange;
     unsigned int _depthTexture;
     int mViewType;
     float mColorHair;
     int _maskID;
+    NSArray *blend_mode;
+    int _src_config;
+    int _dst_config;
+    _Bool _outputMask;
+    struct TextureDrawer *_drawer;
+    _Bool _metalRenderResult;
     int _rotation;
     KSMetalRender *_ksMetalRender;
-    CGECVUtilTextureWithFramebuffer *_utilTextureInput;
-    CGECVUtilTexture *_utilTextureOutput;
 }
 
-@property(retain, nonatomic) CGECVUtilTexture *utilTextureOutput; // @synthesize utilTextureOutput=_utilTextureOutput;
-@property(retain, nonatomic) CGECVUtilTextureWithFramebuffer *utilTextureInput; // @synthesize utilTextureInput=_utilTextureInput;
 @property(retain, nonatomic) KSMetalRender *ksMetalRender; // @synthesize ksMetalRender=_ksMetalRender;
 @property(nonatomic) int rotation; // @synthesize rotation=_rotation;
+@property(nonatomic) _Bool metalRenderResult; // @synthesize metalRenderResult=_metalRenderResult;
+- (id).cxx_construct;
 - (void).cxx_destruct;
 - (void *)getProgram;
+- (void)initUniforms:(id)arg1 provider:(id)arg2 directory:(id)arg3;
 - (void)renderToTextureWithVertices:(const float *)arg1 textureCoordinates:(const float *)arg2;
 - (void)drawResult:(const float *)arg1 textureCoordinates:(const float *)arg2;
 - (void)generateMask;
+- (void)setBlendMode:(id)arg1;
 - (void)setColorValue:(float)arg1;
 - (void)selectMaskRange:(struct CGRect)arg1;
 - (void)setBorderColor:(float)arg1 g:(float)arg2 b:(float)arg3 a:(float)arg4;
 - (void)dealloc;
-- (_Bool)setupWithMetal:(id)arg1 model:(id)arg2;
+- (void)setupWithMetal:(id)arg1 model:(id)arg2;
 - (id)initWithMetal:(id)arg1 model:(id)arg2;
 - (const char *)getFragmentShaderString;
 - (const char *)getVertexShaderString;

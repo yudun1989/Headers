@@ -27,8 +27,10 @@
     UITextView *_textView;
     UILabel *_placeholder;
     UILabel *_noteLabel;
+    NSString *_imagePath;
 }
 
+@property(retain, nonatomic) NSString *imagePath; // @synthesize imagePath=_imagePath;
 @property(retain) UILabel *noteLabel; // @synthesize noteLabel=_noteLabel;
 @property(retain, nonatomic) UILabel *placeholder; // @synthesize placeholder=_placeholder;
 @property(retain, nonatomic) UITextView *textView; // @synthesize textView=_textView;
@@ -45,7 +47,8 @@
 - (_Bool)textView:(id)arg1 shouldChangeTextInRange:(struct _NSRange)arg2 replacementText:(id)arg3;
 - (void)resignKeyboard;
 - (void)scanStateChange;
-- (id)getImagePath;
+- (id)getImageName;
+- (void)uploadFileToTencent;
 - (void)reoprtActioin:(id)arg1;
 - (void)scanClicked:(id)arg1;
 - (void)didReceiveMemoryWarning;

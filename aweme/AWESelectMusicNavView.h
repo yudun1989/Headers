@@ -8,31 +8,39 @@
 
 #import "CAAnimationDelegate-Protocol.h"
 
-@class NSString, UIButton, UIImageView, UILabel;
+@class NSString, NSTimer, UIButton, UIImageView, UILabel;
 
 @interface AWESelectMusicNavView : UIView <CAAnimationDelegate>
 {
     _Bool _isAnimating;
     _Bool _isEliteVersion;
+    _Bool _shouldShowLiveButton;
     UIButton *_galleryBtn;
     UIButton *_selectBtn;
     UIButton *_skipBtn;
-    UIButton *_arButton;
+    UIButton *_liveButton;
     UILabel *_titleLabel;
     NSString *_title;
+    double _cubeTransitionTriggerTime;
+    NSTimer *_timer;
     UIImageView *_galleryImageView;
 }
 
 @property(retain, nonatomic) UIImageView *galleryImageView; // @synthesize galleryImageView=_galleryImageView;
+@property(retain, nonatomic) NSTimer *timer; // @synthesize timer=_timer;
+@property(nonatomic) double cubeTransitionTriggerTime; // @synthesize cubeTransitionTriggerTime=_cubeTransitionTriggerTime;
+@property(nonatomic) _Bool shouldShowLiveButton; // @synthesize shouldShowLiveButton=_shouldShowLiveButton;
 @property(nonatomic) _Bool isEliteVersion; // @synthesize isEliteVersion=_isEliteVersion;
 @property(copy, nonatomic) NSString *title; // @synthesize title=_title;
 @property(nonatomic) _Bool isAnimating; // @synthesize isAnimating=_isAnimating;
 @property(retain, nonatomic) UILabel *titleLabel; // @synthesize titleLabel=_titleLabel;
-@property(retain, nonatomic) UIButton *arButton; // @synthesize arButton=_arButton;
+@property(retain, nonatomic) UIButton *liveButton; // @synthesize liveButton=_liveButton;
 @property(retain, nonatomic) UIButton *skipBtn; // @synthesize skipBtn=_skipBtn;
 @property(retain, nonatomic) UIButton *selectBtn; // @synthesize selectBtn=_selectBtn;
 @property(retain, nonatomic) UIButton *galleryBtn; // @synthesize galleryBtn=_galleryBtn;
 - (void).cxx_destruct;
+- (void)addCubeTransitionAnimationForSkipBtn;
+- (id)cubeTransitionAnimation;
 - (void)layoutSubviews;
 - (void)_setupUI;
 - (void)makeSelectBtnSelected;

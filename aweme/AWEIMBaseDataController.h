@@ -12,7 +12,7 @@
 #import "AWEUserMessage-Protocol.h"
 #import "TTIMMsgExt-Protocol.h"
 
-@class AWEIMBaseDataAssistantController, AWEIMBaseDataStrangeController, AWEIMLoginManager, NSMutableArray, NSMutableDictionary, NSString;
+@class AWEIMBaseDataAssistantController, AWEIMBaseDataStrangeController, AWEIMLoginManager, AWEIMSendMsgLogController, NSMutableArray, NSMutableDictionary, NSString;
 @protocol AWEIMBaseDataControllerDelegate;
 
 @interface AWEIMBaseDataController : NSObject <TTIMMsgExt, AWEUserMessage, AWEIMBaseDataAssistantControllerDelegate, AWEIMBaseDataStrangeControllerDelegate, AWEIMBaseDataControllerProtocol>
@@ -25,9 +25,11 @@
     NSMutableDictionary *_chatDict;
     AWEIMBaseDataAssistantController *_assistantController;
     AWEIMBaseDataStrangeController *_strangeController;
+    AWEIMSendMsgLogController *_sendLogController;
 }
 
 + (id)sharedInstance;
+@property(retain, nonatomic) AWEIMSendMsgLogController *sendLogController; // @synthesize sendLogController=_sendLogController;
 @property(retain, nonatomic) AWEIMBaseDataStrangeController *strangeController; // @synthesize strangeController=_strangeController;
 @property(retain, nonatomic) AWEIMBaseDataAssistantController *assistantController; // @synthesize assistantController=_assistantController;
 @property(retain, nonatomic) NSMutableDictionary *chatDict; // @synthesize chatDict=_chatDict;
@@ -42,11 +44,14 @@
 - (void)didUpdateStrangerChat:(id)arg1;
 - (void)didClearAssistantUnreadCount:(id)arg1;
 - (void)didUpdateAssistantChat:(id)arg1;
+- (void)applicationWillEnterForeground:(id)arg1;
 - (void)handleUpdateChatLatestMsgNoti:(id)arg1;
 - (void)handleClearSessionUnreadCountNoti:(id)arg1;
 - (void)didFinishBlockUser:(id)arg1 status:(long long)arg2;
 - (void)didFinishLogin;
 - (void)didFinishLogout;
+- (void)onSendAck:(id)arg1 msg:(id)arg2 extraInfo:(id)arg3;
+- (void)onAdd:(id)arg1 msg:(id)arg2;
 - (void)onSessionUpdated:(id)arg1;
 - (void)onMsgCenterQuery:(id)arg1;
 - (void)_commonSetup;

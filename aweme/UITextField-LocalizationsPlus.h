@@ -8,7 +8,11 @@
 
 @interface UITextField (LocalizationsPlus)
 + (void)load;
+- (void)alp_setTextAlignment:(long long)arg1;
 - (void)alp_setAttributedPlaceholder:(id)arg1;
 - (void)alp_setPlaceholder:(id)arg1;
+- (void)addTransformBlock;
+- (id)alp_tf_initWithFrame:(struct CGRect)arg1;
+- (id)alp_tf_init;
 @end
 

@@ -17,7 +17,7 @@
 @interface MBKTransitSearchViewController : MBKBaseViewController <UITableViewDelegate, UITableViewDataSource, MBKSearchBarViewDelegate, MBKHistorySelectionDelegate, MBKTagListViewDelegate>
 {
     _Bool _isStart;
-    long long _applicationID;
+    NSString *_applicationID;
     MBKTransitStopModel *_startSelection;
     MBKTransitStopModel *_endSelection;
     UITableView *_leftTableView;
@@ -54,7 +54,7 @@
 @property(retain, nonatomic) MBKTransitStopModel *endSelection; // @synthesize endSelection=_endSelection;
 @property(retain, nonatomic) MBKTransitStopModel *startSelection; // @synthesize startSelection=_startSelection;
 @property(nonatomic) _Bool isStart; // @synthesize isStart=_isStart;
-@property(nonatomic) long long applicationID; // @synthesize applicationID=_applicationID;
+@property(copy, nonatomic) NSString *applicationID; // @synthesize applicationID=_applicationID;
 - (void).cxx_destruct;
 - (id)parseStationsWith:(id)arg1;
 - (id)parseLinesWith:(id)arg1;

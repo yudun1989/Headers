@@ -16,6 +16,7 @@
     struct FrameBuffer *_cacheFrameBuffers;
     struct CGSize _cacheSize;
     struct CGSize _realCacheSize;
+    _Bool _enableBlend;
     struct ProgramObject *_program;
     int _totalPass;
     NSString *_vshDrawMask;
@@ -30,7 +31,7 @@
 - (const char *)getFragmentShaderString;
 - (const char *)getVertexShaderString;
 - (void)dealloc;
-- (id)initWithShaders:(id)arg1 fsh:(id)arg2;
+- (id)initWithShaders:(id)arg1 fsh:(id)arg2 vshDrawMask:(id)arg3 fshDrawMask:(id)arg4 enableBlend:(_Bool)arg5;
 
 @end
 

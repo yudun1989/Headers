@@ -25,6 +25,8 @@
 @property(nonatomic) unsigned long long blockCnt; // @dynamic blockCnt;
 @property(nonatomic) unsigned long long bufferTime; // @dynamic bufferTime;
 @property(nonatomic) unsigned int cid; // @dynamic cid;
+@property(nonatomic) _Bool coverCaption; // @dynamic coverCaption;
+@property(nonatomic) unsigned long long coverHandleCost; // @dynamic coverHandleCost;
 @property(nonatomic) unsigned long long droppedFrameCnt; // @dynamic droppedFrameCnt;
 @property(nonatomic) unsigned long long emptyBpsDuration; // @dynamic emptyBpsDuration;
 @property(nonatomic) unsigned long long emptyFpsDuration; // @dynamic emptyFpsDuration;
@@ -41,6 +43,7 @@
 @property(nonatomic) long long liveExceptionErrorCode; // @dynamic liveExceptionErrorCode;
 @property(nonatomic) unsigned long long livePushEndTime; // @dynamic livePushEndTime;
 @property(nonatomic) unsigned long long livePushStartTime; // @dynamic livePushStartTime;
+@property(nonatomic) unsigned long long liveStartToltalCost; // @dynamic liveStartToltalCost;
 @property(copy, nonatomic) NSString *liveStreamEncodeDetail; // @dynamic liveStreamEncodeDetail;
 @property(copy, nonatomic) NSString *liveStreamHost; // @dynamic liveStreamHost;
 @property(copy, nonatomic) NSString *liveStreamId; // @dynamic liveStreamId;
@@ -52,6 +55,7 @@
 @property(nonatomic) unsigned long long normalBpsDuration; // @dynamic normalBpsDuration;
 @property(nonatomic) unsigned long long normalFpsDuration; // @dynamic normalFpsDuration;
 @property(nonatomic) unsigned long long onlineCntLeave; // @dynamic onlineCntLeave;
+@property(nonatomic) unsigned long long openLivePushPageCost; // @dynamic openLivePushPageCost;
 @property(nonatomic) int ping; // @dynamic ping;
 @property(nonatomic) unsigned long long portraitDuration; // @dynamic portraitDuration;
 @property(nonatomic) unsigned long long prepareTime; // @dynamic prepareTime;
@@ -67,6 +71,7 @@
 @property(nonatomic) int serverMode; // @dynamic serverMode;
 @property(retain, nonatomic) NSMutableArray *soundEffectUsageArray; // @dynamic soundEffectUsageArray;
 @property(readonly, nonatomic) unsigned long long soundEffectUsageArray_Count; // @dynamic soundEffectUsageArray_Count;
+@property(nonatomic) unsigned long long startPushCost; // @dynamic startPushCost;
 @property(nonatomic) unsigned long long totalDuration; // @dynamic totalDuration;
 @property(nonatomic) unsigned long long traffic; // @dynamic traffic;
 @property(nonatomic) unsigned int videoResolutionType; // @dynamic videoResolutionType;

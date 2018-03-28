@@ -10,12 +10,14 @@
 
 @interface KSDowngradeService : NSObject
 {
+    _Bool _isFetchingDowngradeConfigrationFromCDN;
     KSCDNDowngradeConfigration *_downgradeConfigration;
     NSArray *_fetchingDowngradeConfigrationCDNUrls;
     unsigned long long _currentFetchingDowngradeConfigrationCDNIndex;
 }
 
 + (id)sharedInstance;
+@property(nonatomic) _Bool isFetchingDowngradeConfigrationFromCDN; // @synthesize isFetchingDowngradeConfigrationFromCDN=_isFetchingDowngradeConfigrationFromCDN;
 @property(nonatomic) unsigned long long currentFetchingDowngradeConfigrationCDNIndex; // @synthesize currentFetchingDowngradeConfigrationCDNIndex=_currentFetchingDowngradeConfigrationCDNIndex;
 @property(retain, nonatomic) NSArray *fetchingDowngradeConfigrationCDNUrls; // @synthesize fetchingDowngradeConfigrationCDNUrls=_fetchingDowngradeConfigrationCDNUrls;
 @property(retain, nonatomic) KSCDNDowngradeConfigration *downgradeConfigration; // @synthesize downgradeConfigration=_downgradeConfigration;

@@ -22,6 +22,8 @@
 - (_Bool)shouldHideNavigationBarShadow;
 - (id)createNavigationBar;
 - (long long)preferredStatusBarStyle;
+- (void)gotoManualReview;
+- (void)manualReviewAlert;
 - (void)buildUI;
 - (void)addNavigationBar;
 - (void)viewDidLoad;

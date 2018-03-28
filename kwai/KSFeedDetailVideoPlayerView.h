@@ -6,7 +6,7 @@
 
 #import "KSPlayerView.h"
 
-@class KSSimpleProgressView, KS_feed, NSDate, NSString;
+@class KSSimpleProgressView, KSSlideProgressView, KS_feed, NSDate, NSString;
 @protocol KSFeedDetailVideoPlayerViewDelegate;
 
 @interface KSFeedDetailVideoPlayerView : KSPlayerView
@@ -20,10 +20,11 @@
     _Bool _needsMoveProgressBarToScreenBottom;
     _Bool _progressBarHidden;
     _Bool _lasturl;
+    _Bool _startPlay;
     KS_feed *_feed;
     NSString *_ip;
     NSString *_anchorString;
-    KSSimpleProgressView *_slideProgressView;
+    KSSlideProgressView *_slideProgressView;
     unsigned long long _stalledCount;
     double _totalStalledTime;
     NSDate *_startPlayDate;
@@ -41,6 +42,7 @@
     double _totalPlayedPeriodTime;
 }
 
+@property(nonatomic) _Bool startPlay; // @synthesize startPlay=_startPlay;
 @property(nonatomic) double totalPlayedPeriodTime; // @synthesize totalPlayedPeriodTime=_totalPlayedPeriodTime;
 @property(retain, nonatomic) NSDate *lastStartPlayDate; // @synthesize lastStartPlayDate=_lastStartPlayDate;
 @property(nonatomic) long long adStatisticsStatus; // @synthesize adStatisticsStatus=_adStatisticsStatus;
@@ -59,7 +61,7 @@
 @property(nonatomic) unsigned long long stalledCount; // @synthesize stalledCount=_stalledCount;
 @property(nonatomic) _Bool progressBarHidden; // @synthesize progressBarHidden=_progressBarHidden;
 @property(nonatomic) _Bool needsMoveProgressBarToScreenBottom; // @synthesize needsMoveProgressBarToScreenBottom=_needsMoveProgressBarToScreenBottom;
-@property(retain, nonatomic) KSSimpleProgressView *slideProgressView; // @synthesize slideProgressView=_slideProgressView;
+@property(retain, nonatomic) KSSlideProgressView *slideProgressView; // @synthesize slideProgressView=_slideProgressView;
 @property(copy, nonatomic) NSString *anchorString; // @synthesize anchorString=_anchorString;
 @property(retain, nonatomic) NSString *ip; // @synthesize ip=_ip;
 @property(nonatomic) _Bool adStatisticsEnabled; // @synthesize adStatisticsEnabled=_adStatisticsEnabled;

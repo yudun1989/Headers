@@ -6,7 +6,7 @@
 
 #import "GPBMessage.h"
 
-@class KSUActivityLaunchEvent, KSUAllocStatsEvent, KSUAnchorQoSSliceStatEvent, KSUAnchorStatEvent, KSUAnchorVoipQoSSliceStatEvent, KSUApiCostDetailStatEvent, KSUApiRequestStatEvent, KSUAppUsageStatEvent, KSUApplicationStatEvent, KSUAudienceQoSSliceStatEvent, KSUAudienceStatEvent, KSUBaseStationStatEvent, KSUCdnResourceLoadStatEvent, KSUCustomStatEvent, KSUDeviceStatEvent, KSUFrameRateStatEvent, KSUIdcSpeedStatEvent, KSUImageLoadStatEvent, KSULiveChatStatEvent, KSULocalMusicStatEvent, KSUMainThreadBlockEvent, KSUOpenedAppStatEvent, KSURoundTripStatEvent, KSUShareStatEvent, KSUVideoStatEvent, KSUWiFiStatEvent;
+@class KSUActivityLaunchEvent, KSUAllocStatsEvent, KSUAnchorQoSSliceStatEvent, KSUAnchorStatEvent, KSUAnchorVoipQoSSliceStatEvent, KSUApiCostDetailStatEvent, KSUApiRequestStatEvent, KSUAppUsageStatEvent, KSUApplicationStatEvent, KSUAudienceQoSSliceStatEvent, KSUAudienceStatEvent, KSUBaseStationStatEvent, KSUCdnResourceLoadStatEvent, KSUCustomStatEvent, KSUDeviceStatEvent, KSUFrameRateStatEvent, KSUIdcSpeedStatEvent, KSUImageLoadStatEvent, KSULiveAdaptiveQosStatEvent, KSULiveChatStatEvent, KSULiveStreamAdaptiveQosStatEvent, KSULocalMusicStatEvent, KSUMainThreadBlockEvent, KSUOpenedAppStatEvent, KSURoundTripStatEvent, KSUShareStatEvent, KSUVideoStatEvent, KSUWiFiStatEvent;
 
 @interface KSUStatPackage : GPBMessage
 {
@@ -49,7 +49,9 @@
 @property(nonatomic) _Bool hasFrameRateStatEvent; // @dynamic hasFrameRateStatEvent;
 @property(nonatomic) _Bool hasIdcSpeedStatEvent; // @dynamic hasIdcSpeedStatEvent;
 @property(nonatomic) _Bool hasImageLoadStatEvent; // @dynamic hasImageLoadStatEvent;
+@property(nonatomic) _Bool hasLiveAdaptiveQosStatEvent; // @dynamic hasLiveAdaptiveQosStatEvent;
 @property(nonatomic) _Bool hasLiveChatStatEvent; // @dynamic hasLiveChatStatEvent;
+@property(nonatomic) _Bool hasLiveStreamAdaptiveQosStatEvent; // @dynamic hasLiveStreamAdaptiveQosStatEvent;
 @property(nonatomic) _Bool hasLocalMusicStatEvent; // @dynamic hasLocalMusicStatEvent;
 @property(nonatomic) _Bool hasMainThreadBlockEvent; // @dynamic hasMainThreadBlockEvent;
 @property(nonatomic) _Bool hasOpenedAppStatEvent; // @dynamic hasOpenedAppStatEvent;
@@ -59,7 +61,9 @@
 @property(nonatomic) _Bool hasWifiStatEvent; // @dynamic hasWifiStatEvent;
 @property(retain, nonatomic) KSUIdcSpeedStatEvent *idcSpeedStatEvent; // @dynamic idcSpeedStatEvent;
 @property(retain, nonatomic) KSUImageLoadStatEvent *imageLoadStatEvent; // @dynamic imageLoadStatEvent;
+@property(retain, nonatomic) KSULiveAdaptiveQosStatEvent *liveAdaptiveQosStatEvent; // @dynamic liveAdaptiveQosStatEvent;
 @property(retain, nonatomic) KSULiveChatStatEvent *liveChatStatEvent; // @dynamic liveChatStatEvent;
+@property(retain, nonatomic) KSULiveStreamAdaptiveQosStatEvent *liveStreamAdaptiveQosStatEvent; // @dynamic liveStreamAdaptiveQosStatEvent;
 @property(retain, nonatomic) KSULocalMusicStatEvent *localMusicStatEvent; // @dynamic localMusicStatEvent;
 @property(retain, nonatomic) KSUMainThreadBlockEvent *mainThreadBlockEvent; // @dynamic mainThreadBlockEvent;
 @property(retain, nonatomic) KSUOpenedAppStatEvent *openedAppStatEvent; // @dynamic openedAppStatEvent;

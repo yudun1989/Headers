@@ -58,7 +58,7 @@
 - (void)p_addSubviews;
 - (void)viewDidLoad;
 - (_Bool)prefersStatusBarHidden;
-- (id)initWithRouterParamDict:(id)arg1;
+- (_Bool)configWithRouterParamDict:(id)arg1;
 - (id)init;
 - (void)dealloc;
 

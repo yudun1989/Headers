@@ -20,10 +20,12 @@
     long long _status;
     NSString *_updatetime;
     long long _timeout;
-    NSString *_errorCode;
+    NSString *_errorcode;
+    NSString *_message;
 }
 
-@property(copy, nonatomic) NSString *errorCode; // @synthesize errorCode=_errorCode;
+@property(retain, nonatomic) NSString *message; // @synthesize message=_message;
+@property(copy, nonatomic) NSString *errorcode; // @synthesize errorcode=_errorcode;
 @property(nonatomic) long long timeout; // @synthesize timeout=_timeout;
 @property(copy, nonatomic) NSString *updatetime; // @synthesize updatetime=_updatetime;
 @property(nonatomic) long long status; // @synthesize status=_status;

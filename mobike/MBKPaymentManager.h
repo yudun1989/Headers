@@ -14,7 +14,7 @@
 }
 
 + (id)sharedInstance;
-@property(readonly, copy, nonatomic) MBKUserPaymentBonus *paymentBonus; // @synthesize paymentBonus=_paymentBonus;
+@property(copy, nonatomic) MBKUserPaymentBonus *paymentBonus; // @synthesize paymentBonus=_paymentBonus;
 - (void).cxx_destruct;
 - (void)updatePaymentBonusWithSuccessBlock:(CDUnknownBlockType)arg1 failureBlock:(CDUnknownBlockType)arg2;
 - (void)updatePaymentBonus;

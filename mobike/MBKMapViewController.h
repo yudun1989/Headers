@@ -6,7 +6,8 @@
 
 #import "MBKBaseViewController.h"
 
-@class MBKMapAdapter, UIView;
+@class MBKMapAdapter, MMAnnotationView, UIView;
+@protocol MMAnnotation;
 
 @interface MBKMapViewController : MBKBaseViewController
 {
@@ -19,6 +20,8 @@
 @property(retain, nonatomic) MBKMapAdapter *mapAdapter; // @synthesize mapAdapter=_mapAdapter;
 @property(retain, nonatomic) UIView *mapView; // @synthesize mapView=_mapView;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) MMAnnotationView *selectedAnnotationView;
+@property(readonly, nonatomic) id <MMAnnotation> selectedAnnotation;
 - (void)setupMapView;
 - (struct CGRect)mapFrame;
 - (void)viewDidDisappear:(_Bool)arg1;

@@ -9,6 +9,6 @@
 @class NSDictionary;
 
 @protocol BTDRouterViewControllerProtocol <NSObject>
-- (id)initWithRouterParamDict:(NSDictionary *)arg1;
+- (_Bool)configWithRouterParamDict:(NSDictionary *)arg1;
 @end
 

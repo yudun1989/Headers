@@ -8,7 +8,7 @@
 
 #import "NSCopying-Protocol.h"
 
-@class AWEChallengeModel, AWEFilterModel, AWEMusicModel, AWEVideoDraftModel, HTSVideoData, NSArray, NSDictionary, NSMutableArray, NSNumber, NSString, NSValue, UIImage;
+@class AWEAwemeModel, AWEChallengeModel, AWEFilterModel, AWEMusicModel, AWEVideoDraftModel, HTSVideoData, NSArray, NSDictionary, NSMutableArray, NSNumber, NSString, NSURL, NSValue, UIImage;
 
 @interface AWEVideoPublishViewModel : NSObject <NSCopying>
 {
@@ -22,7 +22,7 @@
     _Bool _isHashTag;
     _Bool _isBackUp;
     _Bool _isDraft;
-    _Bool _needShowBonusView;
+    _Bool _isDuet;
     float _voiceVolume;
     float _musicVolume;
     NSString *_createVersion;
@@ -60,18 +60,24 @@
     double _dynamicCoverStartTime;
     UIImage *_toBeUploadedImage;
     UIImage *_toBeUploadedImageWithWaterMark;
-    NSString *_blessWords;
-    double _bonusRecordStart;
-    double _bonusRecordEnd;
+    AWEAwemeModel *_duetSource;
+    NSURL *_duetLocalSourceURL;
     NSValue *_sizeOfVideo;
+    unsigned long long _bitRate;
+    unsigned long long _outputWidth;
+    unsigned long long _outputHeight;
+    long long _cameraType;
     struct _HTSAudioRange _audioRange;
 }
 
+@property(nonatomic) long long cameraType; // @synthesize cameraType=_cameraType;
+@property(nonatomic) unsigned long long outputHeight; // @synthesize outputHeight=_outputHeight;
+@property(nonatomic) unsigned long long outputWidth; // @synthesize outputWidth=_outputWidth;
+@property(nonatomic) unsigned long long bitRate; // @synthesize bitRate=_bitRate;
 @property(retain, nonatomic) NSValue *sizeOfVideo; // @synthesize sizeOfVideo=_sizeOfVideo;
-@property(nonatomic) _Bool needShowBonusView; // @synthesize needShowBonusView=_needShowBonusView;
-@property(nonatomic) double bonusRecordEnd; // @synthesize bonusRecordEnd=_bonusRecordEnd;
-@property(nonatomic) double bonusRecordStart; // @synthesize bonusRecordStart=_bonusRecordStart;
-@property(copy, nonatomic) NSString *blessWords; // @synthesize blessWords=_blessWords;
+@property(retain, nonatomic) NSURL *duetLocalSourceURL; // @synthesize duetLocalSourceURL=_duetLocalSourceURL;
+@property(retain, nonatomic) AWEAwemeModel *duetSource; // @synthesize duetSource=_duetSource;
+@property(nonatomic) _Bool isDuet; // @synthesize isDuet=_isDuet;
 @property(retain, nonatomic) UIImage *toBeUploadedImageWithWaterMark; // @synthesize toBeUploadedImageWithWaterMark=_toBeUploadedImageWithWaterMark;
 @property(retain, nonatomic) UIImage *toBeUploadedImage; // @synthesize toBeUploadedImage=_toBeUploadedImage;
 @property(nonatomic) _Bool isDraft; // @synthesize isDraft=_isDraft;
@@ -82,7 +88,7 @@
 @property(copy, nonatomic) NSString *poiName; // @synthesize poiName=_poiName;
 @property(copy, nonatomic) NSString *poiID; // @synthesize poiID=_poiID;
 @property(copy, nonatomic) NSString *referString; // @synthesize referString=_referString;
-@property(copy, nonatomic) NSNumber *recordRouteNumber; // @synthesize recordRouteNumber=_recordRouteNumber;
+@property(retain, nonatomic) NSNumber *recordRouteNumber; // @synthesize recordRouteNumber=_recordRouteNumber;
 @property(nonatomic) double waterEncodeTime; // @synthesize waterEncodeTime=_waterEncodeTime;
 @property(nonatomic) double encodeTime; // @synthesize encodeTime=_encodeTime;
 @property(nonatomic) unsigned long long privacyType; // @synthesize privacyType=_privacyType;
@@ -123,9 +129,11 @@
 - (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)getLogInfo;
+@property(readonly, nonatomic) _Bool isPrivate;
 @property(readonly, nonatomic) long long uploadVideoType;
 @property(readonly, nonatomic) NSDictionary *referExtra;
 - (id)init;
+- (_Bool)isSpecialEffectEnable;
 - (_Bool)isFilterEditEnabled;
 
 @end

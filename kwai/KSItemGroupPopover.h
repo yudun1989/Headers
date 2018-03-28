@@ -28,6 +28,7 @@
 - (void)addItemViews:(id)arg1;
 - (void)addItemView:(id)arg1;
 - (id)init;
+- (void)dealloc;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

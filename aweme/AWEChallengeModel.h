@@ -10,6 +10,7 @@
 
 @interface AWEChallengeModel : AWEBaseApiModel
 {
+    _Bool _isPGCShow;
     _Bool _shouldUserCreate;
     NSString *_itemID;
     NSString *_challengeName;
@@ -26,6 +27,7 @@
 + (id)authorJSONTransformer;
 + (id)JSONKeyPathsByPropertyKey;
 @property(nonatomic) _Bool shouldUserCreate; // @synthesize shouldUserCreate=_shouldUserCreate;
+@property(nonatomic) _Bool isPGCShow; // @synthesize isPGCShow=_isPGCShow;
 @property(retain, nonatomic) NSArray *connectMusics; // @synthesize connectMusics=_connectMusics;
 @property(retain, nonatomic) AWEShareModel *shareInfo; // @synthesize shareInfo=_shareInfo;
 @property(readonly, nonatomic) NSNumber *userCount; // @synthesize userCount=_userCount;

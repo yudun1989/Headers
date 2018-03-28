@@ -56,6 +56,7 @@
 - (void)viewWillAppear:(_Bool)arg1;
 - (void)viewDidLoad;
 - (id)initWithTitle:(id)arg1 model:(id)arg2 pageURL:(id)arg3;
+- (void)dealloc;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

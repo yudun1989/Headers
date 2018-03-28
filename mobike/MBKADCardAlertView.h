@@ -10,6 +10,7 @@
 
 @interface MBKADCardAlertView : MBKBaseAlertView
 {
+    CDUnknownBlockType _cardAlertViewCanceled;
     UIImageView *_adImageView;
     UIView *_shareView;
     UIView *_shareLeftLineView;
@@ -34,6 +35,7 @@
 @property(retain, nonatomic) UIView *shareLeftLineView; // @synthesize shareLeftLineView=_shareLeftLineView;
 @property(retain, nonatomic) UIView *shareView; // @synthesize shareView=_shareView;
 @property(retain, nonatomic) UIImageView *adImageView; // @synthesize adImageView=_adImageView;
+@property(copy, nonatomic) CDUnknownBlockType cardAlertViewCanceled; // @synthesize cardAlertViewCanceled=_cardAlertViewCanceled;
 - (void).cxx_destruct;
 - (_Bool)showFromRect:(struct CGRect)arg1;
 - (void)addMasConstraint;

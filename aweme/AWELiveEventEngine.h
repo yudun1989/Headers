@@ -34,7 +34,7 @@
 + (id)getMessageMethodFromDict:(id)arg1;
 + (id)messageFromDict:(id)arg1;
 + (void)getHotRoomCountWithFinishBlock:(CDUnknownBlockType)arg1;
-+ (void)getHotRoomListCount:(long long)arg1 cursor:(long long)arg2 finishBlock:(CDUnknownBlockType)arg3;
++ (void)getHotRoomListWithParams:(id)arg1 finishBlock:(CDUnknownBlockType)arg2;
 + (void)getRoomTopUserList:(id)arg1 offset:(long long)arg2 count:(long long)arg3 withCoin:(_Bool)arg4 finishBlock:(CDUnknownBlockType)arg5;
 + (void)sendBarrage:(id)arg1 content:(id)arg2 finishBlock:(CDUnknownBlockType)arg3;
 + (void)sendPresent:(id)arg1 presentID:(id)arg2 count:(long long)arg3 finishBlock:(CDUnknownBlockType)arg4;

@@ -6,19 +6,19 @@
 
 #import <UIKit/UIView.h>
 
-@class NSString, UILabel;
+@class MBKEdgeInsetsLabel, NSString, UILabel;
 
 @interface MBKRidingPanelViewCell : UIView
 {
     UILabel *_contentLabel;
-    UILabel *_descLabel;
+    MBKEdgeInsetsLabel *_descLabel;
     NSString *_contentText;
     NSString *_descText;
 }
 
 @property(copy, nonatomic) NSString *descText; // @synthesize descText=_descText;
 @property(copy, nonatomic) NSString *contentText; // @synthesize contentText=_contentText;
-@property(retain, nonatomic) UILabel *descLabel; // @synthesize descLabel=_descLabel;
+@property(retain, nonatomic) MBKEdgeInsetsLabel *descLabel; // @synthesize descLabel=_descLabel;
 @property(retain, nonatomic) UILabel *contentLabel; // @synthesize contentLabel=_contentLabel;
 - (void).cxx_destruct;
 - (void)setDistanceCellDes:(id)arg1;

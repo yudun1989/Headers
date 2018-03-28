@@ -10,8 +10,8 @@
 {
 }
 
-- (void)setSwitchOn:(_Bool)arg1;
 - (void)drawWithMagicFaces:(id)arg1;
+- (void)commonInit;
 
 @end
 

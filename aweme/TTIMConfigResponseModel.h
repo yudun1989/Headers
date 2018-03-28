@@ -11,7 +11,7 @@
 
 @interface TTIMConfigResponseModel : JSONModel
 {
-    NSNumber *_retry;
+    NSNumber<Optional> *_retry;
     NSNumber<Optional> *_textLength;
     NSNumber<Optional> *_timer;
 }
@@ -19,7 +19,7 @@
 + (id)keyMapper;
 @property(retain, nonatomic) NSNumber<Optional> *timer; // @synthesize timer=_timer;
 @property(retain, nonatomic) NSNumber<Optional> *textLength; // @synthesize textLength=_textLength;
-@property(retain, nonatomic) NSNumber *retry; // @synthesize retry=_retry;
+@property(retain, nonatomic) NSNumber<Optional> *retry; // @synthesize retry=_retry;
 - (void).cxx_destruct;
 - (id)init;
 

@@ -14,7 +14,9 @@
 {
 }
 
++ (void)saveDraftWithPublishViewModel:(id)arg1 video:(id)arg2 backup:(_Bool)arg3 completion:(CDUnknownBlockType)arg4;
 + (void)addWatermarkWithTaskType:(long long)arg1 options:(long long)arg2 srcFilePath:(id)arg3 aweme:(id)arg4 cropData:(id)arg5 outputSize:(struct CGSize)arg6 needSaveToAlbum:(_Bool)arg7 progressBlock:(CDUnknownBlockType)arg8 complete:(CDUnknownBlockType)arg9;
++ (void)saveDraftWithPublishViewModel:(id)arg1 video:(id)arg2 backup:(_Bool)arg3 completion:(CDUnknownBlockType)arg4;
 + (void)addWatermarkWithTaskType:(long long)arg1 options:(long long)arg2 srcFilePath:(id)arg3 aweme:(id)arg4 cropData:(id)arg5 outputSize:(struct CGSize)arg6 needSaveToAlbum:(_Bool)arg7 progressBlock:(CDUnknownBlockType)arg8 complete:(CDUnknownBlockType)arg9;
 
 // Remaining properties

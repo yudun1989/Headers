@@ -10,8 +10,10 @@
 {
     long long _country;
     long long _deviceType;
+    long long _payProcess;
 }
 
+@property(nonatomic) long long payProcess; // @synthesize payProcess=_payProcess;
 @property(nonatomic) long long deviceType; // @synthesize deviceType=_deviceType;
 @property(nonatomic) long long country; // @synthesize country=_country;
 - (id)init;

@@ -28,7 +28,6 @@
 - (void)notifyMsgQuery:(id)arg1 resultMsgs:(id)arg2 error:(id)arg3;
 - (void)notifySessionDeleted:(id)arg1 success:(_Bool)arg2;
 - (void)notifyDelMsg:(id)arg1 msgs:(id)arg2;
-- (void)notifyLoadMoreMsg:(id)arg1 msgs:(id)arg2;
 - (void)notifyGetMsg:(id)arg1 msgs:(id)arg2;
 - (void)notifySendAckMsg:(id)arg1 chatMsg:(id)arg2 extraInfo:(id)arg3;
 - (void)notifyUpdateMsg:(id)arg1 chatMsg:(id)arg2;

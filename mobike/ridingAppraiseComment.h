@@ -16,10 +16,12 @@
     _Bool _isOpenAppraise;
     _Bool _isUploadStop;
     NSString *_oderid;
+    long long _bikeType;
     NSString *_bikeid;
 }
 
 @property(retain) NSString *bikeid; // @synthesize bikeid=_bikeid;
+@property(nonatomic) long long bikeType; // @synthesize bikeType=_bikeType;
 @property _Bool isUploadStop; // @synthesize isUploadStop=_isUploadStop;
 @property _Bool isOpenAppraise; // @synthesize isOpenAppraise=_isOpenAppraise;
 @property _Bool isUploadCoords; // @synthesize isUploadCoords=_isUploadCoords;

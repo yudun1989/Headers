@@ -6,15 +6,15 @@
 
 #import "NSObject-Protocol.h"
 
-@class DDLogMessage, NSString;
-@protocol DDLogger;
+@class DDLogMessage, NSObject, NSString;
+@protocol DDLogger, OS_dispatch_queue;
 
 @protocol DDLogFormatter <NSObject>
 - (NSString *)formatLogMessage:(DDLogMessage *)arg1;
 
 @optional
 - (void)willRemoveFromLogger:(id <DDLogger>)arg1;
-- (void)didAddToLogger:(id <DDLogger>)arg1 inQueue:(struct dispatch_queue_s *)arg2;
+- (void)didAddToLogger:(id <DDLogger>)arg1 inQueue:(NSObject<OS_dispatch_queue> *)arg2;
 - (void)didAddToLogger:(id <DDLogger>)arg1;
 @end
 

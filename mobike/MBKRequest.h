@@ -36,6 +36,8 @@
 - (void)cancel;
 - (void)startWithResponseBlock:(CDUnknownBlockType)arg1;
 - (void)start;
+@property(nonatomic) double requestTimestamp;
+@property(nonatomic, getter=isLatencyTrackEnabled) _Bool enableLatencyTrack;
 - (void)clearBlock;
 - (unsigned long long)stringEncoding;
 

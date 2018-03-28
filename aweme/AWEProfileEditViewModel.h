@@ -6,7 +6,7 @@
 
 #import <Foundation/NSObject.h>
 
-@class NSArray, NSString, UIImage;
+@class NSArray, NSDate, NSString, UIImage;
 
 @interface AWEProfileEditViewModel : NSObject
 {
@@ -14,12 +14,17 @@
     _Bool _isBindedWeibo;
     UIImage *_avatarImage;
     NSArray *_avatarURL;
+    UIImage *_videoIconImage;
+    NSArray *_videoIconURL;
+    NSArray *_videoMp4IconURL;
     NSString *_nickname;
     NSString *_uniqueID;
+    NSDate *_uniqueIdModifyTime;
     NSString *_gender;
     NSString *_birthDate;
     NSString *_signature;
     NSString *_avatarURI;
+    NSString *_videoIconURI;
     long long _genderType;
     NSString *_weiboName;
     NSString *_weiboSchema;
@@ -36,12 +41,17 @@
 @property(nonatomic) _Bool isBindedWeibo; // @synthesize isBindedWeibo=_isBindedWeibo;
 @property(nonatomic) _Bool ifDefaultID; // @synthesize ifDefaultID=_ifDefaultID;
 @property(nonatomic) long long genderType; // @synthesize genderType=_genderType;
+@property(retain, nonatomic) NSString *videoIconURI; // @synthesize videoIconURI=_videoIconURI;
 @property(retain, nonatomic) NSString *avatarURI; // @synthesize avatarURI=_avatarURI;
 @property(retain, nonatomic) NSString *signature; // @synthesize signature=_signature;
 @property(retain, nonatomic) NSString *birthDate; // @synthesize birthDate=_birthDate;
 @property(retain, nonatomic) NSString *gender; // @synthesize gender=_gender;
+@property(retain, nonatomic) NSDate *uniqueIdModifyTime; // @synthesize uniqueIdModifyTime=_uniqueIdModifyTime;
 @property(retain, nonatomic) NSString *uniqueID; // @synthesize uniqueID=_uniqueID;
 @property(retain, nonatomic) NSString *nickname; // @synthesize nickname=_nickname;
+@property(retain, nonatomic) NSArray *videoMp4IconURL; // @synthesize videoMp4IconURL=_videoMp4IconURL;
+@property(retain, nonatomic) NSArray *videoIconURL; // @synthesize videoIconURL=_videoIconURL;
+@property(retain, nonatomic) UIImage *videoIconImage; // @synthesize videoIconImage=_videoIconImage;
 @property(retain, nonatomic) NSArray *avatarURL; // @synthesize avatarURL=_avatarURL;
 @property(retain, nonatomic) UIImage *avatarImage; // @synthesize avatarImage=_avatarImage;
 - (void).cxx_destruct;

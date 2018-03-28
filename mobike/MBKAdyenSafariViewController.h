@@ -9,12 +9,15 @@
 @interface MBKAdyenSafariViewController : SFSafariViewController
 {
     _Bool _isOnlyBindCard;
+    _Bool _isOrderCanceled;
 }
 
 + (void)load;
+@property(nonatomic) _Bool isOrderCanceled; // @synthesize isOrderCanceled=_isOrderCanceled;
 @property(nonatomic) _Bool isOnlyBindCard; // @synthesize isOnlyBindCard=_isOnlyBindCard;
-- (void)didReceiveMemoryWarning;
 - (void)didReceiveNotification:(id)arg1;
+- (void)viewWillDisappear:(_Bool)arg1;
+- (void)viewWillAppear:(_Bool)arg1;
 - (void)viewDidLoad;
 - (_Bool)shouldHideNavigationBarShadow;
 

@@ -11,6 +11,7 @@
 @protocol TencentLBSLocationManagerDelegate <NSObject>
 
 @optional
+- (void)tencentLBSLocationManager:(TencentLBSLocationManager *)arg1 didThrowLocation:(TencentLBSLocation *)arg2;
 - (_Bool)tencentLBSLocationManagerShouldDisplayHeadingCalibration:(TencentLBSLocationManager *)arg1;
 - (void)tencentLBSLocationManager:(TencentLBSLocationManager *)arg1 didUpdateHeading:(CLHeading *)arg2;
 - (void)tencentLBSLocationManager:(TencentLBSLocationManager *)arg1 didChangeAuthorizationStatus:(int)arg2;

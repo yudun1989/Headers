@@ -11,16 +11,17 @@
 @interface FMBodyClipFilter : GPUImageFilter
 {
     struct ProgramObject *_programObject;
-    struct TextureDrawer *_drawer;
     NSArray *blend_mode;
     int _src_config;
     int _dst_config;
     int _maskID;
+    _Bool _metalRenderResult;
     int _rotation;
     KSMetalRender *_ksMetalRender;
 }
 
 @property(retain, nonatomic) KSMetalRender *ksMetalRender; // @synthesize ksMetalRender=_ksMetalRender;
+@property(nonatomic) _Bool metalRenderResult; // @synthesize metalRenderResult=_metalRenderResult;
 @property(nonatomic) int rotation; // @synthesize rotation=_rotation;
 - (void).cxx_destruct;
 - (void *)getProgram;
@@ -32,7 +33,7 @@
 - (void)setBorderRange:(float)arg1 dstPos:(float)arg2;
 - (void)setBorderColor:(float)arg1 g:(float)arg2 b:(float)arg3 a:(float)arg4;
 - (void)dealloc;
-- (_Bool)setupWithMetal:(id)arg1 model:(id)arg2;
+- (void)setupWithMetal:(id)arg1 model:(id)arg2;
 - (id)initWithMetal:(id)arg1 model:(id)arg2;
 - (const char *)getFragmentShaderString;
 - (const char *)getVertexShaderString;

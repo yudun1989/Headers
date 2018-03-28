@@ -16,19 +16,23 @@
     UIImageView *_selectedImageView;
     UIImage *_normalImage;
     UIImage *_selectedImage;
+    UIImage *_transparentImage;
 }
 
+@property(retain, nonatomic) UIImage *transparentImage; // @synthesize transparentImage=_transparentImage;
 @property(retain, nonatomic) UIImage *selectedImage; // @synthesize selectedImage=_selectedImage;
 @property(retain, nonatomic) UIImage *normalImage; // @synthesize normalImage=_normalImage;
 @property(retain, nonatomic) UIImageView *selectedImageView; // @synthesize selectedImageView=_selectedImageView;
 @property(retain, nonatomic) UIImageView *normalImageView; // @synthesize normalImageView=_normalImageView;
 - (void).cxx_destruct;
+- (void)feedStatusDidChange:(long long)arg1;
 - (void)tabbarStatusDidChanged:(long long)arg1 animated:(_Bool)arg2;
 - (double)indicatorWidth;
 - (struct CGRect)convertRect:(struct CGRect)arg1 usingScale:(double)arg2;
 - (void)layoutSubviews;
 - (void)setupUI;
 - (id)initWithimage:(id)arg1 selectedImage:(id)arg2;
+- (id)initWithimage:(id)arg1 selectedImage:(id)arg2 transparentImage:(id)arg3;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

@@ -21,6 +21,7 @@
     KSMusicTrimContext *_trimContext;
     KSMusicItem *_music;
     KSMusicTrimmerViewModel *_viewModel;
+    unsigned long long _sceneType;
     KSMusicPreviewTool *_externalPreviewTool;
     KSAVPlayerView *_externalPlayerView;
     CDUnknownBlockType _externalPlayerViewPlayAtTimeCallback;
@@ -70,6 +71,7 @@
 @property(copy, nonatomic) CDUnknownBlockType externalPlayerViewPlayAtTimeCallback; // @synthesize externalPlayerViewPlayAtTimeCallback=_externalPlayerViewPlayAtTimeCallback;
 @property(retain, nonatomic) KSAVPlayerView *externalPlayerView; // @synthesize externalPlayerView=_externalPlayerView;
 @property(retain, nonatomic) KSMusicPreviewTool *externalPreviewTool; // @synthesize externalPreviewTool=_externalPreviewTool;
+@property(nonatomic) unsigned long long sceneType; // @synthesize sceneType=_sceneType;
 @property(retain, nonatomic) KSMusicTrimmerViewModel *viewModel; // @synthesize viewModel=_viewModel;
 @property(retain, nonatomic) KSMusicItem *music; // @synthesize music=_music;
 @property(retain, nonatomic) KSMusicTrimContext *trimContext; // @synthesize trimContext=_trimContext;

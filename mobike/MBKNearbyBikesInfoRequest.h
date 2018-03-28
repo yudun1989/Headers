@@ -25,6 +25,7 @@
 @property(nonatomic) double longitude; // @synthesize longitude=_longitude;
 @property(nonatomic) double latitude; // @synthesize latitude=_latitude;
 - (void).cxx_destruct;
+- (void)useOldAPIPathForBike;
 - (void)startWithSuccessBlock:(CDUnknownBlockType)arg1 failureBlock:(CDUnknownBlockType)arg2;
 - (id)init;
 

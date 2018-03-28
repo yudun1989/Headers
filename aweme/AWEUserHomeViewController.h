@@ -12,13 +12,14 @@
 #import "AWEVideosCollectionViewAnimationDelegate-Protocol.h"
 #import "BTDRouterViewControllerProtocol-Protocol.h"
 
-@class AWEBubble, AWEDetailFansCollectionViewController, AWELikeWorkViewController, AWEOriginalSoundTrackViewController, AWEPostWorkViewController, AWEStoryWorkViewController, AWEUserDetailHeaderView, AWEUserDetailNavView, AWEUserDetailTabView, AWEUserModel, NSString;
+@class AWEBubble, AWECompanyChallengeViewController, AWEDetailFansCollectionViewController, AWELikeWorkViewController, AWEOriginalSoundTrackViewController, AWEPostWorkViewController, AWEStoryWorkViewController, AWEUserDetailHeaderView, AWEUserDetailNavView, AWEUserDetailTabView, AWEUserModel, NSString;
 
 @interface AWEUserHomeViewController : UIViewController <AWEUserMessage, AWEUserWorkViewControllerDelegate, AWEVideosCollectionViewAnimationDelegate, AWEStoryDataMessage, BTDRouterViewControllerProtocol>
 {
     _Bool _isReminderAnimating;
     _Bool _firstLayoutHeader;
     _Bool _shouldRefreshFansView;
+    _Bool _isCompanyLogSent;
     AWEUserDetailNavView *_navView;
     AWEUserDetailTabView *_tabView;
     AWEUserDetailHeaderView *_headerView;
@@ -28,14 +29,17 @@
     AWEOriginalSoundTrackViewController *_ostVC;
     AWEBubble *_reminderView;
     AWEDetailFansCollectionViewController *_fansVC;
+    AWECompanyChallengeViewController *_corpChallengeVC;
     long long _recommendCount;
 }
 
 + (void)load;
+@property(nonatomic) _Bool isCompanyLogSent; // @synthesize isCompanyLogSent=_isCompanyLogSent;
 @property(nonatomic) _Bool shouldRefreshFansView; // @synthesize shouldRefreshFansView=_shouldRefreshFansView;
 @property(nonatomic) _Bool firstLayoutHeader; // @synthesize firstLayoutHeader=_firstLayoutHeader;
 @property(nonatomic) _Bool isReminderAnimating; // @synthesize isReminderAnimating=_isReminderAnimating;
 @property(nonatomic) long long recommendCount; // @synthesize recommendCount=_recommendCount;
+@property(retain, nonatomic) AWECompanyChallengeViewController *corpChallengeVC; // @synthesize corpChallengeVC=_corpChallengeVC;
 @property(retain, nonatomic) AWEDetailFansCollectionViewController *fansVC; // @synthesize fansVC=_fansVC;
 @property(retain, nonatomic) AWEBubble *reminderView; // @synthesize reminderView=_reminderView;
 @property(retain, nonatomic) AWEOriginalSoundTrackViewController *ostVC; // @synthesize ostVC=_ostVC;
@@ -52,12 +56,17 @@
 - (void)removeBindPhoneView:(id)arg1;
 - (void)downloadApp:(id)arg1;
 @property(retain, nonatomic) AWEUserModel *user; // @dynamic user;
-- (void)showWeiboPage;
+- (void)gotoToutiaoHomePage;
+- (void)gotoWeiboHomePage;
+- (void)gotoBindedAppHomePage;
 - (void)shareProfile;
+- (Class)_getHeaderViewClass;
 - (void)_refreshHeaderFrame:(struct CGRect)arg1;
 - (void)viewWillLayoutSubviews;
 - (void)_refreshHeaderViewAlpha;
 - (void)_refreshHeaderViewAfterFetchUser:(id)arg1;
+- (void)refreshCompanyInfoAlphaIfNeeded:(double)arg1;
+- (void)updateCorpChallengeViewIfNeeded;
 - (void)addFansControllerIfNeeded;
 - (void)_removeController:(id)arg1;
 - (void)_addController:(id)arg1;
@@ -107,7 +116,7 @@
 - (void)viewWillAppear:(_Bool)arg1;
 - (void)viewDidLoad;
 - (void)dealloc;
-- (id)initWithRouterParamDict:(id)arg1;
+- (_Bool)configWithRouterParamDict:(id)arg1;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

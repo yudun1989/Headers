@@ -11,16 +11,11 @@
 #import "UITextViewDelegate-Protocol.h"
 #import "UIViewControllerTransitioningDelegate-Protocol.h"
 
-@class JTSImageInfo, NSString, NSTimer, NSURLSessionDataTask, UIActivityIndicatorView, UIAttachmentBehavior, UIButton, UIDynamicAnimator, UIImage, UIImageView, UILabel, UILongPressGestureRecognizer, UIPanGestureRecognizer, UIProgressView, UIScrollView, UITapGestureRecognizer, UITextView, UIView;
+@class JTSImageInfo, NSString, NSTimer, NSURLSessionDataTask, UIActivityIndicatorView, UIAttachmentBehavior, UIDynamicAnimator, UIImage, UIImageView, UILongPressGestureRecognizer, UIPanGestureRecognizer, UIProgressView, UIScrollView, UITapGestureRecognizer, UITextView, UIView;
 @protocol JTSImageViewControllerAccessibilityDelegate, JTSImageViewControllerAnimationDelegate, JTSImageViewControllerDismissalDelegate, JTSImageViewControllerInteractionsDelegate, JTSImageViewControllerOptionsDelegate;
 
 @interface JTSImageViewController : UIViewController <UIScrollViewDelegate, UITextViewDelegate, UIViewControllerTransitioningDelegate, UIGestureRecognizerDelegate>
 {
-    UILabel *bikeIdLbl;
-    UILabel *comentLbl;
-    UIButton *disdainBtn;
-    UIButton *praiseBtn;
-    UIView *bottomView;
     JTSImageInfo *_imageInfo;
     UIImage *_image;
     long long _mode;
@@ -95,7 +90,6 @@
 @property(nonatomic) long long mode; // @synthesize mode=_mode;
 @property(retain, nonatomic) UIImage *image; // @synthesize image=_image;
 @property(retain, nonatomic) JTSImageInfo *imageInfo; // @synthesize imageInfo=_imageInfo;
-@property(retain, nonatomic) UIView *bottomView; // @synthesize bottomView;
 - (void).cxx_destruct;
 - (id)defaultAccessibilityHintForScrollView:(_Bool)arg1;
 - (id)defaultAccessibilityLabelForScrollView;
@@ -148,9 +142,6 @@
 - (void)showImageViewerByExpandingFromOriginalPositionFromViewController:(id)arg1;
 - (void)setupTextViewTapGestureRecognizer;
 - (void)setupImageModeGestureRecognizers;
-- (void)disdainSucc;
-- (void)praiseSucc;
-- (void)praiseDisdain:(id)arg1;
 - (void)viewDidLoadForAltTextMode;
 - (void)viewDidLoadForImageMode;
 - (void)setupImageAndDownloadIfNecessary:(id)arg1;

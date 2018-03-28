@@ -42,21 +42,19 @@
     NSString *_poiID;
     NSString *_poiName;
     double _duration;
-    NSString *_redPacketTimeStamp;
-    NSString *_redPacketWords;
     long long _stickerType;
     long long _bodydanceScore;
     NSString *_videoID;
+    NSString *_duetSourceAwemeID;
 }
 
 + (id)textExtraJSONTransformer;
 + (id)JSONKeyPathsByPropertyKey;
+@property(copy, nonatomic) NSString *duetSourceAwemeID; // @synthesize duetSourceAwemeID=_duetSourceAwemeID;
 @property(retain, nonatomic) NSString *videoID; // @synthesize videoID=_videoID;
 @property(nonatomic) _Bool newSDK; // @synthesize newSDK=_newSDK;
 @property(nonatomic) long long bodydanceScore; // @synthesize bodydanceScore=_bodydanceScore;
 @property(nonatomic) long long stickerType; // @synthesize stickerType=_stickerType;
-@property(retain, nonatomic) NSString *redPacketWords; // @synthesize redPacketWords=_redPacketWords;
-@property(retain, nonatomic) NSString *redPacketTimeStamp; // @synthesize redPacketTimeStamp=_redPacketTimeStamp;
 @property(nonatomic) _Bool isHashTag; // @synthesize isHashTag=_isHashTag;
 @property(nonatomic) _Bool isLongVideo; // @synthesize isLongVideo=_isLongVideo;
 @property(nonatomic) double duration; // @synthesize duration=_duration;

@@ -10,6 +10,10 @@
 {
 }
 
++ (void)turnOffPostNotificationWithUserID:(id)arg1 completion:(CDUnknownBlockType)arg2;
++ (void)turnOnPostNotificationWithUserID:(id)arg1 completion:(CDUnknownBlockType)arg2;
++ (void)rejectUser:(id)arg1 completion:(CDUnknownBlockType)arg2;
++ (void)approveUser:(id)arg1 completion:(CDUnknownBlockType)arg2;
 + (void)unblockUser:(id)arg1 completion:(CDUnknownBlockType)arg2;
 + (void)blockUser:(id)arg1 completion:(CDUnknownBlockType)arg2;
 + (void)reportUserID:(id)arg1 reason:(id)arg2 completion:(CDUnknownBlockType)arg3;

@@ -25,7 +25,7 @@
 - (void)keyboardWillShow:(_Bool)arg1;
 - (id)createSendButton;
 - (id)backgroundView;
-- (id)init;
+- (id)initWithIsHorizontalMode:(_Bool)arg1;
 
 @end
 

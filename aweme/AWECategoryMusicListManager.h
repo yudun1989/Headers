@@ -17,14 +17,17 @@
     NSMutableArray *_dataList;
     long long _cursor;
     NSString *_cid;
+    NSString *_title;
 }
 
+@property(copy, nonatomic) NSString *title; // @synthesize title=_title;
 @property(nonatomic) _Bool isRequesting; // @synthesize isRequesting=_isRequesting;
 @property(copy, nonatomic) NSString *cid; // @synthesize cid=_cid;
 @property(nonatomic) long long cursor; // @synthesize cursor=_cursor;
 @property(retain, nonatomic) NSMutableArray *dataList; // @synthesize dataList=_dataList;
 @property(nonatomic) _Bool hasMore; // @synthesize hasMore=_hasMore;
 - (void).cxx_destruct;
+- (id)getMusicListTitle;
 - (void)_loadWithCursor:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)loadMore:(CDUnknownBlockType)arg1;
 - (void)refresh:(CDUnknownBlockType)arg1;

@@ -8,7 +8,7 @@
 
 #import "CAAnimationDelegate-Protocol.h"
 
-@class AnimatedAnnotation, DragPoiAnnotation, MMMapContext, NSMutableArray, NSString, RouteAnnotation;
+@class MMMapContext, NSMutableArray, NSString, RouteAnnotation;
 
 @interface MBKMobikeMapAdaptee : NSObject <CAAnimationDelegate>
 {
@@ -16,16 +16,12 @@
     RouteAnnotation *startAnnotation;
     RouteAnnotation *destinationAnnotation;
     MMMapContext *_mMapContext;
-    AnimatedAnnotation *_animatedAnnotation;
-    DragPoiAnnotation *_dragAnnotation;
     NSMutableArray *_overlayArray;
 }
 
 + (void)load;
 + (id)sharedInstance;
 @property(retain, nonatomic) NSMutableArray *overlayArray; // @synthesize overlayArray=_overlayArray;
-@property(retain, nonatomic) DragPoiAnnotation *dragAnnotation; // @synthesize dragAnnotation=_dragAnnotation;
-@property(retain, nonatomic) AnimatedAnnotation *animatedAnnotation; // @synthesize animatedAnnotation=_animatedAnnotation;
 @property(retain, nonatomic) MMMapContext *mMapContext; // @synthesize mMapContext=_mMapContext;
 - (void).cxx_destruct;
 - (void)redrawGeoFencingOverlay:(id)arg1 overlays:(id)arg2 isSelect:(_Bool)arg3;
@@ -40,11 +36,6 @@
 - (id)getRouteAnnotationView:(id)arg1 viewForAnnotation:(id)arg2;
 - (void)removeOperateOverlay;
 - (void)drawOperateArea;
-- (void)clearDragAnnotation;
-- (void)addDragAnnotation:(struct CLLocationCoordinate2D)arg1;
-- (struct CLLocationCoordinate2D)getPinmanAnnotationCoordinate;
-- (void)removePinmanAnnotation;
-- (void)addPinmanAnnotation:(struct CLLocationCoordinate2D)arg1;
 - (void)clearMapViewStartDestinationAnnotation;
 - (void)addDefaultAnnotationsFrom:(struct CLLocationCoordinate2D)arg1 to:(struct CLLocationCoordinate2D)arg2;
 - (id)getMyBundlePath1:(id)arg1;
@@ -64,7 +55,6 @@
 - (void)setMapCenterCoordinate:(struct CLLocationCoordinate2D)arg1 ZoomLevel:(double)arg2 animated:(_Bool)arg3;
 - (void)setMapCenterCoordinate:(struct CLLocationCoordinate2D)arg1 animated:(_Bool)arg2;
 - (void)updateMapviewVisibleRegion:(CDStruct_02837cd9)arg1;
-- (_Bool)isLocationServiceEnabled;
 - (void)stopLocation;
 - (void)startLocation;
 - (void)setMapAngleorignal;
@@ -72,7 +62,6 @@
 - (void)switchMapviewTrackingMode;
 - (long long)getMapViewZoomLevel;
 - (id)mapContextWithFrame:(struct CGRect)arg1 countryCode:(_Bool)arg2 mapType:(_Bool)arg3;
-- (id)init;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

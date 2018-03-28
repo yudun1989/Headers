@@ -14,6 +14,7 @@
 {
 }
 
+- (id)getAlphaGestureWithTarget:(id)arg1 selector:(SEL)arg2;
 - (id)saveAweUser:(id)arg1;
 - (void)fetchTranspondContactList:(CDUnknownBlockType)arg1;
 - (void)transferToMessageVCWithUid:(id)arg1 nickname:(id)arg2 fromVC:(id)arg3;
@@ -21,8 +22,8 @@
 - (id)getBaseMessageViewController;
 - (id)getInteractNotificationManager;
 - (void)fetchIMSettingWithCompletion:(CDUnknownBlockType)arg1;
-- (id)getUnreadDotView;
 - (void)startIM;
+- (id)getAlphaGestureWithTarget:(id)arg1 selector:(SEL)arg2;
 @property(retain, nonatomic) AWEShareServiceExtension_IM *shareExtension;
 - (void)onServiceInit;
 - (id)saveAweUser:(id)arg1;
@@ -32,7 +33,6 @@
 - (id)getBaseMessageViewController;
 - (id)getInteractNotificationManager;
 - (void)fetchIMSettingWithCompletion:(CDUnknownBlockType)arg1;
-- (id)getUnreadDotView;
 - (void)startIM;
 
 // Remaining properties

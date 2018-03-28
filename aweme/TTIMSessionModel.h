@@ -45,9 +45,6 @@
 - (void)querySessionWithSessionId:(id)arg1 block:(CDUnknownBlockType)arg2;
 - (void)querySessionListWithOffset:(long long)arg1 limit:(long long)arg2;
 - (void)setUnreadCountFromServer:(long long)arg1 sessionId:(id)arg2;
-- (void)setSessionLastSvrMsgId:(long long)arg1 sessionId:(id)arg2;
-- (id)lastSvrMsgIdDictOfAllSession;
-- (long long)lastSvrMsgIdOfSession:(id)arg1;
 - (_Bool)containsSession:(id)arg1;
 - (void)markAllSessionInitFinished:(_Bool)arg1;
 - (void)markSessionInitFinished:(_Bool)arg1 sessionId:(id)arg2;

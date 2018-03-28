@@ -14,7 +14,7 @@
 }
 
 + (id)sharedInsance;
-@property(copy, nonatomic) NSString *deviceID; // @synthesize deviceID=_deviceID;
+@property(copy) NSString *deviceID; // @synthesize deviceID=_deviceID;
 - (void).cxx_destruct;
 
 @end

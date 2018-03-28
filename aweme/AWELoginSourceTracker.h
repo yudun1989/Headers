@@ -15,11 +15,9 @@
 {
     NSString *_source;
     NSString *_position;
-    NSString *_redPacketType;
 }
 
 + (id)sharedInstance;
-@property(copy, nonatomic) NSString *redPacketType; // @synthesize redPacketType=_redPacketType;
 @property(copy, nonatomic) NSString *position; // @synthesize position=_position;
 @property(copy, nonatomic) NSString *source; // @synthesize source=_source;
 - (void).cxx_destruct;

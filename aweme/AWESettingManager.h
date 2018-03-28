@@ -11,6 +11,7 @@
 }
 
 + (_Bool)useNewAudiovideoSync;
++ (_Bool)shouldEnableAgeGate;
 + (_Bool)enableAccountLogUpload;
 + (_Bool)enableHardDecode;
 + (_Bool)shouldUseTTPlayer;
@@ -24,6 +25,7 @@
 + (id)originalMusicianURL;
 + (_Bool)showOriginalMusicianEntry;
 + (_Bool)showOriginalMusicianShareStyle;
++ (_Bool)switchToForYou;
 + (_Bool)wakeUpWeiboAPP;
 + (long long)closeFantasy;
 + (_Bool)enableFeedTab;

@@ -6,25 +6,33 @@
 
 #import <UIKit/UICollectionViewCell.h>
 
-@class AWEUserModel, UIImageView, UILabel;
+@class AWEUserModel, AWEVideoBrowserAvatarDecorateView, UIImageView, UILabel;
 
 @interface AWEVideoBrowserCollectionViewCell : UICollectionViewCell
 {
     AWEUserModel *_user;
     UIImageView *_avatarView;
     unsigned long long _style;
+    unsigned long long _state;
     UILabel *_nameLabel;
+    AWEVideoBrowserAvatarDecorateView *_decorateView;
+    unsigned long long _previousState;
 }
 
 + (id)reuseIdentifier;
+@property(nonatomic) unsigned long long previousState; // @synthesize previousState=_previousState;
+@property(retain, nonatomic) AWEVideoBrowserAvatarDecorateView *decorateView; // @synthesize decorateView=_decorateView;
 @property(retain, nonatomic) UILabel *nameLabel; // @synthesize nameLabel=_nameLabel;
+@property(nonatomic) unsigned long long state; // @synthesize state=_state;
 @property(nonatomic) unsigned long long style; // @synthesize style=_style;
 @property(retain, nonatomic) UIImageView *avatarView; // @synthesize avatarView=_avatarView;
 @property(retain, nonatomic) AWEUserModel *user; // @synthesize user=_user;
 - (void).cxx_destruct;
 - (void)setData:(id)arg1;
+- (void)updateState;
 - (void)markAsSeen;
 - (void)markAsUnseen;
+- (void)startLoading;
 - (void)remakeConstrains;
 - (void)_commonInit;
 - (id)initWithFrame:(struct CGRect)arg1;

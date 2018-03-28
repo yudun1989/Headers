@@ -10,7 +10,7 @@
 #import "MMMapContextDelegate-Protocol.h"
 #import "UIGestureRecognizerDelegate-Protocol.h"
 
-@class AnimatedAnnotation, MBKLBSManager, MBKMoCarGetParkingPlacesRequest, MBKMocarHomeTaskController, MBKMocarParkLotAnnotation, MBKRegionPoiView, MBKTimer, MMRGCSearchRequest, MMWalkingRouteRequest, NSArray, NSString;
+@class MBKLBSManager, MBKMoCarGetParkingPlacesRequest, MBKMocarHomeTaskController, MBKMocarParkLotAnnotation, MBKPinAnnotation, MBKRegionPoiView, MBKTimer, MMRGCSearchRequest, MMWalkingRouteRequest, NSArray, NSString;
 
 @interface MBKMoCarHomeViewController : MBKMapViewController <UIGestureRecognizerDelegate, MMMapContextDelegate, MBKMocarHomeTaskControllerDelegate>
 {
@@ -21,7 +21,7 @@
     MBKRegionPoiView *_regionPoiView;
     MBKMocarParkLotAnnotation *_currentParkLotAnnotation;
     MBKMocarParkLotAnnotation *_nearestAnnotation;
-    AnimatedAnnotation *_animatedAnnotation;
+    MBKPinAnnotation *_animatedAnnotation;
     MBKMoCarGetParkingPlacesRequest *_parkingRequest;
     NSArray *_overlays;
     MBKTimer *_timer;
@@ -42,7 +42,7 @@
 @property(retain, nonatomic) NSArray *overlays; // @synthesize overlays=_overlays;
 @property(nonatomic) struct CLLocationCoordinate2D currentCenterCoordinate; // @synthesize currentCenterCoordinate=_currentCenterCoordinate;
 @property(retain, nonatomic) MBKMoCarGetParkingPlacesRequest *parkingRequest; // @synthesize parkingRequest=_parkingRequest;
-@property(retain, nonatomic) AnimatedAnnotation *animatedAnnotation; // @synthesize animatedAnnotation=_animatedAnnotation;
+@property(retain, nonatomic) MBKPinAnnotation *animatedAnnotation; // @synthesize animatedAnnotation=_animatedAnnotation;
 @property(retain, nonatomic) MBKMocarParkLotAnnotation *nearestAnnotation; // @synthesize nearestAnnotation=_nearestAnnotation;
 @property(retain, nonatomic) MBKMocarParkLotAnnotation *currentParkLotAnnotation; // @synthesize currentParkLotAnnotation=_currentParkLotAnnotation;
 @property(retain, nonatomic) MBKRegionPoiView *regionPoiView; // @synthesize regionPoiView=_regionPoiView;

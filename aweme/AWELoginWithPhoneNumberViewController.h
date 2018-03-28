@@ -14,7 +14,6 @@
 @interface AWELoginWithPhoneNumberViewController : UIViewController <TTTAttributedLabelDelegate, BTDRouterViewControllerProtocol>
 {
     NSString *_enterFrom;
-    unsigned long long _redPacketType;
     UIButton *_backButton;
     UILabel *_hintLabel;
     UITextField *_passwordTextField;
@@ -36,7 +35,6 @@
 @property(retain, nonatomic) UITextField *passwordTextField; // @synthesize passwordTextField=_passwordTextField;
 @property(retain, nonatomic) UILabel *hintLabel; // @synthesize hintLabel=_hintLabel;
 @property(retain, nonatomic) UIButton *backButton; // @synthesize backButton=_backButton;
-@property(nonatomic) unsigned long long redPacketType; // @synthesize redPacketType=_redPacketType;
 @property(copy, nonatomic) NSString *enterFrom; // @synthesize enterFrom=_enterFrom;
 - (void).cxx_destruct;
 - (void)_findPassword;
@@ -54,6 +52,7 @@
 - (void)viewDidLoad;
 - (id)initWithPhoneNumber:(id)arg1;
 - (id)initWithRouterParamDict:(id)arg1;
+- (_Bool)configWithRouterParamDict:(id)arg1;
 - (void)dealloc;
 
 // Remaining properties

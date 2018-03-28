@@ -7,7 +7,7 @@
 #import <UIKit/UIImage.h>
 
 @interface UIImage (MBKExtensions)
-+ (id)mbk_imageWithUrl:(id)arg1 placeHolder:(id)arg2;
++ (id)__deprecated__mbk_imageWithUrl:(id)arg1 placeHolder:(id)arg2;
 + (id)mbk_combineWithTopImage:(id)arg1 bottomImage:(id)arg2 withMargin:(long long)arg3;
 + (id)mbk_cutImageFromImage:(id)arg1 inRect:(struct CGRect)arg2;
 + (id)mbk_captureScreenScrollView:(id)arg1;

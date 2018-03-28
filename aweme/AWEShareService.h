@@ -30,7 +30,6 @@
 + (_Bool)shareSinaWeiboAvailable;
 + (_Bool)shareQQAvailable;
 + (_Bool)shareWeChatAvailable;
-+ (void)_initializeShareURLToken;
 @property(copy, nonatomic) CDUnknownBlockType prepareBlock; // @synthesize prepareBlock=_prepareBlock;
 @property(retain, nonatomic) AWEAwemeShareViewController *shareController; // @synthesize shareController=_shareController;
 @property(retain, nonatomic) AWEShareStatisticsModel *statistics; // @synthesize statistics=_statistics;
@@ -73,9 +72,6 @@
 - (void)shareAwemeOnWindow:(id)arg1 referString:(id)arg2 hideOptions:(long long)arg3;
 - (id)_prepareShareModelFromMusic:(id)arg1;
 - (void)shareMusic:(id)arg1 referString:(id)arg2;
-- (void)shareRedPacketUseSystem:(id)arg1;
-- (void)shareRedPacket:(id)arg1 shareInfo:(id)arg2 referString:(id)arg3 hideOptions:(long long)arg4 shareCompletion:(CDUnknownBlockType)arg5;
-- (void)shareRedPacket:(id)arg1 image:(id)arg2 type:(long long)arg3;
 - (id)_prepareShareModelFromPOI:(id)arg1;
 - (void)sharePOI:(id)arg1 coverURLString:(id)arg2;
 - (id)_prepareShareModelFromOriginalMusic:(id)arg1 type:(long long)arg2 isMusicFinder:(_Bool)arg3;

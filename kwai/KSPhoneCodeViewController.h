@@ -48,6 +48,7 @@
 - (id)validatedPhoneCodeInfo;
 - (void)textFieldDidTapReturnBtnWithCell:(id)arg1 textField:(id)arg2;
 - (int)verifyCodeType;
+- (void)didTapVerifyCodeBtn:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)didTapVerifyCodeBtn:(id)arg1;
 - (void)didTapCountryCodeBtn;
 - (void)sendPhoneCodeWithPhoneNumber:(id)arg1 countryCode:(id)arg2 type:(int)arg3 completion:(CDUnknownBlockType)arg4;
@@ -56,6 +57,7 @@
 - (void)startVerifyTimer;
 - (void)setVerifyCodeEnabled:(_Bool)arg1;
 - (void)verifyTimerFired:(id)arg1;
+- (void)_updatePhoneCellMaxLengthWithCountryInfo:(id)arg1;
 - (_Bool)checkEmptyCellAndShowAlert;
 - (void)didTapDoneButton:(id)arg1;
 - (void)scrollViewDidScroll:(id)arg1;

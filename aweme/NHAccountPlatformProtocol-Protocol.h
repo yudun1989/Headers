@@ -18,6 +18,7 @@
 - (void)requestBind:(void (^)(NSDictionary *))arg1 failure:(void (^)(NSError *))arg2 cancel:(void (^)(void))arg3;
 - (_Bool)application:(UIApplication *)arg1 didFinishLaunchingWithOptions:(NSDictionary *)arg2;
 - (_Bool)requestClearAccount;
+- (_Bool)hasActiveSession;
 - (void)requestAccessTokenWithConfiguration:(NSDictionary *)arg1 success:(void (^)(NSDictionary *))arg2 failure:(void (^)(NSError *))arg3 cancel:(void (^)(void))arg4;
 - (void)requestAccessToken:(void (^)(NSDictionary *))arg1 failure:(void (^)(NSError *))arg2 cancel:(void (^)(void))arg3;
 - (_Bool)isAccessTokenGetterAvailable;

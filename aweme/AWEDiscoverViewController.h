@@ -25,6 +25,8 @@
     _Bool _alreadyHandleUpScroll;
     _Bool _alreadyHandleAddButtonDismiss;
     _Bool _inHandleRefreshAnimation;
+    _Bool _switchToDarkStatusBar;
+    _Bool _firstLoading;
     UIView *_topMaskView;
     AWEDiscoverSearchBarView *_searchBarView;
     AWEDiscoverBannerView *_bannerView;
@@ -46,6 +48,8 @@
 }
 
 + (void)load;
+@property(nonatomic) _Bool firstLoading; // @synthesize firstLoading=_firstLoading;
+@property(nonatomic) _Bool switchToDarkStatusBar; // @synthesize switchToDarkStatusBar=_switchToDarkStatusBar;
 @property(retain, nonatomic) AWECompleteInfoTipView *completeInfoTipView; // @synthesize completeInfoTipView=_completeInfoTipView;
 @property(nonatomic) long long finishCount; // @synthesize finishCount=_finishCount;
 @property(nonatomic) _Bool inHandleRefreshAnimation; // @synthesize inHandleRefreshAnimation=_inHandleRefreshAnimation;
@@ -121,7 +125,7 @@
 - (void)viewWillAppear:(_Bool)arg1;
 - (void)viewDidLoad;
 - (void)dealloc;
-- (id)initWithRouterParamDict:(id)arg1;
+- (_Bool)configWithRouterParamDict:(id)arg1;
 - (id)init;
 
 // Remaining properties

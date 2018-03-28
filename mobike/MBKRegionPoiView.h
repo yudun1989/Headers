@@ -27,10 +27,7 @@
 - (void).cxx_destruct;
 - (void)hiddenNoCarInfo;
 - (void)showNoCarInfo;
-- (void)startJumpAnimation;
-- (void)startJumpDownAnimation;
-- (void)startJumpUpAnimation;
-- (void)animationDidStop:(id)arg1 finished:(_Bool)arg2;
+- (id)jumpAnimation;
 - (void)startBreathAnimation;
 - (void)stopLoadAnimation;
 - (void)startLoadAnimations;

@@ -6,7 +6,7 @@
 
 #import "GPUImageFilter.h"
 
-@class CGECVUtilTextureWithFramebuffer, KSMetalRender;
+@class KSMetalRender;
 @protocol FMHandGestureDelegate;
 
 @interface FMHandGestureFilter : GPUImageFilter
@@ -16,22 +16,19 @@
     unsigned long long _maskTexHeight;
     unsigned long long _maskTexChannel;
     struct ProgramObject *_programObject;
-    struct TextureDrawer *_drawer;
     struct CGRect rtMaskRange;
     unsigned int _depthTexture;
     CDStruct_1b6d18a9 _frameTime;
     int _maskID;
+    _Bool _metalRenderResult;
     int _rotation;
     id <FMHandGestureDelegate> _handGestureDelegate;
     KSMetalRender *_ksMetalRender;
-    CGECVUtilTextureWithFramebuffer *_utilTexture;
-    CGECVUtilTextureWithFramebuffer *_maskATexture;
 }
 
-@property(retain, nonatomic) CGECVUtilTextureWithFramebuffer *maskATexture; // @synthesize maskATexture=_maskATexture;
-@property(retain, nonatomic) CGECVUtilTextureWithFramebuffer *utilTexture; // @synthesize utilTexture=_utilTexture;
 @property(retain, nonatomic) KSMetalRender *ksMetalRender; // @synthesize ksMetalRender=_ksMetalRender;
 @property(nonatomic) int rotation; // @synthesize rotation=_rotation;
+@property(nonatomic) _Bool metalRenderResult; // @synthesize metalRenderResult=_metalRenderResult;
 @property(nonatomic) __weak id <FMHandGestureDelegate> handGestureDelegate; // @synthesize handGestureDelegate=_handGestureDelegate;
 - (void).cxx_destruct;
 - (void)newFrameReadyAtTime:(CDStruct_1b6d18a9)arg1 atIndex:(long long)arg2;

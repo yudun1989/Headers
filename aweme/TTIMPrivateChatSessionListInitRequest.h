@@ -15,9 +15,8 @@
 
 @property(retain, nonatomic) NSNumber *pageIndex; // @synthesize pageIndex=_pageIndex;
 - (void).cxx_destruct;
-- (unsigned long long)responseType;
+- (unsigned long long)httpCMDType;
 - (id)params;
-- (id)url;
 - (id)method;
 
 @end

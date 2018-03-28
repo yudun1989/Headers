@@ -43,6 +43,7 @@
 - (void)reloadTableCellForItem:(id)arg1;
 - (void)updateItemsSeperatorLineStyle;
 - (void)viewDidLoad;
+- (void)dealloc;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

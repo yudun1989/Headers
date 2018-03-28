@@ -27,6 +27,7 @@
 @property(retain, nonatomic) KS_news *theNews; // @synthesize theNews=_theNews;
 @property(retain, nonatomic) HLRichLabel *contentLabel; // @synthesize contentLabel=_contentLabel;
 - (void).cxx_destruct;
+- (void)_addNickNameClickLogWithName:(id)arg1;
 - (void)lazyLayout;
 - (id)logOfMoreToOne:(id)arg1;
 - (void)createAnchor;

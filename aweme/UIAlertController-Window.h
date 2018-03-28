@@ -7,12 +7,12 @@
 #import <UIKit/UIAlertController.h>
 
 @interface UIAlertController (Window)
-- (id)messageLabel;
-- (id)titleLabel;
+- (id)btd_messageLabel;
+- (id)btd_titleLabel;
 - (id)viewArray:(id)arg1;
 - (void)viewDidDisappear:(_Bool)arg1;
-- (void)show:(_Bool)arg1;
-- (void)showFromView:(id)arg1;
-- (void)show;
+- (void)btd_show:(_Bool)arg1;
+- (void)btd_showFromView:(id)arg1;
+- (void)btd_show;
 @end
 

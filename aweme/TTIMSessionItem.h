@@ -31,23 +31,29 @@
     long long _createTime;
     long long _modifyTime;
     NSString *_ext;
-    long long _lastReadClientMsgId;
     long long _lastMsgTime;
     long long _sessionShortId;
     long long _unreadCount;
+    long long _unreadCountOfServer;
     TTIMChatMessage *_lastVisibleMsg;
-    long long _lastSvrMsgId;
+    long long _lastSvrMsgIndex;
+    long long _lastSvrMsgIndexOfServer;
+    long long _lastReadMsgIndex;
+    long long _lastReadMsgIndexOfServer;
 }
 
-@property(nonatomic) long long lastSvrMsgId; // @synthesize lastSvrMsgId=_lastSvrMsgId;
-@property(retain, nonatomic) TTIMChatMessage *lastVisibleMsg; // @synthesize lastVisibleMsg=_lastVisibleMsg;
-@property(nonatomic) long long unreadCount; // @synthesize unreadCount=_unreadCount;
+@property long long lastReadMsgIndexOfServer; // @synthesize lastReadMsgIndexOfServer=_lastReadMsgIndexOfServer;
+@property long long lastReadMsgIndex; // @synthesize lastReadMsgIndex=_lastReadMsgIndex;
+@property long long lastSvrMsgIndexOfServer; // @synthesize lastSvrMsgIndexOfServer=_lastSvrMsgIndexOfServer;
+@property long long lastSvrMsgIndex; // @synthesize lastSvrMsgIndex=_lastSvrMsgIndex;
+@property(retain) TTIMChatMessage *lastVisibleMsg; // @synthesize lastVisibleMsg=_lastVisibleMsg;
+@property long long unreadCountOfServer; // @synthesize unreadCountOfServer=_unreadCountOfServer;
+@property long long unreadCount; // @synthesize unreadCount=_unreadCount;
+@property _Bool isSessionDeleted; // @synthesize isSessionDeleted=_isSessionDeleted;
 @property(nonatomic) int noDisturb; // @synthesize noDisturb=_noDisturb;
 @property(nonatomic) int stick; // @synthesize stick=_stick;
 @property(nonatomic) long long sessionShortId; // @synthesize sessionShortId=_sessionShortId;
 @property(nonatomic) long long lastMsgTime; // @synthesize lastMsgTime=_lastMsgTime;
-@property(nonatomic) long long lastReadClientMsgId; // @synthesize lastReadClientMsgId=_lastReadClientMsgId;
-@property(nonatomic) _Bool isSessionDeleted; // @synthesize isSessionDeleted=_isSessionDeleted;
 @property(copy, nonatomic) NSString *ext; // @synthesize ext=_ext;
 @property(nonatomic) int status; // @synthesize status=_status;
 @property(nonatomic) long long modifyTime; // @synthesize modifyTime=_modifyTime;
@@ -67,6 +73,7 @@
 - (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)initWithSessionId:(id)arg1;
+- (id)init;
 
 @end
 

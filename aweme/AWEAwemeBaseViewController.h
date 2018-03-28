@@ -9,7 +9,7 @@
 #import "AWEPreviewable-Protocol.h"
 #import "UIGestureRecognizerDelegate-Protocol.h"
 
-@class AWEAwemeModel, AWEAwemePlayInteractionViewController, NSString, UITapGestureRecognizer;
+@class AWEAwemeModel, AWEAwemePlayInteractionViewController, NSDictionary, NSString, UITapGestureRecognizer;
 @protocol AWEAwemeDisplayViewController;
 
 @interface AWEAwemeBaseViewController : UIViewController <AWEPreviewable, UIGestureRecognizerDelegate>
@@ -19,6 +19,7 @@
     long long _mediaType;
     AWEAwemeModel *_model;
     NSString *_referString;
+    NSDictionary *_logExtraDict;
     long long _type;
     UIViewController<AWEAwemeDisplayViewController> *_videoController;
     AWEAwemePlayInteractionViewController *_interactionController;
@@ -33,6 +34,7 @@
 @property(retain, nonatomic) UIViewController<AWEAwemeDisplayViewController> *videoController; // @synthesize videoController=_videoController;
 @property(nonatomic) _Bool isEditing; // @synthesize isEditing=_isEditing;
 @property(nonatomic) long long type; // @synthesize type=_type;
+@property(retain, nonatomic) NSDictionary *logExtraDict; // @synthesize logExtraDict=_logExtraDict;
 @property(copy, nonatomic) NSString *referString; // @synthesize referString=_referString;
 @property(retain, nonatomic) AWEAwemeModel *model; // @synthesize model=_model;
 @property(nonatomic) long long mediaType; // @synthesize mediaType=_mediaType;
@@ -48,7 +50,6 @@
 - (void)_onVideoPlayerViewClicked:(id)arg1;
 - (_Bool)adOperationGuideShowing;
 - (_Bool)shouldShowShoppingEntrance;
-- (void)setStopByShowingHint:(_Bool)arg1;
 - (void)pause;
 - (void)stop;
 - (void)play;
@@ -65,6 +66,7 @@
 - (void)setPureMode:(_Bool)arg1 animated:(_Bool)arg2;
 - (void)setPureMode:(_Bool)arg1;
 - (void)setShowFollowStatus:(_Bool)arg1;
+- (void)setOriginEntryEnterMethod:(id)arg1;
 - (void)setClickEnter:(id)arg1;
 - (void)initVideoController;
 - (void)initInteractController;

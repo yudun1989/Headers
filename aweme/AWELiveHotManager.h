@@ -13,9 +13,11 @@
     AWELiveHotRoomCountResponseModel *_responseModel;
 }
 
++ (void)showHotLivePlayGuideViewIfNeeded;
 + (id)sharedManager;
 @property(retain, nonatomic) AWELiveHotRoomCountResponseModel *responseModel; // @synthesize responseModel=_responseModel;
 - (void).cxx_destruct;
+- (void)_showHotLivePlayGuideView;
 - (_Bool)enableShowHotLive;
 - (void)fetchHotRoomCountWithFinishBlock:(CDUnknownBlockType)arg1;
 

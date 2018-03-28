@@ -9,7 +9,6 @@
 @class UIView;
 
 @protocol AWEAwemePlayInteractionDelegate <NSObject>
-@property(nonatomic) _Bool isRedPacketShowed;
 @property(retain, nonatomic) UIView *view;
 - (void)setPureMode:(_Bool)arg1 animated:(_Bool)arg2;
 - (void)closeAdOperationGuide;
@@ -18,9 +17,8 @@
 - (void)showAdOperationViewWithPlayTimes:(long long)arg1;
 - (void)showShareHintWithPlayTimes:(long long)arg1;
 - (void)showFollowHint;
-- (void)enableGrabRedPacket:(_Bool)arg1;
 - (void)updatePlayProgressWithTime:(double)arg1 totalDuration:(double)arg2;
-- (void)redPacketShowAnimation;
+- (void)checkIfShouldShowNoticeBarView;
 - (void)showLearnMoreView;
 - (void)stopMusicAnimations;
 - (void)playMusicAnimations;

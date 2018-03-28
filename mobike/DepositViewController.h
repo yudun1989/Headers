@@ -23,6 +23,7 @@
     _Bool _shouldTransitionToAuth;
     CDUnknownBlockType _selectPayWayHandler;
     CDUnknownBlockType _payResultHandler;
+    CDUnknownBlockType _casherHander;
     long long _vcPaytype;
     unsigned long long _payPlatform;
     UIView *_bgView;
@@ -32,8 +33,10 @@
     UIButton *_payButton;
     long long _ridingBalanceReal;
     long long _ridingBalanceSend;
+    long long _thirdTypeBalance;
 }
 
+@property(nonatomic) long long thirdTypeBalance; // @synthesize thirdTypeBalance=_thirdTypeBalance;
 @property(nonatomic) long long ridingBalanceSend; // @synthesize ridingBalanceSend=_ridingBalanceSend;
 @property(nonatomic) long long ridingBalanceReal; // @synthesize ridingBalanceReal=_ridingBalanceReal;
 @property(nonatomic) _Bool shouldTransitionToAuth; // @synthesize shouldTransitionToAuth=_shouldTransitionToAuth;
@@ -46,19 +49,22 @@
 @property(nonatomic) unsigned long long payPlatform; // @synthesize payPlatform=_payPlatform;
 @property(nonatomic) _Bool isRenew; // @synthesize isRenew=_isRenew;
 @property(nonatomic) long long vcPaytype; // @synthesize vcPaytype=_vcPaytype;
+@property(copy, nonatomic) CDUnknownBlockType casherHander; // @synthesize casherHander=_casherHander;
 @property(copy, nonatomic) CDUnknownBlockType payResultHandler; // @synthesize payResultHandler=_payResultHandler;
 @property(copy, nonatomic) CDUnknownBlockType selectPayWayHandler; // @synthesize selectPayWayHandler=_selectPayWayHandler;
 - (void).cxx_destruct;
 - (void)applePayResultCallBack:(id)arg1 withError:(id)arg2;
 - (void)requestPayParamsFailed:(id)arg1;
 - (void)requestPayParamsSucc:(id)arg1;
-- (void)paymentStatusCallbackFailed;
-- (void)paymentStatusCallback;
+- (void)paymentStatusCallbackFailed:(long long)arg1;
+- (void)paymentStatusCallback:(long long)arg1;
 - (void)handleNotification:(id)arg1;
 - (void)setPayBtnTitle:(id)arg1;
+- (void)casherHander:(long long)arg1;
 - (void)transitionToPayCardSuccessAnimated:(_Bool)arg1;
 - (void)transitionToAuthenticationAnimated:(_Bool)arg1;
 - (void)dismiss;
+- (void)requestThirdAcountPay;
 - (void)requesBalancepay;
 - (void)showRidingBalancePayAlert:(long long)arg1;
 - (void)redPacketToBalanceRequest;

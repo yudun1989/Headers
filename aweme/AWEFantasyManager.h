@@ -35,12 +35,9 @@
 @property(retain, nonatomic) NSString *formatedTime; // @synthesize formatedTime=_formatedTime;
 @property(retain, nonatomic) AWEFantasyModel *model; // @synthesize model=_model;
 - (void).cxx_destruct;
-- (void)countingDownTime;
-- (void)stopTimer;
-- (void)startTimer;
+- (void)settingDidChange:(id)arg1;
 - (void)processModel:(id)arg1;
 - (void)fetchFantasyWithCompletion:(CDUnknownBlockType)arg1;
-- (void)alertView:(id)arg1 clickedButtonAtIndex:(long long)arg2;
 - (void)didFinishLogout;
 - (void)didFinishLogin;
 - (void)updateFeedFantasyDisplayedTimesIfNeeded;
@@ -50,6 +47,9 @@
 - (_Bool)canOpenStoryList;
 - (_Bool)isTopBannerFantasyEnabled;
 - (void)setUp;
+- (void)applyLocalSettings;
+- (void)updateSettings;
+- (void)showAlertController;
 - (void)commonInit;
 - (id)init;
 - (void)dealloc;

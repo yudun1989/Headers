@@ -17,7 +17,7 @@
 + (void)downloadVideoWithURLGoup:(id)arg1 destinationURL:(id)arg2 progress:(CDUnknownBlockType)arg3 completionHandler:(CDUnknownBlockType)arg4;
 + (void)_shareAwemeForSaveVideo:(id)arg1 forBTDShareType:(long long)arg2 preprocess:(CDUnknownBlockType)arg3 delegateType:(unsigned long long)arg4 completion:(CDUnknownBlockType)arg5;
 + (id)_localPathURLForAwemeModel:(id)arg1;
-+ (id)_URLListForAwemeModel:(id)arg1 forBTDShareType:(long long)arg2 hasWatermark:(_Bool *)arg3 shouldComposeRedPacketVoice:(_Bool *)arg4 shouldSaveDirectly:(_Bool *)arg5;
++ (id)_URLListForAwemeModel:(id)arg1 forBTDShareType:(long long)arg2 hasWatermark:(_Bool *)arg3 shouldSaveDirectly:(_Bool *)arg4;
 + (void)_dismissLoadingView;
 + (void)_showLoadingView;
 + (id)loadingView;

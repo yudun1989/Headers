@@ -24,6 +24,9 @@
 @property(copy, nonatomic) NSString *last4; // @synthesize last4=_last4;
 - (void).cxx_destruct;
 - (id)initWithDictionary:(id)arg1 creditCardPlatformType:(long long)arg2;
+- (void)encodeWithCoder:(id)arg1;
+- (id)initWithCoder:(id)arg1;
+- (id)copyWithZone:(id)arg1;
 
 @end
 

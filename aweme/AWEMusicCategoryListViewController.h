@@ -6,21 +6,27 @@
 
 #import <UIKit/UIViewController.h>
 
+#import "BTDRouterViewControllerProtocol-Protocol.h"
 #import "HTSVideoAudioSupplier-Protocol.h"
 
-@class AWECategoryMusicListManager, AWEMusicListViewController, AWENavView, NSString, UIView;
+@class AWECategoryMusicListManager, AWEMusicListViewController, AWENavView, NSString, UIButton, UIView;
 
-@interface AWEMusicCategoryListViewController : UIViewController <HTSVideoAudioSupplier>
+@interface AWEMusicCategoryListViewController : UIViewController <BTDRouterViewControllerProtocol, HTSVideoAudioSupplier>
 {
     _Bool _isEliteVersion;
+    _Bool _shouldShowUploadMusicButton;
     CDUnknownBlockType _completion;
     AWEMusicListViewController *_listVC;
     NSString *_cid;
     AWECategoryMusicListManager *_musicManager;
     AWENavView *_navView;
     UIView *_errorView;
+    UIButton *_uploadMusicButton;
 }
 
++ (void)load;
+@property(retain, nonatomic) UIButton *uploadMusicButton; // @synthesize uploadMusicButton=_uploadMusicButton;
+@property(nonatomic) _Bool shouldShowUploadMusicButton; // @synthesize shouldShowUploadMusicButton=_shouldShowUploadMusicButton;
 @property(retain, nonatomic) UIView *errorView; // @synthesize errorView=_errorView;
 @property(nonatomic) _Bool isEliteVersion; // @synthesize isEliteVersion=_isEliteVersion;
 @property(retain, nonatomic) AWENavView *navView; // @synthesize navView=_navView;
@@ -31,11 +37,14 @@
 - (void).cxx_destruct;
 - (void)showErrorView;
 - (void)viewWillLayoutSubviews;
+- (void)goToUploadMusicPage:(id)arg1;
 - (void)_setupUI;
 - (void)_endRefreshing;
 - (void)_loadMoreData;
 - (void)_refreshData;
+- (long long)preferredStatusBarStyle;
 - (void)viewDidLoad;
+- (_Bool)configWithRouterParamDict:(id)arg1;
 - (id)initWithCategoryId:(id)arg1;
 - (id)initWithCategoryId:(id)arg1 isEliteVersion:(_Bool)arg2;
 

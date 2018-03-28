@@ -18,11 +18,11 @@
     AWEIMStrangerChatListDataController *_dataController;
 }
 
-@property(nonatomic) _Bool firstFetchRemote; // @synthesize firstFetchRemote=_firstFetchRemote;
 @property(retain, nonatomic) AWEIMStrangerChatListDataController *dataController; // @synthesize dataController=_dataController;
 @property(retain, nonatomic) AWEIMChatModel *model; // @synthesize model=_model;
 @property(copy, nonatomic) NSString *filepath; // @synthesize filepath=_filepath;
 @property(nonatomic) __weak id <AWEIMBaseDataStrangeControllerDelegate> delegate; // @synthesize delegate=_delegate;
+@property(nonatomic) _Bool firstFetchRemote; // @synthesize firstFetchRemote=_firstFetchRemote;
 - (void).cxx_destruct;
 - (void)handleUpdateStrangerChatNoti:(id)arg1;
 - (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void *)arg4;
@@ -35,6 +35,7 @@
 - (void)_updateCache:(id)arg1;
 - (void)_loadStrangerFromCache;
 - (void)removeAllStrangerChat:(_Bool)arg1;
+- (void)fetchRemoteStrangerChat;
 - (void)fetchLocalStrangeChat:(CDUnknownBlockType)arg1;
 - (void)dealloc;
 - (id)init;

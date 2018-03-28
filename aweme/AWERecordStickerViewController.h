@@ -12,7 +12,7 @@
 #import "UICollectionViewDelegate-Protocol.h"
 #import "UIGestureRecognizerDelegate-Protocol.h"
 
-@class AWEBonusView, NSArray, NSIndexPath, NSMutableArray, NSString, UICollectionView, UILabel, UIView;
+@class NSIndexPath, NSMutableArray, NSString, UICollectionView, UILabel, UIView;
 @protocol AWEStickerPickerDelegate;
 
 @interface AWERecordStickerViewController : UIViewController <UIGestureRecognizerDelegate, UICollectionViewDelegate, UICollectionViewDataSource, CAAnimationDelegate, AWEStickerPicker>
@@ -27,18 +27,10 @@
     NSIndexPath *_seletedIndexPath;
     UIView *_slideControlView;
     UIView *_slideIndicatorView;
-    AWEBonusView *_userBonusView;
-    NSString *_blessWords;
-    NSArray *_placeholds;
-    NSString *_redPacketTips;
     NSIndexPath *_lastClickedIndexPath;
 }
 
 @property(retain, nonatomic) NSIndexPath *lastClickedIndexPath; // @synthesize lastClickedIndexPath=_lastClickedIndexPath;
-@property(copy, nonatomic) NSString *redPacketTips; // @synthesize redPacketTips=_redPacketTips;
-@property(copy, nonatomic) NSArray *placeholds; // @synthesize placeholds=_placeholds;
-@property(copy, nonatomic) NSString *blessWords; // @synthesize blessWords=_blessWords;
-@property(retain, nonatomic) AWEBonusView *userBonusView; // @synthesize userBonusView=_userBonusView;
 @property(retain, nonatomic) UIView *slideIndicatorView; // @synthesize slideIndicatorView=_slideIndicatorView;
 @property(retain, nonatomic) UIView *slideControlView; // @synthesize slideControlView=_slideControlView;
 @property(retain, nonatomic) NSIndexPath *seletedIndexPath; // @synthesize seletedIndexPath=_seletedIndexPath;
@@ -72,12 +64,6 @@
 - (void)p_onClearBackgroundPress:(id)arg1;
 - (id)_maskLayerWithRect:(struct CGRect)arg1;
 - (id)rotationAnimation;
-- (void)animationDidStop:(id)arg1 finished:(_Bool)arg2;
-- (id)receiveRedPacketViewAnimation;
-- (void)dismissBonusView;
-- (void)showBonusView;
-- (void)sendBlessWords;
-- (void)configureUserBonusView;
 - (void)p_setupSubviews;
 - (void)dealloc;
 - (void)viewDidAppear:(_Bool)arg1;

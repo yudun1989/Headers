@@ -40,6 +40,7 @@
     _Bool audioEncodingIsFinished;
     _Bool videoEncodingIsFinished;
     _Bool isRecording;
+    _Bool dropFrame;
     double startFrameTime;
     long long frameCount;
     _Bool _hasAudioTrack;
@@ -105,6 +106,7 @@
 - (void)setFilterFBO;
 - (void)destroyDataFBO;
 - (void)createDataFBO;
+- (void)setDropFrame:(_Bool)arg1;
 - (void)enableSynchronizationCallbacks;
 - (void)processAudioBuffer:(struct opaqueCMSampleBuffer *)arg1;
 - (void)finishRecordingWithCompletionHandler:(CDUnknownBlockType)arg1;

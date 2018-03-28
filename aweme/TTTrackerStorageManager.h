@@ -27,7 +27,7 @@
 - (void)updateV3LastActionTimeForSessionTrack:(id)arg1;
 - (void)deleteV3TrackCreatedBefore:(double)arg1;
 - (void)deleteTrackCreatedBefore:(double)arg1;
-- (id)allV3Tracks;
+- (id)allV3Tracks:(_Bool)arg1;
 - (id)allTracks;
 - (void)updateV3TrackOfIDs:(id)arg1 sending:(_Bool)arg2;
 - (void)updateTrackOfIDs:(id)arg1 sending:(_Bool)arg2;

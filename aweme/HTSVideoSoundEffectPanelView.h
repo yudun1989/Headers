@@ -27,6 +27,7 @@
 - (void)close;
 - (void)sliderValueChanged:(id)arg1;
 - (void)resetButtonClicked:(id)arg1;
+- (void)layoutSubviews;
 - (id)initWithFrame:(struct CGRect)arg1;
 - (id)init;
 

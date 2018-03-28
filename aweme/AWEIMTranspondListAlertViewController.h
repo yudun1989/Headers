@@ -48,7 +48,7 @@
 - (void)clickCertainBtn:(id)arg1;
 - (void)clickCancelBtn:(id)arg1;
 - (void)_sendTextMessage;
-- (void)_sendVideoMessage;
+- (void)_sendCardMessage;
 - (void)_dismissAlerView:(_Bool)arg1;
 - (id)_getTextFromInputView;
 - (void)showOnView:(id)arg1;

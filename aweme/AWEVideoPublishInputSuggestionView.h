@@ -13,6 +13,7 @@
 
 @interface AWEVideoPublishInputSuggestionView : UIView <UITableViewDelegate, UITableViewDataSource>
 {
+    _Bool _isBodyDanceStyle;
     unsigned long long _state;
     NSArray *_suggestions;
     CDUnknownBlockType _didChooseSuggestionBlock;
@@ -20,6 +21,7 @@
     UITableView *_tableView;
 }
 
+@property(nonatomic) _Bool isBodyDanceStyle; // @synthesize isBodyDanceStyle=_isBodyDanceStyle;
 @property(retain, nonatomic) UITableView *tableView; // @synthesize tableView=_tableView;
 @property(retain, nonatomic) AWETextLoadingView *loadingView; // @synthesize loadingView=_loadingView;
 @property(copy, nonatomic) CDUnknownBlockType didChooseSuggestionBlock; // @synthesize didChooseSuggestionBlock=_didChooseSuggestionBlock;
@@ -30,7 +32,9 @@
 - (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;
 - (long long)tableView:(id)arg1 numberOfRowsInSection:(long long)arg2;
 - (long long)numberOfSectionsInTableView:(id)arg1;
+- (void)didAddSubview:(id)arg1;
 - (void)buildUI;
+- (id)initWithBodyDanceStyle:(_Bool)arg1;
 - (id)init;
 
 // Remaining properties

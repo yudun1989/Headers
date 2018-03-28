@@ -16,6 +16,7 @@
 {
     _Bool _muteOutput;
     _Bool _cameraSourceHasAdded;
+    _Bool _allowsRealTimeVoicePowerLevel;
     _Bool _isAppActive;
     float _musicVolume;
     float _voiceVolume;
@@ -31,6 +32,7 @@
 @property(copy, nonatomic) CDUnknownBlockType outputCallback; // @synthesize outputCallback=_outputCallback;
 @property(retain, nonatomic) NSURL *hostURL; // @synthesize hostURL=_hostURL;
 @property(retain, nonatomic) UIView *contentView; // @synthesize contentView=_contentView;
+@property(nonatomic) _Bool allowsRealTimeVoicePowerLevel; // @synthesize allowsRealTimeVoicePowerLevel=_allowsRealTimeVoicePowerLevel;
 @property(nonatomic) unsigned long long audioSourceType; // @synthesize audioSourceType=_audioSourceType;
 @property(retain, nonatomic) TTLiveStreamerSession *livesession; // @synthesize livesession=_livesession;
 @property(nonatomic) _Bool cameraSourceHasAdded; // @synthesize cameraSourceHasAdded=_cameraSourceHasAdded;
@@ -41,6 +43,7 @@
 - (void).cxx_destruct;
 - (_Bool)systemVersionBelowOrIs:(id)arg1;
 - (void)audioSource:(id)arg1 startWithError:(id)arg2;
+- (float)getInputVoicePowerLevel;
 - (void)recordingVoiceWithVolume:(float)arg1;
 - (_Bool)bgMusicIsPlaying;
 - (void)resumeBgMusic;
@@ -70,7 +73,7 @@
 - (void)startPreview;
 - (void)LiveRelease;
 - (_Bool)isRunning;
-- (void)stop;
+- (void)stopWithReason:(long long)arg1;
 - (void)start;
 - (id)initWithConfig:(id)arg1 withPreView:(id)arg2 outputCallback:(CDUnknownBlockType)arg3;
 - (void)dealloc;

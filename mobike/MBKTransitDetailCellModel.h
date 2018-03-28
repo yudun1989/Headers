@@ -14,8 +14,10 @@
 {
     NSString *_titleString;
     NSString *_orderId;
+    NSString *_applicationID;
 }
 
+@property(copy, nonatomic) NSString *applicationID; // @synthesize applicationID=_applicationID;
 @property(retain, nonatomic) NSString *orderId; // @synthesize orderId=_orderId;
 @property(retain, nonatomic) NSString *titleString; // @synthesize titleString=_titleString;
 - (void).cxx_destruct;

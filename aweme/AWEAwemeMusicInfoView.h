@@ -10,10 +10,10 @@
 
 @interface AWEAwemeMusicInfoView : UIView
 {
+    UILabel *_originalFlagLabel;
     UIView *_containerView;
     UIView *_loopContainerView;
     UIImageView *_musicLogoView;
-    UILabel *_originalFlagLabel;
     double _containerViewWidth;
     double _containerViewHeight;
     double _subviewWidth;
@@ -24,10 +24,10 @@
 @property(nonatomic) double subviewWidth; // @synthesize subviewWidth=_subviewWidth;
 @property(nonatomic) double containerViewHeight; // @synthesize containerViewHeight=_containerViewHeight;
 @property(nonatomic) double containerViewWidth; // @synthesize containerViewWidth=_containerViewWidth;
-@property(retain, nonatomic) UILabel *originalFlagLabel; // @synthesize originalFlagLabel=_originalFlagLabel;
 @property(retain, nonatomic) UIImageView *musicLogoView; // @synthesize musicLogoView=_musicLogoView;
 @property(retain, nonatomic) UIView *loopContainerView; // @synthesize loopContainerView=_loopContainerView;
 @property(retain, nonatomic) UIView *containerView; // @synthesize containerView=_containerView;
+@property(retain, nonatomic) UILabel *originalFlagLabel; // @synthesize originalFlagLabel=_originalFlagLabel;
 - (void).cxx_destruct;
 - (double)widthWithLabelString:(id)arg1;
 - (id)subviewItemWithLabelString:(id)arg1;

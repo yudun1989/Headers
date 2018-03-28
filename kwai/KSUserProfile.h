@@ -16,6 +16,7 @@
     NSNumber *_isFollowing;
     NSString *_followReason;
     NSNumber *_isBlocked;
+    NSNumber *_isBlockedByOwner;
     KSExpInfo *_exp_info;
     KSOwnerCount *_ownerCount;
     KSUserDetialSettingOptions *_userSettingOption;
@@ -41,6 +42,7 @@
 @property(retain, nonatomic) KSUserDetialSettingOptions *userSettingOption; // @synthesize userSettingOption=_userSettingOption;
 @property(retain, nonatomic) KSOwnerCount *ownerCount; // @synthesize ownerCount=_ownerCount;
 @property(retain, nonatomic) KSExpInfo *exp_info; // @synthesize exp_info=_exp_info;
+@property(retain, nonatomic) NSNumber *isBlockedByOwner; // @synthesize isBlockedByOwner=_isBlockedByOwner;
 @property(retain, nonatomic) NSNumber *isBlocked; // @synthesize isBlocked=_isBlocked;
 @property(retain, nonatomic) NSString *followReason; // @synthesize followReason=_followReason;
 @property(nonatomic) _Bool followRequesting; // @synthesize followRequesting=_followRequesting;

@@ -8,7 +8,7 @@
 
 #import "KSModelDelegate-Protocol.h"
 
-@class KSBaseViewController, KSLiveUserProductModel, KSLiveUserViewModel, KSUserProfile, KS_user_info, NSArray, NSNumber, NSString, _KSLiveUserLoadProfileModel;
+@class KSLiveUserProductModel, KSLiveUserViewModel, KSUserProfile, KS_user_info, NSArray, NSNumber, NSString, _KSLiveUserLoadProfileModel;
 
 @interface KSLiveUserProfileViewModel : NSObject <KSModelDelegate>
 {
@@ -26,7 +26,6 @@
     NSArray *_feeds;
     CDUnknownBlockType _requestUserProfileCompletion;
     CDUnknownBlockType _requestUserProductCompletion;
-    KSBaseViewController *_fromVC;
     _KSLiveUserLoadProfileModel *_loadModel;
     KSLiveUserProductModel *_loadProductModel;
 }
@@ -38,7 +37,6 @@
 @property(nonatomic) _Bool currentUserAdmin; // @synthesize currentUserAdmin=_currentUserAdmin;
 @property(nonatomic) _Bool currentUserSelf; // @synthesize currentUserSelf=_currentUserSelf;
 @property(nonatomic) _Bool isProfileAnchor; // @synthesize isProfileAnchor=_isProfileAnchor;
-@property(retain, nonatomic) KSBaseViewController *fromVC; // @synthesize fromVC=_fromVC;
 @property(copy, nonatomic) CDUnknownBlockType requestUserProductCompletion; // @synthesize requestUserProductCompletion=_requestUserProductCompletion;
 @property(copy, nonatomic) CDUnknownBlockType requestUserProfileCompletion; // @synthesize requestUserProfileCompletion=_requestUserProfileCompletion;
 @property(retain, nonatomic) NSArray *feeds; // @synthesize feeds=_feeds;

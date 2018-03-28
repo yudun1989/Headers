@@ -6,15 +6,18 @@
 
 #import "AWEBaseApiModel.h"
 
-@class AWELiveMyWalletModel;
+@class AWELiveMyWalletModel, NSArray;
 
 @interface AWELiveMyWalletResponseModel : AWEBaseApiModel
 {
     AWELiveMyWalletModel *_wallet;
+    NSArray *_diamondList;
 }
 
++ (id)diamondListJSONTransformer;
 + (id)walletJSONTransformer;
 + (id)JSONKeyPathsByPropertyKey;
+@property(retain, nonatomic) NSArray *diamondList; // @synthesize diamondList=_diamondList;
 @property(retain, nonatomic) AWELiveMyWalletModel *wallet; // @synthesize wallet=_wallet;
 - (void).cxx_destruct;
 

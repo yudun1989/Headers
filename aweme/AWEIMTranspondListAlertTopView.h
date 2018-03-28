@@ -23,7 +23,10 @@
 @property(retain, nonatomic) UIImageView *avatarView; // @synthesize avatarView=_avatarView;
 @property(retain, nonatomic) UILabel *titleLabel; // @synthesize titleLabel=_titleLabel;
 - (void).cxx_destruct;
+- (void)_setCoverImageView:(id)arg1;
+- (struct CGSize)getCoverImageViewSize;
 - (void)configWithModel:(id)arg1 awemeModel:(id)arg2;
+- (void)layoutSubviews;
 - (void)_setupUI;
 - (id)initWithFrame:(struct CGRect)arg1;
 

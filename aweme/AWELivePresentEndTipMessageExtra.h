@@ -6,14 +6,16 @@
 
 #import "AWELiveBaseMessageExtra.h"
 
-@class AWEUserModel, NSString;
+@class AWELivePresentMessagePresentInfo, AWEUserModel, NSString;
 
 @interface AWELivePresentEndTipMessageExtra : AWELiveBaseMessageExtra
 {
     AWEUserModel *_user;
     NSString *_tips;
+    AWELivePresentMessagePresentInfo *_presentInfo;
 }
 
+@property(retain, nonatomic) AWELivePresentMessagePresentInfo *presentInfo; // @synthesize presentInfo=_presentInfo;
 @property(copy, nonatomic) NSString *tips; // @synthesize tips=_tips;
 @property(retain, nonatomic) AWEUserModel *user; // @synthesize user=_user;
 - (void).cxx_destruct;

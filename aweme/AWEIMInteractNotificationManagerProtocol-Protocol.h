@@ -9,6 +9,10 @@
 @protocol AWEIMInteractNotificationManagerProtocol <NSObject>
 @property(nonatomic) long long followingRecommendCount;
 @property(nonatomic) long long imMessageCount;
+@property(nonatomic) long long createAwemeCount;
+@property(nonatomic) long long duetCount;
+@property(nonatomic) long long approveFollowRequestCount;
+@property(nonatomic) long long followRequestCount;
 @property(nonatomic) long long assistantCount;
 @property(nonatomic) long long strangerCount;
 @property(nonatomic) long long newFansCount;
@@ -19,6 +23,10 @@
 @property(nonatomic) long long incomingFriendCount;
 @property(nonatomic) _Bool hasNewInteractMessage;
 - (void)updateIMMessageCount:(long long)arg1;
+- (void)readCreateAweme;
+- (void)readDuet;
+- (void)readApproveFollowRequest;
+- (void)readFollowRequest;
 - (void)readStranger;
 - (void)readAssistant;
 - (void)readNewFans;

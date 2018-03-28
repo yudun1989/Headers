@@ -6,7 +6,7 @@
 
 #import <UIKit/UICollectionViewCell.h>
 
-@class MBKFaultCellModel, UIButton, UIImage, UIImageView, UILabel;
+@class MBKFaultCellModel, UIButton, UIImageView, UILabel;
 @protocol MBKReportFaultItemDelegate;
 
 @interface MBKReportItemCell : UICollectionViewCell
@@ -16,14 +16,10 @@
     UILabel *_itemLabel;
     UIButton *_itemButton;
     MBKFaultCellModel *_model;
-    UIImage *_normalImage;
-    UIImage *_selectedImage;
     id <MBKReportFaultItemDelegate> _delegate;
 }
 
 @property(nonatomic) __weak id <MBKReportFaultItemDelegate> delegate; // @synthesize delegate=_delegate;
-@property(retain, nonatomic) UIImage *selectedImage; // @synthesize selectedImage=_selectedImage;
-@property(retain, nonatomic) UIImage *normalImage; // @synthesize normalImage=_normalImage;
 @property(retain, nonatomic) MBKFaultCellModel *model; // @synthesize model=_model;
 @property(nonatomic) unsigned char isSelected; // @synthesize isSelected=_isSelected;
 @property(retain, nonatomic) UIButton *itemButton; // @synthesize itemButton=_itemButton;

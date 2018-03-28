@@ -49,6 +49,7 @@
 @property(retain, nonatomic) KSFunsFollowUser *funsFollowUser; // @synthesize funsFollowUser=_funsFollowUser;
 - (void).cxx_destruct;
 - (void)setHighlighted:(_Bool)arg1 animated:(_Bool)arg2;
+- (void)didTapUserHeaderView:(id)arg1;
 - (void)didTapRightButton:(id)arg1;
 - (void)didTapFollowButton:(id)arg1;
 - (id)cellRightUtilityButtons;

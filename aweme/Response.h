@@ -6,7 +6,7 @@
 
 #import "GPBMessage.h"
 
-@class DeleteConversationResp, DeliveSilence, GroupIds, GroupMessageList, GroupSendMessage, HistoryMessages, MessageList, NSString, ReadMessageIds, RefreshMessages;
+@class DeleteConversationResp, DeliveSilence, GroupIds, GroupMessageList, GroupSendMessage, HistoryMessages, MarkRead, MessageList, NSString, ReadMessageIds, RefreshMessages;
 
 @interface Response : GPBMessage
 {
@@ -27,6 +27,7 @@
 @property(nonatomic) _Bool hasSequenceId; // @dynamic hasSequenceId;
 @property(nonatomic) _Bool hasStatusCode; // @dynamic hasStatusCode;
 @property(retain, nonatomic) HistoryMessages *historyMessages; // @dynamic historyMessages;
+@property(retain, nonatomic) MarkRead *markRead; // @dynamic markRead;
 @property(nonatomic) long long messageId; // @dynamic messageId;
 @property(retain, nonatomic) MessageList *messageList; // @dynamic messageList;
 @property(retain, nonatomic) ReadMessageIds *readMessageIds; // @dynamic readMessageIds;

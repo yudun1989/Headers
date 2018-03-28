@@ -9,7 +9,7 @@
 #import "UITableViewDataSource-Protocol.h"
 #import "UITableViewDelegate-Protocol.h"
 
-@class NSArray, NSString, UITableView;
+@class AWERelationEmptyView, NSArray, NSString, UITableView;
 @protocol AWEIMChatListViewControllerDelegate;
 
 @interface AWEIMChatListViewController : UIViewController <UITableViewDelegate, UITableViewDataSource>
@@ -17,12 +17,17 @@
     UITableView *_tableView;
     id <AWEIMChatListViewControllerDelegate> _delegate;
     NSArray *_chatList;
+    AWERelationEmptyView *_emptyView;
 }
 
+@property(retain, nonatomic) AWERelationEmptyView *emptyView; // @synthesize emptyView=_emptyView;
 @property(retain, nonatomic) NSArray *chatList; // @synthesize chatList=_chatList;
 @property(nonatomic) __weak id <AWEIMChatListViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
 @property(retain, nonatomic) UITableView *tableView; // @synthesize tableView=_tableView;
 - (void).cxx_destruct;
+- (void)_dismissEmptyView;
+- (void)_showEmptyView;
+- (void)_checkEmpty;
 - (void)viewWillLayoutSubviews;
 - (void)_setupUI;
 - (void)tableView:(id)arg1 didSelectRowAtIndexPath:(id)arg2;

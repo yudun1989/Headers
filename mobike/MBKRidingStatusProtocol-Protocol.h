@@ -6,7 +6,7 @@
 
 #import "NSObject-Protocol.h"
 
-@class MBKMobikeRidingResponseObject, MBKRidingStatusManager, MBKUnlockBikeData, MBKUnlockStatusData, NSDictionary, NSError;
+@class MBKBike, MBKMobikeRidingResponseObject, MBKRidingStatusManager, MBKUnlockBikeData, NSDictionary, NSError;
 
 @protocol MBKRidingStatusProtocol <NSObject>
 
@@ -17,9 +17,9 @@
 - (void)mbkRidingStatusManager:(MBKRidingStatusManager *)arg1 EnterBookingStatusWithModel:(MBKMobikeRidingResponseObject *)arg2;
 - (void)mbkRidingStatusManager:(MBKRidingStatusManager *)arg1 RidingStatusUpdatedWithModel:(MBKMobikeRidingResponseObject *)arg2 error:(NSError *)arg3;
 - (void)mbkRidingStatusManagerExitRidingStatus:(MBKRidingStatusManager *)arg1;
-- (void)mbkRidingStatusManager:(MBKRidingStatusManager *)arg1 EnterRidingStatusWithModel:(MBKUnlockStatusData *)arg2;
+- (void)mbkRidingStatusManager:(MBKRidingStatusManager *)arg1 EnterRidingStatusWithModel:(MBKBike *)arg2;
 - (void)mbkRidingStatusManager:(MBKRidingStatusManager *)arg1 UnlockMsgSendResult:(MBKMobikeRidingResponseObject *)arg2 error:(NSError *)arg3;
-- (void)mbkRidingStatusManager:(MBKRidingStatusManager *)arg1 UpdateUnlockingStatusWithModel:(MBKMobikeRidingResponseObject *)arg2 error:(NSError *)arg3;
+- (void)mbkRidingStatusManager:(MBKRidingStatusManager *)arg1 UpdateUnlockingStatusWith_depracatedModel:(MBKMobikeRidingResponseObject *)arg2 bikeModel:(MBKBike *)arg3 error:(NSError *)arg4;
 - (void)mbkRidingStatusManager:(MBKRidingStatusManager *)arg1 UnlockProcedurefinishedWithModel:(MBKMobikeRidingResponseObject *)arg2 error:(NSError *)arg3;
 - (void)mbkRidingStatusManagerExitUnlockingStatus:(MBKRidingStatusManager *)arg1;
 - (void)mbkRidingStatusManager:(MBKRidingStatusManager *)arg1 EnterUnlockingStatusWithModel:(MBKMobikeRidingResponseObject *)arg2;

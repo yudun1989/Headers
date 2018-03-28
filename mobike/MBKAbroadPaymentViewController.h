@@ -4,56 +4,103 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-#import "Mobike_ViewController.h"
+#import "MBKTopupViewController.h"
 
-#import "UIGestureRecognizerDelegate-Protocol.h"
+#import "UITableViewDataSource-Protocol.h"
+#import "UITableViewDelegate-Protocol.h"
 
-@class MBKAbroadPayListView, NSMutableArray, NSString, UIButton, UILabel, UIView;
+@class MBKAbroadPaymentChannelModel, MBKAbroadPaymentHeaderModel, MBKAbroadPaymentHeaderView, MBKLocalPaymentPickerView, NSMutableArray, NSString, NSTimer, UIButton, UITableView, ricingstrategy;
 
-@interface MBKAbroadPaymentViewController : Mobike_ViewController <UIGestureRecognizerDelegate>
+@interface MBKAbroadPaymentViewController : MBKTopupViewController <UITableViewDelegate, UITableViewDataSource>
 {
-    _Bool _isPaySucceed;
-    CDUnknownBlockType _payResultHandler;
-    long long _paymentType;
-    long long _price;
+    long long creditCardPlatformType;
+    double utcTimestamp;
+    _Bool _isRigister;
+    _Bool _haveNoCard;
+    _Bool _needSelectNewCreditCard;
+    unsigned long long _payType;
+    long long _pricingstrategy;
     NSString *_cardId;
-    NSMutableArray *_payMethodTypeArray;
-    UIView *_panelView;
-    UILabel *_titleLabel;
-    UILabel *_priceLabel;
-    MBKAbroadPayListView *_payListView;
-    UIButton *_payButton;
-    long long _selectedPayMethodType;
-    NSMutableArray *_modelArray;
+    CDUnknownBlockType _payResultHandler;
+    CDUnknownBlockType _dismissBlock;
+    long long _payStatus;
+    ricingstrategy *_payStrategy;
+    NSString *_productType;
+    UITableView *_tableView;
+    NSMutableArray *_modelsArray;
+    UIButton *_paymentButton;
+    MBKAbroadPaymentHeaderView *_headerView;
+    MBKAbroadPaymentHeaderModel *_headerModel;
+    MBKLocalPaymentPickerView *_pickerView;
+    NSString *_localIssuerId;
+    MBKAbroadPaymentChannelModel *_selectedChannelModel;
+    NSString *_hudText;
+    NSTimer *_checkTimer;
+    NSMutableArray *_issuersArray;
 }
 
-@property(nonatomic) _Bool isPaySucceed; // @synthesize isPaySucceed=_isPaySucceed;
-@property(retain, nonatomic) NSMutableArray *modelArray; // @synthesize modelArray=_modelArray;
-@property(nonatomic) long long selectedPayMethodType; // @synthesize selectedPayMethodType=_selectedPayMethodType;
-@property(retain, nonatomic) UIButton *payButton; // @synthesize payButton=_payButton;
-@property(retain, nonatomic) MBKAbroadPayListView *payListView; // @synthesize payListView=_payListView;
-@property(retain, nonatomic) UILabel *priceLabel; // @synthesize priceLabel=_priceLabel;
-@property(retain, nonatomic) UILabel *titleLabel; // @synthesize titleLabel=_titleLabel;
-@property(retain, nonatomic) UIView *panelView; // @synthesize panelView=_panelView;
-@property(retain, nonatomic) NSMutableArray *payMethodTypeArray; // @synthesize payMethodTypeArray=_payMethodTypeArray;
-@property(nonatomic) NSString *cardId; // @synthesize cardId=_cardId;
-@property(nonatomic) long long price; // @synthesize price=_price;
-@property(nonatomic) long long paymentType; // @synthesize paymentType=_paymentType;
++ (void)load;
+@property(retain, nonatomic) NSMutableArray *issuersArray; // @synthesize issuersArray=_issuersArray;
+@property(retain, nonatomic) NSTimer *checkTimer; // @synthesize checkTimer=_checkTimer;
+@property(copy, nonatomic) NSString *hudText; // @synthesize hudText=_hudText;
+@property(nonatomic) _Bool needSelectNewCreditCard; // @synthesize needSelectNewCreditCard=_needSelectNewCreditCard;
+@property(nonatomic) _Bool haveNoCard; // @synthesize haveNoCard=_haveNoCard;
+@property(retain, nonatomic) MBKAbroadPaymentChannelModel *selectedChannelModel; // @synthesize selectedChannelModel=_selectedChannelModel;
+@property(copy, nonatomic) NSString *localIssuerId; // @synthesize localIssuerId=_localIssuerId;
+@property(retain, nonatomic) MBKLocalPaymentPickerView *pickerView; // @synthesize pickerView=_pickerView;
+@property(retain, nonatomic) MBKAbroadPaymentHeaderModel *headerModel; // @synthesize headerModel=_headerModel;
+@property(retain, nonatomic) MBKAbroadPaymentHeaderView *headerView; // @synthesize headerView=_headerView;
+@property(retain, nonatomic) UIButton *paymentButton; // @synthesize paymentButton=_paymentButton;
+@property(retain, nonatomic) NSMutableArray *modelsArray; // @synthesize modelsArray=_modelsArray;
+@property(retain, nonatomic) UITableView *tableView; // @synthesize tableView=_tableView;
+@property(copy, nonatomic) NSString *productType; // @synthesize productType=_productType;
+@property(retain, nonatomic) ricingstrategy *payStrategy; // @synthesize payStrategy=_payStrategy;
+@property(nonatomic) long long payStatus; // @synthesize payStatus=_payStatus;
+@property(nonatomic) _Bool isRigister; // @synthesize isRigister=_isRigister;
+@property(copy, nonatomic) CDUnknownBlockType dismissBlock; // @synthesize dismissBlock=_dismissBlock;
 @property(copy, nonatomic) CDUnknownBlockType payResultHandler; // @synthesize payResultHandler=_payResultHandler;
+@property(copy, nonatomic) NSString *cardId; // @synthesize cardId=_cardId;
+@property(nonatomic) long long pricingstrategy; // @synthesize pricingstrategy=_pricingstrategy;
+@property(nonatomic) unsigned long long payType; // @synthesize payType=_payType;
 - (void).cxx_destruct;
-- (void)dealloc;
-- (void)handleNotification:(id)arg1;
-- (void)startRequestBalancePay;
-- (void)popPurchaseWithBalanceAlertView;
-- (void)goToCreditListViewController;
-- (void)dismiss;
-- (void)startPaymentRequest;
-- (void)payButtonClicked:(id)arg1;
-- (id)defaultPayMethodModelArray;
-- (void)startPayListRequest;
-- (void)setupView;
+- (void)goBackController;
+- (void)paymentResult:(_Bool)arg1;
+- (void)startCreditCardPaymentRequest;
+- (void)requestOnlinePaymentFailed:(id)arg1;
+- (void)requestOnlinePaymentSucc:(id)arg1;
+- (void)startOnlinePaymentRequest;
+- (void)startBalancePaymentRequest;
+- (void)startLocalPaymentRequest;
+- (void)paymentButtonTapped:(id)arg1;
+- (void)createCreditCardModelsWithArray:(id)arg1 cardPlatformType:(long long)arg2 paySource:(long long)arg3;
+- (void)addLocalIssuerSubData;
+- (void)requestDelCreditFailed:(id)arg1;
+- (void)requestDelCreditSucc:(id)arg1 deletedModel:(id)arg2;
+- (void)tableView:(id)arg1 commitEditingStyle:(long long)arg2 forRowAtIndexPath:(id)arg3;
+- (_Bool)tableView:(id)arg1 canEditRowAtIndexPath:(id)arg2;
+- (void)tableView:(id)arg1 didSelectRowAtIndexPath:(id)arg2;
+- (double)tableView:(id)arg1 heightForRowAtIndexPath:(id)arg2;
+- (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;
+- (long long)tableView:(id)arg1 numberOfRowsInSection:(long long)arg2;
+- (_Bool)isChannelAvailable:(id)arg1;
+- (void)startPaymentStatusRequest;
+- (void)stopCheckStatusLoop;
+- (void)startCheckStatusLoop;
+- (void)selectChannelWithModel:(id)arg1;
+- (long long)creditCardCountInModelsArray;
+- (id)cacheChannelFromDisk;
+- (void)saveCacheChannel:(id)arg1;
+- (void)selectFirstChannel;
+- (void)selectDefaultChannel;
+- (void)sortModelsArray;
+- (void)requestChannelFailed:(id)arg1;
+- (void)requestChannelSucc:(id)arg1;
+- (void)startChannelRequest;
+- (void)viewDidDisappear:(_Bool)arg1;
 - (void)viewWillAppear:(_Bool)arg1;
 - (void)viewDidLoad;
+- (_Bool)shouldHideNavigationBarShadow;
+- (id)deaultIssuersArray;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

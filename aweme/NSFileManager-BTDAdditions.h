@@ -7,10 +7,12 @@
 #import <Foundation/NSFileManager.h>
 
 @interface NSFileManager (BTDAdditions)
++ (id)btd_allDirsInPath:(id)arg1;
 + (void)btd_clearFolderAtPath:(id)arg1;
 + (void)btd_printFolderDetailSizeAtPath:(id)arg1;
 + (long long)btd_folderSizeAtPath:(id)arg1;
 + (long long)btd_fileSizeAtPath:(id)arg1;
++ (id)btd_mainBundlePath;
 + (id)btd_libraryPath;
 + (id)btd_documentPath;
 + (id)btd_cachePath;

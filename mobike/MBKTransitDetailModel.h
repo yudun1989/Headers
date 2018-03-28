@@ -10,6 +10,8 @@
 
 @interface MBKTransitDetailModel : NSObject
 {
+    int _status;
+    int _appType;
     NSString *_startStopString;
     NSString *_startLineString;
     NSString *_endStopString;
@@ -20,8 +22,12 @@
     UIColor *_statusStringColor;
     NSString *_titleString;
     NSString *_orderId;
+    NSString *_applicationID;
 }
 
+@property(copy, nonatomic) NSString *applicationID; // @synthesize applicationID=_applicationID;
+@property(nonatomic) int appType; // @synthesize appType=_appType;
+@property(nonatomic) int status; // @synthesize status=_status;
 @property(retain, nonatomic) NSString *orderId; // @synthesize orderId=_orderId;
 @property(retain, nonatomic) NSString *titleString; // @synthesize titleString=_titleString;
 @property(retain, nonatomic) UIColor *statusStringColor; // @synthesize statusStringColor=_statusStringColor;

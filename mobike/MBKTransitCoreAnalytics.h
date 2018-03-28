@@ -10,6 +10,17 @@
 {
 }
 
++ (void)clicked:(_Bool)arg1;
++ (void)openCityBottom;
++ (void)openCity;
++ (void)busCommonQuestion;
++ (void)noWxFree;
++ (void)tickeQrCodeExpire;
++ (void)unPayOrder;
++ (void)QRCodeNormal;
++ (void)forbindeShareToOthers;
++ (void)busOrSubway:(id)arg1;
++ (void)openTransitBusButton;
 + (void)stationPageClickButton:(id)arg1;
 + (void)mainPageClickButton;
 + (void)payButton;

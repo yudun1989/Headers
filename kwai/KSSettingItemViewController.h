@@ -82,7 +82,7 @@
 - (void)reloadPrivateItemsSettings;
 - (void)refreshUserGuidePointWithShow:(_Bool)arg1;
 - (void)refreshPhoneBindingStatus;
-- (void)receiveBindPhoneSuccessNotification:(id)arg1;
+- (void)_updateSecurityStatusWhenBindSucceed;
 - (void)recoverNetWorkNotification;
 - (void)viewWillAppear:(_Bool)arg1;
 - (void)updatePhoneIfNeeded;

@@ -8,7 +8,7 @@
 
 #import "TTTAttributedLabelDelegate-Protocol.h"
 
-@class AWERelatedChallengeMusicView, AWEUserCountDescView, LOTAnimationView, NSString, UIButton, UIImageView, UILabel, UIView;
+@class AWEChallengeModel, AWERelatedChallengeMusicView, AWEUserCountDescView, LOTAnimationView, NSString, TTTAttributedLabel, UIButton, UIImageView, UILabel, UIView;
 @protocol AWEChallengeDetailHeaderViewDelegate;
 
 @interface AWEChallengeDetailHeaderView : UICollectionReusableView <TTTAttributedLabelDelegate>
@@ -23,14 +23,16 @@
     UILabel *_challengeDescLabel;
     AWEUserCountDescView *_userCountView;
     UIView *_seperateView;
-    UILabel *_descriptionLabel;
+    TTTAttributedLabel *_descriptionLabel;
     AWERelatedChallengeMusicView *_relatedView;
     double _headerViewHeight;
+    AWEChallengeModel *_challenge;
 }
 
+@property(retain, nonatomic) AWEChallengeModel *challenge; // @synthesize challenge=_challenge;
 @property(nonatomic) double headerViewHeight; // @synthesize headerViewHeight=_headerViewHeight;
 @property(retain, nonatomic) AWERelatedChallengeMusicView *relatedView; // @synthesize relatedView=_relatedView;
-@property(retain, nonatomic) UILabel *descriptionLabel; // @synthesize descriptionLabel=_descriptionLabel;
+@property(retain, nonatomic) TTTAttributedLabel *descriptionLabel; // @synthesize descriptionLabel=_descriptionLabel;
 @property(retain, nonatomic) UIView *seperateView; // @synthesize seperateView=_seperateView;
 @property(retain, nonatomic) AWEUserCountDescView *userCountView; // @synthesize userCountView=_userCountView;
 @property(retain, nonatomic) UILabel *challengeDescLabel; // @synthesize challengeDescLabel=_challengeDescLabel;
@@ -42,6 +44,7 @@
 @property(retain, nonatomic) UIImageView *headerBackgroundView; // @synthesize headerBackgroundView=_headerBackgroundView;
 @property(nonatomic) __weak id <AWEChallengeDetailHeaderViewDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
+- (_Bool)isPGCShow;
 - (void)attributedLabel:(id)arg1 didSelectLinkWithURL:(id)arg2;
 - (void)_removeFollowButton;
 - (void)_addFollowButton;
@@ -53,6 +56,7 @@
 - (void)hideFollowPromptView:(_Bool)arg1;
 - (void)updateWithModel:(id)arg1;
 - (void)setContentAlpha:(double)arg1;
+- (void)setupChallengeUI;
 - (id)initWithFrame:(struct CGRect)arg1;
 
 // Remaining properties

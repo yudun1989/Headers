@@ -16,20 +16,16 @@
     NSNumber<Optional> *_statusCode;
     TTIMHttpDeliveSilenceModel<Optional> *_deliveSilence;
     TTIMHttpMessageListIDLModel<Optional> *_msgList;
-    TTIMHttpMessageListIDLModel<Optional> *_groupMsgList;
 }
 
 + (id)keyMapper;
-@property(retain, nonatomic) TTIMHttpMessageListIDLModel<Optional> *groupMsgList; // @synthesize groupMsgList=_groupMsgList;
 @property(retain, nonatomic) TTIMHttpMessageListIDLModel<Optional> *msgList; // @synthesize msgList=_msgList;
 @property(retain, nonatomic) TTIMHttpDeliveSilenceModel<Optional> *deliveSilence; // @synthesize deliveSilence=_deliveSilence;
 @property(retain, nonatomic) NSNumber<Optional> *statusCode; // @synthesize statusCode=_statusCode;
 @property(copy, nonatomic) NSString *seqId; // @synthesize seqId=_seqId;
 @property(retain, nonatomic) NSNumber *cmd; // @synthesize cmd=_cmd;
 - (void).cxx_destruct;
-- (id)transformToGroupPBModel;
 - (id)transformToPBModel;
-- (id)init;
 
 @end
 

@@ -6,13 +6,14 @@
 
 #import "AWEVideoEditViewController.h"
 
+#import "AWEMediaBigAnimationProtocol-Protocol.h"
 #import "AWERecordFilterVCDelegate-Protocol.h"
 #import "AWEVideoComposerDelegate-Protocol.h"
 #import "HTSPlayerDelegate-Protocol.h"
 
 @class AWEBigToSmallModalDelegate, AWEModalTransitionDelegate, AWEModernVideoEditViewContainer, AWEProgressLoadingView, AWERecordFilterOriginViewController, AWEVideoImageGenerator, AWEVideoMusicCutView, AWEVideoPublishViewModel, AWEVideoVolumeView, HTSPlayer, NSArray, NSString, UIImageView, UIView;
 
-@interface AWEModernVideoEditViewController : AWEVideoEditViewController <HTSPlayerDelegate, AWERecordFilterVCDelegate, AWEVideoComposerDelegate>
+@interface AWEModernVideoEditViewController : AWEVideoEditViewController <HTSPlayerDelegate, AWERecordFilterVCDelegate, AWEVideoComposerDelegate, AWEMediaBigAnimationProtocol>
 {
     _Bool _isDirectRecord;
     HTSPlayer *_player;

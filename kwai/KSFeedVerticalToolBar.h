@@ -15,6 +15,8 @@
 {
     id <KSFeedVerticalToolBarDelegate> _delegate;
     NSString *_commentsCountChangeObserver;
+    _Bool _musicSymbolsAnimating;
+    _Bool _needPlaymusicSymbolsAnimation;
     short _currentSymbolType;
     UIImageView *_avatarImageView;
     UIButton *_followButton;
@@ -27,6 +29,8 @@
     NSMutableDictionary *_musicSymbolViewsCycled;
 }
 
+@property(nonatomic) _Bool needPlaymusicSymbolsAnimation; // @synthesize needPlaymusicSymbolsAnimation=_needPlaymusicSymbolsAnimation;
+@property(nonatomic) _Bool musicSymbolsAnimating; // @synthesize musicSymbolsAnimating=_musicSymbolsAnimating;
 @property(retain, nonatomic) NSMutableDictionary *musicSymbolViewsCycled; // @synthesize musicSymbolViewsCycled=_musicSymbolViewsCycled;
 @property(retain, nonatomic) NSMutableDictionary *musicSymbolViewsInUse; // @synthesize musicSymbolViewsInUse=_musicSymbolViewsInUse;
 @property(retain, nonatomic) BFCancellationTokenSource *cancelTokenSource; // @synthesize cancelTokenSource=_cancelTokenSource;
@@ -54,8 +58,10 @@
 - (void)_setupLikeInfoViews;
 - (void)_setupAvatarInfoViews;
 - (void)_setupSubviews;
+- (void)layoutSubviews;
 - (void)stopMusicAnimationIfNeeded;
 - (void)playMusicAnimationIfNeeded;
+- (void)setElementsHidden:(_Bool)arg1;
 - (void)commentsInfoChanged;
 - (void)followStateChanged:(_Bool)arg1 isRequesting:(_Bool)arg2 showAnimation:(_Bool)arg3;
 - (void)likeStateChanged:(_Bool)arg1 showAnimation:(_Bool)arg2;

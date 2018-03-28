@@ -17,6 +17,7 @@
     _Bool _isBeautyOn;
     _Bool _isDisconnected;
     _Bool _hasStarted;
+    _Bool _isSwitchingCDNNode;
     TTLiveStreamer *_liveStreamer;
     NSNumber *_roomId;
     id <AWELiveRecordViewControllerDelegate> _delegate;
@@ -29,8 +30,21 @@
     TTLiveConfiguration *_liveConfig;
     UIView *_preview;
     double _startTime;
+    long long _tickCount;
+    long long _badConditionCount;
+    long long _accumulateBackConditionCount;
+    double _lastBadToastTS;
+    long long _switchCDNCount;
+    long long _badCountForMonitor;
 }
 
+@property(nonatomic) long long badCountForMonitor; // @synthesize badCountForMonitor=_badCountForMonitor;
+@property(nonatomic) _Bool isSwitchingCDNNode; // @synthesize isSwitchingCDNNode=_isSwitchingCDNNode;
+@property(nonatomic) long long switchCDNCount; // @synthesize switchCDNCount=_switchCDNCount;
+@property(nonatomic) double lastBadToastTS; // @synthesize lastBadToastTS=_lastBadToastTS;
+@property(nonatomic) long long accumulateBackConditionCount; // @synthesize accumulateBackConditionCount=_accumulateBackConditionCount;
+@property(nonatomic) long long badConditionCount; // @synthesize badConditionCount=_badConditionCount;
+@property(nonatomic) long long tickCount; // @synthesize tickCount=_tickCount;
 @property(nonatomic) double startTime; // @synthesize startTime=_startTime;
 @property(retain, nonatomic) UIView *preview; // @synthesize preview=_preview;
 @property(retain, nonatomic) TTLiveConfiguration *liveConfig; // @synthesize liveConfig=_liveConfig;
@@ -50,10 +64,12 @@
 - (void)liveStreamer:(id)arg1 streamStateDidChange:(unsigned long long)arg2 withError:(id)arg3;
 - (void)appDidEnterBack;
 - (void)appDidActive;
+- (void)_retryConnecting;
 - (void)_applyBeauty;
 - (void)_setupCamera:(id)arg1;
 - (void)_setupLiveStreamer:(id)arg1;
 - (void)_setupConfig:(id)arg1;
+- (void)switchCDNNode;
 - (void)receiveStickerPresentMessage;
 - (void)applySticker:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (_Bool)isCameraDirectionFront;
@@ -71,6 +87,12 @@
 - (void)viewDidLoad;
 - (void)dealloc;
 - (id)initWithPushURL:(id)arg1;
+- (void)bc_reportBadCondition;
+- (void)bc_switchCDNNode;
+- (void)bc_showSwitchCDNAlert;
+- (void)bc_configCurrentNetConditionWithLogDict:(id)arg1;
+- (void)bc_resetCount;
+- (void)bc_setup;
 - (id)commonParamsDict;
 - (void)setupLog;
 

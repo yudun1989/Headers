@@ -11,35 +11,40 @@
 #import "UITableViewDataSource-Protocol.h"
 #import "UITableViewDelegate-Protocol.h"
 
-@class BMKMapTip, MBKSearchBarView, NSMutableArray, NSString, UITableView;
+@class BMKMapTip, MBKLBSManager, MBKSearchBarView, MMSuggestionRequest, NSArray, NSMutableArray, NSString, UITableView;
 
 @interface MBKEndPOISearchViewController : MBKBaseViewController <UITableViewDelegate, UITableViewDataSource, MBKSearchBarViewDelegate, UIAlertViewDelegate>
 {
-    _Bool _isHistory;
     NSString *userAddress;
+    _Bool _isHistory;
     _Bool _shouldNotCloseAfterSelected;
     NSString *_cityName;
     long long _type;
     UITableView *_listView;
     MBKSearchBarView *_searchBar;
-    NSMutableArray *_resultList;
+    NSArray *_resultList;
     NSMutableArray *_settingList;
     BMKMapTip *_homeTip;
     BMKMapTip *_companyTip;
+    MBKLBSManager *_lbsManager;
+    MMSuggestionRequest *_suggestRequest;
     struct CLLocationCoordinate2D _location;
 }
 
 + (void)load;
 @property(nonatomic) _Bool shouldNotCloseAfterSelected; // @synthesize shouldNotCloseAfterSelected=_shouldNotCloseAfterSelected;
+@property(nonatomic) __weak MMSuggestionRequest *suggestRequest; // @synthesize suggestRequest=_suggestRequest;
+@property(retain, nonatomic) MBKLBSManager *lbsManager; // @synthesize lbsManager=_lbsManager;
 @property(retain, nonatomic) BMKMapTip *companyTip; // @synthesize companyTip=_companyTip;
 @property(retain, nonatomic) BMKMapTip *homeTip; // @synthesize homeTip=_homeTip;
 @property(retain, nonatomic) NSMutableArray *settingList; // @synthesize settingList=_settingList;
-@property(retain, nonatomic) NSMutableArray *resultList; // @synthesize resultList=_resultList;
+@property(retain, nonatomic) NSArray *resultList; // @synthesize resultList=_resultList;
 @property(retain, nonatomic) MBKSearchBarView *searchBar; // @synthesize searchBar=_searchBar;
 @property(retain, nonatomic) UITableView *listView; // @synthesize listView=_listView;
 @property(nonatomic) long long type; // @synthesize type=_type;
 @property(copy, nonatomic) NSString *cityName; // @synthesize cityName=_cityName;
 @property(nonatomic) struct CLLocationCoordinate2D location; // @synthesize location=_location;
+@property(nonatomic) _Bool isHistory; // @synthesize isHistory=_isHistory;
 - (void).cxx_destruct;
 - (void)writeToLocalFileWithTip:(id)arg1;
 - (void)loadLocalFile;
@@ -55,7 +60,6 @@
 - (void)mbkSearchBarCancelBtnDidClick;
 - (_Bool)mbkSearchBarShouldReturn;
 - (_Bool)mbkSearchBarText:(id)arg1 shouldChangeCharactersInRange:(struct _NSRange)arg2 replacementString:(id)arg3;
-- (void)didSearchTipsWithResponse:(id)arg1 err:(id)arg2;
 - (void)alertView:(id)arg1 clickedButtonAtIndex:(long long)arg2;
 - (void)tableView:(id)arg1 didSelectRowAtIndexPath:(id)arg2;
 - (id)tableView:(id)arg1 viewForHeaderInSection:(long long)arg2;

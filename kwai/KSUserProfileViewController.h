@@ -129,7 +129,8 @@
 - (void)logWithElementAction:(int)arg1 elementName:(id)arg2 userId:(id)arg3;
 - (id)ks_thumbnailViewForTransitioning:(id)arg1 context:(id)arg2;
 - (void)scrollToCurrentFeed:(struct KS_feed *)arg1;
-- (void)openFeedListBrowser:(id)arg1 imageView:(id)arg2;
+- (void)openFeedListBrowser:(id)arg1;
+- (void)openNormalFeedList:(id)arg1 imageView:(id)arg2;
 - (long long)_indexForFeed:(id)arg1;
 - (id)scrollViewForSessionPage;
 - (id)ks_followRefer;
@@ -209,8 +210,8 @@
 - (void)userProfileHeaderView:(id)arg1 didTapBigModelBtn:(id)arg2;
 - (void)userProfileHeaderView:(id)arg1 didTapSettingBtn:(id)arg2;
 - (void)userProfileHeaderView:(id)arg1 didTapHeaderView:(id)arg2;
+- (void)userProfileUserHeaderViewDidTap;
 - (void)userProfileHeaderView:(id)arg1 didTapUserHeaderView:(id)arg2;
-- (void)didFinishEdit:(id)arg1;
 - (void)feedBigCellDidTapPoi:(id)arg1;
 - (void)feedBigCellDidTapMoreComments:(id)arg1;
 - (void)feedBigCellDidDoubleTapPlayer:(id)arg1;

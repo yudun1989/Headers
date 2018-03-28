@@ -7,41 +7,33 @@
 #import <Foundation/NSString.h>
 
 @interface NSString (BTDAdditions)
-+ (id)btd_safeEncodingDictForJSONObject:(id)arg1;
-+ (id)btd_jsonWithDictionary:(id)arg1;
-+ (id)btd_uuid;
-+ (id)HMACMD5WithKey:(id)arg1 andData:(id)arg2;
-+ (id)stringOfAppVersion;
-+ (id)generateUUID;
-- (_Bool)btd_match:(id)arg1;
-- (_Bool)btd_isWhiteSpace;
-- (_Bool)btd_isAlphanumeric;
++ (id)btd_HMACMD5WithKey:(id)arg1 andData:(id)arg2;
++ (id)btd_stringWithUUID;
+- (id)btd_path;
+- (id)btd_scheme;
+- (id)btd_queryParamDict;
+- (id)btd_pathComponentArray;
+- (id)btd_urlStringByRemovingParameters:(id)arg1;
+- (id)btd_urlStringByAddingParameters:(id)arg1;
+- (id)btd_stringByURLDecode;
+- (id)btd_stringByURLEncode;
+- (id)btd_numberValue;
+- (id)btd_jsonValueDecoded:(id *)arg1;
+- (id)btd_jsonValueDecoded;
+- (void)btd_enumerateRegexMatches:(id)arg1 options:(unsigned long long)arg2 usingBlock:(CDUnknownBlockType)arg3;
+- (_Bool)btd_matchsRegex:(id)arg1;
 - (_Bool)btd_containsNumberOnly;
+- (id)btd_urlStringByAddingComponentArray:(id)arg1;
+- (id)btd_urlStringByAddingComponentString:(id)arg1;
 - (id)btd_stringByMergingContinuousNewLine;
 - (struct CGSize)btd_sizeWithFont:(id)arg1 width:(double)arg2 maxLine:(long long)arg3;
 - (struct CGSize)btd_sizeWithFont:(id)arg1 width:(double)arg2;
 - (double)btd_widthWithFont:(id)arg1 height:(double)arg2;
 - (double)btd_heightWithFont:(id)arg1 width:(double)arg2;
-- (_Bool)isEmptyContentString;
-- (id)SHA1String;
-- (id)SHA256String;
-- (id)stringByRemoveAllWhitespaceAndNewlineCharacters;
-- (id)stringByRemoveAllCharactersInSet:(id)arg1;
-- (id)trimmed;
-- (long long)versionStringCompare:(id)arg1;
-- (id)urlEncode;
-- (id)dateUTCFromStringWithDatePattern:(id)arg1;
-- (id)dateUTCFromStringWithDateStyle:(unsigned long long)arg1 timeStyle:(unsigned long long)arg2;
-- (id)dateUTCFromStringWithTimeStyle:(unsigned long long)arg1;
-- (id)dateUTCFromStringWithDateStyle:(unsigned long long)arg1;
-- (id)dateFromStringWithDatePattern:(id)arg1 withTimeZone:(id)arg2;
-- (id)dateFromStringWithDatePattern:(id)arg1;
-- (id)dateFromStringWithDateStyle:(unsigned long long)arg1 timeStyle:(unsigned long long)arg2;
-- (id)dateFromStringWithTimeStyle:(unsigned long long)arg1;
-- (id)dateFromStringWithDateStyle:(unsigned long long)arg1;
-- (id)MD5HashString;
-- (id)stringDocumentsPath;
-- (id)stringCachePath;
-- (id)stringMainBundlePath;
+- (id)btd_stringByRemoveAllWhitespaceAndNewlineCharacters;
+- (id)btd_stringByRemoveAllCharactersInSet:(id)arg1;
+- (id)btd_sha1String;
+- (id)btd_sha256String;
+- (id)btd_md5String;
 @end
 

@@ -19,7 +19,14 @@
 + (void)showPayLoading;
 + (void)mvpPaymentWithModel:(id)arg1 completion:(CDUnknownBlockType)arg2;
 + (void)mvpCashierDeskPayBridgeWithResponse:(id)arg1;
-+ (void)openWebWithUrl:(id)arg1;
++ (void)openWebWithUrl:(id)arg1 withBlock:(CDUnknownBlockType)arg2;
++ (void)sendUserRidingMoneyConfirmed:(long long)arg1;
++ (void)secondMvpRefundingPage:(id)arg1;
++ (void)secondMvpTryExpiredPage:(id)arg1;
++ (void)secondMvpPriceConfirmPageWithGoOnBlock:(CDUnknownBlockType)arg1;
++ (_Bool)isContinueScan;
++ (unsigned long long)getMvpUserFreeRemainCount;
++ (id)getMvpUserConfig;
 + (void)mvpRenewScanPage:(id)arg1;
 + (void)mvpRenewPage:(_Bool)arg1;
 + (void)mvpRefundedPage:(id)arg1;

@@ -16,6 +16,7 @@
     _Bool _hideArrow;
     _Bool _disableHighlight;
     _Bool _hasUploadStatics;
+    NSString *_exp_tag;
     NSNumber *_tagId;
     NSString *_tagName;
     unsigned long long _photoCount;
@@ -35,6 +36,7 @@
 @property(nonatomic) unsigned long long photoCount; // @synthesize photoCount=_photoCount;
 @property(retain, nonatomic) NSString *tagName; // @synthesize tagName=_tagName;
 @property(retain, nonatomic) NSNumber *tagId; // @synthesize tagId=_tagId;
+@property(retain, nonatomic) NSString *exp_tag; // @synthesize exp_tag=_exp_tag;
 - (void).cxx_destruct;
 - (id)displayTagName;
 - (id)initWithTitle:(id)arg1 count:(long long)arg2 tagName:(id)arg3;

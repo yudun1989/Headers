@@ -6,12 +6,12 @@
 
 #import "AWEBaseApiModel.h"
 
-@class AWEActivityShareModel, AWEOriginalMusicianModel, AWEURLModel, AWEUserShareModel, NSArray, NSDate, NSNumber, NSString;
+@class AWEActivityShareModel, AWECommerceModel, AWEOriginalMusicianModel, AWEURLModel, AWEUserShareModel, NSArray, NSDate, NSNumber, NSString;
 
 @interface AWEUserModel : AWEBaseApiModel
 {
     _Bool _disableSearch;
-    _Bool _hideLocation;
+    _Bool _isPhoneBinded;
     _Bool _needRecommend;
     _Bool _isBindedWeibo;
     _Bool _showStory;
@@ -25,6 +25,8 @@
     _Bool _showCommerceEntry;
     _Bool _isNoAccountAd;
     _Bool _hasNewDownloadAddress;
+    _Bool _privateAccount;
+    _Bool _isBindedToutiao;
     NSString *_userID;
     NSString *_shortID;
     NSString *_nickname;
@@ -34,6 +36,7 @@
     AWEURLModel *_avatarLarger;
     AWEURLModel *_avatarMedium;
     AWEURLModel *_avatarThumb;
+    AWEURLModel *_videoIcon;
     NSNumber *_isVerified;
     long long _allowStatus;
     long long _followStatus;
@@ -66,6 +69,7 @@
     NSString *_verifyInfo;
     NSNumber *_roomID;
     NSDate *_createTime;
+    NSDate *_uniqueIdModifyTime;
     NSString *_schoolName;
     NSString *_schoolPoiId;
     long long _schooType;
@@ -75,23 +79,45 @@
     NSString *_enterpriseVerifyInfo;
     NSArray *_followerDetailModels;
     NSNumber *_allFollowersCount;
+    AWECommerceModel *_commerceModel;
+    NSNumber *_commerceUserLevel;
+    NSString *_youtubeChannelTitle;
+    NSString *_youtubeChannelId;
+    NSString *_googleAccount;
+    NSString *_insId;
+    NSNumber *_appleAccount;
+    long long _postNotificationStatus;
 }
 
++ (id)commerceModelJSONTransformer;
 + (id)activityShareJSONTransformer;
 + (id)originalMusicianJSONTransformer;
 + (id)schooTypeJSONTransformer;
++ (id)uniqueIdModifyTimeJSONTransformer;
 + (id)createTimeJSONTransformer;
 + (id)shareInfoJSONTransformer;
++ (id)videoIconJSONTransformer;
 + (id)avatarThumbJSONTransformer;
 + (id)avatarMediumJSONTransformer;
 + (id)avatarLargerJSONTransformer;
 + (id)registStatusJSONTransformer;
 + (id)blockStatusJSONTransformer;
++ (id)postNotificationStatusJSONTransformer;
 + (id)followStatusJSONTransformer;
 + (id)allowStatusJSONTransformer;
 + (id)genderJSONTransformer;
 + (id)followerDetailModelsJSONTransformer;
 + (id)JSONKeyPathsByPropertyKey;
+@property(nonatomic) _Bool isBindedToutiao; // @synthesize isBindedToutiao=_isBindedToutiao;
+@property(nonatomic) long long postNotificationStatus; // @synthesize postNotificationStatus=_postNotificationStatus;
+@property(retain, nonatomic) NSNumber *appleAccount; // @synthesize appleAccount=_appleAccount;
+@property(copy, nonatomic) NSString *insId; // @synthesize insId=_insId;
+@property(copy, nonatomic) NSString *googleAccount; // @synthesize googleAccount=_googleAccount;
+@property(copy, nonatomic) NSString *youtubeChannelId; // @synthesize youtubeChannelId=_youtubeChannelId;
+@property(copy, nonatomic) NSString *youtubeChannelTitle; // @synthesize youtubeChannelTitle=_youtubeChannelTitle;
+@property(nonatomic) _Bool privateAccount; // @synthesize privateAccount=_privateAccount;
+@property(nonatomic) NSNumber *commerceUserLevel; // @synthesize commerceUserLevel=_commerceUserLevel;
+@property(retain, nonatomic) AWECommerceModel *commerceModel; // @synthesize commerceModel=_commerceModel;
 @property(retain, nonatomic) NSNumber *allFollowersCount; // @synthesize allFollowersCount=_allFollowersCount;
 @property(copy, nonatomic) NSArray *followerDetailModels; // @synthesize followerDetailModels=_followerDetailModels;
 @property(nonatomic) _Bool hasNewDownloadAddress; // @synthesize hasNewDownloadAddress=_hasNewDownloadAddress;
@@ -105,6 +131,7 @@
 @property(copy, nonatomic) NSString *schoolPoiId; // @synthesize schoolPoiId=_schoolPoiId;
 @property(copy, nonatomic) NSString *schoolName; // @synthesize schoolName=_schoolName;
 @property(nonatomic) _Bool hasActivityMedal; // @synthesize hasActivityMedal=_hasActivityMedal;
+@property(retain, nonatomic) NSDate *uniqueIdModifyTime; // @synthesize uniqueIdModifyTime=_uniqueIdModifyTime;
 @property(retain, nonatomic) NSDate *createTime; // @synthesize createTime=_createTime;
 @property(nonatomic) _Bool pushCommentOff; // @synthesize pushCommentOff=_pushCommentOff;
 @property(nonatomic) _Bool pushDiggOff; // @synthesize pushDiggOff=_pushDiggOff;
@@ -127,6 +154,7 @@
 @property(copy, nonatomic) NSString *weiboName; // @synthesize weiboName=_weiboName;
 @property(nonatomic) _Bool isBindedWeibo; // @synthesize isBindedWeibo=_isBindedWeibo;
 @property(readonly, nonatomic) _Bool needRecommend; // @synthesize needRecommend=_needRecommend;
+@property(readonly, nonatomic) _Bool isPhoneBinded; // @synthesize isPhoneBinded=_isPhoneBinded;
 @property(readonly, nonatomic) NSString *bindPhone; // @synthesize bindPhone=_bindPhone;
 @property(retain, nonatomic) NSNumber *musicEffectLock; // @synthesize musicEffectLock=_musicEffectLock;
 @property(retain, nonatomic) AWEUserShareModel *shareInfo; // @synthesize shareInfo=_shareInfo;
@@ -134,7 +162,6 @@
 @property(readonly, nonatomic) NSString *customVerifyInfo; // @synthesize customVerifyInfo=_customVerifyInfo;
 @property(readonly, nonatomic) NSString *weiboVerifyInfo; // @synthesize weiboVerifyInfo=_weiboVerifyInfo;
 @property(retain, nonatomic) NSNumber *constellation; // @synthesize constellation=_constellation;
-@property(nonatomic) _Bool hideLocation; // @synthesize hideLocation=_hideLocation;
 @property(retain, nonatomic) NSString *location; // @synthesize location=_location;
 @property(nonatomic) _Bool disableSearch; // @synthesize disableSearch=_disableSearch;
 @property(retain, nonatomic) NSString *thirdName; // @synthesize thirdName=_thirdName;
@@ -148,6 +175,7 @@
 @property(nonatomic) long long followStatus; // @synthesize followStatus=_followStatus;
 @property(nonatomic) long long allowStatus; // @synthesize allowStatus=_allowStatus;
 @property(readonly, nonatomic) NSNumber *isVerified; // @synthesize isVerified=_isVerified;
+@property(retain, nonatomic) AWEURLModel *videoIcon; // @synthesize videoIcon=_videoIcon;
 @property(retain, nonatomic) AWEURLModel *avatarThumb; // @synthesize avatarThumb=_avatarThumb;
 @property(readonly, nonatomic) AWEURLModel *avatarMedium; // @synthesize avatarMedium=_avatarMedium;
 @property(readonly, nonatomic) AWEURLModel *avatarLarger; // @synthesize avatarLarger=_avatarLarger;
@@ -158,6 +186,10 @@
 @property(readonly, nonatomic) NSString *shortID; // @synthesize shortID=_shortID;
 @property(retain, nonatomic) NSString *userID; // @synthesize userID=_userID;
 - (void).cxx_destruct;
+- (id)toutiaoDetailModel;
+- (id)awe_displayName;
+- (_Bool)shouldShowChallengeList;
+- (_Bool)isCompanyProfile;
 - (_Bool)isVerifiedEnterprise;
 - (_Bool)isVerifiedMusician;
 - (_Bool)isVerifiedUser;
@@ -166,6 +198,7 @@
 - (id)initWithDict:(id)arg1;
 - (id)init;
 - (_Bool)_shouldShowFansView;
+- (unsigned long long)bindedAppStyle;
 - (long long)displayedFollowerCount;
 - (_Bool)shouldShowFansViewInFansStar;
 - (_Bool)shouldShowFansView;

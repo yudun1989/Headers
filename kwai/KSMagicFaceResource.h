@@ -11,6 +11,7 @@
 
 @interface KSMagicFaceResource : NSObject
 {
+    _Bool _active;
     KSMagicFace *_magicFace;
     unsigned long long _resourceStatus;
     double _progress;
@@ -23,6 +24,7 @@
 @property(retain, nonatomic) SDImageCache *imageCache; // @synthesize imageCache=_imageCache;
 @property(retain, nonatomic) KSDiskCache *resourceCache; // @synthesize resourceCache=_resourceCache;
 @property(retain, nonatomic) id <KSDownloader> resourceDownloader; // @synthesize resourceDownloader=_resourceDownloader;
+@property(nonatomic) _Bool active; // @synthesize active=_active;
 @property(readonly) unsigned long long downloadStatus; // @synthesize downloadStatus=_downloadStatus;
 @property(nonatomic) double progress; // @synthesize progress=_progress;
 @property(nonatomic) unsigned long long resourceStatus; // @synthesize resourceStatus=_resourceStatus;

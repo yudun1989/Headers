@@ -18,6 +18,7 @@
     _Bool _imageLoaded;
     NSNumber *_clickEnter;
     NSString *_referString;
+    NSString *_originEntryEnterMethod;
     AWEAwemeModel *_model;
     id <AWEAwemePlayInteractionDelegate> _interactionDelegate;
     long long _loopPlay;
@@ -38,6 +39,7 @@
 @property(nonatomic) long long loopPlay; // @synthesize loopPlay=_loopPlay;
 @property(nonatomic) __weak id <AWEAwemePlayInteractionDelegate> interactionDelegate; // @synthesize interactionDelegate=_interactionDelegate;
 @property(retain, nonatomic) AWEAwemeModel *model; // @synthesize model=_model;
+@property(copy, nonatomic) NSString *originEntryEnterMethod; // @synthesize originEntryEnterMethod=_originEntryEnterMethod;
 @property(retain, nonatomic) NSString *referString; // @synthesize referString=_referString;
 @property(retain, nonatomic) NSNumber *clickEnter; // @synthesize clickEnter=_clickEnter;
 - (void).cxx_destruct;

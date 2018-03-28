@@ -12,7 +12,7 @@
 
 + (id)registerForPluginName;
 + (void)load;
-- (void)transitRefundActionWithOrderId:(id)arg1;
+- (void)transitRefundActionWithOrderId:(id)arg1 applicationId:(id)arg2;
 - (void)jsbridgeToTransitRefund:(id)arg1;
 - (void)handleJsBridgeWithTargetURL:(id)arg1 jsBridgeRequest:(id)arg2 completion:(CDUnknownBlockType)arg3;
 

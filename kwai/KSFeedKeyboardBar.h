@@ -104,6 +104,7 @@
 - (void)closeKeyboard;
 - (_Bool)becomeFirstResponder;
 - (void)layoutSubviews;
+- (void)dealloc;
 - (id)init;
 
 // Remaining properties

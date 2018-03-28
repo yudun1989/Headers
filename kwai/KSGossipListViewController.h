@@ -8,16 +8,19 @@
 
 #import "KSNewsCellDelegate-Protocol.h"
 
-@class KSMessageView, NSString;
+@class KSGossipPrivacyTipView, KSMessageView, NSString;
 
 @interface KSGossipListViewController : KSListViewController <KSNewsCellDelegate>
 {
     _Bool _uapLog;
     KSMessageView *_gossipEmptyView;
+    KSGossipPrivacyTipView *_tipView;
 }
 
+@property(retain, nonatomic) KSGossipPrivacyTipView *tipView; // @synthesize tipView=_tipView;
 @property(retain, nonatomic) KSMessageView *gossipEmptyView; // @synthesize gossipEmptyView=_gossipEmptyView;
 - (void).cxx_destruct;
+- (void)_addViewNewsHideSettingsLog;
 - (id)ks_followRefer;
 - (id)ksuShowMetaData;
 - (id)pageURL;
@@ -31,6 +34,9 @@
 - (void)tableView:(id)arg1 willDisplayCell:(id)arg2 forRowAtIndexPath:(id)arg3;
 - (double)tableView:(id)arg1 heightForRowAtIndexPath:(id)arg2;
 - (id)cellWithListObject:(id)arg1 atIndexPath:(id)arg2;
+- (void)didDragToRefresh:(id)arg1;
+- (void)hidePrivacyTipViewIfNeeded;
+- (void)_showPrivacyTipIfNeeded;
 - (void)viewDidLoad;
 - (void)modelDidFinishLoad:(id)arg1;
 - (id)createModel;

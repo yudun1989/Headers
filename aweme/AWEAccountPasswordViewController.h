@@ -67,7 +67,7 @@
 - (void)viewDidLoad;
 - (id)initWithUseType:(unsigned long long)arg1 phoneNumber:(id)arg2 captchaValue:(id)arg3;
 - (id)initWithUseType:(unsigned long long)arg1 captchaValue:(id)arg2;
-- (id)initWithRouterParamDict:(id)arg1;
+- (_Bool)configWithRouterParamDict:(id)arg1;
 - (void)dealloc;
 
 // Remaining properties

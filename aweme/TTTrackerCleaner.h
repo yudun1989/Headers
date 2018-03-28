@@ -14,6 +14,7 @@
     NSObject<OS_dispatch_queue> *_sendingQueue;
 }
 
++ (void)setupABTestHandler:(CDUnknownBlockType)arg1;
 + (id)sharedCleaner;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *sendingQueue; // @synthesize sendingQueue=_sendingQueue;
 @property(nonatomic) unsigned long long fromType; // @synthesize fromType=_fromType;

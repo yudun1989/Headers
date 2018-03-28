@@ -26,6 +26,7 @@
 - (void)scrollToItemAtIndexPath:(id)arg1;
 - (void)selectItemAtIndexPath:(id)arg1;
 - (id)initWithFrame:(struct CGRect)arg1 dataSource:(id)arg2;
+- (void)dealloc;
 
 @end
 

@@ -123,14 +123,13 @@
 - (void)viewDidAppear:(_Bool)arg1;
 - (void)viewWillAppear:(_Bool)arg1;
 - (void)viewDidLoad;
-- (id)initWithRouterParamDict:(id)arg1;
+- (_Bool)configWithRouterParamDict:(id)arg1;
 - (id)init;
 - (void)dealloc;
 - (void)didFinishGestureTransition:(id)arg1;
 - (void)didChangeGestureTransition:(id)arg1;
 - (void)didStartGestureTransition:(id)arg1;
 - (_Bool)shouldStartGestureTransition:(id)arg1;
-- (_Bool)prefersNavigationBarHidden;
 - (_Bool)prefersStatusBarHidden;
 - (void)awe_buildLastCaptureView;
 - (void)awe_setLastCaptureImage;

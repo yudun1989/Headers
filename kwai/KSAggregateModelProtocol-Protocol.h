@@ -9,6 +9,7 @@
 @class NSArray, NSString;
 
 @protocol KSAggregateModelProtocol <NSObject>
+@property(nonatomic) short source;
 @property(readonly, nonatomic) NSArray *feeds;
 @property(readonly, nonatomic) NSArray *topPhotos;
 @property(nonatomic) long long photoCount;

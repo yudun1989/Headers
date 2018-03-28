@@ -14,44 +14,56 @@
 {
     _Bool _hasObserveNetworkChange;
     struct _opaque_pthread_mutex_t _blockslock;
+    struct _opaque_pthread_mutex_t _installIDLock;
+    NSRecursiveLock *_deviceIDLock;
     NSRecursiveLock *_didRegisterlock;
     NSMutableArray *_blocksArray;
     NSString *_deviceID;
     NSString *_installID;
     NSString *_appID;
     NSString *_channel;
+    NSString *_appName;
     CDUnknownBlockType _configParamsBlock;
     CDUnknownBlockType _customHeaderBlock;
     CDUnknownBlockType _overrideHeaderBlock;
     unsigned long long _bgTask;
 }
 
++ (id)activateURLString;
 + (id)getInstallIDURLString;
++ (void)setNewActivationDisable:(_Bool)arg1;
 + (id)sharedInstance;
 @property(nonatomic) unsigned long long bgTask; // @synthesize bgTask=_bgTask;
 @property(copy, nonatomic) CDUnknownBlockType overrideHeaderBlock; // @synthesize overrideHeaderBlock=_overrideHeaderBlock;
 @property(copy, nonatomic) CDUnknownBlockType customHeaderBlock; // @synthesize customHeaderBlock=_customHeaderBlock;
 @property(copy, nonatomic) CDUnknownBlockType configParamsBlock; // @synthesize configParamsBlock=_configParamsBlock;
+@property(copy, nonatomic) NSString *appName; // @synthesize appName=_appName;
 @property(copy, nonatomic) NSString *channel; // @synthesize channel=_channel;
 @property(copy, nonatomic) NSString *appID; // @synthesize appID=_appID;
 - (void).cxx_destruct;
 - (_Bool)hasRegistered;
+- (void)didReceiveUpdateDeviceInfoNotice:(id)arg1;
 - (void)connectionChanged:(id)arg1;
 - (void)didEnterBackground:(id)arg1;
 - (void)invalidBgTaskIfNeeded;
 - (void)saveDeviceAndInstallID:(id)arg1 maxRetryTimes:(long long)arg2;
 - (void)startGetInstallIDIfNeededWithRetryTimes:(long long)arg1;
+- (void)startActivateDeviceWithMaxRetryTimes:(long long)arg1;
 - (void)startGetInstallIDWithMaxRetryTimes:(long long)arg1;
+- (void)setCurrentAppLaunguage:(id)arg1 appRegion:(id)arg2;
 - (id)configParams;
 - (void)addRegisterBlockIfNeeded:(CDUnknownBlockType)arg1;
 - (void)setDidRegisterBlock:(CDUnknownBlockType)arg1;
-- (void)startWithAppID:(id)arg1 channel:(id)arg2 finishBlock:(CDUnknownBlockType)arg3;
+- (void)startWithAppID:(id)arg1 channel:(id)arg2 appName:(id)arg3 finishBlock:(CDUnknownBlockType)arg4;
+- (void)notifyUpdateDeviceInfo;
+@property(copy, nonatomic) NSString *currentAppRegion;
+- (void)modifyCurrentAppRegion:(id)arg1;
+@property(copy, nonatomic) NSString *currentAppLauguage;
+- (void)modifyCurrentAppLauguage:(id)arg1;
 @property(copy, nonatomic) NSString *deviceID; // @synthesize deviceID=_deviceID;
 @property(copy, nonatomic) NSString *installID; // @synthesize installID=_installID;
 - (void)dealloc;
 - (id)init;
-- (void)setCurrentAppRegion:(id)arg1;
-- (void)setCurrentAppLauguage:(id)arg1;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

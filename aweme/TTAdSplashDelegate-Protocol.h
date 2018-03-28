@@ -6,16 +6,23 @@
 
 #import "NSObject-Protocol.h"
 
-@class NSDictionary, NSNumber, NSString;
+@class NSArray, NSDictionary, NSNumber, NSString, UIView;
 
 @protocol TTAdSplashDelegate <NSObject>
+
+@optional
+- (NSString *)splashReadMoreString;
+- (NSString *)splashOpenAppString;
+- (UIView *)splashReadMoreView;
+- (UIView *)splashWifiView;
+- (UIView *)splashLogoView;
+- (UIView *)splashBGViewWithFrame:(struct CGRect)arg1;
 - (void)splashActionWithCondition:(NSDictionary *)arg1;
 - (void)trackWithTag:(NSString *)arg1 label:(NSString *)arg2 extra:(NSDictionary *)arg3;
+- (void)trackURLs:(NSArray *)arg1 dict:(NSDictionary *)arg2;
 - (void)splashViewDidDisappear;
 - (void)splashViewWillAppear;
 - (_Bool)enableSplashLog;
-- (NSString *)splashReadMoreString;
-- (NSString *)splashOpenAppString;
 - (NSString *)splashSkipBtnName;
 - (NSString *)splashArrowImageName;
 - (NSString *)splashViewMoreImageName;
@@ -26,6 +33,7 @@
 - (NSString *)deviceId;
 - (NSNumber *)ntType;
 - (NSString *)splashNetwokType;
+- (NSString *)splashPathUrl;
 - (NSString *)splashBaseUrl;
 - (void)requestWithUrl:(NSString *)arg1 responseBlock:(void (^)(NSData *, NSError *, long long))arg2;
 @end

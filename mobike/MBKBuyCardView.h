@@ -8,7 +8,7 @@
 
 #import "MBKViewProtocol-Protocol.h"
 
-@class MBKBuyCardViewModel, Mobike_ViewController, NSString, UIButton, UIImageView;
+@class MBKBaseViewController, MBKBuyCardViewModel, NSString, UIButton, UIImageView;
 
 @interface MBKBuyCardView : UIView <MBKViewProtocol>
 {
@@ -32,7 +32,7 @@
 - (void)configSubView;
 
 // Remaining properties
-@property(nonatomic) __weak Mobike_ViewController *controller;
+@property(nonatomic) __weak MBKBaseViewController *controller;
 @property(readonly, copy) NSString *debugDescription;
 @property(readonly, copy) NSString *description;
 @property(readonly) unsigned long long hash;

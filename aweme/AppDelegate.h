@@ -9,15 +9,15 @@
 #import "UIApplicationDelegate-Protocol.h"
 #import "UNUserNotificationCenterDelegate-Protocol.h"
 
-@class AWEWindow, NSString;
+@class NSString, UIWindow;
 
 @interface AppDelegate : UIResponder <UNUserNotificationCenterDelegate, UIApplicationDelegate>
 {
     _Bool _isColdLaunchAndReceivedPush;
-    AWEWindow *_window;
+    UIWindow *window;
 }
 
-@property(retain, nonatomic) AWEWindow *window; // @synthesize window=_window;
+@property(retain, nonatomic) UIWindow *window; // @synthesize window;
 - (void).cxx_destruct;
 - (id)referStringFromScheme:(id)arg1;
 - (void)trackAppLaunchWithScheme:(id)arg1 isInBackground:(_Bool)arg2;

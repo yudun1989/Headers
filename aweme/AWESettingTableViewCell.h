@@ -4,12 +4,14 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-#import <UIKit/UITableViewCell.h>
+#import "AWETableViewCell.h"
 
 @class AWESettingSwitch, UIButton, UILabel;
+@protocol AWESettingTableViewCellDelegate;
 
-@interface AWESettingTableViewCell : UITableViewCell
+@interface AWESettingTableViewCell : AWETableViewCell
 {
+    id <AWESettingTableViewCellDelegate> _delegate;
     UILabel *_label;
     AWESettingSwitch *_aSwitch;
     UIButton *_button;
@@ -21,14 +23,19 @@
 @property(retain, nonatomic) UIButton *button; // @synthesize button=_button;
 @property(retain, nonatomic) AWESettingSwitch *aSwitch; // @synthesize aSwitch=_aSwitch;
 @property(retain, nonatomic) UILabel *label; // @synthesize label=_label;
+@property(nonatomic) __weak id <AWESettingTableViewCellDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
+- (void)buttonDidPressed:(id)arg1;
+- (void)switchDidChanged;
 - (void)configWithButtonTitle:(id)arg1;
 - (id)buttonOnCell;
 - (id)switchOnCell;
-- (void)configWithAddtionString:(id)arg1;
+- (void)configWithAdditionString:(id)arg1;
 - (void)configWithSwitch:(_Bool)arg1;
 - (void)configWithSwitch;
 - (void)configWithString:(id)arg1;
+- (void)updateWithViewModel:(id)arg1;
+- (void)setCellDelegate:(id)arg1;
 - (void)prepareForReuse;
 - (id)initWithStyle:(long long)arg1 reuseIdentifier:(id)arg2;
 

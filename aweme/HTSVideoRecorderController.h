@@ -8,15 +8,19 @@
 
 #import "AWEAudioWaveformSliderViewDelegate-Protocol.h"
 #import "AWECaptureButtonAnimationViewDelegate-Protocol.h"
+#import "AWELiveAnchorStartLiveControllerDelegate-Protocol.h"
+#import "AWELiveEntranceToolViewDelegate-Protocol.h"
 #import "AWERecordFilterVCDelegate-Protocol.h"
 #import "AWEStickerPickerDelegate-Protocol.h"
 #import "AWESwitchRecordModeViewDelegate-Protocol.h"
 #import "IESCameraDelegate-Protocol.h"
 #import "UICollectionViewDelegate-Protocol.h"
+#import "UIGestureRecognizerDelegate-Protocol.h"
 
-@class AVPlayer, AWEBubble, AWECameraFilterConfiguration, AWEDelayRecordView, AWEFilterModel, AWEModalTransitionDelegate, AWERecordFilterViewController, AWERecordStickerViewController, AWEStoryAuthorityView, AWEVideoAudioContainerView, AWEVideoCameraContainerView, AWEVideoPublishViewModel, AWEVideoRecordControllerState, AWEVideoRecorderARGestureDelegateModel, AWEViewRecordOutputParameter, CADisplayLink, HTSVideoProgressView, IESCamera, NSArray, NSMutableArray, NSMutableSet, NSString, NSTimer, UIImageView, UILabel, UIPanGestureRecognizer, UIView, UIVisualEffectView;
+@class AVPlayer, AWEBubble, AWECameraFilterConfiguration, AWEDelayRecordView, AWEFilterModel, AWEModalTransitionDelegate, AWENoEventView, AWERecordFilterViewController, AWERecordStickerViewController, AWEStoryAuthorityView, AWEVideoAudioContainerView, AWEVideoCameraContainerView, AWEVideoPublishViewModel, AWEVideoRecordControllerState, AWEVideoRecorderARGestureDelegateModel, AWEViewRecordOutputParameter, CADisplayLink, HTSPlayer, HTSVideoProgressView, IESCamera, NSArray, NSMutableArray, NSMutableSet, NSObject, NSString, NSTimer, UIImageView, UILabel, UIPanGestureRecognizer, UIView, UIVisualEffectView;
+@protocol AWELiveAnchorStartLiveControllerProtocol, AWELiveAnchorViewControllerProtocol, AWELiveEntranceViewProtocol;
 
-@interface HTSVideoRecorderController : UIViewController <IESCameraDelegate, AWECaptureButtonAnimationViewDelegate, AWEStickerPickerDelegate, AWERecordFilterVCDelegate, AWESwitchRecordModeViewDelegate, UICollectionViewDelegate, AWEAudioWaveformSliderViewDelegate>
+@interface HTSVideoRecorderController : UIViewController <IESCameraDelegate, AWECaptureButtonAnimationViewDelegate, AWEStickerPickerDelegate, AWERecordFilterVCDelegate, AWELiveEntranceToolViewDelegate, UICollectionViewDelegate, AWEAudioWaveformSliderViewDelegate, AWELiveAnchorStartLiveControllerDelegate, UIGestureRecognizerDelegate, AWESwitchRecordModeViewDelegate>
 {
     _Bool _isShowingStickerController;
     _Bool _isDirectRecord;
@@ -33,6 +37,7 @@
     _Bool _haveBinded;
     _Bool _exporting;
     _Bool _isFirstAppear;
+    _Bool _liveMode;
     _Bool _needRefreshAlgorithm;
     IESCamera *_camera;
     AWEVideoCameraContainerView *_cameraContainer;
@@ -42,6 +47,7 @@
     UIView *_bottomGradientView;
     NSArray *_challengeMusicArray;
     NSString *_ugcPathRefer;
+    UIView *_cameraPreviewView;
     HTSVideoProgressView *_progressView;
     AWEVideoAudioContainerView *_audioContainer;
     AWEDelayRecordView *_delayRecordView;
@@ -62,7 +68,7 @@
     AWERecordStickerViewController *_stickerController;
     AWEStoryAuthorityView *_authorityView;
     AWEModalTransitionDelegate *_transitionDelegate;
-    UIView *_cameraPreviewView;
+    UIView *_htsCameraContainerView;
     UIPanGestureRecognizer *_panGes;
     long long _switchFilterDerection;
     AWEFilterModel *_switchToFilter;
@@ -77,25 +83,38 @@
     NSTimer *_timer;
     double _duration;
     NSMutableArray *_markedTimes;
-    long long _currentStickerType;
+    AWENoEventView *_switchContainer;
+    UIView *_liveContainerView;
+    NSObject<AWELiveAnchorStartLiveControllerProtocol> *_liveStartController;
+    UIViewController<AWELiveAnchorViewControllerProtocol> *_anchorVC;
+    UIView<AWELiveEntranceViewProtocol> *_liveView;
     AWEBubble *_bubble;
-    NSString *_blessWords;
     NSMutableSet *_ARGesturesSet;
     NSMutableSet *_normalRecordGesturesSet;
     NSTimer *_arPlaneDetectTimer;
     AWEVideoRecorderARGestureDelegateModel *_arGesturesDelegate;
     AWEViewRecordOutputParameter *_recordOutputParameter;
+    UIView *_duetCameraContainerView;
+    HTSPlayer *_duetVideoPlayer;
+    UIView *_duetPlayerContainerView;
 }
 
+@property(nonatomic) __weak UIView *duetPlayerContainerView; // @synthesize duetPlayerContainerView=_duetPlayerContainerView;
+@property(retain, nonatomic) HTSPlayer *duetVideoPlayer; // @synthesize duetVideoPlayer=_duetVideoPlayer;
+@property(nonatomic) __weak UIView *duetCameraContainerView; // @synthesize duetCameraContainerView=_duetCameraContainerView;
 @property(retain, nonatomic) AWEViewRecordOutputParameter *recordOutputParameter; // @synthesize recordOutputParameter=_recordOutputParameter;
 @property(retain, nonatomic) AWEVideoRecorderARGestureDelegateModel *arGesturesDelegate; // @synthesize arGesturesDelegate=_arGesturesDelegate;
 @property(nonatomic) _Bool needRefreshAlgorithm; // @synthesize needRefreshAlgorithm=_needRefreshAlgorithm;
 @property(retain, nonatomic) NSTimer *arPlaneDetectTimer; // @synthesize arPlaneDetectTimer=_arPlaneDetectTimer;
 @property(retain, nonatomic) NSMutableSet *normalRecordGesturesSet; // @synthesize normalRecordGesturesSet=_normalRecordGesturesSet;
 @property(retain, nonatomic) NSMutableSet *ARGesturesSet; // @synthesize ARGesturesSet=_ARGesturesSet;
-@property(copy, nonatomic) NSString *blessWords; // @synthesize blessWords=_blessWords;
 @property(retain, nonatomic) AWEBubble *bubble; // @synthesize bubble=_bubble;
-@property(nonatomic) long long currentStickerType; // @synthesize currentStickerType=_currentStickerType;
+@property(retain, nonatomic) UIView<AWELiveEntranceViewProtocol> *liveView; // @synthesize liveView=_liveView;
+@property(retain, nonatomic) UIViewController<AWELiveAnchorViewControllerProtocol> *anchorVC; // @synthesize anchorVC=_anchorVC;
+@property(retain, nonatomic) NSObject<AWELiveAnchorStartLiveControllerProtocol> *liveStartController; // @synthesize liveStartController=_liveStartController;
+@property(retain, nonatomic) UIView *liveContainerView; // @synthesize liveContainerView=_liveContainerView;
+@property(nonatomic) _Bool liveMode; // @synthesize liveMode=_liveMode;
+@property(retain, nonatomic) AWENoEventView *switchContainer; // @synthesize switchContainer=_switchContainer;
 @property(nonatomic) _Bool isFirstAppear; // @synthesize isFirstAppear=_isFirstAppear;
 @property(retain, nonatomic) NSMutableArray *markedTimes; // @synthesize markedTimes=_markedTimes;
 @property(nonatomic, getter=isExporting) _Bool exporting; // @synthesize exporting=_exporting;
@@ -118,7 +137,7 @@
 @property(retain, nonatomic) AWEFilterModel *switchToFilter; // @synthesize switchToFilter=_switchToFilter;
 @property(nonatomic) long long switchFilterDerection; // @synthesize switchFilterDerection=_switchFilterDerection;
 @property(retain, nonatomic) UIPanGestureRecognizer *panGes; // @synthesize panGes=_panGes;
-@property(retain, nonatomic) UIView *cameraPreviewView; // @synthesize cameraPreviewView=_cameraPreviewView;
+@property(nonatomic) __weak UIView *htsCameraContainerView; // @synthesize htsCameraContainerView=_htsCameraContainerView;
 @property(nonatomic) _Bool needRefreshMusicCover; // @synthesize needRefreshMusicCover=_needRefreshMusicCover;
 @property(retain, nonatomic) AWEModalTransitionDelegate *transitionDelegate; // @synthesize transitionDelegate=_transitionDelegate;
 @property(retain, nonatomic) AWEStoryAuthorityView *authorityView; // @synthesize authorityView=_authorityView;
@@ -144,6 +163,7 @@
 @property(retain, nonatomic) AWEDelayRecordView *delayRecordView; // @synthesize delayRecordView=_delayRecordView;
 @property(retain, nonatomic) AWEVideoAudioContainerView *audioContainer; // @synthesize audioContainer=_audioContainer;
 @property(retain, nonatomic) HTSVideoProgressView *progressView; // @synthesize progressView=_progressView;
+@property(retain, nonatomic) UIView *cameraPreviewView; // @synthesize cameraPreviewView=_cameraPreviewView;
 @property(copy, nonatomic) NSString *ugcPathRefer; // @synthesize ugcPathRefer=_ugcPathRefer;
 @property(retain, nonatomic) NSArray *challengeMusicArray; // @synthesize challengeMusicArray=_challengeMusicArray;
 @property(nonatomic) _Bool isDirectRecord; // @synthesize isDirectRecord=_isDirectRecord;
@@ -158,7 +178,7 @@
 @property(readonly, nonatomic) double progress;
 @property(nonatomic) AWEFilterModel *currentFilter;
 - (unsigned long long)segmentCount;
-- (_Bool)prefersNavigationBarHidden;
+- (long long)preferredStatusBarStyle;
 - (_Bool)prefersStatusBarHidden;
 - (void)screenshotDetected;
 - (void)touchesEnded:(id)arg1 withEvent:(id)arg2;
@@ -170,6 +190,13 @@
 - (id)getTrackAttributesWithNewEntriesFromDictionary:(id)arg1;
 - (id)getTrackAttributesWithPhotoFeature;
 - (void)trackError:(id)arg1 action:(id)arg2;
+- (void)didCreateLiveRoom:(id)arg1;
+- (void)startLive;
+- (void)startLiveTapped:(id)arg1;
+- (_Bool)shouldHaveLiveAgreement;
+- (void)exitLiveMode;
+- (void)enterLiveMode;
+- (_Bool)shouldEnableLive;
 - (void)shouldBlockInteraction:(_Bool)arg1;
 - (void)camera:(id)arg1 willFocusAtPoint:(struct CGPoint)arg2;
 - (void)camera:(id)arg1 didPauseVideoRecordingWithError:(id)arg2;
@@ -195,6 +222,7 @@
 - (long long)getRecordModeForIndex:(long long)arg1;
 - (void)didSelectItemAtIndex:(long long)arg1;
 - (_Bool)canSelectItemAtIndex:(long long)arg1;
+- (_Bool)gestureRecognizerShouldBegin:(id)arg1;
 - (void)appendVideoFragmentInfo;
 - (void)restoreDuration;
 - (void)markDuration:(double)arg1;
@@ -240,10 +268,8 @@
 - (void)updateBeautyApplyStateForSticker:(id)arg1;
 - (void)updateARGuideDisplayStateForSticker:(id)arg1;
 - (void)updateGestureStateForSticker:(id)arg1;
+- (void)pickerDidFinish:(id)arg1;
 - (void)applySticker:(id)arg1 completion:(CDUnknownBlockType)arg2;
-- (void)configureNeedShowBonusView:(_Bool)arg1;
-- (_Bool)needShowBonusView;
-- (void)saveBlessWords:(id)arg1;
 - (void)clickStickersBtn:(id)arg1;
 - (void)getStickerItems;
 - (void)applyDefaultReshapeLevel;
@@ -298,8 +324,9 @@
 - (void)increaseEnterRecordPageCount;
 - (void)showFeatureGuide;
 - (void)bubbleTapped;
-- (void)showWalletTipIfNeed;
 - (void)showViewsWhenStickerSelected;
+- (id)duetLayoutGuideWithRecordVideoSize:(struct CGSize)arg1;
+- (void)buildDuetViewsIfNeeded;
 - (void)buildRecordButtonSwitchView;
 - (void)buildProgressView;
 - (void)buildGradientView;

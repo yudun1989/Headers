@@ -74,6 +74,8 @@
 - (_Bool)pushBikePanelIfNeeded;
 - (void)pushToBikePanelIfNeededAndShowMPLInfo:(id)arg1;
 - (void)pushToBikePanelIfNeededAndShowBikeInfo:(id)arg1;
+- (void)setForceHideParkingEnteranceEnabled:(_Bool)arg1;
+- (void)popToRootPanelAnimated:(_Bool)arg1;
 - (void)popToRootPanel;
 - (void)refreshBannerContent;
 - (void)resetSpockLockButtonSlider;

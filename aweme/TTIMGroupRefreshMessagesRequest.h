@@ -21,7 +21,6 @@
 @property(retain, nonatomic) NSNumber *deviceId; // @synthesize deviceId=_deviceId;
 @property(retain, nonatomic) NSNumber *appId; // @synthesize appId=_appId;
 - (void).cxx_destruct;
-- (unsigned long long)responseType;
 - (id)params;
 - (id)url;
 - (id)method;

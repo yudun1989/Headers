@@ -11,39 +11,44 @@
 #import "MBKNavigationTabSliderDelegate-Protocol.h"
 #import "MMMapContextDelegate-Protocol.h"
 
-@class MBKHomeTabBuilder, MBKNavigationTabSlider, MMMapContext, NSArray, NSString, UIView, UIViewController;
+@class MBKHomeViewControllerTab, MBKNavigationTabSlider, NSArray, NSDate, NSString, UIView, UIViewController;
 
 @interface MBKHomeViewController : MBKBaseViewController <MBKMainToScanQRTransitionAnimationProtocol, MMMapContextDelegate, MBKNavigationTabSliderDelegate, MBKNavigationTabSliderDataSource>
 {
-    UIViewController *_currentViewController;
+    NSArray *_tabs;
+    MBKHomeViewControllerTab *_currentTab;
     UIView *_naviBarGrayMask;
-    MMMapContext *_mapContext;
-    UIView *_mapView;
     UIView *_edgeView;
-    MBKHomeTabBuilder *_tabBuilder;
     MBKNavigationTabSlider *_navigationTabSlider;
+    NSDate *_lastSwitchTime;
 }
 
+@property(retain, nonatomic) NSDate *lastSwitchTime; // @synthesize lastSwitchTime=_lastSwitchTime;
 @property(retain, nonatomic) MBKNavigationTabSlider *navigationTabSlider; // @synthesize navigationTabSlider=_navigationTabSlider;
-@property(retain, nonatomic) MBKHomeTabBuilder *tabBuilder; // @synthesize tabBuilder=_tabBuilder;
 @property(retain, nonatomic) UIView *edgeView; // @synthesize edgeView=_edgeView;
-@property(retain, nonatomic) UIView *mapView; // @synthesize mapView=_mapView;
-@property(retain, nonatomic) MMMapContext *mapContext; // @synthesize mapContext=_mapContext;
 @property(retain, nonatomic) UIView *naviBarGrayMask; // @synthesize naviBarGrayMask=_naviBarGrayMask;
-@property(retain, nonatomic) UIViewController *currentViewController; // @synthesize currentViewController=_currentViewController;
+@property(retain, nonatomic) MBKHomeViewControllerTab *currentTab; // @synthesize currentTab=_currentTab;
+@property(retain, nonatomic) NSArray *tabs; // @synthesize tabs=_tabs;
 - (void).cxx_destruct;
 - (id)tabTitlesForTabSlider:(id)arg1;
 - (void)tabSlider:(id)arg1 didSelectTabAtIndex:(long long)arg2;
+- (_Bool)tabSlider:(id)arg1 canSwitchToTabAtIndex:(long long)arg2;
 - (id)messageNaviButtonImage;
 @property(readonly, nonatomic) NSArray *subViewControllers;
 - (id)personalCenterViewController;
 - (_Bool)menuIsShowed;
 @property(readonly, nonatomic) double navigationBarHeight;
 - (void)showMenu;
+- (void)presentLoginViewController;
+- (void)presentLoginViewControllerAnimated:(_Bool)arg1;
 - (void)actionEdgePanGestureRecognizer:(id)arg1;
 - (void)activateViewControllerAtIndex:(long long)arg1;
 - (void)setupTabbar;
 - (void)setupSubviews;
+- (void)manuallyAddSpockTabIfNeeded;
+- (void)switchToTab:(id)arg1 animated:(_Bool)arg2 forcely:(_Bool)arg3;
+- (void)switchToTab:(id)arg1 animated:(_Bool)arg2;
+@property(readonly, nonatomic) UIViewController *currentViewController;
 - (long long)preferredStatusBarStyle;
 - (id)childViewControllerForStatusBarHidden;
 - (id)childViewControllerForStatusBarStyle;

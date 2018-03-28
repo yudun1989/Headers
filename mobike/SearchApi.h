@@ -33,8 +33,8 @@
 - (void)searchRouteFrom:(struct CLLocationCoordinate2D)arg1 To:(struct CLLocationCoordinate2D)arg2;
 - (void)searchTipsByKeyword:(id)arg1 city:(id)arg2 andCenterLocation:(struct CLLocationCoordinate2D)arg3;
 - (void)searchPoiByKeyword:(id)arg1 city:(id)arg2 andCenterLocation:(struct CLLocationCoordinate2D)arg3;
-- (void)searchEngine:(_Bool)arg1 className:(id)arg2;
 - (id)init;
+- (void)searchRouteFrom:(struct CLLocationCoordinate2D)arg1 to:(struct CLLocationCoordinate2D)arg2 completion:(CDUnknownBlockType)arg3;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

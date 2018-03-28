@@ -6,15 +6,17 @@
 
 #import "MBKWebViewBasePlugin.h"
 
-@class MBKLBSManager;
+@class MBKLBSManager, MMRGCSearchRequest;
 
 @interface MBKWebViewEnvInfoPlugin : MBKWebViewBasePlugin
 {
     MBKLBSManager *_lbsManger;
+    MMRGCSearchRequest *_rgcRequest;
 }
 
 + (id)registerForPluginName;
 + (void)load;
+@property(nonatomic) __weak MMRGCSearchRequest *rgcRequest; // @synthesize rgcRequest=_rgcRequest;
 @property(retain, nonatomic) MBKLBSManager *lbsManger; // @synthesize lbsManger=_lbsManger;
 - (void).cxx_destruct;
 - (id)getLocationInfo;

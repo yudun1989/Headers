@@ -53,6 +53,7 @@
 - (void)reportThisFeed;
 - (void)enterFansTop;
 - (void)componentDidDisappear:(_Bool)arg1;
+- (void)componentDidAppear:(_Bool)arg1;
 - (void)didAttachToContainer:(id)arg1 inView:(id)arg2;
 - (struct CGPoint)positionComponentFrom:(struct CGPoint)arg1;
 - (void)updateShareItem:(_Bool)arg1;
@@ -64,6 +65,7 @@
 - (id)sourceTagName;
 - (id)permission;
 @property(readonly, nonatomic) KSFeedToolBar *toolBar; // @dynamic toolBar;
+- (void)setElementsHidden:(_Bool)arg1;
 - (void)viewDidLoad;
 - (void)loadView;
 - (id)initWithViewModel:(id)arg1;

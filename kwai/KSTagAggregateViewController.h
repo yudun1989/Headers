@@ -20,6 +20,7 @@
     _Bool _observedNavigationBar;
     _Bool _isProgramReload;
     _Bool _isReflashCollectionView;
+    short _source;
     NSString *_tagName;
     NSString *_tagId;
     NSNumber *_index;
@@ -43,6 +44,7 @@
 @property(retain, nonatomic) UIBarButtonItem *backBtnItem; // @synthesize backBtnItem=_backBtnItem;
 @property(retain, nonatomic) KSSectionCollectionController *sectionCollctionController; // @synthesize sectionCollctionController=_sectionCollctionController;
 @property(retain, nonatomic) UINavigationItem *realNavigationItem; // @synthesize realNavigationItem=_realNavigationItem;
+@property(nonatomic) short source; // @synthesize source=_source;
 @property(retain, nonatomic) NSString *expTag; // @synthesize expTag=_expTag;
 @property(retain, nonatomic) NSString *llsid; // @synthesize llsid=_llsid;
 @property(retain, nonatomic) NSNumber *index; // @synthesize index=_index;
@@ -97,6 +99,7 @@
 - (void)viewDidLoad;
 - (void)dealloc;
 - (id)init;
+- (id)additionalLogInfo;
 - (int)tagType;
 - (id)tagStringType;
 

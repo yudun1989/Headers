@@ -7,6 +7,7 @@
 #import <UIKit/UIView.h>
 
 @class AWEDiscoverCategoryModel, UIButton, UIImageView, UILabel;
+@protocol AWEDiscoverCellTopViewDelegate;
 
 @interface AWEDiscoverCellTopView : UIView
 {
@@ -15,10 +16,13 @@
     UILabel *_tipLabel;
     UIButton *_numberButton;
     UIImageView *_arrowView;
+    id <AWEDiscoverCellTopViewDelegate> _delegate;
     AWEDiscoverCategoryModel *_model;
 }
 
++ (id)_defaultImage;
 @property(retain, nonatomic) AWEDiscoverCategoryModel *model; // @synthesize model=_model;
+@property(nonatomic) __weak id <AWEDiscoverCellTopViewDelegate> delegate; // @synthesize delegate=_delegate;
 @property(retain, nonatomic) UIImageView *arrowView; // @synthesize arrowView=_arrowView;
 @property(retain, nonatomic) UIButton *numberButton; // @synthesize numberButton=_numberButton;
 @property(retain, nonatomic) UILabel *tipLabel; // @synthesize tipLabel=_tipLabel;

@@ -23,6 +23,10 @@
     long long assistantCount;
     long long imMessageCount;
     long long followingRecommendCount;
+    long long createAwemeCount;
+    long long duetCount;
+    long long followRequestCount;
+    long long approveFollowRequestCount;
     AWEIMStrangerMessage *_latestStrangerMsg;
     double _lastTimestamp;
 }
@@ -30,6 +34,10 @@
 + (id)sharedInstance;
 @property(nonatomic) double lastTimestamp; // @synthesize lastTimestamp=_lastTimestamp;
 @property(retain, nonatomic) AWEIMStrangerMessage *latestStrangerMsg; // @synthesize latestStrangerMsg=_latestStrangerMsg;
+@property(nonatomic) long long approveFollowRequestCount; // @synthesize approveFollowRequestCount;
+@property(nonatomic) long long followRequestCount; // @synthesize followRequestCount;
+@property(nonatomic) long long duetCount; // @synthesize duetCount;
+@property(nonatomic) long long createAwemeCount; // @synthesize createAwemeCount;
 @property(nonatomic) long long followingRecommendCount; // @synthesize followingRecommendCount;
 @property(nonatomic) long long imMessageCount; // @synthesize imMessageCount;
 @property(nonatomic) long long assistantCount; // @synthesize assistantCount;
@@ -47,6 +55,10 @@
 - (void)_checkHasNewInteractMessage;
 - (void)_configWithCountModel:(id)arg1;
 - (void)updateIMMessageCount:(long long)arg1;
+- (void)readCreateAweme;
+- (void)readDuet;
+- (void)readApproveFollowRequest;
+- (void)readFollowRequest;
 - (void)readStranger;
 - (void)readAssistant;
 - (void)readNewFans;

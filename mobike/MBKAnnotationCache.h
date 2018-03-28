@@ -26,7 +26,7 @@
 - (void)removeAllAnno;
 - (id)addAnnoArrToPool:(id)arg1;
 - (double)distanceFromA:(struct CLLocationCoordinate2D)arg1 toB:(struct CLLocationCoordinate2D)arg2;
-- (void)insertionSortAnnotationPoolWithCenter:(struct CLLocationCoordinate2D)arg1;
+- (void)sortAnnotationPoolWithCenter:(struct CLLocationCoordinate2D)arg1;
 - (id)dispalyAnnoListNeedToRemove:(struct CLLocationCoordinate2D)arg1 rangeRadius:(double)arg2;
 - (id)dispalyAnnoListNeedToAdd:(struct CLLocationCoordinate2D)arg1;
 - (id)displayList;

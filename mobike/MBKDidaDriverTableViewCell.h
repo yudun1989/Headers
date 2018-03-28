@@ -8,7 +8,7 @@
 
 #import "MBKViewProtocol-Protocol.h"
 
-@class MBKDidaDriverModel, Mobike_ViewController, NSString, UIButton, UIImageView, UILabel, UIView;
+@class MBKBaseViewController, MBKDidaDriverModel, NSString, UIButton, UIImageView, UILabel, UIView;
 
 @interface MBKDidaDriverTableViewCell : UITableViewCell <MBKViewProtocol>
 {
@@ -42,7 +42,7 @@
 - (id)initWithStyle:(long long)arg1 reuseIdentifier:(id)arg2;
 
 // Remaining properties
-@property(nonatomic) __weak Mobike_ViewController *controller;
+@property(nonatomic) __weak MBKBaseViewController *controller;
 @property(readonly, copy) NSString *debugDescription;
 @property(readonly, copy) NSString *description;
 @property(readonly) unsigned long long hash;

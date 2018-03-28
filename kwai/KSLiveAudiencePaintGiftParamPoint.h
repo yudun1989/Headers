@@ -6,17 +6,19 @@
 
 #import <objc/NSObject.h>
 
+@class NSString;
+
 @interface KSLiveAudiencePaintGiftParamPoint : NSObject
 {
-    _Bool _up;
     long long _giftId;
     long long _left;
     long long _top;
     long long _right;
     long long _bottom;
+    NSString *_handUp;
 }
 
-@property(nonatomic) _Bool up; // @synthesize up=_up;
+@property(nonatomic) NSString *handUp; // @synthesize handUp=_handUp;
 @property(nonatomic) long long bottom; // @synthesize bottom=_bottom;
 @property(nonatomic) long long right; // @synthesize right=_right;
 @property(nonatomic) long long top; // @synthesize top=_top;

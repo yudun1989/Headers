@@ -20,6 +20,7 @@
     NSNumber *_distance;
     KSRecommendUserExtraInfo *_extra;
     NSString *_ussid;
+    NSString *_exactMatchTip;
     NSArray *_representativeWorks;
 }
 
@@ -28,6 +29,7 @@
 + (id)mj_objectClassInArray;
 + (id)mj_replacedKeyFromPropertyName;
 @property(retain, nonatomic) NSArray *representativeWorks; // @synthesize representativeWorks=_representativeWorks;
+@property(copy, nonatomic) NSString *exactMatchTip; // @synthesize exactMatchTip=_exactMatchTip;
 @property(retain, nonatomic) NSString *ussid; // @synthesize ussid=_ussid;
 @property(retain, nonatomic) KSRecommendUserExtraInfo *extra; // @synthesize extra=_extra;
 @property(retain, nonatomic) NSNumber *distance; // @synthesize distance=_distance;

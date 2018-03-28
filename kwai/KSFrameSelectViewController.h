@@ -50,6 +50,7 @@
 - (_Bool)prefersStatusBarHidden;
 - (void)viewDidLoad;
 - (id)initWithVideoFrameService:(id)arg1 selectMap:(id)arg2;
+- (void)dealloc;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

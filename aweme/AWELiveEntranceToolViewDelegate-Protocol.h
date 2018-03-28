@@ -8,6 +8,8 @@
 
 @protocol AWELiveEntranceToolViewDelegate <NSObject>
 - (void)didSelectItemAtIndex:(long long)arg1;
+
+@optional
 - (_Bool)canSelectItemAtIndex:(long long)arg1;
 @end
 

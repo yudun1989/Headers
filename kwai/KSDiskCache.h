@@ -6,16 +6,19 @@
 
 #import <objc/NSObject.h>
 
+@class NSMutableDictionary;
 @protocol KSDiskCachePath, OS_dispatch_queue, OS_dispatch_semaphore;
 
 @interface KSDiskCache : NSObject
 {
     _Bool _indexBusying;
     unsigned long long _limitOfSize;
+    unsigned long long _cacheAlgorithm;
     NSObject<OS_dispatch_semaphore> *_semaphore;
     id <KSDiskCachePath> _cachePath;
     unsigned long long _totalSize;
     NSObject<OS_dispatch_queue> *_indexQueue;
+    NSMutableDictionary *_cacheLocks;
 }
 
 + (id)liveResourceDiskCache;
@@ -25,13 +28,19 @@
 + (id)musicCache;
 + (void)migrateOldConfigFiles;
 + (id)defaultDiskCache;
+@property(retain, nonatomic) NSMutableDictionary *cacheLocks; // @synthesize cacheLocks=_cacheLocks;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *indexQueue; // @synthesize indexQueue=_indexQueue;
 @property(nonatomic) unsigned long long totalSize; // @synthesize totalSize=_totalSize;
 @property _Bool indexBusying; // @synthesize indexBusying=_indexBusying;
 @property(retain, nonatomic) id <KSDiskCachePath> cachePath; // @synthesize cachePath=_cachePath;
 @property(retain, nonatomic) NSObject<OS_dispatch_semaphore> *semaphore; // @synthesize semaphore=_semaphore;
+@property(nonatomic) unsigned long long cacheAlgorithm; // @synthesize cacheAlgorithm=_cacheAlgorithm;
 @property(nonatomic) unsigned long long limitOfSize; // @synthesize limitOfSize=_limitOfSize;
 - (void).cxx_destruct;
+- (void)_updateAccessedDataWithPath:(id)arg1;
+- (void)unlockCacheForKey:(id)arg1;
+- (void)lockCacheForKey:(id)arg1;
+- (void)_lockFileWithKey:(id)arg1 lock:(_Bool)arg2;
 - (void)_updateTotalSizeWithKey:(id)arg1;
 - (void)_purgeOverlimitCache:(id)arg1;
 - (void)purge;

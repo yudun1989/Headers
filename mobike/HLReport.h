@@ -33,6 +33,7 @@
 - (void).cxx_destruct;
 - (long long)updateCount;
 - (void)touchReportForce:(_Bool)arg1;
+- (void)asyncDeleteAllRecords;
 - (void)asyncDoReport:(id)arg1 orType:(long long)arg2;
 - (void)asyncTouchReport;
 - (id)init;

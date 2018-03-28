@@ -93,7 +93,7 @@
 - (id)concernInnerView;
 - (id)discoverInnerView;
 - (id)feedInnerView;
-- (id)innerViewWithText:(id)arg1 image:(id)arg2 selectedImage:(id)arg3 buttonType:(unsigned long long)arg4;
+- (id)innerViewWithText:(id)arg1 image:(id)arg2 selectedImage:(id)arg3 transparentImage:(id)arg4 buttonType:(unsigned long long)arg5;
 - (id)tabbarTypeKey;
 - (void)tabBarBackgroundColorFillAnimation:(_Bool)arg1 animated:(_Bool)arg2;
 - (void)tabBarBackgroundColorFillAnimation:(_Bool)arg1;

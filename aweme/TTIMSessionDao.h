@@ -20,9 +20,10 @@
 - (id)querySessionListWithDB:(id)arg1;
 - (id)querySession:(id)arg1 withDB:(id)arg2;
 - (_Bool)updateSession:(id)arg1 lastMsgTime:(long long)arg2 withDB:(id)arg3;
-- (_Bool)updateSession:(id)arg1 lastCID:(long long)arg2 withDB:(id)arg3;
+- (_Bool)updateSession:(id)arg1 unreadCount:(long long)arg2 lastReadMsgIndex:(long long)arg3 db:(id)arg4;
+- (_Bool)updateSession:(id)arg1 lastReadMsgIndex:(long long)arg2 db:(id)arg3;
 - (_Bool)updateSession:(id)arg1 unreadCount:(long long)arg2 db:(id)arg3;
-- (_Bool)updateSession:(id)arg1 idDel:(_Bool)arg2 lastCID:(long long)arg3 withDB:(id)arg4;
+- (_Bool)updateSession:(id)arg1 isDeleted:(_Bool)arg2 db:(id)arg3;
 - (id)generateInsertSql:(id)arg1;
 - (_Bool)insertOrUpdateSessionArray:(id)arg1 withDB:(id)arg2;
 - (_Bool)insertOrUpdateSession:(id)arg1 withDB:(id)arg2;

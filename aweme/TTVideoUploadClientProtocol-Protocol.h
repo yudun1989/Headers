@@ -9,6 +9,7 @@
 @class NSError, TTUploadVideoInfo;
 
 @protocol TTVideoUploadClientProtocol <NSObject>
+- (int)uploadCheckIfNeedTry:(long long)arg1 tryCount:(long long)arg2;
 - (void)uploadProgressDidUpdate:(long long)arg1;
 - (void)uploadDidFinish:(TTUploadVideoInfo *)arg1 error:(NSError *)arg2;
 @end

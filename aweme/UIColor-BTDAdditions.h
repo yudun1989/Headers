@@ -7,7 +7,7 @@
 #import <UIKit/UIColor.h>
 
 @interface UIColor (BTDAdditions)
-+ (id)hexStringFromColor:(id)arg1;
-+ (id)colorWithHexString:(id)arg1;
++ (id)btd_hexStringFromColor:(id)arg1;
++ (id)btd_colorWithHexString:(id)arg1;
 @end
 

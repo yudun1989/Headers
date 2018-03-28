@@ -10,7 +10,7 @@
 #import "AWEAwemePlayVideoDelegate-Protocol.h"
 #import "IESVideoPlayerDelegate-Protocol.h"
 
-@class AWEAwemeModel, HTSTimingTracker, IESVideoBSModel, NSNumber, NSString, UIImageView, UIView;
+@class AWEAwemeModel, HTSTimingTracker, IESVideoBSModel, NSDictionary, NSNumber, NSString, UIImageView, UIView;
 @protocol AWEAwemePlayInteractionDelegate, IESVideoPlayerProtocol;
 
 @interface AWEAwemePlayVideoViewController : UIViewController <IESVideoPlayerDelegate, AWEAwemeDisplayViewController, AWEAwemePlayVideoDelegate>
@@ -22,11 +22,12 @@
     _Bool _isReadyForDisplay;
     _Bool _isPlaybackFailed;
     _Bool _hasReportClickEnter;
-    _Bool _stopByShowingHint;
     _Bool _alreadyRecordPlayCompletion;
     _Bool _isAdLearnMoreShowed;
     NSNumber *_clickEnter;
+    NSString *_originEntryEnterMethod;
     NSString *_referString;
+    NSDictionary *_logExtraDict;
     AWEAwemeModel *_model;
     id <AWEAwemePlayInteractionDelegate> _interactionDelegate;
     long long _loopPlay;
@@ -53,7 +54,6 @@
 @property(nonatomic) _Bool isAdLearnMoreShowed; // @synthesize isAdLearnMoreShowed=_isAdLearnMoreShowed;
 @property(retain, nonatomic) HTSTimingTracker *timingTracker; // @synthesize timingTracker=_timingTracker;
 @property(nonatomic) _Bool alreadyRecordPlayCompletion; // @synthesize alreadyRecordPlayCompletion=_alreadyRecordPlayCompletion;
-@property(nonatomic) _Bool stopByShowingHint; // @synthesize stopByShowingHint=_stopByShowingHint;
 @property(nonatomic) _Bool hasReportClickEnter; // @synthesize hasReportClickEnter=_hasReportClickEnter;
 @property(nonatomic) double stallStartTimestamp; // @synthesize stallStartTimestamp=_stallStartTimestamp;
 @property(nonatomic) double playStartTimestamp; // @synthesize playStartTimestamp=_playStartTimestamp;
@@ -72,7 +72,9 @@
 @property(nonatomic) long long loopPlay; // @synthesize loopPlay=_loopPlay;
 @property(nonatomic) __weak id <AWEAwemePlayInteractionDelegate> interactionDelegate; // @synthesize interactionDelegate=_interactionDelegate;
 @property(retain, nonatomic) AWEAwemeModel *model; // @synthesize model=_model;
+@property(retain, nonatomic) NSDictionary *logExtraDict; // @synthesize logExtraDict=_logExtraDict;
 @property(retain, nonatomic) NSString *referString; // @synthesize referString=_referString;
+@property(copy, nonatomic) NSString *originEntryEnterMethod; // @synthesize originEntryEnterMethod=_originEntryEnterMethod;
 @property(retain, nonatomic) NSNumber *clickEnter; // @synthesize clickEnter=_clickEnter;
 @property(nonatomic) _Bool pauseBySingleClick; // @synthesize pauseBySingleClick=_pauseBySingleClick;
 - (void).cxx_destruct;

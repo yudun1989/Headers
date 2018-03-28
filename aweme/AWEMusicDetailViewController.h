@@ -87,11 +87,11 @@
 - (void)addNavigationView;
 - (void)reloadMusicDetail;
 - (_Bool)prefersStatusBarHidden;
+- (void)viewDidDisappear:(_Bool)arg1;
 - (void)viewWillDisappear:(_Bool)arg1;
 - (void)viewDidAppear:(_Bool)arg1;
 - (void)viewDidLoad;
-- (void)viewWillAppear:(_Bool)arg1;
-- (id)initWithRouterParamDict:(id)arg1;
+- (_Bool)configWithRouterParamDict:(id)arg1;
 - (id)init;
 - (void)dealloc;
 

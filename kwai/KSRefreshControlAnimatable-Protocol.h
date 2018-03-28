@@ -9,7 +9,7 @@
 @class UIColor;
 
 @protocol KSRefreshControlAnimatable <NSObject>
-- (void)setStokeColor:(UIColor *)arg1;
+- (void)setStrokeColor:(UIColor *)arg1;
 - (void)stopAnimation;
 - (void)turnBackWithDuration:(double)arg1;
 - (void)startAnimation;

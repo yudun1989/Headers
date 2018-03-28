@@ -6,20 +6,20 @@
 
 #import "JSONModel.h"
 
-@class NSNumber, NSString;
+@class NSString;
 @protocol Optional;
 
 @interface TTIMHttpGroupSendMessageModel : JSONModel
 {
-    NSNumber<Optional> *_svrMsgId;
-    NSNumber<Optional> *_svrIndex;
+    NSString<Optional> *_svrMsgId;
+    NSString<Optional> *_svrIndex;
     NSString<Optional> *_extraInfo;
 }
 
 + (id)keyMapper;
 @property(copy, nonatomic) NSString<Optional> *extraInfo; // @synthesize extraInfo=_extraInfo;
-@property(retain, nonatomic) NSNumber<Optional> *svrIndex; // @synthesize svrIndex=_svrIndex;
-@property(retain, nonatomic) NSNumber<Optional> *svrMsgId; // @synthesize svrMsgId=_svrMsgId;
+@property(copy, nonatomic) NSString<Optional> *svrIndex; // @synthesize svrIndex=_svrIndex;
+@property(copy, nonatomic) NSString<Optional> *svrMsgId; // @synthesize svrMsgId=_svrMsgId;
 - (void).cxx_destruct;
 
 @end

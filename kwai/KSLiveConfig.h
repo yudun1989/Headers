@@ -18,6 +18,7 @@
     _Bool _disableShowInvitationEntrance;
     _Bool _disableShowQuizRecord;
     _Bool _enableClickHeadOnQuizAwardList;
+    _Bool _disableShowRedPackDouCount;
     long long _emptyReadSizeDuration;
     long long _stalledDurationInOneMinute;
 }
@@ -25,6 +26,7 @@
 + (void)load;
 + (id)mj_ignoredPropertyNames;
 + (id)sharedInstance;
+@property(nonatomic) _Bool disableShowRedPackDouCount; // @synthesize disableShowRedPackDouCount=_disableShowRedPackDouCount;
 @property(nonatomic) _Bool enableClickHeadOnQuizAwardList; // @synthesize enableClickHeadOnQuizAwardList=_enableClickHeadOnQuizAwardList;
 @property(nonatomic) _Bool disableShowQuizRecord; // @synthesize disableShowQuizRecord=_disableShowQuizRecord;
 @property(nonatomic) _Bool disableShowInvitationEntrance; // @synthesize disableShowInvitationEntrance=_disableShowInvitationEntrance;

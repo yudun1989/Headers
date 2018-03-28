@@ -25,6 +25,7 @@
 - (void)setBackButtonImageColor:(id)arg1;
 - (void)setTitleColor:(id)arg1;
 - (void)backButtonTapped:(id)arg1;
+- (void)updateTitle:(id)arg1;
 - (void)addDefaultConstraints;
 - (void)_setupUI;
 - (id)initWithTitle:(id)arg1 backAction:(CDUnknownBlockType)arg2;

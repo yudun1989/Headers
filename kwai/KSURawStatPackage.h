@@ -33,7 +33,9 @@
 @property(copy, nonatomic) NSData *frameRateStatEvent; // @dynamic frameRateStatEvent;
 @property(copy, nonatomic) NSData *idcSpeedStatEvent; // @dynamic idcSpeedStatEvent;
 @property(copy, nonatomic) NSData *imageLoadStatEvent; // @dynamic imageLoadStatEvent;
+@property(copy, nonatomic) NSData *liveAdaptiveQosStatEvent; // @dynamic liveAdaptiveQosStatEvent;
 @property(copy, nonatomic) NSData *liveChatStatEvent; // @dynamic liveChatStatEvent;
+@property(copy, nonatomic) NSData *liveStreamAdaptiveQosStatEvent; // @dynamic liveStreamAdaptiveQosStatEvent;
 @property(copy, nonatomic) NSData *localMusicStatEvent; // @dynamic localMusicStatEvent;
 @property(copy, nonatomic) NSData *mainThreadBlockEvent; // @dynamic mainThreadBlockEvent;
 @property(copy, nonatomic) NSData *openedAppStatEvent; // @dynamic openedAppStatEvent;

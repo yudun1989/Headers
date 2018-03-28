@@ -6,32 +6,36 @@
 
 #import "MMAnnotationView.h"
 
-@class CustomAnnotationDetailView, CustomCalloutView, PointHelpModel;
-@protocol PointHelpDelegate;
+#import "MBKAnnotationViewProtocol-Protocol.h"
+#import "_TtP23MBKCoreRidingAnnotation25MBKIconImageCacheProtocol_-Protocol.h"
 
-@interface ReservePointView : MMAnnotationView
+@class CustomAnnotationDetailView, CustomCalloutView, NSString, UIImage;
+
+@interface ReservePointView : MMAnnotationView <_TtP23MBKCoreRidingAnnotation25MBKIconImageCacheProtocol_, MBKAnnotationViewProtocol>
 {
     _Bool _selected;
-    PointHelpModel *_ptModel;
     CustomCalloutView *_calloutView;
-    id <PointHelpDelegate> _delegate;
     CustomAnnotationDetailView *_infoWindow;
 }
 
 @property(retain, nonatomic) CustomAnnotationDetailView *infoWindow; // @synthesize infoWindow=_infoWindow;
 @property(nonatomic) _Bool selected; // @synthesize selected=_selected;
-@property(nonatomic) __weak id <PointHelpDelegate> delegate; // @synthesize delegate=_delegate;
 @property(retain, nonatomic) CustomCalloutView *calloutView; // @synthesize calloutView=_calloutView;
-@property(retain, nonatomic) PointHelpModel *ptModel; // @synthesize ptModel=_ptModel;
 - (void).cxx_destruct;
 - (void)dealloc;
-- (void)pointHelpBtnAction:(id)arg1;
+- (_Bool)shouldUseCustomIconImage;
+- (void)setImageOfUrl:(id)arg1 fallBackImageName:(id)arg2;
 - (_Bool)pointInside:(struct CGPoint)arg1 withEvent:(id)arg2;
-- (void)showPointHelp:(_Bool)arg1;
-- (id)getImageUrl:(id)arg1 placeholderImage:(id)arg2;
 - (void)updateAnnotationInfoWith:(long long)arg1 duration:(long long)arg2;
 - (void)updateAnnotation:(id)arg1 withTarget:(id)arg2;
 - (id)initWithAnnotation:(id)arg1 reuseIdentifier:(id)arg2;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly, copy) NSString *description;
+@property(readonly) unsigned long long hash;
+@property(retain, nonatomic) UIImage *image;
+@property(readonly) Class superclass;
 
 @end
 

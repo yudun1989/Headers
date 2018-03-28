@@ -10,15 +10,14 @@
 
 @interface MBKMapAnnotaionsHelper : NSObject
 {
-    _Bool _isAutoZoom;
     NSMutableDictionary *_store;
     MMMapContext *_map;
 }
 
++ (id)routePloylineFromAnnotation:(id)arg1;
 + (id)overlaysFromAnnotations:(id)arg1;
 @property(retain, nonatomic) MMMapContext *map; // @synthesize map=_map;
 @property(retain, nonatomic) NSMutableDictionary *store; // @synthesize store=_store;
-@property(nonatomic) _Bool isAutoZoom; // @synthesize isAutoZoom=_isAutoZoom;
 - (void).cxx_destruct;
 - (void)removeAnnotationAndOverlay:(id)arg1;
 - (void)addAnnotationAndOverlay:(id)arg1;

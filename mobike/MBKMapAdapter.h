@@ -15,7 +15,6 @@
 }
 
 + (id)mapAdapter;
-+ (id)defaultMapAdapter;
 + (void)load;
 @property(retain, nonatomic) MBKMapBuilder *mapBuilder; // @synthesize mapBuilder=_mapBuilder;
 @property(retain, nonatomic) MMMapContext *mapContext; // @synthesize mapContext=_mapContext;

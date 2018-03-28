@@ -74,6 +74,8 @@
 - (id)initWithAnimatedGIFData:(id)arg1;
 - (id)init;
 @property(readonly, nonatomic) unsigned long long frameCacheSizeCurrent;
+- (void)flSetCustomLoopCount:(long long)arg1;
+- (float)flAnimatedDuration;
 - (void)setCustomLoopCount:(long long)arg1;
 - (float)animatedDuration;
 

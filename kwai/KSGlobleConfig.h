@@ -87,7 +87,6 @@
 @property(retain, nonatomic) KSHybridConfig *hybridPackageConfig; // @synthesize hybridPackageConfig=_hybridPackageConfig;
 @property(retain, nonatomic) KSHybridConfig *hybridURLConfig; // @synthesize hybridURLConfig=_hybridURLConfig;
 @property(nonatomic) long long registerAlertCount;
-@property(nonatomic) _Bool disableNewRegister;
 @property(nonatomic) _Bool hasRemindAutoSaveToLocal;
 @property(retain, nonatomic) NSString *qrDomain; // @synthesize qrDomain=_qrDomain;
 @property(nonatomic) _Bool anonymShotEnabled;

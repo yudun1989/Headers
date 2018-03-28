@@ -6,10 +6,14 @@
 
 #import <objc/NSObject.h>
 
+#import "MJCoding-Protocol.h"
+
 @class MBKCarDeposit, NSNumber, NSString;
 
-@interface MBKUserPaymentBonus : NSObject
+@interface MBKUserPaymentBonus : NSObject <MJCoding>
 {
+    _Bool _hasSHThirdAccount;
+    _Bool _isThirdAccountVisible;
     NSString *_redirectUrl;
     long long _locationCardTrade;
     long long _userCanRenewCard;
@@ -37,11 +41,19 @@
     NSString *_cardTypeString;
     NSString *_myWalletMessage;
     MBKCarDeposit *_carShareDeposit;
+    long long _realBalance;
+    long long _sendBalance;
+    long long _shThirdAccount;
     long long _userCanBuyMonthCard;
 }
 
 + (id)jsonKeyToClassNameMap;
 @property(nonatomic) long long userCanBuyMonthCard; // @synthesize userCanBuyMonthCard=_userCanBuyMonthCard;
+@property(readonly, nonatomic) _Bool isThirdAccountVisible; // @synthesize isThirdAccountVisible=_isThirdAccountVisible;
+@property(readonly, nonatomic) _Bool hasSHThirdAccount; // @synthesize hasSHThirdAccount=_hasSHThirdAccount;
+@property(nonatomic) long long shThirdAccount; // @synthesize shThirdAccount=_shThirdAccount;
+@property(nonatomic) long long sendBalance; // @synthesize sendBalance=_sendBalance;
+@property(nonatomic) long long realBalance; // @synthesize realBalance=_realBalance;
 @property(retain, nonatomic) MBKCarDeposit *carShareDeposit; // @synthesize carShareDeposit=_carShareDeposit;
 @property(readonly, copy, nonatomic) NSString *myWalletMessage; // @synthesize myWalletMessage=_myWalletMessage;
 @property(readonly, copy, nonatomic) NSString *cardTypeString; // @synthesize cardTypeString=_cardTypeString;
@@ -74,6 +86,12 @@
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)copyWithZone:(id)arg1;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly, copy) NSString *description;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
 
 @end
 

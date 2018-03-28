@@ -15,6 +15,7 @@
 
 + (id)getPostDictionaryWithCLLocation:(id)arg1 requestLevel:(unsigned long long)arg2 appName:(id)arg3 beacons:(id)arg4;
 + (id)getPostDictionaryWithCLLocation:(id)arg1 requestLevel:(unsigned long long)arg2 appName:(id)arg3;
++ (id)getPostDictionaryWithCLLocation:(id)arg1 requestLevel:(unsigned long long)arg2 appName:(id)arg3 type:(int)arg4;
 + (void)getTheBestLocationData:(id)arg1 tencentLocation:(id)arg2;
 + (id)dataToDictionary:(id)arg1 random:(int)arg2;
 + (void)getLevelFourWithJSONObject:(id)arg1 tencentLocation:(id)arg2;

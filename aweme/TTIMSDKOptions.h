@@ -16,12 +16,12 @@
     long long _wsMaxRetryBeforeHttp;
     long long _fpid;
     long long _appid;
-    NSString *_privateChatSessionListInitURL;
+    NSString *_imServerURL;
     long long _netType;
 }
 
 @property(nonatomic) long long netType; // @synthesize netType=_netType;
-@property(copy, nonatomic) NSString *privateChatSessionListInitURL; // @synthesize privateChatSessionListInitURL=_privateChatSessionListInitURL;
+@property(copy, nonatomic) NSString *imServerURL; // @synthesize imServerURL=_imServerURL;
 @property(nonatomic) long long appid; // @synthesize appid=_appid;
 @property(nonatomic) long long fpid; // @synthesize fpid=_fpid;
 @property(nonatomic) long long wsMaxRetryBeforeHttp; // @synthesize wsMaxRetryBeforeHttp=_wsMaxRetryBeforeHttp;

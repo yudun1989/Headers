@@ -32,7 +32,7 @@
 - (void)sendMessage;
 - (void)mbkRidingStatusManager:(id)arg1 AccountFinishedWithInfo:(id)arg2 error:(id)arg3;
 - (void)mbkRidingStatusManager:(id)arg1 RidingStatusUpdatedWithModel:(id)arg2 error:(id)arg3;
-- (void)mbkRidingStatusManager:(id)arg1 UpdateUnlockingStatusWithModel:(id)arg2 error:(id)arg3;
+- (void)mbkRidingStatusManager:(id)arg1 UpdateUnlockingStatusWith_depracatedModel:(id)arg2 bikeModel:(id)arg3 error:(id)arg4;
 - (void)mbkRidingStatusManager:(id)arg1 UnlockProcedurefinishedWithModel:(id)arg2 error:(id)arg3;
 - (void)mbkRidingStatusManager:(id)arg1 EnterUnlockingStatusWithModel:(id)arg2;
 - (void)mbkRidingStatusManager:(id)arg1 UnlockProcedureTringWithModel:(id)arg2 error:(id)arg3;

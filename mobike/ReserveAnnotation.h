@@ -6,16 +6,12 @@
 
 #import "MMPointAnnotation.h"
 
-@class PointHelpModel;
-
 @interface ReserveAnnotation : MMPointAnnotation
 {
-    PointHelpModel *_ptModel;
+    long long _bikeType;
 }
 
-@property(retain, nonatomic) PointHelpModel *ptModel; // @synthesize ptModel=_ptModel;
-- (void).cxx_destruct;
-- (id)init;
+@property(nonatomic) long long bikeType; // @synthesize bikeType=_bikeType;
 
 @end
 

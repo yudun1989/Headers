@@ -6,9 +6,10 @@
 
 #import "NSObject-Protocol.h"
 
-@class AWECommentListInputView;
+@class AWECommentListInputView, AWEGrowingTextView;
 
 @protocol AWECommentListInputViewDelegate <NSObject>
+- (_Bool)growingTextViewShouldBeginEditing:(AWEGrowingTextView *)arg1;
 - (void)commentInputView:(AWECommentListInputView *)arg1 didChangeHeightWithDiff:(double)arg2;
 - (_Bool)commentInputViewShouldReturn:(AWECommentListInputView *)arg1;
 @end

@@ -63,6 +63,8 @@
 - (void)showParkPlotWith:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)showUserCarButton;
 - (void)watchParkLot;
+- (void)presentLoginViewController;
+- (void)presentLoginViewControllerAnimated:(_Bool)arg1;
 - (void)setupNotifacation;
 - (void)loadParkingDetailDataWith:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)loopinitStateRequest;

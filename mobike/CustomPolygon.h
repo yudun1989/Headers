@@ -6,14 +6,16 @@
 
 #import "MMPolygon.h"
 
-@class operationBoundsConfig;
+@class UIColor;
 
 @interface CustomPolygon : MMPolygon
 {
-    operationBoundsConfig *_params;
+    UIColor *_boundColor;
+    UIColor *_fillColor;
 }
 
-@property(retain, nonatomic) operationBoundsConfig *params; // @synthesize params=_params;
+@property(retain, nonatomic) UIColor *fillColor; // @synthesize fillColor=_fillColor;
+@property(retain, nonatomic) UIColor *boundColor; // @synthesize boundColor=_boundColor;
 - (void).cxx_destruct;
 - (id)init;
 

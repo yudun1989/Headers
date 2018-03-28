@@ -46,7 +46,9 @@
     NSDictionary *_parmsDict;
 }
 
-+ (id)splashUrlAppendParamsExtra:(id)arg1;
++ (id)sdkVersion;
++ (id)splashUrlAppendParams;
++ (id)splashPath;
 + (id)splashUrl;
 + (id)shareInstance;
 @property(retain, nonatomic) NSDictionary *parmsDict; // @synthesize parmsDict=_parmsDict;

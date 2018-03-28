@@ -11,15 +11,15 @@
 @interface MBKSearchStattionByKeyRequest : MBKMobikeRequest
 {
     _Bool _isStart;
-    long long _applicationId;
+    NSString *_applicationId;
     NSString *_stationName;
 }
 
 @property(nonatomic) _Bool isStart; // @synthesize isStart=_isStart;
 @property(copy, nonatomic) NSString *stationName; // @synthesize stationName=_stationName;
-@property(nonatomic) long long applicationId; // @synthesize applicationId=_applicationId;
+@property(copy, nonatomic) NSString *applicationId; // @synthesize applicationId=_applicationId;
 - (void).cxx_destruct;
-- (id)initWith:(long long)arg1 stationName:(id)arg2 isStart:(_Bool)arg3;
+- (id)initWith:(id)arg1 stationName:(id)arg2 isStart:(_Bool)arg3;
 
 @end
 

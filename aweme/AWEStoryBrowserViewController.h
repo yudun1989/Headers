@@ -27,7 +27,9 @@
     _Bool _isEnteringHotLive;
     _Bool _isLoadingVideo;
     _Bool _isLoadingList;
+    _Bool _isAlreadyEndedLive;
     _Bool _isSelected;
+    _Bool _isRequestImageOnAir;
     AWEStoryManager *_storyManager;
     AWEStoryBrowserUserView *_myStoryView;
     AWEGradientView *_userStoryViewGradientBackgroundView;
@@ -47,7 +49,9 @@
     AWEStoryCubeTransitionAnimatorCoordinator *_coordinator;
 }
 
+@property(nonatomic) _Bool isRequestImageOnAir; // @synthesize isRequestImageOnAir=_isRequestImageOnAir;
 @property(nonatomic) _Bool isSelected; // @synthesize isSelected=_isSelected;
+@property(nonatomic) _Bool isAlreadyEndedLive; // @synthesize isAlreadyEndedLive=_isAlreadyEndedLive;
 @property(nonatomic) _Bool isLoadingList; // @synthesize isLoadingList=_isLoadingList;
 @property(nonatomic) _Bool isLoadingVideo; // @synthesize isLoadingVideo=_isLoadingVideo;
 @property(nonatomic) _Bool isEnteringHotLive; // @synthesize isEnteringHotLive=_isEnteringHotLive;
@@ -128,7 +132,9 @@
 - (void)_setupViewControllerTransitionForCell:(id)arg1;
 - (void)_loadmore;
 - (void)handleSeenVideo:(id)arg1;
+- (void)_refreshForLiveEnded:(id)arg1;
 - (void)_refreshForKickout;
+- (void)_refreshForReloadData;
 - (void)_refresh;
 - (void)setSelectedStatus:(_Bool)arg1;
 - (_Bool)hasLive;
@@ -136,6 +142,8 @@
 - (void)showUpWaveAnimation;
 - (void)refreshWithCompletion:(CDUnknownBlockType)arg1;
 - (void)viewDidLayoutSubviews;
+- (void)_removeObservers;
+- (void)_addObservers;
 - (void)viewWillDisappear:(_Bool)arg1;
 - (void)viewDidAppear:(_Bool)arg1;
 - (void)viewDidLoad;

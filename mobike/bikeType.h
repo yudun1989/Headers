@@ -8,7 +8,7 @@
 
 #import "NSCoding-Protocol.h"
 
-@class NSArray, NSString, UIImage, UIImageView;
+@class NSArray, NSString, UIImage;
 
 @interface bikeType : Mobike_Model <NSCoding>
 {
@@ -21,25 +21,20 @@
     NSString *_name;
     NSString *_iconNormal;
     NSString *_iconSelect;
-    UIImage *_imageIconNormal;
-    UIImage *_imageIconSelect;
-    UIImageView *_imageViewIconNormal;
-    UIImageView *_imageViewIconSelect;
     NSArray *_gifImageArr;
     NSString *_cardImage;
     NSString *_cardTitle;
     NSString *_cardBody;
+    UIImage *_imageIconNormal;
+    UIImage *_imageIconSelect;
 }
 
-+ (id)imageWithScreenScale:(id)arg1;
+@property(retain, nonatomic) UIImage *imageIconSelect; // @synthesize imageIconSelect=_imageIconSelect;
+@property(retain, nonatomic) UIImage *imageIconNormal; // @synthesize imageIconNormal=_imageIconNormal;
 @property(retain) NSString *cardBody; // @synthesize cardBody=_cardBody;
 @property(retain) NSString *cardTitle; // @synthesize cardTitle=_cardTitle;
 @property(retain) NSString *cardImage; // @synthesize cardImage=_cardImage;
 @property(retain, nonatomic) NSArray *gifImageArr; // @synthesize gifImageArr=_gifImageArr;
-@property(retain, nonatomic) UIImageView *imageViewIconSelect; // @synthesize imageViewIconSelect=_imageViewIconSelect;
-@property(retain, nonatomic) UIImageView *imageViewIconNormal; // @synthesize imageViewIconNormal=_imageViewIconNormal;
-@property(retain, nonatomic) UIImage *imageIconSelect; // @synthesize imageIconSelect=_imageIconSelect;
-@property(retain, nonatomic) UIImage *imageIconNormal; // @synthesize imageIconNormal=_imageIconNormal;
 @property(retain) NSString *iconSelect; // @synthesize iconSelect=_iconSelect;
 @property(retain) NSString *iconNormal; // @synthesize iconNormal=_iconNormal;
 @property(retain) NSString *name; // @synthesize name=_name;
@@ -50,7 +45,6 @@
 @property long long type; // @synthesize type=_type;
 @property(nonatomic) int electricityState; // @synthesize electricityState=_electricityState;
 - (void).cxx_destruct;
-- (void)loadImages;
 - (id)initWithInfo:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;

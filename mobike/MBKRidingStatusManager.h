@@ -70,7 +70,7 @@
 - (long long)convertFSMStateToRidingStateType:(id)arg1;
 @property(readonly, nonatomic) _Bool isStateAfterScanAction;
 @property(readonly, nonatomic) _Bool isBlueToothPowerOn;
-- (void)fetchRidingAccomplishState:(id)arg1;
+- (void)fetchRidingAccomplishState:(id)arg1 bikeType:(long long)arg2;
 @property(readonly, nonatomic) long long ridingStateType;
 - (void)clearAccountCount;
 @property(readonly, nonatomic) long long accountCount;
@@ -83,7 +83,7 @@
 - (id)freezeRidingBikeWithOrderId:(id)arg1 userCoordinate:(struct CLLocationCoordinate2D)arg2 phone:(id)arg3 epdata:(id)arg4 timestamp:(id)arg5 bz:(id)arg6 img:(id)arg7;
 - (void)forceCancelBookingProcedure;
 - (id)cancelBookingProcedureWithBikeId:(id)arg1 userId:(id)arg2;
-- (id)startBookingProcedureWithBikeId:(id)arg1 userId:(id)arg2 isactive:(_Bool)arg3 bikeType:(id)arg4;
+- (id)startBookingProcedureWithBikeId:(id)arg1 userId:(id)arg2 bikeType:(id)arg3;
 - (id)startRidingProcedureWithBikeId:(id)arg1 bikeType:(long long)arg2 epdata:(id)arg3 time:(id)arg4 warnCodes:(id)arg5 userCoordinate:(struct CLLocationCoordinate2D)arg6;
 - (void)startRidingProcedureFromRidingStatusWithCompletion:(CDUnknownBlockType)arg1;
 - (void)startRidingProcedureFromRidingStatus;

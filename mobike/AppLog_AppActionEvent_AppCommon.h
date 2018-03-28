@@ -16,6 +16,7 @@
 
 // Remaining properties
 @property(copy, nonatomic) NSString *channel; // @dynamic channel;
+@property(copy, nonatomic) NSString *clientName; // @dynamic clientName;
 @property(copy, nonatomic) NSString *clientVersion; // @dynamic clientVersion;
 @property(retain, nonatomic) AppLog_Device *device; // @dynamic device;
 @property(nonatomic) _Bool hasDevice; // @dynamic hasDevice;

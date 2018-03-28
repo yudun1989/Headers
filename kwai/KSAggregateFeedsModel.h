@@ -13,6 +13,7 @@
 @interface KSAggregateFeedsModel : KSPageModel <KSAggregateModelProtocol>
 {
     _Bool _rich;
+    short _source;
     NSString *_tag;
     long long _photoCount;
     NSArray *_topPhotos;
@@ -20,6 +21,7 @@
 
 + (id)displayNameForTag:(id)arg1;
 @property(retain, nonatomic) NSArray *topPhotos; // @synthesize topPhotos=_topPhotos;
+@property(nonatomic) short source; // @synthesize source=_source;
 @property(nonatomic) long long photoCount; // @synthesize photoCount=_photoCount;
 @property(nonatomic) _Bool rich; // @synthesize rich=_rich;
 @property(retain, nonatomic) NSString *tag; // @synthesize tag=_tag;

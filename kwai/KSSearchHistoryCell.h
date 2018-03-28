@@ -10,8 +10,8 @@
 
 @interface KSSearchHistoryCell : UITableViewCell
 {
-    NSString *_searchContent;
     UILabel *_titleLabel;
+    NSString *_searchContent;
     unsigned long long _appearanceType;
     UIView *_line;
     UIImageView *_icon;
@@ -22,8 +22,8 @@
 @property(retain, nonatomic) UIImageView *icon; // @synthesize icon=_icon;
 @property(retain, nonatomic) UIView *line; // @synthesize line=_line;
 @property(nonatomic) unsigned long long appearanceType; // @synthesize appearanceType=_appearanceType;
-@property(readonly, nonatomic) UILabel *titleLabel; // @synthesize titleLabel=_titleLabel;
 @property(retain, nonatomic) NSString *searchContent; // @synthesize searchContent=_searchContent;
+@property(readonly, nonatomic) UILabel *titleLabel; // @synthesize titleLabel=_titleLabel;
 - (void).cxx_destruct;
 - (void)drawWithSearchContent:(id)arg1 iconImage:(id)arg2 iconShow:(_Bool)arg3;
 - (id)initWithStyle:(long long)arg1 reuseIdentifier:(id)arg2;

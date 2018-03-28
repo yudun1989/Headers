@@ -6,10 +6,13 @@
 
 #import <UIKit/UIView.h>
 
-@class MSWeakTimer, UIButton, UIImageView, UILabel;
+#import "UIAccessibilityIdentification-Protocol.h"
 
-@interface MBKUnlockScanButton : UIView
+@class MSWeakTimer, NSString, UIButton, UIImageView, UILabel;
+
+@interface MBKUnlockScanButton : UIView <UIAccessibilityIdentification>
 {
+    NSString *_accessibilityIdentifier;
     UIButton *_scanButton;
     UILabel *_scanLabel;
     UIImageView *_scanIcon;
@@ -22,10 +25,17 @@
 @property(retain, nonatomic) UIImageView *scanIcon; // @synthesize scanIcon=_scanIcon;
 @property(retain, nonatomic) UILabel *scanLabel; // @synthesize scanLabel=_scanLabel;
 @property(retain, nonatomic) UIButton *scanButton; // @synthesize scanButton=_scanButton;
+@property(copy, nonatomic) NSString *accessibilityIdentifier; // @synthesize accessibilityIdentifier=_accessibilityIdentifier;
 - (void).cxx_destruct;
 - (void)addTarget:(id)arg1 action:(SEL)arg2 forControlEvents:(unsigned long long)arg3;
 - (void)scanIconBreathLoop;
 - (id)init;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly, copy) NSString *description;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
 
 @end
 

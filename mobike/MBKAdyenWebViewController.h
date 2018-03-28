@@ -13,11 +13,13 @@
 @interface MBKAdyenWebViewController : MBKBaseViewController <UIWebViewDelegate>
 {
     _Bool _isOnlyBindCard;
+    _Bool _isOrderCanceled;
     UIWebView *_webView;
     NSURLRequest *_request;
 }
 
 + (void)load;
+@property(nonatomic) _Bool isOrderCanceled; // @synthesize isOrderCanceled=_isOrderCanceled;
 @property(nonatomic) _Bool isOnlyBindCard; // @synthesize isOnlyBindCard=_isOnlyBindCard;
 @property(retain, nonatomic) NSURLRequest *request; // @synthesize request=_request;
 @property(retain, nonatomic) UIWebView *webView; // @synthesize webView=_webView;
@@ -27,6 +29,8 @@
 - (void)webViewDidStartLoad:(id)arg1;
 - (_Bool)webView:(id)arg1 shouldStartLoadWithRequest:(id)arg2 navigationType:(long long)arg3;
 - (void)didReceiveNotification:(id)arg1;
+- (void)viewWillDisappear:(_Bool)arg1;
+- (void)viewWillAppear:(_Bool)arg1;
 - (void)viewDidLoad;
 - (id)initWithRequest:(id)arg1;
 - (_Bool)shouldHideNavigationBarShadow;

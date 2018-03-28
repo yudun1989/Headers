@@ -18,6 +18,7 @@
     _Bool _remindNewFriendsJoined;
     _Bool _bootingCrashProtection;
     _Bool _jailbrokenDetection;
+    _Bool _enablePrivacyNewsSetting;
     double _api_success_log_ratio;
     NSNumber *_china;
     NSNumber *_video_record_music_on;
@@ -97,7 +98,6 @@
     NSNumber *_disableAudioLive;
     NSNumber *_enableLiveWatchingListBigHead;
     NSNumber *_disableHate;
-    NSNumber *_disableNewRegister;
     NSNumber *_registerAlertCount;
     NSNumber *_enableNewMovieWriter;
     NSNumber *_enableFanstopFlameEntrance;
@@ -134,7 +134,6 @@
     NSNumber *_disableAutoDetectLight;
     NSNumber *_enableGiftKeyframeAnimation;
     NSNumber *_liveStreamLongPressCopyEnabled;
-    NSDictionary *_migrationGuide;
     NSNumber *_disableUseDepositCoupon;
     NSNumber *_enableHybrid;
     NSNumber *_enableTaoPass;
@@ -144,12 +143,12 @@
 }
 
 @property(retain, nonatomic) NSNumber *slidePreloadSize; // @synthesize slidePreloadSize=_slidePreloadSize;
+@property(nonatomic) _Bool enablePrivacyNewsSetting; // @synthesize enablePrivacyNewsSetting=_enablePrivacyNewsSetting;
 @property(retain, nonatomic) NSString *qqAuthUri; // @synthesize qqAuthUri=_qqAuthUri;
 @property(retain, nonatomic) NSNumber *disableInAppReview; // @synthesize disableInAppReview=_disableInAppReview;
 @property(retain, nonatomic) NSNumber *enableTaoPass; // @synthesize enableTaoPass=_enableTaoPass;
 @property(retain, nonatomic) NSNumber *enableHybrid; // @synthesize enableHybrid=_enableHybrid;
 @property(retain, nonatomic) NSNumber *disableUseDepositCoupon; // @synthesize disableUseDepositCoupon=_disableUseDepositCoupon;
-@property(retain, nonatomic) NSDictionary *migrationGuide; // @synthesize migrationGuide=_migrationGuide;
 @property(retain, nonatomic) NSNumber *liveStreamLongPressCopyEnabled; // @synthesize liveStreamLongPressCopyEnabled=_liveStreamLongPressCopyEnabled;
 @property(retain, nonatomic) NSNumber *enableGiftKeyframeAnimation; // @synthesize enableGiftKeyframeAnimation=_enableGiftKeyframeAnimation;
 @property(retain, nonatomic) NSNumber *disableAutoDetectLight; // @synthesize disableAutoDetectLight=_disableAutoDetectLight;
@@ -192,7 +191,6 @@
 @property(retain, nonatomic) NSNumber *enableFanstopFlameEntrance; // @synthesize enableFanstopFlameEntrance=_enableFanstopFlameEntrance;
 @property(retain, nonatomic) NSNumber *enableNewMovieWriter; // @synthesize enableNewMovieWriter=_enableNewMovieWriter;
 @property(retain, nonatomic) NSNumber *registerAlertCount; // @synthesize registerAlertCount=_registerAlertCount;
-@property(retain, nonatomic) NSNumber *disableNewRegister; // @synthesize disableNewRegister=_disableNewRegister;
 @property(retain, nonatomic) NSNumber *disableHate; // @synthesize disableHate=_disableHate;
 @property(retain, nonatomic) NSNumber *enableLiveWatchingListBigHead; // @synthesize enableLiveWatchingListBigHead=_enableLiveWatchingListBigHead;
 @property(retain, nonatomic) NSNumber *disableAudioLive; // @synthesize disableAudioLive=_disableAudioLive;

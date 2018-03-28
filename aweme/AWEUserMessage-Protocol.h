@@ -6,12 +6,15 @@
 
 #import "NSObject-Protocol.h"
 
-@class AWEUserModel, NSError, NSString;
+@class AWEUserModel, NSError, NSNumber, NSString;
 
 @protocol AWEUserMessage <NSObject>
 
 @optional
 - (void)showStory:(_Bool)arg1;
+- (void)didFinishTurnOffPostNotification:(NSString *)arg1;
+- (void)didFinishTurnOnPostNotification:(NSString *)arg1;
+- (void)updateFollowRequestCount:(NSNumber *)arg1;
 - (void)didFinishUnBlockUser:(NSString *)arg1 status:(long long)arg2;
 - (void)didFinishBlockUser:(NSString *)arg1 status:(long long)arg2;
 - (void)didFinishUnFollowUser:(AWEUserModel *)arg1 status:(long long)arg2 error:(NSError *)arg3;

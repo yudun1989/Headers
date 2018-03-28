@@ -6,9 +6,11 @@
 
 #import "MBKPOIAnnotaionBaseView.h"
 
+#import "MBKAnnotationViewProtocol-Protocol.h"
+
 @class CustomAnnotationDetailView, MBKRedStopCalloutView, NSString, UIImageView, UILabel;
 
-@interface MBKRedStopPointAnnotationView : MBKPOIAnnotaionBaseView
+@interface MBKRedStopPointAnnotationView : MBKPOIAnnotaionBaseView <MBKAnnotationViewProtocol>
 {
     _Bool _selected;
     int _redAmount;
@@ -35,6 +37,12 @@
 - (void)updateAnnotationInfoWith:(long long)arg1 duration:(long long)arg2 isCycling:(_Bool)arg3;
 - (void)updateAppearance;
 - (id)initWithAnnotation:(id)arg1 reuseIdentifier:(id)arg2;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly, copy) NSString *description;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
 
 @end
 

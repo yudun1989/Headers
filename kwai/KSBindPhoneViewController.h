@@ -8,50 +8,40 @@
 
 #import "KSURLPortalAnnotation-Protocol.h"
 
-@class KSBindModel, KSContactModel, KSUTaskMetaData, KSUserInfoSettingCell, NSString;
+@class KSUTaskMetaData, NSString;
 
 @interface KSBindPhoneViewController : KSPhoneCodeViewController <KSURLPortalAnnotation>
 {
-    _Bool _enableAccountProtection;
     _Bool _dismissAutomatically;
-    int _codeType;
+    _Bool _forceBind;
     NSString *_bindSource;
     KSUTaskMetaData *_cancelTaskMetaData;
-    KSBindModel *_bindModel;
     CDUnknownBlockType _onBindSuccess;
     CDUnknownBlockType _onUserCanceled;
-    KSContactModel *_contactsModel;
-    KSUserInfoSettingCell *_passwordCell;
-    NSString *_headerText;
 }
 
 + (void)remindBindPhoneIfNeeded;
 + (id)ks_portalPath;
-@property(retain, nonatomic) NSString *headerText; // @synthesize headerText=_headerText;
-@property(retain, nonatomic) KSUserInfoSettingCell *passwordCell; // @synthesize passwordCell=_passwordCell;
-@property(retain, nonatomic) KSContactModel *contactsModel; // @synthesize contactsModel=_contactsModel;
 @property(copy, nonatomic) CDUnknownBlockType onUserCanceled; // @synthesize onUserCanceled=_onUserCanceled;
 @property(copy, nonatomic) CDUnknownBlockType onBindSuccess; // @synthesize onBindSuccess=_onBindSuccess;
-@property(nonatomic) int codeType; // @synthesize codeType=_codeType;
-@property(retain, nonatomic) KSBindModel *bindModel; // @synthesize bindModel=_bindModel;
+@property(nonatomic) _Bool forceBind; // @synthesize forceBind=_forceBind;
 @property(nonatomic) __weak KSUTaskMetaData *cancelTaskMetaData; // @synthesize cancelTaskMetaData=_cancelTaskMetaData;
 @property(nonatomic) _Bool dismissAutomatically; // @synthesize dismissAutomatically=_dismissAutomatically;
-@property(nonatomic) _Bool enableAccountProtection; // @synthesize enableAccountProtection=_enableAccountProtection;
 @property(retain, nonatomic) NSString *bindSource; // @synthesize bindSource=_bindSource;
 - (void).cxx_destruct;
-- (void)validatePasswordWithContinuation:(CDUnknownBlockType)arg1;
-- (void)tryToBindPhone;
+- (id)ksuShowMetaData;
+- (id)pageURL;
+- (int)verifyCodeType;
+- (void)didChangeCellText:(id)arg1;
+- (id)setUpCells;
+- (void)setUpFooter:(id)arg1;
 - (void)didTapDoneButton:(id)arg1;
 - (void)didTapBackNagigationButton:(id)arg1;
-- (void)setUpHeader:(id)arg1;
-- (int)verifyCodeType;
-- (id)setUpCells;
-- (void)viewWillAppear:(_Bool)arg1;
 - (void)viewDidAppear:(_Bool)arg1;
+- (void)viewWillAppear:(_Bool)arg1;
+- (void)didReceiveMemoryWarning;
 - (void)viewDidLoad;
 - (id)initWithHeaderText:(id)arg1 bindSource:(id)arg2;
-- (id)initWithHeaderText:(id)arg1 bindSource:(id)arg2 enableAccountProtection:(_Bool)arg3;
-- (id)initWithNibName:(id)arg1 bundle:(id)arg2;
 - (_Bool)ks_presentViewNeedUserAvailable;
 - (_Bool)ks_presentViewControllerWithContext:(id)arg1;
 

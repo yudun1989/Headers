@@ -18,6 +18,7 @@
 - (void).cxx_destruct;
 - (void)trackWithTag:(id)arg1 label:(id)arg2 extra:(id)arg3;
 - (void)trackWithTag:(id)arg1 label:(id)arg2 adId:(id)arg3 logExtra:(id)arg4 extra:(id)arg5;
+- (void)trackURLs:(id)arg1 model:(id)arg2;
 - (void)splashActionWithCondition:(id)arg1;
 - (void)splashViewDidDisappear;
 - (void)splashViewWillAppear;
@@ -25,6 +26,10 @@
 - (id)splashReadMoreString;
 - (id)splashOpenAppString;
 - (id)splashSkipBtnName;
+- (id)splashReadMoreView;
+- (id)splashWifiView;
+- (id)splashLogoView;
+- (id)splashBGViewWithFrame:(struct CGRect)arg1;
 - (id)splashArrowImageName;
 - (id)splashViewMoreImageName;
 - (id)splashWifiImageName;
@@ -34,6 +39,7 @@
 - (id)splashNetwokType;
 - (id)installId;
 - (id)deviceId;
+- (id)splashPathUrl;
 - (id)splashBaseUrl;
 - (void)requestWithUrl:(id)arg1 responseBlock:(CDUnknownBlockType)arg2;
 

@@ -8,7 +8,7 @@
 
 #import "TTAdSplashVideoViewDelegate-Protocol.h"
 
-@class NSDate, NSDictionary, NSString, TTAdSplashModel, TTAdSplashSkipButton, TTAdSplashVVeboImageView, TTAdSplashVideoView, UIButton, UIImageView;
+@class NSDate, NSDictionary, NSString, TTAdSplashModel, TTAdSplashSkipButton, TTAdSplashVVeboImageView, TTAdSplashVideoView, UIButton;
 @protocol TTAdSplashViewDelegate;
 
 @interface TTAdSplashView : UIView <TTAdSplashVideoViewDelegate>
@@ -26,16 +26,16 @@
     NSDate *_startDate;
     double _backgroundTime;
     TTAdSplashVideoView *_videoView;
-    UIImageView *_logoImgView;
+    UIView *_logoView;
+    UIView *_wifiView;
     NSDictionary *_currentImageInfo;
-    UIImageView *_wifiImageView;
 }
 
 + (_Bool)splashADModelHasAction:(id)arg1;
 @property(nonatomic) _Bool needNotifyOthersOnDeactivationForAudioSession; // @synthesize needNotifyOthersOnDeactivationForAudioSession=_needNotifyOthersOnDeactivationForAudioSession;
-@property(retain, nonatomic) UIImageView *wifiImageView; // @synthesize wifiImageView=_wifiImageView;
 @property(retain, nonatomic) NSDictionary *currentImageInfo; // @synthesize currentImageInfo=_currentImageInfo;
-@property(retain, nonatomic) UIImageView *logoImgView; // @synthesize logoImgView=_logoImgView;
+@property(retain, nonatomic) UIView *wifiView; // @synthesize wifiView=_wifiView;
+@property(retain, nonatomic) UIView *logoView; // @synthesize logoView=_logoView;
 @property(retain, nonatomic) TTAdSplashVideoView *videoView; // @synthesize videoView=_videoView;
 @property(nonatomic) double backgroundTime; // @synthesize backgroundTime=_backgroundTime;
 @property(retain, nonatomic) NSDate *startDate; // @synthesize startDate=_startDate;
@@ -47,6 +47,7 @@
 @property(nonatomic) __weak id <TTAdSplashViewDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
 - (void)trackWithTag:(id)arg1 label:(id)arg2 adId:(id)arg3 logExtra:(id)arg4 extra:(id)arg5;
+- (void)trackURLs:(id)arg1 model:(id)arg2;
 - (id)trackUrlModel;
 - (id)videoInfoAboutPlabackTimeAndPercent;
 - (void)eventTrack4VideoADWithLabel:(id)arg1 extraInfo:(id)arg2;

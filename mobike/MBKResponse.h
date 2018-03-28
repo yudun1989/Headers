@@ -20,6 +20,7 @@
 @property(copy, nonatomic) NSError *error; // @synthesize error=_error;
 @property(nonatomic) __weak MBKRequest *request; // @synthesize request=_request;
 - (void).cxx_destruct;
+@property(nonatomic) double responseTimestamp;
 @property(readonly, nonatomic) MBKMobikeResponseObject *mobikeRepsonseObject; // @dynamic mobikeRepsonseObject;
 
 @end

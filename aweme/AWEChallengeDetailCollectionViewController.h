@@ -12,7 +12,7 @@
 #import "UICollectionViewDelegate-Protocol.h"
 #import "UICollectionViewDelegateFlowLayout-Protocol.h"
 
-@class AWEChallengeAwemeListDataController, NSString, UICollectionView, UIView;
+@class AWEChallengeAwemeListDataController, NSDictionary, NSString, UICollectionView, UIView;
 @protocol AWEChallengeDetailCollectionViewScrollDelegate;
 
 @interface AWEChallengeDetailCollectionViewController : UIViewController <UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout, AWEPreviewable, AWEVideosCollectionViewAnimationDelegate>
@@ -21,9 +21,11 @@
     AWEChallengeAwemeListDataController *_dataController;
     UICollectionView *_collectionView;
     UIView *_emptyTipView;
+    NSDictionary *_logExtraDict;
     struct CGPoint _originalScrollViewOffset;
 }
 
+@property(retain, nonatomic) NSDictionary *logExtraDict; // @synthesize logExtraDict=_logExtraDict;
 @property(nonatomic) struct CGPoint originalScrollViewOffset; // @synthesize originalScrollViewOffset=_originalScrollViewOffset;
 @property(retain, nonatomic) UIView *emptyTipView; // @synthesize emptyTipView=_emptyTipView;
 @property(retain, nonatomic) UICollectionView *collectionView; // @synthesize collectionView=_collectionView;
@@ -51,7 +53,7 @@
 - (void)viewDidLoad;
 - (void)dealloc;
 - (id)initWithHashtagName:(id)arg1;
-- (id)initWithChallengeID:(id)arg1;
+- (id)initWithChallengeID:(id)arg1 authorID:(id)arg2;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

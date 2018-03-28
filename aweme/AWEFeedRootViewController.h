@@ -83,12 +83,13 @@
 - (void)refreshStoryListForSelectFeedTab;
 - (void)refreshStoryListData;
 - (void)viewDidLayoutSubviews;
+- (long long)preferredStatusBarStyle;
 - (_Bool)prefersStatusBarHidden;
 - (void)viewWillDisappear:(_Bool)arg1;
 - (void)viewDidAppear:(_Bool)arg1;
 - (void)viewWillAppear:(_Bool)arg1;
 - (void)viewDidLoad;
-- (id)initWithRouterParamDict:(id)arg1;
+- (_Bool)configWithRouterParamDict:(id)arg1;
 - (void)dealloc;
 - (id)init;
 

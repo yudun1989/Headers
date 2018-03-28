@@ -6,7 +6,7 @@
 
 #import <UIKit/UIView.h>
 
-@class CAGradientLayer, NSMutableArray, NSString, UIImageView, UIScrollView;
+@class CAGradientLayer, MBKTabButton, NSArray, UIImageView, UIScrollView;
 @protocol MBKNavigationTabSliderDataSource, MBKNavigationTabSliderDelegate;
 
 @interface MBKNavigationTabSlider : UIView
@@ -17,16 +17,16 @@
     UIScrollView *_contentScrollView;
     CAGradientLayer *_leftTranslucentLayer;
     CAGradientLayer *_rightTranslucentLayer;
-    NSMutableArray *_displayTabTitles;
-    NSMutableArray *_displayTabButtons;
-    NSString *_selectedTabTitle;
+    NSArray *_displayTabTitles;
+    NSArray *_displayTabButtons;
+    MBKTabButton *_currentSelectedButton;
     UIView *_bottomSlider;
 }
 
 @property(retain, nonatomic) UIView *bottomSlider; // @synthesize bottomSlider=_bottomSlider;
-@property(copy, nonatomic) NSString *selectedTabTitle; // @synthesize selectedTabTitle=_selectedTabTitle;
-@property(retain, nonatomic) NSMutableArray *displayTabButtons; // @synthesize displayTabButtons=_displayTabButtons;
-@property(retain, nonatomic) NSMutableArray *displayTabTitles; // @synthesize displayTabTitles=_displayTabTitles;
+@property(retain, nonatomic) MBKTabButton *currentSelectedButton; // @synthesize currentSelectedButton=_currentSelectedButton;
+@property(retain, nonatomic) NSArray *displayTabButtons; // @synthesize displayTabButtons=_displayTabButtons;
+@property(retain, nonatomic) NSArray *displayTabTitles; // @synthesize displayTabTitles=_displayTabTitles;
 @property(retain, nonatomic) CAGradientLayer *rightTranslucentLayer; // @synthesize rightTranslucentLayer=_rightTranslucentLayer;
 @property(retain, nonatomic) CAGradientLayer *leftTranslucentLayer; // @synthesize leftTranslucentLayer=_leftTranslucentLayer;
 @property(retain, nonatomic) UIScrollView *contentScrollView; // @synthesize contentScrollView=_contentScrollView;
@@ -36,14 +36,15 @@
 - (void).cxx_destruct;
 - (void)updateTranslucenceColorHex:(int)arg1;
 - (void)reloadData;
-- (id)tabTitleForIndex:(long long)arg1;
+- (void)selectTabAtIndex:(long long)arg1 animated:(_Bool)arg2 skipSwitchCondition:(_Bool)arg3;
 - (void)selectTabAtIndex:(long long)arg1 animated:(_Bool)arg2;
 @property(readonly, nonatomic) unsigned long long currentTabIndex;
 - (void)updateScrollViewAnimated:(_Bool)arg1;
 - (void)updateBottomSeliderAnimated:(_Bool)arg1;
 - (void)updateTabState:(id)arg1;
+- (void)switchToTabOfButton:(id)arg1 animated:(_Bool)arg2 skipSwitchCondition:(_Bool)arg3;
 - (void)tabButtonAction:(id)arg1;
-- (void)updateSlider;
+- (void)updateSliderWithTitles:(id)arg1;
 - (void)layoutSubviews;
 - (void)addMasConstraints;
 - (id)initWithFrame:(struct CGRect)arg1;

@@ -4,20 +4,24 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-#import "KSPageModel.h"
+#import "KSModel.h"
 
-@class NSString;
+@class KSSearchHistoryStorage, NSString;
 
-@interface KSSearchHistoryViewModel : KSPageModel
+@interface KSSearchHistoryViewModel : KSModel
 {
     NSString *_domain;
+    KSSearchHistoryStorage *_storage;
 }
 
+@property(retain, nonatomic) KSSearchHistoryStorage *storage; // @synthesize storage=_storage;
 @property(readonly, nonatomic) NSString *domain; // @synthesize domain=_domain;
 - (void).cxx_destruct;
-- (_Bool)hasHistoryItems;
+- (id)dataSources;
+- (void)addSearchHistory:(id)arg1;
 - (void)deleteAllSearchHistoryCompletion:(CDUnknownBlockType)arg1;
-- (void)addSearchHistory:(id)arg1 completion:(CDUnknownBlockType)arg2;
+- (id)sectionNames;
+- (void)load:(_Bool)arg1;
 - (id)initWithSearchDomain:(id)arg1;
 
 @end

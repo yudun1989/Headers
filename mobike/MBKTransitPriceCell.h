@@ -8,7 +8,7 @@
 
 #import "MBKViewProtocol-Protocol.h"
 
-@class MBKTransitPriceCellModel, Mobike_ViewController, NSString, UILabel, UIView;
+@class MBKBaseViewController, MBKTransitPriceCellModel, NSString, UILabel, UIView;
 
 @interface MBKTransitPriceCell : UITableViewCell <MBKViewProtocol>
 {
@@ -42,7 +42,7 @@
 - (void)awakeFromNib;
 
 // Remaining properties
-@property(nonatomic) __weak Mobike_ViewController *controller;
+@property(nonatomic) __weak MBKBaseViewController *controller;
 @property(readonly, copy) NSString *debugDescription;
 @property(readonly, copy) NSString *description;
 @property(readonly) unsigned long long hash;
