@@ -20,7 +20,6 @@
 
 + (id)getInstance;
 - (id)leakLogPath;
-- (double)getQQLeakMemory;
 - (id)QQLeakPath;
 - (_Bool)isARM64CPU;
 - (_Bool)isCheckInVersion;

@@ -10,11 +10,13 @@
 
 @interface MCComposedMessageVo : NSObject
 {
+    _Bool _match;
     UIColor *_bgColor;
-    struct CGSize _size;
+    double _alpha;
 }
 
-@property(nonatomic) struct CGSize size; // @synthesize size=_size;
+@property(nonatomic) double alpha; // @synthesize alpha=_alpha;
+@property(nonatomic) _Bool match; // @synthesize match=_match;
 @property(retain, nonatomic) UIColor *bgColor; // @synthesize bgColor=_bgColor;
 - (void).cxx_destruct;
 - (id)initWithDatas:(id)arg1;

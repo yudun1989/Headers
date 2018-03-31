@@ -33,7 +33,7 @@
 - (void)hideLoadingView;
 - (void)showLoadingView;
 - (void)reloadView;
-- (void)showErrorView:(_Bool)arg1 state:(int)arg2;
+- (void)showErrorView:(_Bool)arg1 state:(unsigned long long)arg2;
 - (void)showLoading;
 - (void)showCallServiceViewWithNumber:(id)arg1;
 - (void)registerWebviewJSBridge;

@@ -16,8 +16,10 @@
 
 - (void)reportSVClickReport;
 - (void)commentPressed:(id)arg1;
+- (id)shortVideoInfoFromUploadModel:(id)arg1;
 - (void)onCoverClick:(id)arg1;
 - (void)deleteFeeds;
+- (void)reportRetransmissionModule:(id)arg1;
 - (void)setModel:(id)arg1;
 - (void)layoutSubviews;
 - (void)dealloc;

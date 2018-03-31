@@ -6,21 +6,19 @@
 
 #import <UIKit/UIWindow.h>
 
-@class NSMutableArray, UIImageView, UILabel, UIPanGestureRecognizer, UIViewController;
+@class UIImageView, UILabel, UIPanGestureRecognizer, UIViewController;
 
 @interface QQMultiVoiceNoticeBar : UIWindow
 {
-    _Bool _isAinmateing;
-    int _currIndex;
-    UILabel *_labels[2];
-    _Bool _needRefreshAnimation;
-    int _chattingType;
     UIImageView *_container;
     UIImageView *_volume1;
     UIImageView *_volume2;
     UIImageView *_volume3;
+    UILabel *_contentlabel;
+    _Bool _isAinmateing;
+    _Bool _needRefreshAnimation;
+    int _chattingType;
     UIPanGestureRecognizer *_moveGesture;
-    NSMutableArray *_msgArray;
     int _curY;
     int _startY;
     int _tmpDisY;
@@ -42,35 +40,33 @@
 - (void)doOpacityWithView:(id)arg1 fromValue:(float)arg2 toValue:(float)arg3 animationTime:(float)arg4 forKeyValue:(id)arg5;
 - (void)stopAnimation;
 - (void)startAnimation;
-- (void)validRemainNoticeBar;
-- (void)validConcealNoticeBar;
-- (double)getYWhenKayBoard;
-- (_Bool)isKeyBoardShowing;
 - (_Bool)isFloatConcealed;
 - (void)resetNoticeState;
 - (void)goToAudioChat;
-- (_Bool)isNoticeBarShowAnimating;
 - (void)startAVChatting:(int)arg1;
 - (void)stopAVChatting;
 - (void)onMultiVoiceTouchDone;
+- (_Bool)isNoticeBarShowAnimating;
 - (void)endAnimation;
 - (void)beginAnimation;
 - (id)switchString:(id)arg1;
-- (void)playMessage:(_Bool)arg1;
 - (void)addMessage:(id)arg1 color:(id)arg2 animated:(_Bool)arg3;
-- (void)resetAndShowMessage:(id)arg1 color:(id)arg2;
+- (void)validRemainNoticeBar;
+- (void)validConcealNoticeBar;
 - (void)hideNoticeBar;
 - (void)showNoticeBar;
-- (_Bool)isNogticeBarShow;
+- (_Bool)isNoticeBarShow;
 - (void)handleUIApplicationWillChangeStatusBarFrameNotification:(id)arg1;
 - (void)moveEnd:(int)arg1 andY:(int)arg2;
 - (void)setFrame:(struct CGRect)arg1;
 - (void)moveTo:(int)arg1 andY:(int)arg2;
 - (void)swipHandle:(id)arg1;
-- (void)dealloc;
-- (void)addVolume;
+- (double)getYWhenKayBoard;
+- (_Bool)isKeyBoardShowing;
 - (void)keyBoardDidHide:(id)arg1;
 - (void)keyBoardDidShow:(id)arg1;
+- (void)dealloc;
+- (void)addVolume;
 - (id)initWithFrame:(struct CGRect)arg1;
 
 @end

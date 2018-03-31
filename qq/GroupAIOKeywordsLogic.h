@@ -35,6 +35,8 @@
 - (void)showRuleIdForOutMsg:(id)arg1 ruleId:(id)arg2;
 - (id)showedRuleIdsForOutMsg:(id)arg1;
 - (_Bool)controllerDealloc:(id)arg1;
+- (_Bool)controllerOnStartPopping:(id)arg1 controllers:(id)arg2;
+- (_Bool)controllerViewWillDisappear:(id)arg1;
 - (_Bool)controller:(id)arg1 remindNotifyControlClicked:(id)arg2;
 - (_Bool)controllerRemindNotifyCheckDone:(id)arg1;
 - (_Bool)controllerCheckNotifyMsg:(id)arg1;

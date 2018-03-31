@@ -28,6 +28,7 @@
 - (void)setSelectedId:(id)arg1;
 - (id)source;
 - (id)mdSellerId;
+- (id)agencyReceiveHelpUrl;
 - (id)agencyReceiveH5Url;
 - (long long)agencyReceive;
 - (id)selectedOption;

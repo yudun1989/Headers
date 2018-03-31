@@ -14,8 +14,10 @@
 
 @interface ARTCEngineKit : NSObject <RTCEAGLVideoViewDelegate, ArtcEngineDelegate>
 {
-    RTCEAGLVideoView *_remotePeerView;
-    RTCEAGLVideoView *_localPeerView;
+    RTCEAGLVideoView *_videoView1;
+    RTCEAGLVideoView *_videoView2;
+    _Bool _isView1LocalView;
+    _Bool _isView2LocalView;
     struct ArtcManager *_manager;
     ARTCManagerProtocol *_managerProtocol;
     NSString *_peerId;
@@ -24,6 +26,7 @@
     _Bool _isSessionON;
     _Bool _hadRecvFirstFrame;
     _Bool _isSounderOpened;
+    _Bool _hadSetSpeakerphone;
     _Bool _isBindAppSuccess;
     _Bool _isBindServiceSuccess;
     _Bool _isMirrored;
@@ -31,6 +34,8 @@
     _Bool _isBackCamera;
     _Bool _ready2RecvSignalingData;
     int _channelProfile;
+    int _orientation;
+    NSString *_currentAudioSessionCategory;
     id <ArtcEngineDelegate> _callback;
     TBAccsManager *_accsManager;
 }
@@ -40,24 +45,37 @@
 @property(nonatomic) __weak id <ArtcEngineDelegate> callback; // @synthesize callback=_callback;
 - (id).cxx_construct;
 - (void).cxx_destruct;
-- (void)onLocalLayoutSetting:(int)arg1 positionY:(int)arg2 localWidth:(int)arg3 localHeigth:(int)arg4;
+- (void)getChannelUserList:(id)arg1;
+- (void)setBroadcastRole:(int)arg1;
+- (void)setConsoleLogSwitch:(_Bool)arg1;
+- (id)onGetNetworkType;
+- (void)onSendingSignalingMessage:(id)arg1 param:(id)arg2 onSuccess:(CDUnknownBlockType)arg3 onError:(CDUnknownBlockType)arg4;
+- (void)onChannelUserList:(id)arg1;
+- (void)onAudioFrameProcess:(_Bool)arg1 audio10ms:(short *)arg2 length:(unsigned long long)arg3 samplingFreq:(int)arg4 isStereo:(_Bool)arg5;
+- (void)onVideoFrameCaptured:(void *)arg1 rotation:(int)arg2;
 - (void)onCancelCall:(id)arg1 remoteUserID:(id)arg2;
 - (void)onKick:(id)arg1 remoteUserID:(id)arg2;
-- (void)onAnswered:(id)arg1 callID:(id)arg2 userID:(id)arg3 result:(int)arg4;
-- (void)onAnswer:(id)arg1 callID:(id)arg2 result:(int)arg3;
-- (void)onCalled:(id)arg1 callID:(id)arg2 userID:(id)arg3 result:(_Bool)arg4;
-- (void)onCall:(id)arg1 callID:(id)arg2 userID:(id)arg3 result:(int)arg4;
+- (void)onAnswered:(id)arg1 callID:(id)arg2 userID:(id)arg3 result:(int)arg4 role:(int)arg5;
+- (void)onAnswer:(id)arg1 callID:(id)arg2 result:(int)arg3 resultMsg:(id)arg4;
+- (void)onCallTimeout:(id)arg1 userID:(id)arg2;
+- (void)onInvited:(id)arg1 userID:(id)arg2 result:(_Bool)arg3;
+- (void)onInvite:(id)arg1 callID:(id)arg2 userID:(id)arg3 result:(int)arg4 resultMsg:(id)arg5;
+- (void)onCalled:(id)arg1 callID:(id)arg2 userID:(id)arg3 result:(_Bool)arg4 role:(int)arg5;
+- (void)onCall:(id)arg1 callID:(id)arg2 userID:(id)arg3 result:(int)arg4 resultMsg:(id)arg5;
 - (void)onLastmileQuality:(int)arg1;
+- (void)onChannelIdUpdated:(id)arg1;
 - (void)onFirstRemoteVideoFrame:(int)arg1 height:(int)arg2 time:(int)arg3;
 - (void)onConnectionLost;
 - (void)onConnectionInterrupted;
 - (void)onArtcStats:(id)arg1;
-- (void)onError:(int)arg1 code:(int)arg2;
+- (void)onArtcMsg:(id)arg1 level:(int)arg2;
+- (void)onError:(int)arg1 code:(int)arg2 errorMsg:(id)arg3;
 - (void)onLeaveChannel;
 - (void)onChannelClosed:(id)arg1 reason:(id)arg2 reasonId:(int)arg3;
 - (void)onUserLeftChannel:(id)arg1 leftReason:(int)arg2;
 - (void)onUserJoinedChannel:(id)arg1;
 - (void)onJoinChannelSuccess:(id)arg1 time:(int)arg2;
+- (void)onRejoinChannelSuccess:(id)arg1;
 - (void)onCreateChannelSuccess:(id)arg1;
 - (void)onInitializeSuccess;
 - (void)videoView:(id)arg1 didChangeVideoSize:(struct CGSize)arg2;
@@ -68,7 +86,12 @@
 - (void)registerUser:(id)arg1;
 - (_Bool)setVideoLayout:(id)arg1;
 - (void)setupAccs;
+- (_Bool)switchAudioCategaryWithSpeaker:(_Bool)arg1;
+- (_Bool)isHeadPhoneEnable;
+- (void)audioRouteChangeListenerCallback:(id)arg1;
+- (void)onRecvSignalingMessage:(id)arg1;
 - (_Bool)setBroadcastConfig:(id)arg1;
+- (_Bool)setCaptureVideoOrientation:(int)arg1;
 - (_Bool)enableFaceBeauty:(_Bool)arg1;
 - (_Bool)muteRemoteVideoStream:(_Bool)arg1;
 - (_Bool)muteRemoteAudioStream:(_Bool)arg1;
@@ -80,20 +103,29 @@
 - (_Bool)startPreview;
 - (_Bool)setRemoteView:(id)arg1;
 - (_Bool)setLocalView:(id)arg1;
+- (void)setLocalViewMirrorOrNot;
+- (void)setLocalViewMirror:(_Bool)arg1;
+- (void)setFrontCameraMirror:(_Bool)arg1;
 - (_Bool)cancelCall:(id)arg1 remoteUserID:(id)arg2;
 - (_Bool)kick:(id)arg1 remoteUserID:(id)arg2;
 - (_Bool)answer:(id)arg1 callId:(id)arg2 remoteUserID:(id)arg3 answer:(int)arg4;
+- (_Bool)invite:(id)arg1 remoteUserID:(id)arg2 exten:(id)arg3;
 - (_Bool)call:(id)arg1 remoteUserID:(id)arg2 exten:(id)arg3;
 - (_Bool)isSpeakerphoneEnabled;
 - (_Bool)setEnableSpeakerphone:(_Bool)arg1;
 - (_Bool)leaveChannel;
 - (_Bool)joinChannel:(id)arg1;
 - (_Bool)createChannel:(id)arg1;
+- (id)createNewChannel:(id)arg1;
 - (_Bool)setVideoProfile:(int)arg1 isSwap:(_Bool)arg2;
 - (_Bool)setChannelProfile:(int)arg1 isVideoCall:(_Bool)arg2;
+- (_Bool)sendVideoFrame:(void *)arg1 rotation:(int)arg2;
+- (void)setAVCaptureCallbackSwitch:(int)arg1 enabled:(_Bool)arg2;
+- (void)setCallTimeout:(int)arg1;
 - (void)changeUserId:(id)arg1;
 - (id)getVersion;
 - (void)destroy;
+- (void)unInitialize;
 - (void)sharedEngineWithOption:(id)arg1 delegate:(id)arg2;
 
 // Remaining properties

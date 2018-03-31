@@ -266,7 +266,10 @@
 - (void)panGestureRecognizerFired:(id)arg1;
 - (_Bool)gestureRecognizerShouldBegin:(id)arg1;
 - (id)defaultNavGradientImgForView:(id)arg1;
+- (void)downloadTemplatesWithSectionArray:(id)arg1;
+- (void)downloadTemplatesForContainerId:(id)arg1;
 - (void)downloadTemplatesInAllContainers;
+- (void)reloadDataForContainerId:(id)arg1;
 - (void)prerendingViewsWhenBootImageShowing;
 - (void)dealloc;
 - (void)viewDidDisappear:(_Bool)arg1;

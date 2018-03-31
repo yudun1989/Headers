@@ -244,6 +244,7 @@
 - (id)init;
 - (id)loadLastModified;
 - (void)storeLastModfied:(id)arg1;
+- (void)parseMagicMarketConfig;
 - (void)requestMagicActivityWithComplete:(CDUnknownBlockType)arg1;
 - (id)emojiStoreSmallPackageDirPath:(unsigned long long)arg1;
 - (void)downloadSmallEmoji:(id)arg1 package:(id)arg2 count:(int)arg3;

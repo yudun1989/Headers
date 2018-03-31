@@ -11,6 +11,7 @@
 @protocol QQPttTouchDelegate <NSObject>
 
 @optional
+- (void)touchMovePoint:(struct CGPoint)arg1;
 - (void)touchEnd:(NSSet *)arg1;
 - (void)touchCancel:(NSSet *)arg1;
 - (void)touchMove:(NSSet *)arg1;

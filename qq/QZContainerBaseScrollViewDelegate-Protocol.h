@@ -6,11 +6,16 @@
 
 #import <QQMainProject/NSObject-Protocol.h>
 
-@class UIView;
+@class NSIndexPath, UICollectionViewCell, UIView;
 
 @protocol QZContainerBaseScrollViewDelegate <NSObject>
 
 @optional
+- (void)willDisplayCell:(UICollectionViewCell *)arg1 forItemAtIndexPath:(NSIndexPath *)arg2;
+- (void)containerBaseScrollViewDidEndDragging;
+- (void)containerBaseScrollViewWillBeginDragging;
+- (double)getPageWidthWithIndex:(unsigned long long)arg1;
+- (void)pageExposure:(unsigned long long)arg1;
 - (void)setContainerViewCurrentPage:(unsigned long long)arg1;
 - (UIView *)getCellMainContentInfoView:(UIView *)arg1 index:(long long)arg2 withFrame:(struct CGRect)arg3;
 @end

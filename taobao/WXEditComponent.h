@@ -26,6 +26,7 @@
     _Bool _changeEvent;
     _Bool _returnEvent;
     _Bool _keyboardEvent;
+    _Bool _disableMoveViewUp;
     UIColor *_placeholderColor;
     NSString *_placeholderString;
     UILabel *_placeHolderLabel;
@@ -51,11 +52,12 @@
     struct CGSize _keyboardSize;
 }
 
++ (id)wx_export_method_87;
++ (id)wx_export_method_86;
++ (id)wx_export_method_85;
 + (id)wx_export_method_84;
 + (id)wx_export_method_83;
-+ (id)wx_export_method_82;
-+ (id)wx_export_method_81;
-+ (id)wx_export_method_80;
+@property(nonatomic) _Bool disableMoveViewUp; // @synthesize disableMoveViewUp=_disableMoveViewUp;
 @property(retain, nonatomic) NSDictionary *formaterData; // @synthesize formaterData=_formaterData;
 @property(retain, nonatomic) NSString *recoverReplace; // @synthesize recoverReplace=_recoverReplace;
 @property(retain, nonatomic) NSString *recoverRule; // @synthesize recoverRule=_recoverRule;

@@ -6,7 +6,7 @@
 
 #import <UIKit/UIView.h>
 
-@class CAShapeLayer, QQStorySGVideoSelectorItemModel, QQStoryUrlImageView, UIButton;
+@class CAShapeLayer, QQStorySGVideoSelectorItemModel, QQStoryUrlImageView, TBStoryVideoVoteView, UIButton;
 @protocol QQStorySGVideoSelectorItemViewDelegate;
 
 @interface QQStorySGVideoSelectorItemView : UIView
@@ -17,11 +17,14 @@
     QQStorySGVideoSelectorItemModel *_model;
     unsigned long long _itemIndex;
     id <QQStorySGVideoSelectorItemViewDelegate> _delegate;
+    TBStoryVideoVoteView *_voteView;
 }
 
+@property(retain, nonatomic) TBStoryVideoVoteView *voteView; // @synthesize voteView=_voteView;
 @property(nonatomic) id <QQStorySGVideoSelectorItemViewDelegate> delegate; // @synthesize delegate=_delegate;
 @property(nonatomic) unsigned long long itemIndex; // @synthesize itemIndex=_itemIndex;
 @property(retain, nonatomic) QQStorySGVideoSelectorItemModel *model; // @synthesize model=_model;
+- (void)updateVoteView;
 - (void)checkBoxClicked:(id)arg1;
 - (void)handleTap:(id)arg1;
 - (void)setDefaultCover;

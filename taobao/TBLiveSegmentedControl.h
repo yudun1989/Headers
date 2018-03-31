@@ -14,6 +14,7 @@
 @interface TBLiveSegmentedControl : UIControl <UIScrollViewDelegate>
 {
     _Bool _showNofiDelegate;
+    _Bool _finishedLoading;
     long long _selectedIndex;
     id <TBLiveSegmentedControlDelegate> _delegate;
     UIView *_indictorView;
@@ -26,8 +27,11 @@
     UIImage *_buttonHighlightedBackgroundImage;
     UIImage *_buttonSelectedBackgroundImage;
     UIFont *_buttonFont;
+    NSString *_focusOriginalImgUrl;
 }
 
+@property(nonatomic) _Bool finishedLoading; // @synthesize finishedLoading=_finishedLoading;
+@property(retain, nonatomic) NSString *focusOriginalImgUrl; // @synthesize focusOriginalImgUrl=_focusOriginalImgUrl;
 @property(nonatomic) _Bool showNofiDelegate; // @synthesize showNofiDelegate=_showNofiDelegate;
 @property(retain, nonatomic) UIFont *buttonFont; // @synthesize buttonFont=_buttonFont;
 @property(retain, nonatomic) UIImage *buttonSelectedBackgroundImage; // @synthesize buttonSelectedBackgroundImage=_buttonSelectedBackgroundImage;

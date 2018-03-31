@@ -6,7 +6,7 @@
 
 #import <QQMainProject/QQModel.h>
 
-@class NSArray, NSString, TBAddressModel, TBVideoSpreadGroupListModel, TBVideoTagInfoBase;
+@class NSArray, NSString, TBAddressModel, TBQIMVideoInfoModel, TBVideoPollInfoModel, TBVideoSpreadGroupListModel, TBVideoTagInfoBase;
 
 @interface TBVideoBasicInfoModel : QQModel
 {
@@ -38,6 +38,9 @@
     NSString *_ownerUnionID;
     TBVideoSpreadGroupListModel *_groupList;
     TBVideoTagInfoBase *_videoTag;
+    TBVideoPollInfoModel *_videoPollInfo;
+    TBQIMVideoInfoModel *_qimVideoInfo;
+    NSArray *_videoCompressedUrls;
     NSString *_doodleText;
     unsigned long long _videoLength;
     double _videoLoadTime;
@@ -74,6 +77,9 @@
 @property(nonatomic) unsigned int videoHeight; // @synthesize videoHeight=_videoHeight;
 @property(nonatomic) unsigned long long videoLength; // @synthesize videoLength=_videoLength;
 @property(retain, nonatomic) NSString *doodleText; // @synthesize doodleText=_doodleText;
+@property(retain, nonatomic) NSArray *videoCompressedUrls; // @synthesize videoCompressedUrls=_videoCompressedUrls;
+@property(retain, nonatomic) TBQIMVideoInfoModel *qimVideoInfo; // @synthesize qimVideoInfo=_qimVideoInfo;
+@property(retain, nonatomic) TBVideoPollInfoModel *videoPollInfo; // @synthesize videoPollInfo=_videoPollInfo;
 @property(retain, nonatomic) TBVideoTagInfoBase *videoTag; // @synthesize videoTag=_videoTag;
 @property(nonatomic) unsigned int interactStatus; // @synthesize interactStatus=_interactStatus;
 @property(retain, nonatomic) TBVideoSpreadGroupListModel *groupList; // @synthesize groupList=_groupList;

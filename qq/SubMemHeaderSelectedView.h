@@ -26,7 +26,9 @@
 - (void).cxx_destruct;
 - (void)setSearchIconHidden:(_Bool)arg1;
 - (void)_resetMemCustomSearchBarFrame;
+- (void)addDataModel:(id)arg1 scrollAnimated:(_Bool)arg2;
 - (void)addDataModel:(id)arg1;
+- (void)addDataModel:(id)arg1 noAnimation:(_Bool)arg2;
 - (void)removeDataAtArrayIndex:(long long)arg1 needDeleteAction:(_Bool)arg2 noAnimation:(_Bool)arg3;
 - (_Bool)collectionView:(id)arg1 shouldSelectItemAtIndexPath:(id)arg2;
 - (void)collectionView:(id)arg1 didSelectItemAtIndexPath:(id)arg2;

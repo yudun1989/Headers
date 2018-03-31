@@ -77,7 +77,6 @@
 @property(nonatomic) __weak id <KSFeedPhotoComponentDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
 - (id)transitionAnimatingView;
-- (void)showLikeAnimationAtPosition:(struct CGPoint)arg1 inView:(id)arg2;
 - (void)showLikeAnimation;
 @property(readonly, nonatomic) LikableAnimation *likeAnimator; // @synthesize likeAnimator=_likeAnimator;
 - (void)scrollViewDidScroll:(id)arg1;

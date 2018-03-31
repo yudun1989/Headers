@@ -135,7 +135,6 @@
 - (void)parseUserdoc:(id)arg1;
 - (void)parseDynCellHeader:(id)arg1;
 - (void)parseSearchHintAndCoupon:(id)arg1;
-- (void)parseSelecthelper:(id)arg1;
 - (void)parseOnesearch:(id)arg1;
 - (void)parseTab:(id)arg1;
 - (void)parseFooter:(id)arg1;

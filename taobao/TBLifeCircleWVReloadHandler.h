@@ -13,6 +13,7 @@
 + (id)getLocationDataWithItem:(id)arg1;
 + (void)fetchConfigModelSuccess:(CDUnknownBlockType)arg1 failBlock:(CDUnknownBlockType)arg2;
 + (id)mergeWeexData:(id)arg1;
++ (id)mergeWeexData:(id)arg1 WithExt:(id)arg2;
 + (void)reloadData:(id)arg1 withWVBridgeContext:(id)arg2;
 
 @end

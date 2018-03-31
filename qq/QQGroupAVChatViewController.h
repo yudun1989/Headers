@@ -90,6 +90,9 @@
     _Bool _isGestureing;
     _Bool _isGesturDecorating;
     funchatGestureTips *_gestureTipsView;
+    _Bool _isSelfViewInshowBeforeInback;
+    long long _bigViewUin;
+    int _netSatus;
     int _voiceChangeType;
     int _lastAudioVoiceChangeType;
     int _lastVideoVoiceChangeType;
@@ -109,6 +112,7 @@
 
 @property _Bool isGroupVideoStartUp; // @synthesize isGroupVideoStartUp=_isGroupVideoStartUp;
 @property double videoDegreen; // @synthesize videoDegreen=_videoDegreen;
+- (_Bool)isMultiAVoperation;
 - (void)refreshTips;
 - (void)onTipsViewFrameChanged;
 - (void)initNoiseCtrlButtons;
@@ -218,6 +222,7 @@
 - (void)onCameraActionEngine;
 - (void)onCameraAction;
 - (void)OnCamera:(id)arg1;
+- (void)onDisableAddMem;
 - (void)onAddMem;
 - (void)onDisableCameraAction;
 - (void)onMuteActionEngine;
@@ -242,6 +247,7 @@
 - (void)onTipsViewShowTips:(id)arg1;
 - (void)removeMessageFromNoticeBar;
 - (void)addMessageToNoticeBar:(id)arg1 withShowTime:(int)arg2;
+- (void)openLocalVideo;
 - (void)onResume;
 - (void)onSuspend;
 - (void)onControlPanelChangeToVideo:(_Bool)arg1;
@@ -339,7 +345,7 @@
 - (void)onUpDateDiscussName:(id)arg1;
 - (void)checkGroupName;
 - (void)dismissSelfViewController;
-- (void)showWindow:(id)arg1 withAnimationType:(int)arg2;
+- (void)pushAVViewController:(id)arg1 withAnimateType:(int)arg2 withAnimationDuration:(float)arg3 withBarAnimation:(_Bool)arg4;
 - (void)closeGroupAudioSessionEx;
 - (void)closeGroupAudioSession;
 - (void)dealloc;

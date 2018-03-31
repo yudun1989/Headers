@@ -10,7 +10,6 @@
 {
 }
 
-+ (_Bool)IsValidInternationalPhoneNo:(id)arg1;
 + (id)FormatPhoneNo:(id)arg1 withoutNations:(id)arg2;
 + (id)FormatPhoneNoWithoutChina:(id)arg1;
 + (id)DisplayPartOfString:(id)arg1;

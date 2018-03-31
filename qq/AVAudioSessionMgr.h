@@ -20,6 +20,7 @@
 - (void)onAudioSessionActive;
 - (void)doDeactive;
 - (void)deactive;
+- (_Bool)recoveryPlayAndRecord;
 - (_Bool)requestPlayAndRecord;
 - (void)requestPlayBack;
 - (_Bool)updateCallEnd:(id)arg1 reason:(int)arg2;

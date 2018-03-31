@@ -15,6 +15,7 @@
 
 @property(retain, nonatomic) UILabel *hintLabel; // @synthesize hintLabel=_hintLabel;
 - (void).cxx_destruct;
+- (_Bool)isMultiAVoperation;
 - (void)viewWillLayoutSubviews;
 - (void)viewDidLoad;
 - (id)initWithMulMemSelUserInfo:(id)arg1 memCustomSearchBar:(id)arg2 withDelegate:(id)arg3 withListID:(id)arg4;

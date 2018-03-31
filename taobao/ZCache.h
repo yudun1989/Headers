@@ -26,7 +26,7 @@
 + (_Bool)isResourceInstalled:(id)arg1 md5:(id *)arg2;
 + (_Bool)isResourceInstalled:(id)arg1;
 + (id)installedApps;
-+ (_Bool)updateApp:(id)arg1 withCallback:(CDUnknownBlockType)arg2 withProgress:(CDUnknownBlockType)arg3;
++ (id)updateApp:(id)arg1;
 + (void)registerUpdateListener:(CDUnknownBlockType)arg1 withAppName:(id)arg2;
 + (void)registerApp:(id)arg1;
 + (unsigned long long)diskSize;

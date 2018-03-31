@@ -21,6 +21,7 @@
 - (_Bool)isAlbumHttpToHttps:(id)arg1 isHttps:(_Bool)arg2;
 - (void)cleanHttpsFailTime;
 - (void)resetAlbumHttpsFailTime:(id)arg1 isHttps:(_Bool)arg2;
+- (_Bool)isErrorCodeMatch:(long long)arg1;
 - (void)recordAlbumHttpsDownloadFail:(id)arg1 isHttps:(_Bool)arg2 errorCode:(long long)arg3 apn:(long long)arg4;
 - (_Bool)isNeedVerifyDomain:(id)arg1;
 - (void)resetSupportATSHost;

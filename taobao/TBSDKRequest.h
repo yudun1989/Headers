@@ -21,6 +21,7 @@
     _Bool _isUseHttpPost;
     _Bool _isEnableWua;
     _Bool _priorityFlag;
+    _Bool _unHostedByNetWork;
     int _responseStatusCode;
     int _gzipLimitedSize;
     int _wuaFlag;
@@ -53,14 +54,15 @@
     NSMutableArray *_uploadFiles;
     NSString *_unitPrefix;
     id _context;
-    unsigned long long _UnitStrategy;
+    long long _UnitStrategy;
 }
 
 + (id)urlEncode:(id)arg1;
 + (id)dict2QueryString:(id)arg1;
 + (void)cancelTBSDKAllRequest;
 + (void)initialize;
-@property(nonatomic) unsigned long long UnitStrategy; // @synthesize UnitStrategy=_UnitStrategy;
+@property(nonatomic) _Bool unHostedByNetWork; // @synthesize unHostedByNetWork=_unHostedByNetWork;
+@property(nonatomic) long long UnitStrategy; // @synthesize UnitStrategy=_UnitStrategy;
 @property(nonatomic) _Bool priorityFlag; // @synthesize priorityFlag=_priorityFlag;
 @property(nonatomic) int wuaFlag; // @synthesize wuaFlag=_wuaFlag;
 @property(nonatomic) _Bool isEnableWua; // @synthesize isEnableWua=_isEnableWua;

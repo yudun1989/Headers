@@ -8,7 +8,7 @@
 
 #import <QQMainProject/UIScrollViewDelegate-Protocol.h>
 
-@class CFT_TPIDKeyboardView, CFT_TPKeyboardAvoidingScrollView, CFT_UITLTextField, NSDictionary, NSString, UIButton, UILabel, UIView;
+@class CFT_TPIDKeyboardView, CFT_TPKeyboardAvoidingScrollView, CFT_UIFormatField, NSDictionary, NSString, UIButton, UILabel, UIView;
 
 @interface CFT_UIBaseBindCardViewController : CFT_UICustomNaviBarViewController <UIScrollViewDelegate>
 {
@@ -17,10 +17,9 @@
     UIButton *_nextBtn;
     _Bool _isResetPwd;
     _Bool _isGrapHBVerify;
-    float _tLTextFieldTitleWidth;
+    float _fieldTitleWidth;
     CFT_TPKeyboardAvoidingScrollView *_scrollView;
-    CFT_UITLTextField *_userMobileField;
-    UIButton *_userMobileAttention;
+    CFT_UIFormatField *_userMobileField;
     UIView *_nextBox;
     NSDictionary *_selected_bank;
     NSString *_creditcardExpDate;
@@ -30,10 +29,9 @@
 @property(retain, nonatomic) NSString *creditcardExpDate; // @synthesize creditcardExpDate=_creditcardExpDate;
 @property(nonatomic) _Bool isResetPwd; // @synthesize isResetPwd=_isResetPwd;
 @property(retain, nonatomic) NSDictionary *selected_bank; // @synthesize selected_bank=_selected_bank;
-@property(nonatomic) float tLTextFieldTitleWidth; // @synthesize tLTextFieldTitleWidth=_tLTextFieldTitleWidth;
+@property(nonatomic) float fieldTitleWidth; // @synthesize fieldTitleWidth=_fieldTitleWidth;
 @property(retain, nonatomic) UIView *nextBox; // @synthesize nextBox=_nextBox;
-@property(retain, nonatomic) UIButton *userMobileAttention; // @synthesize userMobileAttention=_userMobileAttention;
-@property(retain, nonatomic) CFT_UITLTextField *userMobileField; // @synthesize userMobileField=_userMobileField;
+@property(retain, nonatomic) CFT_UIFormatField *userMobileField; // @synthesize userMobileField=_userMobileField;
 @property(retain, nonatomic) CFT_TPKeyboardAvoidingScrollView *scrollView; // @synthesize scrollView=_scrollView;
 - (void)clearUserInfoCache;
 - (void)qpay_itg_fpay;

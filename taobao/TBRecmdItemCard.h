@@ -20,6 +20,7 @@
     UILabel *_descLabel;
     UIView *_separateLine;
     UIButton *_extendBtn;
+    UIButton *_findSimilarBtn;
     unsigned long long _iconType;
     NSMutableArray *_serviceIconLabels;
     UILabel *_serviceDescLabel;
@@ -32,6 +33,7 @@
 @property(retain, nonatomic) UILabel *serviceDescLabel; // @synthesize serviceDescLabel=_serviceDescLabel;
 @property(retain, nonatomic) NSMutableArray *serviceIconLabels; // @synthesize serviceIconLabels=_serviceIconLabels;
 @property(nonatomic) unsigned long long iconType; // @synthesize iconType=_iconType;
+@property(retain, nonatomic) UIButton *findSimilarBtn; // @synthesize findSimilarBtn=_findSimilarBtn;
 @property(retain, nonatomic) UIButton *extendBtn; // @synthesize extendBtn=_extendBtn;
 @property(retain, nonatomic) UIView *separateLine; // @synthesize separateLine=_separateLine;
 @property(retain, nonatomic) UILabel *descLabel; // @synthesize descLabel=_descLabel;
@@ -44,6 +46,7 @@
 @property(retain, nonatomic) TBRecmdMaskImageView *itemImgView; // @synthesize itemImgView=_itemImgView;
 - (void).cxx_destruct;
 - (void)iconLabelsText:(id)arg1 atIndex:(long long)arg2;
+- (void)findSimilarClicked:(id)arg1;
 - (void)extendBtnClicked:(id)arg1;
 - (void)longPressItem:(id)arg1;
 - (id)serviceIconLabel;

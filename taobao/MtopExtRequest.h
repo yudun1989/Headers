@@ -127,6 +127,7 @@
 - (id)addProtocolParameter:(id)arg1 forKey:(id)arg2;
 - (id)addHttpHeaders:(id)arg1;
 - (id)addHttpHeader:(id)arg1 forKey:(id)arg2;
+- (id)unHostedByNetWork;
 - (id)useHttpPost;
 - (id)disableHttps;
 - (id)useHttps;

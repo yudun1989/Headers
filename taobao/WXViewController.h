@@ -8,13 +8,12 @@
 
 #import "WXErrorViewDelegate-Protocol.h"
 
-@class NSDictionary, NSMutableArray, NSString, NSURL, UIView, WXErrorView, WXSDKInstance;
+@class NSDictionary, NSMutableDictionary, NSString, NSURL, UIView, WXErrorView, WXSDKInstance;
 @protocol WXViewControllerProtocol;
 
 @interface WXViewController : UIViewController <WXErrorViewDelegate>
 {
     _Bool _showWarning;
-    _Bool _isReuse;
     _Bool _prefetchMtop;
     _Bool _needResetOrientation;
     _Bool _isDy;
@@ -26,7 +25,7 @@
     UIViewController *_parentVC;
     unsigned long long _interfaceOrientationMask;
     long long _preferredInterfaceOrientation;
-    NSMutableArray *_embedComponentStack;
+    NSMutableDictionary *_wxExtDict;
     NSURL *_jsURL;
     NSDictionary *_customOpts;
     NSDictionary *_data;
@@ -47,24 +46,31 @@
 @property(retain, nonatomic) NSDictionary *data; // @synthesize data=_data;
 @property(retain, nonatomic) NSDictionary *customOpts; // @synthesize customOpts=_customOpts;
 @property(retain, nonatomic) NSURL *jsURL; // @synthesize jsURL=_jsURL;
-@property(retain, nonatomic) NSMutableArray *embedComponentStack; // @synthesize embedComponentStack=_embedComponentStack;
+@property(retain, nonatomic) NSMutableDictionary *wxExtDict; // @synthesize wxExtDict=_wxExtDict;
 @property(nonatomic) long long preferredInterfaceOrientation; // @synthesize preferredInterfaceOrientation=_preferredInterfaceOrientation;
 @property(nonatomic) unsigned long long interfaceOrientationMask; // @synthesize interfaceOrientationMask=_interfaceOrientationMask;
 @property(nonatomic) _Bool needResetOrientation; // @synthesize needResetOrientation=_needResetOrientation;
 @property(nonatomic) _Bool prefetchMtop; // @synthesize prefetchMtop=_prefetchMtop;
+@property(nonatomic) _Bool showWarning; // @synthesize showWarning=_showWarning;
 @property(nonatomic) __weak UIViewController *parentVC; // @synthesize parentVC=_parentVC;
 @property(retain, nonatomic) UIView *weexView; // @synthesize weexView=_weexView;
 @property(retain, nonatomic) NSURL *tplURL; // @synthesize tplURL=_tplURL;
 @property(retain, nonatomic) WXSDKInstance *instance; // @synthesize instance=_instance;
 @property(nonatomic) __weak id <WXViewControllerProtocol> delegate; // @synthesize delegate=_delegate;
-@property(nonatomic) _Bool isReuse; // @synthesize isReuse=_isReuse;
-@property(nonatomic) _Bool showWarning; // @synthesize showWarning=_showWarning;
 - (void).cxx_destruct;
-- (_Bool)shouldAutorotate;
-- (long long)preferredInterfaceOrientationForPresentation;
-- (unsigned long long)supportedInterfaceOrientations;
-- (id)redirectURL:(id)arg1;
+- (void)evaluateMemoryStatus;
+- (void)onclickErrorView;
+- (struct CGRect)caculateInstanceFrame;
+- (void)utForRefreshWeexPage;
+- (void)parsePageOptions:(id)arg1;
 - (void)prefetchMtopRequestWithUrl:(id *)arg1 instance:(id)arg2;
+- (_Bool)wxJSBundleProcessWhenDownloadFinish:(id)arg1 request:(id)arg2 data:(id)arg3 error:(id)arg4 callback:(CDUnknownBlockType)arg5;
+- (void)wxJSBundleDownloadOnFinish:(id)arg1 request:(id)arg2 data:(id)arg3 error:(id)arg4;
+- (_Bool)wxJSBundleCanUseCache:(id)arg1 callback:(CDUnknownBlockType)arg2;
+- (void)wxInstanceRenderOnFinish;
+- (void)wxInstanceRenderOnFail:(id)arg1;
+- (void)wxInstanceRenderOnCreate;
+- (_Bool)wxInstanceRenderOnReuse;
 - (void)wxRemoveErrorView;
 - (void)wxShowErrorViewOnFail:(id)arg1 rootView:(id)arg2;
 - (void)wxHidePageLoadingIndicator;
@@ -74,30 +80,30 @@
 - (_Bool)wxAppbarIsNeeded;
 - (_Bool)wxNavbarIsTransparent;
 - (_Bool)wxNavbarIsHidden;
+- (void)wxReceiveMemoryWarning;
 - (void)wxRemoveChildViewController:(id)arg1;
 - (void)wxAddChildViewController:(id)arg1;
 - (id)wxChildViewControllers;
 - (id)wxNavigationController;
-- (void)notificationRefreshInstance:(id)arg1;
+- (_Bool)shouldAutorotate;
+- (long long)preferredInterfaceOrientationForPresentation;
+- (unsigned long long)supportedInterfaceOrientations;
+- (id)redirectURL:(id)arg1;
+- (void)monitorDeviceMemoryWarning:(id)arg1;
+- (void)refresh:(id)arg1;
+- (void)replace:(id)arg1;
+- (void)reload:(id)arg1;
 - (void)destroyInstance;
-- (struct CGRect)caculateInstanceFrame;
 - (void)updateInstanceState:(long long)arg1;
 - (void)openH5WeexPage;
 - (void)renderWithTplData:(id)arg1 options:(id)arg2 sourceURL:(id)arg3;
 - (void)renderNormal:(_Bool)arg1;
-- (void)getPage;
-- (void)onclickErrorView;
 - (void)render;
-- (id)resourceContentForURL:(id)arg1;
-- (void)utForRefreshWeexPage;
-- (void)replace:(id)arg1;
-- (void)reload:(id)arg1;
 - (void)dealloc;
 - (void)didReceiveMemoryWarning;
 - (void)viewDidDisappear:(_Bool)arg1;
 - (void)viewWillDisappear:(_Bool)arg1;
 - (void)viewDidAppear:(_Bool)arg1;
-- (void)parsePageOptions:(id)arg1;
 - (void)viewWillAppear:(_Bool)arg1;
 - (void)viewDidLoad;
 - (id)initWithNavigatorURL:(id)arg1 withViewController:(id)arg2 withPageOptions:(id)arg3;

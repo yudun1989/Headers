@@ -13,11 +13,13 @@
     _Bool _isShowTraceability;
     NSString *_taceabilityUrl;
     NSString *_backgroundIcon;
+    NSString *_backgroundNewIcon;
     NSString *_type;
 }
 
 @property(nonatomic) _Bool isShowTraceability; // @synthesize isShowTraceability=_isShowTraceability;
 @property(retain, nonatomic) NSString *type; // @synthesize type=_type;
+@property(retain, nonatomic) NSString *backgroundNewIcon; // @synthesize backgroundNewIcon=_backgroundNewIcon;
 @property(retain, nonatomic) NSString *backgroundIcon; // @synthesize backgroundIcon=_backgroundIcon;
 @property(retain, nonatomic) NSString *taceabilityUrl; // @synthesize taceabilityUrl=_taceabilityUrl;
 - (void).cxx_destruct;

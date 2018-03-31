@@ -7,8 +7,8 @@
 #import <QQMainProject/CFT_UIBaseTabViewController.h>
 
 #import <QQMainProject/QQTransferAccountFinishDelegate-Protocol.h>
+#import <QQMainProject/QQWalletAlertDialogDelegate-Protocol.h>
 #import <QQMainProject/TPADViewDelegate-Protocol.h>
-#import <QQMainProject/TPAlertDialogDelegate-Protocol.h>
 #import <QQMainProject/TPPickerSheetDelegate-Protocol.h>
 #import <QQMainProject/UIActionSheetDelegate-Protocol.h>
 #import <QQMainProject/UIAlertViewDelegate-Protocol.h>
@@ -16,7 +16,7 @@
 
 @class CFT_TPADView, CFT_TPPersonalityResManager, CFT_TPPickerSheet, CFT_UIQQTransferAccountViewController, NSDictionary, NSString, NSTimer, UIImage, UIImageView, UILabel, UIView;
 
-@interface CFT_UIPayCodeViewController : CFT_UIBaseTabViewController <TPPickerSheetDelegate, QQTransferAccountFinishDelegate, UIAlertViewDelegate, UIActionSheetDelegate, UIGestureRecognizerDelegate, TPAlertDialogDelegate, TPADViewDelegate>
+@interface CFT_UIPayCodeViewController : CFT_UIBaseTabViewController <TPPickerSheetDelegate, QQTransferAccountFinishDelegate, UIAlertViewDelegate, UIActionSheetDelegate, UIGestureRecognizerDelegate, QQWalletAlertDialogDelegate, TPADViewDelegate>
 {
     UIImageView *_scaleView;
     UIImageView *_qbarImageView;

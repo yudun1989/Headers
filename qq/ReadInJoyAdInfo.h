@@ -28,6 +28,7 @@
     NSString *_cl;
     NSString *_product_id;
     NSString *_price;
+    NSString *_landing_page;
     NSString *_customized_invoke_url;
     NSString *_corporation_name;
     NSString *_corporate_image_name;
@@ -60,6 +61,7 @@
 @property(retain, nonatomic) NSString *corporate_image_name; // @synthesize corporate_image_name=_corporate_image_name;
 @property(retain, nonatomic) NSString *corporation_name; // @synthesize corporation_name=_corporation_name;
 @property(retain, nonatomic) NSString *customized_invoke_url; // @synthesize customized_invoke_url=_customized_invoke_url;
+@property(retain, nonatomic) NSString *landing_page; // @synthesize landing_page=_landing_page;
 @property(retain, nonatomic) NSString *price; // @synthesize price=_price;
 @property(nonatomic) unsigned int ad_type; // @synthesize ad_type=_ad_type;
 @property(nonatomic) unsigned int product_type; // @synthesize product_type=_product_type;

@@ -11,6 +11,8 @@
 @protocol MCChatShareItemViewDelegate <NSObject>
 
 @optional
+- (void)shareItemRightBtnAction:(MCChatShareItemView *)arg1;
+- (void)shareItemLeftBtnAction:(MCChatShareItemView *)arg1;
 - (void)shareItemViewTapped:(MCChatShareItemView *)arg1;
 @end
 

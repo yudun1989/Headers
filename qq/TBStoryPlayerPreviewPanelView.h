@@ -6,7 +6,7 @@
 
 #import <UIKit/UIView.h>
 
-@class QQStorySGVideoSelectorHandler, TBStoryVideoDesModel, UIButton;
+@class QQStorySGVideoSelectorHandler, TBStoryVideoDesModel, TBStoryVideoVoteView, UIButton;
 @protocol TBStoryPlayerPreviewPanelViewDelegate;
 
 @interface TBStoryPlayerPreviewPanelView : UIView
@@ -16,12 +16,15 @@
     UIButton *_backButton;
     TBStoryVideoDesModel *_videoModel;
     id <TBStoryPlayerPreviewPanelViewDelegate> _delegate;
+    TBStoryVideoVoteView *_voteView;
     QQStorySGVideoSelectorHandler *_handler;
 }
 
 @property(nonatomic) QQStorySGVideoSelectorHandler *handler; // @synthesize handler=_handler;
+@property(retain, nonatomic) TBStoryVideoVoteView *voteView; // @synthesize voteView=_voteView;
 @property(nonatomic) id <TBStoryPlayerPreviewPanelViewDelegate> delegate; // @synthesize delegate=_delegate;
 @property(retain, nonatomic) TBStoryVideoDesModel *videoModel; // @synthesize videoModel=_videoModel;
+- (void)updateVoteView;
 - (void)updateUI:(id)arg1;
 - (void)refreshFinishButtonTitle;
 - (void)toggleSelect:(id)arg1;

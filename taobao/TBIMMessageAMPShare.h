@@ -14,6 +14,26 @@
 {
 }
 
+- (double)getAttrPrice;
+- (id)getAttrTags;
+- (id)getAttrStr;
+- (id)getRightBtColor;
+- (id)getLeftBtColor;
+- (id)getRightBtText;
+- (id)getLeftBtText;
+- (id)getActionBtRightUrl;
+- (id)getActionBtLeftUrl;
+- (id)getRemindTips;
+- (id)getStampPicUrl;
+- (id)getLayoutId;
+- (id)getSenderActionUrl;
+- (id)getReceiverActionUrl;
+- (id)getBgIcon;
+- (id)getFromTextColor;
+- (id)getFromIconText;
+- (id)getFromIcon;
+- (id)getDescColor;
+- (id)getDesc;
 - (id)toJsonDictionary;
 - (id)from;
 - (id)attrHostPic;

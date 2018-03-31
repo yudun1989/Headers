@@ -44,7 +44,6 @@
 - (void)clearOldDirtyData;
 - (_Bool)filterWebSecureWhiteList:(id)arg1;
 - (void)loadWebWhiteListFromLocal;
-- (id)getFilterFromDic:(id)arg1;
 - (void)pushRoamLocationCtrlWithInfoDic:(id)arg1;
 - (void)leaveQZonePics;
 - (void)enterQZonePics;

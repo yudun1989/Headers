@@ -6,7 +6,7 @@
 
 #import <Foundation/NSObject.h>
 
-@class LKLayoutPresenter, NSString, QZFeed;
+@class NSString, PTLayoutPresenter, QZFeed;
 
 @interface QZLKFeedInfo : NSObject
 {
@@ -14,12 +14,12 @@
     NSString *_jsCode;
     NSString *_jsUpdateCode;
     NSString *_jsEventCode;
-    LKLayoutPresenter *_presenter;
+    PTLayoutPresenter *_presenter;
     QZFeed *_feed;
 }
 
 @property(retain, nonatomic) QZFeed *feed; // @synthesize feed=_feed;
-@property(retain, nonatomic) LKLayoutPresenter *presenter; // @synthesize presenter=_presenter;
+@property(retain, nonatomic) PTLayoutPresenter *presenter; // @synthesize presenter=_presenter;
 @property(retain, nonatomic) NSString *jsEventCode; // @synthesize jsEventCode=_jsEventCode;
 @property(retain, nonatomic) NSString *jsUpdateCode; // @synthesize jsUpdateCode=_jsUpdateCode;
 @property(retain, nonatomic) NSString *jsCode; // @synthesize jsCode=_jsCode;

@@ -15,9 +15,17 @@
     NSString *_accessibilityLabel;
     id _userData;
     int _xo;
+    _Bool _isArkPanel;
+    int _jumpFlag;
     unsigned long long _flag;
+    NSString *_appID;
+    NSString *_jumpUrl;
 }
 
+@property(nonatomic) _Bool isArkPanel; // @synthesize isArkPanel=_isArkPanel;
+@property(nonatomic) int jumpFlag; // @synthesize jumpFlag=_jumpFlag;
+@property(copy, nonatomic) NSString *jumpUrl; // @synthesize jumpUrl=_jumpUrl;
+@property(copy, nonatomic) NSString *appID; // @synthesize appID=_appID;
 @property(nonatomic) unsigned long long flag; // @synthesize flag=_flag;
 - (void)dealloc;
 

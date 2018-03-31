@@ -35,7 +35,6 @@
 - (void)getButtonsWidthWithTitles:(id)arg1;
 - (void)itemPressed:(id)arg1;
 - (void)updateSelectedButtonTitleColor;
-- (struct CGPoint)centerForButtonIndex:(unsigned long long)arg1;
 - (double)contentWidthAndAddNavTabBarItemsWithButtonsWidth:(id)arg1;
 - (void)showLineWithButtonWidth:(double)arg1;
 - (void)initUI;

@@ -27,7 +27,6 @@
     _Bool _searchTypeClicked;
     _Bool _fromsearch;
     _Bool _searchBarAnimationEnabled;
-    _Bool _clipBoardTipEnabled;
     _Bool _searchTabEnabled;
     _Bool _searchDoorWeexPageEnable;
     TBSearchSideDoorViewModel *_viewModel;
@@ -49,8 +48,6 @@
     TBSearchAVCaptureTipView *_captureTipView;
     UITableView *_suggestionTableView;
     UIScrollView *_sideDoor;
-    UIView *_clipBoardTipContainer;
-    UIView *_clipBoardTipMask;
     NSMutableArray *_allWidgets;
     UIView *_viewfor11;
     UIView *_statusView;
@@ -65,7 +62,6 @@
 @property(retain, nonatomic) TBSearchSideDoorWeexManager *weexManager; // @synthesize weexManager=_weexManager;
 @property(nonatomic) _Bool searchDoorWeexPageEnable; // @synthesize searchDoorWeexPageEnable=_searchDoorWeexPageEnable;
 @property(nonatomic) _Bool searchTabEnabled; // @synthesize searchTabEnabled=_searchTabEnabled;
-@property(nonatomic) _Bool clipBoardTipEnabled; // @synthesize clipBoardTipEnabled=_clipBoardTipEnabled;
 @property(nonatomic) _Bool searchBarAnimationEnabled; // @synthesize searchBarAnimationEnabled=_searchBarAnimationEnabled;
 @property(retain, nonatomic) NSString *shadeSearchText; // @synthesize shadeSearchText=_shadeSearchText;
 @property(retain, nonatomic) NSString *shadeDisplayText; // @synthesize shadeDisplayText=_shadeDisplayText;
@@ -75,8 +71,6 @@
 @property(retain, nonatomic) UIView *statusView; // @synthesize statusView=_statusView;
 @property(retain, nonatomic) UIView *viewfor11; // @synthesize viewfor11=_viewfor11;
 @property(retain, nonatomic) NSMutableArray *allWidgets; // @synthesize allWidgets=_allWidgets;
-@property(retain, nonatomic) UIView *clipBoardTipMask; // @synthesize clipBoardTipMask=_clipBoardTipMask;
-@property(retain, nonatomic) UIView *clipBoardTipContainer; // @synthesize clipBoardTipContainer=_clipBoardTipContainer;
 @property(retain, nonatomic) UIScrollView *sideDoor; // @synthesize sideDoor=_sideDoor;
 @property(retain, nonatomic) UITableView *suggestionTableView; // @synthesize suggestionTableView=_suggestionTableView;
 @property(retain, nonatomic) TBSearchAVCaptureTipView *captureTipView; // @synthesize captureTipView=_captureTipView;
@@ -160,11 +154,6 @@
 - (void)didReceiveMemoryWarning;
 - (void)viewDidAppear:(_Bool)arg1;
 - (void)viewWillAppear:(_Bool)arg1;
-- (void)tapClipBoardTip:(id)arg1;
-- (void)hideClipBoardTip:(id)arg1;
-- (void)showClipBoardTip:(id)arg1;
-- (id)clipBoardTipPath:(struct CGSize)arg1;
-- (void)clipBoardTip;
 - (void)viewDidLoad;
 - (_Bool)tbfestival_isFestivalEnable;
 - (void)setFestivalNavibar;

@@ -44,6 +44,7 @@
     unsigned long long _type;
     NSDate *_savetime;
     NSString *_ext;
+    NSString *_notWriteDBExt;
     NSData *_extData;
     unsigned long long _sendAppType;
     NSString *_callUserIds;
@@ -71,6 +72,7 @@
 @property(copy, nonatomic) NSString *callUserIds; // @synthesize callUserIds=_callUserIds;
 @property(nonatomic) unsigned long long sendAppType; // @synthesize sendAppType=_sendAppType;
 @property(copy, nonatomic) NSData *extData; // @synthesize extData=_extData;
+@property(copy, nonatomic) NSString *notWriteDBExt; // @synthesize notWriteDBExt=_notWriteDBExt;
 @property(copy, nonatomic) NSString *ext; // @synthesize ext=_ext;
 @property(copy, nonatomic) NSDate *savetime; // @synthesize savetime=_savetime;
 @property(nonatomic) _Bool isUnreaded; // @synthesize isUnreaded=_isUnreaded;

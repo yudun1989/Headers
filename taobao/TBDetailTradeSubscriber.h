@@ -12,11 +12,14 @@
 {
     _Bool _disableSendRequest;
     AliDetailHotSpotAnswerService *_answerService;
+    double _prevBuyNowTime;
 }
 
+@property double prevBuyNowTime; // @synthesize prevBuyNowTime=_prevBuyNowTime;
 @property _Bool disableSendRequest; // @synthesize disableSendRequest=_disableSendRequest;
 @property(retain, nonatomic) AliDetailHotSpotAnswerService *answerService; // @synthesize answerService=_answerService;
 - (void).cxx_destruct;
+- (_Bool)canContinue;
 - (void)showSkuViewForAddToCart;
 - (_Bool)needSelectSku;
 - (void)popSkuview:(unsigned long long)arg1;

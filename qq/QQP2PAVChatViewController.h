@@ -29,7 +29,7 @@
 #import <QQMainProject/VRBGoToShareViewControllerDelegate-Protocol.h>
 #import <QQMainProject/VideoCaptureDelegate-Protocol.h>
 
-@class AVFilterScrView, MPMoviePlayerController, NSMutableArray, NSString, NSTimer, QAVVideoRecordModel, QCallModel, QQAVAntiLockProgressView, QQAVControlPanel, QQAVFaceGameGuidView, QQAVFaceGameLookerResultView, QQAVFaceGamePlayerResultView, QQAVFunChatConfigModel, QQAVNetworkView, QQAVRecordBar, QQAVRichTextView, QQAVShowPanelRestruct, QQAVTinyVideoRecorder, QQAVTipsView, QQAVVoiceSelecterView, QQP2PAVChatModel, QQReport1178Model, QUIActionSheet, QUIAlertView, UIButton, UIImageView, UILabel, UIScrollView, UIView, UIWebView, VRBGoToShareViewController, VRBShareViewModel, VideoViewInfoModel, funchatGestureTips;
+@class AVDeviceOrientation, AVFilterScrView, MPMoviePlayerController, NSMutableArray, NSString, NSTimer, QAVVideoRecordModel, QCallModel, QQAVAntiLockProgressView, QQAVControlPanel, QQAVFaceGameGuidView, QQAVFaceGameLookerResultView, QQAVFaceGamePlayerResultView, QQAVFunChatConfigModel, QQAVNetworkView, QQAVRecordBar, QQAVRichTextView, QQAVShowPanelRestruct, QQAVTinyVideoRecorder, QQAVTipsView, QQAVVoiceSelecterView, QQP2PAVChatModel, QQReport1178Model, QUIActionSheet, QUIAlertView, UIButton, UIImageView, UILabel, UIScrollView, UIView, UIWebView, VRBGoToShareViewController, VRBShareViewModel, VideoViewInfoModel, funchatGestureTips;
 
 @interface QQP2PAVChatViewController : QQP2PAVChatBaseViewController <AVFunChatMgrDelegate, QQAVVoiceSelecterViewDelegate, QQAVRecordBarDelegate, QQAVTinyVideoRecorderDelegate, QQAVFaceGameGuidViewDelegate, QQAVFaceGameLookerResultViewDelegate, QQAVFaceGamePlayerResultViewDelegate, QQAVFaceGameReportDelegate, VRBGoToShareViewControllerDelegate, QQAVShowPanelRestructDelegate, QQAVTipsViewDelegate, QQCollectionViewDataSource, QQCollectionViewDelegate, QUIActionSheetDelegate, VideoCaptureDelegate, QQAVControlPanelDelegate, QUIAlertViewDelegate, QQAVAntiLockProgressViewDelegate, QQAVFunChatBarDelegate, QQAVChatControlBarDelegate, AVFilterScrViewDelegate, QQAVRichTextViewDelagate>
 {
@@ -219,7 +219,7 @@
     unsigned char _statusBarType;
     QQAVFunChatConfigModel *_qqAVFunchatConfig;
     _Bool _isShowedFunChatAnim;
-    struct dispatch_queue_s *_facegameQueue;
+    AVDeviceOrientation *_deviceOrientation;
     _Bool _autoAccept;
     _Bool _hasGotRedBag;
     int _facegameRole;
@@ -317,6 +317,8 @@
 - (void)relayoutMaskView:(int)arg1;
 - (void)relayoutRecordBar:(int)arg1;
 - (void)relayoutTipsAndNetWorkView:(int)arg1;
+- (void)onWirelessRoutesAvailableDidChange:(id)arg1;
+- (void)onWirelessRoutesActiveDidChange:(id)arg1;
 - (void)orientationChanged:(id)arg1;
 - (void)checkRecordAck;
 - (void)checkRecordTimer;
@@ -349,6 +351,7 @@
 - (void)initMultiNoticeViewTips:(id)arg1;
 - (void)initMultiNoticeViewCheckWording;
 - (void)onFriendRecordSupport:(id)arg1;
+- (void)onFriendNewSubtitlesSupport:(id)arg1;
 - (void)onFriendSubtitlesSupport:(id)arg1;
 - (void)onFriendMultiSwapFaceSupport:(id)arg1;
 - (void)onFriendMultiSupport:(id)arg1;
@@ -443,6 +446,7 @@
 - (void)switchSpeakerButtonStyleOnMain:(id)arg1;
 - (void)delayAddVolumeListener;
 - (void)networkErrorCloseSession;
+- (void)notificationDeviceListChanged:(id)arg1;
 - (void)notificationCloseSession;
 - (void)notificationNetLevelOnMain:(id)arg1;
 - (void)notificationNetLevel:(id)arg1;
@@ -583,13 +587,16 @@
 - (_Bool)isCloseActioning;
 - (void)detectFaceFeatureWithFrame:(char *)arg1;
 - (void)showEffectView:(_Bool)arg1;
+- (int)updateDeviceOrientation:(int)arg1;
 - (void)transmitVideoData:(char *)arg1 BufferSize:(unsigned long long)arg2 Width:(unsigned long long)arg3 HeightY:(unsigned long long)arg4;
 - (_Bool)detectBlankVideoFrame:(char *)arg1 BufferSize:(unsigned long long)arg2 width:(unsigned long long)arg3 HeightY:(unsigned long long)arg4;
 - (void)ringAndShowClientState;
 - (void)setPeerRecordState:(long long)arg1;
 - (void)handlePeerRecord:(id)arg1;
+- (void)startPeerSubtitlesNew:(id)arg1 sessionID:(id)arg2;
 - (void)startPeerSubtitles:(id)arg1;
 - (void)handlePeerRedGift:(id)arg1;
+- (void)handlePeerSubtitlesNew:(id)arg1;
 - (void)handlePeerSubtitles:(id)arg1;
 - (void)handlePeerMUltiFace:(id)arg1;
 - (void)handlePeerMUltiVolume:(id)arg1;
@@ -615,7 +622,7 @@
 - (void)handlePeerClientState:(id)arg1;
 - (void)handleNetStateResp:(id)arg1;
 - (void)dismissSelfViewController;
-- (void)showWindow:(id)arg1 withAnimationType:(int)arg2;
+- (void)pushAVViewController:(id)arg1 withAnimateType:(int)arg2 withAnimationDuration:(float)arg3 withBarAnimation:(_Bool)arg4;
 - (_Bool)headsetIsPluggedIn;
 - (void)handlePluggInHeadset:(id)arg1;
 - (void)handleUnPluggingHeadset:(id)arg1;
@@ -707,9 +714,11 @@
 - (id)getShowPanelWithFrame:(struct CGRect)arg1;
 - (void)onGetUserInfo:(id)arg1;
 - (void)audioInterruption:(id)arg1;
+- (void)onBlueToothClick;
 - (void)onVoiceChange;
 - (void)onDeviceLockAction;
 - (void)onRecvVideoState:(id)arg1;
+- (void)initDeviceOrientation;
 - (void)checkMemory;
 - (void)startCheckMemory;
 - (void)setBatteryLevel;

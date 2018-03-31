@@ -10,16 +10,16 @@
 
 @interface TBBlurView : UIView
 {
-    int _blurStyle;
     UIColor *_blurTintColor;
     UIImage *_backgroundImage;
+    long long _blurStyle;
     UIVisualEffectView *_effectView;
     UIImageView *_backgroundImageView;
 }
 
 @property(retain, nonatomic) UIImageView *backgroundImageView; // @synthesize backgroundImageView=_backgroundImageView;
 @property(retain, nonatomic) UIVisualEffectView *effectView; // @synthesize effectView=_effectView;
-@property(nonatomic) int blurStyle; // @synthesize blurStyle=_blurStyle;
+@property(nonatomic) long long blurStyle; // @synthesize blurStyle=_blurStyle;
 @property(retain, nonatomic) UIImage *backgroundImage; // @synthesize backgroundImage=_backgroundImage;
 @property(retain, nonatomic) UIColor *blurTintColor; // @synthesize blurTintColor=_blurTintColor;
 - (void).cxx_destruct;

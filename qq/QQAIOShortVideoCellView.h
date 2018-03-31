@@ -22,12 +22,12 @@
     UIImageView *_refreshButtonView;
     UIView *_playerView;
     QQShortAudioVideoPlayer *_player;
-    NSArray *_urlArray;
-    _Bool _isScrolling;
     int _lastNetworkState;
     QQAIOShortVideoPlayHelper *_shortVideoPlayHelper;
     CALayer *_highlightLayer;
     CALayer *_borderLayer;
+    _Bool _isScrolling;
+    NSArray *_urlArray;
     struct CGSize _thumbSize;
 }
 
@@ -46,6 +46,7 @@
 - (void)becomeActive;
 - (void)onVideoChatStart;
 - (void)onVideoChatEnd;
+- (void)autoPlayVideoWithFilePath:(id)arg1;
 - (void)autoPlayVideo;
 - (void)reportVideoPlayInCell;
 - (long long)aioTypeForPlayReport;
@@ -65,6 +66,7 @@
 - (void)setAudioSessionMixWithCompletion:(CDUnknownBlockType)arg1;
 - (void)playVideo:(id)arg1;
 - (void)startDownloadVideo:(id)arg1;
+- (int)videoDownloadType;
 - (void)playerDidEndPlay;
 - (void)onPlayerCurrentTime:(double)arg1;
 - (void)onPlayerLoadProgress:(double)arg1;

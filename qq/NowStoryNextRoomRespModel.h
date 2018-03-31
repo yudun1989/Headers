@@ -15,6 +15,7 @@
     long long _index;
     long long _interval;
     long long _error_code;
+    NSString *_err_wording;
     NSArray *_roomList;
     NSString *_signature;
     NSArray *_streaming_urls;
@@ -35,6 +36,7 @@
 @property(retain, nonatomic) NSArray *streaming_urls; // @synthesize streaming_urls=_streaming_urls;
 @property(copy, nonatomic) NSString *signature; // @synthesize signature=_signature;
 @property(retain, nonatomic) NSArray *roomList; // @synthesize roomList=_roomList;
+@property(copy, nonatomic) NSString *err_wording; // @synthesize err_wording=_err_wording;
 @property(nonatomic) long long error_code; // @synthesize error_code=_error_code;
 @property(nonatomic) long long interval; // @synthesize interval=_interval;
 @property(nonatomic) long long index; // @synthesize index=_index;

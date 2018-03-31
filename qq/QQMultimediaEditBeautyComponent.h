@@ -9,17 +9,19 @@
 #import <QQMainProject/UICollectionViewDataSource-Protocol.h>
 #import <QQMainProject/UICollectionViewDelegateFlowLayout-Protocol.h>
 
-@class NSArray, NSString, UICollectionView, UILabel, UIView;
+@class NSArray, NSString, UICollectionView, UILabel, UISlider, UIView;
 @protocol QQMultimediaEditBeautyDelegate;
 
 @interface QQMultimediaEditBeautyComponent : QQMultimediaPreEditComponent <UICollectionViewDelegateFlowLayout, UICollectionViewDataSource>
 {
     UIView *_beautyPanel;
     UILabel *_label;
+    UILabel *_labelPtu;
     UICollectionView *_collectView;
     NSArray *_data;
     _Bool _hasAddPendantKVO;
     _Bool _isFirst;
+    UISlider *_levelSlider;
     id <QQMultimediaEditBeautyDelegate> _beautyDelegate;
 }
 
@@ -36,11 +38,14 @@
 - (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void *)arg4;
 - (void)createCollectView;
 - (void)createLabel;
+- (void)createLabelPtu;
 - (void)createBeautyPanel;
 - (void)removePendantKVO;
 - (void)addPendantKVO;
 - (void)refreshComponentParam;
 - (void)start;
+- (void)onSlideValueChanged:(id)arg1;
+- (void)initSilder;
 - (void)dealloc;
 - (id)initWithCaptureEditMode:(long long)arg1;
 

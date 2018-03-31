@@ -17,9 +17,9 @@
     _Bool adjustByContent;
     _Bool hasConstrainedSize;
     UIColor *bgColor;
-    int _groupItemType;
     UILabel *_iconLabel;
     UILabel *_textLabel;
+    unsigned long long _groupItemType;
     UITapGestureRecognizer *_tap;
     NSMutableDictionary *_iconNameDic;
     NSMutableDictionary *_iconColorDic;
@@ -35,7 +35,7 @@
 @property(retain, nonatomic) NSMutableDictionary *iconColorDic; // @synthesize iconColorDic=_iconColorDic;
 @property(retain, nonatomic) NSMutableDictionary *iconNameDic; // @synthesize iconNameDic=_iconNameDic;
 @property(retain, nonatomic) UITapGestureRecognizer *tap; // @synthesize tap=_tap;
-@property(nonatomic) int groupItemType; // @synthesize groupItemType=_groupItemType;
+@property(nonatomic) unsigned long long groupItemType; // @synthesize groupItemType=_groupItemType;
 @property(nonatomic) struct CGSize constrainedSize; // @synthesize constrainedSize=_constrainedSize;
 @property(retain, nonatomic) UILabel *textLabel; // @synthesize textLabel=_textLabel;
 @property(retain, nonatomic) UILabel *iconLabel; // @synthesize iconLabel=_iconLabel;
@@ -57,7 +57,7 @@
 - (void)setIcon:(id)arg1 uicolor:(id)arg2 size:(double)arg3;
 - (void)setIcon:(id)arg1 color:(id)arg2 size:(double)arg3;
 - (void)layoutSubviews;
-- (id)initWithGroupItemType:(int)arg1 withGap:(float)arg2 adjustByContent:(_Bool)arg3;
+- (id)initWithGroupItemType:(unsigned long long)arg1 withGap:(float)arg2 adjustByContent:(_Bool)arg3;
 - (void)setState;
 - (id)getStateKey:(unsigned long long)arg1;
 - (void)initDictionaries;

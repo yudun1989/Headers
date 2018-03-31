@@ -98,7 +98,7 @@
     NSString *_sdk_button_tips;
     NSMutableDictionary *_spfa_list;
     NSMutableDictionary *_garpHbExtr;
-    NSDictionary *_garp_hb_param;
+    NSString *_h5_url;
     NSString *_listid;
     NSDictionary *_golden_msg_guide;
 }
@@ -110,7 +110,7 @@
 + (id)getWalletInstance;
 @property(copy, nonatomic) NSDictionary *golden_msg_guide; // @synthesize golden_msg_guide=_golden_msg_guide;
 @property(copy, nonatomic) NSString *listid; // @synthesize listid=_listid;
-@property(retain, nonatomic) NSDictionary *garp_hb_param; // @synthesize garp_hb_param=_garp_hb_param;
+@property(retain, nonatomic) NSString *h5_url; // @synthesize h5_url=_h5_url;
 @property(retain, nonatomic) NSMutableDictionary *garpHbExtr; // @synthesize garpHbExtr=_garpHbExtr;
 @property(retain, nonatomic) NSMutableDictionary *spfa_list; // @synthesize spfa_list=_spfa_list;
 @property(retain, nonatomic) NSString *sdk_button_tips; // @synthesize sdk_button_tips=_sdk_button_tips;

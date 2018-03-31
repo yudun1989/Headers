@@ -4,26 +4,19 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-#import <Foundation/NSOperation.h>
+#import "ZCOperation.h"
 
-@class NSData, NSDictionary, NSError, NSObject, NSRecursiveLock, NSString, NSURLRequest, NSURLResponse;
-@protocol OS_dispatch_queue;
+@class NSData, NSDictionary, NSString, NSURLRequest, NSURLResponse;
 
-@interface ZCDownloadTask : NSOperation
+@interface ZCDownloadTask : ZCOperation
 {
     _Bool _checkResponse;
     _Bool _shouldResume;
-    _Bool _isExecuting;
-    _Bool _isFinished;
     _Bool _dataFromFile;
     NSURLRequest *_request;
     NSString *_destinationPath;
     NSDictionary *_userInfo;
     NSURLResponse *_response;
-    NSError *_error;
-    NSObject<OS_dispatch_queue> *_completionQueue;
-    CDUnknownBlockType _progressBlock;
-    NSRecursiveLock *_lock;
     NSData *_responseData;
     NSString *_responseString;
     id _responseJson;
@@ -38,12 +31,6 @@
 @property(copy, nonatomic) NSString *responseString; // @synthesize responseString=_responseString;
 @property(nonatomic) _Bool dataFromFile; // @synthesize dataFromFile=_dataFromFile;
 @property(copy, nonatomic) NSData *responseData; // @synthesize responseData=_responseData;
-@property(nonatomic) _Bool isFinished; // @synthesize isFinished=_isFinished;
-@property(nonatomic) _Bool isExecuting; // @synthesize isExecuting=_isExecuting;
-@property(retain, nonatomic) NSRecursiveLock *lock; // @synthesize lock=_lock;
-@property(copy, nonatomic) CDUnknownBlockType progressBlock; // @synthesize progressBlock=_progressBlock;
-@property(retain, nonatomic) NSObject<OS_dispatch_queue> *completionQueue; // @synthesize completionQueue=_completionQueue;
-@property(readonly, nonatomic) NSError *error; // @synthesize error=_error;
 @property(readonly, nonatomic) NSURLResponse *response; // @synthesize response=_response;
 @property(copy, nonatomic) NSDictionary *userInfo; // @synthesize userInfo=_userInfo;
 @property(copy, nonatomic) NSString *destinationPath; // @synthesize destinationPath=_destinationPath;
@@ -52,19 +39,11 @@
 @property(nonatomic, getter=isCheckResponse) _Bool checkResponse; // @synthesize checkResponse=_checkResponse;
 - (void).cxx_destruct;
 - (_Bool)deleteTempFileWithError:(id *)arg1;
-- (_Bool)isConcurrent;
-- (void)fixErrorDescription;
-- (void)operationFinished;
-- (void)operationStartExecute;
-- (void)cancelTask;
-- (void)startTask;
-- (void)cancel;
-- (void)start;
-- (id)getCompletionQueue;
-- (void)setCompletionBlockWithSuccess:(CDUnknownBlockType)arg1 failure:(CDUnknownBlockType)arg2;
-- (void)setCompletionBlock:(CDUnknownBlockType)arg1;
+- (_Bool)isAsynchronous;
+- (id)fixErrorDescription:(id)arg1;
+- (void)finishedWithError:(id)arg1;
+- (void)cancelOperation;
 - (void)reportProgress:(long long)arg1 withExpected:(long long)arg2;
-- (void)setError:(id)arg1;
 - (unsigned long long)responseStringEncoding;
 - (void)setResponseDataWithDestination;
 - (void)setResponseDataWithData:(id)arg1;

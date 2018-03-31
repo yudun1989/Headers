@@ -4,24 +4,28 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-#import "WXHCViewController.h"
+#import "WXViewController.h"
 
 @class NSTimer;
 
-@interface TBWXViewController : WXHCViewController
+@interface TBWXViewController : WXViewController
 {
+    _Bool _allowsControlNaviBarStyle;
+    _Bool _isFirstVC;
     double _progressCount;
     NSTimer *_progressTimer;
 }
 
 @property(retain, nonatomic) NSTimer *progressTimer; // @synthesize progressTimer=_progressTimer;
 @property(nonatomic) double progressCount; // @synthesize progressCount=_progressCount;
+@property(nonatomic) _Bool isFirstVC; // @synthesize isFirstVC=_isFirstVC;
+@property(nonatomic) _Bool allowsControlNaviBarStyle; // @synthesize allowsControlNaviBarStyle=_allowsControlNaviBarStyle;
 - (void).cxx_destruct;
-- (void)wxRemoveErrorView;
 - (void)onclickErrorView;
-- (void)wxShowErrorViewOnFail:(id)arg1 rootView:(id)arg2;
 - (void)invokeProgressIndicator;
 - (_Bool)prefetchMtop;
+- (void)wxRemoveErrorView;
+- (void)wxShowErrorViewOnFail:(id)arg1 rootView:(id)arg2;
 - (void)wxHidePageLoadingIndicator;
 - (void)wxShowPageLoadingIndicator:(id)arg1;
 - (void)wxShowWarningBar:(id)arg1;
@@ -35,6 +39,7 @@
 - (void)recalculateInstanceFrame;
 - (void)viewDidLayoutSubviews;
 - (void)viewWillAppear:(_Bool)arg1;
+- (id)initWithNavigatorURL:(id)arg1 withCustomOptions:(id)arg2 withInitData:(id)arg3 withViewController:(id)arg4 withPageOptions:(id)arg5;
 - (void)dealloc;
 
 @end

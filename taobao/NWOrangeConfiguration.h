@@ -16,7 +16,7 @@
     _Bool _force2httpsValue;
     _Bool _httpsProxyEnabledValue;
     _Bool _cfnetworkHttpSwitch;
-    _Bool _forceUseCFNetwork;
+    _Bool _enableSniCFNetwork;
     _Bool _forceAmdcOldType;
     NSArray *_cfnetworkHttpBlacklist;
     NSArray *_useCfnetworkEcodes;
@@ -36,7 +36,7 @@
 @property(retain, nonatomic) NSArray *useCfnetworkEcodes; // @synthesize useCfnetworkEcodes=_useCfnetworkEcodes;
 @property(retain, nonatomic) NSArray *cfnetworkHttpBlacklist; // @synthesize cfnetworkHttpBlacklist=_cfnetworkHttpBlacklist;
 @property(nonatomic) _Bool forceAmdcOldType; // @synthesize forceAmdcOldType=_forceAmdcOldType;
-@property(nonatomic) _Bool forceUseCFNetwork; // @synthesize forceUseCFNetwork=_forceUseCFNetwork;
+@property(nonatomic) _Bool enableSniCFNetwork; // @synthesize enableSniCFNetwork=_enableSniCFNetwork;
 @property(nonatomic) _Bool cfnetworkHttpSwitch; // @synthesize cfnetworkHttpSwitch=_cfnetworkHttpSwitch;
 @property(nonatomic) _Bool httpsProxyEnabledValue; // @synthesize httpsProxyEnabledValue=_httpsProxyEnabledValue;
 @property(nonatomic) _Bool force2httpsValue; // @synthesize force2httpsValue=_force2httpsValue;
@@ -51,7 +51,7 @@
 - (_Bool)isDispatch2CFNetworkWhenError:(id)arg1;
 - (_Bool)isCFNetworkHttpEnabled:(id)arg1;
 - (_Bool)isHttpsProxyEnabled;
-- (_Bool)isForceUseCFNetwork;
+- (_Bool)isSNICFNetworkEnabled;
 - (_Bool)isForce2Https;
 - (_Bool)isCacheEnabled;
 - (_Bool)isNetworkOff;

@@ -17,8 +17,6 @@
 
 + (id)bridgeFromProfileMemoryStoryFeed:(id)arg1;
 + (id)bridgeFromBannerFeedModel:(id)arg1 pageSource:(unsigned long long)arg2;
-+ (id)bridgeFromRecommendShareGroupFeed:(id)arg1 pageSource:(unsigned long long)arg2;
-+ (id)bridgeFromShareGroupFeedModel:(id)arg1 pageSource:(unsigned long long)arg2;
 + (id)bridgeFromUserGroupFeedModel:(id)arg1 pageSource:(unsigned long long)arg2;
 + (id)accessoryTextForShareGroup:(id)arg1 width:(double)arg2 font:(id)arg3;
 + (id)accessoryTextForShareGroupTodayNewMember:(id)arg1 width:(double)arg2 font:(id)arg3;

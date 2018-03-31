@@ -6,7 +6,7 @@
 
 #import <Foundation/NSObject.h>
 
-@class NSString;
+@class NSString, NSURL;
 
 @interface VSGifConfigModel : NSObject
 {
@@ -17,10 +17,12 @@
     long long _refreshStep;
     long long _gifType;
     long long _actionType;
+    NSURL *_videoUrl;
     struct CGSize _gifSize;
     struct CGRect _scaledFrame;
 }
 
+@property(retain, nonatomic) NSURL *videoUrl; // @synthesize videoUrl=_videoUrl;
 @property(nonatomic) long long actionType; // @synthesize actionType=_actionType;
 @property(nonatomic) long long gifType; // @synthesize gifType=_gifType;
 @property(nonatomic) long long refreshStep; // @synthesize refreshStep=_refreshStep;

@@ -21,16 +21,17 @@
 + (double)buildSubscribeAndSummaryView:(id)arg1 wrapperViewWidth:(double)arg2 article:(id)arg3;
 + (struct CGRect)buildBiuTopicWrapperView:(id)arg1 article:(id)arg2;
 + (struct CGRect)buildWrapperView:(id)arg1 article:(id)arg2;
++ (struct CGRect)buildBiuUGCWrapperView:(id)arg1 article:(id)arg2;
 + (struct CGRect)buildUGCWrapperView:(id)arg1 article:(id)arg2;
 @property(nonatomic) double ugcClickTime; // @synthesize ugcClickTime=_ugcClickTime;
 @property(nonatomic) unsigned int type; // @synthesize type=_type;
 @property(retain, nonatomic) ReadInJoyChannelArticle *feedsModel; // @synthesize feedsModel=_feedsModel;
 - (void)dealloc;
+- (id)findComponent:(id)arg1;
 - (void)UGCWrapperViewTap:(id)arg1 withEvent:(id)arg2;
 - (void)layoutSubviews;
 - (id)hitTest:(struct CGPoint)arg1 withEvent:(id)arg2;
 - (void)setTouchBackground:(id)arg1 withEvent:(id)arg2 withTouchType:(long long)arg3;
-- (void)touchEndDelay;
 - (void)touchesCancelled:(id)arg1 withEvent:(id)arg2;
 - (void)touchesEnded:(id)arg1 withEvent:(id)arg2;
 - (void)touchesBegan:(id)arg1 withEvent:(id)arg2;

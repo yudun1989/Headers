@@ -26,6 +26,7 @@
 - (void)playerViewPreload:(DWPlayerView *)arg1;
 - (void)playerViewTimeChanged:(double)arg1;
 - (void)playerViewStalled:(DWPlayerView *)arg1;
+- (void)playerViewShowPromptView:(DWPlayerView *)arg1;
 - (void)playerViewShowFailView:(DWPlayerView *)arg1 error:(NSError *)arg2;
 - (void)playerViewTimeSliderFinishDrag:(DWPlayerView *)arg1;
 - (void)playerViewTimeSliderStartDrag:(DWPlayerView *)arg1;

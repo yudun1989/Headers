@@ -6,13 +6,15 @@
 
 #import <UIKit/UIView.h>
 
+#import "TBIctEventSubscriber-Protocol.h"
 #import "UIScrollViewDelegate-Protocol.h"
 
-@class NSArray, NSMutableArray, NSString, TBLiveAddCart, TBVideoTweSVVC, TBVideoUIButtonWithBlock, UIImageView, UIScrollView;
+@class NSArray, NSMutableArray, NSString, TBLiveAddCart, TBVideoSVGoodsItemInfo, TBVideoTweSVVC, TBVideoUIButtonWithBlock, UIImageView, UIScrollView;
 
-@interface TBVideoSVGoodsItemView : UIView <UIScrollViewDelegate>
+@interface TBVideoSVGoodsItemView : UIView <UIScrollViewDelegate, TBIctEventSubscriber>
 {
     TBVideoUIButtonWithBlock *_goodsItemBTN;
+    UIImageView *_underlayerImageView;
     TBVideoTweSVVC *_superVC;
     TBVideoUIButtonWithBlock *_fullScreenBGView;
     UIScrollView *_contentBGView;
@@ -22,8 +24,12 @@
     UIImageView *_tagImage;
     NSMutableArray *_tagImages;
     TBLiveAddCart *_addCartManager;
+    TBVideoSVGoodsItemInfo *_currentModel;
+    UIView *_currentTargetView;
 }
 
+@property(retain, nonatomic) UIView *currentTargetView; // @synthesize currentTargetView=_currentTargetView;
+@property(retain, nonatomic) TBVideoSVGoodsItemInfo *currentModel; // @synthesize currentModel=_currentModel;
 @property(retain, nonatomic) TBLiveAddCart *addCartManager; // @synthesize addCartManager=_addCartManager;
 @property(retain, nonatomic) NSMutableArray *tagImages; // @synthesize tagImages=_tagImages;
 @property(retain, nonatomic) UIImageView *tagImage; // @synthesize tagImage=_tagImage;
@@ -33,18 +39,25 @@
 @property(retain, nonatomic) UIScrollView *contentBGView; // @synthesize contentBGView=_contentBGView;
 @property(retain, nonatomic) TBVideoUIButtonWithBlock *fullScreenBGView; // @synthesize fullScreenBGView=_fullScreenBGView;
 @property(nonatomic) __weak TBVideoTweSVVC *superVC; // @synthesize superVC=_superVC;
+@property(retain, nonatomic) UIImageView *underlayerImageView; // @synthesize underlayerImageView=_underlayerImageView;
 @property(retain, nonatomic) TBVideoUIButtonWithBlock *goodsItemBTN; // @synthesize goodsItemBTN=_goodsItemBTN;
 - (void).cxx_destruct;
+- (id)handleEvent:(id)arg1;
 - (id)getUTControlNameFromBizScene:(id)arg1;
-- (void)addCartWithModel:(id)arg1 SKUView:(id)arg2;
+- (void)addCartWithCheckLogin;
+- (void)addItemToCart;
 - (void)gotoItemDetailWithModel:(id)arg1;
 - (id)addedItemViewWithModel:(id)arg1 index:(long long)arg2;
 - (void)activateLandscapeGoodsListView;
 - (void)activatePortraitGoodsListView;
+- (void)closeGoodsListView;
 - (void)activateGoodsListView;
 - (void)updateFrameWithPortrait:(_Bool)arg1;
+- (void)triggerSmallItemAnimation;
 - (void)configBTNWithURL:(id)arg1;
 - (void)dealloc;
+- (void)unRegistEvent;
+- (void)registEvent;
 - (id)initWithTarget:(id)arg1 models:(id)arg2 maxItemNum:(long long)arg3;
 
 // Remaining properties

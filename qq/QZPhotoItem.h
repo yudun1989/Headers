@@ -4,15 +4,17 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-#import <TlibDy/LKLayoutItem.h>
+#import <TlibDy/PTLayoutItem.h>
 
-@class QZDrawItemImage;
+@class NSString, QZDrawItemImage;
 
-@interface QZPhotoItem : LKLayoutItem
+@interface QZPhotoItem : PTLayoutItem
 {
     QZDrawItemImage *_imageItem;
+    NSString *_loadingImageName;
 }
 
+@property(retain, nonatomic) NSString *loadingImageName; // @synthesize loadingImageName=_loadingImageName;
 @property(retain, nonatomic) QZDrawItemImage *imageItem; // @synthesize imageItem=_imageItem;
 - (void).cxx_destruct;
 - (void)setReuseableResource:(id)arg1;

@@ -25,14 +25,12 @@
 - (void)reportRDM:(_Bool)arg1 cached:(_Bool)arg2;
 - (void)setImageWithURL:(id)arg1 placeholderImage:(id)arg2;
 - (void)setImageWithURL:(id)arg1 placeholderImage:(id)arg2 lineup:(_Bool)arg3;
-- (void)setImageWithAnimation:(id)arg1;
 - (void)setImage:(id)arg1;
 - (CDStruct_9841f89e)getImageViewInfo;
 - (void)setup;
 - (id)initWithFrame:(struct CGRect)arg1;
 - (id)init;
 - (void)setImageWithURLString:(id)arg1 lineup:(id)arg2;
-- (void)setEnableString:(id)arg1;
 - (void)setImageWithURLString:(id)arg1;
 
 // Remaining properties

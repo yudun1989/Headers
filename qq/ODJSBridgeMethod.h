@@ -6,10 +6,15 @@
 
 #import <Foundation/NSObject.h>
 
+@protocol ODJSBridgeMethodDelegate;
+
 @interface ODJSBridgeMethod : NSObject
 {
+    id <ODJSBridgeMethodDelegate> _delegate;
 }
 
+@property(nonatomic) __weak id <ODJSBridgeMethodDelegate> delegate; // @synthesize delegate=_delegate;
+- (void).cxx_destruct;
 - (id)init;
 
 @end

@@ -6,17 +6,17 @@
 
 #import <UIKit/UICollectionReusableView.h>
 
-@class TBSearchWaterfallLayout, TBXSearchComplexComponent;
+@class TBXSearchComplexComponent, XSearchWaterfallLayout;
 
 @interface TBXSearchWeexReusableView : UICollectionReusableView
 {
     TBXSearchComplexComponent *_component;
-    TBSearchWaterfallLayout *_layout;
+    XSearchWaterfallLayout *_layout;
 }
 
 + (id)identifierForFooter;
 + (id)identifierForHeader;
-@property(retain, nonatomic) TBSearchWaterfallLayout *layout; // @synthesize layout=_layout;
+@property(retain, nonatomic) XSearchWaterfallLayout *layout; // @synthesize layout=_layout;
 @property(retain, nonatomic) TBXSearchComplexComponent *component; // @synthesize component=_component;
 - (void).cxx_destruct;
 - (void)setSingleComponent:(id)arg1;

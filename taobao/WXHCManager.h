@@ -20,7 +20,7 @@
 @property(retain, nonatomic) NSMutableDictionary *mhcDict; // @synthesize mhcDict=_mhcDict;
 - (void).cxx_destruct;
 - (id)handler;
-- (void)setUpNaviItem:(id)arg1;
+- (void)setUpNaviItem:(id)arg1 withTabIndex:(long long)arg2;
 - (void)releaseAllObjectForWeexMHC;
 - (void)releaseObjectForWeexMHC:(id)arg1;
 - (id)objectForWeexMHC:(id)arg1;

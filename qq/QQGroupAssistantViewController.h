@@ -37,7 +37,6 @@
 - (void)showGroupAssistantSettingPage;
 - (void)reverseGroupStickiedState;
 - (void)gotoGroupAssistantSettings:(id)arg1;
-- (void)jumpToSuperGroupOwnerPage;
 - (int)getTroopAssistantUnreadSessonCount;
 - (void)refreshMessageViewData;
 - (void)viewDidAppear:(_Bool)arg1;

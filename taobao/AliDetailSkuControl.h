@@ -15,9 +15,6 @@
 
 @interface AliDetailSkuControl : NSObject <AliTradeSKUViewDelegate, UIGestureRecognizerDelegate, AliDetailSkuProtocol, AliDetailSkuInnerProtocol>
 {
-    _Bool _isDetailCalled;
-    CDUnknownBlockType UPDATEBLOCK;
-    _Bool willShowTopCartAnimation;
     CDUnknownBlockType TradeCallBack;
     CDUnknownBlockType CARTBLOCK;
     CDUnknownBlockType COMBITEMBLOCK;
@@ -25,13 +22,17 @@
     UIActivityIndicatorView *_loading;
     _Bool skuNoCompletion;
     _Bool callBackIsDone;
+    _Bool _isDetailCalled;
+    _Bool _willShowTopCartAnimation;
     _Bool _isCombinationItemCall;
     _Bool _needReleaseJS;
+    CDUnknownBlockType _UPDATEBLOCK;
     AliDetailModel *_detailModel;
     AliDetailDataEngine *_dataEngine;
     AliTradeSKUView *_skuView;
     unsigned long long _sourceType;
     NSString *_areaId;
+    NSString *_addressId;
     UIViewController *_contentViewController;
     CDUnknownBlockType _quitBlock;
     NSString *_bizName;
@@ -64,11 +65,15 @@
 @property(nonatomic) _Bool isCombinationItemCall; // @synthesize isCombinationItemCall=_isCombinationItemCall;
 @property(copy, nonatomic) CDUnknownBlockType quitBlock; // @synthesize quitBlock=_quitBlock;
 @property(nonatomic) __weak UIViewController *contentViewController; // @synthesize contentViewController=_contentViewController;
+@property(retain, nonatomic) NSString *addressId; // @synthesize addressId=_addressId;
 @property(retain, nonatomic) NSString *areaId; // @synthesize areaId=_areaId;
 @property(nonatomic) unsigned long long sourceType; // @synthesize sourceType=_sourceType;
 @property(retain, nonatomic) AliTradeSKUView *skuView; // @synthesize skuView=_skuView;
 @property(retain, nonatomic) AliDetailDataEngine *dataEngine; // @synthesize dataEngine=_dataEngine;
 @property(retain, nonatomic) AliDetailModel *detailModel; // @synthesize detailModel=_detailModel;
+@property(copy, nonatomic) CDUnknownBlockType UPDATEBLOCK; // @synthesize UPDATEBLOCK=_UPDATEBLOCK;
+@property(nonatomic) _Bool willShowTopCartAnimation; // @synthesize willShowTopCartAnimation=_willShowTopCartAnimation;
+@property(nonatomic) _Bool isDetailCalled; // @synthesize isDetailCalled=_isDetailCalled;
 - (void).cxx_destruct;
 - (void)showSkuWithContext:(id)arg1 itemId:(id)arg2 selectedSkuId:(id)arg3 sourceType:(long long)arg4 bizName:(id)arg5 styleParams:(id)arg6 success:(CDUnknownBlockType)arg7;
 - (void)showSkuWithItemId:(id)arg1 detailEngine:(id)arg2 sourceType:(long long)arg3 actionType:(long long)arg4 success:(CDUnknownBlockType)arg5;
@@ -104,9 +109,15 @@
 - (void)startTimer;
 - (void)timerLoop;
 - (void)overTimeOrError;
+- (void)presentSKUViewWithItemId:(id)arg1 data:(id)arg2 sourceType:(unsigned long long)arg3 areaId:(id)arg4 addressId:(id)arg5 selectedSKU:(id)arg6 exParams:(id)arg7 callBack:(CDUnknownBlockType)arg8;
+- (void)presentSKUViewWithItemId:(id)arg1 data:(id)arg2 sourceType:(unsigned long long)arg3 areaId:(id)arg4 addressId:(id)arg5 selectedSKU:(id)arg6 callBack:(CDUnknownBlockType)arg7;
+- (void)presentSKUViewWithItemId:(id)arg1 data:(id)arg2 sourceType:(unsigned long long)arg3 areaId:(id)arg4 selectedSKU:(id)arg5 exParams:(id)arg6 callBack:(CDUnknownBlockType)arg7;
 - (void)presentSKUViewWithItemId:(id)arg1 data:(id)arg2 sourceType:(unsigned long long)arg3 areaId:(id)arg4 selectedSKU:(id)arg5 callBack:(CDUnknownBlockType)arg6;
+- (void)presentCombinationItemsSKUViewWithItemId:(id)arg1 data:(id)arg2 areaId:(id)arg3 addressId:(id)arg4 selectedSKU:(id)arg5 callBack:(CDUnknownBlockType)arg6;
 - (void)presentCombinationItemsSKUViewWithItemId:(id)arg1 data:(id)arg2 areaId:(id)arg3 selectedSKU:(id)arg4 callBack:(CDUnknownBlockType)arg5;
+- (void)presentSKUViewWithItemId:(id)arg1 containerVC:(id)arg2 data:(id)arg3 sourceType:(unsigned long long)arg4 areaId:(id)arg5 addressId:(id)arg6 updateCallBack:(CDUnknownBlockType)arg7;
 - (void)presentSKUViewWithItemId:(id)arg1 containerVC:(id)arg2 data:(id)arg3 sourceType:(unsigned long long)arg4 areaId:(id)arg5 updateCallBack:(CDUnknownBlockType)arg6;
+- (void)presentSKUViewWithItemId:(id)arg1 areaId:(id)arg2 addressId:(id)arg3 callBack:(CDUnknownBlockType)arg4;
 - (void)presentSKUViewWithItemId:(id)arg1 areaId:(id)arg2 callBack:(CDUnknownBlockType)arg3;
 - (void)changeSKUWithItemId:(id)arg1 areaId:(id)arg2 selectedSKU:(id)arg3 callBack:(CDUnknownBlockType)arg4;
 - (void)presentSKUViewWithItemId:(id)arg1 containerVC:(id)arg2 needShowTopCartAnimation:(_Bool)arg3 callBack:(CDUnknownBlockType)arg4;

@@ -15,7 +15,6 @@
     _Bool _forbidbackPanGesture;
     _Bool _needAppBar;
     _Bool _hideMoreItem;
-    _Bool _isFirstVC;
     TBWXViewController *_wxViewController;
     long long _defaultFestivalStyle;
     long long _defaultStatusBarStyle;
@@ -26,7 +25,6 @@
 }
 
 @property(copy, nonatomic) CDUnknownBlockType backItemClickedAction; // @synthesize backItemClickedAction=_backItemClickedAction;
-@property(nonatomic) _Bool isFirstVC; // @synthesize isFirstVC=_isFirstVC;
 @property(retain, nonatomic) NSArray *moreCustomeItems; // @synthesize moreCustomeItems=_moreCustomeItems;
 @property(nonatomic) _Bool hideMoreItem; // @synthesize hideMoreItem=_hideMoreItem;
 @property(retain, nonatomic) TBBarButtonItem *moreItemBtn; // @synthesize moreItemBtn=_moreItemBtn;
@@ -49,13 +47,13 @@
 - (void)setNaviBarCenterItem:(id)arg1;
 - (long long)tbfestival_defaultStatusBarStyle;
 - (_Bool)tbfestival_isFestivalEnable;
-- (void)wxDidReceiveMemoryWarning;
 - (void)wxCaculateNumberOfWeexVC;
 - (void)wxDegradeToH5:(id)arg1;
 - (void)wxFinishCreateInstance;
 - (void)didReceiveMemoryWarning;
 - (void)viewWillAppear:(_Bool)arg1;
 - (void)viewDidLoad;
+- (id)initWithRenderViewController:(id)arg1;
 - (id)initWithNavigatorURL:(id)arg1 withPageOptions:(id)arg2;
 - (id)initWithNavigatorURL:(id)arg1;
 - (void)dealloc;

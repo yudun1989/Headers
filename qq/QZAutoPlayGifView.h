@@ -52,6 +52,7 @@
 @property(nonatomic) _Bool lazyLoad; // @synthesize lazyLoad=_lazyLoad;
 - (void).cxx_destruct;
 - (id)firstFrameWithSize:(struct CGSize)arg1;
+- (void)setFirstFrameWithImage:(id)arg1;
 - (void)setFirstFrameWithUrl:(id)arg1;
 - (void)setGifFrameDuration:(double)arg1 playDirection:(long long)arg2;
 - (void)play;

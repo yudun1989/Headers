@@ -20,6 +20,8 @@
 - (id)getModifyGroupProfileBuffer:(id)arg1;
 - (id)getAllowManagerVerifyBuffer:(unsigned long long)arg1 uins:(id)arg2 flag:(_Bool)arg3;
 - (id)getGroupJoinQuestionAndAnwserBuffer:(unsigned long long)arg1 question:(id)arg2 answer:(id)arg3;
+- (id)getSetAppPrivilegeFlagBuffer:(unsigned long long)arg1 Flag:(unsigned int)arg2 Mask:(unsigned int)arg3;
+- (id)getJoinGroupBuffer:(unsigned long long)arg1 Option:(unsigned int)arg2;
 - (id)getOnlyMemberInviteBuffer:(unsigned long long)arg1 flag:(_Bool)arg2;
 - (id)getAllowGroupMemberInviteBuffer:(unsigned long long)arg1 flag:(_Bool)arg2;
 - (id)getSetAllMembersShutupBuffer:(unsigned long long)arg1 setOrCancel:(_Bool)arg2;

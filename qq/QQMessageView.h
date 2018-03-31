@@ -243,6 +243,7 @@
 - (void)currentReloadData;
 - (void)dismissNearFileTipView;
 - (void)showNearFileTipView:(id)arg1;
+- (void)cleanCMShowGameBanner;
 - (void)dismissMusicView;
 - (void)dismissSwitchToWebViewBanner;
 - (void)showSwitchToWebViewBanner:(id)arg1;
@@ -250,6 +251,7 @@
 - (void)showQQVIPFunctionTipsView:(id)arg1;
 - (void)showMusicView:(id)arg1;
 - (void)releaseMusicView;
+- (void)cleanReadBannerView;
 - (void)checkFontScaleChange;
 - (void)setUserInteractionEnabled:(_Bool)arg1 byBusiness:(id)arg2;
 - (void)setScrollEnabled:(_Bool)arg1 byBusiness:(id)arg2;

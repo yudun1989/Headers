@@ -33,6 +33,8 @@
 @property(retain, nonatomic) QQBiuTextView *biuTextView; // @synthesize biuTextView=_biuTextView;
 @property(nonatomic) __weak id <QQBiuRecommandEditViewDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
+- (_Bool)textContainQQEmoji;
+- (_Bool)textContainSystemEmoji;
 - (void)setAtFriendInfo:(id)arg1 andChooseFriendMode:(unsigned long long)arg2;
 - (struct _NSRange)findAtMiddleLocation:(unsigned long long)arg1 textView:(id)arg2;
 - (void)textViewDidChangeSelectionForAt:(id)arg1;

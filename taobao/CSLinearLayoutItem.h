@@ -10,10 +10,10 @@
 
 @interface CSLinearLayoutItem : NSObject
 {
-    int _fillMode;
-    int _horizontalAlignment;
-    int _verticalAlignment;
     UIView *_view;
+    unsigned long long _fillMode;
+    unsigned long long _horizontalAlignment;
+    unsigned long long _verticalAlignment;
     NSDictionary *_userInfo;
     long long _tag;
     CDStruct_3c058996 _padding;
@@ -23,9 +23,9 @@
 @property(nonatomic) long long tag; // @synthesize tag=_tag;
 @property(nonatomic) NSDictionary *userInfo; // @synthesize userInfo=_userInfo;
 @property(nonatomic) CDStruct_3c058996 padding; // @synthesize padding=_padding;
-@property(nonatomic) int verticalAlignment; // @synthesize verticalAlignment=_verticalAlignment;
-@property(nonatomic) int horizontalAlignment; // @synthesize horizontalAlignment=_horizontalAlignment;
-@property(nonatomic) int fillMode; // @synthesize fillMode=_fillMode;
+@property(nonatomic) unsigned long long verticalAlignment; // @synthesize verticalAlignment=_verticalAlignment;
+@property(nonatomic) unsigned long long horizontalAlignment; // @synthesize horizontalAlignment=_horizontalAlignment;
+@property(nonatomic) unsigned long long fillMode; // @synthesize fillMode=_fillMode;
 @property(retain, nonatomic) UIView *view; // @synthesize view=_view;
 - (void).cxx_destruct;
 - (void)dealloc;

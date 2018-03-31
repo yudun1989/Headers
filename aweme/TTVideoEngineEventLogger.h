@@ -27,12 +27,14 @@
     NSString *_lastResolution;
     NSString *_currentResolution;
     NSDictionary *_videoInfo;
+    NSString *_tag;
     NSMutableDictionary *_mainError;
     long long _stallStartTs;
 }
 
 @property(nonatomic) long long stallStartTs; // @synthesize stallStartTs=_stallStartTs;
 @property(retain, nonatomic) NSMutableDictionary *mainError; // @synthesize mainError=_mainError;
+@property(copy, nonatomic) NSString *tag; // @synthesize tag=_tag;
 @property(copy, nonatomic) NSDictionary *videoInfo; // @synthesize videoInfo=_videoInfo;
 @property(copy, nonatomic) NSString *currentResolution; // @synthesize currentResolution=_currentResolution;
 @property(copy, nonatomic) NSString *lastResolution; // @synthesize lastResolution=_lastResolution;

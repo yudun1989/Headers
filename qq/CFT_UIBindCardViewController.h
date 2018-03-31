@@ -13,7 +13,7 @@
 #import <QQMainProject/UIPickerViewDataSource-Protocol.h>
 #import <QQMainProject/UIPickerViewDelegate-Protocol.h>
 
-@class CFT_CardBINInfo, CFT_TPIDKeyboardView, CFT_UICellBtnView, CFT_UICheckBox, CFT_UIFormatField, CFT_UIGroupStyleView, CFT_UITLTextField, NSDictionary, NSMutableArray, NSMutableDictionary, NSString, UIButton, UIDatePicker, UILabel, UIView;
+@class CFT_CardBINInfo, CFT_UICellBtnView, CFT_UICheckBox, CFT_UIFormatField, CFT_UIGroupStyleView, NSDictionary, NSMutableArray, NSMutableDictionary, NSString, UIButton, UIDatePicker, UIView;
 
 @interface CFT_UIBindCardViewController : CFT_UIBaseBindCardViewController <UIPickerViewDataSource, UIPickerViewDelegate, UICheckBoxDelegate, UIAlertViewDelegate, UIExpirationDatePickerDelegate, BankTypeSelectViewDelegate>
 {
@@ -22,7 +22,7 @@
     int _need_fill;
     NSString *_alertLeftBtnText;
     NSString *_alertRightBtnText;
-    _Bool *_isRcontinue_Lexit;
+    _Bool _isRcontinue_Lexit;
     double _bankInfoYOffset;
     _Bool _prefillUserInfo;
     _Bool _canIDCardVerify;
@@ -35,16 +35,14 @@
     int _viewType;
     int _layout;
     int _inputRet;
-    int _preLoadingStyle;
     long long _amount;
     NSString *_queryType;
     NSString *_grapHbTips;
     CFT_UIFormatField *_bankCodeField;
-    CFT_UITLTextField *_cardNameField;
+    CFT_UIFormatField *_nameField;
     CFT_UIFormatField *_userIdField;
-    CFT_UITLTextField *_bankSelectField;
     CFT_UIFormatField *_userIdTypePicker;
-    CFT_UITLTextField *_cvvField;
+    CFT_UIFormatField *_cvvField;
     CFT_UIFormatField *_userIdVPField;
     CFT_UIFormatField *_validatePicker;
     CFT_UICheckBox *_checkBox;
@@ -54,22 +52,12 @@
     double _totalheight;
     UIButton *_protocolBtn;
     UIButton *_tipBtn;
-    UIButton *_tipNextBtn;
-    UILabel *_bankCodePrefixLbl;
-    UILabel *_bankTypeLabel;
-    UILabel *_copyrightLabel;
-    CFT_TPIDKeyboardView *_idKeyboard;
-    CFT_TPIDKeyboardView *_numKeyboard;
-    CFT_TPIDKeyboardView *_bankCodeKeyboard;
     CFT_UIGroupStyleView *_bankInfoBox;
     CFT_UIGroupStyleView *_valiadInfoBox;
     CFT_UIGroupStyleView *_detailInfoBox;
     UIView *_protocolBox;
     UIView *_tipInfoBox;
     UIView *_nextFooterView;
-    UIView *_tipFooterView;
-    UIView *_valiadFooterView;
-    UIView *_valiadTipFooterView;
     NSMutableArray *_cardBinArray;
     NSMutableDictionary *_bankIdentityDic;
     NSMutableDictionary *_creditCardNameDic;
@@ -87,19 +75,16 @@
     NSString *_cardBinFlag;
     NSMutableArray *_creditcards_type;
     NSString *_userType;
-    NSString *_sceneType;
     NSString *_functionTag;
 }
 
 @property(retain, nonatomic) NSString *functionTag; // @synthesize functionTag=_functionTag;
 @property(nonatomic) _Bool bBindBankCard; // @synthesize bBindBankCard=_bBindBankCard;
 @property(nonatomic) _Bool notTextChange; // @synthesize notTextChange=_notTextChange;
-@property(copy, nonatomic) NSString *sceneType; // @synthesize sceneType=_sceneType;
 @property(copy, nonatomic) NSString *userType; // @synthesize userType=_userType;
 @property(nonatomic) _Bool isLegalBankNum; // @synthesize isLegalBankNum=_isLegalBankNum;
 @property(retain, nonatomic) NSMutableArray *creditcards_type; // @synthesize creditcards_type=_creditcards_type;
 @property(retain, nonatomic) NSString *cardBinFlag; // @synthesize cardBinFlag=_cardBinFlag;
-@property(nonatomic) int preLoadingStyle; // @synthesize preLoadingStyle=_preLoadingStyle;
 @property(nonatomic) _Bool hasShowBindAlert; // @synthesize hasShowBindAlert=_hasShowBindAlert;
 @property(retain, nonatomic) NSString *userIdType; // @synthesize userIdType=_userIdType;
 @property(retain, nonatomic) NSString *userId; // @synthesize userId=_userId;
@@ -118,22 +103,12 @@
 @property(retain, nonatomic) NSMutableDictionary *creditCardNameDic; // @synthesize creditCardNameDic=_creditCardNameDic;
 @property(retain, nonatomic) NSMutableDictionary *bankIdentityDic; // @synthesize bankIdentityDic=_bankIdentityDic;
 @property(retain, nonatomic) NSMutableArray *cardBinArray; // @synthesize cardBinArray=_cardBinArray;
-@property(retain, nonatomic) UIView *valiadTipFooterView; // @synthesize valiadTipFooterView=_valiadTipFooterView;
-@property(retain, nonatomic) UIView *valiadFooterView; // @synthesize valiadFooterView=_valiadFooterView;
-@property(retain, nonatomic) UIView *tipFooterView; // @synthesize tipFooterView=_tipFooterView;
 @property(retain, nonatomic) UIView *nextFooterView; // @synthesize nextFooterView=_nextFooterView;
 @property(retain, nonatomic) UIView *tipInfoBox; // @synthesize tipInfoBox=_tipInfoBox;
 @property(retain, nonatomic) UIView *protocolBox; // @synthesize protocolBox=_protocolBox;
 @property(retain, nonatomic) CFT_UIGroupStyleView *detailInfoBox; // @synthesize detailInfoBox=_detailInfoBox;
 @property(retain, nonatomic) CFT_UIGroupStyleView *valiadInfoBox; // @synthesize valiadInfoBox=_valiadInfoBox;
 @property(retain, nonatomic) CFT_UIGroupStyleView *bankInfoBox; // @synthesize bankInfoBox=_bankInfoBox;
-@property(retain, nonatomic) CFT_TPIDKeyboardView *bankCodeKeyboard; // @synthesize bankCodeKeyboard=_bankCodeKeyboard;
-@property(retain, nonatomic) CFT_TPIDKeyboardView *numKeyboard; // @synthesize numKeyboard=_numKeyboard;
-@property(retain, nonatomic) CFT_TPIDKeyboardView *idKeyboard; // @synthesize idKeyboard=_idKeyboard;
-@property(retain, nonatomic) UILabel *copyrightLabel; // @synthesize copyrightLabel=_copyrightLabel;
-@property(retain, nonatomic) UILabel *bankTypeLabel; // @synthesize bankTypeLabel=_bankTypeLabel;
-@property(retain, nonatomic) UILabel *bankCodePrefixLbl; // @synthesize bankCodePrefixLbl=_bankCodePrefixLbl;
-@property(retain, nonatomic) UIButton *tipNextBtn; // @synthesize tipNextBtn=_tipNextBtn;
 @property(retain, nonatomic) UIButton *tipBtn; // @synthesize tipBtn=_tipBtn;
 @property(retain, nonatomic) UIButton *protocolBtn; // @synthesize protocolBtn=_protocolBtn;
 @property(nonatomic) double totalheight; // @synthesize totalheight=_totalheight;
@@ -143,11 +118,10 @@
 @property(retain, nonatomic) CFT_UICheckBox *checkBox; // @synthesize checkBox=_checkBox;
 @property(retain, nonatomic) CFT_UIFormatField *validatePicker; // @synthesize validatePicker=_validatePicker;
 @property(retain, nonatomic) CFT_UIFormatField *userIdVPField; // @synthesize userIdVPField=_userIdVPField;
-@property(retain, nonatomic) CFT_UITLTextField *cvvField; // @synthesize cvvField=_cvvField;
+@property(retain, nonatomic) CFT_UIFormatField *cvvField; // @synthesize cvvField=_cvvField;
 @property(retain, nonatomic) CFT_UIFormatField *userIdTypePicker; // @synthesize userIdTypePicker=_userIdTypePicker;
-@property(retain, nonatomic) CFT_UITLTextField *bankSelectField; // @synthesize bankSelectField=_bankSelectField;
 @property(retain, nonatomic) CFT_UIFormatField *userIdField; // @synthesize userIdField=_userIdField;
-@property(retain, nonatomic) CFT_UITLTextField *cardNameField; // @synthesize cardNameField=_cardNameField;
+@property(retain, nonatomic) CFT_UIFormatField *nameField; // @synthesize nameField=_nameField;
 @property(retain, nonatomic) CFT_UIFormatField *bankCodeField; // @synthesize bankCodeField=_bankCodeField;
 @property(nonatomic) int viewType; // @synthesize viewType=_viewType;
 @property(retain, nonatomic) NSString *grapHbTips; // @synthesize grapHbTips=_grapHbTips;
@@ -159,6 +133,7 @@
 - (void)onQQWalletImageDownloadFinishNotify:(id)arg1;
 - (void)checkBoxStateChanged:(id)arg1;
 - (void)alertView:(id)arg1 didDismissWithButtonIndex:(long long)arg2;
+- (void)scrollViewDidScroll:(id)arg1;
 - (void)scrollViewDidEndDecelerating:(id)arg1;
 - (void)scrollViewWillBeginDragging:(id)arg1;
 - (void)expirationDatePicker:(id)arg1 didSelectMonth:(unsigned long long)arg2 inYear:(unsigned long long)arg3;
@@ -178,7 +153,6 @@
 - (void)textFieldChanged:(id)arg1;
 - (void)changeFirstResponder:(id)arg1;
 - (void)changeLayout:(int)arg1 forceRefresh:(_Bool)arg2;
-- (void)delayChangeLayout:(id)arg1;
 - (void)bankTypeDidSelect:(id)arg1;
 - (void)findPswGuide:(id)arg1;
 - (void)popPayPact:(id)arg1;
@@ -204,6 +178,7 @@
 - (void)selectDateFinish;
 - (void)initUserIdVPFieldAndMobileField;
 - (void)initUserIdField:(unsigned long long)arg1;
+- (void)onValidateComplish;
 - (void)initSubViews;
 - (void)viewDidAppear:(_Bool)arg1;
 - (void)viewDidLoad;

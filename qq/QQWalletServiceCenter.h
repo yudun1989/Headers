@@ -22,6 +22,7 @@
 
 + (id)defaultCenter;
 - (void).cxx_destruct;
+- (int)sendCommonRequest:(id)arg1 cmd:(id)arg2 completionBlock:(CDUnknownBlockType)arg3;
 - (int)sendCommonRequest:(id)arg1 completionBlock:(CDUnknownBlockType)arg2;
 - (id)reqContextWithCMD:(id)arg1 seq:(int)arg2;
 - (id)_reqContextKeyWithCMD:(id)arg1 seq:(int)arg2;
@@ -30,7 +31,8 @@
 - (void)_cancelCommonRequestForCondition:(CDUnknownBlockType)arg1;
 - (void)cancelAllCommonRequestWithCMD:(id)arg1;
 - (void)cancelCommonRequestWithSeq:(int)arg1;
-- (id)reqBaseInfoForReqClass:(Class)arg1;
+- (id)mappingKeyForBaseInfoWithReqClass:(Class)arg1 cmd:(id)arg2;
+- (id)reqBaseInfoForReqClass:(Class)arg1 cmd:(id)arg2;
 - (_Bool)registerCommonRequestWithCMD:(id)arg1 requestClass:(Class)arg2 responseClass:(Class)arg3 functionName:(id)arg4 servantName:(id)arg5 descriptionName:(id)arg6;
 - (void)notifyError:(id)arg1;
 - (void)didRecievedMsg:(CDStruct_7895f40e)arg1;
@@ -48,7 +50,7 @@
 - (double)getRefreshPeriodByKey:(id)arg1;
 - (void)cacheRefreshPeriod:(double)arg1 forKey:(id)arg2;
 - (void)requestVoicePwdMatchWithParams:(id)arg1 completion:(CDUnknownBlockType)arg2;
-- (int)requestWalletConfigWithReqType:(long long)arg1 params:(id)arg2 completion:(CDUnknownBlockType)arg3;
+- (int)requestWalletConfigWithReqType:(long long)arg1 isSetSession:(_Bool)arg2 params:(id)arg3 completion:(CDUnknownBlockType)arg4;
 - (void)requestBankCardDetailWithBankName:(id)arg1 cardType:(id)arg2 completion:(CDUnknownBlockType)arg3;
 - (void)requestGetGoldMsgStatusWithFriendUin:(id)arg1 type:(int)arg2 completion:(CDUnknownBlockType)arg3;
 - (void)requestSetGoldMsgStatusWithFriendUin:(id)arg1 goldMsgSwitch:(int)arg2 goldMsgPrice:(long long)arg3 completion:(CDUnknownBlockType)arg4;

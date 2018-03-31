@@ -28,6 +28,8 @@
 - (void)writeQuaReportInfoWhenTerminate;
 - (void)writeQuaReportInfoWhenCrash;
 - (_Bool)isQuaReportExist;
+- (void)writeReportToFileWhenExist:(id)arg1 reportSValue:(id)arg2;
+- (void)writeReportToFileWhenExist:(id)arg1 reportValue:(id)arg2;
 - (void)asyncDispatchToCamera:(CDUnknownBlockType)arg1;
 - (void)syncDispatchToAVService:(CDUnknownBlockType)arg1;
 - (void)asyncDispatchToAVService:(CDUnknownBlockType)arg1;

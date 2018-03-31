@@ -30,12 +30,14 @@
 - (void)uploadDirectoryFiles;
 - (void)uploadDirectoryDetailList;
 - (id)checkModuleDirExist;
+- (void)getLogFilePath:(id)arg1;
 - (void)uploadLog;
 - (void)ClearCache;
 - (void)InvalidOffline;
 - (void)reportEnvirnament;
 - (id)cmdActionMap;
 - (void)dealloc;
+- (id)initWithServerCmd:(id)arg1;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

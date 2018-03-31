@@ -8,11 +8,13 @@
 
 #import <QQMainProject/AVAssetResourceLoaderDelegate-Protocol.h>
 
-@class NSMutableArray, NSString, NSURL, TBDownloadTask;
+@class NSMutableArray, NSString, NSTimer, NSURL, TBDownloadTask;
 
 @interface TBPlayerLoaderRequestInterruptManager : NSURLConnection <AVAssetResourceLoaderDelegate>
 {
     _Bool _moovAtEnd;
+    _Bool _enableTaskCheck;
+    _Bool _hasRecvData;
     float _playPercentage;
     TBDownloadTask *_task;
     unsigned long long _videoLength;
@@ -27,14 +29,20 @@
     CDUnknownBlockType _didFailBlock;
     NSMutableArray *_pendingRequests;
     unsigned long long _playOffset;
+    NSTimer *_retryTimer;
+    unsigned long long _retryCount;
 }
 
+@property(nonatomic) unsigned long long retryCount; // @synthesize retryCount=_retryCount;
+@property(retain, nonatomic) NSTimer *retryTimer; // @synthesize retryTimer=_retryTimer;
+@property(nonatomic) _Bool hasRecvData; // @synthesize hasRecvData=_hasRecvData;
 @property(nonatomic) unsigned long long playOffset; // @synthesize playOffset=_playOffset;
 @property(retain, nonatomic) NSMutableArray *pendingRequests; // @synthesize pendingRequests=_pendingRequests;
 @property(copy, nonatomic) CDUnknownBlockType didFailBlock; // @synthesize didFailBlock=_didFailBlock;
 @property(copy, nonatomic) CDUnknownBlockType didFinishBlock; // @synthesize didFinishBlock=_didFinishBlock;
 @property(copy, nonatomic) CDUnknownBlockType dataReceiveBlock; // @synthesize dataReceiveBlock=_dataReceiveBlock;
 @property(copy, nonatomic) CDUnknownBlockType headerResponseBlock; // @synthesize headerResponseBlock=_headerResponseBlock;
+@property(nonatomic) _Bool enableTaskCheck; // @synthesize enableTaskCheck=_enableTaskCheck;
 @property(nonatomic) _Bool moovAtEnd; // @synthesize moovAtEnd=_moovAtEnd;
 @property(nonatomic) unsigned long long endSize; // @synthesize endSize=_endSize;
 @property(nonatomic) unsigned long long endOffset; // @synthesize endOffset=_endOffset;
@@ -52,6 +60,8 @@
 - (_Bool)resourceLoader:(id)arg1 shouldWaitForLoadingOfRequestedResource:(id)arg2;
 - (_Bool)respondWithDataForRequest:(id)arg1;
 - (void)processPendingRequests;
+- (void)checkTask;
+- (void)hasDataRecv;
 - (void)fillInContentInformation:(id)arg1;
 - (void)dealloc;
 - (id)init;

@@ -10,9 +10,12 @@
 {
 }
 
-+ (void)commitTransitionEndSuc:(id)arg1 animationTime:(long long)arg2 transitionTime:(long long)arg3;
-+ (void)commitTransitionEndFail:(id)arg1 errorCode:(id)arg2 errorMsg:(id)arg3;
++ (void)commitTransitionTime:(id)arg1 totalTime:(double)arg2 animationTime:(double)arg3;
++ (void)commitTransitionSuc:(id)arg1;
++ (void)commitTransitionFail:(id)arg1 errorCode:(id)arg2 errorMsg:(id)arg3;
 + (void)commitTransitionStart:(id)arg1;
++ (void)registerTransitionAppMonitor;
++ (void)setUTEnabled:(_Bool)arg1;
 
 @end
 

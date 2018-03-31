@@ -6,18 +6,18 @@
 
 #import <QQMainProject/QZVideoStateViewDelegate-Protocol.h>
 
-@class QZVideoAdvView;
+@class QZVideoAdvView, QzoneFeedModel;
 
 @protocol QZLayerVideoStateViewDelegate <QZVideoStateViewDelegate>
 
 @optional
-- (void)commonComponentViewClicked;
 - (void)videoConfigViewClicked;
 - (void)moreVideoClick;
 - (void)redpacketClick;
 - (void)didVideoControlViewHidden:(_Bool)arg1;
 - (_Bool)processedSingleTap;
 - (void)didAdvAnimationEnd:(QZVideoAdvView *)arg1;
+- (void)didSelectArea:(unsigned long long)arg1 feedModel:(QzoneFeedModel *)arg2;
 - (void)didSelectArea:(unsigned long long)arg1;
 - (void)didSelectAdv:(QZVideoAdvView *)arg1 selectedArea:(unsigned long long)arg2;
 - (void)showAdvView;

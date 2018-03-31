@@ -14,8 +14,10 @@
     UILabel *_value;
     UIButton *_operation;
     id _controller;
+    id _model;
 }
 
+@property(nonatomic) __weak id model; // @synthesize model=_model;
 @property(nonatomic) __weak id controller; // @synthesize controller=_controller;
 @property(retain, nonatomic) UIButton *operation; // @synthesize operation=_operation;
 @property(retain, nonatomic) UILabel *value; // @synthesize value=_value;

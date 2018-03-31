@@ -7,11 +7,5 @@
 #import <UIKit/UIImage.h>
 
 @interface UIImage (ODHelper)
-+ (id)rotatedByDegrees:(id)arg1 Degrees:(double)arg2;
-+ (id)scaleToSize:(id)arg1 size:(struct CGSize)arg2;
-+ (id)loadImageWithCache:(id)arg1;
-+ (id)loadImage:(id)arg1;
-+ (id)loadNetResImage:(id)arg1 NetResType:(int)arg2;
-+ (id)loadBaseNetResImage:(id)arg1;
 @end
 

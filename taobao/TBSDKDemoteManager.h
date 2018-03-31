@@ -58,6 +58,7 @@
 - (void)initialCacheStorage:(id)arg1 withConfigCenter:(_Bool)arg2;
 - (void)initialCacheConfig4CC:(id)arg1;
 - (void)demoteConfigUpdate:(id)arg1;
+- (void)dealloc;
 - (id)init;
 - (void)initialSwitch;
 

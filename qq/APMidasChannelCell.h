@@ -22,7 +22,6 @@
 }
 
 - (void)setHighlighted:(_Bool)arg1 animated:(_Bool)arg2;
-- (void)prepareForReuse;
 - (void)layoutSubviews;
 - (void)setSelected:(_Bool)arg1 animated:(_Bool)arg2;
 - (void)showState:(_Bool)arg1;

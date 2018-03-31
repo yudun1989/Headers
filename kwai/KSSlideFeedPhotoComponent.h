@@ -9,7 +9,7 @@
 #import "KSFeedDetailVideoPlayerViewDelegate-Protocol.h"
 #import "KSFeedPincherDelegate-Protocol.h"
 
-@class KSAudioSessionRouteMonitor, KSFeedAdEndView, KSFeedPincher, KSSlideFeedViewController, KSUFeedPhotoLogger, KSUTaskMetaData, KSUUrlPackage, KSVideoImageView, LikableAnimation, NSString, UIAlertView, UIButton, UILabel, UIView;
+@class KSAudioSessionRouteMonitor, KSFeedAdEndView, KSFeedPincher, KSSlideFeedViewController, KSSlideLikableAnimation, KSUFeedPhotoLogger, KSUTaskMetaData, KSUUrlPackage, KSVideoImageView, NSString, UIAlertView, UIButton, UILabel, UIView;
 @protocol KSSlideFeedPhotoComponentDelegate;
 
 @interface KSSlideFeedPhotoComponent : KSFeedBaseComponent <KSFeedDetailVideoPlayerViewDelegate, KSFeedPincherDelegate>
@@ -31,7 +31,7 @@
     _Bool _pausedByHeadsetPlugout;
     _Bool _pausedByResignActive;
     _Bool _alwaysShowCommentBar;
-    LikableAnimation *_likeAnimator;
+    KSSlideLikableAnimation *_likeAnimator;
     id <KSSlideFeedPhotoComponentDelegate> _delegate;
     KSFeedPincher *_pincher;
     KSVideoImageView *_playerView;
@@ -75,7 +75,7 @@
 - (id)transitionAnimatingView;
 - (void)showLikeAnimationAtPosition:(struct CGPoint)arg1 inView:(id)arg2;
 - (void)showLikeAnimation;
-@property(readonly, nonatomic) LikableAnimation *likeAnimator; // @synthesize likeAnimator=_likeAnimator;
+@property(readonly, nonatomic) KSSlideLikableAnimation *likeAnimator; // @synthesize likeAnimator=_likeAnimator;
 - (void)scrollViewDidScroll:(id)arg1;
 - (void)applicationWillResignActive;
 - (void)applicationDidBecomeActive;
@@ -117,7 +117,6 @@
 - (void)preparePlayerResource;
 - (void)reloadData;
 - (void)postPlayerLog;
-- (id)loadQOSInfoForPlayer:(id)arg1;
 - (void)clearPauseDate;
 - (void)recordPauseDate;
 - (void)hidePictureIcon;

@@ -14,7 +14,6 @@
 - (void)storyFeedHeaderInfoView:(QQStoryFeedHeaderInfoView *)arg1 didUserNameLabelTapGesture:(UITapGestureRecognizer *)arg2;
 - (void)storyFeedHeaderInfoView:(QQStoryFeedHeaderInfoView *)arg1 didUserCoverTouchUpInside:(UIView *)arg2;
 - (void)storyFeedHeaderInfoView:(QQStoryFeedHeaderInfoView *)arg1 didAddVideoButtonTouchUpInside:(UIButton *)arg2;
-- (void)storyFeedHeaderInfoView:(QQStoryFeedHeaderInfoView *)arg1 didCreateShareGroupButtonTouchUpInside:(UIButton *)arg2;
 - (void)storyFeedHeaderInfoView:(QQStoryFeedHeaderInfoView *)arg1 didJoinButtonTouchUpInside:(UIButton *)arg2;
 - (void)storyFeedHeaderInfoView:(QQStoryFeedHeaderInfoView *)arg1 didFollowButtonTouchUpInside:(UIButton *)arg2;
 @end

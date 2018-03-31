@@ -179,7 +179,6 @@
 - (_Bool)wnsMediaRectSetLiveShow;
 - (double)wnsLuckyMoneyMediaRectWidthForPlus;
 - (double)wnsLuckyMoneyMediaRectWidth;
-- (_Bool)wnsUseNewPermissionLocation;
 - (long long)wnsGetUpdateFeedUndealCntOnce;
 - (long long)wnsFeedNickNameSplashCount;
 - (double)wnsAdFeedExposeTime;
@@ -209,6 +208,8 @@
 - (_Bool)hasPassiveMessage;
 - (void)getUpdateFeedWithFeedList:(id)arg1 reqType:(int)arg2;
 - (void)sendFileToQQ:(id)arg1;
+- (id)imageForClientKey:(id)arg1;
+- (void)saveImage:(id)arg1 key:(id)arg2;
 - (void)addJobToSendBoxWithPath:(id)arg1;
 - (id)getCachePath;
 - (id)getDocPath;

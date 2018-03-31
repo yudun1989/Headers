@@ -40,6 +40,7 @@
 - (void)setInteractViews;
 - (void)loadTemplateResource:(unsigned long long)arg1 byType:(unsigned long long)arg2 placeHolder:(CDUnknownBlockType)arg3 completion:(CDUnknownBlockType)arg4;
 - (void)refreshUI;
+- (void)downloadConfigFinish:(id)arg1;
 - (void)onStickerDownloadSuccess:(id)arg1;
 - (void)didBeginAnimateTemplate:(id)arg1;
 - (id)getCoverImage:(int)arg1 dataId:(int)arg2;

@@ -8,15 +8,12 @@
 
 #import "TBMMessageReceiver-Protocol.h"
 
-@class NSString, TBAccsManager;
+@class NSString;
 
 @interface TBPopLayerAppDidFinishLaunchingNotificationHandler : NSObject <TBMMessageReceiver>
 {
-    TBAccsManager *_accsManager;
 }
 
-@property(retain, nonatomic) TBAccsManager *accsManager; // @synthesize accsManager=_accsManager;
-- (void).cxx_destruct;
 - (void)didReceiveMessageNotification:(id)arg1;
 
 // Remaining properties

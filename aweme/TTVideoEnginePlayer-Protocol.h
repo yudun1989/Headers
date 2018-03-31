@@ -35,6 +35,7 @@
 @property(readonly, nonatomic) double playableDuration;
 @property(readonly, nonatomic) double duration;
 @property(nonatomic) double currentPlaybackTime;
+@property(nonatomic) int testSpeedMode;
 @property(nonatomic) int cacheFileMode;
 @property(copy, nonatomic) NSString *hostname;
 @property(copy, nonatomic) NSURL *contentURL;

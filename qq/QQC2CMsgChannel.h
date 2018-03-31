@@ -18,6 +18,9 @@
 
 + (id)geneLastReadInfo:(unsigned long long)arg1;
 + (id)getInstance;
+- (id)filterHonestTalkingEncapsulation:(id)arg1;
+- (id)genMsgAssemblyLineForType:(int)arg1 isOffLine:(_Bool)arg2;
+- (void)processMessageEncapsulationWith:(id)arg1 isOffLine:(_Bool)arg2;
 - (id)getMsgHandlerType:(unsigned int)arg1 c2cCmd:(unsigned int)arg2 msg:(Msg_f948e9b8 *)arg3;
 - (id)handleMsgResp:(struct PbGetMsgResp *)arg1;
 - (void)notifyError:(id)arg1;

@@ -16,6 +16,7 @@
     struct _opaque_pthread_mutexattr_t _propertMutexAttr;
     _Bool _imageLoadEvent;
     _Bool _imageDownloadFinish;
+    _Bool _downloadImageWithURL;
     NSString *_placeholdSrc;
     double _blurRadius;
     long long _resizeMode;
@@ -26,7 +27,8 @@
     id <WXImageOperationProtocol> _placeholderOperation;
 }
 
-+ (id)wx_export_method_72;
++ (id)wx_export_method_75;
+@property(nonatomic) _Bool downloadImageWithURL; // @synthesize downloadImageWithURL=_downloadImageWithURL;
 @property(nonatomic) _Bool imageDownloadFinish; // @synthesize imageDownloadFinish=_imageDownloadFinish;
 @property(nonatomic) _Bool imageLoadEvent; // @synthesize imageLoadEvent=_imageLoadEvent;
 @property(retain, nonatomic) id <WXImageOperationProtocol> placeholderOperation; // @synthesize placeholderOperation=_placeholderOperation;

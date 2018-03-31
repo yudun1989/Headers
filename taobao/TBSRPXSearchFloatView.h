@@ -28,6 +28,9 @@
 @property(nonatomic) __weak id delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
 - (void)setAllElementsAccessibility:(_Bool)arg1;
+- (void)clearData;
+- (void)renderPushButton;
+- (void)showCrowdCommentComponent;
 - (void)scolldidscoll:(id)arg1;
 - (id)instanceWithName:(id)arg1;
 - (void)insert:(id)arg1 index:(long long)arg2;

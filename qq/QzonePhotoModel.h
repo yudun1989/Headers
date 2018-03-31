@@ -6,7 +6,7 @@
 
 #import <QQMainProject/QZoneModel.h>
 
-@class MQZPhotoPoiInfo, NSArray, NSMutableDictionary, NSNumber, NSString, QQAsset, QZJFeedsCellComm, QZJFeedsCellComment, QZJFeedsCellId, QZJFeedsCellLike, QZJFeedsCellOperation, QZJPhotoAlbum, QzoneAlbumShareInfo, QzoneFeedVideo, UIImage;
+@class MQZPhotoPoiInfo, NSArray, NSMutableDictionary, NSNumber, NSString, QZJFeedsCellComm, QZJFeedsCellComment, QZJFeedsCellId, QZJFeedsCellLike, QZJFeedsCellOperation, QZJPhotoAlbum, QzoneAlbumShareInfo, QzoneFeedVideo;
 
 @interface QzonePhotoModel : QZoneModel
 {
@@ -30,11 +30,10 @@
     QZJFeedsCellLike *_feedsCellLike;
     QZJFeedsCellComment *_feedsCellComment;
     long long _picDataBatchID;
-    UIImage *_image;
-    QQAsset *_asset;
     long long _similiarGroupNum;
     long long _sectionIndexInEventDetail;
     NSArray *_facelist;
+    unsigned long long _originSize;
 }
 
 + (id)convertToQzonePhotoMode:(id)arg1;
@@ -52,14 +51,13 @@
 + (id)commonConvertToCollectionPhotoModelsFrom:(id)arg1 seperateSection:(long long)arg2;
 + (id)commonConvertToEventPhotoModelsFrom:(id)arg1 seperateByUploadTime:(_Bool)arg2 seperateSection:(long long)arg3;
 + (id)eventModelfromPhotoModel:(id)arg1 seperateByUploadTime:(_Bool)arg2 seperateSection:(long long)arg3;
+@property(nonatomic) unsigned long long originSize; // @synthesize originSize=_originSize;
 @property(copy, nonatomic) NSArray *facelist; // @synthesize facelist=_facelist;
 @property(nonatomic) long long sectionIndexInEventDetail; // @synthesize sectionIndexInEventDetail=_sectionIndexInEventDetail;
 @property(nonatomic) _Bool isSelect; // @synthesize isSelect=_isSelect;
 @property(nonatomic) _Bool isShare; // @synthesize isShare=_isShare;
 @property(nonatomic) long long similiarGroupNum; // @synthesize similiarGroupNum=_similiarGroupNum;
 @property(nonatomic) _Bool videoReachLimit; // @synthesize videoReachLimit=_videoReachLimit;
-@property(retain, nonatomic) QQAsset *asset; // @synthesize asset=_asset;
-@property(retain, nonatomic) UIImage *image; // @synthesize image=_image;
 @property(nonatomic) long long picDataBatchID; // @synthesize picDataBatchID=_picDataBatchID;
 @property(retain, nonatomic) QZJFeedsCellComment *feedsCellComment; // @synthesize feedsCellComment=_feedsCellComment;
 @property(retain, nonatomic) QZJFeedsCellLike *feedsCellLike; // @synthesize feedsCellLike=_feedsCellLike;
@@ -79,6 +77,7 @@
 @property(nonatomic) long long smallWidth; // @synthesize smallWidth=_smallWidth;
 - (void).cxx_destruct;
 - (_Bool)isSamePhoto:(id)arg1;
+- (_Bool)isPanoramaPhoto;
 - (_Bool)unablePlayVideo;
 - (_Bool)isEqual:(id)arg1;
 - (_Bool)checkIsSamePhotoByURL:(id)arg1 another:(id)arg2;

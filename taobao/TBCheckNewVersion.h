@@ -9,7 +9,7 @@
 #import "SKStoreProductViewControllerDelegate-Protocol.h"
 #import "TBNewVersionAlertDelegate-Protocol.h"
 
-@class NSString, NSTimer, TBNewVersionAlertPopOperation, TBNewVersionModel;
+@class NSString, NSTimer, SKStoreProductViewController, TBNewVersionAlertPopOperation, TBNewVersionModel;
 
 @interface TBCheckNewVersion : NSObject <TBNewVersionAlertDelegate, SKStoreProductViewControllerDelegate>
 {
@@ -19,10 +19,13 @@
     NSTimer *_timer;
     TBNewVersionAlertPopOperation *_popOperation;
     TBNewVersionModel *_versionModel;
+    unsigned long long _updateProcess;
+    SKStoreProductViewController *_store;
 }
 
-+ (void)openURL:(id)arg1;
 + (id)sharedTBCheckNewVersion;
+@property(nonatomic) __weak SKStoreProductViewController *store; // @synthesize store=_store;
+@property unsigned long long updateProcess; // @synthesize updateProcess=_updateProcess;
 @property(retain, nonatomic) TBNewVersionModel *versionModel; // @synthesize versionModel=_versionModel;
 @property(retain, nonatomic) TBNewVersionAlertPopOperation *popOperation; // @synthesize popOperation=_popOperation;
 @property(nonatomic) __weak NSTimer *timer; // @synthesize timer=_timer;
@@ -30,6 +33,7 @@
 @property(copy, nonatomic) NSString *latestVersion; // @synthesize latestVersion=_latestVersion;
 @property(copy, nonatomic) NSString *appUpdateUrl; // @synthesize appUpdateUrl=_appUpdateUrl;
 - (void).cxx_destruct;
+- (void)openURL:(id)arg1;
 - (_Bool)isSameDay:(id)arg1 date2:(id)arg2;
 - (void)productViewControllerDidFinish:(id)arg1;
 - (void)alertView:(id)arg1 didDismissWithButtonIndex:(long long)arg2;

@@ -53,7 +53,7 @@
 - (void)putBarrageContent:(id)arg1;
 - (_Bool)containsBarrageObject:(id)arg1 seconds:(id)arg2;
 - (_Bool)barrageObjectAtProfiles:(id)arg1;
-- (void)requestBarragePublish:(id)arg1 accountId:(id)arg2;
+- (void)requestBarragePublish:(id)arg1 accountId:(id)arg2 finishCompletion:(CDUnknownBlockType)arg3;
 - (void)sendSelfBarrageContent:(id)arg1;
 - (void)addBarrageWithContent:(id)arg1 type:(long long)arg2 source:(long long)arg3;
 - (void)updatePlayCurrentTime:(double)arg1 duration:(double)arg2;

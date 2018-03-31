@@ -19,6 +19,7 @@
 - (id)parseDynamicInfo:(id)arg1;
 - (void)handleDinamicCells:(id)arg1;
 - (void)parseTemplate:(id)arg1 operation:(id)arg2 callBack:(CDUnknownBlockType)arg3;
+- (void)parsePreSellBanner:(id)arg1 operation:(id)arg2;
 - (void)parseGallery:(id)arg1 operation:(id)arg2;
 - (void)parseBanner:(id)arg1 operation:(id)arg2;
 - (void)parseBoughtList:(id)arg1 operation:(id)arg2;

@@ -12,6 +12,7 @@
 
 + (_Bool)useNewAudiovideoSync;
 + (_Bool)shouldEnableAgeGate;
++ (_Bool)enableVideoLogUpload;
 + (_Bool)enableAccountLogUpload;
 + (_Bool)enableHardDecode;
 + (_Bool)shouldUseTTPlayer;

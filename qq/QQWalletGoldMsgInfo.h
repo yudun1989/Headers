@@ -22,8 +22,10 @@
     unsigned long long _nextGrabTime;
     NSMutableArray *_uinList;
     NSString *_authKey;
+    unsigned long long _grabAmount;
 }
 
+@property(nonatomic) unsigned long long grabAmount; // @synthesize grabAmount=_grabAmount;
 @property(nonatomic) unsigned int number; // @synthesize number=_number;
 @property(retain, nonatomic) NSString *authKey; // @synthesize authKey=_authKey;
 @property(retain, nonatomic) NSMutableArray *uinList; // @synthesize uinList=_uinList;

@@ -10,6 +10,7 @@
 {
 }
 
++ (id)getPopLayerVersionInfo;
 + (_Bool)isDictionary:(id)arg1 containsDictionary:(id)arg2;
 + (id)convertJsonToString:(id)arg1;
 + (id)resolveWithJsonString:(id)arg1;

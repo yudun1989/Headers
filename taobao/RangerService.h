@@ -14,6 +14,7 @@
 {
 }
 
++ (id)intercepterUrlStringByRewriteFromURL:(id)arg1;
 - (void)rangerServiceDownloadContentForWeexUrl:(id)arg1 finishBlock:(CDUnknownBlockType)arg2;
 - (void)sendSynchronousRequest:(id)arg1 callBack:(CDUnknownBlockType)arg2;
 - (id)rangerServiceRedirectForWindvaneUrl:(id)arg1;

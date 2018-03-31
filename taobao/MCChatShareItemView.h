@@ -6,20 +6,36 @@
 
 #import <UIKit/UIButton.h>
 
-@class UIImageView, UILabel;
+@class NSString, UIImage, UIImageView, UILabel;
 @protocol MCChatShareItemViewDelegate;
 
 @interface MCChatShareItemView : UIButton
 {
+    NSString *_textFontColorHex;
+    NSString *_defaultTextFontColorHex;
     id <MCChatShareItemViewDelegate> _delegate;
     UIImageView *_innerImageView;
     UIImageView *_titleIconView;
     UILabel *_innerTitleLabel;
     UILabel *_itemPriceLabel;
     UILabel *_saleNumLabel;
+    UILabel *_typeLabel;
+    UIImageView *_typeIconView;
+    UILabel *_purchaseTipsLabel;
+    UIButton *_leftBtn;
+    UIButton *_rightBtn;
+    UIImageView *_outdateImageView;
+    UIImage *_defaultTypeIcon;
 }
 
 + (struct CGSize)sizeForMessage:(id)arg1;
+@property(retain, nonatomic) UIImage *defaultTypeIcon; // @synthesize defaultTypeIcon=_defaultTypeIcon;
+@property(retain, nonatomic) UIImageView *outdateImageView; // @synthesize outdateImageView=_outdateImageView;
+@property(retain, nonatomic) UIButton *rightBtn; // @synthesize rightBtn=_rightBtn;
+@property(retain, nonatomic) UIButton *leftBtn; // @synthesize leftBtn=_leftBtn;
+@property(retain, nonatomic) UILabel *purchaseTipsLabel; // @synthesize purchaseTipsLabel=_purchaseTipsLabel;
+@property(retain, nonatomic) UIImageView *typeIconView; // @synthesize typeIconView=_typeIconView;
+@property(retain, nonatomic) UILabel *typeLabel; // @synthesize typeLabel=_typeLabel;
 @property(retain, nonatomic) UILabel *saleNumLabel; // @synthesize saleNumLabel=_saleNumLabel;
 @property(retain, nonatomic) UILabel *itemPriceLabel; // @synthesize itemPriceLabel=_itemPriceLabel;
 @property(retain, nonatomic) UILabel *innerTitleLabel; // @synthesize innerTitleLabel=_innerTitleLabel;
@@ -29,7 +45,10 @@
 - (void).cxx_destruct;
 - (void)setTitleWithMessage:(id)arg1 forLabel:(id)arg2;
 - (void)innerTapped:(id)arg1;
+- (void)leftBtnAction:(id)arg1;
+- (void)rightBtnAction:(id)arg1;
 - (void)updateMessage:(id)arg1;
+- (id)creatBtnWithFrame:(struct CGRect)arg1;
 - (id)initWithFrame:(struct CGRect)arg1 delegate:(id)arg2;
 
 @end

@@ -11,10 +11,11 @@
 @interface TBSDKMTOPEnvConfig : NSObject
 {
     _Bool _useSecurityGuard;
-    int _environment;
+    _Bool _enableHttps;
     NSString *_appkey;
     NSString *_appSecret;
     NSString *_uid;
+    long long _environment;
     NSString *_gatewayDomain;
     NSString *_customMtopRequestURL;
     NSString *_authCode;
@@ -27,6 +28,7 @@
 + (id)urlEncodeString:(id)arg1;
 + (id)shareInstance;
 + (void)initialize;
+@property(nonatomic) _Bool enableHttps; // @synthesize enableHttps=_enableHttps;
 @property(nonatomic) _Bool useSecurityGuard; // @synthesize useSecurityGuard=_useSecurityGuard;
 @property(copy) NSString *appConfVersion; // @synthesize appConfVersion=_appConfVersion;
 @property(retain) NSArray *needUpdateTradeUnitList; // @synthesize needUpdateTradeUnitList=_needUpdateTradeUnitList;
@@ -35,7 +37,7 @@
 @property(retain, nonatomic) NSString *authCode; // @synthesize authCode=_authCode;
 @property(retain, nonatomic) NSString *customMtopRequestURL; // @synthesize customMtopRequestURL=_customMtopRequestURL;
 @property(retain, nonatomic) NSString *gatewayDomain; // @synthesize gatewayDomain=_gatewayDomain;
-@property(nonatomic) int environment; // @synthesize environment=_environment;
+@property(nonatomic) long long environment; // @synthesize environment=_environment;
 @property(retain, nonatomic) NSString *uid; // @synthesize uid=_uid;
 @property(retain, nonatomic) NSString *appSecret; // @synthesize appSecret=_appSecret;
 @property(retain, nonatomic) NSString *appkey; // @synthesize appkey=_appkey;

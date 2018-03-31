@@ -6,7 +6,6 @@
 
 #import <Foundation/NSObject.h>
 
-#import <QQMainProject/QQSSGThemeSelectorViewControllerDelegate-Protocol.h>
 #import <QQMainProject/QQStorySGVideoSelectorViewControllerDelegate-Protocol.h>
 #import <QQMainProject/QQVideoCaptureViewControllerDelegate-Protocol.h>
 #import <QQMainProject/TBBizNetworkLogicDelegate-Protocol.h>
@@ -14,7 +13,7 @@
 @class NSArray, NSString, QQStorySGVideoSelectorViewController, UINavigationController, UIViewController;
 @protocol TBShareGroupJumpDelegate, TBShareGroupJumperDataReportDelegate;
 
-@interface TBShareGroupJumpMediator : NSObject <QQVideoCaptureViewControllerDelegate, QQSSGThemeSelectorViewControllerDelegate, TBBizNetworkLogicDelegate, QQStorySGVideoSelectorViewControllerDelegate>
+@interface TBShareGroupJumpMediator : NSObject <QQVideoCaptureViewControllerDelegate, TBBizNetworkLogicDelegate, QQStorySGVideoSelectorViewControllerDelegate>
 {
     unsigned long long _selfRetainCount;
     _Bool _hasChose;
@@ -49,8 +48,6 @@
 - (void)shareGroupVideoSelectorViewControllerDidFinishSelecting:(id)arg1;
 - (void)didRequestFail:(unsigned long long)arg1 requestModel:(id)arg2 error:(id)arg3;
 - (void)didReceivedData:(unsigned long long)arg1 requestModel:(id)arg2 classModel:(id)arg3;
-- (void)themeSelectorViewControllerDidCancel:(id)arg1;
-- (void)themeSelectorViewController:(id)arg1 didSelectedThemes:(id)arg2;
 - (void)storyVideoCaptureViewControllerDidCancel:(id)arg1;
 - (void)storyVideoCaptureViewController:(id)arg1 didFinishPickingMediaWithInfo:(id)arg2;
 - (void)openShareGroupSelectorFromVC:(id)arg1;

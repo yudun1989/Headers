@@ -18,20 +18,24 @@
     _Bool _supportWpa;
     long long _groupUin;
     NSArray *_disabledButtons;
+    _Bool _isRequestingTinyIdForReport;
     long long _summaryEntry;
 }
 
+@property(nonatomic) _Bool isRequestingTinyIdForReport; // @synthesize isRequestingTinyIdForReport=_isRequestingTinyIdForReport;
 @property(nonatomic) long long summaryEntry; // @synthesize summaryEntry=_summaryEntry;
 - (void).cxx_destruct;
 - (void)pushToTribeSettingView;
 - (void)actionSheet:(id)arg1 clickedButtonAtIndex:(long long)arg2;
 - (void)showMoreActionSheet;
 - (void)alertView:(id)arg1 clickedButtonAtIndex:(long long)arg2;
+- (void)reportEvil:(id)arg1;
 - (void)onInformButtonTouched:(id)arg1;
 - (void)disableButton:(id)arg1;
 - (id)loadOperationTabBarWithSupportWpa:(_Bool)arg1;
 - (void)onRTVoiceCallTouched:(id)arg1;
 - (void)onSendMsgTouched:(id)arg1;
+- (void)accordFollowedStatusRrefreshOperationTabBar:(_Bool)arg1;
 - (void)requestFollow:(_Bool)arg1;
 - (void)onNearbyCancelFollowButtonTouched:(id)arg1;
 - (void)onNearbyFollowButtonTouched:(id)arg1;

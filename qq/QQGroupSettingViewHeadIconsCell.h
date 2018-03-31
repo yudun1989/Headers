@@ -23,6 +23,7 @@
 }
 
 + (double)calculateMemberCountCellHeight;
++ (double)calculateCellHeight2:(long long)arg1;
 + (double)calculateCellHeight:(long long)arg1;
 + (float)calculateImageWidth:(float)arg1 picCount:(int)arg2;
 @property(nonatomic) _Bool isShowTitle; // @synthesize isShowTitle=_isShowTitle;

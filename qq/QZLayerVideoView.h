@@ -38,6 +38,7 @@
 - (_Bool)needPlayPremovieAdv;
 - (void)didAdvAnimationEnd:(id)arg1;
 - (void)didSelectAdv:(id)arg1 selectedArea:(unsigned long long)arg2;
+- (void)didSelectArea:(unsigned long long)arg1 feedModel:(id)arg2;
 - (void)didSelectArea:(unsigned long long)arg1;
 - (_Bool)playWithManul:(_Bool)arg1;
 - (void)pauseByUser:(_Bool)arg1;

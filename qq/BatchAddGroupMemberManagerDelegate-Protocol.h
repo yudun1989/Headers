@@ -6,8 +6,10 @@
 
 #import <QQMainProject/NSObject-Protocol.h>
 
+@class NSString;
+
 @protocol BatchAddGroupMemberManagerDelegate <NSObject>
 - (void)conditionCheckFailedWithResult:(long long)arg1;
-- (void)conditionCheckSucceed;
+- (void)conditionCheckSucceed:(NSString *)arg1;
 @end
 

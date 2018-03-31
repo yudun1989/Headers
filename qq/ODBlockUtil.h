@@ -10,6 +10,7 @@
 {
 }
 
++ (_Bool)isGrayOrAppStore;
 + (_Bool)isSimulator;
 + (void)requestPermission:(long long)arg1 resultBlock:(id)arg2;
 + (void)dispatchAfterWhen:(unsigned long long)arg1 queue:(id)arg2 block:(id)arg3;

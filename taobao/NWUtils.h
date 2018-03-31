@@ -10,7 +10,7 @@
 {
 }
 
-+ (_Bool)certiConnection:(id)arg1 withChallenge:(id)arg2;
++ (_Bool)certiConnection:(id)arg1 withChallenge:(id)arg2 onlyX509:(_Bool)arg3;
 + (void)updateHost:(id)arg1 forRequest:(id)arg2;
 + (void)updateScheme:(id)arg1 forRequest:(id)arg2;
 + (id)parseOrangeContent:(id)arg1 withKey:(id)arg2;

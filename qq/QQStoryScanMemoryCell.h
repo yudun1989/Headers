@@ -11,8 +11,6 @@
 
 @interface QQStoryScanMemoryCell : UITableViewCell
 {
-    NSString *_leftTitleStr;
-    UILabel *_leftTitle;
     UIImageView *_arrorIcon;
     NSString *_rightTitleStr;
     UILabel *_rightTitle;

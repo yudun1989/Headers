@@ -17,9 +17,12 @@
 
 @property(nonatomic) id <QQPttTouchDelegate> touchDelegate; // @synthesize touchDelegate=_touchDelegate;
 - (void)touchesMoved:(id)arg1 withEvent:(id)arg2;
+- (void)touchMovePoint:(struct CGPoint)arg1;
 - (void)touchesEnded:(id)arg1 withEvent:(id)arg2;
+- (void)touchEnd;
 - (void)touchesCancelled:(id)arg1 withEvent:(id)arg2;
 - (void)touchesBegan:(id)arg1 withEvent:(id)arg2;
+- (void)touchBegin;
 - (_Bool)judgeInside:(struct CGPoint)arg1;
 - (id)initWithFrame:(struct CGRect)arg1;
 

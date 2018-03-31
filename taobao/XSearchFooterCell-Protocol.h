@@ -9,7 +9,7 @@
 @class NSString, XSearchService;
 
 @protocol XSearchFooterCell <NSObject>
-+ (double)HeightWithModel:(id)arg1 searchService:(XSearchService *)arg2 layoutStyle:(long long)arg3;
++ (double)HeightWithSearchService:(XSearchService *)arg1;
 + (NSString *)reuseIdentifierString;
 - (void)render;
 @end

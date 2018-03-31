@@ -10,20 +10,24 @@
 
 @interface PAAdMsgVideoModel : NSObject
 {
+    _Bool _isHorizontalVideo;
     NSString *_coverUrl;
     NSString *_vid;
     NSString *_adId;
     NSString *_adPaUin;
+    NSString *_jumpGuide;
     double _startPlayTime;
     double _totalPlayTime;
     PAAdMsgVideoBannerModel *_bannerModel;
     unsigned long long _preDownloadType;
 }
 
+@property(nonatomic) _Bool isHorizontalVideo; // @synthesize isHorizontalVideo=_isHorizontalVideo;
 @property(nonatomic) unsigned long long preDownloadType; // @synthesize preDownloadType=_preDownloadType;
 @property(retain, nonatomic) PAAdMsgVideoBannerModel *bannerModel; // @synthesize bannerModel=_bannerModel;
 @property(nonatomic) double totalPlayTime; // @synthesize totalPlayTime=_totalPlayTime;
 @property(nonatomic) double startPlayTime; // @synthesize startPlayTime=_startPlayTime;
+@property(copy, nonatomic) NSString *jumpGuide; // @synthesize jumpGuide=_jumpGuide;
 @property(copy, nonatomic) NSString *adPaUin; // @synthesize adPaUin=_adPaUin;
 @property(copy, nonatomic) NSString *adId; // @synthesize adId=_adId;
 @property(copy, nonatomic) NSString *vid; // @synthesize vid=_vid;

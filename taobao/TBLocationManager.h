@@ -23,6 +23,7 @@
     CDUnknownBlockType _aLocationBlock;
 }
 
++ (void)requestAddressByCoordinate:(float)arg1 lat:(float)arg2 BizID:(id)arg3 block:(CDUnknownBlockType)arg4;
 + (int)getCurrentLocationAuthorizationStatus;
 + (_Bool)isLocationServiceEnabled;
 + (id)allocWithZone:(struct _NSZone *)arg1;
@@ -41,8 +42,6 @@
 - (void)timeoutControl:(id)arg1;
 - (void)clLocationUpdated:(id)arg1 error:(id)arg2;
 - (void)doLocation:(id)arg1;
-- (void)fakeLocation:(id)arg1;
-- (void)fakeLocationCallback:(id)arg1 transferData:(id)arg2 error:(id)arg3;
 - (void)doAdditionalLocation:(id)arg1 innerCode:(long long)arg2 error:(id)arg3;
 - (void)doCancleLocation:(id)arg1;
 - (void)cancelLocation:(id)arg1 block:(CDUnknownBlockType)arg2;

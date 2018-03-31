@@ -9,13 +9,14 @@
 #import <QQMainProject/ISCBusinessCallback-Protocol.h>
 #import <QQMainProject/ISCListenerCallback-Protocol.h>
 
-@class NSCache, NSMutableArray, NSMutableDictionary, NSString;
+@class NSCache, NSMutableArray, NSMutableDictionary, NSString, QQLockDictionary;
 
 @interface PersonalSignTemplateLoader : NSObject <ISCBusinessCallback, ISCListenerCallback>
 {
     NSMutableDictionary *_imageTasks;
     NSMutableDictionary *_animationZipTasks;
     NSMutableArray *_jsonTasks;
+    QQLockDictionary *_jsonTasksDic;
     NSCache *_imageCache;
 }
 
@@ -24,6 +25,7 @@
 + (long long)versionValue:(id)arg1;
 + (_Bool)isTemplateForCurrentVersion:(id)arg1;
 + (id)decodeJsonForTemplates:(id)arg1;
++ (id)decodeJsonForTemplate:(id)arg1;
 + (id)decodeJsonForCagetorys:(id)arg1;
 + (unsigned long long)animationTypeFromResourceType:(unsigned long long)arg1;
 + (unsigned long long)resourceTypeForHeight:(double)arg1;
@@ -36,8 +38,10 @@
 - (_Bool)deleteFiles:(unsigned long long)arg1 scid:(id)arg2;
 - (_Bool)isFileExists:(unsigned long long)arg1 scid:(id)arg2;
 - (_Bool)canUpdate:(unsigned long long)arg1 scid:(id)arg2 from:(id)arg3;
+- (void)contentDidUpdateTemplateId:(unsigned long long)arg1;
 - (void)contentDidUpdate;
 - (void)startCheckContentUpdate;
+- (id)parseTemplateId:(id)arg1;
 - (id)pathForTemplateWith:(unsigned long long)arg1;
 - (id)imagekeyWithType:(unsigned long long)arg1 templateId:(unsigned long long)arg2;
 - (_Bool)isUrlValid:(id)arg1;
@@ -64,8 +68,11 @@
 - (id)dot9ResizableImage:(unsigned long long)arg1;
 - (_Bool)hasDot9Resouce:(unsigned long long)arg1;
 - (id)imageByType:(unsigned long long)arg1 templateId:(unsigned long long)arg2;
+- (void)notifyJsonTaskCallBacks:(_Bool)arg1 templateId:(unsigned long long)arg2;
 - (void)notifyJsonTaskCallBacks:(_Bool)arg1;
+- (void)updateTemplatesJsonCompletion:(CDUnknownBlockType)arg1 templateId:(unsigned long long)arg2;
 - (void)updateTemplatesJsonCompletion:(CDUnknownBlockType)arg1;
+- (void)updateTemplatesCompletion:(CDUnknownBlockType)arg1 templateId:(unsigned long long)arg2;
 - (void)updateTemplatesCompletion:(CDUnknownBlockType)arg1;
 - (id)init;
 

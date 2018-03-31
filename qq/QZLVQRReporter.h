@@ -6,19 +6,19 @@
 
 #import <Foundation/NSObject.h>
 
-@class NSDate, NSTimer;
+#import <QQMainProject/QZLVQRLogReporterDelegate-Protocol.h>
 
-@interface QZLVQRReporter : NSObject
+@class NSDate, NSString, NSTimer;
+@protocol QZLVQRLogReporter;
+
+@interface QZLVQRReporter : NSObject <QZLVQRLogReporterDelegate>
 {
     NSTimer *_qualityLogTimer;
     _Bool _isHost;
     long long _uin;
     _Bool _hasStopped;
     NSDate *_startDate;
-    long long _totalCount;
-    long long _udtLossTotalCount;
-    long long _badTotalCount;
-    double _normolLossRateTotal;
+    id <QZLVQRLogReporter> _realReporter;
     long long _cpuOverLoadCount;
     double _cpuOverLoadThreshold;
     long long _cpuNormalCount;
@@ -27,6 +27,7 @@
     _Bool _isOverLoad;
 }
 
++ (_Bool)isUin:(long long)arg1 inWhitelist:(long long)arg2;
 + (id)reporter;
 - (void).cxx_destruct;
 - (void)notifyCpuIsOverLoad:(_Bool)arg1;
@@ -34,14 +35,19 @@
 - (void)cpuNormalCalculate:(double)arg1;
 - (void)cpuOverloadCalculate:(double)arg1;
 - (void)cpuCostPercentage:(double)arg1;
-- (_Bool)isUinAvailable;
-- (_Bool)shoudReport;
 - (void)getQualityLog;
 - (void)doReport;
+- (void)finishReport;
 - (void)stopTick;
 - (void)startTick;
 - (void)setUin:(long long)arg1;
 - (void)setIsHost:(_Bool)arg1;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly, copy) NSString *description;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
 
 @end
 

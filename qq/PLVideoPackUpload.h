@@ -22,15 +22,6 @@
 @property(nonatomic) unsigned long long fileSize; // @synthesize fileSize=_fileSize;
 @property(retain, nonatomic) NSData *sha1; // @synthesize sha1=_sha1;
 @property(retain, nonatomic) NSData *checkKey; // @synthesize checkKey=_checkKey;
-- (void)writhBuffer:(id)arg1 withKey:(id)arg2 withValue:(id)arg3;
-- (id)getNextUploadPack:(id)arg1 md5:(id)arg2;
-- (double)getUploadPackPercent;
-- (void)modifyOffset:(unsigned long long)arg1;
-- (_Bool)isNoNextUploadPack;
-- (void)resetPack;
-- (void)doInitData:(id)arg1;
-- (void)dealloc;
-- (id)initWithVideoPath:(id)arg1;
 
 @end
 

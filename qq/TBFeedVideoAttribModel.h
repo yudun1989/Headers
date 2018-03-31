@@ -6,7 +6,7 @@
 
 #import <QQMainProject/QQModel.h>
 
-@class NSArray, NSString;
+@class NSArray, NSString, TBVideoPollInfoModel;
 
 @interface TBFeedVideoAttribModel : QQModel
 {
@@ -25,9 +25,11 @@
     NSString *_videoLocation;
     NSString *_videoGpsFilter;
     NSArray *_mentionList;
+    TBVideoPollInfoModel *_videoPollInfo;
 }
 
 + (id)createFeedVideoAttribModel:(id)arg1;
+@property(retain, nonatomic) TBVideoPollInfoModel *videoPollInfo; // @synthesize videoPollInfo=_videoPollInfo;
 @property(nonatomic) int addVideoTimeZone; // @synthesize addVideoTimeZone=_addVideoTimeZone;
 @property(nonatomic) int timezoneOffset; // @synthesize timezoneOffset=_timezoneOffset;
 @property(retain, nonatomic) NSArray *mentionList; // @synthesize mentionList=_mentionList;

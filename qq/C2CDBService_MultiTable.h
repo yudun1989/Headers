@@ -93,7 +93,7 @@
 - (void)removeAllAccostMessages;
 - (id)getAccostMessages:(int)arg1;
 - (void)saveChangeToDB:(id)arg1;
-- (void)updateMessage:(id)arg1;
+- (void)updateMessages:(id)arg1;
 - (void)upOffLineFileMsg:(id)arg1 time:(long long)arg2 forRead:(int)arg3;
 - (void)upOfflineFileMsg:(id)arg1 uuid:(id)arg2 forContent:(id)arg3;
 - (void)upOfflineFileMsg:(id)arg1 uuid:(id)arg2 forRead:(int)arg3;

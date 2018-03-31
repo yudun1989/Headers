@@ -10,7 +10,9 @@
 {
 }
 
++ (id)getMemberStateReportValue:(id)arg1;
 + (id)getSchoolIdentity:(id)arg1;
++ (void)scButtonEventReportWithGroupCode:(id)arg1 buttonType:(unsigned long long)arg2 eventType:(unsigned long long)arg3;
 + (void)scGroupCardSchoolHistorySingalMemberClk:(id)arg1;
 + (void)scGroupCardSchoolHistoryAllMemberClk:(id)arg1;
 + (void)scGroupCardSchoolHistoryClk:(id)arg1;

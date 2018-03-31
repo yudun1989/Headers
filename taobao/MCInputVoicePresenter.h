@@ -7,16 +7,15 @@
 #import "MCBaseInputPresenter.h"
 
 #import "MCBaseItemViewDelegate-Protocol.h"
-#import "YWAudioRecorderDelegate-Protocol.h"
 
-@class MCChatPagePowerView, MCInputVoiceItemView, NSString, UIButton, UIView, YWAudioRecorder;
+@class MCAudioRecorder, MCChatPagePowerView, MCInputVoiceItemView, NSString, UIButton, UIView;
 
-@interface MCInputVoicePresenter : MCBaseInputPresenter <YWAudioRecorderDelegate, MCBaseItemViewDelegate>
+@interface MCInputVoicePresenter : MCBaseInputPresenter <MCBaseItemViewDelegate>
 {
     _Bool _isOutSide;
     _Bool _isActive;
     _Bool _hasGranted;
-    YWAudioRecorder *_ywAudioRecorder;
+    MCAudioRecorder *_recorder;
     UIView *_noticeBackView;
     MCChatPagePowerView *_speakerPowerView;
     MCInputVoiceItemView *_recordView;
@@ -30,10 +29,10 @@
 @property _Bool isOutSide; // @synthesize isOutSide=_isOutSide;
 @property(retain, nonatomic) MCChatPagePowerView *speakerPowerView; // @synthesize speakerPowerView=_speakerPowerView;
 @property(retain, nonatomic) UIView *noticeBackView; // @synthesize noticeBackView=_noticeBackView;
-@property(retain, nonatomic) YWAudioRecorder *ywAudioRecorder; // @synthesize ywAudioRecorder=_ywAudioRecorder;
+@property(retain, nonatomic) MCAudioRecorder *recorder; // @synthesize recorder=_recorder;
 - (void).cxx_destruct;
-- (void)audioRecorder:(id)arg1 recordDidFinish:(id)arg2 length:(float)arg3;
-- (void)audioRecorder:(id)arg1 averagePowerDidUpdate:(float)arg2;
+- (void)audioRecorderDidFinishWithPath:(id)arg1 length:(float)arg2 extension:(id)arg3;
+- (void)audioAveragePowerDidUpdate:(float)arg1;
 - (void)prepareForAudioRecord:(CDUnknownBlockType)arg1;
 - (void)beginRecord;
 - (void)updateSpeakerPowerLevel:(float)arg1;

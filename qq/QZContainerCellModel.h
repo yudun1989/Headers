@@ -10,10 +10,12 @@
 
 @interface QZContainerCellModel : NSObject
 {
+    _Bool _hasProcessed;
     long long _index;
     QZContainerScrollViewCell *_cell;
 }
 
+@property(nonatomic) _Bool hasProcessed; // @synthesize hasProcessed=_hasProcessed;
 @property(retain, nonatomic) QZContainerScrollViewCell *cell; // @synthesize cell=_cell;
 @property(nonatomic) long long index; // @synthesize index=_index;
 - (void).cxx_destruct;

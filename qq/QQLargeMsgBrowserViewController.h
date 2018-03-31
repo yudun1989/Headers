@@ -11,7 +11,7 @@
 #import <QQMainProject/UIGestureRecognizerDelegate-Protocol.h>
 #import <QQMainProject/UIScrollViewDelegate-Protocol.h>
 
-@class NSString, QQAIOMsgModel, QQAvatarView, QQMessageInfoModel, UIButton, UITapGestureRecognizer, UITextView, UIView;
+@class NSString, QQAIOModel, QQAIOMsgModel, QQAvatarView, QQMessageInfoModel, UIButton, UITapGestureRecognizer, UITextView, UIView;
 
 @interface QQLargeMsgBrowserViewController : QQViewController <QQAvatarPendantLoadObserver, UIActionSheetDelegate, UIGestureRecognizerDelegate, UIScrollViewDelegate>
 {
@@ -35,8 +35,10 @@
     UIButton *_magicFontEventControl;
     _Bool _shouldShowBottomView;
     UITapGestureRecognizer *_tapGesture;
+    QQAIOModel *_realAIOModel;
 }
 
+@property(nonatomic) __weak QQAIOModel *realAIOModel; // @synthesize realAIOModel=_realAIOModel;
 @property(nonatomic) __weak UITapGestureRecognizer *tapGesture; // @synthesize tapGesture=_tapGesture;
 @property(nonatomic) _Bool shouldShowBottomView; // @synthesize shouldShowBottomView=_shouldShowBottomView;
 - (void).cxx_destruct;

@@ -60,6 +60,7 @@
     _Bool _selfDevSubtitlesEnable;
     _Bool _peerDevSubtitlesEnable;
     _Bool _peerVerSubtitlesEnable;
+    _Bool _peerVerNewSubtitlesEnable;
     _Bool _selfRedGiftEnable;
     _Bool _selfRedGiftResourceEnable;
     _Bool _peerDevRedGiftEnable;
@@ -92,6 +93,7 @@
 @property(nonatomic) _Bool peerDevRedGiftEnable; // @synthesize peerDevRedGiftEnable=_peerDevRedGiftEnable;
 @property(nonatomic) _Bool selfRedGiftResourceEnable; // @synthesize selfRedGiftResourceEnable=_selfRedGiftResourceEnable;
 @property(nonatomic) _Bool selfRedGiftEnable; // @synthesize selfRedGiftEnable=_selfRedGiftEnable;
+@property(nonatomic) _Bool peerVerNewSubtitlesEnable; // @synthesize peerVerNewSubtitlesEnable=_peerVerNewSubtitlesEnable;
 @property(nonatomic) _Bool peerVerSubtitlesEnable; // @synthesize peerVerSubtitlesEnable=_peerVerSubtitlesEnable;
 @property(nonatomic) _Bool peerDevSubtitlesEnable; // @synthesize peerDevSubtitlesEnable=_peerDevSubtitlesEnable;
 @property(nonatomic) _Bool selfDevSubtitlesEnable; // @synthesize selfDevSubtitlesEnable=_selfDevSubtitlesEnable;

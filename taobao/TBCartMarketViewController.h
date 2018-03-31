@@ -10,6 +10,7 @@
 {
 }
 
+- (void)dealloc;
 - (void)forceReload;
 - (SEL)selectorForEmpty;
 - (_Bool)canRecmdShowSelf;

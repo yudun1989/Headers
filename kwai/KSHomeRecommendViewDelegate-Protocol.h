@@ -13,6 +13,6 @@
 - (void)recommendView:(KSHomeRecommendView *)arg1 didFollowItem:(KSRecommendUser *)arg2;
 - (void)recommendView:(KSHomeRecommendView *)arg1 didSelectItem:(KSRecommendUser *)arg2;
 - (void)recommendView:(KSHomeRecommendView *)arg1 didCloseItem:(KSRecommendUser *)arg2;
-- (void)recommendViewDidClose:(KSHomeRecommendView *)arg1;
+- (void)recommendViewDidCloseAll:(KSHomeRecommendView *)arg1;
 @end
 

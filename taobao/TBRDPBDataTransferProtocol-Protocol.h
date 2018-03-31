@@ -13,6 +13,9 @@
 @property(retain, nonatomic) NSDictionary *pageTrackParams;
 @property(copy, nonatomic) NSString *pageName;
 @property(retain, nonatomic) NSDictionary *requestParams;
+@property(nonatomic) _Bool hasLastPage;
+@property(nonatomic) _Bool hasMoreData;
+@property(nonatomic) _Bool hasLoadMore;
 @property(retain, nonatomic) id localData;
 
 @optional

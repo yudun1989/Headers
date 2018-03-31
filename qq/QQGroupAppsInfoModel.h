@@ -12,6 +12,7 @@
 {
     int _appUnreadNum;
     unsigned int _appOpenType;
+    unsigned int _appStatus;
     unsigned long long _appId;
     NSString *_appName;
     NSString *_appUrl;
@@ -19,6 +20,7 @@
     NSString *_appOpenParam;
 }
 
+@property(nonatomic) unsigned int appStatus; // @synthesize appStatus=_appStatus;
 @property(nonatomic) unsigned int appOpenType; // @synthesize appOpenType=_appOpenType;
 @property(nonatomic) int appUnreadNum; // @synthesize appUnreadNum=_appUnreadNum;
 @property(retain, nonatomic) NSString *appOpenParam; // @synthesize appOpenParam=_appOpenParam;

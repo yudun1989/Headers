@@ -32,16 +32,7 @@
 @property(retain, nonatomic) NSData *ImageData; // @synthesize ImageData=_ImageData;
 @property(retain, nonatomic) NSString *uploadURL; // @synthesize uploadURL=_uploadURL;
 - (void).cxx_destruct;
-- (void)URLSession:(id)arg1 task:(id)arg2 didSendBodyData:(long long)arg3 totalBytesSent:(long long)arg4 totalBytesExpectedToSend:(long long)arg5;
-- (int)cDJBHash:(id)arg1;
-- (id)image2Base64:(id)arg1;
-- (id)internalGetRequest:(id)arg1;
-- (unsigned int)getSubCmd;
-- (void)handleUploadResult:(id)arg1 response:(id)arg2 error:(id)arg3;
 - (id)getCmd:(id)arg1 withDataLength:(int)arg2 withMD5:(char *)arg3 width:(int)arg4 height:(int)arg5;
-- (void)uploadTimeOut;
-- (void)uploadPic:(id)arg1 withDelegate:(id)arg2 withParam:(id)arg3;
-- (id)init;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

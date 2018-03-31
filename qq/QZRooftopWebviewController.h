@@ -6,11 +6,12 @@
 
 #import <QQMainProject/QZoneWebViewController.h>
 
-@class UIButton;
+@class UIButton, UIColor;
 @protocol QZRooftopWebviewDelegate;
 
 @interface QZRooftopWebviewController : QZoneWebViewController
 {
+    UIColor *_oldStatusBarColor;
     id <QZRooftopWebviewDelegate> _delegate;
     UIButton *_closeButton;
     long long _lastStatusBarStyle;
@@ -20,6 +21,8 @@
 @property(retain, nonatomic) UIButton *closeButton; // @synthesize closeButton=_closeButton;
 @property(nonatomic) __weak id <QZRooftopWebviewDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
+- (void)recoverStatusBar;
+- (void)configStatusBar;
 - (void)hiddenCloseButton:(_Bool)arg1;
 - (void)leftButtonClick:(id)arg1;
 - (unsigned long long)supportedInterfaceOrientations;

@@ -35,6 +35,7 @@
 + (id)flexibleSpaceToolbarItem;
 + (void)setDefaultTextColorN:(id)arg1 TextColorH:(id)arg2 forStyle:(int)arg3;
 + (id)sharedInstance;
++ (void)buttonCustomViewClicked:(id)arg1;
 + (id)tbwbBarButtonWithButtonItem:(id)arg1 systemItem:(int)arg2;
 @property(retain, nonatomic) NSMutableDictionary *defaultColorDict; // @synthesize defaultColorDict=_defaultColorDict;
 @property(copy, nonatomic) CDUnknownBlockType itemLayoutBlock; // @synthesize itemLayoutBlock=_itemLayoutBlock;

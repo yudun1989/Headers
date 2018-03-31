@@ -14,7 +14,7 @@
 {
 }
 
-- (_Bool)publishDataID:(int)arg1 dataType:(int)arg2 data:(id)arg3 callback:(CDUnknownBlockType)arg4;
+- (_Bool)publishDataID:(int)arg1 dataType:(unsigned long long)arg2 data:(id)arg3 callback:(CDUnknownBlockType)arg4;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

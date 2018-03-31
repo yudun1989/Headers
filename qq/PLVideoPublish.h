@@ -10,14 +10,7 @@
 {
 }
 
-+ (void)makeVideoMixMusic:(id)arg1 withType:(int)arg2 musicModel:(id)arg3 withCompletionHandler:(CDUnknownBlockType)arg4;
-+ (id)createTinyVideoClipPath:(id)arg1;
 + (void)calculateMD5:(id)arg1 param:(id)arg2 completion:(CDUnknownBlockType)arg3;
-+ (void)verifyMD5:(id)arg1;
-+ (void)publishStoryVideo:(id)arg1 videoPath:(id)arg2;
-+ (void)processVideo:(id)arg1 videoPath:(id)arg2 maskimage:(id)arg3 videoDir:(id)arg4 originPath:(id)arg5;
-+ (void)storyVideoCaptureViewController:(id)arg1 didFinishPickingMediaWithInfo:(id)arg2;
-+ (void)getFeedId:(id)arg1;
 + (id)getPublishThumbleDir;
 + (id)getPublishDoodleDir;
 + (id)getPublishVideoDir;

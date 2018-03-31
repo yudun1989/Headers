@@ -209,26 +209,33 @@ struct ArtcManager {
     int _field2;
     CDUnknownFunctionPointerType *_field3;
     basic_string_a490aa4c _field4;
-    struct recursive_mutex _field5;
+    basic_string_a490aa4c _field5;
     int _field6;
-    _Bool _field7;
-    _Bool _field8;
-    struct ArtcManagerLiveOption _field9;
-    struct ArtcNativeEngine *_field10;
-    struct Looper *_field11;
-    struct Event *_field12;
-    id _field13;
+    struct map<std::__1::basic_string<char>, int, std::__1::less<std::__1::basic_string<char>>, std::__1::allocator<std::__1::pair<const std::__1::basic_string<char>, int>>> _field7;
+    int _field8;
+    _Bool _field9;
+    int _field10;
+    _Bool _field11;
+    _Bool _field12;
+    struct recursive_mutex _field13;
+    struct ArtcManagerLiveOption _field14;
+    struct ArtcNativeEngine *_field15;
+    void *_field16;
+    void *_field17;
+    struct Looper *_field18;
+    struct Event *_field19;
+    id _field20;
 };
 
 struct ArtcManagerLiveOption {
     basic_string_a490aa4c _field1;
     basic_string_a490aa4c _field2;
     basic_string_a490aa4c _field3;
-    _Bool _field4;
+    basic_string_a490aa4c _field4;
     _Bool _field5;
     _Bool _field6;
     _Bool _field7;
-    int _field8;
+    _Bool _field8;
     int _field9;
     int _field10;
     int _field11;
@@ -236,6 +243,7 @@ struct ArtcManagerLiveOption {
     int _field13;
     int _field14;
     int _field15;
+    int _field16;
 };
 
 struct ArtcMediaEngine {
@@ -367,6 +375,21 @@ struct CallInfo;
 struct Callback;
 
 struct CaptureParams;
+
+struct ChartletFilter_TexIdStruct {
+    int texId1;
+    int texId2;
+    int texId3;
+    int texId4;
+    int iFormat;
+};
+
+struct ChartletFilter_TextureCoordinateStruct {
+    struct __resourceVertexPosition coordinateForTex1;
+    struct __resourceVertexPosition coordinateForTex2;
+    struct __resourceVertexPosition coordinateForTex3;
+    struct __resourceVertexPosition coordinateForTex4;
+};
 
 struct CipherDatabase {
     CDUnknownFunctionPointerType *_field1;
@@ -772,6 +795,21 @@ struct Looper;
 struct MAFIARange {
     long long _field1;
     long long _field2;
+};
+
+struct MAMapPoint {
+    double x;
+    double y;
+};
+
+struct MAMapRect {
+    struct MAMapPoint origin;
+    struct MAMapSize size;
+};
+
+struct MAMapSize {
+    double width;
+    double height;
 };
 
 struct MetalAddParameter {
@@ -1487,6 +1525,28 @@ struct _AccsSDKOperationTypeSF {
     long long accsSDKOperationTypeFail;
 };
 
+struct _AliNNContextLayer;
+
+struct _AliNNNet {
+    CDStruct_183601bc **_field1;
+    int _field2;
+    CDStruct_183601bc *_field3;
+    CDStruct_183601bc **_field4;
+    int _field5;
+    int _field6;
+    int _field7;
+    int _field8;
+    int _field9;
+    int _field10;
+    CDStruct_183601bc *_field11;
+    struct _AliNNContextLayer **_field12;
+    unsigned int _field13;
+    CDStruct_183601bc *_field14[10];
+    int _field15;
+};
+
+struct _AliNNTensorBuffer;
+
 struct _Alloc_hider {
     char *_field1;
 };
@@ -1681,6 +1741,18 @@ struct __imgRawData {
 };
 
 struct __list_node<ACDSDataNode, void *>;
+
+struct __resourceVertexPosition {
+    _Bool bIfAvailable;
+    float fLeftBottomPoint_X;
+    float fLeftBottomPoint_Y;
+    float fRightBottomPoint_X;
+    float fRightBottomPoint_Y;
+    float fLeftUpPoint_X;
+    float fLeftUpPoint_Y;
+    float fRightUpPoint_X;
+    float fRightUpPoint_Y;
+};
 
 struct __sFILE {
     char *_field1;
@@ -2182,6 +2254,22 @@ struct stars_s {
     union _GLKVector3 position;
 };
 
+struct thread_basic_info {
+    struct time_value _field1;
+    struct time_value _field2;
+    int _field3;
+    int _field4;
+    int _field5;
+    int _field6;
+    int _field7;
+    int _field8;
+};
+
+struct time_value {
+    int _field1;
+    int _field2;
+};
+
 struct timeval {
     long long tv_sec;
     int tv_usec;
@@ -2649,13 +2737,13 @@ typedef struct {
 typedef struct {
     long long _field1;
     long long _field2;
-    int _field3;
+    long long _field3;
     long long _field4;
     long long _field5;
     long long _field6;
     long long _field7;
     long long _field8;
-} CDStruct_a90cff18;
+} CDStruct_4a9aa5a8;
 
 typedef struct {
     long long _field1;
@@ -2663,16 +2751,6 @@ typedef struct {
 } CDStruct_912cb5d2;
 
 typedef struct CDStruct_183601bc;
-
-typedef struct {
-    CDStruct_183601bc **_field1;
-    int _field2;
-    char **_field3;
-    CDStruct_183601bc **_field4;
-    int _field5;
-    int _field6;
-    int _field7;
-} CDStruct_0df3c7c0;
 
 typedef struct {
     struct map_node_t **_field1;
@@ -2684,6 +2762,17 @@ typedef struct {
     CDStruct_183601bc *_field1;
     int _field2;
 } CDStruct_af61540b;
+
+typedef struct {
+    int _field1;
+    int _field2;
+    int _field3;
+    int _field4;
+    int _field5;
+    int _field6;
+    struct _AliNNTensorBuffer *_field7;
+    int _field8;
+} CDStruct_5b0d7b23;
 
 typedef struct {
     CDStruct_bd2f613f _field1;

@@ -6,30 +6,37 @@
 
 #import "KSFeedToolBar.h"
 
-@class KSExtensionButton, UIButton, UIImage;
+@class KSExtensionButton, UIImage, UILabel;
 @protocol KSFeedHorizontalToolBarDelegate;
 
 @interface KSFeedHorizontalToolBar : KSFeedToolBar
 {
     id <KSFeedHorizontalToolBarDelegate> _delegate;
-    UIButton *_commentButton;
-    UIButton *_likeButton;
+    KSExtensionButton *_commentButton;
+    UILabel *_commentCountLabel;
+    KSExtensionButton *_likeButton;
+    UILabel *_likeCountLabel;
     KSExtensionButton *_shareButton;
     UIImage *_opacityLikeImage;
 }
 
 @property(retain, nonatomic) UIImage *opacityLikeImage; // @synthesize opacityLikeImage=_opacityLikeImage;
 @property(retain, nonatomic) KSExtensionButton *shareButton; // @synthesize shareButton=_shareButton;
-@property(retain, nonatomic) UIButton *likeButton; // @synthesize likeButton=_likeButton;
-@property(retain, nonatomic) UIButton *commentButton; // @synthesize commentButton=_commentButton;
+@property(retain, nonatomic) UILabel *likeCountLabel; // @synthesize likeCountLabel=_likeCountLabel;
+@property(retain, nonatomic) KSExtensionButton *likeButton; // @synthesize likeButton=_likeButton;
+@property(retain, nonatomic) UILabel *commentCountLabel; // @synthesize commentCountLabel=_commentCountLabel;
+@property(retain, nonatomic) KSExtensionButton *commentButton; // @synthesize commentButton=_commentButton;
 - (void).cxx_destruct;
 - (_Bool)_needShowCommentButton;
 - (double)_marginBetweenButtons;
-- (void)_updateLayoutForTitleAndImageForButton:(id)arg1;
+- (void)_bindCommentInfo;
+- (void)_bindLikeInfo;
+- (void)commentBtnClicked:(id)arg1;
 - (void)_setupCommentButton;
 - (void)_setupLikeButton;
 - (void)_setupShareButton;
 - (void)_setupSubviews;
+- (long long)likeAnimationImageCount;
 - (id)likeAnimationImageNameFormat;
 - (id)commentText;
 - (id)likeText;

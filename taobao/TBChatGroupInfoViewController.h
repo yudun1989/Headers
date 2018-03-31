@@ -17,7 +17,7 @@
 #import "UITableViewDataSource-Protocol.h"
 #import "UITableViewDelegate-Protocol.h"
 
-@class HUDActivityView, NSMutableArray, NSString, TBIMGroupTitleView, TBIMMemberTileModel, TBIMUpdateNavigationBar, UIImageView, UILabel, UITableView;
+@class HUDActivityView, NSMutableArray, NSMutableIndexSet, NSString, TBIMGroupTitleView, TBIMMemberTileModel, TBIMUpdateNavigationBar, UIImageView, UILabel, UITableView;
 @protocol MCRecentContactDataSourceProtocol, TBIMGroupAdapter, TBIMGroupServiceAdapter, TBIMMessageServiceAdapter;
 
 @interface TBChatGroupInfoViewController : TBViewController <UIActionSheetDelegate, UITableViewDataSource, UITableViewDelegate, TBIMGroupServiceDelegate, TBAMPEditDelegate, TBIMMessageServiceDelegate, MCRecentContactDataSourceDelegate, TBIMMemberTileCellDelegate, MUKTitleSwitchCellDelegate, TBGroupInfoNoticeRemindCellDelegate>
@@ -33,6 +33,7 @@
     _Bool _isNoticeRemind;
     _Bool _hasNoticeAuth;
     _Bool _showGoodList;
+    _Bool _isReloading;
     UITableView *_tableView;
     NSMutableArray *_friendsArray;
     TBIMMemberTileModel *_memberTileModel;
@@ -49,10 +50,13 @@
     TBIMUpdateNavigationBar *_updateNavigationBar;
     NSString *_currentNewShareItem;
     NSString *_pageName;
+    NSMutableIndexSet *_indexSet;
 }
 
 + (id)coreBlurImage:(id)arg1 withBlurNumber:(double)arg2;
 + (_Bool)tbNeedNavibar;
+@property(nonatomic) _Bool isReloading; // @synthesize isReloading=_isReloading;
+@property(retain, nonatomic) NSMutableIndexSet *indexSet; // @synthesize indexSet=_indexSet;
 @property(nonatomic) _Bool showGoodList; // @synthesize showGoodList=_showGoodList;
 @property(copy, nonatomic) NSString *pageName; // @synthesize pageName=_pageName;
 @property(copy, nonatomic) NSString *currentNewShareItem; // @synthesize currentNewShareItem=_currentNewShareItem;
@@ -119,7 +123,7 @@
 - (void)addFriendAction;
 - (void)editAction:(id)arg1 placeHolder:(id)arg2 contentType:(id)arg3;
 - (void)updateTitleLabelWithIsRemind:(_Bool)arg1;
-- (void)refreashSection:(id)arg1 animation:(_Bool)arg2;
+- (void)refreshSectionWithAnimation:(_Bool)arg1;
 - (void)titleSwitchCell:(id)arg1 switchChange:(_Bool)arg2;
 - (void)messageLoadShareItemMessageResult:(id)arg1 andMsg:(id)arg2;
 - (_Bool)updateSwitchsWithRemindType:(int)arg1;

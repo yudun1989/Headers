@@ -32,9 +32,9 @@
 - (_Bool)getPredownloadAppList:(id)arg1 callback:(CDUnknownBlockType)arg2;
 - (_Bool)downloadWordData:(id)arg1 lastModified:(id)arg2 callback:(CDUnknownBlockType)arg3;
 - (_Bool)downloadAppPackage:(id)arg1 sign:(id)arg2 callback:(CDUnknownBlockType)arg3;
-- (void)_handleReply_QueryAppInfoByNameBatch:(id)arg1 task:(id)arg2;
-- (_Bool)queryAppInfoByNameBatchWithLimit:(id)arg1 callback:(CDUnknownBlockType)arg2;
-- (void)onQueryAppInfoByNameBatchLimitResult:(id)arg1 updateInterval:(int)arg2 resultList:(id)arg3;
+- (void)_handleReply_QueryAppInfoByNameBatch:(id)arg1 callback:(CDUnknownBlockType)arg2;
+- (id)_handleReply_QueryAppInfoByNameBatch:(id)arg1 updateInterval:(int *)arg2;
+- (id)getAppUpdateReqString:(id)arg1;
 - (_Bool)queryAppInfoByNameBatch:(id)arg1 callback:(CDUnknownBlockType)arg2;
 - (id)init;
 

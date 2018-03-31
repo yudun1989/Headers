@@ -9,13 +9,15 @@
 #import <QQMainProject/GetTroopMemberProtocol-Protocol.h>
 #import <QQMainProject/GetTroopRemarkProtocol-Protocol.h>
 #import <QQMainProject/IInviteGroupMemberActionObserver-Protocol.h>
+#import <QQMainProject/QQGroupGameBindEngineDelegate-Protocol.h>
 #import <QQMainProject/QQGroupSettingViewHeadIconsCellDelegate-Protocol.h>
+#import <QQMainProject/QUIActionSheetDelegate-Protocol.h>
 #import <QQMainProject/UITableViewDataSource-Protocol.h>
 #import <QQMainProject/UITableViewDelegate-Protocol.h>
 
 @class NSArray, NSDictionary, NSMutableArray, NSString, QQGroupSettingModel, QQGroupSettingUploadRightsEngine, QQSwitch, UITableView;
 
-@interface QQGroupMemberManageViewController : QQViewController <QQGroupSettingViewHeadIconsCellDelegate, UITableViewDataSource, UITableViewDelegate, IInviteGroupMemberActionObserver, GetTroopMemberProtocol, GetTroopRemarkProtocol>
+@interface QQGroupMemberManageViewController : QQViewController <QQGroupSettingViewHeadIconsCellDelegate, QUIActionSheetDelegate, QQGroupGameBindEngineDelegate, UITableViewDataSource, UITableViewDelegate, IInviteGroupMemberActionObserver, GetTroopMemberProtocol, GetTroopRemarkProtocol>
 {
     UITableView *_tableView;
     NSMutableArray *_sectionRow;
@@ -29,6 +31,9 @@
     QQSwitch *_switchBtn;
     _Bool _isQidianGroup;
     _Bool _isHomeworkGroup;
+    _Bool _isGameGroup;
+    _Bool _isGameGroupBind;
+    _Bool _isShowBindGameEntry;
     _Bool _ifChoosedPay;
     _Bool _ifNeedPayForJoinGroup;
     QQGroupSettingUploadRightsEngine *_engine;
@@ -39,6 +44,9 @@
     NSMutableArray *_transferMemberUinArray;
     NSMutableArray *_transferMemberFlagArray;
     _Bool _groupOwnerWallet;
+    _Bool _showingLoadingIndicator;
+    NSString *_gameGroupGameName;
+    unsigned int _gameGroupGameAppid;
     NSDictionary *_menuDic;
 }
 
@@ -61,6 +69,10 @@
 - (double)tableView:(id)arg1 heightForRowAtIndexPath:(id)arg2;
 - (long long)tableView:(id)arg1 numberOfRowsInSection:(long long)arg2;
 - (long long)numberOfSectionsInTableView:(id)arg1;
+- (void)onBindGameSuccess:(id)arg1;
+- (void)didReceivedGameGetAppidResult:(int)arg1 resultInfo:(id)arg2 msg:(id)arg3;
+- (void)didReceivedGameUnBindResult:(int)arg1 msg:(id)arg2;
+- (void)actionSheet:(id)arg1 clickedButtonAtIndex:(long long)arg2;
 - (void)alertView:(id)arg1 clickedButtonAtIndex:(long long)arg2;
 - (void)onSwitchFindByGC:(id)arg1;
 - (id)createProfileMessageBtn:(id)arg1 model:(id)arg2;
@@ -68,6 +80,7 @@
 - (void)clickAddButton;
 - (id)createGroupManagerBtn:(id)arg1 model:(id)arg2;
 - (id)createSettingPaymentBtn:(id)arg1 model:(id)arg2;
+- (id)createToogleBindGameCell:(id)arg1 model:(id)arg2;
 - (id)createSearchBtn:(id)arg1 model:(id)arg2;
 - (id)createVerityBtn:(id)arg1 model:(id)arg2;
 - (id)createGroupRobotBtn:(id)arg1 model:(id)arg2;
@@ -85,6 +98,7 @@
 - (void)upgrateGroup:(id)arg1;
 - (void)onGetTransferGroupMemUinsNotify:(id)arg1;
 - (void)transferGroup:(id)arg1;
+- (void)toogleBindGame:(id)arg1;
 - (void)setMemberForbidden:(id)arg1;
 - (void)jumpGroupRobot:(id)arg1;
 - (void)setMemberLevel:(id)arg1;
@@ -104,6 +118,8 @@
 - (void)showShortTips:(id)arg1;
 - (void)resetGroupSettingModel;
 - (void)viewWillAppear:(_Bool)arg1;
+- (void)viewWillDisappear:(_Bool)arg1;
+- (id)_getSectionRow;
 - (void)viewDidLoad;
 - (id)initWithGroupSettingModel:(id)arg1;
 - (id)init;

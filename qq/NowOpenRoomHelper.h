@@ -27,6 +27,7 @@
 + (_Bool)openRoomInAppWithRoomId:(id)arg1 param:(id)arg2;
 + (_Bool)openRoomFromRoomWebVCInAppWithRoomId:(id)arg1 param:(id)arg2;
 + (_Bool)openRoomInAppWithRoomId:(id)arg1 from:(id)arg2;
++ (void)open1V1Chat;
 + (void)openNowStartLiveInApp;
 + (id)openRoom:(id)arg1 openLiveRoomType:(int)arg2 firstType:(int)arg3 bid:(id)arg4 isInPageVc:(_Bool)arg5 fromid:(id)arg6;
 

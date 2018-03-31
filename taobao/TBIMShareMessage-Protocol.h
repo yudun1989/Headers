@@ -4,11 +4,12 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
+#import "TBIMCommonMessage-Protocol.h"
 #import "TBIMMessageAdapter-Protocol.h"
 
 @class NSArray, NSDate, NSString;
 
-@protocol TBIMShareMessage <TBIMMessageAdapter>
+@protocol TBIMShareMessage <TBIMMessageAdapter, TBIMCommonMessage>
 - (NSString *)from;
 - (NSString *)attrHostPic;
 - (NSString *)attrHostName;

@@ -9,6 +9,6 @@
 @class NSDictionary;
 
 @protocol IQQComentCGIProtocol <NSObject>
-- (_Bool)publishDataID:(int)arg1 dataType:(int)arg2 data:(NSDictionary *)arg3 callback:(void (^)(int, NSString *))arg4;
+- (_Bool)publishDataID:(int)arg1 dataType:(unsigned long long)arg2 data:(NSDictionary *)arg3 callback:(void (^)(int, NSString *))arg4;
 @end
 

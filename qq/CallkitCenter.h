@@ -23,7 +23,7 @@
 - (void)onTelephoneDialing;
 - (void)setupCallCenter;
 - (void)CallkitAuthChange:(id)arg1;
-- (_Bool)IsCallkitEnabledMulti:(int)arg1 businessType:(int)arg2;
+- (_Bool)IsCallkitEnabledMulti:(int)arg1 businessType:(int)arg2 relationId:(unsigned long long)arg3;
 - (_Bool)IsCallkitEnabledDouble:(int)arg1 hasVideo:(_Bool)arg2;
 - (_Bool)isCallkitEnabled;
 - (_Bool)isMicAuthorised;

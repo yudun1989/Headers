@@ -9,6 +9,7 @@
 #import <QQMainProject/QQGTInputToolBarProtocol-Protocol.h>
 #import <QQMainProject/QQGTTopicViewCellDeleteDelegate-Protocol.h>
 #import <QQMainProject/QQGTTopicViewRecordCellDelegate-Protocol.h>
+#import <QQMainProject/QQGTTopicViewVideoCellDelegate-Protocol.h>
 #import <QQMainProject/QQGroupTribeGifViewDelegate-Protocol.h>
 #import <QQMainProject/QQGroupTribePublishInputViewProtocol-Protocol.h>
 #import <QQMainProject/QQGroupTribeRecordProtocol-Protocol.h>
@@ -20,15 +21,16 @@
 #import <QQMainProject/QQMultiImagePickerControllerDelegate-Protocol.h>
 #import <QQMainProject/QQPttTryListtenPlayerDelegate-Protocol.h>
 #import <QQMainProject/QQPublishViewProviderDelegate-Protocol.h>
+#import <QQMainProject/TribeCaptureHandlerDelegate-Protocol.h>
 #import <QQMainProject/UIActionSheetDelegate-Protocol.h>
 #import <QQMainProject/UIAlertViewDelegate-Protocol.h>
 #import <QQMainProject/UIImagePickerControllerDelegate-Protocol.h>
 #import <QQMainProject/UINavigationControllerDelegate-Protocol.h>
 #import <QQMainProject/UIScrollViewDelegate-Protocol.h>
 
-@class NSMutableArray, NSMutableDictionary, NSString, PublishScrollView, QQGTInputToolBar, QQGTTextView, QQGTTopicRecordCell, QQGroupTribeGifView, QQGroupTribePublishInputViewCell, QQGroupTribeRecordView, QQGroupTribeTopicViewLBSCell, QQGroupTribeTopicViewPhotoCell, QQGroupTribeTopicViewSelectTribeCell, QQGroupTribeTopicViewSelecteCell, QQPttTryListtenPlayer, QQPublishViewHandler, UIImagePickerController, UIView;
+@class NSMutableArray, NSMutableDictionary, NSString, PublishScrollView, QQGTInputToolBar, QQGTTextView, QQGTTopicRecordCell, QQGTTopicSelectThemeView, QQGTTopicTipsView, QQGTTopicVideoCell, QQGroupTribeGifView, QQGroupTribePublishInputViewCell, QQGroupTribeRecordView, QQGroupTribeTopicViewLBSCell, QQGroupTribeTopicViewPhotoCell, QQGroupTribeTopicViewSelectTribeCell, QQGroupTribeTopicViewSelecteCell, QQPttTryListtenPlayer, QQPublishViewHandler, UIImagePickerController, UIView;
 
-@interface QQPublishViewController : QQViewController <UIActionSheetDelegate, UIScrollViewDelegate, UINavigationControllerDelegate, UIImagePickerControllerDelegate, UIAlertViewDelegate, QQGroupTribeGifViewDelegate, QQGroupTribeTopicViewPhotoCellDelegate, QQGroupTribeTopicViewLBSCellDelegate, QQGroupTribeTopicViewSelectTribeCellDelegate, QQGroupTribePublishInputViewProtocol, QQGrowingTextViewDelegate, QQGTTopicViewCellDeleteDelegate, QQGroupTribeRecordProtocol, QQGTTopicViewRecordCellDelegate, QQPttTryListtenPlayerDelegate, QQGroupTribeTopicViewPhotoCellRemoveDelegate, QQMultiImagePickerControllerDelegate, QQPublishViewProviderDelegate, QQGTInputToolBarProtocol>
+@interface QQPublishViewController : QQViewController <UIActionSheetDelegate, UIScrollViewDelegate, UINavigationControllerDelegate, UIImagePickerControllerDelegate, UIAlertViewDelegate, QQGroupTribeGifViewDelegate, QQGroupTribeTopicViewPhotoCellDelegate, QQGroupTribeTopicViewLBSCellDelegate, QQGroupTribeTopicViewSelectTribeCellDelegate, QQGroupTribePublishInputViewProtocol, QQGrowingTextViewDelegate, QQGTTopicViewCellDeleteDelegate, QQGroupTribeRecordProtocol, QQGTTopicViewRecordCellDelegate, QQPttTryListtenPlayerDelegate, QQGroupTribeTopicViewPhotoCellRemoveDelegate, QQMultiImagePickerControllerDelegate, QQPublishViewProviderDelegate, QQGTInputToolBarProtocol, QQGTTopicViewVideoCellDelegate, TribeCaptureHandlerDelegate>
 {
     PublishScrollView *_scrollView;
     UIView *_functionalAreaContainer;
@@ -46,12 +48,15 @@
     UIView *_recordRegionView;
     _Bool _keyboradShow;
     int _optionType;
-    int _selectedMediaType;
+    unsigned long long _selectedMediaType;
     NSMutableArray *_mediaContent;
     NSMutableArray *_recordInfoArr;
     NSString *_currentPlayingRecordPath;
     int _defaultCategory;
     QQPublishViewHandler *_eventHandler;
+    QQGTTopicVideoCell *_videoCell;
+    QQGTTopicSelectThemeView *_selectThemeView;
+    QQGTTopicTipsView *_tipsView;
     UIView *_dividerLine;
     UIImagePickerController *_cameraVC;
     NSMutableDictionary *_pubilshInfo;
@@ -76,12 +81,17 @@
     struct CGRect _keyboardFrame;
     long long _currentKeyboardState;
     _Bool _supportMultiSelect;
+    _Bool _didClickCancelBtn;
     double _drapOffsetWhenStop;
     _Bool _drapReport;
+    unsigned long long _shortVideoState;
 }
 
 + (void)openPublishViewControllerWithParams:(id)arg1 withHandler:(id)arg2;
 + (void)openPublishViewControllerWithParams:(id)arg1;
+@property(nonatomic) unsigned long long shortVideoState; // @synthesize shortVideoState=_shortVideoState;
+- (void)reportEnterVideoVC;
+- (void)QQGTTopicVideoCellPlayShortVideo:(id)arg1;
 - (void)onPlayEnd:(id)arg1;
 - (void)onPlayError:(id)arg1 withErrorCode:(id)arg2;
 - (void)onPlayStateChange:(id)arg1 withState:(id)arg2;
@@ -96,6 +106,7 @@
 - (_Bool)isAPPInstalled;
 - (_Bool)isAPPSupportJumpingViaEntranceType;
 - (id)sendTribeURLStr:(int)arg1;
+- (void)showShortVideoCompositeFailPromptAlertView;
 - (void)showInstallOrUpdateAppPromptAlertView:(_Bool)arg1 buttonType:(int)arg2;
 - (void)gotoAPP:(int)arg1;
 - (void)scrollGifImageToHide;
@@ -160,12 +171,16 @@
 - (void)setDefaultCategoryStr:(id)arg1;
 - (void)showShortNoticeView:(id)arg1 iconType:(long long)arg2 parentView:(id)arg3;
 - (void)topicShow:(id)arg1;
+- (void)createTipsView;
+- (void)adjustInputCellFirstLineHeadIndent;
+- (void)onClickSelectThemeView;
+- (void)createSelecteThemeLabelToInputTextView;
 - (void)activeInputCell:(_Bool)arg1 animated:(_Bool)arg2;
 - (void)cellAnimate:(int)arg1;
 - (void)deleteCell:(int)arg1;
 - (void)deleteCellForMultipleStyle:(int)arg1 WithPath:(id)arg2;
-- (void)deleteFomart:(int)arg1;
-- (void)deleteMediaContentForType:(int)arg1;
+- (void)deleteFomart:(unsigned long long)arg1;
+- (void)deleteMediaContentForType:(unsigned long long)arg1;
 - (void)adjustUI;
 - (void)reArrangeUI;
 - (void)createDividerLine;
@@ -173,6 +188,7 @@
 - (void)createLbsCell;
 - (void)createGifImageView;
 - (void)createPhotoCell;
+- (void)createVideoCellWithVideoInfo:(id)arg1;
 - (void)createRecordCellWithRecordParam:(id)arg1;
 - (void)updateRecordRegionView;
 - (void)createRecordView;
@@ -183,13 +199,16 @@
 - (void)clickMaskBtn;
 - (void)createScrollView;
 - (void)updatePublishViewWithContent:(id)arg1;
+- (int)getCurrentPostType;
 - (void)updateInputCellWithPublishInfo;
 - (void)initUI;
 - (unsigned long long)currentOpEnterIntegerValue;
 - (id)currentOpEnter;
 - (void)keyboardWillChangeFrame:(id)arg1;
 - (void)appDidEnterBackground:(id)arg1;
+- (void)onSelectThemeDone:(id)arg1;
 - (void)handleContentTextOverLength:(id)arg1;
+- (void)changeVideoCellState:(unsigned long long)arg1;
 - (void)dealloc;
 - (void)recordCurrentKeyboardStateWhenDisappear;
 - (void)viewWillDisappear:(_Bool)arg1;
@@ -199,6 +218,8 @@
 - (void)viewWillAppear:(_Bool)arg1;
 - (void)viewDidLoad;
 - (void)updatePublishInfo:(id)arg1;
+- (int)optionWithoutVideoAndMusicBtn:(id)arg1;
+- (_Bool)isQAPost:(id)arg1;
 - (void)updatePublishArgument:(id)arg1;
 - (id)initWithHandler:(id)arg1;
 
@@ -220,9 +241,12 @@
 @property(nonatomic) QQPttTryListtenPlayer *recordPlayer; // @dynamic recordPlayer;
 @property(retain, nonatomic) UIView *recordRegionView; // @dynamic recordRegionView;
 @property(retain, nonatomic) QQGroupTribeRecordView *recordView; // @dynamic recordView;
+@property(retain, nonatomic) QQGTTopicSelectThemeView *selectThemeView; // @dynamic selectThemeView;
 @property(retain, nonatomic) QQGroupTribeTopicViewSelectTribeCell *selectTribeCell; // @dynamic selectTribeCell;
 @property(retain, nonatomic) QQGroupTribeTopicViewSelecteCell *selecteCell; // @dynamic selecteCell;
 @property(readonly) Class superclass;
+@property(retain, nonatomic) QQGTTopicTipsView *tipsView; // @dynamic tipsView;
+@property(retain, nonatomic) QQGTTopicVideoCell *videoCell; // @dynamic videoCell;
 
 @end
 

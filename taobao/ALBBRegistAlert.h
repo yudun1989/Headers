@@ -10,14 +10,14 @@
 
 @interface ALBBRegistAlert : UIView
 {
-    int _scene;
+    long long _scene;
     UIButton *_confirmButton;
     NSString *_title;
 }
 
 @property(copy, nonatomic) NSString *title; // @synthesize title=_title;
 @property(retain, nonatomic) UIButton *confirmButton; // @synthesize confirmButton=_confirmButton;
-@property(nonatomic) int scene; // @synthesize scene=_scene;
+@property(nonatomic) long long scene; // @synthesize scene=_scene;
 - (void).cxx_destruct;
 - (void)openProtocal:(id)arg1;
 - (void)openAlipayProtocal;
@@ -25,7 +25,7 @@
 - (void)openTaoBaoProtocal;
 - (void)onCloseAlert;
 - (void)creatUI;
-- (id)initWithTitle:(id)arg1 scene:(int)arg2;
+- (id)initWithTitle:(id)arg1 scene:(long long)arg2;
 
 @end
 

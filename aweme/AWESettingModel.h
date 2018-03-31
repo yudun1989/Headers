@@ -30,6 +30,7 @@
     _Bool _useTTPlayer;
     _Bool _enableHardDecode;
     _Bool _useTTUploadSDK;
+    _Bool _enableAccountLogUpload;
     _Bool _useNewAudiovideoSync;
     _Bool _disableAgeGate;
     _Bool _iFantasySharkEnabled;
@@ -95,6 +96,7 @@
 @property(nonatomic) _Bool iFantasySharkEnabled; // @synthesize iFantasySharkEnabled=_iFantasySharkEnabled;
 @property(nonatomic) _Bool disableAgeGate; // @synthesize disableAgeGate=_disableAgeGate;
 @property(nonatomic) _Bool useNewAudiovideoSync; // @synthesize useNewAudiovideoSync=_useNewAudiovideoSync;
+@property(nonatomic) _Bool enableAccountLogUpload; // @synthesize enableAccountLogUpload=_enableAccountLogUpload;
 @property(copy, nonatomic) NSArray *videoRecordBitrate; // @synthesize videoRecordBitrate=_videoRecordBitrate;
 @property(copy, nonatomic) NSArray *videoRecordSize; // @synthesize videoRecordSize=_videoRecordSize;
 @property(copy, nonatomic) NSString *sycToToutiaoURL; // @synthesize sycToToutiaoURL=_sycToToutiaoURL;

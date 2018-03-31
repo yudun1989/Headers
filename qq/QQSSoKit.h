@@ -38,7 +38,12 @@
 + (void)popTips:(id)arg1 message:(id)arg2 errorcode:(id)arg3 cancleBtnTitle:(id)arg4;
 + (void)popTips:(id)arg1 message:(id)arg2 errorcode:(id)arg3 cancleBtnTitle:(id)arg4 tag:(long long)arg5 delegate:(id)arg6;
 + (void)clearTips;
++ (id)schemeWhiteList;
 + (_Bool)IsSchemeCallBackConfigInWhiteList:(id)arg1;
++ (id)replaceScheme:(id)arg1 InURL:(id)arg2;
++ (id)chromeUrlStrWithSchemeCallback:(id)arg1 inputURL:(id)arg2;
++ (id)URLEncodedString:(id)arg1;
++ (id)retStringOfAllExplorer:(id)arg1 schemeCallback:(id)arg2;
 + (void)returnToThirdWeb:(id)arg1 uin:(id)arg2 STWeb:(id)arg3;
 + (_Bool)isInWhiteList:(id)arg1;
 + (void)returnToWeiXin;

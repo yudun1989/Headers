@@ -29,6 +29,8 @@
 @property(copy, nonatomic) CDUnknownBlockType glViewUpdateCallback; // @synthesize glViewUpdateCallback=_glViewUpdateCallback;
 @property(nonatomic, getter=isUpdating) _Bool updating; // @synthesize updating=_updating;
 - (void).cxx_destruct;
+- (void)handleActive;
+- (void)handleInactive;
 - (void)glkView:(id)arg1 drawInRect:(struct CGRect)arg2;
 - (void)stopUpdating;
 - (void)startUpdating;

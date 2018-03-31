@@ -11,8 +11,8 @@
 }
 
 + (id)sharedInstance;
-- (void)commitWith:(id)arg1 errorInfo:(id)arg2;
-- (void)commitWith:(id)arg1 formal:(id)arg2 testflight1:(id)arg3 testflight2:(id)arg4;
+- (void)commitWithErrorCode:(id)arg1 errorInfo:(id)arg2;
+- (void)commitWithProcess:(id)arg1 operation:(id)arg2;
 
 @end
 

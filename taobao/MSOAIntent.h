@@ -6,7 +6,7 @@
 
 #import <Foundation/NSObject.h>
 
-@class NSMutableDictionary, NSString;
+@class NSDictionary, NSMutableDictionary, NSString;
 
 @interface MSOAIntent : NSObject
 {
@@ -24,8 +24,10 @@
     NSString *_samplingRate;
     NSString *_invokePage;
     NSString *_invokePageUrl;
+    NSDictionary *_args;
 }
 
+@property(retain, nonatomic) NSDictionary *args; // @synthesize args=_args;
 @property(retain, nonatomic) NSString *invokePageUrl; // @synthesize invokePageUrl=_invokePageUrl;
 @property(retain, nonatomic) NSString *invokePage; // @synthesize invokePage=_invokePage;
 @property(retain, nonatomic) NSString *samplingRate; // @synthesize samplingRate=_samplingRate;

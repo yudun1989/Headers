@@ -10,6 +10,7 @@
 #import <QQMainProject/MQOCRDelegate-Protocol.h>
 #import <QQMainProject/MulMemSelBusiProcessDelegate-Protocol.h>
 #import <QQMainProject/QQFriendSelectedViewControllerDelegate-Protocol.h>
+#import <QQMainProject/QQKingCardAlertViewDelegate-Protocol.h>
 #import <QQMainProject/QUIActionSheetDelegate-Protocol.h>
 #import <QQMainProject/RegionPickerDelegate-Protocol.h>
 #import <QQMainProject/SexAgePickerDelegate-Protocol.h>
@@ -17,7 +18,7 @@
 
 @class ConditionModel, NSDictionary, NSMutableDictionary, NSString, QQFriendSelectedViewController, QUIActionSheet, UIAlertView, UINavigationBar, UITapGestureRecognizer;
 
-@interface QQJSBridgeUIPlugin : QQWebViewPluginQQBizBase <QUIActionSheetDelegate, ARQRManagerDelegate, MQOCRDelegate, UIGestureRecognizerDelegate, QQFriendSelectedViewControllerDelegate, MulMemSelBusiProcessDelegate, SexAgePickerDelegate, RegionPickerDelegate>
+@interface QQJSBridgeUIPlugin : QQWebViewPluginQQBizBase <QQKingCardAlertViewDelegate, QUIActionSheetDelegate, ARQRManagerDelegate, MQOCRDelegate, UIGestureRecognizerDelegate, QQFriendSelectedViewControllerDelegate, MulMemSelBusiProcessDelegate, SexAgePickerDelegate, RegionPickerDelegate>
 {
     UITapGestureRecognizer *tapGesture;
     NSDictionary *_contextQuery;
@@ -56,6 +57,7 @@
 }
 
 + (id)showViewControllerNamed:(id)arg1 withOptions:(id)arg2 andCloseCallback:(id)arg3;
++ (id)tribeDictionaryWithParam:(id)arg1 webVC:(id)arg2;
 + (int)openViewController:(id)arg1 instance:(id)arg2;
 + (void)removeCustomWebCallbackDataForKey:(id)arg1;
 + (id)getCustomWebCallbackDataByKey:(id)arg1;
@@ -96,6 +98,11 @@
 - (_Bool)handleEvent:(int)arg1 userInfo:(id)arg2;
 - (void)shareToFriendCancelled;
 - (void)shareToFriendSuccess;
+- (void)handleJsBridgeRequest_ui_getPopupType:(id)arg1;
+- (void)alertViewClickCancel:(id)arg1;
+- (void)alertView:(id)arg1 clickGuideWithUrl:(id)arg2;
+- (void)alertViewClickContiue:(id)arg1;
+- (void)handleJsBridgeRequest_ui_getCUKingStatus:(id)arg1;
 - (void)handleJsBridgeRequest_ui_mobileDataDialog:(id)arg1;
 - (void)handleWebImageData:(id)arg1 imageUrl:(id)arg2 needIndicator:(_Bool)arg3 callback:(CDUnknownBlockType)arg4;
 - (void)handleJsBridgeRequest_ui_mergeTextToImage:(id)arg1;
@@ -103,6 +110,7 @@
 - (id)filePathForFileName:(id)arg1;
 - (id)searchCacheImageDir;
 - (void)callbackToWebOriginQuery:(id)arg1 cbParams:(id)arg2;
+- (void)handleJsBridgeRequest_ui_customDatePicker:(id)arg1;
 - (void)handleJsBridgeRequest_ui_sharePicMessage:(id)arg1;
 - (void)handleJsBridgeRequest_ui_shareScreenshot:(id)arg1;
 - (void)handleJsBridgeRequest_ui_addFriend:(id)arg1;

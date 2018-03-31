@@ -66,6 +66,7 @@
     NSString *_strUnifiedDownId;
     unsigned long long _uZipJobId;
     int _xo;
+    _Bool _compressVideo;
     NSString *_strRemarkSrc;
     NSString *_strAIOThumbnailPath;
     NSString *_fileNameInitPinyin;
@@ -80,6 +81,7 @@
     struct CGSize _picSize;
 }
 
+@property(nonatomic) _Bool compressVideo; // @synthesize compressVideo=_compressVideo;
 @property(nonatomic) unsigned long long uRealtiveID; // @synthesize uRealtiveID=_uRealtiveID;
 @property(nonatomic) unsigned long long updateTime; // @synthesize updateTime=_updateTime;
 @property(retain, nonatomic) FADownInfo *downInfo; // @synthesize downInfo=_downInfo;
@@ -144,6 +146,8 @@
 @property(nonatomic) unsigned long long uniMsgSeq; // @synthesize uniMsgSeq=_uniMsgSeq;
 @property(nonatomic) unsigned long long uJobID; // @synthesize uJobID=_uJobID;
 - (void).cxx_destruct;
+- (id)presetName;
+- (_Bool)isInIcloud;
 - (void)loadAlbumInfo;
 @property(copy, nonatomic) NSString *strFilePath;
 - (unsigned long long)zipJobId;

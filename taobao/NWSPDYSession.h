@@ -31,6 +31,7 @@
     int _requestCount;
     int _inceptCount;
     int _pingCount;
+    _Bool _keepalive;
     int _status;
     id <SPDYSessionDelegate> _sessionDelegate;
     NWSPDYOrigin *_origin;
@@ -41,6 +42,7 @@
 
 + (id)state2text:(int)arg1;
 + (void)initialize;
+@property(nonatomic) _Bool keepalive; // @synthesize keepalive=_keepalive;
 @property(retain, nonatomic) NWPointSession *uts; // @synthesize uts=_uts;
 @property(readonly, nonatomic) int status; // @synthesize status=_status;
 @property(readonly, nonatomic) NWPolicyResult *policyResult; // @synthesize policyResult=_policyResult;

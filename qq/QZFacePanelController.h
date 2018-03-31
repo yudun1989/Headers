@@ -9,27 +9,52 @@
 #import <QQMainProject/QQFaceTabBarDelegate-Protocol.h>
 
 @class NSString, UIButton;
-@protocol QQFaceKeyBoardDelegate;
+@protocol QQFaceKeyBoardDelegate, QZARProtocol;
 
 @interface QZFacePanelController : QQBaseFacePanelController <QQFaceTabBarDelegate>
 {
     UIButton *_deleteButton;
+    _Bool _ifShowQQEmoji;
+    _Bool _ifShowCustomTab;
+    _Bool _loadAioEmojiOCSSuccess;
+    _Bool _shouldShowQZAnimoji;
+    _Bool _isShowingQZAnimoji;
     id <QQFaceKeyBoardDelegate> _delegate;
+    id <QZARProtocol> _animojiPanel;
 }
 
++ (void)storeLastTab:(long long)arg1;
++ (void)setItem:(id)arg1 forKey:(id)arg2;
++ (id)getItemForKey:(id)arg1;
++ (id)getTabCache;
+@property(retain, nonatomic) id <QZARProtocol> animojiPanel; // @synthesize animojiPanel=_animojiPanel;
+@property(nonatomic) _Bool isShowingQZAnimoji; // @synthesize isShowingQZAnimoji=_isShowingQZAnimoji;
+@property(nonatomic) _Bool shouldShowQZAnimoji; // @synthesize shouldShowQZAnimoji=_shouldShowQZAnimoji;
+@property(nonatomic) _Bool loadAioEmojiOCSSuccess; // @synthesize loadAioEmojiOCSSuccess=_loadAioEmojiOCSSuccess;
+@property(nonatomic) _Bool ifShowCustomTab; // @synthesize ifShowCustomTab=_ifShowCustomTab;
+@property(nonatomic) _Bool ifShowQQEmoji; // @synthesize ifShowQQEmoji=_ifShowQQEmoji;
 @property(nonatomic) __weak id <QQFaceKeyBoardDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
+- (void)resetAnimojiBoard;
+- (void)cleanAnimojiBoard;
 - (void)tabItemDidTapped:(id)arg1;
+- (double)getTabbarWidth;
 - (_Bool)showFaceKeyboardForItem:(long long)arg1 forPage:(long long)arg2;
 - (_Bool)selectTabItem:(id)arg1;
 - (void)setDeleteButton:(struct CGRect)arg1;
 - (_Bool)attachMainView:(id)arg1;
 - (void)setSendButtonHidden:(_Bool)arg1;
-- (void)loadEmojiTabWithItem:(id)arg1;
-- (void)loadSystemTabWithItem:(id)arg1;
+- (void)loadAnimojiTabWithItem:(id)arg1;
+- (id)loadTabWithType:(long long)arg1;
 - (void)loadEmojiStoreFace;
 - (void)storeLastTab:(long long)arg1;
 - (void)loadLastSelectedTabTo:(long long *)arg1;
+- (void)storeSelectTabWithID:(long long)arg1;
+- (id)getFaceId;
+- (id)getIconStr;
+- (id)getAccessibilityStr;
+- (void)dealloc;
+- (void)onAddStoreTabNotify:(id)arg1;
 - (id)init;
 
 // Remaining properties

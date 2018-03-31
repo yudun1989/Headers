@@ -11,6 +11,8 @@
 
 @interface WXMultiColumnLayout : UICollectionViewLayout
 {
+    float _leftGap;
+    float _rightGap;
     float _columnGap;
     int _computedColumnCount;
     id <WXMultiColumnLayoutDelegate> _delegate;
@@ -26,6 +28,8 @@
 @property(retain, nonatomic) NSMutableArray *columnsMaxHeights; // @synthesize columnsMaxHeights=_columnsMaxHeights;
 @property(retain, nonatomic) NSMutableDictionary *layoutAttributes; // @synthesize layoutAttributes=_layoutAttributes;
 @property(nonatomic) float columnGap; // @synthesize columnGap=_columnGap;
+@property(nonatomic) float rightGap; // @synthesize rightGap=_rightGap;
+@property(nonatomic) float leftGap; // @synthesize leftGap=_leftGap;
 @property(retain, nonatomic) WXLength *columnWidth; // @synthesize columnWidth=_columnWidth;
 @property(retain, nonatomic) WXLength *columnCount; // @synthesize columnCount=_columnCount;
 @property(nonatomic) __weak id <WXMultiColumnLayoutDelegate> delegate; // @synthesize delegate=_delegate;

@@ -28,7 +28,9 @@
     UIButton *_batchAddBtn;
     NSMutableArray *_troopMemberArray;
     NSDictionary *_relationDic;
+    NSDictionary *_aiRemarkDic;
     NSMutableDictionary *_memberAddStateDic;
+    id _remarkObserver;
     _Bool _pseudoEdit;
     unsigned long long _addGroupMemberMethod;
     AddFriendSendMessageViewController *_addFriendVC;
@@ -71,6 +73,7 @@
 - (void)searchDisplayControllerDidBeginSearch:(id)arg1;
 - (void)searchDisplayControllerWillBeginSearch:(id)arg1;
 - (CDUnknownBlockType)getSortBlockInSearch:(_Bool)arg1;
+- (id)filterSearchResult:(id)arg1;
 - (void)sortArray:(id)arg1;
 - (void)actionAddTroopFriend:(id)arg1;
 - (void)updateBatchAddButton;
@@ -81,10 +84,11 @@
 - (_Bool)isSupportRightDragToGoBack;
 - (void)reloadTableDataWithoutSort;
 - (void)reloadTableData;
+- (void)reqGroupAIRemark:(id)arg1;
 - (void)checkAndUpdateCommonFriendCount;
 - (void)resetAddStateWithArray:(id)arg1;
 - (int)getAddStateWithTroopMemModel:(id)arg1;
-- (void)setGroopMemverList:(id)arg1 andRelationDic:(id)arg2 memberAddStateDic:(id)arg3;
+- (void)setGroopMemverList:(id)arg1 andRelationDic:(id)arg2 memberAddStateDic:(id)arg3 aiRemakr:(id)arg4;
 - (void)showAddFailAlertView;
 - (void)gotoGroupMemberView:(unsigned long long)arg1;
 - (id)getAccessibilityStringWithType:(int)arg1;

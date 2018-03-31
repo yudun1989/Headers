@@ -30,6 +30,9 @@
 - (long long)ftsSearchMaxNativeChatHistoryNum;
 - (long long)ftsSearchMaxNativeContactorNum;
 - (_Bool)ftsDynamicNeedSearchNative;
+- (_Bool)ftsPluginTabShouldShowNetSearchPersonGroup;
+- (_Bool)ftsContactTabShouldShowNetSearchPersonGroup;
+- (_Bool)ftsMsgTabShouldShowNetSearchPersonGroup;
 - (_Bool)ftsShouldShowNetSearchPersonGroup;
 - (void)setUnifiedConfig:(id)arg1;
 - (void)setUnifiedVersion:(int)arg1;

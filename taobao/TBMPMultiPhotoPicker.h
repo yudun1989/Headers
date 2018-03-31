@@ -14,9 +14,9 @@
 + (id)localImageName;
 + (id)localCacheFolder;
 + (void)setLocalCacheFolder:(id)arg1;
-+ (void)pickWithType:(int)arg1 InitPhotos:(id)arg2 ViewController:(id)arg3 ResultBlock:(CDUnknownBlockType)arg4 withImageRule:(CDStruct_a90cff18 *)arg5;
-+ (void)appendRatepickWithType:(int)arg1 InitPhotos:(id)arg2 ViewController:(id)arg3 ResultBlock:(CDUnknownBlockType)arg4;
-+ (void)pickWithType:(int)arg1 InitPhotos:(id)arg2 ViewController:(id)arg3 ResultBlock:(CDUnknownBlockType)arg4;
++ (void)pickWithType:(long long)arg1 InitPhotos:(id)arg2 ViewController:(id)arg3 ResultBlock:(CDUnknownBlockType)arg4 withImageRule:(CDStruct_4a9aa5a8 *)arg5;
++ (void)appendRatepickWithType:(long long)arg1 InitPhotos:(id)arg2 ViewController:(id)arg3 ResultBlock:(CDUnknownBlockType)arg4;
++ (void)pickWithType:(long long)arg1 InitPhotos:(id)arg2 ViewController:(id)arg3 ResultBlock:(CDUnknownBlockType)arg4;
 
 @end
 

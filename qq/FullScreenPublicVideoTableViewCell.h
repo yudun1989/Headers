@@ -7,6 +7,7 @@
 #import <QQMainProject/FullScreenVideoTableViewCell.h>
 
 #import <QQMainProject/FullVideoStateViewDelegate-Protocol.h>
+#import <QQMainProject/KdNCEntireInfoViewProtocol-Protocol.h>
 #import <QQMainProject/QQReadInJoyVideoCellShareDelegate-Protocol.h>
 #import <QQMainProject/QQReadInJoyVideoViewDelegate-Protocol.h>
 #import <QQMainProject/UICollectionViewDataSource-Protocol.h>
@@ -15,10 +16,11 @@
 @class NSString, QQReadInJoyVideoView, UIButton, UICollectionView;
 @protocol BarrageWebViewDelegate, FullScreenPublicVideoCellDelegate;
 
-@interface FullScreenPublicVideoTableViewCell : FullScreenVideoTableViewCell <QQReadInJoyVideoCellShareDelegate, QQReadInJoyVideoViewDelegate, FullVideoStateViewDelegate, UICollectionViewDataSource, UICollectionViewDelegate>
+@interface FullScreenPublicVideoTableViewCell : FullScreenVideoTableViewCell <QQReadInJoyVideoCellShareDelegate, KdNCEntireInfoViewProtocol, QQReadInJoyVideoViewDelegate, FullVideoStateViewDelegate, UICollectionViewDataSource, UICollectionViewDelegate>
 {
     _Bool _reloadVideoSouce;
     _Bool _needHintTip;
+    _Bool _favorite;
     QQReadInJoyVideoView *_videoView;
     UIButton *_followButton;
     CDUnknownBlockType _followCompletion;
@@ -27,6 +29,7 @@
     id <FullScreenPublicVideoCellDelegate> _publicVideoCellDelegate;
 }
 
+@property(nonatomic) _Bool favorite; // @synthesize favorite=_favorite;
 @property(nonatomic) _Bool needHintTip; // @synthesize needHintTip=_needHintTip;
 @property(nonatomic) __weak id <FullScreenPublicVideoCellDelegate> publicVideoCellDelegate; // @synthesize publicVideoCellDelegate=_publicVideoCellDelegate;
 @property(nonatomic) __weak id <BarrageWebViewDelegate> barrageViewdelegate; // @synthesize barrageViewdelegate=_barrageViewdelegate;
@@ -78,6 +81,7 @@
 - (void)resumePlayVideo;
 - (void)setVideoPlayMode:(int)arg1;
 - (void)playVideo;
+- (void)tapOnRightBarButton:(id)arg1;
 - (void)followButtonDidClick:(id)arg1;
 - (void)updateFollow;
 - (void)setVideoTitlePlayCount;
@@ -87,13 +91,16 @@
 - (id)collectionView:(id)arg1 cellForItemAtIndexPath:(id)arg2;
 - (long long)collectionView:(id)arg1 numberOfItemsInSection:(long long)arg2;
 - (void)setCellStyle:(unsigned long long)arg1;
+- (double)videoHeight;
 - (void)initVideoView:(id)arg1;
 - (void)setCellModel:(id)arg1;
-- (_Bool)shouldResponseToLongPress;
 - (_Bool)canDelayGetNick;
 - (void)resetVideoView:(id)arg1;
 - (id)initWithStyle:(long long)arg1 reuseIdentifier:(id)arg2;
 - (void)setFullScreen:(_Bool)arg1;
+- (void)onCommentNumberChange:(_Bool)arg1;
+- (void)onNewVCStatusChange:(int)arg1 isOpen:(_Bool)arg2;
+- (void)onCloseBtnClicked;
 - (id)getVideoviewInfo;
 - (id)getVideoInnerId;
 - (id)getVideoId;

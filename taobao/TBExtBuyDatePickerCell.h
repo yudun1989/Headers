@@ -23,6 +23,7 @@
 @property(retain, nonatomic) NSDateFormatter *dateAndTimeFormatter; // @synthesize dateAndTimeFormatter=_dateAndTimeFormatter;
 @property(retain, nonatomic) NSDateFormatter *dateFormatter; // @synthesize dateFormatter=_dateFormatter;
 - (void).cxx_destruct;
+- (void)dealloc;
 - (void)setAccessibilityLabelAndTraits:(id)arg1;
 - (void)cellDidSelected;
 - (_Bool)accessibilityActivate;

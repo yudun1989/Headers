@@ -10,7 +10,7 @@
 {
 }
 
-- (void)requestPollingQAWithGameId:(id)arg1 completion:(CDUnknownBlockType)arg2;
+- (void)requestPollingQAWithGameId:(id)arg1 extParams:(id)arg2 completion:(CDUnknownBlockType)arg3;
 
 @end
 

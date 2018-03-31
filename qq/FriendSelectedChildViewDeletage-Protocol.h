@@ -12,6 +12,7 @@
 
 @optional
 - (int)getClusterEnterFilterValue;
+- (void)childViewCellDidSelected:(NSString *)arg1 type:(int)arg2 nick:(NSString *)arg3;
 - (void)childViewCellDidSelected:(NSString *)arg1 type:(int)arg2;
 @end
 

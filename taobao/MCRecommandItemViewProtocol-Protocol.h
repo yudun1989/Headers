@@ -13,7 +13,6 @@
 @property(copy, nonatomic) NSString *subTitleText;
 @property(copy, nonatomic) NSString *titleText;
 @property(copy, nonatomic) NSString *iconUrl;
-- (void)setItemTarget:(id)arg1 action:(SEL)arg2;
 - (void)setSubscribeTarget:(id)arg1 action:(SEL)arg2;
 - (void)setLastItem:(_Bool)arg1;
 @end

@@ -6,17 +6,19 @@
 
 #import <Foundation/NSObject.h>
 
-@class NSHashTable, NSMutableDictionary;
+@class NSArray, NSHashTable, NSMutableDictionary;
 
 @interface QRThemeManager : NSObject
 {
     unsigned long long _currentThemeType;
     NSHashTable *_viewList;
     NSMutableDictionary *_themeTable;
+    unsigned long long _lastThemeType;
 }
 
 + (id)processImage:(id)arg1 forThemeType:(unsigned long long)arg2 forState:(unsigned long long)arg3;
 + (id)sharedInstance;
+@property(nonatomic) unsigned long long lastThemeType; // @synthesize lastThemeType=_lastThemeType;
 @property(retain, nonatomic) NSMutableDictionary *themeTable; // @synthesize themeTable=_themeTable;
 @property(retain, nonatomic) NSHashTable *viewList; // @synthesize viewList=_viewList;
 @property(nonatomic) unsigned long long currentThemeType; // @synthesize currentThemeType=_currentThemeType;
@@ -25,8 +27,11 @@
 - (id)colorTableKeyForThemeType:(unsigned long long)arg1;
 - (void)readCurrentTheme;
 - (id)init;
+@property(readonly, nonatomic) NSArray *themeTypes;
+- (id)processImage:(id)arg1 forThemeType:(unsigned long long)arg2 colorType:(unsigned long long)arg3;
 - (id)readThemeImage:(unsigned long long)arg1;
 - (id)readThemeColorOfType:(unsigned long long)arg1;
+- (id)readThemeColor:(unsigned long long)arg1 forThemeType:(unsigned long long)arg2;
 - (void)reloadTheme;
 - (void)addView:(id)arg1;
 

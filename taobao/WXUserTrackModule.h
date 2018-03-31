@@ -15,6 +15,8 @@
     WXSDKInstance *weexInstance;
 }
 
++ (id)wx_export_method_43;
++ (id)wx_export_method_42;
 + (id)wx_export_method_41;
 + (id)wx_export_method_40;
 + (id)wx_export_method_39;
@@ -27,8 +29,6 @@
 + (id)wx_export_method_32;
 + (id)wx_export_method_31;
 + (id)wx_export_method_30;
-+ (id)wx_export_method_29;
-+ (id)wx_export_method_28;
 @property(nonatomic) __weak WXSDKInstance *weexInstance; // @synthesize weexInstance;
 - (void).cxx_destruct;
 - (void)addPerfPoint:(id)arg1;

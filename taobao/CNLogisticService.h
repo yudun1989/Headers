@@ -17,8 +17,14 @@
     TBSDKMTOPServer *_queryLogisForTradeDetailRequest;
     TBSDKMTOPServer *_touchSettingUpgradeRequest;
     TBSDKMTOPServer *_attentionOfficialCloseRequest;
+    TBSDKMTOPServer *_takePackageFromStationRequest;
+    TBSDKMTOPServer *_queryGaoDoDirectionInfoRequest;
+    TBSDKMTOPServer *_realTimeGaoDeDirectionInfoRequest;
 }
 
+@property(retain, nonatomic) TBSDKMTOPServer *realTimeGaoDeDirectionInfoRequest; // @synthesize realTimeGaoDeDirectionInfoRequest=_realTimeGaoDeDirectionInfoRequest;
+@property(retain, nonatomic) TBSDKMTOPServer *queryGaoDoDirectionInfoRequest; // @synthesize queryGaoDoDirectionInfoRequest=_queryGaoDoDirectionInfoRequest;
+@property(retain, nonatomic) TBSDKMTOPServer *takePackageFromStationRequest; // @synthesize takePackageFromStationRequest=_takePackageFromStationRequest;
 @property(retain, nonatomic) TBSDKMTOPServer *attentionOfficialCloseRequest; // @synthesize attentionOfficialCloseRequest=_attentionOfficialCloseRequest;
 @property(retain, nonatomic) TBSDKMTOPServer *touchSettingUpgradeRequest; // @synthesize touchSettingUpgradeRequest=_touchSettingUpgradeRequest;
 @property(retain, nonatomic) TBSDKMTOPServer *queryLogisForTradeDetailRequest; // @synthesize queryLogisForTradeDetailRequest=_queryLogisForTradeDetailRequest;
@@ -33,10 +39,13 @@
 - (void)setTraceParamByNetRequest:(id)arg1;
 - (void)queryAllTraceByMailNo:(id)arg1 cpCpde:(id)arg2 orderCode:(id)arg3 operation:(id)arg4 completeBlock:(CDUnknownBlockType)arg5;
 - (void)requestSendingSMSDeliveryCodeWithOrderCode:(id)arg1 mailNo:(id)arg2 complete:(CDUnknownBlockType)arg3;
+- (void)takePackageFromStationWithOrderId:(id)arg1 userId:(id)arg2 complete:(CDUnknownBlockType)arg3;
 - (void)getLogisticByOrderId:(id)arg1 completeWithLogisticOrderList:(CDUnknownBlockType)arg2;
 - (void)queryLogisForTradeDetailByTradeId:(id)arg1 complete:(CDUnknownBlockType)arg2;
 - (void)touchSettingUpgrade:(id)arg1 complete:(CDUnknownBlockType)arg2;
 - (void)attentionOfficialCloseComplete:(CDUnknownBlockType)arg1;
+- (void)queryGaoDoDirectionInfo:(id)arg1 complete:(CDUnknownBlockType)arg2;
+- (void)realTimeGaoDeDirectionInfo:(id)arg1 complete:(CDUnknownBlockType)arg2;
 - (void)clearDelegatesAndCancel;
 - (void)dealloc;
 

@@ -35,7 +35,10 @@
 @property(retain, nonatomic) NSCachedURLResponse *cachedResposne; // @synthesize cachedResposne=_cachedResposne;
 @property(retain, nonatomic) NSURLRequest *request; // @synthesize request=_request;
 @property(retain, nonatomic) NSHTTPURLResponse *response; // @synthesize response=_response;
-- (void)qbProxyProtocolDidFinishLoadingWithCached:(id)arg1;
+- (void)qbProxyProtocolDidStopLoading;
+- (void)qbProxyProtocolAfterSendRequest:(id)arg1;
+- (void)qbProxyProtocolDidInitialized;
+- (void)qbProxyProtocolDidFinishLoadingWithCached:(id)arg1 errCode:(long long)arg2;
 - (_Bool)qbProxyProtocolShouldStartLoading;
 - (id)qbProxyProtocolDidReceiveData:(id)arg1;
 - (_Bool)qbProxyProtocolDidReceiveResponse:(inout id *)arg1 error:(out id *)arg2;

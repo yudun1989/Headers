@@ -33,8 +33,10 @@
     UIImage *_liveHostCoverImage;
     NSString *_liveHostCoverUrl;
     NSString *_audienceH5Url;
+    long long _videoPlaySource;
 }
 
+@property(nonatomic) long long videoPlaySource; // @synthesize videoPlaySource=_videoPlaySource;
 @property(nonatomic) _Bool enterPlaybackOrStopPageDirectly; // @synthesize enterPlaybackOrStopPageDirectly=_enterPlaybackOrStopPageDirectly;
 @property(retain, nonatomic) NSString *audienceH5Url; // @synthesize audienceH5Url=_audienceH5Url;
 @property(retain, nonatomic) NSString *liveHostCoverUrl; // @synthesize liveHostCoverUrl=_liveHostCoverUrl;

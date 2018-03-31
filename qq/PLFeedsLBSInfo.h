@@ -22,10 +22,6 @@
 @property(retain, nonatomic) NSString *city; // @synthesize city=_city;
 @property(retain, nonatomic) NSString *lng; // @synthesize lng=_lng;
 @property(retain, nonatomic) NSString *lat; // @synthesize lat=_lat;
-- (void)encodeWithCoder:(id)arg1;
-- (id)initWithCoder:(id)arg1;
-- (void)dealloc;
-- (id)init;
 
 @end
 

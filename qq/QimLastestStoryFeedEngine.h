@@ -15,6 +15,7 @@
 
 + (id)convertMsgModel2StoryFeedModel:(id)arg1;
 + (id)convertStoryFeedModel2MsgModel:(id)arg1;
++ (id)GetInstance;
 - (void).cxx_destruct;
 - (id)onSaveCache;
 - (void)onClearCache;

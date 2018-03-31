@@ -6,18 +6,25 @@
 
 #import "KSFeedResponse.h"
 
+@class NSString;
+
 @interface KSHomeFeedResponse : KSFeedResponse
 {
     _Bool _qqFriendsUploaded;
     _Bool _contactsUploaded;
     _Bool _phoneBinded;
     _Bool _avatarUploaded;
+    _Bool _needShowFollowRecommend;
+    NSString *_followRecommendSource;
 }
 
+@property(retain, nonatomic) NSString *followRecommendSource; // @synthesize followRecommendSource=_followRecommendSource;
+@property(nonatomic) _Bool needShowFollowRecommend; // @synthesize needShowFollowRecommend=_needShowFollowRecommend;
 @property(nonatomic) _Bool avatarUploaded; // @synthesize avatarUploaded=_avatarUploaded;
 @property(nonatomic) _Bool phoneBinded; // @synthesize phoneBinded=_phoneBinded;
 @property(nonatomic) _Bool contactsUploaded; // @synthesize contactsUploaded=_contactsUploaded;
 @property(nonatomic) _Bool qqFriendsUploaded; // @synthesize qqFriendsUploaded=_qqFriendsUploaded;
+- (void).cxx_destruct;
 
 @end
 

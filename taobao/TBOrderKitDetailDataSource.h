@@ -6,7 +6,7 @@
 
 #import "TBOrderKitDataSource.h"
 
-@class NSArray, NSMutableArray, NSString, TBOrderOperationModel, TBOrderOperationView;
+@class NSArray, NSMapTable, NSMutableArray, NSMutableDictionary, NSString, TBOrderOperationModel, TDMDinamicItem, UIView;
 @protocol TBOrderKitDetailDataSourceProtocol;
 
 @interface TBOrderKitDetailDataSource : TBOrderKitDataSource
@@ -17,7 +17,10 @@
     _Bool _hasSection;
     NSString *_bizOrderId;
     id <TBOrderKitDetailDataSourceProtocol> _detailProtocol;
-    TBOrderOperationView *_orderOperationView;
+    UIView *_orderOperationView;
+    TDMDinamicItem *_viewItem;
+    NSMutableDictionary *_preLaadDinamicCellDic;
+    NSMapTable *_dinamicModelsDictionary;
     TBOrderOperationModel *_operateModel;
     NSArray *_customModels;
     NSString *_degradeEventID;
@@ -29,12 +32,16 @@
 @property(nonatomic) _Bool hasSection; // @synthesize hasSection=_hasSection;
 @property(retain, nonatomic) NSArray *customModels; // @synthesize customModels=_customModels;
 @property(retain, nonatomic) TBOrderOperationModel *operateModel; // @synthesize operateModel=_operateModel;
+@property(retain, nonatomic) NSMapTable *dinamicModelsDictionary; // @synthesize dinamicModelsDictionary=_dinamicModelsDictionary;
+@property(retain, nonatomic) NSMutableDictionary *preLaadDinamicCellDic; // @synthesize preLaadDinamicCellDic=_preLaadDinamicCellDic;
+@property(retain, nonatomic) TDMDinamicItem *viewItem; // @synthesize viewItem=_viewItem;
 @property(nonatomic, getter=isOrderRecommend) _Bool orderRecommend; // @synthesize orderRecommend=_orderRecommend;
-@property(retain, nonatomic) TBOrderOperationView *orderOperationView; // @synthesize orderOperationView=_orderOperationView;
+@property(retain, nonatomic) UIView *orderOperationView; // @synthesize orderOperationView=_orderOperationView;
 @property(nonatomic) __weak id <TBOrderKitDetailDataSourceProtocol> detailProtocol; // @synthesize detailProtocol=_detailProtocol;
 @property(nonatomic, getter=isArchive) _Bool archive; // @synthesize archive=_archive;
 @property(retain, nonatomic) NSString *bizOrderId; // @synthesize bizOrderId=_bizOrderId;
 - (void).cxx_destruct;
+- (void)dealloc;
 - (void)tableView:(id)arg1 didSelectRowAtIndexPath:(id)arg2;
 - (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;
 - (long long)tableView:(id)arg1 numberOfRowsInSection:(long long)arg2;
@@ -52,22 +59,35 @@
 - (void)buildDataFromArray:(id)arg1;
 - (void)buildDataFromStructure:(id)arg1;
 - (void)refreshUI;
+- (void)addNativeOperatioView;
 - (void)buildData;
 - (void)rebuildDataWithHolderModel:(id)arg1 tag:(id)arg2;
 - (void)addHolderModel:(id)arg1 tag:(id)arg2;
 - (void)clearData;
 - (void)queryDetail;
 - (id)createServiceOperation;
+- (void)clickShop:(id)arg1;
+- (void)clickLabel:(id)arg1;
+- (void)clickLogistic:(id)arg1;
+- (void)clickSubOrSubService:(id)arg1;
+- (void)clickOperaionViewByIndex:(unsigned long long)arg1 model:(id)arg2;
 - (void)registerActionCallback;
 - (void)initActionView;
 - (void)engineInit;
 - (void)dataInit;
 - (id)initWithBizOrderId:(id)arg1 archive:(_Bool)arg2 target:(id)arg3;
+- (id)keyForOrderModel:(id)arg1;
+- (id)dinamicModelByOriginalModel:(id)arg1;
+- (void)mapDinamicModel:(id)arg1 withOriginalModel:(id)arg2;
+- (void)recordComponentEvent:(id)arg1 model:(id)arg2 code:(id)arg3;
+- (void)recordComponentExposure:(id)arg1 model:(id)arg2;
+- (void)addDinamicOperationView:(id)arg1 dinamicModel:(id)arg2;
 - (void)finishMeasurePerformance:(id)arg1 type:(long long)arg2;
 - (void)startMeasurePerformance:(id)arg1 type:(long long)arg2;
 - (id)templateInfoFromModel:(id)arg1;
 - (_Bool)isDynamicModel:(id)arg1;
 - (id)reuseIdentifier:(id)arg1 cellName:(id)arg2;
+- (void)dinamicCellPreload;
 - (id)templateInfo:(id)arg1;
 - (id)createDynamicComponent:(id)arg1 template:(id)arg2;
 - (id)createDynamicModel:(id)arg1 template:(id)arg2;

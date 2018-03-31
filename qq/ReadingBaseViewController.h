@@ -6,15 +6,15 @@
 
 #import <QQMainProject/QQViewController.h>
 
-@class QRBottomView, QRReadingDataSource, ReadViewToolBar, SettingView, UIButton, UIControl, UIView;
+@class QRBottomView, QRProgressView, QRReadingDataSource, ReadViewToolBar, SettingView, UIButton, UIControl, UIView;
 
 @interface ReadingBaseViewController : QQViewController
 {
     ReadViewToolBar *_topView;
     QRBottomView *_bottomView;
+    QRProgressView *_progressView;
     UIButton *_addBookShelfView;
     UIControl *_middleView;
-    UIView *_visibleMenuView;
     UIView *_alphaView;
     _Bool _showTopView;
     double _alphaValue;
@@ -65,6 +65,7 @@
 // Remaining properties
 @property(nonatomic) double alphaValue; // @dynamic alphaValue;
 @property(retain, nonatomic) QRBottomView *bottomView; // @dynamic bottomView;
+@property(retain, nonatomic) QRProgressView *progressView; // @dynamic progressView;
 @property(nonatomic) _Bool showTopView; // @dynamic showTopView;
 
 @end

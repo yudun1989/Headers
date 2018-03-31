@@ -6,14 +6,16 @@
 
 #import <Foundation/NSObject.h>
 
-@class NSMutableDictionary;
+@class MunionExtMtopRequest, NSMutableDictionary;
 
 @interface MunionRequestManager : NSObject
 {
     NSMutableDictionary *_cpmReqDic;
+    MunionExtMtopRequest *_requestForFlowLimitResource;
 }
 
 + (id)shareInstance;
+@property(retain, nonatomic) MunionExtMtopRequest *requestForFlowLimitResource; // @synthesize requestForFlowLimitResource=_requestForFlowLimitResource;
 @property(retain, nonatomic) NSMutableDictionary *cpmReqDic; // @synthesize cpmReqDic=_cpmReqDic;
 - (void).cxx_destruct;
 - (void)removeAllCPMRequest:(id)arg1;

@@ -25,7 +25,6 @@
 - (void)dealWithPreloadTask:(id)arg1 withPreloadTs:(long long)arg2 redPointPath:(id)arg3;
 - (id)pathToBusinessID;
 - (void)dealRedPointInfoWithBufferDict:(id)arg1 withPreloadTs:(long long)arg2 andRedPointPath:(id)arg3;
-- (_Bool)checkCanScanByUpdateTimeKey:(id)arg1;
 - (_Bool)isPreloadTsCheck:(long long)arg1 templateChangeTime:(long long)arg2;
 - (void)scanRedPointUpdate:(unsigned long long)arg1;
 - (void)loadWithSonic:(id)arg1 withDelegate:(id)arg2;

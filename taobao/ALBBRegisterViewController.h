@@ -16,7 +16,6 @@
 {
     _Bool _beeingInGobackProcess;
     _Bool _hasCloseWindVane;
-    int _regRdsStatus;
     int _lastScreenHeight;
     int _lastScreenWidth;
     NSString *_site;
@@ -39,6 +38,7 @@
     ALBBCountryCode *_selectedCountry;
     NSString *_protocolUrl;
     NSString *_sessionId;
+    long long _regRdsStatus;
 }
 
 + (void)setSharedBizContext:(id)arg1;
@@ -47,7 +47,7 @@
 @property(nonatomic) _Bool beeingInGobackProcess; // @synthesize beeingInGobackProcess=_beeingInGobackProcess;
 @property(nonatomic) int lastScreenWidth; // @synthesize lastScreenWidth=_lastScreenWidth;
 @property(nonatomic) int lastScreenHeight; // @synthesize lastScreenHeight=_lastScreenHeight;
-@property(nonatomic) int regRdsStatus; // @synthesize regRdsStatus=_regRdsStatus;
+@property(nonatomic) long long regRdsStatus; // @synthesize regRdsStatus=_regRdsStatus;
 @property(copy, nonatomic) NSString *sessionId; // @synthesize sessionId=_sessionId;
 @property(retain, nonatomic) NSString *protocolUrl; // @synthesize protocolUrl=_protocolUrl;
 @property(retain, nonatomic) ALBBCountryCode *selectedCountry; // @synthesize selectedCountry=_selectedCountry;

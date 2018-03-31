@@ -37,7 +37,6 @@
 - (void)updateNaviDeco:(id)arg1;
 - (void)stopVideoCover;
 - (_Bool)isAccessibilityElement;
-- (void)updateCustomDiamond:(id)arg1;
 - (id)gradientView:(struct CGRect)arg1 beginColor:(id)arg2 end:(id)arg3 beginAlpha:(double)arg4 endAlpha:(double)arg5;
 - (void)scrollToTop;
 - (void)didScroll:(struct CGPoint)arg1;
@@ -59,7 +58,7 @@
 - (void)viewWillDisappear;
 - (void)viewWillAppear;
 - (void)dealloc;
-- (id)initWithFrame:(struct CGRect)arg1 withUin:(long long)arg2 enableGuideBanner:(_Bool)arg3 withViewControler:(id)arg4 refer:(id)arg5 withProfile:(id)arg6 hasPermission:(_Bool)arg7 hybridCover:(_Bool)arg8;
+- (id)initWithFrame:(struct CGRect)arg1 withUin:(long long)arg2 enableGuideBanner:(_Bool)arg3 withViewControler:(id)arg4 refer:(id)arg5 showBottomBar:(_Bool)arg6 hasPermission:(_Bool)arg7 hybridCover:(_Bool)arg8;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

@@ -12,7 +12,6 @@
 
 - (void)storyFeedHeaderInfoView:(id)arg1 didFollowButtonTouchUpInside:(id)arg2;
 - (void)updateSubviewFrame;
-- (void)setStoryFeed:(id)arg1;
 
 @end
 

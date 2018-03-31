@@ -9,7 +9,7 @@
 #import "TBSearchItemCellMaskDelegate-Protocol.h"
 #import "UIGestureRecognizerDelegate-Protocol.h"
 
-@class NSArray, NSString, TBSearchIconViewComponent, TBSearchImageView, TBSearchItemCellShopInfoView, TBSearchPriceLabel, TBSearchShopDiscountView, TBSearchSummaryTipsView, TBSearchTitleView, TBSearchWapItem, TBXSearchItemCellLongPressManager, TBXSearchItemCellMaskBase, UIButton, UIImageView, UILabel, UIView;
+@class NSArray, NSString, TBSearchIconViewComponent, TBSearchImageView, TBSearchItemCellShopInfoView, TBSearchPriceLabel, TBSearchShopDiscountView, TBSearchSummaryTipsView, TBSearchTitleView, TBSearchWapItem, TBXSearchItemCellLongPressManager, TBXSearchItemCellMaskBase, UIButton, UIImageView, UILabel;
 
 @interface TBXSearchItemAuctionNewCell : TBSearchBaseCell <TBSearchItemCellMaskDelegate, UIGestureRecognizerDelegate>
 {
@@ -22,7 +22,6 @@
     UIImageView *_p4pIconImageView;
     UIImageView *_preTitleIconImageView;
     TBXSearchItemCellMaskBase *_maskView;
-    UIView *_splitLine;
     NSArray *_iconListArray;
     UILabel *_locLabel;
     UILabel *_daySoldLabel;
@@ -44,7 +43,6 @@
 @property(retain, nonatomic) UILabel *daySoldLabel; // @synthesize daySoldLabel=_daySoldLabel;
 @property(retain, nonatomic) UILabel *locLabel; // @synthesize locLabel=_locLabel;
 @property(retain, nonatomic) NSArray *iconListArray; // @synthesize iconListArray=_iconListArray;
-@property(retain, nonatomic) UIView *splitLine; // @synthesize splitLine=_splitLine;
 @property(retain, nonatomic) TBXSearchItemCellMaskBase *maskView; // @synthesize maskView=_maskView;
 @property(retain, nonatomic) UIImageView *preTitleIconImageView; // @synthesize preTitleIconImageView=_preTitleIconImageView;
 @property(retain, nonatomic) UIImageView *p4pIconImageView; // @synthesize p4pIconImageView=_p4pIconImageView;

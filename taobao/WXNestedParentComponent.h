@@ -23,7 +23,7 @@
     id <WXNestedScrollHandlerProtocol> _nestDelegate;
 }
 
-+ (id)wx_export_method_76;
++ (id)wx_export_method_79;
 @property(nonatomic) __weak id <WXNestedScrollHandlerProtocol> nestDelegate; // @synthesize nestDelegate=_nestDelegate;
 @property(retain, nonatomic) WXNestedResolver *scrollResolver; // @synthesize scrollResolver=_scrollResolver;
 @property(nonatomic) double snapThreshold; // @synthesize snapThreshold=_snapThreshold;

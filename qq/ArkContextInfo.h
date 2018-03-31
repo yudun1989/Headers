@@ -10,18 +10,24 @@
 
 @interface ArkContextInfo : NSObject
 {
+    NSString *_appName;
     NSString *_context;
     NSDictionary *_semantic;
+    NSDictionary *_rawSemantic;
     NSString *_keyword;
-    NSNumber *_equalInputText;
     NSNumber *_contextMatchType;
+    NSNumber *_positionBegin;
+    NSNumber *_positionEnd;
 }
 
+@property(retain) NSNumber *positionEnd; // @synthesize positionEnd=_positionEnd;
+@property(retain) NSNumber *positionBegin; // @synthesize positionBegin=_positionBegin;
 @property(retain) NSNumber *contextMatchType; // @synthesize contextMatchType=_contextMatchType;
-@property(retain) NSNumber *equalInputText; // @synthesize equalInputText=_equalInputText;
 @property(retain) NSString *keyword; // @synthesize keyword=_keyword;
+@property(retain) NSDictionary *rawSemantic; // @synthesize rawSemantic=_rawSemantic;
 @property(retain) NSDictionary *semantic; // @synthesize semantic=_semantic;
 @property(retain) NSString *context; // @synthesize context=_context;
+@property(retain) NSString *appName; // @synthesize appName=_appName;
 - (void).cxx_destruct;
 
 @end

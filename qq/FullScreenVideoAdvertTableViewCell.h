@@ -21,7 +21,6 @@
     UILabel *_describeLabel;
     UIButton *_feedbackBtn;
     UIButton *_bottomBar;
-    UILabel *_recommendLabel;
     UILabel *_detailLabel;
     UIView *_feedbackMaskView;
     UITapGestureRecognizer *_feedbackMaskViewTap;
@@ -30,7 +29,6 @@
 @property(retain, nonatomic) UITapGestureRecognizer *feedbackMaskViewTap; // @synthesize feedbackMaskViewTap=_feedbackMaskViewTap;
 @property(retain, nonatomic) UIView *feedbackMaskView; // @synthesize feedbackMaskView=_feedbackMaskView;
 @property(retain, nonatomic) UILabel *detailLabel; // @synthesize detailLabel=_detailLabel;
-@property(retain, nonatomic) UILabel *recommendLabel; // @synthesize recommendLabel=_recommendLabel;
 @property(retain, nonatomic) UIButton *bottomBar; // @synthesize bottomBar=_bottomBar;
 @property(retain, nonatomic) UIButton *feedbackBtn; // @synthesize feedbackBtn=_feedbackBtn;
 @property(retain, nonatomic) UILabel *describeLabel; // @synthesize describeLabel=_describeLabel;
@@ -65,10 +63,10 @@
 - (void)layoutBottomView;
 - (void)layoutTopView;
 - (void)layoutSubviews;
-- (double)getHeaderHeight;
 - (double)getDescribeLabelHeight;
 - (void)updateContainerViewFrame;
 - (void)setCellModel:(id)arg1;
+- (id)getContentView;
 - (id)initWithStyle:(long long)arg1 reuseIdentifier:(id)arg2;
 
 // Remaining properties

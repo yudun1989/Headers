@@ -9,6 +9,7 @@
 @class NSDate, NSDictionary, NSString, YWIMCore, YWMessageBody, YWPerson;
 
 @protocol IYWMessage <NSObject>
+@property(readonly, nonatomic) NSDictionary *internalDictionary;
 @property(readonly, copy, nonatomic) NSString *rootMsgId;
 @property(readonly, copy, nonatomic) NSDictionary *controlParameters;
 @property(readonly, nonatomic) NSDictionary *extraInfo;

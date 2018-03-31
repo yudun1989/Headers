@@ -12,19 +12,19 @@
 {
     _Bool _isNeedLogin;
     int _scence;
-    int _option;
     NSString *_userId;
     NSString *_apiName;
     NSString *_apiVersion;
     NSMutableArray *_pName;
     NSMutableArray *_pValue;
+    long long _option;
     NSString *_site;
     NSString *_compatibleKey;
 }
 
 @property(copy, nonatomic) NSString *compatibleKey; // @synthesize compatibleKey=_compatibleKey;
 @property(copy, nonatomic) NSString *site; // @synthesize site=_site;
-@property(nonatomic) int option; // @synthesize option=_option;
+@property(nonatomic) long long option; // @synthesize option=_option;
 @property(nonatomic) _Bool isNeedLogin; // @synthesize isNeedLogin=_isNeedLogin;
 @property(retain, nonatomic) NSMutableArray *pValue; // @synthesize pValue=_pValue;
 @property(retain, nonatomic) NSMutableArray *pName; // @synthesize pName=_pName;

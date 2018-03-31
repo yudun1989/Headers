@@ -43,12 +43,14 @@
     _Bool _hasSuper;
     _Bool _photoFromPreview;
     _Bool _userGifImagesPlay;
+    _Bool _needStackBlur;
     QQAsset *_asset;
     double _ration;
     NSArray *_recommendGifImages;
     NSString *_editedVideoPath;
 }
 
+@property(nonatomic) _Bool needStackBlur; // @synthesize needStackBlur=_needStackBlur;
 @property(retain, nonatomic) NSString *editedVideoPath; // @synthesize editedVideoPath=_editedVideoPath;
 @property(retain, nonatomic) NSArray *recommendGifImages; // @synthesize recommendGifImages=_recommendGifImages;
 @property(nonatomic) double ration; // @synthesize ration=_ration;
@@ -92,6 +94,7 @@
 - (void)downloadThumbPhoto;
 - (void)downloadOriginalPhoto;
 - (void)downloadPhoto;
+- (_Bool)shouldFullScreen;
 - (void)photoEventShouldShowLoadingView;
 @property(nonatomic) _Bool shouldShowLoadingView; // @dynamic shouldShowLoadingView;
 @property(retain, nonatomic) QzonePhotoModel *photoModel; // @dynamic photoModel;

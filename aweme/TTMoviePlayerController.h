@@ -13,9 +13,9 @@
 
 @interface TTMoviePlayerController : NSObject <NotifyHandler>
 {
-    // Error parsing type: ^{TTPlayer=^^?^^?iiiiB*^{AVSource}^{AVHandler}^^?^v^?^?{_opaque_pthread_rwlock_t=q[192c]}^{AVHandler}Bii{list<com::ss::ttm::AVSource *, std::__1::allocator<com::ss::ttm::AVSource *> >={__list_node_base<com::ss::ttm::AVSource *, void *>=^{__list_node_base<com::ss::ttm::AVSource *, void *>}^{__list_node_base<com::ss::ttm::AVSource *, void *>}}{__compressed_pair<unsigned long, std::__1::allocator<std::__1::__list_node<com::ss::ttm::AVSource *, void *> > >=Q}}^{AVBasePlayer}*[3^{AVSource}]^{AVSource}^{VideoOut}^{AudioOut}^{VideoOutlet}^{AudioOutlet}^{AVFactory}^^?^{APPWRAPPER}^{AVLooper}^{AVWindow}{SeekInfo=q{atomic<long long>=Aq}qqqq}{NextPlayInfo=*i*i*i{_opaque_pthread_mutex_t=q[56c]}}BqB{atomic<bool>=AB}iiiii*iiiiiqqq{TTPlayerConfig=^^?iifffB******iiiiiiiiiiiiiiiiiiiii***iiifiiiiiiiiiiiiii}}, name: _player
+    // Error parsing type: ^{TTPlayer=^^?^^?iiiiB*^{AVSource}^{AVHandler}^^?^v^?^?{_opaque_pthread_rwlock_t=q[192c]}^{AVHandler}Bii{list<com::ss::ttm::AVSource *, std::__1::allocator<com::ss::ttm::AVSource *> >={__list_node_base<com::ss::ttm::AVSource *, void *>=^{__list_node_base<com::ss::ttm::AVSource *, void *>}^{__list_node_base<com::ss::ttm::AVSource *, void *>}}{__compressed_pair<unsigned long, std::__1::allocator<std::__1::__list_node<com::ss::ttm::AVSource *, void *> > >=Q}}^{AVBasePlayer}*[3^{AVSource}]^{AVSource}^{VideoOut}^{AudioOut}^{VideoOutlet}^{AudioOutlet}^{AVFactory}^^?^{APPWRAPPER}^{AVLooper}^{AVWindow}{SeekInfo=q{atomic<long long>=Aq}qqqq}{NextPlayInfo=*i*i*i{_opaque_pthread_mutex_t=q[56c]}}BqB{atomic<bool>=AB}iiiii*iiiiiqqq{TTPlayerConfig=^^?iifffB******iiiiiiiiiiiiiiiiiiiii***iiifiiiiiiiiiiiiiii}}, name: _player
     struct AVWindow *_window;
-    ApApp_41a7cf77 *_wrapper;
+    struct ApApp *_wrapper;
     struct APPWRAPPER *_appWrapper;
     struct PCMWriter *_pcmWriter;
     struct YUVWriter *_yuvWriter;

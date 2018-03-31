@@ -38,7 +38,7 @@
 #import <QQMainProject/UIViewControllerTransitioningDelegate-Protocol.h>
 #import <QQMainProject/UIWebViewDelegate-Protocol.h>
 
-@class ARMapWGBreathLightView, ARMapWGMessageBackgroundView, ARMapWGPendantView, CADisplayLink, HeadButtonLongPress, LYStorage, NSDate, NSIndexPath, NSMutableArray, NSMutableDictionary, NSString, NSTimer, NewMedalPopupController, NowActivityPendantBottomFloatingModel, NowActivityPendantButton, NowActivityPendantDragCoverView, NowActivityPendantTopBannerModel, NowActivityPendantTopFloatingModel, ODRefreshControl, QQ2018BigAdButton, QQ2018ConfettiAreaView, QQ2018CountDownView, QQ2018PendantButton, QQ2018TableDragCoverView, QQConnectAnimationView, QQFontPushbannerConfiguration, QQFriendSelectedViewController, QQMessageView, QQPreviewBasePoper, QQRecentViewRefreshControlModule, QQRightMenuView, QQSpringFestvival2018PendantData, QQWebShareActionSheet, SDKUpgradeModalViewController, UIActivityIndicatorView, UIButton, UIImageView, UILongPressGestureRecognizer, UIView, UIViewController;
+@class ARMapWGBreathLightView, ARMapWGMessageBackgroundView, ARMapWGPendantView, CADisplayLink, HeadButtonLongPress, LYStorage, NSDate, NSIndexPath, NSMutableArray, NSMutableDictionary, NSString, NSTimer, NewMedalPopupController, NowActivityPendantBottomFloatingModel, NowActivityPendantButton, NowActivityPendantDragCoverView, NowActivityPendantTopBannerModel, NowActivityPendantTopFloatingModel, ODRefreshControl, QQConnectAnimationView, QQFontPushbannerConfiguration, QQFriendSelectedViewController, QQMessageView, QQPreviewBasePoper, QQRecentViewRefreshControlModule, QQRightMenuView, QQWebShareActionSheet, SDKUpgradeModalViewController, UIActivityIndicatorView, UIButton, UIImageView, UILongPressGestureRecognizer, UIView, UIViewController;
 @protocol UIViewControllerPreviewing;
 
 @interface QQRecentController : QQSearchBaseViewController <SDKUpgradeModalViewControllerDelegate, UITableViewDataSource, MulMemSelBusiProcessDelegate, UIGestureRecognizerDelegate, UIViewControllerPreviewingDelegate, QQPreviewDelegate, QQPreviewApearStateDelegate, ActionSheetDataDelegate, QZAutoPlayGifViewDelegate, ARMapWGTransitionAnimating, ARMapWGTransitionDelegate, ARMapWGPendantViewDelegate, QQBannerTipViewDelegate, QQStoryNodeViewControllerDelegate, UITableViewDelegate, UIActionSheetDelegate, UIAlertViewDelegate, UIWebViewDelegate, SimpleAlertViewDelegate, QQNetWorkTipsViewDelegate, PushBannerViewDelegate, IQSContactsEngineObserver, QQMusicViewDelegate, IEditViewControllerObserver, EGORefreshTableHeaderDelegate, QQTabMenuDelegate, FANearFileTipViewDelegate, QQWebviewExecuteJSDelegate, UIViewControllerTransitioningDelegate, QQMessageViewDynamicAvatarDelegate, ArkBannerTipsDelegate>
@@ -142,12 +142,6 @@
     NewMedalPopupController *_medalController;
     _Bool _directGoAIO;
     _Bool _messageTabEverPopDown;
-    QQ2018PendantButton *_pendantButton;
-    QQ2018ConfettiAreaView *_confettiAreaView;
-    QQ2018CountDownView *_countDownView;
-    QQ2018TableDragCoverView *_dragCoverView;
-    QQSpringFestvival2018PendantData *_pendantData;
-    QQ2018BigAdButton *_bigAdButton;
     NowActivityPendantButton *_nowPendantButton;
     NowActivityPendantDragCoverView *_nowDragCoverView;
     UIImageView *_nowActivityPendantView;
@@ -197,13 +191,7 @@
 @property(retain, nonatomic) UIImageView *nowActivityPendantView; // @synthesize nowActivityPendantView=_nowActivityPendantView;
 @property(retain, nonatomic) NowActivityPendantDragCoverView *nowDragCoverView; // @synthesize nowDragCoverView=_nowDragCoverView;
 @property(retain, nonatomic) NowActivityPendantButton *nowPendantButton; // @synthesize nowPendantButton=_nowPendantButton;
-@property(retain, nonatomic) QQ2018BigAdButton *bigAdButton; // @synthesize bigAdButton=_bigAdButton;
 @property(readonly, retain, nonatomic) ODRefreshControl *refreshControl; // @synthesize refreshControl=_refreshControl;
-@property(retain, nonatomic) QQSpringFestvival2018PendantData *pendantData; // @synthesize pendantData=_pendantData;
-@property(retain, nonatomic) QQ2018TableDragCoverView *dragCoverView; // @synthesize dragCoverView=_dragCoverView;
-@property(retain, nonatomic) QQ2018CountDownView *countDownView; // @synthesize countDownView=_countDownView;
-@property(retain, nonatomic) QQ2018ConfettiAreaView *confettiAreaView; // @synthesize confettiAreaView=_confettiAreaView;
-@property(retain, nonatomic) QQ2018PendantButton *pendantButton; // @synthesize pendantButton=_pendantButton;
 @property(nonatomic) _Bool directGoAIO; // @synthesize directGoAIO=_directGoAIO;
 @property(retain, nonatomic) QQRightMenuView *rightMenuView; // @synthesize rightMenuView=_rightMenuView;
 @property(nonatomic) _Bool tableScrollEnable; // @synthesize tableScrollEnable=_tableScrollEnable;
@@ -266,10 +254,6 @@
 - (void)willAppearForWealthGod;
 - (void)willDisappearForWealthGod;
 - (_Bool)wealthGodEnable;
-- (void)cancelUpdate;
-- (void)endUpdate;
-- (void)update;
-- (void)startUpdate;
 - (_Bool)isRowOffscreenAtIndexPath:(id)arg1;
 - (_Bool)isDisplayedOfCell:(id)arg1;
 - (void)setCellIsDisplayed:(id)arg1 isDisplayed:(_Bool)arg2;
@@ -449,6 +433,7 @@
 - (void)onLoginSuccess;
 - (void)BackForegroundNotification:(id)arg1;
 - (void)showSwitchToWebView:(id)arg1;
+- (void)onRecieveCMShowGameBannerClose:(id)arg1;
 - (void)onRecieveQQVIPFunctionTipsStateChange:(id)arg1;
 - (void)PlayStateForMusicShare:(id)arg1;
 - (void)enableReloadTableView:(id)arg1;
@@ -480,34 +465,6 @@
 - (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void *)arg4;
 - (_Bool)visible;
 - (id)messageView;
-- (id)keyForPromotionID:(long long)arg1 activityStartTime:(unsigned long long)arg2;
-- (id)snapshotsOfRencentVC;
-- (id)starImageArr;
-- (double)defaultTopContentInset;
-- (struct CGRect)confettiAreaViewFrame;
-- (void)checkNeedShowBigAd;
-- (void)handlePendantPanGesture:(id)arg1;
-- (void)pendantButtonPressed:(id)arg1;
-- (void)bigAdButtonPressed:(id)arg1;
-- (void)test;
-- (void)sp2018_actionGetPushForbidTime:(id)arg1;
-- (void)handleApplicationWillEnterForegroundNote:(id)arg1;
-- (void)handleAllActivityFinishNote:(id)arg1;
-- (void)handleCurrActivityFinishedNote:(id)arg1;
-- (void)handleUserLogout:(id)arg1;
-- (void)handleBigAdShowNote:(id)arg1;
-- (void)loadCountDownViewAnimating:(long long)arg1;
-- (void)handleActivityStateChangedNote:(id)arg1;
-- (void)sp2018_removeAllControls;
-- (_Bool)sp2018_canfreshMessageListOnCurTime;
-- (void)sp2018_viewDidDisappear;
-- (void)sp2018_viewDidAppear;
-- (void)sp2018_viewDidAppearFirstTime;
-- (void)sp2018_scrollViewWillEndDragging:(id)arg1 withVelocity:(struct CGPoint)arg2 targetContentOffset:(inout struct CGPoint *)arg3;
-- (void)handleLoadingMsgAnimationTimer:(id)arg1;
-- (void)sp2018_scrollViewDidEndDragging:(id)arg1;
-- (void)sp2018_scrollViewDidScroll:(id)arg1;
-- (void)sp2018_showSpringFestival2018Activity;
 - (void)nowActivityPendant_notifyBottomFloatingPendantFinish;
 - (void)nowActivityPendant_onBottomFloatingPendantTapGesture;
 - (void)nowActivityPendant_removeBottomFloatingPendant;
@@ -520,6 +477,8 @@
 - (void)nowActivityPendant_unRegisterNotifications;
 - (void)nowActivityPendant_registerNotifications;
 - (id)nowActivityPendant_snapshotsOfRencentVC;
+- (id)nowActivityPendant_snapshotsOfView:(id)arg1;
+- (id)nowActivityPendant_snapshotsOfWindow;
 - (double)nowActivityPendant_defaultTopContentInset;
 - (void)nowActivityPendant_handlePendantPanGesture:(id)arg1;
 - (void)nowActivityPendant_pendantButtonPressed:(id)arg1;

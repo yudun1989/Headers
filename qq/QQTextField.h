@@ -122,7 +122,6 @@
 - (void)reSignRespose;
 - (void)initState;
 - (void)gotoQutuSectionView;
-- (void)goToFaceManageView;
 - (_Bool)becomeFirstResponder;
 - (void)dealloc;
 - (void)willMoveToSuperview:(id)arg1;

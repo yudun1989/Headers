@@ -25,6 +25,7 @@
 }
 
 - (void).cxx_destruct;
+- (void)setBtnBackgroundColor:(id)arg1;
 - (void)setButtonFont:(id)arg1;
 - (void)setHighlightLineColor:(id)arg1;
 - (void)setSplitLineColor:(id)arg1;

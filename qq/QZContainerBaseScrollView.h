@@ -10,20 +10,19 @@
 #import <QQMainProject/UICollectionViewDelegate-Protocol.h>
 #import <QQMainProject/UICollectionViewDelegateFlowLayout-Protocol.h>
 
-@class NSMutableDictionary, NSString, UICollectionView;
+@class NSString, UICollectionView;
 @protocol QZContainerBaseScrollViewDelegate, QZContainerBaseScrollViewScrollDelegate, QZFeedCellDelegate;
 
 @interface QZContainerBaseScrollView : UIView <UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout>
 {
     unsigned long long _oldPage;
-    _Bool _snapping;
-    struct CGPoint _dragVelocity;
-    struct CGPoint _dragDisplacement;
-    NSMutableDictionary *_pagesCenterXDic;
+    double _lastOffsetX;
+    _Bool _needExpose;
     _Bool _needLayoutViewRoundCorner;
     _Bool _forceToNextPage;
     _Bool _isNeedSnapStopToCenter;
     _Bool _isNeedScrollControl;
+    _Bool _isNeedSmoothScrollControl;
     long long _groupCount;
     double _pageWidth;
     double _collectionViewLeftMargin;
@@ -42,6 +41,7 @@
 @property(nonatomic) __weak id <QZContainerBaseScrollViewDelegate> delegate; // @synthesize delegate=_delegate;
 @property(nonatomic) __weak id <QZFeedCellDelegate> clickDelegate; // @synthesize clickDelegate=_clickDelegate;
 @property(nonatomic) __weak id <QZContainerBaseScrollViewScrollDelegate> scrollDelegate; // @synthesize scrollDelegate=_scrollDelegate;
+@property(nonatomic) _Bool isNeedSmoothScrollControl; // @synthesize isNeedSmoothScrollControl=_isNeedSmoothScrollControl;
 @property(nonatomic) _Bool isNeedScrollControl; // @synthesize isNeedScrollControl=_isNeedScrollControl;
 @property(nonatomic) _Bool isNeedSnapStopToCenter; // @synthesize isNeedSnapStopToCenter=_isNeedSnapStopToCenter;
 @property(nonatomic) _Bool forceToNextPage; // @synthesize forceToNextPage=_forceToNextPage;
@@ -60,17 +60,18 @@
 - (_Bool)isCompleteVisible:(long long)arg1;
 - (id)visibleCells;
 - (_Bool)isCellVisible:(long long)arg1;
-- (long long)pageOffsetForComponent;
-- (void)snapToPage;
-- (void)scrollViewDidScroll:(id)arg1;
 - (void)scrollViewWillEndDragging:(id)arg1 withVelocity:(struct CGPoint)arg2 targetContentOffset:(inout struct CGPoint *)arg3;
+- (void)setLastOffsetX:(double)arg1;
+- (void)setNeedExpose;
+- (double)caculatePageOffset:(long long)arg1 inCenter:(_Bool)arg2;
+- (long long)nearestTargetOffsetForOffset:(struct CGPoint)arg1 velocity:(struct CGPoint)arg2;
 - (void)scrollViewDidEndDragging:(id)arg1 willDecelerate:(_Bool)arg2;
 - (void)scrollViewWillBeginDragging:(id)arg1;
-- (void)scrollViewDidEndZooming:(id)arg1 withView:(id)arg2 atScale:(double)arg3;
 - (void)scrollViewDidEndScrollingAnimation:(id)arg1;
 - (void)scrollViewDidEndDecelerating:(id)arg1;
 - (void)setCellMargin:(id)arg1 indexPath:(id)arg2;
 - (id)getlayoutInfoViewAtPage:(unsigned long long)arg1;
+- (void)collectionView:(id)arg1 willDisplayCell:(id)arg2 forItemAtIndexPath:(id)arg3;
 - (id)collectionView:(id)arg1 cellForItemAtIndexPath:(id)arg2;
 - (long long)collectionView:(id)arg1 numberOfItemsInSection:(long long)arg2;
 - (long long)numberOfSectionsInCollectionView:(id)arg1;
@@ -79,16 +80,12 @@
 - (double)getItemWidth:(long long)arg1;
 - (struct CGSize)collectionView:(id)arg1 layout:(id)arg2 sizeForItemAtIndexPath:(id)arg3;
 - (void)initCollectionView:(struct CGRect)arg1;
-- (void)updatePageCenterX:(double)arg1 page:(unsigned long long)arg2;
-- (void)resetCenterDic;
 - (struct CGPoint)contentOffset;
 - (void)setContentOffset:(struct CGPoint)arg1;
 - (void)setBackgroundAlpha:(double)arg1 needBGClearColor:(_Bool)arg2;
 - (void)setBackgroundAlpha:(double)arg1;
-- (void)prepareForReuse;
 - (void)layoutFeedView;
 - (void)layoutSubviews;
-- (void)resetView;
 - (void)resetViewInfo;
 - (id)initWithFrame:(struct CGRect)arg1;
 

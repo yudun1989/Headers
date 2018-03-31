@@ -10,5 +10,10 @@
 
 @protocol SpriteDrawerViewDelegate <NSObject>
 - (void)spriteDrawerView:(SpriteDrawerView *)arg1 didLoadDataSucc:(_Bool)arg2;
+
+@optional
+- (_Bool)spriteDrawerViewHadBoxMsg:(SpriteDrawerView *)arg1;
+- (_Bool)spriteDrawerViewHadShowGameBox:(SpriteDrawerView *)arg1;
+- (void)spriteDrawerViewSpriteClickWhenSpriteIsNotStand:(SpriteDrawerView *)arg1;
 @end
 

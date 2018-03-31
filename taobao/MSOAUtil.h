@@ -19,6 +19,7 @@
 + (id)orangeNotificationNameWithGroup:(id)arg1;
 + (id)lowercaseKeyDictionary:(id)arg1;
 + (_Bool)versionIsNeedUpdateWithBase:(id)arg1 target:(id)arg2;
++ (id)dictionaryWithJsonString:(id)arg1 error:(id)arg2;
 + (id)dictionaryWithJsonString:(id)arg1;
 
 @end

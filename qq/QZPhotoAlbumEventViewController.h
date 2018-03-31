@@ -10,7 +10,7 @@
 #import <QQMainProject/PhotoEditDelegate-Protocol.h>
 #import <QQMainProject/QZPhotoAlbumEventViewCellDelegate-Protocol.h>
 
-@class NSArray, NSDictionary, NSMutableArray, NSMutableDictionary, NSString, QZPhotoEventImageManager;
+@class MQZoneVideoManager, NSArray, NSDictionary, NSMutableArray, NSMutableDictionary, NSString, QZPhotoEventImageManager;
 
 @interface QZPhotoAlbumEventViewController : MQZonePullingTableViewController <QZPhotoAlbumEventViewCellDelegate, MQZonePhotoDescriptionDelegate, PhotoEditDelegate>
 {
@@ -37,8 +37,10 @@
     CDUnknownBlockType _onWillExit;
     CDUnknownBlockType _onExposuredEventChange;
     CDUnknownBlockType _scanCompletionBlock;
+    MQZoneVideoManager *_videoManager;
 }
 
+@property(retain, nonatomic) MQZoneVideoManager *videoManager; // @synthesize videoManager=_videoManager;
 @property(copy, nonatomic) CDUnknownBlockType scanCompletionBlock; // @synthesize scanCompletionBlock=_scanCompletionBlock;
 @property(nonatomic) _Bool requestInList; // @synthesize requestInList=_requestInList;
 @property(retain, nonatomic) NSMutableArray *hintedBigEvents; // @synthesize hintedBigEvents=_hintedBigEvents;

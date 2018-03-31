@@ -10,6 +10,7 @@
 {
 }
 
++ (id)verticalSeparatorWithHeight:(double)arg1;
 + (void)themeProcessButton:(id)arg1 image:(unsigned long long)arg2;
 + (void)changeItem:(id)arg1 to:(int)arg2;
 + (id)sliderWithName:(int)arg1 isDayMode:(_Bool)arg2 width:(double)arg3 height:(double)arg4;

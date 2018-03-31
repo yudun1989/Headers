@@ -45,8 +45,6 @@
     NSString *_itemCheck1111;
     NSString *_totalJoinCount;
     NSString *_viewCount;
-    NSString *_mbUserView;
-    NSString *_mbPageView;
     NSString *_praiseCount;
     NSString *_accountId;
     NSString *_nativeFeedDetailUrl;
@@ -90,15 +88,21 @@
     TBLiveTBTVLiveDOModel *_tbtvLiveDO;
     NSString *_reportUrl;
     NSString *_playIndex;
+    NSString *_pushFeature;
     NSString *_gameId;
     TBLiveMillionBabyModel *_millionBaby;
+    NSString *_mbUserView;
+    NSString *_mbPageView;
     NSArray<TBLiveMarketingInfoModel> *_liveMarketingInfo;
 }
 
 + (id)modelWithJSONDictionary:(id)arg1;
 @property(retain, nonatomic) NSArray<TBLiveMarketingInfoModel> *liveMarketingInfo; // @synthesize liveMarketingInfo=_liveMarketingInfo;
+@property(copy, nonatomic) NSString *mbPageView; // @synthesize mbPageView=_mbPageView;
+@property(copy, nonatomic) NSString *mbUserView; // @synthesize mbUserView=_mbUserView;
 @property(retain, nonatomic) TBLiveMillionBabyModel *millionBaby; // @synthesize millionBaby=_millionBaby;
 @property(copy, nonatomic) NSString *gameId; // @synthesize gameId=_gameId;
+@property(copy, nonatomic) NSString *pushFeature; // @synthesize pushFeature=_pushFeature;
 @property(copy, nonatomic) NSString *playIndex; // @synthesize playIndex=_playIndex;
 @property(copy, nonatomic) NSString *reportUrl; // @synthesize reportUrl=_reportUrl;
 @property(retain, nonatomic) TBLiveTBTVLiveDOModel *tbtvLiveDO; // @synthesize tbtvLiveDO=_tbtvLiveDO;
@@ -146,8 +150,6 @@
 @property(copy, nonatomic) NSString *nativeFeedDetailUrl; // @synthesize nativeFeedDetailUrl=_nativeFeedDetailUrl;
 @property(copy, nonatomic) NSString *accountId; // @synthesize accountId=_accountId;
 @property(copy, nonatomic) NSString *praiseCount; // @synthesize praiseCount=_praiseCount;
-@property(copy, nonatomic) NSString *mbPageView; // @synthesize mbPageView=_mbPageView;
-@property(copy, nonatomic) NSString *mbUserView; // @synthesize mbUserView=_mbUserView;
 @property(copy, nonatomic) NSString *viewCount; // @synthesize viewCount=_viewCount;
 @property(copy, nonatomic) NSString *totalJoinCount; // @synthesize totalJoinCount=_totalJoinCount;
 @property(copy, nonatomic) NSString *itemCheck1111; // @synthesize itemCheck1111=_itemCheck1111;

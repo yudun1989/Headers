@@ -17,6 +17,7 @@
 + (id)spriteDir:(id)arg1;
 + (id)gCmShowCmdEventDict;
 + (id)getInstance;
+- (void)setGameScreenMode:(int)arg1 context:(void *)arg2;
 - (id)getPostEstModelPath;
 - (id)getYTModelPath;
 - (id)getUFAPath;
@@ -27,7 +28,7 @@
 - (void)reportDataBySSOWithDataStr:(id)arg1;
 - (void)reportEventWithDataStr:(id)arg1;
 - (void)reportFlowWithDataStr:(id)arg1;
-- (void)sendHttpRequest:(id)arg1 methodStr:(id)arg2 postStr:(id)arg3 cookieStr:(id)arg4 refererStr:(id)arg5 needBodyCompatible:(_Bool)arg6 callback:(CDUnknownBlockType)arg7;
+- (void)sendHttpRequest:(id)arg1 methodStr:(id)arg2 postStr:(id)arg3 cookieStr:(id)arg4 refererStr:(id)arg5 headerDict:(id)arg6 needBodyCompatible:(_Bool)arg7 callback:(CDUnknownBlockType)arg8;
 - (void)sendSSOWithCmd:(id)arg1 dataChar:(id)arg2 context:(void *)arg3;
 - (id)dictionaryWithJsonString:(id)arg1;
 - (void)sendCmdByEngine:(id)arg1 dataChar:(id)arg2 context:(void *)arg3;
@@ -35,6 +36,8 @@
 - (id)gameSandBoxPath;
 - (id)gameBasePath;
 - (id)basePath;
+- (id)decodeSharpPData:(id *)arg1 width:(unsigned int *)arg2 height:(unsigned int *)arg3 error:(id *)arg4;
+- (_Bool)isSharpPData:(id)arg1;
 - (id)syncSendLocalSSOReqWithJSContext:(void *)arg1 cmd:(id)arg2 jsonStr:(id)arg3;
 - (void)asyncGetAvatarByOpenID:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)asyncGetNickNameByOpenID:(id)arg1 completion:(CDUnknownBlockType)arg2;

@@ -43,6 +43,8 @@
     _Bool _isPreLoadEmoji;
     _Bool _needLayout;
     _Bool _isPrivate;
+    _Bool _ifShowQQEmoji;
+    _Bool _ifShowCustomTab;
     _Bool _isBulletCurtain;
     _Bool _isBubbleCurtain;
     _Bool _isNoNeedAtBtn;
@@ -105,6 +107,8 @@
 @property(retain, nonatomic) NSString *bulletPlaceholder; // @synthesize bulletPlaceholder=_bulletPlaceholder;
 @property(nonatomic) _Bool isBubbleCurtain; // @synthesize isBubbleCurtain=_isBubbleCurtain;
 @property(nonatomic) _Bool isBulletCurtain; // @synthesize isBulletCurtain=_isBulletCurtain;
+@property(nonatomic) _Bool ifShowCustomTab; // @synthesize ifShowCustomTab=_ifShowCustomTab;
+@property(nonatomic) _Bool ifShowQQEmoji; // @synthesize ifShowQQEmoji=_ifShowQQEmoji;
 @property(nonatomic) _Bool isPrivate; // @synthesize isPrivate=_isPrivate;
 @property(retain, nonatomic) NSMutableDictionary *atDict; // @synthesize atDict=_atDict;
 @property(retain, nonatomic) NSString *draftKey; // @synthesize draftKey=_draftKey;
@@ -142,6 +146,7 @@
 - (void)showBubbleBoard;
 - (void)createFontBoard;
 - (void)showFontBoard;
+- (void)sendGifViewWithParam:(id)arg1;
 - (void)sendFace;
 - (void)removeBubbleBoard;
 - (void)removeFontBoard;

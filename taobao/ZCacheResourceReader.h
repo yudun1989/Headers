@@ -45,7 +45,6 @@
 - (_Bool)isComboUrl;
 - (void)reportPackageAppVisit:(id)arg1 withSeq:(unsigned long long)arg2 withError:(id)arg3;
 - (void)reportPackageAppVisit:(id)arg1;
-- (void)reportZCacheFirstVisit:(id)arg1;
 - (id)verifyResource:(id)arg1 withData:(id)arg2;
 - (id)readFromLocalFile:(id)arg1;
 - (id)read;

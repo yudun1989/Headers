@@ -21,6 +21,7 @@
     _Bool _isGetBestImageInAction;
     _Bool _isLessImageMode;
     _Bool _isDetectWrongAction;
+    _Bool _isDetectOcclusion;
     _Bool _enableRecap;
     _Bool _enableReflectDetect;
     _Bool _isReachBusinessRetryLimited;
@@ -71,6 +72,7 @@
     float _maxIso;
     float _minIso;
     int _reflectWaitingFrames;
+    int _actionWhileCheckFail;
     NSMutableArray *_frameArray;
     NSMutableArray *_faceArray;
     NSMutableArray *_actionArray;
@@ -87,9 +89,14 @@
     ABActionResult *_currentAction;
     NSString *_username;
     double _recognizePhaseBeginTime;
+    NSMutableArray *_strategyWhileCheckFail;
+    NSString *_theme;
 }
 
 + (id)sharedContext;
+@property(retain) NSString *theme; // @synthesize theme=_theme;
+@property(retain) NSMutableArray *strategyWhileCheckFail; // @synthesize strategyWhileCheckFail=_strategyWhileCheckFail;
+@property int actionWhileCheckFail; // @synthesize actionWhileCheckFail=_actionWhileCheckFail;
 @property _Bool showOtherButton; // @synthesize showOtherButton=_showOtherButton;
 @property _Bool showStartAnimation; // @synthesize showStartAnimation=_showStartAnimation;
 @property _Bool isTooFar; // @synthesize isTooFar=_isTooFar;
@@ -144,6 +151,7 @@
 @property float recapThreshold; // @synthesize recapThreshold=_recapThreshold;
 @property int recapMode; // @synthesize recapMode=_recapMode;
 @property _Bool enableRecap; // @synthesize enableRecap=_enableRecap;
+@property _Bool isDetectOcclusion; // @synthesize isDetectOcclusion=_isDetectOcclusion;
 @property _Bool isDetectWrongAction; // @synthesize isDetectWrongAction=_isDetectWrongAction;
 @property _Bool isLessImageMode; // @synthesize isLessImageMode=_isLessImageMode;
 @property _Bool isGetBestImageInAction; // @synthesize isGetBestImageInAction=_isGetBestImageInAction;

@@ -31,7 +31,6 @@
 - (void)dealloc;
 - (_Bool)isSupportRightDragToGoBack;
 @property(readonly, nonatomic) unsigned int lastAddChannelId; // @dynamic lastAddChannelId;
-- (void)clickArrowButton:(id)arg1;
 - (void)refreshAllChannelItems;
 - (void)refreshMyChannelFromIndex:(int)arg1 ToIndex:(int)arg2;
 - (void)handleLongPressGesture:(id)arg1;

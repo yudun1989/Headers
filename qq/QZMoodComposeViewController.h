@@ -8,94 +8,87 @@
 
 #import <QQMainProject/GAEmojiTextViewDelegate-Protocol.h>
 #import <QQMainProject/IQZUrlDownloaderDelegate-Protocol.h>
-#import <QQMainProject/MQZoneMoodEditInputCellDelegate-Protocol.h>
-#import <QQMainProject/MQZonePhotoViewDelegate-Protocol.h>
 #import <QQMainProject/QQTabMenuDelegate-Protocol.h>
 #import <QQMainProject/QUIActionSheetDelegate-Protocol.h>
-#import <QQMainProject/QZComposerMultipleInfoViewDelegate-Protocol.h>
-#import <QQMainProject/QZMoodEditVideoCellDelegate-Protocol.h>
 #import <QQMainProject/QZMoodTagEventListControllerDelegate-Protocol.h>
-#import <QQMainProject/QZPhotoGifRecommendViewControllerDelegate-Protocol.h>
 #import <QQMainProject/UIActionSheetDelegate-Protocol.h>
 #import <QQMainProject/UIGestureRecognizerDelegate-Protocol.h>
 #import <QQMainProject/UIScrollViewDelegate-Protocol.h>
 #import <QQMainProject/UITableViewDataSource-Protocol.h>
 #import <QQMainProject/UITableViewDelegate-Protocol.h>
 
-@class MQZMoodEditRecentPhotoesCell, MQZoneMoodEditBatchGeoCell, MQZoneMoodEditInputCell, MQZonePhotoView, NSDictionary, NSMutableArray, NSString, QUIActionSheet, QZComposerDraftManager, QZComposerMultipleInfoView, QZComposerQualityCell, QZFloatingPictureView, QZMoodComposeViewPresenter, QZMoodEditVideoCell, UITableView;
+@class MQZMoodEditRecentPhotoesCell, MQZoneMoodEditInputCell, MQZonePhotoView, NSDictionary, NSString, QUIActionSheet, QZComposerDraftManager, QZComposerMultipleInfoView, QZComposerQualityCell, QZMoodComposeViewCoordinator, QZMoodComposeViewPresenter, QZMoodEasterEggViewController, QZMoodFooterViewController, QZMoodInfoCellController, QZMoodLBSCellController, QZMoodMultimediaCellController, UITableView;
 @protocol QZMoodComposeViewControllerDelegate;
 
-@interface QZMoodComposeViewController : QZoneViewController <QUIActionSheetDelegate, IQZUrlDownloaderDelegate, QZMoodEditVideoCellDelegate, MQZoneMoodEditInputCellDelegate, MQZonePhotoViewDelegate, QZPhotoGifRecommendViewControllerDelegate, QZMoodTagEventListControllerDelegate, UIActionSheetDelegate, UITableViewDataSource, UITableViewDelegate, UIScrollViewDelegate, QQTabMenuDelegate, UIGestureRecognizerDelegate, GAEmojiTextViewDelegate, QZComposerMultipleInfoViewDelegate>
+@interface QZMoodComposeViewController : QZoneViewController <QUIActionSheetDelegate, IQZUrlDownloaderDelegate, QZMoodTagEventListControllerDelegate, UIActionSheetDelegate, UITableViewDataSource, UITableViewDelegate, UIScrollViewDelegate, QQTabMenuDelegate, UIGestureRecognizerDelegate, GAEmojiTextViewDelegate>
 {
     _Bool _hasInitData;
     QUIActionSheet *_actionSheet;
-    QZMoodEditVideoCell *_videoCell;
     MQZMoodEditRecentPhotoesCell *_recentPhotoCell;
-    QZFloatingPictureView *_easterEggImageCell;
-    QZComposerMultipleInfoView *_multipleInfoView;
-    QZComposerMultipleInfoView *_accessoryMultipleInfoView;
-    double _textChangeTime;
     NSString *_lastEditText;
     long long _photoLBSRequestID;
     long long _photoChainRequestID;
-    _Bool _disableLBSInfo;
-    _Bool _isShowKeyBoard;
     UITableView *_tableView;
-    NSMutableArray *_tableDatasource;
     _Bool _forbidChangeTag;
+    _Bool _hasQualityCell;
     _Bool _isAdvPulled;
     _Bool _isAdvReported;
     _Bool _canceledOpenPermissionAlert;
-    double _keyBoardHeight;
     _Bool _hasRecentPhoto;
-    NSDictionary *_permissonJSParams;
     _Bool _supportDraft;
     _Bool _isQQShare;
     _Bool _waitNet;
     _Bool _waitWifi;
     id <QZMoodComposeViewControllerDelegate> _composeViewControllerDelegate;
     QZMoodComposeViewPresenter *_viewModel;
-    MQZonePhotoView *_photoCell;
-    MQZoneMoodEditInputCell *_inputCell;
     NSString *_advTraceInfo;
     NSDictionary *_advDict;
     QZComposerQualityCell *_qualityCell;
-    MQZoneMoodEditBatchGeoCell *_batchGeoCell;
     QZComposerDraftManager *_draftManager;
     long long _videoQuality;
     long long _photoQuality;
-    long long _lastImageEntrance;
     NSString *_preUploadId;
     long long _batchMediaJobType;
     CDUnknownBlockType _onPressPostButton;
+    QZMoodLBSCellController *_LBSCellController;
+    QZComposerMultipleInfoView *_accessoryMultipleInfoView;
+    QZMoodEasterEggViewController *_easterEggController;
+    QZMoodInfoCellController *_infoCellController;
+    QZMoodMultimediaCellController *_multimediaCellController;
+    QZMoodFooterViewController *_footerController;
+    QZMoodComposeViewCoordinator *_coordinator;
 }
 
+@property(retain, nonatomic) QZMoodComposeViewCoordinator *coordinator; // @synthesize coordinator=_coordinator;
+@property(retain, nonatomic) QZMoodFooterViewController *footerController; // @synthesize footerController=_footerController;
+@property(retain, nonatomic) QZMoodMultimediaCellController *multimediaCellController; // @synthesize multimediaCellController=_multimediaCellController;
+@property(retain, nonatomic) QZMoodInfoCellController *infoCellController; // @synthesize infoCellController=_infoCellController;
+@property(retain, nonatomic) QZMoodEasterEggViewController *easterEggController; // @synthesize easterEggController=_easterEggController;
+@property(readonly, nonatomic) QZComposerMultipleInfoView *accessoryMultipleInfoView; // @synthesize accessoryMultipleInfoView=_accessoryMultipleInfoView;
+@property(retain, nonatomic) QZMoodLBSCellController *LBSCellController; // @synthesize LBSCellController=_LBSCellController;
 @property(copy, nonatomic) CDUnknownBlockType onPressPostButton; // @synthesize onPressPostButton=_onPressPostButton;
 @property(nonatomic) long long batchMediaJobType; // @synthesize batchMediaJobType=_batchMediaJobType;
 @property(copy, nonatomic) NSString *preUploadId; // @synthesize preUploadId=_preUploadId;
-@property(nonatomic) long long lastImageEntrance; // @synthesize lastImageEntrance=_lastImageEntrance;
 @property(nonatomic) _Bool waitWifi; // @synthesize waitWifi=_waitWifi;
 @property(nonatomic) _Bool waitNet; // @synthesize waitNet=_waitNet;
 @property(nonatomic) long long photoQuality; // @synthesize photoQuality=_photoQuality;
 @property(nonatomic) long long videoQuality; // @synthesize videoQuality=_videoQuality;
 @property(retain, nonatomic) QZComposerDraftManager *draftManager; // @synthesize draftManager=_draftManager;
-@property(retain, nonatomic) MQZoneMoodEditBatchGeoCell *batchGeoCell; // @synthesize batchGeoCell=_batchGeoCell;
 @property(retain, nonatomic) QZComposerQualityCell *qualityCell; // @synthesize qualityCell=_qualityCell;
 @property(retain, nonatomic) NSDictionary *advDict; // @synthesize advDict=_advDict;
 @property(retain, nonatomic) NSString *advTraceInfo; // @synthesize advTraceInfo=_advTraceInfo;
 @property(nonatomic) _Bool isQQShare; // @synthesize isQQShare=_isQQShare;
 @property(nonatomic) _Bool supportDraft; // @synthesize supportDraft=_supportDraft;
-@property(retain, nonatomic) MQZoneMoodEditInputCell *inputCell; // @synthesize inputCell=_inputCell;
-@property(retain, nonatomic) MQZonePhotoView *photoCell; // @synthesize photoCell=_photoCell;
 @property(readonly) QZMoodComposeViewPresenter *viewModel; // @synthesize viewModel=_viewModel;
 @property(nonatomic) __weak id <QZMoodComposeViewControllerDelegate> composeViewControllerDelegate; // @synthesize composeViewControllerDelegate=_composeViewControllerDelegate;
 - (void).cxx_destruct;
+- (id)getJSUgcRightsParam;
+- (void)setJSUgcRightsParam:(id)arg1;
+- (void)deactivateInputCell;
 - (void)stopVideoCellPlayback;
 - (void)startVideoCellPlayback;
 - (void)onYellowDiamondH5FloatClose:(id)arg1;
 - (void)onNotifyGetPhotoChainInfo:(id)arg1;
-- (void)requestFinished:(id)arg1;
-- (void)onNotifyGetURLInfo:(id)arg1;
 - (_Bool)showPermissionAlert;
 - (void)pressPostButton:(id)arg1;
 - (void)actionSheet:(id)arg1 didDismissWithButtonIndex:(long long)arg2;
@@ -108,33 +101,15 @@
 - (void)refreshWithCurrentViewModel;
 - (_Bool)hasMoodDraft;
 - (void)initData;
-- (void)updateMoodTime:(id)arg1;
 - (void)report_mobileqboss;
 - (void)refreshAdvUI;
 - (void)requestQBossPhotoAdvWithId:(int)arg1;
-- (void)refreshSyncView;
 - (void)photoCellCheckPhotoState:(id)arg1 photoList:(id)arg2;
 - (void)photoCellScrollToBottom;
-- (void)updatephotoCell:(id)arg1 photoList:(id)arg2;
 - (void)photoCellChangeHeight:(id)arg1 heightOffset:(double)arg2;
-- (void)photoCellBecomeActive:(id)arg1;
-- (void)inputCellNeedGetUrlInfo:(id)arg1;
-- (void)inputCellCheckTextState:(id)arg1 text:(id)arg2;
-- (void)inputCellBecomeActive:(id)arg1;
-- (void)inputCellFinishEdit:(id)arg1 text:(id)arg2;
-- (_Bool)inputCell:(id)arg1 shouldChangeCharactersInRange:(struct _NSRange)arg2 replacementString:(id)arg3;
-- (void)refreshMultipleInfoView:(_Bool)arg1 durationTime:(double)arg2;
+- (void)fetchAdvertisement;
 - (void)keepCursorVisible;
-- (void)inputCell:(id)arg1 textDidChange:(id)arg2;
-- (void)videoCellLoadCover:(id)arg1 success:(_Bool)arg2 error:(id)arg3;
 - (void)scrollViewWillBeginDragging:(id)arg1;
-- (void)previewButtonClick;
-- (void)enterPOIInfoList;
-- (void)setWeatherInfo:(id)arg1;
-- (void)setPhotoPOIInfo:(id)arg1;
-- (void)parseGPSInfoInImages:(id)arg1;
-- (id)GPSInfoInImagePickerModels:(id)arg1;
-- (void)setupVideoPoiInfo;
 - (void)onNotifyFetchWeatherInfo:(id)arg1;
 - (long long)onNotifyFetchPOIList:(id)arg1;
 - (void)refreshInfoView;
@@ -150,30 +125,12 @@
 - (void)showRecentlyRecentPhotoesCellWithAssets:(id)arg1;
 - (void)scanRecentCapaturePhotosRedDot;
 - (void)scanRecentlyCapturedPhotos;
-- (void)showEasterEggImagePicker:(long long)arg1 keyword:(id)arg2;
 - (void)addEasterEggImageInfo:(id)arg1;
 - (void)onMoodImagePickerSelectImage:(id)arg1;
 - (void)showEasterEggImageCellIfNeeded;
-- (void)hideEasterEggImageCell;
 - (void)openUgcPermission;
-- (void)enterPermissionSelectView;
-- (id)getJSUgcRightsParam;
-- (void)setJSUgcRightsParam:(id)arg1;
-- (void)recordEventTag:(id)arg1;
-- (void)onNotifyEventTag:(id)arg1;
 - (void)selectTag:(id)arg1;
 - (void)setTag:(id)arg1;
-- (id)postParamOfOpenTagSettingWebView;
-- (void)clickTagEvent;
-- (void)gifRecommendViewControllerNoResultPopOut;
-- (_Bool)canSelectRecommendGif;
-- (void)onSelectGifImages:(id)arg1 ration:(double)arg2;
-- (void)createBatchGeoCell;
-- (void)createVideoCell;
-- (void)createPhotoCell;
-- (void)createInputCell;
-- (_Bool)needShowAccessoryMultipleInfoView;
-- (void)textViewDidChangeContentSize:(id)arg1 contentSize:(struct CGSize)arg2;
 - (void)startPreUpload:(id)arg1;
 - (void)hideWhenSroll;
 - (void)clickMaskBtn;
@@ -184,13 +141,6 @@
 - (void)onForeOffLine:(id)arg1;
 - (void)presentModalViewController:(id)arg1 animated:(_Bool)arg2;
 - (void)reloadSection:(long long)arg1 row:(long long)arg2;
-- (void)multipleInfoViewButtonPressed:(unsigned long long)arg1;
-- (id)cellMultipleInfoCell;
-- (id)cellQuality;
-- (id)cellLBS;
-- (id)cellInputTextMedia;
-- (double)heightForLBS;
-- (double)heightForInputTextMedia;
 - (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;
 - (double)tableView:(id)arg1 heightForRowAtIndexPath:(id)arg2;
 - (double)tableView:(id)arg1 heightForFooterInSection:(long long)arg2;
@@ -200,11 +150,13 @@
 - (void)viewDidAppear:(_Bool)arg1;
 - (void)viewWillDisappear:(_Bool)arg1;
 - (void)viewWillAppear:(_Bool)arg1;
-- (id)rightButtonTitle;
-- (id)getTitle;
 - (void)refreshDatasource;
-- (id)createTableView;
+- (void)createTableView;
 - (void)viewDidLoad;
+- (id)photoModelList;
+@property(readonly, nonatomic) MQZoneMoodEditInputCell *inputCell;
+- (id)videoCell;
+@property(readonly, nonatomic) MQZonePhotoView *photoCell;
 - (void)dealloc;
 - (id)initWithContent:(id)arg1 andImages:(id)arg2;
 - (id)init;

@@ -52,6 +52,7 @@
 - (void)removeCacheToCount:(int)arg1;
 - (void)cache:(id)arg1;
 - (id)init;
+- (void)reset;
 
 @end
 

@@ -33,11 +33,14 @@
 + (double)heightForModel:(id)arg1;
 @property(retain, nonatomic) QQWalletTransferAIOMsgModel *model; // @synthesize model=_model;
 - (void).cxx_destruct;
+- (void)changeStateByPush:(id)arg1;
+- (void)didReceiveAAPayPush:(id)arg1;
 - (void)voiceOverSupport;
 - (struct CGRect)bubleFrame;
 - (void)layoutSubviews;
 - (void)commonInit;
 - (void)sethighlighted:(_Bool)arg1;
+- (void)dealloc;
 - (id)init;
 - (id)initWithFrame:(struct CGRect)arg1;
 - (id)initWithChatViewTable:(id)arg1;

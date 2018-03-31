@@ -13,6 +13,7 @@
 {
     long long _totalDressCount;
     _Bool _roleIsSucceed;
+    _Bool _isAnimating;
     SpriteRoleModel *_roleModel;
     sa_gl_view *_weakglview;
     id <SpriteInstanceDelegate> _delegate;
@@ -23,12 +24,14 @@
 }
 
 @property(nonatomic) unsigned long long newGroupId; // @synthesize newGroupId=_newGroupId;
+@property(nonatomic) _Bool isAnimating; // @synthesize isAnimating=_isAnimating;
 @property(retain, nonatomic) SpriteActionModle *actionModel; // @synthesize actionModel=_actionModel;
 @property(retain, nonatomic) SpriteBaseImageModel *baseImgModel; // @synthesize baseImgModel=_baseImgModel;
 @property(nonatomic) CDStruct_00b794ac currentBubbleInfo; // @synthesize currentBubbleInfo=_currentBubbleInfo;
 @property(nonatomic) id <SpriteInstanceDelegate> delegate; // @synthesize delegate=_delegate;
 @property(nonatomic) sa_gl_view *weakglview; // @synthesize weakglview=_weakglview;
 @property(retain, nonatomic) SpriteRoleModel *roleModel; // @synthesize roleModel=_roleModel;
+- (void)setPosition:(struct CGPoint)arg1;
 - (_Bool)execScript:(id)arg1 jsonInfo:(id)arg2 atlasInfo:(id)arg3 pngInfo:(id)arg4;
 - (_Bool)removeBubble;
 - (_Bool)playBubbleWithBubbleInfo:(CDStruct_00b794ac)arg1;
@@ -47,6 +50,7 @@
 - (void)playAIActionWithActionId:(int)arg1 isRepeat:(_Bool)arg2;
 - (void)playSayHiActionIsRandom:(_Bool)arg1 withRoleId:(long long)arg2 sayHiActionId:(long long)arg3;
 - (void)playAppearActionWithID:(long long)arg1 animationName:(id)arg2;
+- (void)playDrawerGameActionWithID:(long long)arg1 animationName:(id)arg2;
 - (void)playDrawerActionWithID:(long long)arg1 animationName:(id)arg2;
 - (void)playActionWithId:(long long)arg1 isPeer:(_Bool)arg2;
 - (void)reWearAllRoleDress:(CDUnknownBlockType)arg1;

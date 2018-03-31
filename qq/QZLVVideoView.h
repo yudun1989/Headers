@@ -12,7 +12,7 @@
 #import <QQMainProject/QAVRemoteVideoDelegate-Protocol.h>
 #import <QQMainProject/QAVRoomDelegate-Protocol.h>
 
-@class AVGLBaseView, AVSingleFrameDispatcher, NSMutableDictionary, NSMutableSet, NSString, NSTimer, QZLVCameraManager;
+@class AVGLBaseView, AVSingleFrameDispatcher, NSMutableDictionary, NSMutableSet, NSString, NSTimer, QZLVCameraManager, QZVRGLView;
 @protocol QZLVVideoQualityDelegate, QZLVVideoViewDelegate;
 
 @interface QZLVVideoView : UIView <QAVRoomDelegate, QAVRemoteVideoDelegate, QAVChangeDelegate, QAVChangeRoleDelegate, AVCaptureVideoDataOutputSampleBufferDelegate>
@@ -29,6 +29,7 @@
     NSTimer *_qualityLogTimer;
     _Bool _bCameraFront;
     _Bool _bDelayDestroyOpenglToBecomeActive;
+    _Bool _bDelayInitOpenglToBecomeActive;
     _Bool _canStartDisplay;
     QZLVCameraManager *_cameraManager;
     _Bool _bAudienceChangingAuthFromNoToYes;
@@ -38,8 +39,10 @@
     _Bool _canConnectMicUpload;
     _Bool _isDelayExitRoom;
     _Bool _firstRecvCameraEvent;
+    unsigned long long _openglType;
     AVGLBaseView *_imageView;
     AVSingleFrameDispatcher *_frameDispatcher;
+    QZVRGLView *_panoramaView;
     unsigned long long _streamState;
     _Bool _doNotStopStream;
     double _beginTimeStamp;

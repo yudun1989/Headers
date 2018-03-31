@@ -21,9 +21,11 @@
     FBKVOController *_KVOController;
     MQzoneFollowTipView *_tipView;
     UIControl *_maskPanel;
+    _Bool _hasVideo;
     CDUnknownBlockType _onPressTimerButton;
 }
 
+@property(nonatomic) _Bool hasVideo; // @synthesize hasVideo=_hasVideo;
 @property(copy, nonatomic) CDUnknownBlockType onPressTimerButton; // @synthesize onPressTimerButton=_onPressTimerButton;
 - (void).cxx_destruct;
 - (void)adjustTimer;
@@ -31,12 +33,12 @@
 - (void)datePickerShouldHide;
 - (void)onClickPickerDone:(double)arg1;
 - (void)onCancelDatePicker:(id)arg1;
-- (void)showDatePicker;
 - (void)pressTimerButton:(id)arg1;
 - (void)restoreSyncOptions;
 - (void)cancleSync;
 - (void)syncEnable:(_Bool)arg1;
 - (void)setWechatButtonHidden:(_Bool)arg1;
+- (void)setSyncViewHidden:(_Bool)arg1;
 - (void)updatePermission;
 - (void)tipViewShow:(_Bool)arg1;
 - (id)initWithHostView:(id)arg1 viewModel:(id)arg2;

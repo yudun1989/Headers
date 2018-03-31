@@ -13,7 +13,7 @@
 @interface AliDetailBottomBarSMCartComponent : TBDetailUIButton <AliDetailBottomBarItemProtocol>
 {
     _Bool _needShowCoudan;
-    int _groupItemType;
+    unsigned long long _groupItemType;
     AliDetailPriceLabel *_priceLabel;
     UILabel *_textLabel;
     UILabel *_cartLabel;
@@ -37,7 +37,7 @@
 @property(retain, nonatomic) UILabel *cartLabel; // @synthesize cartLabel=_cartLabel;
 @property(retain, nonatomic) UILabel *textLabel; // @synthesize textLabel=_textLabel;
 @property(retain, nonatomic) AliDetailPriceLabel *priceLabel; // @synthesize priceLabel=_priceLabel;
-@property(nonatomic) int groupItemType; // @synthesize groupItemType=_groupItemType;
+@property(nonatomic) unsigned long long groupItemType; // @synthesize groupItemType=_groupItemType;
 - (void).cxx_destruct;
 - (void)updateSMCartPrice:(id)arg1;
 - (void)gotoSMCartPage:(id)arg1;

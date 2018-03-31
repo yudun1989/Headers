@@ -11,6 +11,7 @@
 @protocol XSearchSDKChildBaseViewControllerDelegate <NSObject>
 
 @optional
+- (double)getHeightOfHeaderView;
 - (void)childVCH5FindishLoad:(XSearchSDKChildBaseViewController *)arg1;
 - (void)childVCScrollToTop;
 - (void)childVCSearchFailed:(XSearchSDKChildBaseViewController *)arg1 Error:(NSDictionary *)arg2;

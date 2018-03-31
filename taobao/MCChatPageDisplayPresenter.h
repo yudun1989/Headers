@@ -30,6 +30,8 @@
 @property(retain, nonatomic) NSMutableSet *decorateComponentList; // @synthesize decorateComponentList=_decorateComponentList;
 @property(retain, nonatomic) MCCCellManager *cellManager; // @synthesize cellManager=_cellManager;
 - (void).cxx_destruct;
+- (void)readMessageWithModel:(id)arg1;
+- (void)becomeActive;
 - (void)reloadData;
 - (void)headImageDidLongPressForMessage:(id)arg1;
 - (id)getNextUnReadSoundMessageByCurrentMessage:(id)arg1;
@@ -45,6 +47,7 @@
 - (void)showOrHiddenUnreadAitaLocator;
 - (void)refreshDataAndUI;
 - (void)updateCellHeader:(id)arg1;
+- (void)dealloc;
 - (void)viewWillDisappear:(_Bool)arg1;
 - (void)viewWillAppear:(_Bool)arg1;
 - (id)initWithFrame:(struct CGRect)arg1 baseVC:(id)arg2 bizKey:(id)arg3 sesssionID:(id)arg4 config:(id)arg5 inputPresenter:(id)arg6;

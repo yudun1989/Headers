@@ -36,7 +36,7 @@
 - (void)dealloc;
 - (void)scrollViewDidZoom:(id)arg1;
 - (id)viewForZoomingInScrollView:(id)arg1;
-- (struct CGRect)getImageRect:(id)arg1 inSize:(struct CGSize)arg2;
+- (struct CGRect)getImageRectFromSize:(struct CGSize)arg1 inSize:(struct CGSize)arg2;
 - (void)hidePhotoViewAnimation:(int)arg1 complete:(CDUnknownBlockType)arg2;
 - (void)showPhotoWithAnimation:(_Bool)arg1 complete:(CDUnknownBlockType)arg2;
 - (void)longTap:(id)arg1;

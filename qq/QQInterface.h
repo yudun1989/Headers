@@ -12,7 +12,6 @@
 
 + (id)getCurrentNavigationController;
 + (_Bool)isAutoGrapHb;
-+ (void)gotoTenpayView:(id)arg1 rootVC:(id)arg2 params:(id)arg3 completion:(CDUnknownBlockType)arg4;
 + (void)getPopPersonAnimationForPath:(id)arg1 complete:(CDUnknownBlockType)arg2;
 + (void)getVoiceRateResourceForPath:(id)arg1 complete:(CDUnknownBlockType)arg2;
 + (id)getQRCodePath:(id)arg1;
@@ -25,7 +24,7 @@
 + (id)cardNameByUin:(id)arg1 groupCode:(id)arg2;
 + (id)nickForStrangerWithUin:(id)arg1;
 + (id)getQQFriendRemarkByUin:(id)arg1;
-+ (id)createWeakContainer;
++ (id)weakContainer;
 + (id)getQQFriendNameByUin:(id)arg1;
 + (_Bool)isUinAtFriendList:(id)arg1;
 + (id)vipRedBagBgImage;

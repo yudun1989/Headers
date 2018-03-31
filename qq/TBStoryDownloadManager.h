@@ -96,6 +96,7 @@
 - (id)init;
 - (id)preDownloadCachePathForVideoId:(id)arg1 withPatch:(id)arg2;
 - (id)localPathForVideoId:(id)arg1 withPatch:(id)arg2;
+- (id)localDirectoryForVideo:(id)arg1;
 - (id)md5sumWithStr:(id)arg1;
 - (id)createTmpDirectory:(id)arg1;
 - (id)createMyStoryHDDirectory;

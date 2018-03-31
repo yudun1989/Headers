@@ -6,15 +6,17 @@
 
 #import <QQMainProject/FTSResultMoreBaseViewController.h>
 
-@class FTSFeedModel, NSOperationQueue, NSTimer;
+@class FTSFeedModel, NSOperationQueue, NSString, NSTimer;
 
 @interface FTSResultMoreMsgViewController : FTSResultMoreBaseViewController
 {
     NSOperationQueue *_ftsMoreMsgSearchQueue;
     NSTimer *_uiTimer;
     FTSFeedModel *_originMsgFeedModel;
+    NSString *_lastSearchKeyword;
 }
 
+@property(copy, nonatomic) NSString *lastSearchKeyword; // @synthesize lastSearchKeyword=_lastSearchKeyword;
 @property(retain, nonatomic) FTSFeedModel *originMsgFeedModel; // @synthesize originMsgFeedModel=_originMsgFeedModel;
 @property(retain, nonatomic) NSTimer *uiTimer; // @synthesize uiTimer=_uiTimer;
 @property(retain, nonatomic) NSOperationQueue *ftsMoreMsgSearchQueue; // @synthesize ftsMoreMsgSearchQueue=_ftsMoreMsgSearchQueue;

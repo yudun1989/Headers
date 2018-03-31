@@ -9,6 +9,7 @@
 @class NSDictionary, NSMutableURLRequest, NSString, QZVideoPlayerView, QzoneFeedModel, QzoneFeedVideo, UIImage, UINavigationController, UITableViewCell, UIViewController, UIWindow;
 
 @protocol QZVideoLibInterfaceDelegate <NSObject>
+- (NSString *)adIdentifier;
 - (void)runOCSPluginInvokeService:(NSString *)arg1 withOCSPluginId:(NSString *)arg2 isNeedShowDownloadVC:(_Bool)arg3 fromeNavi:(UINavigationController *)arg4 sucessBlock:(void (^)(void))arg5 failBlock:(_Bool (^)(int))arg6;
 - (double)videoRooftopPictureDisplayTime;
 - (NSString *)hevclv;
@@ -19,8 +20,6 @@
 - (long long)quickForwardAppearBefore;
 - (long long)quickForwardAppearDuration;
 - (_Bool)enableQuickForwardInStateView;
-- (_Bool)canShowVideoDebugInfo;
-- (void)setCanShowVideoDebugInfo:(_Bool)arg1;
 - (double)pgcVideoDisplayScaleRatio;
 - (double)ugcVideoDisplayScaleRatio;
 - (double)showNetworkChangeTipsTimeDelay;

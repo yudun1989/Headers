@@ -14,8 +14,6 @@
 {
 }
 
-+ (void)setGrapHBParam:(id)arg1 scene:(int)arg2;
-+ (id)getGrapHBParam:(int)arg1;
 + (id)getGrapHbData:(id)arg1;
 + (void)setGrapHbData:(id)arg1;
 + (id)getSalt;

@@ -9,9 +9,11 @@
 @interface QQAVFunTempGridDecorationItem : MCGridVideoItem
 {
     _Bool _notShow;
+    int _voiceType;
     long long _selectType;
 }
 
+@property(nonatomic) int voiceType; // @synthesize voiceType=_voiceType;
 @property(nonatomic) long long selectType; // @synthesize selectType=_selectType;
 @property(nonatomic) _Bool notShow; // @synthesize notShow=_notShow;
 - (id)mutableCopyWithZone:(struct _NSZone *)arg1;

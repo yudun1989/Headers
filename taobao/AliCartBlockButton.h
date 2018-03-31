@@ -32,6 +32,11 @@
 - (void)callActionBlock:(id)arg1;
 - (void)handleControlEvent:(unsigned long long)arg1 withBlock:(CDUnknownBlockType)arg2;
 - (id)initWithFrame:(struct CGRect)arg1;
+- (id)hitTest:(struct CGPoint)arg1 withEvent:(id)arg2;
+- (_Bool)pointInside:(struct CGPoint)arg1 withEvent:(id)arg2;
+- (struct CGRect)AliCartenlargedRect;
+- (void)setAliEnlargeEdgeWithTop:(double)arg1 right:(double)arg2 bottom:(double)arg3 left:(double)arg4;
+- (void)setAliEnlargeEdge:(double)arg1;
 
 @end
 

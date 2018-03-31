@@ -12,11 +12,14 @@
 {
     AliDetailNumberCardMainView *_numberCardView;
     TBRateListViewControl *_rateListControl;
+    double _prevOpenSKUTime;
 }
 
+@property(nonatomic) double prevOpenSKUTime; // @synthesize prevOpenSKUTime=_prevOpenSKUTime;
 @property(retain, nonatomic) TBRateListViewControl *rateListControl; // @synthesize rateListControl=_rateListControl;
 @property(retain, nonatomic) AliDetailNumberCardMainView *numberCardView; // @synthesize numberCardView=_numberCardView;
 - (void).cxx_destruct;
+- (_Bool)canContinue;
 - (id)handleOpenContractNumCard:(id)arg1;
 - (id)handleOpenSizeChartPage:(id)arg1;
 - (id)handleGotoSeckillQvc:(id)arg1;

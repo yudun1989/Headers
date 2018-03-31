@@ -55,7 +55,7 @@
 + (void)getLocalPhotoListWithUin:(long long)arg1 albumid:(id)arg2 withType:(int)arg3 eventKey:(id)arg4;
 + (id)keyWithAlbumID:(id)arg1 type:(int)arg2;
 + (id)localPhotoListWithUin:(long long)arg1 albumid:(id)arg2 withType:(int)arg3;
-+ (void)removeFakeVideoWithAlbumID:(id)arg1 clientKey:(id)arg2;
++ (void)removeFakeVideoWithAlbumID:(id)arg1;
 + (void)addFakeVideo:(id)arg1 albumId:(id)arg2 bigURL:(id)arg3 currentURL:(id)arg4 uploadTime:(int)arg5 clientKey:(id)arg6;
 + (void)updateFakeVideo:(id)arg1 cacheKey:(id)arg2;
 + (void)updateFakeVideo:(id)arg1 albumID:(id)arg2;
@@ -114,7 +114,6 @@
 - (id)localPhotoListWithUin:(long long)arg1 albumid:(id)arg2 withType:(int)arg3;
 - (long long)internalGetPhotoList:(long long)arg1 albumid:(id)arg2 url:(id)arg3 pstart:(long long)arg4 pnum:(long long)arg5 password:(id)arg6 curlloc:(id)arg7 swidth:(int)arg8 sheight:(int)arg9 busiParam:(id)arg10 needLocal:(_Bool)arg11 targetUin:(long long)arg12 filterVideo:(_Bool)arg13 shareMemberUIN:(long long)arg14;
 - (long long)internalGetPhotoList:(long long)arg1 albumid:(id)arg2 url:(id)arg3 pstart:(long long)arg4 pnum:(long long)arg5 password:(id)arg6 curlloc:(id)arg7 swidth:(int)arg8 sheight:(int)arg9 busiParam:(id)arg10 needLocal:(_Bool)arg11 targetUin:(long long)arg12 filterVideo:(_Bool)arg13;
-- (void)removeFakeVideoFromCache:(id)arg1 albumID:(id)arg2;
 - (void)cacheFakeVideoIntoCache:(id)arg1 albumID:(id)arg2 photoModel:(id)arg3;
 - (void)rewriteVideoCacheOfUin:(long long)arg1 WithDeletedArray:(id)arg2;
 - (long long)getVideoList:(long long)arg1 attachNew:(id)arg2 attachOld:(id)arg3 needLocal:(_Bool)arg4 getMore:(_Bool)arg5;

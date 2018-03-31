@@ -10,14 +10,15 @@
 
 @interface AliBatonOrange : NSObject
 {
+    _Bool _hasUpdated;
     NSString *_name;
     NSString *_notiName;
     CDUnknownBlockType _changedBlock;
     NSDictionary *_orangeConfig;
-    NSString *_orangeVersion;
 }
 
-@property(copy, nonatomic) NSString *orangeVersion; // @synthesize orangeVersion=_orangeVersion;
++ (void)setUTEnabled:(_Bool)arg1;
+@property(nonatomic) _Bool hasUpdated; // @synthesize hasUpdated=_hasUpdated;
 @property(copy, nonatomic) NSDictionary *orangeConfig; // @synthesize orangeConfig=_orangeConfig;
 @property(copy, nonatomic) CDUnknownBlockType changedBlock; // @synthesize changedBlock=_changedBlock;
 @property(copy, nonatomic) NSString *notiName; // @synthesize notiName=_notiName;
@@ -25,6 +26,7 @@
 - (void).cxx_destruct;
 - (void)orangeStatusChanged:(id)arg1;
 - (void)startUseConfig;
+- (void)configEffect;
 - (void)setChangedObserve:(CDUnknownBlockType)arg1;
 - (id)initWithOrangeName:(id)arg1;
 - (void)dealloc;

@@ -27,6 +27,7 @@
     unsigned int _showLen;
     unsigned int _downloadLen;
     unsigned long long _imgFileType;
+    int _sendingState;
     int _xo;
     _Bool _isPicShowInfo;
     _Bool _shouldSendPicWithText;
@@ -47,6 +48,7 @@
 
 + (id)parseFromJson:(id)arg1;
 + (id)toJson:(id)arg1;
+@property(nonatomic) int sendingState; // @synthesize sendingState=_sendingState;
 @property(nonatomic) _Bool showQIMTail; // @synthesize showQIMTail=_showQIMTail;
 @property(retain, nonatomic) NSArray *broadcastUins; // @synthesize broadcastUins=_broadcastUins;
 @property(nonatomic) _Bool hasCheckPicSize; // @synthesize hasCheckPicSize=_hasCheckPicSize;
@@ -83,6 +85,7 @@
 - (_Bool)imageExist;
 - (id)getUUID;
 - (_Bool)isValidModel;
+- (id)description;
 - (void)getValue:(id)arg1;
 - (void)setJsonValue:(id)arg1;
 - (void)parseFromJson:(id)arg1 name:(id)arg2;

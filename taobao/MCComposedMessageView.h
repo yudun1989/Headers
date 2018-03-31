@@ -8,10 +8,13 @@
 
 @interface MCComposedMessageView : UIView
 {
+    long long _layoutId;
 }
 
 + (struct CGSize)bubbleSizeForCellObject:(id)arg1 withContainer:(struct CGSize)arg2;
+@property(nonatomic) long long layoutId; // @synthesize layoutId=_layoutId;
 - (void)updateView:(id)arg1 bubbleHandler:(id)arg2 atIndexPath:(id)arg3;
+- (id)initWithFrame:(struct CGRect)arg1;
 
 @end
 

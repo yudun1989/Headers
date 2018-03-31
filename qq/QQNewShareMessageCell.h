@@ -10,6 +10,7 @@
 {
 }
 
+- (void)enqueReusableElementView:(id)arg1 withIdentifier:(id)arg2;
 - (void)QQSMItemElementView:(id)arg1 didAction:(id)arg2;
 - (void)longPressAction;
 - (void)viewDidAppear;

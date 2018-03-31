@@ -14,10 +14,12 @@
     _Bool _playStatus;
     WXVideoView *_videoView;
     NSURL *_videoURL;
+    NSURL *_posterURL;
 }
 
 @property(nonatomic) _Bool playStatus; // @synthesize playStatus=_playStatus;
 @property(nonatomic) _Bool autoPlay; // @synthesize autoPlay=_autoPlay;
+@property(retain, nonatomic) NSURL *posterURL; // @synthesize posterURL=_posterURL;
 @property(retain, nonatomic) NSURL *videoURL; // @synthesize videoURL=_videoURL;
 @property(nonatomic) __weak WXVideoView *videoView; // @synthesize videoView=_videoView;
 - (void).cxx_destruct;

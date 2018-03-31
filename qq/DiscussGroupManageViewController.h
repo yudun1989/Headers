@@ -49,6 +49,7 @@
     NSString *_turnToGroupSubTitle;
     _Bool _shadeDone;
     _Bool _isCleanRecord;
+    _Bool _isGoToTransparentVC;
     int _qrCodeFromTag;
     QQGroupSettingInitialHeadView *_headerView;
     UserSummaryNavigationBar *_userSummaryNavigationBar;
@@ -57,6 +58,7 @@
     UIColor *_oriNavbarColor;
 }
 
+@property(nonatomic) _Bool isGoToTransparentVC; // @synthesize isGoToTransparentVC=_isGoToTransparentVC;
 @property(nonatomic) int qrCodeFromTag; // @synthesize qrCodeFromTag=_qrCodeFromTag;
 @property(retain, nonatomic) UIColor *oriNavbarColor; // @synthesize oriNavbarColor=_oriNavbarColor;
 @property(retain, nonatomic) UIImage *oriNavbarImage; // @synthesize oriNavbarImage=_oriNavbarImage;

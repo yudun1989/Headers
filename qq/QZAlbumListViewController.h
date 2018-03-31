@@ -52,6 +52,7 @@
 - (long long)uin;
 - (void)handleEnterForeground;
 - (void)handleEnterBackground;
+- (void)onPhotoEventStatusChange:(id)arg1;
 - (_Bool)shouldShowAlbumBanner;
 - (void)updateNavigationActiveViewState:(_Bool)arg1;
 - (_Bool)onHasMore;
@@ -61,6 +62,7 @@
 - (_Bool)isTransparentRefreshControl;
 - (void)initNotificationObservers:(id)arg1;
 - (void)viewWillDisappear:(_Bool)arg1;
+- (void)updateAlbumListScanBanner;
 - (void)afterViewDidAppear;
 - (void)viewDidAppear:(_Bool)arg1;
 - (void)viewWillAppear:(_Bool)arg1;

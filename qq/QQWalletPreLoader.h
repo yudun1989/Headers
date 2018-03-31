@@ -23,7 +23,6 @@
 - (void)requestConfigWhenLoginOrReconnect;
 - (void)handleDidEnterBackgroundNotification;
 - (void)preLoadOCSPluginsInBackground;
-- (void)preLoadOCSPlugins;
 - (void)preLoadRecommendService;
 - (void)onMSFLoginSuccess:(id)arg1;
 - (void)handleResourcePreloaderDidDealModuleNotification:(id)arg1;

@@ -11,8 +11,8 @@
 }
 
 + (_Bool)canAttributeBeParsed:(id)arg1;
-+ (id)parseExpression:(id)arg1 withData:(id)arg2 module:(id)arg3 context:(id)arg4 error:(id *)arg5 plainTextEnabled:(_Bool)arg6;
-+ (id)parseAttributes:(id)arg1 withData:(id)arg2 module:(id)arg3 context:(id)arg4 error:(id *)arg5;
++ (id)parseExpression:(id)arg1 withParam:(id)arg2 plainTextEnabled:(_Bool)arg3;
++ (id)parseAttributes:(id)arg1 withParam:(id)arg2;
 
 @end
 

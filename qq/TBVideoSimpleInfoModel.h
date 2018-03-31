@@ -6,7 +6,7 @@
 
 #import <QQMainProject/QQModel.h>
 
-@class NSString, TBVideoSpreadGroupListModel;
+@class NSString, TBVideoPollInfoModel, TBVideoSpreadGroupListModel;
 
 @interface TBVideoSimpleInfoModel : QQModel
 {
@@ -14,9 +14,11 @@
     NSString *_vid;
     NSString *_videoCoverUrl;
     TBVideoSpreadGroupListModel *_groupList;
+    TBVideoPollInfoModel *_pollInfoModel;
 }
 
 + (id)createWithQQStory:(struct CPBMessageDecoder *)arg1;
+@property(retain, nonatomic) TBVideoPollInfoModel *pollInfoModel; // @synthesize pollInfoModel=_pollInfoModel;
 @property(nonatomic) unsigned int videoLimit; // @synthesize videoLimit=_videoLimit;
 @property(retain, nonatomic) TBVideoSpreadGroupListModel *groupList; // @synthesize groupList=_groupList;
 @property(retain, nonatomic) NSString *videoCoverUrl; // @synthesize videoCoverUrl=_videoCoverUrl;

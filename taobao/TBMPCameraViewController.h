@@ -24,7 +24,7 @@
     UIButton *_confirmButton;
     UIButton *_flashlightButton;
     UIButton *_cameraSwapButton;
-    CDStruct_a90cff18 *_image_rule;
+    CDStruct_4a9aa5a8 *_image_rule;
     TBMPThumbnailBar *_thumbnailBar;
     MBProgressHUD *_HUD;
     _Bool _isViewVisible;
@@ -35,7 +35,7 @@
 @property(copy, nonatomic) CDUnknownBlockType ResultBlock; // @synthesize ResultBlock=_ResultBlock;
 @property(nonatomic) _Bool bFirstResponse; // @synthesize bFirstResponse=_bFirstResponse;
 - (void).cxx_destruct;
-- (id)outputFromImage:(id)arg1 andImageFileSize:(long long)arg2 byRule:(CDStruct_a90cff18 *)arg3;
+- (id)outputFromImage:(id)arg1 andImageFileSize:(long long)arg2 byRule:(CDStruct_4a9aa5a8 *)arg3;
 - (void)tapToAlbum:(id)arg1;
 - (void)confirmAction;
 - (void)takeButtonAction;

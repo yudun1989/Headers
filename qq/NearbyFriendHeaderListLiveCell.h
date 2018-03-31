@@ -6,7 +6,7 @@
 
 #import <QQMainProject/NearbyFriendHeaderListBaseCell.h>
 
-@class NearbyFriendHeaderListLiveModel, NoRetainTimer, QQAsynUrlImageView, UILabel, UIView;
+@class NearbyFriendHeaderListLiveModel, NoRetainTimer, QQAsynUrlImageView, UIImageView, UILabel, UIView;
 
 @interface NearbyFriendHeaderListLiveCell : NearbyFriendHeaderListBaseCell
 {
@@ -15,6 +15,7 @@
     QQAsynUrlImageView *_titleGifView;
     UILabel *_titleLabel;
     UIView *_containerView;
+    UIImageView *_redDotView;
     NoRetainTimer *_timer;
     long long currentIndex;
 }
@@ -25,6 +26,7 @@
 - (void)stopAnimating;
 - (void)startAnimating;
 - (void)dealloc;
+- (void)clearRedDotIfNecessary;
 - (void)layoutSubviews;
 - (void)setDataSource:(id)arg1;
 - (id)initWithFrame:(struct CGRect)arg1;

@@ -8,19 +8,15 @@
 
 #import "TBDinamicEventHandler-Protocol.h"
 
-@class NSMutableDictionary, NSString, TBOrderStorageComponent, UIViewController;
+@class NSMutableDictionary, NSString;
 
 @interface TDMEventHandler : NSObject <TBDinamicEventHandler>
 {
     NSMutableDictionary *_handlerBus;
     NSString *_configPath;
     NSString *_bizName;
-    TBOrderStorageComponent *_storage;
-    UIViewController *_viewController;
 }
 
-@property(nonatomic) __weak UIViewController *viewController; // @synthesize viewController=_viewController;
-@property(nonatomic) __weak TBOrderStorageComponent *storage; // @synthesize storage=_storage;
 @property(copy, nonatomic) NSString *bizName; // @synthesize bizName=_bizName;
 @property(copy, nonatomic) NSString *configPath; // @synthesize configPath=_configPath;
 @property(retain, nonatomic) NSMutableDictionary *handlerBus; // @synthesize handlerBus=_handlerBus;

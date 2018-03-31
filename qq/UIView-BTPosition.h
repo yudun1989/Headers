@@ -9,18 +9,18 @@
 @interface UIView (BTPosition)
 
 // Remaining properties
-@property(nonatomic) double pBottom;
-@property(nonatomic) struct CGPoint pCenter;
-@property(nonatomic) double pCenterX;
-@property(nonatomic) double pCenterY;
-@property(nonatomic) double pHeight;
-@property(nonatomic) double pLeft;
-@property(nonatomic) struct CGPoint pOrigin;
-@property(nonatomic) double pRight;
-@property(nonatomic) struct CGSize pSize;
-@property(nonatomic) double pTop;
-@property(nonatomic) double pWidth;
-@property(nonatomic) double pX;
-@property(nonatomic) double pY;
+@property(nonatomic) double pBottom; // @dynamic pBottom;
+@property(nonatomic) struct CGPoint pCenter; // @dynamic pCenter;
+@property(nonatomic) double pCenterX; // @dynamic pCenterX;
+@property(nonatomic) double pCenterY; // @dynamic pCenterY;
+@property(nonatomic) double pHeight; // @dynamic pHeight;
+@property(nonatomic) double pLeft; // @dynamic pLeft;
+@property(nonatomic) struct CGPoint pOrigin; // @dynamic pOrigin;
+@property(nonatomic) double pRight; // @dynamic pRight;
+@property(nonatomic) struct CGSize pSize; // @dynamic pSize;
+@property(nonatomic) double pTop; // @dynamic pTop;
+@property(nonatomic) double pWidth; // @dynamic pWidth;
+@property(nonatomic) double pX; // @dynamic pX;
+@property(nonatomic) double pY; // @dynamic pY;
 @end
 

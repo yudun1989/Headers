@@ -11,6 +11,7 @@
 @protocol QZPhotoAlbumEventViewCellDelegate <NSObject>
 
 @optional
+- (void)onClickVideoMaker:(NSDictionary *)arg1 title:(NSString *)arg2;
 - (void)uploadPhotos:(NSDictionary *)arg1 title:(NSString *)arg2 dateStr:(NSString *)arg3 imageView:(UIImageView *)arg4 oriImage:(UIImage *)arg5;
 - (void)onUpdateOriginEventDict:(NSDictionary *)arg1 withEventDict:(NSDictionary *)arg2 poiInfo:(QZPOIInfo *)arg3;
 - (void)onClickUploadBtn:(NSDictionary *)arg1 title:(NSString *)arg2 dateStr:(NSString *)arg3 imageView:(UIImageView *)arg4 clipImage:(UIImage *)arg5 oriImage:(UIImage *)arg6;

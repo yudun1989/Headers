@@ -8,16 +8,15 @@
 
 #import <QQMainProject/ActionSheetDataDelegate-Protocol.h>
 #import <QQMainProject/QRChapterListViewControllerDelegate-Protocol.h>
+#import <QQMainProject/QRProgressViewDelegate-Protocol.h>
 #import <QQMainProject/UIActionSheetDelegate-Protocol.h>
 
-@class NSString, QQShareWebRichMsgLogic, QQWebShareActionSheet;
+@class NSString, QQShareWebRichMsgLogic, QQWebShareActionSheet, QRBookMark;
 
-@interface TextViewController_iphone : TextBaseViewController <ActionSheetDataDelegate, QRChapterListViewControllerDelegate, UIActionSheetDelegate>
+@interface TextViewController_iphone : TextBaseViewController <ActionSheetDataDelegate, QRProgressViewDelegate, QRChapterListViewControllerDelegate, UIActionSheetDelegate>
 {
     double _brightValue;
     _Bool _brightChange;
-    float _progressValueNow;
-    float _progressValueBefore;
     _Bool _isInFontUpProcess;
     _Bool _enteredBook;
     _Bool _isGetComment;
@@ -25,25 +24,38 @@
     QQWebShareActionSheet *_shareActionSheet;
     QQShareWebRichMsgLogic *_sendRichMsgLogic;
     NSString *_introUrl;
+    QRBookMark *_bookMarkForRevert;
 }
 
 @property(nonatomic) _Bool isGetComment; // @synthesize isGetComment=_isGetComment;
 @property(nonatomic) int lastUnreadCount; // @synthesize lastUnreadCount=_lastUnreadCount;
+@property(retain, nonatomic) QRBookMark *bookMarkForRevert; // @synthesize bookMarkForRevert=_bookMarkForRevert;
 @property(retain, nonatomic) NSString *introUrl; // @synthesize introUrl=_introUrl;
 @property(retain, nonatomic) QQShareWebRichMsgLogic *sendRichMsgLogic; // @synthesize sendRichMsgLogic=_sendRichMsgLogic;
 @property(retain, nonatomic) QQWebShareActionSheet *shareActionSheet; // @synthesize shareActionSheet=_shareActionSheet;
 - (void).cxx_destruct;
+- (_Bool)isOptionMenuHidden:(long long)arg1;
+- (void)hideOptionMenu:(long long)arg1 animated:(_Bool)arg2;
+- (void)hideMenuView;
+- (void)showOptionMenu:(long long)arg1 animated:(_Bool)arg2;
 - (void)chapterInfoUpdateFailed:(id)arg1;
 - (void)chapterInfoUpdater:(id)arg1 updateSuccess:(id)arg2;
+- (void)toggleSettingView:(_Bool)arg1;
+- (void)toggleProgressView:(_Bool)arg1;
 - (void)toggleBottomView:(_Bool)arg1;
 - (void)viewWillLayoutSubviews;
 - (void)showTopView:(_Bool)arg1;
 - (void)showTopView:(_Bool)arg1 animated:(_Bool)arg2;
 - (void)refreshProgressValue;
-- (void)appendProgressViewAboveBottomView;
+- (void)refreshChapterProgressButton;
+- (void)enableProgressButton:(id)arg1;
+- (void)initProgressView;
 - (void)initBottomView;
 - (void)resetTopView;
 - (id)getImageForHintQQitemForHintRect:(struct CGRect)arg1;
+- (void)initSettingView;
+- (struct CGRect)adjustRectForGroupAudio:(struct CGRect)arg1;
+- (void)removeSettingView;
 - (void)initTopViewSubViews;
 - (void)initAddBookShelfView;
 - (void)initTopView;
@@ -62,6 +74,18 @@
 - (void)leftButtonClick:(id)arg1;
 - (void)dealloc;
 - (id)init;
+- (void)clearRevertBookMark;
+- (void)recordRevertBookMark;
+- (void)progressSliderTouchEndInProgressView:(id)arg1;
+- (void)progressSliderTouchBeganInProgressView:(id)arg1;
+- (void)revertButtonPressedInProgressView:(id)arg1;
+- (void)previousButtonPressedInProgressView:(id)arg1;
+- (void)nextButtonPressedInProgressView:(id)arg1;
+- (void)progressView:(id)arg1 valueChanged:(long long)arg2;
+- (id)progressInfoTextForChapterId:(long long)arg1;
+- (void)jumpProgressWithValue:(long long)arg1;
+- (long long)getChapterIdWithValue:(long long)arg1;
+- (_Bool)updateChapterIfNeeded;
 - (void)qqHttpSessionError:(id)arg1 error:(id)arg2;
 - (void)qqHttpSessionDidLoad:(id)arg1 result:(id)arg2;
 - (void)requestBookIntro;
@@ -75,6 +99,7 @@
 - (id)getDataForConfig:(id)arg1;
 - (void)seniorSettingPressed;
 - (void)autoPaySelected:(id)arg1;
+- (void)scheduleItemPressed:(id)arg1;
 - (void)settingItemPressed:(id)arg1;
 - (void)commentItemPressed;
 - (void)bottomCommentItemPressed;
@@ -95,25 +120,13 @@
 - (void)qqItemPressed;
 - (void)onReceiveRemoteMsgGotoDetailNew:(id)arg1;
 - (void)backItemPressed;
-- (void)dayNightItemPressed;
-- (void)fontDownItemPressed;
-- (void)fontUpItemPressed;
+- (void)fontSliderValueChanged:(id)arg1;
 - (void)endFontChange;
 - (void)startFontChangeWithIsUpButton:(_Bool)arg1;
 - (void)ligthWithSystem:(id)arg1;
 - (void)lightSliderEne:(id)arg1;
 - (void)lightSliderChanged:(id)arg1;
 - (void)lightSliderStart:(id)arg1;
-- (void)revokeProgressJump;
-- (void)gotoNewChapterForProgressItemPressedWithChapterId:(long long)arg1 toForward:(_Bool)arg2;
-- (void)gotoNewProgressForProgressItemPressedWithProgress:(long long)arg1 toForward:(_Bool)arg2;
-- (void)nextProgressItemPressed:(id)arg1;
-- (void)prevProgressItemPressed:(id)arg1;
-- (void)progressSliderChanged:(id)arg1;
-- (void)progressSliderMoved:(id)arg1;
-- (void)progressSliderBegan:(id)arg1;
-- (void)progressItemPressed;
-- (void)handleTimer:(id)arg1;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

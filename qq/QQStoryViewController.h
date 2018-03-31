@@ -62,7 +62,6 @@
     unsigned long long _enterTime;
     unsigned long long _expiredArrCount;
     _Bool _isFirstTimeAutoRefresh;
-    _Bool _needShowLoadingIndicator;
     _Bool _isUploaded;
     double _openTime;
     _Bool _hasCheckGreetingCelInsertion;
@@ -76,6 +75,7 @@
     _Bool _needShowLeftAvatar;
     _Bool _autoRefreshLater;
     _Bool _autoReloadDataLater;
+    _Bool _needShowLoadingIndicator;
     _Bool _filterRecommend;
     _Bool _isLoadCache;
     int _redState;
@@ -86,9 +86,6 @@
     QQStoryGreetingsModel *_greetingsModel;
     QQFriendSelectedViewController *_fileSelectedViewController;
     UIAlertView *_deleteAlertView;
-    id _firstSelfFeed;
-    id _firstShareGroup;
-    id _firstRecomendGroup;
     NSMutableArray *_autoPlayVidList;
     UIButton *_storyBtn;
     double _clickTime;
@@ -111,6 +108,7 @@
 @property(retain, nonatomic) QQStoryCrashLogSender *crashLogSender; // @synthesize crashLogSender=_crashLogSender;
 @property(retain, nonatomic) TBStoryYellowToast *yellowToast; // @synthesize yellowToast=_yellowToast;
 @property(retain, nonatomic) QQVideoCaptureViewController *videoCaptureVC; // @synthesize videoCaptureVC=_videoCaptureVC;
+@property(nonatomic, getter=isNeedShowLoadingIndicator) _Bool needShowLoadingIndicator; // @synthesize needShowLoadingIndicator=_needShowLoadingIndicator;
 @property(retain, nonatomic) QQStoryBackToTopView *backToTopView; // @synthesize backToTopView=_backToTopView;
 @property(nonatomic) _Bool autoReloadDataLater; // @synthesize autoReloadDataLater=_autoReloadDataLater;
 @property(retain, nonatomic) NSDate *lastFreshDate; // @synthesize lastFreshDate=_lastFreshDate;
@@ -120,9 +118,6 @@
 @property(nonatomic) int viewSource; // @synthesize viewSource=_viewSource;
 @property(retain, nonatomic) UIButton *storyBtn; // @synthesize storyBtn=_storyBtn;
 @property(retain, nonatomic) NSMutableArray *autoPlayVidList; // @synthesize autoPlayVidList=_autoPlayVidList;
-@property(retain, nonatomic) id firstRecomendGroup; // @synthesize firstRecomendGroup=_firstRecomendGroup;
-@property(retain, nonatomic) id firstShareGroup; // @synthesize firstShareGroup=_firstShareGroup;
-@property(retain, nonatomic) id firstSelfFeed; // @synthesize firstSelfFeed=_firstSelfFeed;
 @property(retain, nonatomic) UIAlertView *deleteAlertView; // @synthesize deleteAlertView=_deleteAlertView;
 @property(nonatomic) int redState; // @synthesize redState=_redState;
 @property(nonatomic) _Bool autoOpenCapture; // @synthesize autoOpenCapture=_autoOpenCapture;
@@ -182,7 +177,6 @@
 - (void)clearUnreadMsgSectionData;
 - (void)insertUnreadMsgSectionData;
 - (void)insertFeedListSectionData;
-- (void)findFirstSelfFeedShareFeed;
 - (void)reloadData;
 - (void)openVideoCaptureWithLabel:(id)arg1;
 - (void)openVideoCaptureWithTagInfo:(id)arg1;
@@ -314,8 +308,6 @@
 - (void)unfoldSelfStory;
 - (void)alertView:(id)arg1 clickedButtonAtIndex:(long long)arg2;
 - (void)onTagInfoListNotification:(id)arg1;
-- (void)joinGroupNotification:(id)arg1;
-- (void)shareGroupRemoveMembersNotification:(id)arg1;
 - (void)onReceiveNewMsgWhenRead:(id)arg1;
 - (void)onStoryFeedInteractiveInfoPushHandle:(id)arg1;
 - (void)onStoryFeedsPublishNotification:(id)arg1;

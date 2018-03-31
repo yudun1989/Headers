@@ -45,6 +45,7 @@
     TBLiveBarrageController *_barrageController;
     TBLiveItemVideoData *_currentVideoData;
     NSString *_recommendType;
+    NSString *_bizScene;
     NSString *_originAudioSessionCategory;
     unsigned long long _originAudioSessionCategoryOptions;
     long long _scrollDirection;
@@ -72,6 +73,7 @@
 @property(nonatomic) _Bool isBarrageListRequesting; // @synthesize isBarrageListRequesting=_isBarrageListRequesting;
 @property(nonatomic) _Bool enableSliceDanmu; // @synthesize enableSliceDanmu=_enableSliceDanmu;
 @property(nonatomic) _Bool enableSlicePaging; // @synthesize enableSlicePaging=_enableSlicePaging;
+@property(copy, nonatomic) NSString *bizScene; // @synthesize bizScene=_bizScene;
 @property(copy, nonatomic) NSString *recommendType; // @synthesize recommendType=_recommendType;
 @property(retain, nonatomic) TBLiveItemVideoData *currentVideoData; // @synthesize currentVideoData=_currentVideoData;
 @property(retain, nonatomic) TBLiveBarrageController *barrageController; // @synthesize barrageController=_barrageController;

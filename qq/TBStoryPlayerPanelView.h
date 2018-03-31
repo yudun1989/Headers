@@ -9,12 +9,13 @@
 #import <QQMainProject/TBBizNetworkLogicDelegate-Protocol.h>
 #import <QQMainProject/TBStoryPlayerPanelHelperDelegate-Protocol.h>
 #import <QQMainProject/TBStoryPlayerUserinfoViewDelegate-Protocol.h>
+#import <QQMainProject/TBStoryVideoVoteViewDelegate-Protocol.h>
 #import <QQMainProject/UIGestureRecognizerDelegate-Protocol.h>
 
-@class FLLabel, FLView, NSString, QQStoryUrlImageView, TBExtendedHitButton, TBExtendedHitView, TBLikeButtonView, TBPublishStoryVideoModel, TBQQUserInfoModel, TBStoryFeedModel, TBStoryPlayerPanelHelper, TBStoryPlayerUserinfoModel, TBStoryPlayerUserinfoView, TBStoryVideoDesModel, TBVideoBasicInfoModel, UIActivityIndicatorView, UIButton, UIImageView, UILabel, UITapGestureRecognizer;
+@class FLLabel, FLView, NSString, QQStoryUrlImageView, TBExtendedHitButton, TBExtendedHitView, TBLikeButtonView, TBPublishStoryVideoModel, TBQQUserInfoModel, TBStoryFeedModel, TBStoryPlayerPanelHelper, TBStoryPlayerUserinfoModel, TBStoryPlayerUserinfoView, TBStoryVideoDesModel, TBStoryVideoVoteView, TBVideoBasicInfoModel, UIActivityIndicatorView, UIButton, UIImageView, UILabel, UITapGestureRecognizer;
 @protocol TBStoryPlayerPanelViewProtocol;
 
-@interface TBStoryPlayerPanelView : UIView <UIGestureRecognizerDelegate, TBStoryPlayerUserinfoViewDelegate, TBBizNetworkLogicDelegate, TBStoryPlayerPanelHelperDelegate>
+@interface TBStoryPlayerPanelView : UIView <UIGestureRecognizerDelegate, TBStoryPlayerUserinfoViewDelegate, TBBizNetworkLogicDelegate, TBStoryPlayerPanelHelperDelegate, TBStoryVideoVoteViewDelegate>
 {
     UILabel *_userNameLabel;
     UILabel *_createTimeLabel;
@@ -60,6 +61,7 @@
     _Bool _isRetrying;
     TBVideoBasicInfoModel *_basicInfoModel;
     TBStoryFeedModel *_feedInfo;
+    UIImageView *_voteAnimateView;
     _Bool _didShowInWindow;
     TBStoryPlayerPanelHelper *_panelHelper;
     UIView *_exportBtn;
@@ -72,6 +74,7 @@
     long long _videoStatus;
     TBPublishStoryVideoModel *_publishModel;
     unsigned long long _publicPlayerEntry;
+    TBStoryVideoVoteView *_videoVoteView;
 }
 
 + (id)LikeChanged;
@@ -79,6 +82,7 @@
 + (id)AddComment;
 + (id)PanelLikeChanged;
 + (id)InteractionOccur;
+@property(retain, nonatomic) TBStoryVideoVoteView *videoVoteView; // @synthesize videoVoteView=_videoVoteView;
 @property(nonatomic) unsigned long long publicPlayerEntry; // @synthesize publicPlayerEntry=_publicPlayerEntry;
 @property(retain, nonatomic) TBPublishStoryVideoModel *publishModel; // @synthesize publishModel=_publishModel;
 @property(nonatomic) _Bool didShowInWindow; // @synthesize didShowInWindow=_didShowInWindow;
@@ -93,6 +97,9 @@
 @property(retain, nonatomic) UIView *exportBtn; // @synthesize exportBtn=_exportBtn;
 @property(retain, nonatomic) TBStoryPlayerPanelHelper *panelHelper; // @synthesize panelHelper=_panelHelper;
 - (void).cxx_destruct;
+- (void)voteView:(id)arg1 didSelectVoteOptionAtIndex:(int)arg2;
+- (void)hideVoteControl;
+- (void)showVoteControl;
 - (void)addShareGroupVideoFail;
 - (void)addShareGroupVideoSuccess;
 - (_Bool)isCurrentShareGroupVideo:(id)arg1;
@@ -104,6 +111,7 @@
 - (void)onUpdateVideoViewCount:(id)arg1;
 - (void)rspSubscriptOpetarion:(id)arg1;
 - (void)actionFetchGroupMemberCard:(id)arg1;
+- (void)storyPlayerTagInfoFinishNotification:(id)arg1;
 - (void)didReceivedData:(unsigned long long)arg1 requestModel:(id)arg2 classModel:(id)arg3;
 - (void)playLikeAnimate;
 - (void)tapGestureVideoLabel;
@@ -149,6 +157,8 @@
 - (_Bool)shouldShowUserInfoView;
 - (_Bool)shouldShowMoreBtn;
 - (_Bool)shouldShowVideoTag;
+- (void)updateVideoTag;
+- (void)showVieoLabelWithTagInfo;
 - (_Bool)needShowNormarUserIcon;
 - (_Bool)isFromMsgTabNode;
 - (_Bool)isFromMsgTabNewFuntion;

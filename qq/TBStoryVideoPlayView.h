@@ -28,6 +28,7 @@
     id <TBStoryVideoPlayViewDelegate> _delegate;
     NSString *_cover;
     UIImage *_defaultCoverImage;
+    NSString *_vid;
     CALayer *_displayLayer;
     AVURLAsset *_playAVAssert;
     NSURL *_currentUrl;
@@ -37,6 +38,7 @@
 @property(retain, nonatomic) NSURL *currentUrl; // @synthesize currentUrl=_currentUrl;
 @property(retain, nonatomic) AVURLAsset *playAVAssert; // @synthesize playAVAssert=_playAVAssert;
 @property(retain, nonatomic) CALayer *displayLayer; // @synthesize displayLayer=_displayLayer;
+@property(retain, nonatomic) NSString *vid; // @synthesize vid=_vid;
 @property(nonatomic) _Bool streamInvalid; // @synthesize streamInvalid=_streamInvalid;
 @property(copy, nonatomic) UIImage *defaultCoverImage; // @synthesize defaultCoverImage=_defaultCoverImage;
 @property(copy, nonatomic) NSString *cover; // @synthesize cover=_cover;

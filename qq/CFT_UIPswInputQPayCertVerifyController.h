@@ -10,10 +10,7 @@
 {
 }
 
-- (void)qpay_cert_apply;
-- (void)nextStep;
 - (void)dealloc;
-- (void)viewDidLoad;
 
 @end
 

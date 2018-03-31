@@ -10,11 +10,12 @@
 #import <QQMainProject/PagingScrollViewDelegate-Protocol.h>
 #import <QQMainProject/QQActivateFriendsMemorialDayViewDelegate-Protocol.h>
 #import <QQMainProject/QQFriendSelectedViewControllerDelegate-Protocol.h>
+#import <QQMainProject/QUIActionSheetDelegate-Protocol.h>
 #import <QQMainProject/UIActionSheetDelegate-Protocol.h>
 
 @class NSMutableArray, NSString, PagingScrollView, QQActivateFriendsMemorialDaySharedView, QQActivateFriendsModel, QQFriendSelectedViewController, QQPageControl;
 
-@interface QQActivateFriendsViewController : QQViewController <UIActionSheetDelegate, PagingScrollViewDataSource, PagingScrollViewDelegate, QQActivateFriendsMemorialDayViewDelegate, QQFriendSelectedViewControllerDelegate>
+@interface QQActivateFriendsViewController : QQViewController <UIActionSheetDelegate, PagingScrollViewDataSource, PagingScrollViewDelegate, QQActivateFriendsMemorialDayViewDelegate, QQFriendSelectedViewControllerDelegate, QUIActionSheetDelegate>
 {
     PagingScrollView *_pagingScrollView;
     QQPageControl *_pageControl;
@@ -46,8 +47,8 @@
 - (void)pagingScrollView:(id)arg1 didScrollToItemAtIndex:(long long)arg2;
 - (id)pagingScrollView:(id)arg1 viewForItemAtIndex:(long long)arg2;
 - (long long)numberOfItemsInPagingScrollView:(id)arg1;
-- (void)showActionSheet;
 - (void)actionSheet:(id)arg1 clickedButtonAtIndex:(long long)arg2;
+- (void)showActionSheet;
 - (void)handleSheetEvent;
 - (void)loadLocationViewData;
 - (void)reloadData;

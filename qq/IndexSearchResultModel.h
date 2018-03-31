@@ -11,6 +11,7 @@
 @interface IndexSearchResultModel : NSObject
 {
     _Bool _isFromNewDB;
+    int _type;
     int _matchScore;
     long long _docid;
     NSString *_conversationUin;
@@ -24,6 +25,7 @@
 @property(retain, nonatomic) NSString *ftsPersonSearchNick; // @synthesize ftsPersonSearchNick=_ftsPersonSearchNick;
 @property(nonatomic) long long ftsMsgSearchWayType; // @synthesize ftsMsgSearchWayType=_ftsMsgSearchWayType;
 @property(nonatomic) _Bool isFromNewDB; // @synthesize isFromNewDB=_isFromNewDB;
+@property(nonatomic) int type; // @synthesize type=_type;
 @property(retain, nonatomic) NSString *content; // @synthesize content=_content;
 @property(retain, nonatomic) NSString *uin; // @synthesize uin=_uin;
 @property(retain, nonatomic) NSString *conversationUin; // @synthesize conversationUin=_conversationUin;

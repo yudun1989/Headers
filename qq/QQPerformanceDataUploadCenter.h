@@ -12,7 +12,7 @@
 
 + (id)defaultCenter;
 - (void)uploadFilePath:(id)arg1 plugin:(id)arg2 extra:(id)arg3 priority:(int)arg4 needWifi:(_Bool)arg5 saveMetaIfFailed:(_Bool)arg6 needDelete:(_Bool)arg7 completionHandler:(CDUnknownBlockType)arg8;
-- (void)uploadPerformanceDataToNewAPM:(id)arg1 data:(id)arg2 plugin:(id)arg3;
+- (void)uploadPerformanceDataToNewAPM:(id)arg1 plugin:(id)arg2;
 - (void)uploadPerformanceData:(id)arg1 plugin:(id)arg2;
 
 @end

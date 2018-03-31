@@ -6,9 +6,10 @@
 
 #import "NSObject-Protocol.h"
 
-@class JSValue, NSArray, NSString;
+@class JSContext, JSValue, NSArray, NSString;
 
 @protocol WXBridgeProtocol <NSObject>
+@property(readonly, nonatomic) JSContext *globalJSContext;
 @property(readonly, nonatomic) JSValue *exception;
 - (void)resetEnvironment;
 - (void)registerCallNative:(long long (^)(NSString *, NSArray *, NSString *))arg1;

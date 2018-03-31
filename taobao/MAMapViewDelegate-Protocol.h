@@ -18,8 +18,8 @@
 - (void)mapView:(MAMapView *)arg1 didIndoorMapFloorIndexChanged:(MAIndoorInfo *)arg2;
 - (void)mapView:(MAMapView *)arg1 didIndoorMapShowed:(MAIndoorInfo *)arg2;
 - (void)mapInitComplete:(MAMapView *)arg1;
-- (void)mapView:(MAMapView *)arg1 didLongPressedAtCoordinate:(CDStruct_2c43369c)arg2;
-- (void)mapView:(MAMapView *)arg1 didSingleTappedAtCoordinate:(CDStruct_2c43369c)arg2;
+- (void)mapView:(MAMapView *)arg1 didLongPressedAtCoordinate:(struct CLLocationCoordinate2D)arg2;
+- (void)mapView:(MAMapView *)arg1 didSingleTappedAtCoordinate:(struct CLLocationCoordinate2D)arg2;
 - (void)mapView:(MAMapView *)arg1 didTouchPois:(NSArray *)arg2;
 - (void)mapView:(MAMapView *)arg1 didChangeOpenGLESDisabled:(_Bool)arg2;
 - (void)mapView:(MAMapView *)arg1 didChangeUserTrackingMode:(long long)arg2 animated:(_Bool)arg3;

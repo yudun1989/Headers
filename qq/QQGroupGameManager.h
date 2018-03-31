@@ -50,7 +50,6 @@
 - (void)leaveRoomWithGroupCode:(unsigned long long)arg1 completeBlock:(CDUnknownBlockType)arg2;
 - (id)roleOfPlayer:(unsigned long long)arg1 inGroup:(unsigned long long)arg2;
 - (void)enterRoomWithInviteId:(id)arg1 roomType:(int)arg2 zoneId:(int)arg3 completeBlock:(CDUnknownBlockType)arg4;
-- (void)enterRoomWithParam:(id)arg1 completeBlock:(CDUnknownBlockType)arg2;
 - (void)enterRoomWithInviteId:(id)arg1 roomType:(int)arg2 zoneId:(int)arg3;
 - (void)enterRandomRoomWithType:(int)arg1 zoneId:(int)arg2;
 - (void)accountDidLogout;

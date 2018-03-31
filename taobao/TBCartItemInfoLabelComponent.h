@@ -10,7 +10,7 @@
 
 @interface TBCartItemInfoLabelComponent : TBCartDataComponent
 {
-    int _type;
+    unsigned long long _type;
     NSString *_title;
     NSString *_value;
     NSString *_titleColor;
@@ -25,7 +25,7 @@
 @property(retain, nonatomic) NSString *titleColor; // @synthesize titleColor=_titleColor;
 @property(retain, nonatomic) NSString *value; // @synthesize value=_value;
 @property(retain, nonatomic) NSString *title; // @synthesize title=_title;
-@property(nonatomic) int type; // @synthesize type=_type;
+@property(nonatomic) unsigned long long type; // @synthesize type=_type;
 - (void).cxx_destruct;
 
 @end

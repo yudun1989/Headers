@@ -87,6 +87,7 @@
 - (void)touchEnd:(id)arg1;
 - (void)touchCancel:(id)arg1;
 - (void)touchBegin:(id)arg1;
+- (void)textViewDidChange:(id)arg1;
 - (void)hiddenKeyBorad:(id)arg1;
 - (void)setGamePlayerSpokeUI:(id)arg1;
 - (void)didPressRightLButton:(id)arg1;

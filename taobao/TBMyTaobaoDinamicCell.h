@@ -6,17 +6,17 @@
 
 #import <UIKit/UICollectionViewCell.h>
 
-@class TBDViewItem, TBMTBTemplate, TBMytaobaoDinamicModel;
+@class TBDViewItem, TBMytaobaoDinamicModel, UIViewController;
 
 @interface TBMyTaobaoDinamicCell : UICollectionViewCell
 {
     TBDViewItem *_viewItem;
+    UIViewController *_sourceViewController;
     TBMytaobaoDinamicModel *_dataModel;
-    TBMTBTemplate *_templateInfo;
 }
 
-@property(retain, nonatomic) TBMTBTemplate *templateInfo; // @synthesize templateInfo=_templateInfo;
 @property(retain, nonatomic) TBMytaobaoDinamicModel *dataModel; // @synthesize dataModel=_dataModel;
+@property(retain, nonatomic) UIViewController *sourceViewController; // @synthesize sourceViewController=_sourceViewController;
 @property(retain, nonatomic) TBDViewItem *viewItem; // @synthesize viewItem=_viewItem;
 - (void).cxx_destruct;
 - (void)trackLog:(id)arg1;

@@ -6,11 +6,15 @@
 
 #import <QQMainProject/NSObject-Protocol.h>
 
-@protocol GroupDBServiceInterface, IAppVsersionService, IC2CDBService, IC2CDBService_MultiTable, IIMService, IPluginStatisticsService, IRecentMsgDBService, ITmpMsgSrcDBService;
+@class QQHonestTalkingMsgDBService;
+@protocol GroupDBServiceInterface, IAppVsersionService, IC2CDBService, IC2CDBService_MultiTable, IHtRecentMsgDBService, IIMService, IPluginStatisticsService, IRecentMsgDBService, ITmpMsgSrcDBService;
 
 @protocol IQQServiceCenter <NSObject>
+- (id <IHtRecentMsgDBService>)htRecentMsgDB;
 - (id <ITmpMsgSrcDBService>)tmpMsgSrcDB;
 - (id <IRecentMsgDBService>)recentMsgDB;
+- (id)getTableDBWithAccType:(int)arg1;
+- (QQHonestTalkingMsgDBService *)HonestSayTableDB;
 - (id <IC2CDBService_MultiTable>)C2CMultiTableDB;
 - (id <IC2CDBService>)C2CDBService;
 - (id <IAppVsersionService>)AppVersionService;

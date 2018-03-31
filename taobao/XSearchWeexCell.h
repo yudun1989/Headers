@@ -45,7 +45,7 @@
 - (void)prepareForReuse;
 - (id)getTraceDict;
 - (id)pagePath;
-- (void)reloadItemAtIndexPath;
+- (void)reloadItem;
 - (id)initWithFrame:(struct CGRect)arg1;
 
 @end

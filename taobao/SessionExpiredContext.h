@@ -12,20 +12,20 @@
 
 @interface SessionExpiredContext : NSObject <NSCopying>
 {
-    NSString *nick;
-    NSString *msgCode;
-    NSString *reason;
-    NSString *apiName;
-    NSString *apiVersion;
-    NSString *timestamp;
+    NSString *_nick;
+    NSString *_msgCode;
+    NSString *_reason;
+    NSString *_apiName;
+    NSString *_apiVersion;
+    NSString *_timestamp;
 }
 
-@property(retain, nonatomic) NSString *timestamp; // @synthesize timestamp;
-@property(retain, nonatomic) NSString *apiVersion; // @synthesize apiVersion;
-@property(retain, nonatomic) NSString *apiName; // @synthesize apiName;
-@property(retain, nonatomic) NSString *reason; // @synthesize reason;
-@property(retain, nonatomic) NSString *msgCode; // @synthesize msgCode;
-@property(retain, nonatomic) NSString *nick; // @synthesize nick;
+@property(retain, nonatomic) NSString *timestamp; // @synthesize timestamp=_timestamp;
+@property(retain, nonatomic) NSString *apiVersion; // @synthesize apiVersion=_apiVersion;
+@property(retain, nonatomic) NSString *apiName; // @synthesize apiName=_apiName;
+@property(retain, nonatomic) NSString *reason; // @synthesize reason=_reason;
+@property(retain, nonatomic) NSString *msgCode; // @synthesize msgCode=_msgCode;
+@property(retain, nonatomic) NSString *nick; // @synthesize nick=_nick;
 - (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)asDictionary;

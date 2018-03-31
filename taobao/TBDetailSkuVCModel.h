@@ -12,6 +12,7 @@
 {
     NSString *_itemId;
     NSString *_areaId;
+    NSString *_addressId;
     NSString *_skuId;
     unsigned long long _sourceType;
     NSString *_extraParams;
@@ -20,6 +21,7 @@
 @property(retain, nonatomic) NSString *extraParams; // @synthesize extraParams=_extraParams;
 @property(nonatomic) unsigned long long sourceType; // @synthesize sourceType=_sourceType;
 @property(retain, nonatomic) NSString *skuId; // @synthesize skuId=_skuId;
+@property(retain, nonatomic) NSString *addressId; // @synthesize addressId=_addressId;
 @property(retain, nonatomic) NSString *areaId; // @synthesize areaId=_areaId;
 @property(retain, nonatomic) NSString *itemId; // @synthesize itemId=_itemId;
 - (void).cxx_destruct;

@@ -11,9 +11,11 @@
 @interface QQSMItemElementVideoRichADView : QQSMItemElementVideoViewForVqq
 {
     _Bool isJump2Web;
+    _Bool isVideoCeiling;
     NSString *url;
 }
 
+@property(nonatomic) _Bool isVideoCeiling; // @synthesize isVideoCeiling;
 @property(nonatomic) _Bool isJump2Web; // @synthesize isJump2Web;
 @property(retain, nonatomic) NSString *url; // @synthesize url;
 - (void)reporetDataWithTvalue:(int)arg1 reportTime:(id)arg2;

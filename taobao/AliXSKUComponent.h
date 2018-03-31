@@ -6,22 +6,26 @@
 
 #import "AliDetailComponent.h"
 
-@class AliDetailSKUComponent, UILabel;
+@class AliDetailSKUComponent, UILabel, UITapGestureRecognizer;
 
 @interface AliXSKUComponent : AliDetailComponent
 {
     UILabel *_mainTitleLabel;
     AliDetailSKUComponent *_skuComponent;
     UILabel *_rightTipLabel;
+    UITapGestureRecognizer *_tap;
 }
 
 + (double)componentHeightForObj:(id)arg1 preferredWidth:(double)arg2;
+@property(retain, nonatomic) UITapGestureRecognizer *tap; // @synthesize tap=_tap;
 @property(retain, nonatomic) UILabel *rightTipLabel; // @synthesize rightTipLabel=_rightTipLabel;
 @property(retain, nonatomic) AliDetailSKUComponent *skuComponent; // @synthesize skuComponent=_skuComponent;
 @property(retain, nonatomic) UILabel *mainTitleLabel; // @synthesize mainTitleLabel=_mainTitleLabel;
 - (void).cxx_destruct;
+- (void)popSKUBtnClick:(id)arg1;
 - (void)layoutSubviews;
 - (void)setObject:(id)arg1;
+- (id)initWithFrame:(struct CGRect)arg1;
 
 @end
 

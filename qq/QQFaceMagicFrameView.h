@@ -19,7 +19,6 @@
 
 @property(nonatomic) _Bool showActive; // @synthesize showActive=_showActive;
 - (void)magicActivityClicked;
-- (void)addButtonDidTapped;
 - (id)cellForCollectionView:(id)arg1 didSelectItemAtIndexPath:(id)arg2;
 - (void)collectionView:(id)arg1 didSelectItemAtIndexPath:(id)arg2;
 - (id)collectionView:(id)arg1 cellForItemAtIndexPath:(id)arg2;

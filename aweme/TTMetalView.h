@@ -6,27 +6,40 @@
 
 #import <UIKit/UIView.h>
 
-@class CAMetalLayer, MTLRenderPassDescriptor;
-@protocol CAMetalDrawable, MTLDevice;
+#import "MTKViewDelegate-Protocol.h"
 
-@interface TTMetalView : UIView
+@class MTKView, NSString;
+
+@interface TTMetalView : UIView <MTKViewDelegate>
 {
-    CAMetalLayer *_metalLayer;
-    id <CAMetalDrawable> _currentDrawable;
-    MTLRenderPassDescriptor *_renderPassDescriptor;
-    id <MTLDevice> _device;
+    MTKView *_view;
+    struct MetalRender *_render;
+    struct _opaque_pthread_mutex_t mMutex;
+    _Bool _renderPaused;
 }
 
-+ (Class)layerClass;
-@property(readonly, nonatomic) id <MTLDevice> device; // @synthesize device=_device;
-@property(retain, nonatomic) id <CAMetalDrawable> currentDrawable; // @synthesize currentDrawable=_currentDrawable;
+@property(nonatomic) _Bool renderPaused; // @synthesize renderPaused=_renderPaused;
 - (void).cxx_destruct;
-@property(readonly, nonatomic) MTLRenderPassDescriptor *renderPassDescriptor; // @synthesize renderPassDescriptor=_renderPassDescriptor;
-- (void)setupRenderPassDescriptorForTexture:(id)arg1;
+- (void)mtkView:(id)arg1 drawableSizeWillChange:(struct CGSize)arg2;
+- (void)drawInMTKView:(id)arg1;
+- (void)layoutSubviews;
+- (void)stop;
+- (void)startWithRender:(struct MetalRender *)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithFrame:(struct CGRect)arg1;
 - (void)didMoveToWindow;
+- (id)device;
+- (id)currentDrawable;
+- (id)currentRenderPassDescriptor;
+- (void)renderLoop;
+- (void)dealloc;
 - (void)initCommon;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly, copy) NSString *description;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
 
 @end
 

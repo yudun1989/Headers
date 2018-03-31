@@ -52,6 +52,7 @@
 + (void)showWebController:(id)arg1 title:(id)arg2 webViewStyle:(long long)arg3 stackStyle:(int)arg4 msgModel:(id)arg5;
 + (Class)webviewClassForWebviewType:(long long)arg1;
 @property int maxLeftTitleNum; // @synthesize maxLeftTitleNum=_maxLeftTitleNum;
+- (void)adjustIphoneXTabbar;
 - (void)adjustScrollViewInsets;
 - (void)setAutomaticallyAdjustsScrollViewInsets:(_Bool)arg1;
 - (id)animateBackgroundViewWithFilePath:(id)arg1 defaultImage:(id)arg2;

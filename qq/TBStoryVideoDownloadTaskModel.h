@@ -11,6 +11,7 @@
 @interface TBStoryVideoDownloadTaskModel : QQModel
 {
     _Bool _isLocal;
+    _Bool _enableDownloadPiece;
     int _taskType;
     int _source;
     TBStoryVideoDesModel *_model;
@@ -18,8 +19,11 @@
     NSDate *_startDate;
     NSDate *_endDate;
     NSString *_unionID;
+    unsigned long long _piece;
 }
 
+@property(nonatomic) _Bool enableDownloadPiece; // @synthesize enableDownloadPiece=_enableDownloadPiece;
+@property(nonatomic) unsigned long long piece; // @synthesize piece=_piece;
 @property(nonatomic) int source; // @synthesize source=_source;
 @property(retain, nonatomic) NSString *unionID; // @synthesize unionID=_unionID;
 @property(retain, nonatomic) NSDate *endDate; // @synthesize endDate=_endDate;

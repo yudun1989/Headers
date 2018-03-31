@@ -10,6 +10,8 @@
 {
 }
 
++ (id)imageForKey:(id)arg1;
++ (void)saveImage:(id)arg1 forKey:(id)arg2;
 + (double)getDurationOfItems:(id)arg1;
 + (_Bool)checkIpv6ShowProjection;
 + (void)enterBrowserAndProjection:(id)arg1;

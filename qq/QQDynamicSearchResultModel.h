@@ -6,7 +6,7 @@
 
 #import <QQMainProject/QQModel.h>
 
-@class NSArray, NSIndexPath, NSMutableArray, NSMutableDictionary, NSString;
+@class NSArray, NSIndexPath, NSMutableArray, NSMutableDictionary, NSString, QQDynamicSearchResultBaseLayout;
 
 @interface QQDynamicSearchResultModel : QQModel
 {
@@ -37,8 +37,10 @@
     unsigned long long _rowFromFirst;
     int _xo;
     _Bool _hideTitleBlankView;
+    QQDynamicSearchResultBaseLayout *_viewLayout;
 }
 
+@property(retain, nonatomic) QQDynamicSearchResultBaseLayout *viewLayout; // @synthesize viewLayout=_viewLayout;
 @property(nonatomic) _Bool hideTitleBlankView; // @synthesize hideTitleBlankView=_hideTitleBlankView;
 - (id)getReportThreeReserveItemType;
 - (id)filterKeyWords:(id)arg1;

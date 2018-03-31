@@ -18,7 +18,9 @@
 - (void)changeRoomStatus:(long long)arg1;
 - (void)quickForwardButtonHidden:(_Bool)arg1 forwardButton:(UIButton *)arg2 withFeedModel:(QzoneFeedModel *)arg3;
 - (void)endRecommendVideoAction:(long long)arg1 withFeedModel:(QzoneFeedModel *)arg2 withFeedVideo:(QzoneFeedVideo *)arg3 withUrl:(NSString *)arg4;
+- (void)updateCurrentPlayTime:(double)arg1;
 - (void)playerViewFailed:(NSError *)arg1;
+- (void)playingTick:(double)arg1 canPlayTime:(double)arg2 totalTime:(double)arg3;
 - (void)playerViewEnd;
 - (void)playerViewStarted;
 @end

@@ -6,23 +6,33 @@
 
 #import <Foundation/NSObject.h>
 
-@class NSURL, UIImageView;
+@class NSString, NSURL, UIImageView;
 
 @interface TBCPhotoObj : NSObject
 {
     _Bool _isVideo;
+    _Bool _isOriginInfo;
     _Bool _imageLoading;
     UIImageView *_srcImageView;
+    NSString *_srcPosition;
+    NSString *_imgBgColor;
     NSURL *_thumbUrl;
     long long _index;
     NSURL *_url;
+    struct CGSize _imgOriginSize;
+    struct CGRect _srcRect;
 }
 
 @property(nonatomic) _Bool imageLoading; // @synthesize imageLoading=_imageLoading;
 @property(retain, nonatomic) NSURL *url; // @synthesize url=_url;
+@property(nonatomic) _Bool isOriginInfo; // @synthesize isOriginInfo=_isOriginInfo;
+@property(nonatomic) struct CGRect srcRect; // @synthesize srcRect=_srcRect;
 @property(nonatomic) _Bool isVideo; // @synthesize isVideo=_isVideo;
 @property(nonatomic) long long index; // @synthesize index=_index;
 @property(retain, nonatomic) NSURL *thumbUrl; // @synthesize thumbUrl=_thumbUrl;
+@property(nonatomic) struct CGSize imgOriginSize; // @synthesize imgOriginSize=_imgOriginSize;
+@property(copy, nonatomic) NSString *imgBgColor; // @synthesize imgBgColor=_imgBgColor;
+@property(copy, nonatomic) NSString *srcPosition; // @synthesize srcPosition=_srcPosition;
 @property(retain, nonatomic) UIImageView *srcImageView; // @synthesize srcImageView=_srcImageView;
 - (void).cxx_destruct;
 - (id)init;

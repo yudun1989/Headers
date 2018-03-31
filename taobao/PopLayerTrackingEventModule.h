@@ -16,7 +16,6 @@
 }
 
 + (id)moduleName;
-+ (id)wx_export_method_32;
 + (id)wx_export_method_31;
 + (id)wx_export_method_30;
 + (id)wx_export_method_29;
@@ -37,7 +36,6 @@
 - (void)fireEvent:(id)arg1 withParams:(id)arg2 suc:(CDUnknownBlockType)arg3 err:(CDUnknownBlockType)arg4;
 - (void)operateTrackingView:(id)arg1 suc:(CDUnknownBlockType)arg2 err:(CDUnknownBlockType)arg3;
 - (void)selectAndOperate:(id)arg1 suc:(CDUnknownBlockType)arg2 err:(CDUnknownBlockType)arg3;
-- (void)getPoplayerInfo:(id)arg1 suc:(CDUnknownBlockType)arg2 err:(CDUnknownBlockType)arg3;
 - (void)display:(id)arg1 suc:(CDUnknownBlockType)arg2 err:(CDUnknownBlockType)arg3;
 - (void)info:(id)arg1 suc:(CDUnknownBlockType)arg2 err:(CDUnknownBlockType)arg3;
 - (void)updateMetaConfig:(id)arg1 suc:(CDUnknownBlockType)arg2 err:(CDUnknownBlockType)arg3;

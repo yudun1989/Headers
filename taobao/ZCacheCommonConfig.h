@@ -4,16 +4,16 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-#import "ZCConfigModel.h"
+#import "ZCacheConfig.h"
 
 @class NSDictionary, NSString;
 
-@interface ZCacheCommonConfig : ZCConfigModel
+@interface ZCacheCommonConfig : ZCacheConfig
 {
     _Bool _isAutoRegisterApp;
     _Bool _isCheckCleanup;
     _Bool _isOpenCombo;
-    _Bool _supportDecryption;
+    _Bool _supportAppDecryption;
     NSString *_customsConfigPrefix;
     NSString *_packageZipPreviewPrefix;
     NSString *_packageZipPrefix;
@@ -28,9 +28,11 @@
     NSDictionary *_verifySampleRate;
 }
 
-+ (id)name;
++ (id)currentConfig;
++ (id)defaultConfig;
++ (id)meta;
 @property(copy, nonatomic) NSDictionary *verifySampleRate; // @synthesize verifySampleRate=_verifySampleRate;
-@property(nonatomic) _Bool supportDecryption; // @synthesize supportDecryption=_supportDecryption;
+@property(nonatomic) _Bool supportAppDecryption; // @synthesize supportAppDecryption=_supportAppDecryption;
 @property(nonatomic) double packagePriorityWeight; // @synthesize packagePriorityWeight=_packagePriorityWeight;
 @property(nonatomic) unsigned long long packageMaxAppCount; // @synthesize packageMaxAppCount=_packageMaxAppCount;
 @property(nonatomic) long long packageDownloadLimit; // @synthesize packageDownloadLimit=_packageDownloadLimit;

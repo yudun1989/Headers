@@ -23,6 +23,8 @@
 @property(nonatomic) _Bool openVideoBackgroud; // @synthesize openVideoBackgroud=_openVideoBackgroud;
 @property(nonatomic) _Bool isFirstLaunch; // @synthesize isFirstLaunch=_isFirstLanuch;
 @property(readonly, nonatomic) QQLockDictionary *appSetting; // @synthesize appSetting=_appSetting;
+- (void)setAioAnimojiTipsDisplayTimes:(id)arg1;
+- (id)aioAnimojiTipsDisplayParam;
 - (id)getNowActivityPendantPush:(id)arg1;
 - (void)setNowActivityPendantPush:(id)arg1 withUin:(id)arg2;
 - (id)getNowActivityPendantConfig:(id)arg1;
@@ -46,6 +48,7 @@
 - (_Bool)getNearbyHeartSwitchOn;
 - (void)setNearbyVideoAuthConfigDic:(id)arg1 uin:(id)arg2;
 - (id)nearbyVideoAuthConfigDic:(id)arg1;
+- (int)getMaxAutoInviteNumWhenCreateGrp;
 - (void)setReportQQDiskSpaceUse;
 - (unsigned long long)getAIODouTuSmartHeadPicCount;
 - (void)setAIODouTuSmartHeadPicCount:(unsigned long long)arg1;
@@ -234,6 +237,8 @@
 - (id)getNearByWerewolfEntranceConfig:(id)arg1;
 - (void)setNearByWerewolfEntranceConfig:(id)arg1 withUin:(id)arg2;
 - (id)getNearbyAutoEnterWithoutReddot:(id)arg1;
+- (void)setNearbyNow1V1AdsConfig:(id)arg1 withUin:(id)arg2;
+- (id)getNearbyNow1V1AdsConfig:(id)arg1;
 - (void)setNearbyAutoEnterWithoutReddot:(id)arg1 withUin:(id)arg2;
 - (void)setNearbyBannerConfig:(id)arg1 withUin:(id)arg2;
 - (id)getNearbyBannerConfig:(id)arg1;

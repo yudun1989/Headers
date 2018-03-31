@@ -6,7 +6,7 @@
 
 #import <Foundation/NSObject.h>
 
-@class NSDictionary, NSMutableDictionary, NSString, NSURL, UIView, UIViewController, WXComponentManager, WXResourceLoader, WXRootView, WXThreadSafeMutableDictionary;
+@class JSContext, NSDictionary, NSMutableDictionary, NSString, NSURL, UIView, UIViewController, WXComponentManager, WXResourceLoader, WXRootView, WXThreadSafeMutableDictionary;
 
 @interface WXSDKInstance : NSObject
 {
@@ -18,6 +18,7 @@
     WXThreadSafeMutableDictionary *_moduleEventObservers;
     _Bool _performanceCommit;
     _Bool _needDestroy;
+    _Bool _syncDestroyComponentManager;
     _Bool _isRootViewFrozen;
     _Bool _needValidate;
     _Bool _needPrerender;
@@ -32,11 +33,13 @@
     CDUnknownBlockType _onLayoutChange;
     CDUnknownBlockType _renderFinish;
     CDUnknownBlockType _refreshFinish;
+    NSString *_bundleType;
     CDUnknownBlockType _onFailed;
     CDUnknownBlockType _onJSRuntimeException;
     CDUnknownBlockType _onScroll;
     CDUnknownBlockType _onRenderProgress;
     CDUnknownBlockType _onJSDownloadedFinish;
+    CDUnknownBlockType _onRenderTerminateWhenJSDownloadedFinish;
     NSMutableDictionary *_userInfo;
     NSString *_bizType;
     NSString *_pageName;
@@ -50,9 +53,13 @@
     NSMutableDictionary *_naviBarStyles;
     NSMutableDictionary *_styleConfigs;
     NSMutableDictionary *_attrConfigs;
+    NSString *_mainBundleString;
+    JSContext *_instanceJavaScriptContext;
     struct CGRect _frame;
 }
 
+@property(retain, nonatomic) JSContext *instanceJavaScriptContext; // @synthesize instanceJavaScriptContext=_instanceJavaScriptContext;
+@property(retain, nonatomic) NSString *mainBundleString; // @synthesize mainBundleString=_mainBundleString;
 @property(retain, nonatomic) NSMutableDictionary *attrConfigs; // @synthesize attrConfigs=_attrConfigs;
 @property(retain, nonatomic) NSMutableDictionary *styleConfigs; // @synthesize styleConfigs=_styleConfigs;
 @property(retain, nonatomic) NSMutableDictionary *naviBarStyles; // @synthesize naviBarStyles=_naviBarStyles;
@@ -68,11 +75,13 @@
 @property(nonatomic) _Bool trackComponent; // @synthesize trackComponent=_trackComponent;
 @property(retain) NSMutableDictionary *userInfo; // @synthesize userInfo=_userInfo;
 @property(nonatomic) struct CGRect frame; // @synthesize frame=_frame;
+@property(copy, nonatomic) CDUnknownBlockType onRenderTerminateWhenJSDownloadedFinish; // @synthesize onRenderTerminateWhenJSDownloadedFinish=_onRenderTerminateWhenJSDownloadedFinish;
 @property(copy, nonatomic) CDUnknownBlockType onJSDownloadedFinish; // @synthesize onJSDownloadedFinish=_onJSDownloadedFinish;
 @property(copy, nonatomic) CDUnknownBlockType onRenderProgress; // @synthesize onRenderProgress=_onRenderProgress;
 @property(copy, nonatomic) CDUnknownBlockType onScroll; // @synthesize onScroll=_onScroll;
 @property(copy, nonatomic) CDUnknownBlockType onJSRuntimeException; // @synthesize onJSRuntimeException=_onJSRuntimeException;
 @property(copy, nonatomic) CDUnknownBlockType onFailed; // @synthesize onFailed=_onFailed;
+@property(retain, nonatomic) NSString *bundleType; // @synthesize bundleType=_bundleType;
 @property(copy, nonatomic) CDUnknownBlockType refreshFinish; // @synthesize refreshFinish=_refreshFinish;
 @property(copy, nonatomic) CDUnknownBlockType renderFinish; // @synthesize renderFinish=_renderFinish;
 @property(copy, nonatomic) CDUnknownBlockType onLayoutChange; // @synthesize onLayoutChange=_onLayoutChange;
@@ -113,7 +122,8 @@
 - (void)refreshInstance:(id)arg1;
 - (void)reload:(_Bool)arg1;
 - (void)_renderWithRequest:(id)arg1 options:(id)arg2 data:(id)arg3;
-- (void)_handleConfigCenter;
+- (void)renderWithMainBundleString:(id)arg1;
+- (_Bool)_handleConfigCenter;
 - (void)_renderWithMainBundleString:(id)arg1;
 - (void)renderView:(id)arg1 options:(id)arg2 data:(id)arg3;
 - (void)renderWithURL:(id)arg1 options:(id)arg2 data:(id)arg3;
@@ -121,6 +131,10 @@
 - (id)description;
 - (id)init;
 - (void)dealloc;
+- (id)utArgs;
+- (void)addUtArgs:(id)arg1;
+- (void)setWxExtDict:(id)arg1;
+- (id)wxExtDict;
 - (void)creatFinish;
 - (void)finishPerformance;
 - (void)reloadData:(id)arg1;

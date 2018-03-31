@@ -6,6 +6,8 @@
 
 #import <TlibDy/JceObjectV2.h>
 
+@class QZJPhotoDailyRecommendStatus;
+
 @interface QZJPhotoGetDailyConfigReq : JceObjectV2
 {
 }
@@ -16,6 +18,7 @@
 // Remaining properties
 @property(nonatomic, getter=jce_uin, setter=setJce_uin:) long long jcev2_p_0_r_uin; // @dynamic jcev2_p_0_r_uin;
 @property(nonatomic, getter=jce_confid, setter=setJce_confid:) long long jcev2_p_1_r_confid; // @dynamic jcev2_p_1_r_confid;
+@property(retain, nonatomic, getter=jce_recommend_status, setter=setJce_recommend_status:) QZJPhotoDailyRecommendStatus *jcev2_p_2_o_recommend_status; // @dynamic jcev2_p_2_o_recommend_status;
 
 @end
 

@@ -86,7 +86,6 @@
 - (id)getWifiBlueBarAdUrl;
 - (id)getWifiApInfo;
 - (int)getLastErrCode;
-- (_Bool)cancelConnect:(id)arg1;
 - (void)doCheckCurState:(id)arg1;
 - (void)recheckCurState;
 - (_Bool)connectByPhone:(id)arg1 delegate:(id)arg2;

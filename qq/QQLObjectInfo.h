@@ -8,7 +8,7 @@
 
 #import <QQMainProject/NSCopying-Protocol.h>
 
-@class NSNumber, NSString, QQMessageModelExInfo;
+@class NSNumber, NSString, QQMessageModel, QQMessageModelExInfo;
 
 @interface QQLObjectInfo : QQModel <NSCopying>
 {
@@ -16,11 +16,14 @@
     NSNumber *_number;
     NSNumber *_failNumber;
     long long _msgSeq;
+    QQMessageModel *_data;
     int _xo;
     QQMessageModelExInfo *_extInfo;
 }
 
 @property(retain, nonatomic) QQMessageModelExInfo *extInfo; // @synthesize extInfo=_extInfo;
+@property(nonatomic) __weak QQMessageModel *data; // @synthesize data=_data;
+- (void).cxx_destruct;
 - (id)description;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (long long)compare:(id)arg1;

@@ -10,13 +10,13 @@
 {
 }
 
-+ (id)getIconStr:(int)arg1;
++ (id)getIconStr:(long long)arg1;
 + (void)toast:(id)arg1 subTitle:(id)arg2 toView:(id)arg3 icon:(id)arg4 styles:(id)arg5;
-+ (void)toast:(id)arg1 subTitle:(id)arg2 toView:(id)arg3 iconType:(int)arg4 styles:(id)arg5;
++ (void)toast:(id)arg1 subTitle:(id)arg2 toView:(id)arg3 iconType:(long long)arg4 styles:(id)arg5;
 + (void)toast:(id)arg1 subTitle:(id)arg2 toView:(id)arg3 icon:(id)arg4;
 + (void)toast:(id)arg1 toView:(id)arg2 icon:(id)arg3;
-+ (void)toast:(id)arg1 subTitle:(id)arg2 toView:(id)arg3 iconType:(int)arg4;
-+ (void)toast:(id)arg1 toView:(id)arg2 iconType:(int)arg3;
++ (void)toast:(id)arg1 subTitle:(id)arg2 toView:(id)arg3 iconType:(long long)arg4;
++ (void)toast:(id)arg1 toView:(id)arg2 iconType:(long long)arg3;
 + (void)toast:(id)arg1 toView:(id)arg2;
 
 @end

@@ -23,11 +23,13 @@
     double _scanHintViewHeight;
     UIImageView *_topArrowView;
     UIButton *_commodityInfoView;
+    int _iAutoJump;
     NSString *_sJumpUrl;
     id <QQARImageRetrievalWebDelegate> _delegate;
 }
 
 @property(nonatomic) __weak id <QQARImageRetrievalWebDelegate> delegate; // @synthesize delegate=_delegate;
+@property(nonatomic) int iAutoJump; // @synthesize iAutoJump=_iAutoJump;
 @property(retain, nonatomic) NSString *sJumpUrl; // @synthesize sJumpUrl=_sJumpUrl;
 - (void).cxx_destruct;
 - (void)startBottomViewAnimation;
@@ -41,6 +43,7 @@
 - (struct CGPoint)convertFromPoint:(struct CGPoint)arg1 imgSize:(struct CGSize)arg2;
 - (void)resetView;
 - (void)resetStatus;
+- (void)showSecondaryFace;
 - (void)updateWithInfo:(id)arg1 coordinateBox:(id)arg2;
 
 // Remaining properties

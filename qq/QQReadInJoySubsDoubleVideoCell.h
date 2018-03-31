@@ -13,7 +13,10 @@
 {
     UITapGestureRecognizer *_firstGesture;
     UITapGestureRecognizer *_secondGesture;
+    _Bool _needShowDivideLine;
+    _Bool _needMainFeedsStyle;
     ReadInJoyChannelArticle *_articleInfo;
+    id <QQReadInJoySubsDoubleVideoCellDelegate> _doubleVideoDelegate;
     ReadInJoyChannelArticle *_secondArticleInfo;
     UIView *_viewForFirstVideo;
     UIView *_viewForSecondVideo;
@@ -37,8 +40,10 @@
     QQAvatarView *_secondAvatar;
     UILabel *_firstAccountTitleLabel;
     UILabel *_secondAccountTitleLabel;
+    UIView *_dividingLineView;
 }
 
+@property(retain, nonatomic) UIView *dividingLineView; // @synthesize dividingLineView=_dividingLineView;
 @property(retain, nonatomic) UILabel *secondAccountTitleLabel; // @synthesize secondAccountTitleLabel=_secondAccountTitleLabel;
 @property(retain, nonatomic) UILabel *firstAccountTitleLabel; // @synthesize firstAccountTitleLabel=_firstAccountTitleLabel;
 @property(retain, nonatomic) QQAvatarView *secondAvatar; // @synthesize secondAvatar=_secondAvatar;
@@ -62,6 +67,9 @@
 @property(retain, nonatomic) UIView *viewForSecondVideo; // @synthesize viewForSecondVideo=_viewForSecondVideo;
 @property(retain, nonatomic) UIView *viewForFirstVideo; // @synthesize viewForFirstVideo=_viewForFirstVideo;
 @property(retain, nonatomic) ReadInJoyChannelArticle *secondArticleInfo; // @synthesize secondArticleInfo=_secondArticleInfo;
+@property(nonatomic) _Bool needMainFeedsStyle; // @synthesize needMainFeedsStyle=_needMainFeedsStyle;
+@property(nonatomic) _Bool needShowDivideLine; // @synthesize needShowDivideLine=_needShowDivideLine;
+@property(nonatomic) __weak id <QQReadInJoySubsDoubleVideoCellDelegate> doubleVideoDelegate; // @synthesize doubleVideoDelegate=_doubleVideoDelegate;
 @property(retain, nonatomic) ReadInJoyChannelArticle *articleInfo; // @synthesize articleInfo=_articleInfo;
 - (void).cxx_destruct;
 - (void)setSelected:(_Bool)arg1 animated:(_Bool)arg2;
@@ -71,9 +79,6 @@
 - (void)layoutSubviews;
 - (void)initViews;
 - (id)initWithStyle:(long long)arg1 reuseIdentifier:(id)arg2;
-
-// Remaining properties
-@property(nonatomic) __weak id <QQReadInJoySubsDoubleVideoCellDelegate> delegate;
 
 @end
 

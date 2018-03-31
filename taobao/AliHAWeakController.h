@@ -14,7 +14,7 @@
     NSString *_viewControllerPtr;
 }
 
-@property(retain, nonatomic) NSString *viewControllerPtr; // @synthesize viewControllerPtr=_viewControllerPtr;
+@property(copy, nonatomic) NSString *viewControllerPtr; // @synthesize viewControllerPtr=_viewControllerPtr;
 @property(nonatomic) __weak UIViewController *viewController; // @synthesize viewController=_viewController;
 - (void).cxx_destruct;
 

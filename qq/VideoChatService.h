@@ -106,6 +106,7 @@
 @property(retain, nonatomic) NSString *m_selfPhoneCode; // @synthesize m_selfPhoneCode;
 - (int)nearbyQuitVideoChatType:(id)arg1;
 - (void)recvNearbyACChat:(id)arg1;
+- (_Bool)isSystemVersionIsEaqualTen;
 - (_Bool)checkMemmoryIsEnough:(unsigned long long)arg1;
 - (_Bool)nearbyCheckAVConflictWithUin:(unsigned long long)arg1;
 - (_Bool)nearbyVideoCheckConnect;
@@ -113,7 +114,7 @@
 - (void)requestNearbyVideoChat:(unsigned long long)arg1;
 - (void)startUpNearbyVideoChatWithoutCheck;
 - (void)startUpNearbyVideoChat;
-- (void)SendRecordingRequest:(_Bool)arg1;
+- (void)SendRecordingRequest:(_Bool)arg1 netArray:(id)arg2 sessionID:(unsigned long long)arg3;
 - (unsigned long long)getTableSign;
 - (void)onDBChanged:(id)arg1;
 - (id)modelWithResultSet:(id)arg1;

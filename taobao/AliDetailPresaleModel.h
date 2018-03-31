@@ -17,8 +17,10 @@
     long long _endTime;
     unsigned long long _status;
     long long _orderedItemAmount;
+    NSString *_depositText;
 }
 
+@property(copy, nonatomic) NSString *depositText; // @synthesize depositText=_depositText;
 @property(nonatomic) long long orderedItemAmount; // @synthesize orderedItemAmount=_orderedItemAmount;
 @property(nonatomic) unsigned long long status; // @synthesize status=_status;
 @property(nonatomic) long long endTime; // @synthesize endTime=_endTime;

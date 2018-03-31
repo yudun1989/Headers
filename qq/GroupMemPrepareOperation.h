@@ -13,6 +13,7 @@
 {
     QQGroupSettingModel *_groupSetting;
     NSArray *_troopMemberArray;
+    id _remarkObserver;
     _Bool _isRunning;
     id <GroupMemOperationProtocol> _delegate;
     NSString *_groupCode;
@@ -26,6 +27,7 @@
 - (void)requestGroupMemCommonFriend;
 - (int)getAddStateWithTroopMemModel:(id)arg1;
 - (id)getAddStateWithArray:(id)arg1;
+- (void)reqGroupAIRemark:(id)arg1;
 - (void)sendGroupMemCommomFriendRequest:(id)arg1;
 - (void)onGetTroopMemberResultCallback:(id)arg1;
 - (void)checkNeedUpdateTroopMemberList;

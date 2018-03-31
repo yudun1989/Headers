@@ -33,10 +33,8 @@
     TBDetailHomeViewControl *_detailHomeViewControl;
     TBDetailNavigationBarViewControl *_navigationViewControl;
     TBDetailDataSourceModel *_sourceModel;
-    NSString *_rn;
 }
 
-@property(copy, nonatomic) NSString *rn; // @synthesize rn=_rn;
 @property(retain, nonatomic) TBDetailDataSourceModel *sourceModel; // @synthesize sourceModel=_sourceModel;
 @property(retain, nonatomic) TBDetailNavigationBarViewControl *navigationViewControl; // @synthesize navigationViewControl=_navigationViewControl;
 @property(retain, nonatomic) TBDetailHomeViewControl *detailHomeViewControl; // @synthesize detailHomeViewControl=_detailHomeViewControl;
@@ -59,7 +57,6 @@
 @property(nonatomic) _Bool isSeckill; // @synthesize isSeckill=_isSeckill;
 @property(nonatomic) __weak TBTradeDetailViewController *detailVC; // @synthesize detailVC=_detailVC;
 - (void).cxx_destruct;
-- (id)monitorRN;
 - (void)loadDetailInfoHandler:(id)arg1 error:(id)arg2;
 - (_Bool)checkIfSourceModelIsValid;
 - (void)setDetailBasicInfoSource;
@@ -88,7 +85,6 @@
 - (void)setUpCartCallback;
 - (void)utFromToRelation;
 - (_Bool)needDegradedDetail;
-- (id)genRN;
 - (void)initFromQueryParams:(id)arg1;
 @property(readonly, nonatomic) AliDetailModel *detailModel;
 @property(retain, nonatomic) AliDetailDataEngine *yxgDataEngine;

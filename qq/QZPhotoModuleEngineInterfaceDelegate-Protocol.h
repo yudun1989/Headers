@@ -4,10 +4,12 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-@class NSArray, NSDictionary, NSString, QzoneFeedModel, UIFont, UIImage, UINavigationController, UIViewController;
+@class NSArray, NSDictionary, NSString, QQAsset, QZImageClipperBase, QzoneFeedModel, UIFont, UIImage, UINavigationController, UIViewController;
 @protocol NSCoding;
 
 @protocol QZPhotoModuleEngineInterfaceDelegate
+- (QQAsset *)assetWithAssetIdentifier:(NSString *)arg1;
+- (_Bool)uploadJobsIsEmpty;
 - (_Bool)videoIsExist:(NSString *)arg1 videoUrl:(NSString *)arg2 clientKey:(NSString *)arg3;
 - (void)sendH5ToQzone:(NSString *)arg1 imageUrk:(NSString *)arg2 shareUrl:(NSString *)arg3 desc:(NSString *)arg4 viewController:(UIViewController *)arg5;
 - (void)sendToWeixinTitle:(NSString *)arg1 imageUrl:(NSString *)arg2 shareUrl:(NSString *)arg3 desc:(NSString *)arg4 sence:(long long)arg5;
@@ -17,6 +19,7 @@
 - (NSString *)urlWithoutDomainNorPoundSign:(NSString *)arg1;
 - (void)addAlbumComment:(NSString *)arg1 feedModel:(QzoneFeedModel *)arg2 isPrivate:(_Bool)arg3;
 - (void)likeAlbumWithLikeKey:(NSString *)arg1 isMyLiked:(_Bool)arg2;
+- (UIImage *)imageFromMemForUrl:(NSString *)arg1 clientKey:(NSString *)arg2 clipper:(QZImageClipperBase *)arg3;
 - (void)saveImageToMem:(UIImage *)arg1 url:(NSString *)arg2 clientKey:(NSString *)arg3 clipper:(id)arg4;
 - (NSString *)makeKey:(long long)arg1 primaryKey:(NSString *)arg2 subKey:(NSString *)arg3 cmtID:(NSString *)arg4;
 - (_Bool)string:(NSString *)arg1 hasContainStr:(NSString *)arg2;

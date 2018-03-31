@@ -10,17 +10,17 @@
 
 @interface ArkMsgAppInfo : NSObject
 {
+    int _positionIndex;
     NSString *_appPath;
     NSString *_appName;
     NSString *_appView;
     NSString *_meta;
     NSString *_keyword;
-    NSNumber *_equalInputText;
     NSNumber *_contextMatchType;
 }
 
+@property int positionIndex; // @synthesize positionIndex=_positionIndex;
 @property(retain) NSNumber *contextMatchType; // @synthesize contextMatchType=_contextMatchType;
-@property(retain) NSNumber *equalInputText; // @synthesize equalInputText=_equalInputText;
 @property(retain) NSString *keyword; // @synthesize keyword=_keyword;
 @property(retain) NSString *meta; // @synthesize meta=_meta;
 @property(retain) NSString *appView; // @synthesize appView=_appView;

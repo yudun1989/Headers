@@ -13,6 +13,7 @@
 
 @interface CNLogisticsListView : UIView <UITableViewDelegate, UITableViewDataSource>
 {
+    _Bool _isDowngrading;
     NSString *_orderId;
     CDUnknownBlockType _loadDataBlock;
     CDUnknownBlockType _whenAppearLoadDataBlock;
@@ -30,6 +31,7 @@
 @property(retain, nonatomic) UITableView *tableView; // @synthesize tableView=_tableView;
 @property(copy, nonatomic) CDUnknownBlockType whenAppearLoadDataBlock; // @synthesize whenAppearLoadDataBlock=_whenAppearLoadDataBlock;
 @property(copy, nonatomic) CDUnknownBlockType loadDataBlock; // @synthesize loadDataBlock=_loadDataBlock;
+@property(nonatomic) _Bool isDowngrading; // @synthesize isDowngrading=_isDowngrading;
 @property(retain, nonatomic) NSString *orderId; // @synthesize orderId=_orderId;
 - (void).cxx_destruct;
 - (double)tableView:(id)arg1 heightForRowAtIndexPath:(id)arg2;

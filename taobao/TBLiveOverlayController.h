@@ -11,7 +11,7 @@
 #import "UIGestureRecognizerDelegate-Protocol.h"
 #import "UITextFieldDelegate-Protocol.h"
 
-@class NSArray, NSMutableArray, NSMutableDictionary, NSString, NSTimer, TBLiveActivityModel, TBLiveBrandADManager, TBLiveBroadcasterScore, TBLiveDetailInfoModel, TBLiveGoodsWithVideoItem, TBLiveMarketingInfoView, TBLiveNetFlow, TBLiveOverlayView, TBLiveRecommendView, TBLiveSRMoreView, TBLiveScreenRecordView, TBLiveTextField, TBLiveUserLevelHierarchyEntryModel, TBLiveUserLevelPointsUPView, TBLiveUserLevelUPView, TBLiveWebContainerManager, UIImageView, UILabel, UIView, UIViewController;
+@class NSArray, NSMutableArray, NSMutableDictionary, NSString, NSTimer, TBLiveActivityModel, TBLiveBrandADManager, TBLiveBroadcasterScore, TBLiveDetailInfoModel, TBLiveFollowCache, TBLiveGoodsWithVideoItem, TBLiveMarketingInfoView, TBLiveNetFlow, TBLiveOverlayView, TBLiveRecommendView, TBLiveSRMoreView, TBLiveScreenRecordView, TBLiveTextField, TBLiveUserLevelHierarchyEntryModel, TBLiveUserLevelPointsUPView, TBLiveUserLevelUPView, TBLiveWebContainerManager, UIImageView, UILabel, UIView, UIViewController;
 @protocol LiveRoomFollowProtocol, TBLiveOverlayActionDelegate;
 
 @interface TBLiveOverlayController : TBLiveBaseOverlayController <UIGestureRecognizerDelegate, TBLiveScreenRecordViewDelegate, LiveRoomCommentManagerProtocol, UITextFieldDelegate>
@@ -65,7 +65,7 @@
     UIView *_followView;
     TBLiveTextField *_linkInputField;
     id <LiveRoomFollowProtocol> _followAdapter;
-    NSMutableArray *_followAccountList;
+    TBLiveFollowCache *_followCache;
     TBLiveUserLevelUPView *_userLevelUPView;
     TBLiveUserLevelPointsUPView *_userPointsUPView;
     UILabel *_pointsUPLabel;
@@ -88,7 +88,7 @@
 @property(retain, nonatomic) UILabel *pointsUPLabel; // @synthesize pointsUPLabel=_pointsUPLabel;
 @property(retain, nonatomic) TBLiveUserLevelPointsUPView *userPointsUPView; // @synthesize userPointsUPView=_userPointsUPView;
 @property(retain, nonatomic) TBLiveUserLevelUPView *userLevelUPView; // @synthesize userLevelUPView=_userLevelUPView;
-@property(retain, nonatomic) NSMutableArray *followAccountList; // @synthesize followAccountList=_followAccountList;
+@property(retain, nonatomic) TBLiveFollowCache *followCache; // @synthesize followCache=_followCache;
 @property(nonatomic) _Bool isTBTVShowProgram; // @synthesize isTBTVShowProgram=_isTBTVShowProgram;
 @property(nonatomic) _Bool isTimePlay; // @synthesize isTimePlay=_isTimePlay;
 @property(nonatomic) _Bool shouldHideGoodsShowCase; // @synthesize shouldHideGoodsShowCase=_shouldHideGoodsShowCase;
@@ -156,7 +156,7 @@
 - (void)checkMicAuth;
 - (struct CGPoint)clickPointOnVideoSize:(struct CGSize)arg1 contentMode:(long long)arg2 point:(struct CGPoint)arg3;
 - (void)processAcvitityClickPoint:(struct CGPoint)arg1;
-- (void)openH5OrWeex:(id)arg1 openType:(id)arg2 accessPoint:(id)arg3;
+- (void)openH5OrWeex:(id)arg1 openType:(id)arg2 frame:(struct CGRect)arg3 accessPoint:(id)arg4;
 - (void)processMessInfoActivityData:(id)arg1;
 - (void)processActivityMsg:(id)arg1;
 - (void)incrementActionCount:(id)arg1 params:(id)arg2;

@@ -47,6 +47,7 @@
 - (void)unregistEvent;
 - (void)registEvent;
 - (void)updateAttributes:(id)arg1;
+- (void)removeFromSuperview;
 - (void)viewWillUnload;
 - (void)viewDidLoad;
 - (void)dealloc;

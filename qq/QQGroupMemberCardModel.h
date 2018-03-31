@@ -6,7 +6,7 @@
 
 #import <QQMainProject/QQGroupPropertyModel.h>
 
-@class NSString, StoryInfoModel;
+@class NSString, QQGroupMemberGameInfoModel, StoryInfoModel;
 
 @interface QQGroupMemberCardModel : QQGroupPropertyModel
 {
@@ -26,6 +26,7 @@
 @property(nonatomic) int age; // @dynamic age;
 @property(nonatomic) long long cachedTime; // @dynamic cachedTime;
 @property(nonatomic) long long distance; // @dynamic distance;
+@property(retain, nonatomic) QQGroupMemberGameInfoModel *gameInfoModel; // @dynamic gameInfoModel;
 @property(nonatomic) int gender; // @dynamic gender;
 @property(copy, nonatomic) NSString *groupCode; // @dynamic groupCode;
 @property(copy, nonatomic) NSString *groupMemberUin; // @dynamic groupMemberUin;

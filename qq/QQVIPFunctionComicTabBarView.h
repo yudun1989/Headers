@@ -11,7 +11,6 @@
 
 @interface QQVIPFunctionComicTabBarView : UIView
 {
-    _Bool _isConfigReady;
     unsigned long long _selectedIndex;
     id <QQVIPFunctionComicTabBarViewDelegate> _delegate;
     NSArray *_items;
@@ -19,7 +18,6 @@
 }
 
 @property(retain, nonatomic) UIView *topLine; // @synthesize topLine=_topLine;
-@property(nonatomic) _Bool isConfigReady; // @synthesize isConfigReady=_isConfigReady;
 @property(retain, nonatomic) NSArray *items; // @synthesize items=_items;
 @property(nonatomic) __weak id <QQVIPFunctionComicTabBarViewDelegate> delegate; // @synthesize delegate=_delegate;
 @property(nonatomic) unsigned long long selectedIndex; // @synthesize selectedIndex=_selectedIndex;

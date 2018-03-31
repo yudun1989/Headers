@@ -8,15 +8,15 @@
 
 #import "TBDinamicDataParsePattern-Protocol.h"
 
-@class NSString, TBDinamicDataParsePatternData;
+@class NSString, TDMTMDataParser;
 
 @interface TDMTMStrcatExprParser : NSObject <TBDinamicDataParsePattern>
 {
-    TBDinamicDataParsePatternData *_dataParser;
+    TDMTMDataParser *_dataParser;
 }
 
 + (id)prefixName;
-@property(retain, nonatomic) TBDinamicDataParsePatternData *dataParser; // @synthesize dataParser=_dataParser;
+@property(retain, nonatomic) TDMTMDataParser *dataParser; // @synthesize dataParser=_dataParser;
 - (void).cxx_destruct;
 - (id)revertComma:(id)arg1;
 - (id)holderPlaceComma:(id)arg1;

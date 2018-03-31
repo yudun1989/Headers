@@ -13,6 +13,7 @@
 - (UIImage *)imageFromLocalNamed:(NSString *)arg1 imageView:(UIImageView *)arg2;
 - (void)imageFromUrl:(NSString *)arg1 imageView:(UIImageView *)arg2 useOriginal:(_Bool)arg3;
 - (void)imageFromUrl:(NSString *)arg1 imageView:(UIImageView *)arg2 placeholder:(UIImage *)arg3 completion:(void (^)(NSDictionary *))arg4;
+- (void)imageFromUrl:(NSString *)arg1 imageView:(UIImageView *)arg2 imageBlock:(void (^)(UIImage *))arg3;
 - (void)imageFromUrl:(NSString *)arg1 imageView:(UIImageView *)arg2 completion:(void (^)(NSDictionary *))arg3;
 - (void)imageFromUrl:(NSString *)arg1 imageView:(UIImageView *)arg2;
 @end

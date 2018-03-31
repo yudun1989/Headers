@@ -6,26 +6,30 @@
 
 #import <QQMainProject/CFT_UICustomNaviBarViewController.h>
 
-@class NSDictionary, NSString, NSTimer, QQAvatarView, UIButton, UIControl, UIImageView, UILabel, UIScrollView, UIView;
+#import <QQMainProject/UIAlertViewDelegate-Protocol.h>
+#import <QQMainProject/UITableViewDataSource-Protocol.h>
+#import <QQMainProject/UITableViewDelegate-Protocol.h>
 
-@interface CFT_UIPayByFriendConfirm : CFT_UICustomNaviBarViewController
+@class NSArray, NSDictionary, NSString, NSTimer, QQAvatarView, UIButton, UIControl, UILabel, UIScrollView, UITableView, UIView;
+
+@interface CFT_UIPayByFriendConfirm : CFT_UICustomNaviBarViewController <UITableViewDelegate, UITableViewDataSource, UIAlertViewDelegate>
 {
-    UIControl *_payMyself;
-    UIView *_timeView;
-    UIButton *_nextBtn;
-    UILabel *_timeLabel;
     NSString *_buyerUinStr;
-    NSString *_payerUinStr;
     NSString *_buyerNickStr;
-    NSString *_payerNickStr;
     NSString *_goodNameStr;
     NSString *_goodPriceStr;
     NSString *_tradeStateStr;
-    NSString *_paySuccUinStr;
     NSString *_unavailDesc;
     NSString *_tokenId;
     int orderStateType;
     int timer_count;
+    NSArray *_payerList;
+    UIView *_orderContentView;
+    UIView *_payerListContentView;
+    UITableView *_payerTableView;
+    UILabel *_goodName;
+    UILabel *_rmbLogo;
+    UILabel *_goodPrice;
     NSString *_appinfo;
     NSString *_comefrom;
     NSString *_skey;
@@ -33,26 +37,26 @@
     NSString *_pfa_req;
     NSString *_uin;
     UIScrollView *_pScrollView;
-    UILabel *_goodName;
-    UILabel *_rmbLogo;
-    UILabel *_goodPrice;
     UILabel *_orderState;
-    UIImageView *_moneyState;
     QQAvatarView *_buyerAvatar;
-    QQAvatarView *_payerAvatar;
     NSDictionary *_pfaOrder;
     NSTimer *_timer;
+    NSString *_paySuccUinStr;
+    UIView *_timeView;
+    UILabel *_timeLabel;
+    UIControl *_payMyself;
+    UIButton *_payForFriendBtn;
 }
 
+@property(retain, nonatomic) UIButton *payForFriendBtn; // @synthesize payForFriendBtn=_payForFriendBtn;
+@property(retain, nonatomic) UIControl *payMyself; // @synthesize payMyself=_payMyself;
+@property(retain, nonatomic) UILabel *timeLabel; // @synthesize timeLabel=_timeLabel;
+@property(retain, nonatomic) UIView *timeView; // @synthesize timeView=_timeView;
+@property(retain, nonatomic) NSString *paySuccUinStr; // @synthesize paySuccUinStr=_paySuccUinStr;
 @property(retain, nonatomic) NSTimer *timer; // @synthesize timer=_timer;
 @property(retain, nonatomic) NSDictionary *pfaOrder; // @synthesize pfaOrder=_pfaOrder;
-@property(retain, nonatomic) QQAvatarView *payerAvatar; // @synthesize payerAvatar=_payerAvatar;
 @property(retain, nonatomic) QQAvatarView *buyerAvatar; // @synthesize buyerAvatar=_buyerAvatar;
-@property(retain, nonatomic) UIImageView *moneyState; // @synthesize moneyState=_moneyState;
 @property(retain, nonatomic) UILabel *orderState; // @synthesize orderState=_orderState;
-@property(retain, nonatomic) UILabel *goodPrice; // @synthesize goodPrice=_goodPrice;
-@property(retain, nonatomic) UILabel *rmbLogo; // @synthesize rmbLogo=_rmbLogo;
-@property(retain, nonatomic) UILabel *goodName; // @synthesize goodName=_goodName;
 @property(retain, nonatomic) UIScrollView *pScrollView; // @synthesize pScrollView=_pScrollView;
 @property(retain, nonatomic) NSString *uin; // @synthesize uin=_uin;
 @property(retain, nonatomic) NSString *pfa_req; // @synthesize pfa_req=_pfa_req;
@@ -61,6 +65,12 @@
 @property(retain, nonatomic) NSString *comefrom; // @synthesize comefrom=_comefrom;
 @property(retain, nonatomic) NSString *appinfo; // @synthesize appinfo=_appinfo;
 - (void)dealloc;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly, copy) NSString *description;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
 
 @end
 

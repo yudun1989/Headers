@@ -23,6 +23,7 @@
 - (NSArray *)bizcodeForDisableCache;
 - (_Bool)getConfigForVideoCacheEnable;
 - (NSDictionary *)getTBMediaPlayerBundleOrangeConfig;
+- (NSDictionary *)getDWInteractiveSDKOrangeConfig;
 - (_Bool)getConfigForAllowWiFiAutoPlay;
 @end
 

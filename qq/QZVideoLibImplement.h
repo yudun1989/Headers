@@ -30,6 +30,7 @@
 @property(nonatomic) _Bool networkShouldAutoPlay; // @synthesize networkShouldAutoPlay=_networkShouldAutoPlay;
 @property(nonatomic) _Bool haveGetDebugInfoSetting; // @synthesize haveGetDebugInfoSetting=_haveGetDebugInfoSetting;
 @property(nonatomic) _Bool showVideoDebugInfo; // @synthesize showVideoDebugInfo=_showVideoDebugInfo;
+- (id)adIdentifier;
 - (void)runOCSPluginInvokeService:(id)arg1 withOCSPluginId:(id)arg2 isNeedShowDownloadVC:(_Bool)arg3 fromeNavi:(id)arg4 sucessBlock:(CDUnknownBlockType)arg5 failBlock:(CDUnknownBlockType)arg6;
 - (double)videoRooftopPictureDisplayTime;
 - (id)hevclv;
@@ -40,8 +41,6 @@
 - (long long)quickForwardAppearBefore;
 - (long long)quickForwardAppearDuration;
 - (_Bool)enableQuickForwardInStateView;
-- (_Bool)canShowVideoDebugInfo;
-- (void)setCanShowVideoDebugInfo:(_Bool)arg1;
 - (double)pgcVideoDisplayScaleRatio;
 - (double)ugcVideoDisplayScaleRatio;
 - (void)runRequest:(id)arg1 callBack:(CDUnknownBlockType)arg2;
@@ -75,7 +74,7 @@
 - (_Bool)isOpenAts;
 - (void)getLiveRoomStatusWithRoomID:(id)arg1 isHlsUrlSign:(_Bool)arg2 completionBlock:(CDUnknownBlockType)arg3;
 - (long long)getRecommVideoList:(id)arg1 isMore:(_Bool)arg2 busiParam:(id)arg3 attachInfo:(id)arg4 recommScence:(long long)arg5 requestModelsCount:(long long)arg6;
-- (long long)getRecommVideoList:(id)arg1 isMore:(_Bool)arg2 busiParam:(id)arg3 attachInfo:(id)arg4 recommScence:(long long)arg5 requestModelsCount:(long long)arg6 fromPage:(unsigned long long)arg7;
+- (long long)getRecommVideoList:(id)arg1 isMore:(_Bool)arg2 busiParam:(id)arg3 attachInfo:(id)arg4 recommScence:(long long)arg5 requestModelsCount:(long long)arg6 fromPage:(long long)arg7;
 - (_Bool)requestQQAudioDevice;
 - (_Bool)videoIsInQQAudioChat;
 - (_Bool)videoDisableSpeedLimit;

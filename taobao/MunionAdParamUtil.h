@@ -35,6 +35,7 @@
 - (void)loadParamsFromeFile;
 - (id)orangeConfig;
 - (void)orangeConfig:(id)arg1;
+- (void)dealloc;
 - (id)init;
 
 @end

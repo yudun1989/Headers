@@ -16,6 +16,7 @@
     NSTimer *_timer;
     UILabel *_textLabel;
     UILabel *_extraTextLabel;
+    UILabel *_subTextLabel;
     NSString *_hintText;
     long long _timerCount;
     AliDetailBottomBarPreSaleModel *_presaleModel;
@@ -25,6 +26,7 @@
 @property(nonatomic) _Bool hasAddObserver; // @synthesize hasAddObserver=_hasAddObserver;
 @property(nonatomic) long long timerCount; // @synthesize timerCount=_timerCount;
 @property(retain, nonatomic) NSString *hintText; // @synthesize hintText=_hintText;
+@property(retain, nonatomic) UILabel *subTextLabel; // @synthesize subTextLabel=_subTextLabel;
 @property(retain, nonatomic) UILabel *extraTextLabel; // @synthesize extraTextLabel=_extraTextLabel;
 @property(retain, nonatomic) UILabel *textLabel; // @synthesize textLabel=_textLabel;
 @property(retain, nonatomic) NSTimer *timer; // @synthesize timer=_timer;

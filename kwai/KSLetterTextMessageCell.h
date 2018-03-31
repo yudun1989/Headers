@@ -14,6 +14,7 @@
     NSMutableAttributedString *_attributed;
 }
 
++ (id)getTextWithMessage:(id)arg1;
 + (double)heightWithMessage:(id)arg1;
 + (struct CGSize)messageContentSizeWithMessage:(id)arg1;
 @property(retain, nonatomic) NSMutableAttributedString *attributed; // @synthesize attributed=_attributed;

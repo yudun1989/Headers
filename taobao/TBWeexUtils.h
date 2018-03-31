@@ -10,6 +10,7 @@
 {
 }
 
++ (void)callback:(CDUnknownBlockType)arg1 failure:(id)arg2 withMessage:(id)arg3;
 + (void)blockInvoke:(id)arg1;
 + (id)scheduledTimerWithTimeInterval:(double)arg1 block:(CDUnknownBlockType)arg2 repeats:(_Bool)arg3;
 + (id)parentViewController:(id)arg1;
@@ -18,7 +19,9 @@
 + (_Bool)getBoolFromValue:(id)arg1;
 + (id)scaleImageToNavigatorIcon:(id)arg1 maxHeight:(double)arg2;
 + (id)getIconFont:(id)arg1 size:(double)arg2 color:(id)arg3;
++ (id)blurredImageWithImage:(id)arg1 blurRadius:(double)arg2;
 + (id)imageWithColor:(id)arg1 frame:(struct CGRect)arg2;
++ (id)WXImageContext;
 
 @end
 

@@ -18,18 +18,17 @@
 @property(retain, nonatomic) NSArray *subViewItemTemplateDicts; // @synthesize subViewItemTemplateDicts=_subViewItemTemplateDicts;
 - (void).cxx_destruct;
 - (void)addSubItemsView;
-- (void)updateViewSizeWithData:(id)arg1 context:(id)arg2 error:(id *)arg3;
-- (void)layoutSubViewItems;
-- (void)renderSubViewItemsWithData:(id)arg1 context:(id)arg2 error:(id *)arg3;
-- (void)createEmptySubViewItems;
+- (void)handleSizeInfoWithParam:(id)arg1 subViewItemSizeAction:(CDUnknownBlockType)arg2;
+- (void)updateViewSizeWithParam:(id)arg1;
+- (void)layoutSubViewItemsWithParam:(id)arg1;
+- (struct CGSize)estimatedSizeWithSubViewItem:(id)arg1 atIndex:(unsigned long long)arg2 withParam:(id)arg3;
+- (void)renderSubViewItem:(id)arg1 atIndex:(unsigned long long)arg2 stop:(_Bool *)arg3 withParam:(id)arg4;
+- (void)renderSubViewItemsWithParam:(id)arg1;
+- (void)createEmptySubViewItemsWithParam:(id)arg1;
 - (void)devideAttributeWithKey:(id)arg1 value:(id)arg2 stop:(_Bool *)arg3;
-- (struct CGSize)estimatedViewSizeWithData:(id)arg1 context:(id)arg2 error:(id *)arg3;
-- (void)layoutViewItemWithData:(id)arg1 context:(id)arg2 error:(id *)arg3;
+- (struct CGSize)estimatedViewSizeWithParam:(id)arg1;
+- (void)layoutViewItemWithParam:(id)arg1;
 - (void)destroyView;
-- (void)layoutSubViewItemsWithBaseLayout:(unsigned long long)arg1;
-- (void)updateViewSizeWithBaseLayout:(unsigned long long)arg1 data:(id)arg2 context:(id)arg3 error:(id *)arg4;
-- (double)maxHeightWithBaseLayout:(unsigned long long)arg1 data:(id)arg2 context:(id)arg3 error:(id *)arg4;
-- (double)maxWidthWithBaseLayout:(unsigned long long)arg1 data:(id)arg2 context:(id)arg3 error:(id *)arg4;
 
 @end
 

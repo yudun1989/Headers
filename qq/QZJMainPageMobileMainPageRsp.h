@@ -6,7 +6,7 @@
 
 #import <TlibDy/JceObjectV2.h>
 
-@class NSArray, NSData, NSDictionary, NSString, QZJMainPageSAppinfo, QZJMainPageSBirthday, QZJMainPageSBrandspaceH5, QZJMainPageSCampusQz, QZJMainPageSCount, QZJMainPageSFlower, QZJMainPageSFriendShip, QZJMainPageSFriendreq, QZJMainPageSGame, QZJMainPageSGift, QZJMainPageSMainPage, QZJMainPageSMayknow, QZJMainPageSMsgbFestival, QZJMainPageSPartError, QZJMainPageSProfile, QZJMainPageSReadSpace, QZJMainPageSRecPhotoList, QZJMainPageSSpecial, QZJMainPageSTabList, QZJMainPageSVisit;
+@class NSArray, NSData, NSDictionary, NSString, QZJMainPageSAppinfo, QZJMainPageSBirthday, QZJMainPageSBrandspaceH5, QZJMainPageSCampusQz, QZJMainPageSCount, QZJMainPageSFlower, QZJMainPageSFriendShip, QZJMainPageSFriendreq, QZJMainPageSGame, QZJMainPageSGift, QZJMainPageSMainPage, QZJMainPageSMayknow, QZJMainPageSMsgbFestival, QZJMainPageSPartError, QZJMainPageSProfile, QZJMainPageSReadSpace, QZJMainPageSRecPhotoList, QZJMainPageSSpecial, QZJMainPageSSqMainpageSwitch, QZJMainPageSTabList, QZJMainPageSVisit;
 
 @interface QZJMainPageMobileMainPageRsp : JceObjectV2
 {
@@ -50,9 +50,11 @@
     QZJMainPageSTabList *_jcev2_p_36_o_tab_lst;
     NSString *_jcev2_p_37_o_share_bg_url;
     NSString *_jcev2_p_38_o_qzmall_cover_url;
+    QZJMainPageSSqMainpageSwitch *_jcev2_p_40_o_sq_mainpage_switch;
 }
 
 + (id)jceType;
+@property(retain, nonatomic, getter=jce_sq_mainpage_switch, setter=setJce_sq_mainpage_switch:) QZJMainPageSSqMainpageSwitch *jcev2_p_40_o_sq_mainpage_switch; // @synthesize jcev2_p_40_o_sq_mainpage_switch=_jcev2_p_40_o_sq_mainpage_switch;
 @property(nonatomic, getter=jce_open_msg_board, setter=setJce_open_msg_board:) _Bool jcev2_p_39_o_open_msg_board; // @synthesize jcev2_p_39_o_open_msg_board=_jcev2_p_39_o_open_msg_board;
 @property(retain, nonatomic, getter=jce_qzmall_cover_url, setter=setJce_qzmall_cover_url:) NSString *jcev2_p_38_o_qzmall_cover_url; // @synthesize jcev2_p_38_o_qzmall_cover_url=_jcev2_p_38_o_qzmall_cover_url;
 @property(retain, nonatomic, getter=jce_share_bg_url, setter=setJce_share_bg_url:) NSString *jcev2_p_37_o_share_bg_url; // @synthesize jcev2_p_37_o_share_bg_url=_jcev2_p_37_o_share_bg_url;

@@ -17,8 +17,10 @@
     CDUnknownBlockType _callback;
     NSString *_appView;
     NSString *_appPath;
+    NSString *_intentFeedback;
 }
 
+@property(retain) NSString *intentFeedback; // @synthesize intentFeedback=_intentFeedback;
 @property(retain) NSString *appPath; // @synthesize appPath=_appPath;
 @property(retain) NSString *appView; // @synthesize appView=_appView;
 @property(copy) CDUnknownBlockType callback; // @synthesize callback=_callback;

@@ -34,11 +34,11 @@
 - (id)getTabUrlByKey:(id)arg1;
 - (void)dealWithComicConfig;
 - (void)dealWithTabIcon;
-- (void)mergeNavConfigAndIconMsg;
 - (void)onCompleted:(unsigned long long)arg1 scid:(id)arg2 cfgScid:(id)arg3 from:(id)arg4 dlFrom:(int)arg5 result:(int)arg6 httpcode:(int)arg7;
 - (_Bool)getItem:(unsigned long long)arg1 scid:(id)arg2 info:(id)arg3;
 - (_Bool)deleteFiles:(unsigned long long)arg1 scid:(id)arg2;
 - (_Bool)isFileExists:(unsigned long long)arg1 scid:(id)arg2;
+- (_Bool)checkConfigIsReadyOrNot;
 - (_Bool)canUpdate:(unsigned long long)arg1 scid:(id)arg2 from:(id)arg3;
 - (id)getQQVipComicTabIconPath;
 - (id)getQQVipComicConfigJsonPath;

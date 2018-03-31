@@ -19,6 +19,8 @@
 }
 
 - (void).cxx_destruct;
+- (void)shareDidAction:(id)arg1;
+- (void)popSharePanelWithTopArr:(id)arg1 WithBottomArr:(id)arg2;
 - (void)bringInputBarToFront;
 - (void)leftButtonClick:(id)arg1;
 - (void)viewDidAppear:(_Bool)arg1;

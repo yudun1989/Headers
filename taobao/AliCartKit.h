@@ -20,6 +20,8 @@
 @property(retain, nonatomic) AliCartDataSource *dataSource; // @synthesize dataSource=_dataSource;
 @property(readonly, nonatomic) __weak id <AliCartBizProtocol> sourceTarget; // @synthesize sourceTarget=_sourceTarget;
 - (void).cxx_destruct;
+- (id)inner_styleMapPath;
+- (id)inner_stylePath;
 - (id)initWithSourceTarget:(id)arg1;
 
 @end

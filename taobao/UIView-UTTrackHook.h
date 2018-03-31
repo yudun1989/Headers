@@ -9,6 +9,9 @@
 @class NSDictionary, NSString, NSURL;
 
 @interface UIView (UTTrackHook)
+@property(copy, nonatomic) NSString *utScmPreNext;
+@property(copy, nonatomic) NSString *utScmUrl;
+@property(copy, nonatomic) NSString *utScmPre;
 @property(copy, nonatomic) NSString *utParamPreNext;
 @property(copy, nonatomic) NSString *utParamCnt;
 @property(copy, nonatomic) NSString *utParamUrl;

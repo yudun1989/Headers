@@ -12,6 +12,9 @@
 
 + (_Bool)p_createDirPath:(id)arg1;
 + (_Bool)removePath:(id)arg1;
++ (id)silenceWebResourceMappingPlaceholderPath;
++ (id)silenceWebResourceMappingFilePath;
++ (id)silencesSettingMainPath;
 + (id)silenceActivtyMainPath;
 + (id)silenceDownloadPath;
 + (id)silenceMainPath;

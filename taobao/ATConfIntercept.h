@@ -13,12 +13,14 @@
 {
     NSString *_spmA;
     NSString *_spmB;
+    NSString *_logkey;
     NSArray<ATConfigItem> *_points;
     ATConfigModel *_conf;
 }
 
 @property(nonatomic) __weak ATConfigModel *conf; // @synthesize conf=_conf;
 @property(retain, nonatomic) NSArray<ATConfigItem> *points; // @synthesize points=_points;
+@property(retain, nonatomic) NSString *logkey; // @synthesize logkey=_logkey;
 @property(retain, nonatomic) NSString *spmB; // @synthesize spmB=_spmB;
 @property(retain, nonatomic) NSString *spmA; // @synthesize spmA=_spmA;
 - (void).cxx_destruct;

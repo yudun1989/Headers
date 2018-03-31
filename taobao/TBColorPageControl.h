@@ -12,9 +12,9 @@
 {
     _Bool _hidesForSinglePage;
     _Bool _isSolid;
-    int _type;
     long long _currentPage;
     long long _numberOfPages;
+    long long _type;
     UIColor *_normalPageColor;
     UIColor *_currentPageColor;
     long long _width;
@@ -30,7 +30,7 @@
 @property(nonatomic) long long width; // @synthesize width=_width;
 @property(retain, nonatomic) UIColor *currentPageColor; // @synthesize currentPageColor=_currentPageColor;
 @property(retain, nonatomic) UIColor *normalPageColor; // @synthesize normalPageColor=_normalPageColor;
-@property(nonatomic) int type; // @synthesize type=_type;
+@property(nonatomic) long long type; // @synthesize type=_type;
 @property(nonatomic) _Bool hidesForSinglePage; // @synthesize hidesForSinglePage=_hidesForSinglePage;
 @property(nonatomic) long long numberOfPages; // @synthesize numberOfPages=_numberOfPages;
 @property(nonatomic) long long currentPage; // @synthesize currentPage=_currentPage;

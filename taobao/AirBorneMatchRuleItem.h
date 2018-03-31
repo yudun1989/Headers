@@ -6,12 +6,14 @@
 
 #import <Foundation/NSObject.h>
 
-@class NSMutableDictionary, NSString;
+@class NSMutableArray, NSMutableDictionary, NSString;
 
 @interface AirBorneMatchRuleItem : NSObject
 {
     _Bool _isMatchRuleEnable;
     NSMutableDictionary *_matchQuerys;
+    NSMutableDictionary *_blackVarQuerys;
+    NSMutableArray *_blackHostPaths;
     NSString *_url;
     NSString *_scheme;
 }
@@ -19,11 +21,14 @@
 @property _Bool isMatchRuleEnable; // @synthesize isMatchRuleEnable=_isMatchRuleEnable;
 @property(retain) NSString *scheme; // @synthesize scheme=_scheme;
 @property(retain) NSString *url; // @synthesize url=_url;
+@property(retain) NSMutableArray *blackHostPaths; // @synthesize blackHostPaths=_blackHostPaths;
+@property(retain) NSMutableDictionary *blackVarQuerys; // @synthesize blackVarQuerys=_blackVarQuerys;
 @property(retain) NSMutableDictionary *matchQuerys; // @synthesize matchQuerys=_matchQuerys;
 - (void).cxx_destruct;
 - (_Bool)isUrlMatchPathRule:(id)arg1;
 - (_Bool)isUrlMatchRule:(id)arg1 queryMap:(id)arg2;
 - (_Bool)isUrlParamMatchRule:(id)arg1 queryMap:(id)arg2;
+- (_Bool)blackParamMatch:(id)arg1 queryMap:(id)arg2;
 - (id)initWithRuleJson:(id)arg1;
 - (void)loadMatchRule:(id)arg1;
 

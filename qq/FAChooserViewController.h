@@ -42,14 +42,21 @@
     _Bool _rememberLastPhoto;
     int _curMenuIndex;
     CloudVerifyIndiePasswdView *_verifyView;
+    UIButton *_sizeButton;
+    _Bool _bFromMyPC;
     unsigned long long _serviceType;
 }
 
 + (void)saveCategoryInfo:(int)arg1;
+@property(nonatomic) _Bool bFromMyPC; // @synthesize bFromMyPC=_bFromMyPC;
 @property(nonatomic) unsigned long long serviceType; // @synthesize serviceType=_serviceType;
 @property(nonatomic) UIView *bottomView; // @synthesize bottomView=_bottomView;
+- (_Bool)isShowingSizeButton;
+- (void)resetSizeButton;
+- (void)showSizeButton:(_Bool)arg1 select:(_Bool)arg2;
+- (void)onSizeButtonClick:(id)arg1;
+- (void)initSizeButton;
 - (void)cloudVerifyIndiePasswdSucc;
-- (void)onNearFileTipClick;
 - (void)onCategoryClick:(int)arg1;
 - (void)resetElementForPicPreView;
 - (void)setElementForPicPreView;
@@ -61,6 +68,7 @@
 - (void)onPreviewButtonClick:(id)arg1;
 - (id)getCurSelectedPicture;
 - (void)sendButtonPressed:(id)arg1;
+- (void)resetSelectedSizeText;
 - (void)fileSelected:(id)arg1;
 - (void)internalIconSelected:(id)arg1;
 - (void)iconSelected:(id)arg1;

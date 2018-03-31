@@ -18,7 +18,7 @@
     NSArray *_cellModels;
 }
 
-@property(readonly, nonatomic) NSArray *cellModels; // @synthesize cellModels=_cellModels;
+@property(retain, nonatomic) NSArray *cellModels; // @synthesize cellModels=_cellModels;
 @property(retain, nonatomic) UITableView *tableView; // @synthesize tableView=_tableView;
 - (void).cxx_destruct;
 - (void)tableView:(id)arg1 didSelectRowAtIndexPath:(id)arg2;

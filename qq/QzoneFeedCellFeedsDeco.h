@@ -6,7 +6,7 @@
 
 #import <QQMainProject/QzoneModel.h>
 
-@class QzCustomPraiseSetting, QzoneCustomPassivePraise, QzoneCustomVipInfo, QzoneFeedAvatar, QzoneFeedCellCover;
+@class QZJCustomFacade, QzCustomPraiseSetting, QzoneCustomPassivePraise, QzoneCustomVipInfo, QzoneFeedAvatar, QzoneFeedCellCover, QzoneFeedCustomBubbleSkin;
 
 @interface QzoneFeedCellFeedsDeco : QzoneModel
 {
@@ -15,8 +15,12 @@
     QzoneCustomPassivePraise *_customPassivePraise;
     QzCustomPraiseSetting *_customPraise;
     QzoneFeedCellCover *_feedSkin;
+    QzoneFeedCustomBubbleSkin *_passiveFeedSkin;
+    QZJCustomFacade *_feedFacade;
 }
 
+@property(retain, nonatomic) QZJCustomFacade *feedFacade; // @synthesize feedFacade=_feedFacade;
+@property(retain, nonatomic) QzoneFeedCustomBubbleSkin *passiveFeedSkin; // @synthesize passiveFeedSkin=_passiveFeedSkin;
 @property(retain, nonatomic) QzoneFeedCellCover *feedSkin; // @synthesize feedSkin=_feedSkin;
 @property(retain, nonatomic) QzCustomPraiseSetting *customPraise; // @synthesize customPraise=_customPraise;
 @property(retain, nonatomic) QzoneCustomPassivePraise *customPassivePraise; // @synthesize customPassivePraise=_customPassivePraise;

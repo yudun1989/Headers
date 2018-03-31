@@ -23,7 +23,7 @@
 - (_Bool)p_compareWithItemA:(id)arg1 itemB:(id)arg2;
 - (id)getFaceDataItemByTabType:(int)arg1;
 - (id)currentFaceDataItemWithData:(id)arg1;
-- (void)updateDataManagerForQQAndEmoji;
+- (void)updateDataManagerForQQAndEmoji:(_Bool)arg1 ifShowCustomTab:(_Bool)arg2;
 - (void)updateDataManager:(long long)arg1;
 - (id)init;
 

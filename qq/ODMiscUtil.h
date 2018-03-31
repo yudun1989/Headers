@@ -11,12 +11,16 @@
 }
 
 + (void)report:(id)arg1 action:(id)arg2;
++ (void)queue:(id)arg1 addOperation:(id)arg2 onSet:(SEL)arg3 exInfo:(id)arg4;
 + (void)mainQueueAddOperation:(id)arg1 onSet:(SEL)arg2 exInfo:(id)arg3;
 + (void)dispatch_after_mainQueue:(id)arg1 onSet:(SEL)arg2 duration:(long long)arg3 exInfo:(id)arg4;
++ (void)dispatch_async_queue:(id)arg1 target:(id)arg2 onSet:(SEL)arg3 exInfo:(id)arg4;
 + (void)doAnimation:(id)arg1 onSet:(SEL)arg2 onEnd:(SEL)arg3 duration:(double)arg4 options:(unsigned long long)arg5;
 + (void)doAnimation:(id)arg1 onSet:(SEL)arg2 duration:(double)arg3;
 + (void)doAnimation:(id)arg1 onSet:(SEL)arg2 onEnd:(SEL)arg3 duration:(double)arg4;
 + (void)doAnimation:(id)arg1 onSet:(SEL)arg2 onEnd:(SEL)arg3 duration:(double)arg4 exInfo:(id)arg5;
++ (id)sendSynchronousRequest:(id)arg1 error:(id)arg2;
++ (id)getQQHttpClientSessionWithTarget:(id)arg1 request:(id)arg2 bussiness:(id)arg3 resource:(int)arg4 success:(SEL)arg5 fail:(SEL)arg6 exInfo:(id)arg7;
 + (id)newTimeout:(id)arg1 onTimeout:(SEL)arg2 timeout:(double)arg3 exInfo:(id)arg4;
 + (id)newTimeout:(id)arg1 onTimeout:(SEL)arg2 timeout:(double)arg3;
 + (id)newTimer:(id)arg1 onTimer:(SEL)arg2 interval:(double)arg3 repeats:(_Bool)arg4;

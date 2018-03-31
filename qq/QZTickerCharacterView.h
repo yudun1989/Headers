@@ -18,15 +18,12 @@
     UILabel *_oriTextLabel;
 }
 
-@property(nonatomic) _Bool shouldFade; // @synthesize shouldFade=_shouldFade;
-@property(retain, nonatomic) UILabel *oriTextLabel; // @synthesize oriTextLabel=_oriTextLabel;
 @property(nonatomic) float characterWidth; // @synthesize characterWidth=_characterWidth;
+@property(nonatomic) _Bool shouldFade; // @synthesize shouldFade=_shouldFade;
 @property(nonatomic) float changeTextAnimationDuration; // @synthesize changeTextAnimationDuration=_changeTextAnimationDuration;
+@property(retain, nonatomic) UILabel *oriTextLabel; // @synthesize oriTextLabel=_oriTextLabel;
 @property(retain, nonatomic) UILabel *textLabel; // @synthesize textLabel=_textLabel;
 @property(retain, nonatomic) NSArray *charactersArray; // @synthesize charactersArray=_charactersArray;
-- (void).cxx_destruct;
-- (void)setSelectedCharacter:(_Bool)arg1;
-- (id)initWithFrame:(struct CGRect)arg1 textLabel:(id)arg2 oriTextLabel:(id)arg3;
 
 @end
 

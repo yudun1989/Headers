@@ -20,11 +20,13 @@
     UIColor *_disableTextColor;
     UIColor *_enableTextColor;
     UILabel *_titleLabel;
+    struct UIEdgeInsets _contentInset;
 }
 
 + (id)selectCellWithFrame:(struct CGRect)arg1 action:(CDUnknownBlockType)arg2;
 @property(retain, nonatomic) UILabel *titleLabel; // @synthesize titleLabel=_titleLabel;
 @property(nonatomic, getter=isCursorHidden) _Bool cursorHidden; // @synthesize cursorHidden=_cursorHidden;
+@property(nonatomic) struct UIEdgeInsets contentInset; // @synthesize contentInset=_contentInset;
 @property(nonatomic) double titleWidth; // @synthesize titleWidth=_titleWidth;
 @property(retain, nonatomic) UIColor *enableTextColor; // @synthesize enableTextColor=_enableTextColor;
 @property(retain, nonatomic) UIColor *disableTextColor; // @synthesize disableTextColor=_disableTextColor;
@@ -34,6 +36,7 @@
 - (_Bool)canPerformAction:(SEL)arg1 withSender:(id)arg2;
 - (id)selectionRectsForRange:(id)arg1;
 - (struct CGRect)caretRectForPosition:(id)arg1;
+- (struct CGRect)clearButtonRectForBounds:(struct CGRect)arg1;
 - (struct CGRect)editingRectForBounds:(struct CGRect)arg1;
 - (struct CGRect)textRectForBounds:(struct CGRect)arg1;
 - (_Bool)isBankCardNo:(id)arg1;
@@ -60,6 +63,7 @@
 - (void)dealloc;
 - (_Bool)checkValid:(id *)arg1;
 - (id)initWithFrame:(struct CGRect)arg1 style:(unsigned long long)arg2;
+- (id)initWithFrame:(struct CGRect)arg1;
 - (_Bool)textFieldShouldBeginEditing:(id)arg1;
 - (void)setAction:(CDUnknownBlockType)arg1;
 - (CDUnknownBlockType)action;

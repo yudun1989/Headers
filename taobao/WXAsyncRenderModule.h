@@ -21,7 +21,7 @@
 + (id)wx_export_method_27;
 + (id)wx_export_method_26;
 + (id)wx_export_method_25;
-+ (id)wx_export_method_24;
++ (id)wx_export_method_sync_24;
 @property(nonatomic) _Bool failFg; // @synthesize failFg=_failFg;
 @property(retain, nonatomic) NSMutableDictionary *callbackQueue; // @synthesize callbackQueue=_callbackQueue;
 @property(retain, nonatomic) NSMutableDictionary *asyncData; // @synthesize asyncData=_asyncData;

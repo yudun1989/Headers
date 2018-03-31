@@ -19,10 +19,19 @@
 @property(copy, nonatomic) NSString *dOrientation; // @synthesize dOrientation=_dOrientation;
 @property(copy, nonatomic) NSString *dLayoutType; // @synthesize dLayoutType=_dLayoutType;
 - (void).cxx_destruct;
-- (void)layoutSubViewItems;
-- (void)updateViewSizeWithData:(id)arg1 context:(id)arg2 error:(id *)arg3;
+- (void)handleWeightWithViewItem:(id)arg1 layoutInfo:(id)arg2;
+- (unsigned long long)handleMatchParentWithViewItem:(id)arg1 layoutInfo:(id)arg2;
+- (void)handleSizeInfoWithParam:(id)arg1 subViewItemSizeAction:(CDUnknownBlockType)arg2;
+- (void)renderSubViewItemsWithParam:(id)arg1;
+- (void)layoutSubViewItemsWithBaseLayout:(unsigned long long)arg1 param:(id)arg2;
+- (void)updateViewSizeWithBaseLayout:(unsigned long long)arg1 param:(id)arg2;
+- (double)maxHeightWithBaseLayout:(unsigned long long)arg1 param:(id)arg2;
+- (double)maxWidthWithBaseLayout:(unsigned long long)arg1 param:(id)arg2;
+- (void)layoutSubViewItemsWithParam:(id)arg1;
+- (void)updateViewSizeWithParam:(id)arg1;
 - (void)preprocessDividedAttrDict;
 - (void)devideAttributeWithKey:(id)arg1 value:(id)arg2 stop:(_Bool *)arg3;
+- (id)init;
 
 @end
 

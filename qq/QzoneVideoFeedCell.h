@@ -14,11 +14,13 @@
     UIView *_textBlackTop;
     UIView *_textBlackBottom;
     _Bool _firstAppear;
+    _Bool _hasShowedCornerAdv;
     NSTimer *_delayShowBlackTextTimer;
     double _tipsWillEndTime;
 }
 
 + (double)heightWithNewFeedModel:(id)arg1 param:(id)arg2;
+@property(nonatomic) _Bool hasShowedCornerAdv; // @synthesize hasShowedCornerAdv=_hasShowedCornerAdv;
 @property(nonatomic) double tipsWillEndTime; // @synthesize tipsWillEndTime=_tipsWillEndTime;
 @property(retain, nonatomic) NSTimer *delayShowBlackTextTimer; // @synthesize delayShowBlackTextTimer=_delayShowBlackTextTimer;
 - (void).cxx_destruct;

@@ -16,9 +16,11 @@
     UILabel *_nextTipsView;
     NSTimer *_scrollNextTimer;
     long long _scrollNextRemianTime;
+    float _delayTime;
     id _delegate;
 }
 
+@property(nonatomic) float delayTime; // @synthesize delayTime=_delayTime;
 @property(nonatomic) __weak id delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
 - (void)updateScrollNextRemainTips;

@@ -6,7 +6,7 @@
 
 #import <QQMainProject/QQModel.h>
 
-@class NSArray, NSString, TBFeedBannerModel, TBFeedTagInfoModel, TBGeneralFeedModel, TBGeneralRecommendFeedModel, TBQQUserInfoModel, TBShareGroupFeedModel, TBShareGroupInfoModel, TBShareGroupRecommendFeedModel;
+@class NSArray, NSString, TBFeedBannerModel, TBFeedTagInfoModel, TBGeneralFeedModel, TBGeneralRecommendFeedModel, TBQQUserInfoModel, TBShareGroupFeedModel, TBShareGroupInfoModel;
 
 @interface TBStoryFeedModel : QQModel
 {
@@ -17,7 +17,6 @@
     TBGeneralFeedModel *_generalFeed;
     TBShareGroupFeedModel *_shareGroupFeed;
     TBGeneralRecommendFeedModel *_generalRecommendFeed;
-    TBShareGroupRecommendFeedModel *_shareGroupRecommendFeed;
     TBFeedBannerModel *_bannerFeed;
     TBFeedTagInfoModel *_tagInfoFeed;
 }
@@ -27,7 +26,6 @@
 @property(nonatomic) _Bool isTagsShowMaxLine; // @synthesize isTagsShowMaxLine=_isTagsShowMaxLine;
 @property(retain, nonatomic) TBFeedTagInfoModel *tagInfoFeed; // @synthesize tagInfoFeed=_tagInfoFeed;
 @property(retain, nonatomic) TBFeedBannerModel *bannerFeed; // @synthesize bannerFeed=_bannerFeed;
-@property(retain, nonatomic) TBShareGroupRecommendFeedModel *shareGroupRecommendFeed; // @synthesize shareGroupRecommendFeed=_shareGroupRecommendFeed;
 @property(retain, nonatomic) TBGeneralRecommendFeedModel *generalRecommendFeed; // @synthesize generalRecommendFeed=_generalRecommendFeed;
 @property(retain, nonatomic) TBShareGroupFeedModel *shareGroupFeed; // @synthesize shareGroupFeed=_shareGroupFeed;
 @property(retain, nonatomic) TBGeneralFeedModel *generalFeed; // @synthesize generalFeed=_generalFeed;

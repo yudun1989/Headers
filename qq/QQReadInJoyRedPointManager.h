@@ -22,7 +22,6 @@
 @property(nonatomic) __weak ReadInJoyPageViewController *wReadInJoyPageViewController; // @synthesize wReadInJoyPageViewController=_wReadInJoyPageViewController;
 @property(nonatomic) int tabSelectIndex; // @synthesize tabSelectIndex=_tabSelectIndex;
 - (void).cxx_destruct;
-- (_Bool)isInMainVideoTab;
 - (void)cleanMainVideoTabRed;
 - (_Bool)getMainVideoTabRed;
 - (void)setMainVideoTabRed;
@@ -38,14 +37,15 @@
 - (void)updateIndependenceTadAllRedPoint;
 - (void)initIndependenceTabRedPoint;
 - (void)cleanMineMsgTips;
-- (void)cleanMineTagRedPoint;
-- (void)cleanSubcribeTagRedPoint;
 - (void)cleanBBCircleMsg;
 - (void)updateReadInJoyTagWithIndex:(int)arg1 redPoindType:(unsigned long long)arg2 withInfo:(id)arg3;
 - (void)updateIndependenceTabWithRedPoindType:(unsigned long long)arg1 withInfo:(id)arg2;
 - (void)cleanRedPointWithTabType:(unsigned long long)arg1;
+- (void)cleanMessageWithTabType:(unsigned long long)arg1;
 - (void)cleanRedDotOnlyWithTabType:(unsigned long long)arg1;
 - (void)updateRedPointWithTabType:(unsigned long long)arg1 redPointType:(unsigned long long)arg2 withInfo:(id)arg3;
+- (id)getSubcribeCookie;
+- (_Bool)hasSubcribeRedPoint;
 - (void)updateRedPointOnAllTab;
 - (void)initHasShownMineRedPoint;
 

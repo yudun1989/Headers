@@ -34,6 +34,7 @@
 @property(copy, nonatomic) NSString *adMsgId; // @synthesize adMsgId=_adMsgId;
 - (void).cxx_destruct;
 - (id)description;
+- (void)setAdMsgDataWithCommonData:(id)arg1;
 - (void)setAdMsgDataWithSmMsg:(id)arg1;
 
 @end

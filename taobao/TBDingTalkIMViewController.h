@@ -36,6 +36,7 @@
 - (void)UserChange:(id)arg1;
 - (void)updateNavigationBarTitle:(id)arg1;
 - (id)uniquePageIdForNavigatorBehavior;
+- (void)enterStoreEvent:(id)arg1;
 - (void)gotoChatProfile:(id)arg1;
 - (void)setupNavigation;
 - (void)viewDidDisappear:(_Bool)arg1;

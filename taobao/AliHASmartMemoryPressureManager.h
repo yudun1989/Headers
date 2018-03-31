@@ -17,24 +17,28 @@
     unsigned long long _usage_level_willdie;
     NSDictionary *_parameters;
     id _context;
+    unsigned long long _current_footprint;
+    CDUnknownBlockType _onCurrentFootprintChangedCallback;
+    CDUnknownBlockType _onMemoryPressureStateChangedCallback;
     NSTimer *_measurementTimer;
     double _measurementInterval;
     long long _currentMemoryWarnLevel;
     unsigned long long _footprint_limit;
     unsigned long long _footprint_systemwarn;
-    unsigned long long _current_footprint;
 }
 
-@property(nonatomic) unsigned long long current_footprint; // @synthesize current_footprint=_current_footprint;
 @property(nonatomic) unsigned long long footprint_systemwarn; // @synthesize footprint_systemwarn=_footprint_systemwarn;
 @property(nonatomic) unsigned long long footprint_limit; // @synthesize footprint_limit=_footprint_limit;
 @property(nonatomic) long long currentMemoryWarnLevel; // @synthesize currentMemoryWarnLevel=_currentMemoryWarnLevel;
 @property(nonatomic) double measurementInterval; // @synthesize measurementInterval=_measurementInterval;
 @property(retain, nonatomic) NSTimer *measurementTimer; // @synthesize measurementTimer=_measurementTimer;
+@property(copy, nonatomic) CDUnknownBlockType onMemoryPressureStateChangedCallback; // @synthesize onMemoryPressureStateChangedCallback=_onMemoryPressureStateChangedCallback;
+@property(copy, nonatomic) CDUnknownBlockType onCurrentFootprintChangedCallback; // @synthesize onCurrentFootprintChangedCallback=_onCurrentFootprintChangedCallback;
+@property(nonatomic) unsigned long long current_footprint; // @synthesize current_footprint=_current_footprint;
 @property(nonatomic) _Bool enableNSLog; // @synthesize enableNSLog=_enableNSLog;
 @property(nonatomic) _Bool enableContextLog; // @synthesize enableContextLog=_enableContextLog;
 @property(nonatomic) __weak id context; // @synthesize context=_context;
-@property(retain, nonatomic) NSDictionary *parameters; // @synthesize parameters=_parameters;
+@property(copy, nonatomic) NSDictionary *parameters; // @synthesize parameters=_parameters;
 @property(nonatomic) unsigned long long usage_level_willdie; // @synthesize usage_level_willdie=_usage_level_willdie;
 @property(nonatomic) unsigned long long usage_level_strict; // @synthesize usage_level_strict=_usage_level_strict;
 @property(nonatomic) unsigned long long usage_level_conservative; // @synthesize usage_level_conservative=_usage_level_conservative;

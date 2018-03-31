@@ -19,8 +19,10 @@
     NSMutableDictionary *_uploadState;
     NSArray *_QQTribeMedia;
     NSNumber *_QQTribeContextType;
+    unsigned long long _postType;
 }
 
+@property(nonatomic) unsigned long long postType; // @synthesize postType=_postType;
 @property(retain, nonatomic) NSNumber *QQTribeContextType; // @synthesize QQTribeContextType=_QQTribeContextType;
 @property(retain, nonatomic) NSArray *QQTribeMedia; // @synthesize QQTribeMedia=_QQTribeMedia;
 @property(retain, nonatomic) NSMutableDictionary *uploadState; // @synthesize uploadState=_uploadState;

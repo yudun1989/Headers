@@ -10,6 +10,7 @@
 {
 }
 
++ (id)captureScreen;
 + (void)showHUDForView:(id)arg1 graceTime:(float)arg2;
 + (id)__pathInCateory:(long long)arg1 fileName:(id)arg2 ofType:(id)arg3;
 + (_Bool)__imageNameHasScaleSuffix:(id)arg1;

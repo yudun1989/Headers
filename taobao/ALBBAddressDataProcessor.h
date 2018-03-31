@@ -11,7 +11,7 @@
 }
 
 + (void)processUserRelationData:(id)arg1 sectionMap:(id)arg2 normalAddressList:(id)arg3 allAddressList:(id)arg4;
-+ (void)parseAddressList:(id)arg1 supportStation:(_Bool)arg2 abroadStation:(_Bool)arg3 sites:(id)arg4 token:(id)arg5 forNormalAddressList:(id)arg6 forAllAddressList:(id)arg7 sectionMap:(id)arg8;
++ (void)parseAddressList:(id)arg1 supportStation:(_Bool)arg2 abroadStation:(_Bool)arg3 sites:(id)arg4 token:(id)arg5 forNormalAddressList:(id)arg6 forAllAddressList:(id)arg7 sectionMap:(id)arg8 agencyReceiveHelpUrl:(id)arg9;
 + (id)parseAreaList:(id)arg1;
 + (id)parseAddressList:(id)arg1;
 + (id)dataDicForJson:(id)arg1;

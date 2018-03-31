@@ -31,7 +31,8 @@
 - (void)createTmpFile;
 - (void)clearVASRedpointData;
 - (void)clearOrmModelDb;
-- (void)clearUnnecessaryFiles;
+- (void)__clearUnnecessaryFiles;
+- (void)clearUnnecessaryFilesWithExclusionRegex:(id)arg1;
 - (_Bool)isFrequencyStartCrash;
 - (void)removeItemInDirs:(id)arg1;
 - (void)removeItemInDir:(id)arg1;
@@ -43,6 +44,7 @@
 - (void)FinishStart;
 - (void)CatchCrash;
 - (void)startApp;
+- (void)clearLocalFilesWithExclusionRegex:(id)arg1;
 - (void)action;
 - (void)dealloc;
 - (id)init;

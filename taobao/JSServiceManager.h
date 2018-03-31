@@ -23,10 +23,11 @@
 - (void)removeJSServiceModsMap;
 - (id)getCommonMods;
 - (_Bool)compareVersion:(id)arg1 newV:(id)arg2;
-- (void)getUpdatedModsScript:(id)arg1 reqCb:(CDUnknownBlockType)arg2;
-- (void)loadService;
+- (void)getUpdatedModsScript:(id)arg1 jsServiceCfg:(id)arg2 reqCb:(CDUnknownBlockType)arg3;
+- (void)loadService:(id)arg1;
 - (void)groupConfig:(id)arg1;
-- (void)start;
+- (void)dealloc;
+- (void)start:(id)arg1;
 - (id)init;
 
 @end

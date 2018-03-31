@@ -24,6 +24,7 @@
     _Bool _supportLocalVideo;
     QQViewController *_lastViewController;
     long long _fromType;
+    long long _fromSubType;
     NSDictionary *_userInfo;
     unsigned long long _editSettingMode;
     NSString *_sendButtonTitle;
@@ -43,6 +44,7 @@
 @property(nonatomic) unsigned long long editSettingMode; // @synthesize editSettingMode=_editSettingMode;
 @property(retain, nonatomic) NSDictionary *userInfo; // @synthesize userInfo=_userInfo;
 @property(nonatomic) _Bool isExpandDDMenu; // @synthesize isExpandDDMenu=_isExpandDDMenu;
+@property(nonatomic) long long fromSubType; // @synthesize fromSubType=_fromSubType;
 @property(nonatomic) long long fromType; // @synthesize fromType=_fromType;
 @property(nonatomic) _Bool showFaceUTemplate; // @synthesize showFaceUTemplate=_showFaceUTemplate;
 @property(nonatomic) _Bool supportLBSInfo; // @synthesize supportLBSInfo=_supportLBSInfo;

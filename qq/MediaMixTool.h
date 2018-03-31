@@ -14,6 +14,7 @@
 + (_Bool)addOverlayToVideoAsynchronously:(id)arg1 overlay:(id)arg2 outputPath:(id)arg3 withCompletionHandler:(CDUnknownBlockType)arg4;
 + (void)makeVideoMixMusic:(id)arg1 withType:(int)arg2 musicModel:(id)arg3 withCompletionHandler:(CDUnknownBlockType)arg4;
 + (void)processVideo:(id)arg1 videoPath:(id)arg2 outputPath:(id)arg3 completionBlock:(CDUnknownBlockType)arg4;
++ (void)addBackgroundMiusicWithVideoUrlStr:(id)arg1 audioUrl:(id)arg2 dealType:(int)arg3 videoMute:(_Bool)arg4 progress:(float)arg5 andCaptureVideoDuration:(double)arg6 completion:(CDUnknownBlockType)arg7 musicFade:(_Bool)arg8 musicFadeTime:(double)arg9;
 + (void)addBackgroundMiusicWithVideoUrlStr:(id)arg1 audioUrl:(id)arg2 dealType:(int)arg3 videoMute:(_Bool)arg4 progress:(float)arg5 andCaptureVideoDuration:(double)arg6 completion:(CDUnknownBlockType)arg7;
 
 @end

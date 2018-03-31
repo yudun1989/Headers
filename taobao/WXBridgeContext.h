@@ -21,6 +21,8 @@
     NSMutableArray *_jsServiceQueue;
 }
 
++ (void)handleConsoleOutputWithArgument:(id)arg1 logLevel:(long long)arg2;
++ (void)mountContextEnvironment:(id)arg1;
 @property(retain, nonatomic) NSMutableArray *jsServiceQueue; // @synthesize jsServiceQueue=_jsServiceQueue;
 @property(retain, nonatomic) NSMutableArray *methodQueue; // @synthesize methodQueue=_methodQueue;
 @property(nonatomic) _Bool frameworkLoadFinished; // @synthesize frameworkLoadFinished=_frameworkLoadFinished;
@@ -47,6 +49,7 @@
 - (void)refreshInstance:(id)arg1 data:(id)arg2;
 - (void)forceGarbageCollection;
 - (void)destroyInstance:(id)arg1;
+- (id)_pareJSBundleType:(id)arg1 jsBundleString:(id)arg2;
 - (void)createInstance:(id)arg1 template:(id)arg2 options:(id)arg3 data:(id)arg4;
 - (long long)invokeNative:(id)arg1 tasks:(id)arg2 callback:(id)arg3;
 @property(readonly, nonatomic) __weak WXSDKInstance *topInstance;

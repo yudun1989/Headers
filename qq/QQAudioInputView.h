@@ -6,11 +6,13 @@
 
 #import <UIKit/UIView.h>
 
+#import <QQMainProject/QQAnimojiSelectViewDelegate-Protocol.h>
+#import <QQMainProject/QQAnimojiShowViewDelegate-Protocol.h>
 #import <QQMainProject/UIScrollViewDelegate-Protocol.h>
 
-@class ClickRecordViewController, NSString, QQBaseChatViewController, QQCircleWaveNotifyView, QQMaskView, QQPushToTalkView, UIActivityIndicatorView, UIButton, UIImageView, UIScrollView;
+@class ClickRecordViewController, NSMutableArray, NSString, QQAnimojiSelectView, QQBaseChatViewController, QQCircleWaveNotifyView, QQMaskView, QQPushToTalkView, UIActivityIndicatorView, UIButton, UIImageView, UIScrollView;
 
-@interface QQAudioInputView : UIView <UIScrollViewDelegate>
+@interface QQAudioInputView : UIView <UIScrollViewDelegate, QQAnimojiSelectViewDelegate, QQAnimojiShowViewDelegate>
 {
     UIScrollView *_contentView;
     UIImageView *_pageDot;
@@ -23,14 +25,30 @@
     UIActivityIndicatorView *_indicator;
     long long _currentPage;
     _Bool _onlyShowPttView;
+    NSMutableArray *_arrAnimojiModel;
+    QQAnimojiSelectView *_animojiSelectView;
     int _xo;
     QQBaseChatViewController *_chatViewController;
     QQMaskView *_maskView;
     QQCircleWaveNotifyView *_babyQNotifyView;
+    NSMutableArray *_animojiShowViewArray;
+    _Bool _isAuidoInputViewShowing;
 }
 
+@property(nonatomic) _Bool isAuidoInputViewShowing; // @synthesize isAuidoInputViewShowing=_isAuidoInputViewShowing;
 @property(nonatomic) _Bool onlyShowPttView; // @synthesize onlyShowPttView=_onlyShowPttView;
 @property(nonatomic) long long currentPage; // @synthesize currentPage=_currentPage;
+- (_Bool)isNewAudioInputView;
+- (_Bool)isShowAnimoji;
+- (void)updateIndex:(int)arg1;
+- (void)showAudioInputView;
+- (void)dismissAudioInputView;
+- (void)voicePlayAnimViewSimulation;
+- (void)maximizeInputPanel;
+- (void)onlyShowSelectCell;
+- (void)ShowAnimojiSelectView;
+- (void)pageScrollView:(int)arg1 animojiModel:(id)arg2;
+- (void)addQQAnimojiSelectView;
 - (void)onlyShowPttView:(_Bool)arg1;
 - (void)checkShowedBabyQNotify;
 - (void)hideBabyQNotify;
@@ -57,12 +75,15 @@
 - (void)createRootScrollView;
 - (void)stopAnimation;
 - (void)showAnimation;
+- (void)layoutSubviews;
 - (void)unregisterNotification;
 - (void)registerNotification;
+- (void)releaseAnimojiShowViewArray;
 - (void)dealloc;
 - (id)initWithFrame:(struct CGRect)arg1 chatViewController:(id)arg2;
 
 // Remaining properties
+@property(retain, nonatomic) QQAnimojiSelectView *animojiSelectView; // @dynamic animojiSelectView;
 @property(readonly, copy) NSString *debugDescription;
 @property(readonly, copy) NSString *description;
 @property(readonly) unsigned long long hash;

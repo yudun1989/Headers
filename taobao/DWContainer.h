@@ -15,7 +15,7 @@
 #import "TBSVideoUserViewDelegate-Protocol.h"
 #import "UITextFieldDelegate-Protocol.h"
 
-@class DWBackCoverView, DWCollectLogoView, DWContext, DWDanmakuDataLoader, DWDanmakuRender, DWFloatingWindow, DWGoodListView, DWInteractiveViewController, DWPlayer, DWVideoModel, NSArray, NSDictionary, NSMutableArray, NSMutableDictionary, NSObject, NSString, TBMPBPlayerView, TBSVideoBackCoverView, TBSVideoInteractiveViewHelper, TBSVideoUserInfoData, TBSVideoUserView, TBSViewShowContext, UIButton, UIImageView, UILabel, UITextField, UIView;
+@class DWBackCoverView, DWCollectLogoView, DWContext, DWDanmakuDataLoader, DWDanmakuRender, DWFloatingWindow, DWGoodListView, DWInteractiveViewController, DWPlayer, DWVideoModel, DWWeexComponent, NSArray, NSDictionary, NSMutableArray, NSMutableDictionary, NSObject, NSString, TBMPBPlayerView, TBSVideoBackCoverView, TBSVideoInteractiveViewHelper, TBSVideoUserInfoData, TBSVideoUserView, TBSViewShowContext, UIButton, UIImageView, UILabel, UITextField, UIView;
 @protocol DWContainerProtocal, DWInteractiveProtocol, TBIctAddWeexCallbackProtocol;
 
 @interface DWContainer : DWContainerViewController <TBSVideoUserViewDelegate, TBSVideoBackCoverViewDelegate, TBSVideoInteractiveViewHelperDelegate, TBSVideoMenuActionProtocol, DWDanmakuRendererDelegate, DWDanmakuDelelgate, UITextFieldDelegate, DWActorProtocol>
@@ -41,6 +41,7 @@
     _Bool _delayTransitionScreen;
     _Bool _isGoodListShow;
     _Bool _lastDanmakuStatus;
+    _Bool _hasPreload;
     NSObject *director;
     DWGoodListView *_normalGoodList;
     DWGoodListView *_fullScreenGoodList;
@@ -55,6 +56,7 @@
     id <DWInteractiveProtocol> _interactiveDelegate;
     id <TBIctAddWeexCallbackProtocol> _addWeexCallbackDelegate;
     NSArray *_cmpFrameData;
+    NSString *_backCoverWeexUrl;
     NSDictionary *_videoLogoData;
     NSMutableDictionary *_interativeTypePortraitViewMapper;
     NSMutableDictionary *_interativeTypeLandscapeViewMapper;
@@ -87,12 +89,19 @@
     long long _orientation;
     DWFloatingWindow *_floatingWindow;
     UIImageView *_videoLogoImageView;
+    DWWeexComponent *_weexCmp;
+    UIView *_weexView;
+    NSMutableArray *_weexOnScreen;
     struct CGRect _portraitFrame;
     struct CGRect _anchorOldFrame;
     struct CGRect _originFrame;
     struct CGRect _originPlayerFrame;
 }
 
+@property(retain, nonatomic) NSMutableArray *weexOnScreen; // @synthesize weexOnScreen=_weexOnScreen;
+@property(nonatomic) _Bool hasPreload; // @synthesize hasPreload=_hasPreload;
+@property(retain, nonatomic) UIView *weexView; // @synthesize weexView=_weexView;
+@property(retain, nonatomic) DWWeexComponent *weexCmp; // @synthesize weexCmp=_weexCmp;
 @property(retain, nonatomic) UIImageView *videoLogoImageView; // @synthesize videoLogoImageView=_videoLogoImageView;
 @property(retain, nonatomic) DWFloatingWindow *floatingWindow; // @synthesize floatingWindow=_floatingWindow;
 @property(nonatomic) long long orientation; // @synthesize orientation=_orientation;
@@ -138,6 +147,7 @@
 @property(retain, nonatomic) NSMutableDictionary *interativeTypeLandscapeViewMapper; // @synthesize interativeTypeLandscapeViewMapper=_interativeTypeLandscapeViewMapper;
 @property(retain, nonatomic) NSMutableDictionary *interativeTypePortraitViewMapper; // @synthesize interativeTypePortraitViewMapper=_interativeTypePortraitViewMapper;
 @property(retain, nonatomic) NSDictionary *videoLogoData; // @synthesize videoLogoData=_videoLogoData;
+@property(retain, nonatomic) NSString *backCoverWeexUrl; // @synthesize backCoverWeexUrl=_backCoverWeexUrl;
 @property(retain, nonatomic) NSArray *cmpFrameData; // @synthesize cmpFrameData=_cmpFrameData;
 @property(nonatomic) __weak id <TBIctAddWeexCallbackProtocol> addWeexCallbackDelegate; // @synthesize addWeexCallbackDelegate=_addWeexCallbackDelegate;
 @property(nonatomic) __weak id <DWInteractiveProtocol> interactiveDelegate; // @synthesize interactiveDelegate=_interactiveDelegate;
@@ -165,6 +175,13 @@
 @property(nonatomic) __weak DWGoodListView *normalGoodList; // @synthesize normalGoodList=_normalGoodList;
 @property(nonatomic) __weak NSObject *director; // @synthesize director;
 - (void).cxx_destruct;
+- (void)invisibaleWXCmp:(id)arg1;
+- (void)prepareForBackView;
+- (void)showAllInteractiveCmp:(_Bool)arg1;
+- (void)closeWeexViewLayer;
+- (void)layoutWeexView:(id)arg1 preload:(_Bool)arg2;
+- (void)openWeexViewLayer:(id)arg1;
+- (void)openWeexViewLayer:(id)arg1 preload:(_Bool)arg2;
 - (void)reportAction;
 - (id)utDataForFullScreenClick;
 - (void)handleLikedOperation:(id)arg1;

@@ -11,6 +11,7 @@
 @interface TBXSearchContext : XSearchContext
 {
     _Bool _enableH5Dwinstance;
+    _Bool _globalAutoPlayEnabled;
     NSString *_editionCode;
     NSMutableDictionary *_globalParams;
     NSString *_srpApp;
@@ -18,6 +19,7 @@
     double _safeAreaBottom;
 }
 
+@property(nonatomic) _Bool globalAutoPlayEnabled; // @synthesize globalAutoPlayEnabled=_globalAutoPlayEnabled;
 @property(nonatomic) double safeAreaBottom; // @synthesize safeAreaBottom=_safeAreaBottom;
 @property(retain, nonatomic) NSString *videoPage; // @synthesize videoPage=_videoPage;
 @property(retain, nonatomic) NSString *srpApp; // @synthesize srpApp=_srpApp;

@@ -38,7 +38,6 @@
 @property(nonatomic) __weak id <MQZMoodEditInputAccessoryViewDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
 - (id)createRedDotImageView;
-- (id)pictureButtonImage;
 - (double)screenWidth;
 - (void)layoutSubviews;
 - (void)freshWithFrame:(struct CGRect)arg1;

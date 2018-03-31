@@ -20,5 +20,7 @@
 @property(nonatomic, getter=jce_iOperSource, setter=setJce_iOperSource:) int jcev2_p_3_o_iOperSource; // @dynamic jcev2_p_3_o_iOperSource;
 @property(retain, nonatomic, getter=jce_sQua, setter=setJce_sQua:) NSString *jcev2_p_4_o_sQua; // @dynamic jcev2_p_4_o_sQua;
 @property(retain, nonatomic, getter=jce_sUserID, setter=setJce_sUserID:) NSString *jcev2_p_5_o_sUserID; // @dynamic jcev2_p_5_o_sUserID;
+@property(retain, nonatomic, getter=jce_idfa, setter=setJce_idfa:) NSString *jcev2_p_6_o_idfa; // @dynamic jcev2_p_6_o_idfa;
+@property(nonatomic, getter=jce_iOperTimes, setter=setJce_iOperTimes:) int jcev2_p_7_o_iOperTimes; // @dynamic jcev2_p_7_o_iOperTimes;
 @end
 

@@ -86,6 +86,8 @@
 - (void)getUpdateFeedWithFeedList:(NSArray *)arg1 reqType:(int)arg2;
 - (void)cacheData:(id <NSCoding>)arg1 forKey:(NSString *)arg2 isResource:(_Bool)arg3 forCurrentUin:(_Bool)arg4;
 - (_Bool)unZipFile:(NSString *)arg1 toPath:(NSString *)arg2;
+- (UIImage *)imageForClientKey:(NSString *)arg1;
+- (void)saveImage:(UIImage *)arg1 key:(NSString *)arg2;
 - (void)modelToJce:(NSArray *)arg1 andWriteToFile:(NSString *)arg2;
 - (void)addJobToSendBoxWithPath:(NSString *)arg1;
 - (NSString *)getCachePath;

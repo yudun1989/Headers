@@ -16,7 +16,6 @@
     UIView *_parent;
 }
 
-+ (void)cancelLastShownTipsAtRootView:(id)arg1;
 + (void)showTips:(id)arg1 atRootView:(id)arg2 yOffset:(double)arg3 success:(_Bool)arg4;
 + (void)showTips:(id)arg1 atRootView:(id)arg2 success:(_Bool)arg3;
 @property(nonatomic) UIView *parent; // @synthesize parent=_parent;

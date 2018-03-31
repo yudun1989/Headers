@@ -7,9 +7,11 @@
 #import <UIKit/UIImage.h>
 
 @interface UIImage (Color)
++ (id)imageAfterApplyingAlpha:(double)arg1 image:(id)arg2 backgroundColor:(id)arg3;
 + (id)imageAfterApplyingAlpha:(double)arg1 image:(id)arg2;
 + (id)imageWithColor:(id)arg1 size:(struct CGSize)arg2 cornerRadius:(double)arg3;
 + (id)imageWithColor:(id)arg1;
+- (id)imageBlendColor:(id)arg1 mode:(int)arg2 alpha:(double)arg3;
 - (id)imageBlendColor:(id)arg1 mode:(int)arg2;
 - (id)imageWithMaskColor:(id)arg1;
 - (id)imageWithTintColor:(id)arg1;

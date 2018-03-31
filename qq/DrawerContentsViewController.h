@@ -8,7 +8,7 @@
 
 #import <QQMainProject/SpriteDrawerViewDelegate-Protocol.h>
 
-@class DrawerCoverImageView, DrawerMyInfoView, NSString, QQWeatherView, SpriteDrawerButton, SpriteDrawerView, UIButton, UIImageView, UITableView;
+@class DrawerCoverImageView, DrawerMyInfoView, NSString, QQWeatherView, SpriteDrawerButton, SpriteDrawerView, SpriteGameBoxView, SpriteMessageBubble, UIButton, UIImageView, UITableView;
 
 @interface DrawerContentsViewController : QQViewController <SpriteDrawerViewDelegate>
 {
@@ -27,12 +27,31 @@
     QQWeatherView *_weather;
     UITableView *_table;
     SpriteDrawerView *_spriteDrawerView;
+    SpriteGameBoxView *_spriteGameBoxView;
+    SpriteMessageBubble *_spriteMsgBubbleInfo;
+    NSString *_userUin;
 }
 
+@property(copy, nonatomic) NSString *userUin; // @synthesize userUin=_userUin;
+@property(retain, nonatomic) SpriteMessageBubble *spriteMsgBubbleInfo; // @synthesize spriteMsgBubbleInfo=_spriteMsgBubbleInfo;
+@property(retain, nonatomic) SpriteGameBoxView *spriteGameBoxView; // @synthesize spriteGameBoxView=_spriteGameBoxView;
 @property(retain, nonatomic) SpriteDrawerView *spriteDrawerView; // @synthesize spriteDrawerView=_spriteDrawerView;
 @property(readonly, nonatomic) UITableView *table; // @synthesize table=_table;
 - (void).cxx_destruct;
+- (long long)boxType;
+- (int)getDrawInfoModelType;
+- (id)getBubbleInfo;
+- (void)loadInfoModel;
+- (_Bool)spriteDrawerViewHadBoxMsg:(id)arg1;
+- (_Bool)spriteDrawerViewHadShowGameBox:(id)arg1;
+- (void)spriteDrawerViewSpriteClickWhenSpriteIsNotStand:(id)arg1;
 - (void)spriteDrawerView:(id)arg1 didLoadDataSucc:(_Bool)arg2;
+- (void)gameBoxZoomSmall:(double)arg1;
+- (_Bool)canShowGameBox;
+- (_Bool)hasGameBoxMsg;
+- (void)resetGameBox;
+- (void)jumpToGame;
+- (void)messageClick;
 - (void)addSpriteView;
 - (void)refreshWeatherSpriteShowLogic;
 - (void)onWeatherButtonClick:(id)arg1;

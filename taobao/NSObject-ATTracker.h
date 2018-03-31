@@ -10,6 +10,7 @@
 
 @interface NSObject (ATTracker)
 - (id)getComponentByView:(id)arg1;
+- (void)traceBackWithAttributeWithName:(id)arg1 traversalBlock:(CDUnknownBlockType)arg2;
 - (id)getAttributeWithName:(id)arg1 traversal:(_Bool)arg2;
 @property(nonatomic) unsigned long long trackState;
 @property(nonatomic) _Bool dynamicTrack;

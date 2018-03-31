@@ -61,6 +61,7 @@
     NSString *_createTime;
     NSString *_tagName;
     NSString *_msg_storyExtra;
+    NSString *_msg_tribeVideoInfoExtra;
     QQSMItemElementBase *_sourceElement;
     int _xo;
     NSString *_friendUin;
@@ -111,6 +112,7 @@
 @property(retain, nonatomic) NSString *msg_P_ActionData; // @dynamic msg_P_ActionData;
 @property(retain, nonatomic) NSString *msg_Url; // @dynamic msg_Url;
 @property(retain, nonatomic) NSString *msg_storyExtra; // @dynamic msg_storyExtra;
+@property(retain, nonatomic) NSString *msg_tribeVideoInfoExtra; // @dynamic msg_tribeVideoInfoExtra;
 @property(retain, nonatomic) NSString *serviceID; // @dynamic serviceID;
 @property(retain, nonatomic) QQSMItemElementBase *sourceElement; // @dynamic sourceElement;
 @property(retain, nonatomic) NSString *sourceIconUrl; // @dynamic sourceIconUrl;

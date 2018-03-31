@@ -23,7 +23,7 @@
 @property(nonatomic) long long pullFaceReqID; // @synthesize pullFaceReqID=_pullFaceReqID;
 @property(nonatomic) long long uin; // @synthesize uin=_uin;
 - (void).cxx_destruct;
-- (void)faceMarkBtnClick:(id)arg1 clickBtn:(id)arg2;
+- (void)animationDidStop:(id)arg1 finished:(_Bool)arg2;
 - (void)onBusinessProcessPopCancelMulMemSelector:(id)arg1 currentViewControllerClass:(id)arg2 selectedMember:(id)arg3;
 - (void)coverViewTextClick:(id)arg1;
 - (void)coverViewUnMark:(id)arg1;

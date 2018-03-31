@@ -14,8 +14,10 @@
     NSString *_title;
     NSString *_background;
     NSDictionary *_params;
+    NSString *_syncMaskViewUrl;
 }
 
+@property(retain, nonatomic) NSString *syncMaskViewUrl; // @synthesize syncMaskViewUrl=_syncMaskViewUrl;
 @property(retain, nonatomic) NSDictionary *params; // @synthesize params=_params;
 @property(retain, nonatomic) NSString *background; // @synthesize background=_background;
 @property(retain, nonatomic) NSString *title; // @synthesize title=_title;

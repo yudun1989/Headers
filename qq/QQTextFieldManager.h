@@ -25,13 +25,17 @@
 - (void)saveAllData;
 - (void)updateChatMessageListAfterClearDraftWithUin:(id)arg1;
 - (void)deleteChatViewControllerDraftModelCache:(id)arg1 isGroup:(_Bool)arg2;
-- (void)doSaveDraftInRecentMessageList:(id)arg1 chatModelType:(int)arg2 acType:(int)arg3;
+- (void)doSaveDraftInRecentMessageList:(id)arg1 chatModelType:(int)arg2 acType:(int)arg3 exInfo:(id)arg4;
 - (void)setChatViewControllerTextFieldCache:(id)arg1 uin:(id)arg2 chatModelType:(int)arg3 babyQArk:(_Bool)arg4;
 - (void)setChatViewControllerTextFieldCache:(id)arg1 quoteText:(id)arg2 quoteSeq:(long long)arg3 uin:(id)arg4 chatModelType:(int)arg5 acType:(int)arg6;
 - (void)setChatViewControllerTextFieldCache:(id)arg1 uin:(id)arg2 chatModelType:(int)arg3 acType:(int)arg4;
 - (void)setChatViewControllerTextFieldCache:(id)arg1 uin:(id)arg2 chatModelType:(int)arg3;
 - (id)getChatViewControllerDraftModelCache:(id)arg1 chatModelType:(int)arg2;
 - (id)getChatViewControllerTextFieldCache:(id)arg1 isGroup:(_Bool)arg2;
+- (id)getChatViewControllerDraftModelCache:(id)arg1 chatModelType:(int)arg2 hsTopicId:(unsigned int)arg3 hsConfessorUin:(unsigned long long)arg4;
+- (void)setChatViewControllerTextFieldCache:(id)arg1 uin:(id)arg2 chatModelType:(int)arg3 acType:(int)arg4 exInfo:(id)arg5;
+- (void)updateHonestSayMessageListAfterClearDraftWithUin:(id)arg1 exInfo:(id)arg2;
+- (id)getChatViewControllerTextFieldCache:(id)arg1 hsTopicId:(unsigned int)arg2 hsConfessorUin:(unsigned long long)arg3;
 - (void)saveChatViewControllerInputCache;
 - (void)deleteAllChatViewControllerInputCache:(id)arg1;
 - (void)loadChatViewControllerInputCache;

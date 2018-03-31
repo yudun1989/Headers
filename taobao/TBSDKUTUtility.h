@@ -32,6 +32,7 @@
 - (void)onTcpLinkTime:(long long)arg1 withEndDate:(long long)arg2;
 - (void)onDnsParseTime:(id)arg1;
 - (_Bool)setUT;
+- (void)dealloc;
 - (id)init;
 
 @end

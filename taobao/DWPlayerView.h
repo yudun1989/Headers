@@ -54,6 +54,7 @@
     _Bool _useProxyServer;
     _Bool _isFirstPlayingEventFired;
     _Bool _customToastTopMargin;
+    _Bool _canShowPlayRateButton;
     DWContext *_context;
     NSURL *_videoURL;
     long long _controlsTimeoutPeriod;
@@ -90,6 +91,7 @@
     UITapGestureRecognizer *_tapGesture;
     UILabel *_playerTimeLabel;
     UILabel *_playerTimeLabel2;
+    UIButton *_playRateButton;
     DWPlayerControlHUD *_controlHUD;
     DWPlayerErrorView *_activityIndicator;
     DWFlowPromptView *_promptView;
@@ -129,6 +131,7 @@
 + (void)registerImageLoaderWithClass:(id)arg1;
 + (void)registerConfigWithClass:(id)arg1;
 + (id)md5:(id)arg1;
+@property(nonatomic) _Bool canShowPlayRateButton; // @synthesize canShowPlayRateButton=_canShowPlayRateButton;
 @property(nonatomic) _Bool customToastTopMargin; // @synthesize customToastTopMargin=_customToastTopMargin;
 @property(nonatomic) _Bool isFirstPlayingEventFired; // @synthesize isFirstPlayingEventFired=_isFirstPlayingEventFired;
 @property(nonatomic) _Bool useProxyServer; // @synthesize useProxyServer=_useProxyServer;
@@ -182,6 +185,7 @@
 @property(retain, nonatomic) DWFlowPromptView *promptView; // @synthesize promptView=_promptView;
 @property(retain, nonatomic) DWPlayerErrorView *activityIndicator; // @synthesize activityIndicator=_activityIndicator;
 @property(retain, nonatomic) DWPlayerControlHUD *controlHUD; // @synthesize controlHUD=_controlHUD;
+@property(retain, nonatomic) UIButton *playRateButton; // @synthesize playRateButton=_playRateButton;
 @property(retain, nonatomic) UILabel *playerTimeLabel2; // @synthesize playerTimeLabel2=_playerTimeLabel2;
 @property(retain, nonatomic) UILabel *playerTimeLabel; // @synthesize playerTimeLabel=_playerTimeLabel;
 @property(retain, nonatomic) UITapGestureRecognizer *tapGesture; // @synthesize tapGesture=_tapGesture;
@@ -324,9 +328,11 @@
 - (void)toggleControlsWithAutoDelay;
 - (void)refreshTimeLabelWithCurrent:(double)arg1;
 - (void)refreshProgressIndicator;
+- (void)resumeRefreshing:(id)arg1 seekMode:(long long)arg2;
 - (void)resumeRefreshing:(id)arg1;
 - (void)seek:(id)arg1;
 - (void)pauseRefreshing:(id)arg1;
+- (void)playRateButtonClicked:(id)arg1;
 - (void)muteBtnClicked;
 - (void)toggleFullscreen:(id)arg1;
 - (void)bigPlayButtonClick:(id)arg1;

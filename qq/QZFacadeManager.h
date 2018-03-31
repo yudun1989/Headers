@@ -14,6 +14,9 @@
 {
     NSMutableDictionary *_facadeDict;
     NSRecursiveLock *_lock;
+    _Bool _firstEnterAPP;
+    _Bool _hasChangeFacade;
+    int _iShowOnFriDyn;
 }
 
 + (id)sharedInstance;

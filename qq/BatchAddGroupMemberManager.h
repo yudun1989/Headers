@@ -21,8 +21,8 @@
 @property(copy, nonatomic) NSString *chatModelUin; // @synthesize chatModelUin=_chatModelUin;
 @property(nonatomic) __weak id <BatchAddGroupMemberManagerDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
-- (id)prepareParam;
-- (void)insertBatchAddGroupMemberGrayTip;
+- (id)prepareParam:(id)arg1;
+- (void)insertBatchAddGroupMemberGrayTip:(id)arg1;
 - (void)checkPostcondition;
 - (void)groupMemAddFriendDataPrepareSuccess:(id)arg1;
 - (void)checkSecurityProtocol;

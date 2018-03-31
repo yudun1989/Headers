@@ -73,6 +73,7 @@
 - (void)layoutTopView;
 - (void)layoutSubviews;
 - (void)setCellModel:(id)arg1;
+- (id)getContentView;
 - (id)initWithStyle:(long long)arg1 reuseIdentifier:(id)arg2;
 
 // Remaining properties

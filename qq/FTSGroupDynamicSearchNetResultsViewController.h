@@ -20,18 +20,20 @@
     NSString *_normalResultSearchWord;
     long long _stateBeforeInput;
     FTSHotWordView *_dynamicBusiHotWordView;
-    FTSAssociationalWordsBaseView *_dynamicAssociationalWordsView;
     UIView *_tableViewHeaderView;
     UILabel *_tableViewHeaderLabel;
     UIView *_tableViewHeaderContentView;
     FTSSubTabSearchHotWordView *_ftsSubTabSearchHotWordView;
-    _Bool _userSmartSearch;
     _Bool _isNeedRealTimeSearch;
+    _Bool _userSmartSearch;
     NSArray *_groupMasks;
     NSString *_tabName;
     NSMutableArray *_dynamicNetSearchResults;
+    FTSAssociationalWordsBaseView *_dynamicAssociationalWordsView;
 }
 
+@property(retain, nonatomic) FTSAssociationalWordsBaseView *dynamicAssociationalWordsView; // @synthesize dynamicAssociationalWordsView=_dynamicAssociationalWordsView;
+@property(nonatomic) _Bool userSmartSearch; // @synthesize userSmartSearch=_userSmartSearch;
 @property(retain, nonatomic) NSMutableArray *dynamicNetSearchResults; // @synthesize dynamicNetSearchResults=_dynamicNetSearchResults;
 @property(nonatomic) _Bool isNeedRealTimeSearch; // @synthesize isNeedRealTimeSearch=_isNeedRealTimeSearch;
 @property(copy, nonatomic) NSString *tabName; // @synthesize tabName=_tabName;
@@ -46,13 +48,7 @@
 - (void)onBusiHotWordUpdateCallback:(id)arg1;
 - (void)FTSSubTabSearchHotWordCollectionView:(id)arg1 didSelectItemAtIndexPath:(id)arg2 model:(id)arg3;
 - (void)FTSHotWordCollectionView:(id)arg1 didSelectItemAtIndexPath:(id)arg2 model:(id)arg3;
-- (void)FTSATableView:(id)arg1 didSelectItemAtIndexPath:(id)arg2 dataModel:(id)arg3;
-- (void)FTSATableView:(id)arg1 didSelectItemAtIndexPath:(id)arg2 model:(id)arg3;
-- (void)onSmartSearchAssociationWordUpdateCallback:(id)arg1;
-- (void)onAssociationWordUpdateCallback:(id)arg1;
-- (void)updateAssociationWord:(id)arg1;
 - (void)startTabSearchRequest:(id)arg1;
-- (void)startUniteSearchRequest:(id)arg1 fromAcion:(long long)arg2;
 - (void)onWillDisplayCell:(id)arg1 atIndexPath:(id)arg2;
 - (id)ftsGetAllFeedModel;
 - (void)searchBarCancelButtonClicked:(id)arg1;
@@ -88,6 +84,11 @@
 - (void)loadView;
 - (void)dealloc;
 - (id)initWithSearchKeyword:(id)arg1;
+- (void)FTSATableView:(id)arg1 didSelectItemAtIndexPath:(id)arg2 dataModel:(id)arg3;
+- (void)FTSATableView:(id)arg1 didSelectItemAtIndexPath:(id)arg2 model:(id)arg3;
+- (void)onSmartSearchAssociationWordUpdateCallback:(id)arg1;
+- (void)onAssociationWordUpdateCallback:(id)arg1;
+- (void)updateAssociationWord:(id)arg1;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

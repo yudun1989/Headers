@@ -20,14 +20,17 @@
     QQFaceItemAndPageClass *_middleInfo;
     QQFaceItemAndPageClass *_rightInfo;
     int _xo;
+    _Bool _forQzone;
     QQFaceItemAndPageClass *_currentPageInfo;
     QQPushBannerView_OSUpgrade *_OSUpgradeBanner;
     id _textDelegate;
 }
 
-@property(nonatomic) id textDelegate; // @synthesize textDelegate=_textDelegate;
+@property(nonatomic) __weak id textDelegate; // @synthesize textDelegate=_textDelegate;
+@property(nonatomic) _Bool forQzone; // @synthesize forQzone=_forQzone;
 @property(retain, nonatomic) QQPushBannerView_OSUpgrade *OSUpgradeBanner; // @synthesize OSUpgradeBanner=_OSUpgradeBanner;
 @property(retain, nonatomic) QQFaceItemAndPageClass *currentPageInfo; // @synthesize currentPageInfo=_currentPageInfo;
+- (void).cxx_destruct;
 - (void)addQutuSettingButtonOnClick;
 - (void)customFaceSettingButtonOnClick;
 - (long long)getFacePanelBusinessType:(int)arg1;

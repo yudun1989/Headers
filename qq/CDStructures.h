@@ -424,8 +424,6 @@ struct ActionInfo {
     struct stream _field2;
 };
 
-struct ActiveReportReq;
-
 struct Activity;
 
 struct AddFrdInfo {
@@ -610,6 +608,12 @@ struct AudioChannelLayout {
     unsigned int mChannelBitmap;
     unsigned int mNumberChannelDescriptions;
     struct AudioChannelDescription mChannelDescriptions[1];
+};
+
+struct AudioClassDescription {
+    unsigned int _field1;
+    unsigned int _field2;
+    unsigned int _field3;
 };
 
 struct AudioComponentDescription {
@@ -1146,13 +1150,6 @@ struct ConfMemberInfo {
 
 struct ConferenceTipsInfo;
 
-struct ConfettiVector {
-    double _field1;
-    double _field2;
-    double _field3;
-    double _field4;
-};
-
 struct Config {
     CDUnknownFunctionPointerType *_field1;
     int _field2;
@@ -1597,30 +1594,6 @@ struct FaceDetectionParam {
 
 struct FaceScoreMsgInfo;
 
-struct FaceWallPhoto {
-    Class _field1;
-    id _field2;
-    id _field3;
-    struct CGRect _field4;
-    id _field5;
-    double _field6;
-    int _field7;
-    long long _field8;
-    id _field9;
-    id _field10;
-    id _field11;
-    _Bool _field12;
-    _Bool _field13;
-    _Bool _field14;
-    _Bool _field15;
-    id _field16;
-    _Bool _field17;
-    id _field18;
-    int _field19;
-    id _field20;
-    id _field21;
-};
-
 struct FileControlVec {
     void *_field1;
 };
@@ -1883,26 +1856,6 @@ struct GetConfInfoRsp {
     unsigned int _field7;
 };
 
-struct GetFestivalPackReq;
-
-struct GetFestivalPackResp {
-    CDUnknownFunctionPointerType *_field1;
-    int _field2;
-    unsigned int _field3[8];
-    unsigned int _field4;
-    unsigned int _field5;
-    struct Pack *_field6;
-    unsigned int _field7;
-    unsigned int _field8;
-    unsigned int _field9;
-    unsigned int _field10;
-    basic_string_075b6133 *_field11;
-    basic_string_075b6133 *_field12;
-    basic_string_075b6133 *_field13;
-    basic_string_075b6133 *_field14;
-    basic_string_075b6133 *_field15;
-};
-
 struct GetImgInfoRsp {
     CDUnknownFunctionPointerType *_field1;
     int _field2;
@@ -2125,6 +2078,16 @@ struct HeadInfo;
 
 struct HeartInfo {
     int _field1;
+};
+
+struct HighSpeedLogger {
+    CDUnknownFunctionPointerType _field1;
+    char *_field2;
+    unsigned long long _field3;
+    unsigned long long _field4;
+    struct _malloc_zone_t *_field5;
+    struct __sFILE *_field6;
+    _Bool _field7;
 };
 
 struct HotQunMsg {
@@ -3038,27 +3001,6 @@ struct NetworkStatParam {
     unsigned int _field18;
 };
 
-struct NewYearEvePackReq;
-
-struct NewYearEvePackResp {
-    CDUnknownFunctionPointerType *_field1;
-    int _field2;
-    unsigned int _field3[8];
-    unsigned int _field4;
-    unsigned int _field5;
-    unsigned int _field6;
-    unsigned int _field7;
-    struct Pack *_field8;
-    unsigned int _field9;
-    unsigned int _field10;
-    basic_string_075b6133 *_field11;
-    basic_string_075b6133 *_field12;
-    basic_string_075b6133 *_field13;
-    basic_string_075b6133 *_field14;
-    basic_string_075b6133 *_field15;
-    _Bool _field16;
-};
-
 struct Node;
 
 struct NodeInfo {
@@ -3268,37 +3210,6 @@ struct POIRPInfo {
 };
 
 struct POIShowInfo;
-
-struct Pack {
-    CDUnknownFunctionPointerType *_field1;
-    int _field2;
-    unsigned int _field3[8];
-    basic_string_075b6133 *_field4;
-    unsigned int _field5;
-    unsigned int _field6;
-    unsigned int _field7;
-    unsigned int _field8;
-    basic_string_075b6133 *_field9;
-    basic_string_075b6133 *_field10;
-    unsigned int _field11;
-    unsigned int _field12;
-    unsigned long long _field13;
-    basic_string_075b6133 *_field14;
-    basic_string_075b6133 *_field15;
-    basic_string_075b6133 *_field16;
-    unsigned long long _field17;
-    unsigned int _field18;
-    _Bool _field19;
-    _Bool _field20;
-    _Bool _field21;
-    _Bool _field22;
-    unsigned int _field23;
-    unsigned int _field24;
-    basic_string_075b6133 *_field25;
-    unsigned int _field26;
-    unsigned int _field27;
-    unsigned int _field28;
-};
 
 struct PanSocialInfo {
     unsigned int _field1;
@@ -3525,51 +3436,6 @@ struct PicCoordinate {
 
 struct PicInfo;
 
-struct PkgReq {
-    CDUnknownFunctionPointerType *_field1;
-    int _field2;
-    unsigned int _field3[8];
-    unsigned long long _field4;
-    struct NewYearEvePackReq *_field5;
-    struct QueryEvePackReq *_field6;
-    struct QueryQualificationReq *_field7;
-    struct GetFestivalPackReq *_field8;
-    struct ActiveReportReq *_field9;
-    unsigned int _field10;
-    unsigned int _field11;
-    struct QueryPackReq *_field12;
-    struct QueryPackListReq *_field13;
-    struct SetPackUsedReq *_field14;
-    struct RepeatedPtrField<_n_::im::new_year_2018::ActiveReportReq> _field15;
-    basic_string_075b6133 *_field16;
-    basic_string_075b6133 *_field17;
-    unsigned int _field18;
-    unsigned int _field19;
-    basic_string_075b6133 *_field20;
-    unsigned int _field21;
-    unsigned int _field22;
-    basic_string_075b6133 *_field23;
-    basic_string_075b6133 *_field24;
-};
-
-struct PkgResp {
-    CDUnknownFunctionPointerType *_field1;
-    int _field2;
-    unsigned int _field3[8];
-    unsigned long long _field4;
-    unsigned int _field5;
-    unsigned int _field6;
-    basic_string_075b6133 *_field7;
-    basic_string_075b6133 *_field8;
-    struct NewYearEvePackResp *_field9;
-    struct QueryEvePackResp *_field10;
-    struct QueryQualificationResp *_field11;
-    struct GetFestivalPackResp *_field12;
-    struct QueryPackResp *_field13;
-    struct QueryPackListResp *_field14;
-    struct SetPackUsedResp *_field15;
-};
-
 struct Platform {
     CDUnknownFunctionPointerType *_field1;
 };
@@ -3663,6 +3529,11 @@ struct ProgressRsp {
 
 struct Properties;
 
+struct ProteusSize {
+    unsigned long long type;
+    double value;
+};
+
 struct PtsPostProc;
 
 struct Ptt {
@@ -3742,6 +3613,99 @@ struct QCallInfo {
     basic_string_075b6133 _field2;
     long long _field3;
 };
+
+struct QQAdGet {
+    CDUnknownFunctionPointerType *_field1;
+    int _field2;
+    unsigned int _field3[8];
+    struct QQAdGet_UserInfo *_field4;
+    struct RepeatedPtrField<QQAdGet_PositionInfo> _field5;
+    struct QQAdGet_DeviceInfo *_field6;
+    struct QQAdGet_ContextInfo *_field7;
+    struct QQAdGet_DebugInfo *_field8;
+    basic_string_075b6133 *_field9;
+    basic_string_075b6133 *_field10;
+};
+
+struct QQAdGetRsp {
+    CDUnknownFunctionPointerType *_field1;
+    int _field2;
+    unsigned int _field3[8];
+    basic_string_075b6133 *_field4;
+    struct RepeatedPtrField<QQAdGetRsp_PosAdInfo> _field5;
+    basic_string_075b6133 *_field6;
+    basic_string_075b6133 *_field7;
+    int _field8;
+};
+
+struct QQAdGetRsp_AdInfo {
+    CDUnknownFunctionPointerType *_field1;
+    int _field2;
+    unsigned int _field3[8];
+    struct QQAdGetRsp_AdInfo_DisplayInfo *_field4;
+    struct QQAdGetRsp_AdInfo_ReportInfo *_field5;
+    struct QQAdGetRsp_AdInfo_DestInfo *_field6;
+    struct QQAdGetRsp_AdInfo_AppInfo *_field7;
+    unsigned int _field8;
+};
+
+struct QQAdGetRsp_AdInfo_AppInfo;
+
+struct QQAdGetRsp_AdInfo_DestInfo;
+
+struct QQAdGetRsp_AdInfo_DisplayInfo {
+    CDUnknownFunctionPointerType *_field1;
+    int _field2;
+    unsigned int _field3[8];
+    unsigned int _field4;
+    unsigned int _field5;
+    struct QQAdGetRsp_AdInfo_DisplayInfo_BasicInfo *_field6;
+    struct RepeatedPtrField<QQAdGetRsp_AdInfo_DisplayInfo_ButtonInfo> _field7;
+    struct QQAdGetRsp_AdInfo_DisplayInfo_MutiPicTextInfo *_field8;
+    struct QQAdGetRsp_AdInfo_DisplayInfo_AdvertiserInfo *_field9;
+    struct QQAdGetRsp_AdInfo_DisplayInfo_VideoInfo *_field10;
+    unsigned int _field11;
+};
+
+struct QQAdGetRsp_AdInfo_DisplayInfo_AdvertiserInfo;
+
+struct QQAdGetRsp_AdInfo_DisplayInfo_BasicInfo;
+
+struct QQAdGetRsp_AdInfo_DisplayInfo_MutiPicTextInfo;
+
+struct QQAdGetRsp_AdInfo_DisplayInfo_VideoInfo;
+
+struct QQAdGetRsp_AdInfo_ReportInfo {
+    CDUnknownFunctionPointerType *_field1;
+    int _field2;
+    unsigned int _field3[8];
+    basic_string_075b6133 *_field4;
+    basic_string_075b6133 *_field5;
+    basic_string_075b6133 *_field6;
+    basic_string_075b6133 *_field7;
+    basic_string_075b6133 *_field8;
+    struct QQAdGetRsp_AdInfo_ReportInfo_TraceInfo *_field9;
+};
+
+struct QQAdGetRsp_AdInfo_ReportInfo_TraceInfo;
+
+struct QQAdGetRsp_PosAdInfo {
+    CDUnknownFunctionPointerType *_field1;
+    int _field2;
+    unsigned int _field3[8];
+    basic_string_075b6133 *_field4;
+    basic_string_075b6133 *_field5;
+    struct RepeatedPtrField<QQAdGetRsp_AdInfo> _field6;
+    int _field7;
+};
+
+struct QQAdGet_ContextInfo;
+
+struct QQAdGet_DebugInfo;
+
+struct QQAdGet_DeviceInfo;
+
+struct QQAdGet_UserInfo;
 
 struct QQApolloInfo {
     unsigned int _field1;
@@ -3878,9 +3842,9 @@ struct QQMessageModelExtend {
     struct SpriteMsgInfo *sprite_msg_info_;
     struct QQStoryMsgInfo *story_msg_info_;
     basic_string_075b6133 *crochetcolor_;
+    basic_string_075b6133 *babyq_guide_msg_cookie_;
     unsigned int orgin_face_send_times_;
     unsigned int fontid_;
-    basic_string_075b6133 *babyq_guide_msg_cookie_;
     unsigned long long pendantid_;
     basic_string_075b6133 *bytes_sm_service_id_;
     unsigned int subbubbleid_;
@@ -3891,12 +3855,12 @@ struct QQMessageModelExtend {
     struct NearByNowTipsMsg *nearbynowtipsmsg_;
     basic_string_075b6133 *bytes_rp_index_;
     struct RepeatedPtrField<_n_::qqmessagemodel::AtGroupMemberInfo> at_group_member_info_;
+    basic_string_075b6133 *str_arkai_data_;
     unsigned int uint32_rp_flag_;
     unsigned int multi_send_ex_flag_;
-    basic_string_075b6133 *str_arkai_data_;
+    basic_string_075b6133 *bytes_flashchat_data_;
     unsigned int uint32_longmsg_type_;
     unsigned int uint32_flashchat_rscid_;
-    basic_string_075b6133 *bytes_flashchat_data_;
     basic_string_075b6133 *bytes_thirdappsharemodel_;
     struct FaceScoreMsgInfo *facescore_msg_info_;
     unsigned long long bulletin_msgseq_;
@@ -3952,6 +3916,10 @@ struct QQMessageModelExtend {
     unsigned int text_analysis_result_;
     unsigned long long uint64_diy_font_cfg_update_time_;
     basic_string_075b6133 *bytes_redpack_score_id_;
+    basic_string_075b6133 *recall_message_content_;
+    double recall_message_time_;
+    basic_string_075b6133 *bytes_imax_info_;
+    struct SayHonestExtInfo *sayhonest_extinfo_;
 };
 
 struct QQPerfmonItem {
@@ -4090,39 +4058,6 @@ struct Quaternion {
     float _field2;
     float _field3;
     float _field4;
-};
-
-struct QueryEvePackReq;
-
-struct QueryEvePackResp {
-    CDUnknownFunctionPointerType *_field1;
-    int _field2;
-    unsigned int _field3[8];
-    struct RepeatedPtrField<_n_::im::new_year_2018::Pack> _field4;
-    unsigned int _field5;
-};
-
-struct QueryPackListReq;
-
-struct QueryPackListResp;
-
-struct QueryPackReq;
-
-struct QueryPackResp;
-
-struct QueryQualificationReq;
-
-struct QueryQualificationResp {
-    CDUnknownFunctionPointerType *_field1;
-    int _field2;
-    unsigned int _field3[8];
-    unsigned int _field4;
-    unsigned int _field5;
-    unsigned int _field6;
-    unsigned int _field7;
-    unsigned int _field8;
-    unsigned int _field9;
-    unsigned int _field10;
 };
 
 struct QuoteMsgInfo;
@@ -4304,6 +4239,38 @@ struct RepeatedField<unsigned long long> {
     int _field3;
 };
 
+struct RepeatedPtrField<QQAdGetRsp_AdInfo> {
+    CDUnknownFunctionPointerType _field1;
+    void **_field2;
+    int _field3;
+    int _field4;
+    int _field5;
+};
+
+struct RepeatedPtrField<QQAdGetRsp_AdInfo_DisplayInfo_ButtonInfo> {
+    CDUnknownFunctionPointerType _field1;
+    void **_field2;
+    int _field3;
+    int _field4;
+    int _field5;
+};
+
+struct RepeatedPtrField<QQAdGetRsp_PosAdInfo> {
+    CDUnknownFunctionPointerType _field1;
+    void **_field2;
+    int _field3;
+    int _field4;
+    int _field5;
+};
+
+struct RepeatedPtrField<QQAdGet_PositionInfo> {
+    CDUnknownFunctionPointerType _field1;
+    void **_field2;
+    int _field3;
+    int _field4;
+    int _field5;
+};
+
 struct RepeatedPtrField<_n_::im::QQFriendModel::QQFiendModel> {
     CDUnknownFunctionPointerType _field1;
     void **_field2;
@@ -4425,22 +4392,6 @@ struct RepeatedPtrField<_n_::im::msg::Elem> {
 };
 
 struct RepeatedPtrField<_n_::im::msgrevoke::MsgInfoUserDef_MsgInfoDef> {
-    CDUnknownFunctionPointerType _field1;
-    void **_field2;
-    int _field3;
-    int _field4;
-    int _field5;
-};
-
-struct RepeatedPtrField<_n_::im::new_year_2018::ActiveReportReq> {
-    CDUnknownFunctionPointerType _field1;
-    void **_field2;
-    int _field3;
-    int _field4;
-    int _field5;
-};
-
-struct RepeatedPtrField<_n_::im::new_year_2018::Pack> {
     CDUnknownFunctionPointerType _field1;
     void **_field2;
     int _field3;
@@ -5348,9 +5299,9 @@ struct SCNMatrix4 {
 };
 
 struct SCNVector3 {
-    float _field1;
-    float _field2;
-    float _field3;
+    float x;
+    float y;
+    float z;
 };
 
 struct SDKConfRes {
@@ -5409,6 +5360,8 @@ struct SUpdateRsp {
 struct Sampler;
 
 struct SavedImage;
+
+struct SayHonestExtInfo;
 
 struct Sc2cPttDownload {
     unsigned long long _field1;
@@ -5541,10 +5494,6 @@ struct SessionVec {
 };
 
 struct SetFriendIdRsp;
-
-struct SetPackUsedReq;
-
-struct SetPackUsedResp;
 
 struct ShakeWindow;
 
@@ -7043,50 +6992,6 @@ struct _originalMsgState {
     unsigned long long unReadCount;
 };
 
-struct _xmlAttr {
-    void *_field1;
-    int _field2;
-    char *_field3;
-    struct _xmlNode *_field4;
-    struct _xmlNode *_field5;
-    struct _xmlNode *_field6;
-    struct _xmlAttr *_field7;
-    struct _xmlAttr *_field8;
-    struct _xmlDoc *_field9;
-    struct _xmlNs *_field10;
-    int _field11;
-    void *_field12;
-};
-
-struct _xmlDoc {
-    void *_field1;
-    int _field2;
-    char *_field3;
-    struct _xmlNode *_field4;
-    struct _xmlNode *_field5;
-    struct _xmlNode *_field6;
-    struct _xmlNode *_field7;
-    struct _xmlNode *_field8;
-    struct _xmlDoc *_field9;
-    int _field10;
-    int _field11;
-    struct _xmlDtd *_field12;
-    struct _xmlDtd *_field13;
-    struct _xmlNs *_field14;
-    char *_field15;
-    char *_field16;
-    void *_field17;
-    void *_field18;
-    char *_field19;
-    int _field20;
-    struct _xmlDict *_field21;
-    void *_field22;
-    int _field23;
-    int _field24;
-};
-
-struct _xmlDtd;
-
 struct _xmlNode {
     void *_field1;
     int _field2;
@@ -7106,14 +7011,7 @@ struct _xmlNode {
     unsigned short _field16;
 };
 
-struct _xmlNs {
-    struct _xmlNs *_field1;
-    int _field2;
-    char *_field3;
-    char *_field4;
-    void *_field5;
-    struct _xmlDoc *_field6;
-};
+struct _xmlNs;
 
 struct basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char>> {
     struct __compressed_pair<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char>>::__rep, std::__1::allocator<char>> {
@@ -7209,40 +7107,40 @@ struct bkPoint {
 struct bkRenderNode {
     struct bkObject _field1;
     long long _field2;
-    char *_field3;
-    struct bkRenderNode *_field4;
-    struct bkList *_field5;
+    int _field3;
+    char *_field4;
+    struct bkRenderNode *_field5;
     struct bkList *_field6;
     struct bkList *_field7;
-    struct bkTransform *_field8;
-    struct bkClippingMask *_field9;
-    struct bkGraphics *_field10;
-    struct bkRenderTexture *_field11;
-    unsigned short _field12[6];
-    struct bkVertex _field13[6];
-    struct bkVec3 _field14[6];
-    struct bkAABB _field15;
-    unsigned int _field16;
-    struct bkTrianglesCommand *_field17;
+    struct bkList *_field8;
+    struct bkTransform *_field9;
+    struct bkClippingMask *_field10;
+    struct bkGraphics *_field11;
+    struct bkRenderTexture *_field12;
+    unsigned short _field13[6];
+    struct bkVertex _field14[6];
+    struct bkVec3 _field15[6];
+    struct bkAABB _field16;
+    unsigned int _field17;
     struct bkTrianglesCommand *_field18;
-    struct bkTrianglesBatchCommand *_field19;
-    int _field20;
+    struct bkTrianglesCommand *_field19;
+    struct bkTrianglesBatchCommand *_field20;
     int _field21;
-    struct bkColor4f _field22;
+    int _field22;
     struct bkColor4f _field23;
-    struct bkMatrix _field24;
-    int _field25;
+    struct bkColor4f _field24;
+    struct bkMatrix _field25;
     int _field26;
     int _field27;
     int _field28;
     int _field29;
     int _field30;
     int _field31;
-    unsigned int _field32;
-    int _field33;
+    int _field32;
+    unsigned int _field33;
     int _field34;
     int _field35;
-    CDUnknownFunctionPointerType _field36;
+    int _field36;
     CDUnknownFunctionPointerType _field37;
     CDUnknownFunctionPointerType _field38;
     CDUnknownFunctionPointerType _field39;
@@ -7255,14 +7153,15 @@ struct bkRenderNode {
     CDUnknownFunctionPointerType _field46;
     CDUnknownFunctionPointerType _field47;
     CDUnknownFunctionPointerType _field48;
-    struct bkDirector *_field49;
-    int _field50;
-    char _field51;
+    CDUnknownFunctionPointerType _field49;
+    struct bkDirector *_field50;
+    int _field51;
     char _field52;
     char _field53;
-    struct bkVec2 _field54;
-    void *_field55;
+    char _field54;
+    struct bkVec2 _field55;
     void *_field56;
+    void *_field57;
 };
 
 struct bkRenderTexture;
@@ -9053,6 +8952,13 @@ typedef struct {
 } CDStruct_36d7ebee;
 
 typedef struct {
+    double red;
+    double green;
+    double blue;
+    double alpha;
+} CDStruct_3ead2808;
+
+typedef struct {
     double x;
     double y;
     double z;
@@ -9186,14 +9092,6 @@ typedef struct {
     double _field7;
     double _field8;
 } CDStruct_5741f4bb;
-
-typedef struct {
-    struct CLLocationCoordinate2D center;
-    struct {
-        double latitudeDelta;
-        double longitudeDelta;
-    } span;
-} CDStruct_b7cb895d;
 
 typedef struct {
     unsigned int _field1;
@@ -9488,6 +9386,21 @@ union MapVector2d {
     } _field2;
 };
 
+union _GLKMatrix3 {
+    struct {
+        float m00;
+        float m01;
+        float m02;
+        float m10;
+        float m11;
+        float m12;
+        float m20;
+        float m21;
+        float m22;
+    } ;
+    float m[9];
+};
+
 union _GLKMatrix4 {
     struct {
         float m00;
@@ -9520,6 +9433,25 @@ union _GLKVector2 {
         float t;
     } ;
     float v[2];
+};
+
+union _GLKVector3 {
+    struct {
+        float x;
+        float y;
+        float z;
+    } ;
+    struct {
+        float r;
+        float g;
+        float b;
+    } ;
+    struct {
+        float s;
+        float t;
+        float p;
+    } ;
+    float v[3];
 };
 
 union _GLKVector4 {

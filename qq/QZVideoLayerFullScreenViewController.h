@@ -62,29 +62,36 @@
     _Bool _isScrolling;
     NSTimer *_pictureDisplayTimer;
     double _pictureDisplayTimeTotal;
+    _Bool _isCancelTimerFromPause;
+    _Bool _isStartTimerFromResume;
+    _Bool _isPausingVideo;
+    _Bool _isScrollNextAfterTimeUp;
+    long long _originFeedListCount;
     _Bool _enableDoubleTapToClose;
     _Bool _needFirstRefresh;
     _Bool _enableLoadMore;
     _Bool _unableLandscape;
     _Bool _isStatusBarHiddenParentVC;
+    _Bool _isCloseByBackBtn;
     _Bool _needAudioManager;
     QZPageScrollView *_videoContentView;
     long long _videoLayerDisplayType;
     long long _triggerCrossScreenEvt;
     long long _videoLayerfromType;
     QZRooftopWebviewController *_parentRooftopVC;
+    QZVideoRooftopProgressSliderView *_progressSliderView;
     QUIShareView *_moreView;
     NSString *_oldVideoGravity;
     UIView *_inputMaskView;
-    QZVideoRooftopProgressSliderView *_progressSliderView;
 }
 
 + (void)showVideoLayerFullScreen:(id)arg1 param:(id)arg2 successBlock:(CDUnknownBlockType)arg3 failBlock:(CDUnknownBlockType)arg4;
-@property(retain, nonatomic) QZVideoRooftopProgressSliderView *progressSliderView; // @synthesize progressSliderView=_progressSliderView;
 @property(retain, nonatomic) UIView *inputMaskView; // @synthesize inputMaskView=_inputMaskView;
 @property(retain, nonatomic) NSString *oldVideoGravity; // @synthesize oldVideoGravity=_oldVideoGravity;
 @property(nonatomic) __weak QUIShareView *moreView; // @synthesize moreView=_moreView;
 @property(nonatomic) _Bool needAudioManager; // @synthesize needAudioManager=_needAudioManager;
+@property(retain, nonatomic) QZVideoRooftopProgressSliderView *progressSliderView; // @synthesize progressSliderView=_progressSliderView;
+@property(nonatomic) _Bool isCloseByBackBtn; // @synthesize isCloseByBackBtn=_isCloseByBackBtn;
 @property(nonatomic) __weak QZRooftopWebviewController *parentRooftopVC; // @synthesize parentRooftopVC=_parentRooftopVC;
 @property(nonatomic) long long videoLayerfromType; // @synthesize videoLayerfromType=_videoLayerfromType;
 @property(nonatomic) _Bool isStatusBarHiddenParentVC; // @synthesize isStatusBarHiddenParentVC=_isStatusBarHiddenParentVC;

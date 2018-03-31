@@ -70,6 +70,7 @@
 - (void)report629WithOpKey:(id)arg1 opStatus:(id)arg2 immediately:(_Bool)arg3;
 - (void)report2676WithDepartKey:(id)arg1 opUin:(id)arg2 targetUin:(id)arg3 opType:(id)arg4 opName:(id)arg5 opEntry:(long long)arg6 opCount:(long long)arg7 opResult:(long long)arg8 timelong:(long long)arg9 feedid:(id)arg10 feedType:(long long)arg11 source:(long long)arg12 networkType:(id)arg13 reserved1:(id)arg14 reserved2:(id)arg15 reserved3:(id)arg16 reserved4:(id)arg17 immediately:(_Bool)arg18;
 - (void)report2676WithDepartKey:(id)arg1 opType:(id)arg2 opName:(id)arg3 timelong:(long long)arg4 feedid:(id)arg5 feedType:(long long)arg6 source:(long long)arg7 networkType:(id)arg8 reserved1:(id)arg9 reserved2:(id)arg10 reserved3:(id)arg11 reserved4:(id)arg12;
+- (void)report2676WithDepartKey:(id)arg1 opType:(id)arg2 opName:(id)arg3 timelong:(long long)arg4 feedid:(id)arg5 feedType:(long long)arg6 source:(long long)arg7 reserved1:(id)arg8 reserved2:(id)arg9 reserved3:(id)arg10 reserved4:(id)arg11;
 - (void)report644WithDepartKey:(id)arg1 opUin:(id)arg2 targetUin:(id)arg3 opType:(id)arg4 opName:(id)arg5 opEntry:(long long)arg6 opCount:(long long)arg7 opResult:(long long)arg8 reserved1:(long long)arg9 reserved2:(long long)arg10 reserved3:(id)arg11 reserved4:(id)arg12 immediately:(_Bool)arg13;
 - (void)report644WithDepartKey:(id)arg1 opType:(id)arg2 opName:(id)arg3 reserved1:(long long)arg4 reserved2:(long long)arg5 reserved3:(id)arg6 reserved4:(id)arg7;
 - (void)report644WithDepartKey:(id)arg1 opType:(id)arg2 opName:(id)arg3 opEntry:(long long)arg4;

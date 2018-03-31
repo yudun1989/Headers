@@ -6,7 +6,7 @@
 
 #import <UIKit/UIView.h>
 
-@class CAGradientLayer, NSString, TGradient, UIColor, UIImageView;
+@class CAGradientLayer, CAShapeLayer, NSString, TGradient, UIColor, UIImageView;
 
 @interface JSDiv : UIView
 {
@@ -15,9 +15,19 @@
     UIColor *_foregroundColor;
     NSString *_imageName;
     UIImageView *_imageView;
+    double _borderTLRadius;
+    double _borderTRRadius;
+    double _borderBLRadius;
+    double _borderBRRadius;
+    CAShapeLayer *_shapeLayer;
 }
 
 + (void)attrsTNodeMapper:(id)arg1;
+@property(retain, nonatomic) CAShapeLayer *shapeLayer; // @synthesize shapeLayer=_shapeLayer;
+@property(nonatomic) double borderBRRadius; // @synthesize borderBRRadius=_borderBRRadius;
+@property(nonatomic) double borderBLRadius; // @synthesize borderBLRadius=_borderBLRadius;
+@property(nonatomic) double borderTRRadius; // @synthesize borderTRRadius=_borderTRRadius;
+@property(nonatomic) double borderTLRadius; // @synthesize borderTLRadius=_borderTLRadius;
 @property(retain, nonatomic) UIImageView *imageView; // @synthesize imageView=_imageView;
 @property(retain, nonatomic) NSString *imageName; // @synthesize imageName=_imageName;
 @property(retain, nonatomic) UIColor *foregroundColor; // @synthesize foregroundColor=_foregroundColor;

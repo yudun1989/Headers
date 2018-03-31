@@ -6,7 +6,7 @@
 
 #import "NSObject-Protocol.h"
 
-@class NSArray, NSDictionary, NSString, TBOrderDoPayInfo, TBOrderResult, UIImageView, UIView;
+@class NSArray, NSDictionary, NSString, TBOrderDoPayInfo, TBOrderModel, TBOrderResult, UIImageView, UIView;
 
 @protocol TBAdaptationProtocol <NSObject>
 - (_Bool)needContactTel;
@@ -37,6 +37,7 @@
 - (void)setIconImageView:(UIImageView *)arg1 withUrl:(NSString *)arg2;
 
 @optional
+- (void)recordComponentEvent:(NSString *)arg1 model:(TBOrderModel *)arg2 code:(NSString *)arg3;
 - (void)commitOrderFailedAlarmEvent:(NSString *)arg1 message:(NSString *)arg2;
 - (_Bool)actionSheetWithUrl:(NSString *)arg1;
 - (void)popViewController:(_Bool)arg1;

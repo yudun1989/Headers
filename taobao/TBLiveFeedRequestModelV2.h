@@ -15,9 +15,13 @@
     long long _n;
     NSString *_contentId;
     NSString *_channelId;
+    NSString *_mtopAPIVersion;
+    NSString *_serverVersion;
 }
 
 @property(nonatomic) _Bool haveOnlook; // @synthesize haveOnlook=_haveOnlook;
+@property(retain, nonatomic) NSString *serverVersion; // @synthesize serverVersion=_serverVersion;
+@property(retain, nonatomic) NSString *mtopAPIVersion; // @synthesize mtopAPIVersion=_mtopAPIVersion;
 @property(retain, nonatomic) NSString *channelId; // @synthesize channelId=_channelId;
 @property(retain, nonatomic) NSString *contentId; // @synthesize contentId=_contentId;
 @property(nonatomic) long long n; // @synthesize n=_n;

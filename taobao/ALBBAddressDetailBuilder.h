@@ -10,7 +10,7 @@
 #import "UITableViewDelegate-Protocol.h"
 #import "UITextViewDelegate-Protocol.h"
 
-@class ALBBAddressDetailEditView, NSArray, NSString, UIButton, UIScrollView, UISwitch, UITableView, UITextView, UIView;
+@class ALBBAddressDetailEditView, NSArray, NSDictionary, NSString, UIButton, UIScrollView, UISwitch, UITableView, UITextView, UIView;
 @protocol ALBBAddressDetailBuilderDelegate;
 
 @interface ALBBAddressDetailBuilder : NSObject <UITextViewDelegate, UITableViewDelegate, UITableViewDataSource>
@@ -34,6 +34,7 @@
     UIButton *_confirmButton;
     UIScrollView *_scrollView;
     NSArray *_addressDetailArray;
+    NSDictionary *_selectedAddressDetailDic;
     NSString *_connectionString;
 }
 
@@ -42,6 +43,7 @@
 @property(nonatomic) _Bool canShowAddressConnection; // @synthesize canShowAddressConnection=_canShowAddressConnection;
 @property(copy, nonatomic) NSString *connectionString; // @synthesize connectionString=_connectionString;
 @property(nonatomic) _Bool addressConnectionBegin; // @synthesize addressConnectionBegin=_addressConnectionBegin;
+@property(retain, nonatomic) NSDictionary *selectedAddressDetailDic; // @synthesize selectedAddressDetailDic=_selectedAddressDetailDic;
 @property(retain, nonatomic) NSArray *addressDetailArray; // @synthesize addressDetailArray=_addressDetailArray;
 @property(retain, nonatomic) UIScrollView *scrollView; // @synthesize scrollView=_scrollView;
 @property(retain, nonatomic) UIButton *confirmButton; // @synthesize confirmButton=_confirmButton;
@@ -64,7 +66,7 @@
 - (long long)tableView:(id)arg1 numberOfRowsInSection:(long long)arg2;
 - (double)tableView:(id)arg1 heightForRowAtIndexPath:(id)arg2;
 - (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;
-- (id)getAreaText;
+- (id)getAreaText:(_Bool)arg1;
 - (void)insertAreaText;
 - (void)textViewDidChange:(id)arg1;
 - (id)getTownDivisionCode;

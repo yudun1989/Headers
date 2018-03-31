@@ -22,12 +22,10 @@
 @property(retain, nonatomic) VLView *vlView; // @synthesize vlView=_vlView;
 @property(retain, nonatomic) AliDetailWeexComponentModel *model; // @synthesize model=_model;
 - (void).cxx_destruct;
-- (void)dealloc;
 - (void)sendReloadSingleCellEvent;
 - (void)viewCall:(id)arg1 Callback:(CDUnknownBlockType)arg2;
 - (void)onLoadVLView:(id)arg1 Error:(id)arg2;
 - (void)onLoadFinishWithVLView:(id)arg1;
-- (void)layoutSubviews;
 - (void)setObject:(id)arg1;
 - (id)initWithFrame:(struct CGRect)arg1;
 

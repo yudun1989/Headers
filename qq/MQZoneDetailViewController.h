@@ -11,11 +11,12 @@
 #import <QQMainProject/MulMemSelBusiProcessDelegate-Protocol.h>
 #import <QQMainProject/QUIActionSheetDelegate-Protocol.h>
 #import <QQMainProject/QUIShareDelegate-Protocol.h>
+#import <QQMainProject/QZRecommondVideoCellDelegate-Protocol.h>
 #import <QQMainProject/UIAlertViewDelegate-Protocol.h>
 
 @class CAEmitterLayer, MQZPhotoBrowserViewController, MQZQbossDownQzoneAdvView, MQZoneAdBannerView, NSArray, NSDictionary, NSMutableDictionary, NSString, QZAvatarView, QZJAdBannerQueryADBannerUnit, QzoneFeedModel, UIButton, UIImageView, UIView, UIViewController;
 
-@interface MQZoneDetailViewController : MQZCommonFeedListViewController <BaseURLConnectionDelegate, MulMemSelBusiProcessDelegate, QUIActionSheetDelegate, UIAlertViewDelegate, MQZQbossDownQzoneAdvViewDelegate, QUIShareDelegate>
+@interface MQZoneDetailViewController : MQZCommonFeedListViewController <BaseURLConnectionDelegate, MulMemSelBusiProcessDelegate, QZRecommondVideoCellDelegate, QUIActionSheetDelegate, UIAlertViewDelegate, MQZQbossDownQzoneAdvViewDelegate, QUIShareDelegate>
 {
     CAEmitterLayer *_festivalEmitter;
     long long _numOfTotalEggPictures;
@@ -43,6 +44,8 @@
     _Bool _medalReportExpose;
     _Bool _isDetailLoading;
     _Bool _isDidSelectDropDownItem;
+    _Bool _hasLoadCommentComplete;
+    _Bool _needAdCellExposure;
     NSString *_qqUrl;
     UIViewController *_preCtr;
     UIView *_bottomBar;
@@ -76,12 +79,14 @@
     NSMutableDictionary *_actionMap;
     long long _getSpaceRightReqID;
     NSArray *_feedVideoList;
+    QzoneFeedModel *_adFeed;
     UIView *_doubleBtnView;
 }
 
 @property(retain, nonatomic) UIView *doubleBtnView; // @synthesize doubleBtnView=_doubleBtnView;
 @property(nonatomic) _Bool shouldShowRightBtn; // @synthesize shouldShowRightBtn=_shouldShowRightBtn;
 @property(nonatomic) _Bool loadDetailOCSSuccess; // @synthesize loadDetailOCSSuccess=_loadDetailOCSSuccess;
+@property(retain, nonatomic) QzoneFeedModel *adFeed; // @synthesize adFeed=_adFeed;
 @property(retain, nonatomic) NSArray *feedVideoList; // @synthesize feedVideoList=_feedVideoList;
 @property(nonatomic) _Bool enableFeedPictrueInteraction; // @synthesize enableFeedPictrueInteraction=_enableFeedPictrueInteraction;
 @property(nonatomic) long long getSpaceRightReqID; // @synthesize getSpaceRightReqID=_getSpaceRightReqID;
@@ -137,9 +142,11 @@
 - (_Bool)shouldAutorotate;
 - (void)leftButtonClick:(id)arg1;
 - (long long)getRapidCommentFromType;
+- (void)didGifCommentBtnClicked:(id)arg1;
 - (void)onClickedRedPocketBtn:(id)arg1;
 - (void)onClickedBottomInputBtn:(id)arg1;
 - (void)updateRapidCommentBtn:(id)arg1;
+- (void)updateGifCommentBtnAndRedBonusBtn:(id)arg1;
 - (void)updateBottomBar:(id)arg1;
 - (void)jumpToFirstCommentArea;
 - (void)jumpToCommentArea;
@@ -154,6 +161,7 @@
 - (long long)numberOfRowsInTableView:(id)arg1;
 - (void)setCellPosition:(id)arg1 inUITableView:(id)arg2;
 - (id)getAnEmptyCellForTableView:(id)arg1;
+- (double)getAdCellHeight;
 - (double)tableView:(id)arg1 heightForRowAtIndexPath:(id)arg2;
 - (id)emptyCommentView;
 - (void)setGroupModelPageType;
@@ -162,6 +170,9 @@
 - (id)tableViewForGroupFeedCell:(id)arg1 cellForRowAtIndexPath:(id)arg2 withFeedModel:(id)arg3;
 - (id)generateReminderBanner;
 - (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;
+- (void)didBoxScrollWithIndex:(long long)arg1;
+- (void)didCloseBtClick;
+- (void)didViewClick:(id)arg1;
 - (long long)tableView:(id)arg1 numberOfRowsInSection:(long long)arg2;
 - (long long)numberOfSectionsInTableView:(id)arg1;
 - (void)tableView:(id)arg1 willDisplayCell:(id)arg2 forRowAtIndexPath:(id)arg3;
@@ -187,7 +198,6 @@
 - (void)checkVideoIllegalInfo;
 - (void)updateFeedSkinPlus:(id)arg1;
 - (int)onNotifyFeedDetailResult:(id)arg1;
-- (void)onLayoutKitFileUpdated:(id)arg1;
 - (void)onNotifyBlogDataFromH5:(id)arg1;
 - (void)operationButtonClicked:(long long)arg1 param:(id)arg2;
 - (void)onNotifyQBossGet:(id)arg1;
@@ -205,7 +215,6 @@
 - (_Bool)onLoadMore;
 - (unsigned long long)onGetLastRefreshTime;
 - (_Bool)onRefresh;
-- (void)deleteLocalFeed;
 - (void)loadLocalFeed;
 - (void)handleOpenRemarkQunAlbum:(id)arg1;
 - (void)handleShowImg:(id)arg1 touchItem:(id)arg2 index:(unsigned long long)arg3 photoProviders:(id)arg4;

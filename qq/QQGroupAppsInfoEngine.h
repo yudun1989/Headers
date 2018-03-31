@@ -17,6 +17,8 @@
 + (id)getInstance;
 - (void)notifyError:(id)arg1;
 - (void)didRecievedMsg:(CDStruct_7895f40e)arg1;
+- (int)p_getAppsInfoRequestWithGroupCode:(unsigned long long)arg1 serviceType:(unsigned int)arg2 timeStamp:(unsigned int)arg3;
+- (int)getAppsInfoRequestWithGroupModel:(id)arg1 serviceType:(unsigned int)arg2;
 - (int)getAppsInfoRequest:(unsigned long long)arg1;
 - (id)init;
 

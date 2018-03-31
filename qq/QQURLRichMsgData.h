@@ -53,13 +53,26 @@
     long long _iRichFrom;
     NSString *_arkContent;
     int _WXShareSourceFrom;
+    _Bool _isTribeShortVideo;
+    NSString *_tribeVideoVid;
+    NSString *_tribeVideoTheme;
+    NSString *_tribeVideoUrl;
+    NSString *_tribeCoverUrl;
+    int _tribeVideoWidth;
+    int _tribeVideoHeight;
+    NSString *_sourceUrl;
+    NSString *_tribeName;
+    NSString *_tribeBid;
+    NSString *_tribePid;
     int _xo;
     NSString *flag;
+    UIImage *_webImage;
     NSNumber *_forceChangeUrl;
 }
 
 @property(nonatomic) long long iRichFrom; // @synthesize iRichFrom=_iRichFrom;
 @property(retain, nonatomic) NSNumber *forceChangeUrl; // @synthesize forceChangeUrl=_forceChangeUrl;
+@property(retain, nonatomic) UIImage *webImage; // @synthesize webImage=_webImage;
 @property(retain, nonatomic) NSString *flag; // @synthesize flag;
 - (void)dealloc;
 - (id)copyWithZone:(struct _NSZone *)arg1;
@@ -80,6 +93,7 @@
 @property(retain, nonatomic) NSString *hyperText; // @dynamic hyperText;
 @property(nonatomic) long long iUrlInfoFrm; // @dynamic iUrlInfoFrm;
 @property(nonatomic) _Bool isForceNet; // @dynamic isForceNet;
+@property(nonatomic) _Bool isTribeShortVideo; // @dynamic isTribeShortVideo;
 @property(retain, nonatomic) NSNumber *keepShareUrl; // @dynamic keepShareUrl;
 @property(retain, nonatomic) NSNumber *needPopBack; // @dynamic needPopBack;
 @property(retain, nonatomic) NSString *orgUrlStr; // @dynamic orgUrlStr;
@@ -91,6 +105,7 @@
 @property(nonatomic) int shareQQType; // @dynamic shareQQType;
 @property(retain, nonatomic) NSString *shareType; // @dynamic shareType;
 @property(retain, nonatomic) NSString *sourceName; // @dynamic sourceName;
+@property(copy, nonatomic) NSString *sourceUrl; // @dynamic sourceUrl;
 @property(retain, nonatomic) NSString *srcActionData; // @dynamic srcActionData;
 @property(retain, nonatomic) NSString *srcIconUrl; // @dynamic srcIconUrl;
 @property(retain, nonatomic) NSString *srcName; // @dynamic srcName;
@@ -104,6 +119,15 @@
 @property(retain, nonatomic) NSString *summary; // @dynamic summary;
 @property(retain, nonatomic) NSString *title; // @dynamic title;
 @property(retain, nonatomic) NSString *toUIN; // @dynamic toUIN;
+@property(copy, nonatomic) NSString *tribeBid; // @dynamic tribeBid;
+@property(copy, nonatomic) NSString *tribeCoverUrl; // @dynamic tribeCoverUrl;
+@property(copy, nonatomic) NSString *tribeName; // @dynamic tribeName;
+@property(copy, nonatomic) NSString *tribePid; // @dynamic tribePid;
+@property(nonatomic) int tribeVideoHeight; // @dynamic tribeVideoHeight;
+@property(copy, nonatomic) NSString *tribeVideoTheme; // @dynamic tribeVideoTheme;
+@property(copy, nonatomic) NSString *tribeVideoUrl; // @dynamic tribeVideoUrl;
+@property(copy, nonatomic) NSString *tribeVideoVid; // @dynamic tribeVideoVid;
+@property(nonatomic) int tribeVideoWidth; // @dynamic tribeVideoWidth;
 @property(retain, nonatomic) NSNumber *uinType; // @dynamic uinType;
 @property(retain, nonatomic) NSString *urlStr; // @dynamic urlStr;
 

@@ -16,8 +16,6 @@
 
 @property(retain, nonatomic) CAShapeLayer *fillLayer; // @synthesize fillLayer=_fillLayer;
 @property(nonatomic) struct CGRect noMaskRect; // @synthesize noMaskRect=_noMaskRect;
-- (void)updateMask;
-- (id)initWithFrame:(struct CGRect)arg1;
 
 @end
 

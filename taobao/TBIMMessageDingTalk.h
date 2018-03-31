@@ -6,20 +6,25 @@
 
 #import <Foundation/NSObject.h>
 
-#import "TBIMCouponMessage-Protocol.h"
+#import "TBIMAVMessage-Protocol.h"
+#import "TBIMCommonMessage-Protocol.h"
 #import "TBIMImageMessage-Protocol.h"
+#import "TBIMLocationMessage-Protocol.h"
 #import "TBIMShareMessage-Protocol.h"
 #import "TBIMSystemMessage-Protocol.h"
 #import "TBIMTextMessage-Protocol.h"
+#import "TBIMVideoMessage-Protocol.h"
 
 @class NSAttributedString, NSString;
 @protocol WKBizMessage;
 
-@interface TBIMMessageDingTalk : NSObject <TBIMTextMessage, TBIMImageMessage, TBIMSystemMessage, TBIMShareMessage, TBIMCouponMessage>
+@interface TBIMMessageDingTalk : NSObject <TBIMTextMessage, TBIMImageMessage, TBIMSystemMessage, TBIMShareMessage, TBIMAVMessage, TBIMVideoMessage, TBIMLocationMessage, TBIMCommonMessage>
 {
     struct CGSize _textSize;
     NSString *_convertText;
     NSAttributedString *_attributedString;
+    _Bool _isPlaying;
+    _Bool _isPlayed;
     id <WKBizMessage> _wkMessage;
     NSString *_sessionId;
     NSString *_messageId;
@@ -36,12 +41,43 @@
 - (void).cxx_destruct;
 - (_Bool)isPhoneCall;
 - (_Bool)isGif:(id)arg1;
+- (id)getGeoAttachment;
+- (id)getAudioAttachment;
+- (id)getVideoAttachment;
 - (id)getCustomAttachment;
-- (id)recieverActionUrl;
-- (id)senderActionUrl;
-- (id)picUrl;
-- (id)desc;
-- (id)title;
+- (id)longitude;
+- (id)latitude;
+- (id)localtionShotImage;
+- (id)localtionName;
+- (id)getBgIcon;
+- (double)getAttrPrice;
+- (id)getAttrTags;
+- (id)getAttrStr;
+- (id)getRightBtColor;
+- (id)getLeftBtColor;
+- (id)getRightBtText;
+- (id)getLeftBtText;
+- (id)getActionBtRightUrl;
+- (id)getActionBtLeftUrl;
+- (id)getRemindTips;
+- (id)getStampPicUrl;
+- (id)getLayoutId;
+- (id)getSenderActionUrl;
+- (id)getReceiverActionUrl;
+- (id)getFromTextColor;
+- (id)getFromIconText;
+- (id)getFromIcon;
+- (id)getDescColor;
+- (id)getDesc;
+- (id)getPreviewCDNURL;
+- (long long)getVideoDuration;
+- (id)getVideoUrl:(_Bool *)arg1;
+- (void)setIsPlaying:(_Bool)arg1;
+- (_Bool)isPlaying;
+- (void)setIsPlayed;
+- (_Bool)isPlayed;
+- (long long)getDuration;
+- (id)getDataUrl:(_Bool *)arg1;
 - (id)from;
 - (id)attrTags;
 - (id)attrSaleNum;
@@ -90,7 +126,6 @@
 - (id)summary;
 - (id)getSendTime;
 - (void)dealloc;
-- (id)getPreviewCDNURL;
 - (id)getPreviwImageObject;
 - (_Bool)isTemp;
 - (id)code;

@@ -6,27 +6,24 @@
 
 #import <QQMainProject/MQZoneDragCollectionViewCell.h>
 
-@class MQZImagePickerModel, NSMutableArray, QZGifItemView, UIImageView, UIView;
+@class MQZImagePickerModel, MQZonePhotoCollectionCellMaskView, QZGifItemView, UIImageView;
 
 @interface MQZonePhotoCollectionCell : MQZoneDragCollectionViewCell
 {
     UIImageView *_imageView;
-    UIView *_view;
     QZGifItemView *_playGifView;
-    NSMutableArray *_tags;
-    double _flagX;
-    NSMutableArray *_tagLabels;
-    int _showTagsMaxCount;
+    MQZonePhotoCollectionCellMaskView *_maskView;
     MQZImagePickerModel *_imagePickerModel;
+    _Bool _canAutoPlayGif;
 }
 
-@property(retain, nonatomic) UIImageView *imageView; // @synthesize imageView=_imageView;
-@property(retain, nonatomic) MQZImagePickerModel *imagePickerModel; // @synthesize imagePickerModel=_imagePickerModel;
 - (void).cxx_destruct;
 - (void)prepareForReuse;
-- (void)layoutLabelByTags:(id)arg1;
-- (void)addSubLabel;
+- (void)showIconRedDot:(_Bool)arg1;
+- (void)checkGifPlay;
 - (void)showImage;
+- (void)showMaskView;
+- (void)setImagePickerModel:(id)arg1;
 - (id)initWithFrame:(struct CGRect)arg1;
 
 @end

@@ -6,11 +6,12 @@
 
 #import <QQMainProject/NSObject-Protocol.h>
 
-@class TBVideoPlayerPageScrollViewItem;
+@class NSString, TBVideoPlayerPageScrollViewItem;
 
 @protocol TBVideoPlayerPageScrollViewItemProtocol <NSObject>
 
 @optional
+- (void)playerLoadingDataReport:(TBVideoPlayerPageScrollViewItem *)arg1 playerLoadingTime:(unsigned long long)arg2 vid:(NSString *)arg3;
 - (_Bool)onVideoItemCanStartPlay:(TBVideoPlayerPageScrollViewItem *)arg1;
 - (void)onVideoItemPlayDidPause:(TBVideoPlayerPageScrollViewItem *)arg1;
 - (_Bool)onVideoItemPlayEndShouldRepeated:(TBVideoPlayerPageScrollViewItem *)arg1 status:(long long)arg2;

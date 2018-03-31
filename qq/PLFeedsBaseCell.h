@@ -86,6 +86,7 @@
 - (void)didSVMoreViewDissmiss;
 - (void)reportNearbyUserSummaryModule:(id)arg1;
 - (void)reportDeleteConfirm;
+- (void)reportRetransmissionModule:(id)arg1;
 - (void)alertView:(id)arg1 clickedButtonAtIndex:(long long)arg2;
 - (void)reportDeleteBtnClick;
 - (void)onDeleteButtonClicked:(id)arg1;

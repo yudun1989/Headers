@@ -10,5 +10,6 @@
 - (struct CGSize)cn_sizeWithFont:(id)arg1;
 - (struct CGSize)sizeWithFont:(id)arg1 lineSpacing:(double)arg2 maxSize:(struct CGSize)arg3;
 - (struct CGSize)sizeWithFont:(id)arg1 maxSize:(struct CGSize)arg2;
+- (struct CGSize)cn_sizeWithFont:(id)arg1 maxSize:(struct CGSize)arg2 paragraphStyle:(id)arg3;
 @end
 

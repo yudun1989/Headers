@@ -10,6 +10,7 @@
 {
 }
 
++ (unsigned int)readInt32InBigEndian:(id)arg1 start:(unsigned long long)arg2;
 + (id)decryptTypeA:(id)arg1 withConfig:(id)arg2 withError:(id *)arg3;
 + (id)decrypt:(id)arg1 withConfig:(id)arg2 withType:(unsigned long long)arg3 withError:(id *)arg4;
 

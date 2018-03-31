@@ -8,7 +8,7 @@
 
 #import <QQMainProject/QQAVFunChatAnimViewDelegate-Protocol.h>
 
-@class NSMutableArray, NSMutableDictionary, NSString, QQAVFunChatAnimView, UIButtonForAVControlBar;
+@class MPVolumeView, NSMutableArray, NSMutableDictionary, NSString, QQAVFunChatAnimView, UIButton, UIButtonForAVControlBar, UIWindow;
 @protocol QQAVChatControlBarDelegate;
 
 @interface QQAVChatControlBar : UIView <QQAVFunChatAnimViewDelegate>
@@ -25,8 +25,13 @@
     _Bool _isShowedFunChatAnim;
     double _contectedTime;
     _Bool _isFisrtRemoveFunChatAnim;
+    MPVolumeView *_blueToothView;
+    UIButton *_blueToothRouteButton;
+    UIWindow *_maskWindow;
+    _Bool _isBlueToothConnecting;
     _Bool NeedToFit4s;
     _Bool isTroopAudio;
+    _Bool isTroopAddMemberEnable;
     _Bool isP2PShare;
     _Bool isSpeakerHighLighted;
     _Bool isPhoneCallEnable;
@@ -41,10 +46,15 @@
 @property(nonatomic) _Bool isPhoneCallEnable; // @synthesize isPhoneCallEnable;
 @property(nonatomic) _Bool isSpeakerHighLighted; // @synthesize isSpeakerHighLighted;
 @property(nonatomic) _Bool isP2PShare; // @synthesize isP2PShare;
+@property(nonatomic) _Bool isTroopAddMemberEnable; // @synthesize isTroopAddMemberEnable;
 @property(nonatomic) _Bool isTroopAudio; // @synthesize isTroopAudio;
 @property(readonly, nonatomic) double vmargin; // @synthesize vmargin;
 @property(nonatomic) id <QQAVChatControlBarDelegate> _delegate; // @synthesize _delegate;
 @property(nonatomic) _Bool NeedToFit4s; // @synthesize NeedToFit4s;
+- (_Bool)isAVControlBarHasBlueToothButton;
+- (id)getBlueToothView;
+- (_Bool)isAVBarWirelessRoutesAvailable;
+- (_Bool)isAVBarWirelessRouteActive;
 - (void)recordContectedTime;
 - (void)animViewClicked:(id)arg1;
 - (void)removeFunChatAnimAfterContected10s;
@@ -55,6 +65,7 @@
 - (_Bool)onTextReplyMsg:(id)arg1;
 - (void)onMemAdd:(id)arg1;
 - (_Bool)onMute:(id)arg1;
+- (_Bool)onBlueToothClick:(id)arg1;
 - (_Bool)onSpeaker:(id)arg1;
 - (_Bool)onClose:(id)arg1;
 - (_Bool)onCamera:(id)arg1;
@@ -82,19 +93,20 @@
 - (void)setBusinessType:(int)arg1 animatied:(_Bool)arg2 info:(id)arg3;
 - (void)setGRoupGameGuildCommon:(_Bool)arg1;
 - (void)setNoAnswerAnimatied:(_Bool)arg1;
-- (void)setGroup_EncounterReqiestingAnimated:(_Bool)arg1;
-- (void)setGroupCommonAnimatied:(_Bool)arg1;
-- (void)setGroupVideo:(_Bool)arg1;
-- (void)setP2P_VideoAnimatied:(_Bool)arg1;
+- (void)setGroup_EncounterReqiestingAnimated:(_Bool)arg1 isBlueToothConnected:(id)arg2;
+- (void)setGroupCommonAnimatied:(_Bool)arg1 isBlueToothConnected:(_Bool)arg2;
+- (void)setGroupVideo:(_Bool)arg1 isBlueToothConnected:(_Bool)arg2;
+- (void)setP2P_VideoAnimatied:(_Bool)arg1 isBlueToothConnected:(_Bool)arg2;
 - (void)setP2P_VideoRecvreQuestAnimatied:(_Bool)arg1;
-- (void)setP2P_VideoRequestingAnimatied:(_Bool)arg1;
-- (void)setP2P_CommonAudioAnimatied:(_Bool)arg1;
+- (void)setP2P_VideoRequestingAnimatied:(_Bool)arg1 isBlueToothConnected:(id)arg2;
+- (void)setP2P_CommonAudioAnimatied:(_Bool)arg1 isBlueToothConnected:(_Bool)arg2;
 - (void)setP2P_CommonRecevRequestAnimatied:(_Bool)arg1;
-- (void)setP2P_AudioRequestingAnimatied:(_Bool)arg1;
+- (void)setP2P_AudioRequestingAnimatied:(_Bool)arg1 isBlueToothConnected:(id)arg2;
 - (void)removeBackgroud;
 - (void)addBackground;
 - (_Bool)isPhoneCallDisplay;
 - (void)setButtonWithBaseInfo:(id)arg1 LayoutInfo:(id)arg2 animated:(_Bool)arg3;
+- (void)setupBlueTooth;
 - (id)hitTest:(struct CGPoint)arg1 withEvent:(id)arg2;
 - (id)initWithFrame:(struct CGRect)arg1 BusinessType:(int)arg2 isNeedTofit4s:(_Bool)arg3 animatied:(_Bool)arg4 info:(id)arg5;
 - (id)initWithFrame:(struct CGRect)arg1 isNeedTofit4s:(_Bool)arg2;

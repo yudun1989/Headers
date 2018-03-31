@@ -18,8 +18,8 @@
 
 - (void)cancelAllTasks;
 - (void)cancelUploadMediaFile:(id)arg1;
-- (id)getMediaOnlineUrlForFile:(id)arg1 forType:(int)arg2;
-- (_Bool)uploadMediaFile:(id)arg1 forType:(int)arg2 cgiArgu:(id)arg3 callback:(CDUnknownBlockType)arg4;
+- (id)getMediaOnlineUrlForFile:(id)arg1 forType:(unsigned long long)arg2;
+- (_Bool)uploadMediaFile:(id)arg1 forType:(unsigned long long)arg2 cgiArgu:(id)arg3 callback:(CDUnknownBlockType)arg4;
 - (void)removeTaskForKey:(id)arg1;
 - (void)addTask:(id)arg1 ForKey:(id)arg2;
 - (id)findTaskForFile:(id)arg1;

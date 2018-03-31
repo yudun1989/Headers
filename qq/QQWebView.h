@@ -51,6 +51,7 @@
 - (id)backgroundColor;
 - (id)layer;
 @property(readonly, nonatomic) _Bool canGoBack; // @dynamic canGoBack;
+@property(nonatomic) _Bool mediaPlaybackRequiresUserAction; // @dynamic mediaPlaybackRequiresUserAction;
 - (void)setOpaque:(_Bool)arg1;
 - (void)setBackgroundColor:(id)arg1;
 - (void)setFrame:(struct CGRect)arg1;
@@ -78,7 +79,6 @@
 @property(readonly) unsigned long long hash;
 @property(nonatomic) _Bool keyboardDisplayRequiresUserAction; // @dynamic keyboardDisplayRequiresUserAction;
 @property(readonly, nonatomic, getter=isLoading) _Bool loading; // @dynamic loading;
-@property(nonatomic) _Bool mediaPlaybackRequiresUserAction; // @dynamic mediaPlaybackRequiresUserAction;
 @property(nonatomic) _Bool scalesPageToFit; // @dynamic scalesPageToFit;
 @property(readonly, nonatomic) UIScrollView *scrollView; // @dynamic scrollView;
 @property(readonly) Class superclass;

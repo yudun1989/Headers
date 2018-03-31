@@ -34,6 +34,7 @@
 - (void)resetToDefault;
 - (void)resetWithMainScrollCurrentContentOffsetY:(double)arg1 MainPreScrollCurrentContentOffsetY:(double)arg2 scrollViewStatusDict:(id)arg3;
 - (_Bool)checkStatusScrollView:(id)arg1;
+- (void)setScrollView:(id)arg1 contentOffsetY:(double)arg2 animated:(_Bool)arg3;
 - (void)setScrollView:(id)arg1 contentOffsetY:(double)arg2;
 - (void)keepChildScrollViewOffsetZero;
 - (void)childScrollViewDidScroll:(id)arg1;

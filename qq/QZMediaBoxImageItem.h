@@ -12,6 +12,8 @@
     _Bool _isLive;
     _Bool _isDetail;
     _Bool _isDynamicAlbum;
+    _Bool _isCampusShare;
+    _Bool _isAudioSummaryExist;
     _Bool _isSizeComputed;
     double _picWidth;
     double _picHeight;
@@ -21,6 +23,8 @@
 
 @property(nonatomic) _Bool isSizeComputed; // @synthesize isSizeComputed=_isSizeComputed;
 @property(nonatomic) struct CGSize mediaBoxSize; // @synthesize mediaBoxSize=_mediaBoxSize;
+@property(nonatomic) _Bool isAudioSummaryExist; // @synthesize isAudioSummaryExist=_isAudioSummaryExist;
+@property(nonatomic) _Bool isCampusShare; // @synthesize isCampusShare=_isCampusShare;
 @property(nonatomic) _Bool isDynamicAlbum; // @synthesize isDynamicAlbum=_isDynamicAlbum;
 @property(nonatomic) _Bool isDetail; // @synthesize isDetail=_isDetail;
 @property(nonatomic) _Bool isLive; // @synthesize isLive=_isLive;

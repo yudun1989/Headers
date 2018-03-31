@@ -19,8 +19,10 @@
     NSDictionary *_askInfo;
     NSDictionary *_tagsInfo;
     NSDictionary *_skuBase;
+    NSDictionary *_item;
 }
 
+@property(retain, nonatomic) NSDictionary *item; // @synthesize item=_item;
 @property(retain, nonatomic) NSDictionary *skuBase; // @synthesize skuBase=_skuBase;
 @property(retain, nonatomic) NSDictionary *tagsInfo; // @synthesize tagsInfo=_tagsInfo;
 @property(retain, nonatomic) NSDictionary *askInfo; // @synthesize askInfo=_askInfo;

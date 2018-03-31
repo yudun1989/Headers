@@ -74,7 +74,7 @@
 @property(retain, nonatomic) NSDictionary *responseHeaders; // @synthesize responseHeaders=_responseHeaders;
 @property(retain, nonatomic) NSDictionary *requestHeaders; // @synthesize requestHeaders=_requestHeaders;
 @property(nonatomic) unsigned long long responseEncoding; // @synthesize responseEncoding=_responseEncoding;
-@property(retain, nonatomic) NSString *responseString; // @synthesize responseString=_responseString;
+@property(copy, nonatomic) NSString *responseString; // @synthesize responseString=_responseString;
 @property(retain, nonatomic) NSData *responseData; // @synthesize responseData=_responseData;
 @property(retain, nonatomic) id responseJSON; // @synthesize responseJSON=_responseJSON;
 @property(retain, nonatomic) NSMutableDictionary *params; // @synthesize params=_params;

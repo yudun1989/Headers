@@ -31,7 +31,6 @@
 - (void)requestNotifyListCompletionBlock:(CDUnknownBlockType)arg1 failedBlock:(CDUnknownBlockType)arg2;
 - (void)onEventPush:(id)arg1;
 - (void)resetAllHaveReadWithMaxEventId:(unsigned long long)arg1;
-- (void)setHaveReadWithEventId:(unsigned long long)arg1;
 - (void)setNMNotifyUnReadCount:(int)arg1;
 - (int)getNMNotifyUnreadCount;
 - (void)setRequestReadMessageEventID:(long long)arg1;

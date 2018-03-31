@@ -76,6 +76,7 @@
 @property(nonatomic) __weak id <KSAssetPickViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
 @property(nonatomic) struct UIEdgeInsets ks_additionalSafeAreaInsetsForBelowIOS11; // @synthesize ks_additionalSafeAreaInsetsForBelowIOS11=_ks_additionalSafeAreaInsetsForBelowIOS11;
 - (void).cxx_destruct;
+- (id)ksuShowMetaData;
 - (void)editVideoWith:(id)arg1 originalVideoAsset:(id)arg2 movieInfo:(id)arg3 maxDuration:(double)arg4;
 - (void)generatePhotoVideoOnFinish:(CDUnknownBlockType)arg1 onProgress:(CDUnknownBlockType)arg2;
 - (void)applicationDidBecomeActive;
@@ -102,6 +103,7 @@
 - (void)updateAssetPreviewsWithCurrentAsset;
 - (_Bool)prefersStatusBarHidden;
 - (void)viewWillDisappear:(_Bool)arg1;
+- (void)viewDidAppear:(_Bool)arg1;
 - (void)_assetCollectionViewDidPanWithGesture:(id)arg1;
 - (void)_previewScollViewDidPanWithGesture:(id)arg1;
 - (void)viewDidLayoutSubviews;

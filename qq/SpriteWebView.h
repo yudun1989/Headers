@@ -74,6 +74,7 @@
 - (void)setIsShowSpriteAiView:(_Bool)arg1;
 - (void)resetSpriteWebView;
 - (void)onShopInstanceLongPressed:(id)arg1;
+- (void)checkAndShowAI:(id)arg1;
 - (void)onShopInstanceBubbleClicked:(id)arg1;
 - (void)setButtonImg:(id)arg1;
 - (void)showBubble:(id)arg1 willDismiss:(_Bool)arg2;

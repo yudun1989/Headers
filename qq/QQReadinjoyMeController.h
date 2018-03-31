@@ -56,6 +56,7 @@
 - (void)gotoMyMessage:(id)arg1;
 - (void)gotoWebView:(id)arg1;
 - (void)gotoMySetTags;
+- (void)gotoMyFavorite;
 - (void)gotoMyConcern;
 - (void)gotoMyHistory;
 - (void)gotoMyBiu:(id)arg1;
@@ -82,6 +83,7 @@
 - (void)SetNightModeLayer;
 - (void)viewDidLoad;
 - (void)viewDidDisappear:(_Bool)arg1;
+- (void)viewDidAppear:(_Bool)arg1;
 - (void)newMsgForRead:(int)arg1;
 - (void)viewWillAppear:(_Bool)arg1;
 - (void)releaseArray:(id)arg1;

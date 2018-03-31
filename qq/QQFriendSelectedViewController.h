@@ -154,6 +154,7 @@
     _Bool _bRichSucc;
     _Bool _needRoundAvatar;
     _Bool _isStoryShare;
+    _Bool _isTribeVideoShare;
     _Bool _isRecommendCampusCircleFriend;
     _Bool _isSendToSmartDeviceVc;
     int _serviceType;
@@ -200,6 +201,7 @@
 @property(retain, nonatomic) NSDictionary *shortVideoInfo; // @synthesize shortVideoInfo=_shortVideoInfo;
 @property(retain, nonatomic) NSString *sendTitle; // @synthesize sendTitle=_sendTitle;
 @property(retain, nonatomic) NSString *tailMsg; // @synthesize tailMsg=_tailMsg;
+@property(nonatomic) _Bool isTribeVideoShare; // @synthesize isTribeVideoShare=_isTribeVideoShare;
 @property(nonatomic) _Bool isStoryShare; // @synthesize isStoryShare=_isStoryShare;
 @property(copy, nonatomic) NSString *storyUserCardUnionId; // @synthesize storyUserCardUnionId=_storyUserCardUnionId;
 @property(nonatomic) int storyUserCardUserType; // @synthesize storyUserCardUserType=_storyUserCardUserType;
@@ -281,6 +283,7 @@
 - (void)searchDisplayController:(id)arg1 didShowSearchResultsTableView:(id)arg2;
 - (void)searchDisplayControllerWillBeginSearch:(id)arg1;
 - (int)getClusterEnterFilterValue;
+- (void)childViewCellDidSelected:(id)arg1 type:(int)arg2 nick:(id)arg3;
 - (void)childViewCellDidSelected:(id)arg1 type:(int)arg2;
 - (void)leftButtonClick:(id)arg1;
 - (id)getSendImage;
@@ -318,6 +321,7 @@
 - (void)sendToTheUin:(id)arg1;
 - (void)tableView:(id)arg1 didSelectRowAtIndexPath:(id)arg2;
 - (_Bool)tellDelegateButtonClicked:(long long)arg1;
+- (void)tellGroupCreated:(id)arg1;
 - (_Bool)tellDelegateFriendSelected:(id)arg1 type:(int)arg2;
 - (double)setHeightForRow:(id)arg1;
 - (double)tableView:(id)arg1 heightForRowAtIndexPath:(id)arg2;
@@ -354,8 +358,6 @@
 - (id)init;
 - (_Bool)isSupportFullScreenLayout;
 @property(nonatomic) id <QQFriendSelectedViewControllerDelegate> delegate; // @dynamic delegate;
-- (id)engine;
-- (void)setEngine:(id)arg1;
 - (id)getResourceForFile:(id)arg1;
 - (void)makeUpSendBookXMLToUin:(id)arg1 receiverName:(id)arg2;
 - (void)popMyselfToWindowTopWithAnimated:(_Bool)arg1;

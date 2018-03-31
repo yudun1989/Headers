@@ -16,6 +16,7 @@
 
 - (void)commitFailMonitorPoint:(id)arg1 error:(id)arg2 arg:(id)arg3;
 - (id)appendArg:(id)arg1 forKey:(id)arg2 value:(id)arg3;
+- (id)templateArgWithTemplate:(id)arg1;
 - (void)trackWriteTemplateWithModule:(id)arg1 template:(id)arg2 isSuccess:(_Bool)arg3 error:(id)arg4 costTime:(double)arg5;
 - (void)trackReadTemplateWithModule:(id)arg1 template:(id)arg2 isSuccess:(_Bool)arg3 error:(id)arg4 costTime:(double)arg5;
 - (void)trackDownloadTemplateWithModule:(id)arg1 template:(id)arg2 isSuccess:(_Bool)arg3 error:(id)arg4 costTime:(double)arg5;

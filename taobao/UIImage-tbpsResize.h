@@ -9,6 +9,7 @@
 @interface UIImage (tbpsResize)
 + (id)tbpsImageWithImage:(id)arg1 scaledToSize:(struct CGSize)arg2;
 + (id)imageWithSampleBuffer:(struct opaqueCMSampleBuffer *)arg1 cameraPosition:(long long)arg2;
+- (struct __CVBuffer *)imageTransferBuffer;
 - (void)resizeWithWidth:(int)arg1 height:(int)arg2 RGBABuffer:(char **)arg3 RGBBuffer:(char **)arg4;
 - (void)resizeAsyncImage:(CDUnknownBlockType)arg1;
 - (id)tbpsImageWithSize:(struct CGSize)arg1;

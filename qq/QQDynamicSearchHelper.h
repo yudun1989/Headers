@@ -14,9 +14,15 @@
 + (_Bool)isPureInt:(id)arg1;
 + (id)mergeWhiteSpace:(id)arg1;
 + (id)trimWhiteSpace:(id)arg1;
-+ (_Bool)adustSummaryTextForHighlight:(id)arg1 withKeyWords:(id)arg2 withMaxLineCount:(int)arg3 withWidth:(int)arg4;
-+ (_Bool)adustTitleTextForHighlight:(id)arg1 withKeyWords:(id)arg2 withMaxLineCount:(int)arg3 withWidth:(int)arg4;
++ (_Bool)isString:(id)arg1 boundeInMaxWidth:(double)arg2 forMaxLine:(long long)arg3 font:(id)arg4;
++ (id)boundTextForString:(id)arg1 withKeyWords:(id)arg2 font:(id)arg3 withMaxLineCount:(int)arg4 withWidth:(double)arg5;
++ (id)adustSummaryTextString:(id)arg1 font:(id)arg2 withKeyWords:(id)arg3 withMaxLineCount:(int)arg4 withWidth:(double)arg5 isSingleLine:(_Bool *)arg6;
++ (_Bool)adustSummaryTextForHighlight:(id)arg1 withKeyWords:(id)arg2 withMaxLineCount:(int)arg3 withWidth:(double)arg4;
++ (id)adustTitleTextString:(id)arg1 font:(id)arg2 withKeyWords:(id)arg3 withMaxLineCount:(int)arg4 withWidth:(double)arg5 isSingleLine:(_Bool *)arg6;
++ (_Bool)adustTitleTextForHighlight:(id)arg1 withKeyWords:(id)arg2 withMaxLineCount:(int)arg3 withWidth:(double)arg4;
 + (id)highlightLineText:(id)arg1 withKeyWords:(id)arg2;
++ (id)highlightAttributedString:(id)arg1 withKeyWord:(id)arg2 needMatchPinYin:(_Bool)arg3 isMatched:(_Bool *)arg4;
++ (id)highlightAttributedString:(id)arg1 withKeyWords:(id)arg2 needMatchPinYin:(_Bool)arg3 isMatched:(_Bool *)arg4;
 + (_Bool)highlightAttributedLabel:(id)arg1 withKeyWord:(id)arg2 needMatchPinYin:(_Bool)arg3;
 + (_Bool)highlightAttributedLabel:(id)arg1 withKeyWord:(id)arg2;
 + (_Bool)highlightAttributedLabel:(id)arg1 withKeyWords:(id)arg2;

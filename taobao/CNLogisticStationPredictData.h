@@ -12,8 +12,12 @@
 {
     NSString *_desc;
     NSString *_address;
+    NSString *_stationName;
+    NSString *_officeTime;
 }
 
+@property(retain, nonatomic) NSString *officeTime; // @synthesize officeTime=_officeTime;
+@property(retain, nonatomic) NSString *stationName; // @synthesize stationName=_stationName;
 @property(retain, nonatomic) NSString *address; // @synthesize address=_address;
 @property(retain, nonatomic) NSString *desc; // @synthesize desc=_desc;
 - (void).cxx_destruct;

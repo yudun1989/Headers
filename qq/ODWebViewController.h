@@ -6,6 +6,7 @@
 
 #import <QQMainProject/QQWebViewController.h>
 
+#import <QQMainProject/ODJSBridgeMethodDelegate-Protocol.h>
 #import <QQMainProject/UIActionSheetDelegate-Protocol.h>
 #import <QQMainProject/UIAlertViewDelegate-Protocol.h>
 #import <QQMainProject/UIGestureRecognizerDelegate-Protocol.h>
@@ -15,7 +16,7 @@
 @class NSString, ODJSBridgeMethodConfig, ODRoomPluginViewController, UIButton;
 @protocol ODJSBridgeControlWindowDelegate, ODWebViewControllerDelegate;
 
-@interface ODWebViewController : QQWebViewController <UIImagePickerControllerDelegate, UINavigationControllerDelegate, UIActionSheetDelegate, UIAlertViewDelegate, UIGestureRecognizerDelegate>
+@interface ODWebViewController : QQWebViewController <UIImagePickerControllerDelegate, UINavigationControllerDelegate, UIActionSheetDelegate, UIAlertViewDelegate, UIGestureRecognizerDelegate, ODJSBridgeMethodDelegate>
 {
     ODJSBridgeMethodConfig *_jsMethodConfig;
     _Bool _leftButtonHidden;
@@ -36,6 +37,7 @@
 @property(nonatomic) __weak id <ODJSBridgeControlWindowDelegate> jsBridgeCtrlWinDelegate; // @synthesize jsBridgeCtrlWinDelegate=_jsBridgeCtrlWinDelegate;
 @property(nonatomic) __weak id <ODWebViewControllerDelegate> odWebViewDelegate; // @synthesize odWebViewDelegate=_odWebViewDelegate;
 - (void).cxx_destruct;
+- (void)dispatchEvent:(id)arg1 data:(id)arg2;
 - (void)decideNavigationBarWithStyle;
 - (void)loadStatusBar;
 - (void)disableNavBarSeting:(_Bool)arg1;

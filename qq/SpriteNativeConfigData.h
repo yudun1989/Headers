@@ -22,8 +22,10 @@
     NSMutableArray *_slaveList;
     NSMutableArray *_payedByGoldList;
     unsigned long long _actionTimeStamp;
+    NSArray *_petConfig;
 }
 
+@property(retain, nonatomic) NSArray *petConfig; // @synthesize petConfig=_petConfig;
 @property(readonly, nonatomic) NSArray *payedByGoldList; // @synthesize payedByGoldList=_payedByGoldList;
 @property(readonly, nonatomic) NSArray *slaveList; // @synthesize slaveList=_slaveList;
 @property(readonly, nonatomic) NSArray *todayFreeJoinList; // @synthesize todayFreeJoinList=_todayFreeJoinList;

@@ -11,8 +11,10 @@
 @interface MCComposedMessageTypeDataVo : MCComposedMessageVo
 {
     NSString *_summary;
+    long long _cardBizId;
 }
 
+@property(nonatomic) long long cardBizId; // @synthesize cardBizId=_cardBizId;
 @property(retain, nonatomic) NSString *summary; // @synthesize summary=_summary;
 - (void).cxx_destruct;
 - (id)initWithDatas:(id)arg1;

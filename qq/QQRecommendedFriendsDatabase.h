@@ -19,6 +19,7 @@
 - (void)onDbAsyncCallback:(id)arg1 userdata:(id)arg2 workID:(int)arg3;
 - (unsigned long long)getTableSign;
 - (void)removeHistoryRFInNewFriendData;
+- (void)getRecommendedFriendDataCountAsyn:(CDUnknownBlockType)arg1;
 - (unsigned int)getRecommendedFriendDataCount;
 - (void)modifyRFInNewFriendData:(id)arg1 modifyUnReaded:(_Bool)arg2;
 - (void)modifyRecommendedFriendsData:(id)arg1;
@@ -38,6 +39,7 @@
 - (void)sortRFDataWithTableName:(id)arg1 condition:(id)arg2 asc:(_Bool)arg3 db:(id)arg4;
 - (void)clearAllDataWithTableName:(id)arg1 db:(id)arg2;
 - (void)clearRFData:(id)arg1 db:(id)arg2;
+- (id)getDataCountToArray:(id)arg1 db:(id)arg2;
 - (unsigned int)getDataCount:(id)arg1 db:(id)arg2;
 - (void)dealWithRecommendedFriendDataToCapacityLimit:(id)arg1 capacity:(unsigned int)arg2 db:(id)arg3;
 - (id)getAllRecommendedFriendData:(id)arg1 db:(id)arg2;

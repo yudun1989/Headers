@@ -6,7 +6,7 @@
 
 #import <Foundation/NSObject.h>
 
-@class DWComponent, DWInteractiveModel, NSDictionary, NSString;
+@class DWComponent, DWInteractiveModel, NSArray, NSDictionary, NSString;
 
 @interface DWTimeLineModel : NSObject
 {
@@ -21,9 +21,11 @@
     DWComponent *_portComponent;
     DWComponent *_landComponent;
     long long _videoInteractiveType;
+    NSArray *_portraitVideoList;
 }
 
 + (id)modelWithJSONDictionary:(id)arg1;
+@property(retain, nonatomic) NSArray *portraitVideoList; // @synthesize portraitVideoList=_portraitVideoList;
 @property(nonatomic) long long videoInteractiveType; // @synthesize videoInteractiveType=_videoInteractiveType;
 @property(retain, nonatomic) DWComponent *landComponent; // @synthesize landComponent=_landComponent;
 @property(retain, nonatomic) DWComponent *portComponent; // @synthesize portComponent=_portComponent;

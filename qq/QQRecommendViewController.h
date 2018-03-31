@@ -36,7 +36,7 @@
     _Bool _is6Plus;
     QQAvatarView *_qzoneHeadView;
     _Bool _viewDidShown;
-    _Bool _firstDisplayFlag;
+    unsigned long long _firstDisplayFlagUin;
     _Bool _fromGuiderView;
 }
 
@@ -45,6 +45,7 @@
 - (void)actionCampusCircleClicked:(id)arg1;
 - (void)updateAllPeopleVote:(id)arg1;
 - (void)updateCampusCircleRedPointInfoForItem:(id)arg1;
+- (void)campusCircleViewDidAppear;
 - (void)updateRedPointDynamicTabForCampusCircle;
 - (_Bool)isPluginEnabled:(unsigned long long)arg1;
 - (void)reportMoreButton:(long long)arg1;

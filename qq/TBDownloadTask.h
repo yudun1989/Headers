@@ -12,6 +12,7 @@
 {
     _Bool _isCompeletedDownloaded;
     _Bool _noIPConnection;
+    _Bool _enableDownloadPiece;
     int _state;
     int _taskType;
     unsigned long long _tryCount;
@@ -29,6 +30,7 @@
     CDUnknownBlockType _didFailBlock;
     unsigned long long _endOffset;
     unsigned long long _endSize;
+    unsigned long long _pieceLength;
     QQHttpClientSession *_session;
     NSMutableURLRequest *_request;
     NSFileHandle *_fileHandle;
@@ -39,6 +41,8 @@
 @property(retain, nonatomic) NSFileHandle *fileHandle; // @synthesize fileHandle=_fileHandle;
 @property(retain, nonatomic) NSMutableURLRequest *request; // @synthesize request=_request;
 @property(retain, nonatomic) QQHttpClientSession *session; // @synthesize session=_session;
+@property(nonatomic) unsigned long long pieceLength; // @synthesize pieceLength=_pieceLength;
+@property(nonatomic) _Bool enableDownloadPiece; // @synthesize enableDownloadPiece=_enableDownloadPiece;
 @property(nonatomic) _Bool noIPConnection; // @synthesize noIPConnection=_noIPConnection;
 @property(nonatomic) unsigned long long endSize; // @synthesize endSize=_endSize;
 @property(nonatomic) unsigned long long endOffset; // @synthesize endOffset=_endOffset;

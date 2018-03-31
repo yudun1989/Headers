@@ -6,7 +6,7 @@
 
 #import <Foundation/NSObject.h>
 
-@class JVSEvaluator, NSDictionary, NSString;
+@class AliNNBaseNet, JVSEvaluator, NSDictionary, NSString;
 @protocol OS_dispatch_queue;
 
 @interface TBPSEvaluator : NSObject
@@ -20,22 +20,26 @@
     _Bool _silenceWifi;
     _Bool _encoder;
     double _dataSize;
+    AliNNBaseNet *_net;
     NSDictionary *_setting;
     NSString *_url;
     NSString *_md5;
     NSString *_name;
+    NSString *_weights;
 }
 
 + (id)dispQueue;
 @property(nonatomic) _Bool encoder; // @synthesize encoder=_encoder;
+@property(retain, nonatomic) NSString *weights; // @synthesize weights=_weights;
 @property(retain, nonatomic) NSString *name; // @synthesize name=_name;
 @property(retain, nonatomic) NSString *md5; // @synthesize md5=_md5;
 @property(retain, nonatomic) NSString *url; // @synthesize url=_url;
 @property(retain, nonatomic) NSDictionary *setting; // @synthesize setting=_setting;
 @property(nonatomic) _Bool silenceWifi; // @synthesize silenceWifi=_silenceWifi;
+@property(readonly, nonatomic) AliNNBaseNet *net; // @synthesize net=_net;
 @property(readonly, nonatomic) _Bool isStop; // @synthesize isStop=_isStop;
 @property(readonly, nonatomic) vector_19d11927 reserves; // @synthesize reserves=_reserves;
-@property(readonly, nonatomic) _Bool isReady; // @synthesize isReady=_isReady;
+@property(nonatomic) _Bool isReady; // @synthesize isReady=_isReady;
 @property(readonly, nonatomic) double dataSize; // @synthesize dataSize=_dataSize;
 @property(readonly, nonatomic) JVSEvaluator *evaluator; // @synthesize evaluator=_evaluator;
 @property(readonly, nonatomic) _Bool isRunning; // @synthesize isRunning=_isRunning;
@@ -52,6 +56,7 @@
 - (void)evaluateWithImage:(id)arg1 completed:(CDUnknownBlockType)arg2;
 - (void)evaluate:(vector_19d11927)arg1 completed:(CDUnknownBlockType)arg2;
 - (void)buildEvaluator:(id)arg1 completed:(CDUnknownBlockType)arg2;
+- (void)buildNet:(id)arg1 weights:(id)arg2 completed:(CDUnknownBlockType)arg3;
 - (void)inQueue_buildSetting:(CDUnknownBlockType)arg1;
 - (void)buildSetting:(CDUnknownBlockType)arg1;
 - (id)initWithSetting:(id)arg1;

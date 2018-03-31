@@ -18,6 +18,7 @@
 #import <QQMainProject/QQPublicAccountScreenShotDelegate-Protocol.h>
 #import <QQMainProject/QQUrlJumpHelperDelegate-Protocol.h>
 #import <QQMainProject/QQWebShareDelegate-Protocol.h>
+#import <QQMainProject/QQWebViewControllerDelegate-Protocol.h>
 #import <QQMainProject/QQWebViewSwitchToAioMsgListDelegate-Protocol.h>
 #import <QQMainProject/QQWebviewExecuteJSDelegate-Protocol.h>
 #import <QQMainProject/SonicSessionDelegate-Protocol.h>
@@ -32,9 +33,9 @@
 #import <QQMainProject/WKUIDelegate-Protocol.h>
 
 @class ActionSheetAdditionalItems, JSContext, NSArray, NSData, NSDate, NSDictionary, NSError, NSMutableArray, NSMutableData, NSMutableDictionary, NSNumber, NSString, NSTimer, NSURL, NSURLConnection, NSURLRequest, ODRefreshControl, QQActivityViewController, QQAlertView, QQGroupLinkShareController, QQMessageModel, QQPluginInfo, QQPublicAccountLikeCommentBoxView, QQPublicAccountScreenShotMgr, QQShareWebRichMsgLogic, QQURLRichMsgData, QQUrlJumpHelper, QQWebPageListenerWrapper, QQWebShareActionSheet, QQWebView, QQWebViewControllerPayHelper, QQWebViewDynamicFontSetting, QQWebViewGroupHelper, QQWebViewLBSLogic, QQWebViewOfflineUpdateInfo, QQWebViewPluginScheduler, QQWebViewSwitchToAioMsgListMgr, UIActivityIndicatorView, UIButton, UIColor, UIImage, UIImageView, UILabel, UINavigationController, UISwipeGestureRecognizer, UITapGestureRecognizer, UIView, UIWebView, UserSummaryNavigationBar, WebAdsorbDragButton;
-@protocol QQRichStateJsHelperDelegate;
+@protocol QQRichStateJsHelperDelegate, QQWebViewControllerDelegate;
 
-@interface QQWebViewController : QQViewController <CmShowGameViewDelegate, QQPublicAccountScreenShotDelegate, PhotoEditDelegate, ActionItemDelegate, QQPAPhotoEditDelegate, QQFriendSelectedViewControllerDelegate, QQWebShareDelegate, UserSummaryNavBarItemDelagate, QQWebViewSwitchToAioMsgListDelegate, SonicSessionDelegate, TrackerEventProtocal, QQAudioSessionManagerDelegate, WKScriptMessageHandler, WKUIDelegate, UIGestureRecognizerDelegate, UIWebViewDelegate, WKNavigationDelegate, QQUrlJumpHelperDelegate, QQWebviewExecuteJSDelegate, UIActionSheetDelegate, ActionSheetDataDelegate, QQNavigationControllerEventDelegate, QQBannerTipViewDelegate, UIScrollViewDelegate>
+@interface QQWebViewController : QQViewController <CmShowGameViewDelegate, QQPublicAccountScreenShotDelegate, PhotoEditDelegate, ActionItemDelegate, QQPAPhotoEditDelegate, QQFriendSelectedViewControllerDelegate, QQWebShareDelegate, UserSummaryNavBarItemDelagate, QQWebViewSwitchToAioMsgListDelegate, SonicSessionDelegate, TrackerEventProtocal, QQAudioSessionManagerDelegate, WKScriptMessageHandler, WKUIDelegate, UIGestureRecognizerDelegate, UIWebViewDelegate, WKNavigationDelegate, QQUrlJumpHelperDelegate, QQWebviewExecuteJSDelegate, UIActionSheetDelegate, ActionSheetDataDelegate, QQNavigationControllerEventDelegate, QQBannerTipViewDelegate, UIScrollViewDelegate, QQWebViewControllerDelegate>
 {
     NSString *_lastLeftBtnTitle;
     NSString *_originalLeftBtnTitle;
@@ -185,6 +186,7 @@
     int _jsSetRightForwardButton;
     _Bool _isNeedShowRightButtonRedPoint;
     _Bool _isUsingWKPool;
+    _Bool _isQzoneGame;
     NSString *_recomposePrefix;
     _Bool _skipRedirect;
     _Bool _timeout;
@@ -209,6 +211,7 @@
     _Bool _enableCopyShortLink;
     _Bool _isKeyBoardShow;
     _Bool _isGamePlaying;
+    _Bool _isAutoPlayVideo;
     _Bool _isTransparentAndPassthroughTouchEvent;
     _Bool _isNavTransparent;
     _Bool _shouldTransparentNavigationBarChangeWhenScroll;
@@ -220,6 +223,7 @@
     _Bool _needSetCategory;
     _Bool _isGroupVideoGrayH5Req;
     _Bool _appInBackground;
+    _Bool _hideLeftArrow;
     _Bool _isNeedTopAdapterView;
     _Bool _isNeedBottomAdapterView;
     _Bool _isTopAdapterColorSetInDocumentFinish;
@@ -229,6 +233,7 @@
     _Bool _QZoneRedirectWarningFlag;
     NSMutableArray *bottombarHideArray;
     NSMutableArray *bottombarShowArray;
+    id <QQWebViewControllerDelegate> _webViewDelegate;
     UINavigationController *_tempNavgationController;
     NSString *_currentMainDocumentURL;
     NSString *_beforeRedirectionURL;
@@ -336,6 +341,7 @@
 @property(nonatomic) _Bool isNeedBottomAdapterView; // @synthesize isNeedBottomAdapterView=_isNeedBottomAdapterView;
 @property(nonatomic) _Bool isNeedTopAdapterView; // @synthesize isNeedTopAdapterView=_isNeedTopAdapterView;
 @property(nonatomic) unsigned long long subStyle; // @synthesize subStyle=_subStyle;
+@property(nonatomic) _Bool hideLeftArrow; // @synthesize hideLeftArrow=_hideLeftArrow;
 @property(retain, nonatomic) NSString *reuseWebIdentifier; // @synthesize reuseWebIdentifier=_reuseWebIdentifier;
 @property(nonatomic) _Bool appInBackground; // @synthesize appInBackground=_appInBackground;
 @property(nonatomic) _Bool isGroupVideoGrayH5Req; // @synthesize isGroupVideoGrayH5Req=_isGroupVideoGrayH5Req;
@@ -361,6 +367,7 @@
 @property(nonatomic) double gotPt4tokenTime; // @synthesize gotPt4tokenTime=_gotPt4tokenTime;
 @property(nonatomic) double firstStartLoadingTime; // @synthesize firstStartLoadingTime=_firstStartLoadingTime;
 @property(nonatomic) double startLoadViewTime; // @synthesize startLoadViewTime=_startLoadViewTime;
+@property(nonatomic) _Bool isAutoPlayVideo; // @synthesize isAutoPlayVideo=_isAutoPlayVideo;
 @property(nonatomic) long long originDeviceOrientation; // @synthesize originDeviceOrientation=_originDeviceOrientation;
 @property(retain, nonatomic) UILabel *qbTipsLabel; // @synthesize qbTipsLabel=_qbTipsLabel;
 @property(retain, nonatomic) UIImageView *qbImageView; // @synthesize qbImageView=_qbImageView;
@@ -387,11 +394,13 @@
 @property(retain, nonatomic) NSString *url; // @synthesize url=_url;
 @property(retain, nonatomic) UINavigationController *tempNavgationController; // @synthesize tempNavgationController=_tempNavgationController;
 @property(nonatomic) _Bool hideRightButtonRedPointAfterClick; // @synthesize hideRightButtonRedPointAfterClick=_hideRightButtonRedPointAfterClick;
+@property(nonatomic) id <QQWebViewControllerDelegate> webViewDelegate; // @synthesize webViewDelegate=_webViewDelegate;
 @property(retain, nonatomic) NSString *originShareUrl; // @synthesize originShareUrl=_originShareUrl;
 @property(retain, nonatomic) NSString *arkString; // @synthesize arkString=_arkString;
 @property(retain, nonatomic) NSMutableArray *bottombarShowArray; // @synthesize bottombarShowArray;
 @property(retain, nonatomic) NSMutableArray *bottombarHideArray; // @synthesize bottombarHideArray;
 - (void).cxx_destruct;
+- (void)reportToCompass2216Action:(id)arg1;
 - (id)qbWebReportInfoWithUrl:(id)arg1;
 - (id)getWebBrowserView;
 - (void)logDNSResultForPublicAccount:(id)arg1;
@@ -690,6 +699,7 @@
 - (void)resetlayout;
 - (void)resetlayout:(long long)arg1;
 - (void)createDefaultImageRightButton;
+- (id)imageWithColor:(id)arg1 size:(struct CGSize)arg2;
 - (void)viewDidLayoutSubviews;
 - (unsigned long long)viewID;
 - (int)viewTag;
@@ -710,6 +720,7 @@
 - (void)setNavBottomLineState:(_Bool)arg1;
 - (void)setNavButtonColor:(id)arg1;
 - (void)setNavButtonColorWithHex:(unsigned long long)arg1;
+- (void)updateButton:(id)arg1 color:(id)arg2;
 - (void)setNavTextColor:(id)arg1;
 - (void)setNavTextColorWithHex:(unsigned long long)arg1;
 - (void)setNavBgColor:(id)arg1;
@@ -850,6 +861,9 @@
 - (id)mqq_nav_openGroupAioOrProfile:(id)arg1;
 - (void)onGetCreateGroupAuthority:(int)arg1 groupCode:(unsigned int)arg2 groupUin:(unsigned int)arg3 sign:(id)arg4 svrErrorCode:(int)arg5;
 - (id)mqq_nav_createGroup:(id)arg1;
+- (id)mqq_homework_clearData:(id)arg1;
+- (id)mqq_homework_cancelUpload:(id)arg1;
+- (id)mqq_homework_reUpload:(id)arg1;
 - (id)mqq_homework_playVideo:(id)arg1;
 - (id)mqq_homework_openUploadVideo:(id)arg1;
 - (id)mqq_homework_openLocalFilePreview:(id)arg1;
@@ -945,6 +959,7 @@
 - (void)reportBounceRate;
 - (void)logBounceRateStep:(int)arg1;
 - (void)logBounceRateStart;
+- (void)popAnimationFinished;
 - (void)hidenAnimationStart;
 - (void)popAnimationStart;
 - (id)showPickerView:(id)arg1 doneAction:(SEL)arg2 target:(id)arg3;

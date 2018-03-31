@@ -64,6 +64,9 @@
 - (void)requestFeedWithModel:(id)arg1 contentId:(id)arg2;
 - (void)showEmptyView;
 - (void)configScrollsToTop:(_Bool)arg1;
+- (void)reloadData:(id)arg1;
+- (void)updateExactTemplates:(id)arg1;
+- (void)downloadTemplates:(id)arg1;
 - (void)requestFeedWithModel:(id)arg1 pageNum:(long long)arg2 isPullMode:(_Bool)arg3 contentId:(id)arg4;
 - (void)dealloc;
 - (id)initWithFrame:(struct CGRect)arg1;

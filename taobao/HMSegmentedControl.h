@@ -14,10 +14,6 @@
     _Bool _userDraggable;
     _Bool _touchEnabled;
     _Bool _shouldAnimateUserSelection;
-    int _type;
-    int _selectionStyle;
-    int _segmentWidthStyle;
-    int _selectionIndicatorLocation;
     NSArray *_sectionTitles;
     NSArray *_sectionImages;
     NSArray *_sectionSelectedImages;
@@ -28,6 +24,10 @@
     UIColor *_backgroundColor;
     UIColor *_selectionIndicatorColor;
     double _selectionIndicatorBoxOpacity;
+    long long _type;
+    long long _selectionStyle;
+    long long _segmentWidthStyle;
+    long long _selectionIndicatorLocation;
     long long _selectedSegmentIndex;
     double _selectionIndicatorHeight;
     CALayer *_selectionIndicatorStripLayer;
@@ -58,10 +58,10 @@
 @property(nonatomic, getter=isTouchEnabled) _Bool touchEnabled; // @synthesize touchEnabled=_touchEnabled;
 @property(nonatomic, getter=isUserDraggable) _Bool userDraggable; // @synthesize userDraggable=_userDraggable;
 @property(nonatomic, getter=isScrollEnabled) _Bool scrollEnabled; // @synthesize scrollEnabled=_scrollEnabled;
-@property(nonatomic) int selectionIndicatorLocation; // @synthesize selectionIndicatorLocation=_selectionIndicatorLocation;
-@property(nonatomic) int segmentWidthStyle; // @synthesize segmentWidthStyle=_segmentWidthStyle;
-@property(nonatomic) int selectionStyle; // @synthesize selectionStyle=_selectionStyle;
-@property(nonatomic) int type; // @synthesize type=_type;
+@property(nonatomic) long long selectionIndicatorLocation; // @synthesize selectionIndicatorLocation=_selectionIndicatorLocation;
+@property(nonatomic) long long segmentWidthStyle; // @synthesize segmentWidthStyle=_segmentWidthStyle;
+@property(nonatomic) long long selectionStyle; // @synthesize selectionStyle=_selectionStyle;
+@property(nonatomic) long long type; // @synthesize type=_type;
 @property(nonatomic) double selectionIndicatorBoxOpacity; // @synthesize selectionIndicatorBoxOpacity=_selectionIndicatorBoxOpacity;
 @property(retain, nonatomic) UIColor *selectionIndicatorColor; // @synthesize selectionIndicatorColor=_selectionIndicatorColor;
 @property(retain, nonatomic) UIColor *backgroundColor; // @synthesize backgroundColor=_backgroundColor;

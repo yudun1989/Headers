@@ -6,28 +6,27 @@
 
 #import <Foundation/NSObject.h>
 
-@class NSTimer, UIView;
+@class NSMutableArray, NSTimer;
 
 @interface GdtAdExposureManager : NSObject
 {
     CDUnknownBlockType _adviewDidExpouse;
     CDUnknownBlockType _adviewWillExposure;
-    UIView *_adView;
     NSTimer *_timer;
-    double _startTime;
+    NSMutableArray *_adviewArray;
 }
 
 + (id)shareInstance;
-@property(nonatomic) double startTime; // @synthesize startTime=_startTime;
+@property(retain, nonatomic) NSMutableArray *adviewArray; // @synthesize adviewArray=_adviewArray;
 @property(retain, nonatomic) NSTimer *timer; // @synthesize timer=_timer;
-@property(nonatomic) __weak UIView *adView; // @synthesize adView=_adView;
 @property(copy, nonatomic) CDUnknownBlockType adviewWillExposure; // @synthesize adviewWillExposure=_adviewWillExposure;
 @property(copy, nonatomic) CDUnknownBlockType adviewDidExpouse; // @synthesize adviewDidExpouse=_adviewDidExpouse;
-- (void).cxx_destruct;
-- (double)adViewPercentInWindow;
+- (double)adViewPercentInWindow:(id)arg1;
 - (void)timerSelector;
+- (void)removeExposureInfo;
 - (void)adViewDidEndDisplay:(id)arg1;
 - (void)adViewWillDisplay:(id)arg1;
+- (void)addAdInfo:(id)arg1;
 - (void)dealloc;
 
 @end

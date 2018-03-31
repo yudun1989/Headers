@@ -15,8 +15,8 @@
     WXSDKInstance *weexInstance;
 }
 
++ (id)wx_export_method_19;
 + (id)wx_export_method_18;
-+ (id)wx_export_method_17;
 @property(nonatomic) __weak WXSDKInstance *weexInstance; // @synthesize weexInstance;
 - (void).cxx_destruct;
 - (void)replace:(id)arg1;

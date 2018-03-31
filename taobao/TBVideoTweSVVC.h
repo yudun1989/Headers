@@ -6,15 +6,16 @@
 
 #import "TBLiveBaseViewController.h"
 
+#import "TBVideoSVRightAreaViewDelegate-Protocol.h"
 #import "TBVideoTweSVViewInterface-Protocol.h"
 #import "UIGestureRecognizerDelegate-Protocol.h"
 #import "UIScrollViewDelegate-Protocol.h"
 #import "UITextFieldDelegate-Protocol.h"
 
-@class CALayer, NSMutableArray, NSString, TBIctEventCenter, TBVideoSVBarrageUtil, TBVideoSVCommentInputView, TBVideoSVGoodsItemView, TBVideoSVGravityUtil, TBVideoSVIntroduceView, TBVideoSVPlayerControllView, TBVideoSVRightAreaView, TBVideoSVTopBTNView, TBVideoShortVideoModel, TBVideoTweSVInteractor, TBVideoTweSVPlayerView, TBVideoUIButtonWithBlock, UIScrollView, UIView;
+@class CALayer, NSMutableArray, NSString, TBIctEventCenter, TBVideoBarrageListHomeView, TBVideoSVBarrageUtil, TBVideoSVCommentInputView, TBVideoSVGoodsItemView, TBVideoSVGravityUtil, TBVideoSVIntroduceView, TBVideoSVPlayerControllView, TBVideoSVRightAreaView, TBVideoSVTopBTNView, TBVideoShortVideoModel, TBVideoTweSVInteractor, TBVideoTweSVPlayerView, TBVideoUIButtonWithBlock, UIImageView, UIScrollView, UIView;
 @protocol TBVideoTweSVModuleInterface;
 
-@interface TBVideoTweSVVC : TBLiveBaseViewController <UIScrollViewDelegate, UITextFieldDelegate, UIGestureRecognizerDelegate, TBVideoTweSVViewInterface>
+@interface TBVideoTweSVVC : TBLiveBaseViewController <UIScrollViewDelegate, UITextFieldDelegate, UIGestureRecognizerDelegate, TBVideoSVRightAreaViewDelegate, TBVideoTweSVViewInterface>
 {
     _Bool _willLeavingVC;
     _Bool _goodsViewOpened;
@@ -36,6 +37,9 @@
     TBVideoSVCommentInputView *_commentInputView;
     TBVideoSVBarrageUtil *_barrageMgr;
     TBIctEventCenter *_eventCenter;
+    NSString *_taowaType;
+    UIImageView *_transitionView;
+    NSString *_firstMediaId;
     id <TBVideoTweSVModuleInterface> _tweGVPresenter;
     TBVideoSVGravityUtil *_gravityUtil;
     TBVideoTweSVPlayerView *_playerView;
@@ -54,8 +58,12 @@
     long long _currentScrollPage;
     double _offsetYBeforeDragging;
     double _offsetYAfterDragging;
+    TBVideoUIButtonWithBlock *_underlayer;
+    TBVideoBarrageListHomeView *_barrageListView;
 }
 
+@property(retain, nonatomic) TBVideoBarrageListHomeView *barrageListView; // @synthesize barrageListView=_barrageListView;
+@property(retain, nonatomic) TBVideoUIButtonWithBlock *underlayer; // @synthesize underlayer=_underlayer;
 @property(nonatomic) _Bool muted; // @synthesize muted=_muted;
 @property(nonatomic) _Bool disableScroll; // @synthesize disableScroll=_disableScroll;
 @property(nonatomic) double offsetYAfterDragging; // @synthesize offsetYAfterDragging=_offsetYAfterDragging;
@@ -80,6 +88,9 @@
 @property(retain, nonatomic) TBVideoTweSVPlayerView *playerView; // @synthesize playerView=_playerView;
 @property(retain, nonatomic) TBVideoSVGravityUtil *gravityUtil; // @synthesize gravityUtil=_gravityUtil;
 @property(retain, nonatomic) id <TBVideoTweSVModuleInterface> tweGVPresenter; // @synthesize tweGVPresenter=_tweGVPresenter;
+@property(retain, nonatomic) NSString *firstMediaId; // @synthesize firstMediaId=_firstMediaId;
+@property(retain, nonatomic) UIImageView *transitionView; // @synthesize transitionView=_transitionView;
+@property(retain, nonatomic) NSString *taowaType; // @synthesize taowaType=_taowaType;
 @property(retain, nonatomic) TBIctEventCenter *eventCenter; // @synthesize eventCenter=_eventCenter;
 @property(nonatomic) _Bool showFullScreenBtn; // @synthesize showFullScreenBtn=_showFullScreenBtn;
 @property(nonatomic) _Bool needShowTopView; // @synthesize needShowTopView=_needShowTopView;
@@ -95,14 +106,25 @@
 @property(nonatomic) _Bool willLeavingVC; // @synthesize willLeavingVC=_willLeavingVC;
 @property(nonatomic) long long videoId; // @synthesize videoId=_videoId;
 - (void).cxx_destruct;
+- (_Bool)isPortraitMode;
+- (id)getUTParams;
+- (void)rightViewBarrageTapped:(id)arg1 params:(id)arg2;
+- (void)dismissBarrageList;
+- (void)showBarrageListWithBarrageCount:(long long)arg1;
 - (id)getUCMData;
 - (id)reportURLStr;
 - (id)getDWInstanceUTParams;
 - (id)getItemCheckParams;
 - (id)getShareData;
+- (void)removeTransitionView;
+- (void)addTransitionView;
+- (void)preloadTransitionView;
 - (void)reportAction;
+- (id)taowaShareData;
+- (void)taowaShare:(id)arg1 type:(unsigned long long)arg2;
 - (void)shareButtonEvent;
 - (void)barrageTapEvent;
+- (void)setStatusbarHidden:(_Bool)arg1;
 - (_Bool)getScreenMode;
 - (_Bool)getMuted;
 - (double)getVideoDuriation;
@@ -112,7 +134,7 @@
 - (void)playOrPauseVideo;
 - (void)seekToProgress:(double)arg1;
 - (void)updatePlayCurrentTime:(double)arg1 duration:(double)arg2;
-- (void)requestBarragePublish:(id)arg1;
+- (void)requestBarragePublish:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)activateBarrage:(_Bool)arg1;
 - (_Bool)gestureRecognizer:(id)arg1 shouldReceiveTouch:(id)arg2;
 - (double)offsetOfScrollViewAtIndex:(long long)arg1;
@@ -121,6 +143,7 @@
 - (void)scrollViewDidEndDecelerating:(id)arg1;
 - (void)scrollViewWillBeginDragging:(id)arg1;
 - (void)setScrollViewEnableScroll:(_Bool)arg1;
+- (void)cleanPlayerView;
 - (void)updateItemCardFrameAfterRotate;
 - (void)addTimeBox:(id)arg1 screenType:(id)arg2;
 - (void)addItemCard:(id)arg1 screenType:(id)arg2;
@@ -128,6 +151,7 @@
 - (void)updateCloseButtonAfterRotate;
 - (void)updateBroadCastInfoViewAfterRotate;
 - (void)updateCommentInputViewAfterRotate;
+- (void)updateRightAreaAfterRotate;
 - (void)refreshVCViewAfterRotate;
 - (void)rotateScreenToPortrait;
 - (void)rotateScreenToLandscape:(unsigned long long)arg1;
@@ -141,6 +165,7 @@
 - (void)startListenGravity;
 - (void)didReceiveMemoryWarning;
 - (void)handleNotification:(id)arg1;
+- (void)rotateToPortraitIfNeeded;
 - (void)addEventObservers;
 - (void)switchPlayerControlView:(id)arg1;
 - (void)goodsItemTapEvent:(id)arg1;
@@ -156,6 +181,7 @@
 - (void)setupTopView;
 - (void)setupBGViewsAtScrollPage:(long long)arg1;
 - (void)setupWidgetViewWithIndex:(long long)arg1;
+- (void)doDoubleTap:(id)arg1;
 - (id)updatePageProperties;
 - (void)updateUcmParams;
 - (void)enterWithUserTrack;
@@ -168,7 +194,10 @@
 - (void)viewWillAppear:(_Bool)arg1;
 - (void)viewDidLoad;
 - (void)dealloc;
+- (_Bool)getTaoWaOrangeConfig;
 - (id)initWithNavigatorURL:(id)arg1 query:(id)arg2;
+- (void)showWidgetView:(_Bool)arg1;
+- (void)openNewVideo:(id)arg1 level:(unsigned long long)arg2 index:(unsigned long long)arg3 isReplay:(_Bool)arg4 toast:(id)arg5;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

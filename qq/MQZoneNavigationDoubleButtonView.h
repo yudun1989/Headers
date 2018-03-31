@@ -10,16 +10,24 @@
 
 @interface MQZoneNavigationDoubleButtonView : UIView
 {
+    _Bool _isMessageStyle;
     UIButton *_leftButton;
     UIButton *_rightButton;
+    UIButton *_middleButton;
     UIImage *_defaultImage;
     UIImage *_customImage;
     UIImage *_customPressImage;
+    UIImage *_mDefaultImage;
+    UIImage *_mCustomImage;
 }
 
+@property(retain, nonatomic) UIImage *mCustomImage; // @synthesize mCustomImage=_mCustomImage;
+@property(retain, nonatomic) UIImage *mDefaultImage; // @synthesize mDefaultImage=_mDefaultImage;
+@property(nonatomic) _Bool isMessageStyle; // @synthesize isMessageStyle=_isMessageStyle;
 @property(retain, nonatomic) UIImage *customPressImage; // @synthesize customPressImage=_customPressImage;
 @property(retain, nonatomic) UIImage *customImage; // @synthesize customImage=_customImage;
 @property(retain, nonatomic) UIImage *defaultImage; // @synthesize defaultImage=_defaultImage;
+@property(retain, nonatomic) UIButton *middleButton; // @synthesize middleButton=_middleButton;
 @property(retain, nonatomic) UIButton *rightButton; // @synthesize rightButton=_rightButton;
 @property(retain, nonatomic) UIButton *leftButton; // @synthesize leftButton=_leftButton;
 - (void).cxx_destruct;

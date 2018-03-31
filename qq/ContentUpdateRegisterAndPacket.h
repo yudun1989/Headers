@@ -18,12 +18,15 @@
     int _xo;
     NSMutableArray *_appInfoArray;
     NSMutableArray *_tmpInfoArray;
+    NSMutableArray *_pendingTasks;
 }
 
 + (id)sharedInstance;
+@property(retain, nonatomic) NSMutableArray *pendingTasks; // @synthesize pendingTasks=_pendingTasks;
 @property(retain, nonatomic) NSMutableArray *tmpInfoArray; // @synthesize tmpInfoArray=_tmpInfoArray;
 @property(retain, nonatomic) NSMutableArray *appInfoArray; // @synthesize appInfoArray=_appInfoArray;
 - (void).cxx_destruct;
+@property(nonatomic) _Bool isLoading; // @dynamic isLoading;
 - (void)dealloc;
 - (void)onLogOut;
 - (void)notifyError:(id)arg1;
@@ -55,7 +58,6 @@
 @property(readonly, copy) NSString *debugDescription;
 @property(readonly, copy) NSString *description;
 @property(readonly) unsigned long long hash;
-@property(nonatomic) _Bool isLoading; // @dynamic isLoading;
 @property(nonatomic) _Bool isSingleModeOn; // @dynamic isSingleModeOn;
 @property(nonatomic) int singleModeAppId; // @dynamic singleModeAppId;
 @property(readonly) Class superclass;

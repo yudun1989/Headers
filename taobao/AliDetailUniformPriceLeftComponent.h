@@ -21,12 +21,12 @@
     NSString *_priceColor;
 }
 
-+ (id)getPriceStyle:(int)arg1;
++ (id)getPriceStyle:(unsigned long long)arg1;
 + (struct CGSize)adjustZoneRect:(struct CGRect)arg1 targetFrame:(struct CGRect)arg2;
-+ (id)getPriceModel:(id)arg1 pos:(int)arg2;
++ (id)getPriceModel:(id)arg1 pos:(unsigned long long)arg2;
 + (void)fitView:(id)arg1 withMaxX:(double)arg2;
 + (struct CGRect)frameAdjustForViewSize:(struct CGSize)arg1 startPoint:(struct CGPoint)arg2 zoneRect:(struct CGRect)arg3 needShow:(_Bool)arg4;
-+ (struct CGRect)priceFrameWithStart:(struct CGPoint)arg1 zoneRect:(struct CGRect)arg2 priceModel:(id)arg3 pos:(int)arg4 needShow:(_Bool)arg5;
++ (struct CGRect)priceFrameWithStart:(struct CGPoint)arg1 zoneRect:(struct CGRect)arg2 priceModel:(id)arg3 pos:(unsigned long long)arg4 needShow:(_Bool)arg5;
 + (struct CGRect)priceTagsFrameWithStart:(struct CGPoint)arg1 zoneRect:(struct CGRect)arg2 tagModel:(id)arg3;
 + (double)linePaddingWithModel:(id)arg1;
 + (double)componentHeightForObj:(id)arg1 preferredWidth:(double)arg2;
@@ -44,7 +44,7 @@
 - (void)addMxsObserver;
 - (void)drawTags:(id)arg1;
 - (id)drawTag:(id)arg1;
-- (id)drawPriceWithEntity:(id)arg1 pos:(int)arg2;
+- (id)drawPriceWithEntity:(id)arg1 pos:(unsigned long long)arg2;
 - (void)drawFurthurPrices:(id)arg1;
 - (void)drawMainPrice;
 - (struct CGRect)adjustFrameAlignBottom:(struct CGRect)arg1 zoneSize:(struct CGSize)arg2 bottom:(double)arg3;

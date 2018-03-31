@@ -6,56 +6,79 @@
 
 #import <UIKit/UIView.h>
 
-#import "UITableViewDataSource-Protocol.h"
-#import "UITableViewDelegate-Protocol.h"
+#import "TBRecmdContainerViewDelegate-Protocol.h"
 
-@class CNLeagueBarView, CNLogisticOrderListItem, CNLogisticsDetailModel, CNTableViewRegisterNibHelper, CNTraceabilityView, NSArray, NSString, TBRecmdContainerView, UITableView;
+@class CNCustomHitTestScrollView, CNGoodMapView, CNLogisticOrderListItem, CNLogisticsDetailModel, CNLogisticsDetailViewMapBridge, CNLogisticsExceptionNoticeView, CNMVVMScrollViewBinder, CNMapViewModel, NSArray, NSString, TBRecmdContainerView, UIViewController;
 
-@interface CNLogisticsDetailView : UIView <UITableViewDelegate, UITableViewDataSource>
+@interface CNLogisticsDetailView : UIView <TBRecmdContainerViewDelegate>
 {
-    _Bool _showFullDetail;
     CDUnknownBlockType _loadDataBlock;
+    CDUnknownBlockType _updateNavigationBarStateBlock;
     CDUnknownBlockType _whenAppearLoadDataBlock;
+    CNLogisticsDetailViewMapBridge *_mapViewBridge;
     TBRecmdContainerView *_recmdContainerView;
+    CNCustomHitTestScrollView *_logisticsScrollView;
+    CNMVVMScrollViewBinder *_scrollViewBinder;
     CNLogisticsDetailModel *_viewModel;
-    UITableView *_tableView;
     UIView *_emptyView;
-    CNLeagueBarView *_leagueBarView;
-    CNTraceabilityView *_traceabilityView;
     NSArray *_cellModels;
     CNLogisticOrderListItem *_item;
-    CNTableViewRegisterNibHelper *_nibHelper;
     NSString *_orderId;
+    CNGoodMapView *_goodView;
+    CNLogisticsExceptionNoticeView *_exceptionNoticeView;
+    CNMapViewModel *_mapModel;
+    UIViewController *_containingViewController;
+    UIView *_backgroundViewBetweenMapAndScrollView;
+    double _logisticsScrollInvisibleAreaHeight;
+    double _draggingBeginOffsetY;
 }
 
-@property(nonatomic) _Bool showFullDetail; // @synthesize showFullDetail=_showFullDetail;
+@property(nonatomic) double draggingBeginOffsetY; // @synthesize draggingBeginOffsetY=_draggingBeginOffsetY;
+@property(nonatomic) double logisticsScrollInvisibleAreaHeight; // @synthesize logisticsScrollInvisibleAreaHeight=_logisticsScrollInvisibleAreaHeight;
+@property(retain, nonatomic) UIView *backgroundViewBetweenMapAndScrollView; // @synthesize backgroundViewBetweenMapAndScrollView=_backgroundViewBetweenMapAndScrollView;
+@property(nonatomic) __weak UIViewController *containingViewController; // @synthesize containingViewController=_containingViewController;
+@property(retain, nonatomic) CNMapViewModel *mapModel; // @synthesize mapModel=_mapModel;
+@property(retain, nonatomic) CNLogisticsExceptionNoticeView *exceptionNoticeView; // @synthesize exceptionNoticeView=_exceptionNoticeView;
+@property(retain, nonatomic) CNGoodMapView *goodView; // @synthesize goodView=_goodView;
 @property(retain, nonatomic) NSString *orderId; // @synthesize orderId=_orderId;
-@property(retain, nonatomic) CNTableViewRegisterNibHelper *nibHelper; // @synthesize nibHelper=_nibHelper;
 @property(retain, nonatomic) CNLogisticOrderListItem *item; // @synthesize item=_item;
 @property(retain, nonatomic) NSArray *cellModels; // @synthesize cellModels=_cellModels;
-@property(retain, nonatomic) CNTraceabilityView *traceabilityView; // @synthesize traceabilityView=_traceabilityView;
-@property(retain, nonatomic) CNLeagueBarView *leagueBarView; // @synthesize leagueBarView=_leagueBarView;
 @property(retain, nonatomic) UIView *emptyView; // @synthesize emptyView=_emptyView;
-@property(retain, nonatomic) UITableView *tableView; // @synthesize tableView=_tableView;
 @property(retain, nonatomic) CNLogisticsDetailModel *viewModel; // @synthesize viewModel=_viewModel;
+@property(retain, nonatomic) CNMVVMScrollViewBinder *scrollViewBinder; // @synthesize scrollViewBinder=_scrollViewBinder;
+@property(retain, nonatomic) CNCustomHitTestScrollView *logisticsScrollView; // @synthesize logisticsScrollView=_logisticsScrollView;
 @property(retain, nonatomic) TBRecmdContainerView *recmdContainerView; // @synthesize recmdContainerView=_recmdContainerView;
+@property(retain, nonatomic) CNLogisticsDetailViewMapBridge *mapViewBridge; // @synthesize mapViewBridge=_mapViewBridge;
 @property(copy, nonatomic) CDUnknownBlockType whenAppearLoadDataBlock; // @synthesize whenAppearLoadDataBlock=_whenAppearLoadDataBlock;
+@property(copy, nonatomic) CDUnknownBlockType updateNavigationBarStateBlock; // @synthesize updateNavigationBarStateBlock=_updateNavigationBarStateBlock;
 @property(copy, nonatomic) CDUnknownBlockType loadDataBlock; // @synthesize loadDataBlock=_loadDataBlock;
 - (void).cxx_destruct;
-- (double)tableView:(id)arg1 heightForRowAtIndexPath:(id)arg2;
-- (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;
-- (long long)tableView:(id)arg1 numberOfRowsInSection:(long long)arg2;
-- (long long)numberOfSectionsInTableView:(id)arg1;
+- (_Bool)isMapShowing;
+- (id)mapView;
+- (double)offsetForPercent:(double)arg1;
+- (double)mapAreaHeightWhenShowingAllContent:(_Bool)arg1;
+- (double)preferedHeightForMapArea;
+- (double)maxHeightForMapArea;
+- (double)minHeightForMapArea;
+- (double)invisibleContentOnScrollTopAndInitialOffset:(out double *)arg1;
+- (double)mapShowingHeight;
+- (double)scrollViewContentTopToScreenTop;
+- (void)containerViewWillBeginDragging;
+- (void)containerViewDidEndDecelerating;
+- (void)containerViewDidEndDraggingWillDecelerate:(_Bool)arg1;
+- (void)containerViewDidScroll;
+- (void)dealloc;
+- (id)scrollViewBackgroundColor;
+- (void)scrollViewBackgroundColorChangeWithWhileScroll;
 - (void)updateItem:(id)arg1;
-- (void)configPullToRefresh;
-- (void)addTopLineView;
-- (void)reloadView;
 - (void)refreshView;
-- (void)initCommand;
+- (void)initModel;
 - (void)bindViewController:(id)arg1;
 - (void)setTradeId:(id)arg1;
-- (id)init;
+- (id)initWithContainingViewController:(id)arg1 item:(id)arg2;
+- (struct CGRect)recommendSDKFrame;
 - (void)initRecmdContainerView:(double)arg1 itemIds:(id)arg2;
+- (void)addBackgroundViewBetweenMapAndLogisticsScrollView;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

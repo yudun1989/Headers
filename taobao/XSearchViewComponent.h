@@ -23,6 +23,7 @@
     UIView *_view;
 }
 
++ (double)thisHeightWithModel:(id)arg1 SearchService:(id)arg2;
 @property(nonatomic) _Bool viewHasLoaded; // @synthesize viewHasLoaded=_viewHasLoaded;
 @property(retain, nonatomic) UIView *view; // @synthesize view=_view;
 @property(retain, nonatomic) XSearchContext *searchContext; // @synthesize searchContext=_searchContext;

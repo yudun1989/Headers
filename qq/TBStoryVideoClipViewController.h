@@ -13,6 +13,7 @@
 
 @interface TBStoryVideoClipViewController : QQViewController <TBStoryVideoClipViewDelegate>
 {
+    unsigned int _maxDuration;
     id <TBStoryVideoClipViewControllerDelegate> _delegate;
     TBStoryVideoClipView *_clipView;
     QQStoryLocalMediaModel *_mediaModel;
@@ -20,6 +21,7 @@
 
 @property(retain, nonatomic) QQStoryLocalMediaModel *mediaModel; // @synthesize mediaModel=_mediaModel;
 @property(retain, nonatomic) TBStoryVideoClipView *clipView; // @synthesize clipView=_clipView;
+@property(nonatomic) unsigned int maxDuration; // @synthesize maxDuration=_maxDuration;
 @property(nonatomic) __weak id <TBStoryVideoClipViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
 - (void)didEnterForeground;

@@ -12,6 +12,8 @@
 
 @interface WXJSCoreBridge : NSObject <WXBridgeProtocol>
 {
+    _Bool _multiContext;
+    JSContext *globalJSContext;
     JSContext *_jsContext;
     NSMutableArray *_timers;
     NSMutableDictionary *_intervaltimers;
@@ -24,6 +26,8 @@
 @property(retain, nonatomic) NSMutableDictionary *intervaltimers; // @synthesize intervaltimers=_intervaltimers;
 @property(retain, nonatomic) NSMutableArray *timers; // @synthesize timers=_timers;
 @property(retain, nonatomic) JSContext *jsContext; // @synthesize jsContext=_jsContext;
+@property(nonatomic) _Bool multiContext; // @synthesize multiContext=_multiContext;
+@property(readonly, nonatomic) JSContext *globalJSContext; // @synthesize globalJSContext;
 - (void).cxx_destruct;
 - (id)extendCallNative:(id)arg1;
 - (void)triggerClearTimeout:(id)arg1;

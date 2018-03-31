@@ -18,8 +18,8 @@
 + (id)allocWithZone:(struct _NSZone *)arg1;
 + (id)sharedInstance;
 - (void).cxx_destruct;
-- (int)networkStatusForFlags:(unsigned int)arg1;
-- (int)currentReachabilityStatus;
+- (unsigned long long)networkStatusForFlags:(unsigned int)arg1;
+- (unsigned long long)currentReachabilityStatus;
 - (id)currentReachabilityStatusString;
 - (struct __SCNetworkReachability *)createNetworkReachabilityRef;
 - (id)init;

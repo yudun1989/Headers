@@ -38,10 +38,12 @@
     NSString *_alassetsGroupID;
     NSObject<OS_dispatch_queue> *_enumQueue;
     NSObject<OS_dispatch_queue> *_processQueue;
+    NSObject<OS_dispatch_queue> *_compressQueue;
 }
 
 + (unsigned long long)albumAuthorizationStatus;
 + (id)getInstance;
+@property(retain, nonatomic) NSObject<OS_dispatch_queue> *compressQueue; // @synthesize compressQueue=_compressQueue;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *processQueue; // @synthesize processQueue=_processQueue;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *enumQueue; // @synthesize enumQueue=_enumQueue;
 @property(retain, nonatomic) NSString *alassetsGroupID; // @synthesize alassetsGroupID=_alassetsGroupID;
@@ -114,9 +116,9 @@
 - (void)cameraRoll:(CDUnknownBlockType)arg1;
 - (id)cameraRoll;
 - (void)enumeratePHAsset:(id)arg1 enumerateAssetsUsingBlock:(CDUnknownBlockType)arg2;
+- (id)getOriginalAssetFileName:(id)arg1;
 - (id)getAssetFileName:(id)arg1;
-- (id)createVideoExportSession:(id)arg1 ToFile:(id)arg2 presetName:(id)arg3;
-- (id)createVideoExportSessionWithAvAsset:(id)arg1 ToFile:(id)arg2 presetName:(id)arg3;
+- (void)exportVideo:(id)arg1 toFile:(id)arg2 presetName:(id)arg3 completeBlock:(CDUnknownBlockType)arg4;
 - (void)asyncCompressedVideos:(id)arg1 withblock:(CDUnknownBlockType)arg2 presetName:(id)arg3;
 - (id)createMediaDirAndPath:(id)arg1 presetName:(id)arg2;
 - (id)syncCacheOriginalImages:(id)arg1;

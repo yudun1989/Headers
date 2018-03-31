@@ -112,9 +112,10 @@
 - (id)updateUrlByConfig;
 - (void)utWebView;
 - (void)loadH5View;
-- (void)showErrorView:(_Bool)arg1 state:(int)arg2;
+- (void)showErrorView:(_Bool)arg1 state:(unsigned long long)arg2;
 - (void)reloadView;
 - (void)handleResponse:(id)arg1 isTemplate:(_Bool)arg2 error:(id)arg3;
+- (unsigned long long)decideContentModeWithProductModel:(id)arg1 currentMode:(unsigned long long)arg2;
 - (void)addEventTokenToComponentModels:(id)arg1;
 - (void)requestProductModel;
 - (void)handleLocatorTo:(id)arg1 control:(id)arg2 completion:(CDUnknownBlockType)arg3;

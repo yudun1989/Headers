@@ -25,9 +25,10 @@
 @property(nonatomic) double cellHeight; // @synthesize cellHeight=_cellHeight;
 @property(retain, nonatomic) TBCartItemComponent *item; // @synthesize item=_item;
 - (void).cxx_destruct;
+- (id)quantityString;
+- (_Bool)showPreSellQuantity;
+- (_Bool)showPriceAppend;
 - (_Bool)showSelectorLayer;
-- (_Bool)showQuantityStepper;
-- (_Bool)showOriginPrice;
 - (_Bool)showMoveToFav;
 - (_Bool)showSimilar;
 - (_Bool)showWeight;

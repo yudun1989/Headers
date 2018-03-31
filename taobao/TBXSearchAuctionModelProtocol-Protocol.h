@@ -11,5 +11,8 @@
 @protocol TBXSearchAuctionModelProtocol <NSObject>
 - (NSString *)getNeedAuctionId;
 - (void)proccessIconWithSytleData:(NSDictionary *)arg1;
+
+@optional
+- (_Bool)isP4pAuction;
 @end
 

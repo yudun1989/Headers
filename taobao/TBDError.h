@@ -13,10 +13,11 @@
     NSDictionary *_errorMap;
 }
 
++ (void)addErrorInParam:(id)arg1 withCode:(id)arg2 info:(id)arg3 exception:(id)arg4;
 + (void)addError:(id *)arg1 withCode:(id)arg2 module:(id)arg3 info:(id)arg4 exception:(id)arg5;
 @property(retain, nonatomic) NSDictionary *errorMap; // @synthesize errorMap=_errorMap;
 - (void).cxx_destruct;
-- (void)addErrorMapWithCode:(id)arg1 errorDesc:(id)arg2;
+- (void)addErrorDescWithCode:(id)arg1 module:(id)arg2 info:(id)arg3 exception:(id)arg4;
 - (id)descriptionForDict:(id)arg1;
 - (id)errorDescriptionForErrorCode:(id)arg1;
 - (id)allErrorDescription;

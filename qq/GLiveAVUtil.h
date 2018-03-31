@@ -7,15 +7,18 @@
 #import <Foundation/NSObject.h>
 
 @class QAVContext;
+@protocol OS_dispatch_queue;
 
 @interface GLiveAVUtil : NSObject
 {
     QAVContext *_gliveAVContext;
     unsigned long long _eGLiveAVContextState;
     long long g_resetContextTaskCount;
+    NSObject<OS_dispatch_queue> *_opengl_render_queue;
 }
 
 + (id)sharedInstance;
+@property(retain, nonatomic) NSObject<OS_dispatch_queue> *opengl_render_queue; // @synthesize opengl_render_queue=_opengl_render_queue;
 - (void).cxx_destruct;
 - (id)createAVContext;
 - (void)resetContextIfNeed;

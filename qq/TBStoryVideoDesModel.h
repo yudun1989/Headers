@@ -8,7 +8,7 @@
 
 #import <QQMainProject/NSCoding-Protocol.h>
 
-@class NSArray, NSString, TBAddressModel, TBQQUserInfoModel, TBVideoSpreadGroupListModel, TBVideoTagInfoBase;
+@class NSArray, NSString, TBAddressModel, TBQIMVideoInfoModel, TBQQUserInfoModel, TBVideoPollInfoModel, TBVideoSpreadGroupListModel, TBVideoTagInfoBase;
 
 @interface TBStoryVideoDesModel : NSObject <NSCoding>
 {
@@ -17,6 +17,7 @@
     _Bool _isHasLike;
     _Bool _isPicture;
     _Bool _isLocal;
+    _Bool _enableDownloadPiece;
     unsigned int _type;
     unsigned int _viewTotalNum;
     unsigned int _videoHeight;
@@ -60,10 +61,23 @@
     NSString *_dataKey;
     unsigned long long _videoIndex;
     TBVideoTagInfoBase *_videoTagInfo;
+    TBVideoPollInfoModel *_videoPollInfo;
+    TBQIMVideoInfoModel *_qimVideoInfo;
+    NSArray *_videoCompressedUrls;
+    NSString *_downloadingURL;
+    NSString *_downloadedURL;
+    unsigned long long _piece;
 }
 
 + (id)filterOverdueVideo:(id)arg1;
 + (id)createWithQQStoryCPBMessageDecoder:(struct CPBMessageDecoder *)arg1;
+@property(nonatomic) _Bool enableDownloadPiece; // @synthesize enableDownloadPiece=_enableDownloadPiece;
+@property(nonatomic) unsigned long long piece; // @synthesize piece=_piece;
+@property(retain, nonatomic) NSString *downloadedURL; // @synthesize downloadedURL=_downloadedURL;
+@property(retain, nonatomic) NSString *downloadingURL; // @synthesize downloadingURL=_downloadingURL;
+@property(retain, nonatomic) NSArray *videoCompressedUrls; // @synthesize videoCompressedUrls=_videoCompressedUrls;
+@property(retain, nonatomic) TBQIMVideoInfoModel *qimVideoInfo; // @synthesize qimVideoInfo=_qimVideoInfo;
+@property(retain, nonatomic) TBVideoPollInfoModel *videoPollInfo; // @synthesize videoPollInfo=_videoPollInfo;
 @property(retain, nonatomic) TBVideoTagInfoBase *videoTagInfo; // @synthesize videoTagInfo=_videoTagInfo;
 @property(nonatomic) unsigned long long videoIndex; // @synthesize videoIndex=_videoIndex;
 @property(nonatomic) int addVideoTimeZone; // @synthesize addVideoTimeZone=_addVideoTimeZone;

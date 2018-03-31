@@ -6,13 +6,10 @@
 
 #import "MCChatBubble.h"
 
-#import "MCChatBubbleBackgroundViewDelegate-Protocol.h"
+@class MCComposedMessageView, UILabel;
 
-@class MCChatBubbleBackgroundView, MCComposedMessageView, NSString, UILabel;
-
-@interface MCChatComposedBubble : MCChatBubble <MCChatBubbleBackgroundViewDelegate>
+@interface MCChatComposedBubble : MCChatBubble
 {
-    MCChatBubbleBackgroundView *_innerBubbleImageView;
     UILabel *_titleLabel;
     MCComposedMessageView *_composedTopView;
     MCComposedMessageView *_composedBottomView;
@@ -24,20 +21,12 @@
 @property(retain, nonatomic) MCComposedMessageView *composedBottomView; // @synthesize composedBottomView=_composedBottomView;
 @property(retain, nonatomic) MCComposedMessageView *composedTopView; // @synthesize composedTopView=_composedTopView;
 @property(retain, nonatomic) UILabel *titleLabel; // @synthesize titleLabel=_titleLabel;
-@property(retain, nonatomic) MCChatBubbleBackgroundView *innerBubbleImageView; // @synthesize innerBubbleImageView=_innerBubbleImageView;
 - (void).cxx_destruct;
-- (void)chatBubbleBackgroundViewLongPress:(id)arg1;
-- (void)chatBubbleBackgroundViewTapped:(id)arg1;
+- (void)bubbleClicked:(id)arg1;
 - (void)recycle;
 - (void)layoutSubviews;
 - (void)updateBubbleWithCellObject:(id)arg1 bubbleHandler:(id)arg2 atIndexPath:(id)arg3;
 - (id)initWithBubbleStyle:(long long)arg1 subStyle:(long long)arg2;
-
-// Remaining properties
-@property(readonly, copy) NSString *debugDescription;
-@property(readonly, copy) NSString *description;
-@property(readonly) unsigned long long hash;
-@property(readonly) Class superclass;
 
 @end
 

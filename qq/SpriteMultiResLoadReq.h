@@ -11,6 +11,7 @@
 @interface SpriteMultiResLoadReq : NSObject
 {
     _Bool _needBubble;
+    _Bool _isPet;
     int _namePlate;
     int _resImgType;
     NSString *_uin;
@@ -20,6 +21,7 @@
     NSString *_bubbleContent;
 }
 
+@property(nonatomic) _Bool isPet; // @synthesize isPet=_isPet;
 @property(retain, nonatomic) NSString *bubbleContent; // @synthesize bubbleContent=_bubbleContent;
 @property(nonatomic) _Bool needBubble; // @synthesize needBubble=_needBubble;
 @property(nonatomic) long long actionId; // @synthesize actionId=_actionId;

@@ -177,6 +177,7 @@
 - (void)configToolbarStyle;
 - (void)didRotateFromInterfaceOrientation:(long long)arg1;
 - (void)viewWillDisappear:(_Bool)arg1;
+- (void)viewDidAppear:(_Bool)arg1;
 - (void)viewWillAppear:(_Bool)arg1;
 - (void)viewDidLayoutSubviews;
 - (void)viewDidLoad;
@@ -231,7 +232,7 @@
 @property(nonatomic, getter=isOpenLocalService) _Bool openLocalService;
 @property(nonatomic, getter=isOpenLongPressSaveImage) _Bool openLongPressSaveImage;
 @property(nonatomic, getter=isOpenWebKitLongPress) _Bool openWebKitLongPress;
-@property(copy, nonatomic) CDUnknownBlockType souldStartLoadAction;
+@property(copy, nonatomic) CDUnknownBlockType shouldStartLoadAction;
 @property(readonly) Class superclass;
 @property(nonatomic, getter=isUseCustomPullToRefresh) _Bool useCustomPullToRefresh;
 @property(nonatomic, getter=isUseInfiniteScrolling) _Bool useInfiniteScrolling;

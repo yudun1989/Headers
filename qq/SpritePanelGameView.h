@@ -43,9 +43,9 @@
 @property(nonatomic) id <SpritePanelGameViewDelagate> delegate; // @synthesize delegate=_delegate;
 @property(retain, nonatomic) SpriteGameModel *currentGameModel; // @synthesize currentGameModel=_currentGameModel;
 @property(retain, nonatomic) NSArray *gameArrays; // @synthesize gameArrays=_gameArrays;
+- (void)scrollViewWillBeginDragging:(id)arg1;
 - (void)collectionView:(id)arg1 didSelectItemAtIndexPath:(id)arg2;
 - (id)collectionView:(id)arg1 cellForItemAtIndexPath:(id)arg2;
-- (id)collectionView:(id)arg1 viewForSupplementaryElementOfKind:(id)arg2 atIndexPath:(id)arg3;
 - (struct CGSize)collectionView:(id)arg1 layout:(id)arg2 referenceSizeForHeaderInSection:(long long)arg3;
 - (long long)collectionView:(id)arg1 numberOfItemsInSection:(long long)arg2;
 - (void)onStartGameWithGameBtnModel:(id)arg1;
@@ -63,6 +63,8 @@
 - (void)onGameCoinUpdate:(id)arg1;
 - (void)showTipsImg:(id)arg1 atRootView:(id)arg2 startY:(int)arg3 success:(_Bool)arg4;
 - (void)alertView:(id)arg1 clickedButtonAtIndex:(long long)arg2;
+- (void)p_hideRankChangeGuideTips;
+- (void)p_checkIfNeedRankChangeGuideTipsWithCellFrame:(struct CGRect)arg1;
 - (void)clickFirstShowView:(id)arg1;
 - (void)clickTipView:(id)arg1;
 - (id)firstShowTipView;
@@ -89,6 +91,7 @@
 - (void)generateGameBigItemViewWithoutAddSubview:(_Bool)arg1;
 - (void)reloadCollectionViewCell:(id)arg1 withIndexPath:(id)arg2 gameModel:(id)arg3;
 - (void)reloadCollectionViewUI:(_Bool)arg1;
+- (void)onGamePanelRefresh:(id)arg1;
 - (void)updateSpriteScrollViewWithItemModels:(id)arg1;
 - (void)removeOpenedGameCover;
 - (void)setiPhoneXAdjustBgView:(id)arg1;

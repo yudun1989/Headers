@@ -13,13 +13,16 @@
     UILabel *_titleLabel;
     TBSearchImageView *_backgroundView;
     TBSearchImageView *_logo;
+    UIView *_back;
 }
 
+@property(retain, nonatomic) UIView *back; // @synthesize back=_back;
 @property(retain, nonatomic) TBSearchImageView *logo; // @synthesize logo=_logo;
 @property(retain, nonatomic) TBSearchImageView *backgroundView; // @synthesize backgroundView=_backgroundView;
 @property(retain, nonatomic) UILabel *titleLabel; // @synthesize titleLabel=_titleLabel;
 - (void).cxx_destruct;
 - (void)configWithData:(id)arg1;
+- (void)layoutSubviews;
 - (id)initWithFrame:(struct CGRect)arg1;
 
 @end

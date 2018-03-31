@@ -6,10 +6,13 @@
 
 #import "WXModuleProtocol-Protocol.h"
 
-@class NSDictionary, NSString;
+@class NSDictionary, NSString, NSURL, UIImage, UIImageView;
 @protocol WXImageOperationProtocol;
 
 @protocol WXImgLoaderProtocol <WXModuleProtocol>
 - (id <WXImageOperationProtocol>)downloadImageWithURL:(NSString *)arg1 imageFrame:(struct CGRect)arg2 userInfo:(NSDictionary *)arg3 completed:(void (^)(UIImage *, NSError *, _Bool))arg4;
+
+@optional
+- (void)setImageViewWithURL:(UIImageView *)arg1 url:(NSURL *)arg2 placeholderImage:(UIImage *)arg3 options:(NSDictionary *)arg4 progress:(void (^)(long long, long long))arg5 completed:(void (^)(UIImage *, NSError *, long long, NSURL *))arg6;
 @end
 

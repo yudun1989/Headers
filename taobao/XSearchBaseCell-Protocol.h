@@ -14,5 +14,11 @@
 - (void)hideMask;
 - (void)render;
 - (void)didSelect;
+
+@optional
+- (void)play;
+- (void)pause;
+- (_Bool)isPlaying;
+- (_Bool)playable;
 @end
 

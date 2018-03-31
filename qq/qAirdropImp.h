@@ -21,6 +21,7 @@
 - (void)AirdropCheckSendThreadProc;
 - (_Bool)threadCheckSend;
 - (void)AirdropThreadProc;
+- (void)donothingatall;
 - (void)ResetAllFiles;
 - (void)ResetSelect;
 - (void)delayReleasePeerId:(id)arg1;

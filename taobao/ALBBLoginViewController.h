@@ -98,7 +98,7 @@
 - (void)sendSMS:(id)arg1;
 - (_Bool)needRegistButton;
 - (_Bool)needPwdButton;
-- (void)verifyDidFinishedWithStatus:(int)arg1 token:(id)arg2 signature:(id)arg3 session:(id)arg4;
+- (void)verifyDidFinishedWithStatus:(long long)arg1 token:(id)arg2 signature:(id)arg3 session:(id)arg4;
 - (void)showNativeMechineVerify;
 - (void)showAutoFillsWithUserName:(id)arg1 password:(id)arg2;
 - (void)willWebViewCloseCallback:(id)arg1 request:(id)arg2 params:(id)arg3;
@@ -144,6 +144,7 @@
 - (void)getOnForgetPasswordUrlWithMobileNeed:(_Bool)arg1;
 - (void)onForgetPasswordWhenLoginFailed;
 - (void)onForgetPassword;
+- (void)dealloc;
 - (void)onBack;
 - (id)getReferenceUIView;
 - (void)limitCount:(id)arg1;

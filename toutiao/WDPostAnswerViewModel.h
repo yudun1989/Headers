@@ -39,7 +39,7 @@
 
 + (id)eventName;
 + (Class)serviceClass;
-+ (void)fetchTipsInfoWithSource:(long long)arg1 finishBlock:(CDUnknownBlockType)arg2;
++ (void)fetchTipsInfoWithQid:(id)arg1 source:(long long)arg2 finishBlock:(CDUnknownBlockType)arg3;
 + (void)deleteDraftWithQid:(id)arg1 finishBlock:(CDUnknownBlockType)arg2;
 + (void)postDraftWithQid:(id)arg1 content:(id)arg2 apiParameter:(id)arg3 finishBlock:(CDUnknownBlockType)arg4;
 + (void)fetchDraftWithQid:(id)arg1 apiParameter:(id)arg2 finishBlock:(CDUnknownBlockType)arg3;

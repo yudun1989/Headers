@@ -66,7 +66,7 @@
 - (void)onGetAppInfoByContextActionMeta_GetAppPath:(id)arg1 retCode:(int)arg2 msg:(id)arg3 appPath:(id)arg4 appName:(id)arg5;
 - (void)onGetAppInfoByContextActionMeta:(void *)arg1 appViewList:(const set_acb53744 *)arg2;
 - (void)onGetAppByActionTaskComplete;
-- (_Bool)getAppByContextAction:(id)arg1 action:(id)arg2 scene:(int)arg3 metaList:(id)arg4 historyMetaList:(id)arg5 callback:(CDUnknownBlockType)arg6;
+- (_Bool)getAppByContextAction:(id)arg1 scene:(int)arg2 metaList:(id)arg3 historyMetaList:(id)arg4 callback:(CDUnknownBlockType)arg5;
 - (void)clearActionAppQueryCache;
 - (void)clearActionAppRecentCache;
 - (_Bool)getAppPathByName:(id)arg1 minVersion:(id)arg2 callback:(CDUnknownBlockType)arg3;

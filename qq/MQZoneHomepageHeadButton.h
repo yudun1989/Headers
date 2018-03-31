@@ -10,9 +10,11 @@
 {
 }
 
+- (id)headTitleLabel;
+- (id)headNumberLabel;
 - (void)adjustNaviDeco:(id)arg1;
-- (id)numberStr:(int)arg1;
-- (void)setNumberLableAsInt:(int)arg1;
+- (id)numberStr:(unsigned long long)arg1;
+- (void)setNumberLableAsInt:(unsigned long long)arg1;
 - (id)initWithFrame:(struct CGRect)arg1 text:(id)arg2 textfont:(id)arg3 numfont:(id)arg4;
 
 @end

@@ -139,8 +139,6 @@
 - (int)requestGetQFindAssistSwitch:(unsigned long long)arg1;
 - (void)receiveGetSmartDeviceQQMsgProxyStatus:(CDStruct_7895f40e)arg1;
 - (int)requestGetSmartDeviceQQMsgProxyStatus:(unsigned long long)arg1;
-- (void)receiveSyncXiaoWeiDeviceUinSKey:(CDStruct_7895f40e)arg1;
-- (int)requestSyncXiaoWeiDeviceUin:(unsigned long long)arg1 skey:(id)arg2 completion:(CDUnknownBlockType)arg3;
 - (void)receiveGetSmartDeviceOpenAVAuthBuff:(CDStruct_7895f40e)arg1;
 - (int)requestGetSmartDeviceOpenAVAuthBuff:(unsigned long long)arg1 selfId:(id)arg2 roomId:(int)arg3 completion:(CDUnknownBlockType)arg4;
 - (void)receiveGetSmartDeviceBindedSwitch:(CDStruct_7895f40e)arg1;
@@ -171,6 +169,8 @@
 - (void)receiveSetAcceptFreshNewsSwitch:(CDStruct_7895f40e)arg1;
 - (int)requestGetAccpetFreshNewsSwitch:(unsigned long long)arg1;
 - (int)requestSetAccpetFreshNewsSwitch:(unsigned long long)arg1 isOn:(_Bool)arg2;
+- (void)parseGetGroupSmartRemark:(CDStruct_7895f40e)arg1;
+- (int)reqGroupAIRemark:(id)arg1 uin:(unsigned long long)arg2;
 - (_Bool)receiveSetPersonalTagSwitchStatus:(CDStruct_7895f40e)arg1;
 - (int)setPersonalTagSwitchStatus:(long long)arg1 type:(int)arg2;
 - (_Bool)receiveSetEntrySettingVisibleSwitch:(CDStruct_7895f40e)arg1;

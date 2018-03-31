@@ -13,8 +13,8 @@
 + (id)getGradeImage:(id)arg1 grade:(long long)arg2;
 + (_Bool)checkEmptyString:(id)arg1;
 + (void)renderWithGradientColor:(id)arg1 colorArr:(id)arg2;
-+ (void)renderWithGradientColor:(id)arg1 type:(int)arg2;
-+ (id)getGradientConfigByType:(int)arg1;
++ (void)renderWithGradientColor:(id)arg1 type:(unsigned long long)arg2;
++ (id)getGradientConfigByType:(unsigned long long)arg1;
 + (long long)detailButtonHeight;
 + (void)updateDetailButtonContent:(id)arg1 title:(id)arg2;
 + (id)drawDetailButton:(id)arg1 themeType:(id)arg2;

@@ -27,7 +27,6 @@
 - (void)addImageSize:(long long)arg1;
 - (long long)gifBuffer_MAX;
 - (_Bool)needCacheForUrl:(id)arg1;
-- (long long)oneGifBuffer_MAX;
 - (id)firstFrameWithURL:(id)arg1;
 - (id)cacheHelperForURL:(id)arg1;
 - (void)removeCacheForURL:(id)arg1;

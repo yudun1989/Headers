@@ -10,7 +10,7 @@
 {
 }
 
-+ (_Bool)ImageNeedScale:(struct scaled_size *)arg1;
++ (_Bool)ImageNeedScale:(struct scaled_size *)arg1 url:(id)arg2;
 + (long long)exifOrientationFromImageOrientation:(long long)arg1;
 + (long long)imageOrientationFromEXIFOrientation:(long long)arg1;
 + (id)framesFromAnimatedImage:(id)arg1;

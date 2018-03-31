@@ -69,6 +69,16 @@
 @property(nonatomic) _Bool enableCache; // @synthesize enableCache=_enableCache;
 @property(nonatomic) _Bool enableQueryCartSecondPageUsePost; // @synthesize enableQueryCartSecondPageUsePost=_enableQueryCartSecondPageUsePost;
 - (void).cxx_destruct;
+- (double)sourceTarget_tableView:(id)arg1 heightForRowAtIndexPath:(id)arg2;
+- (id)sourceTarget_tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;
+- (long long)sourceTarget_tableView:(id)arg1 numberOfRowsInSection:(long long)arg2;
+- (long long)dataSource_tableView:(id)arg1 numberOfRowsInSection:(long long)arg2;
+- (long long)dataSource_numberOfSectionsInTableView:(id)arg1;
+- (long long)sourceTarget_numberOfSectionsInTableView:(id)arg1;
+- (_Bool)inner_alicart_openURLFromSourceAndParams:(id)arg1 target:(id)arg2 extraInfo:(id)arg3;
+- (void)inner_delayShowLoadingInView:(id)arg1;
+- (void)inner_hideBigLoadingInView:(id)arg1;
+- (void)inner_showBigLoadingView:(id)arg1 delay:(double)arg2 toView:(id)arg3;
 - (void)setDynamicCalculateConfig;
 - (void)resetItemEditStatu;
 - (void)viewDidDisappear:(_Bool)arg1;

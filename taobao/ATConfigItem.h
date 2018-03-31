@@ -13,12 +13,15 @@
 {
     NSString *_idMatch;
     NSString *_classMatch;
+    NSString *_selector;
     NSString *_spmB;
     NSString *_spmC;
     NSString *_spmD;
     NSString *_aliasName;
     NSString *_type;
     NSString *_clickType;
+    NSString *_arg1;
+    NSString *_logkey;
     NSString *_jumpSpmKey;
     NSString *_pageName;
     NSString *_controlName;
@@ -41,12 +44,15 @@
 @property(retain, nonatomic) NSString *controlName; // @synthesize controlName=_controlName;
 @property(retain, nonatomic) NSString *pageName; // @synthesize pageName=_pageName;
 @property(retain, nonatomic) NSString *jumpSpmKey; // @synthesize jumpSpmKey=_jumpSpmKey;
+@property(retain, nonatomic) NSString *logkey; // @synthesize logkey=_logkey;
+@property(retain, nonatomic) NSString *arg1; // @synthesize arg1=_arg1;
 @property(retain, nonatomic) NSString *clickType; // @synthesize clickType=_clickType;
 @property(retain, nonatomic) NSString *type; // @synthesize type=_type;
 @property(retain, nonatomic) NSString *aliasName; // @synthesize aliasName=_aliasName;
 @property(retain, nonatomic) NSString *spmD; // @synthesize spmD=_spmD;
 @property(retain, nonatomic) NSString *spmC; // @synthesize spmC=_spmC;
 @property(retain, nonatomic) NSString *spmB; // @synthesize spmB=_spmB;
+@property(retain, nonatomic) NSString *selector; // @synthesize selector=_selector;
 @property(retain, nonatomic) NSString *classMatch; // @synthesize classMatch=_classMatch;
 @property(retain, nonatomic) NSString *idMatch; // @synthesize idMatch=_idMatch;
 - (void).cxx_destruct;

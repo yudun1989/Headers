@@ -9,6 +9,9 @@
 @class NSDictionary, NSString;
 
 @protocol QQPublishViewProviderDelegate <NSObject>
+- (int)getCurrentPostType;
+- (void)showShortVideoCompositeFailPromptAlertView;
+- (void)changeVideoCellState:(unsigned long long)arg1;
 - (void)updatePublishViewWithContent:(NSDictionary *)arg1;
 - (void)updatePublishInfo:(NSDictionary *)arg1;
 - (void)didSelectAItem:(NSDictionary *)arg1;

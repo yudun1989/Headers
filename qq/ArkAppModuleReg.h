@@ -14,6 +14,7 @@
 {
 }
 
++ (_Bool)moduleCheckPermission:(const char *)arg1 appType:(long long)arg2 permissionName:(const char *)arg3;
 + (void)unregister:(void *)arg1 wrapper:(struct HARKMODULEREGISTER__ *)arg2;
 + (void)register:(void *)arg1 wrapper:(struct HARKMODULEREGISTER__ *)arg2 appID:(const char *)arg3;
 + (void)regModuleClass:(Class)arg1;

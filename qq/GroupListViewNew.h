@@ -22,6 +22,7 @@
     QQRelationLogicEngine *_logicEngine;
     id <GroupListViewDelegate> _groupListViewDelegate;
     FriendListHeaderModel *_commonGroupModel;
+    FriendListHeaderModel *_unnamedGroupModel;
     FriendListHeaderModel *_ownerGroupModel;
     FriendListHeaderModel *_adminGroupModel;
     FriendListHeaderModel *_memberGroupModel;
@@ -56,6 +57,7 @@
 - (void)orgnizeMemberGroupHeaderModel;
 - (void)orgnizeAdminGroupHeaderModel;
 - (void)orgnizeOwnerGroupHeaderModel;
+- (void)orgnizeUnnamedGroupHeaderModel;
 - (void)orgnizeCommonGroupHeaderModel;
 - (unsigned long long)getExpandedHeaderIdsCount;
 - (void)removeAllExpandedHeaderIds;
@@ -65,7 +67,6 @@
 - (void)saveExpandedHeadersId;
 - (void)loadExpandedHeadersId;
 - (void)setSuperGroupOwnerFlag;
-- (void)jumpToSuperGroupOwnerPage;
 - (id)friendListHeaderModelbySection:(long long)arg1;
 - (void)friendListHeaderViewDidTouch:(id)arg1;
 - (void)scrollViewDidEndDragging:(id)arg1 willDecelerate:(_Bool)arg2;

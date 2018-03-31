@@ -25,6 +25,7 @@
 @property(retain, nonatomic) NSString *originTitle;
 - (id)priceTitleWithFormat:(id)arg1;
 @property(nonatomic) long long origin;
+@property(retain, nonatomic) NSString *nowTitleAppend;
 @property(retain, nonatomic) NSString *nowTitle;
 @property(nonatomic) long long now;
 - (id)initWithData:(id)arg1;

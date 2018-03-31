@@ -10,9 +10,11 @@
 
 @interface QZCommentPhotoUploadJob : QZBaseJob
 {
+    _Bool _notToAlbum;
 }
 
 + (id)operationWithJob:(id)arg1;
+@property(nonatomic) _Bool notToAlbum; // @synthesize notToAlbum=_notToAlbum;
 - (id)jobTypeName;
 - (id)initWithCoder:(id)arg1;
 - (_Bool)persistent;

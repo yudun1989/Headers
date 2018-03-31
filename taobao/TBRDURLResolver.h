@@ -14,6 +14,7 @@
 {
 }
 
+- (_Bool)isInteractPhotoBrwoseUrl:(id)arg1;
 - (_Bool)isAlbumListUrl:(id)arg1;
 - (_Bool)isRateListUrl:(id)arg1;
 - (_Bool)isAppendRateUrl:(id)arg1;

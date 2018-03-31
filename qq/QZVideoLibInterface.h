@@ -10,6 +10,7 @@
 {
 }
 
++ (id)adIdentifier;
 + (void)runOCSPluginInvokeService:(id)arg1 withOCSPluginId:(id)arg2 isNeedShowDownloadVC:(_Bool)arg3 fromeNavi:(id)arg4 sucessBlock:(CDUnknownBlockType)arg5 failBlock:(CDUnknownBlockType)arg6;
 + (double)videoRooftopPictureDisplayTime;
 + (id)hevclv;
@@ -20,8 +21,6 @@
 + (long long)quickForwardAppearBefore;
 + (long long)quickForwardAppearDuration;
 + (_Bool)enableQuickForwardInStateView;
-+ (_Bool)canShowVideoDebugInfo;
-+ (void)setCanShowVideoDebugInfo:(_Bool)arg1;
 + (double)pgcVideoDisplayScaleRatio;
 + (double)ugcVideoDisplayScaleRatio;
 + (double)getVideoLayerShowAdvTipsDuration;

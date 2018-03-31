@@ -20,7 +20,6 @@
 - (void)scrollToFrameVisible:(struct CGRect)arg1;
 - (void)setIndicatorViewBGColor;
 - (void)setBGColor;
-- (void)buttonSelect:(id)arg1;
 - (void)setupView;
 
 @end

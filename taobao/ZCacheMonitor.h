@@ -12,8 +12,6 @@
 
 + (void)reportRecovery:(id)arg1;
 + (void)reportCleanUp:(id)arg1;
-+ (void)reportFirstVisit:(id)arg1;
-+ (void)reportFirstUpdate:(id)arg1;
 + (void)reportVerifyCache:(id)arg1;
 + (void)reportWarning:(id)arg1 withError:(id)arg2;
 + (void)reportAppVisit:(id)arg1 withSep:(unsigned long long)arg2 withError:(id)arg3;

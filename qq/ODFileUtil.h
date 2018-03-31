@@ -10,6 +10,8 @@
 {
 }
 
++ (_Bool)unzipFile:(id)arg1 toPath:(id)arg2;
++ (_Bool)moveItemAtPath:(id)arg1 toPath:(id)arg2;
 + (id)fileMD5:(id)arg1;
 + (_Bool)createDirectoryIfNeed:(id)arg1;
 + (id)urlEncode:(id)arg1 onlyLinkSymbol:(_Bool)arg2;

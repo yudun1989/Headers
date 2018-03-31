@@ -26,7 +26,6 @@
 
 - (void).cxx_destruct;
 - (id)businessModel;
-- (_Bool)displayEnable;
 - (double)heightForRow;
 
 // Remaining properties

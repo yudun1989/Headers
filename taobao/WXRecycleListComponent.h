@@ -22,13 +22,11 @@
     NSMutableDictionary *_sizeCache;
     NSMutableDictionary *_stickyCache;
     unsigned long long _previousLoadMoreCellNumber;
-    unsigned long long _scrollDirection;
     WXRecycleListDataManager *_dataManager;
     WXRecycleListTemplateManager *_templateManager;
     WXRecycleListUpdateManager *_updateManager;
 }
 
-+ (id)wx_export_method_62;
 + (id)wx_export_method_61;
 + (id)wx_export_method_60;
 + (id)wx_export_method_59;
@@ -37,6 +35,7 @@
 + (id)wx_export_method_56;
 + (id)wx_export_method_55;
 + (id)wx_export_method_54;
++ (id)wx_export_method_53;
 @property(retain, nonatomic) WXRecycleListUpdateManager *updateManager; // @synthesize updateManager=_updateManager;
 @property(retain, nonatomic) WXRecycleListTemplateManager *templateManager; // @synthesize templateManager=_templateManager;
 @property(retain, nonatomic) WXRecycleListDataManager *dataManager; // @synthesize dataManager=_dataManager;

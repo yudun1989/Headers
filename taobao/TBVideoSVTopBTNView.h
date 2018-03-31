@@ -8,7 +8,7 @@
 
 #import "TBMorePopoverItemsViewDelegate-Protocol.h"
 
-@class NSString, TBMorePopoverItemsView, TBVideoSVBarrageUtil, TBVideoTweSVVC, TBVideoUIButtonWithBlock, UIImageView;
+@class NSString, TBMoreCustomItem, TBMorePopoverItemsView, TBVideoSVAuthorAccountInfo, TBVideoSVBarrageUtil, TBVideoSVBroadCastInfoView, TBVideoTweSVVC, TBVideoUIButtonWithBlock, UIButton, UIImageView;
 
 @interface TBVideoSVTopBTNView : UIView <TBMorePopoverItemsViewDelegate>
 {
@@ -17,8 +17,16 @@
     TBMorePopoverItemsView *_moreItemView;
     TBVideoSVBarrageUtil *_barrageUtil;
     UIImageView *_barrageBTNView;
+    TBMoreCustomItem *_barrageItem;
+    TBVideoSVBroadCastInfoView *_broadcastView;
+    TBVideoSVAuthorAccountInfo *_accountInfo;
+    UIButton *_moreBTN;
 }
 
+@property(retain, nonatomic) UIButton *moreBTN; // @synthesize moreBTN=_moreBTN;
+@property(retain, nonatomic) TBVideoSVAuthorAccountInfo *accountInfo; // @synthesize accountInfo=_accountInfo;
+@property(retain, nonatomic) TBVideoSVBroadCastInfoView *broadcastView; // @synthesize broadcastView=_broadcastView;
+@property(retain, nonatomic) TBMoreCustomItem *barrageItem; // @synthesize barrageItem=_barrageItem;
 @property(retain, nonatomic) UIImageView *barrageBTNView; // @synthesize barrageBTNView=_barrageBTNView;
 @property(nonatomic) __weak TBVideoSVBarrageUtil *barrageUtil; // @synthesize barrageUtil=_barrageUtil;
 @property(retain, nonatomic) TBMorePopoverItemsView *moreItemView; // @synthesize moreItemView=_moreItemView;
@@ -27,7 +35,6 @@
 - (void).cxx_destruct;
 - (void)updateFrameWithPortrait:(_Bool)arg1;
 - (void)barrageTapEvent;
-- (void)shareButtonEvent;
 - (void)didSelectTBMorePopoverItemAtIndex:(long long)arg1;
 - (void)showAllElements;
 - (void)hideAllElements;
@@ -35,7 +42,9 @@
 - (double)itemCenterYValue;
 - (_Bool)pointInside:(struct CGPoint)arg1 withEvent:(id)arg2;
 - (void)reportAction;
+- (void)setupAccountInfo:(id)arg1;
 - (void)activateMorePopView;
+- (id)createMoreItemsWhenBarrageOpen:(_Bool)arg1;
 - (void)configItem;
 - (id)initWithTarget:(id)arg1 barrage:(id)arg2;
 

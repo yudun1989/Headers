@@ -6,7 +6,7 @@
 
 #import <QQMainProject/CFT_UIBaseOrderDetailViewController.h>
 
-@class NSDictionary, NSMutableDictionary, NSString, UILabel;
+@class NSDictionary, NSMutableDictionary, NSString, UILabel, UIView;
 
 @interface CFT_UIPayOrderDetailViewController : CFT_UIBaseOrderDetailViewController
 {
@@ -14,6 +14,7 @@
     _Bool _trustpayFlg;
     _Bool _istouchPay;
     UILabel *_agreeLabel;
+    UIView *_contentView;
     NSMutableDictionary *_gateDataInfo;
     NSDictionary *_touchPayParam;
     NSDictionary *_promotionInfo;

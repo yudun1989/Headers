@@ -15,6 +15,7 @@
 
 @property(retain, nonatomic) NSDictionary *allConfig; // @synthesize allConfig=_allConfig;
 - (void).cxx_destruct;
+- (id)getLayoutValForKey:(id)arg1 layoutStyle:(long long)arg2;
 - (double)getLayoutFloatValForKey:(id)arg1;
 - (id)getRequestServiceConfigByAlias:(id)arg1;
 - (id)getRequestServiceParamDic:(id)arg1 alias:(id)arg2 andAliasConfig:(id)arg3;

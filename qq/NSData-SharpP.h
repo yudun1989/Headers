@@ -7,6 +7,7 @@
 #import <Foundation/NSData.h>
 
 @interface NSData (SharpP)
++ (id)decodeSharpPData:(id *)arg1 needImage:(_Bool)arg2 width:(unsigned int *)arg3 height:(unsigned int *)arg4 error:(id *)arg5;
 + (id)decodeSharpPData:(id *)arg1 error:(id *)arg2;
 + (_Bool)isSharpPData:(id)arg1;
 @end

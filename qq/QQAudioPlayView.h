@@ -6,14 +6,15 @@
 
 #import <UIKit/UIView.h>
 
+#import <QQMainProject/QQAnimojiVoiceAnimDelegate-Protocol.h>
 #import <QQMainProject/QQPttTryListtenPlayerDelegate-Protocol.h>
 #import <QQMainProject/QQVoiceAnimDelegate-Protocol.h>
 #import <QQMainProject/VolumeMeterDelegate-Protocol.h>
 
-@class NSString, NSTimer, QQConnectAnimationView, QQPttTryListtenPlayer, QQVoicePlayAnimationView, UIButton;
+@class NSString, NSTimer, QQAnimojiProcessView, QQAnimojiVoicePlayAnimationView, QQConnectAnimationView, QQPttTryListtenPlayer, QQVoicePlayAnimationView, UIButton;
 @protocol QQAudioPlayDelegate;
 
-@interface QQAudioPlayView : UIView <QQPttTryListtenPlayerDelegate, VolumeMeterDelegate, QQVoiceAnimDelegate>
+@interface QQAudioPlayView : UIView <QQPttTryListtenPlayerDelegate, VolumeMeterDelegate, QQVoiceAnimDelegate, QQAnimojiVoiceAnimDelegate>
 {
     QQConnectAnimationView *_processView;
     QQPttTryListtenPlayer *_pttPlayer;
@@ -26,8 +27,14 @@
     QQVoicePlayAnimationView *_voicePlayAnimView;
     id <QQAudioPlayDelegate> _delegate;
     int _xo;
+    QQAnimojiProcessView *_animojiProcessView;
+    QQAnimojiVoicePlayAnimationView *_voicePlayAnimViewNew;
 }
 
+@property(retain, nonatomic) QQAnimojiVoicePlayAnimationView *voicePlayAnimViewNew; // @synthesize voicePlayAnimViewNew=_voicePlayAnimViewNew;
+@property(retain, nonatomic) QQAnimojiProcessView *animojiProcessView; // @synthesize animojiProcessView=_animojiProcessView;
+- (_Bool)isAnimojiProcessView;
+- (float)getAnimojiCurrentVoicePeakPower;
 - (void)onEnterBackground;
 - (_Bool)needShowVoiceAnimation;
 - (float)getCurrentVoicePeakPower;

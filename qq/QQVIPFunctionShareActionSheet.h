@@ -18,6 +18,7 @@
 - (void)dismiss;
 - (void)shareDidDismiss:(id)arg1;
 - (void)showWithDismissBlock:(CDUnknownBlockType)arg1;
+- (id)getGTKFromSKey:(id)arg1;
 - (void)webShareActivityDidAction:(id)arg1;
 - (void)shareWithFriend;
 @property(retain, nonatomic) NSString *shareTitle; // @dynamic shareTitle;

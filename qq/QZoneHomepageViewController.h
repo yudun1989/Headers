@@ -77,7 +77,6 @@
     QzoneFeedModel *_memorySealOffModel;
     struct CGRect _memorySealOffCellRect;
     QZCommonWidget *_commonWidget;
-    NSString *_firstTitle;
     unsigned long long _firstRightButtonType;
     QZHomePagePermissionViewManager *_permissionViewManager;
     _Bool _isShowPermission;
@@ -197,6 +196,7 @@
 - (void)clickCampusSpaceView;
 - (void)clickFamousQZoneView;
 - (void)clickPersonalizeView;
+- (void)clickMVideoView;
 - (void)clickMyFollowView;
 - (void)showFollowActionSheetWithIndex:(id)arg1;
 - (void)clickMyFansFollowButton;
@@ -289,7 +289,6 @@
 - (void)clickAvatarView;
 - (void)clickFace:(long long)arg1 avatarCover:(long long)arg2 isNameplate:(_Bool)arg3;
 - (void)handleOpenHomepage:(long long)arg1 nick:(id)arg2;
-- (void)videoCoverStateChanged:(id)arg1;
 - (void)videoCoverFinishedCallBack:(id)arg1;
 - (_Bool)isProfileFeeds;
 - (void)pauseAllFeedVideo;
@@ -334,13 +333,13 @@
 - (void)viewWillDisappear:(_Bool)arg1;
 - (void)viewDidDisappear:(_Bool)arg1;
 - (void)afterViewDidAppear;
+- (void)adjustTableContentInsetWithBottomNavView;
 - (void)viewDidAppear:(_Bool)arg1;
 - (void)viewWillAppear:(_Bool)arg1;
 - (void)viewDidLoad;
 - (void)showFacadeView;
 - (void)deleteVisitRecord;
 - (void)addFriend:(int)arg1;
-- (void)answerQuestion;
 - (void)applyVisit;
 - (void)doFollow;
 - (long long)followSource;

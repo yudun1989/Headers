@@ -36,8 +36,12 @@
 @property(retain, nonatomic) TBLiveBroadCasterInfoView *hostInfoView; // @synthesize hostInfoView=_hostInfoView;
 @property(retain, nonatomic) UIView *topMaskView; // @synthesize topMaskView=_topMaskView;
 - (void).cxx_destruct;
+- (void)stopLikeAnimation;
+- (void)startLikeAnimation;
 - (void)liveHPPlayer:(id)arg1 changeEvent:(int)arg2;
 - (_Bool)enablePlayShortVideo;
+- (void)doStopShortVideo;
+- (void)doPlayShortVideo;
 - (void)stopShortVideo;
 - (void)playShortVideo;
 - (void)updatePlayShortVideo;
@@ -47,6 +51,7 @@
 - (void)showBubbleTipsViewWithAnimation;
 - (_Bool)shouldShowBubbleTipsView;
 - (void)closeBubbleTipsView;
+- (void)showBubbleTipsViewWithoutCheckOffset;
 - (void)showBubbleTipsView;
 - (void)updateBubbleTipsView;
 - (void)updateBubbleModel:(id)arg1;

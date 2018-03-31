@@ -7,9 +7,11 @@
 #import <Foundation/NSObject.h>
 
 @class ArtisanSignInRequest, NSArray;
+@protocol OS_dispatch_semaphore;
 
 @interface ArtisanSDKManager : NSObject
 {
+    NSObject<OS_dispatch_semaphore> *_lock;
     _Bool _dataLoadDone;
     NSArray *_activities;
     ArtisanSignInRequest *_request;
@@ -30,6 +32,7 @@
 - (void)checkBackgroundData;
 - (void)dealloc;
 - (void)setup;
+- (id)init;
 
 @end
 

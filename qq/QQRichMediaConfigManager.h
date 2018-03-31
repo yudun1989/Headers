@@ -19,11 +19,7 @@
 
 + (id)getInstance;
 - (void).cxx_destruct;
-- (_Bool)QQAppReviewConfig;
-- (void)saveQQAppReviewConfig:(id)arg1;
 - (id)QQPendantConfig;
-- (void)saveQQPendantConfig:(id)arg1;
-- (void)savePendantRedDotConfig:(id)arg1;
 - (id)init;
 - (void)downloadFilterItem:(id)arg1 callback:(CDUnknownBlockType)arg2;
 - (id)dirForFilter;

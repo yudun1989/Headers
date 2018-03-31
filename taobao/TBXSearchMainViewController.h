@@ -7,47 +7,89 @@
 #import "TBXSearchSrpViewController.h"
 
 #import "TBSRPXSearchDynPromotionCellDelegate-Protocol.h"
+#import "TBSRPXSearchPromotionBannerComponentDelegate-Protocol.h"
 #import "TBSRPXSearchTopBarComponentDelegate-Protocol.h"
+#import "TBSearchInputDelegate-Protocol.h"
 #import "TBSearchSideDoorViewControllerDelegate-Protocol.h"
 #import "TBXCustomerDataDelegate-Protocol.h"
 #import "TBXSearchFilterComponentDelegate-Protocol.h"
 #import "TBXSearchHintDelegate-Protocol.h"
 #import "TBXSearchRelatedRecommendDelegate-Protocol.h"
-#import "TBXSearchSearchBarDelegate-Protocol.h"
+#import "UITextFieldDelegate-Protocol.h"
 
-@class NSString, TBSRPXSearchDynamicPortalViewController, TBXSearchMainViewModel, XSearchWXInstance;
+@class NSString, TBSRPXSearchDynamicPortalViewController, TBSearchInput, TBXSearchBotSearchPullToRefreshAnimationView, TBXSearchBotSearchPullToRefreshView, TBXSearchEmptyView, TBXSearchFloatView, TBXSearchMainViewModel, UIImageView, XSearchWXInstance;
 
-@interface TBXSearchMainViewController : TBXSearchSrpViewController <TBSRPXSearchTopBarComponentDelegate, TBXSearchFilterComponentDelegate, TBXSearchSearchBarDelegate, TBSearchSideDoorViewControllerDelegate, TBXSearchHintDelegate, TBSRPXSearchDynPromotionCellDelegate, TBXCustomerDataDelegate, TBXSearchRelatedRecommendDelegate>
+@interface TBXSearchMainViewController : TBXSearchSrpViewController <TBSRPXSearchTopBarComponentDelegate, TBXSearchFilterComponentDelegate, TBSearchSideDoorViewControllerDelegate, TBXSearchHintDelegate, TBSRPXSearchDynPromotionCellDelegate, TBXCustomerDataDelegate, TBXSearchRelatedRecommendDelegate, TBSearchInputDelegate, UITextFieldDelegate, TBSRPXSearchPromotionBannerComponentDelegate>
 {
-    XSearchWXInstance *_wxInstance;
-    NSString *_botSearchStatus;
+    _Bool _scrollAnimationIsDoing;
+    _Bool _botWXInstanceIsRenderFinish;
+    _Bool _botSearchPullComplete;
+    _Bool _showBotWeexRootViewLater;
+    _Bool _hasDisAppear;
+    _Bool _realItemViewEnabled;
     TBSRPXSearchDynamicPortalViewController *_dynamicPortalVc;
+    TBSearchInput *_searchBar;
+    XSearchWXInstance *_botWXInstance;
+    NSString *_botSearchStatus;
+    double _botSearchWXInstanceBottom;
+    UIImageView *_botSearchGuideView;
+    TBXSearchEmptyView *_emptyView;
+    TBXSearchBotSearchPullToRefreshView *_pullToRefreshView;
+    TBXSearchBotSearchPullToRefreshAnimationView *_pullToRefreshAnimationView;
+    TBXSearchFloatView *_floatBar;
 }
 
-@property(retain, nonatomic) TBSRPXSearchDynamicPortalViewController *dynamicPortalVc; // @synthesize dynamicPortalVc=_dynamicPortalVc;
+@property(nonatomic) _Bool realItemViewEnabled; // @synthesize realItemViewEnabled=_realItemViewEnabled;
+@property(nonatomic) _Bool hasDisAppear; // @synthesize hasDisAppear=_hasDisAppear;
+@property(retain, nonatomic) TBXSearchFloatView *floatBar; // @synthesize floatBar=_floatBar;
+@property(retain, nonatomic) TBXSearchBotSearchPullToRefreshAnimationView *pullToRefreshAnimationView; // @synthesize pullToRefreshAnimationView=_pullToRefreshAnimationView;
+@property(retain, nonatomic) TBXSearchBotSearchPullToRefreshView *pullToRefreshView; // @synthesize pullToRefreshView=_pullToRefreshView;
+@property(retain, nonatomic) TBXSearchEmptyView *emptyView; // @synthesize emptyView=_emptyView;
+@property(nonatomic) _Bool showBotWeexRootViewLater; // @synthesize showBotWeexRootViewLater=_showBotWeexRootViewLater;
+@property(nonatomic) _Bool botSearchPullComplete; // @synthesize botSearchPullComplete=_botSearchPullComplete;
+@property(retain, nonatomic) UIImageView *botSearchGuideView; // @synthesize botSearchGuideView=_botSearchGuideView;
+@property(nonatomic) double botSearchWXInstanceBottom; // @synthesize botSearchWXInstanceBottom=_botSearchWXInstanceBottom;
+@property(nonatomic) _Bool botWXInstanceIsRenderFinish; // @synthesize botWXInstanceIsRenderFinish=_botWXInstanceIsRenderFinish;
 @property(retain, nonatomic) NSString *botSearchStatus; // @synthesize botSearchStatus=_botSearchStatus;
-@property(retain, nonatomic) XSearchWXInstance *wxInstance; // @synthesize wxInstance=_wxInstance;
+@property(retain, nonatomic) XSearchWXInstance *botWXInstance; // @synthesize botWXInstance=_botWXInstance;
+@property(nonatomic) _Bool scrollAnimationIsDoing; // @synthesize scrollAnimationIsDoing=_scrollAnimationIsDoing;
+@property(retain, nonatomic) TBSearchInput *searchBar; // @synthesize searchBar=_searchBar;
+@property(retain, nonatomic) TBSRPXSearchDynamicPortalViewController *dynamicPortalVc; // @synthesize dynamicPortalVc=_dynamicPortalVc;
 - (void).cxx_destruct;
+- (void)realtimeViewTrack:(id)arg1;
+- (void)availableCommitFail;
+- (void)availableCommitSuccess;
+- (void)reloadForH5jSbridge;
+- (void)showTbNavibar:(_Bool)arg1;
+- (double)navibarOrigTop;
+- (void)dealloc;
+- (void)closePromotionBanner;
 - (void)tabContentWhenVCDidShowAgain;
+- (void)setNavigationBarShowWithAnimated:(_Bool)arg1;
+- (void)setNavigationBarHiddenWithAnimated:(_Bool)arg1;
+- (void)setNavigationBarHidden:(_Bool)arg1 animated:(_Bool)arg2;
+- (void)scrollerSetNavigationBarHidden:(_Bool)arg1 animated:(_Bool)arg2;
 - (void)tabDidHiddenForPageDisAppear;
 - (void)updatePageNameAndArgs;
 - (id)pageUserInfo;
-- (void)dealloc;
 - (void)searchWithKeyWord:(id)arg1 AndType:(id)arg2 AndSearchParams:(id)arg3;
 - (void)createMainSrpSearchDoor;
-- (_Bool)textFieldShouldReturn:(id)arg1 searchBar:(id)arg2;
-- (_Bool)textFieldShouldBeginEditing:(id)arg1 searchBar:(id)arg2;
+- (_Bool)textFieldShouldBeginEditing:(id)arg1;
 - (void)setCollectionAccessibility:(_Bool)arg1;
 - (void)setFilterBackViewAccessibility:(_Bool)arg1;
+- (void)resetFilterComponents;
 - (id)getCurrentFilterComponent;
 - (void)reloadFilter;
 - (void)setFilterIconHighlight;
 - (void)closeFilter;
 - (void)doFilterSearch;
 - (void)openFilter;
+- (void)resetFloatBarComponents;
+- (void)goToCart;
 - (void)goToTop;
 - (void)searchScrollViewDidScroll:(id)arg1;
-- (void)hideAllFloatBar;
+- (void)removeAllFloatBar;
+- (id)getCurrentFloatView;
 - (void)loadCurrentFloatBarComponent;
 - (void)showFloatBar;
 - (void)topBarTurnStyle:(long long)arg1;
@@ -64,32 +106,57 @@
 - (void)filterSearchFail:(id)arg1;
 - (void)filterSearchSuccess;
 - (void)filterSearchStart;
+- (void)searchLoadMore;
 - (void)fixSearchFail:(id)arg1;
 - (void)fixSearchSuccess;
 - (void)fixSearchStart;
+- (void)searchReset;
+- (_Bool)isBotSearchSrp;
 - (void)sendEventToBotWeex;
+- (void)loadFailed:(id)arg1;
 - (void)reloadData;
 - (void)registerRequestStatusView;
 - (void)registerCell;
 - (void)registerComponents;
+- (void)recoverBotSearchGuideInsets;
+- (void)hideBotSearchGuide;
+- (void)setupBotSearchGuide;
+- (double)getBotSearchGuideViewHeight;
 - (void)setupPlaceholderView;
+- (void)setPullRefreshEnabledStatus;
 - (void)setupPullRefresh;
-- (void)sendPulltoRefreshRequest:(id)arg1;
-- (void)fixWeexBottomAfterViewDidAppear;
+- (void)sendPulltoRefreshRequest;
+- (void)fixWeexBottomAfterViewDidAppear:(_Bool)arg1;
 - (void)updateWeexFrame:(id)arg1;
+- (void)coordinativeScrollComponentsDidScroll:(id)arg1;
 - (void)filterSearch:(id)arg1;
 - (void)botSearchQuit:(id)arg1;
 - (void)botSearchToHalfScreen:(id)arg1;
 - (double)getBotTop;
 - (void)botSearchToFullScreen:(id)arg1;
-- (void)addEventForService:(id)arg1;
 - (void)keyboardWillHide:(id)arg1;
 - (void)keyboardWasShown:(id)arg1;
 - (void)renderMaskViewWithURL:(id)arg1;
-- (void)loadPoplayer;
+- (void)pullSuccess:(_Bool)arg1;
+- (void)hidePullToRefreshView;
+- (void)clickBotWXInstance;
+- (void)setBotWXInstanceDefaultFrame;
+- (void)addGlobalEvent;
+- (void)addEventForService:(id)arg1;
+- (void)showPhotoSearch;
 - (void)shareAction;
 - (void)addCustomMoreItems;
+- (void)doSearchBarAnimation;
+- (void)configNavBarWithTitle:(id)arg1;
+- (double)pullRefreshOffset;
+- (void)setNavBarWithAlpha:(double)arg1;
+- (void)configNavBar;
+- (void)reuseOldVCToSearchWithParams:(id)arg1;
+- (void)searchWithParams:(id)arg1;
+- (void)loadPoplayer;
 - (void)viewDidAppear:(_Bool)arg1;
+- (void)viewWillAppear:(_Bool)arg1;
+- (void)viewDidLoad;
 - (id)loadViewModel;
 
 // Remaining properties

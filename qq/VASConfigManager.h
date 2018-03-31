@@ -60,6 +60,7 @@
     int _gameIconExpireDay;
     _Bool _highBoomMsgShouldDrawInAIO;
     _Bool _founderColorFontShouldDrawInAIO;
+    _Bool _founderAnimationFontShouldDrawInAIO;
     unsigned long long _emojiJumpTimeInterval;
     unsigned long long _ipStackTimeInterval;
     long long _lastShowVipGrayTipTimeC2C;
@@ -130,6 +131,8 @@
 - (void)updateLastShowVipGrayTipsTimeWithMsgModel:(id)arg1;
 - (_Bool)shouldShowVipGrayTipsWithMsgModel:(id)arg1;
 - (_Bool)isInGray:(id)arg1;
+- (void)setFounderAnimationFontShouldDrawInAIO:(_Bool)arg1;
+- (_Bool)founderAnimationFontShouldDrawInAIO;
 - (void)setFounderColorFontShouldDrawInAIO:(_Bool)arg1;
 - (_Bool)founderColorFontShouldDrawInAIO;
 - (void)setHighBoomMsgShouldDrawInAIO:(_Bool)arg1;

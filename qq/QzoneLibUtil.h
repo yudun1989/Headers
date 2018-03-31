@@ -30,6 +30,8 @@
 + (id)getyyyyMMddHHmmssStringFromDate:(id)arg1;
 + (id)cStringWithFirstLevel:(const char *)arg1 andSecondLevel:(const char *)arg2;
 + (id)stringWithFirstLevel:(id)arg1 andSecondLevel:(id)arg2;
++ (id)imageForKey:(id)arg1;
++ (void)saveImage:(id)arg1 key:(id)arg2;
 + (_Bool)hasDataFor:(id)arg1 isResource:(_Bool)arg2 forCurrentUin:(_Bool)arg3;
 + (void)removeDataFor:(id)arg1 isResource:(_Bool)arg2 forCurrentUin:(_Bool)arg3;
 + (id)loadDataForKey:(id)arg1 isResource:(_Bool)arg2 forCurrentUin:(_Bool)arg3;

@@ -47,7 +47,6 @@
 - (id)getInstanceIdStack;
 - (void)createInstance:(id)arg1 template:(id)arg2 options:(id)arg3 data:(id)arg4;
 - (void)_runLoopThread;
-- (void)dealloc;
 - (void)unload;
 @property(readonly, nonatomic) __weak WXSDKInstance *topInstance;
 - (id)init;

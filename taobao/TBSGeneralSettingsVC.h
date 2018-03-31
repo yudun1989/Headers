@@ -31,7 +31,6 @@
 @property(retain, nonatomic) UITableView *settingsTableView; // @synthesize settingsTableView=_settingsTableView;
 - (void).cxx_destruct;
 - (void)actionSheet:(id)arg1 clickedButtonAtIndex:(long long)arg2;
-- (void)checkFingerPrintCell:(_Bool)arg1;
 - (void)setWifiAutoplayShotSwitch:(_Bool)arg1;
 - (void)setShareScreenShotSwitch:(_Bool)arg1;
 - (void)setHomePageShakeSwitch:(_Bool)arg1;

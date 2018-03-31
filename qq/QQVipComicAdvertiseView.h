@@ -21,9 +21,11 @@
     QQVipComicAdvertiseModel *_model;
     int _xo;
     QQComicAsynUrlImageView *_advertise;
+    QQComicAsynUrlImageView *_adTipsImageview;
     UIButton *_leftTopBtn;
     QQVipComicDropDownMenu *_dropDownMenuView;
     _Bool _isImgLoaded;
+    _Bool _isTipsImgLoaded;
     UIButton *_maskBtn;
     double _imageHeight;
 }

@@ -53,13 +53,14 @@
 - (void)SMSTextFieldShouldBeginEditing:(id)arg1;
 - (void)sendSms:(id)arg1 smsSid:(id)arg2;
 - (void)sendSms;
-- (void)verifyDidFinishedWithStatus:(int)arg1 token:(id)arg2 signature:(id)arg3 session:(id)arg4;
+- (void)verifyDidFinishedWithStatus:(long long)arg1 token:(id)arg2 signature:(id)arg3 session:(id)arg4;
 - (void)showNativeMechineVerify;
-- (void)onRegister:(id)arg1 loginViewController:(id)arg2 isKinship:(_Bool)arg3;
+- (void)onRegister:(id)arg1 loginViewController:(id)arg2 isKinship:(_Bool)arg3 navigationController:(id)arg4;
 - (void)onRegister;
 - (void)ALBBSmsBox:(id)arg1 inputAvailable:(_Bool)arg2;
 - (id)contentView;
 - (id)nextStepButton;
+- (void)dealloc;
 - (void)onBack;
 - (void)textFieldDidChange:(id)arg1;
 - (void)createCountryBox;

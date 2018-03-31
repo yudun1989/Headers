@@ -4,17 +4,20 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-#import <UIKit/UIImageView.h>
+#import <UIKit/UIView.h>
 
-@class UIView;
+@class UIImageView;
 
-@interface TBLiveHPBaseCardView : UIImageView
+@interface TBLiveHPBaseCardView : UIView
 {
+    UIImageView *_imageView;
     UIView *_maskView;
 }
 
 @property(retain, nonatomic) UIView *maskView; // @synthesize maskView=_maskView;
+@property(retain, nonatomic) UIImageView *imageView; // @synthesize imageView=_imageView;
 - (void).cxx_destruct;
+- (void)tblive_setImageWithUrl:(id)arg1 placeHolder:(id)arg2;
 - (void)didTapView;
 - (void)addUserAction;
 - (void)setupSubViews;

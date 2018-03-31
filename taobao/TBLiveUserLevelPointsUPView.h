@@ -22,6 +22,8 @@
 @property(nonatomic) int userLevel; // @synthesize userLevel=_userLevel;
 - (void).cxx_destruct;
 - (void)refreshWithData:(long long)arg1 title:(id)arg2 trigger:(id)arg3;
+- (void)addGradientLayer:(unsigned long long)arg1 endHexValue:(unsigned long long)arg2;
+- (void)addColor:(long long)arg1;
 - (void)setupViews;
 - (id)initWithUserLevel:(struct CGRect)arg1 level:(int)arg2;
 

@@ -15,7 +15,8 @@
 }
 
 + (id)getSchemeName;
-- (_Bool)navigate:(id)arg1 data:(id)arg2 appType:(long long)arg3;
+- (_Bool)navigate:(id)arg1 data:(id)arg2 appType:(long long)arg3 appID:(const char *)arg4;
+- (void)doOpenCmShowGame:(id)arg1;
 - (void)doWeatherShoppingPendant:(id)arg1;
 - (void)showQQMapView:(id)arg1;
 

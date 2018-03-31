@@ -40,7 +40,7 @@
 - (void)getPicImagePatch:(id)arg1 sectionModel:(id)arg2 picInfoModel:(id)arg3 pageIndex:(long long)arg4 isAlreadySuccessDownload:(_Bool)arg5 isFirst:(_Bool)arg6;
 - (void)getPicImage:(id)arg1 sectionModel:(id)arg2 picInfoModels:(id)arg3 pageIndex:(long long)arg4 isAlreadySuccessDownload:(_Bool)arg5;
 - (void)getPicInfoBySection:(id)arg1 cID:(id)arg2;
-- (void)getPatchSectionInfo:(id)arg1 cID:(id)arg2;
+- (void)getPatchSectionInfo:(id)arg1 cID:(id)arg2 cSectionIDs:(id)arg3;
 - (void)getPatchInfo:(id)arg1 sID:(id)arg2 sectionIndex:(unsigned long long)arg3 isInitData:(_Bool)arg4;
 - (void)getPatchInfo:(id)arg1 sID:(id)arg2;
 - (_Bool)hasDownloadRecordInComic:(id)arg1 SectionID:(id)arg2;

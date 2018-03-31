@@ -11,11 +11,12 @@
 #import <QQMainProject/IDiscussGroupChatEngineDelegate-Protocol.h>
 #import <QQMainProject/QQPttPlayerDelegate-Protocol.h>
 #import <QQMainProject/QQPttRecorderDelegate-Protocol.h>
+#import <QQMainProject/QQRichMsgPreviewSingleButtonDialogDelegate-Protocol.h>
 #import <QQMainProject/QUIActionSheetDelegate-Protocol.h>
 
 @class ArkBannerTipView, DGAIONotifyControl, DGContentNotifyControl, DiscussGroupManageViewController, DiscussGroupMemberListHandler, GroupUnreadNotifyController, NSAttributedString, NSMutableArray, NSString, QQDiscussAudioTipsShowManager, QQMessageModel, QQRichMsgPreviewSingleButtonDialog;
 
-@interface DiscussGroupChatViewController : QQBaseChatViewController <ArkBannerTipsDelegate, QQPttRecorderDelegate, QUIActionSheetDelegate, FTSMsgEngineDelegate, IDiscussGroupChatEngineDelegate, QQPttPlayerDelegate>
+@interface DiscussGroupChatViewController : QQBaseChatViewController <ArkBannerTipsDelegate, QQRichMsgPreviewSingleButtonDialogDelegate, QQPttRecorderDelegate, QUIActionSheetDelegate, FTSMsgEngineDelegate, IDiscussGroupChatEngineDelegate, QQPttPlayerDelegate>
 {
     QQMessageModel *_recordModel;
     _Bool _needLoadMsg;
@@ -61,6 +62,9 @@
 @property(retain, nonatomic) QQMessageModel *minModel; // @synthesize minModel=_minModel;
 - (void)setRecordModel:(id)arg1;
 - (id)recordModel;
+- (void)setMsgAtMemArr:(id)arg1;
+- (void)replaceReEditMsgTip:(id)arg1;
+- (void)updateReEditMsgModel;
 - (_Bool)shouldShowAudioFromConern;
 - (id)getDGContentNotifyControl;
 - (id)getAtDiscussMemArr;
@@ -216,6 +220,7 @@
 - (void)groupGiftSelectionViewDidSelect;
 - (void)openDiscussGroupMemberList:(_Bool)arg1;
 @property(retain, nonatomic) DiscussGroupMemberListHandler *discussGroupMemberListHandler;
+- (void)setAtStatus;
 - (id)generateAtData:(id)arg1;
 - (int)findAtCountBeforeLocation:(int)arg1;
 - (void)insertAtMem:(id)arg1 WithLocation:(int)arg2;
@@ -242,6 +247,7 @@
 - (void)onPostEnterGroupAudio;
 - (void)onCreateDiscussInGroupNotify:(id)arg1;
 - (void)alertView:(id)arg1 didDismissWithButtonIndex:(long long)arg2;
+- (void)doSendLargeMsgOptimizeMsg:(id)arg1 picUrl:(id)arg2 resendModel:(id)arg3;
 - (_Bool)doSendTextMsg:(id)arg1 showText:(id)arg2 isLocation:(_Bool)arg3 emojiStickerInfo:(id)arg4 resendModel:(id)arg5;
 - (_Bool)doSendTextMsg:(id)arg1 showText:(id)arg2 isLocation:(_Bool)arg3 resendModel:(id)arg4;
 - (_Bool)doSendTextMsg:(id)arg1 showText:(id)arg2 isLocation:(_Bool)arg3;

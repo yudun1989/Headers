@@ -12,8 +12,10 @@
 {
     NSString *_uin;
     unsigned long long _type;
+    id _userInfo;
 }
 
+@property(copy, nonatomic) id userInfo; // @synthesize userInfo=_userInfo;
 @property(nonatomic) unsigned long long type; // @synthesize type=_type;
 @property(copy, nonatomic) NSString *uin; // @synthesize uin=_uin;
 - (_Bool)isBaseChatViewController;

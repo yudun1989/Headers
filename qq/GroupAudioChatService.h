@@ -142,6 +142,7 @@
 @property(nonatomic) _Bool isNeedClickAcceptGroupAudio; // @synthesize isNeedClickAcceptGroupAudio=_isNeedClickAcceptGroupAudio;
 @property(nonatomic) int entranceType; // @synthesize entranceType=_entranceType;
 @property(nonatomic) _Bool isUserAudioPermission; // @synthesize isUserAudioPermission=_isUserAudioPermission;
+- (_Bool)isGroupCallShowInviteBox:(unsigned long long)arg1;
 - (unsigned long long)getTableSign;
 - (void)onDBChanged:(id)arg1;
 - (id)modelWithResultSet:(id)arg1;
@@ -330,6 +331,8 @@
 - (_Bool)isAddingMem:(unsigned long long)arg1;
 - (void)AddDiscussGroupMemDone:(unsigned long long)arg1 withResult:(id)arg2;
 - (void)AddDiscussGroupMem:(unsigned long long)arg1 ipNoAnswer:(id)arg2 pstnMember:(id)arg3 source:(unsigned long long)arg4;
+- (void)AddGroupMem:(unsigned long long)arg1;
+- (_Bool)isGroupChating;
 - (void)embedCmdNotifyFromSDK:(int)arg1 businessType:(int)arg2 relationID:(unsigned long long)arg3 andWithCmdNo:(int)arg4;
 - (void)showShutUpAlert:(id)arg1;
 - (void)createRoomFail:(unsigned int)arg1 relationType:(int)arg2 businessType:(int)arg3 relationID:(unsigned long long)arg4 retCode:(int)arg5 content:(id)arg6;
@@ -363,6 +366,7 @@
 - (int)QuitGroupAudioChat:(int)arg1 businessType:(int)arg2 relationID:(unsigned long long)arg3 closeReasion:(int)arg4;
 - (int)InviteGroupAudioPSTNChat:(id)arg1;
 - (int)InviteGroupAudioChat:(int)arg1 businessType:(int)arg2 relationID:(unsigned long long)arg3 friendsID:(id)arg4;
+- (void)inviteGroupMem:(unsigned long long)arg1 invitedArray:(id)arg2 msg:(id)arg3 WithExtraInfo:(id)arg4;
 - (int)InviteGroupAudioChatWithTypes:(id)arg1 relationType:(int)arg2 businessType:(int)arg3 relationID:(unsigned long long)arg4 transPstn:(int)arg5 isSelfPstn:(_Bool)arg6 supplement:(_Bool)arg7;
 - (int)GetPstnStrategy:(int)arg1 businessType:(int)arg2 RelationID:(unsigned long long)arg3 friendsID:(id)arg4;
 - (void)OpenSelfCamera;
@@ -418,6 +422,7 @@
 - (void)notifyError:(id)arg1;
 - (void)stopOfflineTimer;
 - (void)didRecievedOfflineMsg:(unsigned long long)arg1:(int)arg2:(char *)arg3:(int)arg4;
+- (void)didRecievedOfflineMsg:(id)arg1;
 - (void)didRecievedMsg:(CDStruct_7895f40e)arg1;
 - (_Bool)sendWupBuffer:(char *)arg1 cmd:(char *)arg2 seq:(int *)arg3 immediately:(_Bool)arg4 timeOut:(int)arg5;
 - (void)UpdateSelfChatState;

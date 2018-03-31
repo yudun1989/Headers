@@ -31,7 +31,7 @@
 + (id)uniqueGlobalDeviceIdentifier;
 + (id)macAddress;
 + (id)getUniqueID;
-+ (int)networkStatus;
++ (unsigned long long)networkStatus;
 + (_Bool)isReachableViaWifi;
 + (struct __SCNetworkReachability *)utCreateReachabilityRef;
 + (unsigned int)reachabilityFlags;

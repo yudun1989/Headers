@@ -34,6 +34,7 @@
 - (void)storeTokenAndExpiredTimeWithResult:(id)arg1;
 - (id)getserverDomainList;
 - (id)getserverCookieList;
+- (void)makeSessionInvalidLocally:(CDUnknownBlockType)arg1;
 - (void)makeSessionInvalidLocally;
 - (void)loadAndStoreCookies:(id)arg1 externalCookies:(id)arg2 domainList:(id)arg3 loginType:(int)arg4;
 - (void)setCookies:(id)arg1;

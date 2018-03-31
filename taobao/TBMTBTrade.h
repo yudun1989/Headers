@@ -6,16 +6,18 @@
 
 #import "TBMTBBaseModule.h"
 
-@class TBMTBTradeData;
+@class NSDictionary, TBMTBTradeData;
 
 @interface TBMTBTrade : TBMTBBaseModule
 {
     _Bool _isFromACDS;
-    TBMTBTradeData *_data;
+    TBMTBTradeData *_tradeData;
+    NSDictionary *_data;
 }
 
+@property(retain, nonatomic) NSDictionary *data; // @synthesize data=_data;
 @property(nonatomic) _Bool isFromACDS; // @synthesize isFromACDS=_isFromACDS;
-@property(retain, nonatomic) TBMTBTradeData *data; // @synthesize data=_data;
+@property(retain, nonatomic) TBMTBTradeData *tradeData; // @synthesize tradeData=_tradeData;
 - (void).cxx_destruct;
 - (id)init;
 

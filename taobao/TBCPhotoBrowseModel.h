@@ -13,13 +13,19 @@
     _Bool _isVideo;
     NSString *_picUrl;
     UIImageView *_originIv;
+    NSString *_position;
+    NSString *_bgColor;
     NSDictionary *_pic;
     NSDictionary *_video;
+    struct CGSize _imgOriginSize;
 }
 
 @property(nonatomic) _Bool isVideo; // @synthesize isVideo=_isVideo;
 @property(retain, nonatomic) NSDictionary *video; // @synthesize video=_video;
 @property(retain, nonatomic) NSDictionary *pic; // @synthesize pic=_pic;
+@property(nonatomic) struct CGSize imgOriginSize; // @synthesize imgOriginSize=_imgOriginSize;
+@property(copy, nonatomic) NSString *bgColor; // @synthesize bgColor=_bgColor;
+@property(copy, nonatomic) NSString *position; // @synthesize position=_position;
 @property(retain, nonatomic) UIImageView *originIv; // @synthesize originIv=_originIv;
 @property(copy, nonatomic) NSString *picUrl; // @synthesize picUrl=_picUrl;
 - (void).cxx_destruct;

@@ -4,13 +4,13 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-#import "XSearchFooterCell.h"
+#import "TBXSearchMainViewComponent.h"
 
 #import "TBSearchLabelButtonMixedDelegate-Protocol.h"
 
 @class NSString, TBSearchLabelButtonMixedComponent, TBSearchLabelButtonMixedViewModel, TBSearchRelatedRecommendModel, TBXSearchRelatedRecommendModel, UILabel, UIView;
 
-@interface TBXSearchRelatedRecommendComponent : XSearchFooterCell <TBSearchLabelButtonMixedDelegate>
+@interface TBXSearchRelatedRecommendComponent : TBXSearchMainViewComponent <TBSearchLabelButtonMixedDelegate>
 {
     TBSearchRelatedRecommendModel *_realmodel;
     UILabel *_titleLabel;
@@ -21,7 +21,7 @@
 }
 
 + (double)heightOfComponentWithModel:(id)arg1;
-+ (double)HeightWithModel:(id)arg1 searchService:(id)arg2 layoutStyle:(long long)arg3;
++ (double)thisHeightWithModel:(id)arg1 SearchService:(id)arg2;
 @property(retain, nonatomic) TBSearchLabelButtonMixedComponent *mixedUIComponent; // @synthesize mixedUIComponent=_mixedUIComponent;
 @property(retain, nonatomic) TBSearchLabelButtonMixedViewModel *mixedUIViewModel; // @synthesize mixedUIViewModel=_mixedUIViewModel;
 @property(retain, nonatomic) UIView *titleLineRightView; // @synthesize titleLineRightView=_titleLineRightView;
@@ -30,7 +30,7 @@
 @property(retain, nonatomic) TBSearchRelatedRecommendModel *realmodel; // @synthesize realmodel=_realmodel;
 - (void).cxx_destruct;
 - (void)buttonClickedInIndex:(long long)arg1;
-- (void)render;
+- (void)dataLoaded;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

@@ -30,6 +30,7 @@
 - (id)bizcodeForEnabledPlayControl;
 - (_Bool)getConfigForVideoCacheEnable;
 - (id)getTBMediaPlayerBundleOrangeConfig;
+- (id)getDWInteractiveSDKOrangeConfig;
 - (_Bool)getConfigForAllowWiFiAutoPlay;
 - (_Bool)getConfigForCacheEnable;
 - (id)init;

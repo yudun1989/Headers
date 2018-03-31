@@ -10,11 +10,11 @@
 {
 }
 
-+ (void)old_transiteFromController:(id)arg1 toController:(id)arg2 containerController:(id)arg3 parentView:(id)arg4 withTransitionStyle:(int)arg5 completion:(CDUnknownBlockType)arg6;
-+ (void)transiteFromController:(id)arg1 toController:(id)arg2 containerController:(id)arg3 parentView:(id)arg4 withTransitionStyle:(int)arg5 completion:(CDUnknownBlockType)arg6;
++ (void)old_transiteFromController:(id)arg1 toController:(id)arg2 containerController:(id)arg3 parentView:(id)arg4 withTransitionStyle:(long long)arg5 completion:(CDUnknownBlockType)arg6;
++ (void)transiteFromController:(id)arg1 toController:(id)arg2 containerController:(id)arg3 parentView:(id)arg4 withTransitionStyle:(long long)arg5 completion:(CDUnknownBlockType)arg6;
 + (double)currentTabbarHeight;
 + (_Bool)needHideBottom:(id)arg1;
-+ (int)reverseForTransitionStyle:(int)arg1;
++ (long long)reverseForTransitionStyle:(long long)arg1;
 + (id)sharedMaskView;
 + (id)nearestTabBarControllerForViewController:(id)arg1;
 

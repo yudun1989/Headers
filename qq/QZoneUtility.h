@@ -19,12 +19,17 @@
     NSString *_QQVersionNum;
 }
 
++ (_Bool)needFullScreen:(id)arg1;
 + (void)goToh5DownLoadQzone:(id)arg1;
 + (struct CGRect)convertToWindowWithView:(id)arg1;
 + (id)getHDVideoCompressParam;
 + (id)getVideoCompressParam;
 + (void)runOCSPluginInvokePlugin:(id)arg1 isNeedShowDownloadVC:(_Bool)arg2 fromeNavi:(id)arg3 sucessBlock:(CDUnknownBlockType)arg4 failBlock:(CDUnknownBlockType)arg5 timeCost:(id)arg6;
 + (void)runOCSPluginInvokeService:(id)arg1 withOCSPluginId:(id)arg2 isNeedShowDownloadVC:(_Bool)arg3 fromeNavi:(id)arg4 sucessBlock:(CDUnknownBlockType)arg5 failBlock:(CDUnknownBlockType)arg6;
++ (id)descriptionWithFileSize:(unsigned long long)arg1;
++ (id)contextWithCPURenderer;
++ (id)contextWithGPURenderer;
++ (id)contextWithCurrentApplicationState;
 + (_Bool)startClearCacheWithSize:(unsigned long long)arg1 withJobs:(id)arg2;
 + (void)startClearCacheWithJobs:(id)arg1;
 + (void)showSendBoxViewController:(id)arg1;
@@ -35,6 +40,9 @@
 + (id)currentNetTypeForReport;
 + (id)convertRouteIPType:(long long)arg1;
 + (id)convertAPNType:(long long)arg1;
++ (_Bool)isJPGOrJPEGFromat:(id)arg1;
++ (_Bool)isPNGFromat:(id)arg1;
++ (_Bool)isGIFFromat:(id)arg1;
 + (_Bool)isHLSFromat:(id)arg1;
 + (void)addShadowToView:(id)arg1 withOpacity:(float)arg2 shadowRadius:(double)arg3 andCornerRadius:(double)arg4;
 + (id)saveImageExifInfo:(id)arg1 exifInfo:(id)arg2;
@@ -43,7 +51,6 @@
 + (id)getCustomDateWithHour:(long long)arg1;
 + (_Bool)isBetweenFromHour:(long long)arg1 toHour:(long long)arg2;
 + (long long)onMarkFaceNotify:(id)arg1 feeds:(id)arg2;
-+ (_Bool)shouldUseNewVideoURL:(id)arg1;
 + (_Bool)canShowRooftopInsetting;
 + (_Bool)isCanAutoPlayVideo:(id)arg1 feedModel:(id)arg2;
 + (_Bool)canAutoPlayGifInSetting;

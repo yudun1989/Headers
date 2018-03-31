@@ -29,7 +29,6 @@
     long long _connectionTimeout;
     long long _readTimeout;
     long long _heartbeat;
-    double _fetchTime;
     double _updateTime;
     double _lastFailureTime;
 }
@@ -38,7 +37,6 @@
 @property(nonatomic) unsigned char failureMarks; // @synthesize failureMarks=_failureMarks;
 @property(nonatomic) double lastFailureTime; // @synthesize lastFailureTime=_lastFailureTime;
 @property(nonatomic) double updateTime; // @synthesize updateTime=_updateTime;
-@property(nonatomic) double fetchTime; // @synthesize fetchTime=_fetchTime;
 @property(nonatomic) int l7encript; // @synthesize l7encript=_l7encript;
 @property(nonatomic) int auth; // @synthesize auth=_auth;
 @property(nonatomic) int retry; // @synthesize retry=_retry;

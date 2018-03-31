@@ -25,7 +25,7 @@
 + (id)keywordsFromAppInfo:(id)arg1;
 + (id)keywordFromAppInfo:(id)arg1 filterSet:(id)arg2;
 + (_Bool)judgeCanAddCardWithModel:(id)arg1 existsCardModels:(id)arg2 isBabyQ:(_Bool)arg3;
-+ (id)findRemovableCardModelsWithContexts:(id)arg1 appInfos:(id)arg2 isBabyQ:(_Bool)arg3;
++ (id)findRemovableCardModelsWithContexts:(id)arg1 isBabyQ:(_Bool)arg2;
 + (id)filterCardsWithContexts:(id)arg1 totalAppInfos:(id)arg2 removableAppInfos:(id)arg3 allKeywords:(id)arg4 AccostType:(int)arg5 isBabyQMsg:(_Bool)arg6;
 + (void)cardModelsFromMessageModel:(id)arg1 callback:(CDUnknownBlockType)arg2;
 + (id)image:(id)arg1 withCornerRadius:(double)arg2 newSize:(struct CGSize)arg3 backgroundColor:(id)arg4;

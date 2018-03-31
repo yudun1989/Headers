@@ -15,6 +15,8 @@
 
 @property(nonatomic) __weak AliCartDataSource *dataSource; // @synthesize dataSource=_dataSource;
 - (void).cxx_destruct;
+- (void)inner_showBigLoadingView:(id)arg1 delay:(double)arg2 toView:(id)arg3;
+- (_Bool)inner_alicart_openURLFromSourceAndParams:(id)arg1 target:(id)arg2 extraInfo:(id)arg3;
 - (void)p_alertWithShowHandler:(CDUnknownBlockType)arg1 model:(id)arg2;
 - (void)closeBanner:(id)arg1;
 - (void)enterShop:(id)arg1;
@@ -24,12 +26,14 @@
 - (void)openSimiliar:(id)arg1;
 - (void)goJiesuan:(id)arg1;
 - (void)moveToFav;
+- (long long)preSellItemCount:(id)arg1;
 - (long long)priorityBuyItemCount:(id)arg1;
 - (void)deleteItemWithAlertConfirm:(id)arg1 tipsContent:(id)arg2 items:(id)arg3 isValid:(_Bool)arg4 includePriorityBuyItem:(_Bool)arg5 userInfo:(id)arg6;
+- (void)deletePreSellTips:(id)arg1 tipsTitle:(id *)arg2 tipsContent:(id *)arg3;
 - (void)deletePriorityBuyTips:(id)arg1 tipsTitle:(id *)arg2 tipsContent:(id *)arg3;
 - (void)deleteValidItems:(id)arg1 userInfo:(id)arg2;
 - (void)deleteInvalidItems:(id)arg1 isClear:(_Bool)arg2 userInfo:(id)arg3;
-- (void)move2FavWithAlertConfirm:(id)arg1 tipsContent:(id)arg2 items:(id)arg3 includePriorityBuyItem:(_Bool)arg4 userInfo:(id)arg5;
+- (void)move2FavWithAlertConfirm:(id)arg1 tipsContent:(id)arg2 items:(id)arg3 includePriorityBuyItem:(_Bool)arg4 includePreSellItem:(_Bool)arg5 userInfo:(id)arg6;
 - (void)move2FavPriorityBuyTips:(id)arg1 tipsTitle:(id *)arg2 tipsContent:(id *)arg3;
 - (void)move2FavWithTips:(id)arg1 userInfo:(id)arg2;
 - (void)registerFooterEvent;

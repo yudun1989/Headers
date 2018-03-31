@@ -14,6 +14,7 @@
 + (id)readDictFromJsonPath:(id)arg1;
 + (id)digitFolderPathInRoot:(id)arg1;
 + (id)filesPathInRoot:(id)arg1;
++ (_Bool)isExistPlayResWithRoleId:(long long)arg1 actionId:(long long)arg2 type:(id)arg3;
 + (_Bool)isExistPlayResWithRoleId:(long long)arg1 actionId:(long long)arg2;
 + (_Bool)isExistPlayResWithActionId:(long long)arg1;
 + (_Bool)isExistPlayResWithDressId:(long long)arg1;

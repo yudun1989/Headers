@@ -77,6 +77,7 @@
 - (id)initWithFrame:(struct CGRect)arg1 pullDirection:(int)arg2 initText:(id)arg3 pullText:(id)arg4 loadingText:(id)arg5 noMoreText:(id)arg6 timeText:(id)arg7 lastTimeKey:(id)arg8;
 - (id)initWithFrame:(struct CGRect)arg1 pullDirection:(int)arg2 initText:(id)arg3 pullText:(id)arg4 loadingText:(id)arg5 noMoreText:(id)arg6;
 - (id)initWithFrame:(struct CGRect)arg1 pullDirection:(int)arg2;
+- (void)dealloc;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

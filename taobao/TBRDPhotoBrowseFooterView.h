@@ -6,26 +6,38 @@
 
 #import <UIKit/UIView.h>
 
-@class TBCEngine, TBRDPhotoBrowseModel, TBRDStructuredTextComponent, UIScrollView, UserInfoView;
+@class TBCEngine, TBRDPhotoBrowseModel, TBRDStructuredTextComponent, UIImageView, UILabel, UIScrollView;
 
 @interface TBRDPhotoBrowseFooterView : UIView
 {
+    _Bool _animateEnd;
     TBCEngine *_engin;
-    UserInfoView *_userInfoView;
     UIView *_mainContentView;
     UIScrollView *_scrollView;
+    UIView *_scrollViewWrapView;
+    UILabel *_lbName;
+    UILabel *_lbSku;
     TBRDStructuredTextComponent *_textView;
+    UIImageView *_ivItem;
+    UILabel *_lbPrice;
     TBRDPhotoBrowseModel *_pbm;
 }
 
+@property(nonatomic) _Bool animateEnd; // @synthesize animateEnd=_animateEnd;
 @property(retain, nonatomic) TBRDPhotoBrowseModel *pbm; // @synthesize pbm=_pbm;
+@property(retain, nonatomic) UILabel *lbPrice; // @synthesize lbPrice=_lbPrice;
+@property(retain, nonatomic) UIImageView *ivItem; // @synthesize ivItem=_ivItem;
 @property(retain, nonatomic) TBRDStructuredTextComponent *textView; // @synthesize textView=_textView;
+@property(retain, nonatomic) UILabel *lbSku; // @synthesize lbSku=_lbSku;
+@property(retain, nonatomic) UILabel *lbName; // @synthesize lbName=_lbName;
+@property(retain, nonatomic) UIView *scrollViewWrapView; // @synthesize scrollViewWrapView=_scrollViewWrapView;
 @property(retain, nonatomic) UIScrollView *scrollView; // @synthesize scrollView=_scrollView;
 @property(retain, nonatomic) UIView *mainContentView; // @synthesize mainContentView=_mainContentView;
-@property(retain, nonatomic) UserInfoView *userInfoView; // @synthesize userInfoView=_userInfoView;
 @property(retain, nonatomic) TBCEngine *engin; // @synthesize engin=_engin;
 - (void).cxx_destruct;
+- (void)itemTapAction:(id)arg1;
 - (void)tapAction:(id)arg1;
+- (void)exeSwitchAnimate:(id)arg1;
 - (void)loadData:(id)arg1;
 - (id)initWithFrame:(struct CGRect)arg1 withEngin:(id)arg2;
 

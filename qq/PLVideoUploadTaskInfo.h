@@ -20,7 +20,6 @@
 @property(retain, nonatomic) id userData; // @synthesize userData=_userData;
 @property(nonatomic) __weak id <VideoFileUploadDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
-- (void)dealloc;
 
 @end
 

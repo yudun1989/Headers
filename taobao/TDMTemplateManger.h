@@ -10,6 +10,7 @@
 
 @interface TDMTemplateManger : NSObject
 {
+    _Bool _useDinamicCellPreload;
     _Bool _isAvailable;
     NSMutableDictionary *_managedTemplateInfos;
     NSMutableDictionary *_avaiableTemplateItems;
@@ -19,6 +20,7 @@
 @property(retain, nonatomic) NSMutableDictionary *avaiableTemplateItems; // @synthesize avaiableTemplateItems=_avaiableTemplateItems;
 @property(retain, nonatomic) NSMutableDictionary *managedTemplateInfos; // @synthesize managedTemplateInfos=_managedTemplateInfos;
 @property(nonatomic) _Bool isAvailable; // @synthesize isAvailable=_isAvailable;
+@property(nonatomic) _Bool useDinamicCellPreload; // @synthesize useDinamicCellPreload=_useDinamicCellPreload;
 - (void).cxx_destruct;
 - (void)readConfigurations;
 - (void)saveConfigurations;

@@ -43,6 +43,7 @@
 - (void)resetUI;
 - (void)timeOutStopRecord;
 - (void)stopReocrdMemoryIsNotEnough;
+- (_Bool)isAccessibilityElement;
 - (void)updateProgress;
 - (void)showStartRecordUI;
 - (void)relayoutDegreee:(int)arg1;

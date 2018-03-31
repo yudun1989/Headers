@@ -8,18 +8,11 @@
 
 @interface QQVIPQRSettingBtn : UIButton
 {
-    long long _index;
     int _xo;
+    unsigned long long _type;
 }
 
-- (void)dealloc;
-- (void)setSelectedWithIndex:(long long)arg1;
-- (void)qrBtnTouchHandler:(id)arg1;
-- (void)settingBtnTouchDownHandler;
-- (id)initWithFrame:(struct CGRect)arg1 withIndex:(long long)arg2;
-
-// Remaining properties
-@property(nonatomic) long long index; // @dynamic index;
+@property(nonatomic) unsigned long long type; // @synthesize type=_type;
 
 @end
 

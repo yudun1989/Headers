@@ -12,6 +12,7 @@
 {
     _Bool _shouldShowRedPoint;
     _Bool _selected;
+    _Bool _skinIsSetDefault;
     _Bool _animated;
     _Bool _hasAttatchedView;
     _Bool _shouldShowIcon;
@@ -29,6 +30,7 @@
 @property(copy, nonatomic) NSString *iconPath; // @synthesize iconPath=_iconPath;
 @property(nonatomic) _Bool hasAttatchedView; // @synthesize hasAttatchedView=_hasAttatchedView;
 @property(nonatomic) _Bool animated; // @synthesize animated=_animated;
+@property(nonatomic) _Bool skinIsSetDefault; // @synthesize skinIsSetDefault=_skinIsSetDefault;
 @property(nonatomic) unsigned long long selectedCount; // @synthesize selectedCount=_selectedCount;
 @property(nonatomic) SEL deselectedAction; // @synthesize deselectedAction=_deselectedAction;
 @property(nonatomic) SEL selectedAction; // @synthesize selectedAction=_selectedAction;

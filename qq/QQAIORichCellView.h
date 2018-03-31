@@ -73,6 +73,7 @@
 - (id)sourceView;
 - (void)drawGrayTail;
 - (void)willDrawBubble;
+- (struct CGRect)reDrawRect;
 - (void)loadGIF;
 - (id)getChatImageMetaInfo;
 - (void)willDrawBubbleSubViews;

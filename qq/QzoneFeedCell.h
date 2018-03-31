@@ -26,7 +26,6 @@
     _Bool _isForLayoutKit;
     int _cellStyle;
     long long _section;
-    double _feedCellBgAlpha;
     NSArray *_feedLayoutViewList;
     QzoneFeedLayoutView *_lkLayoutView;
 }
@@ -46,7 +45,6 @@
 @property(nonatomic) _Bool isInVideoCommentView; // @synthesize isInVideoCommentView=_isInVideoCommentView;
 @property(readonly, nonatomic) NSArray *feedLayoutViewList; // @synthesize feedLayoutViewList=_feedLayoutViewList;
 @property(nonatomic) _Bool usingLocalVideoCache; // @synthesize usingLocalVideoCache=_usingLocalVideoCache;
-@property(nonatomic) double feedCellBgAlpha; // @synthesize feedCellBgAlpha=_feedCellBgAlpha;
 @property(nonatomic) _Bool streamingPlay; // @synthesize streamingPlay=_streamingPlay;
 @property(nonatomic) _Bool needPredraw; // @synthesize needPredraw=_needPredraw;
 @property(nonatomic) _Bool shouldShowDress; // @synthesize shouldShowDress=_shouldShowDress;
@@ -58,7 +56,7 @@
 - (void)generateLikeListAccessibilityElementWithFrame:(struct CGRect)arg1;
 - (void)generateCommentAccessibilityElements;
 - (void)setAllLayoutViewHidden:(_Bool)arg1;
-- (void)setAllLayoutViewHidden:(_Bool)arg1 resetLKLayoutView:(_Bool)arg2;
+- (void)setAllLayoutViewHidden:(_Bool)arg1 resetPTLayoutView:(_Bool)arg2;
 - (void)refreshFeedDressToLayoutView:(id)arg1;
 - (void)setFeedModelForLayoutKit:(id)arg1;
 - (id)layoutModelInfo;
@@ -106,6 +104,7 @@
 - (id)layoutViewOfTagContent:(id)arg1 layoutInfo:(id)arg2;
 - (void)setIsTableScrolling:(_Bool)arg1;
 - (void)prepareForReuse;
+- (void)setFeedCellBgAlpha:(double)arg1;
 - (void)initFeedLayoutView;
 - (id)initWithStyle:(long long)arg1 reuseIdentifier:(id)arg2;
 - (id)initWithStyle:(long long)arg1 reuseIdentifier:(id)arg2 fixDress:(_Bool)arg3 isDetail:(_Bool)arg4;

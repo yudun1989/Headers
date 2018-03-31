@@ -16,6 +16,7 @@
 {
     id <TroopListViewDelegate> _listViewDelegate;
     NSMutableArray *_allTroopList;
+    NSMutableArray *_unnamedTroopList;
     NSMutableArray *_commonTroopList;
     NSMutableArray *_ownerTroopList;
     NSMutableArray *_adminTroopList;
@@ -48,6 +49,7 @@
 @property(retain, nonatomic) NSMutableArray *memberTroopList; // @dynamic memberTroopList;
 @property(retain, nonatomic) NSMutableArray *ownerTroopList; // @dynamic ownerTroopList;
 @property(readonly) Class superclass;
+@property(retain, nonatomic) NSMutableArray *unnamedTroopList; // @dynamic unnamedTroopList;
 
 @end
 

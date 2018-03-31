@@ -6,21 +6,23 @@
 
 #import <Foundation/NSObject.h>
 
-@class NSMutableArray;
+@class NSMutableDictionary;
 @protocol OS_dispatch_semaphore;
 
 @interface ArtisanTrigger : NSObject
 {
-    NSMutableArray *_registerArray;
     NSObject<OS_dispatch_semaphore> *_lock;
+    NSMutableDictionary *_registerDict;
 }
 
 + (void)postBackgroundData;
 + (id)sharedManager;
+@property(retain, nonatomic) NSMutableDictionary *registerDict; // @synthesize registerDict=_registerDict;
 - (void).cxx_destruct;
 - (void)unRegisterTriggerById:(id)arg1;
+- (void)unRegisterUseleTriggers;
 - (void)unRegisterTriggers;
-- (void)registerTrigger:(id)arg1 activityId:(id)arg2 awarenessExecutorType:(id)arg3 withBlock:(CDUnknownBlockType)arg4;
+- (void)registerTrigger:(id)arg1 activityId:(id)arg2 withBlock:(CDUnknownBlockType)arg3;
 - (id)init;
 
 @end

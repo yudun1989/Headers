@@ -12,14 +12,18 @@
 {
     NSString *_broadcasterId;
     NSString *_liveId;
+    long long _videoId;
     unsigned long long _s;
     unsigned long long _n;
     NSString *_recommendType;
+    NSString *_bizScene;
 }
 
+@property(copy, nonatomic) NSString *bizScene; // @synthesize bizScene=_bizScene;
 @property(copy, nonatomic) NSString *recommendType; // @synthesize recommendType=_recommendType;
 @property(nonatomic) unsigned long long n; // @synthesize n=_n;
 @property(nonatomic) unsigned long long s; // @synthesize s=_s;
+@property(nonatomic) long long videoId; // @synthesize videoId=_videoId;
 @property(copy, nonatomic) NSString *liveId; // @synthesize liveId=_liveId;
 @property(copy, nonatomic) NSString *broadcasterId; // @synthesize broadcasterId=_broadcasterId;
 - (void).cxx_destruct;

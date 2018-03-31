@@ -7,11 +7,11 @@
 #import <QQMainProject/QzoneModel.h>
 
 #import <QQMainProject/IQZoneFavour-Protocol.h>
-#import <QQMainProject/LKJSExport-Protocol.h>
+#import <QQMainProject/PTJSExport-Protocol.h>
 
-@class NSArray, NSDate, NSDictionary, NSIndexPath, NSMutableArray, NSMutableDictionary, NSNumber, NSString, QZJFeedsCellLeftThumb, QZJFeedsCellRedBonus, QZJFeedsCellRefer, QZLayoutInfo, QzoneCommSparkleWord, QzoneFeedCellAdvContainerAttach, QzoneFeedCellAudio, QzoneFeedCellBottomRecomm, QzoneFeedCellCanvas, QzoneFeedCellComm, QzoneFeedCellComment, QzoneFeedCellContent, QzoneFeedCellCornerAdv, QzoneFeedCellCover, QzoneFeedCellDecorate, QzoneFeedCellFeedsDeco, QzoneFeedCellFollowGuide, QzoneFeedCellForward, QzoneFeedCellForwardList, QzoneFeedCellFrdLikeContainer, QzoneFeedCellGdtAdLR, QzoneFeedCellGift, QzoneFeedCellGuiding, QzoneFeedCellID, QzoneFeedCellInterest, QzoneFeedCellLBS, QzoneFeedCellLike, QzoneFeedCellLive, QzoneFeedCellLuckyMoney, QzoneFeedCellMusic, QzoneFeedCellNegativeFeedback, QzoneFeedCellOperation, QzoneFeedCellPermission, QzoneFeedCellPhotoLayer, QzoneFeedCellPicText, QzoneFeedCellPicture, QzoneFeedCellQBossPsvAdv, QzoneFeedCellRecomTag, QzoneFeedCellRecommAction, QzoneFeedCellRecommHeader, QzoneFeedCellRecommItem, QzoneFeedCellRemark, QzoneFeedCellSeparator, QzoneFeedCellShare, QzoneFeedCellSpecialCare, QzoneFeedCellSummary, QzoneFeedCellTemplate, QzoneFeedCellTitle, QzoneFeedCellUser, QzoneFeedCellVideo, QzoneFeedCellViewMore, QzoneFeedCellVisitor, QzoneFeedGiftCombine, QzoneFeedPicture, QzoneFeedTouchParam, QzoneFeedUser;
+@class NSArray, NSDate, NSDictionary, NSIndexPath, NSMutableArray, NSMutableDictionary, NSNumber, NSString, QZJFeedsCellLeftThumb, QZJFeedsCellRedBonus, QZJFeedsCellRefer, QZLayoutInfo, QzoneCommSparkleWord, QzoneFeedCellAdvContainerAttach, QzoneFeedCellAudio, QzoneFeedCellBottomRecomm, QzoneFeedCellCampusShareCard, QzoneFeedCellCanvas, QzoneFeedCellComm, QzoneFeedCellComment, QzoneFeedCellContent, QzoneFeedCellCornerAdv, QzoneFeedCellCover, QzoneFeedCellDecorate, QzoneFeedCellFeedsDeco, QzoneFeedCellFollowGuide, QzoneFeedCellForward, QzoneFeedCellForwardList, QzoneFeedCellFrdLikeContainer, QzoneFeedCellGdtAdLR, QzoneFeedCellGift, QzoneFeedCellGuiding, QzoneFeedCellID, QzoneFeedCellInterest, QzoneFeedCellLBS, QzoneFeedCellLike, QzoneFeedCellLive, QzoneFeedCellLuckyMoney, QzoneFeedCellMusic, QzoneFeedCellNegativeFeedback, QzoneFeedCellOperation, QzoneFeedCellPermission, QzoneFeedCellPhotoLayer, QzoneFeedCellPicText, QzoneFeedCellPicture, QzoneFeedCellQBossPsvAdv, QzoneFeedCellRecomTag, QzoneFeedCellRecommAction, QzoneFeedCellRecommHeader, QzoneFeedCellRecommItem, QzoneFeedCellRemark, QzoneFeedCellSeparator, QzoneFeedCellShare, QzoneFeedCellSpecialCare, QzoneFeedCellSummary, QzoneFeedCellTemplate, QzoneFeedCellTitle, QzoneFeedCellUser, QzoneFeedCellVideo, QzoneFeedCellViewMore, QzoneFeedCellVisitor, QzoneFeedGiftCombine, QzoneFeedPicture, QzoneFeedTouchParam, QzoneFeedUser;
 
-@interface QzoneFeedModel : QzoneModel <LKJSExport, IQZoneFavour>
+@interface QzoneFeedModel : QzoneModel <PTJSExport, IQZoneFavour>
 {
     _Bool _willNotBeCached;
     _Bool _shouldHasAutoPlayToken;
@@ -28,6 +28,7 @@
     _Bool _isADExposed;
     _Bool _isQBossExposed;
     _Bool _isPlayFeedExposed;
+    _Bool _isShortVideoFeedExposed;
     _Bool _isDetail;
     _Bool _userInteractionDisable;
     _Bool _disableCommentInputBar;
@@ -90,10 +91,12 @@
     QzoneFeedCellDecorate *_decorate;
     QzoneFeedCellForwardList *_frdList;
     QzoneFeedCellShare *_share;
+    QzoneFeedCellCampusShareCard *_campusShareCard;
     QzoneFeedModel *_original;
     QzoneFeedCellContent *_content;
     QzoneFeedCellOperation *_operation;
     QzoneFeedCellVisitor *_visitor;
+    QZLayoutInfo *_detailBottomAdLayoutInfo;
     QzoneFeedCellAudio *_audio;
     QZJFeedsCellRefer *_jce_refer;
     QZLayoutInfo *_referLayoutInfo;
@@ -139,6 +142,7 @@
     NSMutableArray *_updatedCells;
     NSArray *_groupFeedList;
     long long _subGroupIndex;
+    NSMutableArray *_friGroupVideoList;
     QzoneFeedModel *_mainFeed;
     QzoneFeedTouchParam *_touchParam;
     long long _cellRow;
@@ -151,6 +155,7 @@
     NSDictionary *_cgiReportParam;
     NSMutableDictionary *_cgiClickAttachement;
     double _advActionHeight;
+    long long _containerSubType;
     NSString *_homePageNoFeedReminder;
     NSString *_homePageNoFeedSubReminder;
     long long _albumUin;
@@ -215,6 +220,7 @@
 @property(nonatomic) _Bool isDateFeedModel; // @synthesize isDateFeedModel=_isDateFeedModel;
 @property(nonatomic) _Bool layoutSingleAdvVisitor; // @synthesize layoutSingleAdvVisitor=_layoutSingleAdvVisitor;
 @property(nonatomic) _Bool inFloatLayer; // @synthesize inFloatLayer=_inFloatLayer;
+@property(nonatomic) long long containerSubType; // @synthesize containerSubType=_containerSubType;
 @property(nonatomic) double advActionHeight; // @synthesize advActionHeight=_advActionHeight;
 @property(retain, nonatomic) NSMutableDictionary *cgiClickAttachement; // @synthesize cgiClickAttachement=_cgiClickAttachement;
 @property(retain, nonatomic) NSDictionary *cgiReportParam; // @synthesize cgiReportParam=_cgiReportParam;
@@ -241,6 +247,7 @@
 @property(nonatomic) _Bool isLayoutGroup; // @synthesize isLayoutGroup=_isLayoutGroup;
 @property(retain, nonatomic) QzoneFeedTouchParam *touchParam; // @synthesize touchParam=_touchParam;
 @property(nonatomic) __weak QzoneFeedModel *mainFeed; // @synthesize mainFeed=_mainFeed;
+@property(retain, nonatomic) NSMutableArray *friGroupVideoList; // @synthesize friGroupVideoList=_friGroupVideoList;
 @property(nonatomic) long long subGroupIndex; // @synthesize subGroupIndex=_subGroupIndex;
 @property(retain, nonatomic) NSArray *groupFeedList; // @synthesize groupFeedList=_groupFeedList;
 @property(nonatomic) _Bool disableCommentInputBar; // @synthesize disableCommentInputBar=_disableCommentInputBar;
@@ -253,6 +260,7 @@
 @property(retain, nonatomic) NSString *feedInfo; // @synthesize feedInfo=_feedInfo;
 @property(nonatomic) int status; // @synthesize status=_status;
 @property(nonatomic) _Bool isDetail; // @synthesize isDetail=_isDetail;
+@property(nonatomic) _Bool isShortVideoFeedExposed; // @synthesize isShortVideoFeedExposed=_isShortVideoFeedExposed;
 @property(nonatomic) _Bool isPlayFeedExposed; // @synthesize isPlayFeedExposed=_isPlayFeedExposed;
 @property(nonatomic) _Bool isQBossExposed; // @synthesize isQBossExposed=_isQBossExposed;
 @property(nonatomic) _Bool isADExposed; // @synthesize isADExposed=_isADExposed;
@@ -305,10 +313,12 @@
 @property(retain, nonatomic) QZLayoutInfo *referLayoutInfo; // @synthesize referLayoutInfo=_referLayoutInfo;
 @property(retain, nonatomic) QZJFeedsCellRefer *jce_refer; // @synthesize jce_refer=_jce_refer;
 @property(retain, nonatomic) QzoneFeedCellAudio *audio; // @synthesize audio=_audio;
+@property(retain, nonatomic) QZLayoutInfo *detailBottomAdLayoutInfo; // @synthesize detailBottomAdLayoutInfo=_detailBottomAdLayoutInfo;
 @property(retain, nonatomic) QzoneFeedCellVisitor *visitor; // @synthesize visitor=_visitor;
 @property(retain, nonatomic) QzoneFeedCellOperation *operation; // @synthesize operation=_operation;
 @property(retain, nonatomic) QzoneFeedCellContent *content; // @synthesize content=_content;
 @property(retain, nonatomic) QzoneFeedModel *original; // @synthesize original=_original;
+@property(retain, nonatomic) QzoneFeedCellCampusShareCard *campusShareCard; // @synthesize campusShareCard=_campusShareCard;
 @property(retain, nonatomic) QzoneFeedCellShare *share; // @synthesize share=_share;
 @property(retain, nonatomic) QzoneFeedCellForwardList *frdList; // @synthesize frdList=_frdList;
 @property(retain, nonatomic) QzoneFeedCellDecorate *decorate; // @synthesize decorate=_decorate;
@@ -329,6 +339,8 @@
 @property(retain, nonatomic) QzoneFeedCellUser *user; // @synthesize user=_user;
 @property(retain, nonatomic) QzoneFeedCellComm *comm; // @synthesize comm=_comm;
 - (void).cxx_destruct;
+- (_Bool)isBrandUgcSelfMediaAdv;
+- (_Bool)isUgcShowcaseAdvFeeds;
 - (id)feedSkin;
 - (_Bool)firstIndexFeed;
 - (_Bool)isOriginVideo;
@@ -362,6 +374,8 @@
 - (_Bool)isFakeSeparatorModel;
 - (id)genSepartorModel;
 - (_Bool)isQbossFeed;
+- (_Bool)ifShowCustomEmotionTab;
+- (_Bool)isShowGifComment;
 - (_Bool)isRedBonusIconEnable;
 - (_Bool)isShowRedBouns;
 - (_Bool)isPlayFeed;
@@ -404,8 +418,11 @@
 - (_Bool)isPictureVideoMixedFeed;
 - (_Bool)isPopAdv;
 - (_Bool)isBrandUgcAdv;
+- (_Bool)isWeishiVideoContainer;
+- (_Bool)isWeishiFeed;
 - (_Bool)isGDTVideoFeed;
 - (_Bool)isVideoFeed;
+- (_Bool)needCompactDisplayVideo;
 - (id)getFirstVideo;
 - (_Bool)needInstalledFilter;
 - (_Bool)isPassiveAdvFeed;
@@ -422,6 +439,8 @@
 - (_Bool)isSpecialCareCell;
 - (_Bool)isMainFeed;
 - (_Bool)isFeedFollowGuide;
+- (_Bool)isRecommFrdShortVideoOutside;
+- (_Bool)isRecommFrdShortVideoContainer;
 - (_Bool)isRecomHotVideoOutSide;
 - (_Bool)isRecomHotVideoInside;
 - (long long)getAdvVideoJumpType;
@@ -482,6 +501,8 @@
 - (_Bool)hasShootLBS;
 - (_Bool)needForwardBgColor;
 - (_Bool)isForwardFeed;
+- (int)campusShareType;
+- (_Bool)isCampusShareCard;
 - (_Bool)isVideoMood;
 - (_Bool)isAudioMood;
 - (_Bool)isMessage;

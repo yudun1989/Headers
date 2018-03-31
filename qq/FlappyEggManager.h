@@ -17,6 +17,7 @@
     NSMutableArray *_eggs;
     int _eggJDBidCount;
     _Bool _hasJDEggRequested;
+    NSArray *_enableEggIDs;
     UITableView *_tableView;
 }
 
@@ -39,6 +40,8 @@
 - (id)_loadConfigList;
 - (_Bool)unZipAndReloadConfigList:(id)arg1;
 - (void)enableEggWithIDs:(id)arg1;
+- (void)resetAllEgg;
+- (void)disableAllEgg;
 - (void)disableEggWithIDs:(id)arg1;
 - (id)_emojiImageWithString:(id)arg1;
 - (id)_getImageFromFlappyEggImageModel:(id)arg1;

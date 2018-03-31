@@ -17,9 +17,9 @@
 + (Class)getTBBizDownloadTask;
 @property(retain, nonatomic) id <ZCTBBizDownloadTaskProtocol> task; // @synthesize task=_task;
 - (void).cxx_destruct;
-- (void)cancelTask;
+- (void)cancelOperation;
 - (_Bool)tryInvoke:(id)arg1 withSelector:(SEL)arg2 withInt:(int)arg3;
-- (void)startTask;
+- (void)executeOperation;
 - (id)initWithRequest:(id)arg1;
 
 @end

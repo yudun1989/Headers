@@ -9,6 +9,7 @@
 @class FullScreenVideoTableViewCell, NSDictionary, UIImage;
 
 @protocol FullScreenVideoCellDelegate <NSObject>
+- (void)tableViewVideoCell:(FullScreenVideoTableViewCell *)arg1 favoriteDidChange:(_Bool)arg2;
 - (void)removeViewVideoCell:(FullScreenVideoTableViewCell *)arg1;
 - (_Bool)isMiddleCell:(FullScreenVideoTableViewCell *)arg1;
 - (NSDictionary *)getReportDicForCell:(FullScreenVideoTableViewCell *)arg1;

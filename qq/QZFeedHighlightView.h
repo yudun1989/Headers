@@ -7,12 +7,12 @@
 #import <UIKit/UIView.h>
 
 @class NSDictionary, UIColor;
-@protocol LKViewDelegate;
+@protocol PTViewDelegate;
 
 @interface QZFeedHighlightView : UIView
 {
     UIColor *_highlightColor;
-    id <LKViewDelegate> _delegate;
+    id <PTViewDelegate> _delegate;
     long long _clickEventTag;
     NSDictionary *_userParam;
     UIColor *_originBgColor;
@@ -21,7 +21,7 @@
 @property(retain, nonatomic) UIColor *originBgColor; // @synthesize originBgColor=_originBgColor;
 @property(retain, nonatomic) NSDictionary *userParam; // @synthesize userParam=_userParam;
 @property(nonatomic) long long clickEventTag; // @synthesize clickEventTag=_clickEventTag;
-@property(nonatomic) __weak id <LKViewDelegate> delegate; // @synthesize delegate=_delegate;
+@property(nonatomic) __weak id <PTViewDelegate> delegate; // @synthesize delegate=_delegate;
 @property(retain, nonatomic) UIColor *highlightColor; // @synthesize highlightColor=_highlightColor;
 - (void).cxx_destruct;
 - (void)touchesCancelled:(id)arg1 withEvent:(id)arg2;

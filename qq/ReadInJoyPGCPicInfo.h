@@ -15,9 +15,13 @@
     NSString *_md5;
     NSString *_url;
     NSString *_thumbnailUrl;
+    NSString *_picDesc;
+    unsigned long long _galleryIndex;
 }
 
 + (id)pgcPicInfoFromMsgDecoder:(struct CPBMessageDecoder *)arg1;
+@property(nonatomic) unsigned long long galleryIndex; // @synthesize galleryIndex=_galleryIndex;
+@property(retain, nonatomic) NSString *picDesc; // @synthesize picDesc=_picDesc;
 @property(retain, nonatomic) NSString *thumbnailUrl; // @synthesize thumbnailUrl=_thumbnailUrl;
 @property(retain, nonatomic) NSString *url; // @synthesize url=_url;
 @property(retain, nonatomic) NSString *md5; // @synthesize md5=_md5;

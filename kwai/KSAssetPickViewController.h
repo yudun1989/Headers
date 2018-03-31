@@ -18,7 +18,6 @@
 
 @interface KSAssetPickViewController : KSBaseViewController <KSAssetPickViewControllerProtocol, KSVideoImageFullScreenViewControllerDelegate, UICollectionViewDelegate, UIScrollViewDelegate, UINavigationControllerDelegate, KSPostComponent>
 {
-    _Bool _active;
     _Bool _catchingAssetCollectionPan;
     id <KSAssetPickViewControllerDelegate> _delegate;
     double _videoMaximumDuration;
@@ -104,7 +103,6 @@
 @property(retain, nonatomic) NSLayoutConstraint *assetCollectionViewImage2VideoConstraint; // @synthesize assetCollectionViewImage2VideoConstraint=_assetCollectionViewImage2VideoConstraint;
 @property(retain, nonatomic) KSAssetCollectionDataSource *assetCollectionDataSource; // @synthesize assetCollectionDataSource=_assetCollectionDataSource;
 @property(retain, nonatomic) UICollectionView *assetCollectionView; // @synthesize assetCollectionView=_assetCollectionView;
-@property(nonatomic) _Bool active; // @synthesize active=_active;
 @property(retain, nonatomic) KSPoi *defaultPoi; // @synthesize defaultPoi=_defaultPoi;
 @property(retain, nonatomic) NSString *initalCaption; // @synthesize initalCaption=_initalCaption;
 @property(retain, nonatomic) NSString *currentPageURL; // @synthesize currentPageURL=_currentPageURL;

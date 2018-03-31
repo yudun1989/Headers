@@ -7,16 +7,16 @@
 #import <QQMainProject/CFT_UIBaseRichViewController.h>
 
 #import <QQMainProject/CAAnimationDelegate-Protocol.h>
+#import <QQMainProject/QQWalletAlertDialogDelegate-Protocol.h>
 #import <QQMainProject/TPADViewDelegate-Protocol.h>
-#import <QQMainProject/TPAlertDialogDelegate-Protocol.h>
 #import <QQMainProject/UIGestureRecognizerDelegate-Protocol.h>
 #import <QQMainProject/UINavigationControllerDelegate-Protocol.h>
 #import <QQMainProject/UIScrollViewDelegate-Protocol.h>
 
-@class CFT_TPADView, CFT_TPAlertDialog, CFT_UIRedGiftView, NSDictionary, NSMutableDictionary, NSString, UIViewController;
+@class CFT_TPADView, CFT_TPAlertDialog, CFT_UIRedGiftView, NSMutableDictionary, NSString, UIViewController;
 @protocol UITPStartingDelegate;
 
-@interface CFT_FF23927 : CFT_UIBaseRichViewController <TPAlertDialogDelegate, TPADViewDelegate, UIGestureRecognizerDelegate, UINavigationControllerDelegate, CAAnimationDelegate, UIScrollViewDelegate>
+@interface CFT_FF23927 : CFT_UIBaseRichViewController <QQWalletAlertDialogDelegate, TPADViewDelegate, UIGestureRecognizerDelegate, UINavigationControllerDelegate, CAAnimationDelegate, UIScrollViewDelegate>
 {
     _Bool _isClosing;
     int _needRealNameFlag;
@@ -58,14 +58,8 @@
     CFT_TPADView *_adView;
     CFT_UIRedGiftView *_redGiftView;
     CFT_TPAlertDialog *_alertDlg;
-    NSString *_grap_hb_returl;
-    NSString *_grap_hb_tips;
-    NSDictionary *_grap_hb_param;
 }
 
-@property(retain, nonatomic) NSDictionary *grap_hb_param; // @synthesize grap_hb_param=_grap_hb_param;
-@property(retain, nonatomic) NSString *grap_hb_tips; // @synthesize grap_hb_tips=_grap_hb_tips;
-@property(retain, nonatomic) NSString *grap_hb_returl; // @synthesize grap_hb_returl=_grap_hb_returl;
 @property(retain, nonatomic) CFT_TPAlertDialog *alertDlg; // @synthesize alertDlg=_alertDlg;
 @property(nonatomic) _Bool isThemeRedGift; // @synthesize isThemeRedGift=_isThemeRedGift;
 @property(retain, nonatomic) CFT_UIRedGiftView *redGiftView; // @synthesize redGiftView=_redGiftView;
@@ -107,7 +101,6 @@
 - (_Bool)gestureRecognizer:(id)arg1 shouldReceiveTouch:(id)arg2;
 - (void)onTPADViewClick:(id)arg1;
 - (void)alertDialog:(id)arg1 clickedButtonAtIndex:(long long)arg2;
-- (void)alertView:(id)arg1 didDismissWithButtonIndex:(long long)arg2;
 - (void)onBackgroundTapped;
 - (void)onSelfViewTap:(id)arg1;
 - (void)showWebPage:(id)arg1 title:(id)arg2;
@@ -131,11 +124,9 @@
 - (void)sendHongbaoButtonClick:(id)arg1;
 - (void)closeButtonClick:(id)arg1;
 - (id)getVerifyUrlAndMsg:(id)arg1;
-- (void)gotoVerify;
-- (void)qwallet;
+- (void)gotoVerify:(id)arg1;
 - (void)tapMoneyLabel:(id)arg1;
 - (void)closeGrapView;
-- (void)reqQWalletFor:(int)arg1;
 - (void)showFakeRedParam:(id)arg1;
 - (void)requestData;
 - (void)dealloc;

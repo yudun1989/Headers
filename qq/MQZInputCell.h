@@ -35,6 +35,7 @@
     QZFacePanelController *_facePanelController;
     QZFontBoardContainerView *_fontBoardContainer;
     UIView *_fontBoardView;
+    UIView *_animojiBoardView;
     UITapGestureRecognizer *_showKeyBoardTapGesture;
     CDUnknownBlockType _onPressPictureButton;
     CDUnknownBlockType _onPressGifRecommendButton;
@@ -64,6 +65,7 @@
 @property(copy, nonatomic) CDUnknownBlockType onPressPictureButton; // @synthesize onPressPictureButton=_onPressPictureButton;
 @property(nonatomic, getter=isActive) _Bool active; // @synthesize active=_active;
 @property(retain, nonatomic) UITapGestureRecognizer *showKeyBoardTapGesture; // @synthesize showKeyBoardTapGesture=_showKeyBoardTapGesture;
+@property(retain, nonatomic) UIView *animojiBoardView; // @synthesize animojiBoardView=_animojiBoardView;
 @property(retain, nonatomic) UIView *fontBoardView; // @synthesize fontBoardView=_fontBoardView;
 @property(retain, nonatomic) QZFontBoardContainerView *fontBoardContainer; // @synthesize fontBoardContainer=_fontBoardContainer;
 @property(retain, nonatomic) QZFacePanelController *facePanelController; // @synthesize facePanelController=_facePanelController;
@@ -95,6 +97,9 @@
 - (void)updateSparklewordDisplay;
 - (void)viewWillAppear;
 - (void)textChanged;
+- (void)createAnimojiBoard;
+- (void)showAnimojiBoard;
+- (_Bool)animojiButtonClicked;
 - (_Bool)voiceButtonClicked;
 - (_Bool)fontButtonClicked;
 - (void)createFontBoard;

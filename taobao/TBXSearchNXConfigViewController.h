@@ -10,10 +10,12 @@
 
 @interface TBXSearchNXConfigViewController : TBXSearchSrpBaseViewController
 {
+    _Bool _disableNX;
     NSURL *_url;
     TBXSearchDynamicPortalViewController *_dynamicPortalVc;
 }
 
+@property(nonatomic) _Bool disableNX; // @synthesize disableNX=_disableNX;
 @property(retain, nonatomic) TBXSearchDynamicPortalViewController *dynamicPortalVc; // @synthesize dynamicPortalVc=_dynamicPortalVc;
 @property(retain, nonatomic) NSURL *url; // @synthesize url=_url;
 - (void).cxx_destruct;

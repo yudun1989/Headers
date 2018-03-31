@@ -6,7 +6,7 @@
 
 #import <Foundation/NSObject.h>
 
-@class QQBlueConfig, QQFGData;
+@class QQBlueConfig, QQBlueReporter, QQFGData;
 
 @interface QQBlueMonitor : NSObject
 {
@@ -24,12 +24,14 @@
     double _allStuckTime;
     double _foregroundTime;
     QQFGData *_fgData;
+    QQBlueReporter *_reporter;
 }
 
 + (id)getUnsuspandableThread;
 + (void)setMSFActived;
 + (void)logEvent:(id)arg1 startTime:(double)arg2 cost:(double)arg3;
 + (id)getInstance;
+@property(retain, nonatomic) QQBlueReporter *reporter; // @synthesize reporter=_reporter;
 @property(retain, nonatomic) QQFGData *fgData; // @synthesize fgData=_fgData;
 @property(nonatomic) unsigned int stackCaptureInterval; // @synthesize stackCaptureInterval=_stackCaptureInterval;
 @property _Bool needOpenMonitor; // @synthesize needOpenMonitor=_needOpenMonitor;
@@ -56,9 +58,6 @@
 - (void)onEnterforeGroundEnd;
 - (void)openResourceMonitor;
 - (void)onBatteryDataUpdate:(id)arg1;
-- (id)transResourceUsageToDic:(id)arg1;
-- (void)packResourceData:(id)arg1;
-- (void)uploadResourceUsage:(id)arg1;
 - (void)onMsfReconnect;
 - (void)applicationDidBecomeActive;
 - (void)onAcitonSFinish;
@@ -86,6 +85,7 @@
 - (void)startStage:(unsigned long long)arg1;
 - (void)start;
 - (void)dealloc;
+- (id)init;
 
 @end
 

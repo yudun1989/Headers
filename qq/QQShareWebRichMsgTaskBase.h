@@ -44,6 +44,7 @@
 - (void)reportServerDownImage:(int)arg1;
 - (void)processPreviewImage:(id)arg1;
 - (void)qqHttpSessionError:(id)arg1 error:(id)arg2;
+- (void)processWebImageWithData:(id)arg1;
 - (void)qqHttpSessionDidLoad:(id)arg1 result:(id)arg2;
 - (void)reportUploadShareImage:(int)arg1 shareImageURL:(id)arg2;
 - (void)startToUploadImage:(id)arg1;

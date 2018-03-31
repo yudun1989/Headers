@@ -22,6 +22,7 @@
 @property(copy, nonatomic) NSString *index; // @synthesize index=_index;
 @property(nonatomic) __weak id <SilenceHuDongAudioPlayerDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
+- (void)dealloc;
 - (void)seekToTime:(double)arg1;
 - (void)pause;
 - (void)resume;

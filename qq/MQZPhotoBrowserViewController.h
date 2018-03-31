@@ -6,11 +6,11 @@
 
 #import <QQMainProject/PhotoBrowserBaseViewContoller.h>
 
+#import <QQMainProject/CAAnimationDelegate-Protocol.h>
 #import <QQMainProject/GAInputBarDelegate-Protocol.h>
 #import <QQMainProject/MQZFaceDetectorCoverViewDelegate-Protocol.h>
 #import <QQMainProject/MQZMutipleImageHandlerDelegate-Protocol.h>
 #import <QQMainProject/MQZoneLandscapeInputBoardDelegate-Protocol.h>
-#import <QQMainProject/MQZoneTopBarDelegat-Protocol.h>
 #import <QQMainProject/MulMemSelBusiProcessDelegate-Protocol.h>
 #import <QQMainProject/QQFriendSelectedViewControllerDelegate-Protocol.h>
 #import <QQMainProject/QQPhotoDelegate-Protocol.h>
@@ -21,9 +21,9 @@
 #import <QQMainProject/QZPhotoBrowseVideoDelegate-Protocol.h>
 #import <QQMainProject/UIGestureRecognizerDelegate-Protocol.h>
 
-@class GAInputBar, MQZFavourOperater, MQZMutipleImageHandler, MQZoneLandscapeInputBoard, MQZoneTopBar, NSArray, NSDate, NSDictionary, NSMutableArray, NSMutableDictionary, NSString, NSTimer, QQProgressBar, QUIShareView, QZBlackCommentController, QZPhotoBottomBar, QZPhotoBrowserInteractiveAnimatedTransition, QZUPnpCommonUI, QZUPnpHttpServer, QzoneFeedModel, QzonePhotoModel, UIButton, UIControl, UIImage, UILabel, UIPanGestureRecognizer, UIProgressView, UIView, UIViewController;
+@class GAInputBar, MQZFavourOperater, MQZMutipleImageHandler, MQZoneLandscapeInputBoard, MQZoneTopBar, NSArray, NSDate, NSDictionary, NSMutableArray, NSMutableDictionary, NSString, NSTimer, QUIShareView, QZBlackCommentController, QZPhotoBottomBar, QZPhotoBrowserInteractiveAnimatedTransition, QZUPnpCommonUI, QZUPnpHttpServer, QzoneFeedModel, QzonePhotoModel, UIButton, UIControl, UIImage, UIImageView, UIPanGestureRecognizer, UIProgressView, UIView, UIViewController;
 
-@interface MQZPhotoBrowserViewController : PhotoBrowserBaseViewContoller <GAInputBarDelegate, MulMemSelBusiProcessDelegate, MQZoneLandscapeInputBoardDelegate, QQPhotoDelegate, QZPhotoBottomBarDelegate, MQZMutipleImageHandlerDelegate, QZPhotoBrowseVideoDelegate, QUIShareDelegate, QQFriendSelectedViewControllerDelegate, QZBlackCommentControllerDelegate, MQZFaceDetectorCoverViewDelegate, MQZoneTopBarDelegat, QZCommonVideoViewVideoPlayEventDelegate, UIGestureRecognizerDelegate>
+@interface MQZPhotoBrowserViewController : PhotoBrowserBaseViewContoller <GAInputBarDelegate, MulMemSelBusiProcessDelegate, MQZoneLandscapeInputBoardDelegate, QQPhotoDelegate, QZPhotoBottomBarDelegate, MQZMutipleImageHandlerDelegate, QZPhotoBrowseVideoDelegate, QUIShareDelegate, QQFriendSelectedViewControllerDelegate, QZBlackCommentControllerDelegate, MQZFaceDetectorCoverViewDelegate, CAAnimationDelegate, QZCommonVideoViewVideoPlayEventDelegate, UIGestureRecognizerDelegate>
 {
     _Bool bDismissWhenEnterBackground;
     UIViewController *_fatherController;
@@ -56,10 +56,6 @@
     NSDictionary *_businessParameter;
     long long _firstRequestMoreIndex;
     long long _favourRequestId;
-    UIView *_qzMaskView;
-    UIControl *_maskControl;
-    QQProgressBar *_progressView;
-    UILabel *_progressLabel;
     long long _type;
     NSMutableDictionary *_requests;
     _Bool _shouldFetchPhotoList;
@@ -79,10 +75,9 @@
     _Bool _isShowMorePitureButton;
     _Bool _allowShare;
     int _opmask;
-    UIButton *_moreBtn;
-    UIButton *_likeBtn;
-    UILabel *_likeLabel;
-    UILabel *_commentLabel;
+    UIView *_qzMaskView;
+    UIButton *_originButton;
+    UIImageView *_bottomMask;
     QZPhotoBottomBar *_photoBottomBar;
     double _loadBeginTime;
     _Bool _pushToPlayBack;
@@ -112,6 +107,8 @@
     NSMutableDictionary *_recommendFaceInfos;
     _Bool _isPanoramaViewShowing;
     _Bool _isOrigPhotoDownloading;
+    _Bool _isShowFaceMarkSwitchOn;
+    double _oriButtonClickTime;
     _Bool _isPushWithProjection;
     _Bool _showShare;
     _Bool _hasMore;
@@ -156,6 +153,12 @@
 @property(retain, nonatomic) QzonePhotoModel *photoModel; // @synthesize photoModel=_photoModel;
 @property(nonatomic) _Bool isPushWithProjection; // @synthesize isPushWithProjection=_isPushWithProjection;
 - (void).cxx_destruct;
+- (void)photoBottomBarChangeToFrame:(struct CGRect)arg1;
+- (void)photoBottomBarDescriptionClicked;
+- (void)photoBottomBarMoreButtonClicked;
+- (void)photoBottomBarLikeButtonClicked;
+- (void)photoBottomBarInputButtonClicked;
+- (void)photoBottomBarCommentButtonClicked;
 - (void)setProjectionProgress;
 - (void)stopProgressTimer;
 - (void)startProgressTimer;
@@ -174,6 +177,8 @@
 - (void)onForWardButtonClick;
 - (void)onReportButtonClick;
 - (void)onQRCodeButtonClick;
+- (void)alertView:(id)arg1 clickedButtonAtIndex:(long long)arg2;
+- (void)onPituButtonClick;
 - (void)onOCRButtonClick;
 - (void)onDeleteButtonclick;
 - (void)downloadImageCompleteHandler;
@@ -199,11 +204,6 @@
 - (void)playVideoWithManul:(_Bool)arg1;
 - (void)pauseVideoByUser:(_Bool)arg1;
 - (id)commonVideoView;
-- (void)photoBottomBarDescriptionClicked;
-- (void)photoBottomBarMoreButtonClicked;
-- (void)photoBottomBarLikeButtonClicked;
-- (void)photoBottomBarInputButtonClicked;
-- (void)photoBottomBarCommentButtonClicked;
 - (void)createOperationBottomBar;
 - (_Bool)isAlbumFeed;
 - (void)delayDealWithScanResult:(id)arg1;
@@ -215,10 +215,10 @@
 - (id)navigationTopBar;
 - (void)updateProjectButtonWhenRotate:(_Bool)arg1;
 - (void)updateButtonBarWhenRotate:(_Bool)arg1;
-- (_Bool)needHideRightButtonMoreWithProvider:(id)arg1;
+- (_Bool)shouldHideOriginButtonWithProvider:(id)arg1;
+- (id)currentTittle;
 - (void)resetTitleText;
 - (void)onProjectBtnClick;
-- (void)onRightButtonClick:(id)arg1;
 - (void)createHowserWindow;
 - (void)onLeftButtonClick:(id)arg1;
 - (void)clickVideoPlayButtonWithimageView:(id)arg1 photo:(id)arg2;
@@ -238,10 +238,19 @@
 - (void)sendToWeixinMoments:(id)arg1 outsiteShareUrl:(id)arg2 scene:(int)arg3;
 - (_Bool)isNeedShareOutSiteUGCRight:(id)arg1;
 - (_Bool)isSupportShareOutsiteRight:(id)arg1;
+- (void)onOriginButtonCliked;
+- (void)updateBotttomMaskFrame;
+- (void)updateOriginButtonFrame;
+- (void)removeOriginButtonAnimate;
+- (void)hideOriginButtonAnimated:(_Bool)arg1;
+- (void)showOriginButtonWithText:(id)arg1;
+- (void)createBottomMask;
+- (void)createOriginButton;
 - (id)getVideoShareFeedModel;
 - (void)showSpaceRightAlertView:(id)arg1 message:(id)arg2 scene:(int)arg3 shareFor:(long long)arg4;
 - (void)forwardPICTOWeChat;
 - (void)ForwardToWeChat:(id)arg1;
+- (_Bool)showPitu;
 - (_Bool)showOCR;
 - (_Bool)canQuote;
 - (_Bool)showReport;
@@ -258,6 +267,7 @@
 - (void)scrollViewWillBeginDragging;
 - (_Bool)canShowPageControl;
 - (void)updatePageControl;
+- (void)showOriginRemindIfNeed;
 - (void)updateButtonBar;
 - (void)setBottomBarHidden;
 - (_Bool)supportLongPress;
@@ -274,7 +284,6 @@
 - (void)showDownloadProgressUI;
 - (void)updateDownloadProgressUI:(double)arg1;
 - (id)progressSizeConvert:(double)arg1;
-- (id)getProgressLabelText:(double)arg1;
 - (void)notifyDownloadProgress:(id)arg1;
 - (void)notifyAsynLoadImageFail:(id)arg1;
 - (void)notifyAsynLoadImageSuccess:(id)arg1;
@@ -314,7 +323,9 @@
 - (void)willRotateToInterfaceOrientation:(long long)arg1 duration:(double)arg2;
 - (void)onNotifyGetAllFeedsPhotoList:(id)arg1;
 - (void)getCategoryDetailNotify:(id)arg1;
+- (_Bool)canShowFaceWithCurrentProvider;
 - (void)dealWithServiceFace;
+- (void)switchShowFaceMarkOn:(_Bool)arg1;
 - (void)onNotifyGetPhotoList:(id)arg1;
 - (void)setPhotomodelTihBusiParam:(id)arg1;
 - (void)delayShowProgressView:(id)arg1;

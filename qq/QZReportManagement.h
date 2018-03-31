@@ -27,7 +27,6 @@
 }
 
 + (id)sharedInstance;
-- (void).cxx_destruct;
 - (id)loadControlData;
 - (void)saveControldata;
 - (_Bool)checkIsSendedFile:(id)arg1;
@@ -68,6 +67,7 @@
 - (long long)getMaxCacheDay;
 - (long long)getMaxPacketCount;
 - (long long)getUpperLimitNumber;
+- (void)dealloc;
 - (id)init;
 
 @end

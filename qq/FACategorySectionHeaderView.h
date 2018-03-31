@@ -19,6 +19,8 @@
 
 @property(nonatomic) id <IFACategorySectionHeaderViewDelegate> delegate; // @synthesize delegate=_theDelegate;
 @property(retain, nonatomic) FACategorySectionModel *model; // @synthesize model=_model;
+- (unsigned long long)accessibilityTraits;
+- (id)accessibilityLabel;
 - (void)notifyDelegateHeaderViewDidTouch;
 - (void)touchesEnded:(id)arg1 withEvent:(id)arg2;
 - (void)touchesCancelled:(id)arg1 withEvent:(id)arg2;

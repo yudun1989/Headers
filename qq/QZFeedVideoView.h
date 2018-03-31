@@ -11,7 +11,7 @@
 #import <QQMainProject/QZVideoPlayerViewDelegate-Protocol.h>
 #import <QQMainProject/QZVideoStateViewDelegate-Protocol.h>
 
-@class NSArray, NSMutableArray, NSObject, NSString, NSTimer, QZPremovieAdvVideoView, QZVideoAdvManager, QZVideoEndRecommendGroupView, QZVideoPlayerView, QZVideoSectionInfo, QzoneFeedModel, QzoneFeedVideo, UILabel;
+@class NSArray, NSMutableArray, NSObject, NSString, NSTimer, QZPremovieAdvVideoView, QZVideoAdvManager, QZVideoEndRecommendGroupView, QZVideoPlayerView, QZVideoSectionInfo, QzoneFeedModel, QzoneFeedVideo;
 @protocol OS_dispatch_queue, QZFeedVideoViewDelegate;
 
 @interface QZFeedVideoView : QZFeedPhotoView <QZVideoEndRecommendViewDelegate, QZPremovieAdvVideoViewDelegate, QZVideoStateViewDelegate, QZVideoPlayerViewDelegate>
@@ -43,7 +43,6 @@
     long long tsSequenceStallNum;
     QZPremovieAdvVideoView *_premovieVideoView;
     double _currentPlayStartTime;
-    UILabel *_videoDebugInfoView;
     _Bool _haveUpdateHdInfo;
     _Bool _iSQuickForwardAppeared;
     _Bool _quickForwardEnable;
@@ -65,6 +64,7 @@
     long long _cellIndex;
     NSString *_orgCoverURL;
     long long _videoPlayScene;
+    id <QZFeedVideoViewDelegate> _containerViewDelegate;
     QZVideoAdvManager *_advManager;
     NSArray *_endRecommendGroupModels;
     QZVideoEndRecommendGroupView *_endRecommendGroupView;
@@ -78,6 +78,7 @@
 @property(nonatomic) _Bool hasClickLiveVideoView; // @synthesize hasClickLiveVideoView=_hasClickLiveVideoView;
 @property(nonatomic) _Bool hasWifiAlertView; // @synthesize hasWifiAlertView=_hasWifiAlertView;
 @property(nonatomic) __weak QZVideoAdvManager *advManager; // @synthesize advManager=_advManager;
+@property(nonatomic) __weak id <QZFeedVideoViewDelegate> containerViewDelegate; // @synthesize containerViewDelegate=_containerViewDelegate;
 @property(nonatomic) long long videoPlayScene; // @synthesize videoPlayScene=_videoPlayScene;
 @property(nonatomic) _Bool asyncSnapImg; // @synthesize asyncSnapImg=_asyncSnapImg;
 @property(nonatomic) _Bool continuePlay; // @synthesize continuePlay=_continuePlay;
@@ -91,8 +92,6 @@
 @property(nonatomic) __weak QzoneFeedModel *feedModel; // @synthesize feedModel=_feedModel;
 @property(nonatomic) __weak id <QZFeedVideoViewDelegate> delegate; // @synthesize delegate;
 - (void).cxx_destruct;
-- (void)updateVideoDebugInfo;
-- (void)showVideoDebugInfo;
 - (long long)getVideoSizeWithNoPlayVideoSize:(long long *)arg1;
 - (double)getCurrentPlayDurationWithoutInterrupt;
 - (id)videoIdentifier;
@@ -132,7 +131,6 @@
 - (void)checkShowEndRecommendGroupView:(_Bool)arg1;
 - (_Bool)isNeedRequestEndRecommendGroupView;
 - (void)addEndRecommendGroupView;
-- (void)getRequestRecommVideo;
 - (void)handleLiveEnd;
 - (_Bool)checkHlsUrlHasChanged:(id)arg1;
 - (void)resetSectionInfo:(id)arg1;
@@ -177,6 +175,7 @@
 - (void)updateStateViewHDInfo:(id)arg1 hasCache:(_Bool)arg2;
 - (void)reportPrePlayError:(long long)arg1;
 - (void)loadAndStartPlay;
+- (void)destroyAfterPasterAdv;
 - (_Bool)play;
 - (_Bool)isCanAutoPlayVideoInCell;
 - (_Bool)needContinuePlay;
@@ -206,6 +205,8 @@
 - (_Bool)needUserConfirmNetworkChangeTip;
 - (void)showNetworkChangeTipIfFailed:(_Bool)arg1;
 - (void)onNetworkChange;
+- (void)setShowPlayCountView:(_Bool)arg1;
+- (void)setShowDynamicEffectIcon:(_Bool)arg1;
 - (void)setShowDurationInView:(_Bool)arg1;
 - (void)seek:(double)arg1;
 - (void)startPlayOrigin;

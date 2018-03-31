@@ -21,6 +21,7 @@
 - (id)createComponentsForGroupStory:(id)arg1;
 - (id)createComponentsForStory:(id)arg1;
 - (id)createComponentsForCIO:(id)arg1;
+- (id)createComponentsForTribe:(id)arg1;
 - (id)createComponents:(id)arg1;
 
 @end

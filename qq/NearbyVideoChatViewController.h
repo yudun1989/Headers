@@ -10,13 +10,15 @@
 #import <QQMainProject/NearbyAVControlPanelDelegate-Protocol.h>
 #import <QQMainProject/NearbyAVTopControlbarDelegate-Protocol.h>
 #import <QQMainProject/NearbyGiftSelectionViewDelegate-Protocol.h>
+#import <QQMainProject/NearbyNowAdsViewDelegate-Protocol.h>
+#import <QQMainProject/NearbyNowMiniAdsViewDelegate-Protocol.h>
 #import <QQMainProject/NearbyVideoChatMatchViewDelegate-Protocol.h>
 #import <QQMainProject/UIAlertViewDelegate-Protocol.h>
 #import <QQMainProject/VideoMatchDelegate-Protocol.h>
 
-@class AllDurationRequest, MLAPlayerView, NSDate, NSDictionary, NSString, NSTimer, NearbyAVControlPanel, NearbyGiftSelectionView, NearbyVideoChatMatchView, QQAVTipsView, UILabel, VideoMatchManager;
+@class AllDurationRequest, MLAPlayerView, NSDate, NSDictionary, NSString, NSTimer, NearbyAVControlPanel, NearbyGiftSelectionView, NearbyNowAdsView, NearbyNowMiniAdsView, NearbyVideoChatMatchView, QQAVTipsView, UILabel, VideoMatchManager, VideoMatchNowAdsModel;
 
-@interface NearbyVideoChatViewController : QQP2PAVChatViewController <NearbyAVControlPanelDelegate, NearbyVideoChatMatchViewDelegate, NearbyAVTopControlbarDelegate, VideoMatchDelegate, UIAlertViewDelegate, NearbyGiftSelectionViewDelegate, AVFunChatMgrDelegate>
+@interface NearbyVideoChatViewController : QQP2PAVChatViewController <NearbyAVControlPanelDelegate, NearbyVideoChatMatchViewDelegate, NearbyAVTopControlbarDelegate, VideoMatchDelegate, UIAlertViewDelegate, NearbyGiftSelectionViewDelegate, AVFunChatMgrDelegate, NearbyNowAdsViewDelegate, NearbyNowMiniAdsViewDelegate>
 {
     NearbyVideoChatMatchView *_matchPanel;
     _Bool _isMatching;
@@ -28,6 +30,7 @@
     _Bool _freeGiftFirstSend;
     NSString *_giftAnimationModelUin;
     _Bool _hasReportUnOpenForNoMicro;
+    _Bool _noMoreMiniAds;
     unsigned int _lastHeartBeatInterval;
     int _currentRematchType;
     NearbyAVControlPanel *_nearbyControlPanel;
@@ -46,8 +49,19 @@
     NSTimer *_videoTimer;
     long long _videoTimeCount;
     NSDate *_timeDate;
+    NearbyNowAdsView *_nowAdsView;
+    NearbyNowMiniAdsView *_miniNowAdsView;
+    VideoMatchNowAdsModel *_nowAdsModel;
+    unsigned long long _sameSexCount;
+    unsigned long long _changeChaterCount;
 }
 
+@property(nonatomic) _Bool noMoreMiniAds; // @synthesize noMoreMiniAds=_noMoreMiniAds;
+@property(nonatomic) unsigned long long changeChaterCount; // @synthesize changeChaterCount=_changeChaterCount;
+@property(nonatomic) unsigned long long sameSexCount; // @synthesize sameSexCount=_sameSexCount;
+@property(retain, nonatomic) VideoMatchNowAdsModel *nowAdsModel; // @synthesize nowAdsModel=_nowAdsModel;
+@property(retain, nonatomic) NearbyNowMiniAdsView *miniNowAdsView; // @synthesize miniNowAdsView=_miniNowAdsView;
+@property(retain, nonatomic) NearbyNowAdsView *nowAdsView; // @synthesize nowAdsView=_nowAdsView;
 @property(retain, nonatomic) NSDate *timeDate; // @synthesize timeDate=_timeDate;
 @property(nonatomic) long long videoTimeCount; // @synthesize videoTimeCount=_videoTimeCount;
 @property(retain, nonatomic) NSTimer *videoTimer; // @synthesize videoTimer=_videoTimer;
@@ -99,6 +113,7 @@
 - (void)updateShowPanelLayout;
 - (void)relayoutSmallView;
 - (void)topControlBarReportBtnClick:(id)arg1;
+- (void)closeMatchLogic;
 - (void)closeMatchPanel;
 - (void)exitVideoToStartUp;
 - (void)closeActionOnVideo;
@@ -117,6 +132,7 @@
 - (void)requestVideoChat:(unsigned long long)arg1;
 - (void)matchPanelCloseBtnClick:(id)arg1;
 - (void)closeActionOnMatch;
+- (void)matchTimeout;
 - (void)onReceiveNearbyVideoCountUpNotify:(id)arg1;
 - (void)onReceiveNearbyVideoCountUpOverTimeNotify:(id)arg1;
 - (void)onReceveVideoChatGoldBeanAndHeart:(id)arg1;
@@ -129,6 +145,22 @@
 - (void)didSendHeartBeat:(id)arg1;
 - (void)deductGoldBeanForMatch;
 - (void)didExitMatchVideoChater;
+- (void)nearbyNearbyNowMiniAdsViewNoMoreButtonSelected:(_Bool)arg1;
+- (void)nearbyNearbyNowMiniAdsViewAvatarButtonClicked:(id)arg1;
+- (void)nearbyNowAdsViewAvatarButtonClicked:(id)arg1;
+- (void)nearbyNowAdsViewClosedButtonClicked;
+- (void)pushToNowAnchorWebVc:(id)arg1;
+- (void)didGetNowAdsFailure;
+- (void)didGetNowAds:(id)arg1;
+- (void)queryNowAdsNowAdsData:(unsigned int)arg1;
+- (void)showChangeChaterNowAdsView;
+- (_Bool)checkNeedShowChangeChaterNowAds;
+- (void)checkSameSexAndShowNowAdsView:(CDUnknownBlockType)arg1;
+- (void)preloadNowAdsData;
+- (void)showMiniNowAdsView:(CDUnknownBlockType)arg1;
+- (void)calculateSameSexCount:(id)arg1;
+- (void)showNowAdsView;
+- (_Bool)hasNowAdsData;
 - (void)didGetMatchVideoRequestor:(id)arg1;
 - (void)sendHeadBeatForMatch;
 - (void)handleMatchResult:(id)arg1;

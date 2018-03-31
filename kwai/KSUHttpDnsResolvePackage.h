@@ -17,6 +17,7 @@
 // Remaining properties
 @property(retain, nonatomic) KSUHttpDnsResolvePackage_IpEntity *bestResult; // @dynamic bestResult;
 @property(copy, nonatomic) NSString *domain; // @dynamic domain;
+@property(nonatomic) _Bool enableCrossPlatform; // @dynamic enableCrossPlatform;
 @property(nonatomic) _Bool hasBestResult; // @dynamic hasBestResult;
 @property(nonatomic) unsigned long long ipExpireDuration; // @dynamic ipExpireDuration;
 @property(retain, nonatomic) NSMutableArray *localResolvedCdnIpArray; // @dynamic localResolvedCdnIpArray;

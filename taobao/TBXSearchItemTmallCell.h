@@ -9,7 +9,7 @@
 #import "TBSearchItemCellMaskDelegate-Protocol.h"
 #import "UIGestureRecognizerDelegate-Protocol.h"
 
-@class NSArray, NSString, TBSearchIconViewComponent, TBSearchImageView, TBSearchItemCellShopInfoView, TBSearchPriceLabel, TBSearchTitleView, TBSearchTmallItem, TBXSearchItemCellLongPressManager, TBXSearchItemCellMaskBase, UIButton, UIImageView, UILabel, UIView;
+@class NSArray, NSString, TBSearchIconViewComponent, TBSearchImageView, TBSearchItemCellShopInfoView, TBSearchPriceLabel, TBSearchTitleView, TBSearchTmallItem, TBXSearchItemCellLongPressManager, TBXSearchItemCellMaskBase, UIButton, UIImageView, UILabel;
 
 @interface TBXSearchItemTmallCell : TBSearchBaseCell <TBSearchItemCellMaskDelegate, UIGestureRecognizerDelegate>
 {
@@ -24,7 +24,6 @@
     UIButton *_sameBtn;
     UIButton *_similarBtn;
     TBXSearchItemCellMaskBase *_maskView;
-    UIView *_splitLine;
     NSArray *_iconListArray;
     UILabel *_daySoldLabel;
     TBSearchIconViewComponent *_iconViewComponent;
@@ -43,7 +42,6 @@
 @property(retain, nonatomic) TBSearchIconViewComponent *iconViewComponent; // @synthesize iconViewComponent=_iconViewComponent;
 @property(retain, nonatomic) UILabel *daySoldLabel; // @synthesize daySoldLabel=_daySoldLabel;
 @property(retain, nonatomic) NSArray *iconListArray; // @synthesize iconListArray=_iconListArray;
-@property(retain, nonatomic) UIView *splitLine; // @synthesize splitLine=_splitLine;
 @property(retain, nonatomic) TBXSearchItemCellMaskBase *maskView; // @synthesize maskView=_maskView;
 @property(retain, nonatomic) UIButton *similarBtn; // @synthesize similarBtn=_similarBtn;
 @property(retain, nonatomic) UIButton *sameBtn; // @synthesize sameBtn=_sameBtn;

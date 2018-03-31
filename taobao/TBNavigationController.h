@@ -15,7 +15,7 @@
     UIView *_transitionView;
     UIViewController *_wrapperTopViewController;
     _Bool _isUpdateVisibleController;
-    int _visibleViewControllerTransition;
+    long long _visibleViewControllerTransition;
     UIViewController *_visibleViewController;
     UIViewController *_visibleWrapperController;
     UIView *_panToWrapperView;
@@ -47,6 +47,7 @@
 + (void)setAnimationTime:(double)arg1;
 + (double)animationTime;
 + (_Bool)tbNeedToolbar;
++ (_Bool)useSystemTransitionBehavior;
 @property(nonatomic) long long naviOperation; // @synthesize naviOperation=_naviOperation;
 @property(retain, nonatomic) UIPanGestureRecognizer *panGesture; // @synthesize panGesture=_panGesture;
 @property(retain, nonatomic) NSDate *animateEndDate; // @synthesize animateEndDate=_animateEndDate;
@@ -65,7 +66,7 @@
 - (id)topSecondeViewController;
 @property(readonly, nonatomic) UIViewController *topViewController;
 @property(retain, nonatomic) NSArray *viewControllers;
-- (void)setViewControllers:(id)arg1 animated:(_Bool)arg2 transitionStyle:(int)arg3;
+- (void)setViewControllers:(id)arg1 animated:(_Bool)arg2 transitionStyle:(long long)arg3;
 - (void)setViewControllers:(id)arg1 animated:(_Bool)arg2;
 @property(readonly, nonatomic) UIView *transitionView;
 - (void)popViewControllerWithSingleViews:(id)arg1;
@@ -75,7 +76,7 @@
 - (void)popViewControllerAnimated:(_Bool)arg1;
 - (void)popToViewController:(id)arg1 animated:(_Bool)arg2;
 - (void)pushViewController:(id)arg1 animated:(_Bool)arg2 transitionParams:(id)arg3;
-- (void)pushViewController:(id)arg1 animated:(_Bool)arg2 transitionStyle:(int)arg3;
+- (void)pushViewController:(id)arg1 animated:(_Bool)arg2 transitionStyle:(long long)arg3;
 - (void)pushViewController:(id)arg1 animated:(_Bool)arg2;
 - (void)adjustStatusBarStyleForVC:(id)arg1;
 - (void)adjustStatusBarStyleForWrapperViewController:(id)arg1;

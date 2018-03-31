@@ -34,6 +34,7 @@
     _Bool _isDiscuss;
     _Bool _hasSelectedButton;
     unsigned long long _roomID;
+    int _preVoiceType;
     _Bool _isShow;
     int _lastMultiType;
     id <QQAVFunChatBarDelegate> _delegate;

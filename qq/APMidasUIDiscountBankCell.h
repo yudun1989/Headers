@@ -6,17 +6,16 @@
 
 #import <QQMainProject/APMidasChannelCell.h>
 
-@class UIImageView, UILabel;
+@class UILabel;
 
 @interface APMidasUIDiscountBankCell : APMidasChannelCell
 {
-    UIImageView *_bgImg;
     UILabel *_lb;
+    UILabel *_lb2;
 }
 
 - (void)layoutSubviews;
-- (void)setDiscountBackgroundType:(unsigned long long)arg1;
-- (void)setShowDiscount:(id)arg1;
+- (void)setShowDiscount:(id)arg1 andPromotion:(id)arg2;
 - (id)initWithStyle:(long long)arg1 reuseIdentifier:(id)arg2;
 
 @end

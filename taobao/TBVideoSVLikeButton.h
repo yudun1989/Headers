@@ -6,14 +6,16 @@
 
 #import <UIKit/UIButton.h>
 
-@class NSString, TBVideoTweSVVC, UIImageView, UILabel;
+@class NSDictionary, NSString, TBVideoTweSVVC, UIImageView, UILabel;
 
 @interface TBVideoSVLikeButton : UIButton
 {
     _Bool _hasLiked;
+    NSDictionary *_utParams;
     UIImageView *_likeImageView;
     UILabel *_likeCountLabel;
     NSString *_favorId;
+    NSString *_nameSpace;
     long long _likeCount;
     TBVideoTweSVVC *_superVC;
 }
@@ -21,16 +23,22 @@
 @property(nonatomic) __weak TBVideoTweSVVC *superVC; // @synthesize superVC=_superVC;
 @property(nonatomic) long long likeCount; // @synthesize likeCount=_likeCount;
 @property(nonatomic) _Bool hasLiked; // @synthesize hasLiked=_hasLiked;
+@property(retain, nonatomic) NSString *nameSpace; // @synthesize nameSpace=_nameSpace;
 @property(retain, nonatomic) NSString *favorId; // @synthesize favorId=_favorId;
 @property(retain, nonatomic) UILabel *likeCountLabel; // @synthesize likeCountLabel=_likeCountLabel;
 @property(retain, nonatomic) UIImageView *likeImageView; // @synthesize likeImageView=_likeImageView;
+@property(copy, nonatomic) NSDictionary *utParams; // @synthesize utParams=_utParams;
 - (void).cxx_destruct;
 - (void)postEvent:(unsigned long long)arg1 params:(id)arg2;
+- (void)popInsideWithDuration:(double)arg1;
+- (void)popOutsideWithDuration:(double)arg1;
 - (void)switchLikeStatus;
-- (void)clickButton;
+- (void)clickButton:(id)arg1;
+- (void)lightenThumbIfNeeded;
 - (void)updateLikeStatus;
 - (void)requestLikeCount;
 - (void)setupSubviews;
+- (id)initWithFrame:(struct CGRect)arg1 favorId:(id)arg2 nameSpace:(id)arg3 superVC:(id)arg4;
 - (id)initWithFrame:(struct CGRect)arg1 favorId:(id)arg2 superVC:(id)arg3;
 
 @end

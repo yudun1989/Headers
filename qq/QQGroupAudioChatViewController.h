@@ -19,8 +19,12 @@
     QQGroupVideoMemberListViewController *_memberListController;
 }
 
+- (void)ActionQQInviteJoinGroupResult:(id)arg1;
+- (void)onWirelessRoutesAvailableDidChange:(id)arg1;
 - (void)onMicOffByAdminFailNotify;
-- (void)onSelfManagerUpdate:(id)arg1;
+- (_Bool)canAddMem;
+- (void)onSelfManagerUpdate;
+- (void)TroopInfoUpdated:(id)arg1;
 - (void)onSelfManagerChange:(id)arg1;
 - (void)onMemberGetIn:(int)arg1 withGroupID:(long long)arg2 inMemArray:(id)arg3;
 - (_Bool)handleNetState;
@@ -31,6 +35,8 @@
 - (void)onUpStageFail:(id)arg1;
 - (void)onUpStageSuccess:(id)arg1;
 - (void)OnStartRemoteVideoFail;
+- (void)onDisableAddMem;
+- (void)onAddMem;
 - (void)onToggleCameraAction;
 - (void)onCloseAction;
 - (void)onManageRoom;
@@ -52,9 +58,9 @@
 - (void)initControlPanel;
 - (void)initShowPanel;
 - (void)initMemberCollectionView;
-- (void)unInitNofification;
 - (void)initNotification;
-- (void)updateButtonState;
+- (void)updateAddButtonState;
+- (void)updateManageButtonState;
 - (void)viewDidLoad;
 - (void)dealloc;
 - (id)initWithRelationType:(int)arg1 businessType:(int)arg2 relationID:(unsigned long long)arg3;

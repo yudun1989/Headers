@@ -6,17 +6,17 @@
 
 #import <Foundation/NSObject.h>
 
-#import "TBSearchDelegateWaterfallLayout-Protocol.h"
 #import "TBSearchExpandOrContractScrollViewDelegate-Protocol.h"
 #import "TBXSearchPromotionBannerComponentDelegate-Protocol.h"
 #import "UICollectionViewDataSource-Protocol.h"
 #import "UICollectionViewDelegate-Protocol.h"
 #import "WXNestedScrollProtocol-Protocol.h"
+#import "XSearchDelegateWaterfallLayout-Protocol.h"
 
-@class NSMutableArray, NSString, TBScrollViewCompensator, TBSearchRelatedRecommendViewModel, TBSearchWaterfallLayout, TBXSearchCellFactory, TBXSearchPromotionBannerComponent, TBXSearchService, UICollectionView;
+@class NSMutableArray, NSString, TBScrollViewCompensator, TBSearchRelatedRecommendViewModel, TBXSearchCellFactory, TBXSearchPromotionBannerComponent, TBXSearchService, UICollectionView, XSearchWaterfallLayout;
 @protocol TBSearchBaseCellContainer, TBXSearchCollectionViewComponentDelegate, WXNestedScrollHandlerProtocol;
 
-@interface TBXSearchCollectionViewComponent : NSObject <TBSearchDelegateWaterfallLayout, UICollectionViewDataSource, TBSearchExpandOrContractScrollViewDelegate, TBXSearchPromotionBannerComponentDelegate, UICollectionViewDelegate, WXNestedScrollProtocol>
+@interface TBXSearchCollectionViewComponent : NSObject <XSearchDelegateWaterfallLayout, UICollectionViewDataSource, TBSearchExpandOrContractScrollViewDelegate, TBXSearchPromotionBannerComponentDelegate, UICollectionViewDelegate, WXNestedScrollProtocol>
 {
     _Bool _hasClickedAuction;
     _Bool _loadMoreFailed;
@@ -33,7 +33,7 @@
     TBXSearchPromotionBannerComponent *_promotionBannerComponent;
     double _headerHeight;
     TBScrollViewCompensator *_expandOrContractScrollViewDelegateObject;
-    TBSearchWaterfallLayout *_collectionViewLayout;
+    XSearchWaterfallLayout *_collectionViewLayout;
     TBXSearchCellFactory *_cellFactory;
     NSObject *_itemHeader;
     NSMutableArray *_itemList;
@@ -58,7 +58,7 @@
 @property(nonatomic) _Bool isLoadingMore; // @synthesize isLoadingMore=_isLoadingMore;
 @property(nonatomic) _Bool loadMoreFailed; // @synthesize loadMoreFailed=_loadMoreFailed;
 @property(retain, nonatomic) TBXSearchCellFactory *cellFactory; // @synthesize cellFactory=_cellFactory;
-@property(retain, nonatomic) TBSearchWaterfallLayout *collectionViewLayout; // @synthesize collectionViewLayout=_collectionViewLayout;
+@property(retain, nonatomic) XSearchWaterfallLayout *collectionViewLayout; // @synthesize collectionViewLayout=_collectionViewLayout;
 @property(retain, nonatomic) TBScrollViewCompensator *expandOrContractScrollViewDelegateObject; // @synthesize expandOrContractScrollViewDelegateObject=_expandOrContractScrollViewDelegateObject;
 @property(nonatomic) _Bool hasClickedAuction; // @synthesize hasClickedAuction=_hasClickedAuction;
 @property(nonatomic) double headerHeight; // @synthesize headerHeight=_headerHeight;

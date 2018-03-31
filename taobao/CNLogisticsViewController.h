@@ -8,10 +8,11 @@
 
 #import "UIViewControllerTBNavigator-Protocol.h"
 
-@class CNLogisticOrderListItem, CNLogisticService, CNLogisticsDetailView, CNLogisticsListView, NSDate, NSString, TBModelStatusHandler;
+@class CNLogisticOrderListItem, CNLogisticService, CNLogisticsDetailView, CNLogisticsListView, CNLogisticsOldDetailView, NSDate, NSString, TBModelStatusHandler;
 
 @interface CNLogisticsViewController : TBViewController <UIViewControllerTBNavigator>
 {
+    _Bool _isDowngrading;
     _Bool _isLoadFinish;
     _Bool _isH5Action;
     _Bool _isWhenAppearLoadData;
@@ -23,13 +24,17 @@
     TBModelStatusHandler *_statusHandler;
     CNLogisticsListView *_listView;
     CNLogisticsDetailView *_detailView;
+    CNLogisticsOldDetailView *_oldDetailView;
     CDUnknownBlockType _loadDataBlock;
     CDUnknownBlockType _whenAppearLoadDataBlock;
+    long long _showNavigationBarState;
 }
 
+@property(nonatomic) long long showNavigationBarState; // @synthesize showNavigationBarState=_showNavigationBarState;
 @property(copy, nonatomic) CDUnknownBlockType whenAppearLoadDataBlock; // @synthesize whenAppearLoadDataBlock=_whenAppearLoadDataBlock;
 @property(copy, nonatomic) CDUnknownBlockType loadDataBlock; // @synthesize loadDataBlock=_loadDataBlock;
 @property(nonatomic) _Bool isWhenAppearLoadData; // @synthesize isWhenAppearLoadData=_isWhenAppearLoadData;
+@property(retain, nonatomic) CNLogisticsOldDetailView *oldDetailView; // @synthesize oldDetailView=_oldDetailView;
 @property(retain, nonatomic) CNLogisticsDetailView *detailView; // @synthesize detailView=_detailView;
 @property(retain, nonatomic) CNLogisticsListView *listView; // @synthesize listView=_listView;
 @property(nonatomic) _Bool isH5Action; // @synthesize isH5Action=_isH5Action;
@@ -37,22 +42,29 @@
 @property(nonatomic) _Bool isLoadFinish; // @synthesize isLoadFinish=_isLoadFinish;
 @property(retain, nonatomic) NSDate *lastRefreshDate; // @synthesize lastRefreshDate=_lastRefreshDate;
 @property(retain, nonatomic) CNLogisticService *service; // @synthesize service=_service;
+@property(nonatomic) _Bool isDowngrading; // @synthesize isDowngrading=_isDowngrading;
 @property(copy, nonatomic) CDUnknownBlockType appearLoadDataBlock; // @synthesize appearLoadDataBlock=_appearLoadDataBlock;
 @property(retain, nonatomic) CNLogisticOrderListItem *nativeItem; // @synthesize nativeItem=_nativeItem;
 @property(retain, nonatomic) NSString *strOrderFormId; // @synthesize strOrderFormId=_strOrderFormId;
 - (void).cxx_destruct;
+- (id)bundleLoadDynamicLibWithPath:(id)arg1;
+- (id)loadAMapFramework;
 - (void)backItemClicked:(id)arg1;
 - (void)clear;
 - (void)viewDidUnload;
 - (void)dealloc;
 - (void)removeEmptyView;
 - (void)loadData;
+- (void)more:(id)arg1;
 - (void)showDetailView:(id)arg1;
 - (void)showListView:(id)arg1 partOutPackage:(_Bool)arg2 unDeliverItemList:(id)arg3;
 - (void)internalLoadData;
 - (void)openH5;
+- (void)setNavigationBarHidden:(_Bool)arg1;
+- (void)initNavigationBarHidden:(long long)arg1;
 - (void)viewWillAppear:(_Bool)arg1;
 - (void)viewDidLoad;
+- (void)viewDidAppear:(_Bool)arg1;
 - (id)initWithNibName:(id)arg1 bundle:(id)arg2;
 - (id)initWithNavigatorURL:(id)arg1 query:(id)arg2;
 

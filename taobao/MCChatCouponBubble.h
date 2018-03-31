@@ -4,40 +4,44 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-#import "MCChatBubble.h"
+#import "MCChatBaseCardBubble.h"
 
-#import "MCChatBubbleBackgroundViewDelegate-Protocol.h"
+@class NSString, UIImage;
 
-@class MCChatBubbleBackgroundView, NSString, UIImageView, UILabel;
-
-@interface MCChatCouponBubble : MCChatBubble <MCChatBubbleBackgroundViewDelegate>
+@interface MCChatCouponBubble : MCChatBaseCardBubble
 {
-    _Bool _isSend;
-    UILabel *_titleLab;
-    UIImageView *_imageView;
-    UILabel *_subLab;
-    MCChatBubbleBackgroundView *_innerBubbleImageView;
+    UIImage *_defaultInnerBubbleBackgroundReceiveImage;
+    UIImage *_defaultInnerBubbleBackgroundSendImage;
+    UIImage *_defaultCardBackgroundImage;
+    UIImage *_defaultCardBigIconImage;
+    UIImage *_defaultTypeIconImage;
+    NSString *_defaultFromIconText;
+    NSString *_defaultInnerBubbleBackgroundReceiveImageName;
+    NSString *_defaultInnerBubbleBackgroundSendImageName;
+    NSString *_defaultCardBackgroundImageName;
+    NSString *_defaultCardBigIconImageName;
+    NSString *_defaultTypeIconImageName;
 }
 
-+ (struct CGSize)bubbleSizeForCellObject:(id)arg1 withContainer:(struct CGSize)arg2;
-@property(retain, nonatomic) MCChatBubbleBackgroundView *innerBubbleImageView; // @synthesize innerBubbleImageView=_innerBubbleImageView;
-@property(retain, nonatomic) UILabel *subLab; // @synthesize subLab=_subLab;
-@property(retain, nonatomic) UIImageView *imageView; // @synthesize imageView=_imageView;
-@property(retain, nonatomic) UILabel *titleLab; // @synthesize titleLab=_titleLab;
+@property(retain, nonatomic) NSString *defaultTypeIconImageName; // @synthesize defaultTypeIconImageName=_defaultTypeIconImageName;
+@property(retain, nonatomic) NSString *defaultCardBigIconImageName; // @synthesize defaultCardBigIconImageName=_defaultCardBigIconImageName;
+@property(retain, nonatomic) NSString *defaultCardBackgroundImageName; // @synthesize defaultCardBackgroundImageName=_defaultCardBackgroundImageName;
+@property(retain, nonatomic) NSString *defaultInnerBubbleBackgroundSendImageName; // @synthesize defaultInnerBubbleBackgroundSendImageName=_defaultInnerBubbleBackgroundSendImageName;
+@property(retain, nonatomic) NSString *defaultInnerBubbleBackgroundReceiveImageName; // @synthesize defaultInnerBubbleBackgroundReceiveImageName=_defaultInnerBubbleBackgroundReceiveImageName;
+- (void)setDefaultFromIconText:(id)arg1;
+- (void)setDefaultTypeIconImage:(id)arg1;
+- (void)setDefaultCardBigIconImage:(id)arg1;
+- (void)setDefaultCardBackgroundImage:(id)arg1;
+- (void)setDefaultInnerBubbleBackgroundSendImage:(id)arg1;
+- (void)setDefaultInnerBubbleBackgroundReceiveImage:(id)arg1;
 - (void).cxx_destruct;
-- (void)chatBubbleBackgroundViewLongPress:(id)arg1;
-- (void)chatBubbleBackgroundViewTapped:(id)arg1;
-- (void)layoutSubviews;
-- (void)updateBubbleWithCellObject:(id)arg1 bubbleHandler:(id)arg2 atIndexPath:(id)arg3;
-- (id)createLab:(id)arg1 font:(double)arg2;
-- (void)initSubview;
-- (id)initWithBubbleStyle:(long long)arg1 subStyle:(long long)arg2;
-
-// Remaining properties
-@property(readonly, copy) NSString *debugDescription;
-@property(readonly, copy) NSString *description;
-@property(readonly) unsigned long long hash;
-@property(readonly) Class superclass;
+- (id)imageMaskWithColor:(id)arg1 image:(id)arg2;
+- (id)defaultFromIconText;
+- (id)defaultTypeIconImage;
+- (id)defaultCardBigIconImage;
+- (id)defaultCardBackgroundImage;
+- (id)defaultInnerBubbleBackgroundSendImage;
+- (id)defaultInnerBubbleBackgroundReceiveImage;
 
 @end
 

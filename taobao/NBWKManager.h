@@ -8,17 +8,12 @@
 
 @interface NBWKManager : NSObject
 {
-    _Bool _hasRegisterProtocol;
 }
 
-+ (id)a;
 + (id)shareInstance;
-@property(nonatomic) _Bool hasRegisterProtocol; // @synthesize hasRegisterProtocol=_hasRegisterProtocol;
 - (void)willTerminate:(id)arg1;
 - (void)clearWKBodyCache;
 - (void)fillRequest:(id)arg1;
-- (void)unRegisterHttpProtocol;
-- (void)registerHttpProtocol;
 - (void)dealloc;
 - (id)init;
 - (void)recoveryCookies;

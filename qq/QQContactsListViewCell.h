@@ -23,6 +23,7 @@
     UILabel *_friendsNumLabel;
     short _cellType;
     int _status;
+    _Bool _hasAIRemark;
     _Bool _cusSelected;
     _Bool _pseudoEdit;
     _Bool _deleting;
@@ -47,7 +48,7 @@
 - (void)setEditing:(_Bool)arg1 animated:(_Bool)arg2;
 - (void)setBackgroundColorInNomal:(id)arg1;
 - (void)setCellWithType:(int)arg1 andModel:(id)arg2;
-- (void)setCellWithType:(int)arg1 andTroopModel:(id)arg2 andCommonCount:(int)arg3;
+- (void)setCellWithType:(int)arg1 andTroopModel:(id)arg2 andCommonCount:(int)arg3 aiRemark:(id)arg4;
 - (void)setViewRightWith:(int)arg1;
 - (void)addButtonPress:(id)arg1;
 - (void)updateCellViews:(float)arg1;

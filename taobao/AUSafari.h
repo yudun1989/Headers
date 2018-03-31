@@ -6,20 +6,11 @@
 
 #import <Foundation/NSObject.h>
 
-#import "SFSafariViewControllerDelegate-Protocol.h"
+@class AUSafariTaskQueue;
 
-@class NSString, SFSafariViewController;
-@protocol OS_dispatch_semaphore;
-
-@interface AUSafari : NSObject <SFSafariViewControllerDelegate>
+@interface AUSafari : NSObject
 {
-    _Bool _isRunning;
-    SFSafariViewController *_safariViewController;
-    CDUnknownBlockType _AUSafariRefreshBlock;
-    CDUnknownBlockType _AUSafariSetBlock;
-    long long _failCount;
-    NSObject<OS_dispatch_semaphore> *_delegateSemaphore;
-    NSObject<OS_dispatch_semaphore> *_runningSemaphore;
+    AUSafariTaskQueue *_taskQueue;
 }
 
 + (void)stop;
@@ -27,32 +18,12 @@
 + (void)setAudid:(id)arg1 withBlock:(CDUnknownBlockType)arg2;
 + (void)refreshAudidWithBlock:(CDUnknownBlockType)arg1;
 + (id)sharedInstance;
-@property(retain, nonatomic) NSObject<OS_dispatch_semaphore> *runningSemaphore; // @synthesize runningSemaphore=_runningSemaphore;
-@property(retain, nonatomic) NSObject<OS_dispatch_semaphore> *delegateSemaphore; // @synthesize delegateSemaphore=_delegateSemaphore;
-@property(nonatomic) _Bool isRunning; // @synthesize isRunning=_isRunning;
-@property(nonatomic) long long failCount; // @synthesize failCount=_failCount;
-@property(copy, nonatomic) CDUnknownBlockType AUSafariSetBlock; // @synthesize AUSafariSetBlock=_AUSafariSetBlock;
-@property(copy, nonatomic) CDUnknownBlockType AUSafariRefreshBlock; // @synthesize AUSafariRefreshBlock=_AUSafariRefreshBlock;
-@property(retain, nonatomic) SFSafariViewController *safariViewController; // @synthesize safariViewController=_safariViewController;
+@property(retain, nonatomic) AUSafariTaskQueue *taskQueue; // @synthesize taskQueue=_taskQueue;
 - (void).cxx_destruct;
-- (void)safariViewController:(id)arg1 didCompleteInitialLoad:(_Bool)arg2;
-- (void)mainThreadLoadSafariWithSafari:(id)arg1 url:(id)arg2 viewController:(id)arg3;
-- (_Bool)isSupport;
-- (id)viewControllerFromRootVC:(id)arg1;
-- (void)tryGetRootViewControllerWithBlock:(CDUnknownBlockType)arg1;
-- (void)releaseSafariViewController;
-- (void)_cleanAudid;
+- (void)stop;
 - (void)cleanAudid;
-- (void)_setAudid:(id)arg1 withBlock:(CDUnknownBlockType)arg2;
 - (void)setAudid:(id)arg1 withBlock:(CDUnknownBlockType)arg2;
-- (void)_refreshAudidWithBlock:(CDUnknownBlockType)arg1;
 - (void)refreshAudidWithBlock:(CDUnknownBlockType)arg1;
-
-// Remaining properties
-@property(readonly, copy) NSString *debugDescription;
-@property(readonly, copy) NSString *description;
-@property(readonly) unsigned long long hash;
-@property(readonly) Class superclass;
 
 @end
 

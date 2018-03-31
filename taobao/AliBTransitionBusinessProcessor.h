@@ -11,6 +11,7 @@
     _Bool _transitionBizEnabled;
 }
 
++ (void)setUTEnabled:(_Bool)arg1;
 + (void)setTransitionBizEnabled:(_Bool)arg1;
 + (void)regist;
 + (id)shareInstance;

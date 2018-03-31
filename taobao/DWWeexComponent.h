@@ -16,6 +16,7 @@
     _Bool _wrapInitFinished;
     DWWeexComponentWrapView *_wrapView;
     id _dwInstance;
+    NSString *_weexUrl;
     long long _type;
     CDUnknownBlockType _wrapViewCloseBtnHandler;
     WXSDKInstance *_instance;
@@ -28,6 +29,7 @@
 @property(retain, nonatomic) WXSDKInstance *instance; // @synthesize instance=_instance;
 @property(copy, nonatomic) CDUnknownBlockType wrapViewCloseBtnHandler; // @synthesize wrapViewCloseBtnHandler=_wrapViewCloseBtnHandler;
 @property(nonatomic) long long type; // @synthesize type=_type;
+@property(retain, nonatomic) NSString *weexUrl; // @synthesize weexUrl=_weexUrl;
 @property(nonatomic) __weak id dwInstance; // @synthesize dwInstance=_dwInstance;
 @property(retain, nonatomic) DWWeexComponentWrapView *wrapView; // @synthesize wrapView=_wrapView;
 @property(nonatomic) struct CGRect orginFrame; // @synthesize orginFrame=_orginFrame;

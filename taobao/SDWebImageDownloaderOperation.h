@@ -15,8 +15,6 @@
 
 @interface SDWebImageDownloaderOperation : NSOperation <NSURLConnectionDataDelegate, ImageLibNetworkDelegateProtocol, SDWebImageOperation>
 {
-    unsigned long long width;
-    unsigned long long height;
     long long orientation;
     _Bool responseFromCached;
     _Bool isWeakNetwork;
@@ -47,8 +45,10 @@
     NSThread *_thread;
     unsigned long long _backgroundTaskId;
     id <SDWebImageProgressiveCoder> _progressiveCoder;
+    struct CGSize _viewSize;
 }
 
+@property struct CGSize viewSize; // @synthesize viewSize=_viewSize;
 @property(retain, nonatomic) id <SDWebImageProgressiveCoder> progressiveCoder; // @synthesize progressiveCoder=_progressiveCoder;
 @property(nonatomic) unsigned long long backgroundTaskId; // @synthesize backgroundTaskId=_backgroundTaskId;
 @property(retain) NSThread *thread; // @synthesize thread=_thread;
@@ -90,7 +90,7 @@
 - (void)cancelInternalAndStop;
 - (void)cancel;
 - (void)start;
-- (id)initWithRequest:(id)arg1 token:(id)arg2 options:(unsigned long long)arg3 progress:(CDUnknownBlockType)arg4 completed:(CDUnknownBlockType)arg5 cancelled:(CDUnknownBlockType)arg6;
+- (id)initWithRequest:(id)arg1 viewSize:(struct CGSize)arg2 token:(id)arg3 options:(unsigned long long)arg4 progress:(CDUnknownBlockType)arg5 completed:(CDUnknownBlockType)arg6 cancelled:(CDUnknownBlockType)arg7;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

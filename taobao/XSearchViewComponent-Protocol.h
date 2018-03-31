@@ -6,9 +6,10 @@
 
 #import "NSObject-Protocol.h"
 
-@class NSError;
+@class NSError, XSearchJSONModel, XSearchService;
 
 @protocol XSearchViewComponent <NSObject>
++ (double)thisHeightWithModel:(XSearchJSONModel *)arg1 SearchService:(XSearchService *)arg2;
 - (void)reloadData;
 - (void)loadDataFailed:(NSError *)arg1;
 - (void)dataLoaded;

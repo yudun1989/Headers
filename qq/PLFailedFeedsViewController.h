@@ -6,13 +6,14 @@
 
 #import <QQMainProject/QQViewController.h>
 
+#import <QQMainProject/PLFeedsUploadFailedCellDelegate-Protocol.h>
 #import <QQMainProject/PLLoadStatusDelegate-Protocol.h>
 #import <QQMainProject/UITableViewDataSource-Protocol.h>
 #import <QQMainProject/UITableViewDelegate-Protocol.h>
 
 @class NSMutableArray, NSString, PLLoadStatusView, UITableView;
 
-@interface PLFailedFeedsViewController : QQViewController <UITableViewDelegate, UITableViewDataSource, PLLoadStatusDelegate>
+@interface PLFailedFeedsViewController : QQViewController <PLFeedsUploadFailedCellDelegate, UITableViewDelegate, UITableViewDataSource, PLLoadStatusDelegate>
 {
     NSMutableArray *_failedArry;
     UITableView *_tableView;
@@ -21,6 +22,7 @@
 
 @property(retain, nonatomic) PLLoadStatusView *loadStatusView; // @synthesize loadStatusView=_loadStatusView;
 @property(retain, nonatomic) UITableView *tableView; // @synthesize tableView=_tableView;
+- (void)reportRetransmissionModule:(id)arg1 model:(id)arg2;
 - (void)onRetryBtClicked:(id)arg1 Cell:(id)arg2;
 - (void)onDeleteBtClicked:(id)arg1 Cell:(id)arg2;
 - (double)tableView:(id)arg1 heightForRowAtIndexPath:(id)arg2;

@@ -138,7 +138,7 @@
 - (void)setRecommendEntryButtonUp:(_Bool)arg1;
 - (void)closeRecommendView;
 - (_Bool)openRecommendView;
-- (void)recommendViewDidClose:(id)arg1;
+- (void)recommendViewDidCloseAll:(id)arg1;
 - (void)recommendView:(id)arg1 didCloseItem:(id)arg2;
 - (void)recommendView:(id)arg1 didSelectItem:(id)arg2;
 - (void)recommendView:(id)arg1 didFollowItem:(id)arg2;

@@ -17,6 +17,7 @@
 + (id)shareInstance;
 - (void)pullLoginWithCompletionHandler:(CDUnknownBlockType)arg1 cancelHandler:(CDUnknownBlockType)arg2;
 - (_Bool)loginStatus;
+- (void)shareWithurl:(id)arg1 imgUrl:(id)arg2 title:(id)arg3 businessId:(id)arg4 description:(id)arg5 delegate:(id)arg6;
 - (void)shareWithurl:(id)arg1 imgUrl:(id)arg2 title:(id)arg3 businessId:(id)arg4 description:(id)arg5;
 - (void)shareWithurl:(id)arg1 imgUrl:(id)arg2 title:(id)arg3;
 

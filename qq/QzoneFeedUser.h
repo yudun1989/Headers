@@ -32,6 +32,7 @@
 - (_Bool)isAnnualVip;
 - (_Bool)isVip;
 - (_Bool)isFromPenyou;
+- (_Bool)isFromWeishi;
 - (_Bool)isFromQzone;
 
 // Remaining properties

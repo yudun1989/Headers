@@ -12,7 +12,6 @@
 
 + (void)saveAndShareToQzoneMood:(id)arg1 andCurrentViewController:(id)arg2;
 + (void)shareToQzoneMoodWithModel:(id)arg1 andCurrentViewController:(id)arg2 supportDraft:(_Bool)arg3;
-+ (void)shareToQzoneMoodWithAsset:(id)arg1 andCurrentViewController:(id)arg2;
 + (void)shareToQzoneMood:(id)arg1 andCurrentViewController:(id)arg2;
 + (void)shareToQQWithImagePath:(id)arg1 andQQChatPhoto:(id)arg2 andCurrentViewController:(id)arg3;
 + (void)shareToQQWithImagePath:(id)arg1 andQQChatPhoto:(id)arg2 andCurrentViewController:(id)arg3 isPush:(_Bool)arg4 delegate:(id)arg5;

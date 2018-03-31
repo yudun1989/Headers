@@ -15,12 +15,9 @@
 
 @interface NearbyHomeViewController : QQViewController <QUIActionSheetDelegate, NearbyFriendHeaderViewDelegate, NearbyHomeWebViewControllerDelegete, UIScrollViewDelegate>
 {
-    UIView *_customView;
-    UIView *_webViewContainer;
     NearbyFriendHeaderView *_headerView;
     NearbyHomeWebViewController *_webViewController;
     _Bool _customHideFlag;
-    _Bool _isAnimating;
     UIScrollView *_bgScrollView;
     ODRefreshControl *_refreshControl;
     UIImageView *_shootingButton;
@@ -31,8 +28,15 @@
     NMFeedListLBSDenyView *_lbsDenyView;
     _Bool _shootingButtonHiddenState;
     _Bool _lastLbsAnthorizeState;
+    _Bool _isAnimating;
+    UIView *_webViewContainer;
+    UIView *_customView;
 }
 
+@property(retain, nonatomic) UIView *customView; // @synthesize customView=_customView;
+@property(retain, nonatomic) UIView *webViewContainer; // @synthesize webViewContainer=_webViewContainer;
+@property(nonatomic) _Bool isAnimating; // @synthesize isAnimating=_isAnimating;
+- (void).cxx_destruct;
 - (void)headerViewOnDragingStateChanged:(_Bool)arg1;
 - (void)headerViewOnLayoutComplete:(id)arg1;
 - (void)onNearbyAnchorListUpdatedFail;

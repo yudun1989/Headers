@@ -8,5 +8,6 @@
 
 @protocol AliNNNetMonitorDelegate
 - (void)commitInferenceStatisticsWithModelBusinessName:(NSString *)arg1 packageId:(NSString *)arg2 modelName:(NSString *)arg3 errorCode:(NSString *)arg4 successCount:(double)arg5 failCount:(double)arg6 inferenceTime:(double)arg7 memoryAdd:(double)arg8 layerCount:(int)arg9 layerTimeElapsed:(float *)arg10;
+- (void)commitDownloadStatisticsWithBizName:(NSString *)arg1 packageId:(NSString *)arg2 errorType:(long long)arg3 errorCode:(long long)arg4 successCount:(double)arg5 failCount:(double)arg6 downloadedTime:(double)arg7;
 @end
 

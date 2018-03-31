@@ -19,7 +19,6 @@
     struct CGPoint _lastContentOffset;
     struct CGPoint _lastSVContentOffset;
     struct CGPoint _startSVContentOffset;
-    _Bool _observerContentOffset;
     double _scrollMove;
     _Bool _isShowResult;
     _Bool _isShowLoading;
@@ -148,8 +147,6 @@
 @property(nonatomic) _Bool isShowResult; // @synthesize isShowResult=_isShowResult;
 @property(retain, nonatomic) UIImage *image; // @synthesize image=_image;
 - (void).cxx_destruct;
-- (void)camera:(id)arg1;
-- (void)webView:(id)arg1 didFailLoadWithError:(id)arg2;
 - (void)backView:(id)arg1;
 - (void)cancel:(id)arg1;
 - (id)imageWithShareRender;
@@ -157,12 +154,8 @@
 - (void)share:(id)arg1;
 - (void)requestDidFailed:(id)arg1;
 - (void)showResult;
-- (void)searchKeyWord:(id)arg1;
 - (void)resetArguments;
 - (void)resetArgumentsInMainThread;
-- (void)showSearchBar:(id)arg1;
-- (void)processH5LoadStatus:(id)arg1;
-- (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void *)arg4;
 - (void)contentViewDidLoadFailedWithError:(id)arg1;
 - (void)contentViewDidLoadFinished;
 - (void)contentViewDidUpdateContext:(id)arg1;
@@ -187,15 +180,7 @@
 - (void)reloadContent;
 - (id)searchWithURLString;
 - (id)paramURLAppending:(id)arg1;
-- (id)base64StringWithBackgroundImage;
-- (id)base64StringWithThumbImage;
-- (void)webViewDidLoadFinishedTimeOut;
-- (void)showWebViewController;
-- (void)showContainer;
-- (void)updateThemeColor;
-- (void)prepareForBlurImages;
 - (void)shouldReturn:(CDUnknownBlockType)arg1;
-- (void)refreshWebViewController;
 - (void)backViewController:(id)arg1;
 - (id)regionSelected;
 - (void)requestDidFinished:(id)arg1;
@@ -221,8 +206,6 @@
 - (void)showUserGuide;
 - (void)viewWillDisappear:(_Bool)arg1;
 - (void)regionViewDidEndEditing:(id)arg1;
-- (void)feedback:(id)arg1;
-- (void)toTop:(id)arg1;
 - (void)viewDidLoad;
 - (id)initWithImage:(id)arg1;
 - (id)init;

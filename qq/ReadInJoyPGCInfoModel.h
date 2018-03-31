@@ -8,18 +8,22 @@
 
 #import <QQMainProject/NSCopying-Protocol.h>
 
-@class NSMutableArray, NSString;
+@class NSData, NSMutableArray, NSString;
 
 @interface ReadInJoyPGCInfoModel : NSObject <NSCopying>
 {
     unsigned int _myself_follow_status;
     unsigned int _follow_counts;
+    unsigned int _pgc_feeds_type;
     NSMutableArray *_pgcPicInfoArray;
     NSMutableArray *_pgcVideoInfoArray;
     NSString *_comments;
+    NSData *_msg_gallery_feeds_info;
 }
 
 + (id)pgcInfoFromMsgDecoder:(struct CPBMessageDecoder *)arg1;
+@property(copy, nonatomic) NSData *msg_gallery_feeds_info; // @synthesize msg_gallery_feeds_info=_msg_gallery_feeds_info;
+@property(nonatomic) unsigned int pgc_feeds_type; // @synthesize pgc_feeds_type=_pgc_feeds_type;
 @property(nonatomic) unsigned int follow_counts; // @synthesize follow_counts=_follow_counts;
 @property(nonatomic) unsigned int myself_follow_status; // @synthesize myself_follow_status=_myself_follow_status;
 @property(copy, nonatomic) NSString *comments; // @synthesize comments=_comments;

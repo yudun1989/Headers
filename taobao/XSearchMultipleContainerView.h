@@ -16,6 +16,9 @@
     NSMutableDictionary *_viewCache;
 }
 
++ (id)getCurrentComponentsArrayWithType:(long long)arg1 SearchService:(id)arg2;
++ (Class)getComponentClassWithType:(long long)arg1 SearchService:(id)arg2 Model:(id)arg3;
++ (double)thisHeightWithType:(long long)arg1 SearchService:(id)arg2;
 @property(retain, nonatomic) NSMutableDictionary *viewCache; // @synthesize viewCache=_viewCache;
 @property(nonatomic) long long type; // @synthesize type=_type;
 @property(retain, nonatomic) NSMutableArray *viewArray; // @synthesize viewArray=_viewArray;

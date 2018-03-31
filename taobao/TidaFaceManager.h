@@ -30,6 +30,7 @@
 - (void)deinitAliFace;
 - (id)detectFaceAndLandmark:(struct __CVBuffer *)arg1 data:(char *)arg2 width:(float)arg3 height:(float)arg4 angel:(unsigned long long)arg5 type:(_Bool)arg6;
 - (void)initAliFace:(CDUnknownBlockType)arg1;
+- (int)videoFrameDetectInterval;
 - (void)setSizeAndAngleFacewidth:(double)arg1 height:(double)arg2 angel:(double)arg3;
 
 @end

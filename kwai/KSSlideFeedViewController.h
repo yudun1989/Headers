@@ -191,6 +191,7 @@
 - (void)likeThisFeed:(_Bool)arg1 withAnchorURL:(id)arg2 isSingleClick:(_Bool)arg3;
 - (void)blacklistUserWithID:(id)arg1 pageName:(id)arg2 anchor:(id)arg3;
 - (void)openProfileWithAnchor:(id)arg1;
+- (void)createForwardProfileViewControllerIfNeeded;
 - (void)addClickEventWithName:(id)arg1 clickType:(int)arg2 elementType:(int)arg3 action:(int)arg4;
 - (id)ksuClickMetaData;
 - (id)ksuURLPackageParams;

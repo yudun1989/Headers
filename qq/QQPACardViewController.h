@@ -72,6 +72,7 @@
 @property(copy, nonatomic) NSString *nick; // @synthesize nick=_nick;
 @property(nonatomic) long long uin; // @synthesize uin=_uin;
 @property(retain, nonatomic) PACardInitModel *baseInfo; // @synthesize baseInfo=_baseInfo;
+- (void)onRTVoiceCallTouched:(id)arg1;
 - (id)thirdAppExtInfoGenerate;
 - (void)backToThirdApp;
 - (void)QQShareResultAlertView:(id)arg1 clikedButtionAtIndex:(unsigned long long)arg2;
@@ -123,7 +124,6 @@
 - (void)on3RDShareNotify:(id)arg1;
 - (id)getDataForShareItem:(id)arg1 onThisItem:(int)arg2;
 - (id)getDataForConfig:(id)arg1;
-- (void)onRTVoiceCallTouched:(id)arg1;
 - (void)ARQRManagerSucess:(id)arg1 QRResult:(id)arg2;
 - (void)imageTouch:(id)arg1;
 - (void)eventTransmit:(long long)arg1 dicinfo:(id)arg2;

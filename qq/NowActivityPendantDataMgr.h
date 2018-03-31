@@ -6,7 +6,7 @@
 
 #import <Foundation/NSObject.h>
 
-@class CADisplayLink, NSMutableDictionary, NSTimer, NowActivityPendantAllConfig, NowActivityPendantSettingModel, QQAsynUrlImageView, QQSpringFestvival2018PendantData;
+@class CADisplayLink, NSMutableDictionary, NSTimer, NowActivityPendantAllConfig, NowActivityPendantSettingModel, QQAsynUrlImageView;
 
 @interface NowActivityPendantDataMgr : NSObject
 {
@@ -15,7 +15,6 @@
     _Bool _springFestivalPackAcitityIng;
     NowActivityPendantAllConfig *_allConfig;
     NSMutableDictionary *_pushItemDic;
-    QQSpringFestvival2018PendantData *_curSpringFestvivalPendantData;
     NowActivityPendantSettingModel *_userSettingModel;
     QQAsynUrlImageView *_cacheImageView;
 }
@@ -25,7 +24,6 @@
 + (id)shareInstance;
 @property(retain, nonatomic) QQAsynUrlImageView *cacheImageView; // @synthesize cacheImageView=_cacheImageView;
 @property(retain, nonatomic) NowActivityPendantSettingModel *userSettingModel; // @synthesize userSettingModel=_userSettingModel;
-@property(retain, nonatomic) QQSpringFestvival2018PendantData *curSpringFestvivalPendantData; // @synthesize curSpringFestvivalPendantData=_curSpringFestvivalPendantData;
 @property(nonatomic) _Bool springFestivalPackAcitityIng; // @synthesize springFestivalPackAcitityIng=_springFestivalPackAcitityIng;
 @property(retain, nonatomic) NSMutableDictionary *pushItemDic; // @synthesize pushItemDic=_pushItemDic;
 @property(retain, nonatomic) NowActivityPendantAllConfig *allConfig; // @synthesize allConfig=_allConfig;

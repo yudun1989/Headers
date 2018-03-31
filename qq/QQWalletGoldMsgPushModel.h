@@ -16,10 +16,12 @@
     unsigned int _total;
     unsigned int _interval;
     unsigned int _finish;
+    unsigned int _action;
     NSString *_billno;
     NSMutableArray *_uin;
 }
 
+@property(nonatomic) unsigned int action; // @synthesize action=_action;
 @property(retain, nonatomic) NSMutableArray *uin; // @synthesize uin=_uin;
 @property(nonatomic) unsigned int finish; // @synthesize finish=_finish;
 @property(nonatomic) unsigned int interval; // @synthesize interval=_interval;

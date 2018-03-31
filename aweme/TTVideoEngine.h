@@ -46,6 +46,7 @@
     long long _playbackState;
     unsigned long long _loadState;
     unsigned long long _stallReason;
+    unsigned long long _testSpeedMode;
     unsigned long long _imageScaleType;
     unsigned long long _enhancementType;
     unsigned long long _imageLayoutType;
@@ -62,6 +63,7 @@
     TTVideoEnginePlayItem *_playItem;
     TTVideoEngineVideoInfo *_videoInfo;
     NSString *_vid;
+    NSString *_tag;
     TTAVPreloaderItem *_preloaderItem;
     unsigned long long _videoSource;
     unsigned long long _lastResolution;
@@ -74,6 +76,7 @@
     double _duration;
     double _playableDuration;
     NSTimer *_timer;
+    NSTimer *_speedTimer;
     unsigned long long _errorCount;
     unsigned long long _accumulatedErrorCount;
     long long _playerUrlDNSRetryCount;
@@ -102,6 +105,7 @@
 @property(nonatomic) long long playerUrlDNSRetryCount; // @synthesize playerUrlDNSRetryCount=_playerUrlDNSRetryCount;
 @property(nonatomic) unsigned long long accumulatedErrorCount; // @synthesize accumulatedErrorCount=_accumulatedErrorCount;
 @property(nonatomic) unsigned long long errorCount; // @synthesize errorCount=_errorCount;
+@property(retain, nonatomic) NSTimer *speedTimer; // @synthesize speedTimer=_speedTimer;
 @property(retain, nonatomic) NSTimer *timer; // @synthesize timer=_timer;
 @property(nonatomic) double playableDuration; // @synthesize playableDuration=_playableDuration;
 @property(nonatomic) double duration; // @synthesize duration=_duration;
@@ -114,6 +118,7 @@
 @property(nonatomic) unsigned long long lastResolution; // @synthesize lastResolution=_lastResolution;
 @property(nonatomic) unsigned long long videoSource; // @synthesize videoSource=_videoSource;
 @property(retain, nonatomic) TTAVPreloaderItem *preloaderItem; // @synthesize preloaderItem=_preloaderItem;
+@property(copy, nonatomic) NSString *tag; // @synthesize tag=_tag;
 @property(copy, nonatomic) NSString *vid; // @synthesize vid=_vid;
 @property(retain, nonatomic) TTVideoEngineVideoInfo *videoInfo; // @synthesize videoInfo=_videoInfo;
 @property(retain, nonatomic) TTVideoEnginePlayItem *playItem; // @synthesize playItem=_playItem;
@@ -130,6 +135,7 @@
 @property(nonatomic) unsigned long long imageLayoutType; // @synthesize imageLayoutType=_imageLayoutType;
 @property(nonatomic) unsigned long long enhancementType; // @synthesize enhancementType=_enhancementType;
 @property(nonatomic) unsigned long long imageScaleType; // @synthesize imageScaleType=_imageScaleType;
+@property(nonatomic) unsigned long long testSpeedMode; // @synthesize testSpeedMode=_testSpeedMode;
 @property(nonatomic) unsigned long long stallReason; // @synthesize stallReason=_stallReason;
 @property(nonatomic) unsigned long long loadState; // @synthesize loadState=_loadState;
 @property(nonatomic) long long playbackState; // @synthesize playbackState=_playbackState;
@@ -204,6 +210,8 @@
 @property(readonly, nonatomic) long long videoSize;
 @property(readonly, nonatomic) double durationWatched;
 @property(readonly, nonatomic) double currentPlaybackTime;
+- (void)removeSpeedTimeObserver;
+- (void)addSpeedTimeObserverForInterval:(double)arg1 queue:(id)arg2 usingBlock:(CDUnknownBlockType)arg3;
 - (void)removeTimeObserver;
 - (void)addPeriodicTimeObserverForInterval:(double)arg1 queue:(id)arg2 usingBlock:(CDUnknownBlockType)arg3;
 - (void)setCurrentPlaybackTime:(double)arg1 complete:(CDUnknownBlockType)arg2;

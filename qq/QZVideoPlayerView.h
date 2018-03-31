@@ -16,6 +16,8 @@
     _Bool _isPausedBySeek;
     _Bool _hasEnoughCacheData;
     _Bool _showDurationInView;
+    _Bool _showDynamicEffectIcon;
+    _Bool _showPlayCountView;
     _Bool _hiddenVideoWhenStop;
     _Bool _enableDelayShowLoading;
     id <QZVideoPlayerViewDelegate> _delegate;
@@ -32,12 +34,13 @@
 @property(nonatomic) double canPlayTime; // @synthesize canPlayTime=_canPlayTime;
 @property(nonatomic) _Bool enableDelayShowLoading; // @synthesize enableDelayShowLoading=_enableDelayShowLoading;
 @property(nonatomic) _Bool hiddenVideoWhenStop; // @synthesize hiddenVideoWhenStop=_hiddenVideoWhenStop;
+@property(nonatomic) _Bool showPlayCountView; // @synthesize showPlayCountView=_showPlayCountView;
+@property(nonatomic) _Bool showDynamicEffectIcon; // @synthesize showDynamicEffectIcon=_showDynamicEffectIcon;
 @property(nonatomic) _Bool showDurationInView; // @synthesize showDurationInView=_showDurationInView;
 @property(nonatomic) unsigned long long defaultState; // @synthesize defaultState=_defaultState;
 @property(retain, nonatomic) QZVideoStateView *stateView; // @synthesize stateView=_stateView;
 @property(nonatomic) __weak id <QZVideoPlayerViewDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
-- (id)getVideoDebugInfo;
 - (long long)getVideoSizeWithNoPlayVideoSize:(long long *)arg1;
 - (void)showLiveStatusTips;
 - (void)setStepPoint:(long long)arg1;

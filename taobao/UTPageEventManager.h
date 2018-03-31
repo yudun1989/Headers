@@ -35,6 +35,7 @@
 @property(retain) NSMutableDictionary *pageItems; // @synthesize pageItems=_pageItems;
 @property(copy, nonatomic) NSString *prePageKey; // @synthesize prePageKey=_prePageKey;
 - (void).cxx_destruct;
+- (void)h5Refresh;
 - (void)switchBackGround;
 - (void)switchForeGround;
 - (void)removePageObjectForKey:(id)arg1;

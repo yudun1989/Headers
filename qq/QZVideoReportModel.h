@@ -84,6 +84,7 @@
 @property(nonatomic) long long seekCount; // @dynamic seekCount;
 @property(nonatomic) long long seqNo; // @dynamic seqNo;
 @property(retain, nonatomic) NSString *serverIP; // @dynamic serverIP;
+@property(nonatomic) long long startLoadTimestamp; // @dynamic startLoadTimestamp;
 @property(retain, nonatomic) NSMutableDictionary *stepDuration; // @dynamic stepDuration;
 @property(nonatomic) double timeToSee; // @dynamic timeToSee;
 @property(nonatomic) double totalBufferTimeDuration; // @dynamic totalBufferTimeDuration;

@@ -84,6 +84,7 @@
 - (void)addSpriteImgInstanceWith:(id)arg1;
 - (void)createSpriteImgInstanceWith:(id)arg1;
 @property(readonly, retain, nonatomic) SpriteInstance *meInstance;
+- (id)petInstance;
 - (id)initWithFrame:(struct CGRect)arg1 sourceType:(int)arg2;
 - (id)initWithFrame:(struct CGRect)arg1;
 - (void)dealloc;

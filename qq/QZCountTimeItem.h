@@ -4,13 +4,20 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-#import <TlibDy/LKLayoutItem.h>
+#import <TlibDy/PTLayoutItem.h>
 
-@interface QZCountTimeItem : LKLayoutItem
+@class NSString;
+
+@interface QZCountTimeItem : PTLayoutItem
 {
+    NSString *_audioSummaryText;
 }
 
+@property(retain, nonatomic) NSString *audioSummaryText; // @synthesize audioSummaryText=_audioSummaryText;
+- (void).cxx_destruct;
 - (void)configView:(id)arg1 context:(id)arg2;
+- (void)updateView:(id)arg1 context:(id)arg2;
+- (struct CGSize)computeSizeWithStraintSize:(struct CGSize)arg1;
 - (id)createView;
 
 @end

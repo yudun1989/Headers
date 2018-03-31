@@ -33,8 +33,8 @@
 + (void)backToQQTabWithAnimated:(_Bool)arg1;
 + (void)backToClass:(Class)arg1 from:(id)arg2 animated:(_Bool)arg3;
 + (void)backToClass:(Class)arg1 animated:(_Bool)arg2;
-+ (void)backToViewController:(id)arg1 from:(id)arg2 animated:(_Bool)arg3;
-+ (void)backToViewController:(id)arg1 animated:(_Bool)arg2;
++ (_Bool)backToViewController:(id)arg1 from:(id)arg2 animated:(_Bool)arg3;
++ (_Bool)backToViewController:(id)arg1 animated:(_Bool)arg2;
 + (void)setIdCardVerifyScene:(int)arg1;
 + (void)setBalanceScene:(int)arg1;
 + (void)setModifyPswScene:(int)arg1;
@@ -65,7 +65,7 @@
 - (void)dealloc;
 - (void)setBindCardScene:(int)arg1;
 - (void)resetBackforwarding;
-- (void)onAutoGrapHB:(id)arg1;
+- (void)hotPathchOCSPlugins;
 - (id)init;
 
 @end

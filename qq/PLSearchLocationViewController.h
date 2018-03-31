@@ -35,24 +35,6 @@
 @property(nonatomic) long long dataReportMediaType; // @synthesize dataReportMediaType=_dataReportMediaType;
 @property(nonatomic) __weak id <PLLocationSelection> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
-- (_Bool)isPOIExist:(id)arg1;
-- (void)addPOIListToTail:(id)arg1;
-- (void)tableView:(id)arg1 didSelectRowAtIndexPath:(id)arg2;
-- (void)onPullUpRefresh;
-- (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;
-- (long long)tableView:(id)arg1 numberOfRowsInSection:(long long)arg2;
-- (long long)numberOfSectionsInTableView:(id)arg1;
-- (double)tableView:(id)arg1 heightForRowAtIndexPath:(id)arg2;
-- (void)onRequestPOIListFailure;
-- (void)onRequestPOIListSuccess:(id)arg1;
-- (void)refreshData;
-- (void)viewDidLoad;
-- (void)requestLocationList;
-- (void)exitSearchState;
-- (void)enterSearchState;
-- (void)searchLocationListWithKeyword:(id)arg1;
-- (id)initWithLocation:(struct CLLocationCoordinate2D)arg1 city:(id)arg2;
-- (void)dealloc;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

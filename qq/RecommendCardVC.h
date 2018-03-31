@@ -6,17 +6,18 @@
 
 #import <QQMainProject/QQViewController.h>
 
+#import <QQMainProject/CardViewDelegate-Protocol.h>
 #import <QQMainProject/CardsContainerViewDataDelegate-Protocol.h>
 #import <QQMainProject/CardsContainerViewDelegate-Protocol.h>
+#import <QQMainProject/SayHonestCardViewDelegate-Protocol.h>
 
-@class AddFriendSendMessageViewController, CardsContainerView, NSArray, NSMutableArray, NSString, RecommendServerConfig, UIViewController;
+@class AddFriendSendMessageViewController, CardsContainerView, CloudLayoutManager, NSMutableArray, NSString, RecommendServerConfig, SayHonestMultiShareView, UIButton, UIViewController;
 
-@interface RecommendCardVC : QQViewController <CardsContainerViewDataDelegate, CardsContainerViewDelegate>
+@interface RecommendCardVC : QQViewController <CardsContainerViewDataDelegate, CardsContainerViewDelegate, CardViewDelegate, SayHonestCardViewDelegate>
 {
     AddFriendSendMessageViewController *_addFriendSendMessageViewController;
     CardsContainerView *_cardsContainer;
     RecommendServerConfig *_config;
-    NSArray *_dataRecommendShow;
     NSMutableArray *_dataRecommendFriends;
     NSMutableArray *_dataHiddenFriends;
     long long _indexTopCard;
@@ -24,8 +25,16 @@
     _Bool _needRefresh;
     UIViewController *_hostViewController;
     UIViewController *_entranceViewController;
+    NSMutableArray *_dataRecommendShow;
+    CloudLayoutManager *_cloudWordManager;
+    UIButton *_changeBtn;
+    SayHonestMultiShareView *_multiShareView;
 }
 
+@property(retain, nonatomic) SayHonestMultiShareView *multiShareView; // @synthesize multiShareView=_multiShareView;
+@property(retain, nonatomic) UIButton *changeBtn; // @synthesize changeBtn=_changeBtn;
+@property(retain, nonatomic) CloudLayoutManager *cloudWordManager; // @synthesize cloudWordManager=_cloudWordManager;
+@property(retain, nonatomic) NSMutableArray *dataRecommendShow; // @synthesize dataRecommendShow=_dataRecommendShow;
 @property(nonatomic) __weak UIViewController *entranceViewController; // @synthesize entranceViewController=_entranceViewController;
 @property(nonatomic) __weak UIViewController *hostViewController; // @synthesize hostViewController=_hostViewController;
 - (void).cxx_destruct;
@@ -38,6 +47,7 @@
 - (void)showTopCard:(long long)arg1 view:(id)arg2;
 - (id)cardsContainerView:(id)arg1 cellForItemAtIndex:(unsigned long long)arg2;
 - (void)didReceivedAddFriendResponse:(id)arg1;
+- (void)sayHonestCardViewDidClick:(id)arg1;
 - (void)btnAddedFriend:(id)arg1;
 - (void)btnHeadImg:(id)arg1;
 - (void)removedCardData:(id)arg1;
@@ -59,6 +69,7 @@
 - (void)LoadHiddenData;
 - (void)hiddenView:(_Bool)arg1;
 - (void)viewWillDisappear:(_Bool)arg1;
+- (void)addSayHonestData;
 - (void)viewWillAppear:(_Bool)arg1;
 - (void)reloadAppearance;
 - (void)viewDidLoad;

@@ -10,10 +10,13 @@
 {
 }
 
+- (id)getMixedRedPointShowInfo;
 - (void)clearNearbyRedDotInfoWithAppid:(int)arg1;
 - (id)getNearbyRedDotInfoWithAppid:(int)arg1;
 - (void)clearDynamicUnreadState;
+- (_Bool)readStateForRedDotID:(long long)arg1;
 - (_Bool)getDynamicUnreadState;
+- (id)nearbyRedDotIDs;
 
 @end
 

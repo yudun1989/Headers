@@ -14,9 +14,11 @@
 @interface GroupAudioNeedInfo : NSObject <MulMemSelBusiProcessDelegate, LaunchThirdAppDelegate>
 {
     NSMutableDictionary *_addDiscussMemParam;
+    NSMutableDictionary *_addGroupMemParam;
 }
 
 + (id)GetInstance;
+@property(retain, nonatomic) NSMutableDictionary *addGroupMemParam; // @synthesize addGroupMemParam=_addGroupMemParam;
 @property(retain, nonatomic) NSMutableDictionary *addDiscussMemParam; // @synthesize addDiscussMemParam=_addDiscussMemParam;
 - (_Bool)isComeBackToGroupChatVideo;
 - (id)getPersonalUserSummaryController:(id)arg1;
@@ -47,7 +49,7 @@
 - (void)AppendTipToMsgDB:(int)arg1 businessType:(int)arg2 relationID:(unsigned long long)arg3 content:(id)arg4;
 - (void)AppendCloseMsgToMsgDB:(int)arg1 businessType:(int)arg2 relationID:(unsigned long long)arg3;
 - (void)AppendHRConfMsg:(unsigned long long)arg1;
-- (void)AppendNotifyMsg:(int)arg1 fromUin:(unsigned long long)arg2 relationType:(int)arg3 businessType:(int)arg4 relationID:(unsigned long long)arg5 interval:(unsigned long long)arg6;
+- (void)AppendNotifyMsg:(int)arg1 fromUin:(unsigned long long)arg2 relationType:(int)arg3 businessType:(int)arg4 relationID:(unsigned long long)arg5 interval:(int)arg6;
 - (int)groupAssistantPolicyForGroup:(id)arg1;
 - (void)pushController:(id)arg1 animated:(_Bool)arg2;
 - (id)getUserSummaryController:(unsigned long long)arg1 groupUin:(unsigned long long)arg2;
@@ -90,6 +92,7 @@
 - (void)onBusinessProcessCancelMulMemSelector:(id)arg1 currentViewControllerClass:(id)arg2 selectedMember:(id)arg3;
 - (void)jumpToUserSummary:(id)arg1;
 - (void)jumpToDiscussGroupAddNewMem:(id)arg1 ipNoAnswer:(id)arg2 pstnMember:(id)arg3 source:(unsigned long long)arg4;
+- (void)jumpToGroupAddNewMem:(id)arg1;
 - (void)jumpToGroupAIO:(id)arg1;
 - (void)jumpToDiscussGroupAIO:(id)arg1;
 - (void)jumpToDiscussManageView:(id)arg1;

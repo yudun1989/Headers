@@ -15,6 +15,8 @@
     double _startTime;
     double _endTime;
     NSString *_itemImage;
+    NSString *_itemImage2;
+    NSString *_itemIds;
     NSString *_guessIcon;
     NSString *_jumpIcon;
     NSString *_mainTitle;
@@ -29,6 +31,8 @@
 @property(retain, nonatomic) NSString *mainTitle; // @synthesize mainTitle=_mainTitle;
 @property(retain, nonatomic) NSString *jumpIcon; // @synthesize jumpIcon=_jumpIcon;
 @property(retain, nonatomic) NSString *guessIcon; // @synthesize guessIcon=_guessIcon;
+@property(retain, nonatomic) NSString *itemIds; // @synthesize itemIds=_itemIds;
+@property(retain, nonatomic) NSString *itemImage2; // @synthesize itemImage2=_itemImage2;
 @property(retain, nonatomic) NSString *itemImage; // @synthesize itemImage=_itemImage;
 @property(nonatomic) double endTime; // @synthesize endTime=_endTime;
 @property(nonatomic) double startTime; // @synthesize startTime=_startTime;

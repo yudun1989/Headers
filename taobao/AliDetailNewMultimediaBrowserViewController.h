@@ -31,15 +31,12 @@
 @property(nonatomic) _Bool successShowVideoFlow; // @synthesize successShowVideoFlow=_successShowVideoFlow;
 @property(nonatomic) struct CGPoint videoFlowContentOffset; // @synthesize videoFlowContentOffset=_videoFlowContentOffset;
 - (void).cxx_destruct;
-- (void)controlViewDidDisappear;
-- (void)controlViewDidAppear;
 - (void)videoFlowScrollToContentOffset:(struct CGPoint)arg1 srollEnd:(_Bool)arg2 successShowVideoFlow:(_Bool)arg3;
 - (void)scrollViewDidScroll:(id)arg1;
 - (void)recordVideoFlowStayTime;
 - (void)recordVideoFlowShowStartTime;
 - (void)enterForeground:(id)arg1;
 - (void)enterBackground:(id)arg1;
-- (void)removeNotification;
 - (void)addNotification;
 - (double)currentTime;
 - (void)topMaskContainerMoveTopToValue:(double)arg1 scrollEnd:(_Bool)arg2;
@@ -48,6 +45,7 @@
 - (void)updateCountLabelTips;
 - (void)buildUI;
 - (void)removeFromSuperview;
+- (void)videoCloseUTEvent;
 - (void)segmentControlValueChanged:(id)arg1;
 - (void)performLayoutSubviews;
 - (void)setCurrentSegmentIndex:(unsigned long long)arg1;
@@ -56,6 +54,8 @@
 - (id)segmentControl;
 - (unsigned long long)supportedInterfaceOrientations;
 - (void)didReceiveMemoryWarning;
+- (void)viewDidAppear:(_Bool)arg1;
+- (void)viewDidDisappear:(_Bool)arg1;
 - (void)viewDidLoad;
 - (id)init;
 - (void)dealloc;

@@ -20,6 +20,7 @@
 - (void)setLoadProgress:(double)arg1;
 - (void)setDuration:(double)arg1;
 - (id)slider;
+- (void)setFrame:(struct CGRect)arg1;
 - (id)initWithFrame:(struct CGRect)arg1;
 
 @end

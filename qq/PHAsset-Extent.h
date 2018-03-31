@@ -12,6 +12,7 @@
 + (int)requestImageDataForAssetSupportHEIC:(id)arg1 options:(id)arg2 resultHandler:(CDUnknownBlockType)arg3;
 + (int)requestImageDataForAsset:(id)arg1 options:(id)arg2 resultHandler:(CDUnknownBlockType)arg3;
 + (int)requestImageDataSupportHeicForAsset:(id)arg1 options:(id)arg2 resultHandler:(CDUnknownBlockType)arg3;
+- (long long)assetFileSizeEx;
 - (id)requestMetadataForQzone;
 - (id)valueForProperty:(id)arg1;
 - (int)getEditedFullScreenImageOrientation;

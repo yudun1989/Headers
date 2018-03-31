@@ -7,6 +7,7 @@
 #import <Foundation/NSString.h>
 
 @interface NSString (TBDConverter)
++ (id)tbd_stringValueFromPointValue:(double)arg1;
 + (_Bool)tbd_boolValue:(id)arg1 withDefault:(_Bool)arg2;
 + (double)tbd_floatValue:(id)arg1 withDefault:(double)arg2;
 + (double)tbd_pointValue:(id)arg1 withDefault:(id)arg2;

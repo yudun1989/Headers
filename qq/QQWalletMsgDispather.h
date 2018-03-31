@@ -10,6 +10,7 @@
 
 @interface QQWalletMsgDispather : NSObject
 {
+    NSMutableDictionary *_aapayPushModels;
     NSMutableArray *_pushDealGoldMsgModels;
     NSTimer *_pushDealGoldMsgTimer;
     long long _spareTimeCounter;
@@ -23,9 +24,13 @@
 @property(nonatomic) long long spareTimeCounter; // @synthesize spareTimeCounter=_spareTimeCounter;
 @property(retain, nonatomic) NSTimer *pushDealGoldMsgTimer; // @synthesize pushDealGoldMsgTimer=_pushDealGoldMsgTimer;
 @property(retain, nonatomic) NSMutableArray *pushDealGoldMsgModels; // @synthesize pushDealGoldMsgModels=_pushDealGoldMsgModels;
+@property(retain, nonatomic) NSMutableDictionary *aapayPushModels; // @synthesize aapayPushModels=_aapayPushModels;
 - (void).cxx_destruct;
-- (void)groupGoldMsgAnimation;
-- (void)startTimerHandleModel:(id)arg1;
+- (void)handleDidEnterBackgroundNotification;
+- (void)restoreAAPayPushModelsFromDisk;
+- (void)saveAAPayPushModelToDisk;
+- (void)aapayPushReceived:(id)arg1;
+- (id)pushModelFromPB:(struct CPBMessageDecoder *)arg1;
 - (void)_innerReceivedGoldMsgPush:(id)arg1;
 - (void)didReceivedGoldMsgPush:(struct CPBMessageDecoder *)arg1;
 - (void)removeMsgesIfNeeded:(id)arg1;

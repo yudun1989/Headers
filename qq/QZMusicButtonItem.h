@@ -4,11 +4,11 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-#import <TlibDy/LKLayoutItem.h>
+#import <TlibDy/PTLayoutItem.h>
 
 @class NSString, QZDrawMusicButton;
 
-@interface QZMusicButtonItem : LKLayoutItem
+@interface QZMusicButtonItem : PTLayoutItem
 {
     QZDrawMusicButton *_musicItem;
     NSString *_source;
@@ -21,7 +21,7 @@
 - (void).cxx_destruct;
 - (void)configView:(id)arg1 context:(id)arg2;
 - (id)createView;
-- (void)setUpForItemConfiguration:(id)arg1 globalConfiguration:(id)arg2;
+- (void)setUpForItemAttribute:(id)arg1 globalSetting:(id)arg2;
 
 @end
 

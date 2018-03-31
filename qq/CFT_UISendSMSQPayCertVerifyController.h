@@ -18,12 +18,7 @@
 
 @property(retain, nonatomic) NSString *mobileNumer; // @synthesize mobileNumer=_mobileNumer;
 @property(retain, nonatomic) NSString *p; // @synthesize p=_p;
-- (void)qpay_gate;
-- (void)installFinish:(id)arg1 resultCode:(int)arg2 quiet:(_Bool)arg3;
-- (void)nextButtonClick:(id)arg1;
-- (void)viewDidLoad;
 - (void)dealloc;
-- (id)init;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

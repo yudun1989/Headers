@@ -12,7 +12,7 @@
 #import "KSRecordingManagerDelegate-Protocol.h"
 #import "KSVideoRecordActionsControllerDelegate-Protocol.h"
 
-@class AVAudioPlayer, AVPlayer, FMResource, GPUImageFilter, GPUImageFilterPipeline, GPUImageNormalBlendFilter, GPUImageUIElement, KSBubbleAlertView, KSCaptureDeviceLowLightDetector, KSEvenlySpacedViewsContainer, KSExtensionButton, KSLyricsLineTimestampController, KSMagicFace, KSMagicFaceResource, KSMotionManager, KSMusicItem, KSMusicResourceManager, KSPaintMagicFaceViewController, KSPoi, KSRecordingManager, KSRoundedCornerSlider, KSSwapFacePhotosViewController, KSUTaskMetaData, KSUnhittableView, KSVideoRecordActionsController, KSVideoRecordFrameStat, NSArray, NSLayoutConstraint, NSMutableArray, NSMutableDictionary, NSString, NSTimer, THLabel, UIButton, UIImageView, UILabel, UIView;
+@class AVAudioPlayer, AVPlayer, FMResource, GPUImageFilter, GPUImageFilterPipeline, GPUImageNormalBlendFilter, GPUImageUIElement, KSBubbleAlertView, KSCaptureDeviceLowLightDetector, KSEvenlySpacedViewsContainer, KSExtensionButton, KSLyricsLineTimestampController, KSMagicFace, KSMagicFaceResource, KSMotionManager, KSMusicItem, KSMusicResourceManager, KSPaintMagicFaceViewController, KSPoi, KSRecordingManager, KSRoundedCornerSlider, KSSwapFacePhotosViewController, KSUTaskMetaData, KSUnhittableView, KSVideoRecordActionsController, KSVideoRecordFrameStat, KSVideoRecordSizeConfiguration, NSArray, NSLayoutConstraint, NSMutableArray, NSMutableDictionary, NSString, NSTimer, THLabel, UIButton, UIImageView, UILabel, UIView;
 @protocol KSVideoRecordingSoundtrack;
 
 @interface KSVideoRecordViewController : KSCameraViewController <GPUImageVideoCameraDelegate, AVAudioPlayerDelegate, KSVideoRecordActionsControllerDelegate, KSRecordingManagerDelegate, KSPostComponent>
@@ -68,6 +68,7 @@
     GPUImageFilter *_writerPort;
     GPUImageFilterPipeline *_writerFilterPipeline;
     KSMagicFaceResource *_defaultMagicFaceResource;
+    KSVideoRecordSizeConfiguration *_sizeConfig;
     KSPaintMagicFaceViewController *_paintMagicFaceViewController;
     KSSwapFacePhotosViewController *_swapFacePhotosViewController;
     unsigned long long _backgroundRecordID;
@@ -133,6 +134,7 @@
 @property(nonatomic) unsigned long long backgroundRecordID; // @synthesize backgroundRecordID=_backgroundRecordID;
 @property(retain, nonatomic) KSSwapFacePhotosViewController *swapFacePhotosViewController; // @synthesize swapFacePhotosViewController=_swapFacePhotosViewController;
 @property(retain, nonatomic) KSPaintMagicFaceViewController *paintMagicFaceViewController; // @synthesize paintMagicFaceViewController=_paintMagicFaceViewController;
+@property(retain, nonatomic) KSVideoRecordSizeConfiguration *sizeConfig; // @synthesize sizeConfig=_sizeConfig;
 @property(nonatomic) float frameRate; // @synthesize frameRate=_frameRate;
 @property(retain, nonatomic) KSMagicFaceResource *defaultMagicFaceResource; // @synthesize defaultMagicFaceResource=_defaultMagicFaceResource;
 @property(retain, nonatomic) GPUImageFilterPipeline *writerFilterPipeline; // @synthesize writerFilterPipeline=_writerFilterPipeline;
@@ -263,7 +265,7 @@
 - (void)didClickLyrics:(id)arg1;
 - (void)didClickBeautifyButton:(id)arg1;
 - (void)didClickLowLightBoost:(id)arg1;
-- (void)didClickCameraSwitchButton:(id)arg1;
+- (void)didSwitchCamera;
 - (void)didToggleRateSlider:(id)arg1;
 - (void)didReceiveAudioSessionRouteChanged:(id)arg1;
 - (void)didReceiveDidBecomeActive:(id)arg1;

@@ -17,9 +17,11 @@
 + (id)shareInstance;
 @property(retain, nonatomic) NSMutableDictionary *mapInfo; // @synthesize mapInfo=_mapInfo;
 @property(retain, nonatomic) NSMutableDictionary *styleInfo; // @synthesize styleInfo=_styleInfo;
+- (void)eventHandle:(id)arg1;
 - (_Bool)ifSubviewHide:(id)arg1 bind:(id)arg2;
 - (void)layoutProteusViews:(id)arg1 holder:(id)arg2;
 - (void)buildProteusViews:(id)arg1 holder:(id)arg2;
+- (void)gestureHandle:(id)arg1;
 - (unsigned long long)getLayoutType:(id)arg1;
 - (id)value:(id)arg1 attr:(id)arg2 bind:(id)arg3;
 - (void)setItemValue:(id)arg1 bind:(id)arg2;
@@ -29,6 +31,7 @@
 - (void)descendLevelLayout:(id)arg1 rootLayout:(id)arg2 x:(double)arg3 y:(double)arg4;
 - (struct CGRect)processViewLayout:(id)arg1 parent:(id)arg2 bind:(id)arg3 beginX:(double)arg4 beginY:(double)arg5;
 - (id)buildProteusCell:(id)arg1 data:(id)arg2 tableview:(id)arg3;
+- (unsigned long long)sizeTypeFromString:(id)arg1;
 - (id)styleInfo:(id)arg1;
 - (_Bool)buildProteusCanvas:(id)arg1 data:(id)arg2 complete:(CDUnknownBlockType)arg3;
 - (float)canvasHeight:(id)arg1;

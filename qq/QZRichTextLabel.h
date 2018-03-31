@@ -35,6 +35,7 @@
     _Bool _isSetAllTextNormal;
     int _textVerticalAlignment;
     int _textHorizontalAlignment;
+    int _textDrawStatus;
     long long _normalTextOnly;
     QZDrawItemTextWrapper *_expandText;
     QZDrawItemInteractionRect *_backgroundArea;
@@ -52,6 +53,7 @@
 + (id)richLabelRenderQueue;
 @property(retain, nonatomic) CAGradientLayer *mGradientLayer; // @synthesize mGradientLayer=_mGradientLayer;
 @property(retain, nonatomic) CALayer *colorChangeLayer; // @synthesize colorChangeLayer=_colorChangeLayer;
+@property(nonatomic) int textDrawStatus; // @synthesize textDrawStatus=_textDrawStatus;
 @property(nonatomic) _Bool isSetAllTextNormal; // @synthesize isSetAllTextNormal=_isSetAllTextNormal;
 @property(nonatomic) _Bool handleEmotionView; // @synthesize handleEmotionView=_handleEmotionView;
 @property(nonatomic) _Bool noHighLightWhenWholeLabelTouched; // @synthesize noHighLightWhenWholeLabelTouched=_noHighLightWhenWholeLabelTouched;

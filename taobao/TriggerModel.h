@@ -14,10 +14,12 @@
     NSDictionary *_triggerdata;
     NSString *_triggerType;
     NSString *_triggerId;
+    NSString *_signature;
 }
 
 + (id)initTriggerModelByDict:(id)arg1;
 @property(nonatomic) _Bool isRegister; // @synthesize isRegister=_isRegister;
+@property(retain, nonatomic) NSString *signature; // @synthesize signature=_signature;
 @property(retain, nonatomic) NSString *triggerId; // @synthesize triggerId=_triggerId;
 @property(retain, nonatomic) NSString *triggerType; // @synthesize triggerType=_triggerType;
 @property(retain, nonatomic) NSDictionary *triggerdata; // @synthesize triggerdata=_triggerdata;

@@ -6,11 +6,16 @@
 
 #import <Foundation/NSObject.h>
 
+@protocol ALBBPersonalProfileDelegate;
+
 @interface ALBBAccountCenterManager : NSObject
 {
+    id <ALBBPersonalProfileDelegate> _profileDelegate;
 }
 
 + (id)sharedInstance;
+@property(nonatomic) __weak id <ALBBPersonalProfileDelegate> profileDelegate; // @synthesize profileDelegate=_profileDelegate;
+- (void).cxx_destruct;
 - (void)showPersonal:(id)arg1;
 - (void)showCenterView:(id)arg1;
 - (void)openAccountCenterViewController:(id)arg1;

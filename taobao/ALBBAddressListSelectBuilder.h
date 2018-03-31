@@ -44,8 +44,8 @@
 - (long long)numberOfSectionsInTableView:(id)arg1;
 - (void)requestSignUserRelationStation:(id)arg1;
 - (void)requestUserRelationStation;
-- (void)requestAddressListWithSupportStation:(_Bool)arg1 abroadStation:(_Bool)arg2 sites:(id)arg3 token:(id)arg4;
-- (void)requestAddressListWithSupportStation:(_Bool)arg1 abroadStation:(_Bool)arg2 sites:(id)arg3 token:(id)arg4 deliverId:(id)arg5 completion:(CDUnknownBlockType)arg6;
+- (void)requestAddressListWithSupportStation:(_Bool)arg1 abroadStation:(_Bool)arg2 sites:(id)arg3 token:(id)arg4 agencyReceiveHelpUrl:(id)arg5;
+- (void)requestAddressListWithSupportStation:(_Bool)arg1 abroadStation:(_Bool)arg2 sites:(id)arg3 token:(id)arg4 deliverId:(id)arg5 agencyReceiveHelpUrl:(id)arg6 completion:(CDUnknownBlockType)arg7;
 - (void)didEditAddress:(id)arg1;
 - (void)deleteAddressID:(id)arg1;
 - (void)actionToAddAddress;

@@ -15,24 +15,10 @@
 }
 
 + (id)getSortDateFormat:(long long)arg1;
-+ (id)getSortLetterFormat:(id)arg1;
 + (id)sharedInstance;
 @property(retain, nonatomic) NSMutableArray *arrayCardInfos; // @synthesize arrayCardInfos=_arrayCardInfos;
 @property(nonatomic) unsigned long long currentListSortStyle; // @synthesize currentListSortStyle=_currentListSortStyle;
-- (void).cxx_destruct;
-- (id)getViewTagStatus:(id)arg1;
 - (void)sortArray:(unsigned long long)arg1;
-- (void)sortArrayByLetter;
-- (void)sortArrayByTime;
-- (void)forceListSort;
-- (_Bool)isAlphaViewrow:(unsigned long long)arg1;
-- (long long)getCardCount;
-- (id)getCardInfo:(long long)arg1;
-- (void)addArrayFromCardInfos:(id)arg1;
-- (void)setMineQQCardModel:(id)arg1;
-- (void)resetArrayCardInfosWithOutMineCard;
-- (void)resetArrayCardInfos;
-- (id)init;
 
 @end
 

@@ -22,8 +22,12 @@
     TBCartItemBizIconComponent *_bizIcon;
     NSString *_itemRecParamId;
     NSMutableArray *_logos;
+    NSDictionary *_topList;
+    NSDictionary *_discover;
 }
 
+@property(retain, nonatomic) NSDictionary *discover; // @synthesize discover=_discover;
+@property(retain, nonatomic) NSDictionary *topList; // @synthesize topList=_topList;
 @property(nonatomic) _Bool isItemEdit; // @synthesize isItemEdit=_isItemEdit;
 @property(retain, nonatomic) NSMutableArray *logos; // @synthesize logos=_logos;
 @property(retain, nonatomic) NSString *itemRecParamId; // @synthesize itemRecParamId=_itemRecParamId;
@@ -42,9 +46,12 @@
 - (void)checkAll:(_Bool)arg1;
 - (_Bool)isCheckAll;
 - (id)submitData;
+@property(readonly, nonatomic) _Bool isPreSellItemCannotPayStatus;
+@property(readonly, nonatomic) _Bool isPreSellItem;
 @property(readonly, nonatomic) _Bool isPriorityBuyItem;
 @property(readonly, nonatomic) NSString *priorityBuyAddCartType;
 @property(retain, nonatomic) NSDictionary *extra;
+@property(retain, nonatomic) NSString *preSellStatus;
 @property(retain, nonatomic) NSString *jhsStatus;
 @property(readonly, nonatomic) _Bool isPreHotItem;
 @property(retain, nonatomic) NSString *checkedBackgroundColor;

@@ -23,7 +23,7 @@
 - (id)description;
 - (void)copyForSerializationFromObject:(id)arg1;
 - (void)removeAll;
-- (void)updatePoliciesFetchTime:(double)arg1 forHost:(id)arg2;
+- (void)updatePoliciesTTL:(double)arg1 forHost:(id)arg2;
 - (void)removeExpiredPolicies:(long long)arg1;
 - (void)eliminateStrategy;
 - (void)addPolicyGroup:(id)arg1;

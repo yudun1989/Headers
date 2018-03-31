@@ -21,6 +21,7 @@
 @property(nonatomic, getter=jce_video_count, setter=setJce_video_count:) int jcev2_p_11_o_video_count; // @dynamic jcev2_p_11_o_video_count;
 @property(retain, nonatomic, getter=jce_stMemoryInfo, setter=setJce_stMemoryInfo:) QZJFeedsSMemorySealOff *jcev2_p_12_o_stMemoryInfo; // @dynamic jcev2_p_12_o_stMemoryInfo;
 @property(retain, nonatomic, getter=jce_mapEx, setter=setJce_mapEx:) NSDictionary *jcev2_p_13_o_mapEx__b0x9i_M09ONSStringONSData; // @dynamic jcev2_p_13_o_mapEx__b0x9i_M09ONSStringONSData;
+@property(nonatomic, getter=jce_shuoshuo_timer_unpublished_count, setter=setJce_shuoshuo_timer_unpublished_count:) int jcev2_p_14_o_shuoshuo_timer_unpublished_count; // @dynamic jcev2_p_14_o_shuoshuo_timer_unpublished_count;
 @property(nonatomic, getter=jce_hasmore, setter=setJce_hasmore:) int jcev2_p_1_o_hasmore; // @dynamic jcev2_p_1_o_hasmore;
 @property(nonatomic, getter=jce_remain_count, setter=setJce_remain_count:) int jcev2_p_2_o_remain_count; // @dynamic jcev2_p_2_o_remain_count;
 @property(retain, nonatomic, getter=jce_attach_info, setter=setJce_attach_info:) NSString *jcev2_p_3_o_attach_info; // @dynamic jcev2_p_3_o_attach_info;

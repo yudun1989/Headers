@@ -20,6 +20,7 @@
     double _reprotEendTime;
     double _minTime;
     double _durationSec;
+    unsigned int _maxClipDuration;
     id <TBStoryVideoClipViewDelegate> _delegate;
     UIButton *_backBtn;
     UIButton *_nextBtn;
@@ -30,6 +31,7 @@
     NSMutableArray *_videoPaths;
 }
 
+@property(nonatomic) unsigned int maxClipDuration; // @synthesize maxClipDuration=_maxClipDuration;
 @property(retain, nonatomic) NSMutableArray *videoPaths; // @synthesize videoPaths=_videoPaths;
 @property(retain, nonatomic) AVAsset *asset; // @synthesize asset=_asset;
 @property(retain, nonatomic) TBStoryVideoPreviewView *player; // @synthesize player=_player;
@@ -57,7 +59,7 @@
 - (id)stringOfTime;
 - (_Bool)initPlayer:(id)arg1;
 - (void)initUI;
-- (id)initWithFrame:(struct CGRect)arg1 AVAsset:(id)arg2;
+- (id)initWithFrame:(struct CGRect)arg1 maxDuration:(unsigned int)arg2 AVAsset:(id)arg3;
 - (void)reset;
 - (void)pausePlayer;
 - (void)stopPlayer;

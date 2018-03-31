@@ -16,6 +16,8 @@
 }
 
 + (id)sharedInstance;
+- (id)assetWithAssetIdentifier:(id)arg1;
+- (_Bool)uploadJobsIsEmpty;
 - (_Bool)videoIsExist:(id)arg1 videoUrl:(id)arg2 clientKey:(id)arg3;
 - (void)sendH5ToQzone:(id)arg1 imageUrk:(id)arg2 shareUrl:(id)arg3 desc:(id)arg4 viewController:(id)arg5;
 - (void)sendToWeixinTitle:(id)arg1 imageUrl:(id)arg2 shareUrl:(id)arg3 desc:(id)arg4 sence:(long long)arg5;
@@ -25,6 +27,7 @@
 - (id)urlWithoutDomainNorPoundSign:(id)arg1;
 - (void)addAlbumComment:(id)arg1 feedModel:(id)arg2 isPrivate:(_Bool)arg3;
 - (void)likeAlbumWithLikeKey:(id)arg1 isMyLiked:(_Bool)arg2;
+- (id)imageFromMemForUrl:(id)arg1 clientKey:(id)arg2 clipper:(id)arg3;
 - (void)saveImageToMem:(id)arg1 url:(id)arg2 clientKey:(id)arg3 clipper:(id)arg4;
 - (id)makeKey:(long long)arg1 primaryKey:(id)arg2 subKey:(id)arg3 cmtID:(id)arg4;
 - (_Bool)string:(id)arg1 hasContainStr:(id)arg2;

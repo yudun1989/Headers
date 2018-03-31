@@ -12,15 +12,20 @@
 {
     NSMutableArray *_patchs;
     LuaPatchRuntime *_luaPatchRuntime;
+    NSMutableArray *_observers;
 }
 
 + (id)shareInstance;
 - (void).cxx_destruct;
+- (void)removeObserver:(id)arg1;
+- (void)addObserver:(id)arg1;
+- (void)onPatchBatchConfigComplete;
 - (int)patchConfigVersion;
 - (id)patchedIDs;
 - (void)downloadPatch:(id)arg1 finish:(CDUnknownBlockType)arg2;
-- (void)updatePatches:(id)arg1;
-- (void)patchConfigFeatched:(id)arg1 updated:(_Bool)arg2 nezVersion:(int)arg3;
+- (void)updatePatches:(id)arg1 phase:(long long)arg2;
+- (void)patchConfigFeatched:(id)arg1 updated:(_Bool)arg2 nezVersion:(int)arg3 phase:(long long)arg4;
+- (void)patchBatchConfigFeatched:(id)arg1 updated:(_Bool)arg2 nezVersion:(int)arg3 phase:(long long)arg4;
 - (void)patchBatchConfigFeatched:(id)arg1 updated:(_Bool)arg2 nezVersion:(int)arg3;
 - (id)combilePatchConfig:(id)arg1;
 - (id)patchsPolicyApply:(id)arg1;

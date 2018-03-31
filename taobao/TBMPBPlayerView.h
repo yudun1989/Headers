@@ -150,6 +150,7 @@
 @property(readonly, nonatomic) _Bool isLoadingFromCache;
 @property(readonly, nonatomic) double duration;
 @property(nonatomic) double currentPlaybackTime;
+@property(nonatomic) float playbackRate;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

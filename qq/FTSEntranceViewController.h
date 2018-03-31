@@ -8,7 +8,7 @@
 
 #import <QQMainProject/QQDynamicSearchDiscoveryViewDelegate-Protocol.h>
 
-@class FTSAISearchView, FTSCustomSearchBar, FTSGroupResultsTabViewController, FTSSearchEngine, FTSSmartSearchViewController, NSMutableArray, NSString, QQDynamicSearchDiscoveryView, UILabel, UIView;
+@class FTSAISearchView, FTSCustomSearchBar, FTSGroupResultsViewController, FTSSearchEngine, FTSSmartSearchViewController, NSMutableArray, NSString, QQDynamicSearchDiscoveryView, UILabel, UIView;
 
 @interface FTSEntranceViewController : QQViewController <QQDynamicSearchDiscoveryViewDelegate>
 {
@@ -17,7 +17,7 @@
     unsigned long long _searchEntranceTabType;
     FTSCustomSearchBar *_ftsCustomSearchBar;
     UIView *_ftsContentArea;
-    FTSGroupResultsTabViewController *_ftsGroupResultsTabViewController;
+    FTSGroupResultsViewController *_ftsGroupResultsViewController;
     FTSSmartSearchViewController *_ftsSmartSearchViewController;
     struct CGRect _contentFrame;
     long long _currentState;
@@ -53,7 +53,6 @@
 @property(nonatomic) _Bool isNaviOptimizeHandle; // @synthesize isNaviOptimizeHandle=_isNaviOptimizeHandle;
 @property(nonatomic) _Bool isNaviNeedAnimation; // @synthesize isNaviNeedAnimation=_isNaviNeedAnimation;
 - (void).cxx_destruct;
-- (long long)getCurrentTabSelectedIndex;
 - (void)QQDynamicSearchDiscoveryView:(id)arg1 didClickDynamicHotWord:(id)arg2;
 - (void)onSearchContentRecommendUpdateCallback:(id)arg1;
 - (void)onDidQQDynamicSearchDiscoveryViewBeginDragging;
@@ -67,7 +66,6 @@
 - (void)onApplicationWillResignActiveNotification:(id)arg1;
 - (void)_ftsDataReportADS;
 - (void)handleShowDiscoveryView;
-- (void)handleShowSearchRecord;
 - (void)reloadFTSEntranceViewAppearance;
 - (void)resetCurrentSearchState:(long long)arg1;
 - (long long)currentSearchState;
@@ -80,6 +78,7 @@
 - (void)initializeDiscoveryView;
 - (void)initializeFTSCurrentShow;
 - (void)initializeFTSSmartSearchViewController;
+- (void)initializeFTSGroupResultsViewController;
 - (void)initializeFTSContentViewContrs;
 - (void)initializeFTSContentArea;
 - (void)initializeFTSCustomSearchBar;

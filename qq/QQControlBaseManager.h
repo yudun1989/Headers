@@ -19,7 +19,6 @@
     _Bool _needSaveData;
 }
 
-+ (id)GetInstance;
 - (void).cxx_destruct;
 - (id)onSaveCache;
 - (void)onLoadCache:(id)arg1 forUin:(long long)arg2;
@@ -45,6 +44,7 @@
 - (void)markToSaveCache;
 - (id)loadDataForUin:(long long)arg1;
 - (id)fileNameForCacheData;
+- (void)checkAccountChanged;
 - (id)init;
 - (void)dealloc;
 

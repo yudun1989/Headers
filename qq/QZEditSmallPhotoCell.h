@@ -31,7 +31,7 @@
 - (void)onClickCheckBox:(id)arg1;
 - (void)selectPhotoBtn:(id)arg1;
 - (void)onSelectPhotoBtn:(id)arg1;
-- (void)updateLayoutWithPhotoModels:(id)arg1 selectedPhotoModels:(id)arg2 maxPhotoModelsNum:(long long)arg3 hideVideo:(_Bool)arg4;
+- (void)updateLayoutWithPhotoModels:(id)arg1 selectedPhotoModels:(id)arg2 maxPhotoModelsNum:(long long)arg3 hideVideo:(_Bool)arg4 assetsForIdentifiers:(id)arg5;
 
 @end
 

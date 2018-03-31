@@ -6,7 +6,7 @@
 
 #import <TlibDy/JceObjectV2.h>
 
-@class NSDictionary, NSString, QZJFeedsSingleDetail;
+@class NSDictionary, NSString, QZJFeedsSLifeMoment, QZJFeedsSingleDetail, QZJFeedsSingleFeed;
 
 @interface QZJFeedsMobileDetailRsp : JceObjectV2
 {
@@ -22,5 +22,7 @@
 @property(retain, nonatomic, getter=jce_extend_info, setter=setJce_extend_info:) NSDictionary *jcev2_p_5_o_extend_info__b0x9i_M09ONSStringONSString; // @dynamic jcev2_p_5_o_extend_info__b0x9i_M09ONSStringONSString;
 @property(nonatomic, getter=jce_hasmore_essence, setter=setJce_hasmore_essence:) int jcev2_p_6_o_hasmore_essence; // @dynamic jcev2_p_6_o_hasmore_essence;
 @property(retain, nonatomic, getter=jce_attach_info_essence, setter=setJce_attach_info_essence:) NSString *jcev2_p_7_o_attach_info_essence; // @dynamic jcev2_p_7_o_attach_info_essence;
+@property(retain, nonatomic, getter=jce_life_moment_info, setter=setJce_life_moment_info:) QZJFeedsSLifeMoment *jcev2_p_8_o_life_moment_info; // @dynamic jcev2_p_8_o_life_moment_info;
+@property(retain, nonatomic, getter=jce_ugc_detail_adv, setter=setJce_ugc_detail_adv:) QZJFeedsSingleFeed *jcev2_p_9_o_ugc_detail_adv; // @dynamic jcev2_p_9_o_ugc_detail_adv;
 @end
 

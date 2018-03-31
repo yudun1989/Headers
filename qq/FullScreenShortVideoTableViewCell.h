@@ -21,10 +21,8 @@
     CDUnknownBlockType _showProgressHUD;
     CDUnknownBlockType _actionSheetDismissCompletion;
     C2CSVideoDownloadReqInfo *_downloadReq;
-    unsigned long long _stampCount;
 }
 
-@property(nonatomic) unsigned long long stampCount; // @synthesize stampCount=_stampCount;
 @property(retain, nonatomic) C2CSVideoDownloadReqInfo *downloadReq; // @synthesize downloadReq=_downloadReq;
 @property(copy, nonatomic) CDUnknownBlockType actionSheetDismissCompletion; // @synthesize actionSheetDismissCompletion=_actionSheetDismissCompletion;
 @property(copy, nonatomic) CDUnknownBlockType showProgressHUD; // @synthesize showProgressHUD=_showProgressHUD;
@@ -59,6 +57,7 @@
 - (void)resumePlayVideo;
 - (void)playVideo;
 - (void)setFullScreen:(_Bool)arg1;
+- (void)volumeButtonDidClick:(id)arg1;
 - (void)zoomButtonDidClick:(id)arg1;
 - (void)playButtonDidClick:(id)arg1;
 - (void)setStateViewHidden:(_Bool)arg1 animated:(_Bool)arg2;

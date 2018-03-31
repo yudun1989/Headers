@@ -6,7 +6,7 @@
 
 #import <Foundation/NSObject.h>
 
-@class NSDictionary, NSMutableDictionary, NSString, NSURL, TBShopActionService, TBShopCacheService, TBShopContainerComponent, TBShopEffectService, TBShopEngine, TBShopUTService, UIViewController;
+@class NSDictionary, NSMutableDictionary, NSString, NSURL, TBShopActionService, TBShopCacheService, TBShopContainerComponent, TBShopEffectService, TBShopEngine, TBShopMonitorService, TBShopUTService, UIViewController;
 @protocol TBShopViewController;
 
 @interface TBShopContext : NSObject
@@ -29,12 +29,14 @@
     TBShopEffectService *_effectService;
     TBShopActionService *_actionService;
     TBShopUTService *_utService;
+    TBShopMonitorService *_monitorService;
     TBShopCacheService *_cacheService;
     UIViewController<TBShopViewController> *_mainViewController;
 }
 
 @property(nonatomic) __weak UIViewController<TBShopViewController> *mainViewController; // @synthesize mainViewController=_mainViewController;
 @property(retain, nonatomic) TBShopCacheService *cacheService; // @synthesize cacheService=_cacheService;
+@property(retain, nonatomic) TBShopMonitorService *monitorService; // @synthesize monitorService=_monitorService;
 @property(retain, nonatomic) TBShopUTService *utService; // @synthesize utService=_utService;
 @property(retain, nonatomic) TBShopActionService *actionService; // @synthesize actionService=_actionService;
 @property(retain, nonatomic) TBShopEffectService *effectService; // @synthesize effectService=_effectService;

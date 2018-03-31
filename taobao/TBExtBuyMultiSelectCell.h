@@ -19,6 +19,7 @@
 @property(retain, nonatomic) NSMutableString *voiceOverStr; // @synthesize voiceOverStr=_voiceOverStr;
 @property(nonatomic) __weak TBTradeMultiSelectModel *model; // @synthesize model=_model;
 - (void).cxx_destruct;
+- (void)dealloc;
 - (void)setAccessibilityLabelAndTraits:(id)arg1;
 - (void)cellDidSelected;
 - (_Bool)accessibilityActivate;

@@ -9,9 +9,11 @@
 @interface AliTradeComponentPropSelectControl : AliTradeSKUPropSelectControl
 {
     _Bool _isSingleSeleted;
+    long long _selectedIndex;
 }
 
 @property(nonatomic) _Bool isSingleSeleted; // @synthesize isSingleSeleted=_isSingleSeleted;
+- (long long)selectedIndex;
 - (void)setSelectedIndex:(long long)arg1;
 - (id)initWithFrame:(struct CGRect)arg1;
 

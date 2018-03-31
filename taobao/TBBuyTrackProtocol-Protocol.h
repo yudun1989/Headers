@@ -11,6 +11,8 @@
 @protocol TBBuyTrackProtocol <NSObject>
 
 @optional
+- (void)et_updateViewControllerProperties:(UIViewController *)arg1 properties:(NSDictionary *)arg2;
+- (void)commintBuyUmbrellaPoint:(_Bool)arg1 serviceId:(NSString *)arg2 version:(NSString *)arg3 sceneName:(NSString *)arg4 args:(NSDictionary *)arg5;
 - (void)recordQueueWeexViewError:(NSString *)arg1;
 - (void)recordQueueStateWithArg:(NSString *)arg1;
 - (void)recordAdjustOriginalParams:(id)arg1;
@@ -35,6 +37,7 @@
 - (void)updateEnterFamilyPageNormalEvent:(UIViewController *)arg1;
 - (void)updateEnterFamilyPagePayEvent:(UIViewController *)arg1;
 - (void)commitEnterPageEvent:(UIViewController *)arg1;
+- (void)commitConfirmButtonNotMyClickedEvent:(TBTradeBuyEngine *)arg1;
 - (void)commitConfirmButtonByFamilyClickedEvent:(TBTradeBuyEngine *)arg1;
 - (void)commitConfirmButtonBySelfClickedEvent:(TBTradeBuyEngine *)arg1;
 - (void)commitConfirmButtonClickedEvent:(TBTradeBuyEngine *)arg1;

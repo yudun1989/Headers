@@ -8,18 +8,25 @@
 
 #import <QQMainProject/NSCoding-Protocol.h>
 
+@class NSString;
+
 @interface SubscribeTabTip : NSObject <NSCoding>
 {
     _Bool _hasShownForRedPoint;
+    _Bool _hasConsumed;
     unsigned long long _msgTime;
+    NSString *_diandianCookie;
     long long _msgUid;
     unsigned long long _uin;
 }
 
 @property(nonatomic) unsigned long long uin; // @synthesize uin=_uin;
 @property(nonatomic) long long msgUid; // @synthesize msgUid=_msgUid;
+@property(nonatomic) _Bool hasConsumed; // @synthesize hasConsumed=_hasConsumed;
 @property(nonatomic) _Bool hasShownForRedPoint; // @synthesize hasShownForRedPoint=_hasShownForRedPoint;
+@property(retain, nonatomic) NSString *diandianCookie; // @synthesize diandianCookie=_diandianCookie;
 @property(nonatomic) unsigned long long msgTime; // @synthesize msgTime=_msgTime;
+- (void).cxx_destruct;
 - (id)description;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;

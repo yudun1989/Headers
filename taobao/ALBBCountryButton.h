@@ -13,15 +13,15 @@
 
 @interface ALBBCountryButton : UIButton <ALBBCountryListViewControllerDelegate>
 {
-    int _type;
     ALBBCountryCode *_selectedCountry;
     UILabel *_countryLabel;
     UIImageView *_accessoryView;
     UINavigationController *_sourceController;
     id <ALBBCountryBtnDelegate> _delegate;
+    unsigned long long _type;
 }
 
-@property(nonatomic) int type; // @synthesize type=_type;
+@property(nonatomic) unsigned long long type; // @synthesize type=_type;
 @property(nonatomic) __weak id <ALBBCountryBtnDelegate> delegate; // @synthesize delegate=_delegate;
 @property(nonatomic) __weak UINavigationController *sourceController; // @synthesize sourceController=_sourceController;
 @property(retain, nonatomic) UIImageView *accessoryView; // @synthesize accessoryView=_accessoryView;
@@ -34,7 +34,7 @@
 - (void)loginGetCountryCode:(CDUnknownBlockType)arg1;
 - (void)goToSelectCountry;
 - (void)onCountryClick;
-- (id)initWithType:(int)arg1;
+- (id)initWithType:(unsigned long long)arg1;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

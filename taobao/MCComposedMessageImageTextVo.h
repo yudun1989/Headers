@@ -4,19 +4,19 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-#import "MCComposedMessageVo.h"
+#import "MCComposedMessageTextExtVo.h"
 
 @class NSString;
 
-@interface MCComposedMessageImageTextVo : MCComposedMessageVo
+@interface MCComposedMessageImageTextVo : MCComposedMessageTextExtVo
 {
     NSString *_imageUrl;
-    NSString *_text;
-    NSString *_ext;
+    NSString *_image;
+    long long _imageType;
 }
 
-@property(retain, nonatomic) NSString *ext; // @synthesize ext=_ext;
-@property(retain, nonatomic) NSString *text; // @synthesize text=_text;
+@property(nonatomic) long long imageType; // @synthesize imageType=_imageType;
+@property(retain, nonatomic) NSString *image; // @synthesize image=_image;
 @property(retain, nonatomic) NSString *imageUrl; // @synthesize imageUrl=_imageUrl;
 - (void).cxx_destruct;
 - (id)initWithDatas:(id)arg1;

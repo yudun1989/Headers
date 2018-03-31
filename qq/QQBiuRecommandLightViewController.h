@@ -42,9 +42,11 @@
     long long _topGuideStyle;
     NSArray *_closeFriends;
     unsigned long long _chooseFriendMode;
+    NSString *_commentFromCommentVC;
 }
 
 + (long long)biuEditMaxCount;
+@property(copy, nonatomic) NSString *commentFromCommentVC; // @synthesize commentFromCommentVC=_commentFromCommentVC;
 @property(nonatomic) unsigned long long chooseFriendMode; // @synthesize chooseFriendMode=_chooseFriendMode;
 @property(copy, nonatomic) NSArray *closeFriends; // @synthesize closeFriends=_closeFriends;
 @property(nonatomic) long long topGuideStyle; // @synthesize topGuideStyle=_topGuideStyle;
@@ -94,6 +96,7 @@
 - (void)showMyFacePanel;
 - (id)base64decode:(id)arg1;
 - (void)onBiuClick:(id)arg1;
+- (void)sendBiuToServerBy83e;
 - (_Bool)shouldIgnoreThisClick:(float)arg1;
 - (_Bool)checkSendOrShowTips;
 - (unsigned long long)getBiuSrc;
@@ -119,6 +122,7 @@
 - (void)createCloseButton;
 - (void)createTopCoverView;
 - (void)viewDidLoad;
+- (double)getTopCoverHeight;
 - (void)onEnterForeGround;
 - (void)setBiuSendResultBlockForWebJs:(CDUnknownBlockType)arg1;
 - (void)dealloc;
@@ -130,6 +134,9 @@
 - (id)initWithJSWebQuery:(id)arg1;
 - (void)popQQController:(_Bool)arg1;
 - (void)createNewSociallizeInfoIfEmpty;
+- (id)initWithAlbumModel:(id)arg1 adTag:(unsigned long long)arg2 newComment:(id)arg3;
+- (id)initWithAlbumModel:(id)arg1 adTag:(unsigned long long)arg2;
+- (id)initWithVideoModel:(id)arg1 adTag:(unsigned long long)arg2 multiLevel:(id)arg3;
 - (id)initWithVideoModel:(id)arg1 adTag:(unsigned long long)arg2;
 - (id)copyChannelArticleForBiuEditor:(id)arg1;
 - (id)initWithArticleModel:(id)arg1 adTag:(unsigned long long)arg2;

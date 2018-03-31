@@ -11,6 +11,7 @@
 @interface APGlobalInfoManager : QQGroupPropertyModel
 {
     _Bool _autoWxSign;
+    _Bool _hideWxSignBackTip;
     _Bool _report;
     _Bool _showRiskAlert;
     NSString *_OrderAndDistUrl;
@@ -41,6 +42,7 @@
 @property(nonatomic) _Bool showRiskAlert; // @synthesize showRiskAlert=_showRiskAlert;
 @property(nonatomic) _Bool report; // @synthesize report=_report;
 @property(retain, nonatomic) NSDictionary *dictExtra; // @synthesize dictExtra=_dictExtra;
+@property(nonatomic) _Bool hideWxSignBackTip; // @synthesize hideWxSignBackTip=_hideWxSignBackTip;
 @property(nonatomic) _Bool autoWxSign; // @synthesize autoWxSign=_autoWxSign;
 @property(readonly, nonatomic) APMidasIapOrderInfo *iapOrderInfo; // @synthesize iapOrderInfo=_iapOrderInfo;
 @property(readonly, nonatomic) APMidasUserInfo *userInfo; // @synthesize userInfo=_userInfo;
@@ -61,6 +63,7 @@
 @property(readonly, nonatomic) NSString *ChangeKeyUrl; // @synthesize ChangeKeyUrl=_ChangeKeyUrl;
 @property(readonly, nonatomic) NSString *GetBalanceUrl; // @synthesize GetBalanceUrl=_GetBalanceUrl;
 @property(readonly, nonatomic) NSString *OrderAndDistUrl; // @synthesize OrderAndDistUrl=_OrderAndDistUrl;
+- (void)parseAutoJump:(long long)arg1;
 - (void)reset;
 - (id)getUUID;
 - (void)resetUUID;
@@ -106,7 +109,6 @@
 @property(retain, nonatomic) NSString *saveSuccessUrl; // @dynamic saveSuccessUrl;
 @property(nonatomic) _Bool sendReport; // @dynamic sendReport;
 @property(nonatomic) _Bool shouldIgnoreVerifyCodeOrMb; // @dynamic shouldIgnoreVerifyCodeOrMb;
-@property(retain, nonatomic) NSMutableArray *showCommonChannelList; // @dynamic showCommonChannelList;
 @property(nonatomic) _Bool showNum; // @dynamic showNum;
 @property(nonatomic) _Bool showOtherAmount; // @dynamic showOtherAmount;
 @property(retain, nonatomic) NSString *smsCode; // @dynamic smsCode;

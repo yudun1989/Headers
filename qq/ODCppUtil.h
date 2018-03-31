@@ -10,6 +10,7 @@
 {
 }
 
++ (int)numberWithHexString:(id)arg1;
 + (id)JSONObjectWithData:(id)arg1 options:(unsigned long long)arg2;
 + (id)dataWithJSONObject:(id)arg1 options:(unsigned long long)arg2;
 + (id)PBProxy_removeWupHeadBuffer:(char *)arg1 length:(int)arg2;

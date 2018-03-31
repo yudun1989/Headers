@@ -13,7 +13,7 @@
 {
     _Bool _openDebugLog;
     _Bool _isNetWorkOK;
-    int _loginGroup;
+    unsigned long long _loginGroup;
     NSString *_oceanAppkey;
     NSString *_appkey;
     NSString *_securitykey;
@@ -39,12 +39,12 @@
 @property(nonatomic) _Bool isNetWorkOK; // @synthesize isNetWorkOK=_isNetWorkOK;
 @property(nonatomic) _Bool openDebugLog; // @synthesize openDebugLog=_openDebugLog;
 @property(copy, nonatomic) NSString *oceanAppkey; // @synthesize oceanAppkey=_oceanAppkey;
-@property(nonatomic) int loginGroup; // @synthesize loginGroup=_loginGroup;
+@property(nonatomic) unsigned long long loginGroup; // @synthesize loginGroup=_loginGroup;
 - (void).cxx_destruct;
 - (void)reachabilityChanged:(id)arg1;
 - (void)updateNetWorkStatus;
 - (void)dealloc;
-- (void)accountInit:(int)arg1;
+- (void)accountInit:(unsigned long long)arg1;
 - (id)getAppKey;
 - (id)jsonToArray:(id)arg1;
 - (void)updateUrls;

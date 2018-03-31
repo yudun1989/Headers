@@ -29,6 +29,7 @@
 - (void)metaViewDidTap:(id)arg1 withFold:(_Bool)arg2;
 - (void)didTapMusic:(id)arg1;
 - (void)didTapLocation:(id)arg1;
+- (void)componentDidAppear:(_Bool)arg1;
 - (void)updateFollowItem:(_Bool)arg1;
 - (void)didAttachToContainer:(id)arg1 inView:(id)arg2;
 - (void)viewDidLoad;

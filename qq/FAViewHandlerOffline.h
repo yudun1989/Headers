@@ -43,7 +43,6 @@
 - (_Bool)onVideoPlayEnd:(long long)arg1;
 - (void)onVideoStopPlay;
 - (void)didFileUrlFetch:(id)arg1;
-- (_Bool)canPreloadVideo;
 - (id)getVideoViewData;
 - (void)onMenuClick:(int)arg1;
 - (int)getMenuFlag;

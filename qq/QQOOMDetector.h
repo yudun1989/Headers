@@ -25,9 +25,10 @@
 - (id)OOMZipPath;
 - (id)OOMDataPath;
 - (id)getRdmUUid;
-- (void)uploadAllOOMData;
+- (void)uploadOOMData:(id)arg1;
+- (void)clearOOMLog;
+- (id)getOOMDataByUUID:(id)arg1;
 - (void)stopMonitor;
-- (void)detectorTask;
 - (void)startMonitor:(double)arg1 VMMonitor:(_Bool)arg2 flushInterval:(double)arg3 threshHoldInbytes:(unsigned long long)arg4 flushAllTheTime:(_Bool)arg5 needContinueAfterOverflow:(_Bool)arg6 version:(int)arg7 stackDepth:(unsigned long long)arg8 needSystemStack:(_Bool)arg9 needStackWithoutApp:(_Bool)arg10;
 - (void)startMonitorChunkMalloc;
 - (void)setThreshHold:(unsigned long long)arg1;

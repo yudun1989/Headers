@@ -14,7 +14,7 @@
 {
 }
 
-- (id)parseExpression:(id)arg1 withDataDict:(id)arg2;
+- (id)parseExpression:(id)arg1 withData:(id)arg2 module:(id)arg3 context:(id)arg4;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

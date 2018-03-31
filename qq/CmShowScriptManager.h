@@ -22,11 +22,14 @@
 - (void)applicationWillEnterForeground:(id)arg1;
 - (void)callBackToBk:(id)arg1 retCode:(int)arg2 data:(id)arg3;
 - (void)sendLocalCmd:(id)arg1 data:(id)arg2;
+- (void)spriteInfoChangedPets:(id)arg1;
 - (void)spriteInfoChanged:(int)arg1 uinList:(id)arg2;
+- (void)notityPetStatusChanged;
 - (void)stopAllTasksWithType:(_Bool)arg1;
 - (void)addBubbbleWithContent:(id)arg1 bubbleUin:(id)arg2 bubbleFile:(id)arg3;
 - (void)setSpriteVisibility:(int)arg1;
 - (void)didClickSprite:(int)arg1 url:(id)arg2;
+- (void)didClickSprite:(int)arg1 url:(id)arg2 nodeName:(id)arg3;
 - (void)spriteActionUpdateFinished:(id)arg1 isSuccess:(_Bool)arg2 taskId:(id)arg3 extraInfo:(id)arg4;
 - (void)spriteRoleAndDressUpdateFinished:(id)arg1 isSuccess:(_Bool)arg2 extraInfo:(id)arg3;
 - (void)spritePanelStatusChange:(int)arg1;

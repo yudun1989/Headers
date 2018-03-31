@@ -12,7 +12,7 @@
 
 + (long long)contentModeForScaleType:(id)arg1;
 - (void)view:(id)arg1 module:(id)arg2 tImageUrl:(id)arg3 dWidth:(id)arg4 dHeight:(id)arg5;
-- (void)view:(id)arg1 tImage:(id)arg2;
+- (void)view:(id)arg1 tImage:(id)arg2 tLocalImageName:(id)arg3;
 - (void)view:(id)arg1 tScaleType:(id)arg2;
 - (id)initializeView;
 

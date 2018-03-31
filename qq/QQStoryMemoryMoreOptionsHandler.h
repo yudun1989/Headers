@@ -25,6 +25,7 @@
 - (void)onClickMoreProfileBtn;
 - (void)handleReportRsp:(id)arg1;
 - (void)handleTipOffWithIndex:(long long)arg1;
+- (long long)tipOffEviTypeWithButtonIndex:(long long)arg1;
 - (void)handleTipOff_3;
 - (void)handleTipOff_2;
 - (void)handleTipOff_1;

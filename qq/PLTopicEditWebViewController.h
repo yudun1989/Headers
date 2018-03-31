@@ -15,13 +15,6 @@
 
 @property(nonatomic) __weak id <PLTopicEditWebViewControllerProtocol> webMessageDelegate; // @synthesize webMessageDelegate=_webMessageDelegate;
 - (void).cxx_destruct;
-- (id)jsonFormatWithTopicTextList:(id)arg1;
-- (id)fetchTopicTextList:(id)arg1;
-- (void)onSetTopicLabelMessage:(id)arg1;
-- (void)onCloseMessage:(id)arg1;
-- (void)backToPreViewController;
-- (id)initWithType:(unsigned long long)arg1 inputTextList:(id)arg2;
-- (void)dealloc;
 
 @end
 

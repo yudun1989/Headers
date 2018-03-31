@@ -14,12 +14,7 @@
 @interface TTAVPreloader : NSObject <NotifyHandler>
 {
     // Error parsing type: ^{AVPreload=^^?^^?^v^?^?*ii{atomic<int>=Ai}^{APPWRAPPER}^{AVLooper}^{AVHandler}^{AVThreadPool}^{AVTaskManager}^{AVFileManager}{recursive_mutex={_opaque_pthread_mutex_t=q[56c]}}{recursive_mutex={_opaque_pthread_mutex_t=q[56c]}}{map<long long, com::ss::ttm::preloader::AVTask *, std::__1::less<long long>, std::__1::allocator<std::__1::pair<const long long, com::ss::ttm::preloader::AVTask *> > >={__tree<std::__1::__value_type<long long, com::ss::ttm::preloader::AVTask *>, std::__1::__map_value_compare<long long, std::__1::__value_type<long long, com::ss::ttm::preloader::AVTask *>, std::__1::less<long long>, true>, std::__1::allocator<std::__1::__value_type<long long, com::ss::ttm::preloader::AVTask *> > >=^{__tree_end_node<std::__1::__tree_node_base<void *> *>}{__compressed_pair<std::__1::__tree_end_node<std::__1::__tree_node_base<void *> *>, std::__1::allocator<std::__1::__tree_node<std::__1::__value_type<long long, com::ss::ttm::preloader::AVTask *>, void *> > >={__tree_end_node<std::__1::__tree_node_base<void *> *>=^{__tree_node_base<void *>}}}{__compressed_pair<unsigned long, std::__1::__map_value_compare<long long, std::__1::__value_type<long long, com::ss::ttm::preloader::AVTask *>, std::__1::less<long long>, true> >=Q}}}}, name: _preloader
-    struct ApApp {
-        id;
-        void *;
-        void *;
-        void *;
-    } *_wrapper;
+    struct ApApp *_wrapper;
     TTAVPreloaderConfig *_config;
     id <TTAVPreloaderDelegate> _delegate;
     NSMutableArray *_logs;

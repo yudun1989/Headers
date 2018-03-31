@@ -29,6 +29,7 @@
 - (id)readBubbleClothModelsWithId:(id)arg1;
 - (id)readBubbleClothModels;
 - (id)appearanceActionInfoWithId:(long long)arg1;
+- (id)readDefaultAction:(long long)arg1 Type:(id)arg2;
 - (id)readDefaultAction:(long long)arg1;
 - (id)readDefaultActionWitType:(id)arg1 needLoadData:(_Bool)arg2;
 - (id)readDefaultActionWithPath:(id)arg1 idstr:(id)arg2;

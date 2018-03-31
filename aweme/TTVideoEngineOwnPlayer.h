@@ -47,6 +47,7 @@
     _Bool _ksyHevcDecode;
     _Bool _isPreparedToPlay;
     int _cacheFileMode;
+    int _testSpeedMode;
     id <TTVideoPlayerStateProtocol> _delegate;
     double _currentPlaybackTime;
     double _duration;
@@ -69,6 +70,7 @@
 @property(copy, nonatomic) NSString *decryptionKey; // @synthesize decryptionKey=_decryptionKey;
 @property(copy, nonatomic) NSString *fileKey; // @synthesize fileKey=_fileKey;
 @property(copy, nonatomic) NSString *filePath; // @synthesize filePath=_filePath;
+@property(nonatomic) int testSpeedMode; // @synthesize testSpeedMode=_testSpeedMode;
 @property(nonatomic) int cacheFileMode; // @synthesize cacheFileMode=_cacheFileMode;
 @property(readonly, nonatomic) TTVideoEngineAVPlayerItemAccessLog *accessLog; // @synthesize accessLog=_accesslog;
 @property(nonatomic) __weak id <AVAssetResourceLoaderDelegate> resourceLoaderDelegate; // @synthesize resourceLoaderDelegate=_resourceLoaderDelegate;

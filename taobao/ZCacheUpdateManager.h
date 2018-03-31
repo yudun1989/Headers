@@ -37,15 +37,14 @@
 @property(nonatomic) unsigned long long maxConcurrentOperationCount; // @synthesize maxConcurrentOperationCount=_maxConcurrentOperationCount;
 - (void).cxx_destruct;
 - (void)operationCompleted:(id)arg1;
-- (id)nextOperationUnsafe;
 - (void)reportPackageQueue;
 - (void)startUpdateUnsafe;
 - (unsigned long long)cleanInvalidApps:(_Bool)arg1;
 - (void)errorRecovery;
-- (void)addInfoToTaskQueueUnsafe:(id)arg1;
+- (void)addOperationToTaskQueueUnsafe:(id)arg1;
 - (void)addToTaskQueueUnsafe:(id)arg1;
 - (void)update;
-- (_Bool)updateApp:(id)arg1 withCallback:(CDUnknownBlockType)arg2 withProgress:(CDUnknownBlockType)arg3;
+- (id)updateApp:(id)arg1;
 - (void)registerUpdateListener:(CDUnknownBlockType)arg1 withAppName:(id)arg2;
 - (void)setValidApps:(id)arg1;
 - (void)dealloc;

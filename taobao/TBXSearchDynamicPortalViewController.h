@@ -56,6 +56,7 @@
 - (void)reloadDataWithURL:(id)arg1;
 - (void)viewDidAppear:(_Bool)arg1;
 - (void)viewDidLoad;
+- (id)getProcessedURL;
 - (id)initWithURL:(id)arg1 andFrom:(id)arg2;
 
 // Remaining properties

@@ -18,7 +18,7 @@
 
 // Remaining properties
 @property(retain, nonatomic) NSString *appId; // @dynamic appId;
-@property(nonatomic) _Bool autoJump; // @dynamic autoJump;
+@property(nonatomic) long long autoJump; // @dynamic autoJump;
 @property(retain, nonatomic) NSString *bargainorId; // @dynamic bargainorId;
 @property(retain, nonatomic) NSString *extend; // @dynamic extend;
 @property(retain, nonatomic) NSString *nonceStr; // @dynamic nonceStr;

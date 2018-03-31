@@ -28,6 +28,7 @@
     id <IMsgObserver> _expertMessageHandler;
     id <IMsgObserver> _tribeMessageHandler;
     id <IMsgObserver> _campusCircleMessageHandler;
+    id <IMsgObserver> _honestSayMessageHandler;
     id <IMsgObserver> _walletMovieTicketMessageHandler;
 }
 

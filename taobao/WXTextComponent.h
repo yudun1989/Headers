@@ -32,6 +32,7 @@
     struct _opaque_pthread_mutex_t _ctAttributedStringMutex;
     struct _opaque_pthread_mutexattr_t _propertMutexAttr;
     _Bool _observerIconfont;
+    _Bool _enableCopy;
     NSString *_text;
     NSString *_useCoreTextAttr;
 }
@@ -61,6 +62,7 @@
 - (id)drawRect:(struct CGRect)arg1;
 - (_Bool)needsDrawRect;
 - (id)loadView;
+- (void)displayMenuController:(id)arg1;
 - (void)viewDidLoad;
 - (void)setNeedsLayout;
 - (void)setNeedsRepaint;

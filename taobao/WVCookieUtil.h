@@ -10,6 +10,7 @@
 {
 }
 
++ (id)readCookiesAsString:(id)arg1;
 + (id)readCookies:(id)arg1;
 + (_Bool)setCookieWithDictionary:(id)arg1 forURL:(id)arg2;
 + (_Bool)setCookieWithString:(id)arg1 forURL:(id)arg2;

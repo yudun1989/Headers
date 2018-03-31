@@ -6,7 +6,7 @@
 
 #import <UIKit/UIView.h>
 
-@class TBSearchIconViewComponent, TBSearchImageView, TBSearchPropTagView, TBSearchShopRateImageView, UILabel;
+@class TBSearchIconViewComponent, TBSearchImageView, TBSearchShopRateImageView, UILabel;
 
 @interface TBShopSearchNewShopView : UIView
 {
@@ -15,14 +15,12 @@
     UILabel *_enterShopLabel;
     TBSearchShopRateImageView *_rateImageView;
     TBSearchIconViewComponent *_iconViewComponent;
-    TBSearchPropTagView *_propTagView;
     UIView *_logoRightFirstLineView;
     TBSearchImageView *_backgroundImageView;
 }
 
 @property(retain, nonatomic) TBSearchImageView *backgroundImageView; // @synthesize backgroundImageView=_backgroundImageView;
 @property(retain, nonatomic) UIView *logoRightFirstLineView; // @synthesize logoRightFirstLineView=_logoRightFirstLineView;
-@property(retain, nonatomic) TBSearchPropTagView *propTagView; // @synthesize propTagView=_propTagView;
 @property(retain, nonatomic) TBSearchIconViewComponent *iconViewComponent; // @synthesize iconViewComponent=_iconViewComponent;
 @property(retain, nonatomic) TBSearchShopRateImageView *rateImageView; // @synthesize rateImageView=_rateImageView;
 @property(retain, nonatomic) UILabel *enterShopLabel; // @synthesize enterShopLabel=_enterShopLabel;

@@ -108,7 +108,6 @@
 - (void)handleUploadAction;
 - (_Bool)isNeedShareOutSiteUGCRight;
 - (_Bool)isSupportShareOutsiteRight;
-- (id)fetchMessageTips:(id)arg1 isNeedShareOutSiteUGCRight:(_Bool)arg2;
 - (void)onWeixinMomment;
 - (void)onClickedWeixin;
 - (void)onClickedQQ;

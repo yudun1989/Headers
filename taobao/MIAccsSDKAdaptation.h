@@ -24,6 +24,7 @@
 - (void)bindApp;
 - (void)bindAppWithAppleToken:(id)arg1 resultsBlock:(CDUnknownBlockType)arg2;
 - (void)startAccs;
+- (void)dealloc;
 - (id)init;
 
 @end

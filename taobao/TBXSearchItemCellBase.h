@@ -27,7 +27,6 @@
     UIButton *_sameBtn;
     UIButton *_similarBtn;
     TBXSearchItemCellMaskBase *_maskView;
-    UIView *_splitLine;
     NSArray *_iconListArray;
     UILabel *_locLabel;
     UILabel *_daySoldLabel;
@@ -46,7 +45,6 @@
 @property(retain, nonatomic) UILabel *daySoldLabel; // @synthesize daySoldLabel=_daySoldLabel;
 @property(retain, nonatomic) UILabel *locLabel; // @synthesize locLabel=_locLabel;
 @property(retain, nonatomic) NSArray *iconListArray; // @synthesize iconListArray=_iconListArray;
-@property(retain, nonatomic) UIView *splitLine; // @synthesize splitLine=_splitLine;
 @property(retain, nonatomic) TBXSearchItemCellMaskBase *maskView; // @synthesize maskView=_maskView;
 @property(retain, nonatomic) UIButton *similarBtn; // @synthesize similarBtn=_similarBtn;
 @property(retain, nonatomic) UIButton *sameBtn; // @synthesize sameBtn=_sameBtn;

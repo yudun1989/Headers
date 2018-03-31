@@ -33,7 +33,9 @@
 - (void)onMemberAddToInitGroup:(id)arg1;
 - (void)updateAvatarUinList:(id)arg1;
 - (void)updateAvatarUinList:(id)arg1 forGroup:(unsigned long long)arg2;
+- (id)getAvatarUinListWithoutSelf:(unsigned long long)arg1;
 - (id)getAvatarUinList:(unsigned long long)arg1;
+- (void)setIsModifyGrpName:(id)arg1;
 - (unsigned long long)getModifyGroupNameState:(unsigned long long)arg1;
 - (unsigned long long)getModifyGroupFaceState:(unsigned long long)arg1;
 - (unsigned long long)getGroupState:(unsigned long long)arg1;

@@ -9,8 +9,9 @@
 @class QQGroupVideoMemberListViewController, UIViewController;
 
 @protocol MemberListViewControllerDelegate <NSObject>
-- (void)dismissListView;
-- (void)dismissViewController:(UIViewController *)arg1;
 - (void)viewController:(QQGroupVideoMemberListViewController *)arg1 memberSelected:(unsigned long long)arg2;
+
+@optional
+- (void)dismissViewController:(UIViewController *)arg1;
 @end
 

@@ -7,6 +7,7 @@
 #import <UIKit/UIApplication.h>
 
 @interface UIApplication (hookMethod)
+- (void)qqSetNetworkActivityIndicatorVisible:(_Bool)arg1;
 - (void)qqSetApplicationIconBadgeNumber:(long long)arg1;
 @end
 

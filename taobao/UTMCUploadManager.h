@@ -12,11 +12,11 @@
 
 @interface UTMCUploadManager : NSObject <UTMCLifeCycleProtocol>
 {
-    int DEFAULT_MODE;
-    int _allowedNetoworkStatus;
+    unsigned long long DEFAULT_MODE;
+    unsigned long long _allowedNetoworkStatus;
     _Bool isFirst;
-    int _currentMode;
     UTMCTask *_task;
+    unsigned long long _currentMode;
     long long _currentUploadInterval;
     long long _currentBatchThreshold;
     CDUnknownBlockType _listenerBlock;
@@ -27,14 +27,14 @@
 @property(copy, nonatomic) CDUnknownBlockType listenerBlock; // @synthesize listenerBlock=_listenerBlock;
 @property long long currentBatchThreshold; // @synthesize currentBatchThreshold=_currentBatchThreshold;
 @property long long currentUploadInterval; // @synthesize currentUploadInterval=_currentUploadInterval;
-@property int currentMode; // @synthesize currentMode=_currentMode;
+@property unsigned long long currentMode; // @synthesize currentMode=_currentMode;
 @property(retain, nonatomic) UTMCTask *task; // @synthesize task=_task;
 - (void).cxx_destruct;
-- (void)startWithMode:(int)arg1;
-- (void)setAllowedNetoworkStatus:(int)arg1;
+- (void)startWithMode:(unsigned long long)arg1;
+- (void)setAllowedNetoworkStatus:(unsigned long long)arg1;
 - (void)setBatchThreshold:(long long)arg1;
 - (void)setInterval:(long long)arg1;
-- (void)setMode:(int)arg1;
+- (void)setMode:(unsigned long long)arg1;
 - (void)stop;
 - (void)start;
 - (void)switchBackGround;

@@ -34,18 +34,20 @@
     TBStoryVideoDesModel *_videoModel;
     TBStoryPlayerPanelView *_panelView;
     id _delegate;
+    unsigned long long _playStrategy;
+    TBVideoPublishPerformLogger *_performLogger;
     TBPlayerLoaderRequestInterruptManager *_resouerLoader;
     AVURLAsset *_videoURLAsset;
     NSURL *_localPath;
     UIImage *_doodleImg;
-    TBVideoPublishPerformLogger *_performLogger;
 }
 
-@property(retain, nonatomic) TBVideoPublishPerformLogger *performLogger; // @synthesize performLogger=_performLogger;
 @property(retain, nonatomic) UIImage *doodleImg; // @synthesize doodleImg=_doodleImg;
 @property(retain, nonatomic) NSURL *localPath; // @synthesize localPath=_localPath;
 @property(retain, nonatomic) AVURLAsset *videoURLAsset; // @synthesize videoURLAsset=_videoURLAsset;
 @property(retain, nonatomic) TBPlayerLoaderRequestInterruptManager *resouerLoader; // @synthesize resouerLoader=_resouerLoader;
+@property(retain, nonatomic) TBVideoPublishPerformLogger *performLogger; // @synthesize performLogger=_performLogger;
+@property(nonatomic) unsigned long long playStrategy; // @synthesize playStrategy=_playStrategy;
 @property(nonatomic) __weak id delegate; // @synthesize delegate=_delegate;
 @property(retain, nonatomic) TBStoryPlayerPanelView *panelView; // @synthesize panelView=_panelView;
 @property(retain, nonatomic) TBStoryVideoDesModel *videoModel; // @synthesize videoModel=_videoModel;
@@ -67,6 +69,7 @@
 - (void)checkFileMd5:(id)arg1 status:(long long)arg2;
 - (void)TBStoryViewPlayProcess:(id)arg1 timeChange:(double)arg2 totalTime:(double)arg3;
 - (void)playVideoStucked;
+- (void)playerDidStartDataReport;
 - (void)TBStoryViewPlayDidStart:(id)arg1 totalTime:(double)arg2;
 - (void)TBStoryViewPlayWillStart:(id)arg1;
 - (void)TBStoryViewPlay:(id)arg1 playStatusChange:(int)arg2;
@@ -89,6 +92,7 @@
 - (void)getPlayVideoInfo;
 - (void)removeProcessView;
 - (void)addProcessView;
+- (_Bool)isPlayerLoading;
 - (void)destroyVideoPanel;
 - (void)destoryVideoPlayer;
 - (void)initVideoPanel;

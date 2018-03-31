@@ -20,6 +20,8 @@
 + (void)addEmojiStickerMsg:(id)arg1 toRichText:(struct RichText *)arg2;
 - (void)addGoldMsgInfoWithMsgBody:(MsgBody_ba4fc016 *)arg1 sendingModel:(id)arg2;
 - (void)setGoldMsgSendingModel:(id)arg1 withMsg:(id)arg2;
+- (void)addHonestSayMsgWithMsgBody:(MsgBody_ba4fc016 *)arg1 sendingModel:(id)arg2;
+- (void)setHonestSaySendingModel:(id)arg1 withMsg:(id)arg2;
 - (int)sendPbDoodleMsg:(id)arg1;
 - (int)sendPbHighBoomMessage:(id)arg1;
 - (int)sendPbFlashChatMessage:(id)arg1 shareAppInfo:(id)arg2;

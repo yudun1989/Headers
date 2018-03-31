@@ -36,6 +36,7 @@
 - (void)pauseMusicWithHash:(id)arg1 hash:(unsigned long long)arg2;
 - (unsigned long long)playSoundWithAMRFilePath:(id)arg1;
 - (unsigned long long)playSoundWithMP3FilePath:(id)arg1 loopCount:(int)arg2;
+- (unsigned long long)startSoundWithMP3FilePath:(id)arg1 loopCount:(int)arg2 Audio:(id)arg3;
 - (void)playBackgroundMusicWithMP3FilePath:(id)arg1 loopCount:(int)arg2;
 - (_Bool)canPlayMuisic;
 - (void)resumeMusic;

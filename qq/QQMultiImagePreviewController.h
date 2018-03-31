@@ -29,6 +29,7 @@
     float _maxWPixels;
     float _maxSize;
     QzoneFeedModel *_feedModelSelectedTroopAlbum;
+    unsigned long long _maxSelectedSize;
     long long _maxVideoNum;
     NSNumber *_videoFileSizeLimit;
     long long _maxVideoDur;
@@ -48,6 +49,7 @@
 @property(nonatomic) float maxHPixels; // @synthesize maxHPixels=_maxHPixels;
 @property(nonatomic) float minHWProportion; // @synthesize minHWProportion=_minHWProportion;
 @property(nonatomic) float maxHWProportion; // @synthesize maxHWProportion=_maxHWProportion;
+@property(nonatomic) unsigned long long maxSelectedSize; // @synthesize maxSelectedSize=_maxSelectedSize;
 @property(nonatomic) _Bool isSuperShowSend2TroopAlbumBar; // @synthesize isSuperShowSend2TroopAlbumBar=_isSuperShowSend2TroopAlbumBar;
 @property(nonatomic) _Bool isCheckboxSelected; // @synthesize isCheckboxSelected=_isCheckboxSelected;
 @property(retain, nonatomic) QzoneFeedModel *feedModelSelectedTroopAlbum; // @synthesize feedModelSelectedTroopAlbum=_feedModelSelectedTroopAlbum;
@@ -73,6 +75,7 @@
 - (void)QQImagePickerBottomBarEditButtonDidClick;
 - (void)cleanCheckAvailableCompleteBlock;
 - (void)checkAvailable:(id)arg1 completeBlock:(CDUnknownBlockType)arg2;
+- (unsigned long long)selectedListSize;
 - (void)setBottomBarFlashButtonSelected:(_Bool)arg1;
 - (void)setBottomBarSizeButtonTitle:(id)arg1 selected:(_Bool)arg2;
 - (void)resetBottomBarState;

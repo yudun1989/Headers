@@ -16,7 +16,6 @@
 
 @property(nonatomic) struct CGSize emojiSize; // @synthesize emojiSize=_emojiSize;
 @property(retain, nonatomic) NSString *emojiTag; // @synthesize emojiTag=_emojiTag;
-- (struct CGRect)attachmentBoundsForTextContainer:(id)arg1 proposedLineFragment:(struct CGRect)arg2 glyphPosition:(struct CGPoint)arg3 characterIndex:(unsigned long long)arg4;
 
 @end
 

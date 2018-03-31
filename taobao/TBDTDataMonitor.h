@@ -9,14 +9,17 @@
 #import "TBDataMonitorProtocol-Protocol.h"
 
 @class NSString;
+@protocol TBDataMonitorProtocol;
 
 @interface TBDTDataMonitor : NSObject <TBDataMonitorProtocol>
 {
     id _tlog;
+    id <TBDataMonitorProtocol> _monitorProxy;
 }
 
 + (void)setDefaultMonitor:(id)arg1;
 + (id)defaultMonitor;
+@property(retain, nonatomic) id <TBDataMonitorProtocol> monitorProxy; // @synthesize monitorProxy=_monitorProxy;
 @property(retain, nonatomic) id tlog; // @synthesize tlog=_tlog;
 - (void).cxx_destruct;
 - (void)log:(id)arg1;

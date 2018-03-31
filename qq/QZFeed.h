@@ -6,9 +6,7 @@
 
 #import <Foundation/NSObject.h>
 
-#import <QQMainProject/NSCoding-Protocol.h>
-
-@interface QZFeed : NSObject <NSCoding>
+@interface QZFeed : NSObject
 {
 }
 

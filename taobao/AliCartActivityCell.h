@@ -22,6 +22,7 @@
 @property(nonatomic) __weak id <AliCartBizProtocol> sourceTarget; // @synthesize sourceTarget=_sourceTarget;
 @property(retain, nonatomic) AliCartEventManager *eventManager; // @synthesize eventManager=_eventManager;
 - (void).cxx_destruct;
+- (_Bool)inner_alicart_openURLFromSourceAndParams:(id)arg1 target:(id)arg2 extraInfo:(id)arg3;
 - (void)registerAction;
 - (void)bindData:(id)arg1;
 - (void)layoutSubviews;

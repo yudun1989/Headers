@@ -16,6 +16,7 @@
     double _cellheight;
 }
 
++ (double)heightWithItem:(id)arg1;
 + (id)createWithEmojiEggHeadString:(id)arg1 withEmojiEggDetailString:(id)arg2 withEmojiEggIconString:(id)arg3;
 @property(nonatomic) double cellheight; // @synthesize cellheight=_cellheight;
 @property(retain, nonatomic) NSString *emojiEggIconString; // @synthesize emojiEggIconString=_emojiEggIconString;

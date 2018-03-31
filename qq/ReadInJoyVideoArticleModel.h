@@ -11,9 +11,12 @@
 @interface ReadInJoyVideoArticleModel : NSObject
 {
     _Bool _hasEstimated;
+    _Bool _favorite;
+    _Bool _wantFavorite;
     unsigned int _video_play_count;
     int _busiType;
     unsigned int _strategy_id;
+    unsigned int _video_comment_count;
     unsigned long long _article_id;
     NSString *_innerUniqueID;
     NSString *_article_title;
@@ -55,6 +58,9 @@
     NSString *_flowForeCastCompleteNotReachable;
     NSString *_flowForeCastTipsNotReachable;
     NSString *_video_json;
+    double _currentTime;
+    unsigned long long _favoriteLocalID;
+    NSArray *_favoriteCidList;
     NSString *_biuData;
     struct CGSize _formatDurationSize;
     struct CGSize _flowForeCastXGSize;
@@ -67,6 +73,11 @@
 }
 
 @property(copy, nonatomic) NSString *biuData; // @synthesize biuData=_biuData;
+@property(copy, nonatomic) NSArray *favoriteCidList; // @synthesize favoriteCidList=_favoriteCidList;
+@property(nonatomic) unsigned long long favoriteLocalID; // @synthesize favoriteLocalID=_favoriteLocalID;
+@property(nonatomic) _Bool wantFavorite; // @synthesize wantFavorite=_wantFavorite;
+@property(nonatomic) _Bool favorite; // @synthesize favorite=_favorite;
+@property(nonatomic) double currentTime; // @synthesize currentTime=_currentTime;
 @property(copy, nonatomic) NSString *video_json; // @synthesize video_json=_video_json;
 @property(nonatomic) _Bool hasEstimated; // @synthesize hasEstimated=_hasEstimated;
 @property(nonatomic) struct CGSize flowForeCastTipsNotReachableSize; // @synthesize flowForeCastTipsNotReachableSize=_flowForeCastTipsNotReachableSize;
@@ -90,6 +101,7 @@
 @property(nonatomic) unsigned long long feedsID; // @synthesize feedsID=_feedsID;
 @property(retain, nonatomic) ReadInJoyChannelArticle *channelArticle; // @synthesize channelArticle=_channelArticle;
 @property(copy, nonatomic) NSString *video_url; // @synthesize video_url=_video_url;
+@property(nonatomic) unsigned int video_comment_count; // @synthesize video_comment_count=_video_comment_count;
 @property(copy, nonatomic) NSArray *recommend_barrage_text_list; // @synthesize recommend_barrage_text_list=_recommend_barrage_text_list;
 @property(copy, nonatomic) NSArray *rtp_label_list; // @synthesize rtp_label_list=_rtp_label_list;
 @property(nonatomic) unsigned long long uint64_pull_time; // @synthesize uint64_pull_time=_uint64_pull_time;

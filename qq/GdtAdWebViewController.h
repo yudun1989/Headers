@@ -15,6 +15,7 @@
 
 @property(nonatomic) __weak id <GdtAdWebViewControllerDelegate> adWebviewControllerDelagate; // @synthesize adWebviewControllerDelagate=_adWebviewControllerDelagate;
 - (void).cxx_destruct;
+- (void)viewWillAppear:(_Bool)arg1;
 - (void)webView:(id)arg1 didFailLoadWithError:(id)arg2;
 - (void)webViewDidFinishLoad:(id)arg1;
 - (void)webViewDidStartLoad:(id)arg1;

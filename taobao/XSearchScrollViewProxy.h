@@ -26,8 +26,6 @@
 @property(nonatomic) _Bool isExpand; // @synthesize isExpand=_isExpand;
 @property(nonatomic) __weak id <XSearchScrollViewProxyDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
-- (void)resetExpandAndContract;
-- (void)finishedExecute;
 - (void)scrollViewWillBeginDragging:(id)arg1;
 - (void)recoverScrollerView:(id)arg1;
 - (void)scrollViewDidScroll:(id)arg1;

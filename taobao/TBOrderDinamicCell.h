@@ -6,26 +6,20 @@
 
 #import "TBOrderBasicCell.h"
 
-@class NSMapTable, TBDViewItem, UILongPressGestureRecognizer;
+@class NSMutableDictionary, TBOrderDinamicModel, TDMDinamicItem;
 
 @interface TBOrderDinamicCell : TBOrderBasicCell
 {
-    id _model;
-    TBDViewItem *_viewItem;
-    NSMapTable *_additionalParameters;
-    UILongPressGestureRecognizer *_logRecognizer;
+    NSMutableDictionary *_extraData;
+    TBOrderDinamicModel *_model;
+    TDMDinamicItem *_viewItem;
 }
 
 + (double)cellHeight:(id)arg1 withWidth:(double)arg2 styleKitContext:(id)arg3 controller:(id)arg4;
-@property(retain, nonatomic) UILongPressGestureRecognizer *logRecognizer; // @synthesize logRecognizer=_logRecognizer;
-@property(retain, nonatomic) NSMapTable *additionalParameters; // @synthesize additionalParameters=_additionalParameters;
-@property(retain, nonatomic) TBDViewItem *viewItem; // @synthesize viewItem=_viewItem;
-@property(retain, nonatomic) id model; // @synthesize model=_model;
+@property(retain, nonatomic) TDMDinamicItem *viewItem; // @synthesize viewItem=_viewItem;
+@property(retain, nonatomic) TBOrderDinamicModel *model; // @synthesize model=_model;
+@property(retain, nonatomic) NSMutableDictionary *extraData; // @synthesize extraData=_extraData;
 - (void).cxx_destruct;
-- (id)viewGenerator;
-- (id)tableView;
-- (id)indexPath;
-- (void)addAdditionalParameters:(id)arg1 controller:(id)arg2;
 - (void)bindData:(id)arg1 controller:(id)arg2 styleKitContext:(id)arg3;
 - (void)viewLayout;
 

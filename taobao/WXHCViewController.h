@@ -4,25 +4,27 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-#import "WXViewController.h"
+#import <Foundation/NSObject.h>
 
 #import "WXViewControllerProtocol-Protocol.h"
 
-@class NSString;
+@class NSString, WXViewController;
 @protocol WXViewControllerProtocol;
 
-@interface WXHCViewController : WXViewController <WXViewControllerProtocol>
+@interface WXHCViewController : NSObject <WXViewControllerProtocol>
 {
     _Bool _isMainHC;
     _Bool _showMsgPanel;
     long long _tabIndex;
     id <WXViewControllerProtocol> _proxy;
+    WXViewController *_viewController;
 }
 
+@property(nonatomic) __weak WXViewController *viewController; // @synthesize viewController=_viewController;
 @property(nonatomic) _Bool showMsgPanel; // @synthesize showMsgPanel=_showMsgPanel;
 @property(nonatomic) __weak id <WXViewControllerProtocol> proxy; // @synthesize proxy=_proxy;
-@property(nonatomic) long long tabIndex; // @synthesize tabIndex=_tabIndex;
 @property(nonatomic) _Bool isMainHC; // @synthesize isMainHC=_isMainHC;
+@property(nonatomic) long long tabIndex; // @synthesize tabIndex=_tabIndex;
 - (void).cxx_destruct;
 - (void)wxDegradeToH5:(id)arg1;
 - (void)wxDidReceiveMemoryWarning;
@@ -30,17 +32,25 @@
 - (void)wxFinishRenderInstance;
 - (void)wxFailCreateInstance;
 - (void)wxFinishCreateInstance;
-- (void)reuseWeexPage;
-- (void)finishRenderMHCWeexPage;
-- (void)releaseMHCWeexPage;
 - (void)notificationReleaseInstance:(id)arg1;
-- (void)notifyReleaseWeexPage;
-- (void)destroyInstance;
+- (void)setNaviBarWithTabIndex:(id)arg1;
+- (id)md5ForWeexHC:(id)arg1;
+- (id)resourceContentForURL:(id)arg1 withHeader:(id *)arg2;
+- (_Bool)hasWeexCacheHeader:(id)arg1;
+- (_Bool)allowsControlNaviBarStyle;
+- (_Bool)wxJSBundleProcessWhenDownloadFinish:(id)arg1 request:(id)arg2 data:(id)arg3 error:(id)arg4 callback:(CDUnknownBlockType)arg5;
+- (void)wxInstanceRenderOnFinish;
+- (void)wxInstanceRenderOnFail:(id)arg1;
+- (_Bool)wxInstanceRenderOnReuse;
+- (_Bool)wxJSBundleCanUseCache:(id)arg1 callback:(CDUnknownBlockType)arg2;
 - (void)dealloc;
+- (void)sdkInstanceInstantiated:(id)arg1;
+- (void)destory:(_Bool)arg1;
+- (void)startAsyncDataRequest:(id)arg1 wxTpl:(id)arg2;
+- (void)addMsgPanel:(id)arg1;
 - (void)viewWillAppear:(_Bool)arg1;
 - (void)setDelegate:(id)arg1;
-- (id)initWithNavigatorURL:(id)arg1 withViewController:(id)arg2 withPageOptions:(id)arg3;
-- (id)initWithNavigatorURL:(id)arg1 withViewController:(id)arg2;
+- (id)initWithViewController:(id)arg1;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

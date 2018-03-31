@@ -20,7 +20,11 @@
 + (id)undealQueue;
 + (id)updateQueue;
 + (id)sharedInstance;
-- (void).cxx_destruct;
+@property(retain, nonatomic) NSTimer *nextAliveTimer; // @synthesize nextAliveTimer=_nextAliveTimer;
+@property(retain, nonatomic) NSMutableArray *undealRankArray; // @synthesize undealRankArray=_undealRankArray;
+@property(retain, nonatomic) NSMutableArray *rankArray; // @synthesize rankArray=_rankArray;
+@property(retain, nonatomic) NSMutableDictionary *undealFeedList; // @synthesize undealFeedList=_undealFeedList;
+@property(retain, nonatomic) NSMutableDictionary *updateFeedList; // @synthesize updateFeedList=_updateFeedList;
 - (_Bool)checkIfUpdateReplyList:(id)arg1 isTheSameWithLocalReplyList:(id)arg2;
 - (_Bool)checkIfUpdateCommentList:(id)arg1 isTheSameWithLocalList:(id)arg2;
 - (id)generateFeedCommentReplyListWithComment:(id)arg1;

@@ -6,7 +6,7 @@
 
 #import <Foundation/NSObject.h>
 
-@class NSInputStream, NSMutableArray, NSMutableData, NSMutableDictionary, NSRunLoop, NSString, NSURL, NSURLRequest;
+@class NSInputStream, NSMutableArray, NSMutableData, NSRunLoop, NSString, NSURL, NSURLRequest;
 @protocol NALHttpBodySendDelegate, SPDYRequestDataDelegate;
 
 @interface NWSPDYRequest : NSObject
@@ -14,7 +14,6 @@
     id <NALHttpBodySendDelegate> _httpBodySendDelegate;
     NSInputStream *_httpBodyStream;
     NSRunLoop *_httpBodyStreamReadingRunloop;
-    NSMutableDictionary *_spdyHeaders;
     NSMutableArray *_areaArray;
     NSMutableData *_stringArena;
     long long _capacity;
@@ -56,7 +55,7 @@
 - (void)_unscheduleNSInputStream;
 - (void)_scheduleNSInputStream;
 - (id)initWithURLRequest:(id)arg1 URLConnection:(id)arg2 hostSessionMgr:(id)arg3 delegate:(id)arg4;
-- (id)allSPDYHeaderFields:(id)arg1;
+- (id)prepareRequestHeaders:(id)arg1;
 - (_Bool)hasSuffix:(id)arg1;
 - (char *)copyStringToBuffer:(id)arg1;
 - (void)fixArena:(long long)arg1;

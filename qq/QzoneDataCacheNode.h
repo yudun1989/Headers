@@ -8,15 +8,16 @@
 
 #import <QQMainProject/NSCoding-Protocol.h>
 
-@class NSDate, NSString;
+@class NSData, NSDate, NSString;
 @protocol NSCoding;
 
 @interface QzoneDataCacheNode : NSObject <NSCoding>
 {
+    NSObject<NSCoding> *_innerData;
+    NSData *_innerEncodedData;
     _Bool _isResource;
     _Bool _needEncrypt;
     _Bool _alreadyWriteDisk;
-    id <NSCoding> _data;
     NSString *_key;
     NSDate *_expiredDate;
     long long _accessTimes;
@@ -32,13 +33,13 @@
 @property(nonatomic) long long accessTimes; // @synthesize accessTimes=_accessTimes;
 @property(retain, nonatomic) NSDate *expiredDate; // @synthesize expiredDate=_expiredDate;
 @property(copy, nonatomic) NSString *key; // @synthesize key=_key;
-@property(retain, nonatomic) id <NSCoding> data; // @synthesize data=_data;
 - (void).cxx_destruct;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)localFullPath:(id)arg1;
 - (_Bool)isExpiredNode;
 - (id)initWithData:(id)arg1 key:(id)arg2 isResource:(_Bool)arg3 uin:(long long)arg4 needEncrypt:(_Bool)arg5 expiredDate:(id)arg6;
+@property(retain, nonatomic) NSObject<NSCoding> *data;
 
 @end
 

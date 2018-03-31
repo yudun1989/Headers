@@ -18,6 +18,7 @@
 - (id)imageFromIconFontName:(id)arg1 size:(double)arg2 color:(id)arg3;
 - (id)imageFromLocalNamed:(id)arg1 imageView:(id)arg2;
 - (void)imageFromUrl:(id)arg1 imageView:(id)arg2 placeholder:(id)arg3 completion:(CDUnknownBlockType)arg4;
+- (void)imageFromUrl:(id)arg1 imageView:(id)arg2 imageBlock:(CDUnknownBlockType)arg3;
 - (void)imageFromUrl:(id)arg1 imageView:(id)arg2 completion:(CDUnknownBlockType)arg3;
 - (void)imageFromUrl:(id)arg1 imageView:(id)arg2 useOriginal:(_Bool)arg3;
 - (void)imageFromUrl:(id)arg1 imageView:(id)arg2;

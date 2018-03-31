@@ -10,10 +10,14 @@
 {
 }
 
++ (struct CGSize)calcOutputSize:(struct CGSize)arg1;
++ (void)setExportParams:(id)arg1 andVideoSize:(struct CGSize)arg2;
 + (id)imageFromSampleBuffer:(struct opaqueCMSampleBuffer *)arg1;
 + (void)exportVideoWithAsset:(id)arg1 outputPath:(id)arg2 startTime:(double)arg3 endTime:(double)arg4 completeBlock:(CDUnknownBlockType)arg5;
 + (void)exportVideo:(id)arg1 path:(id)arg2 videoComposition:(id)arg3 block:(CDUnknownBlockType)arg4;
++ (void)exportVideo:(id)arg1 path:(id)arg2 autoRotatd:(_Bool)arg3 presetName:(id)arg4 block:(CDUnknownBlockType)arg5;
 + (void)exportVideo:(id)arg1 path:(id)arg2 autoRotatd:(_Bool)arg3 block:(CDUnknownBlockType)arg4;
++ (void)exportVideoWithAsset:(id)arg1 path:(id)arg2 orientation:(long long)arg3 block:(CDUnknownBlockType)arg4;
 + (void)exportVideoWithAsset:(id)arg1 startTime:(double)arg2 endTime:(double)arg3 completeBlock:(CDUnknownBlockType)arg4;
 + (void)exportVideoWithPath:(id)arg1 startTime:(double)arg2 endTime:(double)arg3 completeBlock:(CDUnknownBlockType)arg4;
 + (id)clipVideo:(id)arg1 startTime:(double)arg2 stopTime:(double)arg3 error:(id *)arg4;

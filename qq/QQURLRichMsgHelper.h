@@ -6,12 +6,10 @@
 
 #import <Foundation/NSObject.h>
 
-#import <QQMainProject/IGroupVideoDelegate-Protocol.h>
-
 @class NSString, QQHttpClientSession, QQURLRichMsgData;
 @protocol QQURLRichMsgHelperDelegate;
 
-@interface QQURLRichMsgHelper : NSObject <IGroupVideoDelegate>
+@interface QQURLRichMsgHelper : NSObject
 {
     QQHttpClientSession *_session;
     NSString *_requestURL;
@@ -32,10 +30,6 @@
 @property(copy, nonatomic) NSString *richMsgURL; // @synthesize richMsgURL=_richMsgURL;
 @property(nonatomic) long long iRichServiceFrom; // @synthesize iRichServiceFrom=_iRichServiceFrom;
 @property(nonatomic) id <QQURLRichMsgHelperDelegate> deleate; // @synthesize deleate=_deleate;
-- (void)onRequestPlayURLComplete:(int)arg1 status:(int)arg2 playUrlInfo:(id)arg3;
-- (void)_finishTencentVideoRequest;
-- (_Bool)_requestTencentVideoMsg:(id)arg1 withCompletion:(CDUnknownBlockType)arg2;
-- (_Bool)_isTencentVideoUrl:(id)arg1;
 - (id)parseShortURL:(id)arg1;
 - (id)createPostBody:(id)arg1;
 - (void)processPreviewImage:(id)arg1;
@@ -55,12 +49,6 @@
 - (void)requestURLRichMsgBySSO:(id)arg1;
 - (void)dealloc;
 - (id)initWithDeleate:(id)arg1;
-
-// Remaining properties
-@property(readonly, copy) NSString *debugDescription;
-@property(readonly, copy) NSString *description;
-@property(readonly) unsigned long long hash;
-@property(readonly) Class superclass;
 
 @end
 

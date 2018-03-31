@@ -37,7 +37,6 @@
 - (id)configPath;
 - (_Bool)isEnabledWithBegin:(id)arg1 end:(id)arg2;
 - (_Bool)scanPortNeedHidden:(id)arg1;
-- (_Bool)userGuideWordingNeedShow:(id)arg1;
 - (id)init;
 - (void)dealloc;
 

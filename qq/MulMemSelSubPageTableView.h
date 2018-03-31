@@ -34,12 +34,16 @@
     UIButton *_selAllBtn;
     _Bool _selectAll;
     _Bool _isShowGroupOrganization;
+    _Bool _shouldMySelfGroupedSeparately;
+    NSString *_mySelfGroupedSeparatelySectionTitle;
     unsigned long long _organizationGroupCode;
     NSMutableDictionary *_pinyinCache;
 }
 
 @property(retain, nonatomic) NSMutableDictionary *pinyinCache; // @synthesize pinyinCache=_pinyinCache;
 @property(nonatomic) unsigned long long organizationGroupCode; // @synthesize organizationGroupCode=_organizationGroupCode;
+@property(retain, nonatomic) NSString *mySelfGroupedSeparatelySectionTitle; // @synthesize mySelfGroupedSeparatelySectionTitle=_mySelfGroupedSeparatelySectionTitle;
+@property(nonatomic) _Bool shouldMySelfGroupedSeparately; // @synthesize shouldMySelfGroupedSeparately=_shouldMySelfGroupedSeparately;
 @property(nonatomic) _Bool isShowGroupOrganization; // @synthesize isShowGroupOrganization=_isShowGroupOrganization;
 - (void).cxx_destruct;
 - (void)showNonMemView:(_Bool)arg1;
@@ -60,6 +64,8 @@
 - (long long)numberOfSectionsInTableView:(id)arg1;
 - (id)getMulMemSelMemberModel:(id)arg1;
 - (id)calcFirstLetter:(id)arg1;
+- (id)_mySelfSectionTitle;
+- (id)_sortedSecAlphaIndexTitles;
 - (void)configureDataSource;
 - (_Bool)orgnizeSubPageData;
 - (void)updateSubPageMemList:(id)arg1 customSectionDataList:(id)arg2 customSectionTitle:(id)arg3 normalSectionTitle:(id)arg4;

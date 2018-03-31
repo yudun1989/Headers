@@ -75,6 +75,7 @@
 - (id)createFeedDescModelFromDynamicSearchGroup:(id)arg1;
 - (id)createFeedDescModelFromFeedModel:(id)arg1;
 - (void)handleSearchGroupResultsPackage:(id)arg1 withFeedModel:(id)arg2;
+- (void)addBlankModelBetweenBeforeSubItems:(id)arg1;
 - (void)addBlackModelToSearchGroupResults:(id)arg1;
 - (void)gatherFavoriteAndFileSearchGroupResultsPackage:(id)arg1;
 - (id)handleFeedGroupDataSource:(id)arg1;
@@ -106,7 +107,9 @@
 - (_Bool)_lastResultsIsSearched:(long long)arg1 resultsAll:(id)arg2;
 - (void)ftsOptimizeSetNotNeedSearchFeedWithLastAll:(id)arg1 andLastHandled:(id)arg2 withKeyword:(id)arg3;
 - (id)ftsHandleGroupResults:(id)arg1;
+- (id)convertDataListToSectionCellModel:(id)arg1;
 - (id)ftsOrgnizeFTSGroupResults:(id)arg1 withGroupShowState:(long long)arg2 isNeedContinueRefresh:(_Bool)arg3 isAllTab:(_Bool)arg4;
+- (_Bool)shouldShowNetSearchPeopleAndGroupEnter;
 - (_Bool)ftsCheckLocalSearchIsAllFinished;
 - (_Bool)ftsCheckIsHaveResults:(id)arg1;
 - (void)ftsClearAllFeedModel;

@@ -8,31 +8,39 @@
 
 #import <QQMainProject/QQWalletConfigManagerDelegate-Protocol.h>
 
-@class NSMutableArray, NSMutableDictionary, QQMessageModel;
+@class NSCache, NSMutableArray, NSMutableDictionary, NSTimer, QQLockDictionary;
 
 @interface QQWalletGoldMsgCenter : NSObject <QQWalletConfigManagerDelegate>
 {
     NSMutableArray *_taskQueue;
     _Bool _isPaying;
-    NSMutableDictionary *_pushModelDic;
+    QQLockDictionary *_pushModelDic;
     long long _taskSeq;
     NSMutableDictionary *_taskDic;
     double _nextGrabTime;
     NSMutableDictionary *_goldMsgAIOFlagMap;
-    QQMessageModel *_lastSendMessage;
+    NSCache *_boundingRectCache;
+    NSMutableArray *_pushDealGoldMsgModels;
+    NSTimer *_pushDealGoldMsgTimer;
+    long long _spareTimeCounter;
 }
 
 + (id)sharedInstance;
++ (struct CGSize)contentSizeUseCache:(id)arg1 font:(id)arg2;
++ (_Bool)loadGoldMsgPushModelIfNeeded:(id)arg1;
++ (_Bool)isGoldMsgModel:(id)arg1;
 + (id)getSessionIDForVideo:(id)arg1:(id)arg2;
 + (long long)getSessionTypeForVideo:(id)arg1;
 + (_Bool)isBelowIphone5;
 + (void)downloadGoldMsgOCSResource;
-+ (_Bool)shouldShowGoldMsgCoinAnimationWithMsg:(id)arg1;
 + (id)optainCurrentVC;
 + (_Bool)shouldShowAIOGoldMsgAnimationWithMsg:(id)arg1;
 + (id)_uniquelTagForSessionType:(long long)arg1;
 + (id)_uniquelTagForSessionType:(long long)arg1 sessionID:(id)arg2;
-@property(retain, nonatomic) QQMessageModel *lastSendMessage; // @synthesize lastSendMessage=_lastSendMessage;
+@property(nonatomic) long long spareTimeCounter; // @synthesize spareTimeCounter=_spareTimeCounter;
+@property(retain, nonatomic) NSTimer *pushDealGoldMsgTimer; // @synthesize pushDealGoldMsgTimer=_pushDealGoldMsgTimer;
+@property(retain, nonatomic) NSMutableArray *pushDealGoldMsgModels; // @synthesize pushDealGoldMsgModels=_pushDealGoldMsgModels;
+@property(retain, nonatomic) NSCache *boundingRectCache; // @synthesize boundingRectCache=_boundingRectCache;
 @property(retain, nonatomic) NSMutableDictionary *goldMsgAIOFlagMap; // @synthesize goldMsgAIOFlagMap=_goldMsgAIOFlagMap;
 - (id)init;
 - (void)reloadAIOTableView;

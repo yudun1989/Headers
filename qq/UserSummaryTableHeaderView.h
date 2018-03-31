@@ -140,7 +140,6 @@
 - (void)registerObsevers;
 - (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void *)arg4;
 - (void)nowLiveViewClicked;
-- (void)addNowLiveView;
 - (void)showNowOrMusicRing;
 - (struct CGPoint)adjustCenterToFullScreen:(struct CGPoint)arg1;
 - (struct CGRect)adjustToFullScreen:(struct CGRect)arg1;

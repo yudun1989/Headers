@@ -8,13 +8,14 @@
 
 #import "UIScrollViewDelegate-Protocol.h"
 
-@class CAGradientLayer, HLRichLabel, KS_feed, NSArray, NSString, UIView;
+@class CAGradientLayer, HLRichLabel, KS_feed, MarqueeLabel, NSArray, NSString, UIView;
 
 @interface KSMetaScrollView : UIScrollView <UIScrollViewDelegate>
 {
     CAGradientLayer *_gradientLayer;
     struct KS_feed *_feed;
-    HLRichLabel *_musicLabel;
+    UIView *_musicLabel;
+    MarqueeLabel *_musicMarqueeLabel;
     UIView *_musicView;
     NSArray *_tagViews;
     HLRichLabel *_magicFaceLabel;
@@ -30,7 +31,8 @@
 @property(retain, nonatomic) HLRichLabel *magicFaceLabel; // @synthesize magicFaceLabel=_magicFaceLabel;
 @property(retain, nonatomic) NSArray *tagViews; // @synthesize tagViews=_tagViews;
 @property(retain, nonatomic) UIView *musicView; // @synthesize musicView=_musicView;
-@property(retain, nonatomic) HLRichLabel *musicLabel; // @synthesize musicLabel=_musicLabel;
+@property(retain, nonatomic) MarqueeLabel *musicMarqueeLabel; // @synthesize musicMarqueeLabel=_musicMarqueeLabel;
+@property(retain, nonatomic) UIView *musicLabel; // @synthesize musicLabel=_musicLabel;
 @property(retain, nonatomic) KS_feed *feed; // @synthesize feed=_feed;
 @property(retain, nonatomic) CAGradientLayer *gradientLayer; // @synthesize gradientLayer=_gradientLayer;
 - (void).cxx_destruct;

@@ -4,31 +4,25 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-#import "TBSearchViewModel.h"
+#import "XSearchViewModel.h"
 
-@class TBSearchPromotionBanner, TBXSearchService;
-@protocol TBSRPXSearchPromotionBannerViewModelUIComponentDelegate;
+@class TBSRPXSearchService, TBSearchPromotionBanner;
 
-@interface TBSRPXSearchPromotionBannerViewModel : TBSearchViewModel
+@interface TBSRPXSearchPromotionBannerViewModel : XSearchViewModel
 {
-    _Bool _isShowing;
-    TBXSearchService *_searchService;
+    TBSRPXSearchService *_searchService;
+    TBSearchPromotionBanner *_model;
 }
 
-@property(nonatomic) _Bool isShowing; // @synthesize isShowing=_isShowing;
-@property(retain, nonatomic) TBXSearchService *searchService; // @synthesize searchService=_searchService;
+@property(retain, nonatomic) TBSearchPromotionBanner *model; // @synthesize model=_model;
+@property(retain, nonatomic) TBSRPXSearchService *searchService; // @synthesize searchService=_searchService;
 - (void).cxx_destruct;
 - (id)getUTArgs;
 - (void)dataLoaded;
 - (_Bool)checkTimeValid;
 - (void)updateCloseTime;
-- (_Bool)checkJiagouShow;
 - (_Bool)checkDefaultShow;
-@property(readonly, nonatomic) TBSearchPromotionBanner *model;
 - (id)initWithSearchService:(id)arg1;
-
-// Remaining properties
-@property(nonatomic) __weak id <TBSRPXSearchPromotionBannerViewModelUIComponentDelegate> uiComponent; // @dynamic uiComponent;
 
 @end
 

@@ -17,12 +17,16 @@
     NSObject *_NULL_VALUE;
 }
 
-+ (id)wx_export_method_57;
-+ (id)wx_export_method_56;
++ (id)retValue:(id)arg1 data:(id)arg2;
++ (void)callbackFailure:(id)arg1 data:(id)arg2 callback:(CDUnknownBlockType)arg3 isNewStyle:(_Bool)arg4;
++ (id)wx_export_method_76;
++ (id)wx_export_method_75;
 @property(retain, nonatomic) NSObject *NULL_VALUE; // @synthesize NULL_VALUE=_NULL_VALUE;
 @property(retain, nonatomic) NSMutableDictionary *pendingRequests; // @synthesize pendingRequests=_pendingRequests;
 @property(nonatomic) __weak WXSDKInstance *weexInstance; // @synthesize weexInstance;
 - (void).cxx_destruct;
+- (_Bool)sendMtop:(id)arg1 isNewStyle:(_Bool)arg2 success:(CDUnknownBlockType)arg3 failure:(CDUnknownBlockType)arg4;
+- (_Bool)checkSecurity;
 - (void)removeRequest:(id)arg1;
 - (void)pending:(id)arg1 request:(id)arg2 delegate:(id)arg3;
 - (id)nextId;

@@ -9,6 +9,9 @@
 @class NSDictionary, NSString, NSURL;
 
 @interface UIViewController (UTTrackHook)
+@property(copy, nonatomic) NSString *utScmPreNext;
+@property(copy, nonatomic) NSString *utScmUrl;
+@property(copy, nonatomic) NSString *utScmPre;
 @property(copy, nonatomic) NSString *utParamPreNext;
 @property(copy, nonatomic) NSString *utParamCnt;
 @property(copy, nonatomic) NSString *utParamUrl;
@@ -17,8 +20,10 @@
 - (_Bool)ut_isBackWithStackLength:(long long)arg1;
 - (_Bool)ut_isChildViewController;
 - (id)ut_correctNavigationController;
+- (void)ut_h5UpdateScmInfo:(id)arg1;
 - (void)ut_h5UpdateSpmInfo:(id)arg1;
 @property(copy, nonatomic) NSString *utSpmPreNext;
+@property(nonatomic) _Bool utIsbkManually;
 @property(nonatomic) _Bool utIsbk;
 @property(nonatomic) _Bool utPresentNew;
 @property(copy, nonatomic) NSString *utSpmUrl;

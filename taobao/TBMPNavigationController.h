@@ -11,7 +11,7 @@
 @interface TBMPNavigationController : UINavigationController
 {
     NSMutableArray *_photos;
-    CDStruct_a90cff18 *_imageRule;
+    CDStruct_4a9aa5a8 *_imageRule;
     NSMutableArray *_curAssetsGroup;
     long long _iSelectGroupIndex;
     CDUnknownBlockType _ResultBlock;
@@ -22,7 +22,7 @@
 - (void)dealloc;
 - (void)cancelSelect;
 - (void)viewDidLoad;
-- (id)initWithInitPhotos:(id)arg1 rootViewController:(id)arg2 withImageRule:(CDStruct_a90cff18 *)arg3;
+- (id)initWithInitPhotos:(id)arg1 rootViewController:(id)arg2 withImageRule:(CDStruct_4a9aa5a8 *)arg3;
 
 @end
 

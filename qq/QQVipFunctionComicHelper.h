@@ -38,7 +38,7 @@
 - (id)filterQuerySectionModelIDs:(id)arg1 withComicModel:(id)arg2 withDeleteIDs:(id)arg3;
 - (void)getSimpleSectionArrayModelInfo:(id)arg1 withComicModel:(id)arg2 withSimpleMode:(int)arg3 preferLocalData:(_Bool)arg4 withCompleteBlock:(CDUnknownBlockType)arg5;
 - (void)getSimpleSectionArrayModelInfo:(id)arg1 withComicID:(id)arg2 withSimpleMode:(int)arg3 withCompleteBlock:(CDUnknownBlockType)arg4;
-- (void)getSectionArrayModelInfo:(id)arg1 withComicID:(id)arg2 withCompleteBlock:(CDUnknownBlockType)arg3;
+- (void)getSectionArrayModelInfo:(id)arg1 withComicID:(id)arg2 cSectionIDs:(id)arg3 withCompleteBlock:(CDUnknownBlockType)arg4;
 - (void)getSectionModelArrayInfo:(id)arg1 withLastObj:(id)arg2 withComicModel:(id)arg3 withCompleteBlock:(CDUnknownBlockType)arg4;
 - (void)getSectionModelInfo:(id)arg1 withComicModel:(id)arg2 isPreferLocal:(_Bool)arg3 withCompleteBlock:(CDUnknownBlockType)arg4;
 - (void)getSectionModelInfo:(id)arg1 withComicModel:(id)arg2 withCompleteBlock:(CDUnknownBlockType)arg3;

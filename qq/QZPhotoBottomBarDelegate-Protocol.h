@@ -7,6 +7,7 @@
 #import <QQMainProject/NSObject-Protocol.h>
 
 @protocol QZPhotoBottomBarDelegate <NSObject>
+- (void)photoBottomBarChangeToFrame:(struct CGRect)arg1;
 - (void)photoBottomBarDescriptionClicked;
 - (void)photoBottomBarMoreButtonClicked;
 - (void)photoBottomBarInputButtonClicked;

@@ -20,6 +20,7 @@
 - (_Bool)openControllerFromPluginUrl:(long long)arg1 secondPluginResID:(long long)arg2;
 - (_Bool)openControllerFromPluginUrl:(long long)arg1;
 - (void)openExpandFunction:(id)arg1;
+- (void)openHonestSay:(id)arg1;
 - (void)openAGreeting:(id)arg1;
 - (void)openServiceAccount:(id)arg1;
 - (void)openSayHello:(id)arg1;

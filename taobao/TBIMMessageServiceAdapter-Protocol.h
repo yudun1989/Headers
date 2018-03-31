@@ -33,6 +33,7 @@
 - (id <TBIMMessageAdapter>)generateSendExtendMessageWithVersion:(long long)arg1 type:(NSString *)arg2 content:(NSDictionary *)arg3 url:(NSString *)arg4 sessionId:(NSString *)arg5;
 - (id <TBIMMessageAdapter>)generateNoticeMessageWithTitle:(NSString *)arg1 content:(NSString *)arg2 noticeModifyTime:(NSDate *)arg3 senderId:(NSString *)arg4 session:(NSString *)arg5;
 - (id <TBIMMessageAdapter>)generateSysMessageWithContent:(NSString *)arg1 session:(NSString *)arg2 templateDict:(NSDictionary *)arg3 activeList:(NSArray *)arg4;
+- (id <TBIMMessageAdapter>)generateGeoWithLongitude:(double)arg1 latitude:(double)arg2 name:(NSString *)arg3 pic:(UIImage *)arg4 session:(NSString *)arg5;
 - (id <TBIMMessageAdapter>)generateVideoWihtLocalUrl:(NSURL *)arg1 previewImage:(UIImage *)arg2 duration:(long long)arg3 width:(double)arg4 height:(double)arg5 session:(NSString *)arg6;
 - (id <TBIMMessageAdapter>)generateEmoticonMessage:(id <TBIMEmoticonAdapter>)arg1 sessionId:(NSString *)arg2;
 - (id <TBIMMessageAdapter>)generateBusinessCardMessage:(NSString *)arg1 headUrl:(NSURL *)arg2 nick:(NSString *)arg3 session:(NSString *)arg4;
@@ -41,6 +42,7 @@
 - (id <TBIMMessageAdapter>)generateShareMessage:(int)arg1 title:(NSString *)arg2 picUrl:(NSString *)arg3 price:(double)arg4 actionUrl:(NSString *)arg5 shopLevelImageUrl:(NSString *)arg6 shareTag:(NSString *)arg7 attr:(NSString *)arg8 session:(NSString *)arg9;
 - (id <TBIMMessageAdapter>)generateTempShareMessage:(int)arg1 title:(NSString *)arg2 picUrl:(NSString *)arg3 price:(double)arg4 actionUrl:(NSString *)arg5 shopLevelImageUrl:(NSString *)arg6 shareTag:(NSString *)arg7 senderId:(NSString *)arg8 attrHostName:(NSString *)arg9 attrHostPic:(NSString *)arg10 session:(NSString *)arg11;
 - (id <TBIMMessageAdapter>)generateShareMessage:(int)arg1 title:(NSString *)arg2 picUrl:(NSString *)arg3 price:(double)arg4 actionUrl:(NSString *)arg5 shopLevelImageUrl:(NSString *)arg6 shareTag:(NSString *)arg7 session:(NSString *)arg8;
+- (id <TBIMMessageAdapter>)generateVoiceMessageWithPath:(NSString *)arg1 withLocalAudio:(id)arg2 duration:(long long)arg3 sessionId:(NSString *)arg4 extension:(id)arg5;
 - (id <TBIMMessageAdapter>)generateVoiceMessage:(NSData *)arg1 withLocalAudio:(id)arg2 duration:(long long)arg3 sessionId:(NSString *)arg4;
 - (id <TBIMMessageAdapter>)generateImageMessage:(UIImage *)arg1 session:(NSString *)arg2;
 - (id <TBIMMessageAdapter>)generateTextMessage:(NSString *)arg1 sessionId:(NSString *)arg2 withAiTaUserIdList:(NSArray *)arg3;

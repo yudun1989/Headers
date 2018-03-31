@@ -6,12 +6,10 @@
 
 #import <UIKit/UITableViewCell.h>
 
-#import <QQMainProject/QQStorySGMemberViewControllerDelegate-Protocol.h>
-
-@class NSString, QQStorySGMemberViewController, QQStoryUrlImageView, TBShareGroupInfoModel, UIButton, UIImageView, UILabel, UIView;
+@class QQStoryUrlImageView, TBShareGroupInfoModel, UIButton, UIImageView, UILabel, UIView;
 @protocol QQStorySGTopCellDelegate;
 
-@interface QQStorySGTopCell : UITableViewCell <QQStorySGMemberViewControllerDelegate>
+@interface QQStorySGTopCell : UITableViewCell
 {
     TBShareGroupInfoModel *_infoModel;
     id <QQStorySGTopCellDelegate> _delegate;
@@ -20,7 +18,6 @@
     UILabel *_descriptionLabel;
     UIButton *_inviteBtn;
     UIView *_avatarBackView;
-    QQStorySGMemberViewController *_memberVC;
     UIImageView *_limitIcon;
     UIButton *_tapToMemberView;
     QQStoryUrlImageView *_backImageView;
@@ -30,7 +27,6 @@
 @property(retain, nonatomic) QQStoryUrlImageView *backImageView; // @synthesize backImageView=_backImageView;
 @property(retain, nonatomic) UIButton *tapToMemberView; // @synthesize tapToMemberView=_tapToMemberView;
 @property(retain, nonatomic) UIImageView *limitIcon; // @synthesize limitIcon=_limitIcon;
-@property(retain, nonatomic) QQStorySGMemberViewController *memberVC; // @synthesize memberVC=_memberVC;
 @property(retain, nonatomic) UIView *avatarBackView; // @synthesize avatarBackView=_avatarBackView;
 @property(retain, nonatomic) UIButton *inviteBtn; // @synthesize inviteBtn=_inviteBtn;
 @property(retain, nonatomic) UILabel *descriptionLabel; // @synthesize descriptionLabel=_descriptionLabel;
@@ -39,23 +35,12 @@
 @property(nonatomic) __weak id <QQStorySGTopCellDelegate> delegate; // @synthesize delegate=_delegate;
 @property(retain, nonatomic) TBShareGroupInfoModel *infoModel; // @synthesize infoModel=_infoModel;
 - (void).cxx_destruct;
-- (void)memberViewController:(id)arg1 inviteFriend:(id)arg2;
 - (void)layout;
-- (void)layoutForShareGroup;
 - (void)layoutForGroup;
 - (void)setMemberList:(id)arg1;
 - (void)dealloc;
-- (void)inviteAction;
 - (void)enterMemberListView;
-- (void)joinShreGroup;
-- (void)commonBtnAction:(id)arg1;
 - (id)initWithStyle:(long long)arg1 reuseIdentifier:(id)arg2;
-
-// Remaining properties
-@property(readonly, copy) NSString *debugDescription;
-@property(readonly, copy) NSString *description;
-@property(readonly) unsigned long long hash;
-@property(readonly) Class superclass;
 
 @end
 

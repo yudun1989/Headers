@@ -14,7 +14,8 @@
 }
 
 @property(retain, nonatomic) NSDictionary *data; // @synthesize data=_data;
-- (void)configAttributeData:(id)arg1 forPicture:(id)arg2 isLive:(_Bool)arg3 scene:(id)arg4 actionType:(long long)arg5;
+- (void)configCampusShareAttribute:(id)arg1 feedModel:(id)arg2 forPicture:(id)arg3 isLive:(_Bool)arg4 scene:(id)arg5 actionType:(long long)arg6;
+- (void)configAttributeData:(id)arg1 feedModel:(id)arg2 forPicture:(id)arg3 isLive:(_Bool)arg4 scene:(id)arg5 actionType:(long long)arg6;
 - (void)configAttributeFromFeedModel:(id)arg1 toData:(id)arg2 scene:(id)arg3;
 - (void)updateFeedAttribute:(id)arg1 withFeedModel:(id)arg2 zone:(long long)arg3 param:(id)arg4 scene:(id)arg5;
 - (id)attributeForFeedModel:(id)arg1 scene:(id)arg2;

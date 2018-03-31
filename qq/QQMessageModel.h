@@ -208,6 +208,7 @@
     EmojiStickerInfo *_emojiStickerinfo;
     QQMessageFileInfo *_fileInfo;
     QQMessageDoodleInfo *_doodleInfo;
+    NSMutableArray *_picInfoArray;
     unsigned long long _preMsgID;
     NSString *_arkCompatibleText;
     NSString *_prpListId;
@@ -219,6 +220,7 @@
     NSString *_robotVoiceTailText;
     long long _robotSubMsgClassID;
     unsigned long long _doutuComboCount;
+    struct _NSRange _subRichMsgContentRange;
 }
 
 + (unsigned int)uidToRandom:(unsigned long long)arg1;
@@ -229,6 +231,7 @@
 + (id)splitPicMessage:(id)arg1;
 + (id)splitPicAndTextMessage:(id)arg1;
 + (id)createPicInfoWithName:(id)arg1;
++ (id)getMessagePicInfoArray:(id)arg1 inArray:(id)arg2;
 + (id)getMessagePicInfo:(id)arg1 inArray:(id)arg2;
 @property(retain, nonatomic) PttMsgInfo *receiptPttMsgInfo; // @synthesize receiptPttMsgInfo=_receiptPttMsgInfo;
 @property(nonatomic) _Bool isReptMsgResourceModel; // @synthesize isReptMsgResourceModel=_isReptMsgResourceModel;
@@ -291,6 +294,7 @@
 @property(retain, nonatomic) NSString *anonymousNick; // @synthesize anonymousNick=_anonymousNick;
 @property(retain, nonatomic) NSData *anonymousID; // @synthesize anonymousID=_anonymousID;
 @property(nonatomic) unsigned int anonymousFlags; // @synthesize anonymousFlags=_anonymousFlags;
+@property(nonatomic) struct _NSRange subRichMsgContentRange; // @synthesize subRichMsgContentRange=_subRichMsgContentRange;
 @property(nonatomic) _Bool isSplitedMsg; // @synthesize isSplitedMsg=_isSplitedMsg;
 @property(nonatomic) int mixedRichMsgSplitIndex; // @synthesize mixedRichMsgSplitIndex=_mixedRichMsgSplitIndex;
 @property(retain, nonatomic) QQMessageModel *belongMultiMsg; // @synthesize belongMultiMsg=_belongMultiMsg;
@@ -309,6 +313,7 @@
 @property(retain, nonatomic) NSString *phoneName; // @synthesize phoneName=_phoneName;
 @property(retain, nonatomic) NSString *phoneNumber; // @synthesize phoneNumber=_phoneNumber;
 @property(retain, nonatomic) QQMessageSensCtrlInfo *sensCtrlInfo; // @synthesize sensCtrlInfo=_sensCtrlInfo;
+@property(retain, nonatomic) NSMutableArray *picInfoArray; // @synthesize picInfoArray=_picInfoArray;
 @property(retain, nonatomic) QQMessageDoodleInfo *doodleInfo; // @synthesize doodleInfo=_doodleInfo;
 @property(retain, nonatomic) QQMessageFileInfo *fileInfo; // @synthesize fileInfo=_fileInfo;
 @property(retain, nonatomic) NSMutableDictionary *richInfoDic; // @synthesize richInfoDic=_richInfoDic;
@@ -382,7 +387,6 @@
 @property(nonatomic) int read; // @synthesize read=_read;
 @property(nonatomic) unsigned long long time; // @synthesize time=_time;
 @property(nonatomic) int msgType; // @synthesize msgType=_msgType;
-@property(retain, nonatomic) NSString *groupCode; // @synthesize groupCode=_groupCode;
 @property(nonatomic) int secretFileDurationTime; // @synthesize secretFileDurationTime=_secretFileDurationTime;
 @property(nonatomic) int secretFileReadTimes; // @synthesize secretFileReadTimes=_secretFileReadTimes;
 @property(nonatomic) int secretFileExpireTime; // @synthesize secretFileExpireTime=_secretFileExpireTime;
@@ -426,6 +430,7 @@
 - (_Bool)isReplyToMeMsg;
 - (_Bool)isGroupAnonymousModel;
 - (void)directSetMsgType:(int)arg1;
+- (id)getMessagePicInfos;
 - (_Bool)isC2CVoiceMsg;
 - (id)getSign;
 - (_Bool)isMapMessage;
@@ -467,6 +472,7 @@
 - (id)GetContent;
 - (_Bool)isAutoReplyMsg;
 @property(nonatomic) int msgBusiType; // @synthesize msgBusiType;
+- (_Bool)isHonestTalkingMsg;
 - (_Bool)isGroupMsg;
 @property(nonatomic) unsigned long long diyFontCfgUpdateTime;
 @property(nonatomic) unsigned int avatarId;
@@ -491,9 +497,11 @@
 @property(nonatomic) int fromSecretStatus;
 - (void)copyRichInfoDic:(id)arg1;
 @property(retain, nonatomic) NSString *discussGroupUin;
+@property(retain, nonatomic) NSString *groupCode;
 @property(retain, nonatomic) NSString *nickname;
 @property(retain, nonatomic) NSString *uin;
 @property(retain, nonatomic) NSDictionary *mobaGameNick;
+@property(retain, nonatomic) NSDictionary *iMaxInfo;
 @property(retain, nonatomic) NSString *mobilePhone;
 - (id)duplicateMessageModel;
 - (id)initWithMessageModel:(id)arg1;
@@ -539,6 +547,8 @@
 - (_Bool)isRpFlodMsg;
 - (_Bool)isExpiredPAAdMsg;
 - (_Bool)isPAAdMsg;
+- (_Bool)isExpiredIMaxMsg;
+- (_Bool)isIMaxMsg;
 @property(retain, nonatomic) NSDictionary *contentFileInfo;
 @property(readonly, nonatomic) unsigned long long groupFileTaskId;
 @property(readonly, nonatomic) NSString *groupFileName;

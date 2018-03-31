@@ -6,8 +6,18 @@
 
 #import <UIKit/UISlider.h>
 
+@class NSArray;
+
 @interface UISlider (QRTheme)
+- (void)reloadMarkPoints;
+- (id)createMarkPointSubviewWithValue:(double)arg1 inView:(id)arg2;
+- (struct CGPoint)getCenterPointWithValue:(double)arg1 adjustWidth:(double)arg2;
+- (struct CGRect)getSliderLineRect;
+- (id)getThumbImageView;
 - (void)reloadQRTheme;
+@property(nonatomic) NSArray *markPointValues;
+@property(nonatomic) unsigned long long QRThemeMaximumValueImage;
+@property(nonatomic) unsigned long long QRThemeMinimumValueImage;
 @property(nonatomic) unsigned long long QRThemeRightTrackTintColor; // @dynamic QRThemeRightTrackTintColor;
 @property(nonatomic) unsigned long long QRThemeLeftTrackTintColor; // @dynamic QRThemeLeftTrackTintColor;
 @property(nonatomic) unsigned long long QRThemeThumbImageHightlighted; // @dynamic QRThemeThumbImageHightlighted;

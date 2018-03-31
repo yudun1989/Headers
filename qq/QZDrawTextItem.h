@@ -94,6 +94,7 @@
 - (void)accachCustomTagsWithLine:(struct __CTLine *)arg1 layoutLine:(id)arg2;
 - (void)setTextAnimation:(struct __CTLine *)arg1 lastHeight:(double)arg2 text:(id)arg3 layoutRect:(struct QZTextRect)arg4;
 - (void)layoutFixWidth:(id)arg1;
+- (void)layoutWithCTFrame:(id)arg1 layoutLineArray:(id)arg2;
 - (long long)calculateLineNum:(long long)arg1 maximumLimit:(long long)arg2;
 - (void)layout;
 - (void)clearLayoutInfo;

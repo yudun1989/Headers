@@ -16,6 +16,7 @@
     int _xo;
 }
 
++ (id)templateJsonPath:(unsigned long long)arg1;
 + (id)configJsonPath;
 + (id)rootDirectoryPath;
 + (id)sharedInstance;
@@ -23,11 +24,11 @@
 - (id)keyWithKeyComponent:(id)arg1;
 @property(readonly, nonatomic) NSDictionary *templatesJson;
 @property(retain, nonatomic) NSArray *categories; // @dynamic categories;
+- (id)templateById:(unsigned long long)arg1;
 @property(retain, nonatomic) NSArray *allTemplates; // @dynamic allTemplates;
 - (void)templatesJsonUpdated:(id)arg1;
 - (id)templatesByCategoryId:(id)arg1;
 - (id)p_templateCacheKey:(unsigned long long)arg1;
-- (id)templateById:(unsigned long long)arg1;
 - (id)init;
 
 // Remaining properties

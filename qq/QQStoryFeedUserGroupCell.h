@@ -4,9 +4,9 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-#import <QQMainProject/QQStoryFeedBaseShareGroupCell.h>
+#import <QQMainProject/QQStoryFeedCell.h>
 
-@interface QQStoryFeedUserGroupCell : QQStoryFeedBaseShareGroupCell
+@interface QQStoryFeedUserGroupCell : QQStoryFeedCell
 {
 }
 
@@ -16,6 +16,10 @@
 - (void)storyFeedHeaderInfoView:(id)arg1 didAddVideoButtonTouchUpInside:(id)arg2;
 - (void)storyFeedHeaderInfoView:(id)arg1 didUserNameLabelTapGesture:(id)arg2;
 - (void)storyFeedHeaderInfoView:(id)arg1 didUserCoverTouchUpInside:(id)arg2;
+- (_Bool)isFromQQGroup:(id)arg1;
+- (void)addShareGroupVideo;
+- (void)openHistoryStorySelector;
+- (void)openCamera;
 - (void)enterUserGroupViewController;
 - (id)headerInfoView;
 

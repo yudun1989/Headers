@@ -39,11 +39,9 @@
 @property(retain, nonatomic) PLFeedsBaseModel *model; // @synthesize model=_model;
 @property(nonatomic) __weak id <PLFeedsInteractionViewDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
-- (void)reportCommentClick:(id)arg1;
 - (void)commentCellClick:(id)arg1;
 - (void)reqUnLike:(id)arg1;
 - (void)reqLike:(id)arg1;
-- (void)reportCommentOut;
 - (void)reportNearbyUserSummaryModule:(id)arg1 model:(id)arg2;
 - (void)reportCommentIcon:(id)arg1;
 - (void)onCommentButtonClick:(id)arg1;

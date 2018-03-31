@@ -6,7 +6,7 @@
 
 #import <TlibDy/JceObjectV2.h>
 
-@class NSDictionary, NSString, QZJFeedsSVideoremark;
+@class NSArray, NSDictionary, NSString, QZJFeedsSVideoremark;
 
 @interface QZJFeedsCellVideo : JceObjectV2
 {
@@ -34,7 +34,10 @@
 @property(nonatomic, getter=jce_isOnWifiPlay, setter=setJce_isOnWifiPlay:) _Bool jcev2_p_25_o_isOnWifiPlay; // @dynamic jcev2_p_25_o_isOnWifiPlay;
 @property(nonatomic, getter=jce_isHadSetPlayOnWifi, setter=setJce_isHadSetPlayOnWifi:) _Bool jcev2_p_26_o_isHadSetPlayOnWifi; // @dynamic jcev2_p_26_o_isHadSetPlayOnWifi;
 @property(nonatomic, getter=jce_auto_refresh_second, setter=setJce_auto_refresh_second:) int jcev2_p_27_o_auto_refresh_second; // @dynamic jcev2_p_27_o_auto_refresh_second;
+@property(retain, nonatomic, getter=jce_vcCovers, setter=setJce_vcCovers:) NSArray *jcev2_p_28_o_vcCovers__b0x9i_VM09ONSNumberOQZJFeedsSPicurl; // @dynamic jcev2_p_28_o_vcCovers__b0x9i_VM09ONSNumberOQZJFeedsSPicurl;
+@property(nonatomic, getter=jce_video_form, setter=setJce_video_form:) int jcev2_p_29_o_video_form; // @dynamic jcev2_p_29_o_video_form;
 @property(retain, nonatomic, getter=jce_coverurl, setter=setJce_coverurl:) NSDictionary *jcev2_p_2_o_coverurl__b0x9i_M09ONSNumberOQZJFeedsSPicurl; // @dynamic jcev2_p_2_o_coverurl__b0x9i_M09ONSNumberOQZJFeedsSPicurl;
+@property(retain, nonatomic, getter=jce_gaussPicUrl, setter=setJce_gaussPicUrl:) NSDictionary *jcev2_p_30_o_gaussPicUrl__b0x9i_M09ONSNumberOQZJFeedsSPicurl; // @dynamic jcev2_p_30_o_gaussPicUrl__b0x9i_M09ONSNumberOQZJFeedsSPicurl;
 @property(nonatomic, getter=jce_actiontype, setter=setJce_actiontype:) int jcev2_p_3_o_actiontype; // @dynamic jcev2_p_3_o_actiontype;
 @property(retain, nonatomic, getter=jce_actionurl, setter=setJce_actionurl:) NSString *jcev2_p_4_o_actionurl; // @dynamic jcev2_p_4_o_actionurl;
 @property(retain, nonatomic, getter=jce_clientkey, setter=setJce_clientkey:) NSString *jcev2_p_5_o_clientkey; // @dynamic jcev2_p_5_o_clientkey;

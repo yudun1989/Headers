@@ -10,6 +10,7 @@
 {
 }
 
++ (long long)generateImageType:(id)arg1;
 + (id)priceFormatter:(double)arg1 bigFontSize:(double)arg2 smallFontSize:(double)arg3;
 + (id)noticeDescriptionFromDate:(id)arg1;
 + (id)resizableImageWithImagePath:(id)arg1 capInsets:(struct UIEdgeInsets)arg2;

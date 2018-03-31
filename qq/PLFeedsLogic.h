@@ -29,6 +29,7 @@
     long long _requestSuccReportID;
 }
 
++ (id)createModelWithLocalModel:(id)arg1;
 @property(nonatomic) long long requestSuccReportID; // @synthesize requestSuccReportID=_requestSuccReportID;
 @property(retain, nonatomic) NSMutableArray *netArray; // @synthesize netArray=_netArray;
 @property(retain, nonatomic) NSMutableArray *localArray; // @synthesize localArray=_localArray;

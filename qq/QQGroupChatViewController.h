@@ -20,7 +20,7 @@
 #import <QQMainProject/QQGroupRobotKeywordViewDelegate-Protocol.h>
 #import <QQMainProject/UIActionSheetDelegate-Protocol.h>
 
-@class DirectionMoviePlayerViewController, GroupAIONotifyControl, GroupFileListViewController, GroupUnreadNotifyController, MLAPlayerView, MLPlayerView, NSArray, NSAttributedString, NSDate, NSMutableDictionary, NSString, NSTimer, QQAIOEventDispatcher, QQGroupChatViewAnonymousUIParam, QQGroupLinkShareController, QQGroupMsgCache, QQGroupNoticeCenterControl, QQGroupNoticeCenterMaskView, QQGroupRobotKeywordManager, QQGroupRobotKeywordView, QQVideoAnimationView, QQWeakProxy, QSilentTaskInfo, SimpleAlertView, UIImageView, UILabel, UIView;
+@class GroupAIONotifyControl, GroupDragonMediator, GroupFileListViewController, GroupUnreadNotifyController, MLAPlayerView, MLPlayerView, NSArray, NSAttributedString, NSDate, NSMutableDictionary, NSString, NSTimer, QQAIOEventDispatcher, QQGroupChatViewAnonymousUIParam, QQGroupLinkShareController, QQGroupMsgCache, QQGroupNoticeCenterControl, QQGroupNoticeCenterMaskView, QQGroupRobotKeywordManager, QQGroupRobotKeywordView, QQVideoAnimationView, QQWeakProxy, QSilentTaskInfo, SimpleAlertView, TriRectStyleView, UIImageView, UILabel, UIView;
 
 @interface QQGroupChatViewController : QQChatViewController <QQGroupGiftSelectionViewDelegate, MulMemSelBusiProcessDelegate, QQGroupRobotKeywordViewDelegate, QQGroupRobotKeywordManagerDelegate, ArkBannerTipsDelegate, QQGroupAnonymousDelegate, BatchAddGroupMemberManagerDelegate, QQGroupNoticeCenterGestureDelegate, QQChatViewTableDelegate, UIActionSheetDelegate, GroupOpenAPPManagerProtocol, QQGroupBulletinContentViewDelegate, JDEggDataDelegate>
 {
@@ -29,7 +29,6 @@
     double _wifiChatStartTime;
     NSAttributedString *_curViewText;
     UIImageView *_blockTips;
-    DirectionMoviePlayerViewController *_videoPlayerController;
     GroupFileListViewController *_groupFileListViewController;
     GroupAIONotifyControl *_remindNotifyControl;
     GroupUnreadNotifyController *_groupUnreadNotifyControl;
@@ -89,6 +88,8 @@
     _Bool _isShowingOnlineMemberTitle;
     _Bool _isFromCreate;
     _Bool _bAnonymousMode;
+    int _selfState;
+    int _groupCategory;
     unsigned long long _atMemberUin;
     NSString *_atNickName;
     QQGroupMsgCache *_msgCache;
@@ -102,6 +103,8 @@
     NSDate *_perfAIOOpenTime;
     double _leftBarButtonWidth;
     double _rightBarButtonWidth;
+    TriRectStyleView *_noticeTipView;
+    GroupDragonMediator *_dragonMediator;
     QQGroupChatViewAnonymousUIParam *_oldGroupChatViewParam;
     NSMutableDictionary *_specialTitleSetSeq;
 }
@@ -118,6 +121,10 @@
 @property(retain, nonatomic) NSMutableDictionary *specialTitleSetSeq; // @synthesize specialTitleSetSeq=_specialTitleSetSeq;
 @property(retain, nonatomic) QQGroupChatViewAnonymousUIParam *oldGroupChatViewParam; // @synthesize oldGroupChatViewParam=_oldGroupChatViewParam;
 @property(nonatomic) _Bool bAnonymousMode; // @synthesize bAnonymousMode=_bAnonymousMode;
+@property(retain, nonatomic) GroupDragonMediator *dragonMediator; // @synthesize dragonMediator=_dragonMediator;
+@property(nonatomic) int groupCategory; // @synthesize groupCategory=_groupCategory;
+@property(nonatomic) int selfState; // @synthesize selfState=_selfState;
+@property(retain, nonatomic) TriRectStyleView *noticeTipView; // @synthesize noticeTipView=_noticeTipView;
 @property(nonatomic) double rightBarButtonWidth; // @synthesize rightBarButtonWidth=_rightBarButtonWidth;
 @property(nonatomic) double leftBarButtonWidth; // @synthesize leftBarButtonWidth=_leftBarButtonWidth;
 @property(retain, nonatomic) NSDate *perfAIOOpenTime; // @synthesize perfAIOOpenTime=_perfAIOOpenTime;
@@ -138,6 +145,15 @@
 @property(copy, nonatomic) NSString *atNickName; // @synthesize atNickName=_atNickName;
 @property(nonatomic) unsigned long long atMemberUin; // @synthesize atMemberUin=_atMemberUin;
 @property(readonly, nonatomic) _Bool bShowGroupNotice; // @synthesize bShowGroupNotice=_bShowGroupNotice;
+- (void)hideNoticeTipView;
+- (void)noticeTipViewTapped;
+- (void)showGroupTipView:(id)arg1 forType:(long long)arg2 position:(struct CGPoint)arg3;
+- (void)collectionView:(id)arg1 willDisplayCell:(id)arg2 forItemAtIndexPath:(id)arg3;
+- (void)singleTapGR:(id)arg1;
+- (_Bool)textViewShouldBeginEditing:(id)arg1;
+- (void)didSelectInputbarItemAtIndexPath:(id)arg1;
+- (void)replaceReEditMsgTip:(id)arg1;
+- (void)updateReEditMsgModel;
 - (void)didSendGroupChatImage;
 - (void)asyncLoadGroupConfigInfo;
 - (id)getNoticeCenterControl;
@@ -177,6 +193,9 @@
 - (void)actionInputbarEmotion:(id)arg1;
 - (void)actionInputbarPTT:(id)arg1;
 - (void)actionInputbarMore:(id)arg1;
+- (void)actionInputBarNotice:(id)arg1;
+- (void)p_SchoolGroupAction:(id)arg1;
+- (void)actionSchoolGroupPublishHomework:(id)arg1;
 - (void)setupInputbarItems;
 - (void)groupDidFollowUpstairsWithSpriteActionModel:(id)arg1;
 - (void)groupDidFollowUpstairsWithSimpleText:(id)arg1;
@@ -197,13 +216,23 @@
 - (void)didEndScroll:(id)arg1;
 - (void)quitMessageMoreStateForGroup:(id)arg1;
 - (void)onMsgMultiTaskStart:(id)arg1;
+- (void)onGroupMemberStateUpdated:(id)arg1;
+- (void)groupProfileChangeSucceed:(id)arg1;
 - (void)groupNoticeCenterGestureWithUp;
 - (void)onGroupNoticeCenterClickNotice:(id)arg1;
 - (void)onQQGroupNoticeCenterDelFeedsPush:(id)arg1;
+- (void)showGameGroupRedDot:(id)arg1;
+- (void)onGameGroupRedDotClear:(id)arg1;
+- (void)onGameGroupRedDotPull:(id)arg1;
+- (void)onGameGroupRedDotPush:(id)arg1;
 - (void)onGroupAlbumNoticePush:(id)arg1;
 - (void)onQQGroupAlbumNoticePullFail:(id)arg1;
 - (void)onQQGroupAlbumNoticePull:(id)arg1;
+- (void)switchSchoolHomeWorkRedState:(_Bool)arg1 groupCode:(id)arg2;
 - (void)noticeSwitchGroupRightButton:(id)arg1;
+- (void)schoolHomeworkClearRedPoint:(id)arg1;
+- (void)p_OnClickGroupSchoolHomeworkNotice;
+- (void)checkSwitchSchoolHomeWorkRedState;
 - (void)switchGroupRightButton;
 - (void)didSelectFileList:(id)arg1 photoList:(id)arg2 bNearFile:(_Bool)arg3;
 - (void)sendVideoFile:(id)arg1;
@@ -237,6 +266,7 @@
 - (void)downLoadGroupImg:(id)arg1 isRefresh:(_Bool)arg2;
 - (void)didSelectReloadImage:(id)arg1;
 - (void)reset2LineTitleView:(float)arg1 custmViewWidth:(float)arg2 line1OffsetY:(float)arg3;
+- (double)limitedTitleWidth;
 - (double)limitedTitleWidth:(id)arg1 membersCount:(id)arg2 titleFont:(id)arg3;
 - (void)setGroupTitle;
 - (void)resetCustomTitleView;
@@ -292,7 +322,7 @@
 - (void)saveTextInputCacheWithChatModelType:(int)arg1;
 - (void)viewWillDisappear:(_Bool)arg1;
 - (void)conditionCheckFailedWithResult:(long long)arg1;
-- (void)conditionCheckSucceed;
+- (void)conditionCheckSucceed:(id)arg1;
 - (void)viewDidAppear:(_Bool)arg1;
 - (void)viewWillAppear:(_Bool)arg1;
 - (void)viewDidLayoutSubviews;
@@ -390,6 +420,7 @@
 - (void)_scShowSchoolCardIdentityBanner;
 - (_Bool)_scCheckVCHasPop;
 - (void)_receivedMemberCard:(_Bool)arg1 schoolId:(unsigned int)arg2;
+- (_Bool)scCheckIsSchoolCard;
 - (void)scCheckSchoolIdentity;
 - (_Bool)scCheckShowSchoolIdentityBanner:(id)arg1;
 - (void)_showSchoolIdentityAlert:(id)arg1;
@@ -405,8 +436,10 @@
 - (void)stopPlayFlashPicture;
 - (void)playFlashVideoWithImage:(id)arg1 effectID:(long long)arg2 finishBlock:(CDUnknownBlockType)arg3;
 - (void)playFlashPictureWithImage:(id)arg1 effectID:(long long)arg2 finishBlock:(CDUnknownBlockType)arg3;
+- (void)setAtStatus;
 - (void)addQuoteMsAtInfo:(id)arg1;
 - (int)emojiStringLength:(id)arg1;
+- (id)generateAtData:(id)arg1;
 - (void)fillAtGroupData:(id)arg1 memUin:(unsigned int)arg2;
 - (void)fillAtAllData:(long long)arg1 viewText:(id)arg2 nickName:(id)arg3;
 - (void)fillAtGroupData:(id)arg1 cursorLocation:(unsigned long long)arg2 viewText:(id)arg3 memUin:(unsigned int)arg4 ifLongPress:(_Bool)arg5;
@@ -504,7 +537,7 @@
 - (_Bool)needClearRobotFlag;
 @property(nonatomic) unsigned long long groupRobotUIN;
 @property(retain, nonatomic) NSString *groupRobotNickName;
-- (void)onPostEnterGroupAudio;
+- (void)onPostEnterGroupAV:(id)arg1;
 - (void)onCreateInitialGrpInGroupNotify:(id)arg1;
 - (long long)getLimitMaxMsgCellCount;
 - (void)addMsgToCache:(id)arg1;
@@ -561,15 +594,8 @@
 - (void)viewDidLoadAnonymous;
 - (void)deallocAnonymous;
 - (void)initAnonymous;
-- (void)stopGroupVideo;
-- (_Bool)isVideoExist;
 - (void)jumpToVideoDetail:(id)arg1 aioModel:(id)arg2;
 - (void)videoQQAIOShareMessageCellDidAction:(id)arg1 aioModel:(id)arg2;
-- (void)playVideoInGroupAIO:(id)arg1 groupCode:(id)arg2;
-- (void)viewWillDisappearOperations;
-- (void)viewWillAppearOperations;
-- (void)uninitGroupVideo;
-- (void)initGroupVideo;
 - (void)uninitShareLocationGroup;
 - (void)popUpTipsOfSetShareLocationInRichKeyBoard:(id)arg1;
 - (void)initShareLocationGroup;

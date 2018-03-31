@@ -30,8 +30,6 @@
     _Bool _subScrollEnabled;
     _Bool _needRefreshCoudan;
     _Bool _isClickJiesuan;
-    int _editType;
-    int _networkType;
     NSIndexPath *_editingIndexPath;
     NSString *_cartClient;
     NSString *_marketTpId;
@@ -39,6 +37,8 @@
     long long _currentPage;
     long long _retryCount;
     long long _fillRetry;
+    long long _editType;
+    long long _networkType;
     unsigned long long _cartStartSection;
     NSString *_promotionUrl;
     UIViewController *_viewController;
@@ -62,8 +62,8 @@
 @property(nonatomic) _Bool showedErrorView; // @synthesize showedErrorView=_showedErrorView;
 @property(nonatomic) _Bool viewAppearing; // @synthesize viewAppearing=_viewAppearing;
 @property(nonatomic) _Bool isSubShow; // @synthesize isSubShow=_isSubShow;
-@property(nonatomic) int networkType; // @synthesize networkType=_networkType;
-@property(nonatomic) int editType; // @synthesize editType=_editType;
+@property(nonatomic) long long networkType; // @synthesize networkType=_networkType;
+@property(nonatomic) long long editType; // @synthesize editType=_editType;
 @property(nonatomic) long long fillRetry; // @synthesize fillRetry=_fillRetry;
 @property(nonatomic) long long retryCount; // @synthesize retryCount=_retryCount;
 @property(nonatomic) _Bool tableIsReloading; // @synthesize tableIsReloading=_tableIsReloading;

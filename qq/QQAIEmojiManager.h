@@ -9,7 +9,7 @@
 #import <QQMainProject/IEngineDispatchDelegate-Protocol.h>
 
 @class NSArray, NSDictionary, NSMutableArray, NSMutableSet, NSString, QQAIOMarioViewController, QQBaseChatViewController;
-@protocol OS_dispatch_queue;
+@protocol OS_dispatch_queue, QQAIEmojiManagerDelegate;
 
 @interface QQAIEmojiManager : NSObject <IEngineDispatchDelegate>
 {
@@ -23,8 +23,10 @@
     NSMutableArray *_lastImageUrls;
     NSArray *_searchList;
     _Bool _textImageIsLoad;
+    int _businessType;
     int _curPage;
     int _pageLen;
+    id <QQAIEmojiManagerDelegate> _delegate;
     CDUnknownBlockType _getEmojiCompletion;
     QQBaseChatViewController *_chatViewController;
     QQAIOMarioViewController *_marioViewController;
@@ -45,12 +47,16 @@
 @property(retain, nonatomic) QQAIOMarioViewController *marioViewController; // @synthesize marioViewController=_marioViewController;
 @property(nonatomic) QQBaseChatViewController *chatViewController; // @synthesize chatViewController=_chatViewController;
 @property(copy, nonatomic) CDUnknownBlockType getEmojiCompletion; // @synthesize getEmojiCompletion=_getEmojiCompletion;
+@property(nonatomic) int businessType; // @synthesize businessType=_businessType;
+@property(nonatomic) id <QQAIEmojiManagerDelegate> delegate; // @synthesize delegate=_delegate;
 - (void)hidenMarioButton;
 - (void)sendMarioMsg:(id)arg1;
 - (void)layoutMarioPanelWithOriginY:(double)arg1;
 - (_Bool)containsQQEmoji:(id)arg1;
 - (void)dismissMarioPanel;
 - (void)clearMarioEmojiManager;
+- (void)loadMarioViewWithResult:(id)arg1;
+- (void)presentMarioEmojisPanelWithString:(id)arg1 chatType:(id)arg2 delegate:(id)arg3;
 - (void)presentMarioEmojisPanelWithInputText:(id)arg1 chatType:(id)arg2;
 - (void)resetMarioBaseVC:(id)arg1;
 - (void)reportMarioInfo:(id)arg1 md5:(id)arg2 style:(id)arg3 action:(int)arg4;

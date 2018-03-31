@@ -31,9 +31,11 @@
     NSDictionary *_extraInfo;
     NSDictionary *_controlParameters;
     NSString *_rootMsgId;
+    NSDictionary *_internalDictionary;
 }
 
 + (id)bridgeFromManagedObject:(id)arg1 imCore:(id)arg2;
+@property(retain, nonatomic) NSDictionary *internalDictionary; // @synthesize internalDictionary=_internalDictionary;
 @property(copy, nonatomic) NSString *rootMsgId; // @synthesize rootMsgId=_rootMsgId;
 @property(copy, nonatomic) NSDictionary *controlParameters; // @synthesize controlParameters=_controlParameters;
 @property(retain, nonatomic) NSDictionary *extraInfo; // @synthesize extraInfo=_extraInfo;
@@ -53,6 +55,7 @@
 @property(copy, nonatomic) NSString *messageId; // @synthesize messageId=_messageId;
 @property(nonatomic) unsigned long long messageType; // @synthesize messageType=_messageType;
 - (void).cxx_destruct;
+- (id)_makeDictionaryFromWWMessage:(id)arg1;
 @property(readonly) unsigned long long hash;
 - (_Bool)isEqual:(id)arg1;
 - (_Bool)isEqualToMessageObject:(id)arg1;

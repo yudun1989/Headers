@@ -32,11 +32,12 @@
 @property(nonatomic) _Bool largeFlag; // @synthesize largeFlag=_largeFlag;
 @property(nonatomic) int largeCount; // @synthesize largeCount=_largeCount;
 @property(nonatomic) int node; // @synthesize node=_node;
+- (id)objectWithNum:(unsigned long long)arg1;
 - (id)msgIDContent;
 - (void)setMsgIDContent:(id)arg1;
 - (id)msgContent;
 - (void)setMsgContent:(id)arg1;
-- (_Bool)insertLargeInfoID:(int)arg1 msgSeq:(long long)arg2 infoIndex:(int)arg3 content:(id)arg4 state:(int)arg5 extInfo:(id)arg6;
+- (_Bool)insertLargeInfoID:(int)arg1 msgSeq:(long long)arg2 infoIndex:(int)arg3 content:(id)arg4 state:(int)arg5 extInfo:(id)arg6 data:(id)arg7;
 - (_Bool)isContainFialMsg;
 - (_Bool)isContainMsgPkgIndex:(int)arg1;
 - (_Bool)largeMsgContain:(int)arg1;

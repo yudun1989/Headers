@@ -6,53 +6,74 @@
 
 #import <UIKit/UIViewController.h>
 
+#import <QQMainProject/QQAIEmojiManagerDelegate-Protocol.h>
 #import <QQMainProject/QQBiuRecommandEditViewDelegate-Protocol.h>
 #import <QQMainProject/QQBiuUploadBaseObjectDelegate-Protocol.h>
 
-@class HotPicInfo, NSArray, NSString, QQBiuRecommandEditView, QQBiuUploadBaseObject, QQReadInJoyUGCUploadShowView, UIButton, UIScrollView, UIView;
+@class HotPicInfo, MarioEmojiInfo, NSArray, NSString, QQBiuRecommandEditView, QQBiuUploadBaseObject, QQRIJMarioEmojiButton, QQReadInJoyUGCUploadShowView, UIButton, UILabel, UIScrollView, UIView;
 
-@interface QQRIJCommentViewController : UIViewController <QQBiuUploadBaseObjectDelegate, QQBiuRecommandEditViewDelegate>
+@interface QQRIJCommentViewController : UIViewController <QQBiuUploadBaseObjectDelegate, QQBiuRecommandEditViewDelegate, QQAIEmojiManagerDelegate>
 {
     _Bool _enableAnonymous;
     _Bool _openAt;
     _Bool _toolBarHidden;
     _Bool _isAnonymous;
+    _Bool _isMarioEmojiEnable;
+    _Bool _isMarioEmojiOpen;
+    _Bool _hasSelectedPic;
     _Bool _isFirstLoad;
     _Bool _commentSendBtnClicked;
+    int _ncSource;
     CDUnknownBlockType _commentCallBack;
     UIScrollView *_aboveScrollView;
     NSString *_placeholder;
     NSString *_defaultTxt;
     NSArray *_defaultCommentAtLevel;
+    UIView *_editViewContainer;
     QQBiuRecommandEditView *_biuRecommandEditView;
     UIView *_mainContainer;
     UIView *_editBgView;
+    UIButton *_biuToDianDianBtn;
     UIButton *_commentSendBtn;
     QQBiuUploadBaseObject *_toolBarObject;
     UIButton *_anonymityBtn;
+    QQRIJMarioEmojiButton *_marioEmojiButton;
+    unsigned long long _picSource;
+    MarioEmojiInfo *_marioEmojiInfo;
     HotPicInfo *_hotPicInfo;
     QQReadInJoyUGCUploadShowView *_prePicView;
     unsigned long long _totalCount;
     long long _commentType;
     long long _sourceType;
     unsigned long long _chooseFriendMode;
+    UILabel *_textCountLabel;
 }
 
+@property(nonatomic) int ncSource; // @synthesize ncSource=_ncSource;
+@property(retain, nonatomic) UILabel *textCountLabel; // @synthesize textCountLabel=_textCountLabel;
 @property(nonatomic) unsigned long long chooseFriendMode; // @synthesize chooseFriendMode=_chooseFriendMode;
 @property(nonatomic) _Bool commentSendBtnClicked; // @synthesize commentSendBtnClicked=_commentSendBtnClicked;
 @property(nonatomic) _Bool isFirstLoad; // @synthesize isFirstLoad=_isFirstLoad;
 @property(nonatomic) long long sourceType; // @synthesize sourceType=_sourceType;
 @property(nonatomic) long long commentType; // @synthesize commentType=_commentType;
 @property(nonatomic) unsigned long long totalCount; // @synthesize totalCount=_totalCount;
+@property(nonatomic) _Bool hasSelectedPic; // @synthesize hasSelectedPic=_hasSelectedPic;
 @property(retain, nonatomic) QQReadInJoyUGCUploadShowView *prePicView; // @synthesize prePicView=_prePicView;
 @property(retain, nonatomic) HotPicInfo *hotPicInfo; // @synthesize hotPicInfo=_hotPicInfo;
+@property(retain, nonatomic) MarioEmojiInfo *marioEmojiInfo; // @synthesize marioEmojiInfo=_marioEmojiInfo;
+@property(nonatomic) unsigned long long picSource; // @synthesize picSource=_picSource;
+@property(retain, nonatomic) QQRIJMarioEmojiButton *marioEmojiButton; // @synthesize marioEmojiButton=_marioEmojiButton;
+@property(nonatomic) _Bool isMarioEmojiOpen; // @synthesize isMarioEmojiOpen=_isMarioEmojiOpen;
+@property(nonatomic) _Bool isMarioEmojiEnable; // @synthesize isMarioEmojiEnable=_isMarioEmojiEnable;
 @property(nonatomic) _Bool isAnonymous; // @synthesize isAnonymous=_isAnonymous;
 @property(retain, nonatomic) UIButton *anonymityBtn; // @synthesize anonymityBtn=_anonymityBtn;
 @property(retain, nonatomic) QQBiuUploadBaseObject *toolBarObject; // @synthesize toolBarObject=_toolBarObject;
 @property(retain, nonatomic) UIButton *commentSendBtn; // @synthesize commentSendBtn=_commentSendBtn;
+@property(retain, nonatomic) UIButton *biuToDianDianBtn; // @synthesize biuToDianDianBtn=_biuToDianDianBtn;
 @property(retain, nonatomic) UIView *editBgView; // @synthesize editBgView=_editBgView;
 @property(retain, nonatomic) UIView *mainContainer; // @synthesize mainContainer=_mainContainer;
 @property(retain, nonatomic) QQBiuRecommandEditView *biuRecommandEditView; // @synthesize biuRecommandEditView=_biuRecommandEditView;
+@property(retain, nonatomic) UIView *editViewContainer; // @synthesize editViewContainer=_editViewContainer;
 @property(nonatomic) _Bool toolBarHidden; // @synthesize toolBarHidden=_toolBarHidden;
 @property(retain, nonatomic) NSArray *defaultCommentAtLevel; // @synthesize defaultCommentAtLevel=_defaultCommentAtLevel;
 @property(nonatomic) _Bool openAt; // @synthesize openAt=_openAt;
@@ -62,11 +83,13 @@
 @property(nonatomic) __weak UIScrollView *aboveScrollView; // @synthesize aboveScrollView=_aboveScrollView;
 @property(copy, nonatomic) CDUnknownBlockType commentCallBack; // @synthesize commentCallBack=_commentCallBack;
 - (void).cxx_destruct;
+- (void)initBiuCheckboxStatus;
 - (id)getReportR5String;
 - (id)base64encode:(id)arg1;
 - (id)base64decode:(id)arg1;
 - (id)getFilterContent;
 - (long long)getRealCharCount;
+- (void)refreshBiuToDiandianBtn;
 - (void)refreshTextCountLabel;
 - (void)updateCommentSendBtn;
 - (void)updateSubviews;
@@ -75,16 +98,28 @@
 - (void)showPreviewImage:(id)arg1 bigFacePath:(id)arg2 apngPath:(id)arg3;
 - (void)sendHotPicGifImgUseForward:(id)arg1;
 - (void)changeFrameOnScroll:(_Bool)arg1;
-- (id)getCommentPicArray;
+- (id)getCommentPicArrayWithImgUrl:(id)arg1;
 - (id)getCommentAtLevelArray;
 - (id)getBase64CommentString;
 - (_Bool)checkSendOrShowTips;
+- (void)commitCommentSendWithPicArray:(id)arg1;
+- (void)hideLoadingTips;
+- (void)sendContentWithMarioEmoji;
 - (void)onCommentSendBtnClick;
+- (void)onClickBiuToDianDianBtn;
 - (void)onClickAnonymityBtn;
 - (void)onChooseFriendInfo:(id)arg1;
 - (void)showFriendSelectViewControllerMaxCount:(long long)arg1 andChooseFriendMode:(unsigned long long)arg2;
 - (void)onBiuViewTextChange;
 - (void)onBiuViewBeginEdit;
+- (void)onChooseMarioEmoji:(id)arg1;
+- (void)onHideMarioButton;
+- (id)getMainView;
+- (struct CGRect)getInputBarFrame;
+- (void)hideMarioEmojiBar;
+- (void)presentMarioEmojisPanel;
+- (_Bool)checkMarioEmojiButtonClickable:(_Bool)arg1;
+- (void)onClickAIEmojiBtn;
 - (void)onClickAndChooseFace;
 - (void)onClickHotPicBtn;
 - (void)onClickAtBtn;
@@ -108,11 +143,13 @@
 - (_Bool)isSupportRightDragToGoBack;
 - (_Bool)prefersStatusBarHidden;
 - (long long)preferredStatusBarStyle;
+- (_Bool)isMarioEmojiConfigEnable;
 - (void)viewWillDisappear:(_Bool)arg1;
 - (void)viewDidAppear:(_Bool)arg1;
 - (void)viewWillAppear:(_Bool)arg1;
 - (void)viewDidLoad;
 - (void)dealloc;
+- (id)initWithNativeQuery:(id)arg1 source:(int)arg2;
 - (id)initWithJSWebQuery:(id)arg1;
 
 // Remaining properties

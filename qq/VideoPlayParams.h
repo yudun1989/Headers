@@ -6,14 +6,16 @@
 
 #import <Foundation/NSObject.h>
 
-@class NSURL;
+@class NSURL, QQAsset;
 
 @interface VideoPlayParams : NSObject
 {
     long long _playID;
     NSURL *_playURL;
+    QQAsset *_asset;
 }
 
+@property(retain, nonatomic) QQAsset *asset; // @synthesize asset=_asset;
 @property(retain, nonatomic) NSURL *playURL; // @synthesize playURL=_playURL;
 @property(nonatomic) long long playID; // @synthesize playID=_playID;
 - (void)dealloc;

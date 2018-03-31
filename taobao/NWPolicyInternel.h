@@ -45,7 +45,7 @@
 - (id)currentNettypeString:(unsigned long long)arg1;
 - (id)currentNettypeString;
 - (id)currentPolicyConfiguration;
-- (id)colletExpiredHosts:(id)arg1 modificationTime:(long long)arg2;
+- (id)colletExpiredHosts:(id)arg1 modificationTime:(double)arg2 maxCount:(unsigned long long)arg3;
 - (void)resetFailoverTimestamp:(id)arg1;
 - (void)eliminateSchemesLRU;
 - (void)updateSchemeModelWithOrigin:(id)arg1;

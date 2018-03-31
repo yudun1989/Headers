@@ -6,12 +6,26 @@
 
 #import <QQMainProject/QZDrawItemImage.h>
 
+@class NSString;
+
 @interface QZDrawItemVideo : QZDrawItemImage
 {
     _Bool _showDurationInView;
+    _Bool _showDynamicEffectIcon;
+    _Bool _showPlayCountView;
     unsigned long long _videoTime;
+    NSString *_currentGaussPicUrl;
+    long long _videoWidth;
+    long long _videoHeight;
+    NSString *_remarkText;
 }
 
+@property(retain, nonatomic) NSString *remarkText; // @synthesize remarkText=_remarkText;
+@property(nonatomic) long long videoHeight; // @synthesize videoHeight=_videoHeight;
+@property(nonatomic) long long videoWidth; // @synthesize videoWidth=_videoWidth;
+@property(retain, nonatomic) NSString *currentGaussPicUrl; // @synthesize currentGaussPicUrl=_currentGaussPicUrl;
+@property(nonatomic) _Bool showPlayCountView; // @synthesize showPlayCountView=_showPlayCountView;
+@property(nonatomic) _Bool showDynamicEffectIcon; // @synthesize showDynamicEffectIcon=_showDynamicEffectIcon;
 @property(nonatomic) _Bool showDurationInView; // @synthesize showDurationInView=_showDurationInView;
 @property(nonatomic) unsigned long long videoTime; // @synthesize videoTime=_videoTime;
 - (id)init;

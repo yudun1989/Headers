@@ -10,6 +10,7 @@
 {
 }
 
++ (id)mockFeature;
 + (_Bool)partOutPackage;
 + (id)mockLogisticGoodsListData;
 + (id)mockLogisticPackagesData;

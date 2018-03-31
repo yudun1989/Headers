@@ -18,6 +18,7 @@
     NSDictionary *_cartParam;
     NSString *_buyText;
     NSDictionary *_buyParam;
+    NSString *_buyNowUrl;
     NSString *_redirectUrl;
     AliDetailHintBannerModel *_hintBanner;
     NSString *_buttonTips;
@@ -40,6 +41,7 @@
 @property(copy, nonatomic) NSString *buttonTips; // @synthesize buttonTips=_buttonTips;
 @property(retain, nonatomic) AliDetailHintBannerModel *hintBanner; // @synthesize hintBanner=_hintBanner;
 @property(copy, nonatomic) NSString *redirectUrl; // @synthesize redirectUrl=_redirectUrl;
+@property(copy, nonatomic) NSString *buyNowUrl; // @synthesize buyNowUrl=_buyNowUrl;
 @property(retain, nonatomic) NSDictionary *buyParam; // @synthesize buyParam=_buyParam;
 @property(copy, nonatomic) NSString *buyText; // @synthesize buyText=_buyText;
 @property(nonatomic) _Bool buyEnable; // @synthesize buyEnable=_buyEnable;

@@ -34,6 +34,7 @@
 - (void)reportWatchOnline;
 - (void)loginFailed_v2:(id)arg1 andRst:(int)arg2 withErrInfo:(id)arg3 tag:(long long)arg4;
 - (void)loginSuccessSig_v2:(id)arg1 andSig:(id)arg2 andBaseInfo:(id)arg3 tag:(long long)arg4;
+- (_Bool)changeWatchHttpEvn:(_Bool)arg1;
 - (void)continueToSendLastLoginInfo;
 - (_Bool)syncLogFile;
 - (_Bool)updataLoginInfo:(id)arg1;

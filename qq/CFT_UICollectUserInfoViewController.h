@@ -9,7 +9,7 @@
 #import <QQMainProject/RegionPickerDelegate-Protocol.h>
 #import <QQMainProject/UserSummarySelectOccupationViewControllerDelegate-Protocol.h>
 
-@class CFT_TpRegionPickerViewExtend, CFT_UIFormatField, CFT_UIGroupStyleView, CFT_UITLTextField, ConditionModel, NSMutableDictionary, NSString, RegionPickerView;
+@class CFT_TpRegionPickerViewExtend, CFT_UIFormatField, CFT_UIGroupStyleView, ConditionModel, NSMutableDictionary, NSString, RegionPickerView;
 
 @interface CFT_UICollectUserInfoViewController : CFT_UIBaseBindCardViewController <RegionPickerDelegate, UserSummarySelectOccupationViewControllerDelegate>
 {
@@ -18,7 +18,7 @@
     CFT_UIGroupStyleView *_mobileBox;
     CFT_UIFormatField *_addressTextField;
     CFT_UIFormatField *_careerTextField;
-    CFT_UITLTextField *_detailAddressField;
+    CFT_UIFormatField *_detailAddressField;
     RegionPickerView *_regionPickView;
     CFT_TpRegionPickerViewExtend *_extend;
     NSString *_province;

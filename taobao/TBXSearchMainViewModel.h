@@ -6,20 +6,24 @@
 
 #import "TBXSearchSrpViewModel.h"
 
-@class NSMutableDictionary, TBSRPXSearchService, TBXSearchContext;
+@class NSMutableDictionary, NSString, TBSRPXSearchService, TBXSearchContext;
 
 @interface TBXSearchMainViewModel : TBXSearchSrpViewModel
 {
     NSMutableDictionary *_filterDict;
     NSMutableDictionary *_floatBarDict;
+    NSString *_firstRN;
 }
 
+@property(retain, nonatomic) NSString *firstRN; // @synthesize firstRN=_firstRN;
 @property(retain, nonatomic) NSMutableDictionary *floatBarDict; // @synthesize floatBarDict=_floatBarDict;
 @property(retain, nonatomic) NSMutableDictionary *filterDict; // @synthesize filterDict=_filterDict;
 - (void).cxx_destruct;
 - (void)reset;
+- (id)botAns;
 - (void)processItemList;
 - (void)dataProcess;
+- (void)configRequestConfig;
 - (void)initSearchService:(id)arg1;
 - (void)createWithQuery:(id)arg1;
 - (id)getPreProcessedQuery:(id)arg1;

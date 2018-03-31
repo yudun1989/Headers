@@ -12,21 +12,26 @@
 
 @interface TBDetailHUDActivityView : UIView <UIScrollViewDelegate>
 {
-    double indicatorWidth;
-    double indicatorHeight;
-    UIScrollView *scrollView;
-    UIView *maskView;
-    UIView *backView;
-    UIActivityIndicatorView *activityView;
-    UILabel *textLabel;
-    UIImageView *imageView;
-    _Bool needShowTip;
+    _Bool _needShowTip;
+    double _indicatorWidth;
+    double _indicatorHeight;
+    UILabel *_textLabel;
+    UIImageView *_imageView;
+    UIScrollView *_scrollView;
+    UIView *_maskView;
+    UIView *_backView;
+    UIActivityIndicatorView *_activityView;
 }
 
-@property(retain, nonatomic) UIImageView *imageView; // @synthesize imageView;
-@property(retain, nonatomic) UILabel *textLabel; // @synthesize textLabel;
-@property(nonatomic) double indicatorHeight; // @synthesize indicatorHeight;
-@property(nonatomic) double indicatorWidth; // @synthesize indicatorWidth;
+@property(nonatomic) _Bool needShowTip; // @synthesize needShowTip=_needShowTip;
+@property(retain, nonatomic) UIActivityIndicatorView *activityView; // @synthesize activityView=_activityView;
+@property(retain, nonatomic) UIView *backView; // @synthesize backView=_backView;
+@property(retain, nonatomic) UIView *maskView; // @synthesize maskView=_maskView;
+@property(retain, nonatomic) UIScrollView *scrollView; // @synthesize scrollView=_scrollView;
+@property(retain, nonatomic) UIImageView *imageView; // @synthesize imageView=_imageView;
+@property(retain, nonatomic) UILabel *textLabel; // @synthesize textLabel=_textLabel;
+@property(nonatomic) double indicatorHeight; // @synthesize indicatorHeight=_indicatorHeight;
+@property(nonatomic) double indicatorWidth; // @synthesize indicatorWidth=_indicatorWidth;
 - (void).cxx_destruct;
 - (void)dealloc;
 - (id)viewForZoomingInScrollView:(id)arg1;

@@ -37,6 +37,8 @@
     NSString *_similarCount;
     NSString *_sameCount;
     NSString *_similarURL;
+    NSString *_disable;
+    NSString *_similarSameUrl;
     NSString *_uniqpid;
     NSString *_spuId;
     NSString *_iconList;
@@ -119,6 +121,8 @@
 @property(retain, nonatomic) NSString *iconList; // @synthesize iconList=_iconList;
 @property(retain, nonatomic) NSString *spuId; // @synthesize spuId=_spuId;
 @property(retain, nonatomic) NSString *uniqpid; // @synthesize uniqpid=_uniqpid;
+@property(retain, nonatomic) NSString *similarSameUrl; // @synthesize similarSameUrl=_similarSameUrl;
+@property(retain, nonatomic) NSString *disable; // @synthesize disable=_disable;
 @property(retain, nonatomic) NSString *similarURL; // @synthesize similarURL=_similarURL;
 @property(retain, nonatomic) NSString *sameCount; // @synthesize sameCount=_sameCount;
 @property(retain, nonatomic) NSString *similarCount; // @synthesize similarCount=_similarCount;
@@ -143,6 +147,7 @@
 @property(retain, nonatomic) NSString *pic_path; // @synthesize pic_path=_pic_path;
 @property(retain, nonatomic) NSString *title; // @synthesize title=_title;
 - (void).cxx_destruct;
+- (_Bool)isP4pAuction;
 - (id)getNeedAuctionId;
 - (void)proccessIconWithSytleData:(id)arg1;
 - (_Bool)disableTouchComponent;

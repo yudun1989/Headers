@@ -13,8 +13,7 @@
 + (void)updateShowCountsWithInfoModel:(id)arg1 key:(id)arg2;
 + (id)getSpritePushModelByKey:(id)arg1;
 + (id)parseMsgContentOfSubType0xdc:(struct CPBMessageDecoder *)arg1;
-+ (void)parseAioMsg:(struct CPBMessageDecoder *)arg1;
-+ (void)parseDrawerMsg:(struct CPBMessageDecoder *)arg1;
++ (void)parseS2CMsg:(struct CPBMessageDecoder *)arg1 msgType:(int)arg2 pbIndex:(unsigned int)arg3 existedModels:(id *)arg4;
 + (void)parseSubMessageType0xdc:(const void *)arg1 dataLength:(int)arg2;
 
 @end

@@ -7,7 +7,7 @@
 #import <Foundation/NSObject.h>
 
 @class NSDictionary, NSMutableDictionary, NSString, TBSDKThreadSafeMutableDictionary;
-@protocol OS_dispatch_group, OS_dispatch_queue;
+@protocol MtopCacheProtocol, OS_dispatch_group, OS_dispatch_queue;
 
 @interface TBSDKCacheStorage : NSObject
 {
@@ -20,10 +20,12 @@
     TBSDKThreadSafeMutableDictionary *_blockConfig;
     TBSDKThreadSafeMutableDictionary *_apiConfig;
     NSMutableDictionary *_blocks;
+    id <MtopCacheProtocol> _cacheModule;
 }
 
 + (id)sharedInstance;
 @property _Bool syncflag; // @synthesize syncflag=_syncflag;
+@property(retain, nonatomic) id <MtopCacheProtocol> cacheModule; // @synthesize cacheModule=_cacheModule;
 @property(retain, nonatomic) NSMutableDictionary *blocks; // @synthesize blocks=_blocks;
 @property(retain, nonatomic) TBSDKThreadSafeMutableDictionary *apiConfig; // @synthesize apiConfig=_apiConfig;
 @property(retain, nonatomic) TBSDKThreadSafeMutableDictionary *blockConfig; // @synthesize blockConfig=_blockConfig;
@@ -50,6 +52,7 @@
 - (void)addConfig:(id)arg1;
 - (void)setConfig:(id)arg1;
 - (void)dealloc;
+- (void)adapterCacheModule;
 - (id)init;
 - (void)cleanCache;
 - (void)nextStartupCleanCache;

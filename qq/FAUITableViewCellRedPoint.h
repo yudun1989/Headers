@@ -13,6 +13,7 @@
     UIImageView *_redPointView;
 }
 
+- (unsigned long long)accessibilityTraits;
 - (void)layoutSubviews;
 - (void)resetRedPointHidden:(_Bool)arg1 type:(int)arg2;
 - (void)dealloc;

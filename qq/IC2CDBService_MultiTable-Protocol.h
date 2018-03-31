@@ -72,7 +72,7 @@
 - (void)deleteMsgWithUin:(NSString *)arg1 msgID:(int)arg2;
 - (_Bool)getPTTPICFileFromDB:(NSString *)arg1 len:(int)arg2 type:(int)arg3 uin:(NSString *)arg4;
 - (void)removeAllAccostMessages;
-- (void)updateMessage:(NSArray *)arg1;
+- (void)updateMessages:(NSArray *)arg1;
 - (NSArray *)getAccostMessages:(int)arg1;
 - (void)upOffLineFileMsg:(NSString *)arg1 time:(long long)arg2 forRead:(int)arg3;
 - (void)upOfflineFileMsg:(NSString *)arg1 uuid:(NSString *)arg2 forContent:(NSString *)arg3;

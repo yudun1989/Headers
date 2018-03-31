@@ -28,7 +28,7 @@
 - (void)setVoiceOverText:(id)arg1;
 - (void)drawPriceItem:(id)arg1 style:(id)arg2;
 - (void)updatePriceStyle;
-- (void)setConstrainedSize:(struct CGSize)arg1 type:(int)arg2;
+- (void)setConstrainedSize:(struct CGSize)arg1 type:(unsigned long long)arg2;
 - (id)init;
 
 @end

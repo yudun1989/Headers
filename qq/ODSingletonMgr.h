@@ -10,6 +10,11 @@
 {
 }
 
++ (id)shareODGiftH264ViewController:(Class)arg1;
++ (id)shareODSealsMgr:(Class)arg1;
++ (id)sharedNetResFileLoader:(Class)arg1;
++ (id)sharedEffectManager:(Class)arg1;
++ (id)sharedODResultHandler:(Class)arg1;
 + (id)sharedODPermission:(Class)arg1;
 + (id)sharedODResDownloadMgr:(Class)arg1;
 + (id)sharedUserMgr:(Class)arg1;
@@ -24,6 +29,7 @@
 + (id)standardUserDefaults:(Class)arg1;
 + (id)sharedODDeveloperUtil:(Class)arg1;
 + (id)sharedCSTask:(Class)arg1;
++ (id)sharedFileDownloadTask:(Class)arg1;
 
 @end
 

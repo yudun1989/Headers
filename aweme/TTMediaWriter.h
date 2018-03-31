@@ -14,7 +14,7 @@
 @interface TTMediaWriter : NSObject <NotifyHandler, TTMediaWriter>
 {
     struct MediaWriter *_mediaWriter;
-    ApApp_41a7cf77 *_mWrapper;
+    struct ApApp *_mWrapper;
     CDUnknownBlockType _completionBlock;
 }
 

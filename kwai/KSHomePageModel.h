@@ -6,7 +6,7 @@
 
 #import "KSPageModel.h"
 
-@class KSHomeStatModel, KSThirdPartyFriendsInfo, NSLock, NSMutableArray, NSString;
+@class KSExtraFollowPageInfo, KSHomeStatModel, KSThirdPartyFriendsInfo, NSLock, NSMutableArray, NSString;
 
 @interface KSHomePageModel : KSPageModel
 {
@@ -16,6 +16,7 @@
     NSString *_llsid;
     NSLock *_isLoadingCachedFeedLock;
     KSThirdPartyFriendsInfo *_thirdPartyFriendsInfo;
+    KSExtraFollowPageInfo *_extraFollowPageInfo;
     NSMutableArray *_feeds;
     NSMutableArray *_dislikedFeeds;
     KSHomeStatModel *_homeStatModel;
@@ -27,6 +28,7 @@
 @property(retain, nonatomic) KSHomeStatModel *homeStatModel; // @synthesize homeStatModel=_homeStatModel;
 @property(retain, nonatomic) NSMutableArray *dislikedFeeds; // @synthesize dislikedFeeds=_dislikedFeeds;
 @property(retain, nonatomic) NSMutableArray *feeds; // @synthesize feeds=_feeds;
+@property(retain, nonatomic) KSExtraFollowPageInfo *extraFollowPageInfo; // @synthesize extraFollowPageInfo=_extraFollowPageInfo;
 @property(retain, nonatomic) KSThirdPartyFriendsInfo *thirdPartyFriendsInfo; // @synthesize thirdPartyFriendsInfo=_thirdPartyFriendsInfo;
 @property(retain, nonatomic) NSLock *isLoadingCachedFeedLock; // @synthesize isLoadingCachedFeedLock=_isLoadingCachedFeedLock;
 @property(nonatomic) _Bool isLoadingCachedFeed; // @synthesize isLoadingCachedFeed=_isLoadingCachedFeed;

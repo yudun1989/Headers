@@ -15,6 +15,7 @@
     NIAttributedLabel *_richLabel;
 }
 
+@property(readonly, nonatomic) QQXMLMessageItem *messageItem; // @synthesize messageItem=_messageItem;
 - (void)drawRect:(struct CGRect)arg1;
 - (void)setDelegate:(id)arg1;
 - (void)dealloc;

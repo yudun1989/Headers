@@ -14,7 +14,7 @@
 + (void)onTap:(id)arg1;
 + (id)gestureForEventKey:(id)arg1;
 + (id)eventAttrbuteKeys;
-+ (void)setDViewEventWithAttributes:(id)arg1 withData:(id)arg2 module:(id)arg3 context:(id)arg4 error:(id *)arg5 inView:(id)arg6;
++ (void)setDViewEventWithAttributes:(id)arg1 withParam:(id)arg2 inView:(id)arg3;
 
 @end
 

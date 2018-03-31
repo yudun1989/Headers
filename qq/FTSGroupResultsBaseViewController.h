@@ -11,7 +11,7 @@
 #import <QQMainProject/QQDynamicSearchTableFootLoadingViewDelegate-Protocol.h>
 #import <QQMainProject/UISearchBarDelegate-Protocol.h>
 
-@class FTSCustomSearchBar, FTSEntranceViewController, FTSGaussBlurMaskView, FTSGroupResultsTabViewController, FTSGroupResultsTableView, FTSNoMoreResultView, NSData, NSString, QQDynamicSearchTableFootLoadingView;
+@class FTSCustomSearchBar, FTSEntranceViewController, FTSGaussBlurMaskView, FTSGroupResultsTableView, FTSNoMoreResultView, NSData, NSString, QQDynamicSearchTableFootLoadingView;
 
 @interface FTSGroupResultsBaseViewController : QQViewController <FTSGroupResultsDelegate, FTSNoMoreResultDelegate, QQDynamicSearchTableFootLoadingViewDelegate, UISearchBarDelegate>
 {
@@ -42,7 +42,6 @@
     NSString *_searchBarPlaceholder;
     long long _searchStateFilter;
     FTSEntranceViewController *_ftsEntranceViewController;
-    FTSGroupResultsTabViewController *_ftsGroupResultsTabViewController;
     long long _searchSource;
     NSData *_cookie;
 }
@@ -55,7 +54,6 @@
 @property(nonatomic) _Bool closeSelfWhenOpenWebView; // @synthesize closeSelfWhenOpenWebView=_closeSelfWhenOpenWebView;
 @property(nonatomic) _Bool isClickItemFirst; // @synthesize isClickItemFirst=_isClickItemFirst;
 @property(nonatomic) _Bool needSearchNet; // @synthesize needSearchNet=_needSearchNet;
-@property(nonatomic) __weak FTSGroupResultsTabViewController *ftsGroupResultsTabViewController; // @synthesize ftsGroupResultsTabViewController=_ftsGroupResultsTabViewController;
 @property(nonatomic) __weak FTSEntranceViewController *ftsEntranceViewController; // @synthesize ftsEntranceViewController=_ftsEntranceViewController;
 @property(nonatomic) long long searchStateFilter; // @synthesize searchStateFilter=_searchStateFilter;
 @property(nonatomic) _Bool dontShowAISearch; // @synthesize dontShowAISearch=_dontShowAISearch;
@@ -116,6 +114,7 @@
 - (void)keyboardWillShow:(id)arg1;
 - (void)initializeFTSCustomSearchBar;
 - (void)initializeFootLoadingView;
+- (void)setTableviewFrame:(struct CGRect)arg1;
 - (void)initializeGroupResultsTable;
 - (void)initializeNoResultsPage;
 - (void)initializeSearchBackgroud;

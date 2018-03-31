@@ -21,9 +21,11 @@
     long long _numberOfVideoTitleLineByGlobalConfig;
     long long _timeOfControlViewStayByGlobalConfig;
     NSMutableArray *_danmakuArray;
+    long long _videoForm;
 }
 
 + (id)excludedPropertyKeys;
+@property(nonatomic) long long videoForm; // @synthesize videoForm=_videoForm;
 @property(nonatomic) _Bool hasMoreDanmaku; // @synthesize hasMoreDanmaku=_hasMoreDanmaku;
 @property(retain, nonatomic) NSMutableArray *danmakuArray; // @synthesize danmakuArray=_danmakuArray;
 @property(nonatomic) _Bool disableAutoPlayByGlobalConfig; // @synthesize disableAutoPlayByGlobalConfig=_disableAutoPlayByGlobalConfig;
@@ -72,6 +74,7 @@
 @property(nonatomic) double cEnlargeRate; // @dynamic cEnlargeRate;
 @property(retain, nonatomic) NSString *clientKey; // @dynamic clientKey;
 @property(retain, nonatomic) NSDictionary *cookie; // @dynamic cookie;
+@property(retain, nonatomic) NSString *currentGaussPicURL; // @dynamic currentGaussPicURL;
 @property(retain, nonatomic) NSString *currentURL; // @dynamic currentURL;
 @property(retain, nonatomic) NSDictionary *extendInfo; // @dynamic extendInfo;
 @property(retain, nonatomic) NSMutableDictionary *extraPlayInfo; // @dynamic extraPlayInfo;

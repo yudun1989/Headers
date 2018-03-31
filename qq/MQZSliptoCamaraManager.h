@@ -21,6 +21,7 @@
     NSString *_remoteURL;
     int _xo;
     _Bool _wnsIsAllowToSlide;
+    _Bool _isShowedAuthorityView;
     int _storageAppearCount;
     UIView *_contentView;
     UIView *_maskView;
@@ -30,6 +31,7 @@
 
 + (id)getManager;
 @property(nonatomic) int storageAppearCount; // @synthesize storageAppearCount=_storageAppearCount;
+@property(nonatomic) _Bool isShowedAuthorityView; // @synthesize isShowedAuthorityView=_isShowedAuthorityView;
 @property(nonatomic) _Bool wnsIsAllowToSlide; // @synthesize wnsIsAllowToSlide=_wnsIsAllowToSlide;
 @property(retain, nonatomic) QZCarameGuideView *carameGuideView; // @synthesize carameGuideView=_carameGuideView;
 @property(retain, nonatomic) NSString *remoteURL; // @synthesize remoteURL=_remoteURL;

@@ -21,6 +21,7 @@
 - (void)actionSearch;
 - (void)clearDataSource;
 - (void)addDatasource:(id)arg1;
+- (void)viewDidAppear:(_Bool)arg1;
 - (void)viewWillAppear:(_Bool)arg1;
 - (void)_setDiscussGroupDetailTitle;
 - (void)dealloc;

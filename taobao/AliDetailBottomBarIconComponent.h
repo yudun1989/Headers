@@ -15,16 +15,16 @@
 {
     _Bool _hasRegist;
     _Bool _isWWGuideShowing;
-    int _groupItemType;
     UIButton *_iconButton;
     UIButton *_textButton;
+    unsigned long long _groupItemType;
     AliDetailBottomBarIconModel *_itemModel;
 }
 
 @property(nonatomic) _Bool isWWGuideShowing; // @synthesize isWWGuideShowing=_isWWGuideShowing;
 @property(nonatomic) _Bool hasRegist; // @synthesize hasRegist=_hasRegist;
 @property(retain, nonatomic) AliDetailBottomBarIconModel *itemModel; // @synthesize itemModel=_itemModel;
-@property(nonatomic) int groupItemType; // @synthesize groupItemType=_groupItemType;
+@property(nonatomic) unsigned long long groupItemType; // @synthesize groupItemType=_groupItemType;
 @property(retain, nonatomic) UIButton *textButton; // @synthesize textButton=_textButton;
 @property(retain, nonatomic) UIButton *iconButton; // @synthesize iconButton=_iconButton;
 - (void).cxx_destruct;

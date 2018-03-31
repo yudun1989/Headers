@@ -16,10 +16,12 @@
     _Bool _usingView;
     _Bool _isFrontView;
     _Bool _underTextView;
+    _Bool _needRoundCorner;
     NSString *_imageName;
     long long _actionType;
 }
 
+@property(nonatomic) _Bool needRoundCorner; // @synthesize needRoundCorner=_needRoundCorner;
 @property(nonatomic) long long actionType; // @synthesize actionType=_actionType;
 @property(nonatomic) _Bool underTextView; // @synthesize underTextView=_underTextView;
 @property(nonatomic) _Bool isFrontView; // @synthesize isFrontView=_isFrontView;

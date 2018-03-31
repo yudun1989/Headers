@@ -47,6 +47,7 @@
 - (void)dealloc;
 - (double)xOfVc;
 - (void)clearVC;
+- (void)resetWithSearchContext:(id)arg1;
 - (id)vcForBizName:(id)arg1;
 - (id)tabModelWithIndex:(long long)arg1;
 - (id)generateChildVC:(id)arg1 withSearchService:(id)arg2;

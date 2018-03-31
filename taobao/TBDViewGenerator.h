@@ -13,17 +13,12 @@
     NSString *_module;
 }
 
-+ (id)defaultDViewGenerator;
 + (id)viewGeneratorWithModule:(id)arg1;
 + (id)defaultViewGenerator;
 @property(readonly, nonatomic) NSString *module; // @synthesize module=_module;
 - (void).cxx_destruct;
-- (id)generateViewItemWithTemplateItem:(id)arg1 dataDict:(id)arg2 needDownloadTemplate:(_Bool *)arg3 templateDownloadComplete:(CDUnknownBlockType)arg4;
-- (id)generateViewItemWithTemplateItem:(id)arg1 dataDict:(id)arg2 needDownloadTemplate:(_Bool *)arg3 viewItemUpdateBlock:(CDUnknownBlockType)arg4;
-- (_Bool)needUpdateTemplateWithViewItem:(id)arg1 templateItem:(id)arg2;
-- (_Bool)canGenerateViewItemWithTemplateItem:(id)arg1 needDownloadTemplate:(_Bool *)arg2 templateDownloadComplete:(CDUnknownBlockType)arg3;
-- (_Bool)canGenerateViewItemWithTemplateItem:(id)arg1;
-- (id)rendedViewItemWithTemplateItem:(id)arg1 templateDict:(id)arg2 data:(id)arg3 context:(id)arg4 error:(id *)arg5;
+- (struct CGSize)estimatedViewSizeWithTemplateItem:(id)arg1 templateDict:(id)arg2 param:(id)arg3;
+- (id)rendedViewItemWithTemplateItem:(id)arg1 templateDict:(id)arg2 param:(id)arg3;
 - (struct CGSize)estimatedViewSizeWithExactTemplate:(id)arg1 data:(id)arg2 context:(id)arg3 error:(id *)arg4;
 - (struct CGSize)estimatedViewSizeWithExactTemplate:(id)arg1 dataDict:(id)arg2;
 - (id)generateViewItemWithExactTemplate:(id)arg1 data:(id)arg2 context:(id)arg3 error:(id *)arg4;

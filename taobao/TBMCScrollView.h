@@ -16,9 +16,9 @@
 {
     _Bool _jumpFlag;
     _Bool _isSubviewsUnload;
-    int _scrollDirection;
     id <TBMCScrollViewDataSource> _mcDataSource;
     id <TBMCScrollViewDelegate> _mcDelegate;
+    unsigned long long _scrollDirection;
     NSMutableArray *_layouts;
     double _previewPointY;
     long long _currentOnTopIndex;
@@ -34,7 +34,7 @@
 @property(nonatomic) long long currentOnTopIndex; // @synthesize currentOnTopIndex=_currentOnTopIndex;
 @property(nonatomic) double previewPointY; // @synthesize previewPointY=_previewPointY;
 @property(retain, nonatomic) NSMutableArray *layouts; // @synthesize layouts=_layouts;
-@property(nonatomic) int scrollDirection; // @synthesize scrollDirection=_scrollDirection;
+@property(nonatomic) unsigned long long scrollDirection; // @synthesize scrollDirection=_scrollDirection;
 @property(nonatomic) struct UIEdgeInsets contentEdgeInsets; // @synthesize contentEdgeInsets=_contentEdgeInsets;
 @property(nonatomic) __weak id <TBMCScrollViewDelegate> mcDelegate; // @synthesize mcDelegate=_mcDelegate;
 @property(nonatomic) __weak id <TBMCScrollViewDataSource> mcDataSource; // @synthesize mcDataSource=_mcDataSource;
@@ -54,7 +54,7 @@
 - (void)viewDidAppearForIndex:(long long)arg1;
 - (void)viewWillAppearForIndex:(long long)arg1;
 - (void)viewDidLoadForComponent:(id)arg1 withLayout:(id)arg2;
-- (int)direction:(double)arg1;
+- (unsigned long long)direction:(double)arg1;
 - (void)didDisappearComponentForLayout:(id)arg1 atIndex:(long long)arg2;
 - (void)willDisappearComponentForLayout:(id)arg1 atIndex:(long long)arg2;
 - (void)didAppearComponnetForLayout:(id)arg1 atIndex:(long long)arg2;
@@ -62,7 +62,7 @@
 - (void)handleDirectionNone:(id)arg1 index:(long long)arg2 currentPointY:(double)arg3 currentBottom:(double)arg4;
 - (void)handleDirectionDown:(id)arg1 index:(long long)arg2 currentPointY:(double)arg3 currentBottom:(double)arg4;
 - (void)handleDirectionUp:(id)arg1 index:(long long)arg2 currentPointY:(double)arg3 currentBottom:(double)arg4;
-- (void)handleComponentForIndex:(long long)arg1 direction:(int)arg2;
+- (void)handleComponentForIndex:(long long)arg1 direction:(unsigned long long)arg2;
 - (void)scrollViewDidScroll:(id)arg1;
 - (void)scrollViewDidEndDragging:(id)arg1 willDecelerate:(_Bool)arg2;
 - (_Bool)checkJumpAnimated:(long long)arg1;

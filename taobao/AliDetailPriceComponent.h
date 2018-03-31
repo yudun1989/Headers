@@ -20,11 +20,11 @@
     NSString *_originPrice;
 }
 
-+ (id)getPriceStyle:(int)arg1;
++ (id)getPriceStyle:(unsigned long long)arg1;
 + (struct CGSize)adjustZoneRect:(struct CGRect)arg1 targetFrame:(struct CGRect)arg2;
-+ (id)getPriceModel:(id)arg1 pos:(int)arg2;
++ (id)getPriceModel:(id)arg1 pos:(unsigned long long)arg2;
 + (struct CGRect)frameAdjustForViewSize:(struct CGSize)arg1 startPoint:(struct CGPoint)arg2 zoneRect:(struct CGRect)arg3;
-+ (struct CGRect)priceFrameWithStart:(struct CGPoint)arg1 zoneRect:(struct CGRect)arg2 priceModel:(id)arg3 pos:(int)arg4;
++ (struct CGRect)priceFrameWithStart:(struct CGPoint)arg1 zoneRect:(struct CGRect)arg2 priceModel:(id)arg3 pos:(unsigned long long)arg4;
 + (struct CGRect)priceTagsFrameWithStart:(struct CGPoint)arg1 zoneRect:(struct CGRect)arg2 tagModel:(id)arg3;
 + (double)componentHeightForObj:(id)arg1 preferredWidth:(double)arg2;
 @property(retain, nonatomic) NSString *originPrice; // @synthesize originPrice=_originPrice;
@@ -39,7 +39,7 @@
 - (void)updateMxsPrice:(id)arg1;
 - (void)drawTags:(id)arg1;
 - (id)drawTag:(id)arg1;
-- (id)drawPriceWithEntity:(id)arg1 pos:(int)arg2;
+- (id)drawPriceWithEntity:(id)arg1 pos:(unsigned long long)arg2;
 - (id)drawExtraPriceDescLabel:(id)arg1;
 - (void)drawFurthurPrices:(id)arg1;
 - (void)drawExtraPriceDescs;

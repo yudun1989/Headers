@@ -15,6 +15,7 @@
 }
 
 + (id)sharedInstance;
+- (id)currentPageName;
 - (id)utdid;
 - (void)log:(id)arg1 message:(id)arg2;
 - (void)pageDisAppeaPageObject:(id)arg1;

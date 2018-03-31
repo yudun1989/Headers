@@ -48,7 +48,8 @@
 + (void)trackOnViewDidLoad:(id)arg1;
 + (void)trackOnInitVC:(id)arg1;
 + (void)exposureUserTrack:(id)arg1 onVC:(id)arg2;
-+ (id)rn_monitor:(id)arg1 onVC:(id)arg2;
++ (_Bool)needMonitor:(id)arg1 onVC:(id)arg2;
++ (void)exposureStandardUserTrack:(id)arg1 onVC:(id)arg2;
 + (void)exposureNativeComponent:(id)arg1 onVC:(id)arg2;
 + (void)exposureDinamicComponent:(id)arg1 onVC:(id)arg2;
 + (id)generateCommonTrackParams:(id)arg1 customParams:(id)arg2;

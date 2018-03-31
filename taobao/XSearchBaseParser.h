@@ -10,7 +10,5 @@
 {
 }
 
-- (id)getUniversalComponentData:(id)arg1;
-
 @end
 

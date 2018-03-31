@@ -74,12 +74,14 @@
     CALayer *_closeMaskLayer;
     CALayer *_bottomMaskLayer;
     struct CGPoint _scrollBeganPoint;
+    struct CGRect _activityPosition;
 }
 
 + (void)updateApplicationFirstLaunchFlag:(id)arg1;
 @property(retain, nonatomic) CALayer *bottomMaskLayer; // @synthesize bottomMaskLayer=_bottomMaskLayer;
 @property(retain, nonatomic) CALayer *closeMaskLayer; // @synthesize closeMaskLayer=_closeMaskLayer;
 @property(nonatomic) _Bool isUpDownSwitch; // @synthesize isUpDownSwitch=_isUpDownSwitch;
+@property(nonatomic) struct CGRect activityPosition; // @synthesize activityPosition=_activityPosition;
 @property(nonatomic) _Bool ignoreActivityUrl; // @synthesize ignoreActivityUrl=_ignoreActivityUrl;
 @property(retain, nonatomic) NSString *renderType; // @synthesize renderType=_renderType;
 @property(retain, nonatomic) NSString *activityUrl; // @synthesize activityUrl=_activityUrl;

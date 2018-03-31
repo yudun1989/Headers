@@ -22,6 +22,8 @@
 - (id)title;
 - (id)detailIcon;
 - (id)totalValue;
+- (id)fontColor;
+- (id)iconHeight;
 - (id)icon;
 - (void)reload:(id)arg1;
 - (id)initWithData:(id)arg1 withBuyEngine:(id)arg2;

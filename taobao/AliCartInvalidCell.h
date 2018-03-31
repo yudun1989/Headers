@@ -33,6 +33,11 @@
 @property(retain, nonatomic) UILabel *invalidIconLabel; // @synthesize invalidIconLabel=_invalidIconLabel;
 - (void).cxx_destruct;
 - (void)registerAction;
+- (id)similarButtonStyle;
+- (struct CGRect)similarButtonFrame;
+- (void)layoutSubviewsForSimilarButton;
+- (void)loadSimilarButton;
+- (void)loadMenuSimilarButton;
 - (void)bindData:(id)arg1;
 - (void)layoutSubviews;
 - (void)loadSubviews;

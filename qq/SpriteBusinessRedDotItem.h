@@ -43,7 +43,6 @@
 - (_Bool)isShowMsgWithShowLevel:(unsigned long long)arg1;
 - (void)clickWithShowLevel:(unsigned long long)arg1;
 - (void)dealloc;
-- (id)description;
 - (id)initWithDictionary:(id)arg1;
 
 @end

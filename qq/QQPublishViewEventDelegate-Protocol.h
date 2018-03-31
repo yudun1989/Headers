@@ -11,6 +11,7 @@
 @protocol QQPublishViewEventDelegate <NSObject>
 
 @optional
+- (void)publishViewStartProcessShortVideo;
 - (void)publishViewDidSimplyChangeBidUsingSuggestTribe:(NSString *)arg1;
 - (void)publishViewDidChangeBid:(NSArray *)arg1 newCondition:(NSDictionary *)arg2;
 - (void)hasDefaultCategory:(int)arg1;

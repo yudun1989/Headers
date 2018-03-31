@@ -6,9 +6,13 @@
 
 #import "NSObject-Protocol.h"
 
-@class KSLetterMessageCell;
+@class KSLetterMessageCell, NSString, NSURL;
 
 @protocol KSLetterMessageCellDelegate <NSObject>
+
+@optional
+- (void)goToWebViewControllerWithUrl:(NSURL *)arg1;
+- (void)sendFeedbackMessage:(NSString *)arg1 extraInfo:(NSString *)arg2;
 - (void)didTapMessageAvatar:(KSLetterMessageCell *)arg1;
 - (void)didLongPressMessageCell:(KSLetterMessageCell *)arg1;
 - (void)didTapMessageCell:(KSLetterMessageCell *)arg1;

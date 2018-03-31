@@ -51,6 +51,7 @@
 - (_Bool)hasAdditionalData;
 - (_Bool)isNeedShowAdditionalData;
 - (void)interceptorDidNeedClean;
+- (void)share;
 - (void)cleanInvildItems;
 - (void)cartQueryEndPageDataSuccess;
 - (void)cartQueryData;

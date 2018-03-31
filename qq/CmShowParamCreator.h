@@ -16,8 +16,9 @@
 + (id)getActionArrayWithRspArray:(id)arg1;
 + (id)getActionArrayWithReqDic:(id)arg1;
 + (id)getSpriteArrayWithSpriteRspArray:(id)arg1 chatModel:(id)arg2;
++ (id)getSpriteArrayWithSpriteRspArray:(id)arg1 petRspArray:(id)arg2 petActions:(id)arg3 chatModel:(id)arg4;
 + (id)getSendSpriteMsgParamWith:(id)arg1 actionType:(int)arg2;
-+ (id)getInitSpriteParamWithSpriteRspData:(id)arg1 chatModel:(id)arg2 petRspData:(id)arg3;
++ (id)getInitSpriteParamWithSpriteRspData:(id)arg1 chatModel:(id)arg2 petRspData:(id)arg3 petActions:(id)arg4;
 + (id)getAioCommonParamWithInfo:(id)arg1;
 + (id)getTransitionActionRscPathWithActionID:(short)arg1;
 + (id)getBubbleRscPathWithModel:(id)arg1;

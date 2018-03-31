@@ -6,16 +6,22 @@
 
 #import "TBJSONModel.h"
 
-@class NSString;
+@class NSString, TBDTemplateItem, TBLiveDynamicTemplateModel;
 
 @interface TBLiveChannelPageContentModel : TBJSONModel
 {
+    TBDTemplateItem *_originalTemplate;
+    TBDTemplateItem *_exactTemplate;
     NSString *_type;
     id _data;
+    TBLiveDynamicTemplateModel *_template;
 }
 
+@property(retain, nonatomic) TBLiveDynamicTemplateModel *template; // @synthesize template=_template;
 @property(retain, nonatomic) id data; // @synthesize data=_data;
 @property(copy, nonatomic) NSString *type; // @synthesize type=_type;
+@property(retain, nonatomic) TBDTemplateItem *exactTemplate; // @synthesize exactTemplate=_exactTemplate;
+@property(retain, nonatomic) TBDTemplateItem *originalTemplate; // @synthesize originalTemplate=_originalTemplate;
 - (void).cxx_destruct;
 
 @end

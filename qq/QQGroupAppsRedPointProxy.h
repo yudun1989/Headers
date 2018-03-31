@@ -16,7 +16,7 @@
 + (id)parseAppList:(basic_string_075b6133 *)arg1;
 + (id)create0x5be_1RequestFromGroupCode:(unsigned long long)arg1 groupAppsNum:(unsigned int)arg2 version:(unsigned int)arg3;
 + (id)parse0x5be_1Response:(basic_string_075b6133 *)arg1;
-+ (id)create0xaf4RequestFromGroupCode:(unsigned long long)arg1 version:(id)arg2;
++ (id)create0xaf4RequestFromGroupCode:(unsigned long long)arg1 serviceType:(unsigned int)arg2 version:(id)arg3 timeStamp:(unsigned int)arg4;
 + (id)parse0xaf4Response:(basic_string_075b6133 *)arg1;
 
 @end

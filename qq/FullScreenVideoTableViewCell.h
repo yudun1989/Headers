@@ -9,7 +9,7 @@
 #import <QQMainProject/BarrageWebViewTableCellDelegate-Protocol.h>
 #import <QQMainProject/QQReadInJoyFullVideoViewDelegate-Protocol.h>
 
-@class BubbleView, CAGradientLayer, CALayer, CellContainerView, FullScreenVideoCellModel, FullScreenVideoStateView, NSString, QQAvatarView, QQReadInJoyVideoItemFullScreenViewController, UIButton, UILabel, UILongPressGestureRecognizer, UIView;
+@class BubbleView, CAGradientLayer, CALayer, CellContainerView, FullScreenVideoCellModel, FullScreenVideoStateView, NSDictionary, NSString, QQAvatarView, QQReadInJoyVideoItemFullScreenViewController, UIButton, UILabel, UILongPressGestureRecognizer, UIView;
 @protocol FullScreenVideoCellDelegate;
 
 @interface FullScreenVideoTableViewCell : UITableViewCell <QQReadInJoyFullVideoViewDelegate, BarrageWebViewTableCellDelegate>
@@ -45,10 +45,12 @@
     CDUnknownBlockType _forwardAction;
     id <FullScreenVideoCellDelegate> _delegate;
     QQReadInJoyVideoItemFullScreenViewController *_itemFullScreenVC;
+    UIView *_commentContainerView;
     unsigned long long _cellStyle;
     double _watchingDuration;
     double _startPlayingTime;
     double _bottomMarginHeight;
+    NSDictionary *_report_info_dic;
     UILongPressGestureRecognizer *_longPress;
 }
 
@@ -56,6 +58,7 @@
 @property(retain, nonatomic) UILongPressGestureRecognizer *longPress; // @synthesize longPress=_longPress;
 @property(nonatomic, getter=isFetchingLike) _Bool fetchingLike; // @synthesize fetchingLike=_fetchingLike;
 @property(nonatomic, getter=isFetchingReadCount) _Bool fetchingReadCount; // @synthesize fetchingReadCount=_fetchingReadCount;
+@property(copy, nonatomic) NSDictionary *report_info_dic; // @synthesize report_info_dic=_report_info_dic;
 @property(nonatomic) double bottomMarginHeight; // @synthesize bottomMarginHeight=_bottomMarginHeight;
 @property(nonatomic) double startPlayingTime; // @synthesize startPlayingTime=_startPlayingTime;
 @property(nonatomic) double watchingDuration; // @synthesize watchingDuration=_watchingDuration;
@@ -65,6 +68,7 @@
 @property(nonatomic) _Bool inFullScreen; // @synthesize inFullScreen=_inFullScreen;
 @property(nonatomic, getter=isResizeVideo) _Bool resizeVideo; // @synthesize resizeVideo=_resizeVideo;
 @property(nonatomic) unsigned long long cellStyle; // @synthesize cellStyle=_cellStyle;
+@property(nonatomic) __weak UIView *commentContainerView; // @synthesize commentContainerView=_commentContainerView;
 @property(nonatomic) __weak QQReadInJoyVideoItemFullScreenViewController *itemFullScreenVC; // @synthesize itemFullScreenVC=_itemFullScreenVC;
 @property(nonatomic) __weak id <FullScreenVideoCellDelegate> delegate; // @synthesize delegate=_delegate;
 @property(copy, nonatomic) CDUnknownBlockType forwardAction; // @synthesize forwardAction=_forwardAction;
@@ -96,6 +100,7 @@
 - (id)getVideoInnerId;
 - (id)getvideoDebugInfo;
 - (double)getCurrentVolum;
+- (void)tableViewCellDidTap:(id)arg1;
 - (void)didPressLong:(id)arg1;
 - (void)tapOnLikeButton:(id)arg1;
 - (void)forwardButtonDidClick:(id)arg1;
@@ -104,9 +109,10 @@
 - (void)setCommentCount:(unsigned long long)arg1;
 - (void)initContainerUI;
 - (void)setupUI;
+- (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void *)arg4;
+- (void)dealloc;
 - (id)initWithStyle:(long long)arg1 reuseIdentifier:(id)arg2;
 @property(readonly, copy, nonatomic) NSString *videoDescription;
-- (void)changeCellVideoMode;
 - (_Bool)shouldActiveFullScreen;
 - (_Bool)checkVideoFrameNan;
 - (void)pauseVideo;

@@ -15,6 +15,7 @@
     _Bool _needRedDot;
     _Bool _isShowdefaultContent;
     _Bool _isShowdefaultCategory;
+    _Bool _modified;
     int _expirationTime;
     long long _iconRedDotVersion;
     long long _defaultUseVersion;
@@ -29,6 +30,7 @@
 
 + (id)cfgPath;
 + (id)getInstance;
+@property(nonatomic) _Bool modified; // @synthesize modified=_modified;
 @property(retain, nonatomic) NSMutableArray *items; // @synthesize items=_items;
 @property(nonatomic) long long itemRedDotVersion; // @synthesize itemRedDotVersion=_itemRedDotVersion;
 @property(retain, nonatomic) NSMutableArray *categorys; // @synthesize categorys=_categorys;
@@ -43,12 +45,17 @@
 @property(nonatomic) _Bool needRedDot; // @synthesize needRedDot=_needRedDot;
 @property(nonatomic) long long iconRedDotVersion; // @synthesize iconRedDotVersion=_iconRedDotVersion;
 - (void).cxx_destruct;
+- (void)enterBackground;
+- (void)terminateAction;
 - (void)saveConfig;
+- (void)updateConfig:(id)arg1;
 - (void)deleteAllItemRedDot;
+- (_Bool)getItemNeedRedDot:(id)arg1;
 - (void)setItemDeleteRedDot:(id)arg1;
 - (_Bool)getCategoryNeedRedDot:(long long)arg1;
 - (void)setCategoryDeleteRedDot:(long long)arg1;
-- (_Bool)getItemNeedRedDot:(id)arg1;
+- (_Bool)getComponentNeedRedDot;
+- (void)setComponentDeleteRedDot;
 - (void)setItemWithItemID:(id)arg1 version:(long long)arg2 needDot:(_Bool)arg3;
 - (void)setCategoryWithID:(long long)arg1 name:(id)arg2 version:(long long)arg3 needDot:(_Bool)arg4;
 - (void)encodeWithCoder:(id)arg1;

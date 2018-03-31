@@ -48,7 +48,7 @@
 - (id)addOverlayToVideoAsynchronously:(id)arg1 overlay:(id)arg2 outputPath:(id)arg3 overlayPoint:(struct CGPoint)arg4 withCompletionHandler:(CDUnknownBlockType)arg5;
 - (id)addOverlayToVideoAsynchronously:(id)arg1 overlay:(id)arg2 outputPath:(id)arg3 withCompletionHandler:(CDUnknownBlockType)arg4;
 - (id)mergeVideosAsynchronously:(id)arg1 outputPath:(id)arg2 withCompletionHandler:(CDUnknownBlockType)arg3;
-- (id)dealFilterSimAsynchronously:(id)arg1 withMediaType:(unsigned long long)arg2 isHD:(_Bool)arg3 withFilter:(id)arg4 outputPath:(id)arg5 withCompletionHandler:(CDUnknownBlockType)arg6;
+- (id)dealFilterSimAsynchronously:(id)arg1 withMediaType:(unsigned long long)arg2 isHD:(_Bool)arg3 withSubtitle:(id)arg4 withFilter:(id)arg5 outputPath:(id)arg6 withCompletionHandler:(CDUnknownBlockType)arg7;
 - (id)dealWithVideoAsynchronously:(id)arg1 withType:(int)arg2 outputPath:(id)arg3 withCompletionHandler:(CDUnknownBlockType)arg4;
 - (id)dealWithVideoAsynchronously:(id)arg1 withType:(int)arg2 withMediaType:(unsigned long long)arg3 isHD:(_Bool)arg4 withFilter:(id)arg5 isSilence:(_Bool)arg6 outputPath:(id)arg7 withCompletionHandler:(CDUnknownBlockType)arg8;
 - (id)init;

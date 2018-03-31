@@ -15,6 +15,7 @@
     WXSDKInstance *weexInstance;
 }
 
++ (id)wx_export_method_33;
 + (id)wx_export_method_32;
 + (id)wx_export_method_31;
 + (id)wx_export_method_30;
@@ -24,6 +25,7 @@
 - (void)goForward:(id)arg1;
 - (void)goBack:(id)arg1;
 - (void)reload:(id)arg1;
+- (void)postMessage:(id)arg1 data:(id)arg2;
 - (void)notifyWebview:(id)arg1 data:(id)arg2;
 - (void)doBlock:(CDUnknownBlockType)arg1;
 - (void)performBlockWithWebView:(id)arg1 block:(CDUnknownBlockType)arg2;

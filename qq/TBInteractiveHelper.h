@@ -24,7 +24,8 @@
 + (void)reportCommentSend:(id)arg1 feedOwner:(id)arg2 statusModel:(id)arg3 sourceModel:(id)arg4;
 + (void)reportWithOpType:(id)arg1 opName:(id)arg2 interactiveModel:(id)arg3 feedOwner:(id)arg4 statusModel:(id)arg5 sourceModel:(id)arg6;
 + (void)handleReportRsp:(id)arg1;
-+ (void)reportComment:(id)arg1 feedId:(id)arg2 index:(long long)arg3;
++ (void)reportComment:(id)arg1 feedId:(id)arg2 index:(long long)arg3 atView:(id)arg4;
++ (long long)tipOffEviTypeWithButtonIndex:(long long)arg1;
 + (void)showReportActionSheetWithDelegate:(id)arg1 rootView:(id)arg2;
 + (void)copyComment:(id)arg1;
 + (unsigned long long)deleteComment:(id)arg1 feedId:(id)arg2 rootView:(id)arg3 delegate:(id)arg4;

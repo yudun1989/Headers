@@ -6,17 +6,32 @@
 
 #import "XSearchSDKChildBaseViewController.h"
 
-@class XSearchCollectionViewComponent, XSearchSDKChildComponent;
+@class XSearchCollectionViewComponent, XSearchSDKChildComponent, XSearchSingleContainerView;
 
 @interface XSearchSDKChildNatvieViewController : XSearchSDKChildBaseViewController
 {
     XSearchSDKChildComponent *_childComponent;
     XSearchCollectionViewComponent *_collectionViewComponent;
+    XSearchSingleContainerView *_emptyView;
+    XSearchSingleContainerView *_errorView;
+    XSearchSingleContainerView *_loadingView;
 }
 
+@property(retain, nonatomic) XSearchSingleContainerView *loadingView; // @synthesize loadingView=_loadingView;
+@property(retain, nonatomic) XSearchSingleContainerView *errorView; // @synthesize errorView=_errorView;
+@property(retain, nonatomic) XSearchSingleContainerView *emptyView; // @synthesize emptyView=_emptyView;
 @property(retain, nonatomic) XSearchCollectionViewComponent *collectionViewComponent; // @synthesize collectionViewComponent=_collectionViewComponent;
 @property(retain, nonatomic) XSearchSDKChildComponent *childComponent; // @synthesize childComponent=_childComponent;
 - (void).cxx_destruct;
+- (_Bool)checkStatusViewRegister;
+- (void)changeEmptyStatusViewFrame;
+- (void)changeStatusViewFrame:(_Bool)arg1;
+- (void)changeStatusViewFailForFilterSearch:(id)arg1;
+- (void)changeStatusViewSuccessForFilterSearch:(_Bool)arg1;
+- (void)changeStatusViewStartForFilterSearch;
+- (void)loadStatusView;
+- (void)hideStatusView;
+- (void)createStatusView;
 - (double)listHeaderViewHeight;
 - (void)childScrollToTop;
 - (void)childComponentSearchFailed:(id)arg1 Error:(id)arg2;
@@ -27,6 +42,7 @@
 - (void)headerLayout;
 - (void)tabSearch;
 - (void)filterSearch;
+- (void)reloadDataAfterLayoutHeader;
 - (void)reloadData;
 - (void)viewDidLoad;
 - (id)initWithService:(id)arg1 Delegate:(id)arg2;

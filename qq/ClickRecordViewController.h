@@ -6,6 +6,7 @@
 
 #import <UIKit/UIViewController.h>
 
+#import <QQMainProject/QQAnimojiVoiceAnimDelegate-Protocol.h>
 #import <QQMainProject/QQAudioPlayDelegate-Protocol.h>
 #import <QQMainProject/QQAudioSessionManagerDelegate-Protocol.h>
 #import <QQMainProject/QQCircularProgressViewDelegate-Protocol.h>
@@ -19,10 +20,10 @@
 #import <QQMainProject/VoiceChangeDelegate-Protocol.h>
 #import <QQMainProject/VolumeMeterDelegate-Protocol.h>
 
-@class NSString, NSTimer, QQAudioPlayView, QQChangeVoicePlayPanel, QQMessageModel, QQPttRecordBtn, QQPttRecorder, QQVoicePlayAnimationView, UIActivityIndicatorView, UIButton, UILabel, UIScrollView, UIView;
+@class NSString, NSTimer, QQAnimojiVoicePlayAnimationView, QQAudioPlayView, QQChangeVoicePlayPanel, QQMessageModel, QQPttRecordBtn, QQPttRecorder, QQVoicePlayAnimationView, UIActivityIndicatorView, UIButton, UILabel, UIScrollView, UIView;
 @protocol ClickRecordViewProtocol;
 
-@interface ClickRecordViewController : UIViewController <QQPttRecorderDelegate, QQAudioSessionManagerDelegate, QQAudioPlayDelegate, QQPttTouchDelegate, VoiceChangeDelegate, UIAlertViewDelegate, UICollectionViewDataSource, UICollectionViewDelegate, QQCircularProgressViewDelegate, VolumeMeterDelegate, QQVoiceAnimDelegate, UIScrollViewDelegate>
+@interface ClickRecordViewController : UIViewController <QQPttRecorderDelegate, QQAudioSessionManagerDelegate, QQAudioPlayDelegate, QQPttTouchDelegate, VoiceChangeDelegate, UIAlertViewDelegate, UICollectionViewDataSource, UICollectionViewDelegate, QQCircularProgressViewDelegate, VolumeMeterDelegate, QQVoiceAnimDelegate, UIScrollViewDelegate, QQAnimojiVoiceAnimDelegate>
 {
     UIView *_bgView;
     UIView *_sheetView;
@@ -35,6 +36,7 @@
     UILabel *_labelTime;
     UILabel *_preparingTipsLable;
     QQVoicePlayAnimationView *_voicePlayAnimView;
+    QQAnimojiVoicePlayAnimationView *_voicePlayAnimViewSimulation;
     _Bool _bDeviceOk;
     NSTimer *_timer;
     double _recordTime;
@@ -50,20 +52,40 @@
     QQMessageModel *_pttMessageModel;
     QQAudioPlayView *_audioPlayView;
     _Bool *_isMaskViewShowed;
+    id _chatViewController;
+    QQPttRecordBtn *_pushButton;
+    _Bool _bIsRandompeakPower;
     QQPttRecorder *_recorder;
     int _xo;
     int _pttFormat;
     _Bool _hasSetPttFormat;
-    id _chatViewController;
-    QQPttRecordBtn *_pushButton;
     UIScrollView *_scrollView;
     QQChangeVoicePlayPanel *_voiceChangePlayPanel;
 }
 
 @property(nonatomic) _Bool *isMaskViewShowed; // @synthesize isMaskViewShowed=_isMaskViewShowed;
 - (void).cxx_destruct;
+- (void)setRecordBtnImage;
+- (_Bool)isHideImage;
+- (void)cleartStartBtnImage;
+- (void)cleartPushBtnImage;
+- (void)createVoicePlayAnimViewimulation;
+- (void)resetVoicePlayAnimViewSimulation;
+- (void)updateVoicePlayAnimViewSimulation;
+- (_Bool)isShowMask;
+- (void)createVoicePlayAnimView;
+- (void)setLabelColorAndFont:(id)arg1;
+- (struct CGRect)getTimeLabelRect;
+- (struct CGRect)getBeginTextRect;
+- (struct CGRect)getAudioPlayViewRect;
+- (void)stopVoiceAnimMonitor;
+- (void)startVoiceAnimMonitor;
+- (float)getAnimojiCurrentVoicePeakPower;
+- (id)getRecordButton;
+- (id)getPushButton;
 - (_Bool)needShowVoiceAnimation;
 - (float)getCurrentVoicePeakPower;
+- (_Bool)isIphoneX;
 - (void)hideAudioMask;
 - (void)showAudioMask;
 - (double)peakPowerLevel;

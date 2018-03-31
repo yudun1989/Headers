@@ -12,12 +12,15 @@
 
 @interface AliCartManageView : UIView <AliCartManageViewProtocol>
 {
+    _Bool _isDisplayShareBtn;
     AliCartBlockButton *_moveToFavButton;
     AliCartBlockButton *_deleteButton;
     AliCartBlockButton *_cleanButton;
+    AliCartBlockButton *_shareButton;
     CDUnknownBlockType _moveToFavClickBlock;
     CDUnknownBlockType _deleteClickBlock;
     CDUnknownBlockType _cleanClickBlock;
+    CDUnknownBlockType _shareClickBlock;
     StyleKitContext *_styleKitContext;
     UIView *_bottomLine;
 }
@@ -25,9 +28,12 @@
 + (double)cellCalHeight:(id)arg1;
 @property(retain, nonatomic) UIView *bottomLine; // @synthesize bottomLine=_bottomLine;
 @property(retain, nonatomic) StyleKitContext *styleKitContext; // @synthesize styleKitContext=_styleKitContext;
+@property(nonatomic) _Bool isDisplayShareBtn; // @synthesize isDisplayShareBtn=_isDisplayShareBtn;
+@property(copy, nonatomic) CDUnknownBlockType shareClickBlock; // @synthesize shareClickBlock=_shareClickBlock;
 @property(copy, nonatomic) CDUnknownBlockType cleanClickBlock; // @synthesize cleanClickBlock=_cleanClickBlock;
 @property(copy, nonatomic) CDUnknownBlockType deleteClickBlock; // @synthesize deleteClickBlock=_deleteClickBlock;
 @property(copy, nonatomic) CDUnknownBlockType moveToFavClickBlock; // @synthesize moveToFavClickBlock=_moveToFavClickBlock;
+@property(retain, nonatomic) AliCartBlockButton *shareButton; // @synthesize shareButton=_shareButton;
 @property(retain, nonatomic) AliCartBlockButton *cleanButton; // @synthesize cleanButton=_cleanButton;
 @property(retain, nonatomic) AliCartBlockButton *deleteButton; // @synthesize deleteButton=_deleteButton;
 @property(retain, nonatomic) AliCartBlockButton *moveToFavButton; // @synthesize moveToFavButton=_moveToFavButton;

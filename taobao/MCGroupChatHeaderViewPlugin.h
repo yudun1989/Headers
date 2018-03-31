@@ -6,52 +6,48 @@
 
 #import <Foundation/NSObject.h>
 
-#import "MCChatDisplayHeaderViewDelegate-Protocol.h"
-#import "MCGroupChatNavigationBarDelegate-Protocol.h"
 #import "MCPluginBaseProtocol-Protocol.h"
-#import "MCRecentContactDataSourceDelegate-Protocol.h"
-#import "TBIMGroupServiceDelegate-Protocol.h"
-#import "TBIMInitServiceDelegate-Protocol.h"
 
-@class MCDecorateTemplate, MCGroupChatHeaderView, NSDictionary, NSString, UIViewController;
+@class MCDecorateTemplate, NSDictionary, NSMutableArray, NSString, UILabel, UIView, UIViewController;
 @protocol MCChatInputComponentPresenterProtocol, MCChatPageDisplayPresenterInterface, TBIMGroupAdapter;
 
-@interface MCGroupChatHeaderViewPlugin : NSObject <MCChatDisplayHeaderViewDelegate, TBIMGroupServiceDelegate, MCRecentContactDataSourceDelegate, TBIMInitServiceDelegate, MCPluginBaseProtocol, MCGroupChatNavigationBarDelegate>
+@interface MCGroupChatHeaderViewPlugin : NSObject <MCPluginBaseProtocol>
 {
     _Bool _backToRoot;
-    MCGroupChatHeaderView *_hv;
     id <MCChatPageDisplayPresenterInterface> _chatPageDisplayConponet;
     id <MCChatInputComponentPresenterProtocol> _chatPageInputPresenter;
-    UIViewController *_baseView;
+    UIViewController *_baseVC;
     id <TBIMGroupAdapter> _group;
     MCDecorateTemplate *_templateObj;
+    UIView *_menuView;
+    NSMutableArray *_iconList;
+    UILabel *_titleLabel;
+    UILabel *_subTitleLabel;
+    UIView *_centerTitleView;
 }
 
+@property(retain, nonatomic) UIView *centerTitleView; // @synthesize centerTitleView=_centerTitleView;
+@property(retain, nonatomic) UILabel *subTitleLabel; // @synthesize subTitleLabel=_subTitleLabel;
+@property(retain, nonatomic) UILabel *titleLabel; // @synthesize titleLabel=_titleLabel;
+@property(retain, nonatomic) NSMutableArray *iconList; // @synthesize iconList=_iconList;
+@property(retain, nonatomic) UIView *menuView; // @synthesize menuView=_menuView;
 @property(retain, nonatomic) MCDecorateTemplate *templateObj; // @synthesize templateObj=_templateObj;
 @property(retain, nonatomic) id <TBIMGroupAdapter> group; // @synthesize group=_group;
-@property(nonatomic) __weak UIViewController *baseView; // @synthesize baseView=_baseView;
+@property(nonatomic) __weak UIViewController *baseVC; // @synthesize baseVC=_baseVC;
 @property(nonatomic) __weak id <MCChatInputComponentPresenterProtocol> chatPageInputPresenter; // @synthesize chatPageInputPresenter=_chatPageInputPresenter;
 @property(nonatomic) __weak id <MCChatPageDisplayPresenterInterface> chatPageDisplayConponet; // @synthesize chatPageDisplayConponet=_chatPageDisplayConponet;
 @property(nonatomic) _Bool backToRoot; // @synthesize backToRoot=_backToRoot;
-@property(retain, nonatomic) MCGroupChatHeaderView *hv; // @synthesize hv=_hv;
 - (void).cxx_destruct;
-- (void)imInitFinish;
-- (void)sessionChange:(id)arg1;
-- (void)sessionAdd:(id)arg1;
-- (void)groupUserUpdatedSuccess:(id)arg1;
-- (void)groupInfoChange:(id)arg1;
+- (void)updateHeaderMenu;
+- (void)menuAction:(id)arg1;
+- (id)createButtonWithBarButtonVo:(id)arg1;
+- (void)exposeUT;
+- (void)refreshTileMenu;
+- (void)setUpTileMenu;
+- (void)setupHeaderView;
 - (void)loadTemplate:(id)arg1 error:(id)arg2;
-- (void)midAction:(id)arg1;
-- (void)rightAction:(id)arg1;
-- (void)leftAction:(id)arg1;
-- (void)scrollViewDidEndDragging:(id)arg1 willDecelerate:(_Bool)arg2;
-- (void)scrollViewWillBeginDragging:(id)arg1;
-- (void)scrollViewDidScroll:(id)arg1;
-- (id)getHeaderView;
 - (void)processPage:(id)arg1;
 - (void)updateNaviBarWithSession:(id)arg1;
-- (void)updateNaviBar;
-- (void)setupHeaderView:(id)arg1;
 - (void)viewWillDisAppear:(_Bool)arg1;
 - (void)viewWillAppear:(_Bool)arg1;
 - (id)getKey;

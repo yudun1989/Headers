@@ -29,6 +29,7 @@
 + (id)MsgAssemblyLineForGroupRoam;
 + (id)MsgAssemblyLineForGroupOffine;
 + (id)MsgAssemblyLineForGroupOnlinePush;
++ (id)MsgAssemblyLineForHonestTalking;
 - (id)processMsgEncapsulation:(id)arg1;
 - (void)removeProcessor:(id)arg1;
 - (void)removeAllProcessors;

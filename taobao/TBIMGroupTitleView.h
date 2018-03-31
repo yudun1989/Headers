@@ -16,6 +16,7 @@
 }
 
 - (void).cxx_destruct;
+- (struct CGSize)sizeWithString:(id)arg1 andFont:(id)arg2 andMaxSize:(struct CGSize)arg3;
 - (void)setTitleText:(id)arg1 andSubTitleText:(id)arg2;
 - (void)setSubTitleLabelColor:(id)arg1;
 - (void)setTitleColor:(id)arg1;

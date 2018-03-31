@@ -11,6 +11,7 @@
 @interface QZJPhotoPhoto : JceObjectV2
 {
     unsigned int _jcev2_p_37_o_view_count;
+    unsigned int _jcev2_p_44_o_origin_size;
     NSString *_jcev2_p_38_o_photo_visitor_ugc_key;
     NSString *_jcev2_p_39_o_client_key;
     QZJFeedsStPoi *_jcev2_p_40_o_shoot_place_info;
@@ -18,6 +19,7 @@
     NSArray *_jcev2_p_43_o_facelist__b0x9i_VOQZJFeedsStFaceItem;
 }
 
+@property(nonatomic, getter=jce_origin_size, setter=setJce_origin_size:) unsigned int jcev2_p_44_o_origin_size; // @synthesize jcev2_p_44_o_origin_size=_jcev2_p_44_o_origin_size;
 @property(retain, nonatomic, getter=jce_facelist, setter=setJce_facelist:) NSArray *jcev2_p_43_o_facelist__b0x9i_VOQZJFeedsStFaceItem; // @synthesize jcev2_p_43_o_facelist__b0x9i_VOQZJFeedsStFaceItem=_jcev2_p_43_o_facelist__b0x9i_VOQZJFeedsStFaceItem;
 @property(retain, nonatomic, getter=jce_label_info, setter=setJce_label_info:) QZJPhotoStLabelInfo *jcev2_p_42_o_label_info; // @synthesize jcev2_p_42_o_label_info=_jcev2_p_42_o_label_info;
 @property(retain, nonatomic, getter=jce_shoot_place_info, setter=setJce_shoot_place_info:) QZJFeedsStPoi *jcev2_p_40_o_shoot_place_info; // @synthesize jcev2_p_40_o_shoot_place_info=_jcev2_p_40_o_shoot_place_info;

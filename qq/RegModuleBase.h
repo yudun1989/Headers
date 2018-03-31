@@ -6,17 +6,23 @@
 
 #import <Foundation/NSObject.h>
 
+@class NSMutableDictionary;
+
 @interface RegModuleBase : NSObject
 {
     long long m_appType;
     basic_string_075b6133 m_appID;
     long long m_curCallbackId;
     struct map<long, ArkCallbackWrapper, std::less<long>, std::allocator<std::pair<const long, ArkCallbackWrapper>>> m_callbackMap;
+    NSMutableDictionary *mApiToTokenBucketSetMap;
 }
 
 + (_Bool)check:(const char *)arg1;
 - (id).cxx_construct;
 - (void).cxx_destruct;
+- (_Bool)checkFrequency:(id)arg1;
+- (void)setFrequencyLimit:(id)arg1;
+- (void)addTokenBucket:(id)arg1 times:(id)arg2 period:(id)arg3;
 - (void)destroy;
 - (void)runTaskInArkThread:(CDUnknownBlockType)arg1;
 - (struct ArkCallbackWrapper)getCallback:(long long)arg1;

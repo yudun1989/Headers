@@ -9,6 +9,7 @@
 @class NSDictionary, NSString;
 
 @protocol DWUserTrackProtocol <NSObject>
+- (NSString *)currentPageName;
 - (NSString *)utdid;
 - (void)log:(NSString *)arg1 message:(NSString *)arg2;
 - (void)pageDisAppeaPageObject:(id)arg1;

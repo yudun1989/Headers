@@ -6,19 +6,28 @@
 
 #import <UIKit/UIButton.h>
 
-@class UIImageView, UILabel;
+@class NSString, UIImage, UIImageView, UILabel, UIView;
 @protocol MCChatShareContentViewDelegate;
 
 @interface MCChatShareContentView : UIButton
 {
-    UIImageView *_innerMaskViewImageView;
+    _Bool _isShowInnerImage;
+    _Bool _isShowInnerIconImage;
+    _Bool _isShowInnerfromIcon;
+    _Bool _isShowInnerContent;
+    _Bool _isFromTextColor;
+    double _innerTitleHeight;
+    NSString *_textFontColorHex;
+    NSString *_defaultTextFontColorHex;
     UIImageView *_innerImageView;
     UIImageView *_innerIconImageView;
+    UIView *_innerIconBackgroundView;
     UILabel *_innerTitleLabel;
     UILabel *_innerContentLabel;
     UIImageView *_innerfromLabelBcView;
     UILabel *_fromLabel;
     id <MCChatShareContentViewDelegate> _delegate;
+    UIImage *_defaultInnerfromIcon;
 }
 
 + (double)heightForFrom;
@@ -29,14 +38,15 @@
 + (struct CGSize)sizeForMessage:(id)arg1 contentViewStyle:(long long)arg2;
 + (struct CGSize)sizeForMessageWithObject:(id)arg1 message:(id)arg2 contentViewStyle:(long long)arg3;
 + (struct CGSize)sizeForMessageWithObject:(id)arg1 contentViewStyle:(long long)arg2;
+@property(retain, nonatomic) UIImage *defaultInnerfromIcon; // @synthesize defaultInnerfromIcon=_defaultInnerfromIcon;
 @property(nonatomic) __weak id <MCChatShareContentViewDelegate> delegate; // @synthesize delegate=_delegate;
 @property(retain, nonatomic) UILabel *fromLabel; // @synthesize fromLabel=_fromLabel;
 @property(retain, nonatomic) UIImageView *innerfromLabelBcView; // @synthesize innerfromLabelBcView=_innerfromLabelBcView;
 @property(retain, nonatomic) UILabel *innerContentLabel; // @synthesize innerContentLabel=_innerContentLabel;
 @property(retain, nonatomic) UILabel *innerTitleLabel; // @synthesize innerTitleLabel=_innerTitleLabel;
+@property(retain, nonatomic) UIView *innerIconBackgroundView; // @synthesize innerIconBackgroundView=_innerIconBackgroundView;
 @property(retain, nonatomic) UIImageView *innerIconImageView; // @synthesize innerIconImageView=_innerIconImageView;
 @property(retain, nonatomic) UIImageView *innerImageView; // @synthesize innerImageView=_innerImageView;
-@property(retain, nonatomic) UIImageView *innerMaskViewImageView; // @synthesize innerMaskViewImageView=_innerMaskViewImageView;
 - (void).cxx_destruct;
 - (id)attributedTitle:(id)arg1;
 - (void)updateMiniMessage:(id)arg1;
@@ -44,7 +54,9 @@
 - (void)innerTapped:(id)arg1;
 - (void)updateMessage:(id)arg1 contentViewStyle:(long long)arg2;
 - (void)updateMessageWithObject:(id)arg1 message:(id)arg2 contentViewStyle:(long long)arg3;
+- (void)setStyleInfoWithMessage:(id)arg1;
 - (void)updateMessageWithObject:(id)arg1 contentViewStyle:(long long)arg2;
+- (void)setupSubviewsFrame;
 - (id)initWithFrame:(struct CGRect)arg1 style:(long long)arg2 delegate:(id)arg3;
 
 @end

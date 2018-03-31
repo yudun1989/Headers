@@ -233,7 +233,6 @@
 - (void)onShowARCloudLoadingProgress:(id)arg1;
 - (void)hideARCloudLoadingView;
 - (void)handleScanLineAnimationView:(_Bool)arg1;
-- (void)clearARCloudLoadingView;
 - (void)showARCloudLoadingView;
 - (void)initLoadViewMask;
 - (void)closeHongbao;

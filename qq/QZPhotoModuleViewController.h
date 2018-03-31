@@ -77,9 +77,7 @@
 - (void)updateShareUserSelectedList:(id)arg1;
 - (void)onMutltiMembersSelected:(id)arg1 members:(id)arg2;
 - (void)gotoPhotoBrowserWithPhotoModel:(id)arg1 allPhotoModel:(id)arg2 attachInfo:(id)arg3 hasMore:(_Bool)arg4 phtFromType:(long long)arg5 title:(id)arg6 classifyID:(id)arg7 classifyType:(long long)arg8;
-- (void)showAlbumTableHeaderView;
 - (_Bool)shouldShowAlbumBanner;
-- (void)startBannerScroll:(id)arg1;
 - (void)albumScrollViewWillBeginDragging:(id)arg1;
 - (void)albumScrollViewDidScroll:(id)arg1;
 - (void)onFeedCell:(id)arg1 action:(unsigned long long)arg2 param:(id)arg3 feedModel:(id)arg4;
@@ -89,6 +87,8 @@
 - (void)reportRegularBannerViewExposed;
 - (void)loadPhotoListBannerPlugin;
 - (void)stopScanningEventPhoto;
+- (void)removePhotoEventBanner;
+- (void)checkShouldLoadPhotoListBanner;
 - (void)checkAlbumListScanBanner;
 - (void)checkFootViewState;
 - (void)clearNavigationBarDidBecomeTransparent;
@@ -107,8 +107,6 @@
 - (void)checkMediaBusy;
 - (void)onOpenVIP;
 - (id)createNavigationControllerWithRootViewController:(id)arg1;
-- (void)onEnterDetailViewController:(id)arg1 uin:(long long)arg2;
-- (void)onEnterPhotoBrowserFeedModel:(id)arg1 index:(long long)arg2;
 - (void)didSelectAlbumFinish:(id)arg1 delegateForH5:(id)arg2;
 - (_Bool)albumPickerIsPresentController;
 - (void)enterAlbumEditViewController:(id)arg1 selectedPhotoList:(id)arg2;
@@ -116,7 +114,6 @@
 - (void)onUpdateSendBoxNotify:(id)arg1;
 - (void)showSendBoxViewController;
 - (void)didSelectIndex:(int)arg1;
-- (id)recentAlbumListTabMenu:(long long)arg1;
 - (void)openVideoRecord;
 - (id)createUploadPhotoViewController;
 - (void)MQZMultiImagePickerDidCancel:(id)arg1;

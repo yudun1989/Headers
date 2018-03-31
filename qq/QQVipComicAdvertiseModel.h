@@ -24,14 +24,24 @@
     NSString *_comicID;
     NSString *_sectionID;
     unsigned long long _apTimes;
+    NSString *_customized_invoke_url;
     unsigned long long _width;
     unsigned long long _height;
+    unsigned long long _th;
+    unsigned long long _tw;
+    NSString *_turl;
     unsigned long long _adHeight;
+    unsigned long long _tipsPicHeight;
 }
 
+@property(nonatomic) unsigned long long tipsPicHeight; // @synthesize tipsPicHeight=_tipsPicHeight;
 @property(nonatomic) unsigned long long adHeight; // @synthesize adHeight=_adHeight;
+@property(retain, nonatomic) NSString *turl; // @synthesize turl=_turl;
+@property(nonatomic) unsigned long long tw; // @synthesize tw=_tw;
+@property(nonatomic) unsigned long long th; // @synthesize th=_th;
 @property(nonatomic) unsigned long long height; // @synthesize height=_height;
 @property(nonatomic) unsigned long long width; // @synthesize width=_width;
+@property(retain, nonatomic) NSString *customized_invoke_url; // @synthesize customized_invoke_url=_customized_invoke_url;
 @property(nonatomic) unsigned long long apTimes; // @synthesize apTimes=_apTimes;
 @property(retain, nonatomic) NSString *sectionID; // @synthesize sectionID=_sectionID;
 @property(retain, nonatomic) NSString *comicID; // @synthesize comicID=_comicID;

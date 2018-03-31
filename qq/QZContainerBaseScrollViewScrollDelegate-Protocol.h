@@ -9,10 +9,7 @@
 @protocol QZContainerBaseScrollViewScrollDelegate <NSObject>
 
 @optional
-- (void)containerViewDidEndZooming:(long long)arg1 oldPage:(long long)arg2 atScale:(double)arg3;
 - (void)containerViewDidEndScrollingAnimation:(long long)arg1 oldPage:(long long)arg2;
 - (void)containerViewDidEndDraggingWithPage:(long long)arg1 oldPage:(long long)arg2 decelerate:(_Bool)arg3;
-- (void)containerViewDidEndDeceleratingWithPage:(long long)arg1 oldPage:(long long)arg2;
-- (void)containerViewWillBeginDraggingWithPage:(long long)arg1 oldPage:(long long)arg2;
 @end
 

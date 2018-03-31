@@ -6,7 +6,7 @@
 
 #import "TBJSONModel.h"
 
-@class CNLogisticsLdAdsBannerDTO, CNLogisticsLdAdsBasicDTO, CNLogisticsLdAdsEndCardDTO, CNLogisticsLdAdsHangDTO;
+@class CNLogisticsLdAdsBannerDTO, CNLogisticsLdAdsBasicDTO, CNLogisticsLdAdsBubbleDTO, CNLogisticsLdAdsEndCardDTO, CNLogisticsLdAdsHangDTO, CNLogisticsLdAdsSurveyDTO;
 
 @interface CNLogisticNewAdsDO : TBJSONModel
 {
@@ -14,8 +14,12 @@
     CNLogisticsLdAdsBannerDTO *_ldAdsBannerDTO;
     CNLogisticsLdAdsEndCardDTO *_ldAdsEndCardDTO;
     CNLogisticsLdAdsHangDTO *_ldAdsHangDTO;
+    CNLogisticsLdAdsSurveyDTO *_ldAdsSurveyDTO;
+    CNLogisticsLdAdsBubbleDTO *_ldAdsBubbleDTO;
 }
 
+@property(retain, nonatomic) CNLogisticsLdAdsBubbleDTO *ldAdsBubbleDTO; // @synthesize ldAdsBubbleDTO=_ldAdsBubbleDTO;
+@property(retain, nonatomic) CNLogisticsLdAdsSurveyDTO *ldAdsSurveyDTO; // @synthesize ldAdsSurveyDTO=_ldAdsSurveyDTO;
 @property(retain, nonatomic) CNLogisticsLdAdsHangDTO *ldAdsHangDTO; // @synthesize ldAdsHangDTO=_ldAdsHangDTO;
 @property(retain, nonatomic) CNLogisticsLdAdsEndCardDTO *ldAdsEndCardDTO; // @synthesize ldAdsEndCardDTO=_ldAdsEndCardDTO;
 @property(retain, nonatomic) CNLogisticsLdAdsBannerDTO *ldAdsBannerDTO; // @synthesize ldAdsBannerDTO=_ldAdsBannerDTO;

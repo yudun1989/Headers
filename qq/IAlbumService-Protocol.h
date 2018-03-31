@@ -4,13 +4,14 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-@class ALAssetsLibrary, NSArray, NSData, NSDictionary, NSString, NSURL, QQAssetsGroup, UIImage;
+@class ALAssetsLibrary, NSArray, NSData, NSDictionary, NSString, NSURL, QQAsset, QQAssetsGroup, UIImage;
 
 @protocol IAlbumService
 
 @optional
 + (long long)authorizationStatus;
 - (void)saveVideoToAlbumWithPath:(NSURL *)arg1 completionBlock:(void (^)(id, NSError *))arg2;
+- (NSString *)createMediaDirAndPath:(QQAsset *)arg1 presetName:(NSString *)arg2;
 - (void)asyncSendAlbumPhotoList:(NSArray *)arg1 withblock:(void (^)(NSArray *, _Bool, _Bool))arg2 presetName:(NSString *)arg3;
 - (void)asyncSendAlbumPhotoList:(NSArray *)arg1 withblock:(void (^)(NSArray *, _Bool, _Bool))arg2;
 - (void)saveImageToAlbumWithPath:(NSString *)arg1;

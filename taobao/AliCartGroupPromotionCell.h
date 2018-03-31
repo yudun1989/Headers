@@ -10,7 +10,6 @@
 
 @interface AliCartGroupPromotionCell : AliCartBasicCell
 {
-    int _animationStatus;
     UILabel *_titleLabel;
     AliCartBlockButton *_nextBtn;
     UILabel *_nextTitleLabel;
@@ -19,10 +18,11 @@
     CDUnknownBlockType _nextClickBlock;
     UILabel *_animationLabel;
     UIView *_animationContentView;
+    long long _animationStatus;
 }
 
 + (double)cellHeight:(id)arg1 styleKitContext:(id)arg2;
-@property(nonatomic) int animationStatus; // @synthesize animationStatus=_animationStatus;
+@property(nonatomic) long long animationStatus; // @synthesize animationStatus=_animationStatus;
 @property(retain, nonatomic) UIView *animationContentView; // @synthesize animationContentView=_animationContentView;
 @property(retain, nonatomic) UILabel *animationLabel; // @synthesize animationLabel=_animationLabel;
 @property(copy, nonatomic) CDUnknownBlockType nextClickBlock; // @synthesize nextClickBlock=_nextClickBlock;

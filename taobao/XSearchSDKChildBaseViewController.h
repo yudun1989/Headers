@@ -49,6 +49,7 @@
 - (void)loadFailed:(id)arg1;
 - (void)tabSearch;
 - (void)filterSearch;
+- (void)reloadDataAfterLayoutHeader;
 - (void)reloadData;
 - (void)didHidden;
 - (void)didShow;

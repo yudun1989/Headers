@@ -47,6 +47,7 @@
 - (void)fetchTransferInfo:(unsigned long long)arg1;
 - (void)fetchQidianSimpleInfo:(unsigned long long)arg1;
 - (void)fetchQidianInfo:(unsigned long long)arg1;
+- (id)qidianGetFriendModel:(id)arg1;
 - (_Bool)isCrmUin:(id)arg1;
 - (_Bool)isCrmUinLocal:(id)arg1;
 - (void)requestQidianMasterFlag:(unsigned long long)arg1;

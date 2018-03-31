@@ -7,12 +7,11 @@
 #import <Foundation/NSObject.h>
 
 #import <QQMainProject/BDHUploadDelegate-Protocol.h>
-#import <QQMainProject/IEngineDispatchDelegate-Protocol.h>
 
 @class NSString, QQLockDictionary;
 @protocol OS_dispatch_queue;
 
-@interface SpriteAIDataManager : NSObject <BDHUploadDelegate, IEngineDispatchDelegate>
+@interface SpriteAIDataManager : NSObject <BDHUploadDelegate>
 {
     QQLockDictionary *_uploadTasks;
     NSObject<OS_dispatch_queue> *_queue;
@@ -31,9 +30,7 @@
 - (void)notifyBDHFail:(long long)arg1 uploadDetail:(id)arg2 fail:(id)arg3;
 - (struct Sc2cPttUpload *)setPttUploadBody:(struct Sc2cPttUpload *)arg1 uploadModel:(id)arg2;
 - (void)uploadSpriteFileWithModel:(id)arg1;
-- (void)notifyError:(id)arg1;
-- (void)didRecievedMsg:(CDStruct_7895f40e)arg1;
-- (void)sendSSOWithCmd:(id)arg1 data:(id)arg2;
+- (void)dealRecievedMsgOfAISSO:(id)arg1 retCode:(int)arg2 dic:(id)arg3;
 - (void)reportAIEventWithName:(id)arg1 eventType:(unsigned int)arg2 externParam:(id)arg3;
 - (void)openSpriteAIState;
 - (void)sendSpriteMessageBySSO:(int)arg1 content:(id)arg2;

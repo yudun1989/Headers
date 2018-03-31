@@ -31,7 +31,7 @@
 + (void)addCart:(long long)arg1 detailModel:(id)arg2;
 + (id)createCartParams:(long long)arg1 detailModel:(id)arg2 successHandler:(CDUnknownBlockType)arg3 failureHandler:(CDUnknownBlockType)arg4;
 + (id)buildOrderUrl:(long long)arg1 detailModel:(id)arg2 successHandler:(CDUnknownBlockType)arg3 failureHandler:(CDUnknownBlockType)arg4;
-+ (id)buildOrderUrl:(id)arg1;
++ (id)buildOrderUrl:(id)arg1 withBuyUrl:(id)arg2;
 + (id)createBuyParams:(long long)arg1 detailModel:(id)arg2 successHandler:(CDUnknownBlockType)arg3 failureHandler:(CDUnknownBlockType)arg4;
 @property(retain, nonatomic) NSString *eventToken; // @synthesize eventToken=_eventToken;
 @property(nonatomic) unsigned long long sourceType; // @synthesize sourceType=_sourceType;
@@ -70,7 +70,7 @@
 - (id)createFullAddCartParams:(long long)arg1 step:(long long)arg2 extraParams:(id)arg3;
 - (id)createAddCartExtraParams;
 - (void)createAddCartExtraParamsWithcompleteHandler:(CDUnknownBlockType)arg1;
-- (id)buildOrderUrl:(id)arg1;
+- (id)buildOrderUrl:(id)arg1 withBuyUrl:(id)arg2;
 - (id)createBuyParams:(long long)arg1;
 - (void)createBuyParams:(long long)arg1 completeHandler:(CDUnknownBlockType)arg2;
 - (void)dealloc;

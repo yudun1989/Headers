@@ -20,8 +20,6 @@
 @property(retain, nonatomic) NSString *localPath; // @synthesize localPath=_localPath;
 @property(retain, nonatomic) NSURL *httpUrl; // @synthesize httpUrl=_httpUrl;
 @property(retain, nonatomic) NSMutableArray *downloadInfoList; // @synthesize downloadInfoList=_downloadInfoList;
-- (void)dealloc;
-- (id)init;
 
 @end
 

@@ -17,10 +17,12 @@
     UIScrollView *_scrollView;
     UIImageView *_arrowView;
     UIButton *_closeButton;
+    _Bool _needAdditionalHeight;
     QZMoodComposeViewController *_ctr;
 }
 
 @property(nonatomic) __weak QZMoodComposeViewController *ctr; // @synthesize ctr=_ctr;
+@property(readonly, nonatomic) _Bool needAdditionalHeight; // @synthesize needAdditionalHeight=_needAdditionalHeight;
 @property(nonatomic) long long compressBatchId; // @synthesize compressBatchId=_compressBatchId;
 - (void).cxx_destruct;
 - (_Bool)isIllegalDuration:(double)arg1;

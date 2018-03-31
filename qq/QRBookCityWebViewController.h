@@ -6,13 +6,14 @@
 
 #import <QQMainProject/BookWebBaseViewController.h>
 
+#import <QQMainProject/QBossAdvRequestDelegate-Protocol.h>
 #import <QQMainProject/QQTabMenuDelegate-Protocol.h>
 #import <QQMainProject/QRTabBarDelegate-Protocol.h>
 #import <QQMainProject/UIScrollViewDelegate-Protocol.h>
 
 @class NSArray, NSString, NSTimer, ODRefreshControl, QQTabMenu, QRTabBar, UIActivityIndicatorView, UIControl, UIImageView, UIView;
 
-@interface QRBookCityWebViewController : BookWebBaseViewController <UIScrollViewDelegate, QQTabMenuDelegate, QRTabBarDelegate>
+@interface QRBookCityWebViewController : BookWebBaseViewController <UIScrollViewDelegate, QQTabMenuDelegate, QBossAdvRequestDelegate, QRTabBarDelegate>
 {
     struct CGRect _tabRect;
     _Bool _advPopDidShow;
@@ -140,16 +141,22 @@
 - (void)refreshTimeOut;
 - (void)dragViewDidBeginRefresh;
 - (void)add_shortcut;
+- (void)goto_bookshelf_audio_delete;
 - (void)goto_bookshelf_delete;
+- (void)goto_bookshelf_secret;
 - (void)importBtnClicked;
 - (void)goto_bookshelf_follow;
 - (void)editBtnClicked;
 - (void)touchDownAndHideMiddleview:(id)arg1 withEvent:(id)arg2;
-- (void)initMiddleView;
+- (void)hideMiddleView;
+- (void)showMiddleView;
 - (void)layoutViewsIfNeeds:(id)arg1;
 - (void)viewWillDisappear:(_Bool)arg1;
 - (void)viewDidAppear:(_Bool)arg1;
 - (void)redPointShowHandler:(id)arg1;
+- (void)refreshColumnMineRedPoint;
+- (void)clearQBossAdvType:(long long)arg1;
+- (void)didGetQBossAdvType:(long long)arg1 advJson:(id)arg2 fromCache:(_Bool)arg3;
 - (void)redPointClearHandler:(id)arg1;
 - (void)newChapterChangeHandler:(id)arg1;
 - (void)initialRedPoint;

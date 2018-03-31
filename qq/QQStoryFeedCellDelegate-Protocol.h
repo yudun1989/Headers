@@ -9,6 +9,8 @@
 @class QQStoryFeedCell, TBStoryFeedModel;
 
 @protocol QQStoryFeedCellDelegate <NSObject>
+
+@optional
 - (void)storyFeedCell:(QQStoryFeedCell *)arg1 didFeedbackForStoryFeed:(TBStoryFeedModel *)arg2;
 - (Class)getGoBackClassWhenSended:(QQStoryFeedCell *)arg1;
 - (void)onRequestMoreVideoCover:(TBStoryFeedModel *)arg1;

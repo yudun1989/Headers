@@ -10,7 +10,9 @@
 {
 }
 
++ (void)showCanvasViewController:(id)arg1;
 + (long long)gdtAdDoAppJump:(id)arg1;
++ (void)showVideoCeiling:(id)arg1;
 + (id)getInstance;
 - (id)init;
 

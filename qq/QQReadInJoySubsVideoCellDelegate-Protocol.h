@@ -6,7 +6,7 @@
 
 #import <QQMainProject/NSObject-Protocol.h>
 
-@class NSString, QQReadInJoySubsVideoCell, QQReadInJoyVideoView, ReadInJoyChannel, ReadInJoyChannelArticle, UIImage, UIView;
+@class NSString, QQReadInJoySubsVideoCell, QQReadInJoyVideoView, ReadInJoyChannel, ReadInJoyChannelArticle, UIButton, UIImage, UIView;
 
 @protocol QQReadInJoySubsVideoCellDelegate <NSObject>
 - (void)readInJoySubsVideoCell:(QQReadInJoySubsVideoCell *)arg1 progressUpdateToCurrentTime:(double)arg2 duration:(double)arg3;
@@ -18,6 +18,7 @@
 - (_Bool)shouldPlayVideo:(QQReadInJoySubsVideoCell *)arg1 player:(QQReadInJoyVideoView *)arg2;
 
 @optional
+- (void)tableViewCell:(QQReadInJoySubsVideoCell *)arg1 didClickCommentButton:(UIButton *)arg2;
 - (void)tableViewCell:(QQReadInJoySubsVideoCell *)arg1 willDisplaySubChannelLabel:(ReadInJoyChannel *)arg2;
 - (void)tableViewCell:(QQReadInJoySubsVideoCell *)arg1 fullScreenWillActive:(_Bool)arg2;
 - (void)tableViewCell:(QQReadInJoySubsVideoCell *)arg1 itemFullScreenWillActive:(_Bool)arg2;

@@ -11,6 +11,7 @@
 @interface QZProfileModel : QZoneModel
 {
     _Bool _showMenuPanle;
+    _Bool _showMVideo;
     _Bool _ifOpenMsgBord;
     QZHomePageVisit *_visitNoRight;
     long long _nameplateType;
@@ -29,6 +30,7 @@
 @property(retain, nonatomic) NSString *shareBgUrl; // @synthesize shareBgUrl=_shareBgUrl;
 @property(retain, nonatomic) NSString *spaceDesc; // @synthesize spaceDesc=_spaceDesc;
 @property(nonatomic) long long brandFlag; // @synthesize brandFlag=_brandFlag;
+@property(nonatomic) _Bool showMVideo; // @synthesize showMVideo=_showMVideo;
 @property(nonatomic) _Bool showMenuPanle; // @synthesize showMenuPanle=_showMenuPanle;
 @property(nonatomic) long long userType; // @synthesize userType=_userType;
 @property(retain, nonatomic) QzoneCustomVipInfo *customVipInfo; // @synthesize customVipInfo=_customVipInfo;

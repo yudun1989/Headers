@@ -47,6 +47,7 @@
 - (void)sendEmoji:(id)arg1;
 - (void)cellStopAtPoint:(id)arg1 data:(id)arg2 view:(id)arg3;
 - (void)cellMoveToPoint:(id)arg1 view:(id)arg2;
+- (void)processPicWithPath:(id)arg1 fileName:(id)arg2;
 - (void)cellDidTapped:(id)arg1 onKeyBoard:(id)arg2;
 - (void)setText:(id)arg1;
 - (id)text;

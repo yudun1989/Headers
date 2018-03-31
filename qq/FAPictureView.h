@@ -8,7 +8,7 @@
 
 #import <QQMainProject/UIGestureRecognizerDelegate-Protocol.h>
 
-@class FAModel, FAPictureTableViewCell, NSString, QQAsynUrlImageView, UIImageView, UITapGestureRecognizer;
+@class FAModel, FAPictureTableViewCell, ICloudView, NSString, QQAnimatedRevealMaskView, QQAsynUrlImageView, QQTwinkleCircleProgressView, UIImageView, UITapGestureRecognizer;
 
 @interface FAPictureView : UIView <UIGestureRecognizerDelegate>
 {
@@ -24,10 +24,24 @@
     UITapGestureRecognizer *_tapGesture;
     int _xo;
     FAPictureTableViewCell *_cellView;
+    QQTwinkleCircleProgressView *_progressView;
+    QQAnimatedRevealMaskView *_revealMaskView;
+    _Bool _downloadingFromIcloud;
+    ICloudView *_icloudView;
 }
 
 + (id)createMoreViewWithFrame:(struct CGRect)arg1;
-- (void)adjustAccessibilityTraits;
+@property(retain, nonatomic) ICloudView *icloudView; // @synthesize icloudView=_icloudView;
+@property(nonatomic) _Bool downloadingFromIcloud; // @synthesize downloadingFromIcloud=_downloadingFromIcloud;
+- (id)accessibilityLabel;
+- (void)onIcloudFileDownloadSuccess:(id)arg1;
+- (void)onICloudFileDownloadProgress:(double)arg1 error:(id)arg2;
+- (_Bool)checkAnddownloadIcloudFile;
+- (_Bool)checkIcloudState;
+- (void)resetProgressView;
+- (void)setProgress:(double)arg1;
+- (void)showProgressView:(_Bool)arg1;
+- (void)showIcloudView:(_Bool)arg1;
 - (void)onThumbnailDone:(id)arg1;
 - (void)setSelected:(_Bool)arg1;
 - (_Bool)isSelected;

@@ -12,10 +12,15 @@
 {
     NSString *_scriptUrl;
     NSString *_type;
+    NSString *_activityPosition;
     NSDictionary *_bizData;
+    struct CGRect _activityFrame;
 }
 
++ (id)modelWithJSONDictionary:(id)arg1;
 @property(retain, nonatomic) NSDictionary *bizData; // @synthesize bizData=_bizData;
+@property(nonatomic) struct CGRect activityFrame; // @synthesize activityFrame=_activityFrame;
+@property(copy, nonatomic) NSString *activityPosition; // @synthesize activityPosition=_activityPosition;
 @property(copy, nonatomic) NSString *type; // @synthesize type=_type;
 @property(copy, nonatomic) NSString *scriptUrl; // @synthesize scriptUrl=_scriptUrl;
 - (void).cxx_destruct;

@@ -31,31 +31,7 @@
 @property(copy, nonatomic) NSString *videoGravity; // @synthesize videoGravity=_videoGravity;
 @property(nonatomic) __weak id <PLStoryVideoPreviewViewDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
-- (void)videoChangedWithCMTime:(CDStruct_1b6d18a9)arg1;
-- (void)onAVPlayerItemPlaybackStalledNotification:(id)arg1;
-- (void)onAVPlayerItemNewAccessLogEntryNotification:(id)arg1;
-- (void)onAVPlayerItemNewErrorLogEntryNotification:(id)arg1;
-- (void)onAVPlayerItemFailedToPlayToEndTimeNotification:(id)arg1;
-- (void)onAVPlayerItemDidPlayToEndTimeNotification:(id)arg1;
-- (void)updateMosaic:(id)arg1;
-- (void)playViewDidStopPlay;
-- (void)playViewDidPlay;
-- (void)closePlayer;
-- (_Bool)stop;
-- (void)rePlay;
-- (_Bool)startPlay:(long long)arg1;
-- (_Bool)play;
-- (_Bool)isPlaying;
 - (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void *)arg4;
-- (void)setRate:(float)arg1;
-- (void)setMute:(_Bool)arg1;
-- (void)seekToTime:(CDStruct_1b6d18a9)arg1;
-- (void)rebootWithAVAsset:(id)arg1;
-- (void)reboot:(id)arg1;
-- (void)setupShadow;
-- (void)loadPlayerWithAsset:(id)arg1;
-- (id)initWithFrame:(struct CGRect)arg1 videoClips:(id)arg2;
-- (void)dealloc;
 
 @end
 

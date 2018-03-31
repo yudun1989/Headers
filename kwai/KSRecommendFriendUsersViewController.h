@@ -6,7 +6,7 @@
 
 #import "KSRecommendUsersViewController.h"
 
-@class KSPYMKRecommendUserService, NSMutableArray;
+@class KSContactModel, KSPYMKRecommendUserService, NSMutableArray;
 
 @interface KSRecommendFriendUsersViewController : KSRecommendUsersViewController
 {
@@ -17,8 +17,10 @@
     CDUnknownBlockType _didClickContactItem;
     KSPYMKRecommendUserService *_pymkUserService;
     NSMutableArray *_noPermissonPlatformNameList;
+    KSContactModel *_contactModel;
 }
 
+@property(retain, nonatomic) KSContactModel *contactModel; // @synthesize contactModel=_contactModel;
 @property(nonatomic) _Bool showAllFriendsMode; // @synthesize showAllFriendsMode=_showAllFriendsMode;
 @property(retain, nonatomic) NSMutableArray *noPermissonPlatformNameList; // @synthesize noPermissonPlatformNameList=_noPermissonPlatformNameList;
 @property(nonatomic) _Bool showContactCell; // @synthesize showContactCell=_showContactCell;
@@ -40,6 +42,7 @@
 - (id)recommendUserService;
 - (void)viewDidLoad;
 - (void)dealloc;
+- (id)initWithNibName:(id)arg1 bundle:(id)arg2;
 
 @end
 

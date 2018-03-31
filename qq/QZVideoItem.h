@@ -4,11 +4,11 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-#import <TlibDy/LKLayoutItem.h>
+#import <TlibDy/PTLayoutItem.h>
 
 @class QZDrawItemVideo;
 
-@interface QZVideoItem : LKLayoutItem
+@interface QZVideoItem : PTLayoutItem
 {
     _Bool _needShowPlayToEndControl;
     QZDrawItemVideo *_videoItem;
@@ -23,6 +23,7 @@
 - (void)didHideView:(id)arg1;
 - (void)configVideoView:(id)arg1 drawItem:(id)arg2 feedModel:(id)arg3;
 - (id)createDrawItemVideoWithFeedModel:(id)arg1;
+- (void)adjustFeedVideoView:(id)arg1;
 - (void)configView:(id)arg1 context:(id)arg2;
 - (void)updateView:(id)arg1 context:(id)arg2;
 - (id)createView;

@@ -31,8 +31,6 @@
 - (void)insertItem:(id)arg1;
 - (void)insertItem:(id)arg1 userdata:(id)arg2 callback:(id)arg3;
 - (void)insertItem:(id)arg1 inDb:(id)arg2;
-- (long long)getEfficacyCountById:(id)arg1;
-- (long long)getEfficacyCountById:(id)arg1 inDB:(id)arg2;
 - (id)getContentInfoById:(id)arg1;
 - (id)getContentInfoById:(id)arg1 inDB:(id)arg2;
 - (id)getIndex;

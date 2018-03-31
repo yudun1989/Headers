@@ -45,6 +45,7 @@
 - (void)handleJsBridgeRequest_media_getLocalImageV2:(id)arg1;
 - (void)handleJsBridgeRequest_media_getLocalImage:(id)arg1;
 - (void)handleGetLocalImageResult:(id)arg1 minSize:(struct CGSize)arg2 outputSize:(struct CGSize)arg3 forURL:(id)arg4;
+- (void)handleGetLocalGif:(id)arg1 forURL:(id)arg2;
 - (void)callbackJsWithRet:(int)arg1 base64Image:(id)arg2;
 - (void)QQGroupShortVideoHandlerDidCancled:(id)arg1;
 - (void)QQGroupShortVideoHandler:(id)arg1 didSelectVideo:(id)arg2;

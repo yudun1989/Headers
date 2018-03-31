@@ -9,7 +9,7 @@
 #import "UICollectionViewDataSource-Protocol.h"
 #import "UICollectionViewDelegate-Protocol.h"
 
-@class CAAnimationlessLayer, NSMutableArray, NSMutableSet, NSString, NSTimer, UICollectionView, UICollectionViewFlowLayout, UILabel;
+@class CAAnimationlessLayer, NSMutableArray, NSMutableSet, NSString, NSTimer, UIButton, UICollectionView, UICollectionViewFlowLayout, UILabel;
 @protocol KSHomeRecommendViewDelegate;
 
 @interface KSHomeRecommendView : UIView <UICollectionViewDataSource, UICollectionViewDelegate>
@@ -21,7 +21,7 @@
     UICollectionView *_collectionView;
     UICollectionViewFlowLayout *_flowLayout;
     UILabel *_titleLabel;
-    UILabel *_moreLabel;
+    UIButton *_closeAllButton;
     CAAnimationlessLayer *_topLine;
     NSMutableArray *_users;
     NSMutableSet *_displayedUsers;
@@ -32,7 +32,7 @@
 @property(retain, nonatomic) NSMutableSet *displayedUsers; // @synthesize displayedUsers=_displayedUsers;
 @property(retain, nonatomic) NSMutableArray *users; // @synthesize users=_users;
 @property(retain, nonatomic) CAAnimationlessLayer *topLine; // @synthesize topLine=_topLine;
-@property(retain, nonatomic) UILabel *moreLabel; // @synthesize moreLabel=_moreLabel;
+@property(retain, nonatomic) UIButton *closeAllButton; // @synthesize closeAllButton=_closeAllButton;
 @property(retain, nonatomic) UILabel *titleLabel; // @synthesize titleLabel=_titleLabel;
 @property(retain, nonatomic) UICollectionViewFlowLayout *flowLayout; // @synthesize flowLayout=_flowLayout;
 @property(retain, nonatomic) UICollectionView *collectionView; // @synthesize collectionView=_collectionView;
@@ -41,6 +41,7 @@
 @property(retain, nonatomic) NSString *defaultTitle; // @synthesize defaultTitle=_defaultTitle;
 @property(nonatomic) __weak id <KSHomeRecommendViewDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
+- (void)didClickCloseAll;
 - (void)didClickCloseUser:(id)arg1;
 - (void)didClickFollowUser:(id)arg1;
 - (void)collectionView:(id)arg1 didSelectItemAtIndexPath:(id)arg2;

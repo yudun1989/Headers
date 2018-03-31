@@ -11,8 +11,10 @@
 @interface TBOrderDinamicModel : TBOrderModel
 {
     TBOrderDinamicComponent *_dinamicComponent;
+    TBOrderModel *_originModel;
 }
 
+@property(nonatomic) __weak TBOrderModel *originModel; // @synthesize originModel=_originModel;
 @property(retain, nonatomic) TBOrderDinamicComponent *dinamicComponent; // @synthesize dinamicComponent=_dinamicComponent;
 - (void).cxx_destruct;
 - (id)initWithCellType:(id)arg1 cellData:(id)arg2;

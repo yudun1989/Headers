@@ -22,6 +22,8 @@
 + (id)getCurrentViewControllerName;
 + (_Bool)isWeakNetwork;
 + (id)getSwitch:(id)arg1;
++ (_Bool)isOpenViewAdaption;
++ (_Bool)isOpenThreadProtection;
 + (_Bool)isOpenLaunchMMap;
 + (_Bool)isOpenMMap;
 + (long long)fileSizeAtPath:(id)arg1;

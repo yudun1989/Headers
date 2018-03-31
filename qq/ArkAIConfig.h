@@ -6,7 +6,7 @@
 
 #import <Foundation/NSObject.h>
 
-@class NSArray, NSString;
+@class NSArray, NSDictionary, NSString;
 
 @interface ArkAIConfig : NSObject
 {
@@ -17,6 +17,7 @@
     _Bool _serverMsgFlowDisable;
     _Bool _serverInputDisable;
     _Bool _atbabyqDisable;
+    _Bool _arkAppPanelDisable;
     _Bool _graybarDisable;
     _Bool _termsSwitch;
     int _bubbleCloseTime;
@@ -36,10 +37,14 @@
     NSArray *_graybarConfigs;
     NSString *_termsUrl;
     NSString *_termsText;
+    NSDictionary *_moduleApiFrequency;
+    NSDictionary *_appGlobalUrlConfig;
 }
 
 + (id)genPerUinKey:(id)arg1;
 + (id)sharedInstance;
+@property(copy, nonatomic) NSDictionary *appGlobalUrlConfig; // @synthesize appGlobalUrlConfig=_appGlobalUrlConfig;
+@property(copy, nonatomic) NSDictionary *moduleApiFrequency; // @synthesize moduleApiFrequency=_moduleApiFrequency;
 @property(nonatomic) _Bool termsSwitch; // @synthesize termsSwitch=_termsSwitch;
 @property(copy, nonatomic) NSString *termsText; // @synthesize termsText=_termsText;
 @property(copy, nonatomic) NSString *termsUrl; // @synthesize termsUrl=_termsUrl;
@@ -57,6 +62,7 @@
 @property(nonatomic) int blackbarAppearDays; // @synthesize blackbarAppearDays=_blackbarAppearDays;
 @property(nonatomic) int blackbarAppearNumPerDay; // @synthesize blackbarAppearNumPerDay=_blackbarAppearNumPerDay;
 @property(copy, nonatomic) NSString *watermarkTips; // @synthesize watermarkTips=_watermarkTips;
+@property(nonatomic) _Bool arkAppPanelDisable; // @synthesize arkAppPanelDisable=_arkAppPanelDisable;
 @property(nonatomic) int arkServiceType; // @synthesize arkServiceType=_arkServiceType;
 @property(nonatomic) _Bool atbabyqDisable; // @synthesize atbabyqDisable=_atbabyqDisable;
 @property(nonatomic) _Bool serverInputDisable; // @synthesize serverInputDisable=_serverInputDisable;
@@ -71,15 +77,18 @@
 - (id)getShowAPPIDList;
 - (_Bool)setAIDictConfig:(id)arg1;
 - (id)getAIDictConfig;
+- (_Bool)isArkAppPanelEnabled;
 - (_Bool)isArkServiceEnabled;
 - (_Bool)isAtBabyqEnabled;
 - (_Bool)isReportEnabled;
 - (_Bool)isInputEnabled;
 - (_Bool)isMsgFlowEnabled;
 - (_Bool)isEnabled;
+- (void)setArkMsgAnalyzeDictionary:(id)arg1 keyName:(id)arg2;
 - (void)setArkMsgAnalyzeList:(id)arg1 keyName:(id)arg2;
 - (void)setArkMsgAnalyzeKeyWord:(id)arg1 keyName:(id)arg2;
 - (void)setArkMsgAnalyzeDisable:(id)arg1 keyName:(id)arg2;
+- (id)loadDictionaryAppSettingWithKeyName:(id)arg1;
 - (id)loadArrayAppSettingWithKeyName:(id)arg1;
 - (id)loadStringAppSettingWithKeyName:(id)arg1;
 - (int)loadIntAppSettingWithKeyName:(id)arg1;

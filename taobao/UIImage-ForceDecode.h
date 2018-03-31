@@ -8,6 +8,8 @@
 
 @interface UIImage (ForceDecode)
 + (id)decodedImageWithCGImageRef:(struct CGImage *)arg1;
++ (id)inner_decodedImageWithImage:(id)arg1;
++ (id)decodedAnimatedImageWithImage:(id)arg1;
 + (id)decodedImageWithImage:(id)arg1;
 @end
 

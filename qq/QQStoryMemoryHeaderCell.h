@@ -10,6 +10,7 @@
 
 @interface QQStoryMemoryHeaderCell : UITableViewCell
 {
+    unsigned int _videoNum;
     TBQQUserInfoModel *_model;
     QQStoryUrlImageView *_coverImageView;
     QQStoryMemoryProfileHeader *_profileHeaderView;
@@ -28,6 +29,7 @@
 @property(retain, nonatomic) UILabel *userNameLabel; // @synthesize userNameLabel=_userNameLabel;
 @property(retain, nonatomic) QQStoryMemoryProfileHeader *profileHeaderView; // @synthesize profileHeaderView=_profileHeaderView;
 @property(retain, nonatomic) QQStoryUrlImageView *coverImageView; // @synthesize coverImageView=_coverImageView;
+@property(nonatomic) unsigned int videoNum; // @synthesize videoNum=_videoNum;
 @property(retain, nonatomic) TBQQUserInfoModel *model; // @synthesize model=_model;
 - (void)updateSignatureWithModel:(id)arg1;
 - (void)updateIconWithModel:(id)arg1;

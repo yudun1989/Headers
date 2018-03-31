@@ -10,7 +10,7 @@
 #import <QQMainProject/UITableViewDataSource-Protocol.h>
 #import <QQMainProject/UITableViewDelegate-Protocol.h>
 
-@class MQZoneHomepageMemorySealOffView, NSString, QzoneFeedModel, UIView;
+@class MQZoneHomepageMemorySealOffView, NSString, QzoneFeedModel, UIButton, UIView;
 
 @interface QZMoodListViewController : MQZCommonFeedListViewController <UISearchBarDelegate, UITableViewDelegate, UITableViewDataSource>
 {
@@ -20,6 +20,8 @@
     long long _lastUpdateTime;
     long long _hasMore;
     long long _moodListReqID;
+    UIView *_customTableHeaderView;
+    UIButton *_timerMoodEntranceBar;
     double _layoutDrawingBeginTime;
     MQZoneHomepageMemorySealOffView *_sealOffView;
     QzoneFeedModel *_memorySealOffModel;
@@ -38,6 +40,11 @@
 - (double)tableView:(id)arg1 heightForRowAtIndexPath:(id)arg2;
 - (_Bool)searchBarShouldBeginEditing:(id)arg1;
 - (id)searchBar;
+- (void)timerMoodUpdateNotify:(id)arg1;
+- (void)refreshTimerMoodEntranceBar:(int)arg1;
+- (void)didTimerMoodEntranceBarClicked:(id)arg1;
+- (id)timerMoodEntranceBar;
+- (id)customTableHeaderView;
 - (void)checkFootViewState;
 - (_Bool)onLoadMore;
 - (_Bool)onHasMore;

@@ -6,14 +6,15 @@
 
 #import <Foundation/NSObject.h>
 
-@class NSLock, NSMutableArray, NSOperationQueue, NSRecursiveLock, NSString;
+@class NSMutableArray, NSRecursiveLock, NSString;
+@protocol OS_dispatch_queue;
 
 @interface NWHTTPDNSTools : NSObject
 {
-    NSOperationQueue *_downloadQueue;
+    NSObject<OS_dispatch_queue> *_downloadQueue;
     NSRecursiveLock *_downloadLock;
+    NSRecursiveLock *_hostLock;
     NSMutableArray *_hostArray;
-    NSLock *_hostLock;
     NSString *_BodyString;
     double _lastRequestTime;
     NSString *_netIp;
@@ -32,7 +33,8 @@
 - (id)getAMDCVersion;
 - (void)reportUT4Amdc:(id)arg1 error:(id)arg2 errorMsg:(id)arg3 sign:(id)arg4 localSign:(id)arg5 isProxy:(_Bool)arg6 isSuccess:(_Bool)arg7 retryTimes:(int)arg8 policy:(id)arg9;
 - (void)handleEffectiveNow:(id)arg1;
-- (void)syncFetchStrategy:(id)arg1;
+- (_Bool)syncFetchStrategy:(id)arg1;
+- (int)backoff;
 - (void)fetchStrategy:(id)arg1;
 - (id)popFromQueue;
 - (_Bool)hasPendingHosts;

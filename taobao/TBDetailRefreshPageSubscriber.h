@@ -16,7 +16,7 @@
 - (void)openUrlWithRedirectUrl:(id)arg1;
 - (void)loadH5PageWithRedirectUrl:(id)arg1;
 - (id)handlePopViewController:(id)arg1;
-- (id)handleRedirectToH5Event:(id)arg1;
+- (id)handleURLRoutingEvent:(id)arg1;
 - (id)handleReloadSingleCellEvent:(id)arg1;
 - (id)handleReloadTableViewEvent:(id)arg1;
 - (id)handleReloadSingleCellWithKeyEvent:(id)arg1;

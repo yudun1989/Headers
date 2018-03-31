@@ -6,19 +6,19 @@
 
 #import <Foundation/NSObject.h>
 
-@class NSArray, NSString;
+@class NSString, ZCOperation;
 
 @interface ZCCustomAppInfo : NSObject
 {
-    NSArray *_appNames;
+    NSString *_appName;
     NSString *_url;
+    ZCOperation *_operation;
 }
 
-+ (id)getAppConfigURL:(id)arg1 withNextVersion:(id)arg2;
+@property(retain, nonatomic) ZCOperation *operation; // @synthesize operation=_operation;
 @property(copy, nonatomic) NSString *url; // @synthesize url=_url;
-@property(copy, nonatomic) NSArray *appNames; // @synthesize appNames=_appNames;
+@property(copy, nonatomic) NSString *appName; // @synthesize appName=_appName;
 - (void).cxx_destruct;
-- (id)initWithAppNames:(id)arg1 withNextVersion:(id)arg2;
 
 @end
 

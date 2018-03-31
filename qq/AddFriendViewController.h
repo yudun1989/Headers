@@ -34,7 +34,6 @@
 @property(retain, nonatomic) AddFriendSendMessageViewController *sendMessageViewController; // @synthesize sendMessageViewController=_sendMessageViewController;
 - (void)ActionOnExchangeUinResult:(id)arg1;
 - (void)onResponseSummaryNotification:(id)arg1;
-- (void)_searchBadResultsFilter:(id)arg1;
 - (int)getSummaryTypeUsingSearchResult:(id)arg1;
 - (void)onGetSearchResultNoti:(id)arg1;
 - (void)onExchangeUinTimeout;

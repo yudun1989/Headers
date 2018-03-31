@@ -14,6 +14,7 @@
     _Bool _hasMeal;
     _Bool _showSku;
     _Bool _hasCoupon;
+    _Bool _newAddress;
     _Bool _secKill;
     _Bool _hideShopDsr;
     _Bool _hasMobileDesc;
@@ -54,6 +55,7 @@
 @property(nonatomic) _Bool hasMobileDesc; // @synthesize hasMobileDesc=_hasMobileDesc;
 @property(nonatomic) _Bool hideShopDsr; // @synthesize hideShopDsr=_hideShopDsr;
 @property(nonatomic) _Bool secKill; // @synthesize secKill=_secKill;
+@property(nonatomic) _Bool newAddress; // @synthesize newAddress=_newAddress;
 @property(nonatomic) _Bool hasCoupon; // @synthesize hasCoupon=_hasCoupon;
 @property(nonatomic) _Bool showSku; // @synthesize showSku=_showSku;
 @property(nonatomic) _Bool hasMeal; // @synthesize hasMeal=_hasMeal;

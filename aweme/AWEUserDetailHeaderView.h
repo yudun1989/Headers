@@ -6,7 +6,7 @@
 
 #import <UIKit/UIView.h>
 
-@class AWEBindPhoneNumberTipView, AWEUserHomeAddFriendBubbleView, AWEUserModel, AWEUserRelationView, LOTAnimationView, UIButton, UIImageView, UILabel, UIVisualEffectView, YYAnimatedImageView;
+@class AWEBindPhoneNumberTipView, AWEUserHomeAddFriendBubbleView, AWEUserModel, AWEUserRelationView, LOTAnimationView, UIButton, UIImageView, UILabel, YYAnimatedImageView;
 @protocol AWEFollowActionDelegate;
 
 @interface AWEUserDetailHeaderView : UIView
@@ -65,10 +65,10 @@
     UIImageView *_bindingAppArrowImageView;
     UILabel *_downloadAppLabel;
     UIImageView *_downloadAppArrowImageView;
-    UIVisualEffectView *_effectView;
+    UIView *_effectView;
 }
 
-@property(retain, nonatomic) UIVisualEffectView *effectView; // @synthesize effectView=_effectView;
+@property(retain, nonatomic) UIView *effectView; // @synthesize effectView=_effectView;
 @property(nonatomic) _Bool canDownloadApp; // @synthesize canDownloadApp=_canDownloadApp;
 @property(retain, nonatomic) UIImageView *downloadAppArrowImageView; // @synthesize downloadAppArrowImageView=_downloadAppArrowImageView;
 @property(retain, nonatomic) UILabel *downloadAppLabel; // @synthesize downloadAppLabel=_downloadAppLabel;

@@ -31,6 +31,7 @@
 - (void)compressInfoReport:(_Bool)arg1 error:(id)arg2 avasset:(id)arg3 compressBeginTime:(double)arg4;
 - (void)startCompressVideoIfNeeded;
 - (void)execute;
+- (void)cancelJob:(_Bool)arg1;
 - (id)init;
 
 @end

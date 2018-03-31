@@ -11,7 +11,7 @@
 #import <QQMainProject/IHotPicLibraryEngineDelegate-Protocol.h>
 #import <QQMainProject/UIScrollViewDelegate-Protocol.h>
 
-@class HotPicBottomBar, HotPicGuideView, HotPicLoadingView, NSMutableArray, NSString, QQTabWithInPageControl, UIScrollView;
+@class HotPicBottomBar, HotPicGuideView, HotPicLoadingView, NSMutableArray, NSString, QQTabWithInPageControl, UIImage, UIScrollView;
 @protocol QQHotPicViewDelegate;
 
 @interface QQHotPicView : UIView <UIScrollViewDelegate, HotPicCollectionDelegate, IHotPicLibraryEngineDelegate, HotPicBottomBarDelegate>
@@ -21,8 +21,10 @@
     _Bool _isRecentFirstEnter;
     QQTabWithInPageControl *_tabControlBar;
     unsigned long long _selectedIndex;
+    _Bool _forbidLayoutBottomBar;
     _Bool _hasGetTagList;
     id <QQHotPicViewDelegate> _delegate;
+    UIImage *_lineViewImage;
     HotPicBottomBar *_bottomBar;
     HotPicGuideView *_guideView;
     NSMutableArray *_tagList;
@@ -42,6 +44,8 @@
 @property(retain, nonatomic) NSMutableArray *tagList; // @synthesize tagList=_tagList;
 @property(retain, nonatomic) HotPicGuideView *guideView; // @synthesize guideView=_guideView;
 @property(retain, nonatomic) HotPicBottomBar *bottomBar; // @synthesize bottomBar=_bottomBar;
+@property(retain, nonatomic) UIImage *lineViewImage; // @synthesize lineViewImage=_lineViewImage;
+@property(nonatomic) _Bool forbidLayoutBottomBar; // @synthesize forbidLayoutBottomBar=_forbidLayoutBottomBar;
 @property(nonatomic) __weak id <QQHotPicViewDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
 - (void)changeFrameOnScroll:(_Bool)arg1;
@@ -64,10 +68,12 @@
 - (void)onBottomBarTouchCancel:(unsigned long long)arg1;
 - (void)onBottomBarTouchDown:(unsigned long long)arg1;
 - (void)initSegmentedControl;
+- (id)getBottomBar;
 - (void)layoutSubviews;
 - (void)hotPicViewHidden;
 - (void)hotPicViewShown;
 - (void)dealloc;
+- (id)initWithFrame:(struct CGRect)arg1 lineViewImage:(id)arg2;
 - (id)initWithFrame:(struct CGRect)arg1;
 
 // Remaining properties

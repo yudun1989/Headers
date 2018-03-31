@@ -61,6 +61,9 @@
 - (void)showKeyboard;
 - (void)setupTextView;
 - (void)updateInputCellFrameForTextHeight:(double)arg1 withCursorPosition:(struct CGPoint)arg2 cursionValid:(_Bool)arg3;
+- (void)setTextViewDefaultAttributedPlaceholderFirstLineHeadIndent:(double)arg1;
+- (void)setTextViewExclusionPaths:(id)arg1;
+- (void)setTextViewFont:(id)arg1;
 - (struct CGRect)textViewFrame;
 @property(nonatomic) _Bool autoGrowingTextView; // @dynamic autoGrowingTextView;
 - (void)setTextViewDraftText:(id)arg1;

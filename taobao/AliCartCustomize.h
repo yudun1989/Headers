@@ -16,7 +16,6 @@
     _Bool _itemHideWeight;
     _Bool _itemHideBizIconP;
     _Bool _itemHideBizIconS;
-    _Bool _itemHideOriginPrice;
     _Bool _showMarketQuickQuantityEditor;
     _Bool _itemSKUBanEdit;
     _Bool _shopHideGoArrow;
@@ -54,7 +53,6 @@
 @property(nonatomic) _Bool shopHideGoArrow; // @synthesize shopHideGoArrow=_shopHideGoArrow;
 @property(nonatomic) _Bool itemSKUBanEdit; // @synthesize itemSKUBanEdit=_itemSKUBanEdit;
 @property(nonatomic) _Bool showMarketQuickQuantityEditor; // @synthesize showMarketQuickQuantityEditor=_showMarketQuickQuantityEditor;
-@property(nonatomic) _Bool itemHideOriginPrice; // @synthesize itemHideOriginPrice=_itemHideOriginPrice;
 @property(nonatomic) unsigned long long itemEditStateFunctionType; // @synthesize itemEditStateFunctionType=_itemEditStateFunctionType;
 @property(nonatomic) _Bool itemHideBizIconS; // @synthesize itemHideBizIconS=_itemHideBizIconS;
 @property(nonatomic) _Bool itemHideBizIconP; // @synthesize itemHideBizIconP=_itemHideBizIconP;

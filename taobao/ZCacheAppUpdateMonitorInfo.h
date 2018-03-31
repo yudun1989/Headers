@@ -14,7 +14,6 @@
     _Bool _networkSupport;
     _Bool _isIncr;
     NSString *_appName;
-    NSString *_version;
     NSString *_seq;
     double _downloadTime;
     double _unzipTime;
@@ -40,12 +39,11 @@
 @property(nonatomic) _Bool networkSupport; // @synthesize networkSupport=_networkSupport;
 @property(nonatomic) _Bool online; // @synthesize online=_online;
 @property(readonly, copy, nonatomic) NSString *seq; // @synthesize seq=_seq;
-@property(readonly, copy, nonatomic) NSString *version; // @synthesize version=_version;
 @property(readonly, copy, nonatomic) NSString *appName; // @synthesize appName=_appName;
 - (void).cxx_destruct;
 - (id)errorArg;
 @property(readonly, nonatomic) _Bool hasPublishTime;
-- (id)initWithAppName:(id)arg1 withVersion:(id)arg2 withSeq:(unsigned long long)arg3;
+- (id)initWithAppName:(id)arg1 withSeq:(unsigned long long)arg2;
 
 @end
 

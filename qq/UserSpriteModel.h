@@ -54,7 +54,6 @@
 @property(nonatomic) short vipState; // @synthesize vipState=_vipState;
 @property(nonatomic) short state; // @synthesize state=_state;
 @property(nonatomic) long long uin; // @synthesize uin=_uin;
-- (id)description;
 - (void)updateWithAccountModel:(id)arg1;
 - (_Bool)isInCMOpenGameWhiteList;
 - (_Bool)isInCMFaceWhiteList;
@@ -67,6 +66,7 @@
 - (void)getModelWithModel:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (void)dealloc;
+- (id)mePetModel;
 
 @end
 

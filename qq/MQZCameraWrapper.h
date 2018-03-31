@@ -26,6 +26,7 @@
 - (void)sendRemoveConflictNotificationToAV;
 - (void)sendConflictNotificationToAV;
 - (void)richMediaPickerControllerDidCancel:(id)arg1;
+- (void)processEditedVideoAsset:(id)arg1 videoInfo:(id)arg2;
 - (void)richMediaPickerController:(id)arg1 didFinishPickingMediaWithInfo:(id)arg2;
 - (void)presentInViewController:(id)arg1 onlyImage:(_Bool)arg2;
 - (void)presentInViewController:(id)arg1 onlyImage:(_Bool)arg2 fromCamera:(_Bool)arg3;

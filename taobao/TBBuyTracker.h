@@ -15,6 +15,8 @@
 }
 
 + (_Bool)joinerSingleton;
+- (void)et_updateViewControllerProperties:(id)arg1 properties:(id)arg2;
+- (void)commintBuyUmbrellaPoint:(_Bool)arg1 serviceId:(id)arg2 version:(id)arg3 sceneName:(id)arg4 args:(id)arg5;
 - (void)recordQueueWeexViewError:(id)arg1;
 - (void)recordQueueStateWithArg:(id)arg1;
 - (void)recordAdjustOriginalParams:(id)arg1;
@@ -41,6 +43,7 @@
 - (void)commitEnterPageEvent:(id)arg1;
 - (void)commitConfirmButtonByFamilyClickedEvent:(id)arg1;
 - (void)commitConfirmButtonBySelfClickedEvent:(id)arg1;
+- (void)commitConfirmButtonNotMyClickedEvent:(id)arg1;
 - (void)commitConfirmButtonClickedEvent:(id)arg1;
 - (void)familySelectedListExposedEvent;
 - (void)floatTipsAddressViewExposedEvent;

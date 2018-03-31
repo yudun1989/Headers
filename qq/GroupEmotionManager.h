@@ -6,28 +6,30 @@
 
 #import <Foundation/NSObject.h>
 
+@class NSArray;
 @protocol OS_dispatch_queue;
 
 @interface GroupEmotionManager : NSObject
 {
     NSObject<OS_dispatch_queue> *_emotionDBQueue;
-    _Bool _shouldShowGroupEmotionEntrance;
     _Bool _shouldDismissRD;
     _Bool _accountChange;
     long long _availableClickCount;
     long long _totalGroupEmotionCount;
+    NSArray *_groupEmotionList;
 }
 
 + (id)manager;
+@property(copy, nonatomic) NSArray *groupEmotionList; // @synthesize groupEmotionList=_groupEmotionList;
 @property(nonatomic) _Bool accountChange; // @synthesize accountChange=_accountChange;
 @property(nonatomic) _Bool shouldDismissRD; // @synthesize shouldDismissRD=_shouldDismissRD;
 @property(nonatomic) long long totalGroupEmotionCount; // @synthesize totalGroupEmotionCount=_totalGroupEmotionCount;
 @property(nonatomic) long long availableClickCount; // @synthesize availableClickCount=_availableClickCount;
 - (void)groupEmotionReportOpName:(id)arg1 reserved2:(id)arg2;
+- (id)getAllGroupFilter;
 - (void)deleteGroupEmotionMore;
 - (void)delayDeleteGroupEmotionMore;
 - (void)reciveMessageModel:(id)arg1;
-@property(readonly, nonatomic) _Bool shouldShowGroupEmotionEntrance;
 - (void)recallMessagePair:(id)arg1;
 - (void)deleteGroupEmotionWithMd5:(id)arg1;
 - (void)deleteMessageModel:(id)arg1;
@@ -36,7 +38,7 @@
 - (_Bool)isRepeatCustomFace:(id)arg1;
 - (void)reciveMessageArray:(id)arg1;
 - (void)groupEmotionListWithCallBack:(CDUnknownBlockType)arg1;
-- (id)groupEmotionList;
+- (id)getGroupEmotionListWithFilterArr:(id)arg1;
 - (id)groupEmotionListWithOutTimestamp:(id)arg1;
 - (_Bool)isMessageSuportGroupEmotion:(id)arg1;
 - (id)init;

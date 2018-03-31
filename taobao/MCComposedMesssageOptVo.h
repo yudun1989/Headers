@@ -6,12 +6,17 @@
 
 #import "MCComposedMessageVo.h"
 
+@class NSString;
+
 @interface MCComposedMesssageOptVo : MCComposedMessageVo
 {
     _Bool _centerDisplay;
+    NSString *_clickUrl;
 }
 
+@property(retain, nonatomic) NSString *clickUrl; // @synthesize clickUrl=_clickUrl;
 @property(nonatomic) _Bool centerDisplay; // @synthesize centerDisplay=_centerDisplay;
+- (void).cxx_destruct;
 - (id)initWithDatas:(id)arg1;
 
 @end

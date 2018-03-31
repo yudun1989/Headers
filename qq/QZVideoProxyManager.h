@@ -15,16 +15,12 @@
     QZVideoInfo *_videoInfo;
     NSMutableDictionary *_changeVkeyMutlDict;
     NSMutableArray *_h5PlayInfo;
-    NSMutableDictionary *_cacheVideoDebugInfo;
-    NSMutableDictionary *_cacheVideoDebugInfoSwitch;
     _Bool _isInited;
     _Bool _enablePreload;
 }
 
 + (id)instance;
 - (void).cxx_destruct;
-- (id)getVideoDebugInfo:(id)arg1;
-- (void)updateVideoDebugInfo:(id)arg1 fileId:(id)arg2;
 - (void)qzoneVideoH5Callback:(id)arg1;
 - (id)getApnStrWithType:(long long)arg1;
 - (void)willCreatePlayIDWithParam:(id)arg1;

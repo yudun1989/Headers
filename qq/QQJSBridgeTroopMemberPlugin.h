@@ -16,6 +16,7 @@
 }
 
 @property(retain, nonatomic) NSDictionary *requestQuery; // @synthesize requestQuery=_requestQuery;
+- (void)handleJsBridgeRequest_TroopMemberApiPlugin_setTribePublishTopic:(id)arg1;
 - (_Bool)handleJsBridgeRequest_TroopMemberApiPlugin_createVideoAndSend:(id)arg1;
 - (id)convertToNSString:(id)arg1;
 - (void)callbackWithObj:(id)arg1;

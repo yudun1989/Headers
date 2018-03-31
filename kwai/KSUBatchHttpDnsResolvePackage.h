@@ -17,6 +17,7 @@
 // Remaining properties
 @property(retain, nonatomic) NSMutableArray *domainArray; // @dynamic domainArray;
 @property(readonly, nonatomic) unsigned long long domainArray_Count; // @dynamic domainArray_Count;
+@property(nonatomic) _Bool enableCrossPlatform; // @dynamic enableCrossPlatform;
 @property(retain, nonatomic) NSMutableArray *existedDomainArray; // @dynamic existedDomainArray;
 @property(readonly, nonatomic) unsigned long long existedDomainArray_Count; // @dynamic existedDomainArray_Count;
 @property(retain, nonatomic) NSMutableArray *inputDomainArray; // @dynamic inputDomainArray;

@@ -23,7 +23,7 @@
 - (void)connection:(id)arg1 didReceiveData:(id)arg2;
 - (void)connection:(id)arg1 didReceiveResponse:(id)arg2;
 - (void)connection:(id)arg1 didFailWithError:(id)arg2;
-- (_Bool)uploadMediaFile:(id)arg1 forType:(int)arg2 cgiArgu:(id)arg3 callback:(CDUnknownBlockType)arg4;
+- (_Bool)uploadMediaFile:(id)arg1 forType:(unsigned long long)arg2 cgiArgu:(id)arg3 callback:(CDUnknownBlockType)arg4;
 - (id)getDataForFile:(id)arg1;
 - (void)uploadMediaFileResult:(int)arg1 errMsg:(id)arg2;
 - (void)uploadMediaFileTimeout;

@@ -6,31 +6,27 @@
 
 #import <UIKit/UIView.h>
 
-#import <QQMainProject/CAAnimationDelegate-Protocol.h>
+@class QQAIOMsgModel, QQWalletGoldMsgAvatarAnimationView, QQWalletGoldMsgPushModel, UIImageView, UILabel, UITapGestureRecognizer;
 
-@class NSString, QQMessageModel, QQWalletGoldMsgPushModel, UIImageView, UILabel, UITapGestureRecognizer;
-
-@interface QQWalletGoldMsgCellTailView : UIView <CAAnimationDelegate>
+@interface QQWalletGoldMsgCellTailView : UIView
 {
     unsigned long long _type;
-    QQMessageModel *_goldMsg;
+    QQAIOMsgModel *_aioModel;
     struct CGRect _backRect;
     UIImageView *_coinImgView;
     UILabel *_moneyLab;
     UITapGestureRecognizer *_tapGes;
+    QQWalletGoldMsgAvatarAnimationView *_avatarAniView;
+    UILabel *_tipLabel;
     id _tapTarget;
     SEL _tapSelector;
     QQWalletGoldMsgPushModel *_pushMsg;
+    CDUnknownBlockType _completeBlock;
 }
 
++ (double)tailViewWidthWithMsgModel:(id)arg1;
+@property(copy, nonatomic) CDUnknownBlockType completeBlock; // @synthesize completeBlock=_completeBlock;
 @property(retain, nonatomic) QQWalletGoldMsgPushModel *pushMsg; // @synthesize pushMsg=_pushMsg;
-- (id)boundingRectCache;
-
-// Remaining properties
-@property(readonly, copy) NSString *debugDescription;
-@property(readonly, copy) NSString *description;
-@property(readonly) unsigned long long hash;
-@property(readonly) Class superclass;
 
 @end
 

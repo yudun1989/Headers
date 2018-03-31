@@ -17,10 +17,8 @@
     NSString *_version;
     NSString *_formatVersion;
     NSString *_layoutVersion;
-    NSString *_layout;
 }
 
-@property(copy, nonatomic) NSString *layout; // @synthesize layout=_layout;
 @property(copy, nonatomic) NSString *layoutVersion; // @synthesize layoutVersion=_layoutVersion;
 @property(copy, nonatomic) NSString *formatVersion; // @synthesize formatVersion=_formatVersion;
 @property(copy, nonatomic) NSString *version; // @synthesize version=_version;

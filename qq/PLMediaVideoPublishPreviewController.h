@@ -17,6 +17,7 @@
     CDUnknownBlockType _completion;
     PLStoryVideoPreviewView *_preview;
     UIImageView *_doodleImageView;
+    UIImageView *_coverImageView;
     UIView *_topView;
     AVAudioPlayer *_audioPlayer;
     NSTimer *_timer;
@@ -27,28 +28,11 @@
 @property(retain, nonatomic) NSTimer *timer; // @synthesize timer=_timer;
 @property(retain, nonatomic) AVAudioPlayer *audioPlayer; // @synthesize audioPlayer=_audioPlayer;
 @property(retain, nonatomic) UIView *topView; // @synthesize topView=_topView;
+@property(retain, nonatomic) UIImageView *coverImageView; // @synthesize coverImageView=_coverImageView;
 @property(retain, nonatomic) UIImageView *doodleImageView; // @synthesize doodleImageView=_doodleImageView;
 @property(retain, nonatomic) PLStoryVideoPreviewView *preview; // @synthesize preview=_preview;
 @property(copy, nonatomic) CDUnknownBlockType completion; // @synthesize completion=_completion;
-- (unsigned long long)supportedInterfaceOrientations;
-- (_Bool)shouldAutorotate;
-- (_Bool)shouldAutorotateToInterfaceOrientation:(long long)arg1;
-- (void)storyVideoPreviewDidPlay:(id)arg1;
-- (void)storyVideoPreviewReadyToPlay:(id)arg1;
 - (void)touchesEnded:(id)arg1 withEvent:(id)arg2;
-- (void)viewDidLoad;
-- (void)viewWillDisappear:(_Bool)arg1;
-- (void)viewWillAppear:(_Bool)arg1;
-- (void)dismissTopView;
-- (void)showTopView;
-- (void)onLeftBtnClick:(id)arg1;
-- (void)audioPlayerDidFinishPlaying:(id)arg1 successfully:(_Bool)arg2;
-- (void)timerAction;
-- (void)setupUI;
-- (id)initWithImage:(id)arg1;
-- (id)initWithVideoClips:(id)arg1 doodleImage:(id)arg2 maskImage:(id)arg3 musicModel:(id)arg4;
-- (void)stopAudioPlayWithClearData;
-- (void)dealloc;
 - (void)initAudioPlay:(id)arg1;
 
 // Remaining properties

@@ -8,7 +8,7 @@
 
 #import <QQMainProject/NSCopying-Protocol.h>
 
-@class EmotionParseResult, NSArray, NSAttributedString, NSData, NSDictionary, NSMutableDictionary, NSString, QQReadInJoyArkAppLoader, ReadInJoyArkAppFeedsInfo, ReadInJoyArticlePackInfo, ReadInJoySocializeFeedsInfo, ReadInJoyTopicFeedsInfo, ReadInJoyVideoArticleModel, UIImage;
+@class EmotionParseResult, NSArray, NSAttributedString, NSData, NSDictionary, NSMutableDictionary, NSString, QQReadInJoyArkAppLoader, QQReadInJoyGalleryPGCFeedsInfo, ReadInJoyArkAppFeedsInfo, ReadInJoyArticlePackInfo, ReadInJoySocializeFeedsInfo, ReadInJoyTopicFeedsInfo, ReadInJoyVideoArticleModel, UIImage;
 
 @interface ReadInJoyChannelArticle : ReadInJoyEntityBase <NSCopying>
 {
@@ -71,18 +71,25 @@
     unsigned long long _fcLocation;
     long long _fhNextLoc;
     double _fHeight;
+    unsigned int _isHot;
     int _xo;
+    _Bool _isPack;
     _Bool _styleEnable;
     _Bool _isFromPACard;
     _Bool _isClickPlay;
     _Bool _isFeedsVideoCard;
+    _Bool _isNeedTruncatingTail;
     _Bool _videoDynamicFetching;
+    _Bool _collected;
+    unsigned int _video_comment_count;
     unsigned int _video_play_count;
     unsigned int _is_accountless;
     unsigned int _bussinessId;
     unsigned int _fetchCount;
     unsigned int _firstExposePosition;
+    unsigned int _article_style;
     NSString *_innerId;
+    NSString *_videoCommentCountString;
     EmotionParseResult *_biuParseResult;
     EmotionParseResult *_summaryParseResult;
     unsigned long long _masterBiuTime;
@@ -96,11 +103,14 @@
     double _videoInfo_duration;
     NSData *_articleSummary_list_data;
     NSArray *_articleSummary_list;
+    NSArray *_subArticle;
     double _pic_ratio;
     unsigned long long _mode;
     unsigned long long _nextMode;
     unsigned long long _height;
     NSDictionary *_layoutInfo;
+    NSString *_bindJson;
+    NSDictionary *_bindInfo;
     NSMutableDictionary *_styleData;
     NSString *_aspectRatioUrl;
     unsigned long long _separatorType;
@@ -114,6 +124,7 @@
     NSString *_bussinessUrl;
     NSString *_businessNamePrefix;
     double _videoCellTitleLabelHeight;
+    double _videoCommentCountLabelWidth;
     ReadInJoyVideoArticleModel *_videoArticleModel;
     QQReadInJoyArkAppLoader *_arkLoader;
     ReadInJoyArkAppFeedsInfo *_arkFeedsInfo;
@@ -121,6 +132,11 @@
     UIImage *_currentImage;
     double _currentTime;
     NSArray *_videoEstimatedInfos;
+    QQReadInJoyGalleryPGCFeedsInfo *_pgcFeedsInfo;
+    NSString *_gallery_report_extdata;
+    NSString *_galleryData;
+    NSArray *_arrayForGalleryIndex;
+    unsigned long long _firstExposeTime;
     struct CGSize _picSize;
     struct CGSize _videoCellPlayCountLabelSize;
     struct CGSize _videoCellSourceLabelSize;
@@ -134,6 +150,13 @@
 + (id)MultiPicUrlFromData:(id)arg1;
 + (id)dataFromMultiPicUrl:(id)arg1;
 + (id)tableName;
+@property(nonatomic) _Bool collected; // @synthesize collected=_collected;
+@property(nonatomic) unsigned long long firstExposeTime; // @synthesize firstExposeTime=_firstExposeTime;
+@property(retain, nonatomic) NSArray *arrayForGalleryIndex; // @synthesize arrayForGalleryIndex=_arrayForGalleryIndex;
+@property(copy, nonatomic) NSString *galleryData; // @synthesize galleryData=_galleryData;
+@property(nonatomic) unsigned int article_style; // @synthesize article_style=_article_style;
+@property(copy, nonatomic) NSString *gallery_report_extdata; // @synthesize gallery_report_extdata=_gallery_report_extdata;
+@property(retain, nonatomic) QQReadInJoyGalleryPGCFeedsInfo *pgcFeedsInfo; // @synthesize pgcFeedsInfo=_pgcFeedsInfo;
 @property(nonatomic) unsigned int firstExposePosition; // @synthesize firstExposePosition=_firstExposePosition;
 @property(copy, nonatomic) NSArray *videoEstimatedInfos; // @synthesize videoEstimatedInfos=_videoEstimatedInfos;
 @property(nonatomic) double currentTime; // @synthesize currentTime=_currentTime;
@@ -144,6 +167,7 @@
 @property(nonatomic, getter=isVideoDynamicFetching) _Bool videoDynamicFetching; // @synthesize videoDynamicFetching=_videoDynamicFetching;
 @property(nonatomic) unsigned int fetchCount; // @synthesize fetchCount=_fetchCount;
 @property(retain, nonatomic) ReadInJoyVideoArticleModel *videoArticleModel; // @synthesize videoArticleModel=_videoArticleModel;
+@property double videoCommentCountLabelWidth; // @synthesize videoCommentCountLabelWidth=_videoCommentCountLabelWidth;
 @property struct CGSize videoCellTimeCountLabelSize; // @synthesize videoCellTimeCountLabelSize=_videoCellTimeCountLabelSize;
 @property struct CGSize videoCellSourceLabelSize; // @synthesize videoCellSourceLabelSize=_videoCellSourceLabelSize;
 @property struct CGSize videoCellPlayCountLabelSize; // @synthesize videoCellPlayCountLabelSize=_videoCellPlayCountLabelSize;
@@ -154,6 +178,7 @@
 @property(nonatomic) unsigned int bussinessId; // @synthesize bussinessId=_bussinessId;
 @property(copy, nonatomic) NSString *accountDesc; // @synthesize accountDesc=_accountDesc;
 @property(nonatomic) unsigned long long position; // @synthesize position=_position;
+@property(nonatomic) _Bool isNeedTruncatingTail; // @synthesize isNeedTruncatingTail=_isNeedTruncatingTail;
 @property(nonatomic) long long isNeedChangeBreakLineCache; // @synthesize isNeedChangeBreakLineCache=_isNeedChangeBreakLineCache;
 @property(nonatomic) struct CGSize picSize; // @synthesize picSize=_picSize;
 @property(nonatomic) unsigned long long variablePicNum; // @synthesize variablePicNum=_variablePicNum;
@@ -166,11 +191,14 @@
 @property(retain, nonatomic) NSString *aspectRatioUrl; // @synthesize aspectRatioUrl=_aspectRatioUrl;
 @property(retain, nonatomic) NSMutableDictionary *styleData; // @synthesize styleData=_styleData;
 @property(nonatomic) _Bool styleEnable; // @synthesize styleEnable=_styleEnable;
+@property(retain, nonatomic) NSDictionary *bindInfo; // @synthesize bindInfo=_bindInfo;
+@property(retain, nonatomic) NSString *bindJson; // @synthesize bindJson=_bindJson;
 @property(retain, nonatomic) NSDictionary *layoutInfo; // @synthesize layoutInfo=_layoutInfo;
 @property(nonatomic) unsigned long long height; // @synthesize height=_height;
 @property(nonatomic) unsigned long long nextMode; // @synthesize nextMode=_nextMode;
 @property(nonatomic) unsigned long long mode; // @synthesize mode=_mode;
 @property(nonatomic) double pic_ratio; // @synthesize pic_ratio=_pic_ratio;
+@property(copy, nonatomic) NSArray *subArticle; // @synthesize subArticle=_subArticle;
 @property(copy, nonatomic) NSArray *articleSummary_list; // @synthesize articleSummary_list=_articleSummary_list;
 @property(retain, nonatomic) NSData *articleSummary_list_data; // @synthesize articleSummary_list_data=_articleSummary_list_data;
 @property(nonatomic) double videoInfo_duration; // @synthesize videoInfo_duration=_videoInfo_duration;
@@ -186,6 +214,9 @@
 @property(nonatomic) unsigned long long masterBiuTime; // @synthesize masterBiuTime=_masterBiuTime;
 @property(retain, nonatomic) EmotionParseResult *summaryParseResult; // @synthesize summaryParseResult=_summaryParseResult;
 @property(retain, nonatomic) EmotionParseResult *biuParseResult; // @synthesize biuParseResult=_biuParseResult;
+@property(nonatomic) _Bool isPack; // @synthesize isPack=_isPack;
+@property(copy, nonatomic) NSString *videoCommentCountString; // @synthesize videoCommentCountString=_videoCommentCountString;
+@property(nonatomic) unsigned int video_comment_count; // @synthesize video_comment_count=_video_comment_count;
 @property(copy, nonatomic) NSString *innerId; // @synthesize innerId=_innerId;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)description;
@@ -198,6 +229,8 @@
 - (void)setUgcInfoToSocializeInfo:(id)arg1;
 - (void)updateCoverUrlWithUGCInfo:(id)arg1;
 @property(retain, nonatomic) ReadInJoyArticlePackInfo *packInfo; // @dynamic packInfo;
+@property(readonly, nonatomic) _Bool isSocializeVideoMode;
+@property(readonly, nonatomic) _Bool isVideoMode;
 - (id)init;
 - (_Bool)saveToDb:(id)arg1;
 - (void)dealloc;
@@ -229,6 +262,7 @@
 @property(copy, nonatomic) NSString *footer_word; // @dynamic footer_word;
 @property(copy, nonatomic) NSString *friend_likes; // @dynamic friend_likes;
 @property(nonatomic) _Bool imageFIFO; // @dynamic imageFIFO;
+@property(nonatomic) unsigned int isHot; // @dynamic isHot;
 @property(nonatomic) _Bool isReplaceStore; // @dynamic isReplaceStore;
 @property(nonatomic) _Bool isShowTimestamp; // @dynamic isShowTimestamp;
 @property(nonatomic) _Bool isSupportGallery; // @dynamic isSupportGallery;

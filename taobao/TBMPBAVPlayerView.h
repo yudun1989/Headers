@@ -26,6 +26,7 @@
     _Bool _isPlayExperienceReported;
     _Bool _isFirstVideoFrameRenderedReported;
     _Bool _isError;
+    float _playbackRate;
     int _playerStatus;
     int _stallsCount;
     int _loopCount;
@@ -148,6 +149,7 @@
 - (void)checkIfFirstVideoFrameRendered;
 - (void)removeObservers;
 - (void)addObservers;
+- (void)audioSessionRouteChange:(id)arg1;
 - (void)audioSessionInterruption:(id)arg1;
 - (void)playerItemPlaybackStalled:(id)arg1;
 - (void)playerItemFailedToPlayToEndTime:(id)arg1;
@@ -172,6 +174,7 @@
 @property(readonly, nonatomic) double cacheDuration;
 @property(readonly, nonatomic) double duration; // @synthesize duration=_duration;
 @property(nonatomic) double currentPlaybackTime; // @synthesize currentPlaybackTime=_currentPlaybackTime;
+@property(nonatomic) float playbackRate; // @synthesize playbackRate=_playbackRate;
 @property(nonatomic) double preferredForwardBufferDuration; // @synthesize preferredForwardBufferDuration=_preferredForwardBufferDuration;
 
 // Remaining properties

@@ -18,6 +18,9 @@
     NSObject<OS_dispatch_queue> *_serialQueue;
 }
 
++ (id)splitPicMessage:(id)arg1;
++ (id)createPicInfoWithName:(id)arg1;
++ (id)getMessagePicInfo:(id)arg1 inArray:(id)arg2;
 + (id)getInstance;
 @property(retain) NSObject<OS_dispatch_queue> *serialQueue; // @synthesize serialQueue=_serialQueue;
 - (void).cxx_destruct;

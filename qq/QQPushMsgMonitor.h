@@ -43,6 +43,7 @@
 - (int)getValidTimeStampWithMtp:(int)arg1;
 - (id)getMsgShowArray:(int)arg1;
 - (id)getMsgRecvArray:(int)arg1;
+- (void)checkAndReportPushServiceCount;
 - (void)willEnterForeground;
 - (void)didEnterBackground;
 - (void)onMSFNetworkStateNotification:(id)arg1;

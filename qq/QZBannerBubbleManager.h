@@ -15,6 +15,7 @@
     NSMutableDictionary *_bubbleSkinCache;
 }
 
++ (id)moveFile:(id)arg1 toPath:(id)arg2;
 + (id)instance;
 @property(retain, nonatomic) NSMutableDictionary *bubbleSkinCache; // @synthesize bubbleSkinCache=_bubbleSkinCache;
 

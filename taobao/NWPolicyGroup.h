@@ -21,14 +21,14 @@
     NSString *_unit;
     double _lastAccessTime;
     double _fetchAmdcTime;
-    long long _amdcTTL;
+    double _amdcTTL;
 }
 
 + (id)convert2policyWithAisles:(id)arg1 withHost:(id)arg2 withScheme:(id)arg3 withUnit:(id)arg4 withIP:(id)arg5 withIpType:(int)arg6 withTimestamp:(double)arg7;
 + (id)convert2policiesWithAisles:(id)arg1 withIps:(id)arg2 withHost:(id)arg3 withScheme:(id)arg4 withUnit:(id)arg5 withIpType:(int)arg6 withTimestamp:(double)arg7;
 + (id)convert2policiesWithOrigin:(id)arg1;
 + (id)findSamePolicy:(id)arg1 fromPolicies:(id)arg2;
-@property(readonly, nonatomic) long long amdcTTL; // @synthesize amdcTTL=_amdcTTL;
+@property(readonly, nonatomic) double amdcTTL; // @synthesize amdcTTL=_amdcTTL;
 @property(readonly, nonatomic) double fetchAmdcTime; // @synthesize fetchAmdcTime=_fetchAmdcTime;
 @property(readonly, nonatomic) double lastAccessTime; // @synthesize lastAccessTime=_lastAccessTime;
 @property(readonly, nonatomic) NSString *unit; // @synthesize unit=_unit;
@@ -49,6 +49,7 @@
 - (_Bool)isInUpdateInterval:(id)arg1 withNow:(double)arg2;
 - (void)updatePolicy:(id)arg1 withStatus:(_Bool)arg2;
 - (void)updateLastAccessTime:(double)arg1;
+- (void)updateAmdcTTL:(double)arg1;
 - (void)updateFetchAmdcTime:(double)arg1;
 - (id)searchPoliciesWithScheme:(id)arg1 withType:(int)arg2;
 - (_Bool)updateWithOrigin:(id)arg1;

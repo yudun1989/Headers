@@ -32,6 +32,7 @@
 @property(retain, nonatomic) NSString *contentString; // @synthesize contentString=_contentString;
 @property(retain, nonatomic) NSString *imageName; // @synthesize imageName=_imageName;
 @property(nonatomic) long long type; // @synthesize type=_type;
+- (void)closeClicked;
 - (void)didPushBannerClickedUp;
 - (void)didPushBannerClickedDown;
 - (void)handleTapRecognizer;

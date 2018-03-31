@@ -6,7 +6,7 @@
 
 #import "TBJSONModel.h"
 
-@class AliDetailBuyerModel, AliDetailCertificationModel, AliDetailConsumerProtectionModel, AliDetailDeliveryModel, AliDetailFeatureModel, AliDetailItemModel, AliDetailItemPriceModel, AliDetailLayoutModel, AliDetailParamsModel, AliDetailProps2Model, AliDetailPropsModel, AliDetailRateModel, AliDetailResourceModel, AliDetailSellerModel, AliDetailServiceInfoModel, AliDetailSkuBaseModel, AliDetailSkuCoreModel, AliDetailSkuVertical, AliDetailTradeConsumerProtectionModel, AliDetailTradeModel, AliDetailVertical, AliDetailYXGModel, AliTradeDetailSKUService, NSArray, NSDictionary, NSMutableDictionary, NSString;
+@class AliDetailBuyerModel, AliDetailCertificationModel, AliDetailConsumerProtectionModel, AliDetailDeliveryModel, AliDetailFeatureModel, AliDetailItemModel, AliDetailItemPriceModel, AliDetailLayoutModel, AliDetailParamsModel, AliDetailProps2Model, AliDetailPropsModel, AliDetailRateModel, AliDetailResourceModel, AliDetailSellerModel, AliDetailServiceInfoModel, AliDetailSkuBaseModel, AliDetailSkuCoreModel, AliDetailSkuVertical, AliDetailTradeConsumerProtectionModel, AliDetailTradeModel, AliDetailVertical, AliDetailYXGModel, AliDetailhybrid, AliTradeDetailSKUService, NSArray, NSDictionary, NSMutableDictionary, NSString;
 @protocol AliDetailWeAppDataItem;
 
 @interface AliDetailModel : TBJSONModel
@@ -25,6 +25,7 @@
     AliDetailConsumerProtectionModel *_consumerProtection;
     AliDetailCertificationModel *_certification;
     AliDetailLayoutModel *_layout;
+    AliDetailhybrid *_hybrid;
     AliDetailTradeConsumerProtectionModel *_tradeConsumerProtection;
     AliDetailRateModel *_rate;
     AliDetailSkuBaseModel *_skuBase;
@@ -67,6 +68,7 @@
 @property(retain, nonatomic) AliDetailSkuBaseModel *skuBase; // @synthesize skuBase=_skuBase;
 @property(retain, nonatomic) AliDetailRateModel *rate; // @synthesize rate=_rate;
 @property(retain, nonatomic) AliDetailTradeConsumerProtectionModel *tradeConsumerProtection; // @synthesize tradeConsumerProtection=_tradeConsumerProtection;
+@property(retain, nonatomic) AliDetailhybrid *hybrid; // @synthesize hybrid=_hybrid;
 @property(retain, nonatomic) AliDetailLayoutModel *layout; // @synthesize layout=_layout;
 @property(retain, nonatomic) AliDetailCertificationModel *certification; // @synthesize certification=_certification;
 @property(retain, nonatomic) AliDetailConsumerProtectionModel *consumerProtection; // @synthesize consumerProtection=_consumerProtection;

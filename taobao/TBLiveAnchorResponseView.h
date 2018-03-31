@@ -14,8 +14,10 @@
     UIView *_backView;
     UILabel *_contentLabel;
     NSString *_targetUrl;
+    NSString *_targetType;
 }
 
+@property(copy, nonatomic) NSString *targetType; // @synthesize targetType=_targetType;
 @property(copy, nonatomic) NSString *targetUrl; // @synthesize targetUrl=_targetUrl;
 @property(retain, nonatomic) UILabel *contentLabel; // @synthesize contentLabel=_contentLabel;
 @property(retain, nonatomic) UIView *backView; // @synthesize backView=_backView;

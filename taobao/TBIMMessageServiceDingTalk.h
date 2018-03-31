@@ -18,6 +18,7 @@
 
 @property(retain, nonatomic) NSMutableDictionary *sessionIdDict; // @synthesize sessionIdDict=_sessionIdDict;
 - (void).cxx_destruct;
+- (unsigned long long)getFileSize:(id)arg1;
 - (void)failMsgsWhenAppReLaunchInSession:(id)arg1;
 - (void)removeSentConversation:(id)arg1;
 - (void)removeSentMsg:(id)arg1;
@@ -39,6 +40,9 @@
 - (void)receiveMessages:(id)arg1 sessionId:(id)arg2 hasMore:(_Bool)arg3;
 - (_Bool)resendMessage:(id)arg1;
 - (_Bool)sendMessage:(id)arg1;
+- (id)generateGeoWithLongitude:(double)arg1 latitude:(double)arg2 name:(id)arg3 pic:(id)arg4 session:(id)arg5;
+- (id)generateVideoWihtLocalUrl:(id)arg1 previewImage:(id)arg2 duration:(long long)arg3 width:(double)arg4 height:(double)arg5 session:(id)arg6;
+- (id)generateVoiceMessageWithPath:(id)arg1 withLocalAudio:(id)arg2 duration:(long long)arg3 sessionId:(id)arg4 extension:(id)arg5;
 - (id)generateImageMessage:(id)arg1 session:(id)arg2;
 - (id)generateTextMessage:(id)arg1 sessionId:(id)arg2 withAiTaUserIdList:(id)arg3;
 - (_Bool)loadMessage:(id)arg1 lastMessage:(id)arg2 count:(unsigned long long)arg3;

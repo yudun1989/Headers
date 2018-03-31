@@ -10,12 +10,12 @@
 {
 }
 
-+ (void)disableMock:(id)arg1 withCallback:(CDUnknownBlockType)arg2 withWebView:(id)arg3 withViewController:(id)arg4;
-+ (void)testData:(id)arg1 withCallback:(CDUnknownBlockType)arg2 withWebView:(id)arg3 withViewController:(id)arg4;
++ (void)disableMock:(id)arg1 withWVBridgeContext:(id)arg2;
++ (void)testData:(id)arg1 withWVBridgeContext:(id)arg2;
 + (id)getActivityInfo:(id)arg1;
-+ (void)route:(id)arg1 activityInfo:(id)arg2 withCallback:(CDUnknownBlockType)arg3 withWebView:(id)arg4;
++ (void)route:(id)arg1 activityInfo:(id)arg2 withWVBridgeContext:(id)arg3;
 + (void)resolveParam:(id)arg1 withBlock:(CDUnknownBlockType)arg2;
-+ (void)invoke:(id)arg1 withCallback:(CDUnknownBlockType)arg2 withWebView:(id)arg3 withViewController:(id)arg4;
++ (void)invoke:(id)arg1 withWVBridgeContext:(id)arg2;
 
 @end
 

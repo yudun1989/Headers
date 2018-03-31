@@ -20,6 +20,7 @@
 + (id)tagCategories;
 + (id)modelURL;
 + (id)modelSaveDir;
++ (id)modelSaveBaseDir;
 + (id)babyTagIndexArray;
 + (id)tagTresholds;
 + (id)tagVersionForServer;

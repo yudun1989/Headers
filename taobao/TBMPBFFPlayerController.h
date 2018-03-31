@@ -117,7 +117,6 @@
 @property(nonatomic) _Bool shouldShowHudView; // @synthesize shouldShowHudView=_shouldShowHudView;
 @property(nonatomic) __weak UIView *playerView; // @synthesize playerView=_playerView;
 - (void).cxx_destruct;
-- (void)removeObservers;
 - (void)addObservers;
 - (void)userDefinedSEIPopped:(id)arg1;
 - (void)networkTrafficPopped:(id)arg1;
@@ -167,6 +166,7 @@
 @property(readonly, nonatomic) struct CGSize naturalSize;
 @property(readonly, nonatomic) struct CGRect videoRect;
 @property(readonly, nonatomic) double duration;
+@property(nonatomic) float playbackRate;
 @property(nonatomic) double currentPlaybackTime;
 @property(retain) id ijkFFPlayer; // @synthesize ijkFFPlayer=_ijkFFPlayer;
 

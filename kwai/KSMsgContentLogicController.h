@@ -57,6 +57,7 @@
 - (void)loadSessionInfo;
 - (void)loadUserInfo:(id)arg1;
 - (void)loadMessages;
+- (void)sendFeedbackMessage:(id)arg1 extra:(id)arg2;
 - (void)sendImageMessages:(id)arg1;
 - (_Bool)sendTextMessage:(id)arg1;
 - (void)resendMessage:(id)arg1;

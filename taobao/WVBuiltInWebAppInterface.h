@@ -10,7 +10,8 @@
 {
     _Bool _resetStatusBarStyle;
     _Bool _resetNavigationBarHidden;
-    _Bool _resetNavigationBarStyle;
+    _Bool _resetNavigationBarForegroundColor;
+    _Bool _resetNavigationBarBackgroundColor;
     _Bool _resetNavigationBarRightItem;
     _Bool _resetNavigationGestures;
     long long _oldStatusBarStyle;
@@ -23,7 +24,8 @@
 + (unsigned long long)instanceScope;
 @property(nonatomic) _Bool resetNavigationGestures; // @synthesize resetNavigationGestures=_resetNavigationGestures;
 @property(nonatomic) _Bool resetNavigationBarRightItem; // @synthesize resetNavigationBarRightItem=_resetNavigationBarRightItem;
-@property(nonatomic) _Bool resetNavigationBarStyle; // @synthesize resetNavigationBarStyle=_resetNavigationBarStyle;
+@property(nonatomic) _Bool resetNavigationBarBackgroundColor; // @synthesize resetNavigationBarBackgroundColor=_resetNavigationBarBackgroundColor;
+@property(nonatomic) _Bool resetNavigationBarForegroundColor; // @synthesize resetNavigationBarForegroundColor=_resetNavigationBarForegroundColor;
 @property(nonatomic) _Bool resetNavigationBarHidden; // @synthesize resetNavigationBarHidden=_resetNavigationBarHidden;
 @property(nonatomic) long long oldStatusBarStyle; // @synthesize oldStatusBarStyle=_oldStatusBarStyle;
 @property(nonatomic) _Bool resetStatusBarStyle; // @synthesize resetStatusBarStyle=_resetStatusBarStyle;

@@ -21,11 +21,11 @@
     UIButton *_confirmButton;
     UIButton *_buttonToCamera;
     MBProgressHUD *_HUD;
-    CDStruct_a90cff18 *_image_rule;
+    CDStruct_4a9aa5a8 *_image_rule;
 }
 
 - (void).cxx_destruct;
-- (id)outputFromImage:(id)arg1 andImageFileSize:(long long)arg2 byRule:(CDStruct_a90cff18 *)arg3;
+- (id)outputFromImage:(id)arg1 andImageFileSize:(long long)arg2 byRule:(CDStruct_4a9aa5a8 *)arg3;
 - (void)loadAssets;
 - (id)itemsForRowAtIndexPath:(id)arg1;
 - (double)tableView:(id)arg1 heightForRowAtIndexPath:(id)arg2;

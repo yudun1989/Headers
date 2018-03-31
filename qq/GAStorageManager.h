@@ -18,6 +18,9 @@
 + (id)createKeyOfWithoutDomainUrl:(id)arg1;
 + (id)urlWithoutPoundSign:(id)arg1;
 + (id)urlWithoutDomainNorPoundSign:(id)arg1;
++ (void)saveImage:(id)arg1 url:(id)arg2 clientKey:(id)arg3 isCache:(_Bool)arg4;
++ (void)saveImage:(id)arg1 key:(id)arg2;
++ (id)imageForKey:(id)arg1;
 + (id)instance;
 + (id)keyForUrlWithoutPoundSign:(id)arg1;
 + (id)keyForUrlWithoutDomain:(id)arg1;

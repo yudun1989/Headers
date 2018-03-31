@@ -43,12 +43,15 @@
 - (void)photoBrowseView:(id)arg1 didScrollToHalfOfIndex:(long long)arg2;
 - (void)photoBrowseView:(id)arg1 didScrollToContentOffset:(struct CGPoint)arg2 contentSize:(struct CGSize)arg3 singlePageSize:(struct CGSize)arg4;
 - (void)photoBrowseView:(id)arg1 tapIndex:(long long)arg2;
+- (void)handleAfterScrollToLast;
 - (void)handleShopGardenCardView;
 - (void)requestMediaInteractOfIndex:(long long)arg1;
 - (void)requestBrowse:(long long)arg1;
 - (void)firstRequestData;
 - (void)loadData;
 - (id)commonTrackData:(id)arg1;
+- (void)ut_item;
+- (void)ut_profile;
 - (void)ut_Zang:(id)arg1 mediaId:(id)arg2;
 - (void)ut_Comment;
 - (void)ut_picExposure:(long long)arg1;

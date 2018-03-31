@@ -26,6 +26,7 @@
 - (void)setCoverImageURL:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)setTitle:(id)arg1 andSubtitle:(id)arg2;
 - (void)layoutSubviews;
+- (void)addTarget:(id)arg1 playAction:(SEL)arg2;
 - (id)initWithFrame:(struct CGRect)arg1;
 
 @end

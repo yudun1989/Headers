@@ -11,16 +11,22 @@
 #import <QQMainProject/QUIAlertPlusViewDelegate-Protocol.h>
 #import <QQMainProject/TVKLitePlaybackDelegate-Protocol.h>
 
-@class NSString, PAAdMsgBannerButton, PAAdMsgVideoModel, QQAlertView, QQAsynUrlImageView, QUIAlertPlusView, TVKLitePlayer, UIButton, UIImageView, UIView;
+@class CAGradientLayer, NSString, PAAdMsgBannerButton, PAAdMsgVideoModel, QQAlertView, QQAsynUrlImageView, QUIAlertPlusView, TVKLitePlayer, UIButton, UIImageView, UIView;
 
 @interface PAAdMsgVideoViewController : UIViewController <QQAudioSessionManagerDelegate, QUIAlertPlusViewDelegate, TVKLitePlaybackDelegate, PAAdMsgViewControllerProtocol>
 {
     _Bool _isCached;
     _Bool _isResignActive;
     _Bool _shouldRestart;
+    _Bool _isMaskViewHidden;
+    _Bool _isRotateRight;
     _Bool _needReadBtn;
     PAAdMsgVideoModel *_videoModel;
+    UIView *_headerView;
+    CAGradientLayer *_headerGradient;
     UIButton *_volumeBtn;
+    UIView *_footerView;
+    CAGradientLayer *_footerGradient;
     UIImageView *_firstArrow;
     UIImageView *_secondArrow;
     PAAdMsgBannerButton *_bannerButton;
@@ -43,7 +49,11 @@
 @property(retain, nonatomic) PAAdMsgBannerButton *bannerButton; // @synthesize bannerButton=_bannerButton;
 @property(retain, nonatomic) UIImageView *secondArrow; // @synthesize secondArrow=_secondArrow;
 @property(retain, nonatomic) UIImageView *firstArrow; // @synthesize firstArrow=_firstArrow;
+@property(retain, nonatomic) CAGradientLayer *footerGradient; // @synthesize footerGradient=_footerGradient;
+@property(retain, nonatomic) UIView *footerView; // @synthesize footerView=_footerView;
 @property(retain, nonatomic) UIButton *volumeBtn; // @synthesize volumeBtn=_volumeBtn;
+@property(retain, nonatomic) CAGradientLayer *headerGradient; // @synthesize headerGradient=_headerGradient;
+@property(retain, nonatomic) UIView *headerView; // @synthesize headerView=_headerView;
 @property(retain, nonatomic) PAAdMsgVideoModel *videoModel; // @synthesize videoModel=_videoModel;
 @property(nonatomic) _Bool needReadBtn; // @synthesize needReadBtn=_needReadBtn;
 - (void).cxx_destruct;
@@ -84,6 +94,8 @@
 - (void)onCloseBtnClick:(id)arg1;
 - (void)updateMuteState;
 - (void)onVolumeBtnClick:(id)arg1;
+- (void)endRotateRightAnimation;
+- (void)startRotateRightAnimation;
 - (void)onForceOffline;
 - (void)onLoginSuccess;
 - (void)loadStatusBar;
@@ -94,6 +106,9 @@
 - (void)appWillResignActive;
 - (void)_stopArrowAnimation;
 - (void)_startArrowAnimation;
+- (void)delayHiddenMaskView;
+- (void)hiddenMaskView:(_Bool)arg1;
+- (void)handleHiddenTap;
 - (void)_addFooterView;
 - (void)_addHeaderView;
 - (void)_addVideoPlayerView;

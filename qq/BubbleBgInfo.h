@@ -53,10 +53,12 @@
     NSArray *_mixKeyWords;
     long long _groupID;
     long long _groupType;
+    UIColor *_textColorInConfig;
 }
 
 + (struct CGContext *)newARGBBitmapContextFromImage:(struct CGImage *)arg1;
 + (struct UIEdgeInsets)GetBGInsetWithType:(int)arg1;
+@property(retain, nonatomic) UIColor *textColorInConfig; // @synthesize textColorInConfig=_textColorInConfig;
 @property(nonatomic) long long groupType; // @synthesize groupType=_groupType;
 @property(nonatomic) long long groupID; // @synthesize groupID=_groupID;
 @property(retain, nonatomic) NSArray *mixKeyWords; // @synthesize mixKeyWords=_mixKeyWords;

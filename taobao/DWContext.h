@@ -36,6 +36,7 @@
 + (void)setFullScreen:(_Bool)arg1;
 + (_Bool)isFreeFlowGuideEnabledForBusiness:(id)arg1;
 + (id)getTBMediaPlayerBundleOrangeConfig;
++ (id)getDWInteractiveSDKOrangeConfig;
 + (id)playerCoreABTestBucket;
 + (_Bool)isPlayerCoreABTestEnabledForBusiness:(id)arg1;
 + (id)interactiveVideoPlayerCoreMode;

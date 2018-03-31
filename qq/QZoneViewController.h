@@ -102,6 +102,7 @@
 - (void)handleFeedCellCommentReplyClicked:(id)arg1 indexPath:(id)arg2 comment:(long long)arg3 reply:(long long)arg4 offset:(double)arg5 commentType:(long long)arg6;
 - (void)handleFeedCellLookupButtonClicked:(id)arg1 indexPath:(id)arg2;
 - (void)handleFeedCellCommentButtonClicked:(id)arg1 indexPath:(id)arg2;
+- (void)handleClickOpenRecommFrdShortVideo:(id)arg1 feedList:(id)arg2;
 - (void)handleFeedCellMusicClicked:(id)arg1 image:(id)arg2 indexPath:(id)arg3;
 - (void)showToastWithMsg:(id)arg1 tipType:(long long)arg2;
 - (id)getLayoutView:(id)arg1;
@@ -169,6 +170,8 @@
 - (void)hideFeed:(id)arg1 reportType:(long long)arg2 isRemoveFeed:(_Bool)arg3;
 - (void)handleClickClose:(id)arg1 isRemoveFeed:(_Bool)arg2;
 - (void)handleClickClose:(id)arg1;
+- (id)getWeishiVideoContainerFeedId:(id)arg1;
+- (void)handleSingleGroupFeedExposureReport:(id)arg1 currentIndex:(long long)arg2;
 - (void)handlePeopleYouMayKnowExposureReport:(id)arg1 currentIndex:(long long)arg2;
 - (void)handleGroupFeedSpecialcareCardExposureReport:(id)arg1 currentIndex:(long long)arg2;
 - (void)handleSpecialCareMinusReport:(id)arg1 index:(long long)arg2;
@@ -194,6 +197,7 @@
 - (void)dealWithActionType:(long long)arg1 feedModel:(id)arg2 isOperation:(_Bool)arg3 param:(id)arg4;
 - (void)handleDidSelectCell:(id)arg1;
 - (void)handleDidSelectCell:(id)arg1 param:(id)arg2;
+- (void)handleClickMoreView:(long long)arg1 schemaUrl:(id)arg2 actionUrl:(id)arg3;
 - (_Bool)handleDidSelectCellWithCell:(id)arg1;
 - (void)handleOpenOpAppDetail:(id)arg1;
 - (void)handleOpenFeedOriginalDetail:(long long)arg1 feedModel:(id)arg2;

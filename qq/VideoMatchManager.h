@@ -15,6 +15,7 @@
     VideoHeartBeatRequest *_sendHeartRequest;
     VideoMatchRequest *_getMatchRequesterRequest;
     int _currentReMatchType;
+    VideoMatchRequest *_nowAdsRequest;
 }
 
 + (void)parseMsgType0x210SubMsgType0xe4:(const void *)arg1 DataLen:(int)arg2 subMsgType:(unsigned int)arg3 subMsgSeq:(unsigned int)arg4;
@@ -28,6 +29,7 @@
 - (void)SendHeartBeatWithStatus:(int)arg1;
 - (void)exitMatchVideoChater:(int)arg1;
 - (void)reMatchVideoChater:(id)arg1 Type:(int)arg2;
+- (void)queryNowAds:(unsigned int)arg1;
 - (void)startMatchVideoChater:(id)arg1;
 - (_Bool)isVideoChaterMatchLoading;
 - (void)setDelegate:(id)arg1;

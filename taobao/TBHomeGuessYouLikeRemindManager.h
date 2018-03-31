@@ -14,9 +14,9 @@
     _Bool _hasShowed;
     _Bool _isShowing;
     _Bool _isLoading;
+    TBHomeGuessYouLikeRemindItem *_remindItem;
     UIView *_superView;
     UIButton *_guessYouLikeRemindButton;
-    TBHomeGuessYouLikeRemindItem *_remindItem;
     double _tabbarHeight;
     CDUnknownBlockType _jumpBlock;
 }
@@ -29,9 +29,9 @@
 @property(nonatomic) _Bool isShowing; // @synthesize isShowing=_isShowing;
 @property(nonatomic) _Bool hasShowed; // @synthesize hasShowed=_hasShowed;
 @property(nonatomic) _Bool isRequestSuccessed; // @synthesize isRequestSuccessed=_isRequestSuccessed;
-@property(retain, nonatomic) TBHomeGuessYouLikeRemindItem *remindItem; // @synthesize remindItem=_remindItem;
 @property(retain, nonatomic) UIButton *guessYouLikeRemindButton; // @synthesize guessYouLikeRemindButton=_guessYouLikeRemindButton;
 @property(nonatomic) __weak UIView *superView; // @synthesize superView=_superView;
+@property(retain, nonatomic) TBHomeGuessYouLikeRemindItem *remindItem; // @synthesize remindItem=_remindItem;
 - (void).cxx_destruct;
 - (void)userTrackWithTrackInfo:(id)arg1;
 - (void)screenAdapterWithView:(id)arg1;

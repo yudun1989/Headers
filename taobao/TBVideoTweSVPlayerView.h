@@ -13,7 +13,10 @@
 
 @interface TBVideoTweSVPlayerView : UIView <DWPlayerLifecycleProtocol, TBIctAddWeexCallbackProtocol>
 {
+    _Bool _isCompletion;
+    _Bool _isInteractiveFailed;
     UIView *_progressView;
+    CDUnknownBlockType _weexItemDismissBlock;
     NSString *_videoURL;
     UIView *_timelineView;
     UIView *_currentTimeView;
@@ -21,13 +24,17 @@
     CDUnknownBlockType _addViewBlock;
     CDUnknownBlockType _progressBlock;
     CDUnknownBlockType _statusChangedBlock;
+    CDUnknownBlockType _playerFrameBlock;
     UIButton *_restartBTN;
     TBVideoTweSVVC *_superVC;
     struct CGSize _playerSize;
 }
 
 @property(nonatomic) __weak TBVideoTweSVVC *superVC; // @synthesize superVC=_superVC;
+@property(nonatomic) _Bool isInteractiveFailed; // @synthesize isInteractiveFailed=_isInteractiveFailed;
+@property(nonatomic) _Bool isCompletion; // @synthesize isCompletion=_isCompletion;
 @property(retain, nonatomic) UIButton *restartBTN; // @synthesize restartBTN=_restartBTN;
+@property(copy, nonatomic) CDUnknownBlockType playerFrameBlock; // @synthesize playerFrameBlock=_playerFrameBlock;
 @property(copy, nonatomic) CDUnknownBlockType statusChangedBlock; // @synthesize statusChangedBlock=_statusChangedBlock;
 @property(copy, nonatomic) CDUnknownBlockType progressBlock; // @synthesize progressBlock=_progressBlock;
 @property(copy, nonatomic) CDUnknownBlockType addViewBlock; // @synthesize addViewBlock=_addViewBlock;
@@ -36,10 +43,12 @@
 @property(retain, nonatomic) UIView *currentTimeView; // @synthesize currentTimeView=_currentTimeView;
 @property(retain, nonatomic) UIView *timelineView; // @synthesize timelineView=_timelineView;
 @property(retain, nonatomic) NSString *videoURL; // @synthesize videoURL=_videoURL;
+@property(copy, nonatomic) CDUnknownBlockType weexItemDismissBlock; // @synthesize weexItemDismissBlock=_weexItemDismissBlock;
 @property(retain, nonatomic) UIView *progressView; // @synthesize progressView=_progressView;
 - (void).cxx_destruct;
 - (void)onVideoViewTapAtPlayedTime:(double)arg1;
 - (void)onMuted:(_Bool)arg1;
+- (void)onShowPromptView;
 - (void)onVideoPause;
 - (void)onVideoError:(id)arg1;
 - (void)onVideoPlay;
@@ -49,6 +58,17 @@
 - (void)onVideoTimeChanged:(double)arg1;
 - (void)onVideoPrepared;
 - (void)postEvent:(unsigned long long)arg1 params:(id)arg2;
+- (id)taowaData;
+- (void)interactiveRequestFail;
+- (void)showAllInteractiveCmp:(_Bool)arg1;
+- (id)taowaShareData;
+- (void)share:(id)arg1 level:(unsigned long long)arg2 index:(unsigned long long)arg3 type:(unsigned long long)arg4;
+- (id)deepMutableCopyForArr:(id)arg1;
+- (id)deepMutableCopy:(id)arg1;
+- (void)saveCheckedDataWithLevel:(unsigned long long)arg1 index:(unsigned long long)arg2;
+- (_Bool)readCheckedDataWithLevel:(unsigned long long)arg1 index:(unsigned long long)arg2;
+- (void)openNewVideoWithLevel:(unsigned long long)arg1 index:(unsigned long long)arg2 videoListInfo:(id)arg3 isUserChecked:(_Bool)arg4;
+- (void)onWXCmpDismiss:(id)arg1;
 - (_Bool)add:(id)arg1 cmpType:(id)arg2 screenType:(id)arg3;
 - (void)seekToProgress:(double)arg1;
 - (_Bool)shouldFullScreenWithSize:(struct CGSize)arg1;

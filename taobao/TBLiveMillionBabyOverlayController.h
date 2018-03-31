@@ -7,14 +7,16 @@
 #import "TBLiveBaseOverlayController.h"
 
 #import "LiveRoomCommentManagerProtocol-Protocol.h"
-#import "TBLiveMillionBabyQAManagerDelegate-Protocol.h"
+#import "TBLiveQAManagerDelegate-Protocol.h"
+#import "TBLiveQAMonitorDelegate-Protocol.h"
+#import "TBLiveQAViewDelegate-Protocol.h"
 #import "UIGestureRecognizerDelegate-Protocol.h"
 #import "UITextFieldDelegate-Protocol.h"
 
-@class NSArray, NSMutableArray, NSMutableDictionary, NSString, NSTimer, TBLiveActivityModel, TBLiveBrandADManager, TBLiveDetailInfoModel, TBLiveMillionBabyOverlayView, TBLiveMillionBabyQAManager, TBLiveMillionBabyVC, TBLiveNetFlow, TBLiveUserLevelHierarchyEntryModel, TBLiveUserLevelPointsUPView, TBLiveUserLevelUPView, TBLiveWebContainerManager, UILabel;
+@class NSArray, NSMutableArray, NSMutableDictionary, NSString, NSTimer, TBLiveActivityModel, TBLiveBrandADManager, TBLiveDetailInfoModel, TBLiveMillionBabyOverlayView, TBLiveMillionBabyVC, TBLiveNetFlow, TBLiveQAManager, TBLiveUserLevelHierarchyEntryModel, TBLiveUserLevelPointsUPView, TBLiveUserLevelUPView, TBLiveWebContainerManager, UILabel;
 @protocol TBLiveOverlayActionDelegate;
 
-@interface TBLiveMillionBabyOverlayController : TBLiveBaseOverlayController <UIGestureRecognizerDelegate, LiveRoomCommentManagerProtocol, UITextFieldDelegate, TBLiveMillionBabyQAManagerDelegate>
+@interface TBLiveMillionBabyOverlayController : TBLiveBaseOverlayController <UIGestureRecognizerDelegate, LiveRoomCommentManagerProtocol, UITextFieldDelegate, TBLiveQAManagerDelegate, TBLiveQAMonitorDelegate, TBLiveQAViewDelegate>
 {
     _Bool _switchDataModelPrepare;
     _Bool _liveFinished;
@@ -56,13 +58,13 @@
     unsigned long long _currentUserPoints;
     TBLiveNetFlow *_netflowView;
     long long _refreshLiveOrEnterLive;
-    TBLiveMillionBabyQAManager *_mbQAManager;
+    TBLiveQAManager *_mbQAManager;
     long long _weexRetryCount;
 }
 
 + (id)identifier;
 @property(nonatomic) long long weexRetryCount; // @synthesize weexRetryCount=_weexRetryCount;
-@property(retain, nonatomic) TBLiveMillionBabyQAManager *mbQAManager; // @synthesize mbQAManager=_mbQAManager;
+@property(retain, nonatomic) TBLiveQAManager *mbQAManager; // @synthesize mbQAManager=_mbQAManager;
 @property(nonatomic) long long refreshLiveOrEnterLive; // @synthesize refreshLiveOrEnterLive=_refreshLiveOrEnterLive;
 @property(retain, nonatomic) TBLiveNetFlow *netflowView; // @synthesize netflowView=_netflowView;
 @property(nonatomic) unsigned long long currentUserPoints; // @synthesize currentUserPoints=_currentUserPoints;
@@ -113,19 +115,23 @@
 - (void)removeNetFlowView;
 - (void)CellularNetworkToast:(int)arg1;
 - (void)showNetworkFlowView;
-- (void)requestSubmitWithGameId:(id)arg1 examNum:(id)arg2 selectValue:(id)arg3 completion:(CDUnknownBlockType)arg4;
-- (void)requestReviveWithGameId:(id)arg1 examNum:(id)arg2 completion:(CDUnknownBlockType)arg3;
-- (void)updateUnlimitCountWith:(id)arg1;
-- (void)updateReviveCountWith:(id)arg1;
-- (void)QATimeEndedWithResultUrl:(id)arg1;
-- (void)playAudioWithFileName:(id)arg1 vibrate:(_Bool)arg2;
-- (void)showShareContainer;
+- (id)qaLiveReviveGifUrl;
+- (id)qaLiveLateGifUrl;
+- (void)tlogMonitor:(id)arg1 level:(long long)arg2 args:(id)arg3;
+- (void)utMonitor:(id)arg1 page:(id)arg2 eventId:(int)arg3 args:(id)arg4;
+- (void)updateQACardNums:(id)arg1;
+- (void)finishQAWithResultUrl:(id)arg1;
+- (void)gotoShop:(id)arg1;
+- (void)shareTBLiveQA;
 - (void)sendSEIDataToQAManager:(id)arg1;
 - (void)stopMillionBabyQAController;
 - (void)startNativeQA;
 - (void)startWeexQAWithUrl:(id)arg1;
 - (void)startMillionBabyQAController;
-- (void)openH5OrWeex:(id)arg1 openType:(id)arg2 accessPoint:(id)arg3;
+- (void)requestPollingWithGameId:(id)arg1 extParams:(id)arg2 completion:(CDUnknownBlockType)arg3;
+- (void)requestSubmitWithGameId:(id)arg1 examNum:(id)arg2 selectValue:(id)arg3 extParams:(id)arg4 completion:(CDUnknownBlockType)arg5;
+- (void)requestReviveWithGameId:(id)arg1 examNum:(id)arg2 extParams:(id)arg3 completion:(CDUnknownBlockType)arg4;
+- (void)openH5OrWeex:(id)arg1 openType:(id)arg2 frame:(struct CGRect)arg3 accessPoint:(id)arg4;
 - (void)processMessInfoActivityData:(id)arg1;
 - (void)processActivityMsg:(id)arg1;
 - (void)incrementActionCount:(id)arg1 params:(id)arg2;

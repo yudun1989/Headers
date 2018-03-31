@@ -34,6 +34,7 @@
     double _durationSeconds;
     double _remainTime;
     AVAsset *_asset;
+    unsigned int _maxDuration;
     UIColor *_color;
     id <TBStoryVideoClipRangeSliderViewDelegate> _delegate;
     double _minTime;
@@ -44,6 +45,7 @@
     double _lastStep;
 }
 
+@property(nonatomic) unsigned int maxDuration; // @synthesize maxDuration=_maxDuration;
 @property(nonatomic) double lastStep; // @synthesize lastStep=_lastStep;
 @property(nonatomic) double timeOffset; // @synthesize timeOffset=_timeOffset;
 @property(nonatomic) double duration; // @synthesize duration=_duration;
@@ -69,7 +71,7 @@
 - (id)newViewWithFrame:(struct CGRect)arg1;
 - (void)layoutSubviews;
 - (void)createUIWithFrame:(struct CGRect)arg1;
-- (id)initWithFrame:(struct CGRect)arg1 avasset:(id)arg2;
+- (id)initWithFrame:(struct CGRect)arg1 maxDuration:(unsigned int)arg2 avasset:(id)arg3;
 - (void)dealloc;
 
 // Remaining properties

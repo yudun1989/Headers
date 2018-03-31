@@ -10,6 +10,7 @@
 
 @interface WXSDKManager : NSObject
 {
+    _Bool _multiContext;
     WXBridgeManager *_bridgeMgr;
     WXThreadSafeMutableDictionary *_instanceDict;
 }
@@ -23,7 +24,9 @@
 + (id)sharedInstance;
 @property(retain, nonatomic) WXThreadSafeMutableDictionary *instanceDict; // @synthesize instanceDict=_instanceDict;
 @property(retain, nonatomic) WXBridgeManager *bridgeMgr; // @synthesize bridgeMgr=_bridgeMgr;
+@property(nonatomic) _Bool multiContext; // @synthesize multiContext=_multiContext;
 - (void).cxx_destruct;
+- (id)init;
 
 @end
 

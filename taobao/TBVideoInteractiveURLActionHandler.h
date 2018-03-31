@@ -14,7 +14,7 @@
 {
 }
 
-- (_Bool)isLiveShortVideoUrl:(id)arg1;
+- (_Bool)isImmersiveVideoUrl:(id)arg1;
 - (_Bool)isTimeLineURL:(id)arg1;
 - (_Bool)isVideoFlowURL:(id)arg1;
 - (id)handleURLActionRequest:(id)arg1;

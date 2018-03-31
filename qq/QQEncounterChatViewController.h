@@ -99,9 +99,15 @@
     _Bool _isFetchingQDMasterFlag;
     _Bool _firstAppear;
     int account_type;
+    int _hsTopicId;
+    int _hsConfessorSex;
+    int _lastThemeId;
     QQPublicPlatformCustomMenu *_ppMenu;
     QQPromotionInfo *promotionInfo;
     NSString *pendantEventUrl;
+    NSString *_hsConfessorNick;
+    unsigned long long _hsConfessorUin;
+    NSString *_hsConfessContent;
     QDWPAInfo *_qdWPAInfo;
     QQViewController *_campusCircleWebVC;
     long long _unreadCount;
@@ -137,6 +143,13 @@
 @property(retain, nonatomic) QDWPAInfo *qdWPAInfo; // @synthesize qdWPAInfo=_qdWPAInfo;
 @property(nonatomic) _Bool isQDWPASession; // @synthesize isQDWPASession=_isQDWPASession;
 @property(nonatomic) _Bool firstInit_roamMsg; // @synthesize firstInit_roamMsg=_firstInit_roamMsg;
+@property(nonatomic) int lastThemeId; // @synthesize lastThemeId=_lastThemeId;
+@property(copy, nonatomic) NSString *hsConfessContent; // @synthesize hsConfessContent=_hsConfessContent;
+@property int hsConfessorSex; // @synthesize hsConfessorSex=_hsConfessorSex;
+@property unsigned long long hsConfessorUin; // @synthesize hsConfessorUin=_hsConfessorUin;
+@property int hsTopicId; // @synthesize hsTopicId=_hsTopicId;
+@property(copy) NSString *hsConfessorNick; // @synthesize hsConfessorNick=_hsConfessorNick;
+@property(nonatomic) long long unReadCount; // @synthesize unReadCount=_unReadCount;
 @property(nonatomic) unsigned long long type; // @synthesize type=_type;
 @property(nonatomic) _Bool isPublicAccountFirstIn; // @synthesize isPublicAccountFirstIn=_isPublicAccountFirstIn;
 @property(nonatomic) _Bool closeOperationGrayTip; // @synthesize closeOperationGrayTip=_closeOperationGrayTip;
@@ -194,6 +207,7 @@
 - (void)PublicAccountUpdataMsgHandle:(id)arg1;
 - (void)performReadConfirm;
 - (id)nearbySummaryModel;
+- (void)setHonestSayMessageModel:(id)arg1;
 - (void)GetMemberRemarkNotify:(id)arg1 list:(id)arg2;
 - (id)getCRMKFNick:(id)arg1;
 - (void)setCRMKFNick:(id)arg1 withUin:(id)arg2;
@@ -327,6 +341,7 @@
 - (void)setNavContentColor:(id)arg1;
 - (void)SingleTap:(id)arg1;
 - (void)handleMsgUnreadCountClean;
+- (void)dismissKeyboard:(_Bool)arg1;
 - (void)viewWillAppearOnNormalStatus;
 - (void)viewWillAppear:(_Bool)arg1;
 - (void)willMoveToParentViewController:(id)arg1;
@@ -428,6 +443,8 @@
 - (void)initFlashChatMsgModel:(id)arg1;
 - (void)sendArkAppMsgModel:(id)arg1;
 - (void)initArkAppMsgModel:(id)arg1;
+- (id)createMultiMsgForward:(id)arg1;
+- (void)doSendLargeMsgOptimizeMsg:(id)arg1 picUrl:(id)arg2 resendModel:(id)arg3;
 - (_Bool)doSendTextMsg:(id)arg1 showText:(id)arg2 isLocation:(_Bool)arg3;
 - (void)attachSmobaGameNick:(id)arg1;
 - (void)sendNearbyAccostMsg:(id)arg1;

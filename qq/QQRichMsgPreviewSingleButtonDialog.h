@@ -7,6 +7,7 @@
 #import <QQMainProject/FullscreenOverlayView.h>
 
 @class QQVisualEffectView, UIButton, UIImageView, UILabel, UIView;
+@protocol QQRichMsgPreviewSingleButtonDialogDelegate;
 
 @interface QQRichMsgPreviewSingleButtonDialog : FullscreenOverlayView
 {
@@ -16,10 +17,10 @@
     UIButton *_okButton;
     QQVisualEffectView *_effctView;
     UIView *_contentView;
-    id _delegate;
+    id <QQRichMsgPreviewSingleButtonDialogDelegate> _delegate;
 }
 
-@property(nonatomic) __weak id delegate; // @synthesize delegate=_delegate;
+@property(nonatomic) __weak id <QQRichMsgPreviewSingleButtonDialogDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
 - (void)dismiss;
 - (void)setupFrame;

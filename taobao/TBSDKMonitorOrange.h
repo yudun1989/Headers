@@ -15,6 +15,7 @@
 @property(nonatomic) _Bool enableLog; // @synthesize enableLog=_enableLog;
 - (void)orangeMonitor:(id)arg1;
 - (void)updatEnableLog:(id)arg1;
+- (void)dealloc;
 - (id)init;
 
 @end

@@ -6,22 +6,27 @@
 
 #import <QQMainProject/QZLayoutCell.h>
 
-@class NSString, QZFeedPhotoView, UIImage, UIImageView, UIView;
+@class NSString, QZCImageView, QZFeedPhotoView, UIImage, UIImageView, UIView;
 
 @interface QZFeedLayoutCell : QZLayoutCell
 {
     NSString *_dressImageUrl;
-    UIImageView *_backgroundImageView;
-    QZFeedPhotoView *_dressImageView;
+    QZCImageView *_passiveDressIamgeView;
     UIView *_gradientView;
+    double _feedCellBgAlpha;
+    QZFeedPhotoView *_dressImageView;
     UIImage *_backgroundImage;
+    UIImageView *_backgroundImageView;
     long long _videoPlayScene;
 }
 
 + (void)enumImageRectangles:(id)arg1 VisibleRectDic:(id)arg2 photoViews:(id)arg3;
 @property(nonatomic) long long videoPlayScene; // @synthesize videoPlayScene=_videoPlayScene;
+@property(retain, nonatomic) UIImageView *backgroundImageView; // @synthesize backgroundImageView=_backgroundImageView;
 @property(retain, nonatomic) NSString *dressImageUrl; // @synthesize dressImageUrl=_dressImageUrl;
 @property(retain, nonatomic) UIImage *backgroundImage; // @synthesize backgroundImage=_backgroundImage;
+@property(retain, nonatomic) QZFeedPhotoView *dressImageView; // @synthesize dressImageView=_dressImageView;
+@property(nonatomic) double feedCellBgAlpha; // @synthesize feedCellBgAlpha=_feedCellBgAlpha;
 - (void).cxx_destruct;
 - (_Bool)setObtainShowPhotoTags:(_Bool)arg1;
 - (id)firstVideo;

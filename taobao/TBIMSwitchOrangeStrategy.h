@@ -13,6 +13,9 @@
     IMThreadSafeMutableDictionary *_orangeConfig;
 }
 
++ (id)downgradeWeexUrlJson;
++ (id)middleRouteWeexUrl;
++ (_Bool)wangxinInDefaultThread;
 + (_Bool)dingTalkEnabled;
 + (_Bool)dingTalkUseWhiteList;
 + (double)dingTalkRetryInterval;
@@ -85,7 +88,7 @@
 + (long long)darenFlowListAdsTimeout;
 + (id)darenFlowListAdsUrl;
 + (id)mockOffilinePUSHContent;
-+ (_Bool)openHorizontalRecommend;
++ (_Bool)openRecommend;
 + (_Bool)needMockOffilinePUSH;
 + (_Bool)isImageDirToUseAVFS;
 + (long long)accountListCacheTime;

@@ -6,17 +6,26 @@
 
 #import "WXSDKInstance.h"
 
-@class XSearchContext, XSearchService;
+@class CADisplayLink, XSearchContext, XSearchService;
 
 @interface XSearchWXInstance : WXSDKInstance
 {
     XSearchService *_searchService;
     XSearchContext *_searchContext;
+    CADisplayLink *_displayLink;
+    double _duration;
+    struct CGRect _oldFrame;
+    struct CGRect _newFrame;
 }
 
+@property(nonatomic) double duration; // @synthesize duration=_duration;
+@property(nonatomic) struct CGRect newFrame; // @synthesize newFrame=_newFrame;
+@property(nonatomic) struct CGRect oldFrame; // @synthesize oldFrame=_oldFrame;
+@property(retain, nonatomic) CADisplayLink *displayLink; // @synthesize displayLink=_displayLink;
 @property(nonatomic) __weak XSearchContext *searchContext; // @synthesize searchContext=_searchContext;
 @property(nonatomic) __weak XSearchService *searchService; // @synthesize searchService=_searchService;
 - (void).cxx_destruct;
+- (void)displayLinkHandler:(id)arg1;
 
 @end
 

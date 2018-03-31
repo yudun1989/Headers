@@ -29,6 +29,11 @@
     _Bool _isMuteButtonHighlight;
 }
 
+- (void)NetChangeSuc;
+- (void)onResume;
+- (void)onSuspend;
+- (void)onMemberVideoOut:(int)arg1 inMemArray:(id)arg2;
+- (void)onMemberVideoIn:(int)arg1 inMemArray:(id)arg2;
 - (void)onMicOffByAdminFailNotify;
 - (void)checkMicAvailable;
 - (void)setChatName:(id)arg1;
@@ -79,6 +84,7 @@
 - (void)updateButtonState;
 - (void)onDisableAddMem;
 - (void)onAddMem;
+- (void)onWirelessRoutesAvailableDidChange:(id)arg1;
 - (void)getDiscussMemberRemarkFinishCallBack:(id)arg1;
 - (void)onDiscuMemChanged:(id)arg1;
 - (void)viewDidLoad;

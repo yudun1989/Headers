@@ -72,7 +72,7 @@
 - (void)setupContents;
 - (void)viewDidAppear:(_Bool)arg1;
 - (void)viewDidLoad;
-- (void)orangeSwitch;
+- (_Bool)orangeSwitch;
 - (id)initWithDWInstance:(id)arg1 videoId:(id)arg2 itemId:(id)arg3 sellerId:(id)arg4 view:(id)arg5 extraData:(id)arg6 scrollBlock:(CDUnknownBlockType)arg7;
 
 @end

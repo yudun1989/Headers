@@ -10,6 +10,7 @@
 
 @interface TBCDNImageConfigModel : NSObject
 {
+    _Bool _gifLimitForWebView;
     _Bool _cutWebpForWebView;
     _Bool _cutWebpForWebViewOn4s;
     _Bool _domainSwitch;
@@ -56,6 +57,7 @@
 @property(retain, nonatomic) NSArray *cdnImageSizes; // @synthesize cdnImageSizes=_cdnImageSizes;
 @property(nonatomic) _Bool cutWebpForWebViewOn4s; // @synthesize cutWebpForWebViewOn4s=_cutWebpForWebViewOn4s;
 @property(nonatomic) _Bool cutWebpForWebView; // @synthesize cutWebpForWebView=_cutWebpForWebView;
+@property(nonatomic) _Bool gifLimitForWebView; // @synthesize gifLimitForWebView=_gifLimitForWebView;
 - (void).cxx_destruct;
 - (id)getModuleModelForName:(id)arg1;
 

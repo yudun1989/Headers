@@ -12,7 +12,7 @@
 
 @interface ActionSheetObject : NSObject <UIActionSheetDelegate>
 {
-    CDStruct_a90cff18 *_imageRule;
+    CDStruct_4a9aa5a8 *_imageRule;
     UIViewController *_vc;
     NSArray *_photos;
     CDUnknownBlockType _resultBlock;

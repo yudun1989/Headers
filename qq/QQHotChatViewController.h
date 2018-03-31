@@ -120,7 +120,6 @@
 - (void)actionInputbarRobotPanel:(id)arg1;
 - (void)onMemberSelected:(id)arg1;
 - (void)groupGiftSelectionViewDidSelect;
-- (void)enterSendFlowersList;
 - (void)enterFlowerShopWithUin:(id)arg1 groupCode:(id)arg2;
 - (void)enterFlowerShopWithUin:(id)arg1;
 - (void)buttonClick:(id)arg1 atIndex:(int)arg2;
@@ -130,7 +129,6 @@
 - (void)showCharmAlertView;
 - (void)actionAlbumForFlashPicture:(id)arg1;
 - (void)stopSavingAnimation;
-- (void)startSavingAnimation;
 - (void)actionInputbarSpriteGame:(id)arg1;
 - (void)setupInputbarItems;
 - (void)didTouchRichKeyBorad:(id)arg1 withControl:(id)arg2 forEvent:(id)arg3;

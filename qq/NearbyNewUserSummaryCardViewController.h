@@ -19,7 +19,7 @@
 #import <QQMainProject/UITableViewDelegate-Protocol.h>
 #import <QQMainProject/UserSummaryNavBarItemDelagate-Protocol.h>
 
-@class NSArray, NSMutableDictionary, NSString, NearbyAlbumView, NearbyCharmInfoChangePushView, NearbyCustomNavigationBar, NearbyEditToolBar, NearbyFaceScoreOperationTabView, PLFeedsViewController, PLTabControl, PluginManager, UIButton, UILabel, UIView, UserSummaryModel, UserSummaryTouchControl;
+@class NSMutableDictionary, NSString, NearbyAlbumView, NearbyCharmInfoChangePushView, NearbyCustomNavigationBar, NearbyEditToolBar, NearbyFaceScoreOperationTabView, PLFeedsViewController, PLTabControl, PluginManager, UIButton, UILabel, UIView, UserSummaryModel, UserSummaryTouchControl;
 
 @interface NearbyNewUserSummaryCardViewController : NearbyUserSummaryViewController <UITableViewDataSource, UITableViewDelegate, PluginDelegate, PluginDataSource, NearbyAlbumInfoComponentDelegate, NearbyOperationComponentDelegate, UIAlertViewDelegate, UserSummaryNavBarItemDelagate, NearbyEditToolBarDelegate, NearbyTableViewOffsetChangeDelegate, PLTabControlDelegate, PLFeedsContentDelegate>
 {
@@ -32,16 +32,17 @@
     _Bool _fetchSuccess;
     _Bool _bShowInterestTag;
     struct CGPoint touchPoint;
+    _Bool _isFollowStatusChange;
     long long _summaryEntry;
     UIButton *_qzoneButton;
     int _currentNearbyZanLimitSeq;
-    NSArray *_cellModels;
     NearbyFaceScoreOperationTabView *_faceScoreOperationTabView;
     _Bool _bEditing;
     _Bool _isSelf;
     _Bool _canAutoSwitchToFeedsTab;
     _Bool _userHasManualSwitchedTab;
     _Bool _enterEditStateFromFeedsTab;
+    _Bool _followedStatus;
     PluginManager *_pManager;
     NearbyCharmInfoChangePushView *_charmInfoPushView;
     NearbyEditToolBar *_editBar;
@@ -57,6 +58,7 @@
     UIView *_bottomOperationSafeAreaView;
 }
 
+@property(nonatomic) _Bool followedStatus; // @synthesize followedStatus=_followedStatus;
 @property(nonatomic) _Bool enterEditStateFromFeedsTab; // @synthesize enterEditStateFromFeedsTab=_enterEditStateFromFeedsTab;
 @property(nonatomic) _Bool userHasManualSwitchedTab; // @synthesize userHasManualSwitchedTab=_userHasManualSwitchedTab;
 @property(nonatomic) _Bool canAutoSwitchToFeedsTab; // @synthesize canAutoSwitchToFeedsTab=_canAutoSwitchToFeedsTab;
@@ -101,6 +103,7 @@
 - (void)initBottomOperationSafeAreaView;
 - (void)initTopView;
 - (void)initMainContainerView;
+- (void)onFollowedStatusDidChange:(id)arg1;
 - (void)onStatusBarFrameDidChange:(id)arg1;
 - (void)onGetNearbyZanLimitInfoRspCallback:(id)arg1;
 - (void)onUpdateTableViewDataSource:(id)arg1;

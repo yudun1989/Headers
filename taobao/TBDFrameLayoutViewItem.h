@@ -4,14 +4,14 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-#import "TBDLayoutViewItem.h"
+#import "TBDBaseLayoutViewItem.h"
 
-@interface TBDFrameLayoutViewItem : TBDLayoutViewItem
+@interface TBDFrameLayoutViewItem : TBDBaseLayoutViewItem
 {
 }
 
-- (void)updateViewSizeWithData:(id)arg1 context:(id)arg2 error:(id *)arg3;
-- (void)layoutSubViewItems;
+- (id)dLayoutType;
+- (id)init;
 
 @end
 

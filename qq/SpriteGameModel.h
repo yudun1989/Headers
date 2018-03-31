@@ -18,8 +18,8 @@
     int _appId;
     int _playMode;
     int _screenMode;
-    int _viewMode;
     int _currentSrc;
+    int _viewMode;
     NSString *_idStr;
     NSString *_name;
     NSString *_version;
@@ -35,12 +35,14 @@
     SpriteCheckGameRspModel *_rspModel;
     NSMutableArray *_homeButtonAction;
     NSString *_activityUrl;
+    NSString *_entranceUrl;
 }
 
+@property(retain, nonatomic) NSString *entranceUrl; // @synthesize entranceUrl=_entranceUrl;
+@property(nonatomic) int viewMode; // @synthesize viewMode=_viewMode;
 @property(nonatomic) int currentSrc; // @synthesize currentSrc=_currentSrc;
 @property(nonatomic) _Bool hasOwnArk; // @synthesize hasOwnArk=_hasOwnArk;
 @property(retain, nonatomic) NSString *activityUrl; // @synthesize activityUrl=_activityUrl;
-@property(nonatomic) int viewMode; // @synthesize viewMode=_viewMode;
 @property(retain, nonatomic) NSMutableArray *homeButtonAction; // @synthesize homeButtonAction=_homeButtonAction;
 @property(nonatomic) int screenMode; // @synthesize screenMode=_screenMode;
 @property(retain, nonatomic) SpriteCheckGameRspModel *rspModel; // @synthesize rspModel=_rspModel;

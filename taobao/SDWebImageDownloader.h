@@ -43,6 +43,7 @@
 - (void)setSuspended:(_Bool)arg1;
 - (void)cancelDownloadImageWithURL:(id)arg1 operation:(id)arg2 token:(id)arg3;
 - (void)addProgressCallback:(CDUnknownBlockType)arg1 completedBlock:(CDUnknownBlockType)arg2 forURL:(id)arg3 token:(id)arg4 createCallback:(CDUnknownBlockType)arg5;
+- (id)downloadImageWithURL:(id)arg1 viewSize:(struct CGSize)arg2 token:(id)arg3 options:(unsigned long long)arg4 progress:(CDUnknownBlockType)arg5 completed:(CDUnknownBlockType)arg6;
 - (id)downloadImageWithURL:(id)arg1 token:(id)arg2 options:(unsigned long long)arg3 progress:(CDUnknownBlockType)arg4 completed:(CDUnknownBlockType)arg5;
 - (id)downloadImageWithURL:(id)arg1 options:(unsigned long long)arg2 progress:(CDUnknownBlockType)arg3 completed:(CDUnknownBlockType)arg4;
 @property(nonatomic) long long maxConcurrentDownloads;

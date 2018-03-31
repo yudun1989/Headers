@@ -6,7 +6,7 @@
 
 #import "TBJSONModel.h"
 
-@class NSArray;
+@class CNLogisticResultFeatureData, NSArray;
 @protocol CNLogisticOrderListItem, CNLogisticPackageListItem;
 
 @interface CNLogisticResultData : TBJSONModel
@@ -14,8 +14,10 @@
     _Bool _partOutPackage;
     NSArray<CNLogisticOrderListItem> *_orderList;
     NSArray<CNLogisticPackageListItem> *_packageItemList;
+    CNLogisticResultFeatureData *_feature;
 }
 
+@property(retain, nonatomic) CNLogisticResultFeatureData *feature; // @synthesize feature=_feature;
 @property(nonatomic) _Bool partOutPackage; // @synthesize partOutPackage=_partOutPackage;
 @property(retain, nonatomic) NSArray<CNLogisticPackageListItem> *packageItemList; // @synthesize packageItemList=_packageItemList;
 @property(retain, nonatomic) NSArray<CNLogisticOrderListItem> *orderList; // @synthesize orderList=_orderList;

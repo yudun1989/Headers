@@ -50,7 +50,6 @@
 - (void)reSetLeftButtonTitle;
 - (void)setTabBarHidden:(_Bool)arg1 animated:(_Bool)arg2;
 - (id)contentView;
-- (long long)indexForViewController:(id)arg1;
 - (void)setSelectedIndex:(unsigned long long)arg1 animation:(_Bool)arg2;
 - (id)getCurrentViewController;
 - (_Bool)shouldAutorotateToInterfaceOrientation:(long long)arg1;

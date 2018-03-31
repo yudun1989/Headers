@@ -12,6 +12,7 @@
 
 + (id)screenshotsOfView:(id)arg1;
 + (id)gradientColorFromColor:(id)arg1 toColor:(id)arg2 size:(struct CGSize)arg3;
++ (id)gradientLayerFromColor:(id)arg1 toColor:(id)arg2 size:(struct CGSize)arg3 direction:(long long)arg4;
 + (id)gradientLayerFromColor:(id)arg1 toColor:(id)arg2 size:(struct CGSize)arg3;
 + (id)gradientImageFromColor:(id)arg1 toColor:(id)arg2 size:(struct CGSize)arg3;
 + (void)removeMaskViewFroView:(id)arg1;

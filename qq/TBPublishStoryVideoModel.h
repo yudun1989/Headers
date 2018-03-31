@@ -17,6 +17,7 @@
     _Bool _isGroupVideo;
     _Bool _isPublishTaskCancel;
     _Bool _isPublishFail;
+    _Bool _isWaitingPublish;
     _Bool _isPostureDancePendant;
     int _timezoneOffset;
     unsigned int _ignoreInSelfStory;
@@ -60,6 +61,7 @@
 @property(nonatomic) unsigned long long uin; // @synthesize uin=_uin;
 @property(retain, nonatomic) NSString *uploadedIP; // @synthesize uploadedIP=_uploadedIP;
 @property(retain, nonatomic) NSNumber *uploadedFileOffset; // @synthesize uploadedFileOffset=_uploadedFileOffset;
+@property(nonatomic) _Bool isWaitingPublish; // @synthesize isWaitingPublish=_isWaitingPublish;
 @property(nonatomic) _Bool isPublishFail; // @synthesize isPublishFail=_isPublishFail;
 @property(retain, nonatomic) NSObject *userExtInfo; // @synthesize userExtInfo=_userExtInfo;
 @property(nonatomic) _Bool isPublishTaskCancel; // @synthesize isPublishTaskCancel=_isPublishTaskCancel;

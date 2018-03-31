@@ -8,7 +8,7 @@
 
 #import <QQMainProject/QZPhotoModuleDownloaderInterfaceDelegate-Protocol.h>
 
-@class NSString, UIButton, UIImageView, UILabel, UIView;
+@class NSAttributedString, NSString, UIButton, UIImageView, UILabel, UIView;
 
 @interface QZPhotoEmptyCell : QZPhotoModuleCell <QZPhotoModuleDownloaderInterfaceDelegate>
 {
@@ -18,12 +18,13 @@
     UIView *_joinShareAlbumTipView;
     UILabel *_tipLabel;
     UIImageView *_tipIcon;
+    NSString *_albumNoPhotoURL;
     _Bool _bgBtnHidden;
     _Bool _joinTipHidden;
     NSString *_bgURL;
     NSString *_bgBtnTitle;
     CDUnknownBlockType _buttonBlock;
-    NSString *_emptyNoContentTitle;
+    NSAttributedString *_emptyNoContentTitle;
     long long _state;
     long long _errorCode;
     NSString *_joinTip;
@@ -34,13 +35,14 @@
 @property(retain, nonatomic) NSString *joinTip; // @synthesize joinTip=_joinTip;
 @property(nonatomic) long long errorCode; // @synthesize errorCode=_errorCode;
 @property(nonatomic) long long state; // @synthesize state=_state;
-@property(retain, nonatomic) NSString *emptyNoContentTitle; // @synthesize emptyNoContentTitle=_emptyNoContentTitle;
+@property(retain, nonatomic) NSAttributedString *emptyNoContentTitle; // @synthesize emptyNoContentTitle=_emptyNoContentTitle;
 @property(nonatomic) _Bool joinTipHidden; // @synthesize joinTipHidden=_joinTipHidden;
 @property(nonatomic) _Bool bgBtnHidden; // @synthesize bgBtnHidden=_bgBtnHidden;
 @property(copy, nonatomic) CDUnknownBlockType buttonBlock; // @synthesize buttonBlock=_buttonBlock;
 @property(retain, nonatomic) NSString *bgBtnTitle; // @synthesize bgBtnTitle=_bgBtnTitle;
 @property(retain, nonatomic) NSString *bgURL; // @synthesize bgURL=_bgURL;
 - (void).cxx_destruct;
+- (void)adjustSize;
 - (void)setState:(long long)arg1 url:(id)arg2;
 - (void)onBgButtonClick:(id)arg1;
 - (void)requestFinishedisSuccess:(_Bool)arg1 image:(id)arg2 reqUrl:(id)arg3;

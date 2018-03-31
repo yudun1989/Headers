@@ -16,7 +16,7 @@
     UILabel *_sellCountLabel;
 }
 
-+ (id)getPriceStyle:(int)arg1;
++ (id)getPriceStyle:(unsigned long long)arg1;
 + (double)componentHeightForObj:(id)arg1 preferredWidth:(double)arg2;
 @property(retain, nonatomic) UILabel *sellCountLabel; // @synthesize sellCountLabel=_sellCountLabel;
 @property(retain, nonatomic) AliDetailPriceLabel *subPriceLabel; // @synthesize subPriceLabel=_subPriceLabel;
@@ -24,7 +24,7 @@
 @property(nonatomic) __weak AliDetailPriceXinXuanViewModel *priceModel; // @synthesize priceModel=_priceModel;
 - (void).cxx_destruct;
 - (void)layoutSubviews;
-- (id)createPriceViewModel:(id)arg1 style:(int)arg2;
+- (id)createPriceViewModel:(id)arg1 style:(unsigned long long)arg2;
 - (void)setObject:(id)arg1;
 
 @end

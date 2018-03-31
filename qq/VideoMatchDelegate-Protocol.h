@@ -6,9 +6,11 @@
 
 #import <QQMainProject/NSObject-Protocol.h>
 
-@class NSDictionary;
+@class NSDictionary, VideoMatchNowAdsModel;
 
 @protocol VideoMatchDelegate <NSObject>
+- (void)didGetNowAdsFailure;
+- (void)didGetNowAds:(VideoMatchNowAdsModel *)arg1;
 - (void)didSendHeartBeat:(NSDictionary *)arg1;
 - (void)didExitMatchVideoChater;
 - (void)didGetMatchVideoRequestor:(NSDictionary *)arg1;

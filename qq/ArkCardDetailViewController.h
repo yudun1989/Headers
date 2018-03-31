@@ -23,6 +23,7 @@
     double _startTouchTime;
     UIPanGestureRecognizer *_gestureRecognizer;
     ArkCardModel *_currentCardModel;
+    int _sourceType;
     NSMutableArray *_appViewControllers;
     ArkUIView *_currentArkView;
     QQFriendSelectedViewController *_friendSelectedViewController;
@@ -30,6 +31,9 @@
     UIBarButtonItem *_rightBarButton;
 }
 
++ (void)openWithUrl:(id)arg1 sourceType:(int)arg2;
++ (_Bool)canParseURL:(id)arg1;
+@property(nonatomic) int sourceType; // @synthesize sourceType=_sourceType;
 @property(retain, nonatomic) UIBarButtonItem *rightBarButton; // @synthesize rightBarButton=_rightBarButton;
 @property(retain, nonatomic) NSMutableDictionary *titles; // @synthesize titles=_titles;
 @property(retain, nonatomic) QQFriendSelectedViewController *friendSelectedViewController; // @synthesize friendSelectedViewController=_friendSelectedViewController;

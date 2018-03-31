@@ -29,17 +29,21 @@
     int _xo;
     QQLockDictionary *_memberListInCacheRecord;
     _Bool _shouldReqAllGroupList;
+    _Bool _isDiscussGroupListLoading;
     NSMutableDictionary *_discussMemberDict;
     NSMutableDictionary *_dicNeedShareDisGroupCode;
     NSArray *_needUpdateInfoArray;
     NSMutableDictionary *_dictEngineBlock;
     NSArray *_ignoreUpdateInfoDisUins;
+    CDUnknownBlockType _loadDiscussGroupListCompleteBlock;
     struct dispatch_queue_s *_updateMemberQueue;
 }
 
 + (void)checkUpdateDiscussHead;
 + (id)getInstance;
 @property(nonatomic) struct dispatch_queue_s *updateMemberQueue; // @synthesize updateMemberQueue=_updateMemberQueue;
+@property(copy, nonatomic) CDUnknownBlockType loadDiscussGroupListCompleteBlock; // @synthesize loadDiscussGroupListCompleteBlock=_loadDiscussGroupListCompleteBlock;
+@property(nonatomic) _Bool isDiscussGroupListLoading; // @synthesize isDiscussGroupListLoading=_isDiscussGroupListLoading;
 @property(retain, nonatomic) NSArray *ignoreUpdateInfoDisUins; // @synthesize ignoreUpdateInfoDisUins=_ignoreUpdateInfoDisUins;
 @property(nonatomic) _Bool shouldReqAllGroupList; // @synthesize shouldReqAllGroupList=_shouldReqAllGroupList;
 @property(retain, nonatomic) NSMutableDictionary *dictEngineBlock; // @synthesize dictEngineBlock=_dictEngineBlock;

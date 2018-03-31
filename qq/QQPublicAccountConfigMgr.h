@@ -73,7 +73,7 @@
 - (long long)insertSpecialTimelineMsg:(id)arg1 msgTime:(unsigned long long)arg2 isFrom0xc5:(_Bool)arg3 isSubscribeMsg:(_Bool)arg4;
 - (_Bool)isRNPACardPreDownBundleEnable;
 - (_Bool)isRNPACardEnable;
-- (_Bool)isBigDataChannelDisable;
+- (int)getBigDataChannelOpenInfoWithModel:(id)arg1;
 - (_Bool)isPAFolderConfigNil;
 - (unsigned long long)checkRemindWifiOnlyFlag;
 - (_Bool)checkIfCanInsertKandianMessgae;

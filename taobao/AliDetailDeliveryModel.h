@@ -17,10 +17,12 @@
     NSString *_completedTo;
     NSString *_postage;
     NSString *_areaId;
+    NSString *_addressWeexUrl;
     NSDictionary *_extras;
 }
 
 @property(retain, nonatomic) NSDictionary *extras; // @synthesize extras=_extras;
+@property(copy, nonatomic) NSString *addressWeexUrl; // @synthesize addressWeexUrl=_addressWeexUrl;
 @property(nonatomic) _Bool showAreaChooser; // @synthesize showAreaChooser=_showAreaChooser;
 @property(nonatomic) _Bool areaSell; // @synthesize areaSell=_areaSell;
 @property(copy, nonatomic) NSString *areaId; // @synthesize areaId=_areaId;

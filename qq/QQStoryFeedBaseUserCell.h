@@ -7,16 +7,14 @@
 #import <QQMainProject/QQStoryFeedCell.h>
 
 #import <QQMainProject/MulMemSelBusiProcessDelegate-Protocol.h>
-#import <QQMainProject/QQStoryShareGroupCreateViewControllerDelegate-Protocol.h>
 
 @class NSString;
 
-@interface QQStoryFeedBaseUserCell : QQStoryFeedCell <MulMemSelBusiProcessDelegate, QQStoryShareGroupCreateViewControllerDelegate>
+@interface QQStoryFeedBaseUserCell : QQStoryFeedCell <MulMemSelBusiProcessDelegate>
 {
 }
 
 - (void)rspSubscriptNotification:(id)arg1;
-- (void)createShareGroup;
 - (void)followUser:(id)arg1;
 - (void)enterMemoryViewController;
 - (void)onBusinessProcessWithSelectedMems:(id)arg1 currentViewControllerClass:(id)arg2 currentViewController:(id)arg3;

@@ -15,6 +15,7 @@
     _Bool _safeSecret;
     _Bool _supportOpenAccsOut;
     _Bool _isDisableNewDeviceID;
+    _Bool _isSwitchOffGetServerTime;
     NSString *_appVersion;
     double _timestampOffset;
     NSString *_deviceID;
@@ -47,18 +48,23 @@
     TBSDKMTOPEnvConfig *_mtopConfig;
     NSMutableDictionary *_applicationHeaders;
     NSString *_authErrorCode;
+    NSString *_pageName;
+    NSString *_pageUrl;
     struct _opaque_pthread_rwlock_t _rwlock;
 }
 
 + (id)timeStampFixedWithServer;
 + (void)addEcodeSignAPI:(id)arg1;
-+ (id)shareInstanceDisableDeviceID:(_Bool)arg1;
++ (id)shareInstanceDisableDeviceID:(_Bool)arg1 andSwitchOffServerTime:(_Bool)arg2;
 + (id)shareInstance;
+@property(copy, nonatomic) NSString *pageUrl; // @synthesize pageUrl=_pageUrl;
+@property(copy, nonatomic) NSString *pageName; // @synthesize pageName=_pageName;
 @property(copy, nonatomic) NSString *authErrorCode; // @synthesize authErrorCode=_authErrorCode;
 @property(nonatomic) struct _opaque_pthread_rwlock_t rwlock; // @synthesize rwlock=_rwlock;
 @property(retain, nonatomic) NSMutableDictionary *applicationHeaders; // @synthesize applicationHeaders=_applicationHeaders;
 @property(retain, nonatomic) TBSDKMTOPEnvConfig *mtopConfig; // @synthesize mtopConfig=_mtopConfig;
 @property(retain, nonatomic) TBSDKConfigurationHelper *configurationHelper; // @synthesize configurationHelper=_configurationHelper;
+@property(nonatomic) _Bool isSwitchOffGetServerTime; // @synthesize isSwitchOffGetServerTime=_isSwitchOffGetServerTime;
 @property(nonatomic) _Bool isDisableNewDeviceID; // @synthesize isDisableNewDeviceID=_isDisableNewDeviceID;
 @property(retain, nonatomic) NSArray *tradeUnitDomains; // @synthesize tradeUnitDomains=_tradeUnitDomains;
 @property(retain, nonatomic) TBSDKThreadSafeMutableDictionary *globalExtData; // @synthesize globalExtData=_globalExtData;
@@ -87,6 +93,8 @@
 @property(copy, nonatomic) NSString *securityAppKey; // @synthesize securityAppKey=_securityAppKey;
 @property(readonly, nonatomic) double timestampOffset; // @synthesize timestampOffset=_timestampOffset;
 - (void).cxx_destruct;
+- (id)currentPageName;
+- (id)currentPageUrl;
 - (void)setAppkeyIndex:(unsigned long long)arg1;
 @property(readonly, nonatomic) unsigned long long appkeyIndex;
 - (void)loadAVCV;
@@ -109,9 +117,12 @@
 - (void)unableWhiteSecurity;
 @property(copy, nonatomic) NSString *authCode;
 - (void)enableWhiteSecurity;
+@property(nonatomic) _Bool enableHttps;
 - (void)enableUnitFeatures;
+- (void)controllerTransition:(id)arg1;
+- (void)registerControllerTransitionNotice;
 - (void)dealloc;
-- (id)initWithDisableNewDeviceID:(_Bool)arg1;
+- (id)initWithDisableNewDeviceID:(_Bool)arg1 andSwitchOffServerTime:(_Bool)arg2;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

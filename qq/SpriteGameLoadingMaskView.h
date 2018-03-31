@@ -15,6 +15,8 @@
     SpriteGameLoadingImageView *_gamePad;
     UILabel *_waitLabel;
     UIButton *_cancelBtn;
+    NSString *_sessionId;
+    int _aioType;
     _Bool _isCreator;
     _Bool _needLoadingView;
     _Bool _needAgain;
@@ -49,6 +51,7 @@
 - (void)dealWithRetCode:(int)arg1 rspModel:(id)arg2;
 - (void)loadGame;
 - (void)checkCanJoinGame;
+- (id)initWithGameId:(unsigned int)arg1 roomId:(unsigned long long)arg2 sessionId:(id)arg3 isCreator:(_Bool)arg4 gameMode:(int)arg5 aioType:(int)arg6 gameParam:(id)arg7 needLoadingView:(_Bool)arg8 src:(int)arg9;
 - (id)initWithGameId:(unsigned int)arg1 roomId:(unsigned long long)arg2 isCreator:(_Bool)arg3 gameMode:(int)arg4 gameParam:(id)arg5 needLoadingView:(_Bool)arg6 src:(int)arg7;
 
 // Remaining properties

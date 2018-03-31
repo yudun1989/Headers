@@ -26,6 +26,7 @@
     _Bool _isNoAccountAd;
     _Bool _hasNewDownloadAddress;
     _Bool _privateAccount;
+    _Bool _hideLocation;
     _Bool _isBindedToutiao;
     NSString *_userID;
     NSString *_shortID;
@@ -110,6 +111,7 @@
 + (id)JSONKeyPathsByPropertyKey;
 @property(nonatomic) _Bool isBindedToutiao; // @synthesize isBindedToutiao=_isBindedToutiao;
 @property(nonatomic) long long postNotificationStatus; // @synthesize postNotificationStatus=_postNotificationStatus;
+@property(nonatomic) _Bool hideLocation; // @synthesize hideLocation=_hideLocation;
 @property(retain, nonatomic) NSNumber *appleAccount; // @synthesize appleAccount=_appleAccount;
 @property(copy, nonatomic) NSString *insId; // @synthesize insId=_insId;
 @property(copy, nonatomic) NSString *googleAccount; // @synthesize googleAccount=_googleAccount;

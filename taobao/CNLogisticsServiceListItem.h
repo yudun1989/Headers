@@ -17,6 +17,7 @@
     NSString *_serviceExplain;
     NSString *_desc;
     NSString *_serviceLogo;
+    NSString *_serviceInfoUrl;
     NSString *_serviceStatus;
     NSString *_timestamp;
     NSNumber *_source;
@@ -27,6 +28,7 @@
 @property(retain, nonatomic) NSNumber *source; // @synthesize source=_source;
 @property(retain, nonatomic) NSString *timestamp; // @synthesize timestamp=_timestamp;
 @property(retain, nonatomic) NSString *serviceStatus; // @synthesize serviceStatus=_serviceStatus;
+@property(retain, nonatomic) NSString *serviceInfoUrl; // @synthesize serviceInfoUrl=_serviceInfoUrl;
 @property(retain, nonatomic) NSString *serviceLogo; // @synthesize serviceLogo=_serviceLogo;
 @property(retain, nonatomic) NSString *desc; // @synthesize desc=_desc;
 @property(retain, nonatomic) NSString *serviceExplain; // @synthesize serviceExplain=_serviceExplain;

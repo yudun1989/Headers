@@ -30,23 +30,34 @@
     _Bool _isMarioGif;
     _Bool _isGif;
     _Bool _imageOpenFromNilRect;
+    _Bool _isMultRichModel;
     int _uploadSecondTransfer;
     unsigned long long _preuploadState;
     NSString *_marioText;
+    struct CGRect richDrawR;
 }
 
++ (id)getImageMetaInfoWithPicName:(id)arg1 picInfo:(id)arg2 isShare:(_Bool)arg3;
 + (id)getImageMetaInfo:(id)arg1 isShare:(_Bool)arg2;
 + (id)getImageMetaInfo:(id)arg1;
 + (id)paseImage:(id)arg1;
 + (id)modeWithMessageModelAsync:(id)arg1;
 + (id)modelWithMessageModel:(id)arg1;
+@property(nonatomic) _Bool isMultRichModel; // @synthesize isMultRichModel=_isMultRichModel;
 @property(nonatomic) _Bool imageOpenFromNilRect; // @synthesize imageOpenFromNilRect=_imageOpenFromNilRect;
 @property(nonatomic) _Bool isGif; // @synthesize isGif=_isGif;
 @property _Bool isMarioGif; // @synthesize isMarioGif=_isMarioGif;
 @property(retain, nonatomic) NSString *marioText; // @synthesize marioText=_marioText;
 @property(nonatomic) int uploadSecondTransfer; // @synthesize uploadSecondTransfer=_uploadSecondTransfer;
 @property(nonatomic) unsigned long long preuploadState; // @synthesize preuploadState=_preuploadState;
+@property(nonatomic) struct CGRect richDrawR; // @synthesize richDrawR;
 - (void).cxx_destruct;
+- (id)getMultRichModelPicName:(id)arg1;
+- (id)elementArray;
+- (id)elementWithImage:(id)arg1 picInfo:(id)arg2;
+- (id)elementWithStr:(id)arg1;
+- (id)layoutPicNames;
+- (id)layoutResults;
 - (id)getSchoolIdentity:(id)arg1;
 - (id)removeAllEmotion:(id)arg1;
 - (id)disable_EmojiString:(id)arg1;
@@ -64,7 +75,6 @@
 - (id)favoritesInfoModel;
 - (_Bool)isRichModelImageExist;
 - (void)updateUploadState:(_Bool)arg1;
-- (id)getAvailableRichModelPictureName;
 - (id)getRichModelPictureName;
 - (id)paseImage:(id)arg1;
 - (id)eventHandleClassName;

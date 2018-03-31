@@ -10,17 +10,17 @@
 
 @interface TBEmoticon : NSObject
 {
-    int _type;
+    long long _type;
     NSString *_title;
     NSString *_code;
     UIImage *_image;
 }
 
-+ (id)emoticonWithType:(int)arg1 title:(id)arg2 code:(id)arg3 image:(id)arg4;
++ (id)emoticonWithType:(long long)arg1 title:(id)arg2 code:(id)arg3 image:(id)arg4;
 @property(retain, nonatomic) UIImage *image; // @synthesize image=_image;
 @property(copy, nonatomic) NSString *code; // @synthesize code=_code;
 @property(copy, nonatomic) NSString *title; // @synthesize title=_title;
-@property(nonatomic) int type; // @synthesize type=_type;
+@property(nonatomic) long long type; // @synthesize type=_type;
 - (void).cxx_destruct;
 
 @end

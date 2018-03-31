@@ -24,7 +24,6 @@
 @property(retain, nonatomic) PLPOIModel *mylbs; // @synthesize mylbs=_mylbs;
 @property(retain, nonatomic) NSMutableArray *rptPoilistArr; // @synthesize rptPoilistArr=_rptPoilistArr;
 @property(nonatomic) unsigned int uint32Ec; // @synthesize uint32Ec=_uint32Ec;
-- (void)dealloc;
 
 @end
 

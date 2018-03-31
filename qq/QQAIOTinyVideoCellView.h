@@ -46,7 +46,6 @@
 - (void)voiceSetData:(id)arg1;
 - (void)menuActionDelete:(id)arg1;
 - (void)showToastWithString:(id)arg1;
-- (void)resumeDwonloadOrUpload;
 - (void)pauseDownloadOrUpload;
 - (void)viewDidAppear;
 - (_Bool)isPlaying;

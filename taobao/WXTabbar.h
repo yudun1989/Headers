@@ -25,6 +25,7 @@
 @property(retain, nonatomic) NSMutableArray *tabItems; // @synthesize tabItems=_tabItems;
 @property(nonatomic) long long selectedIndex; // @synthesize selectedIndex=_selectedIndex;
 - (void).cxx_destruct;
+- (void)update:(id)arg1;
 - (void)layoutEmbedView:(long long)arg1;
 - (void)changeSelectedIndex:(long long)arg1;
 - (void)tabItemView:(id)arg1 didSelectIndex:(long long)arg2;
@@ -33,6 +34,7 @@
 - (void)viewDidUnload;
 - (void)viewDidLoad;
 - (id)initWithRef:(id)arg1 type:(id)arg2 styles:(id)arg3 attributes:(id)arg4 events:(id)arg5 weexInstance:(id)arg6;
+- (void)dealloc;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

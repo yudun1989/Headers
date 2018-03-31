@@ -4,7 +4,7 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-@class AVUserModel, NSArray, NSDictionary, NSMutableArray, NSMutableDictionary, NSString, UIFont;
+@class AVUserModel, NSArray, NSDictionary, NSMutableArray, NSMutableDictionary, NSString, QQAVMessageModel, UIFont;
 
 @protocol IGroupAudioChatService
 - (void)setIsOpenSDKLiveStreaming:(_Bool)arg1;
@@ -28,9 +28,11 @@
 - (_Bool)isHRInterviewer:(unsigned long long)arg1;
 - (void)didRecievedRandomPush:(unsigned long long)arg1 memberNum:(unsigned int)arg2 data:(NSString *)arg3;
 - (void)didRecievedOfflineMsg:(unsigned long long)arg1:(int)arg2:(char *)arg3:(int)arg4;
+- (void)didRecievedOfflineMsg:(QQAVMessageModel *)arg1;
 - (_Bool)needRemoveDuplicate:(NSString *)arg1;
 - (_Bool)isAddingMem:(unsigned long long)arg1;
 - (void)AddDiscussGroupMemDone:(unsigned long long)arg1 withResult:(NSDictionary *)arg2;
+- (_Bool)isGroupChating;
 - (void)updateChatStates:(int)arg1 businessType:(int)arg2 relationID:(unsigned long long)arg3;
 - (int)getPstnCountInChatting;
 - (AVUserModel *)getChatListDictChattingSecondMem:(int)arg1 businessType:(int)arg2 relationID:(unsigned long long)arg3;

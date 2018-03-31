@@ -11,6 +11,8 @@
 }
 
 + (id)shareInstance;
++ (id)strFromInt:(long long)arg1;
++ (id)strFormatWithInt:(long long)arg1;
 + (id)getTextOfNumber:(long long)arg1 frontText:(id)arg2 uintText:(id)arg3 actionText:(id)arg4 needDot:(_Bool)arg5;
 + (_Bool)privacyCanTouch:(long long)arg1;
 + (id)privacyIconByType:(long long)arg1;
@@ -103,24 +105,20 @@
 - (void)layout_CommentNumber:(id)arg1 info:(id)arg2 isDetail:(_Bool)arg3;
 - (void)layout_QzoneFeedCellComment:(id)arg1 info:(id)arg2 isForward:(_Bool)arg3 isDetail:(_Bool)arg4;
 - (id)layout_LodingItemWithText:(id)arg1 isLoading:(_Bool)arg2 info:(id)arg3;
-- (void)layout_QZoneFeedInterest:(id)arg1 info:(id)arg2;
+- (void)layout_QzoneFeedCellBottomAd:(id)arg1 info:(id)arg2;
 - (void)layout_QzoneFeedCellBottomRecomm:(id)arg1 info:(id)arg2 isForward:(_Bool)arg3 isDetail:(_Bool)arg4 isVideoFeed:(_Bool)arg5;
 - (void)layout_QzoneFeedCellLbs:(id)arg1 info:(id)arg2 isDetail:(_Bool)arg3;
 - (void)layout_QzoneFeedCellRemark:(id)arg1 info:(id)arg2 isForward:(_Bool)arg3 isDetail:(_Bool)arg4;
+- (void)layout_QzoneFriShortVideoUser:(id)arg1 info:(id)arg2;
 - (void)layout_QzoneFeedCellVideo:(id)arg1 info:(id)arg2 isForward:(_Bool)arg3 isDetail:(_Bool)arg4 video:(id)arg5;
-- (void)layout_QzoneFeedCellAudio:(id)arg1 info:(id)arg2 isForward:(_Bool)arg3 isDetail:(_Bool)arg4;
 - (void)layout_QzoneFeedCellSpecialMoreFriendCell:(id)arg1 info:(id)arg2;
 - (void)layout_QzoneFeedCellGiftItems:(id)arg1 info:(id)arg2;
-- (void)layoutMemorySealOff:(id)arg1 withFeedModel:(id)arg2 isFeed:(_Bool)arg3;
-- (void)layout_QzoneFeedCellFollowGuide:(id)arg1 info:(id)arg2;
+- (void)layout_QzoneFeedShortFriVideoViewMore:(id)arg1 info:(id)arg2;
 - (void)layout_QzoneFeedCellSpecialBirthGift:(id)arg1 info:(id)arg2;
 - (void)layoutPicList:(id)arg1 model:(id)arg2 sizeDict:(id)arg3 info:(id)arg4;
 - (void)layout_QzoneFeedCellPicture:(id)arg1 info:(id)arg2 isForward:(_Bool)arg3 isDetail:(_Bool)arg4 picture:(id)arg5;
 - (struct CGSize)mediaBoxWithFixWidth:(double)arg1 FixHeight:(double)arg2 picWidth:(double)arg3 picHeight:(double)arg4 enlargeRate:(double)arg5;
 - (struct CGSize)minSizeWithPicture:(double)arg1 picHeight:(double)arg2;
-- (void)layoutNoPicTextImage:(id)arg1;
-- (void)layoutNoPicTextImage:(id)arg1 needForwardBackground:(_Bool)arg2;
-- (void)layout_QzoneFeedFaceList:(id)arg1 info:(id)arg2 left:(double)arg3 width:(double)arg4;
 - (_Bool)isLayoutGift:(id)arg1 isForward:(_Bool)arg2;
 - (void)layout_RecomHotVideoInsideCell:(id)arg1 info:(id)arg2;
 - (void)layout_QzoneFeedCellTitleAndSummary:(id)arg1 info:(id)arg2 isForward:(_Bool)arg3 isDetail:(_Bool)arg4;
@@ -147,6 +145,7 @@
 - (id)layoutLikeWithFeedModel:(id)arg1 layoutInfo:(id)arg2 param:(id)arg3;
 - (void)layoutAllButtonSeperator:(id)arg1 info:(id)arg2 revealSep:(_Bool)arg3 force:(_Bool)arg4 increase:(_Bool)arg5;
 - (id)layoutDetailContentWithFeedModel:(id)arg1 layoutInfo:(id)arg2;
+- (id)layoutDetailBottomAdWithFeedModel:(id)arg1 layoutInfo:(id)arg2;
 - (id)layoutContentWithFeedModel:(id)arg1 layoutInfo:(id)arg2 param:(id)arg3;
 - (id)layoutWithNewFeedModel:(id)arg1;
 

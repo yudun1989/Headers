@@ -167,7 +167,7 @@
 - (void)didRespHideContactsWithResult:(int)arg1;
 - (void)didRespDisableMobileBindWithResult:(int)arg1;
 - (void)didRespCancelBindMobileWithResult:(int)arg1;
-- (void)didRespQueryQQMobileContactsNotBind:(struct ResponeQueryQQMobileContactsNotBind *)arg1 result:(int)arg2;
+- (void)didRespQueryQQMobileContactsNotBind:(struct ResponeQueryQQMobileContactsNotBind *)arg1 result:(int)arg2 requestItem:(id)arg3;
 - (void)didRespQueryQQMobileContacts:(struct ResponeQueryQQMobileContactsV3 *)arg1 result:(int)arg2;
 - (void)processQueryQQMobileContactsNotBindFinished:(struct ResponeQueryQQMobileContactsNotBind *)arg1;
 - (void)processQueryQQMobileContactsFinished:(struct ResponeQueryQQMobileContactsV3 *)arg1;

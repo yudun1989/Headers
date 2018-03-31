@@ -6,7 +6,7 @@
 
 #import <UIKit/UIView.h>
 
-@class NSString, QQStoryUrlImageView, TBVideoSimpleInfoModel, UIImageView;
+@class NSString, QQStoryUrlImageView, TBStoryVideoVoteView, TBVideoSimpleInfoModel, UIImageView;
 
 @interface QQStoryMemoryVideoItemView : UIView
 {
@@ -18,8 +18,10 @@
     NSString *_unionID;
     QQStoryUrlImageView *_coverImageView;
     UIImageView *_permissionIcon;
+    TBStoryVideoVoteView *_voteView;
 }
 
+@property(retain, nonatomic) TBStoryVideoVoteView *voteView; // @synthesize voteView=_voteView;
 @property(retain, nonatomic) UIImageView *permissionIcon; // @synthesize permissionIcon=_permissionIcon;
 @property(retain, nonatomic) QQStoryUrlImageView *coverImageView; // @synthesize coverImageView=_coverImageView;
 @property(retain, nonatomic) NSString *unionID; // @synthesize unionID=_unionID;
@@ -28,6 +30,7 @@
 @property(nonatomic) unsigned int collectionID; // @synthesize collectionID=_collectionID;
 @property(retain, nonatomic) TBVideoSimpleInfoModel *model; // @synthesize model=_model;
 @property(copy, nonatomic) NSString *vid; // @synthesize vid=_vid;
+- (void)updateVoteView;
 - (void)setVideoPermission:(id)arg1 isVip:(_Bool)arg2;
 - (void)openVideoPlayVCWithUin:(id)arg1;
 - (void)handleTap:(id)arg1;

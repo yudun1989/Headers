@@ -25,6 +25,7 @@
     UIImageView *_isOriginView;
     _Bool _playToEnd;
     _Bool _showDurationInView;
+    _Bool _showPlayCountView;
     _Bool _showLimitedVideoTips;
     _Bool _disableSoundIcon;
     _Bool _needNetworkChangeTip;
@@ -39,7 +40,7 @@
     id <QZVideoStateViewDelegate> _delegate;
     NSString *_failMsg;
     long long _errorCode;
-    UIImageView *_playIcon;
+    UIView *_playIcon;
     long long _videoPlayCnt;
     UIImageView *_playCountIcon;
     NSString *_customPlayIconName;
@@ -52,12 +53,13 @@
 @property(nonatomic) _Bool userInteraction; // @synthesize userInteraction=_userInteraction;
 @property(nonatomic) _Bool needNetworkChangeTip; // @synthesize needNetworkChangeTip=_needNetworkChangeTip;
 @property(nonatomic) long long videoPlayCnt; // @synthesize videoPlayCnt=_videoPlayCnt;
-@property(retain, nonatomic) UIImageView *playIcon; // @synthesize playIcon=_playIcon;
+@property(retain, nonatomic) UIView *playIcon; // @synthesize playIcon=_playIcon;
 @property(nonatomic) _Bool disableSoundIcon; // @synthesize disableSoundIcon=_disableSoundIcon;
 @property(nonatomic) _Bool showLimitedVideoTips; // @synthesize showLimitedVideoTips=_showLimitedVideoTips;
 @property(nonatomic) long long errorCode; // @synthesize errorCode=_errorCode;
 @property(retain, nonatomic) NSString *failMsg; // @synthesize failMsg=_failMsg;
 @property(nonatomic) __weak id <QZVideoStateViewDelegate> delegate; // @synthesize delegate=_delegate;
+@property(nonatomic) _Bool showPlayCountView; // @synthesize showPlayCountView=_showPlayCountView;
 @property(nonatomic) _Bool showDurationInView; // @synthesize showDurationInView=_showDurationInView;
 @property(nonatomic) double loadSpeed; // @synthesize loadSpeed=_loadSpeed;
 @property(nonatomic) _Bool playToEnd; // @synthesize playToEnd=_playToEnd;
@@ -87,6 +89,7 @@
 - (void)showPlayIcon:(_Bool)arg1;
 - (void)layoutSubviews;
 - (void)setPlayIconHidden:(_Bool)arg1;
+- (id)initWithFrame:(struct CGRect)arg1;
 
 @end
 

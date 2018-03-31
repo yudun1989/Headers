@@ -18,15 +18,16 @@
 #import <QQMainProject/QZCommonWidgetDelegate-Protocol.h>
 #import <QQMainProject/QZCoverViewWrapperDelegate-Protocol.h>
 #import <QQMainProject/QZEventWidgetDelegate-Protocol.h>
+#import <QQMainProject/QZFacadeViewDelegate-Protocol.h>
 #import <QQMainProject/QZIntelligenceBannerContainerDelegate-Protocol.h>
 #import <QQMainProject/QZMenuViewDelegate-Protocol.h>
 #import <QQMainProject/QZRooftopWebviewDelegate-Protocol.h>
 #import <QQMainProject/QZoneBannerContainerDelegate-Protocol.h>
 #import <QQMainProject/UIActionSheetDelegate-Protocol.h>
 
-@class MQZCameraWrapper, MQZMultiImagePickerWrapper, MQZoneNavigationDoubleButtonView, NSDictionary, NSIndexPath, NSMutableArray, NSMutableDictionary, NSMutableSet, NSNumber, NSString, QZCommonWidget, QZEventWidgetWrapper, QZFloatView, QZFunctionManager, QZIntelligenceBannerContainer, QZJNsQmallCoverQzmallCustomNavi, QZMenuView, QZRooftopInfo, QZRooftopNavigationController, QZRooftopWebviewController, QZWidgetView, QZoneBannerContainer, QzoneBannerUnreadBannerView, QzoneFeedCell, QzoneFeedModel, UIActivityIndicatorView, UIControl, UIImageView, UIView, UIWindow;
+@class MQZCameraWrapper, MQZMultiImagePickerWrapper, MQZoneNavigationDoubleButtonView, MQzoneFollowTipView, NSDictionary, NSIndexPath, NSMutableArray, NSMutableDictionary, NSNumber, NSString, QZCommonWidget, QZEventWidgetWrapper, QZFacadeView, QZFloatView, QZFunctionManager, QZIntelligenceBannerContainer, QZJNsQmallCoverQzmallCustomNavi, QZMenuView, QZNotificationInfo, QZRooftopInfo, QZRooftopNavigationController, QZRooftopWebviewController, QZWidgetView, QZoneBannerContainer, QzoneBannerUnreadBannerView, QzoneFeedCell, QzoneFeedModel, UIActivityIndicatorView, UIControl, UIImageView, UIView, UIWindow;
 
-@interface MQZoneActiveFeedViewController : MQZCoverFeedListViewController <QQRichMediaPickerReportDelegate, MQZMultiImagePickerWrapperDelegate, QZMenuViewDelegate, MQZonePhotoDescriptionDelegate, QZCommonWidgetDelegate, QZAvatarWidgetDelegate, PhotoEditDelegate, QZEventWidgetDelegate, QZRooftopWebviewDelegate, UIActionSheetDelegate, MQZoneCoverHeaderViewDelegate, MQZoneActiveFeedHeaderViewDelegate, QZCoverViewWrapperDelegate, QQMultiImagePickerControllerDelegate, QZoneBannerContainerDelegate, QZIntelligenceBannerContainerDelegate, MQZImagePickerDelegate>
+@interface MQZoneActiveFeedViewController : MQZCoverFeedListViewController <QQRichMediaPickerReportDelegate, MQZMultiImagePickerWrapperDelegate, QZMenuViewDelegate, MQZonePhotoDescriptionDelegate, QZCommonWidgetDelegate, QZAvatarWidgetDelegate, PhotoEditDelegate, QZEventWidgetDelegate, QZRooftopWebviewDelegate, UIActionSheetDelegate, MQZoneCoverHeaderViewDelegate, MQZoneActiveFeedHeaderViewDelegate, QZCoverViewWrapperDelegate, QQMultiImagePickerControllerDelegate, QZoneBannerContainerDelegate, QZIntelligenceBannerContainerDelegate, MQZImagePickerDelegate, QZFacadeViewDelegate>
 {
     _Bool _hasMore;
     long long _getQBossAdvRequestID;
@@ -51,6 +52,8 @@
     UIControl *_maskControl;
     UIWindow *_coverWindow;
     MQZMultiImagePickerWrapper *_picker;
+    QZFacadeView *_facadeView;
+    _Bool _isFacadeDisappeared;
     NSIndexPath *_clickedFeedIndexPath;
     _Bool _currShowWidgetAI;
     _Bool _observing;
@@ -58,6 +61,8 @@
     long long _scanADFeedNum;
     double _enterActiveVCTime;
     NSString *_attachinfo;
+    _Bool _endViewWillAppear;
+    _Bool _shouldShowFacadeView;
     QZIntelligenceBannerContainer *_currentBannerContainer;
     QZJNsQmallCoverQzmallCustomNavi *_naviDeco;
     QZWidgetView *_widgetView;
@@ -89,9 +94,13 @@
     QzoneFeedCell *_followScrollAnimationView;
     long long _feedFirstPieceID;
     _Bool _processingSecPiece;
-    NSMutableSet *_needUpdateFeeds;
+    _Bool _preSendFeedRequest;
+    _Bool _viewDidLoad;
+    _Bool _refreshTableInViewDidLoad;
+    QZNotificationInfo *_feedInfo;
     _Bool _delayAfterAppearMethod;
     NSString *_fullScreenCoverUrl;
+    MQzoneFollowTipView *_messageTipView;
     double _layoutDrawingBeginTime;
     MQZCameraWrapper *_cameraWrapper;
     _Bool _shouldScrollToTop;
@@ -108,10 +117,12 @@
     NSString *_lastRefreshFirstFeedskey;
     double _scrollBeginContentOffsetY;
     NSNumber *_enterQzoneTime;
+    long long _firstShowFeedCnt;
 }
 
 + (_Bool)isTimeOutForOffset:(long long)arg1;
 + (void)clearContentOffset;
+@property(nonatomic) long long firstShowFeedCnt; // @synthesize firstShowFeedCnt=_firstShowFeedCnt;
 @property(retain, nonatomic) NSNumber *enterQzoneTime; // @synthesize enterQzoneTime=_enterQzoneTime;
 @property(nonatomic) _Bool firstEnterQzoneAndRefresh; // @synthesize firstEnterQzoneAndRefresh=_firstEnterQzoneAndRefresh;
 @property(nonatomic) _Bool enterQzoneAndRefresh; // @synthesize enterQzoneAndRefresh=_enterQzoneAndRefresh;
@@ -192,6 +203,7 @@
 - (double)tableView:(id)arg1 heightForRowAtIndexPath:(id)arg2;
 - (long long)tableView:(id)arg1 numberOfRowsInSection:(long long)arg2;
 - (long long)numberOfSectionsInTableView:(id)arg1;
+- (_Bool)shouldLoadMore;
 - (void)dealWithTypeForNotifyTopfeeds:(long long)arg1;
 - (void)onNotifyMoodHitThemeAlbum:(id)arg1;
 - (long long)onNotifyDelUgcSuccess:(id)arg1;
@@ -202,15 +214,16 @@
 - (long long)onSyncGetActiveFeedNotify:(id)arg1;
 - (void)preloadForAppStoreFeeds:(id)arg1;
 - (void)canvasPicPreload:(id)arg1;
-- (void)setFeedNeedUpdateWithKey:(id)arg1;
-- (void)updateSecPieceFeeds:(id)arg1;
-- (_Bool)isProcessSecPiece;
 - (long long)onGetActiveFeedNotify:(id)arg1;
+- (void)refreshWithInfo:(id)arg1;
+- (void)delayFeedInsert:(id)arg1;
 - (void)onNotifySetFeedCover:(id)arg1;
 - (void)addObjectsFromArray:(id)arg1;
 - (void)filterTodayInHistoryFeed;
 - (void)onLoginOutNotify:(id)arg1;
 - (void)ActionLogin;
+- (void)bringNewQBossADBannerToFront;
+- (void)willSwipeIntelligenceBannerView;
 - (id)intelligenceBannerCell:(id)arg1;
 - (id)intelligencePassiveBannerCell:(id)arg1;
 - (id)getAnEmptyCellForTableView:(id)arg1;
@@ -221,6 +234,7 @@
 - (void)updateNavigationActiveViewState:(_Bool)arg1;
 - (void)onRefreshFeeds;
 - (_Bool)onRefresh;
+- (void)preSendFeedRequest;
 - (id)GetLastFeedModel;
 - (id)getDictFeedsWithKey;
 - (id)getFeedList;
@@ -241,6 +255,7 @@
 - (void)clickBuddle:(id)arg1;
 - (void)clickNaviItem:(id)arg1;
 - (void)clickPassiveMessageBar;
+- (void)clickPassiveMessageBarTop;
 - (void)clickAvatarView;
 - (void)longPressFace;
 - (void)clickFace:(long long)arg1 avatarCover:(long long)arg2 isNameplate:(_Bool)arg3;
@@ -258,6 +273,7 @@
 - (void)getProfile;
 - (void)createHeaderView;
 - (void)didBannerClosed;
+- (void)clickIntelligenceBannerView:(id)arg1 scheme:(id)arg2;
 - (void)clickIntelligenceBannerView:(id)arg1;
 - (void)eventPhotoUploaded:(id)arg1;
 - (void)eventPhotoUploadedAtIndex:(long long)arg1;
@@ -278,6 +294,8 @@
 - (void)postCleanMemory;
 - (void)didReceiveLowMemoryNotification;
 - (void)clickRightBtn;
+- (void)hideTipToClickRightBtn;
+- (void)showTipToClickRightBtn;
 - (void)didMQZImagePicker:(id)arg1 selectedImages:(id)arg2;
 - (void)longPressRightBtn:(id)arg1;
 - (void)animationDidStop:(id)arg1 finished:(id)arg2 context:(void *)arg3;
@@ -303,6 +321,12 @@
 - (void)stopHeaderRefreshing:(_Bool)arg1;
 - (void)viewDidDisappear:(_Bool)arg1;
 - (void)viewWillDisappear:(_Bool)arg1;
+- (void)showFacadeView;
+- (void)showTopUI;
+- (void)facadeViewFadeAway;
+- (void)clickEnterButton;
+- (void)clickBackButton;
+- (void)clickFacade:(id)arg1;
 - (void)onUpdateFloat:(id)arg1;
 - (void)removeFloatView;
 - (void)showFloatView;
@@ -321,7 +345,6 @@
 - (void)startBannerViewAutoPlay;
 - (void)afterViewDidAppear;
 - (void)viewDidAppear:(_Bool)arg1;
-- (void)requestQzoneFacadeData;
 - (_Bool)isSupportRightDragToGoBack;
 - (void)viewWillAppear:(_Bool)arg1;
 - (void)setUpTheCameraGuideView;

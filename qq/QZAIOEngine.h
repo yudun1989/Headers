@@ -6,18 +6,25 @@
 
 #import <QQMainProject/QZBaseEngine.h>
 
+@class NSMutableDictionary, NSRecursiveLock;
+
 @interface QZAIOEngine : QZBaseEngine
 {
+    NSMutableDictionary *_aioNewestFeedMutlDict;
+    NSRecursiveLock *_lock;
+    _Bool _isNewestFeedDataChanged;
 }
 
++ (void)updateLoverRelationship;
 + (id)instance;
+- (void).cxx_destruct;
 - (void)dealloc;
 - (long long)getAIONewestFeedFromNet:(long long)arg1;
 - (id)getAIONewestFeedFromCache:(long long)arg1;
 - (void)updateAIONewestFeedInfo:(long long)arg1 feedInfo:(id)arg2;
 - (void)checkCanShowQzoneNewestFeed:(long long)arg1 executeBlockOnMainThread:(CDUnknownBlockType)arg2;
-- (id)getHostDataInfo:(long long)arg1;
-- (void)checkCacheCount:(id)arg1;
+- (id)getHostDataInfoNeedLock:(long long)arg1;
+- (void)checkCacheCountNeedLock:(id)arg1;
 - (void)updateCache;
 - (double)getDellOneC2CMsgTime:(long long)arg1;
 - (double)getDelAllMsgTime;

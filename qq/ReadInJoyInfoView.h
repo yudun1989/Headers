@@ -13,27 +13,17 @@
     UILabel *footerLabel;
     UILabel *sourceLabel;
     ReadInJoyChannelArticle *_feedsModel;
-    UILabel *_adFooterLabel;
-    UILabel *_appFooterLabel;
-    UIView *_appBanner;
-    UILabel *_appBannerOpenLabel;
-    UILabel *_appBannerTipLabel;
+    UILabel *_appOpenLabel;
 }
 
-@property(retain, nonatomic) UILabel *appBannerTipLabel; // @synthesize appBannerTipLabel=_appBannerTipLabel;
-@property(retain, nonatomic) UILabel *appBannerOpenLabel; // @synthesize appBannerOpenLabel=_appBannerOpenLabel;
-@property(retain, nonatomic) UIView *appBanner; // @synthesize appBanner=_appBanner;
-@property(retain, nonatomic) UILabel *appFooterLabel; // @synthesize appFooterLabel=_appFooterLabel;
-@property(retain, nonatomic) UILabel *adFooterLabel; // @synthesize adFooterLabel=_adFooterLabel;
+@property(retain, nonatomic) UILabel *appOpenLabel; // @synthesize appOpenLabel=_appOpenLabel;
 @property(retain, nonatomic) ReadInJoyChannelArticle *feedsModel; // @synthesize feedsModel=_feedsModel;
 - (void)dealloc;
 - (void)updateAppInstallState;
 - (void)feedbackTapped;
-- (void)layoutForAdFeeds;
 - (void)layoutForNormalFeeds;
 - (void)layoutForSocialFeeds;
 - (void)layoutSubviewsExt;
-- (void)resetAdViews;
 - (void)layoutSubviews;
 - (id)init;
 

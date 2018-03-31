@@ -6,14 +6,20 @@
 
 #import <QQMainProject/QQAIOTextModel.h>
 
+@class QQAIOMultRichModel;
+
 @interface QQAIOTextSubModel : QQAIOTextModel
 {
     QQAIOTextModel *_parentModel;
+    QQAIOMultRichModel *_realModel;
 }
 
+@property(nonatomic) __weak QQAIOMultRichModel *realModel; // @synthesize realModel=_realModel;
 @property(nonatomic) __weak QQAIOTextModel *parentModel; // @synthesize parentModel=_parentModel;
 - (void).cxx_destruct;
+- (id)favoritesInfoModel;
 - (void)reloadLayoutResult;
+- (_Bool)canMultiMsgDelete;
 - (id)cellViewClassName;
 - (_Bool)isLongSplitMessage;
 - (_Bool)highlighted;

@@ -11,7 +11,7 @@
 }
 
 + (_Bool)bundleLoadDynamicLibWithPath:(id)arg1;
-+ (_Bool)loadTBMediaPlayerFramework;
++ (_Bool)loadFrameworkWithName:(id)arg1;
 + (_Bool)loadFramework;
 + (id)userAgentInfo;
 + (id)policyIPForHost:(id)arg1;

@@ -6,7 +6,7 @@
 
 #import <Foundation/NSObject.h>
 
-@class NSMutableArray, NSMutableDictionary, TBOrderBannerComponent, TBOrderDoOpInfo, TBOrderDoPayInfo, TBOrderGalleryComponent, TBOrderLabelModel, TBOrderPageComponent, TBOrderTailInfo, TBOrderTemplateComponent;
+@class NSMutableArray, NSMutableDictionary, TBOrderBannerComponent, TBOrderDoOpInfo, TBOrderDoPayInfo, TBOrderGalleryComponent, TBOrderLabelModel, TBOrderPageComponent, TBOrderPreSellBannerModel, TBOrderTailInfo, TBOrderTemplateComponent;
 
 @interface TBOrderStructure : NSObject
 {
@@ -18,6 +18,7 @@
     TBOrderPageComponent *_page;
     TBOrderBannerComponent *_banner;
     TBOrderGalleryComponent *_gallery;
+    TBOrderPreSellBannerModel *_preSellBanner;
     TBOrderTemplateComponent *_template;
     TBOrderDoPayInfo *_doPayInfo;
     TBOrderDoOpInfo *_doOpInfo;
@@ -31,6 +32,7 @@
 @property(retain) TBOrderDoOpInfo *doOpInfo; // @synthesize doOpInfo=_doOpInfo;
 @property(retain) TBOrderDoPayInfo *doPayInfo; // @synthesize doPayInfo=_doPayInfo;
 @property(retain) TBOrderTemplateComponent *template; // @synthesize template=_template;
+@property(retain) TBOrderPreSellBannerModel *preSellBanner; // @synthesize preSellBanner=_preSellBanner;
 @property(retain) TBOrderGalleryComponent *gallery; // @synthesize gallery=_gallery;
 @property(retain) TBOrderBannerComponent *banner; // @synthesize banner=_banner;
 @property(retain) TBOrderPageComponent *page; // @synthesize page=_page;

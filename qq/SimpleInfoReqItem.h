@@ -11,10 +11,12 @@
 @interface SimpleInfoReqItem : SAMRequestItem
 {
     _Bool _isNeedDateNick;
+    _Bool _isJustXMan;
     NSArray *_uinArray;
 }
 
 + (id)getSimpleInfoArray:(const char *)arg1 len:(int)arg2 seq:(int)arg3;
+@property(nonatomic) _Bool isJustXMan; // @synthesize isJustXMan=_isJustXMan;
 @property(nonatomic) _Bool isNeedDateNick; // @synthesize isNeedDateNick=_isNeedDateNick;
 @property(retain, nonatomic) NSArray *uinArray; // @synthesize uinArray=_uinArray;
 - (void).cxx_destruct;

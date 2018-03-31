@@ -16,14 +16,11 @@
 #import <QQMainProject/UIPageViewControllerDataSource-Protocol.h>
 #import <QQMainProject/UIPageViewControllerDelegate-Protocol.h>
 
-@class NSObject, NSString, NSTimer, OnlineTag, QRAlertView, QRPanGestureRecognizer, QRReadingDataSource, QRSubPageViewController, UIButton, UIPageViewController;
+@class NSObject, NSString, OnlineTag, QRAlertView, QRPanGestureRecognizer, QRReadingDataSource, QRSubPageViewController, UIButton, UIPageViewController;
 @protocol OS_dispatch_group;
 
 @interface TextBaseViewController : ReadingBaseViewController <QRReadingPageViewDataSource, QRReadingPageViewDelegate, UIPageViewControllerDataSource, UIPageViewControllerDelegate, UIAlertViewDelegate, QRChapterListViewControllerDelegate, HttpRequestDelegate, UIGestureRecognizerDelegate, QRReadingBookInfoChangeDelegate>
 {
-    NSTimer *_progressCheckTimer;
-    float _progressValueLongTime;
-    float _progressValueLast;
     QRAlertView *_backBookShelfAlert;
     QRAlertView *_messageAlert;
     QRAlertView *_publicAccountAlert;
@@ -40,8 +37,6 @@
     UIButton *_commentButton;
     _Bool _isDraggingDown;
     _Bool _toNextPage;
-    float _progressValueNow;
-    float _progressValueBefore;
     QRPanGestureRecognizer *_dragDownGesture;
     QRReadingDataSource *_dataSource;
     QRSubPageViewController *_subPageViewController;
@@ -50,8 +45,6 @@
 
 @property(retain, nonatomic) NSObject<OS_dispatch_group> *setPageViewControllerGroup; // @synthesize setPageViewControllerGroup=_setPageViewControllerGroup;
 @property(retain, nonatomic) QRSubPageViewController *subPageViewController; // @synthesize subPageViewController=_subPageViewController;
-@property(nonatomic) float progressValueBefore; // @synthesize progressValueBefore=_progressValueBefore;
-@property(nonatomic) float progressValueNow; // @synthesize progressValueNow=_progressValueNow;
 @property(nonatomic) _Bool toNextPage; // @synthesize toNextPage=_toNextPage;
 @property(retain, nonatomic) QRReadingDataSource *dataSource; // @synthesize dataSource=_dataSource;
 @property(nonatomic) _Bool isDraggingDown; // @synthesize isDraggingDown=_isDraggingDown;
@@ -68,15 +61,9 @@
 - (void)doUpdateBookReadProgress:(id)arg1;
 - (void)commitBookReadProgress;
 - (void)updateTime;
-- (void)popShowBySlider:(id)arg1 chapterInfo:(id)arg2 progress:(double)arg3 revokeBtnShow:(_Bool)arg4;
-- (void)popShowBySlider:(id)arg1 chapterInfo:(id)arg2 progress:(double)arg3;
-- (void)popShowBySlider:(id)arg1 chapterInfo:(id)arg2 revokeBtnShow:(_Bool)arg3;
-- (void)popShowBySlider:(id)arg1 chapterInfo:(id)arg2;
-- (id)getChapterInfoByBookMark:(id)arg1;
+- (id)getChapterInfoByParaOffset:(long long)arg1;
 - (void)updateFontNameChangeHandler:(id)arg1;
 - (void)updateTextSize:(unsigned long long)arg1;
-- (void)decreaseTextSize;
-- (void)increaseTextSize;
 - (void)switchDayNightMode;
 - (void)updateDayNightModeWithOrientation:(long long)arg1;
 - (void)updateTheme;

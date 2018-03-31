@@ -10,11 +10,16 @@
 {
 }
 
++ (_Bool)isContainPlatformData:(id)arg1;
++ (_Bool)isContainSubData:(id)arg1;
++ (id)parsePlatformExpression:(id)arg1 data:(id)arg2 dataParser:(id)arg3;
++ (id)parseSubdataExpression:(id)arg1 data:(id)arg2 dataParser:(id)arg3;
++ (_Bool)isNumeric:(id)arg1;
 + (id)expressionValue:(id)arg1 data:(id)arg2 dataParser:(id)arg3;
 + (id)constValue:(id)arg1;
-+ (_Bool)isCustomExpressionString:(id)arg1;
-+ (_Bool)isOriginalDataExpression:(id)arg1;
++ (_Bool)isCustomExpression:(id)arg1;
 + (_Bool)isCustomConstExpression:(id)arg1;
++ (id)evalDataExpr:(id)arg1 data:(id)arg2 subData:(id)arg3 dataParser:(id)arg4;
 + (id)evalDataExpr:(id)arg1 data:(id)arg2 dataParser:(id)arg3;
 + (id)extractTokensFromExpr:(id)arg1 separator:(id)arg2;
 + (_Bool)isArrayContains:(id)arg1 value:(id)arg2;

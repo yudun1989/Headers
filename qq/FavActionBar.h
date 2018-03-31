@@ -24,7 +24,6 @@
 - (void)setActionEnabled:(_Bool)arg1 atIndex:(unsigned long long)arg2;
 - (void)emphasizeActionAtIndex:(unsigned long long)arg1;
 - (void)actionClick:(id)arg1;
-- (void)setTips:(id)arg1 width:(double)arg2;
 - (void)removeBtnIcon;
 - (void)setActionButtons:(id)arg1 enable:(_Bool)arg2;
 - (void)setActionLabels:(id)arg1 enable:(_Bool)arg2;

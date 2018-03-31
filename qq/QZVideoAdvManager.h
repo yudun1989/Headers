@@ -18,8 +18,12 @@
     long long _popVideoLength;
     long long _popPlayLonger;
     long long _popFirstVideoPlayLonger;
+    long long _after_pastera_adv_count;
+    long long _after_pastera_adv_playtime;
 }
 
+@property(nonatomic) long long after_pastera_adv_playtime; // @synthesize after_pastera_adv_playtime=_after_pastera_adv_playtime;
+@property(nonatomic) long long after_pastera_adv_count; // @synthesize after_pastera_adv_count=_after_pastera_adv_count;
 @property(nonatomic) long long popFirstVideoPlayLonger; // @synthesize popFirstVideoPlayLonger=_popFirstVideoPlayLonger;
 @property(nonatomic) long long popPlayLonger; // @synthesize popPlayLonger=_popPlayLonger;
 @property(nonatomic) long long popVideoLength; // @synthesize popVideoLength=_popVideoLength;
@@ -29,7 +33,7 @@
 @property(nonatomic) long long remainDisplayCount; // @synthesize remainDisplayCount=_remainDisplayCount;
 @property(nonatomic) long long maxDisplayCount; // @synthesize maxDisplayCount=_maxDisplayCount;
 - (void).cxx_destruct;
-- (_Bool)popCheckCanShowWithIndex:(long long)arg1 videoDuration:(long long)arg2;
+- (_Bool)popCheckCanRequestWithIndex:(long long)arg1 videoDuration:(double)arg2 feedmodel:(id)arg3;
 - (_Bool)popCheckCanShowWithPlayedTime:(long long)arg1 index:(long long)arg2;
 - (_Bool)canPremovieDisplayNext;
 - (void)clear;

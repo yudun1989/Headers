@@ -14,7 +14,12 @@
     UILabel *_singleLineDescLabel;
     UILabel *_extendedLabel1;
     UILabel *_extendedLabel2;
+    UIImage *_iconImage;
     UIImageView *_iconImageView;
+    UIImage *_accessoryDescImg;
+    UIImageView *_accessoryDescImgView;
+    UIImage *_accessoryRedDotImg;
+    UIImageView *_accessoryRedDotImgView;
     NSString *_detailDesc;
     NSString *_singleLineDetailDesc;
     NSString *_extendedDesc1;
@@ -22,13 +27,11 @@
     long long _forcedNumberOfLines;
     _Bool _clippingDetailTail;
     UIActivityIndicatorView *_loadingView;
-    UIImage *_iconImage;
 }
 
 + (double)calculateCellHeight:(id)arg1 detailRow:(int)arg2;
 + (double)calculateCellHeight:(id)arg1;
 + (double)calculateExtendedCellHeight:(id)arg1 content:(id)arg2;
-@property(retain, nonatomic) UIImage *iconImage; // @synthesize iconImage=_iconImage;
 - (void)prepareForReuse;
 @property(retain, nonatomic) NSString *extendedDesc2; // @dynamic extendedDesc2;
 @property(retain, nonatomic) NSString *extendedDesc1; // @dynamic extendedDesc1;
@@ -41,8 +44,11 @@
 - (id)initWithStyle:(long long)arg1 reuseIdentifier:(id)arg2;
 
 // Remaining properties
+@property(retain, nonatomic) UIImage *accessoryDescImg; // @dynamic accessoryDescImg;
+@property(retain, nonatomic) UIImage *accessoryRedDotImg; // @dynamic accessoryRedDotImg;
 @property(nonatomic) _Bool clippingDetailTail; // @dynamic clippingDetailTail;
 @property(nonatomic) long long forcedNumberOfLines; // @dynamic forcedNumberOfLines;
+@property(retain, nonatomic) UIImage *iconImage; // @dynamic iconImage;
 @property(retain, nonatomic) NSString *singleLineDetailDesc; // @dynamic singleLineDetailDesc;
 
 @end

@@ -10,7 +10,7 @@
 #import <QQMainProject/UICollectionViewDelegate-Protocol.h>
 #import <QQMainProject/UICollectionViewDelegateFlowLayout-Protocol.h>
 
-@class NSArray, NSString, QQStoryVideoPreview, UICollectionView;
+@class NSArray, NSString, QQStoryVideoPreview, TBStoryVideoVoteView, UICollectionView;
 @protocol QQStoryFeedVideoViewDelegate;
 
 @interface QQStoryFeedVideoView : UIView <UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout>
@@ -21,9 +21,11 @@
     double _videoWidth;
     id <QQStoryFeedVideoViewDelegate> _delegate;
     NSArray *_videoInfo;
+    TBStoryVideoVoteView *_videoVoteView;
 }
 
 + (double)estimatedHeight:(double)arg1;
+@property(retain, nonatomic) TBStoryVideoVoteView *videoVoteView; // @synthesize videoVoteView=_videoVoteView;
 @property(nonatomic) _Bool isDragLeftInEnd; // @synthesize isDragLeftInEnd=_isDragLeftInEnd;
 @property(retain, nonatomic) NSArray *videoInfo; // @synthesize videoInfo=_videoInfo;
 @property(nonatomic) __weak id <QQStoryFeedVideoViewDelegate> delegate; // @synthesize delegate=_delegate;
@@ -42,7 +44,9 @@
 - (long long)numberOfSectionsInCollectionView:(id)arg1;
 - (void)pauseFirstVideo;
 - (void)playFirstVideo:(int)arg1 unioinId:(id)arg2;
+- (id)firstVideoInfo;
 - (void)reloadData;
+- (void)configureVideoVoteInfoWithVideoInfoModel:(id)arg1;
 - (void)dealloc;
 - (void)setupPreview;
 - (void)setupCollectionView;

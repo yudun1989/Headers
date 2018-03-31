@@ -6,7 +6,7 @@
 
 #import "XSearchBaseCell.h"
 
-@class NSMutableArray, NSString, TBSRPXSearchService, TBSearchIconViewComponent, TBShopSearchNewShopView, TBXSearchShopNewResultItemModel, UILabel, UIView;
+@class NSMutableArray, NSString, TBSRPXSearchService, TBSearchIconViewComponent, TBSearchPropTagView, TBShopSearchNewShopView, TBXSearchShopNewResultItemModel, UILabel, UIView;
 
 @interface TBSRPXSearchShopNewCell : XSearchBaseCell
 {
@@ -17,16 +17,18 @@
     NSString *_sellerId;
     NSString *_pageName;
     NSString *_keyword;
-    UIView *_bottomView;
     TBXSearchShopNewResultItemModel *_item;
     TBSearchIconViewComponent *_iconViewComponent;
+    TBSearchPropTagView *_propTagView;
+    UIView *_containerView;
 }
 
 + (double)heightOfCell:(id)arg1 searchService:(id)arg2;
 + (struct CGSize)cellSizeWithModel:(id)arg1 searchService:(id)arg2 layoutStyle:(long long)arg3;
+@property(retain, nonatomic) UIView *containerView; // @synthesize containerView=_containerView;
+@property(retain, nonatomic) TBSearchPropTagView *propTagView; // @synthesize propTagView=_propTagView;
 @property(retain, nonatomic) TBSearchIconViewComponent *iconViewComponent; // @synthesize iconViewComponent=_iconViewComponent;
 @property(retain, nonatomic) TBXSearchShopNewResultItemModel *item; // @synthesize item=_item;
-@property(retain, nonatomic) UIView *bottomView; // @synthesize bottomView=_bottomView;
 @property(retain, nonatomic) NSString *keyword; // @synthesize keyword=_keyword;
 @property(retain, nonatomic) NSString *pageName; // @synthesize pageName=_pageName;
 @property(retain, nonatomic) NSString *sellerId; // @synthesize sellerId=_sellerId;

@@ -28,6 +28,7 @@
 @property(retain, nonatomic) UIImageView *leftIconView; // @synthesize leftIconView=_leftIconView;
 @property(nonatomic) __weak TBTradeRichSelectModel *model; // @synthesize model=_model;
 - (void).cxx_destruct;
+- (void)dealloc;
 - (void)setAccessibilityLabelAndTraits:(id)arg1;
 - (void)showInfo:(id)arg1;
 - (void)cellDidSelected;

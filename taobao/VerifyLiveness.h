@@ -17,10 +17,12 @@
     _Bool _bSmallImageMode;
     _Bool _needActionImage;
     _Bool _needGaze;
+    _Bool _onlyGaze;
     _Bool _livenessLimitFlag;
     _Bool _otherLimitFlag;
     _Bool _useCloudApi;
     _Bool _showOtherButton;
+    _Bool _detectOcclusion;
     int _maxCount;
     int _curRetryCount;
     UIViewController *_vc;
@@ -29,10 +31,12 @@
 }
 
 + (id)componentName;
+@property(nonatomic) _Bool detectOcclusion; // @synthesize detectOcclusion=_detectOcclusion;
 @property(nonatomic) _Bool showOtherButton; // @synthesize showOtherButton=_showOtherButton;
 @property(nonatomic) _Bool useCloudApi; // @synthesize useCloudApi=_useCloudApi;
 @property(nonatomic) _Bool otherLimitFlag; // @synthesize otherLimitFlag=_otherLimitFlag;
 @property(nonatomic) _Bool livenessLimitFlag; // @synthesize livenessLimitFlag=_livenessLimitFlag;
+@property(nonatomic) _Bool onlyGaze; // @synthesize onlyGaze=_onlyGaze;
 @property(nonatomic) _Bool needGaze; // @synthesize needGaze=_needGaze;
 @property(nonatomic) _Bool needActionImage; // @synthesize needActionImage=_needActionImage;
 @property(nonatomic) _Bool bSmallImageMode; // @synthesize bSmallImageMode=_bSmallImageMode;

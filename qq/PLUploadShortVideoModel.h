@@ -16,6 +16,7 @@
     unsigned int _videoDuration;
     unsigned int _startTime;
     unsigned int _hasFace;
+    unsigned int _createTime;
     PLFeedsLBSInfo *_lbsInfo;
     NSString *_city;
     NSString *_latitude;
@@ -43,14 +44,10 @@
     NSString *_vid;
     long long _feedUploadState;
     NSMutableDictionary *_extParam;
-    unsigned long long _primaryKey;
 }
 
 + (id)persistentProperties;
-+ (id)primaryKey;
-+ (id)tableName;
-+ (id)dbName;
-@property(nonatomic) unsigned long long primaryKey; // @synthesize primaryKey=_primaryKey;
+@property(nonatomic) unsigned int createTime; // @synthesize createTime=_createTime;
 @property(retain, nonatomic) NSMutableDictionary *extParam; // @synthesize extParam=_extParam;
 @property(nonatomic) long long feedUploadState; // @synthesize feedUploadState=_feedUploadState;
 @property(nonatomic) _Bool isImport; // @synthesize isImport=_isImport;
@@ -84,10 +81,6 @@
 @property(retain, nonatomic) NSString *latitude; // @synthesize latitude=_latitude;
 @property(retain, nonatomic) NSString *city; // @synthesize city=_city;
 @property(retain, nonatomic) PLFeedsLBSInfo *lbsInfo; // @synthesize lbsInfo=_lbsInfo;
-- (unsigned long long)hash;
-- (_Bool)isEqual:(id)arg1;
-- (void)dealloc;
-- (id)init;
 
 @end
 

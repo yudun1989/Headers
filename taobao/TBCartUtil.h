@@ -11,7 +11,7 @@
 }
 
 + (id)revisePicUrlStr:(id)arg1;
-+ (int)cartNetworkTypeWithNetworkStatus:(unsigned long long)arg1;
++ (long long)cartNetworkTypeWithNetworkStatus:(unsigned long long)arg1;
 
 @end
 

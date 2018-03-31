@@ -13,9 +13,11 @@
     NSString *_serviceName;
     NSString *_userId;
     NSString *_appKey;
+    NSString *_deviceId;
 }
 
 + (id)defaultOptions;
+@property(retain, nonatomic) NSString *deviceId; // @synthesize deviceId=_deviceId;
 @property(retain, nonatomic) NSString *appKey; // @synthesize appKey=_appKey;
 @property(retain, nonatomic) NSString *userId; // @synthesize userId=_userId;
 @property(retain, nonatomic) NSString *serviceName; // @synthesize serviceName=_serviceName;

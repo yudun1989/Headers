@@ -29,7 +29,7 @@
 @property(retain, nonatomic) NSTimer *updateTimer; // @synthesize updateTimer=_updateTimer;
 @property(retain, nonatomic) NSMutableArray *viewControllerMonitorList; // @synthesize viewControllerMonitorList=_viewControllerMonitorList;
 @property(retain, nonatomic) NSMutableDictionary *viewImageViewMap; // @synthesize viewImageViewMap=_viewImageViewMap;
-@property(nonatomic) NSDictionary *parameters; // @synthesize parameters=_parameters;
+@property(copy, nonatomic) NSDictionary *parameters; // @synthesize parameters=_parameters;
 @property(nonatomic) _Bool enableNSLog; // @synthesize enableNSLog=_enableNSLog;
 @property(nonatomic) _Bool enableContextLog; // @synthesize enableContextLog=_enableContextLog;
 @property(nonatomic) __weak id context; // @synthesize context=_context;
@@ -37,7 +37,7 @@
 - (void).cxx_destruct;
 - (void)log:(id)arg1;
 - (void)onViewExit:(id)arg1;
-- (void)handleMemoryWarning;
+- (int)handleMemoryWarning;
 - (void)stop;
 - (void)start;
 - (void)updateTimerFunc:(id)arg1;

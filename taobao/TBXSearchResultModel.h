@@ -6,7 +6,7 @@
 
 #import <Foundation/NSObject.h>
 
-@class NSArray, NSDictionary, NSMutableArray, NSString, TBPriceRange, TBSearchBotSearchModel, TBSearchEmptyViewModel, TBSearchItemList, TBSearchNXModel, TBSearchOnesearchModel, TBSearchPromotionBanner, TBSearchPushButtonModel, TBSearchReview, TBSearchSelectHelper, TBSearchTheme, TBXSearchSortbarModel, TBXSearchTopBarModel;
+@class NSArray, NSDictionary, NSMutableArray, NSString, TBPriceRange, TBSearchBotSearchModel, TBSearchEmptyViewModel, TBSearchItemList, TBSearchNXModel, TBSearchOnesearchModel, TBSearchPromotionBanner, TBSearchPushButtonModel, TBSearchReview, TBSearchTheme, TBXSearchSortbarModel, TBXSearchTopBarModel;
 
 @interface TBXSearchResultModel : NSObject
 {
@@ -29,7 +29,6 @@
     TBSearchOnesearchModel *_onesearch;
     NSString *_activityFlag;
     TBSearchNXModel *_searchNXComboModel;
-    TBSearchSelectHelper *_selectHelper;
     TBSearchEmptyViewModel *_emptyViewModel;
     NSMutableArray *_filterArray;
     TBXSearchSortbarModel *_sortMenu;
@@ -55,7 +54,6 @@
 @property(retain, nonatomic) TBXSearchSortbarModel *sortMenu; // @synthesize sortMenu=_sortMenu;
 @property(retain, nonatomic) NSMutableArray *filterArray; // @synthesize filterArray=_filterArray;
 @property(retain, nonatomic) TBSearchEmptyViewModel *emptyViewModel; // @synthesize emptyViewModel=_emptyViewModel;
-@property(retain, nonatomic) TBSearchSelectHelper *selectHelper; // @synthesize selectHelper=_selectHelper;
 @property(retain, nonatomic) TBSearchNXModel *searchNXComboModel; // @synthesize searchNXComboModel=_searchNXComboModel;
 @property(retain, nonatomic) NSString *activityFlag; // @synthesize activityFlag=_activityFlag;
 @property(retain, nonatomic) TBSearchOnesearchModel *onesearch; // @synthesize onesearch=_onesearch;

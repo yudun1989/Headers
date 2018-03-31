@@ -11,7 +11,6 @@
 @interface QQVIPFunctionComicTabBarItemView : UIButton
 {
     NSString *_titleStr;
-    _Bool _isConfigReady;
     _Bool _delaySelected;
     unsigned long long _index;
     unsigned long long _badge;
@@ -24,7 +23,6 @@
 @property(retain, nonatomic) UILabel *badgeLabel; // @synthesize badgeLabel=_badgeLabel;
 @property(retain, nonatomic) QQAPNGImageView *apngImageView; // @synthesize apngImageView=_apngImageView;
 @property(retain, nonatomic) UIImageView *badgeImage; // @synthesize badgeImage=_badgeImage;
-@property(nonatomic) _Bool isConfigReady; // @synthesize isConfigReady=_isConfigReady;
 @property(nonatomic) unsigned long long badge; // @synthesize badge=_badge;
 @property(nonatomic) unsigned long long index; // @synthesize index=_index;
 - (void).cxx_destruct;

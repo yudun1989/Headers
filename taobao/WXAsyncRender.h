@@ -13,7 +13,11 @@
 + (id)sharedInstance;
 - (void)fireFail:(id)arg1;
 - (void)addAsyncDataToModule:(id)arg1 asyncData:(id)arg2;
+- (id)getCookie:(id)arg1;
 - (void)startAsyncDataRequest:(id)arg1 bundleUrl:(id)arg2;
+- (id)asyncOptsWhiteList;
+- (id)asyncOpts;
+- (id)asyncOpts:(id)arg1;
 
 @end
 

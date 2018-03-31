@@ -11,8 +11,5 @@
 - (void)au_invalidateTimer;
 - (id)au_scheduledTimerWithTimeInterval:(double)arg1 block:(CDUnknownBlockType)arg2;
 - (id)au_timerHelper;
-- (void)au_removeObserverForKeyPath:(id)arg1;
-- (void)au_addObserverForKeyPath:(id)arg1 options:(unsigned long long)arg2 block:(CDUnknownBlockType)arg3;
-- (id)au_helper;
 @end
 

@@ -26,8 +26,6 @@
 - (void).cxx_destruct;
 - (void)shareControllerDismiss:(id)arg1;
 - (void)shareControllerShow:(id)arg1;
-- (void)doShareMyStory;
-- (id)getGroupNickWithUid:(id)arg1;
 - (_Bool)isPersonalVideo;
 - (_Bool)isShareGroupVideo;
 - (_Bool)isGroupVideo;

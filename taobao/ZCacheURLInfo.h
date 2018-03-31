@@ -34,14 +34,14 @@
 + (id)getMimeTypeWithPath:(id)arg1;
 @property(retain, nonatomic) ZCacheResourceInfo *resInfo; // @synthesize resInfo=_resInfo;
 @property(copy, nonatomic) NSString *originPath; // @synthesize originPath=_originPath;
-@property(readonly, nonatomic) NSString *filePath; // @synthesize filePath=_filePath;
+@property(readonly, copy, nonatomic) NSString *filePath; // @synthesize filePath=_filePath;
 @property(readonly, nonatomic) long long appMonitor; // @synthesize appMonitor=_appMonitor;
 @property(readonly, nonatomic) unsigned long long seq; // @synthesize seq=_seq;
 @property(readonly, copy, nonatomic) NSString *version; // @synthesize version=_version;
 @property(readonly, copy, nonatomic) NSString *appName; // @synthesize appName=_appName;
 @property(readonly, nonatomic) NSError *error; // @synthesize error=_error;
 @property(readonly, nonatomic) long long fromType; // @synthesize fromType=_fromType;
-@property(readonly, nonatomic) NSString *url; // @synthesize url=_url;
+@property(readonly, copy, nonatomic) NSString *url; // @synthesize url=_url;
 - (void).cxx_destruct;
 - (id)description;
 - (_Bool)verifyResource:(id)arg1;

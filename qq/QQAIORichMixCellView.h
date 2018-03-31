@@ -20,6 +20,7 @@
 }
 
 - (void).cxx_destruct;
+- (void)redrawTextWithColorDefinedInBubbleConfig;
 - (void)wordSegmentUpdateDicFinished:(id)arg1;
 - (void)rePlayAnimation;
 - (void)tableView:(id)arg1 didEndDisplayingCell:(id)arg2 forRowAtIndexPath:(id)arg3;

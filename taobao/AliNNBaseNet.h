@@ -6,18 +6,30 @@
 
 #import <Foundation/NSObject.h>
 
+@class NSString;
 @protocol AliNNNetMonitorDelegate;
 
 @interface AliNNBaseNet : NSObject
 {
-    CDStruct_0df3c7c0 *_net;
+    struct _AliNNNet *_net;
     id <AliNNNetMonitorDelegate> _monitor;
+    NSString *_bizName;
+    NSString *_modelName;
 }
 
+@property(retain, nonatomic) NSString *modelName; // @synthesize modelName=_modelName;
+@property(retain, nonatomic) NSString *bizName; // @synthesize bizName=_bizName;
 @property(retain, nonatomic) id <AliNNNetMonitorDelegate> monitor; // @synthesize monitor=_monitor;
-@property(nonatomic) CDStruct_0df3c7c0 *net; // @synthesize net=_net;
+@property(nonatomic) struct _AliNNNet *net; // @synthesize net=_net;
 - (void).cxx_destruct;
 - (void)dealloc;
+- (int)inference;
+- (CDStruct_5b0d7b23 *)inputLayerSize:(int)arg1;
+- (void)AliNNLayerSetTypeByName:(id)arg1 type:(unsigned long long)arg2;
+- (void)getOutputDataByLayerName:(id)arg1 tensor:(CDStruct_183601bc **)arg2 targetBufferType:(unsigned long long)arg3;
+- (void)setInputDataByLayerIndex:(int)arg1 tensor:(CDStruct_5b0d7b23 *)arg2;
+- (void)setInputDataByLayerName:(id)arg1 tensor:(CDStruct_5b0d7b23 *)arg2;
+- (void)prepareWithModelPath:(id)arg1 weightPath:(id)arg2 forwardType:(unsigned long long)arg3 successCallback:(CDUnknownBlockType)arg4 failCallback:(CDUnknownBlockType)arg5;
 - (id)init;
 
 @end

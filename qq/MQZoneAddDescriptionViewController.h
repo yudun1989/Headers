@@ -64,6 +64,7 @@
 - (void)coverViewFaceClick:(id)arg1;
 - (void)coverViewRecommendClick:(id)arg1;
 - (void)coverViewSelectToFriendSelector:(id)arg1;
+- (_Bool)isSupportRightDragToGoBack;
 - (void)handleUIApplicationDidEnterBackgroundNotification:(id)arg1;
 - (id)getCurrentProvider;
 - (id)getCurrentImage;

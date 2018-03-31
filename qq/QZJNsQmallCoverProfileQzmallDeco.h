@@ -6,7 +6,7 @@
 
 #import <TlibDy/JceObjectV2.h>
 
-@class QZJNsQmallCoverQzmallAvatar, QZJNsQmallCoverQzmallCustomBanner, QZJNsQmallCoverQzmallCustomNavi, QZJNsQmallCoverQzmallCustomPlayer, QZJNsQmallCoverQzmallCustomPraise, QZJNsQmallCoverQzmallCustomVip, QZJNsQmallCoverQzmallFeedSkin, QZJNsQmallCoverQzmallFloat;
+@class QZJNsQmallCoverQzmallAvatar, QZJNsQmallCoverQzmallCustomBanner, QZJNsQmallCoverQzmallCustomNavi, QZJNsQmallCoverQzmallCustomPlayer, QZJNsQmallCoverQzmallCustomPraise, QZJNsQmallCoverQzmallCustomVip, QZJNsQmallCoverQzmallFacade, QZJNsQmallCoverQzmallFeedSkin, QZJNsQmallCoverQzmallFloat;
 
 @interface QZJNsQmallCoverProfileQzmallDeco : JceObjectV2
 {
@@ -22,5 +22,6 @@
 @property(retain, nonatomic, getter=jce_stFloat, setter=setJce_stFloat:) QZJNsQmallCoverQzmallFloat *jcev2_p_5_o_stFloat; // @dynamic jcev2_p_5_o_stFloat;
 @property(retain, nonatomic, getter=jce_stFeedSkin, setter=setJce_stFeedSkin:) QZJNsQmallCoverQzmallFeedSkin *jcev2_p_6_o_stFeedSkin; // @dynamic jcev2_p_6_o_stFeedSkin;
 @property(retain, nonatomic, getter=jce_stCustomVip, setter=setJce_stCustomVip:) QZJNsQmallCoverQzmallCustomVip *jcev2_p_7_o_stCustomVip; // @dynamic jcev2_p_7_o_stCustomVip;
+@property(retain, nonatomic, getter=jce_stFacade, setter=setJce_stFacade:) QZJNsQmallCoverQzmallFacade *jcev2_p_8_o_stFacade; // @dynamic jcev2_p_8_o_stFacade;
 @end
 

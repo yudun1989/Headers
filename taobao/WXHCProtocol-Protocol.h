@@ -6,12 +6,11 @@
 
 #import "NSObject-Protocol.h"
 
-@class NSArray, NSString, NSURL, WXHCTabConfigItem, WXViewController;
+@class NSArray, NSString, WXHCTabConfigItem, WXViewController;
 
 @protocol WXHCProtocol <NSObject>
 - (void)setUpNaviItem:(WXViewController *)arg1 withConfigItem:(WXHCTabConfigItem *)arg2;
 - (NSArray *)domainOfWeexMHC;
-- (_Bool)isValidWeexMHCURL:(NSURL *)arg1;
 
 @optional
 - (NSString *)md5OfWeexHC:(NSString *)arg1;

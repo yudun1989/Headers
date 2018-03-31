@@ -11,6 +11,7 @@
 }
 
 + (void)callSelector:(SEL)arg1 target:(id)arg2 object:(id)arg3;
++ (id)parseJson:(id)arg1;
 + (id)jsonToDictionary:(id)arg1;
 
 @end

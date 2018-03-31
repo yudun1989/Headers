@@ -11,8 +11,10 @@
 @interface TBLiveCPViewContentDataLiveModel : TBJSONModel
 {
     NSString *_title;
+    NSString *_tidbitsUrl;
     NSString *_clickUrl;
     NSString *_coverImg;
+    NSString *_coverImg169;
     NSString *_liveId;
     NSString *_liveStatus;
     long long _channelId;
@@ -22,8 +24,10 @@
     NSString *_scm;
     NSString *_trackInfo;
     NSString *_matchtype;
+    NSString *_viewCount;
 }
 
+@property(copy, nonatomic) NSString *viewCount; // @synthesize viewCount=_viewCount;
 @property(copy, nonatomic) NSString *matchtype; // @synthesize matchtype=_matchtype;
 @property(copy, nonatomic) NSString *trackInfo; // @synthesize trackInfo=_trackInfo;
 @property(copy, nonatomic) NSString *scm; // @synthesize scm=_scm;
@@ -33,8 +37,10 @@
 @property(nonatomic) long long channelId; // @synthesize channelId=_channelId;
 @property(copy, nonatomic) NSString *liveStatus; // @synthesize liveStatus=_liveStatus;
 @property(copy, nonatomic) NSString *liveId; // @synthesize liveId=_liveId;
+@property(copy, nonatomic) NSString *coverImg169; // @synthesize coverImg169=_coverImg169;
 @property(copy, nonatomic) NSString *coverImg; // @synthesize coverImg=_coverImg;
 @property(copy, nonatomic) NSString *clickUrl; // @synthesize clickUrl=_clickUrl;
+@property(copy, nonatomic) NSString *tidbitsUrl; // @synthesize tidbitsUrl=_tidbitsUrl;
 @property(copy, nonatomic) NSString *title; // @synthesize title=_title;
 - (void).cxx_destruct;
 

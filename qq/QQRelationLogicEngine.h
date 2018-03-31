@@ -22,6 +22,7 @@
     _Bool _pubAcctListReady;
 }
 
++ (id)getNewGroupModel:(id)arg1;
 + (id)getInstance;
 @property(readonly, nonatomic) NSArray *pubAccountListInContactList; // @synthesize pubAccountListInContactList=_pubAccountListInContactList;
 @property(readonly, nonatomic) NSArray *pubAccountList; // @synthesize pubAccountList=_pubAccountList;

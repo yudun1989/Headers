@@ -19,6 +19,7 @@
 - (void)showProgressView;
 - (_Bool)shouldShowProgress;
 - (void)handleLongPressGesture:(id)arg1;
+- (void)dealloc;
 - (id)initWithFrame:(struct CGRect)arg1;
 
 @end

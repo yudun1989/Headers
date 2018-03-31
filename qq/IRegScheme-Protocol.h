@@ -10,6 +10,6 @@
 
 @protocol IRegScheme <NSObject>
 + (NSString *)getSchemeName;
-- (_Bool)navigate:(NSString *)arg1 data:(NSDictionary *)arg2 appType:(long long)arg3;
+- (_Bool)navigate:(NSString *)arg1 data:(NSDictionary *)arg2 appType:(long long)arg3 appID:(const char *)arg4;
 @end
 

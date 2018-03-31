@@ -10,6 +10,10 @@
 {
 }
 
++ (id)makeScreenVoteImageByPollInfo:(id)arg1;
++ (id)makeVoteImageByPollInfo:(id)arg1 combinedParentImage:(id)arg2;
++ (id)makeScreenVoteImageByStoryId:(id)arg1;
++ (id)makeVoteImageByStoryId:(id)arg1 combinedParentImage:(id)arg2;
 + (id)sharedInstance;
 - (id)makeFakeUrl:(id)arg1 type:(int)arg2;
 - (void)drawString:(id)arg1 inRect:(struct CGRect)arg2 font:(id)arg3 textColor:(id)arg4;

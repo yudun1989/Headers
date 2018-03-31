@@ -4,12 +4,15 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-#import "TBRDRatePBTransfer.h"
+#import "TBRDCommonTransfer.h"
 
 @class NSDictionary, NSString;
 
-@interface TBRDAlbumPBTransfer : TBRDRatePBTransfer
+@interface TBRDAlbumPBTransfer : TBRDCommonTransfer
 {
+    _Bool hasLoadMore;
+    _Bool hasLastPage;
+    _Bool hasMoreData;
     id localData;
     NSDictionary *requestParams;
     NSString *pageName;
@@ -17,6 +20,12 @@
     NSDictionary *commonTrackParams;
 }
 
+- (void)setHasMoreData:(_Bool)arg1;
+- (_Bool)hasMoreData;
+- (void)setHasLastPage:(_Bool)arg1;
+- (_Bool)hasLastPage;
+- (void)setHasLoadMore:(_Bool)arg1;
+- (_Bool)hasLoadMore;
 - (void)setCommonTrackParams:(id)arg1;
 - (id)commonTrackParams;
 - (void)setPageTrackParams:(id)arg1;

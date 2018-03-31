@@ -11,7 +11,6 @@
 }
 
 + (id)thumbnailImageForVideo:(id)arg1 atTime:(double)arg2;
-+ (id)getUploadThumbnail:(id)arg1 withCoverImage:(id)arg2;
 
 @end
 

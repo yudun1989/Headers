@@ -8,7 +8,7 @@
 
 #import "TBWebViewControllerReferenceProtocol-Protocol.h"
 
-@class NSArray, NSDictionary, NSString, TBBarButtonItem, TBModelStatusHandler, UIButton;
+@class NSArray, NSDictionary, NSString, TBBarButtonItem, TBLoadProgressView, TBModelStatusHandler, UIButton;
 
 @interface TBWVBaseController : WVUIWebViewController <TBWebViewControllerReferenceProtocol>
 {
@@ -45,6 +45,7 @@
     NSString *_activeFrom;
     id _activeData;
     TBBarButtonItem *_oldMoreItem;
+    TBLoadProgressView *_progressView;
     NSString *_trackCode;
     NSDictionary *_trackExtraInfo;
 }
@@ -53,6 +54,7 @@
 + (void)registerJAEHandler:(id)arg1;
 @property(retain, nonatomic) NSDictionary *trackExtraInfo; // @synthesize trackExtraInfo=_trackExtraInfo;
 @property(retain, nonatomic) NSString *trackCode; // @synthesize trackCode=_trackCode;
+@property(retain, nonatomic) TBLoadProgressView *progressView; // @synthesize progressView=_progressView;
 @property(retain, nonatomic) TBBarButtonItem *oldMoreItem; // @synthesize oldMoreItem=_oldMoreItem;
 @property(retain, nonatomic) id activeData; // @synthesize activeData=_activeData;
 @property(retain, nonatomic) NSString *activeFrom; // @synthesize activeFrom=_activeFrom;
@@ -143,11 +145,13 @@
 - (void)loadView;
 - (_Bool)isOriginalVC;
 - (_Bool)isTopVC;
+- (void)viewWillLayoutSubviews;
 - (void)viewDidAppear:(_Bool)arg1;
 - (void)viewWillDisappear:(_Bool)arg1;
 - (void)viewWillAppear:(_Bool)arg1;
 - (void)refreshLocalCookie;
 - (void)viewDidLoad;
+- (void)setLoadProgress:(double)arg1;
 - (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void *)arg4;
 - (void)loadURL:(id)arg1 query:(id)arg2 nativeParams:(id)arg3;
 - (void)loadURL:(id)arg1 query:(id)arg2;

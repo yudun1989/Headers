@@ -49,6 +49,7 @@
 - (void)setupUI;
 - (void)autoDismissTitle;
 - (void)setTitleLabelHidden:(_Bool)arg1 animated:(_Bool)arg2;
+- (_Bool)isTitleHidden:(_Bool)arg1;
 - (_Bool)canHideStateView;
 - (void)autoDisappear;
 - (void)setSelected:(_Bool)arg1 animated:(_Bool)arg2;

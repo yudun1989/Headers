@@ -40,6 +40,9 @@
 - (id)loadRecentMessageWithUins:(id)arg1 inDB:(id)arg2;
 - (id)loadRecentMessageWitdhLimitCount:(int)arg1 inDB:(id)arg2;
 - (id)getRecentMsg:(id)arg1;
+- (id)fetchTableOperation;
+- (id)genTableOperation;
+- (id)getTableName;
 - (id)initWithUin:(id)arg1;
 - (void)onDBChanged:(id)arg1;
 - (void)dealloc;

@@ -22,6 +22,8 @@
 - (void)didRecievedMsg:(CDStruct_7895f40e)arg1;
 - (id)getOIDBSSOPkg:(long long)arg1 serviceType:(long long)arg2 buffer:(basic_string_075b6133)arg3;
 - (void)sendAllUnreadRequest:(long long)arg1 appID:(long long)arg2 sig:(id)arg3;
+- (void)requestClearSchoolHomeworkRedRot:(id)arg1;
+- (void)requestClearGameGroupRedDot:(id)arg1;
 - (void)requestClearGroupNoticeCenterRedRot:(id)arg1;
 - (void)dealloc;
 - (id)init;

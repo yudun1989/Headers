@@ -14,7 +14,7 @@
 #import <QQMainProject/QQMultiImagePickerControllerDelegate-Protocol.h>
 #import <QQMainProject/UINavigationControllerDelegate-Protocol.h>
 
-@class ARCardPromotion, ARQRManager, NSDate, NSString, QQMultiImagePickerController, QRCodeReaderOverlayView, SDScanManager, TwoDimensionBarcodeManager, UIButton, UIImage, UILabel, UIView;
+@class ARCardPromotion, ARQRManager, NSString, QQMultiImagePickerController, QRCodeReaderOverlayView, SDScanManager, TwoDimensionBarcodeManager, UIButton, UIImage, UILabel, UIView;
 @protocol ARQRManagerDelegate;
 
 @interface MQQRCodeReaderViewController : QQViewController <QQMultiImagePickerControllerDelegate, QCRecorderDelegate, QQAudioSessionManagerDelegate, ARQRManagerDelegate, UINavigationControllerDelegate, QBAAlertViewDelegate, ActionSheetDataDelegate>
@@ -39,7 +39,6 @@
     _Bool _isDecodeImageFromOut;
     UIImage *_imageFromLibrary;
     NSString *_scanResultFromLibrary;
-    _Bool _bWriteLogScan;
     ARQRManager *_arqrManager;
     _Bool _hasQRResult;
     UIButton *_rightbutton;
@@ -56,12 +55,9 @@
     ARCardPromotion *_promotion;
     TwoDimensionBarcodeManager *_qrcodeMgr;
     QQMultiImagePickerController *_qrcodePhotoPicker;
-    NSDate *_enterOlyDate;
 }
 
 @property(nonatomic) _Bool isRecordFinished; // @synthesize isRecordFinished=_isRecordFinished;
-@property(retain, nonatomic) NSDate *enterOlyDate; // @synthesize enterOlyDate=_enterOlyDate;
-@property _Bool bWriteLogScan; // @synthesize bWriteLogScan=_bWriteLogScan;
 @property(retain, nonatomic) QQMultiImagePickerController *qrcodePhotoPicker; // @synthesize qrcodePhotoPicker=_qrcodePhotoPicker;
 @property _Bool isDecodeImageFromOut; // @synthesize isDecodeImageFromOut=_isDecodeImageFromOut;
 @property _Bool isOpenByAppHasResult; // @synthesize isOpenByAppHasResult=_isOpenByAppHasResult;
@@ -112,7 +108,6 @@
 - (void)stopRecording;
 - (void)cancelFullScreenLayout;
 - (void)setFullScreenLayout;
-- (_Bool)isNeedShowTip;
 - (void)firstTimeUseVocalAddFriend;
 - (void)startRecording;
 - (void)willEnterForeground;
@@ -138,7 +133,6 @@
 - (id)initWithDecodeType:(int)arg1 customUIType:(unsigned long long)arg2;
 - (id)init;
 - (id)initWithFrom:(_Bool)arg1;
-- (id)initWithNibName:(id)arg1 bundle:(id)arg2;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

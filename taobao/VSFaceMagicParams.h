@@ -14,8 +14,12 @@
     float _thinFace;
     float _bigEye;
     float _smallFace;
+    float _facePink;
+    float _cheekPink;
 }
 
+@property(nonatomic) float cheekPink; // @synthesize cheekPink=_cheekPink;
+@property(nonatomic) float facePink; // @synthesize facePink=_facePink;
 @property(nonatomic) float smallFace; // @synthesize smallFace=_smallFace;
 @property(nonatomic) float bigEye; // @synthesize bigEye=_bigEye;
 @property(nonatomic) float thinFace; // @synthesize thinFace=_thinFace;

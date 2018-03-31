@@ -15,16 +15,12 @@
     TBDTemplateCache *_templateCache;
 }
 
-+ (id)sharedTemplateManager;
 + (id)templateManagerWithModule:(id)arg1;
 + (id)defaultTemplateManager;
 @property(readonly, nonatomic) TBDTemplateCache *templateCache; // @synthesize templateCache=_templateCache;
 @property(readonly, nonatomic) TBDTemplateDownloader *templateDownloader; // @synthesize templateDownloader=_templateDownloader;
 @property(readonly, nonatomic) NSString *module; // @synthesize module=_module;
 - (void).cxx_destruct;
-- (_Bool)hasLocalFileForTemplateItem:(id)arg1;
-- (void)batchDownloadTemplateDictWithTemplateItem:(id)arg1;
-- (void)singleDownloadTemplateDictWithTemplateItem:(id)arg1 complete:(CDUnknownBlockType)arg2;
 - (_Bool)clearCache;
 - (void)turnOffDebug;
 - (void)turnOnDebug;

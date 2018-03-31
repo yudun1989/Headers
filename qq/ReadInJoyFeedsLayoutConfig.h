@@ -35,6 +35,8 @@
 - (unsigned long long)getSocialCommentType:(id)arg1;
 - (void)insertFeedToLayout:(id)arg1 feed:(id)arg2 index:(unsigned long long)arg3 from:(long long)arg4;
 - (void)buildFeedsLayoutInfo:(id)arg1 from:(long long)arg2;
+- (id)preProcessAticlesForCollectionCard:(id)arg1 cutLastCollection:(_Bool)arg2;
+- (void)addTestData:(id)arg1;
 - (_Bool)protuesEnable;
 - (void)setProteusStyleID:(long long)arg1;
 - (long long)proteusStyleID;
@@ -44,6 +46,7 @@
 - (void)onLoginSuccess;
 - (void)imageProcess:(id)arg1 layout:(id)arg2;
 - (void)bindStyleData:(id)arg1;
+- (_Bool)useVideoSmartCrop:(unsigned long long)arg1;
 - (_Bool)styleEnable:(id)arg1;
 - (id)cardStyleInfo:(unsigned long long)arg1 mode:(unsigned long long)arg2;
 - (struct CGRect)infoViewFrame:(id)arg1;
@@ -57,6 +60,7 @@
 - (void)buildCellLayoutInfo:(id)arg1 channelType:(long long)arg2;
 - (_Bool)needShowDisLikeBtn:(id)arg1;
 - (void)adjustFeedsComponetLayout:(id)arg1 article:(id)arg2 channelType:(long long)arg3;
+- (void)buildMaskButton:(id)arg1 article:(id)arg2;
 - (void)buildDisLike:(id)arg1 article:(id)arg2;
 - (double)buildFooter:(id)arg1 article:(id)arg2 posY:(double)arg3;
 - (double)buildCellHeader:(id)arg1 article:(id)arg2;

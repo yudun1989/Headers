@@ -45,7 +45,7 @@
 - (void)tagItemTouchCancel:(unsigned long long)arg1;
 - (void)tagItemTouchDown:(unsigned long long)arg1;
 - (void)tagItemClicked:(unsigned long long)arg1;
-- (id)initWithFrame:(struct CGRect)arg1 withDatas:(id)arg2 selectedTag:(unsigned long long)arg3;
+- (id)initWithFrame:(struct CGRect)arg1 withDatas:(id)arg2 selectedTag:(unsigned long long)arg3 lineViewImage:(id)arg4;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

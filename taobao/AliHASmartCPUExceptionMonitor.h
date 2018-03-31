@@ -43,9 +43,9 @@
 @property(retain, nonatomic) NSMutableArray *uploadedThreadIdList; // @synthesize uploadedThreadIdList=_uploadedThreadIdList;
 @property(nonatomic) unsigned int monitorThread_t; // @synthesize monitorThread_t=_monitorThread_t;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *monitorQueue; // @synthesize monitorQueue=_monitorQueue;
-@property(retain, nonatomic) NSString *reportExceptionType; // @synthesize reportExceptionType=_reportExceptionType;
+@property(copy, nonatomic) NSString *reportExceptionType; // @synthesize reportExceptionType=_reportExceptionType;
 @property(nonatomic) double lastUploadTime; // @synthesize lastUploadTime=_lastUploadTime;
-@property(retain, nonatomic) NSString *lastBackTraceHash; // @synthesize lastBackTraceHash=_lastBackTraceHash;
+@property(copy, nonatomic) NSString *lastBackTraceHash; // @synthesize lastBackTraceHash=_lastBackTraceHash;
 @property(nonatomic) _Bool needUploadException; // @synthesize needUploadException=_needUploadException;
 @property(retain, nonatomic) AliHASmartCPUExceptionInfo *cpuExceptionInfo; // @synthesize cpuExceptionInfo=_cpuExceptionInfo;
 @property(retain, nonatomic) AliHASmartCPUInfo *cpuInfo; // @synthesize cpuInfo=_cpuInfo;
@@ -57,12 +57,13 @@
 @property(nonatomic) double beginCalcAfterTouchInterval; // @synthesize beginCalcAfterTouchInterval=_beginCalcAfterTouchInterval;
 @property(nonatomic) double cpuExceptionReportDuration; // @synthesize cpuExceptionReportDuration=_cpuExceptionReportDuration;
 @property(nonatomic) double monitorInterval; // @synthesize monitorInterval=_monitorInterval;
-@property(retain, nonatomic) NSDictionary *monitorParameters; // @synthesize monitorParameters=_monitorParameters;
+@property(copy, nonatomic) NSDictionary *monitorParameters; // @synthesize monitorParameters=_monitorParameters;
 @property(nonatomic) _Bool enableNSLog; // @synthesize enableNSLog=_enableNSLog;
 @property(nonatomic) _Bool enableContextLog; // @synthesize enableContextLog=_enableContextLog;
 @property(nonatomic) __weak id context; // @synthesize context=_context;
 - (void).cxx_destruct;
 - (void)cpuUsageWithApp;
+- (float)_handleThreadBasicInfo:(struct thread_basic_info *)arg1 isFirstQuery:(_Bool)arg2 thread_index:(int)arg3 thread_id:(unsigned int)arg4;
 - (void)analyzeCpuInfo;
 - (void)stopMonitor;
 - (void)startMonitor;

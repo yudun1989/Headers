@@ -24,14 +24,6 @@
 @property(nonatomic) int lineHeight; // @synthesize lineHeight=_lineHeight;
 @property(nonatomic) int widthLimit; // @synthesize widthLimit=_widthLimit;
 @property(nonatomic) _Bool isMultiLine; // @synthesize isMultiLine=_isMultiLine;
-- (void)rearrange;
-- (struct CGSize)intrinsicContentSize;
-- (void)setTopicLabelArray:(id)arg1;
-- (void)setTopicTextList:(id)arg1 labelStyle:(unsigned long long)arg2;
-- (void)initSetting;
-- (id)initWithFrame:(struct CGRect)arg1;
-- (id)init;
-- (void)dealloc;
 
 @end
 

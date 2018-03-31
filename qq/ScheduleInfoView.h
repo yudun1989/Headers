@@ -14,9 +14,9 @@
     UILabel *_timeAndAddressInfoLabel;
 }
 
-- (void)initScheduleInfoLabelGroupWithTopic:(id)arg1 beginInfo:(id)arg2 msg:(id)arg3;
+- (void)initScheduleInfoLabelGroupWithIsHG:(_Bool)arg1 topic:(id)arg2 beginInfo:(id)arg3 msg:(id)arg4;
 - (void)dealloc;
-- (id)initWithFrame:(id)arg1 beginInfo:(id)arg2 timeInfo:(id)arg3 placeInfo:(id)arg4;
+- (id)initWithFrame:(_Bool)arg1 topic:(id)arg2 beginInfo:(id)arg3 timeInfo:(id)arg4 placeInfo:(id)arg5;
 
 @end
 

@@ -44,6 +44,7 @@
     MQZSliptoCamaraManager *_slipToCamaraManager;
     _Bool _shouldHidesActionSheetOrAlertView;
     _Bool _isSupportSlipPush;
+    NSString *_viewControllerName;
 }
 
 + (id)newWithRootViewController:(id)arg1 supportRightDragBack:(_Bool)arg2;
@@ -51,6 +52,7 @@
 + (id)newWithRootViewController:(id)arg1 shouldHidesActionSheetOrAlertView:(_Bool)arg2;
 + (id)topNavigationController;
 @property(retain, nonatomic) MQZSliptoCamaraManager *slipToCamaraManager; // @synthesize slipToCamaraManager=_slipToCamaraManager;
+@property(retain) NSString *viewControllerName; // @synthesize viewControllerName=_viewControllerName;
 @property(nonatomic) _Bool isSupportSlipPush; // @synthesize isSupportSlipPush=_isSupportSlipPush;
 @property(nonatomic) _Bool shouldHidesActionSheetOrAlertView; // @synthesize shouldHidesActionSheetOrAlertView=_shouldHidesActionSheetOrAlertView;
 @property(nonatomic) double popGuestureRespondWidth; // @synthesize popGuestureRespondWidth=_popGuestureRespondWidth;
@@ -84,6 +86,8 @@
 - (_Bool)isViewSupportRightDragToGoBack:(id)arg1;
 - (_Bool)gestureRecognizerShouldBegin:(id)arg1;
 - (_Bool)gestureRecognizer:(id)arg1 shouldRecognizeSimultaneouslyWithGestureRecognizer:(id)arg2;
+- (void)QQApplicationWillEnterForeground:(id)arg1;
+- (_Bool)closed;
 - (id)findViewContrlloer:(id)arg1;
 - (id)navigationController:(id)arg1 animationControllerForOperation:(long long)arg2 fromViewController:(id)arg3 toViewController:(id)arg4;
 - (id)navigationController:(id)arg1 interactionControllerForAnimationController:(id)arg2;
@@ -110,6 +114,9 @@
 - (void)dealloc;
 - (void)viewDidLoad;
 @property(readonly, nonatomic, getter=isAnimating) _Bool isAnimating;
+- (id)printfViewControllerName;
+- (void)setViewControllers:(id)arg1;
+- (_Bool)showViewControllerName;
 - (id)initWithRootViewController:(id)arg1;
 - (id)initWithShouldHidesActionSheetOrAlertView:(_Bool)arg1 futureOrientationMask:(unsigned long long)arg2;
 - (void)removeLastViewTagAndReportIfNeed;

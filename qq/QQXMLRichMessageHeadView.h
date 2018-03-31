@@ -6,13 +6,15 @@
 
 #import <QQMainProject/QQXMLMessageBaseView.h>
 
-@class QQXMLMessagePictureView;
+@class QQXMLMessageItem, QQXMLMessagePictureView;
 
 @interface QQXMLRichMessageHeadView : QQXMLMessageBaseView
 {
     QQXMLMessagePictureView *_coverView;
+    QQXMLMessageItem *_messageItem;
 }
 
+@property(readonly, nonatomic) QQXMLMessageItem *messageItem; // @synthesize messageItem=_messageItem;
 - (void)dealloc;
 - (id)bigCoverTitleView:(id)arg1;
 - (id)initWithFrame:(struct CGRect)arg1 messageItem:(id)arg2 msgRef:(id)arg3;

@@ -6,37 +6,38 @@
 
 #import "AliCartBasicCell.h"
 
-@class AliCartBlockButton, AliCartCheckButton, AliCartStepper, AliCartStrikeLabel, NSMutableArray, NSMutableAttributedString, UIImageView, UILabel, UIView;
+@class AliCartBlockButton, AliCartCheckButton, AliCartStepper, NSMutableArray, NSMutableAttributedString, UIImageView, UILabel, UIView;
 
 @interface AliCartContextCell : AliCartBasicCell
 {
-    AliCartBlockButton *_skuButton;
-    _Bool _infoOneLine;
+    UIView *_topListView;
     _Bool _disablePanGesture;
     AliCartCheckButton *_selectionButton;
+    UIView *_selectionButtonCover;
     UILabel *_iconLabel;
     UIImageView *_itemImageView;
     UILabel *_titleLabel;
     AliCartBlockButton *_editButton;
     AliCartStepper *_numberStepper;
-    UILabel *_skuLabel;
+    AliCartBlockButton *_skuButton;
     UILabel *_skuTitleLabel;
     UIImageView *_skuEditIconView;
-    AliCartStrikeLabel *_originPriceLabel;
+    UILabel *_priceAppendLabel;
     UILabel *_priceLabel;
     UILabel *_countLabel;
     UILabel *_weightLabel;
     UIImageView *_stateIconViewL;
     UIImageView *_stateIconViewC;
     UIImageView *_stateIconViewR;
-    AliCartBlockButton *_editStateFunctionButton;
-    AliCartBlockButton *_deleteButton;
-    AliCartBlockButton *_menuSimilarButton;
-    AliCartBlockButton *_menuMoveToFavButton;
-    CDUnknownBlockType _editFinishShouldShowBlock;
-    NSMutableArray *_logosArray;
     UILabel *_invalidSKUTipLabel;
     AliCartBlockButton *_editSKUButton;
+    AliCartBlockButton *_editStateFunctionButton;
+    AliCartBlockButton *_deleteButton;
+    UIView *_extraMenuView;
+    AliCartBlockButton *_menuSimilarButton;
+    AliCartBlockButton *_menuMoveToFavButton;
+    NSMutableAttributedString *_priceAttrString;
+    NSMutableArray *_logosArray;
     CDUnknownBlockType _selectClickBlock;
     CDUnknownBlockType _skuClickBlock;
     CDUnknownBlockType _deleteClickBlock;
@@ -48,18 +49,18 @@
     CDUnknownBlockType _stepperIncreaseClickBlock;
     CDUnknownBlockType _stepperDecreaseClickBlock;
     CDUnknownBlockType _editSKUButtonClickBlock;
-    UIView *_selectionButtonCover;
-    NSMutableAttributedString *_priceAttrString;
 }
 
 + (double)incrementFontSize:(double)arg1 styleKitContext:(id)arg2;
-+ (id)taxStringWithItem:(id)arg1;
-+ (_Bool)infoOneLine:(id)arg1 styleKitContext:(id)arg2;
-+ (double)cellHeight:(id)arg1 styleKitContext:(id)arg2;
++ (id)priceAttributedStringWithModel:(id)arg1;
++ (struct CGSize)topListSize:(id)arg1 context:(id)arg2;
 + (struct CGSize)skuTitleSize:(id)arg1 context:(id)arg2;
 + (struct CGSize)skuInvalidTipSize:(id)arg1 context:(id)arg2;
-@property(retain, nonatomic) NSMutableAttributedString *priceAttrString; // @synthesize priceAttrString=_priceAttrString;
-@property(retain, nonatomic) UIView *selectionButtonCover; // @synthesize selectionButtonCover=_selectionButtonCover;
++ (struct CGSize)itemImageSize:(id)arg1 context:(id)arg2;
++ (double)cellHeight:(id)arg1 styleKitContext:(id)arg2;
++ (struct CGSize)sizeForNumber:(id)arg1 font:(id)arg2;
++ (_Bool)isOverLine:(double)arg1 weightWidth:(double)arg2 numberWidth:(double)arg3;
++ (_Bool)infoOneLine:(id)arg1 styleKitContext:(id)arg2;
 @property(copy, nonatomic) CDUnknownBlockType editSKUButtonClickBlock; // @synthesize editSKUButtonClickBlock=_editSKUButtonClickBlock;
 @property(copy, nonatomic) CDUnknownBlockType stepperDecreaseClickBlock; // @synthesize stepperDecreaseClickBlock=_stepperDecreaseClickBlock;
 @property(copy, nonatomic) CDUnknownBlockType stepperIncreaseClickBlock; // @synthesize stepperIncreaseClickBlock=_stepperIncreaseClickBlock;
@@ -72,53 +73,56 @@
 @property(copy, nonatomic) CDUnknownBlockType skuClickBlock; // @synthesize skuClickBlock=_skuClickBlock;
 @property(copy, nonatomic) CDUnknownBlockType selectClickBlock; // @synthesize selectClickBlock=_selectClickBlock;
 @property(nonatomic) _Bool disablePanGesture; // @synthesize disablePanGesture=_disablePanGesture;
-@property(retain, nonatomic) AliCartBlockButton *editSKUButton; // @synthesize editSKUButton=_editSKUButton;
-@property(retain, nonatomic) UILabel *invalidSKUTipLabel; // @synthesize invalidSKUTipLabel=_invalidSKUTipLabel;
 @property(retain, nonatomic) NSMutableArray *logosArray; // @synthesize logosArray=_logosArray;
-@property(nonatomic) _Bool infoOneLine; // @synthesize infoOneLine=_infoOneLine;
-@property(copy, nonatomic) CDUnknownBlockType editFinishShouldShowBlock; // @synthesize editFinishShouldShowBlock=_editFinishShouldShowBlock;
+@property(retain, nonatomic) NSMutableAttributedString *priceAttrString; // @synthesize priceAttrString=_priceAttrString;
 @property(retain, nonatomic) AliCartBlockButton *menuMoveToFavButton; // @synthesize menuMoveToFavButton=_menuMoveToFavButton;
 @property(retain, nonatomic) AliCartBlockButton *menuSimilarButton; // @synthesize menuSimilarButton=_menuSimilarButton;
+@property(retain, nonatomic) UIView *topListView; // @synthesize topListView=_topListView;
+@property(retain, nonatomic) UIView *extraMenuView; // @synthesize extraMenuView=_extraMenuView;
 @property(retain, nonatomic) AliCartBlockButton *deleteButton; // @synthesize deleteButton=_deleteButton;
 @property(retain, nonatomic) AliCartBlockButton *editStateFunctionButton; // @synthesize editStateFunctionButton=_editStateFunctionButton;
+@property(retain, nonatomic) AliCartBlockButton *editSKUButton; // @synthesize editSKUButton=_editSKUButton;
+@property(retain, nonatomic) UILabel *invalidSKUTipLabel; // @synthesize invalidSKUTipLabel=_invalidSKUTipLabel;
 @property(retain, nonatomic) UIImageView *stateIconViewR; // @synthesize stateIconViewR=_stateIconViewR;
 @property(retain, nonatomic) UIImageView *stateIconViewC; // @synthesize stateIconViewC=_stateIconViewC;
 @property(retain, nonatomic) UIImageView *stateIconViewL; // @synthesize stateIconViewL=_stateIconViewL;
 @property(retain, nonatomic) UILabel *weightLabel; // @synthesize weightLabel=_weightLabel;
 @property(retain, nonatomic) UILabel *countLabel; // @synthesize countLabel=_countLabel;
 @property(retain, nonatomic) UILabel *priceLabel; // @synthesize priceLabel=_priceLabel;
-@property(retain, nonatomic) AliCartStrikeLabel *originPriceLabel; // @synthesize originPriceLabel=_originPriceLabel;
+@property(retain, nonatomic) UILabel *priceAppendLabel; // @synthesize priceAppendLabel=_priceAppendLabel;
 @property(retain, nonatomic) UIImageView *skuEditIconView; // @synthesize skuEditIconView=_skuEditIconView;
 @property(retain, nonatomic) UILabel *skuTitleLabel; // @synthesize skuTitleLabel=_skuTitleLabel;
 @property(retain, nonatomic) AliCartBlockButton *skuButton; // @synthesize skuButton=_skuButton;
-@property(retain, nonatomic) UILabel *skuLabel; // @synthesize skuLabel=_skuLabel;
 @property(retain, nonatomic) AliCartStepper *numberStepper; // @synthesize numberStepper=_numberStepper;
 @property(retain, nonatomic) AliCartBlockButton *editButton; // @synthesize editButton=_editButton;
 @property(retain, nonatomic) UILabel *titleLabel; // @synthesize titleLabel=_titleLabel;
 @property(retain, nonatomic) UIImageView *itemImageView; // @synthesize itemImageView=_itemImageView;
 @property(retain, nonatomic) UILabel *iconLabel; // @synthesize iconLabel=_iconLabel;
+@property(retain, nonatomic) UIView *selectionButtonCover; // @synthesize selectionButtonCover=_selectionButtonCover;
 @property(retain, nonatomic) AliCartCheckButton *selectionButton; // @synthesize selectionButton=_selectionButton;
 - (void).cxx_destruct;
 - (void)setStateIconView:(id)arg1 pic:(id)arg2;
 - (void)exposeTrack:(id)arg1;
-- (_Bool)isItemEditing:(id)arg1;
 - (void)disabledPan;
-- (void)dealloc;
 - (void)registerAction;
 - (void)addSelectedLayer:(id)arg1;
 - (void)bindCellData:(id)arg1;
 - (void)bindData:(id)arg1;
 - (void)willTransitionToShowMenu;
-- (void)layoutSubViewsForContextMenu:(id)arg1;
-- (void)layoutSubviewsForSKUButton:(id)arg1 xOffset:(double)arg2 editAreaWidth:(double)arg3 rightAreaWidth:(double)arg4;
-- (void)layoutSubViewsForNumberStepper:(id)arg1 xOffset:(double)arg2 editAreaWidth:(double)arg3 rightAreaWidth:(double)arg4;
-- (void)layoutSubViewsForSKUTitle:(id)arg1 xOffset:(double)arg2 yOffset:(double)arg3 editAreaWidth:(double)arg4 rightAreaWidth:(double)arg5;
-- (void)layoutSubViewsForTitle:(id)arg1 xOffset:(double)arg2 yOffset:(double)arg3 editAreaWidth:(double)arg4 rightAreaWidth:(double)arg5;
-- (void)layoutSubViewsForDelButton:(id)arg1;
-- (void)layoutSubviewsForItemImage:(id)arg1 xOffset:(double)arg2 yOffset:(double)arg3;
-- (void)layoutSubviewsForInvalidSKU:(double)arg1;
 - (void)layoutSubviews;
+- (void)layoutSubviewsForTopList:(double)arg1 yOffset:(double)arg2;
 - (void)loadSubviews;
+- (void)dealloc;
+- (void)layoutSubviewsForWeightAndNumber:(double)arg1 yOffset:(double)arg2;
+- (void)layoutSubviewsForPay:(double)arg1 yOffset:(double)arg2;
+- (void)layoutSubviewsForInvalidSKU:(double)arg1;
+- (double)layoutSubviewsForLogos:(id)arg1 xOffset:(double)arg2 yOffset:(double)arg3;
+- (void)layoutSubViewsForContextMenu:(id)arg1;
+- (void)layoutSubviewsForIcons:(id)arg1 xOffset:(double)arg2 yOffset:(double)arg3;
+- (void)layoutSubviewsForSKUButton:(id)arg1 xOffset:(double)arg2 yOffset:(double)arg3;
+- (void)layoutSubViewsForTitle:(id)arg1 xOffset:(double)arg2 yOffset:(double)arg3;
+- (void)layoutSubviewsForItemImage:(id)arg1 xOffset:(double)arg2 yOffset:(double)arg3;
+- (void)layoutSubviewsForItemCheckBox:(id)arg1 xOffset:(double)arg2 yOffset:(double)arg3;
 
 @end
 

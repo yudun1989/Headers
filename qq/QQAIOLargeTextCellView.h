@@ -10,9 +10,25 @@
 {
 }
 
+- (void)menuActionGroupTopic:(id)arg1;
+- (void)menuActionRecall:(id)arg1;
+- (void)menuActionCancelSendAllImage:(id)arg1;
+- (void)menuActionSaveImage:(id)arg1;
+- (id)getMenuItems;
+- (_Bool)shouldShowMenuItemAddToFace;
+- (id)larMsgModel;
+- (id)currentRichModel;
+- (id)menuCopyStr;
+- (_Bool)shouldDisplayMsgSendFail;
+- (_Bool)shouldDisplayMsgSendLoading;
+- (_Bool)isLastSubCell;
+- (_Bool)supportReplay;
+- (_Bool)containsText;
+- (_Bool)containsImg;
 - (void)loadBubbleImageNor:(int)arg1 imageSel:(int)arg2;
 - (void)drawBubbleImageOnMainThread:(id)arg1;
 - (void)reciveDividedImageNotification:(id)arg1;
+- (void)setHighlighted:(_Bool)arg1;
 - (void)dealloc;
 - (id)initWithFrame:(struct CGRect)arg1 chatViewTable:(id)arg2;
 

@@ -19,8 +19,10 @@
     long long _videoMeasureType;
     NSDictionary *_recommendVideos;
     NSString *_scenes;
+    NSString *_interactiveType;
 }
 
+@property(retain, nonatomic) NSString *interactiveType; // @synthesize interactiveType=_interactiveType;
 @property(retain, nonatomic) NSString *scenes; // @synthesize scenes=_scenes;
 @property(retain, nonatomic) NSDictionary *recommendVideos; // @synthesize recommendVideos=_recommendVideos;
 @property(nonatomic) long long videoMeasureType; // @synthesize videoMeasureType=_videoMeasureType;

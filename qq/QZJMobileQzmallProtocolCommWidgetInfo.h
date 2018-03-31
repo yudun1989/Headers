@@ -16,6 +16,7 @@
 // Remaining properties
 @property(nonatomic, getter=jce_bShow, setter=setJce_bShow:) _Bool jcev2_p_0_o_bShow; // @dynamic jcev2_p_0_o_bShow;
 @property(nonatomic, getter=jce_uiLoopIntervalMs, setter=setJce_uiLoopIntervalMs:) unsigned int jcev2_p_10_o_uiLoopIntervalMs; // @dynamic jcev2_p_10_o_uiLoopIntervalMs;
+@property(retain, nonatomic, getter=jce_strTraceInfo, setter=setJce_strTraceInfo:) NSString *jcev2_p_11_o_strTraceInfo; // @dynamic jcev2_p_11_o_strTraceInfo;
 @property(nonatomic, getter=jce_type, setter=setJce_type:) long long jcev2_p_1_o_type; // @dynamic jcev2_p_1_o_type;
 @property(retain, nonatomic, getter=jce_strWidgetUrl, setter=setJce_strWidgetUrl:) NSString *jcev2_p_2_o_strWidgetUrl; // @dynamic jcev2_p_2_o_strWidgetUrl;
 @property(retain, nonatomic, getter=jce_stArrowInfo, setter=setJce_stArrowInfo:) QZJMobileQzmallProtocolArrowInfo *jcev2_p_3_o_stArrowInfo; // @dynamic jcev2_p_3_o_stArrowInfo;

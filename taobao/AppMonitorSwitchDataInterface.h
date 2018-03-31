@@ -17,7 +17,7 @@
 - (void)setLocalConfig;
 - (_Bool)GetResult:(id)arg1 MonitorPoint:(id)arg2 Type:(id)arg3 isSuccess:(_Bool)arg4 Dimension:(id)arg5 Arg:(id)arg6;
 - (_Bool)GetResult:(id)arg1 MonitorPoint:(id)arg2 Type:(id)arg3 Dimension:(id)arg4 Arg:(id)arg5;
-- (int)GetValidPoint:(id)arg1 MonitorPoint:(id)arg2 Measure:(id)arg3 measureValue:(id)arg4;
+- (unsigned long long)GetValidPoint:(id)arg1 MonitorPoint:(id)arg2 Measure:(id)arg3 measureValue:(id)arg4;
 - (id)init;
 
 @end

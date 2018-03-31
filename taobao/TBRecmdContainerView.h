@@ -6,10 +6,14 @@
 
 #import <UIKit/UIView.h>
 
-@class NSDictionary, NSString, RNSTubView, TBRecmdEngine, UICollectionView;
+#import "RNSTubViewDelegate-Protocol.h"
 
-@interface TBRecmdContainerView : UIView
+@class NSDictionary, NSString, RNSTubView, TBRecmdEngine, UICollectionView;
+@protocol TBRecmdContainerViewDelegate;
+
+@interface TBRecmdContainerView : UIView <RNSTubViewDelegate>
 {
+    id <TBRecmdContainerViewDelegate> _containerViewDelegate;
     NSString *_channel;
     NSDictionary *_param;
     UIView *_businessView;
@@ -28,7 +32,12 @@
 @property(retain, nonatomic) UIView *businessView; // @synthesize businessView=_businessView;
 @property(retain, nonatomic) NSDictionary *param; // @synthesize param=_param;
 @property(retain, nonatomic) NSString *channel; // @synthesize channel=_channel;
+@property(nonatomic) __weak id <TBRecmdContainerViewDelegate> containerViewDelegate; // @synthesize containerViewDelegate=_containerViewDelegate;
 - (void).cxx_destruct;
+- (void)tubViewWillBeginDragging;
+- (void)tubViewDidEndDecelerating;
+- (void)tubViewDidEndDraggingWillDecelerate:(_Bool)arg1;
+- (void)tubViewDidScroll;
 - (void)registEngineActions;
 - (void)queryGuessData;
 - (void)addPullToReresh;
@@ -39,6 +48,12 @@
 - (id)initWithFrame:(struct CGRect)arg1 channel:(id)arg2 param:(id)arg3 businessView:(id)arg4 pullToRefreshHandler:(CDUnknownBlockType)arg5;
 - (id)refreshHostView;
 @property(readonly, nonatomic) TBRecmdEngine *engine;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly, copy) NSString *description;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
 
 @end
 

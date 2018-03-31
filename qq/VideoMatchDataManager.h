@@ -77,6 +77,7 @@
 - (void)reSetCallValues;
 - (_Bool)isNeedToRecvCall;
 - (id)objectModelWithCurrentFilterType;
+- (id)getNearbyNowAdsConfig;
 - (void)clearCurrentInfo;
 - (void)handleCallValuesAccepting:(id)arg1;
 - (void)removeCallValueFromUin:(unsigned long long)arg1;

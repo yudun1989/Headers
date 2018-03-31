@@ -19,6 +19,7 @@
     _Bool _orderRecmdDegrade;
     TBOrderKitDetailDataSource *_dataSource;
     id _eventHandler;
+    double _startLoadTime;
     NSString *_orderId;
     UITableView *_orderTable;
     UIView *_headerView;
@@ -38,9 +39,11 @@
 @property(retain, nonatomic) UITableView *orderTable; // @synthesize orderTable=_orderTable;
 @property(nonatomic) _Bool archive; // @synthesize archive=_archive;
 @property(retain, nonatomic) NSString *orderId; // @synthesize orderId=_orderId;
+@property(nonatomic) double startLoadTime; // @synthesize startLoadTime=_startLoadTime;
 @property(retain, nonatomic) id eventHandler; // @synthesize eventHandler=_eventHandler;
 @property(retain, nonatomic) TBOrderKitDetailDataSource *dataSource; // @synthesize dataSource=_dataSource;
 - (void).cxx_destruct;
+- (void)recordComponentEvent:(id)arg1 model:(id)arg2 code:(id)arg3;
 - (id)pageUserInfo;
 - (id)pageName;
 - (void)didRotateFromInterfaceOrientation:(long long)arg1;
@@ -82,12 +85,8 @@
 - (id)initWithNavigatorURL:(id)arg1 query:(id)arg2;
 - (id)percentageOfABTest;
 - (_Bool)isUserHitedDynamic;
-- (_Bool)systemVersionIsGreaterThanOrEqualTo:(id)arg1;
-- (id)appVersion;
-- (id)dictionaryWithString:(id)arg1;
+- (_Bool)useDinamicCellPreload;
 - (id)totoalTempalteSwicth;
-- (id)supportMinimumClinetVersion;
-- (id)dataSourceFromOrangeConfig;
 - (void)loadDynamicConfig;
 - (void)registerComponents;
 

@@ -6,21 +6,11 @@
 
 #import <QQMainProject/QQStoryFeedBaseUserCell.h>
 
-@class TBBeginGuidanceBubble;
-
 @interface QQStoryFeedGeneralCell : QQStoryFeedBaseUserCell
 {
-    TBBeginGuidanceBubble *_shareVideoBGBuggle;
 }
 
-- (void)shareVideoBeginGuidanceBubbleTouchUpInside:(id)arg1;
-- (void)clearShareVideoBeginGuidanceBubble;
-- (void)showShareVideoBeginGuidanceBubble;
-- (_Bool)shouldShowShareVideoBeginGuidanceBubble;
-- (void)storyFeedHeaderInfoView:(id)arg1 didCreateShareGroupButtonTouchUpInside:(id)arg2;
 - (void)storyFeedHeaderInfoView:(id)arg1 didFollowButtonTouchUpInside:(id)arg2;
-- (void)setStoryFeed:(id)arg1;
-- (void)dealloc;
 
 @end
 

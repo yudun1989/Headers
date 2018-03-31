@@ -6,13 +6,16 @@
 
 #import <TlibDy/QZModelObject.h>
 
-@class NSDate;
+@class NSArray, NSDate;
 
 @interface QZMoodTimeObject : QZModelObject
 {
+    NSArray *_showGroups;
 }
 
+@property(copy, nonatomic) NSArray *showGroups; // @synthesize showGroups=_showGroups;
 - (void)dealloc;
+- (id)init;
 
 // Remaining properties
 @property(nonatomic) _Bool delOpen; // @dynamic delOpen;

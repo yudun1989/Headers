@@ -6,19 +6,19 @@
 
 #import "TBJSONModel.h"
 
-@class NSArray, TBLiveCPViewContentModel, TBLiveTBTVViewContentModel;
+@class NSMutableArray, TBLiveCPViewContentModel, TBLiveTBTVViewContentModel;
 @protocol TBLiveChannelPageContentModel;
 
 @interface TBLiveChannelPageModel : TBJSONModel
 {
-    NSArray<TBLiveChannelPageContentModel> *_dataList;
+    NSMutableArray<TBLiveChannelPageContentModel> *_dataList;
     TBLiveCPViewContentModel *_viewData;
     TBLiveTBTVViewContentModel *_tbtvData;
 }
 
 @property(retain, nonatomic) TBLiveTBTVViewContentModel *tbtvData; // @synthesize tbtvData=_tbtvData;
 @property(retain, nonatomic) TBLiveCPViewContentModel *viewData; // @synthesize viewData=_viewData;
-@property(retain, nonatomic) NSArray<TBLiveChannelPageContentModel> *dataList; // @synthesize dataList=_dataList;
+@property(retain, nonatomic) NSMutableArray<TBLiveChannelPageContentModel> *dataList; // @synthesize dataList=_dataList;
 - (void).cxx_destruct;
 
 @end

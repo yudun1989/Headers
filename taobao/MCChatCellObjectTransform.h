@@ -26,6 +26,7 @@
 + (_Bool)shouldShowTimeWithPreMessage:(id)arg1 currentMessage:(id)arg2;
 + (struct CGSize)bubbleSizeForCellObject:(id)arg1;
 + (id)cellObjectWithPreMessage:(id)arg1 currentMessage:(id)arg2 config:(id)arg3;
++ (id)covertAMPExtendMessageFromTBIMMessageDingTalk:(id)arg1;
 + (id)cellObjectsWithMessages:(id)arg1 config:(id)arg2;
 
 @end

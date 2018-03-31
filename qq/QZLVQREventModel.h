@@ -22,10 +22,12 @@
     long long _roomStatus;
     NSString *_networkType;
     NSString *_liveType;
+    NSString *_videoPlaySource;
     QZLVQREventParamsModel *_params;
 }
 
 @property(retain) QZLVQREventParamsModel *params; // @synthesize params=_params;
+@property(copy) NSString *videoPlaySource; // @synthesize videoPlaySource=_videoPlaySource;
 @property(retain) NSString *liveType; // @synthesize liveType=_liveType;
 @property(retain) NSString *networkType; // @synthesize networkType=_networkType;
 @property long long roomStatus; // @synthesize roomStatus=_roomStatus;

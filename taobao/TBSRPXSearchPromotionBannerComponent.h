@@ -4,44 +4,34 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-#import "TBSearchViewComponent.h"
+#import "TBXSearchMainViewComponent.h"
 
-#import "TBSRPXSearchPromotionBannerViewModelUIComponentDelegate-Protocol.h"
-
-@class NSString, TBSRPXSearchPromotionBannerViewModel, UIButton, UICollectionViewCell;
+@class TBSRPXSearchPromotionBannerViewModel, TBSearchPromotionBanner, UIButton;
 @protocol TBSRPXSearchPromotionBannerComponentDelegate;
 
-@interface TBSRPXSearchPromotionBannerComponent : TBSearchViewComponent <TBSRPXSearchPromotionBannerViewModelUIComponentDelegate>
+@interface TBSRPXSearchPromotionBannerComponent : TBXSearchMainViewComponent
 {
     TBSRPXSearchPromotionBannerViewModel *_viewModel;
-    id <TBSRPXSearchPromotionBannerComponentDelegate> _delegate;
-    UICollectionViewCell *_componentView;
     UIButton *_titleButton;
     UIButton *_closeButton;
 }
 
 @property(retain, nonatomic) UIButton *closeButton; // @synthesize closeButton=_closeButton;
 @property(retain, nonatomic) UIButton *titleButton; // @synthesize titleButton=_titleButton;
-@property(retain, nonatomic) UICollectionViewCell *componentView; // @synthesize componentView=_componentView;
-@property(nonatomic) __weak id <TBSRPXSearchPromotionBannerComponentDelegate> delegate; // @synthesize delegate=_delegate;
 @property(retain, nonatomic) TBSRPXSearchPromotionBannerViewModel *viewModel; // @synthesize viewModel=_viewModel;
 - (void).cxx_destruct;
-- (void)layoutViewOfSubviews;
+- (void)layoutComponentSubviews;
 - (void)close;
 - (void)render;
-- (_Bool)checkJiaGouShow;
 - (_Bool)checkDefaultShow;
 - (void)onCloseBtnClick:(id)arg1;
 - (void)onTitleBtnClick:(id)arg1;
 - (void)dataLoaded;
-- (void)startLoading;
-- (void)setViewModelData:(id)arg1;
+- (id)initWithFrame:(struct CGRect)arg1 Service:(id)arg2;
 
 // Remaining properties
-@property(readonly, copy) NSString *debugDescription;
-@property(readonly, copy) NSString *description;
-@property(readonly) unsigned long long hash;
-@property(readonly) Class superclass;
+@property(nonatomic) __weak id <TBSRPXSearchPromotionBannerComponentDelegate> bizVCDelegate; // @dynamic bizVCDelegate;
+@property(retain, nonatomic) TBSearchPromotionBanner *model; // @dynamic model;
 
 @end
 

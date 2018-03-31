@@ -12,18 +12,23 @@
 
 @interface AliCartActivityView : UIView <UIScrollViewDelegate>
 {
-    UIScrollView *scrollView;
-    UIView *maskView;
-    UIView *backView;
-    UIActivityIndicatorView *activityView;
-    _Bool needShowTip;
+    _Bool _needShowTip;
     UIImageView *_imageView;
     double _indicatorWidth;
     double _indicatorHeight;
     UILabel *_textLabel;
+    UIScrollView *_scrollView;
+    UIView *_maskView;
+    UIView *_backView;
+    UIActivityIndicatorView *_activityView;
     struct CGRect _userInteractionEnabledRect;
 }
 
+@property(nonatomic) _Bool needShowTip; // @synthesize needShowTip=_needShowTip;
+@property(retain, nonatomic) UIActivityIndicatorView *activityView; // @synthesize activityView=_activityView;
+@property(retain, nonatomic) UIView *backView; // @synthesize backView=_backView;
+@property(retain, nonatomic) UIView *maskView; // @synthesize maskView=_maskView;
+@property(retain, nonatomic) UIScrollView *scrollView; // @synthesize scrollView=_scrollView;
 @property(nonatomic) struct CGRect userInteractionEnabledRect; // @synthesize userInteractionEnabledRect=_userInteractionEnabledRect;
 @property(retain, nonatomic) UILabel *textLabel; // @synthesize textLabel=_textLabel;
 @property(nonatomic) double indicatorHeight; // @synthesize indicatorHeight=_indicatorHeight;

@@ -31,7 +31,6 @@
 - (void).cxx_destruct;
 - (void)stopMonitors;
 - (_Bool)startMonitors;
-- (void)detectoerRegion:(id)arg1;
 - (void)setTriggerParam:(id)arg1;
 - (id)init;
 

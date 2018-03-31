@@ -60,6 +60,7 @@
 - (void)setNavibarBackgroundColor:(double)arg1;
 - (void)setTabBackgroundColor:(double)arg1;
 - (void)setBackground;
+- (id)hitTest:(struct CGPoint)arg1 withEvent:(id)arg2;
 - (void)layoutSubviews;
 - (void)dealloc;
 - (id)initWithFrame:(struct CGRect)arg1;

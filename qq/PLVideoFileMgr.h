@@ -19,21 +19,8 @@
     NSString *_curDownLoadingUrl;
 }
 
-+ (id)keyForMessage;
-+ (id)keyForErrorCode;
-+ (id)keyForUploadUrl;
 + (id)sharedInstance;
 @property(retain, nonatomic) NSString *cacheDirectory; // @synthesize cacheDirectory=_cacheDirectory;
-- (void)uploadVideoFail:(id)arg1 withError:(id)arg2 withUserData:(id)arg3;
-- (void)uploadVideoProgress:(id)arg1 withProgress:(double)arg2 withUserData:(id)arg3;
-- (void)uploadVideoSuccess:(id)arg1 withVideoCover:(id)arg2 withVideoPath:(id)arg3 withResultDict:(id)arg4 withUserData:(id)arg5;
-- (void)uploadVideoBegin:(id)arg1 withVideoCover:(id)arg2 withUserData:(id)arg3;
-- (void)clearDisk;
-- (void)removeObserver:(id)arg1 forUpLoadUrl:(id)arg2;
-- (void)uploadNextFile;
-- (_Bool)uploadFile:(id)arg1 withDelegate:(id)arg2 withUserInfo:(id)arg3;
-- (void)dealloc;
-- (id)init;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

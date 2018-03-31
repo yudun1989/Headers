@@ -22,6 +22,7 @@
 
 + (void)setTestDictCrash:(_Bool)arg1;
 + (_Bool)isTestDictCrash;
++ (void)updateAppGlobalUrlConfig;
 + (void)setCardShowInMsg:(id)arg1 isShow:(_Bool)arg2;
 + (_Bool)isCardShowInMsg:(id)arg1;
 + (id)createArkMsgModel:(id)arg1;
@@ -35,7 +36,10 @@
 + (id)getAppInfoFromOldMsg:(id)arg1;
 + (id)toArrayOrNSDictionary:(id)arg1;
 + (id)getArkLogicAsyncQueue;
++ (struct ArkXML_TagStruct *)getAppUrlWhiteList:(id)arg1;
++ (struct ArkXML_TagStruct *)getAppPermissions:(id)arg1;
 + (id)getAppVersion:(id)arg1;
++ (id)getAppLauncher:(id)arg1;
 + (id)getAppDesc:(id)arg1;
 + (unsigned int)checkAppVersion:(id)arg1;
 + (void)deleteAppActionSet:(struct ArkXML_TagStruct *)arg1;

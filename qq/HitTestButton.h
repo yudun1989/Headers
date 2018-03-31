@@ -10,8 +10,5 @@
 {
 }
 
-- (_Bool)pointInside:(struct CGPoint)arg1;
-- (_Bool)pointInside:(struct CGPoint)arg1 withEvent:(id)arg2;
-
 @end
 

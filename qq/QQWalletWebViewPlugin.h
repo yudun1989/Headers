@@ -11,7 +11,7 @@
 #import <QQMainProject/QQFriendSelectedViewControllerDelegate-Protocol.h>
 #import <QQMainProject/UIAlertViewDelegate-Protocol.h>
 
-@class NSMutableArray, NSString, QQWalletVideoPluginHandler;
+@class NSMutableArray, NSString;
 
 @interface QQWalletWebViewPlugin : QQWebViewPluginQQBizBase <ABPeoplePickerNavigationControllerDelegate, UIAlertViewDelegate, QQFriendSelectedViewControllerDelegate, MulMemSelBusiProcessDelegate>
 {
@@ -19,7 +19,6 @@
     NSString *_callBack;
     NSString *_title;
     int _mode;
-    QQWalletVideoPluginHandler *_videoPluginHandler;
 }
 
 + (_Bool)shouldInterceptOpenAppURL:(id)arg1 sourceURL:(id)arg2 shouldJumpToBlock:(CDUnknownBlockType)arg3;
@@ -40,13 +39,6 @@
 - (_Bool)handleJsBridgeRequest_qw_getVideo:(id)arg1;
 - (_Bool)handleJsBridgeRequest_qw_charge_tenpayTransfer:(id)arg1;
 - (_Bool)handleJsBridgeRequest_qw_data_getFriendInfo:(id)arg1;
-- (_Bool)handleJsBridgeRequest_qw_charge_isExistVideo:(id)arg1;
-- (_Bool)handleJsBridgeRequest_qw_charge_downloadVideo:(id)arg1;
-- (_Bool)handleJsBridgeRequest_qw_charge_stopVideo:(id)arg1;
-- (_Bool)handleJsBridgeRequest_qw_charge_pauseVideo:(id)arg1;
-- (_Bool)handleJsBridgeRequest_qw_charge_playVideo:(id)arg1;
-- (_Bool)handleJsBridgeRequest_qw_charge_initVideo:(id)arg1;
-- (id)videoPluginHandler;
 - (_Bool)handleJsBridgeRequest_qw_charge_notifyViewUpdate:(id)arg1;
 - (_Bool)handleJsBridgeRequest_qw_charge_getAppAuthorizationCode:(id)arg1;
 - (_Bool)handleJsBridgeRequest_qw_charge_getAllContact:(id)arg1;

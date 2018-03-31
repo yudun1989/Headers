@@ -18,6 +18,7 @@
 - (_Bool)shouldDisplaySelfNick;
 - (double)cellHeight;
 - (id)initWithMessageModel:(id)arg1;
+- (_Bool)_isAnimoji;
 - (id)eventHandleClassName;
 - (id)cellViewClassName;
 - (id)cellClassName;

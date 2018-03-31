@@ -29,6 +29,8 @@
 + (UIColor *)colorFromString:(NSString *)arg1;
 + (NSString *)cStringWithFirstLevel:(const char *)arg1 andSecondLevel:(const char *)arg2;
 + (NSString *)stringWithFirstLevel:(NSString *)arg1 andSecondLevel:(NSString *)arg2;
++ (UIImage *)imageForKey:(NSString *)arg1;
++ (void)saveImage:(UIImage *)arg1 key:(NSString *)arg2;
 + (void)modelToJce:(NSArray *)arg1 andWriteToFile:(NSString *)arg2;
 + (void)addJobToSendBoxWithPath:(NSString *)arg1;
 + (NSString *)getUserPath;

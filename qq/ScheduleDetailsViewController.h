@@ -7,15 +7,11 @@
 #import <QQMainProject/QQViewController.h>
 
 #import <QQMainProject/ScheduleDetailsOCSProtocol-Protocol.h>
-#import <QQMainProject/UIAlertViewDelegate-Protocol.h>
-#import <QQMainProject/UIControlCallBase-Protocol.h>
-#import <QQMainProject/UITableViewDataSource-Protocol.h>
-#import <QQMainProject/UITableViewDelegate-Protocol.h>
 
 @class NSString, ScheduleCreatingViewModel, ScheduleMemberViewCell, ScheduleNormalSelector, UIButton, UITableView, UIView;
 @protocol ScheduleActionDelegate;
 
-@interface ScheduleDetailsViewController : QQViewController <UITableViewDelegate, UITableViewDataSource, UIControlCallBase, UIAlertViewDelegate, ScheduleDetailsOCSProtocol>
+@interface ScheduleDetailsViewController : QQViewController <ScheduleDetailsOCSProtocol>
 {
     UITableView *_tableView;
     UIView *_errContentView;
@@ -41,12 +37,6 @@
 - (void)loadCalendarAndCreateTable;
 - (void)adjustTableView;
 - (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void *)arg4;
-
-// Remaining properties
-@property(readonly, copy) NSString *debugDescription;
-@property(readonly, copy) NSString *description;
-@property(readonly) unsigned long long hash;
-@property(readonly) Class superclass;
 
 @end
 

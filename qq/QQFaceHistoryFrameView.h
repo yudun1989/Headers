@@ -27,5 +27,8 @@
 - (void)freshUI;
 - (id)initWithFrame:(struct CGRect)arg1;
 
+// Remaining properties
+@property(nonatomic) _Bool forQzone;
+
 @end
 

@@ -9,14 +9,20 @@
 #import <QQMainProject/UIViewControllerAnimatedTransitioning-Protocol.h>
 
 @class NSString;
-@protocol QQViewControllerAnimatedTransitioningDelegate;
+@protocol QQViewControllerAnimatedTransitioningDelegate, UIViewControllerContextTransitioning;
 
 @interface QQViewControllerAnimatedTransitioning : NSObject <UIViewControllerAnimatedTransitioning>
 {
     id <QQViewControllerAnimatedTransitioningDelegate> _delegate;
+    int animation;
+    id <UIViewControllerContextTransitioning> QQtransitionContext;
 }
 
+@property(nonatomic) id <UIViewControllerContextTransitioning> QQtransitionContext; // @synthesize QQtransitionContext;
+@property(nonatomic) int animation; // @synthesize animation;
 @property(nonatomic) id <QQViewControllerAnimatedTransitioningDelegate> delegate; // @synthesize delegate=_delegate;
+- (void)dealloc;
+- (_Bool)closed;
 - (void)animationEnded:(_Bool)arg1;
 - (void)animateTransition:(id)arg1;
 - (double)transitionDuration:(id)arg1;

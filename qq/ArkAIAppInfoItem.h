@@ -10,7 +10,6 @@
 
 @interface ArkAIAppInfoItem : NSObject
 {
-    _Bool _resultEqualInputText;
     _Bool _resultFromServer;
     int _contextMatchType;
     ArkAppNameView *_view;
@@ -22,7 +21,6 @@
 + (id)createWithAppNameView:(id)arg1 nameView:(id)arg2;
 @property(nonatomic) int contextMatchType; // @synthesize contextMatchType=_contextMatchType;
 @property(nonatomic) _Bool resultFromServer; // @synthesize resultFromServer=_resultFromServer;
-@property(nonatomic) _Bool resultEqualInputText; // @synthesize resultEqualInputText=_resultEqualInputText;
 @property(retain, nonatomic) NSDictionary *meta; // @synthesize meta=_meta;
 @property(copy, nonatomic) NSString *title; // @synthesize title=_title;
 @property(copy, nonatomic) NSString *contextName; // @synthesize contextName=_contextName;

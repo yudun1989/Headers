@@ -43,8 +43,8 @@
 @property(retain, nonatomic) TBPSAVCaptureViewController *captureViewController; // @synthesize captureViewController=_captureViewController;
 @property(readonly, nonatomic) UIViewController *navController; // @synthesize navController=_navController;
 @property(readonly, nonatomic) UILabel *refreshLabel; // @synthesize refreshLabel=_refreshLabel;
-@property(readonly, nonatomic) UIButton *btnCaptureTipView; // @synthesize btnCaptureTipView=_btnCaptureTipView;
-@property(readonly, nonatomic) TBAVCaptureTipView *captureTipView; // @synthesize captureTipView=_captureTipView;
+@property(retain, nonatomic) UIButton *btnCaptureTipView; // @synthesize btnCaptureTipView=_btnCaptureTipView;
+@property(retain, nonatomic) TBAVCaptureTipView *captureTipView; // @synthesize captureTipView=_captureTipView;
 @property(readonly, nonatomic) UIImageView *arrowView; // @synthesize arrowView=_arrowView;
 @property(retain, nonatomic) UIButton *btnPhotoLibrary; // @synthesize btnPhotoLibrary=_btnPhotoLibrary;
 @property(retain, nonatomic) UIButton *btnCamera; // @synthesize btnCamera=_btnCamera;
@@ -62,7 +62,6 @@
 - (void)imagePickerController:(id)arg1 didFinishPickingMediaWithInfo:(id)arg2;
 - (void)capture:(id)arg1;
 - (void)searchWithImage:(id)arg1 from:(id)arg2 metaInfo:(id)arg3;
-- (void)checkHolidayActivitySmartPiece;
 - (void)layoutSubviews;
 - (void)didReceiveMemoryWarning;
 - (void)backViewController:(id)arg1;

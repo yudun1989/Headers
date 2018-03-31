@@ -10,8 +10,10 @@
 
 @interface APMidasChannelInfo : QQGroupPropertyModel
 {
+    NSString *_ChannelPromotion;
 }
 
+@property(retain, nonatomic) NSString *ChannelPromotion; // @synthesize ChannelPromotion=_ChannelPromotion;
 - (void)dealloc;
 
 // Remaining properties

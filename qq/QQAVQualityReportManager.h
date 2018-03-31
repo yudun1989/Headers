@@ -21,6 +21,8 @@
 - (void)setNodeStartTime;
 - (void)setReportInfo:(id)arg1;
 - (void)setReportInfo:(id)arg1 peerUin:(id)arg2 accountType:(int)arg3 businessType:(int)arg4;
+- (void)writeReportToFileWhenExist:(id)arg1 reportSValue:(id)arg2;
+- (void)writeReportToFileWhenExist:(id)arg1 reportValue:(id)arg2;
 - (void)writeReportToFile:(id)arg1 reportSValue:(id)arg2;
 - (void)writeReportToFile:(id)arg1 reportValue:(id)arg2;
 - (void)removeFile;

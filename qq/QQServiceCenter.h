@@ -14,8 +14,11 @@
 {
 }
 
+- (id)htRecentMsgDB;
 - (id)tmpMsgSrcDB;
 - (id)recentMsgDB;
+- (id)getTableDBWithAccType:(int)arg1;
+- (id)HonestSayTableDB;
 - (id)C2CMultiTableDB;
 - (id)C2CDBService;
 - (id)AppVersionService;

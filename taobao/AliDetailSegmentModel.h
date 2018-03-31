@@ -10,13 +10,13 @@
 
 @interface AliDetailSegmentModel : NSObject
 {
-    int _type;
     NSString *_highlightedIcon;
     NSString *_normalIcon;
     NSString *_title;
+    unsigned long long _type;
 }
 
-@property(nonatomic) int type; // @synthesize type=_type;
+@property(nonatomic) unsigned long long type; // @synthesize type=_type;
 @property(copy, nonatomic) NSString *title; // @synthesize title=_title;
 @property(copy, nonatomic) NSString *normalIcon; // @synthesize normalIcon=_normalIcon;
 @property(copy, nonatomic) NSString *highlightedIcon; // @synthesize highlightedIcon=_highlightedIcon;

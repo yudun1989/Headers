@@ -6,7 +6,7 @@
 
 #import <Foundation/NSObject.h>
 
-@class NSString;
+@class NSNumber, NSString;
 
 @interface QQVipComicAdvertiseExt : NSObject
 {
@@ -14,8 +14,12 @@
     NSString *_appid;
     NSString *_pkg_name;
     NSString *_subordinate_product_id;
+    NSString *_pkgurl;
+    NSNumber *_desttype;
 }
 
+@property(retain, nonatomic) NSNumber *desttype; // @synthesize desttype=_desttype;
+@property(retain, nonatomic) NSString *pkgurl; // @synthesize pkgurl=_pkgurl;
 @property(retain, nonatomic) NSString *subordinate_product_id; // @synthesize subordinate_product_id=_subordinate_product_id;
 @property(retain, nonatomic) NSString *pkg_name; // @synthesize pkg_name=_pkg_name;
 @property(retain, nonatomic) NSString *appid; // @synthesize appid=_appid;

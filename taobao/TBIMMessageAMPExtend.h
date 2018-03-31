@@ -6,19 +6,79 @@
 
 #import "TBIMMessageAMP.h"
 
+#import "TBAMPExtendMessageConvertFromDingTalk-Protocol.h"
+#import "TBIMCommonMessage-Protocol.h"
 #import "TBIMExtendMessage-Protocol.h"
 
 @class NSString;
+@protocol WKBizMessage;
 
-@interface TBIMMessageAMPExtend : TBIMMessageAMP <TBIMExtendMessage>
+@interface TBIMMessageAMPExtend : TBIMMessageAMP <TBIMExtendMessage, TBIMCommonMessage, TBAMPExtendMessageConvertFromDingTalk>
 {
+    _Bool _isConvertFromDingTalk;
+    NSString *_defaultBackgroundImageName;
+    NSString *_defaultFromIconName;
+    NSString *_defaultImageName;
+    NSString *_defaultFromText;
+    long long _defaultFromIconFromType;
+    long long _defaultImageFromType;
+    long long _defaultBackgroundImageFromType;
+    NSString *_defaultFromTextColorHex;
+    NSString *_defaultPriceColorHex;
+    NSString *_defaultDesColorHex;
+    NSString *_defaultTitleColorHex;
+    NSString *_salePeopleNum;
+    double _priceFromDesc;
+    NSString *_defaultBubbleBackgroundColorHex;
+    long long _extendBizType;
+    id <WKBizMessage> _wkMessage;
 }
 
+@property(retain, nonatomic) id <WKBizMessage> wkMessage; // @synthesize wkMessage=_wkMessage;
+@property(nonatomic) long long extendBizType; // @synthesize extendBizType=_extendBizType;
+- (void).cxx_destruct;
+- (id)getBgIcon;
+- (double)getAttrPrice;
+- (id)getAttrTags;
+- (id)getAttrStr;
+- (id)getRightBtColor;
+- (id)getLeftBtColor;
+- (id)getRightBtText;
+- (id)getLeftBtText;
+- (id)getActionBtRightUrl;
+- (id)getActionBtLeftUrl;
+- (id)getRemindTips;
+- (id)getStampPicUrl;
+- (id)getLayoutId;
+- (id)getSenderActionUrl;
+- (id)getReceiverActionUrl;
+- (id)getFromTextColor;
+- (id)getFromIconText;
+- (id)getFromIcon;
+- (id)getpicUrl;
+- (id)getDescColor;
+- (id)getDesc;
+- (id)getTitle;
 - (id)extContent;
 - (id)actionUrl;
 - (id)activeContent;
 - (id)extType;
 - (long long)extVersion;
+@property(copy, nonatomic) NSString *defaultBubbleBackgroundColorHex; // @synthesize defaultBubbleBackgroundColorHex=_defaultBubbleBackgroundColorHex;
+@property(nonatomic) double priceFromDesc; // @synthesize priceFromDesc=_priceFromDesc;
+@property(copy, nonatomic) NSString *salePeopleNum; // @synthesize salePeopleNum=_salePeopleNum;
+@property(copy, nonatomic) NSString *defaultTitleColorHex; // @synthesize defaultTitleColorHex=_defaultTitleColorHex;
+@property(copy, nonatomic) NSString *defaultDesColorHex; // @synthesize defaultDesColorHex=_defaultDesColorHex;
+@property(copy, nonatomic) NSString *defaultPriceColorHex; // @synthesize defaultPriceColorHex=_defaultPriceColorHex;
+@property(copy, nonatomic) NSString *defaultFromTextColorHex; // @synthesize defaultFromTextColorHex=_defaultFromTextColorHex;
+@property(copy, nonatomic) NSString *defaultFromText; // @synthesize defaultFromText=_defaultFromText;
+@property(copy, nonatomic) NSString *defaultFromIconName; // @synthesize defaultFromIconName=_defaultFromIconName;
+@property(nonatomic) long long defaultFromIconFromType; // @synthesize defaultFromIconFromType=_defaultFromIconFromType;
+@property(nonatomic) long long defaultImageFromType; // @synthesize defaultImageFromType=_defaultImageFromType;
+@property(copy, nonatomic) NSString *defaultImageName; // @synthesize defaultImageName=_defaultImageName;
+@property(nonatomic) long long defaultBackgroundImageFromType; // @synthesize defaultBackgroundImageFromType=_defaultBackgroundImageFromType;
+@property(copy, nonatomic) NSString *defaultBackgroundImageName; // @synthesize defaultBackgroundImageName=_defaultBackgroundImageName;
+@property(nonatomic) _Bool isConvertFromDingTalk; // @synthesize isConvertFromDingTalk=_isConvertFromDingTalk;
 - (id)message;
 
 // Remaining properties

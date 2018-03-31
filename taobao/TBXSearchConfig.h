@@ -20,7 +20,8 @@
 @property(retain, nonatomic) NSMutableDictionary *outterConfig; // @synthesize outterConfig=_outterConfig;
 - (void).cxx_destruct;
 - (id)defaultSearchBarType;
-- (id)getLayoutConfig;
+- (id)getWfLayoutConfig;
+- (id)getListLayoutConfig;
 - (id)getChituConfig;
 - (id)getRequestServiceConfig;
 - (id)getWeexConfig;

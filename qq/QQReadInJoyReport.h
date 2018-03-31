@@ -49,7 +49,7 @@
 - (void)ExposureItems:(id)arg1 reportInfo:(id)arg2;
 - (void)realTimeReport:(id)arg1;
 - (int)getNetWorkType;
-- (void)reportOpenReadInJoyTimeWithIsFirstEnter:(_Bool)arg1 isForceRefresh:(_Bool)arg2 isCached:(_Bool)arg3;
+- (void)reportOpenReadInJoyTimeWithIsFirstEnter:(_Bool)arg1 isForceRefresh:(_Bool)arg2 isCached:(_Bool)arg3 tabIndex:(unsigned long long)arg4;
 - (id)getToUin:(id)arg1;
 - (void)report81C4WithIsInKandianTab:(_Bool)arg1;
 - (void)report81C3;
@@ -79,6 +79,11 @@
 - (id)getR5ForChannelBoardHideChannelId:(long long)arg1 currentChannelId:(long long)arg2 selectIndex:(unsigned long long)arg3 contentType:(int)arg4;
 - (id)getR5ForChannelBoardShowIndex:(int)arg1 channelId:(long long)arg2;
 - (id)getR5ForSocializeReport:(unsigned long long)arg1 article:(id)arg2 entryMode:(int)arg3 toUin:(unsigned long long)arg4;
+- (int)getCollectionViewType:(id)arg1;
+- (unsigned long long)getCollectionViewTypeId:(id)arg1;
+- (int)getCollectionViewContentType:(id)arg1;
+- (id)getColectionViewR5WithArticle:(id)arg1 selectArticle:(id)arg2;
+- (id)getColectionViewR5WithArticle:(id)arg1;
 - (id)getR5WithFeedsSource:(id)arg1;
 - (id)getR5WithKandianModeAndTabSource;
 - (id)getR5WithKandianModeAndTabSource:(int)arg1;
@@ -103,6 +108,7 @@
 - (void)setIndependenceTabCurIndex:(int)arg1;
 - (void)setIndependenceTabRedPointCount:(int)arg1;
 - (void)setIndependenceTabRedPointType:(unsigned long long)arg1;
+- (unsigned int)getBussinessID:(id)arg1;
 - (int)getTabSource;
 - (int)getContentType:(id)arg1;
 - (int)getKandianModeNew;

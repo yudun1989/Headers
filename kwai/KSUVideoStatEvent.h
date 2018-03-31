@@ -43,6 +43,7 @@
 @property(nonatomic) int playURLIpSource; // @dynamic playURLIpSource;
 @property(nonatomic) int playVideoType; // @dynamic playVideoType;
 @property(nonatomic) unsigned long long playedDuration; // @dynamic playedDuration;
+@property(nonatomic) unsigned int playedLoopCount; // @dynamic playedLoopCount;
 @property(nonatomic) unsigned long long popupWindowPlayedDuration; // @dynamic popupWindowPlayedDuration;
 @property(nonatomic) unsigned long long prefetchSize; // @dynamic prefetchSize;
 @property(nonatomic) unsigned long long prepareDuration; // @dynamic prepareDuration;

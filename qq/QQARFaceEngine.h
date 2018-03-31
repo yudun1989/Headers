@@ -30,7 +30,6 @@
 @property(nonatomic) long long faceRecogState; // @synthesize faceRecogState=_faceRecogState;
 @property(nonatomic) __weak id <QQARFaceRecogProtocol> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
-- (vector_be8cf01e)getFaceFeatureWithRectId:(int)arg1;
 - (_Bool)stopFaceTracking;
 - (_Bool)resumeFaceTracking;
 - (_Bool)pauseFaceTracking;

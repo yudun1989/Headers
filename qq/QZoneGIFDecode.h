@@ -23,6 +23,7 @@
 + (id)getInstance;
 @property(readonly, nonatomic) NSOperationQueue *decodeQueue; // @synthesize decodeQueue=_decodeQueue;
 - (void).cxx_destruct;
+- (void)deleteUrlDic:(id)arg1;
 - (id)dealWithStr:(id)arg1;
 - (_Bool)isLocalSourceEmotionWithUrl:(id)arg1;
 - (id)filePathWithUrl:(id)arg1 needCache:(_Bool)arg2;

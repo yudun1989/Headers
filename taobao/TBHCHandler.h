@@ -14,6 +14,8 @@
 {
 }
 
+- (id)scaleImageToNavigatorIcon:(id)arg1 maxHeight:(double)arg2;
+- (id)imageWithColor:(id)arg1 frame:(struct CGRect)arg2;
 - (void)onNavRightBtnClicked:(id)arg1;
 - (void)onNavCenterBtnClicked:(id)arg1;
 - (id)createNavBarRightButton:(id)arg1;
@@ -21,7 +23,6 @@
 - (void)setUpNaviItem:(id)arg1 withConfigItem:(id)arg2;
 - (id)md5OfWeexHC:(id)arg1;
 - (id)domainOfWeexMHC;
-- (_Bool)isValidWeexMHCURL:(id)arg1;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

@@ -31,7 +31,6 @@
 - (void)prepareForReuse;
 - (void)setHighlighted:(_Bool)arg1;
 - (void)setAioModel:(id)arg1;
-- (id)caluateTitle:(id)arg1 maxWidth:(double)arg2;
 - (id)initWithFrame:(struct CGRect)arg1 chatViewTable:(id)arg2;
 
 @end

@@ -10,8 +10,7 @@
 {
 }
 
-- (id)labelModelWithCellType:(id)arg1 cellData:(id)arg2;
-- (void)labelOperation:(id)arg1;
+- (void)clickLabelWithStorage:(id)arg1;
 
 @end
 

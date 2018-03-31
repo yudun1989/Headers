@@ -6,7 +6,7 @@
 
 #import <UIKit/UIButton.h>
 
-@class DrawerRichStateView, NMAsynUrlImageView, QQAvatarView, UIAccessibilityElement, UIControl, UIImageView, UILabel, UIView;
+@class DrawerRichStateView, NMAsynUrlImageView, QQAvatarView, QQTaskEntryModel, UIAccessibilityElement, UIControl, UIImageView, UILabel, UIView;
 
 @interface DrawerMyInfoView : UIButton
 {
@@ -22,6 +22,7 @@
     UIImageView *_signInHintImgView;
     UILabel *_signWordLabel;
     UIImageView *_gameIconImageView;
+    QQTaskEntryModel *_taskEntryModel;
     DrawerRichStateView *_richState;
     UIAccessibilityElement *_helperElement;
 }
@@ -36,6 +37,8 @@
 - (void)touchesCancle:(id)arg1;
 - (void)touchesDown:(id)arg1;
 - (void)goToSignInPage:(id)arg1;
+- (void)goToTaskPage:(id)arg1;
+- (void)switchSignInOrTask:(id)arg1;
 - (double)nickLabelMaxWidthWithLeft:(double)arg1;
 - (double)nickLabelLeft;
 - (void)hideInfoHint;
@@ -52,7 +55,10 @@
 - (void)reloadAppearance;
 - (void)reLayoutSubViews;
 - (void)layoutSubviews;
+- (void)refreshTaskRedDot;
+- (void)initTaskView;
 - (void)initSignView;
+- (void)initEntryView;
 - (id)initWithFrame:(struct CGRect)arg1;
 
 @end

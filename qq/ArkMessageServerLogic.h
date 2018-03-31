@@ -23,6 +23,8 @@
 + (id)sharedInstance;
 - (id).cxx_construct;
 - (void).cxx_destruct;
+- (_Bool)checkIntent:(const vector_1c913a96 *)arg1 callback:(CDUnknownBlockType)arg2;
+- (void)requestArkAppPanelListCallback:(CDUnknownBlockType)arg1;
 - (void)analyzeArkAIText:(id)arg1 msg:(id)arg2 callback:(CDUnknownBlockType)arg3;
 - (void)analyzeAtBabyQText:(id)arg1 callback:(CDUnknownBlockType)arg2;
 - (void)analyzeTextIntent:(id)arg1 callback:(CDUnknownBlockType)arg2;
@@ -30,6 +32,7 @@
 - (_Bool)skipAnalyzeTextByServer:(id)arg1;
 - (void)parseAnalyzeTextReply:(id)arg1 replyString:(id)arg2 intentArray:(vector_1c913a96 *)arg3;
 - (id)getAnalyzeTextLocReqString:(id)arg1;
+- (id)getCommonMeta;
 - (id)getAnalyzeTextReqString:(id)arg1;
 - (void)handleGetLocFieldFail:(id)arg1;
 - (void)handleGetLocFieldSucc:(id)arg1;
@@ -37,10 +40,6 @@
 - (void)removeAddressObserver;
 - (void)getCurrentAddress;
 - (void)doCallback:(_Bool)arg1 dict:(id)arg2;
-- (void)notifyUnknownWordQueryResult;
-- (void)queryUnknownWord:(const struct ContextItem *)arg1 callback:(CDUnknownBlockType)arg2;
-- (void)addUnkownWord:(const basic_string_075b6133 *)arg1 name:(const basic_string_075b6133 *)arg2 realname:(const basic_string_075b6133 *)arg3;
-- (_Bool)getUnkownWord:(const basic_string_075b6133 *)arg1 name:(const basic_string_075b6133 *)arg2 realname:(basic_string_075b6133 *)arg3;
 - (void)initEnviroment;
 - (id)init;
 

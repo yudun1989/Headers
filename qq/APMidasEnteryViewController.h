@@ -39,7 +39,7 @@
 - (void)showPayView;
 - (void)onBuyPageSucc;
 - (void)bizDistribute;
-- (void)navToChannelPage;
+- (void)navToChannelPage:(_Bool)arg1;
 - (void)cancel;
 - (void)onSaveErr:(long long)arg1 innerErrCode:(id)arg2 errMsg:(id)arg3;
 - (void)save;

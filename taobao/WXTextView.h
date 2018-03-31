@@ -19,6 +19,9 @@
 - (id)accessibilityLabel;
 - (id)accessibilityValue;
 - (id)description;
+- (_Bool)canPerformAction:(SEL)arg1 withSender:(id)arg2;
+- (_Bool)canBecomeFirstResponder;
+- (void)copy:(id)arg1;
 - (id)initWithFrame:(struct CGRect)arg1;
 
 @end

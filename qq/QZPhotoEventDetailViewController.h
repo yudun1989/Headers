@@ -14,7 +14,7 @@
 #import <QQMainProject/QZPhotoEventCoverViewDelegate-Protocol.h>
 #import <QQMainProject/UIViewControllerPreviewingDelegate-Protocol.h>
 
-@class MQZoneVideoManager, NSArray, NSDictionary, NSMutableArray, NSMutableSet, NSString, QZPhotoEventCoverView, QzonePhotoModel, UIButton, UIImage;
+@class MQZoneVideoManager, NSArray, NSDictionary, NSMutableArray, NSMutableDictionary, NSMutableSet, NSString, QZPhotoEventCoverView, QzonePhotoModel, UIButton, UIImage;
 
 @interface QZPhotoEventDetailViewController : QZPhotoModuleCommonPhotoListViewController <QZAddMoreFriendDelegate, QZAlbumEditViewControllerDelegate, MQZonePhotoDescriptionDelegate, QQRichShortVideoPreviewViewControllerDelegate, UIViewControllerPreviewingDelegate, QZCommonPhotoCellDelegate, QZPhotoEventCoverViewDelegate>
 {
@@ -46,10 +46,12 @@
     CDUnknownBlockType _addFriendCompeleteBlock;
     UIButton *_stickToBottomButton;
     NSMutableSet *_uinSet;
+    NSMutableDictionary *_assetsForIdentifiers;
     MQZoneVideoManager *_videoManager;
 }
 
 @property(retain, nonatomic) MQZoneVideoManager *videoManager; // @synthesize videoManager=_videoManager;
+@property(retain, nonatomic) NSMutableDictionary *assetsForIdentifiers; // @synthesize assetsForIdentifiers=_assetsForIdentifiers;
 @property(retain, nonatomic) NSMutableSet *uinSet; // @synthesize uinSet=_uinSet;
 @property(nonatomic) _Bool hasShowShareCell; // @synthesize hasShowShareCell=_hasShowShareCell;
 @property(retain, nonatomic) UIButton *stickToBottomButton; // @synthesize stickToBottomButton=_stickToBottomButton;

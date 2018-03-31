@@ -50,8 +50,10 @@
     long long _currentScrollPage;
     double _offsetYBeforeDragging;
     double _offsetYAfterDragging;
+    NSString *_disableSmallWindow;
 }
 
+@property(copy, nonatomic) NSString *disableSmallWindow; // @synthesize disableSmallWindow=_disableSmallWindow;
 @property(nonatomic) _Bool disableScroll; // @synthesize disableScroll=_disableScroll;
 @property(nonatomic) double offsetYAfterDragging; // @synthesize offsetYAfterDragging=_offsetYAfterDragging;
 @property(nonatomic) double offsetYBeforeDragging; // @synthesize offsetYBeforeDragging=_offsetYBeforeDragging;

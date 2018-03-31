@@ -30,16 +30,6 @@
 @property(nonatomic) __weak id <PLVideoUploadDelegate> delegate; // @synthesize delegate=_delegate;
 @property(retain, nonatomic) id userData; // @synthesize userData=_userData;
 - (void).cxx_destruct;
-- (void)stopTimer;
-- (unsigned long long)getTimeoutFromOffline;
-- (void)startTimer;
-- (void)timeoutFunc;
-- (void)resumeTimeout;
-- (void)pauseTimeout;
-- (void)cancelTimeOut;
-- (void)startTimeOutTickWithCallBack:(CDUnknownBlockType)arg1;
-- (void)dealloc;
-- (id)init;
 
 @end
 

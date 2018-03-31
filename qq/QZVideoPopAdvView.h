@@ -20,9 +20,8 @@
     id <QZVideoPopAdvViewDelegate> _delegate;
 }
 
-@property(nonatomic) __weak id <QZVideoPopAdvViewDelegate> delegate; // @synthesize delegate=_delegate;
+@property(nonatomic) id <QZVideoPopAdvViewDelegate> delegate; // @synthesize delegate=_delegate;
 @property(retain, nonatomic) QzoneFeedModel *feedModel; // @synthesize feedModel=_feedModel;
-- (void).cxx_destruct;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

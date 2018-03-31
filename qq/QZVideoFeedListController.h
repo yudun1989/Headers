@@ -29,7 +29,7 @@
     NSString *_cornerAdvGifUrl;
     _Bool _cornerAdvGifIsPreloaded;
     _Bool _isBackToThisController;
-    UIButton *_floatWindowButton;
+    QzoneFeedModel *_curAPAModel;
     UIView *_topMaskView;
     UIView *_blackMaskView;
     UIView *_blackMaskBottomView;
@@ -85,7 +85,6 @@
     NSMutableArray *_premovieRequestIds;
     QZVideoPopAdvView *_popAdvView;
     CALayer *_popShadowLayer;
-    _Bool _hasRequestPopAdv;
     long long _currentVideoPlayDurationWithoutInterrupt;
     QzoneFeedModel *_preFeedModel;
     _Bool _isInEnterFloatWindow;
@@ -117,6 +116,7 @@
     _Bool _globalConfigDisableAutoPageDown;
     _Bool _isIPhoneX;
     _Bool _isHideCommentViewBeforeEnterFullScreen;
+    _Bool _isOCSCompleteLoad;
     UIImage *_bgImage;
     UIViewController *_fromViewController;
     long long _advArea;
@@ -130,6 +130,7 @@
     long long _quickShareReqId;
     UIView *_headBarView;
     UIButton *_closeButton;
+    UIButton *_floatWindowButton;
     UISearchBar *_searchBar;
     UIButton *_searchBarBtn;
     UILabel *_searchBarPlaceHolderLabel;
@@ -141,6 +142,7 @@
     NSString *_mainSearchPageUrl;
     NSString *_historyURL;
     NSString *_historyText;
+    NSMutableArray *_all_after_pastera_advs;
     QZVideoAdvManager *_advManager;
     long long _globalConfigTimeOfControlViewStay;
     long long _globalConfigNumberOfTitleLine;
@@ -149,7 +151,6 @@
 }
 
 + (_Bool)needDeleteFirstModelInFeedList:(id)arg1 originFeedmodel:(id)arg2;
-+ (_Bool)isPGCVideo:(id)arg1;
 + (_Bool)needAdjustCellPosition:(struct CGSize)arg1 isFirstCell:(_Bool)arg2 isPGCVideo:(_Bool)arg3;
 + (void)showVideoFloatLayer:(id)arg1 video:(id)arg2 fromRect:(struct CGRect)arg3 feedCoverImage:(id)arg4 controller:(id)arg5 videoPlayerView:(id)arg6 cell:(id)arg7 startContentOffset:(id)arg8 feedList:(id)arg9 userInfo:(id)arg10;
 + (void)showVideoFloatLayer:(id)arg1 video:(id)arg2 fromRect:(struct CGRect)arg3 feedCoverImage:(id)arg4 controller:(id)arg5 videoPlayerView:(id)arg6 cell:(id)arg7 userInfo:(id)arg8;
@@ -158,6 +159,7 @@
 + (void)commReleaseAudioDevice:(id)arg1 hasObtainedAudioDevice:(_Bool)arg2 complete:(CDUnknownBlockType)arg3;
 + (_Bool)commonRequestAudioDevice:(id)arg1;
 + (id)imageFromView:(id)arg1;
+@property(nonatomic) _Bool isOCSCompleteLoad; // @synthesize isOCSCompleteLoad=_isOCSCompleteLoad;
 @property(nonatomic) _Bool isHideCommentViewBeforeEnterFullScreen; // @synthesize isHideCommentViewBeforeEnterFullScreen=_isHideCommentViewBeforeEnterFullScreen;
 @property(nonatomic) _Bool isIPhoneX; // @synthesize isIPhoneX=_isIPhoneX;
 @property(retain, nonatomic) QzoneVideoFeedCell *currentCellForRealTimeUpdate; // @synthesize currentCellForRealTimeUpdate=_currentCellForRealTimeUpdate;
@@ -176,6 +178,7 @@
 @property(retain, nonatomic) QzoneFeedModel *adaptedFeedModel; // @synthesize adaptedFeedModel=_adaptedFeedModel;
 @property(retain, nonatomic) QzoneFeedModel *curFeedModel; // @synthesize curFeedModel=_curFeedModel;
 @property(retain, nonatomic) QZVideoAdvManager *advManager; // @synthesize advManager=_advManager;
+@property(retain, nonatomic) NSMutableArray *all_after_pastera_advs; // @synthesize all_after_pastera_advs=_all_after_pastera_advs;
 @property(retain, nonatomic) NSString *historyText; // @synthesize historyText=_historyText;
 @property(retain, nonatomic) NSString *historyURL; // @synthesize historyURL=_historyURL;
 @property(retain, nonatomic) NSString *mainSearchPageUrl; // @synthesize mainSearchPageUrl=_mainSearchPageUrl;
@@ -187,6 +190,7 @@
 @property(retain, nonatomic) UILabel *searchBarPlaceHolderLabel; // @synthesize searchBarPlaceHolderLabel=_searchBarPlaceHolderLabel;
 @property(retain, nonatomic) UIButton *searchBarBtn; // @synthesize searchBarBtn=_searchBarBtn;
 @property(retain, nonatomic) UISearchBar *searchBar; // @synthesize searchBar=_searchBar;
+@property(retain, nonatomic) UIButton *floatWindowButton; // @synthesize floatWindowButton=_floatWindowButton;
 @property(retain, nonatomic) UIButton *closeButton; // @synthesize closeButton=_closeButton;
 @property(retain, nonatomic) UIView *headBarView; // @synthesize headBarView=_headBarView;
 @property(nonatomic) _Bool historyHidden; // @synthesize historyHidden=_historyHidden;
@@ -274,17 +278,18 @@
 - (void)cancelWillScrollToNextAnimation;
 - (void)delayScrollToNextCell:(id)arg1;
 - (id)getLayerVideoStateViewWithCell:(id)arg1;
-- (void)hideCommonComponentViewWithCell:(id)arg1;
-- (void)commonComponentViewClicked;
-- (void)playingTick:(id)arg1 param:(id)arg2;
 - (void)reportVideoVisit:(id)arg1 adaptedFeedModel:(id)arg2;
 - (void)reportVideoVisit:(id)arg1;
 - (_Bool)enableFeedVisitReport;
 - (void)feedbackcellDidAppear:(id)arg1;
 - (long long)inputBarTheme;
 - (id)getFeedVideoViewsInCell:(id)arg1;
-- (unsigned long long)secondType:(unsigned long long)arg1;
-- (void)enableBtn:(id)arg1;
+- (float)getAfterPasterAdvDelayTime;
+- (void)destroyAfterPasteraAdv;
+- (void)expourseAfterPasterAdv;
+- (void)playAfterPasterAdv;
+- (_Bool)isPreVideoOfGDTVideo;
+- (_Bool)isNeedPlayAfterPasteraAdv;
 - (void)onFeedCell:(id)arg1 action:(unsigned long long)arg2 param:(id)arg3 feedModel:(id)arg4;
 - (void)doDestroyCornerAdvTimer;
 - (void)closeByScroll:(_Bool)arg1;
@@ -301,6 +306,7 @@
 - (void)playerViewStarted;
 - (void)onCornerAdvShowed;
 - (void)hideCornerAdv;
+- (_Bool)isNeedShowCorderAdv;
 - (void)tryPlayCornerAdv;
 - (void)handleFeedCellBottomRecommClick:(id)arg1 indexPath:(id)arg2 param:(id)arg3;
 - (_Bool)needAsyncaSnapImgWhenDisappear:(id)arg1;
@@ -321,6 +327,7 @@
 - (void)restoreCellVideo:(id)arg1;
 - (void)storeCellVideo:(id)arg1;
 - (void)requestFinished:(id)arg1;
+- (void)preloadAfterPasteraAdv:(id)arg1;
 - (void)preloadAdvCorner;
 - (int)onNotifyRecommVideoList:(id)arg1;
 - (long long)startGetRequest;
@@ -346,7 +353,6 @@
 - (void)closeWithAnimation:(_Bool)arg1;
 - (void)restoreAttachInfo:(id)arg1;
 - (id)recordAttachInfo;
-- (void)enterFloatWindow;
 - (void)nativeToH5;
 - (void)clearWhenCloseListWindow;
 - (void)setFullScreenVC:(id)arg1;
@@ -354,9 +360,6 @@
 - (void)closeVideoListWindow:(CDUnknownBlockType)arg1;
 - (void)initVideoListWinodw:(id)arg1 parentCtr:(id)arg2;
 - (void)close;
-- (void)onEnterFloatWindowTapForDebugInfo:(id)arg1;
-- (void)setupEnterFloatingWindowButton;
-- (void)setupCloseButton;
 - (void)setupBackgroundColor;
 - (id)getCurrentCell;
 - (id)firstVideo:(id)arg1;
@@ -379,7 +382,6 @@
 - (id)getDictFeedsWithKey;
 - (id)getFeedList;
 - (void)stopRequest;
-- (void)loadFloatWindowPlugin;
 - (void)onSearchOCS;
 - (void)onSearch;
 - (void)setupHeadBarView;
@@ -404,9 +406,9 @@
 - (id)initWithFeedModel:(id)arg1 videoPlayerView:(id)arg2 cell:(id)arg3 isInVideoLayerByClickTag:(_Bool)arg4;
 - (id)init;
 - (void)advCancelAll;
-- (void)advCheckToShowPopAdvWithIndex:(long long)arg1 playedTime:(long long)arg2 videoDuration:(long long)arg3;
+- (void)advCheckToShowPopAdvWithIndex:(long long)arg1 playedTime:(long long)arg2 videoDuration:(double)arg3;
 - (void)advPreLoadAdvWithCurFeedModel:(id)arg1;
-- (void)addMediaGainSharingInModel:(id)arg1;
+- (void)addMediaGainSharingToAdvModel:(id)arg1;
 - (void)advPopOnTouchPopView:(id)arg1 action:(unsigned long long)arg2 param:(id)arg3 feedModel:(id)arg4;
 - (void)advPopRefreshPopAdvView:(id)arg1;
 - (void)advPopDestoryView;
@@ -416,6 +418,7 @@
 - (long long)advPopGetPopAdvType:(id)arg1;
 - (_Bool)advPopHasPop;
 - (void)advPopSendRequestForPopAdv:(id)arg1;
+- (void)loadFloatWindowPlugin;
 - (void)reportClickVideoTag:(id)arg1;
 - (void)reportClickCommentButton;
 - (void)advPremovieAdvPlayerCheckLoadWithIndex:(long long)arg1 key:(id)arg2;

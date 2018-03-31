@@ -6,30 +6,40 @@
 
 #import <Foundation/NSObject.h>
 
+#import "TBIMMessageServiceDelegate-Protocol.h"
 #import "UIActionSheetDelegate-Protocol.h"
 #import "WXModuleProtocol-Protocol.h"
 
 @class NSString, WXSDKInstance;
 
-@interface TBIMGoodsSelectWeexModule : NSObject <UIActionSheetDelegate, WXModuleProtocol>
+@interface TBIMGoodsSelectWeexModule : NSObject <UIActionSheetDelegate, TBIMMessageServiceDelegate, WXModuleProtocol>
 {
     WXSDKInstance *_weexInstance;
     CDUnknownBlockType _actionSheetCallback;
+    CDUnknownBlockType _chatItemCallback;
+    NSString *_loadChatItemSessionID;
 }
 
-+ (id)wx_export_method_168;
-+ (id)wx_export_method_157;
-+ (id)wx_export_method_137;
-+ (id)wx_export_method_118;
-+ (id)wx_export_method_112;
-+ (id)wx_export_method_75;
-+ (id)wx_export_method_68;
-+ (id)wx_export_method_62;
-+ (id)wx_export_method_29;
++ (id)wx_export_method_188;
++ (id)wx_export_method_178;
++ (id)wx_export_method_170;
++ (id)wx_export_method_159;
++ (id)wx_export_method_139;
++ (id)wx_export_method_120;
++ (id)wx_export_method_114;
++ (id)wx_export_method_77;
++ (id)wx_export_method_70;
++ (id)wx_export_method_64;
++ (id)wx_export_method_31;
+@property(retain, nonatomic) NSString *loadChatItemSessionID; // @synthesize loadChatItemSessionID=_loadChatItemSessionID;
+@property(copy, nonatomic) CDUnknownBlockType chatItemCallback; // @synthesize chatItemCallback=_chatItemCallback;
 @property(copy, nonatomic) CDUnknownBlockType actionSheetCallback; // @synthesize actionSheetCallback=_actionSheetCallback;
 @property(nonatomic) __weak WXSDKInstance *weexInstance; // @synthesize weexInstance=_weexInstance;
 - (void).cxx_destruct;
 - (void)actionSheet:(id)arg1 clickedButtonAtIndex:(long long)arg2;
+- (void)messageLoadShareItemMessageResult:(id)arg1 andMsg:(id)arg2;
+- (void)getUserInfo:(CDUnknownBlockType)arg1;
+- (void)isEmptyLocalGoodsList:(id)arg1 callback:(CDUnknownBlockType)arg2;
 - (void)beta:(id)arg1 data:(id)arg2;
 - (void)showActionSheet:(id)arg1 p:(id)arg2 n:(id)arg3 callback:(CDUnknownBlockType)arg4;
 - (void)showAlertDialog:(id)arg1 p:(id)arg2 n:(id)arg3 callback:(CDUnknownBlockType)arg4;

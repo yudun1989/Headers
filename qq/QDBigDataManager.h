@@ -26,7 +26,7 @@
 - (_Bool)parseRespData:(char *)arg1 size:(unsigned long long)arg2 outDataHead:(id *)arg3 outDataBody:(id *)arg4;
 - (id)getBigDataReqWithData:(id)arg1 cmd:(unsigned int)arg2 subcmd:(unsigned int)arg3;
 - (id)getCurrentAIO;
-- (void)showNaviMsg:(id)arg1 needShow:(_Bool)arg2;
+- (void)showNaviMsg:(id)arg1 needShow:(_Bool)arg2 isFirstShow:(_Bool)arg3;
 - (void)naviMsgReturnSucc:(id)arg1 userInfo:(id)arg2;
 - (void)requestNaviMsg:(id)arg1;
 - (id)link;

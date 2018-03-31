@@ -6,7 +6,7 @@
 
 #import <Foundation/NSObject.h>
 
-@class NSString;
+@class NSString, TBVideoPollInfoModel;
 
 @interface TBStoryMsgVideoInfo : NSObject
 {
@@ -16,8 +16,10 @@
     NSString *_coverURL;
     unsigned long long _authorUid;
     NSString *_authorUnionId;
+    TBVideoPollInfoModel *_pollInfoModel;
 }
 
+@property(retain, nonatomic) TBVideoPollInfoModel *pollInfoModel; // @synthesize pollInfoModel=_pollInfoModel;
 @property(copy, nonatomic) NSString *authorUnionId; // @synthesize authorUnionId=_authorUnionId;
 @property(nonatomic) _Bool isAuthorBigV; // @synthesize isAuthorBigV=_isAuthorBigV;
 @property(nonatomic) unsigned int videoTime; // @synthesize videoTime=_videoTime;

@@ -6,12 +6,13 @@
 
 #import "TBJSONModel.h"
 
-@class NSString;
+@class CNExceptionSrvDetailItem, NSString;
 
 @interface CNLogisticTransitListItem : TBJSONModel
 {
     NSString *_message;
     NSString *_time;
+    NSString *_status;
     NSString *_statusDesc;
     NSString *_statusIcon;
     NSString *_jKBasicDesc;
@@ -19,8 +20,10 @@
     NSString *_jKIcon2;
     NSString *_jKStatusDesc;
     NSString *_jKStationDesc;
+    CNExceptionSrvDetailItem *_exceptionSrvDetail;
 }
 
+@property(retain, nonatomic) CNExceptionSrvDetailItem *exceptionSrvDetail; // @synthesize exceptionSrvDetail=_exceptionSrvDetail;
 @property(retain, nonatomic) NSString *jKStationDesc; // @synthesize jKStationDesc=_jKStationDesc;
 @property(retain, nonatomic) NSString *jKStatusDesc; // @synthesize jKStatusDesc=_jKStatusDesc;
 @property(retain, nonatomic) NSString *jKIcon2; // @synthesize jKIcon2=_jKIcon2;
@@ -28,6 +31,7 @@
 @property(retain, nonatomic) NSString *jKBasicDesc; // @synthesize jKBasicDesc=_jKBasicDesc;
 @property(retain, nonatomic) NSString *statusIcon; // @synthesize statusIcon=_statusIcon;
 @property(retain, nonatomic) NSString *statusDesc; // @synthesize statusDesc=_statusDesc;
+@property(retain, nonatomic) NSString *status; // @synthesize status=_status;
 @property(retain, nonatomic) NSString *time; // @synthesize time=_time;
 @property(retain, nonatomic) NSString *message; // @synthesize message=_message;
 - (void).cxx_destruct;

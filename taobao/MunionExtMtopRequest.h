@@ -22,6 +22,7 @@
     NSString *_nick;
     NSMutableArray *_imageDataArr;
     NSMutableArray *_imageRequestArr;
+    NSMutableArray *_imageRequestArrForFlowLimit;
     long long _imageSuccessCnt;
     long long _imageCutType;
     NSString *_serviceName;
@@ -34,6 +35,7 @@
 @property(nonatomic) long long imageCutType; // @synthesize imageCutType=_imageCutType;
 @property(nonatomic) struct CGSize bannerSize; // @synthesize bannerSize=_bannerSize;
 @property(nonatomic) long long imageSuccessCnt; // @synthesize imageSuccessCnt=_imageSuccessCnt;
+@property(retain, nonatomic) NSMutableArray *imageRequestArrForFlowLimit; // @synthesize imageRequestArrForFlowLimit=_imageRequestArrForFlowLimit;
 @property(retain, nonatomic) NSMutableArray *imageRequestArr; // @synthesize imageRequestArr=_imageRequestArr;
 @property(retain, nonatomic) NSMutableArray *imageDataArr; // @synthesize imageDataArr=_imageDataArr;
 @property(retain, nonatomic) NSString *nick; // @synthesize nick=_nick;
@@ -50,6 +52,7 @@
 - (void)timeOfJoinImage:(long long)arg1;
 - (void)notJoinImageError:(id)arg1;
 - (void)joinImageError:(id)arg1;
+- (void)checkIfNeedToRecordFlowLimitHandleSuccessWithAdData:(id)arg1;
 - (void)addImageRequest:(id)arg1;
 - (void)cancleImageRequest;
 - (void)imageDownLoadError:(id)arg1 imageDataModel:(id)arg2;
@@ -66,7 +69,11 @@
 - (id)joinImageResolve:(id)arg1 index:(long long)arg2;
 - (void)resolveMtopResposeDataToModel:(id)arg1 index:(long long)arg2;
 - (void)downloadImagesForCPM;
+- (void)downloadImagesForFlowLimitConfiguration:(id)arg1 successBlock:(CDUnknownBlockType)arg2;
 - (void)resolveBannerDic;
+- (id)dataModelMapToDicForFlowLimit;
+- (_Bool)handleDefaultDataForFlowLimit:(id)arg1;
+- (_Bool)isFlowLimitError:(id)arg1;
 - (_Bool)networkError:(id)arg1;
 - (void)retryAfterFail;
 - (void)setupRequestParm;

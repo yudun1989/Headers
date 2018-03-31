@@ -8,7 +8,7 @@
 
 #import <QQMainProject/IEngineDispatchDelegate-Protocol.h>
 
-@class NSCache, NSMutableDictionary, NSString;
+@class NSCache, NSMutableDictionary, NSString, QQLockDictionary;
 
 @interface QQGroupAlbumNoticeManager : NSObject <IEngineDispatchDelegate>
 {
@@ -20,7 +20,10 @@
     NSMutableDictionary *_groupActivitiesNoticeDict;
     NSMutableDictionary *_groupExtraAppsNoticeDict;
     NSMutableDictionary *_groupNoticeCenterNoticeDict;
+    QQLockDictionary *_groupGameGroupNoticeDict;
+    NSMutableDictionary *_groupSchoolHomeworkNoticeDict;
     NSCache *_tribeFeedRedPointDictionary;
+    NSMutableDictionary *_groupDragonAppNoticeDict;
 }
 
 + (id)getInstance;
@@ -31,6 +34,8 @@
 - (void)handleGroupNoticeCenterDelFeedsPush:(struct MsgBody *)arg1;
 - (void)handleGroupAlbumNoticePush:(const void *)arg1 DataLen:(int)arg2;
 - (unsigned long long)byteswap_uint64:(unsigned long long)arg1;
+- (_Bool)hasGroupSchoolHomeworkRedPoint:(id)arg1;
+- (_Bool)hasGameGroupRedPoint:(id)arg1;
 - (_Bool)hasGroupNoticeCenterRedPoint:(id)arg1;
 - (_Bool)hasRedPoint:(id)arg1;
 - (_Bool)trySetGroupExtraAppCount:(unsigned long long)arg1 appid:(unsigned long long)arg2 count:(int)arg3;

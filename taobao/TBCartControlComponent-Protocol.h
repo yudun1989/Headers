@@ -10,6 +10,9 @@
 
 @protocol TBCartControlComponent <NSObject>
 @property(readonly, nonatomic) NSString *divisionCode;
+- (NSString *)favorTipsOfContentPreSell;
+- (NSString *)deleteTipsOfContentPreSell;
+- (NSString *)deleteTipsOfTitlePreSell;
 - (NSString *)favorTipsOfContentPriorityBuy;
 - (NSString *)favorTipsOfTitlePriorityBuy;
 - (NSString *)deleteTipsOfContentPriorityBuy;

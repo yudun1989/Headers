@@ -13,9 +13,11 @@
 
 @interface MCRecommendDataSource : NSObject <MCRecommendDataSourceProtocol>
 {
+    _Bool _isRequesting;
     YHMuticastDelegate<MCRecommendDataSourceDelegate> *_mutiCastDelegate;
 }
 
+@property(nonatomic) _Bool isRequesting; // @synthesize isRequesting=_isRequesting;
 @property(retain, nonatomic) YHMuticastDelegate<MCRecommendDataSourceDelegate> *mutiCastDelegate; // @synthesize mutiCastDelegate=_mutiCastDelegate;
 - (void).cxx_destruct;
 - (void)notifyRecommendData:(id)arg1;

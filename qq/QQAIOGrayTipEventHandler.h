@@ -18,6 +18,7 @@
 }
 
 - (void).cxx_destruct;
+- (_Bool)handleQDTouchEnd:(id)arg1 grayExtInfo:(id)arg2 grayId:(unsigned int)arg3;
 - (_Bool)handleUnicomKingCardClickAtIndex:(long long)arg1 aioCellView:(id)arg2 param:(id)arg3;
 - (_Bool)handleCmshowGrayTipClickAtIndex:(long long)arg1 aioCellView:(id)arg2 param:(id)arg3;
 - (_Bool)handleQDClickAtIndex:(long long)arg1 aioCellView:(id)arg2 param:(id)arg3 grayId:(unsigned int)arg4;

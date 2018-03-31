@@ -20,10 +20,8 @@
     id <TBXSearchTopBarComponentDelegate> _delegate;
     NSMutableArray *_topBarCollection;
     unsigned long long _adpaterItemNum;
-    UIView *_bottomLineView;
 }
 
-@property(retain, nonatomic) UIView *bottomLineView; // @synthesize bottomLineView=_bottomLineView;
 @property(nonatomic) unsigned long long adpaterItemNum; // @synthesize adpaterItemNum=_adpaterItemNum;
 @property(retain, nonatomic) NSMutableArray *topBarCollection; // @synthesize topBarCollection=_topBarCollection;
 @property(nonatomic) __weak id <TBXSearchTopBarComponentDelegate> delegate; // @synthesize delegate=_delegate;

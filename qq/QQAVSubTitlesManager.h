@@ -8,50 +8,44 @@
 
 #import <QQMainProject/IEngineDispatchDelegate-Protocol.h>
 
-@class NSString;
+@class NSMutableArray, NSString;
 
 @interface QQAVSubTitlesManager : NSObject <IEngineDispatchDelegate>
 {
     CDUnknownBlockType _creatSessionSuccBlock;
-    CDUnknownBlockType _joinSessionSuccBlock;
     CDUnknownBlockType _changeSessionSuccBlock;
     CDUnknownBlockType _exitSessionSuccBlock;
     CDUnknownBlockType _creatSessionFailBlock;
-    CDUnknownBlockType _joinSessionFailBlock;
     CDUnknownBlockType _changeSessionFailBlock;
     CDUnknownBlockType _exitSessionFailBlock;
     _Bool _needTrans;
+    unsigned long long _sessionCombineNum;
+    NSMutableArray *_sessionNetArray;
     NSString *_sessionID;
-    unsigned long long _combineNum;
     unsigned long long _subtitleBusiness;
 }
 
 + (id)GetInstance;
-@property(nonatomic) unsigned long long subtitleBusiness; // @synthesize subtitleBusiness=_subtitleBusiness;
-@property(nonatomic) unsigned long long combineNum; // @synthesize combineNum=_combineNum;
 @property(nonatomic) _Bool needTrans; // @synthesize needTrans=_needTrans;
+@property(nonatomic) unsigned long long subtitleBusiness; // @synthesize subtitleBusiness=_subtitleBusiness;
 @property(copy, nonatomic) NSString *sessionID; // @synthesize sessionID=_sessionID;
-- (id)getSessionID;
-- (unsigned long long)getSessionCombineNum;
-- (_Bool)sendHeartData;
-- (_Bool)sendSubtitleSilkData:(id)arg1;
-- (void)startShortVideoTitle:(id)arg1 needTrans:(_Bool)arg2 succ:(CDUnknownBlockType)arg3 fail:(CDUnknownBlockType)arg4;
+@property(readonly, nonatomic) NSMutableArray *sessionNetArray; // @synthesize sessionNetArray=_sessionNetArray;
+@property(readonly, nonatomic) unsigned long long sessionCombineNum; // @synthesize sessionCombineNum=_sessionCombineNum;
 - (void)stopAVSubTitle;
+- (void)startAVSubTitle:(id)arg1 sessionID:(id)arg2 needTrans:(_Bool)arg3 succ:(CDUnknownBlockType)arg4 fail:(CDUnknownBlockType)arg5;
 - (void)startAVSubTitle:(id)arg1 needTrans:(_Bool)arg2 succ:(CDUnknownBlockType)arg3 fail:(CDUnknownBlockType)arg4;
-- (void)handleStartAVSubTitle:(id)arg1 type:(unsigned long long)arg2 needTrans:(_Bool)arg3 succ:(CDUnknownBlockType)arg4 fail:(CDUnknownBlockType)arg5;
+- (void)handleStartAVSubTitle:(id)arg1 sessionID:(id)arg2 needTrans:(_Bool)arg3 succ:(CDUnknownBlockType)arg4 fail:(CDUnknownBlockType)arg5;
+- (void)handleStartAVSubTitle:(id)arg1 needTrans:(_Bool)arg2 succ:(CDUnknownBlockType)arg3 fail:(CDUnknownBlockType)arg4;
 - (void)exitSession;
 - (void)changeSession:(id)arg1 needTrans:(_Bool)arg2 succ:(CDUnknownBlockType)arg3 fail:(CDUnknownBlockType)arg4;
-- (void)joinSession:(id)arg1 needTrans:(_Bool)arg2 succ:(CDUnknownBlockType)arg3 fail:(CDUnknownBlockType)arg4;
-- (void)creatSession:(id)arg1 succ:(CDUnknownBlockType)arg2 fail:(CDUnknownBlockType)arg3;
+- (void)creatSession:(id)arg1 sessionID:(id)arg2 needTrans:(_Bool)arg3 succ:(CDUnknownBlockType)arg4 fail:(CDUnknownBlockType)arg5;
 - (_Bool)parseS2CMessage:(char *)arg1 length:(int)arg2 businessType:(unsigned int)arg3;
 - (_Bool)exitSessionResponse:(char *)arg1 length:(int)arg2;
 - (void)onExitSession;
 - (_Bool)changeSessionResponse:(char *)arg1 length:(int)arg2;
 - (void)onChangeSession:(id)arg1 needTrans:(_Bool)arg2;
-- (_Bool)joinSessionResponse:(char *)arg1 length:(int)arg2;
-- (void)onJoinSession:(id)arg1 needTrans:(_Bool)arg2;
 - (_Bool)creatSessionResponse:(char *)arg1 length:(int)arg2;
-- (void)onCreatSession:(id)arg1;
+- (void)onCreatSession:(id)arg1 sessionID:(id)arg2 needTrans:(_Bool)arg3;
 - (void)notifyError:(id)arg1;
 - (void)didRecievedMsg:(CDStruct_7895f40e)arg1;
 - (id)init;

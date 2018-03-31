@@ -20,12 +20,18 @@
     NSMutableArray *_buttonArray;
     UIImageView *_verticalLine;
     UIImageView *_horizontalline;
+    _Bool _isHomeGroupType;
     id <SimpleAlertViewDelegate> _delegate;
     UILabel *_titleLabel;
     NSString *_createUin;
     NSString *_scheduleID;
+    NSString *_homeGroupJumpURL;
+    NSString *_homeGroupUin;
 }
 
+@property(nonatomic) _Bool isHomeGroupType; // @synthesize isHomeGroupType=_isHomeGroupType;
+@property(copy, nonatomic) NSString *homeGroupUin; // @synthesize homeGroupUin=_homeGroupUin;
+@property(copy, nonatomic) NSString *homeGroupJumpURL; // @synthesize homeGroupJumpURL=_homeGroupJumpURL;
 @property(copy, nonatomic) NSString *scheduleID; // @synthesize scheduleID=_scheduleID;
 @property(copy, nonatomic) NSString *createUin; // @synthesize createUin=_createUin;
 @property(readonly, nonatomic) UILabel *titleLabel; // @synthesize titleLabel=_titleLabel;

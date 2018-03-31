@@ -20,5 +20,6 @@
 @property(nonatomic, getter=jce_hasmore, setter=setJce_hasmore:) int jcev2_p_3_o_hasmore; // @dynamic jcev2_p_3_o_hasmore;
 @property(retain, nonatomic, getter=jce_attach_info, setter=setJce_attach_info:) NSString *jcev2_p_4_o_attach_info; // @dynamic jcev2_p_4_o_attach_info;
 @property(retain, nonatomic, getter=jce_search_bar, setter=setJce_search_bar:) QZJVideoVideoFloatingLayerSearchBar *jcev2_p_5_o_search_bar; // @dynamic jcev2_p_5_o_search_bar;
+@property(retain, nonatomic, getter=jce_all_after_paster_adv, setter=setJce_all_after_paster_adv:) NSArray *jcev2_p_6_o_all_after_paster_adv__b0x9i_VOQZJFeedsSingleFeed; // @dynamic jcev2_p_6_o_all_after_paster_adv__b0x9i_VOQZJFeedsSingleFeed;
 @end
 

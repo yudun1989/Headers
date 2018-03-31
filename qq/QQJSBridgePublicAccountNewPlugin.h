@@ -42,6 +42,7 @@
 - (void)handleJsBridgeRequest_publicAccountNew_reportpreloaddata:(id)arg1;
 - (void)handleJsBridgeRequest_publicAccountNew_isEnabledRightButton:(id)arg1;
 - (void)handleJsBridgeRequest_publicAccountNew_showPicture:(id)arg1;
+- (void)handleJsBridgeRequest_publicAccountNew_getDiandianRedpointState:(id)arg1;
 - (void)handleJsBridgeRequest_publicAccountNew_chooseVideoFromAlbum:(id)arg1;
 - (void)dealloc;
 

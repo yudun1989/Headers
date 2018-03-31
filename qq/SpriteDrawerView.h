@@ -8,46 +8,42 @@
 
 #import <QQMainProject/SpriteMultiImgDelegate-Protocol.h>
 
-@class NSString, SpriteMsgPushModelDrawerActionWorkForFriend, SpriteRedDotModel, SpriteS2CDrawerInfoModel, SpriteWeatherModel;
+@class NSString, SpriteMessageBubble, SpriteMsgPushModelDrawerActionWorkForFriend, SpriteWeatherModel;
 @protocol SpriteDrawerViewDelegate;
 
 @interface SpriteDrawerView : SpriteMultiImageView <SpriteMultiImgDelegate>
 {
+    _Bool _isSpriteStand;
     int _showBubbleType;
     int _showingBoxType;
     long long _bubbleAppearTime;
     long long _bubbleDisappearTime;
+    SpriteMessageBubble *_messageBubbleInfo;
     id <SpriteDrawerViewDelegate> _drawerDelegate;
-    SpriteS2CDrawerInfoModel *_s2cInfoModel;
-    SpriteRedDotModel *_redDotModel;
     SpriteWeatherModel *_weatherModel;
     SpriteMsgPushModelDrawerActionWorkForFriend *_pushModelActionWorkForFriend;
     long long _stepCount;
 }
 
+@property(nonatomic) _Bool isSpriteStand; // @synthesize isSpriteStand=_isSpriteStand;
 @property(nonatomic) int showingBoxType; // @synthesize showingBoxType=_showingBoxType;
 @property(nonatomic) long long stepCount; // @synthesize stepCount=_stepCount;
 @property(nonatomic) int showBubbleType; // @synthesize showBubbleType=_showBubbleType;
 @property(retain, nonatomic) SpriteMsgPushModelDrawerActionWorkForFriend *pushModelActionWorkForFriend; // @synthesize pushModelActionWorkForFriend=_pushModelActionWorkForFriend;
 @property(retain, nonatomic) SpriteWeatherModel *weatherModel; // @synthesize weatherModel=_weatherModel;
-@property(retain, nonatomic) SpriteRedDotModel *redDotModel; // @synthesize redDotModel=_redDotModel;
-@property(retain, nonatomic) SpriteS2CDrawerInfoModel *s2cInfoModel; // @synthesize s2cInfoModel=_s2cInfoModel;
 @property(nonatomic) id <SpriteDrawerViewDelegate> drawerDelegate; // @synthesize drawerDelegate=_drawerDelegate;
+@property(retain, nonatomic) SpriteMessageBubble *messageBubbleInfo; // @synthesize messageBubbleInfo=_messageBubbleInfo;
 @property(nonatomic) long long bubbleDisappearTime; // @synthesize bubbleDisappearTime=_bubbleDisappearTime;
 @property(nonatomic) long long bubbleAppearTime; // @synthesize bubbleAppearTime=_bubbleAppearTime;
-- (id)externParmForS2C;
-- (long long)getZeroTimeWithTime:(long long)arg1;
 - (id)getCurrentDate;
 - (id)getStepCountBubblePushURL;
 - (long long)getActionIDbyStepLevel:(unsigned long long)arg1;
+- (void)push2WebViewControllerWithURL:(id)arg1;
+- (void)checkBubbleAndJumpToShop;
 - (void)clickSpriteViewToJump;
-- (void)pushToWebViewControllerWithURL:(id)arg1;
-- (void)pushToShopViewControllerWithShopTab:(int)arg1 externParam:(id)arg2;
 - (void)pushToStepCountURL;
 - (void)pushToWeatherURL;
 - (void)pushToWeatherGuideAndStepGuideURL;
-- (void)pushToS2CURL;
-- (void)pushToRedDotURL;
 - (void)onSpriteInstanceBubbleClicked:(id)arg1;
 - (void)spriteBoxClick;
 - (void)onSpriteInstanceClicked:(id)arg1;
@@ -56,13 +52,10 @@
 - (void)didReceiveLocationUpdateNotification:(id)arg1;
 - (void)addLocationUpdateNotificationIfNeed;
 - (_Bool)needUpdateLocation;
+- (_Bool)hadGameBoxMsg;
+- (_Bool)canShowGameBox;
 - (void)resetBubbleInfo;
 - (void)loadWeatherInfo;
-- (void)loadInfoModelByKey:(id)arg1;
-- (void)markHasShowedWithInfoModel:(id)arg1 key:(id)arg2;
-- (void)updateShowCountsWithInfoModel:(id)arg1 key:(id)arg2;
-- (void)updateTodayBubbleShowCounts;
-- (_Bool)needShowBubble;
 - (int)getShowBubbleType;
 - (void)removeBubble;
 - (void)actionForShowBubblefailed;
@@ -76,6 +69,9 @@
 - (void)showBussniessRedDot;
 - (void)showCmShowGuide;
 - (void)showBubbleByType;
+- (void)playPetRandomAction;
+- (id)redDotModel;
+- (id)s2cInfoModel;
 - (void)refreshSpriteViewData;
 - (void)dealloc;
 - (id)initWithFrame:(struct CGRect)arg1;

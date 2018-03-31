@@ -34,6 +34,7 @@
 - (void)onAudioSessionActive;
 - (id)getIntruptStr;
 - (void)setMix;
+- (void)delayRecoverOtherAppVolume;
 - (void)recoverOtherAppVolume;
 - (void)resetReadInJoyAudioMix;
 - (void)setReadInJoyAudioMix:(_Bool)arg1;
@@ -49,6 +50,7 @@
 - (_Bool)defaultVolumeMute:(int)arg1;
 - (_Bool)volumeMute:(int)arg1;
 - (void)makeVolumeMute:(_Bool)arg1 volumeType:(int)arg2;
+- (void)dealloc;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

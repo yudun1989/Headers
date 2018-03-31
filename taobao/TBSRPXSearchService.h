@@ -6,7 +6,7 @@
 
 #import "XSearchService.h"
 
-@class NSDictionary, NSMutableArray, NSString, TBSearchPushButtonModel, TBSearchReview, TBXSearchContext, TBXSearchOptionBase;
+@class NSDictionary, NSMutableArray, NSString, TBSearchBotSearchModel, TBSearchPushButtonModel, TBSearchReview, TBXSearchContext, TBXSearchOptionBase;
 
 @interface TBSRPXSearchService : XSearchService
 {
@@ -16,12 +16,12 @@
     NSMutableArray *_filterArray;
     TBSearchPushButtonModel *_pushButtonModel;
     TBSearchReview *_review;
-    NSDictionary *_botInfo;
+    TBSearchBotSearchModel *_botModel;
     NSString *_serverPageName;
 }
 
 @property(retain, nonatomic) NSString *serverPageName; // @synthesize serverPageName=_serverPageName;
-@property(retain, nonatomic) NSDictionary *botInfo; // @synthesize botInfo=_botInfo;
+@property(retain, nonatomic) TBSearchBotSearchModel *botModel; // @synthesize botModel=_botModel;
 @property(retain, nonatomic) TBSearchReview *review; // @synthesize review=_review;
 @property(retain, nonatomic) TBSearchPushButtonModel *pushButtonModel; // @synthesize pushButtonModel=_pushButtonModel;
 @property(retain, nonatomic) NSMutableArray *filterArray; // @synthesize filterArray=_filterArray;
@@ -78,6 +78,7 @@
 - (id)getNXRawIconData;
 - (id)getLocalIconStyleDataWithLocalDataPathString:(id)arg1;
 - (long long)getDefaultLayoutStyle;
+- (_Bool)isSimilarAndSame;
 - (_Bool)isInShopService;
 - (_Bool)isSimilarShop;
 - (id)navTitle;

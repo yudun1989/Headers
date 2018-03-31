@@ -48,6 +48,7 @@
     _Bool _singleChoosePreview;
     _Bool _aVChatComingDismiss;
     _Bool _onPanGesture;
+    int _maxSelectedSize;
     int _totalMaxCount;
     long long _curTroopCode;
     NSMutableArray *_selectedAlbumBarInfo;
@@ -64,11 +65,13 @@
 @property(nonatomic) _Bool isFlash; // @synthesize isFlash=_isFlash;
 @property(nonatomic) _Bool disablePhotoPreviewOnClick; // @synthesize disablePhotoPreviewOnClick=_disablePhotoPreviewOnClick;
 @property(nonatomic) int totalMaxCount; // @synthesize totalMaxCount=_totalMaxCount;
+@property(nonatomic) int maxSelectedSize; // @synthesize maxSelectedSize=_maxSelectedSize;
 @property(nonatomic) _Bool isNeedSpecialLogicForAVFloatBar; // @synthesize isNeedSpecialLogicForAVFloatBar=_isNeedSpecialLogicForAVFloatBar;
 @property(retain, nonatomic) NSMutableArray *selectedAlbumBarInfo; // @synthesize selectedAlbumBarInfo=_selectedAlbumBarInfo;
 @property(nonatomic) _Bool isShowSend2TroopAlbumBar; // @synthesize isShowSend2TroopAlbumBar=_isShowSend2TroopAlbumBar;
 @property(nonatomic) long long curTroopCode; // @synthesize curTroopCode=_curTroopCode;
 @property(nonatomic) _Bool isSupportFlashPic; // @synthesize isSupportFlashPic=_isSupportFlashPic;
+- (unsigned long long)selectedListSize;
 - (void)refreshSelectedView:(id)arg1 withOriIndex:(int)arg2;
 - (_Bool)canRememberUpload:(long long)arg1 groupCode:(long long)arg2;
 - (_Bool)isItemIndexSelected:(long long)arg1;

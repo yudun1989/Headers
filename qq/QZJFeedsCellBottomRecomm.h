@@ -18,6 +18,7 @@
 @property(retain, nonatomic, getter=jce_joinlist, setter=setJce_joinlist:) QZJFeedsSJoinList *jcev2_p_10_o_joinlist; // @dynamic jcev2_p_10_o_joinlist;
 @property(nonatomic, getter=jce_isSupportFeedback, setter=setJce_isSupportFeedback:) _Bool jcev2_p_11_o_isSupportFeedback; // @dynamic jcev2_p_11_o_isSupportFeedback;
 @property(nonatomic, getter=jce_iReportFlag, setter=setJce_iReportFlag:) int jcev2_p_12_o_iReportFlag; // @dynamic jcev2_p_12_o_iReportFlag;
+@property(nonatomic, getter=jce_iButtonFlag, setter=setJce_iButtonFlag:) int jcev2_p_13_o_iButtonFlag; // @dynamic jcev2_p_13_o_iButtonFlag;
 @property(retain, nonatomic, getter=jce_title, setter=setJce_title:) NSString *jcev2_p_1_o_title; // @dynamic jcev2_p_1_o_title;
 @property(retain, nonatomic, getter=jce_summary, setter=setJce_summary:) NSString *jcev2_p_2_o_summary; // @dynamic jcev2_p_2_o_summary;
 @property(retain, nonatomic, getter=jce_buttonIconUrl, setter=setJce_buttonIconUrl:) NSString *jcev2_p_3_o_buttonIconUrl; // @dynamic jcev2_p_3_o_buttonIconUrl;

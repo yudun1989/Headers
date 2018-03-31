@@ -10,8 +10,10 @@
 {
 }
 
++ (void)feedBackInfo:(id)arg1 operType:(long long)arg2 operSource:(long long)arg3 userID:(id)arg4 operTimes:(int)arg5;
 + (void)feedBackInfo:(id)arg1 operType:(long long)arg2 operSource:(long long)arg3 userID:(id)arg4;
 + (id)instance;
+- (void)getAdv:(long long)arg1 appid:(int)arg2 iReqFlag:(int)arg3 key:(id)arg4 advCnt:(int)arg5 advid:(int)arg6 iPullAsExposeOper:(int)arg7 complete:(CDUnknownBlockType)arg8;
 - (void)getAdv:(long long)arg1 appid:(int)arg2 iReqFlag:(int)arg3 key:(id)arg4 advCnt:(int)arg5 advid:(int)arg6 iPullAsExposeOper:(int)arg7 withDone:(CDUnknownBlockType)arg8;
 - (long long)getAdv:(long long)arg1 appids:(id)arg2 iReqFlag:(int)arg3 keys:(id)arg4 advCnts:(id)arg5 advids:(id)arg6 iPullAsExposeOper:(int)arg7;
 - (long long)getAdv:(long long)arg1 appid:(int)arg2 iReqFlag:(int)arg3 key:(id)arg4 advCnt:(int)arg5 advid:(int)arg6 iPullAsExposeOper:(int)arg7;

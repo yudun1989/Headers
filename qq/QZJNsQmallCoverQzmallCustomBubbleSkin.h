@@ -20,6 +20,7 @@
 @property(nonatomic, getter=jce_lUin, setter=setJce_lUin:) long long jcev2_p_2_o_lUin; // @dynamic jcev2_p_2_o_lUin;
 @property(nonatomic, getter=jce_lHeadBgColor, setter=setJce_lHeadBgColor:) long long jcev2_p_3_o_lHeadBgColor; // @dynamic jcev2_p_3_o_lHeadBgColor;
 @property(nonatomic, getter=jce_lTextColor, setter=setJce_lTextColor:) long long jcev2_p_4_o_lTextColor; // @dynamic jcev2_p_4_o_lTextColor;
+@property(retain, nonatomic, getter=jce_strFeedsPicUrl, setter=setJce_strFeedsPicUrl:) NSString *jcev2_p_5_o_strFeedsPicUrl; // @dynamic jcev2_p_5_o_strFeedsPicUrl;
 
 @end
 

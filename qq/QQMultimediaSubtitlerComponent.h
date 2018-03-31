@@ -16,6 +16,8 @@
     UIView *_subtitlePanel;
     _Bool _cleareFlag;
     unsigned long long _startRecordTime;
+    _Bool _bPreTranTime;
+    _Bool _bStartRecordTranTime;
     id <QQMultimediaSubtitlerDelegate> _subtitleDelegate;
     QQSubtitleConfigModel *_selectedItem;
     NSArray *_data;

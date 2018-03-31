@@ -13,16 +13,14 @@
 #import "SKStoreProductViewControllerDelegate-Protocol.h"
 #import "UINavigationBarDelegate-Protocol.h"
 
-@class KSFollowModel, KSFollowRecommendUserService, KSNavAlertView, KSNavigationBar, KSNotifyDotView, KSScrollTitleView, KSUploadingFeedsViewController, NSString, UIButton, UIImageView, UINavigationItem, UITapGestureRecognizer, UIView;
+@class KSNavAlertView, KSNavigationBar, KSNotifyDotView, KSScrollTitleView, KSUploadingFeedsViewController, NSString, UIButton, UIImageView, UINavigationItem, UITapGestureRecognizer, UIView;
 
 @interface KSHomeViewController : KSHomePageViewController <KSURLPortalAnnotation, KSScrollTitleViewDelegate, UINavigationBarDelegate, SKStoreProductViewControllerDelegate, KSHomeRecommendViewDelegate, KSInteractiveTransitioningToViewController>
 {
-    _Bool _useRecommendFollowPageRef;
     _Bool _forceReloadFollowPage;
     _Bool _anonymShotEnabled;
     _Bool _bubbleShowing;
     _Bool _needLogSwitchTab;
-    _Bool _recommendUserReqSucceed;
     UIButton *_videoButton;
     KSNotifyDotView *_notifyDotView;
     KSScrollTitleView *_scrollTitleView;
@@ -32,19 +30,14 @@
     KSNavAlertView *_navAlertView;
     UITapGestureRecognizer *_localDoubleTapGestureRecognizer;
     UIImageView *_localTriangleImageView;
-    KSFollowRecommendUserService *_recommendUserService;
     KSUploadingFeedsViewController *_uploadingFeedsViewController;
-    KSFollowModel *_followModel;
     NSString *_homeMenuPointToken;
 }
 
 + (id)ks_portalViewControllerWithContext:(id)arg1;
 + (id)ks_portalPath;
 @property(retain, nonatomic) NSString *homeMenuPointToken; // @synthesize homeMenuPointToken=_homeMenuPointToken;
-@property(retain, nonatomic) KSFollowModel *followModel; // @synthesize followModel=_followModel;
 @property(retain, nonatomic) KSUploadingFeedsViewController *uploadingFeedsViewController; // @synthesize uploadingFeedsViewController=_uploadingFeedsViewController;
-@property(nonatomic) _Bool recommendUserReqSucceed; // @synthesize recommendUserReqSucceed=_recommendUserReqSucceed;
-@property(retain, nonatomic) KSFollowRecommendUserService *recommendUserService; // @synthesize recommendUserService=_recommendUserService;
 @property(nonatomic) _Bool needLogSwitchTab; // @synthesize needLogSwitchTab=_needLogSwitchTab;
 @property(nonatomic) _Bool bubbleShowing; // @synthesize bubbleShowing=_bubbleShowing;
 @property(nonatomic) _Bool anonymShotEnabled; // @synthesize anonymShotEnabled=_anonymShotEnabled;
@@ -63,14 +56,7 @@
 - (void)ks_didEndInteractiveTransitioning:(id)arg1;
 - (id)ks_thumbnailViewForTransitioning:(id)arg1 context:(id)arg2;
 - (void)observeDidBecomeActive:(id)arg1;
-- (void)recommendViewDidClose:(id)arg1;
-- (void)recommendView:(id)arg1 didSelectItem:(id)arg2;
-- (void)recommendView:(id)arg1 didFollowItem:(id)arg2;
-- (void)recommendView:(id)arg1 didCloseItem:(id)arg2;
-- (void)recommendView:(id)arg1 didDisplayedItems:(id)arg2 completion:(CDUnknownBlockType)arg3;
 - (id)pageURL;
-- (void)reloadRecommendUsers;
-- (void)didReceiveFollowNotification:(id)arg1;
 - (void)didReceivePublishGuideCheckFinishNotification:(id)arg1;
 - (void)showPublishGuideBubble;
 - (void)showMigrationAlertIfNeeded;

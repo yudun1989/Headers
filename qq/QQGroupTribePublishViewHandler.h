@@ -8,11 +8,11 @@
 
 #import <QQMainProject/QQGTTaskUploadBatchManagerDelegate-Protocol.h>
 
-@class NSArray, NSDictionary, NSMutableArray, NSString, QQGTCachePhotoOnlineManager, QQGTDraftModel, QQGTTaskUploadBatchManager, QQWebViewController;
+@class NSArray, NSDictionary, NSMutableArray, NSString, QQGTCachePhotoOnlineManager, QQGTDraftModel, QQGTTaskUploadBatchManager, QQTribeCaptureHandler, QQWebViewController;
 
 @interface QQGroupTribePublishViewHandler : QQPublishViewHandler <QQGTTaskUploadBatchManagerDelegate>
 {
-    int _selectedMediaType;
+    unsigned long long _selectedMediaType;
     NSMutableArray *_mediaContent;
     _Bool _waitPublish;
     NSDictionary *passThroughMsg;
@@ -35,22 +35,34 @@
     NSString *_groupUin;
     CDUnknownBlockType _cancelCallBack;
     CDUnknownBlockType _confirmCallBack;
+    unsigned long long _shortVideoState;
+    QQTribeCaptureHandler *_captureHandler;
 }
 
 + (id)getJsonDictFromPhotoInfo:(id)arg1;
+@property(retain, nonatomic) QQTribeCaptureHandler *captureHandler; // @synthesize captureHandler=_captureHandler;
+@property(nonatomic) unsigned long long shortVideoState; // @synthesize shortVideoState=_shortVideoState;
 @property(copy, nonatomic) CDUnknownBlockType confirmCallBack; // @synthesize confirmCallBack=_confirmCallBack;
 @property(copy, nonatomic) CDUnknownBlockType cancelCallBack; // @synthesize cancelCallBack=_cancelCallBack;
 - (void)handleAIOOrignalImageDownloadStateNotification:(id)arg1;
 - (void)requestAIOImageTimeout;
 - (void)downloadAIOPic:(id)arg1;
+- (void)doReportTribeShortVideo;
 - (void)unilogSuccessPublish;
 - (void)unilogExpPublish;
 - (void)reportWhenTopicPublishIsFail:(id)arg1 reserve3:(id)arg2;
+- (id)currentPubType;
 - (id)currentOpEnter;
 - (void)uniformLogWithOpName:(id)arg1 reserve2:(id)arg2 reserve3:(id)arg3;
 - (void)uniformLogForGroupWithOpName:(id)arg1 reserve2:(id)arg2;
 - (void)uniformLogWithOpName:(id)arg1 reserve2:(id)arg2;
 - (void)dataReport:(int)arg1 withInfor:(id)arg2;
+- (void)notifyUploadFail:(id)arg1 fail:(id)arg2;
+- (void)notifyUploadSuccess:(id)arg1;
+- (void)notifyVideoProcessFail:(id)arg1 fail:(id)arg2;
+- (void)notifyVideoProcessSuccess:(id)arg1;
+- (void)doneUploadShortVideoThumbeUrl:(id)arg1;
+- (void)publishViewStartProcessShortVideo;
 - (void)updateBid:(id)arg1;
 - (void)publishViewDidSimplyChangeBidUsingSuggestTribe:(id)arg1;
 - (void)publishViewDidChangeBid:(id)arg1 newCondition:(id)arg2;
@@ -72,6 +84,7 @@
 - (void)publishViewDidClickCancleBtn:(id)arg1;
 - (void)publishViewDidClickConfirmBtn:(id)arg1;
 - (void)updateByDraftData;
+- (void)updateByVideoContent;
 - (void)savePhotoDraft;
 - (void)saveTheCurrentDraft;
 - (void)doSomethingBeforeDisappear;

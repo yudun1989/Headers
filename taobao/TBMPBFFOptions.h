@@ -33,6 +33,8 @@
     NSString *_anchorAccountID;
     NSString *_videoDefinition;
     NSString *_logToken;
+    NSString *_mediaSourceType;
+    NSString *_spm;
 }
 
 + (id)defaultPlayerOptions;
@@ -43,6 +45,8 @@
 @property(nonatomic) int renderType; // @synthesize renderType=_renderType;
 @property(nonatomic) _Bool playerShouldUpthrowImage; // @synthesize playerShouldUpthrowImage=_playerShouldUpthrowImage;
 @property(nonatomic) _Bool isUseProxy; // @synthesize isUseProxy=_isUseProxy;
+@property(copy, nonatomic) NSString *spm; // @synthesize spm=_spm;
+@property(copy, nonatomic) NSString *mediaSourceType; // @synthesize mediaSourceType=_mediaSourceType;
 @property(copy, nonatomic) NSString *logToken; // @synthesize logToken=_logToken;
 @property(copy, nonatomic) NSString *videoDefinition; // @synthesize videoDefinition=_videoDefinition;
 @property(copy, nonatomic) NSString *anchorAccountID; // @synthesize anchorAccountID=_anchorAccountID;

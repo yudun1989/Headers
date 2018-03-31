@@ -30,7 +30,6 @@
 @property(nonatomic) int textType; // @synthesize textType=_textType;
 @property(retain, nonatomic) NSString *text; // @synthesize text=_text;
 @property(nonatomic) int actionId; // @synthesize actionId=_actionId;
-- (id)description;
 - (void)dealloc;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)getFavDictionary;

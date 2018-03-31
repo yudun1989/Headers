@@ -32,6 +32,7 @@
 - (id)getReadConfirmLicense;
 - (void)onEnterBackGround;
 - (void)showScheduleDetail:(id)arg1;
+- (void)reportHGAction:(id)arg1 uin:(id)arg2;
 - (void)didClickButtonAtIndex:(id)arg1 atIndex:(int)arg2;
 - (void)requstTimeOut:(id)arg1;
 - (void)showScheduleInfoAlertView:(id)arg1;

@@ -41,6 +41,7 @@
 @property(nonatomic) int shareType; // @synthesize shareType=_shareType;
 @property(nonatomic) QQViewController *parentController; // @synthesize parentController=_parentController;
 @property(retain, nonatomic) NSArray *activities; // @synthesize activities=_activities;
+- (void)changeGameVCToPortrait;
 - (void)dealloc;
 - (void)shareToQzoneSuccess;
 - (void)shareToFriendSuccess;

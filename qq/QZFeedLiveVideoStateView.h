@@ -13,10 +13,13 @@
     UIImageView *_liveEndBgView;
     unsigned long long _currentState;
     _Bool _alwaysHideDurationLabel;
+    _Bool _isPanoramaLive;
 }
 
+@property(nonatomic) _Bool isPanoramaLive; // @synthesize isPanoramaLive=_isPanoramaLive;
 @property(nonatomic) _Bool alwaysHideDurationLabel; // @synthesize alwaysHideDurationLabel=_alwaysHideDurationLabel;
 - (void).cxx_destruct;
+- (void)showPlayIcon:(_Bool)arg1;
 - (void)didMoveToWindow;
 - (void)setFeedLiveInfoViewsHidden:(_Bool)arg1;
 - (void)dealView:(id)arg1 Animated:(_Bool)arg2 isShow:(_Bool)arg3 completion:(CDUnknownBlockType)arg4;

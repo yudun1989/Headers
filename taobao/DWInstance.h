@@ -147,6 +147,15 @@
 @property(retain, nonatomic) DWInteractiveInfo *interactiveInfo; // @synthesize interactiveInfo=_interactiveInfo;
 @property(retain, nonatomic) DWVideoInfo *videoInfo; // @synthesize videoInfo=_videoInfo;
 - (void).cxx_destruct;
+- (void)invisibaleWXCmp:(id)arg1;
+- (void)closeWeexViewLayer;
+- (void)openWeexViewLayer:(id)arg1;
+- (void)showAllInteractiveCmp:(_Bool)arg1;
+- (id)shareData;
+- (id)taowaData;
+- (void)share:(unsigned long long)arg1 index:(unsigned long long)arg2 type:(unsigned long long)arg3;
+- (void)openNewVideo:(unsigned long long)arg1 index:(unsigned long long)arg2 isUserChecked:(_Bool)arg3;
+- (void)openNewVideo:(unsigned long long)arg1 index:(unsigned long long)arg2;
 - (void)addViewToRightInteractiveView:(id)arg1 upOfLikeBtn:(_Bool)arg2 needLayout:(_Bool)arg3;
 - (void)onWXCmpDismiss:(id)arg1;
 - (void)changeWeexCmpFrame:(id)arg1;
@@ -154,6 +163,8 @@
 - (void)handleAttentionStatusChange:(id)arg1;
 - (void)handleLikeStatusChange:(id)arg1;
 - (id)makePlaySid;
+- (void)restoreInteractiveRightBar;
+- (void)predisplayInteractiveRightBar;
 - (void)shouldShowView;
 - (void)shouldHideView;
 - (void)switchFullScreen;
@@ -179,6 +190,7 @@
 - (void)onVideoClose;
 - (void)onVideoSliderStartDrag;
 - (void)onVideoComplete;
+- (void)onShowPromptView;
 - (void)onVideoError:(id)arg1;
 - (void)onVideoPrepared;
 - (void)onVideoPlay;

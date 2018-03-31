@@ -27,7 +27,7 @@
 @property(nonatomic) _Bool isDictationPlaceholderShow; // @synthesize isDictationPlaceholderShow=_isDictationPlaceholderShow;
 @property(nonatomic) __weak UIResponder *overrideNextResponder; // @synthesize overrideNextResponder=_overrideNextResponder;
 - (void).cxx_destruct;
-- (id)accessibilityLabel;
+- (id)accessibilityValue;
 - (void)didBeginEditing;
 - (void)setTextContainerInset:(struct UIEdgeInsets)arg1;
 - (double)getQuoteLabelHeight;

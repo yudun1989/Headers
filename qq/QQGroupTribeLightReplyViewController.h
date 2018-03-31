@@ -28,7 +28,7 @@
     UIView *_bgView;
     QQGroupTribeDetailInputTextView *_textField;
     QQGroupTribeLightReplyPhotoCell *_photoView;
-    int _selectedMediaType;
+    unsigned long long _selectedMediaType;
     NSArray *_mediaContent;
     QQGTTopicRecordCell *_RecordCell;
     _Bool _isFirstCall;

@@ -58,6 +58,7 @@
 - (void)sendLikeActionReport:(long long)arg1 totalFavorCount:(long long)arg2;
 - (void)delayUploadLikeCount;
 - (void)onTapGesture:(id)arg1;
+- (void)addFavor;
 - (void)showStarAnimationView;
 - (void)hideStarAnimationView;
 - (void)setShow:(_Bool)arg1;

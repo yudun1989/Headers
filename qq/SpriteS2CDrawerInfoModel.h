@@ -11,9 +11,11 @@
 @interface SpriteS2CDrawerInfoModel : SpritePushItemDrawerInfo
 {
     int _messageID;
+    int _msgType;
     NSString *_wording;
 }
 
+@property(nonatomic) int msgType; // @synthesize msgType=_msgType;
 @property(retain, nonatomic) NSString *wording; // @synthesize wording=_wording;
 @property(nonatomic) int messageID; // @synthesize messageID=_messageID;
 - (void)dealloc;

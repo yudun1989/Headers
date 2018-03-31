@@ -15,8 +15,10 @@
     int _state;
     CAShapeLayer *_layer2;
     CAShapeLayer *_layer3;
+    int _lineWidth;
 }
 
+@property(nonatomic) int lineWidth; // @synthesize lineWidth=_lineWidth;
 @property(retain, nonatomic) UIColor *progressTintColor; // @synthesize progressTintColor=_progressTintColor;
 - (void)DrawCircle:(float)arg1 endAngle:(float)arg2 duration:(float)arg3;
 - (void)pauseAnimation:(float)arg1;

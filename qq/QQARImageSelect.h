@@ -11,7 +11,6 @@
 @interface QQARImageSelect : NSObject
 {
     _Bool _focusedEngineStart;
-    _Bool _forOCR;
     _Bool _cameraIsStatic;
     int _sameSceneDiff;
     float _bestImgThreshold;
@@ -23,7 +22,6 @@
 @property(nonatomic) char *selectImgYByte; // @synthesize selectImgYByte=_selectImgYByte;
 @property(nonatomic) _Bool cameraIsStatic; // @synthesize cameraIsStatic=_cameraIsStatic;
 @property(nonatomic) float bestImgThreshold; // @synthesize bestImgThreshold=_bestImgThreshold;
-@property(nonatomic) _Bool forOCR; // @synthesize forOCR=_forOCR;
 @property(nonatomic) _Bool focusedEngineStart; // @synthesize focusedEngineStart=_focusedEngineStart;
 @property(nonatomic) int sameSceneDiff; // @synthesize sameSceneDiff=_sameSceneDiff;
 - (void).cxx_destruct;

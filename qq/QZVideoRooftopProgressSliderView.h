@@ -10,18 +10,22 @@
 
 @interface QZVideoRooftopProgressSliderView : UIView
 {
-    _Bool _type;
+    long long _type;
     NSMutableArray *_durationArr;
     NSMutableArray *_sliderArr;
     QZVideoPlayerLightToolbar *_lightToolbar;
+    QZVideoPlayerLightToolbar *_leftLightToolbar;
+    QZVideoPlayerLightToolbar *_rightLightToolbar;
     long long _currentIndex;
 }
 
 @property(nonatomic) long long currentIndex; // @synthesize currentIndex=_currentIndex;
+@property(retain, nonatomic) QZVideoPlayerLightToolbar *rightLightToolbar; // @synthesize rightLightToolbar=_rightLightToolbar;
+@property(retain, nonatomic) QZVideoPlayerLightToolbar *leftLightToolbar; // @synthesize leftLightToolbar=_leftLightToolbar;
 @property(retain, nonatomic) QZVideoPlayerLightToolbar *lightToolbar; // @synthesize lightToolbar=_lightToolbar;
 @property(retain, nonatomic) NSMutableArray *sliderArr; // @synthesize sliderArr=_sliderArr;
 @property(retain, nonatomic) NSMutableArray *durationArr; // @synthesize durationArr=_durationArr;
-@property(nonatomic) _Bool type; // @synthesize type=_type;
+@property(nonatomic) long long type; // @synthesize type=_type;
 
 @end
 

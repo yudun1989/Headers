@@ -13,11 +13,10 @@
 + (void)clearForceExitFlag;
 + (_Bool)getForceExitFlag;
 + (void)onAppEnterBackground:(id)arg1;
-+ (void)checkNeedExit;
-+ (void)checkCrashFlag;
 + (void)preloadConfig;
 + (void)doAsyncPreLoad;
 + (void)workAfterAccount;
++ (void)swizzleMethodForCodeZipper;
 + (void)initPublicComponents;
 + (void)initTools;
 + (void)initBaseFrameWork;

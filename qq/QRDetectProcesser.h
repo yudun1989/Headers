@@ -19,6 +19,7 @@
     double _lastCheckLightTime;
     double _luma;
     _Bool _firstCapture;
+    _Bool _isSupportMetal;
     id <MTLBuffer> _texBuffer;
     id <MTLDevice> _device;
     struct __CVMetalTextureCache *_textureCache;
@@ -45,9 +46,6 @@
 - (void)resetCheckLightTime;
 - (void)checkNeedTorch:(id)arg1;
 - (void)getTorchLuma;
-- (id)scaleImage:(id)arg1 toScale:(float)arg2;
-- (id)resizeImage:(id)arg1 withNewSize:(struct CGSize)arg2;
-- (id)clipImage:(id)arg1 byRect:(struct CGRect)arg2;
 - (_Bool)decodeLibImageThread:(id)arg1;
 - (id)getQRDecodeResult:(struct CGImage *)arg1;
 - (id)qrcodeDecode:(struct CGImage *)arg1;
@@ -55,7 +53,7 @@
 - (struct CGRect)initScreenCropSize:(double)arg1 originX:(double)arg2 originY:(double)arg3 previewHeight:(double)arg4 previewWidth:(double)arg5;
 - (void)decodeImageWithClip:(_Bool)arg1 sampleBuffer:(struct __CVBuffer *)arg2 width:(double)arg3 height:(double)arg4;
 - (void)captureOutput:(struct opaqueCMSampleBuffer *)arg1;
-- (_Bool)isLowerThanIphone5S;
+- (_Bool)isSupportMetal;
 - (id)init;
 
 @end

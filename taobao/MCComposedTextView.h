@@ -16,6 +16,7 @@
 + (struct CGSize)bubbleSizeForCellObject:(id)arg1 withContainer:(struct CGSize)arg2;
 @property(retain, nonatomic) UILabel *titleLab; // @synthesize titleLab=_titleLab;
 - (void).cxx_destruct;
+- (void)generateLabel:(id)arg1;
 - (void)layoutSubviews;
 - (void)updateView:(id)arg1 bubbleHandler:(id)arg2 atIndexPath:(id)arg3;
 - (id)initWithFrame:(struct CGRect)arg1;

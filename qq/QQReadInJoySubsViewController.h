@@ -33,8 +33,8 @@
 #import <QQMainProject/UserSummaryNavBarItemDelagate-Protocol.h>
 #import <QQMainProject/VideoReportDelegate-Protocol.h>
 
-@class BarrageWebView, CALayer, KandianNewRefreshControl, MQZoneTableFootLoadingView, MsgTip, NSArray, NSDictionary, NSMutableArray, NSMutableDictionary, NSMutableSet, NSString, NSTimer, ODRefreshControl, QQPublicAccountFullScreenViewController, QQRIJRainAnimateView, QQReadInJoyChannelBar, QQReadInJoyDislikeDialog, QQReadInJoyHeaderNotifyBtn, QQReadInJoySubsChannelHeader, QQReadInJoySubsVideoCell, QQReadInJoyTopicChannelHeader, QQReadInJoyVideoFullScreenNavigationTransition, QQWebShareActionSheet, QUIAlertPlusView, ReadInJoyBBCircleView, ReadInJoyCellFactory, ReadInJoyChannel, ReadInJoyChannelArticle, UIButton, UIImageView, UILabel, UISearchBar, UITableView, UITapGestureRecognizer, UIView, UnsubcribeTipsCoverView, UserSummaryNavigationBar, VideoBubbleViewManager;
-@protocol QQReadInJoySubsDelegate, ReadInJoyMessageDelegate, ReadInJoyScrollViewDelegate;
+@class BarrageWebView, CALayer, KandianNewRefreshControl, MQZoneTableFootLoadingView, MsgTip, NSArray, NSDictionary, NSMutableArray, NSMutableDictionary, NSMutableSet, NSString, NSTimer, ODRefreshControl, QQPublicAccountFullScreenViewController, QQRIJRainAnimateView, QQReadInJoyChannelBar, QQReadInJoyDislikeDialog, QQReadInJoyHeaderNotifyBtn, QQReadInJoySubsChannelHeader, QQReadInJoySubsVideoCell, QQReadInJoyTopicChannelHeader, QQWebShareActionSheet, QUIAlertPlusView, ReadInJoyBBCircleView, ReadInJoyCellFactory, ReadInJoyChannel, ReadInJoyChannelArticle, UIButton, UIImageView, UILabel, UISearchBar, UITableView, UITapGestureRecognizer, UIView, UnsubcribeTipsCoverView, UserSummaryNavigationBar, VideoBubbleViewManager;
+@protocol QQReadInJoySubsDelegate, ReadInJoyMessageDelegate, ReadInJoyScrollViewDelegate, UIViewControllerAnimatedTransitioning;
 
 @interface QQReadInJoySubsViewController : QQViewController <MQZoneTableFootLoadingViewDelegate, QQReadInJoySubsCellDelegate, QQReadInJoySubsVideoCellDelegate, VideoReportDelegate, UIAlertViewDelegate, ODRefreshControlDelegate, QQReadInJoyChannelBarDelegate, NavigationTranstionSource, NavigationTranstionDestination, UINavigationControllerDelegate, QQReadInJoySubsChannelHeaderDelegate, UserSummaryNavBarItemDelagate, QQReadInJoyVideoShareAutoPlayDelegate, QUIAlertPlusViewDelegate, QUIAlertViewDelegate, ReadInJoyBBCircleViewDelegate, UITableViewDataSourcePrefetching, QQMultiBiuEditControllerDelegate, UIWebViewDelegate, UISearchBarDelegate, QQReadInJoySubsDoubleVideoCellDelegate, KandianNewRefreshControlDelegate, UITableViewDataSource, UITableViewDelegate, QQReadInJoyChannelEntranceBtnTouchedDelegate, QQReadInJoyDislikeDelegate>
 {
@@ -73,6 +73,8 @@
     unsigned int _upTimes;
     _Bool _firstDidLoad;
     NSMutableSet *readinjoyMessagevideoreportData;
+    NSMutableDictionary *readinjoyMessagegalleryreportData;
+    NSMutableSet *inTimeExposeReportedData;
     long long _currentSelectedItem;
     long long _scrollToTopBtnType;
     long long _footerLoadingFromType;
@@ -97,6 +99,8 @@
     unsigned long long _lastDataSourceCount;
     KandianNewRefreshControl *_newRefreshControl;
     QQRIJRainAnimateView *_rainAnimateView;
+    _Bool _insertArticleRefreshing;
+    _Bool _isFullScreenActiveComment;
     _Bool _needRefreshTip;
     _Bool _refreshWhenNoData;
     _Bool _isEndRefreshToTop;
@@ -108,10 +112,11 @@
     _Bool _backFromFullScreen;
     _Bool _isPullRefresh;
     _Bool _insertingCell;
-    _Bool _insertArticleRefreash;
+    _Bool _runPushVideoSubsAnimation;
     _Bool _isForPageVC;
     _Bool _isTabVideoChannel;
     _Bool _isDisappearBySwitchOhterTab;
+    _Bool _haveVideoPlayed;
     _Bool _exitFromFullscreen;
     _Bool _isShowAlert;
     _Bool _isViewAppearFirst;
@@ -151,7 +156,9 @@
     NSMutableSet *_preloadTriggerSet;
     NSString *_imageCropDetailMsg;
     long long _currentPlayVideoIndex;
+    ReadInJoyChannelArticle *_currentPlayVideoArticle;
     long long _lastPlayVideoIndexWhenDisappear;
+    ReadInJoyChannelArticle *_lastPlayVideoArticleWhenDisappear;
     NSMutableDictionary *_exposedSubChannels;
     unsigned long long _gestureScrollDirection;
     NSMutableArray *_playedVideoBehavious;
@@ -159,7 +166,6 @@
     BarrageWebView *_barrageWebview;
     unsigned long long _lastFeedsDisplayTriggerSeq;
     QQReadInJoySubsVideoCell *_enterVideoCell;
-    QQReadInJoyVideoFullScreenNavigationTransition *_navigationTransition;
     QQReadInJoySubsChannelHeader *_subsChannelHeaderView;
     QQReadInJoyTopicChannelHeader *_topicChannelHeaderView;
     UserSummaryNavigationBar *_userSummaryNavigationBar;
@@ -178,6 +184,7 @@
     long long _orientation;
     NSMutableDictionary *_articleFirstExposePosDic;
     unsigned long long _video_play_sequence;
+    id <UIViewControllerAnimatedTransitioning> _transitionAnimator;
 }
 
 + (id)getSocializeTopicVideoUrlByChannelID:(unsigned int)arg1 name:(id)arg2;
@@ -185,8 +192,10 @@
 + (id)getSocialFeedsDetailUrlByFeedsId:(unsigned long long)arg1 feedsId:(unsigned long long)arg2 feedsType:(unsigned long long)arg3;
 + (id)getSocializeHomePageUrlByUin:(unsigned long long)arg1;
 + (id)getPGCSocializeHomePageUrlByUin:(unsigned long long)arg1;
++ (id)getSocializeKandianFavoriteUrl;
 + (id)getSocializeMessageBoxPendantUrl;
 + (id)getSocializeMessageBoxUrl;
+@property(retain, nonatomic) id <UIViewControllerAnimatedTransitioning> transitionAnimator; // @synthesize transitionAnimator=_transitionAnimator;
 @property(nonatomic) unsigned long long video_play_sequence; // @synthesize video_play_sequence=_video_play_sequence;
 @property(retain, nonatomic) NSMutableDictionary *articleFirstExposePosDic; // @synthesize articleFirstExposePosDic=_articleFirstExposePosDic;
 @property(nonatomic) long long orientation; // @synthesize orientation=_orientation;
@@ -209,7 +218,6 @@
 @property(retain, nonatomic) UserSummaryNavigationBar *userSummaryNavigationBar; // @synthesize userSummaryNavigationBar=_userSummaryNavigationBar;
 @property(retain, nonatomic) QQReadInJoyTopicChannelHeader *topicChannelHeaderView; // @synthesize topicChannelHeaderView=_topicChannelHeaderView;
 @property(retain, nonatomic) QQReadInJoySubsChannelHeader *subsChannelHeaderView; // @synthesize subsChannelHeaderView=_subsChannelHeaderView;
-@property(retain, nonatomic) QQReadInJoyVideoFullScreenNavigationTransition *navigationTransition; // @synthesize navigationTransition=_navigationTransition;
 @property(retain, nonatomic) QQReadInJoySubsVideoCell *enterVideoCell; // @synthesize enterVideoCell=_enterVideoCell;
 @property(nonatomic) unsigned int feedsDisplayTriggerNum; // @synthesize feedsDisplayTriggerNum=_feedsDisplayTriggerNum;
 @property(nonatomic) unsigned long long lastFeedsDisplayTriggerSeq; // @synthesize lastFeedsDisplayTriggerSeq=_lastFeedsDisplayTriggerSeq;
@@ -221,7 +229,9 @@
 @property(nonatomic) _Bool isViewAppearFirst; // @synthesize isViewAppearFirst=_isViewAppearFirst;
 @property(nonatomic) unsigned long long gestureScrollDirection; // @synthesize gestureScrollDirection=_gestureScrollDirection;
 @property(retain, nonatomic) NSMutableDictionary *exposedSubChannels; // @synthesize exposedSubChannels=_exposedSubChannels;
+@property(retain, nonatomic) ReadInJoyChannelArticle *lastPlayVideoArticleWhenDisappear; // @synthesize lastPlayVideoArticleWhenDisappear=_lastPlayVideoArticleWhenDisappear;
 @property(nonatomic) long long lastPlayVideoIndexWhenDisappear; // @synthesize lastPlayVideoIndexWhenDisappear=_lastPlayVideoIndexWhenDisappear;
+@property(retain, nonatomic) ReadInJoyChannelArticle *currentPlayVideoArticle; // @synthesize currentPlayVideoArticle=_currentPlayVideoArticle;
 @property(nonatomic) long long currentPlayVideoIndex; // @synthesize currentPlayVideoIndex=_currentPlayVideoIndex;
 @property(retain, nonatomic) NSString *imageCropDetailMsg; // @synthesize imageCropDetailMsg=_imageCropDetailMsg;
 @property(retain, nonatomic) NSMutableSet *preloadTriggerSet; // @synthesize preloadTriggerSet=_preloadTriggerSet;
@@ -234,13 +244,14 @@
 @property(nonatomic) _Bool isShowAlert; // @synthesize isShowAlert=_isShowAlert;
 @property(nonatomic) _Bool exitFromFullscreen; // @synthesize exitFromFullscreen=_exitFromFullscreen;
 @property(retain, nonatomic) UISearchBar *searchBar; // @synthesize searchBar=_searchBar;
+@property(nonatomic) _Bool haveVideoPlayed; // @synthesize haveVideoPlayed=_haveVideoPlayed;
 @property(retain, nonatomic) NSString *sessionID; // @synthesize sessionID=_sessionID;
 @property(nonatomic) _Bool isDisappearBySwitchOhterTab; // @synthesize isDisappearBySwitchOhterTab=_isDisappearBySwitchOhterTab;
 @property(nonatomic) _Bool isTabVideoChannel; // @synthesize isTabVideoChannel=_isTabVideoChannel;
 @property(nonatomic) _Bool isForPageVC; // @synthesize isForPageVC=_isForPageVC;
 @property(retain, nonatomic) ReadInJoyChannelArticle *insertChannelArticle; // @synthesize insertChannelArticle=_insertChannelArticle;
 @property(nonatomic) unsigned int operationBitmap; // @synthesize operationBitmap=_operationBitmap;
-@property(nonatomic) _Bool insertArticleRefreash; // @synthesize insertArticleRefreash=_insertArticleRefreash;
+@property(nonatomic) _Bool runPushVideoSubsAnimation; // @synthesize runPushVideoSubsAnimation=_runPushVideoSubsAnimation;
 @property(nonatomic, getter=isInsertingCell) _Bool insertingCell; // @synthesize insertingCell=_insertingCell;
 @property(nonatomic) long long preloadReportAnchor; // @synthesize preloadReportAnchor=_preloadReportAnchor;
 @property(nonatomic) _Bool isPullRefresh; // @synthesize isPullRefresh=_isPullRefresh;
@@ -272,6 +283,11 @@
 @property(retain, nonatomic) ReadInJoyChannel *channel; // @synthesize channel=_channel;
 @property(retain, nonatomic) UITableView *tableView; // @synthesize tableView=_tableView;
 @property(nonatomic) double loadtime; // @synthesize loadtime=_loadtime;
+- (void)addFavoriteResultNotification:(id)arg1;
+- (void)addFavorite:(id)arg1;
+- (void)notifyOtherAppAudioSessionActive;
+- (void)delayNotifyOtherAppAudioSessionActive;
+- (void)activeAudioSession;
 - (void)setArticleFirstExposePosition:(id)arg1 position:(unsigned long long)arg2;
 - (void)applicationEnterBackground;
 - (void)stopPlaySoundIfNeed;
@@ -283,7 +299,6 @@
 - (void)delayRemoveWebview;
 - (void)webView:(id)arg1 didFailLoadWithError:(id)arg2;
 - (void)webViewDidFinishLoad:(id)arg1;
-- (void)preloadSingleWebview;
 - (_Bool)isIphone5SEarlyDevice;
 - (_Bool)needOptimizeForLowerDevice;
 - (void)tableviewReloadData;
@@ -305,6 +320,7 @@
 - (void)addCoverIfNeed:(id)arg1;
 - (id)getLastPlayingVideoCell;
 - (_Bool)hasVideoPlaying;
+- (unsigned long long)videoFullScreenSourceWithArticle:(id)arg1;
 - (_Bool)ignoreThisClick:(double)arg1;
 - (void)fetchVideoArticlesWhilePlayingWithVideoArticle:(id)arg1 condition:(int)arg2;
 - (_Bool)canRealtimeInsert;
@@ -313,6 +329,7 @@
 - (void)autoPlayVideo:(id)arg1 containerRect:(struct CGRect)arg2;
 - (void)startPlayVideoWithCell:(id)arg1;
 - (void)manageVideoAutoPlayAt:(id)arg1;
+- (_Bool)canPlayInCell:(id)arg1;
 - (struct CGRect)canAutoPlayRect;
 - (void)tableView:(id)arg1 prefetchingRowsAtIndexPath:(id)arg2;
 - (void)onVideoNeedAutoStart;
@@ -320,6 +337,7 @@
 - (void)onVideoNeedPause;
 - (_Bool)canPlayVideoInCell;
 - (void)startVideoPrealoadTasksAtIndexPaths:(id)arg1;
+- (void)handleMaskButtonEvent:(id)arg1 Object:(id)arg2;
 - (void)handleArkAppPanelViewEvent:(id)arg1 Object:(id)arg2;
 - (void)handleSocialWrapperViewEvent:(id)arg1 Object:(id)arg2;
 - (void)handleTitleViewEvent:(id)arg1 Object:(id)arg2;
@@ -330,19 +348,19 @@
 - (void)socializeSendLike:(int)arg1 article:(id)arg2 retryCount:(int)arg3;
 - (void)handleDisLikeButtonEventWithInfo:(id)arg1 Object:(id)arg2;
 - (void)handleTopicTagEventWithInfo:(id)arg1 Object:(id)arg2;
-- (void)handleTopicFooterEventWithInfo:(id)arg1 Object:(id)arg2;
 - (void)handleCommentViewEvent:(id)arg1 Object:(id)arg2;
 - (void)jumpToDetailUrlWithDic:(id)arg1;
-- (void)handleSocialSocialSubHeaderEvent:(id)arg1 Object:(id)arg2;
 - (void)handleSubcribeHeaderEventWithInfo:(id)arg1 Object:(id)arg2;
 - (void)handleTopicCardHeaderEventWithInfo:(id)arg1 Object:(id)arg2;
-- (void)handleTopicHeaderEventWithInfo:(id)arg1 Object:(id)arg2;
+- (void)handleCollectionViewHeader:(id)arg1 Object:(id)arg2;
 - (void)handleSocialHeaderEventWithInfo:(id)arg1 Object:(id)arg2;
 - (void)handleInfoViewEventWithInfo:(id)arg1 Object:(id)arg2;
 - (void)handleHotTopicHeaderViewEventWithInfo:(id)arg1 Object:(id)arg2;
 - (void)handleMultiTopicViewEventWithInfo:(id)arg1 Object:(id)arg2;
 - (void)handleTopicViewEventWithInfo:(id)arg1 Object:(id)arg2;
+- (void)handleCollectionViewEvent:(id)arg1 Object:(id)arg2;
 - (void)handleComponentEvent:(id)arg1;
+- (void)handleProteusEvent:(id)arg1;
 - (void)delayTableviewReloadData;
 - (void)handleLayoutConfigEvent:(id)arg1;
 - (void)HiddenVideoBubbleTip;
@@ -351,6 +369,10 @@
 - (void)onForceOffLineNotify;
 - (void)handleVideoChatStart;
 - (void)socialEnterDetialViewReport:(id)arg1 puin:(unsigned long long)arg2 toUin:(unsigned long long)arg3 entryMode:(int)arg4;
+- (void)newGalleryExposeReport:(id)arg1;
+- (void)newGalleryClickReport:(id)arg1 clickIndex:(long long)arg2;
+- (long long)getNewGalleryCarType:(id)arg1;
+- (unsigned long long)getNewGallerySource:(id)arg1;
 - (void)feedsHeaderExposeReport:(id)arg1;
 - (id)getUinSetSringByArticle:(id)arg1;
 - (void)onTopicHeaderClickReport:(id)arg1;
@@ -363,6 +385,7 @@
 - (id)getRowkey;
 - (id)getPlayingVideoCell;
 - (id)getArticleId;
+- (id)getVideoId:(id)arg1;
 - (id)getVideoId;
 - (int)getPlayStatus;
 - (void)rePortMigrateTo1160:(id)arg1 R3:(unsigned long long)arg2 R4:(id)arg3 R5:(id)arg4;
@@ -382,6 +405,7 @@
 - (void)report8B68:(id)arg1;
 - (void)report8B67:(id)arg1;
 - (void)report8B66:(id)arg1;
+- (id)reportGet7626R5:(id)arg1 cell:(id)arg2 usedTimeMs:(unsigned long long)arg3 algorithmId:(int)arg4;
 - (id)reportGet7626R5:(id)arg1 cell:(id)arg2 usedTimeMs:(unsigned long long)arg3;
 - (void)report8AD1:(id)arg1;
 - (void)report8AEE:(id)arg1;
@@ -400,14 +424,17 @@
 - (void)delayPreLoad;
 - (void)preloadSocialWebContent:(id)arg1;
 - (void)onReadInJoySubsVideoCellLabelClick:(id)arg1 channelInfo:(id)arg2;
-- (void)onReadInJoySubsVideoCellVideoViewClick:(id)arg1;
+- (void)onReadInJoySubsVideoCellVideoViewClick:(id)arg1 article:(id)arg2;
 - (void)actionSheetClickedAtIndex:(int)arg1 sender:(id)arg2;
+- (void)collectUrl;
 - (void)shareWithSinaWeibo;
 - (void)shareWithQZone;
 - (void)shareWithFriend;
 - (id)getDataForShareItem:(id)arg1 onThisItem:(int)arg2;
 - (void)autoResume;
 - (void)autoPause;
+- (void)reportTopic;
+- (void)reportVideoCell;
 - (void)readInJoySubsVideoCell:(id)arg1 shareWithChannelArticle:(id)arg2;
 - (void)readInJoySubsVideoCell:(id)arg1 progressUpdateToCurrentTime:(double)arg2 duration:(double)arg3;
 - (void)onPlayVideoErrorWithErrorCode:(id)arg1 ErrorCode:(long long)arg2;
@@ -444,11 +471,13 @@
 - (void)alertView:(id)arg1 didDismissWithButtonIndex:(long long)arg2;
 - (void)alertView:(id)arg1 clickedButtonAtIndex:(long long)arg2;
 - (void)showNetAlert;
+- (void)tableViewCell:(id)arg1 didClickCommentButton:(id)arg2;
 - (void)tableViewCell:(id)arg1 fullScreenWillActive:(_Bool)arg2;
 - (void)tableViewCell:(id)arg1 itemFullScreenWillActive:(_Bool)arg2;
 - (void)gotoFullScreenAtCell:(id)arg1;
 - (void)deviceOrientationDidChange:(id)arg1;
 - (id)reportGet80ecR5:(id)arg1;
+- (void)reportClickAlbumView:(id)arg1;
 - (void)reportClickFollowButton:(id)arg1;
 - (void)handleFollowStatusChanged:(id)arg1;
 - (void)clickFlowForeCast:(id)arg1;
@@ -465,14 +494,19 @@
 - (void)scrollToTopWithAnimationFromBtnType:(long long)arg1;
 - (void)launchFullscreenVC:(id)arg1 selectedIndex:(id)arg2;
 - (void)ReportMainFeedsJump:(int)arg1 article:(id)arg2 op:(long long)arg3;
+- (void)scrollViewDidScrollToTop:(id)arg1;
+- (_Bool)scrollViewShouldScrollToTop:(id)arg1;
+- (void)scrollViewDidEndScrollingAnimation:(id)arg1;
 - (void)scrollViewDidEndDragging:(id)arg1 willDecelerate:(_Bool)arg2;
 - (void)scrollViewWillBeginDragging:(id)arg1;
 - (void)scrollViewDidEndDecelerating:(id)arg1;
 - (void)scrollViewDidScroll:(id)arg1;
 - (void)tableView:(id)arg1 didEndDisplayingCell:(id)arg2 forRowAtIndexPath:(id)arg3;
 - (void)tableView:(id)arg1 willDisplayCell:(id)arg2 forRowAtIndexPath:(id)arg3;
+- (void)openVideoAdMultiView:(id)arg1;
 - (void)openAppAdUrl:(id)arg1;
 - (void)gotoArticleWebView:(id)arg1;
+- (void)gotoNewGalleryDetail:(id)arg1 index:(long long)arg2;
 - (void)tableView:(id)arg1 didSelectRowAtIndexPath:(id)arg2;
 - (void)insertAni;
 - (void)TableviewcellClickReport:(id)arg1 cell:(id)arg2;
@@ -517,9 +551,10 @@
 - (_Bool)updateSocializeFeedsInfoToDb:(id)arg1 completionBlock:(CDUnknownBlockType)arg2;
 - (void)handleJsApiUpdateSocializeInfo:(id)arg1;
 - (void)loadOldData:(long long)arg1 count:(long long)arg2 refreshTime:(double)arg3;
-- (_Bool)jumpToVideoChannel:(id)arg1;
-- (_Bool)jumpToVideoChannelResult:(id)arg1;
-- (void)jumToSingleViewWithChannelID:(unsigned int)arg1 channelName:(id)arg2 channelType:(unsigned int)arg3 isTopic:(_Bool)arg4 insertChannelArticle:(id)arg5 withCompletion:(CDUnknownBlockType)arg6;
+- (int)jumpToVideoChannel:(id)arg1 didSelectedCell:(id)arg2 doJump:(_Bool)arg3;
+- (int)jumpToVideoChannel:(id)arg1;
+- (_Bool)canJumpTo56WithNoMediaSpecs:(id)arg1;
+- (void)jumToSingleViewWithChannelID:(unsigned int)arg1 channelName:(id)arg2 channelType:(unsigned int)arg3 isTopic:(_Bool)arg4 insertChannelArticle:(id)arg5 sourceView:(id)arg6 withCompletion:(CDUnknownBlockType)arg7;
 - (void)jumpToSingleView:(unsigned int)arg1 channelName:(id)arg2 channelType:(unsigned int)arg3 isTopic:(_Bool)arg4;
 - (void)readloadDataForCustomizedFeeds;
 - (void)updateTableViewWithArray:(id)arg1;
@@ -528,8 +563,10 @@
 - (void)insertVideoCellCover;
 - (void)forceInsertHideSubsChannel;
 - (void)correctionAticleInfoForVideoChannel:(id)arg1;
+- (void)executeForceInsertArticles;
 - (_Bool)forceInsertArticle:(id)arg1;
 - (void)updateInsertArticleTableView;
+- (void)startPushVideoSubsAnimation;
 - (id)removeDumplicates:(id)arg1 isCached:(_Bool)arg2;
 - (void)reloadData:(id)arg1 fromCache:(_Bool)arg2;
 - (void)preProcessDataSources:(id)arg1;
@@ -543,6 +580,7 @@
 - (id)getExposeTopicList;
 - (void)channelEntranceBtnTouchedFromCell:(id)arg1;
 - (void)reportMessageReadinjoyVideoExpose;
+- (void)reportGallery;
 - (void)reportArticleExpose:(unsigned long long)arg1;
 - (void)ayncReport:(unsigned long long)arg1;
 - (void)viewEndScrollAppear;
@@ -557,6 +595,7 @@
 - (_Bool)needMarkArticleAsRead;
 - (_Bool)isBlackThemeForVideoChannel;
 - (_Bool)hasChannelHeader;
+- (_Bool)isLastReadLine:(id)arg1;
 - (_Bool)isTopicChannel;
 - (_Bool)isSubscribeTabChannel;
 - (_Bool)isMainVideoTabFromMame;
@@ -575,6 +614,7 @@
 - (void)handleShowUnSubcribeTipsLogicWithData:(id)arg1;
 - (_Bool)isNeedToShowHeaderNotifyBtn;
 - (void)volumeChanged:(id)arg1;
+- (void)QQTabSwitchNotification:(id)arg1;
 - (void)removeNotificationOnViewDisappear;
 - (void)addNotificationOnViewAppear;
 - (void)removeNotificationOnDealloc;

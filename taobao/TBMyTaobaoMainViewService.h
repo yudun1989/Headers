@@ -21,9 +21,11 @@
     NSString *_listenerUuid;
     AVFSCache *_avfsCache;
     id <TBMyTaobaoMainViewServiceDelegate> _delegate;
+    NSString *_interfaceVersion;
 }
 
 + (id)shareInstance;
+@property(retain, nonatomic) NSString *interfaceVersion; // @synthesize interfaceVersion=_interfaceVersion;
 @property(nonatomic) __weak id <TBMyTaobaoMainViewServiceDelegate> delegate; // @synthesize delegate=_delegate;
 @property(retain, nonatomic) AVFSCache *avfsCache; // @synthesize avfsCache=_avfsCache;
 @property(retain, nonatomic) NSString *listenerUuid; // @synthesize listenerUuid=_listenerUuid;

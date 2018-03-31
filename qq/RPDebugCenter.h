@@ -24,7 +24,6 @@
 - (void)testEnvAction:(id)arg1;
 - (void)forceReconnectImpl;
 - (void)forceReconnect;
-- (id)getAllNewAppInfos;
 - (void)updateNewAppinfos:(id)arg1;
 - (id)init;
 

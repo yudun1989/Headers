@@ -103,7 +103,6 @@
 - (void)viewWillAppear:(_Bool)arg1;
 - (void)gotoMoreSubscribePage;
 - (void)onExitFolder;
-- (void)gotoPublicAccountSearchPage:(id)arg1;
 - (void)onNeedReloadMessage:(id)arg1;
 - (void)_asyncCheckUpdateOfflinePackageForSubscriptionCenter;
 - (void)PublicAccountUpdataMsgHandle:(id)arg1;

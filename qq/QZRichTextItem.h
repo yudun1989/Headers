@@ -4,11 +4,11 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-#import <TlibDy/LKLayoutItem.h>
+#import <TlibDy/PTLayoutItem.h>
 
 @class NSArray, NSMutableArray, NSMutableDictionary, NSString, QZDrawItemTextWrapper, QzoneCommSparkleWord, UIColor, UIFont, UIImage;
 
-@interface QZRichTextItem : LKLayoutItem
+@interface QZRichTextItem : PTLayoutItem
 {
     _Bool _useParagraph;
     _Bool _showBigFont;
@@ -34,6 +34,7 @@
     NSString *_verticalAlignment;
     double _lineSpace;
     QZDrawItemTextWrapper *_textWrapper;
+    UIImage *_image;
     QzoneCommSparkleWord *_sparkleWord;
     UIImage *_textWrapperMask;
     NSArray *_colorChangeColorList;
@@ -59,6 +60,7 @@
 @property(retain, nonatomic) UIImage *textWrapperMask; // @synthesize textWrapperMask=_textWrapperMask;
 @property(retain, nonatomic) QzoneCommSparkleWord *sparkleWord; // @synthesize sparkleWord=_sparkleWord;
 @property(nonatomic) _Bool showBigFont; // @synthesize showBigFont=_showBigFont;
+@property(retain, nonatomic) UIImage *image; // @synthesize image=_image;
 @property(retain, nonatomic) QZDrawItemTextWrapper *textWrapper; // @synthesize textWrapper=_textWrapper;
 @property(nonatomic) double lineSpace; // @synthesize lineSpace=_lineSpace;
 @property(nonatomic) _Bool useParagraph; // @synthesize useParagraph=_useParagraph;
@@ -82,8 +84,8 @@
 - (void)setReuseableResource:(id)arg1;
 - (id)reusableResource;
 - (void)didHideView:(id)arg1;
-- (int)LKTextVerticalAlignmentToGADrawTextVerticalAlignment:(id)arg1;
-- (int)LKTextAlignmentToGADrawTextAlignment:(id)arg1;
+- (int)PTTextVerticalAlignmentToGADrawTextVerticalAlignment:(id)arg1;
+- (int)PTTextAlignmentToGADrawTextAlignment:(id)arg1;
 - (void)configView:(id)arg1 context:(id)arg2;
 - (struct CGSize)computeSizeWithStraintSize:(struct CGSize)arg1;
 - (id)fontForName:(id)arg1 size:(double)arg2;
@@ -95,7 +97,7 @@
 - (void)configTextWrapperWithStraintSize:(struct CGSize)arg1;
 - (struct CGSize)maxSizeForSubItem:(id)arg1 straintSize:(struct CGSize)arg2;
 - (id)createView;
-- (void)setUpForItemConfiguration:(id)arg1 globalConfiguration:(id)arg2;
+- (void)setUpForItemAttribute:(id)arg1 globalSetting:(id)arg2;
 
 @end
 

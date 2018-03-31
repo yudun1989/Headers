@@ -6,19 +6,19 @@
 
 #import "AliCartBlockButton.h"
 
-@class UIColor;
+@class CAShapeLayer, UIColor;
 
 @interface AliCartStepperButton : AliCartBlockButton
 {
     int _type;
-    int _seperateLineStyle;
-    double _seperateLineWidth;
-    UIColor *_seperateLineColor;
+    unsigned long long _borderDriection;
+    UIColor *_customBorderColor;
+    CAShapeLayer *_borderLayer;
 }
 
-@property(retain, nonatomic) UIColor *seperateLineColor; // @synthesize seperateLineColor=_seperateLineColor;
-@property(nonatomic) double seperateLineWidth; // @synthesize seperateLineWidth=_seperateLineWidth;
-@property(nonatomic) int seperateLineStyle; // @synthesize seperateLineStyle=_seperateLineStyle;
+@property(retain, nonatomic) CAShapeLayer *borderLayer; // @synthesize borderLayer=_borderLayer;
+@property(retain, nonatomic) UIColor *customBorderColor; // @synthesize customBorderColor=_customBorderColor;
+@property(nonatomic) unsigned long long borderDriection; // @synthesize borderDriection=_borderDriection;
 @property(nonatomic) int type; // @synthesize type=_type;
 - (void).cxx_destruct;
 - (void)drawRect:(struct CGRect)arg1;

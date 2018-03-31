@@ -30,6 +30,7 @@
 - (void)reportKeywordClickedWithCardModel:(_Bool)arg1 cardModel:(id)arg2;
 - (void)onScrollEndAnimation:(id)arg1;
 - (void)arkButtonDidTap:(id)arg1;
+- (void)hiddenKeyBorad;
 - (void)closeArkViewWithKeywordRange:(struct _NSRange)arg1;
 - (void)scrollToSelectedCardWithKeywordRange:(struct _NSRange)arg1 cardModels:(id)arg2;
 - (void)showArkViewWithKeywordRange:(struct _NSRange)arg1 fromIcon:(_Bool)arg2;
@@ -38,7 +39,7 @@
 - (void)setTextModelExtra;
 - (void)reportArkCellModel:(id)arg1 scene:(int)arg2 action:(int)arg3 first:(int)arg4;
 - (id)getCardModelWithIcon;
-- (void)initArkAIUI:(id)arg1 appName:(id)arg2 equalInputText:(_Bool)arg3 contextMatchType:(int)arg4 keyword:(id)arg5;
+- (void)initArkAIUI:(id)arg1 appName:(id)arg2 contextMatchType:(int)arg3 keyword:(id)arg4;
 - (_Bool)needParseArkAI;
 - (void)updateArkButtonImage:(id)arg1;
 - (void)checkCardListView;

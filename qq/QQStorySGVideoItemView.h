@@ -6,7 +6,7 @@
 
 #import <UIKit/UIView.h>
 
-@class NSString, QQShareGroupStoryInfo, QQStoryUrlImageView;
+@class NSString, QQShareGroupStoryInfo, QQStoryUrlImageView, TBStoryVideoVoteView;
 @protocol QQStorySGVideoItemViewDelegate;
 
 @interface QQStorySGVideoItemView : UIView
@@ -18,8 +18,10 @@
     NSString *_storyID;
     id <QQStorySGVideoItemViewDelegate> _delegate;
     QQStoryUrlImageView *_coverImageView;
+    TBStoryVideoVoteView *_voteView;
 }
 
+@property(retain, nonatomic) TBStoryVideoVoteView *voteView; // @synthesize voteView=_voteView;
 @property(retain, nonatomic) QQStoryUrlImageView *coverImageView; // @synthesize coverImageView=_coverImageView;
 @property(nonatomic) __weak id <QQStorySGVideoItemViewDelegate> delegate; // @synthesize delegate=_delegate;
 @property(copy, nonatomic) NSString *storyID; // @synthesize storyID=_storyID;
@@ -28,6 +30,7 @@
 @property(retain, nonatomic) NSString *feedID; // @synthesize feedID=_feedID;
 @property(retain, nonatomic) QQShareGroupStoryInfo *model; // @synthesize model=_model;
 - (void).cxx_destruct;
+- (void)updateVoteViewWith:(id)arg1;
 - (void)openVideoPlayVCWithStoryID:(id)arg1;
 - (void)handleTap:(id)arg1;
 - (void)useDefaultCover;

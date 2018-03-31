@@ -8,19 +8,22 @@
 
 #import <QQMainProject/IRegModule-Protocol.h>
 #import <QQMainProject/RichMsgPreviewDialogDelegate-Protocol.h>
+#import <QQMainProject/SimpleAlertViewDelegate-Protocol.h>
 
-@class ArkAppLbsWrapper, NSMutableDictionary, NSMutableString, NSString;
+@class ArkAppLbsWrapper, ArkAppScheduleWrapper, NSMutableDictionary, NSMutableString, NSString;
 
-@interface ArkAppQQModuleReg : RegModuleBase <IRegModule, RichMsgPreviewDialogDelegate>
+@interface ArkAppQQModuleReg : RegModuleBase <IRegModule, RichMsgPreviewDialogDelegate, SimpleAlertViewDelegate>
 {
     NSMutableDictionary *_loginDic;
     NSMutableDictionary *_userInfoDic;
     NSMutableString *_currentKey;
     NSString *_appID;
     ArkAppLbsWrapper *m_getLoaction;
+    ArkAppScheduleWrapper *m_currentSchedule;
 }
 
 + (const char *)getModuleName;
+- (void)setFrequencyLimit:(id)arg1;
 - (void)shareToFriendSuccess;
 - (void)shareToFriendCancelled;
 - (void)dismissFriendsSelectViewController;
@@ -33,12 +36,14 @@
 - (void)setShowMaskAlertAPPID:(id)arg1;
 - (void)doMaskAlertWithKey:(id)arg1 succ:(_Bool)arg2 show:(_Bool)arg3;
 - (void)showAuthorizationMaskAlertWithKey:(id)arg1 tips:(id)arg2;
+- (void)buttonClick:(id)arg1 atIndex:(int)arg2;
 - (unsigned int)invokeFunc:(const char *)arg1 args:(const struct tagArkVariant *)arg2 count:(unsigned int)arg3 ret:(struct tagArkVariant *)arg4 helper:(struct tagArkHostFuncs *)arg5;
 - (unsigned int)arkJsonComponentsToUrl:(id)arg1 url:(id)arg2;
 - (id)joinQueryComponents:(id)arg1;
 - (unsigned int)hasMethod:(const char *)arg1;
 - (void)doUserInfoCallbackDict:(id)arg1 succ:(_Bool)arg2;
 - (void)doLoginCallbackDict:(id)arg1 succ:(_Bool)arg2;
+- (void)doAddScheduleCallback:(long long)arg1 success:(_Bool)arg2 granted:(_Bool)arg3 error:(id)arg4;
 - (void)doPositionCallback:(long long)arg1 dict:(id)arg2 succ:(_Bool)arg3;
 - (void)doPositionCallback:(long long)arg1 lat:(double)arg2 lng:(double)arg3 succ:(_Bool)arg4;
 - (void)dealloc;

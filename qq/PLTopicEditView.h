@@ -34,15 +34,6 @@
 @property(retain, nonatomic) PLTopicLabel *addBtn; // @synthesize addBtn=_addBtn;
 @property(retain, nonatomic) PLTopicDisplayView *displayView; // @synthesize displayView=_displayView;
 - (void).cxx_destruct;
-- (void)onTopicClick:(id)arg1;
-- (void)onWebViewCloseMessage:(id)arg1;
-- (void)onWebView:(id)arg1 setTopicLabelMessage:(id)arg2;
-- (id)displayTopicTextList;
-- (void)simulateClickTopic;
-- (void)setTopicTextList:(id)arg1;
-- (void)initSettingWithTopicType:(unsigned long long)arg1 style:(unsigned long long)arg2 maxShowCount:(int)arg3 editDelegate:(id)arg4;
-- (id)initWithTopicType:(unsigned long long)arg1 style:(unsigned long long)arg2 maxShowCount:(int)arg3 editDelegate:(id)arg4;
-- (void)dealloc;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

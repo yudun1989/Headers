@@ -8,13 +8,12 @@
 
 #import <QQMainProject/QZFeedCellDelegate-Protocol.h>
 
-@class NSString, QZLayoutInfo, QzoneFeedLayoutView, QzoneFeedModel;
+@class NSString, QzoneFeedLayoutView, QzoneFeedModel;
 @protocol MQZoneHomepageMemorySealOffViewDelegate;
 
 @interface MQZoneHomepageMemorySealOffView : UIView <QZFeedCellDelegate>
 {
     QzoneFeedLayoutView *_layoutView;
-    QZLayoutInfo *_layoutInfo;
     QzoneFeedModel *_feedModel;
     id <MQZoneHomepageMemorySealOffViewDelegate> _delegate;
 }

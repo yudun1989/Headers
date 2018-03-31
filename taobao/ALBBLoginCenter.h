@@ -56,6 +56,7 @@
 - (void)logoutAllAccounts;
 - (void)logout:(id)arg1;
 - (void)logout;
+- (void)makeSessionInvalidLocally:(CDUnknownBlockType)arg1;
 - (void)makeSessionInvalidLocally;
 - (void)clearSession;
 - (id)currentSession;

@@ -125,6 +125,14 @@ struct AVWindow {
     float _field16;
 };
 
+struct ApApp {
+    id _field1;
+    id _field2;
+    void *_field3;
+    void *_field4;
+    void *_field5;
+};
+
 struct Arena;
 
 struct ArenaStringPtr {
@@ -631,6 +639,60 @@ struct MediaWriter {
     int _field29;
     int _field30;
     int _field31[4];
+};
+
+struct MetalRender {
+    CDUnknownFunctionPointerType *_field1;
+    CDUnknownFunctionPointerType *_field2;
+    int _field3;
+    int _field4;
+    int _field5;
+    int _field6;
+    _Bool _field7;
+    char *_field8;
+    struct AVSource *_field9;
+    struct AVHandler *_field10;
+    struct AVWindow *_field11;
+    int _field12;
+    int _field13;
+    int _field14;
+    int _field15;
+    int _field16;
+    int _field17;
+    int _field18;
+    int _field19[8];
+    int _field20;
+    int _field21;
+    _Bool _field22;
+    _Bool _field23;
+    int _field24;
+    int _field25;
+    int _field26;
+    int _field27;
+    float _field28;
+    id _field29;
+    id _field30;
+    id _field31;
+    id _field32;
+    id _field33;
+    id _field34;
+    id _field35;
+    id _field36;
+    id _field37;
+    struct __CVMetalTextureCache *_field38;
+    id _field39[9];
+    id _field40[3];
+    struct {
+        double _field1;
+        double _field2;
+        double _field3;
+        double _field4;
+        double _field5;
+        double _field6;
+    } _field41;
+    struct __CVBuffer *_field42[3];
+    struct _opaque_pthread_mutex_t _field43;
+    struct _opaque_pthread_cond_t _field44;
 };
 
 struct MicSource {
@@ -2252,18 +2314,6 @@ struct weak_ptr<videocore::iOS::MicSource> {
     struct MicSource *_field1;
     struct __shared_weak_count *_field2;
 };
-
-#if 0
-// Names with conflicting types:
-typedef struct {
-    id _field1;
-    id _field2;
-    void *_field3;
-    void *_field4;
-    void *_field5;
-} ApApp_41a7cf77;
-
-#endif
 
 #pragma mark Typedef'd Structures
 

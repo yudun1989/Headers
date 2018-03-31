@@ -16,8 +16,9 @@
 + (unsigned long long)freeMemoryOfDevice;
 + (float)cpuUsageOfDevice;
 + (float)cpuUsageOfApp;
-+ (id)getCurrentDeviceLevelConfig;
++ (id)getCurrentDeviceConfig;
 + (unsigned long long)evaluationForRuntimeLevel;
++ (id)evaluateForMemoryThreshold;
 + (unsigned long long)evaluationForDeviceLevel;
 + (id)getBatteryInfo;
 + (id)getDisplayInfo;

@@ -37,6 +37,10 @@
 + (void)report_arkSdkShareSendClose:(id)arg1;
 + (void)report_arkSdkShareSend:(id)arg1;
 + (void)report_arkSdkShareSelect:(id)arg1;
++ (void)report_aioAppCenterShareClick:(id)arg1;
++ (void)report_aioAppCenterEnterClick:(id)arg1;
++ (void)report_aioAppPanelMoreClick:(id)arg1;
++ (void)report_aioAppPanelAppClick:(id)arg1;
 + (void)report_aioMsgClickCloseIcon:(id)arg1 type:(unsigned long long)arg2 matchType:(int)arg3;
 + (void)report_recommendEvent:(id)arg1 app:(id)arg2 keyword:(id)arg3 type:(unsigned long long)arg4 matchType:(int)arg5;
 + (void)report_aioInputPannelTabClick:(id)arg1;

@@ -13,6 +13,7 @@
 - (struct NSDictionary *)api;
 
 @optional
+- (id)mockData;
 - (NSDictionary *)parameterMapper;
 - (void)dismissLoadingView;
 - (void)showLoadingView;

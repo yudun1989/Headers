@@ -15,6 +15,8 @@
     NSMutableArray *pushSeqs;
     NSMutableDictionary *seqsDictionary;
     NSMutableDictionary *_setOnlyMemberInviteSeqDic;
+    NSMutableDictionary *_setJoinGroupOptionSeqDic;
+    NSMutableDictionary *_setGroupAppFlagDic;
 }
 
 + (id)getPushTipString:(int)arg1:(int)arg2;
@@ -28,6 +30,8 @@
 - (_Bool)requestGroupInfoPrivilegeFlag:(id)arg1;
 - (_Bool)sendGroupFeeOffRequest:(unsigned long long)arg1 groupOption:(unsigned int)arg2;
 - (_Bool)setUploadRights:(unsigned long long)arg1 type:(unsigned int)arg2 rights:(unsigned int)arg3;
+- (_Bool)requestSetAppPrivilegeFlag:(unsigned int)arg1 Mask:(unsigned int)arg2 ForGroup:(unsigned long long)arg3;
+- (_Bool)requestModifyJoinGroupOption:(unsigned int)arg1 ForGroup:(unsigned long long)arg2;
 - (_Bool)requestModifyOnlyMemberInviteFlag:(unsigned long long)arg1 flag:(_Bool)arg2;
 - (_Bool)requestUploadRights:(unsigned long long)arg1 type:(unsigned int)arg2;
 - (void)writeGroupSystemMsg:(id)arg1 with:(id)arg2 sequence:(int)arg3 msgType:(int)arg4;

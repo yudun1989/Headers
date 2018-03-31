@@ -8,16 +8,18 @@
 
 #import <QQMainProject/QUIShareDelegate-Protocol.h>
 #import <QQMainProject/QZFeedbackCellDelegate-Protocol.h>
+#import <QQMainProject/QZGifPanelviewDelegate-Protocol.h>
 #import <QQMainProject/QZVideoFeedsTouchViewDelegate-Protocol.h>
 #import <QQMainProject/QZoneHomepageShareViewDelegate-Protocol.h>
 
-@class AddFriendSendMessageViewController, MQZFavourOperater, MQzoneFollowTipView, NSDate, NSMutableArray, NSMutableDictionary, NSString, QUIActionSheet, QUIShareView, QZSpeciallyFollowBannerView, QZVideoFeedsTouchView, QZoneHomepageShareView;
+@class AddFriendSendMessageViewController, MQZFavourOperater, MQzoneFollowTipView, NSDate, NSMutableArray, NSMutableDictionary, NSString, QUIActionSheet, QUIShareView, QZGifPanelview, QZSpeciallyFollowBannerView, QZVideoFeedsTouchView, QZoneHomepageShareView;
 
-@interface MQZCommonFeedListViewController : MQZoneOperatableViewController <QUIShareDelegate, QZoneHomepageShareViewDelegate, QZVideoFeedsTouchViewDelegate, QZFeedbackCellDelegate>
+@interface MQZCommonFeedListViewController : MQZoneOperatableViewController <QUIShareDelegate, QZoneHomepageShareViewDelegate, QZVideoFeedsTouchViewDelegate, QZGifPanelviewDelegate, QZFeedbackCellDelegate>
 {
     NSMutableArray *_feedList;
     NSMutableArray *_itemList;
     QUIActionSheet *_qZoneActionSheet;
+    QZGifPanelview *_gifPanelview;
     NSMutableDictionary *_getAllCommentRequestIDContainer;
     long long _intelligenceBannerType;
     NSDate *_lastUpdateDate;
@@ -78,8 +80,6 @@
 - (void)invalidShareRequestId;
 - (void)updateCachedFeedListInTimeLineMode:(id)arg1;
 - (void)updateFeedListAndRefreshUI:(id)arg1;
-- (void)setFeedNeedUpdateWithKey:(id)arg1;
-- (_Bool)isProcessSecPiece;
 - (_Bool)performSelectorRefreshUI:(double)arg1;
 - (void)receiveUndealCntFeed:(id)arg1;
 - (_Bool)checkIfControllerInNav;
@@ -106,6 +106,21 @@
 - (void)quickforwardButtonChangeState:(id)arg1 feedModel:(id)arg2;
 - (long long)getQuickForwardBtnScene:(long long)arg1;
 - (void)onManuallyClickFeedVideo:(id)arg1;
+- (void)doPredrawAndCache:(id)arg1 url:(id)arg2 rect:(struct CGRect)arg3 focus:(struct CGPoint)arg4;
+- (void)didNonePanelAreaSelected:(id)arg1;
+- (void)changeFrameToExpandUp:(_Bool)arg1;
+- (void)didSelectedGifPic:(id)arg1;
+- (void)sendGifViewWithinputBar:(id)arg1 param:(id)arg2;
+- (id)gifPanelview;
+- (long long)qzoneTableViewOffsetY;
+- (void)revertTableViewContentOffset:(double)arg1;
+- (void)adjustTableViewContentOffset:(double)arg1;
+- (void)hideGifPanelView;
+- (void)loadGifPanel:(id)arg1 param:(id)arg2 indexPath:(id)arg3;
+- (void)handleFeedCellGifCommentBtnClicked:(id)arg1 param:(id)arg2 indexPath:(id)arg3;
+- (_Bool)gifPanelUsingOCSPlugin;
+- (void)onStoryFeedsUnReadBannerItemClickedNotify:(id)arg1;
+- (_Bool)scrollViewShouldScrollToTop:(id)arg1;
 - (void)clickDeleteButton:(id)arg1 indexPath:(id)arg2;
 - (void)handleFeedCellCommentReplyClicked:(id)arg1 indexPath:(id)arg2 comment:(long long)arg3 reply:(long long)arg4 offset:(double)arg5 commentType:(long long)arg6;
 - (void)showFollowTips:(_Bool)arg1 uin:(long long)arg2 top:(double)arg3 feedModel:(id)arg4;
@@ -171,8 +186,6 @@
 - (void)onNotifyShareOutsiteOperation:(id)arg1;
 - (void)onNotifyLuckyMoneyToastResult:(id)arg1;
 - (id)getImageFromOutShare:(id)arg1;
-- (id)fetchUGCMessageTips:(id)arg1;
-- (id)fetchMessageTips:(id)arg1;
 - (id)removeTitlePrefixandSuffix:(id)arg1;
 - (void)sendToWeixinMoments:(id)arg1 outsiteShareUrl:(id)arg2 scene:(int)arg3;
 - (void)sendReqToQQ:(id)arg1 outsiteShareUrl:(id)arg2;
@@ -196,7 +209,6 @@
 - (void)onFowardToQQClicked:(id)arg1;
 - (void)showSpaceRightAlertViewForWinxin:(id)arg1 message:(id)arg2 scene:(int)arg3 shareUrl:(id)arg4;
 - (void)showSpaceRightAlertViewForQQWithMessage:(id)arg1 shareUrl:(id)arg2 feedModel:(id)arg3;
-- (void)onNotifyForwardEdit:(id)arg1;
 - (void)onFowardToQZoneClicked:(id)arg1 cell:(id)arg2 indexPath:(id)arg3 isQuickForward:(_Bool)arg4;
 - (void)scrollViewWillBeginDragging:(id)arg1;
 - (void)clickForwardBtn:(id)arg1 cell:(id)arg2;
@@ -206,12 +218,14 @@
 - (void)viewWillDisappear:(_Bool)arg1;
 - (void)viewDidAppear:(_Bool)arg1;
 - (void)handleClickComment:(id)arg1 feedModel:(id)arg2 fromType:(long long)arg3;
+- (void)changeFeedAudioPlayState:(_Bool)arg1;
+- (void)audioPlayerStateDidChange:(id)arg1;
 - (void)removeGetAllCommentContainer;
 - (void)removeGetAllCommentRequestID:(long long)arg1 cancel:(_Bool)arg2;
-- (void)onEnterDetailViewController:(id)arg1 uin:(long long)arg2;
 - (void)initNotificationObservers:(id)arg1;
 - (_Bool)hasNoFeeds;
 - (void)loadView;
+- (void)retrieveGifPanelView;
 - (void)dealloc;
 - (id)init;
 - (void)petQuickCommentWithImage:(id)arg1 size:(double)arg2 param:(id)arg3;

@@ -20,6 +20,7 @@
     double _lastDistance;
     NSDate *_lastStepChangedDate;
     int _xo;
+    _Bool _isStartStepCount;
 }
 
 + (id)shareInstance;
@@ -40,7 +41,9 @@
 + (_Bool)hasVerifyHealthKitRight;
 + (_Bool)isHealthKitAvailable;
 + (_Bool)isCMPedometerAvilable;
+@property(nonatomic) _Bool isStartStepCount; // @synthesize isStartStepCount=_isStartStepCount;
 - (void).cxx_destruct;
+- (void)willEnterForeground;
 - (void)verifyCMPedometerPower:(CDUnknownBlockType)arg1;
 - (void)verifyHealthKitPower:(CDUnknownBlockType)arg1;
 - (void)stopPedometerUpdates;

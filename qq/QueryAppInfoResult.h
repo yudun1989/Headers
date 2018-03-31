@@ -11,12 +11,14 @@
 @interface QueryAppInfoResult : NSObject
 {
     int _err;
+    int _state;
     NSString *_msg;
     ArkAppDownloadInfo *_info;
 }
 
 @property(retain, nonatomic) ArkAppDownloadInfo *info; // @synthesize info=_info;
 @property(retain, nonatomic) NSString *msg; // @synthesize msg=_msg;
+@property(nonatomic) int state; // @synthesize state=_state;
 @property(nonatomic) int err; // @synthesize err=_err;
 - (void).cxx_destruct;
 

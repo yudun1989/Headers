@@ -124,6 +124,8 @@
 - (void)didLongPressMessageCell:(id)arg1;
 - (void)didTapPhotoCell:(id)arg1;
 - (void)didTapProfileCellWithMessage:(id)arg1;
+- (void)sendFeedbackMessage:(id)arg1 extraInfo:(id)arg2;
+- (void)goToWebViewControllerWithUrl:(id)arg1;
 - (void)didTapMessageCell:(id)arg1;
 - (void)didTapMessageAvatar:(id)arg1;
 - (void)didLongPressWithMessage:(id)arg1 image:(id)arg2;

@@ -36,8 +36,8 @@
     NSString *_sessionID;
     CDUnknownBlockType _didAppearCompletion;
     ReadInJoyChannelArticle *_insertChannelArticle;
-    QQReadInJoySubsViewController *_subViewController;
     id <ReadInJoyScrollViewDelegate> _scrollViewDelegate;
+    QQReadInJoySubsViewController *_subViewController;
     UIColor *_defaultTabBarColor;
     UserSummaryNavigationBar *_userSummaryNavigationBar;
     NSDate *_startTime;
@@ -56,10 +56,10 @@
 @property(nonatomic) _Bool firstTimeLoadData; // @synthesize firstTimeLoadData=_firstTimeLoadData;
 @property(retain, nonatomic) UserSummaryNavigationBar *userSummaryNavigationBar; // @synthesize userSummaryNavigationBar=_userSummaryNavigationBar;
 @property(retain, nonatomic) UIColor *defaultTabBarColor; // @synthesize defaultTabBarColor=_defaultTabBarColor;
+@property(retain, nonatomic) QQReadInJoySubsViewController *subViewController; // @synthesize subViewController=_subViewController;
 @property(nonatomic) _Bool isViewDidLoaded; // @synthesize isViewDidLoaded=_isViewDidLoaded;
 @property(nonatomic) _Bool isForceJump; // @synthesize isForceJump=_isForceJump;
 @property(nonatomic) id <ReadInJoyScrollViewDelegate> scrollViewDelegate; // @synthesize scrollViewDelegate=_scrollViewDelegate;
-@property(retain, nonatomic) QQReadInJoySubsViewController *subViewController; // @synthesize subViewController=_subViewController;
 @property(nonatomic) _Bool isTabVideoChannel; // @synthesize isTabVideoChannel=_isTabVideoChannel;
 @property(nonatomic) _Bool isForPageVC; // @synthesize isForPageVC=_isForPageVC;
 @property(retain, nonatomic) ReadInJoyChannelArticle *insertChannelArticle; // @synthesize insertChannelArticle=_insertChannelArticle;
@@ -111,6 +111,7 @@
 - (void)loadViewForChannel;
 - (_Bool)isTabbarShowing;
 - (void)openOrCloseNightMode;
+- (void)viewWillLayoutSubviews;
 - (void)loadView;
 - (void)refreshChannelDataNew;
 - (_Bool)isRedDotShown;

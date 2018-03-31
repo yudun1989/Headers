@@ -6,7 +6,7 @@
 
 #import <UIKit/UIImageView.h>
 
-@class QQCountingLabel, QQMessageModel, UIView;
+@class NSMutableArray, QQCountingLabel, QQMessageModel, UILabel, UIView;
 
 @interface QQWalletGoldMsgAIOAnimationView : UIImageView
 {
@@ -17,14 +17,15 @@
     QQMessageModel *_msgModel;
     double _fromValue;
     double _toValue;
-    _Bool _isShowing;
-    _Bool _isCoinState;
-    _Bool _isCountAniFinished;
+    UILabel *_tipsLab;
+    _Bool _tipsHasShow;
+    NSMutableArray *_aniCoins;
+    double _countingFinishTime;
 }
 
-@property(readonly, nonatomic) _Bool isCoinState; // @synthesize isCoinState=_isCoinState;
+@property(nonatomic) unsigned long long viewType; // @synthesize viewType=_viewType;
 @property(retain, nonatomic) QQMessageModel *msgModel; // @synthesize msgModel=_msgModel;
-@property(readonly, nonatomic) _Bool isCountAniFinished; // @synthesize isCountAniFinished=_isCountAniFinished;
+- (void)layoutSplashViewCenterForAnimation;
 
 @end
 

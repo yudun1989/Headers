@@ -17,6 +17,7 @@
     _Bool _globalVerifyLimit;
     NSString *_biz;
     NSString *_source;
+    NSString *_skinColor;
     NSArray *_steps;
     NSDictionary *_globalParam;
 }
@@ -26,6 +27,7 @@
 @property(nonatomic) _Bool globalVerifyLimit; // @synthesize globalVerifyLimit=_globalVerifyLimit;
 @property(retain, nonatomic) NSDictionary *globalParam; // @synthesize globalParam=_globalParam;
 @property(retain, nonatomic) NSArray *steps; // @synthesize steps=_steps;
+@property(retain, nonatomic) NSString *skinColor; // @synthesize skinColor=_skinColor;
 @property(retain, nonatomic) NSString *source; // @synthesize source=_source;
 @property(retain, nonatomic) NSString *biz; // @synthesize biz=_biz;
 @property(nonatomic) _Bool useOCR; // @synthesize useOCR=_useOCR;

@@ -12,8 +12,10 @@
 
 @interface TBReqCheckActivity : NSObject <ITBPBGetData>
 {
+    unsigned long long _adcode;
 }
 
+@property(nonatomic) unsigned long long adcode; // @synthesize adcode=_adcode;
 - (id)getRequestPBData;
 
 // Remaining properties

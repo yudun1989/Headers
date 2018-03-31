@@ -26,6 +26,7 @@
 - (void)insertRecentMsg:(id)arg1 exMsgId:(int)arg2 inDb:(id)arg3;
 - (void)createindex:(id)arg1 inDb:(id)arg2;
 - (void)createTableWithName:(id)arg1 inDb:(id)arg2;
+- (id)getCreateTableSql:(id)arg1;
 
 @end
 

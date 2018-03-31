@@ -23,7 +23,8 @@
 + (id)formatPlayCountLabelWithString:(id)arg1;
 + (id)formatWatchCountLabelWithString:(id)arg1;
 + (id)getDecimalNumberWith:(double)arg1;
-+ (_Bool)openFullScreenVideoWithChannelAirticleModel:(id)arg1 viewController:(id)arg2;
++ (_Bool)openFullScreenVideoWithChannelAirticleModel:(id)arg1 viewController:(id)arg2 fullScreenSource:(unsigned long long)arg3;
++ (id)readInJoyChannelArticleWithVideoArticleModel:(id)arg1;
 + (id)getVideoArticleModelWithChannelAirticleModel:(id)arg1;
 + (id)getVideoArticleModelWithNotification:(id)arg1;
 + (_Bool)isSocialSwithOn;

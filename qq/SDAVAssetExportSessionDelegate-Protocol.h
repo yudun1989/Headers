@@ -9,6 +9,8 @@
 @class SDAVAssetExportSession;
 
 @protocol SDAVAssetExportSessionDelegate <NSObject>
+
+@optional
 - (void)exportSessionWithProgress:(float)arg1;
 - (void)exportSession:(SDAVAssetExportSession *)arg1 renderFrame:(struct __CVBuffer *)arg2 withPresentationTime:(CDStruct_1b6d18a9)arg3 toBuffer:(struct __CVBuffer *)arg4;
 @end

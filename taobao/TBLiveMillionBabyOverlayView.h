@@ -9,16 +9,16 @@
 #import "TBLiveOverlayProtocol-Protocol.h"
 #import "UITextFieldDelegate-Protocol.h"
 
-@class NSString, TBLiveActionView, TBLiveAnchorTipView, TBLiveCommentInputView, TBLiveDetailInfoModel, TBLiveGoodsPromptView, TBLiveMBIconTextView, TBLiveMillionBabyOverlayController, TBLiveNormalQuitView, TBLiveRoomContext, TBLiveTextField, TBLiveUserLevelPointsView, TBLiveWeexBaseView, UIButton, UIImageView, UIView;
+@class NSString, TBLiveActionView, TBLiveAnchorTipView, TBLiveCommentInputView, TBLiveDetailInfoModel, TBLiveGoodsPromptView, TBLiveMillionBabyOverlayController, TBLiveNormalQuitView, TBLiveQAIconTextView, TBLiveRoomContext, TBLiveTextField, TBLiveUserLevelPointsView, TBLiveWeexBaseView, UIButton, UIImageView, UIView;
 
 @interface TBLiveMillionBabyOverlayView : TBLiveBaseOverlayView <UITextFieldDelegate, TBLiveOverlayProtocol>
 {
     _Bool _isLandscape;
     TBLiveGoodsPromptView *_goodsPromptView;
     TBLiveUserLevelPointsView *_userLevelPointsView;
-    TBLiveMBIconTextView *_onlineUserView;
-    TBLiveMBIconTextView *_lifeNumView;
-    TBLiveMBIconTextView *_unLimitView;
+    TBLiveQAIconTextView *_onlineUserView;
+    TBLiveQAIconTextView *_lifeNumView;
+    TBLiveQAIconTextView *_unLimitView;
     UIImageView *_logoView;
     UIButton *_shareBtn;
     TBLiveCommentInputView *_comnentInputView;
@@ -50,9 +50,9 @@
 @property(retain, nonatomic) TBLiveCommentInputView *comnentInputView; // @synthesize comnentInputView=_comnentInputView;
 @property(retain, nonatomic) UIButton *shareBtn; // @synthesize shareBtn=_shareBtn;
 @property(retain, nonatomic) UIImageView *logoView; // @synthesize logoView=_logoView;
-@property(retain, nonatomic) TBLiveMBIconTextView *unLimitView; // @synthesize unLimitView=_unLimitView;
-@property(retain, nonatomic) TBLiveMBIconTextView *lifeNumView; // @synthesize lifeNumView=_lifeNumView;
-@property(retain, nonatomic) TBLiveMBIconTextView *onlineUserView; // @synthesize onlineUserView=_onlineUserView;
+@property(retain, nonatomic) TBLiveQAIconTextView *unLimitView; // @synthesize unLimitView=_unLimitView;
+@property(retain, nonatomic) TBLiveQAIconTextView *lifeNumView; // @synthesize lifeNumView=_lifeNumView;
+@property(retain, nonatomic) TBLiveQAIconTextView *onlineUserView; // @synthesize onlineUserView=_onlineUserView;
 @property(retain, nonatomic) TBLiveUserLevelPointsView *userLevelPointsView; // @synthesize userLevelPointsView=_userLevelPointsView;
 @property(retain, nonatomic) TBLiveGoodsPromptView *goodsPromptView; // @synthesize goodsPromptView=_goodsPromptView;
 - (void).cxx_destruct;

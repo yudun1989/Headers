@@ -9,7 +9,9 @@
 @class MQZImagePicker, NSArray;
 
 @protocol MQZImagePickerDelegate <NSObject>
-- (void)didMQZImagePicker:(MQZImagePicker *)arg1 selectedImages:(NSArray *)arg2 didSaved:(_Bool)arg3;
 - (void)didMQZImagePicker:(MQZImagePicker *)arg1 selectedImages:(NSArray *)arg2;
+
+@optional
+- (void)didMQZImagePicker:(MQZImagePicker *)arg1 selectedImages:(NSArray *)arg2 didSaved:(_Bool)arg3;
 @end
 

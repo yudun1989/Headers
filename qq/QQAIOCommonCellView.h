@@ -91,6 +91,7 @@
 @property(retain, nonatomic) UIImage *bgImageNor; // @synthesize bgImageNor=_bgImageNor;
 @property(retain, nonatomic) UIColor *nickColor; // @synthesize nickColor=_nickColor;
 - (void).cxx_destruct;
+- (void)redrawTextWithColorDefinedInBubbleConfig;
 - (void)showVASAvatarView;
 - (void)qimIdentityReport;
 - (_Bool)loadQIMStyleBubbleImageNor:(int)arg1 imageSel:(int)arg2;
@@ -148,6 +149,7 @@
 - (void)hideMenuController;
 - (void)setHighlighted:(_Bool)arg1;
 - (void)drawMarioButton;
+- (void)letOtherCellRedraw;
 - (void)drawGoldMsgTailView;
 - (void)calBubbleBackRect;
 - (void)drawDouTuButton;
@@ -156,6 +158,7 @@
 - (struct CGRect)frameForMsgSendLoading;
 - (struct CGRect)frameForDouTuButton;
 - (struct CGRect)frameForMarioButton;
+- (_Bool)supportMultFor;
 - (_Bool)shouldDisplayGoldMsgButton;
 - (_Bool)shouldDisplayDouTuButton;
 - (_Bool)shouldDisplayLoadingAndFailForMsgType:(int)arg1;

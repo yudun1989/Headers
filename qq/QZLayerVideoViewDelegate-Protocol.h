@@ -6,7 +6,7 @@
 
 #import <QQMainProject/QZFeedVideoViewDelegate-Protocol.h>
 
-@class QZLayerVideoView, QZVideoAdvView, QZVideoDanmaku;
+@class QZLayerVideoView, QZVideoAdvView, QZVideoDanmaku, QzoneFeedModel;
 
 @protocol QZLayerVideoViewDelegate <QZFeedVideoViewDelegate>
 
@@ -19,6 +19,7 @@
 - (void)redpacketClick;
 - (void)playerViewPaused;
 - (void)didAdvAnimationEnd:(QZVideoAdvView *)arg1;
+- (void)didSelectArea:(unsigned long long)arg1 feedModel:(QzoneFeedModel *)arg2;
 - (void)didSelectArea:(unsigned long long)arg1;
 - (void)didSelectAdv:(QZVideoAdvView *)arg1 selectedArea:(unsigned long long)arg2;
 - (void)showMediaBusyTips;

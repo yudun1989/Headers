@@ -14,8 +14,5 @@
 - (id <AVFSCursorProtocol>)executeQuery:(NSString *)arg1 values:(NSArray *)arg2 error:(id *)arg3;
 - (void)executeUpdate:(NSString *)arg1 values:(NSArray *)arg2 error:(id *)arg3;
 - (id)initWithPath:(NSString *)arg1;
-
-@optional
-- (id)initWithPath:(NSString *)arg1 key:(NSString *)arg2;
 @end
 

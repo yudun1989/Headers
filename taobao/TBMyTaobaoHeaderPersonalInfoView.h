@@ -43,6 +43,7 @@
 @property(retain, nonatomic) UIImageView *skinImageView; // @synthesize skinImageView=_skinImageView;
 @property(retain, nonatomic) UIView *contentView; // @synthesize contentView=_contentView;
 - (void).cxx_destruct;
+- (void)hideSubviews:(_Bool)arg1;
 - (void)taoqizhiClicked;
 - (void)vipInfoClicked;
 - (void)nickNameClicked;

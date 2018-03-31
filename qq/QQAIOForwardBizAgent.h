@@ -27,6 +27,7 @@
 - (void)richTextForwardTo:(id)arg1 src:(id)arg2 appShareID:(unsigned int)arg3;
 - (void)textForwardTo:(id)arg1 src:(id)arg2 appShareID:(unsigned int)arg3;
 - (void)arkForwardTo:(id)arg1 src:(id)arg2 appShareID:(unsigned int)arg3;
+- (void)richMultMsgForwardTo:(id)arg1 src:(id)arg2 appShareID:(unsigned int)arg3;
 - (void)highBoomForwardTo:(id)arg1;
 - (void)flashChatForwardTo:(id)arg1 src:(id)arg2 appShareID:(unsigned int)arg3;
 - (void)forwardTo:(id)arg1;

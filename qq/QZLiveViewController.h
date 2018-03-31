@@ -150,12 +150,14 @@
     _Bool _isRetrievedBackgroud;
     _Bool _needRotateVideoViewToFullScreen;
     _Bool _isVideoLandscape;
+    _Bool _isPanoramaLive;
     UIViewController *_preVC;
     UIView *_exitTopBar;
     UIWebView *_webView;
 }
 
 + (id)second_time;
+@property(nonatomic) _Bool isPanoramaLive; // @synthesize isPanoramaLive=_isPanoramaLive;
 @property(readonly, nonatomic) _Bool isVideoLandscape; // @synthesize isVideoLandscape=_isVideoLandscape;
 @property(nonatomic) _Bool needRotateVideoViewToFullScreen; // @synthesize needRotateVideoViewToFullScreen=_needRotateVideoViewToFullScreen;
 @property(retain, nonatomic) UIWebView *webView; // @synthesize webView=_webView;
@@ -291,27 +293,7 @@
 - (id)cameraPickerController;
 - (void)setImagePickerController:(id)arg1;
 - (id)imagePickerController;
-- (_Bool)switchFlash:(_Bool)arg1;
-- (_Bool)isFlashOn;
-- (_Bool)isBackFlashEnable;
-- (_Bool)isFrontFlashEnable;
-- (_Bool)switchCamera;
-- (_Bool)isCameraFront;
-- (_Bool)isBackCameraExist;
-- (_Bool)isFrontCameraExist;
-- (id)getIDFA;
-- (id)parseChangeMobileInfo:(id)arg1;
-- (void)changeMobileAlert:(id)arg1 msg:(id)arg2;
-- (void)onChangeMobile:(id)arg1;
-- (void)showNotifyTip:(id)arg1;
-- (void)shouldCloseLive;
-- (void)networkRecover;
-- (void)roleSwitchToLevle:(unsigned long long)arg1 lastLevel:(unsigned long long)arg2;
-- (void)hasUdtLoss;
-- (void)handlePUGCBadNetwork:(_Bool)arg1;
-- (void)showingLiveShowView;
 - (void)enterLiveShowView;
-- (_Bool)shouldRecomand;
 - (void)setLiveShowChatVC:(id)arg1;
 - (id)getLiveShowVC;
 - (void)setRoleSwitchController:(id)arg1;

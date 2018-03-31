@@ -23,6 +23,7 @@
     QQGroupAudioManageRoomViewController *_manageRoomController;
 }
 
+- (_Bool)isMultiAVoperation;
 - (_Bool)isScreenLocked;
 - (unsigned int)GetCurrentCount;
 - (void)onControlPanelShow:(_Bool)arg1;
@@ -54,8 +55,6 @@
 - (void)showTipsChange:(id)arg1;
 - (void)onVideoShowPanelMessageBarPressDelegate;
 - (void)checkVideoMemCount;
-- (void)onSelfManagerUpdate:(id)arg1;
-- (void)onSelfManagerChange:(id)arg1;
 - (void)onMemberAudioOut:(int)arg1 inMemArray:(id)arg2;
 - (void)onMemberGetOut:(int)arg1 withGroupID:(long long)arg2 inMemArray:(id)arg3;
 - (void)onMemberGetIn:(int)arg1 withGroupID:(long long)arg2 inMemArray:(id)arg3;

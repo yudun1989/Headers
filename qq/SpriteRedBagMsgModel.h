@@ -28,7 +28,6 @@
 @property(nonatomic) unsigned long long sendUin; // @synthesize sendUin=_sendUin;
 @property(nonatomic) int actionType; // @synthesize actionType=_actionType;
 @property(nonatomic) int actionId; // @synthesize actionId=_actionId;
-- (id)description;
 - (void)dealloc;
 
 @end

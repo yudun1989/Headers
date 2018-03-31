@@ -6,24 +6,23 @@
 
 #import <UIKit/UIView.h>
 
+#import <QQMainProject/CAAnimationDelegate-Protocol.h>
 #import <QQMainProject/QZPhotoBottomBarInVideoPlayerDelegate-Protocol.h>
 
-@class NSDictionary, NSString, QZRichTextLabel, QZVideoPlayerToolBarWithPlayAndPause, QzonePhotoModel, UIButton, UIColor, UIImageView, UILabel;
+@class CALayer, NSDictionary, NSString, QZRichTextLabel, QZVideoPlayerToolBarWithPlayAndPause, QzonePhotoModel, UIButton, UIColor, UIImageView, UILabel;
 @protocol QZCommonVideoViewDelegate, QZPhotoBottomBarDelegate;
 
-@interface QZPhotoBottomBar : UIView <QZPhotoBottomBarInVideoPlayerDelegate>
+@interface QZPhotoBottomBar : UIView <CAAnimationDelegate, QZPhotoBottomBarInVideoPlayerDelegate>
 {
     int _xo;
     UIView *_toolView;
     UIView *_descriptionBackgroundView;
     UIImageView *_decriptionIcon;
-    UIImageView *_backgroundView;
     UIColor *_enableColor;
     UIColor *_disableColor;
     NSDictionary *_seletorDic;
     UIView *_videoPlayerBarBackgroundView;
     QZRichTextLabel *_descriptionLabel;
-    UILabel *_dateLabel;
     UIButton *_moreBtn;
     UIButton *_likeBtn;
     UIButton *_commentBtn;
@@ -31,7 +30,6 @@
     UILabel *_likeLabel;
     UILabel *_commentLabel;
     _Bool _showDescription;
-    _Bool _showDate;
     _Bool _showOneLineDescription;
     _Bool _isShareAlbum;
     long long _anonymity;
@@ -40,8 +38,13 @@
     id <QZPhotoBottomBarDelegate> _delegate;
     id <QZCommonVideoViewDelegate> _videoPlayerDelegate;
     QZVideoPlayerToolBarWithPlayAndPause *_videoPlayerControlBar;
+    long long _style;
+    _Bool _showDate;
+    CALayer *_likeAnimateLayer;
 }
 
+@property(nonatomic) _Bool showDate; // @synthesize showDate=_showDate;
+@property(retain, nonatomic) CALayer *likeAnimateLayer; // @synthesize likeAnimateLayer=_likeAnimateLayer;
 @property(retain, nonatomic) QZVideoPlayerToolBarWithPlayAndPause *videoPlayerControlBar; // @synthesize videoPlayerControlBar=_videoPlayerControlBar;
 @property(nonatomic) id <QZCommonVideoViewDelegate> videoPlayerDelegate; // @synthesize videoPlayerDelegate=_videoPlayerDelegate;
 @property(nonatomic) id <QZPhotoBottomBarDelegate> delegate; // @synthesize delegate=_delegate;
@@ -51,10 +54,8 @@
 
 // Remaining properties
 @property(nonatomic) long long anonymity; // @dynamic anonymity;
-@property(retain, nonatomic) UIImageView *backgroundView; // @dynamic backgroundView;
 @property(retain, nonatomic) UIButton *commentBtn; // @dynamic commentBtn;
 @property(retain, nonatomic) UILabel *commentLabel; // @dynamic commentLabel;
-@property(retain, nonatomic) UILabel *dateLabel; // @dynamic dateLabel;
 @property(readonly, copy) NSString *debugDescription;
 @property(retain, nonatomic) UIImageView *decriptionIcon; // @dynamic decriptionIcon;
 @property(readonly, copy) NSString *description;
@@ -68,8 +69,8 @@
 @property(retain, nonatomic) UIButton *likeBtn; // @dynamic likeBtn;
 @property(retain, nonatomic) UILabel *likeLabel; // @dynamic likeLabel;
 @property(retain, nonatomic) UIButton *moreBtn; // @dynamic moreBtn;
+@property(retain, nonatomic) UIButton *originButton; // @dynamic originButton;
 @property(copy, nonatomic) NSDictionary *seletorDic; // @dynamic seletorDic;
-@property(nonatomic) _Bool showDate; // @dynamic showDate;
 @property(nonatomic) _Bool showDescription; // @dynamic showDescription;
 @property(nonatomic) _Bool showOneLineDescription; // @dynamic showOneLineDescription;
 @property(readonly) Class superclass;

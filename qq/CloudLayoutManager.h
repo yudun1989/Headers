@@ -17,9 +17,11 @@
     NSDictionary *_resultDic;
     CloudLayoutCalculator *_calculator;
     _Bool _isDefaultTemplate;
+    _Bool _hasPlaceholderWord;
 }
 
 + (id)sharedManager;
+@property(nonatomic) _Bool hasPlaceholderWord; // @synthesize hasPlaceholderWord=_hasPlaceholderWord;
 @property(nonatomic) _Bool isDefaultTemplate; // @synthesize isDefaultTemplate=_isDefaultTemplate;
 - (void).cxx_destruct;
 - (void)calulateLayout:(id)arg1 uin:(long long)arg2 result:(CDUnknownBlockType)arg3;

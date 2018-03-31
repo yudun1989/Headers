@@ -7,7 +7,7 @@
 #import <UIKit/UIView.h>
 
 #import <QQMainProject/CAAnimationDelegate-Protocol.h>
-#import <QQMainProject/LKViewDelegate-Protocol.h>
+#import <QQMainProject/PTViewDelegate-Protocol.h>
 #import <QQMainProject/QZAutoPlayGifViewDelegate-Protocol.h>
 #import <QQMainProject/QZFeedCellDelegate-Protocol.h>
 #import <QQMainProject/QZFeedVideoViewDelegate-Protocol.h>
@@ -17,10 +17,10 @@
 #import <QQMainProject/QzCustomPraiseComboAnimViewDelegate-Protocol.h>
 #import <QQMainProject/QzoneDropDownMenuViewDelegate-Protocol.h>
 
-@class CAGradientLayer, LKLayoutView, NSArray, NSDictionary, NSIndexPath, NSMutableArray, NSMutableDictionary, NSString, NSTimer, PhotoNickEmotionView, QZAutoPlayGifView, QZCFrameAnimationView, QZDrawItem, QZDrawItemInteractionRect, QZFeedPhotoView, QZFeedVideoView, QZLayoutInfo, QZoneFeedCellButton, QzoneBaseFeedView, QzoneDropDownMenuView, QzoneFeedLiveView, QzoneFeedModel, UIActivityIndicatorView, UIButton, UIImageView;
+@class CAGradientLayer, NSArray, NSDictionary, NSIndexPath, NSMutableArray, NSMutableDictionary, NSString, NSTimer, PTLayoutView, PhotoNickEmotionView, QZAutoPlayGifView, QZCFrameAnimationView, QZDrawItem, QZDrawItemInteractionRect, QZFeedPhotoView, QZFeedVideoView, QZLayoutInfo, QZoneFeedCellButton, QzoneBaseFeedView, QzoneDropDownMenuView, QzoneFeedLiveView, QzoneFeedModel, UIActivityIndicatorView, UIButton, UIImageView;
 @protocol QZFeedCellDelegate;
 
-@interface QzoneFeedLayoutView : UIView <QZLayerVideoStateViewDelegate, QzoneDropDownMenuViewDelegate, QZLayerVideoViewDelegate, QzCustomPraiseComboAnimViewDelegate, CAAnimationDelegate, LKViewDelegate, QZFeedCellDelegate, QZPhotoThumbViewDelegate, QZFeedVideoViewDelegate, QZAutoPlayGifViewDelegate>
+@interface QzoneFeedLayoutView : UIView <QZLayerVideoStateViewDelegate, QzoneDropDownMenuViewDelegate, QZLayerVideoViewDelegate, QzCustomPraiseComboAnimViewDelegate, CAAnimationDelegate, PTViewDelegate, QZFeedCellDelegate, QZPhotoThumbViewDelegate, QZFeedVideoViewDelegate, QZAutoPlayGifViewDelegate>
 {
     double _touchDownTime;
     struct CGPoint _touchDownPoint;
@@ -114,10 +114,10 @@
     long long _detailSection;
     double _feedCellBgAlpha;
     NSDictionary *_longPressParamForLayoutKit;
-    LKLayoutView *_layoutKitRootView;
+    PTLayoutView *_layoutKitRootView;
 }
 
-@property(retain, nonatomic) LKLayoutView *layoutKitRootView; // @synthesize layoutKitRootView=_layoutKitRootView;
+@property(retain, nonatomic) PTLayoutView *layoutKitRootView; // @synthesize layoutKitRootView=_layoutKitRootView;
 @property(retain, nonatomic) NSDictionary *longPressParamForLayoutKit; // @synthesize longPressParamForLayoutKit=_longPressParamForLayoutKit;
 @property(nonatomic) _Bool isForLayoutKit; // @synthesize isForLayoutKit=_isForLayoutKit;
 @property(nonatomic) double feedCellBgAlpha; // @synthesize feedCellBgAlpha=_feedCellBgAlpha;
@@ -143,7 +143,8 @@
 - (void).cxx_destruct;
 - (void)onFeedCell:(id)arg1 action:(unsigned long long)arg2 param:(id)arg3 feedModel:(id)arg4;
 - (id)subviewForTag:(id)arg1;
-- (void)resetLKLayoutView;
+- (void)resetPTLayoutView;
+- (void)setViewAlphaWithViewTag:(id)arg1;
 - (void)doSomeExtraProcess;
 - (id)forceActionDrawItemForLayoutKit:(struct CGPoint)arg1;
 - (void)didDropDownMenuItemClicked:(id)arg1;
@@ -181,6 +182,7 @@
 - (void)moreVideoClick;
 - (void)redpacketClick;
 - (void)didSelectAdv:(id)arg1 selectedArea:(unsigned long long)arg2;
+- (void)didSelectArea:(unsigned long long)arg1 feedModel:(id)arg2;
 - (void)didSelectArea:(unsigned long long)arg1;
 - (void)didDanmakuClicked:(id)arg1;
 - (void)showMediaBusyTips;
@@ -226,8 +228,6 @@
 - (_Bool)canBecomeFirstResponder;
 - (_Bool)canPerformAction:(SEL)arg1 withSender:(id)arg2;
 - (void)actionSheet:(id)arg1 clickedButtonAtIndex:(long long)arg2;
-- (_Bool)shouldShowVideoInfo;
-- (void)didMenuItemShowVideoNetworkInfo:(id)arg1;
 - (void)didMenuItemShowPhotoLog:(id)arg1;
 - (_Bool)shouldShowPhotoLog;
 - (void)didMenuItemFeedModel:(id)arg1;
@@ -277,7 +277,7 @@
 - (void)shackLikeBtn:(long long)arg1;
 - (id)setImageRoundCorner:(id)arg1 isTopRound:(_Bool)arg2 isNeedAllRound:(_Bool)arg3;
 - (id)setImageRoundCorner:(id)arg1 isTopRound:(_Bool)arg2;
-- (id)setImageRoundCorner:(id)arg1;
+- (void)setImageRoundCorner:(id)arg1;
 - (void)setNoRoundCorner:(id)arg1;
 - (struct CGRect)frameForBackground:(long long)arg1;
 - (void)updateLayoutBackgroundImageViews;

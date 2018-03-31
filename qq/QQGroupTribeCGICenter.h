@@ -28,14 +28,15 @@
 + (_Bool)sendSSORequest:(id)arg1 cmd:(id)arg2 callback:(CDUnknownBlockType)arg3;
 + (_Bool)requestTopicAioExtraInfoWithBid:(unsigned long long)arg1 pid:(id)arg2 topicType:(int)arg3 msgSeq:(unsigned long long)arg4 callback:(CDUnknownBlockType)arg5;
 + (_Bool)requestTopicAioContentWithBid:(unsigned long long)arg1 pid:(id)arg2 callback:(CDUnknownBlockType)arg3;
++ (_Bool)requestPlayTribeShortVideoDataReportWithBid:(unsigned long long)arg1 pid:(id)arg2 themeId:(unsigned long long)arg3 callback:(CDUnknownBlockType)arg4;
 + (_Bool)getGroupTribeConfigForGroup:(id)arg1 callback:(CDUnknownBlockType)arg2;
 + (_Bool)getGroupTribeCategoryInfo:(id)arg1 callback:(CDUnknownBlockType)arg2;
 + (_Bool)likeTopicWithBid:(id)arg1 Pid:(id)arg2 content:(_Bool)arg3 groupType:(int)arg4 params:(id)arg5 callback:(CDUnknownBlockType)arg6;
-+ (_Bool)replyTopicWithBid:(id)arg1 Pid:(id)arg2 content:(id)arg3 mediaType:(int)arg4 mediaContent:(id)arg5 groupType:(int)arg6 params:(id)arg7 callback:(CDUnknownBlockType)arg8;
++ (_Bool)replyTopicWithBid:(id)arg1 Pid:(id)arg2 content:(id)arg3 mediaType:(unsigned long long)arg4 mediaContent:(id)arg5 groupType:(int)arg6 params:(id)arg7 callback:(CDUnknownBlockType)arg8;
 + (void)requestHiPlayHeadListNum:(long long)arg1 lotitude:(long long)arg2 latitude:(long long)arg3 callback:(CDUnknownBlockType)arg4;
 + (_Bool)tribeWithBids:(id)arg1 callback:(CDUnknownBlockType)arg2;
-+ (_Bool)postTopic:(id)arg1 supportMultiSelect:(_Bool)arg2 title:(id)arg3 content:(id)arg4 mediaType:(int)arg5 mediaContent:(id)arg6 params:(id)arg7 category:(id)arg8 groupType:(int)arg9 callback:(CDUnknownBlockType)arg10;
-+ (id)getKeyForMediaType:(int)arg1;
++ (_Bool)postTopic:(id)arg1 supportMultiSelect:(_Bool)arg2 title:(id)arg3 content:(id)arg4 mediaType:(unsigned long long)arg5 mediaContent:(id)arg6 params:(id)arg7 category:(id)arg8 groupType:(int)arg9 callback:(CDUnknownBlockType)arg10;
++ (id)getKeyForMediaType:(unsigned long long)arg1;
 + (id)getGroupTribeUploadImageRequestWithImage:(id)arg1 targetUrl:(id)arg2;
 + (id)getGroupTribeUploadImageRequestWithImageData:(id)arg1 targetUrl:(id)arg2;
 + (_Bool)uploadImage:(id)arg1 callback:(CDUnknownBlockType)arg2;

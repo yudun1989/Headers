@@ -9,6 +9,7 @@
 @class FullScreenPublicVideoTableViewCell, ReadInJoyChannel;
 
 @protocol FullScreenPublicVideoCellDelegate <NSObject>
+- (void)tableViewVideoCell:(FullScreenPublicVideoTableViewCell *)arg1 commentViewOpenNewVC:(_Bool)arg2;
 - (void)tableViewVideoCell:(FullScreenPublicVideoTableViewCell *)arg1 willDisplayLabel:(ReadInJoyChannel *)arg2 forIndex:(unsigned long long)arg3;
 - (void)tableViewVideoCell:(FullScreenPublicVideoTableViewCell *)arg1 didSelectLabel:(ReadInJoyChannel *)arg2 forIndex:(unsigned long long)arg3;
 @end

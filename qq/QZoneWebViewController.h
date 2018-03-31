@@ -47,6 +47,7 @@
 - (void)reportUnLoadCompleteWithActionExp:(long long)arg1 errorCode:(long long)arg2;
 - (void)reportDataToRdm:(_Bool)arg1 error:(id)arg2;
 - (void)scrollViewDidScroll:(id)arg1;
+- (_Bool)isInBanList:(id)arg1;
 - (void)webView:(id)arg1 didFailLoadWithError:(id)arg2;
 - (void)webViewDidFinishLoad:(id)arg1;
 - (void)webViewDidStartLoad:(id)arg1;

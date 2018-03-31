@@ -15,11 +15,11 @@
 + (void)requestStreetWithDeliverID:(id)arg1 divisionCode:(id)arg2 townDivisionCode:(id)arg3 addressDetail:(id)arg4 SuccessBlock:(CDUnknownBlockType)arg5 failBlock:(CDUnknownBlockType)arg6;
 + (void)requestAreaWithDivisionCode:(id)arg1 SuccessBlock:(CDUnknownBlockType)arg2 failBlock:(CDUnknownBlockType)arg3;
 + (void)requestProvinceWithSuccessBlock:(CDUnknownBlockType)arg1 failBlock:(CDUnknownBlockType)arg2;
-+ (void)requestAddAddressWithFullName:(id)arg1 mobile:(id)arg2 post:(id)arg3 divisionCode:(id)arg4 detailAddress:(id)arg5 townDivisionCode:(id)arg6 defaultDeliverAddress:(id)arg7 kinshipUserId:(id)arg8 successBlock:(CDUnknownBlockType)arg9 failBlock:(CDUnknownBlockType)arg10;
-+ (void)requestEditAddressWithDeliverID:(id)arg1 fullName:(id)arg2 mobile:(id)arg3 post:(id)arg4 divisionCode:(id)arg5 townDivisionCode:(id)arg6 detailAddress:(id)arg7 defaultDeliverAddress:(id)arg8 kinshipUserId:(id)arg9 successBlock:(CDUnknownBlockType)arg10 failBlock:(CDUnknownBlockType)arg11;
++ (void)requestAddAddressWithFullName:(id)arg1 mobile:(id)arg2 post:(id)arg3 divisionCode:(id)arg4 detailAddress:(id)arg5 townDivisionCode:(id)arg6 defaultDeliverAddress:(id)arg7 kinshipUserId:(id)arg8 detailDivisionCode:(id)arg9 successBlock:(CDUnknownBlockType)arg10 failBlock:(CDUnknownBlockType)arg11;
++ (void)requestEditAddressWithDeliverID:(id)arg1 fullName:(id)arg2 mobile:(id)arg3 post:(id)arg4 divisionCode:(id)arg5 townDivisionCode:(id)arg6 detailAddress:(id)arg7 defaultDeliverAddress:(id)arg8 kinshipUserId:(id)arg9 detailDivisionCode:(id)arg10 successBlock:(CDUnknownBlockType)arg11 failBlock:(CDUnknownBlockType)arg12;
 + (void)requestDeleteAddressWithAddressID:(id)arg1 addressType:(id)arg2 successBlock:(CDUnknownBlockType)arg3 failBlock:(CDUnknownBlockType)arg4;
 + (void)requestSetAddressAsDefaultWithAddressID:(id)arg1 successBlock:(CDUnknownBlockType)arg2 failBlock:(CDUnknownBlockType)arg3;
-+ (void)requestAddressListWithSupportStation:(_Bool)arg1 abroadStation:(_Bool)arg2 sites:(id)arg3 token:(id)arg4 successBlock:(CDUnknownBlockType)arg5 failBlock:(CDUnknownBlockType)arg6;
++ (void)requestAddressListWithSupportStation:(_Bool)arg1 abroadStation:(_Bool)arg2 sites:(id)arg3 token:(id)arg4 agencyReceiveHelpUrl:(id)arg5 successBlock:(CDUnknownBlockType)arg6 failBlock:(CDUnknownBlockType)arg7;
 + (void)requestAddressListWithSuccessBlock:(CDUnknownBlockType)arg1 failBlock:(CDUnknownBlockType)arg2 isSupportStation:(_Bool)arg3;
 
 @end

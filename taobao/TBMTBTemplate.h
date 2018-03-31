@@ -11,13 +11,12 @@
 @interface TBMTBTemplate : TBJSONModel
 {
     NSString *_name;
-    NSString *_url;
+    NSString *_iosUrl;
     NSString *_version;
 }
 
-+ (id)jsonToModelKeyMapDictionary;
-@property(nonatomic) NSString *version; // @synthesize version=_version;
-@property(retain, nonatomic) NSString *url; // @synthesize url=_url;
+@property(retain, nonatomic) NSString *version; // @synthesize version=_version;
+@property(retain, nonatomic) NSString *iosUrl; // @synthesize iosUrl=_iosUrl;
 @property(retain, nonatomic) NSString *name; // @synthesize name=_name;
 - (void).cxx_destruct;
 

@@ -19,15 +19,20 @@
     JSContext *_jsContext;
     WXWebView *_webview;
     NSString *_url;
+    NSString *_source;
+    NSString *_inInitsource;
 }
 
-+ (id)wx_export_method_66;
-+ (id)wx_export_method_65;
-+ (id)wx_export_method_64;
++ (id)wx_export_method_72;
++ (id)wx_export_method_71;
++ (id)wx_export_method_70;
++ (id)wx_export_method_69;
 @property(nonatomic) _Bool notifyEvent; // @synthesize notifyEvent=_notifyEvent;
 @property(nonatomic) _Bool failLoadEvent; // @synthesize failLoadEvent=_failLoadEvent;
 @property(nonatomic) _Bool finishLoadEvent; // @synthesize finishLoadEvent=_finishLoadEvent;
 @property(nonatomic) _Bool startLoadEvent; // @synthesize startLoadEvent=_startLoadEvent;
+@property(retain, nonatomic) NSString *inInitsource; // @synthesize inInitsource=_inInitsource;
+@property(retain, nonatomic) NSString *source; // @synthesize source=_source;
 @property(retain, nonatomic) NSString *url; // @synthesize url=_url;
 @property(retain, nonatomic) WXWebView *webview; // @synthesize webview=_webview;
 @property(retain, nonatomic) JSContext *jsContext; // @synthesize jsContext=_jsContext;
@@ -37,6 +42,7 @@
 - (void)webViewDidFinishLoad:(id)arg1;
 - (void)webViewDidStartLoad:(id)arg1;
 - (id)baseInfo;
+- (void)postMessage:(id)arg1;
 - (void)notifyWebview:(id)arg1;
 - (void)goForward;
 - (void)goBack;

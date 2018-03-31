@@ -16,10 +16,10 @@
     NSMutableDictionary *_actionBlockDic;
     NSMutableDictionary *_infoDic;
     NSMutableArray *_clickedItems;
-    NSMutableArray *_priorItems;
+    NSString *_priorItems;
 }
 
-@property(retain, nonatomic) NSMutableArray *priorItems; // @synthesize priorItems=_priorItems;
+@property(retain, nonatomic) NSString *priorItems; // @synthesize priorItems=_priorItems;
 @property(retain, nonatomic) NSMutableArray *clickedItems; // @synthesize clickedItems=_clickedItems;
 @property(retain, nonatomic) NSMutableDictionary *infoDic; // @synthesize infoDic=_infoDic;
 @property(retain, nonatomic) NSMutableDictionary *actionBlockDic; // @synthesize actionBlockDic=_actionBlockDic;

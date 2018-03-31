@@ -34,6 +34,7 @@
     QQWalletImageDownloader *_downloader;
 }
 
++ (struct CGSize)welfareCell3Size;
 + (struct CGSize)welfareCellSize;
 + (struct CGSize)cellSize;
 @property(retain, nonatomic) QQWalletImageDownloader *downloader; // @synthesize downloader=_downloader;
@@ -46,6 +47,7 @@
 - (void)downloader:(id)arg1 didFailWithError:(id)arg2 forURL:(id)arg3;
 - (void)downloader:(id)arg1 didDownloadImage:(id)arg2 forURL:(id)arg3;
 - (id)accessibilityLabel;
+- (_Bool)isSmallScreen;
 - (void)downloadZipImages;
 - (void)fillBackground;
 - (id)getImageUrlArrayFromServiceId:(int)arg1;

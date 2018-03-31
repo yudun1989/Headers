@@ -15,6 +15,7 @@
 
 @property(retain, nonatomic) ReadInJoyChannelArticle *feedsModel; // @synthesize feedsModel=_feedsModel;
 - (void)dealloc;
+- (id)getVideoView;
 - (struct CGRect)getDislikeButtonFrameToWindow;
 - (id)findComponent:(id)arg1;
 - (void)layoutView:(id)arg1 WithType:(id)arg2;

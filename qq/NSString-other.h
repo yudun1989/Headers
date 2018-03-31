@@ -20,6 +20,7 @@
 - (struct CGSize)sizeWithFont:(id)arg1 constrainedToSize:(struct CGSize)arg2;
 - (struct CGSize)safelySizeWithFont:(id)arg1 constrainedToSize:(struct CGSize)arg2;
 - (id)stringByReplacingSystemEmojiWithSpace;
+- (long long)lengthWithNoEmoji;
 - (struct _NSRange)rangeOfFirstEmoji4AIOLayout:(struct _NSRange)arg1;
 - (struct _NSRange)firstRangeOfEmojiInRange2:(struct _NSRange)arg1;
 - (struct _NSRange)firstRangeOfEmojiInRange:(struct _NSRange)arg1;

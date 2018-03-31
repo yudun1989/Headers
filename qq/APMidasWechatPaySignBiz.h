@@ -20,6 +20,7 @@
 - (void)callback;
 - (void)onWechatPaySuccess;
 - (void)onWechatPayFinish:(id)arg1;
+- (void)onSignCallback;
 - (void)onWechatSignBack;
 - (void)processPaySign;
 - (void)processSign;

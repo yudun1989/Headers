@@ -4,15 +4,22 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-#import "AwarenessExecutor.h"
+#import <Foundation/NSObject.h>
 
-@interface AwarenessLBSPushExecutor : AwarenessExecutor
+@protocol OS_dispatch_semaphore;
+
+@interface AwarenessLBSPushExecutor : NSObject
 {
+    NSObject<OS_dispatch_semaphore> *_pushlock;
 }
 
-+ (void)awarenessCancelByUUID:(id)arg1;
-+ (void)awarenessExecutorWithModel:(id)arg1;
-+ (void)regestNotification:(id)arg1;
++ (id)shareInstance;
+- (void).cxx_destruct;
+- (void)unregisteredAllLBSPush;
+- (void)unregisteredLBSPush:(id)arg1;
+- (void)registered:(id)arg1;
+- (void)registeredLBSPush:(id)arg1;
+- (id)init;
 
 @end
 

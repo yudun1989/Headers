@@ -10,7 +10,6 @@
 
 @interface QQDynamicSearchCellTemplateLayout3View : QQDynamicSearchCellTemplateBaseView
 {
-    double _contentViewHeight;
     QQDynamicSearchCellTemplateLeftImageView *_leftImageView;
     UILabel *_nickLabel;
     QQAsynUrlImageView *_headLineIcon;
@@ -21,10 +20,13 @@
     UILabel *_imageCountLabel;
 }
 
+- (double)contentViewBottomMargin;
+- (double)contentViewTopMargin;
 - (double)calHeightForCell;
 - (void)resetContentViewFrame;
 - (double)calContentViewWidth;
 - (double)calContentViewHeight;
+- (void)layoutViewsWithResult:(id)arg1;
 - (void)layoutContentView;
 - (void)dealloc;
 - (id)initWithFrame:(struct CGRect)arg1;

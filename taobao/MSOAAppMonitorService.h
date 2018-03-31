@@ -10,9 +10,8 @@
 {
 }
 
++ (_Bool)canCommit:(id)arg1;
 + (_Bool)isMsoaV2ReportData;
-+ (void)commitInvokeMethodFailureAppMonitorWithIntent:(id)arg1 methodId:(id)arg2 cost:(double)arg3;
-+ (void)commitInvokeMethodSuccessAppMonitorWithIntent:(id)arg1 methodId:(id)arg2 cost:(double)arg3;
 + (void)commitRequestServiceFailureAppMonitorWithIntent:(id)arg1 error:(id)arg2;
 + (void)commitRequestServiceSuccessAppMonitorWithIntent:(id)arg1;
 + (void)commitObtainServiceFailureAppMonitorWithIntent:(id)arg1 error:(id)arg2;

@@ -13,24 +13,28 @@
 #import <QQMainProject/UITableViewDataSource-Protocol.h>
 #import <QQMainProject/UITableViewDelegate-Protocol.h>
 
-@class APMidasBizManager, APMidasMbInputViewController, APMidasUIChannelOrderView, APMidasWechatPaySignBiz, NSMutableArray, NSString, QQNavigationController, UITableView;
+@class APMidasBizManager, APMidasMbInputViewController, APMidasUIChannelOrderViewNew, APMidasUITitleView, APMidasWechatPaySignBiz, NSMutableArray, NSString, QQNavigationController, UITableView, UIView;
 @protocol APMidasUIQQPayChannelViewControllerDelegate;
 
 @interface APMidasUIQQPayChannelViewController : QQViewController <APMidasCftPayDelegate, UIAlertViewDelegate, APMidasMbInputViewControllerDelegate, APMidasMbH5ViewControllerDelegate, UITableViewDataSource, UITableViewDelegate>
 {
     id <APMidasUIQQPayChannelViewControllerDelegate> channelVcDelegate;
     APMidasBizManager *bizManager;
+    _Bool isFromExpress;
     _Bool _paySuccessReturnFromCft;
     _Bool _payErrorReturnFromCft;
     unsigned long long _cftErrorCode;
     _Bool _wechatSignConfirmShow;
     APMidasWechatPaySignBiz *_wechatSignBiz;
-    APMidasUIChannelOrderView *_orderView;
+    APMidasUITitleView *_mdsTitleView;
+    APMidasUIChannelOrderViewNew *_orderView;
     NSMutableArray *_dispChannels;
-    NSMutableArray *_moreDispChannels;
     APMidasMbInputViewController *_mbInputVc;
     QQNavigationController *_navVc;
     UITableView *_tableView;
+    UIView *_popView;
+    _Bool hasPageShowed;
+    struct CGPoint centerPoint;
 }
 
 + (id)qqPayChannelViewController;
@@ -46,17 +50,12 @@
 - (void)payByAcct;
 - (void)payByQQWallet;
 - (void)payByChannel:(id)arg1;
-- (id)tableView:(id)arg1 viewForHeaderInSection:(long long)arg2;
-- (double)tableView:(id)arg1 heightForHeaderInSection:(long long)arg2;
 - (void)tableView:(id)arg1 didSelectRowAtIndexPath:(id)arg2;
 - (double)tableView:(id)arg1 heightForRowAtIndexPath:(id)arg2;
 - (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;
 - (long long)tableView:(id)arg1 numberOfRowsInSection:(long long)arg2;
-- (long long)numberOfSectionsInTableView:(id)arg1;
-- (void)decorateWechatCell:(id)arg1 channelInfo:(id)arg2;
-- (void)decorateQQWalletCell:(id)arg1 channelInfo:(id)arg2;
-- (void)decorateBankCell:(id)arg1 channelInfo:(id)arg2;
-- (void)decorateQCoinCell:(id)arg1 channelInfo:(id)arg2;
+- (void)tableView:(id)arg1 willDisplayCell:(id)arg2 forRowAtIndexPath:(id)arg3;
+- (void)decorateChannelCell:(id)arg1 channelInfo:(id)arg2;
 - (void)commonDecorateBankCell:(id)arg1;
 - (void)checkOrderInfo;
 - (void)onTenPayFinish:(id)arg1 errorCode:(long long)arg2;
@@ -64,7 +63,6 @@
 - (void)processRollbackFail;
 - (void)rollbackIfNeeded;
 - (void)onWechatPayFinish:(id)arg1;
-- (id)getOtherCell:(id)arg1 indexPath:(id)arg2;
 - (void)gotoResultBigPage;
 - (void)callbackFromWechat;
 - (void)onWechatPaySuccess;
@@ -78,11 +76,9 @@
 - (id)getChannelInfoById:(id)arg1 inChannels:(id)arg2;
 - (id)bankCellFroTableView:(id)arg1;
 - (void)onCancel;
-- (void)leftButtonClick:(id)arg1;
 - (void)processCftReturnIfNeeded;
 - (void)showError:(id)arg1;
 - (id)GetCurrentTitle;
-- (void)loadView;
 - (void)viewDidDisappear:(_Bool)arg1;
 - (void)viewDidAppear:(_Bool)arg1;
 - (void)viewWillDisappear:(_Bool)arg1;

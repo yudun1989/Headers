@@ -20,6 +20,9 @@
 + (void)getAppInfo:(id)arg1 withWebView:(id)arg2 withViewController:(id)arg3 withType:(id)arg4 completion:(CDUnknownBlockType)arg5;
 + (void)unSubscribeMessage:(id)arg1 withWebView:(id)arg2 withViewController:(id)arg3 withType:(id)arg4 completion:(CDUnknownBlockType)arg5;
 + (void)subscribeMessage:(id)arg1 withWebView:(id)arg2 withViewController:(id)arg3 withType:(id)arg4 completion:(CDUnknownBlockType)arg5;
++ (void)showSharePanel:(id)arg1 withWebView:(id)arg2 withViewController:(id)arg3 withType:(id)arg4 completion:(CDUnknownBlockType)arg5;
++ (void)showGoodsPackage:(id)arg1 withWebView:(id)arg2 withViewController:(id)arg3 withType:(id)arg4 completion:(CDUnknownBlockType)arg5;
++ (void)addFavor:(id)arg1 withWebView:(id)arg2 withViewController:(id)arg3 withType:(id)arg4 completion:(CDUnknownBlockType)arg5;
 + (void)setUserInteractionEnabled:(id)arg1 withWebView:(id)arg2 withViewController:(id)arg3 withType:(id)arg4 completion:(CDUnknownBlockType)arg5;
 + (void)getFansLevelInfo:(id)arg1 withWebView:(id)arg2 withViewController:(id)arg3 withType:(id)arg4 completion:(CDUnknownBlockType)arg5;
 + (void)closeFansRightsLayer:(id)arg1 withWebView:(id)arg2 withViewController:(id)arg3 withType:(id)arg4 completion:(CDUnknownBlockType)arg5;

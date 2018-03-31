@@ -77,6 +77,8 @@
     int _xo;
     unsigned int _lastThemeSuitId;
     unsigned int _themeSuitId;
+    int _iXManScene1DelayTime;
+    int _iXManScene2DelayTime;
     unsigned int _gameIconShowFlag;
     unsigned int _gameRank;
     unsigned int _avatarId;
@@ -106,6 +108,8 @@
 @property(nonatomic) unsigned int vipFontID; // @synthesize vipFontID=_vipFontID;
 @property(nonatomic) unsigned int pendantDiyInfoId; // @synthesize pendantDiyInfoId=_pendantDiyInfoId;
 @property(nonatomic) long long avatarPendantID; // @synthesize avatarPendantID=_avatarPendantID;
+@property(nonatomic) int iXManScene2DelayTime; // @synthesize iXManScene2DelayTime=_iXManScene2DelayTime;
+@property(nonatomic) int iXManScene1DelayTime; // @synthesize iXManScene1DelayTime=_iXManScene1DelayTime;
 @property(nonatomic) int lastUpdateQQXManTime; // @synthesize lastUpdateQQXManTime=_lastUpdateQQXManTime;
 @property(nonatomic) int phoneQQXManDay; // @synthesize phoneQQXManDay=_phoneQQXManDay;
 @property(nonatomic) int loginDay; // @synthesize loginDay=_loginDay;

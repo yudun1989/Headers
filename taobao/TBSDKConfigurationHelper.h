@@ -26,6 +26,7 @@
 - (void)fetchServerTimeIntervalAndSetToConfiguration;
 - (void)appBecomeActive:(id)arg1;
 - (void)appDidFinishLaunching:(id)arg1;
+- (void)dealloc;
 - (void)appWillTerminate:(id)arg1;
 
 @end

@@ -29,7 +29,9 @@
 @property(retain, nonatomic) UIImageView *VideoImageView; // @synthesize VideoImageView=_VideoImageView;
 @property(retain, nonatomic) UIImageView *avatarImageView; // @synthesize avatarImageView=_avatarImageView;
 - (void).cxx_destruct;
+- (id)createBackgroundLayer;
 - (void)clickAccountHead;
+- (void)updateFollowButtonPosition;
 - (void)updateBroadCastModel:(id)arg1;
 - (void)setupSubviews;
 - (id)initWithFrame:(struct CGRect)arg1 superVC:(id)arg2;

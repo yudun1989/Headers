@@ -27,7 +27,9 @@
 @property(nonatomic) _Bool enableLikeAnimation; // @synthesize enableLikeAnimation=_enableLikeAnimation;
 @property(nonatomic) double animationHeight; // @synthesize animationHeight=_animationHeight;
 - (void).cxx_destruct;
-- (void)startLikeAnimation;
+- (void)stopLikeAnimation;
+- (void)startLikeAnimation:(id)arg1;
+- (void)doLikeAnimation:(id)arg1;
 - (void)setCountLabelColor:(id)arg1;
 - (void)updateLikeCount:(id)arg1;
 - (void)setupSubviews;

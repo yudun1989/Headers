@@ -10,10 +10,12 @@
 
 @interface TBSDKThreadSafeMutableArry : NSArray
 {
-    struct _opaque_pthread_rwlock_t s_pthread_rwlock_t;
     NSMutableArray *_mutableArry;
+    struct _opaque_pthread_rwlock_t _s_pthread_rwlock_t;
 }
 
+@property(retain, nonatomic) NSMutableArray *mutableArry; // @synthesize mutableArry=_mutableArry;
+@property(nonatomic) struct _opaque_pthread_rwlock_t s_pthread_rwlock_t; // @synthesize s_pthread_rwlock_t=_s_pthread_rwlock_t;
 - (void).cxx_destruct;
 - (unsigned long long)count;
 - (unsigned long long)getCount;

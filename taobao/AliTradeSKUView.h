@@ -9,7 +9,7 @@
 #import "AliTradeSKUViewDelegate-Protocol.h"
 #import "UIScrollViewDelegate-Protocol.h"
 
-@class AliDetailDataEngine, AliDetailHotSpotAnswerService, AliDetailModel, AliDetailNewAreaChooseView, AliDetailRequest, AliTradeComponentsSelectionControl, AliTradeH5SKUView, AliTradeSKUAreaSelectionControl, AliTradeSKUDonateSelectionView, AliTradeSKUHeadView, AliTradeSKUSelectionControl, AliTradeSKUStagePayControl, AliTradeSkuEngine, AliTradeTmallServiceSelectionControl, CSLinearLayoutView, NSDictionary, NSMutableArray, NSString, PAStepperDetail, TBDetailUIButton, UIImageView, UILabel;
+@class AliDetailALViewControl, AliDetailDataEngine, AliDetailHotSpotAnswerService, AliDetailModel, AliDetailNewAreaChooseView, AliDetailRequest, AliTradeComponentsSelectionControl, AliTradeH5SKUView, AliTradeSKUAreaSelectionControl, AliTradeSKUDonateSelectionView, AliTradeSKUHeadView, AliTradeSKUSelectionControl, AliTradeSKUStagePayControl, AliTradeSkuEngine, AliTradeTmallServiceSelectionControl, CSLinearLayoutView, NSDictionary, NSMutableArray, NSString, PAStepperDetail, TBDetailUIButton, UIImageView, UILabel;
 @protocol AliTradeSKUViewDelegate;
 
 @interface AliTradeSKUView : UIView <AliTradeSKUViewDelegate, UIScrollViewDelegate>
@@ -50,6 +50,7 @@
     AliTradeTmallServiceSelectionControl *_tmallServiceSelectionControl;
     AliTradeComponentsSelectionControl *_componentsSelectionControl;
     AliDetailNewAreaChooseView *_areaChooserView;
+    AliDetailALViewControl *_aliDetailALViewControl;
     UILabel *_buyTitleLabel;
     UIView *_buyNumberStepView;
     UIView *_buttonDivisionLine;
@@ -76,6 +77,7 @@
 @property(retain, nonatomic) UIView *buttonDivisionLine; // @synthesize buttonDivisionLine=_buttonDivisionLine;
 @property(retain, nonatomic) UIView *buyNumberStepView; // @synthesize buyNumberStepView=_buyNumberStepView;
 @property(retain, nonatomic) UILabel *buyTitleLabel; // @synthesize buyTitleLabel=_buyTitleLabel;
+@property(retain, nonatomic) AliDetailALViewControl *aliDetailALViewControl; // @synthesize aliDetailALViewControl=_aliDetailALViewControl;
 @property(retain, nonatomic) AliDetailNewAreaChooseView *areaChooserView; // @synthesize areaChooserView=_areaChooserView;
 @property(retain, nonatomic) AliTradeComponentsSelectionControl *componentsSelectionControl; // @synthesize componentsSelectionControl=_componentsSelectionControl;
 @property(retain, nonatomic) AliTradeTmallServiceSelectionControl *tmallServiceSelectionControl; // @synthesize tmallServiceSelectionControl=_tmallServiceSelectionControl;
@@ -133,6 +135,7 @@
 - (void)setEnabledChooseArea:(_Bool)arg1;
 - (void)hideAreaChooserView;
 - (void)showAreaChooserView:(id)arg1 vc:(id)arg2;
+- (id)getCurretnViewControl;
 - (void)refreshAreaChooserView:(id)arg1 vc:(id)arg2;
 - (void)insertCustomView:(id)arg1 afterViewType:(unsigned long long)arg2;
 - (void)insertCustomView:(id)arg1 beforeViewType:(unsigned long long)arg2;

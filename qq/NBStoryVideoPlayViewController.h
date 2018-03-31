@@ -73,6 +73,7 @@
 }
 
 + (id)buildUrlWithUrl:(id)arg1 roomImageUrl:(id)arg2;
++ (void)playVideoWithModel:(id)arg1 startView:(id)arg2;
 + (void)playVideoWithUrl:(id)arg1;
 @property(retain, nonatomic) NBVideoPlayerPageScrollViewItem *fastLoadItem; // @synthesize fastLoadItem=_fastLoadItem;
 @property(retain, nonatomic) NBShortVideoInfo *fastLoadVideoInfo; // @synthesize fastLoadVideoInfo=_fastLoadVideoInfo;

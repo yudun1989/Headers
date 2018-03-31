@@ -6,14 +6,23 @@
 
 #import "RNSView.h"
 
+#import "RNSScrollViewDelegate-Protocol.h"
 #import "UIScrollViewDelegate-Protocol.h"
 
 @class NSString;
+@protocol RNSTubViewDelegate;
 
-@interface RNSTubView : RNSView <UIScrollViewDelegate>
+@interface RNSTubView : RNSView <UIScrollViewDelegate, RNSScrollViewDelegate>
 {
+    id <RNSTubViewDelegate> _tubViewDelegate;
 }
 
+@property(nonatomic) __weak id <RNSTubViewDelegate> tubViewDelegate; // @synthesize tubViewDelegate=_tubViewDelegate;
+- (void).cxx_destruct;
+- (void)rns_scrollViewWillBeginDragging:(id)arg1;
+- (void)rns_scrollViewDidEndDragging:(id)arg1 willDecelerate:(_Bool)arg2;
+- (void)rns_scrollViewDidEndDecelerating:(id)arg1;
+- (void)rns_scrollViewDidScroll:(id)arg1;
 - (void)resizeSubviewsFrame;
 - (void)configSubviewsProxy;
 - (void)dealloc;

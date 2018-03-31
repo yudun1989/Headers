@@ -35,7 +35,7 @@
 - (void)_ftsDataReportGroupResultsSucc:(id)arg1;
 - (void)_ftsDataReportSelected:(id)arg1 indexPath:(id)arg2;
 - (void)reportGroupItemExp;
-- (id)getCellModelFromGroupResults:(id)arg1;
+- (id)getBaseCellModelFromGroupResults:(id)arg1;
 - (id)getCellModelFromGroupResultsSafe:(id)arg1;
 - (_Bool)isDynamicSearchModelFromGroupResults:(id)arg1;
 - (_Bool)checkDataSourceValid:(unsigned long long)arg1 row:(unsigned long long)arg2;
@@ -56,6 +56,8 @@
 - (id)tableView:(id)arg1 viewForHeaderInSection:(long long)arg2;
 - (double)tableView:(id)arg1 heightForHeaderInSection:(long long)arg2;
 - (void)top5RelationResultPrint:(id)arg1 cellViewClassForString:(id)arg2 indexPath:(id)arg3;
+- (id)sectionHeadModelForSection:(unsigned long long)arg1;
+- (id)sectionModelForSection:(unsigned long long)arg1;
 - (id)getCellModelFromGroupResultsAtSection:(unsigned long long)arg1 row:(unsigned long long)arg2;
 - (unsigned long long)cellTypeAtIndexPath:(id)arg1;
 - (id)tableView:(id)arg1 cellAddBottomView:(id)arg2 AtIndexPath:(id)arg3;

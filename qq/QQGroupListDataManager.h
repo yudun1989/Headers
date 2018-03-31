@@ -13,6 +13,7 @@
     NSMutableArray *_groupList;
     NSMutableArray *_commonGroupList;
     NSMutableArray *_allGroupList;
+    NSMutableArray *_unnamedGroupList;
     NSMutableArray *_ownerGroupList;
     NSMutableArray *_adminGroupList;
     NSMutableArray *_memberGroupList;
@@ -35,6 +36,7 @@
 @property(retain, nonatomic) NSMutableArray *memberGroupList; // @dynamic memberGroupList;
 @property(retain, nonatomic) NSMutableArray *ownerGroupList; // @dynamic ownerGroupList;
 @property(retain, nonatomic) NSMutableArray *qidianGroupList; // @dynamic qidianGroupList;
+@property(retain, nonatomic) NSMutableArray *unnamedGroupList; // @dynamic unnamedGroupList;
 
 @end
 

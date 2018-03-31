@@ -9,13 +9,14 @@
 #import "TBLiveErrorViewDelegate-Protocol.h"
 #import "TBLiveEventProtocol-Protocol.h"
 #import "TBLiveOverlayActionDelegate-Protocol.h"
+#import "TBLiveQAMaskViewDelegate-Protocol.h"
 #import "TBLiveSRShareViewDelegate-Protocol.h"
 #import "UIGestureRecognizerDelegate-Protocol.h"
 #import "UIScrollViewDelegate-Protocol.h"
 
-@class CALayer, LiveRoomElvesController, NSDate, NSDictionary, NSMutableArray, NSString, NSURL, TBLinkLiveController, TBLiveAdvertiseLayerView, TBLiveCloseButton, TBLiveDetailInfoModel, TBLiveErrorView, TBLiveGiftModel, TBLiveGiftOverlayView, TBLiveGoodsListManager, TBLiveHTTPDNS, TBLiveMessageListener, TBLiveOverlayController, TBLiveOverlayView, TBLivePlaybackController, TBLivePlayerInitOptionsModel, TBLivePlayerManager, TBLiveRewardMgrView, TBLiveRewardMsgManager, TBLiveScrollView, TBLiveStreamManager, TBLiveSwitchDataModelController, TBLiveUIStateManager, TBLiveVideoEngine, TBLiveVideoGoodModel, TBLiveVoiceInterface, UIButton, UIImageView, UIView;
+@class CALayer, LiveRoomElvesController, NSDate, NSDictionary, NSMutableArray, NSString, NSURL, TBLinkLiveController, TBLiveAdvertiseLayerView, TBLiveCloseButton, TBLiveDetailInfoModel, TBLiveErrorView, TBLiveGiftModel, TBLiveGiftOverlayView, TBLiveGoodsListManager, TBLiveHTTPDNS, TBLiveMessageListener, TBLiveOverlayController, TBLiveOverlayView, TBLivePlaybackController, TBLivePlayerInitOptionsModel, TBLivePlayerManager, TBLiveQAMaskView, TBLiveRewardMgrView, TBLiveRewardMsgManager, TBLiveScrollView, TBLiveStreamManager, TBLiveSwitchDataModelController, TBLiveUIStateManager, TBLiveVideoEngine, TBLiveVideoGoodModel, TBLiveVoiceInterface, UIButton, UIImageView, UIView;
 
-@interface TBLivePlayViewController : TBLiveBaseViewController <UIGestureRecognizerDelegate, TBLiveErrorViewDelegate, TBLiveEventProtocol, UIScrollViewDelegate, TBLiveOverlayActionDelegate, TBLiveSRShareViewDelegate>
+@interface TBLivePlayViewController : TBLiveBaseViewController <UIGestureRecognizerDelegate, TBLiveErrorViewDelegate, TBLiveEventProtocol, UIScrollViewDelegate, TBLiveOverlayActionDelegate, TBLiveSRShareViewDelegate, TBLiveQAMaskViewDelegate>
 {
     _Bool _replay_isPlaying;
     _Bool _isLandscapeFromURL;
@@ -106,13 +107,16 @@
     CALayer *_closeMaskLayer;
     CALayer *_bottomMaskLayer;
     CALayer *_leftMaskLayer;
+    TBLiveQAMaskView *_qaMaskView;
     struct CGPoint _scrollBeganPoint;
+    struct CGRect _activityPosition;
 }
 
 + (void)updateApplicationFirstLaunchFlag:(id)arg1;
 + (_Bool)bundleLoadDynamicLibWithPath:(id)arg1;
 + (_Bool)loadHotLinkProtectionFramework;
 + (_Bool)loadFramework;
+@property(retain, nonatomic) TBLiveQAMaskView *qaMaskView; // @synthesize qaMaskView=_qaMaskView;
 @property(retain, nonatomic) CALayer *leftMaskLayer; // @synthesize leftMaskLayer=_leftMaskLayer;
 @property(retain, nonatomic) CALayer *bottomMaskLayer; // @synthesize bottomMaskLayer=_bottomMaskLayer;
 @property(retain, nonatomic) CALayer *closeMaskLayer; // @synthesize closeMaskLayer=_closeMaskLayer;
@@ -121,6 +125,7 @@
 @property(nonatomic) _Bool isUpDownSwitch; // @synthesize isUpDownSwitch=_isUpDownSwitch;
 @property(nonatomic) _Bool isTimePlay; // @synthesize isTimePlay=_isTimePlay;
 @property(copy, nonatomic) NSString *lhsTimestamp; // @synthesize lhsTimestamp=_lhsTimestamp;
+@property(nonatomic) struct CGRect activityPosition; // @synthesize activityPosition=_activityPosition;
 @property(nonatomic) _Bool ignoreActivityUrl; // @synthesize ignoreActivityUrl=_ignoreActivityUrl;
 @property(retain, nonatomic) NSString *renderType; // @synthesize renderType=_renderType;
 @property(retain, nonatomic) NSString *activityUrl; // @synthesize activityUrl=_activityUrl;
@@ -203,6 +208,11 @@
 @property(nonatomic) _Bool isCloseByOpenNeWVC; // @synthesize isCloseByOpenNeWVC=_isCloseByOpenNeWVC;
 @property(nonatomic) _Bool isLandscapeFromURL; // @synthesize isLandscapeFromURL=_isLandscapeFromURL;
 - (void).cxx_destruct;
+- (void)showFinalViewWithUrl:(id)arg1;
+- (void)gotoShop:(id)arg1;
+- (void)shareQALiveRoom;
+- (void)setQAPlayerConfig;
+- (_Bool)isQALiveRoom;
 - (void)CellularNetworkToast;
 - (_Bool)canSwitchLiveRoom;
 - (void)didCloseSRShareView;

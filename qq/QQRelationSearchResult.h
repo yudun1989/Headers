@@ -11,6 +11,9 @@
 @interface QQRelationSearchResult : NSObject
 {
     _Bool _isPinyinMatched;
+    _Bool _isFromInitialTroop;
+    _Bool _isInitialTroopModifyName;
+    _Bool _isInitialTroopModifyFace;
     _Bool _aiEditDistance;
     _Bool _isFunction;
     _Bool _isQiDianMaster;
@@ -40,6 +43,9 @@
 @property(retain, nonatomic) NSString *aiEditTarget; // @synthesize aiEditTarget=_aiEditTarget;
 @property(nonatomic) unsigned long long aiDistanceValue; // @synthesize aiDistanceValue=_aiDistanceValue;
 @property(nonatomic) _Bool aiEditDistance; // @synthesize aiEditDistance=_aiEditDistance;
+@property(nonatomic) _Bool isInitialTroopModifyFace; // @synthesize isInitialTroopModifyFace=_isInitialTroopModifyFace;
+@property(nonatomic) _Bool isInitialTroopModifyName; // @synthesize isInitialTroopModifyName=_isInitialTroopModifyName;
+@property(nonatomic) _Bool isFromInitialTroop; // @synthesize isFromInitialTroop=_isFromInitialTroop;
 @property(nonatomic) unsigned long long sortWeightValue; // @synthesize sortWeightValue=_sortWeightValue;
 @property(nonatomic) _Bool isPinyinMatched; // @synthesize isPinyinMatched=_isPinyinMatched;
 @property(nonatomic) long long matchedTextType; // @synthesize matchedTextType=_matchedTextType;

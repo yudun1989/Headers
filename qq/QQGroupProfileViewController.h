@@ -15,6 +15,7 @@
 #import <QQMainProject/QQEmotionLabelDelegate-Protocol.h>
 #import <QQMainProject/QQGroupCategoryListViewControllerDelegate-Protocol.h>
 #import <QQMainProject/QQGroupFaceWallLogicDelegate-Protocol.h>
+#import <QQMainProject/QQGroupGameBindEngineDelegate-Protocol.h>
 #import <QQMainProject/UIActionSheetDelegate-Protocol.h>
 #import <QQMainProject/UIAlertViewDelegate-Protocol.h>
 #import <QQMainProject/UserSummaryTouchControlDelegate-Protocol.h>
@@ -22,7 +23,7 @@
 @class AddFriendSendMessageViewController, NSArray, NSString, QQAsynUrlImagesPlayer, QQGroupFaceWallAddNewImageView, QQGroupFaceWallLogic, QQGroupFaceWallUI, QQGroupLinkForwardHelper, QQGroupSettingModel, QQPushBannerView_Advertisement, UIButton, UIImage, UIImageView, UIView, UserSummaryTouchControl;
 @protocol IQQGroupProfileViewController;
 
-@interface QQGroupProfileViewController : QQGroupTableStyleViewController <QQGroupCategoryListViewControllerDelegate, QQEditGroupLocationDelegate, QQAsynUrlImagesPlayerDelegae, IEditViewControllerObserver, UIActionSheetDelegate, QQGroupFaceWallLogicDelegate, QQEmotionLabelDelegate, MFMailComposeViewControllerDelegate, ModifyGroupTagsDelegate, UIAlertViewDelegate, PushBannerViewDelegate, UserSummaryTouchControlDelegate>
+@interface QQGroupProfileViewController : QQGroupTableStyleViewController <QQGroupCategoryListViewControllerDelegate, QQEditGroupLocationDelegate, QQAsynUrlImagesPlayerDelegae, QQGroupGameBindEngineDelegate, IEditViewControllerObserver, UIActionSheetDelegate, QQGroupFaceWallLogicDelegate, QQEmotionLabelDelegate, MFMailComposeViewControllerDelegate, ModifyGroupTagsDelegate, UIAlertViewDelegate, PushBannerViewDelegate, UserSummaryTouchControlDelegate>
 {
     QQGroupSettingModel *_groupModel;
     id <IQQGroupProfileViewController> _delegate;
@@ -67,6 +68,7 @@
     long long _imageTag;
     UIImage *_uploadingImage;
     _Bool _showInitialAlert;
+    int _gameGroupGameAppid;
     _Bool _fromGroupSearch;
     int _reportSource;
     NSString *_groupTribeName;

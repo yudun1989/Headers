@@ -10,7 +10,7 @@
 {
 }
 
-- (void)requestWithGameId:(id)arg1 examNum:(id)arg2 completion:(CDUnknownBlockType)arg3;
+- (void)requestWithGameId:(id)arg1 examNum:(id)arg2 extParams:(id)arg3 completion:(CDUnknownBlockType)arg4;
 
 @end
 

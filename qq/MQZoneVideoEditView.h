@@ -41,6 +41,8 @@
 @property(nonatomic) _Bool showQualityButton; // @synthesize showQualityButton=_showQualityButton;
 @property(nonatomic) unsigned long long editSettingMode; // @synthesize editSettingMode=_editSettingMode;
 - (void).cxx_destruct;
+- (id)editActionResult;
+- (id)publishInfoDictionary;
 - (void)handleGestureRecognizer:(id)arg1;
 - (void)componentStart:(id)arg1;
 - (void)componentButtonClicked:(id)arg1;

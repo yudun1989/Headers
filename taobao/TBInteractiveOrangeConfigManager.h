@@ -25,6 +25,7 @@
 + (id)bizcodeForDisableCache;
 + (_Bool)getConfigForVideoCacheEnable;
 + (id)getTBMediaPlayerBundleOrangeConfig;
++ (id)getDWInteractiveSDKOrangeConfig;
 + (id)getOrangeConfigForKeyName:(id)arg1 defaultConfig:(id)arg2;
 
 @end

@@ -18,7 +18,7 @@
 @property(nonatomic) struct CGSize cloudWordRegionSize; // @synthesize cloudWordRegionSize=_cloudWordRegionSize;
 - (void).cxx_destruct;
 - (void)cloudWordRegionAddTarget:(id)arg1 action:(SEL)arg2;
-- (void)setWords:(id)arg1 useWhiteTheme:(_Bool)arg2;
+- (void)setWords:(id)arg1 useWhiteTheme:(_Bool)arg2 allWordIsWhite:(_Bool)arg3;
 - (id)initWithFrame:(struct CGRect)arg1;
 
 @end

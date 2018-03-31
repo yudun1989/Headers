@@ -28,7 +28,7 @@
 - (void)addAccountToSubscribeList:(id)arg1;
 - (void)loadSubscribeListFromLocal;
 - (void)saveMemeoryAndDBWithAccountInfo:(id)arg1;
-- (id)cacheAccountsServiceFromDB;
+- (void)cacheAccountsServiceFromDBCompletion:(CDUnknownBlockType)arg1;
 - (id)allAccountInfoFromMemcache;
 - (id)readFromDBAndSaveMemeoryWithMsgTypeId:(id)arg1;
 - (id)localOfficialAccountInfo:(id)arg1;
@@ -41,7 +41,7 @@
 - (id)getOfficalAcconutInfosWithContext:(id)arg1;
 - (void)saveOfficalAcconutInfo:(id)arg1;
 - (id)officalAcconutInfoWithMsgTypeId:(id)arg1 isInvalid:(_Bool *)arg2;
-- (id)allOfficalAcconutInfos;
+- (void)allOfficalAcconutInfosCompletion:(CDUnknownBlockType)arg1;
 - (void)reset;
 - (id)init;
 

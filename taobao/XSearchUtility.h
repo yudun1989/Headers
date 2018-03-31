@@ -10,6 +10,8 @@
 {
 }
 
++ (id)getNetWorkStatus;
++ (id)getSDKVCDelegateWithObj:(id)arg1;
 + (_Bool)isNxWithType:(id)arg1;
 + (double)statusBarHeight;
 + (void)setChiTuAbtest;

@@ -6,7 +6,7 @@
 
 #import <Foundation/NSObject.h>
 
-@class NSArray, NSMutableArray, SpritePackageModel;
+@class NSArray, NSMutableArray, SpriteNativeConfigData, SpritePackageModel;
 
 @interface SpritePanelModel : NSObject
 {
@@ -17,8 +17,10 @@
     unsigned int _actionTimeStamp;
     NSMutableArray *_packgeList;
     NSMutableArray *_actionsList;
+    SpriteNativeConfigData *_nativeData;
 }
 
+@property(retain, nonatomic) SpriteNativeConfigData *nativeData; // @synthesize nativeData=_nativeData;
 @property(retain, nonatomic) NSMutableArray *actionsList; // @synthesize actionsList=_actionsList;
 @property(retain, nonatomic) NSMutableArray *packgeList; // @synthesize packgeList=_packgeList;
 @property(nonatomic) unsigned int actionTimeStamp; // @synthesize actionTimeStamp=_actionTimeStamp;

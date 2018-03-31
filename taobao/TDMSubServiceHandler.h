@@ -10,7 +10,6 @@
 {
 }
 
-- (id)subServiceModelWithCellType:(id)arg1 cellData:(id)arg2 mainModel:(id)arg3;
 - (void)subServiceOperation:(id)arg1;
 
 @end

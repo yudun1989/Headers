@@ -94,6 +94,7 @@
 - (void)showNetworkTrafficView:(id)arg1;
 - (void)onActionCloseLive:(id)arg1;
 - (void)requestNetworkTraffic:(id)arg1;
+- (void)registerDinamicViewConstructor;
 - (void)checkABTest;
 - (void)didReceiveMemoryWarning;
 - (unsigned long long)supportedInterfaceOrientations;

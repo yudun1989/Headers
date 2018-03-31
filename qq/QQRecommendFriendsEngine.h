@@ -50,7 +50,9 @@
 - (id)recommendFriendDataPersistentTimeKey;
 - (id)recommendFriendPushMessageTimeKey;
 - (id)recommendFriendPushMessageNotReadKey;
+- (void)shouldRequestRecommendFriendsDataAsyn:(CDUnknownBlockType)arg1;
 - (_Bool)shouldRequestRecommendFriendsData;
+- (_Bool)shouldRequestRecommendFriendsDataWithCount:(unsigned int)arg1;
 - (void)requestDataWithCallback:(CDUnknownBlockType)arg1 isPush:(_Bool)arg2;
 - (void)requestRecommendFriendsDataWithCallback:(CDUnknownBlockType)arg1;
 - (void)readCachedRecommendFriendsData:(CDUnknownBlockType)arg1 hasReqFailed:(_Bool)arg2;

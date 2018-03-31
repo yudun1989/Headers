@@ -29,6 +29,7 @@
 - (void)actionInputbarPTT:(id)arg1;
 
 @optional
+- (void)actionInputbarSchoolCardAction:(id)arg1;
 - (void)actionInputbarMore:(id)arg1;
 - (void)actionInputbarMpFile:(id)arg1;
 - (void)actionInputbarFile:(id)arg1;

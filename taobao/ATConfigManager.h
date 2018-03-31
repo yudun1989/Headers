@@ -16,8 +16,16 @@
     ATAppConfig *_appConf;
     NSMutableDictionary *_pageConfs;
     NSObject<OS_dispatch_queue> *_queue;
+    NSString *_globalSpmA;
+    NSString *_globalSpmB;
+    NSString *_globalPageName;
+    NSString *_globalPageId;
 }
 
+@property(copy, nonatomic) NSString *globalPageId; // @synthesize globalPageId=_globalPageId;
+@property(copy, nonatomic) NSString *globalPageName; // @synthesize globalPageName=_globalPageName;
+@property(copy, nonatomic) NSString *globalSpmB; // @synthesize globalSpmB=_globalSpmB;
+@property(copy, nonatomic) NSString *globalSpmA; // @synthesize globalSpmA=_globalSpmA;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *queue; // @synthesize queue=_queue;
 @property(retain, nonatomic) NSMutableDictionary *pageConfs; // @synthesize pageConfs=_pageConfs;
 @property(retain, nonatomic) ATAppConfig *appConf; // @synthesize appConf=_appConf;
@@ -37,19 +45,23 @@
 - (void)loadRules:(id)arg1;
 - (id)findPageConfigById:(id)arg1;
 - (id)findAppConfItemById:(id)arg1;
-- (id)getConfigItemById:(id)arg1 trackerClass:(id)arg2 parentDataSpm:(id)arg3 type:(id)arg4 pageTrackerId:(id)arg5 configReady:(_Bool *)arg6;
-- (id)getConfigItemById:(id)arg1 trackerClass:(id)arg2 parentDataSpm:(id)arg3 type:(id)arg4 pageTrackerId:(id)arg5;
+- (id)getConfigItemById:(id)arg1 trackerClass:(id)arg2 dom:(id)arg3 type:(id)arg4 pageTrackerId:(id)arg5 configReady:(_Bool *)arg6;
+- (id)getConfigItemById:(id)arg1 trackerClass:(id)arg2 dom:(id)arg3 type:(id)arg4 pageTrackerId:(id)arg5;
 - (void)getConfigItemById:(id)arg1 type:(id)arg2 configTrackerId:(id)arg3 result:(CDUnknownBlockType)arg4;
 - (void)updateConfig:(id)arg1 pageUrl:(id)arg2;
-- (_Bool)hasConfigItemById:(id)arg1 trackerClass:(id)arg2 parentDataSpm:(id)arg3 type:(id)arg4 pageTrackerId:(id)arg5;
+- (_Bool)hasConfigItemForDom:(id)arg1 trackerId:(id)arg2 trackerClass:(id)arg3 type:(id)arg4 pageTrackerId:(id)arg5;
 - (_Bool)hasConfigById:(id)arg1 pageTrackerId:(id)arg2 type:(id)arg3;
-- (void)getConfigItemById:(id)arg1 trackerClass:(id)arg2 parentDataSpm:(id)arg3 pageTrackerId:(id)arg4 type:(id)arg5 result:(CDUnknownBlockType)arg6;
+- (void)getConfigItemForDom:(id)arg1 trackerId:(id)arg2 trackerClass:(id)arg3 pageTrackerId:(id)arg4 type:(id)arg5 result:(CDUnknownBlockType)arg6;
 - (id)getConfigById:(id)arg1;
 - (void)handlePageConfig:(id)arg1;
 - (void)loadConfigById:(id)arg1 result:(CDUnknownBlockType)arg2;
 - (void)asyncLoadConfigById:(id)arg1 result:(CDUnknownBlockType)arg2;
 - (void)loadAppConfig;
 - (id)init;
+- (id)pageNameWithModel:(id)arg1;
+- (id)spmBWithItem:(id)arg1;
+- (id)spmAWithItem:(id)arg1;
+- (void)updateSpmA:(id)arg1 spmB:(id)arg2 pageName:(id)arg3 url:(id)arg4;
 
 @end
 

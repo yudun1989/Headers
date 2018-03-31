@@ -10,10 +10,7 @@
 {
 }
 
-+ (void)setVideoDownloadDelegate:(id)arg1;
 + (void)setUseURLsInsteadVideoID:(_Bool)arg1;
-+ (void)setPlayerDidFinishRequestURLBlock:(CDUnknownBlockType)arg1;
-+ (void)setPlayerDidStartRequestURLBlock:(CDUnknownBlockType)arg1;
 + (void)setCacheReportBlock:(CDUnknownBlockType)arg1;
 + (void)setCacheKeyParserBlock:(CDUnknownBlockType)arg1;
 + (void)setCacheSizeLimit:(unsigned long long)arg1;

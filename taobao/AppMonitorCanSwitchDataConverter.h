@@ -36,7 +36,7 @@
 - (id)compareValueWithMetricsForStat:(id)arg1 RandomNum:(int)arg2 KeyStr:(id)arg3 Dimension:(id)arg4;
 - (id)getSwitchResultForStat:(id)arg1 monitorPoint:(id)arg2 Dimension:(id)arg3 RandomNum:(int)arg4;
 - (id)getDetailPointForStat:(id)arg1 MonitorPoint:(id)arg2;
-- (int)GetValidPoint:(id)arg1 MonitorPoint:(id)arg2 Measure:(id)arg3 measureValue:(id)arg4;
+- (unsigned long long)GetValidPoint:(id)arg1 MonitorPoint:(id)arg2 Measure:(id)arg3 measureValue:(id)arg4;
 - (id)init;
 
 @end

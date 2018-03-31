@@ -19,6 +19,7 @@
 @property(readonly, nonatomic) _Bool isLoadingFromCache;
 @property(readonly, nonatomic) double duration;
 @property(nonatomic) double currentPlaybackTime;
+@property(nonatomic) float playbackRate;
 @property(nonatomic) double preferredForwardBufferDuration;
 @property(nonatomic) long long playerContentMode;
 @property(nonatomic) _Bool muted;

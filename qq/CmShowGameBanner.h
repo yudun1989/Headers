@@ -31,6 +31,7 @@
 @property(nonatomic) _Bool isAnimating; // @synthesize isAnimating=_isAnimating;
 @property(nonatomic) id <CmShowGameBannerDelegate> delegate; // @synthesize delegate=_delegate;
 @property(retain, nonatomic) NSString *title; // @synthesize title=_title;
+- (void)onQQWillLogoutCurrentAccountNotification;
 - (void)dealloc;
 - (void)showAnimation;
 - (void)receiveJoinRoomTips:(id)arg1;

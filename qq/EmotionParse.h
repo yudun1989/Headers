@@ -12,7 +12,6 @@
 
 + (void)clearWordSegmentLRUCache;
 + (unsigned long long)parseSpriteActionWith:(id)arg1 outResult:(id)arg2 length:(double *)arg3 pos:(int *)arg4 lineHeight:(double)arg5;
-+ (id)parseCommentUin:(id)arg1 text:(id)arg2 url:(id)arg3;
 + (id)filterSmallFaceStr:(id)arg1;
 + (id)refreshSmallCacheArrayByText:(id)arg1 text:(id)arg2;
 + (int)numberOfSmallFaceAtPrevious:(id)arg1;
@@ -52,6 +51,7 @@
 + (struct CGRect)imageDrawRect:(struct CGRect)arg1 inRect:(struct CGRect)arg2;
 + (_Bool)shouldDrawEllipses:(struct CGRect)arg1 parseResult:(id)arg2 index:(unsigned long long)arg3 font:(id)arg4 lineBreakMode:(long long)arg5;
 + (void)drawQQEmotionAndSmallEmotionOnView:(id)arg1 inRect:(struct CGRect)arg2 withLayoutResult:(id)arg3 animated:(_Bool)arg4 font:(id)arg5 lineBreakMode:(long long)arg6;
++ (_Bool)isSpecialCharacter:(id)arg1 str:(id)arg2;
 + (id)VAS_LayoutQQEmotionString:(id)arg1 maxWidth:(double)arg2 aioTextFont:(id)arg3 emotionWidth:(double)arg4 customeLineHeight:(double)arg5 isMagicFont:(_Bool)arg6 magicSeed:(unsigned long long)arg7 isFts:(_Bool)arg8 alignment:(long long)arg9 aioModel:(id)arg10;
 + (id)VAS_LayoutQQEmotionString:(id)arg1 maxWidth:(double)arg2 aioTextFont:(id)arg3 emotionWidth:(double)arg4 customeLineHeight:(double)arg5 isMagicFont:(_Bool)arg6 magicSeed:(unsigned long long)arg7 isFts:(_Bool)arg8 aioModel:(id)arg9;
 + (id)VAS_LayoutQQEmotionString:(id)arg1 maxWidth:(double)arg2 aioTextFont:(id)arg3 userFontId:(long long)arg4 customeLineHeight:(double)arg5 isMagicFont:(_Bool)arg6 magicSeed:(unsigned long long)arg7 aioModel:(id)arg8;

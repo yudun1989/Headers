@@ -6,12 +6,17 @@
 
 #import "NSObject-Protocol.h"
 
-@class UITableView, UIView;
+@class NSIndexPath, UITableView, UITableViewCell, UIView;
 @protocol MCRecentContactCustomInterface, MCRecentSectionViewProtocol;
 
 @protocol MCRecentSessionDelegate <NSObject>
+- (void)presenterDataLoadOver:(id <MCRecentContactCustomInterface>)arg1;
+- (double)presenter:(id <MCRecentContactCustomInterface>)arg1 tableView:(UITableView *)arg2 rowHeightForIndexPath:(NSIndexPath *)arg3;
+- (unsigned long long)presenter:(id <MCRecentContactCustomInterface>)arg1 tableView:(UITableView *)arg2 numberOfRowsInSection:(long long)arg3;
+- (UITableViewCell *)presenter:(id <MCRecentContactCustomInterface>)arg1 tableView:(UITableView *)arg2 cellForRowAtIndexPath:(NSIndexPath *)arg3;
 
 @optional
+- (void)presenter:(id <MCRecentContactCustomInterface>)arg1 tableView:(UITableView *)arg2 didSelectRowAtIndexPath:(NSIndexPath *)arg3;
 - (UIView<MCRecentSectionViewProtocol> *)presenter:(id <MCRecentContactCustomInterface>)arg1 tableView:(UITableView *)arg2 viewForFooterInSection:(long long)arg3;
 - (UIView *)presenter:(id <MCRecentContactCustomInterface>)arg1 tableView:(UITableView *)arg2 viewForHeaderInSection:(long long)arg3;
 - (double)presenter:(id <MCRecentContactCustomInterface>)arg1 tableView:(UITableView *)arg2 heightForFooterInSection:(long long)arg3;

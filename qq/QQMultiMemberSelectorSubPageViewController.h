@@ -22,6 +22,7 @@
     QQRelationSearchEngine *_searchEngine;
     int _selectType;
     NSArray *orgSelectedMemUins;
+    _Bool _willDelayReloadSubPageTable;
     _Bool _needShowMyself;
     _Bool _isOnlyShowAdmi;
     _Bool _hideRobot;
@@ -38,6 +39,7 @@
 @property(nonatomic) _Bool needShowMyself; // @synthesize needShowMyself=_needShowMyself;
 - (void).cxx_destruct;
 - (void)notifyUpdateBindingInfo:(id)arg1;
+- (void)updateMulMemSelSubPageTableViewMemList;
 - (void)actionGetTroopMember:(id)arg1 result:(_Bool)arg2;
 - (void)getTroopMemberResult:(id)arg1;
 - (void)getTroopMemberProgress:(id)arg1;
@@ -58,11 +60,14 @@
 - (void)handleSelectSubPageMember:(id)arg1 needDeleteAction:(_Bool)arg2 noAnimation:(_Bool)arg3;
 - (void)handleSelectSubPageMemberCallback:(id)arg1;
 - (void)onDidSelectSubPageMemCallback:(id)arg1 forSelAll:(_Bool)arg2;
+- (void)reloadSubPageTableView;
+- (void)_delayReloadSubPageTableView;
 - (void)setTopView:(id)arg1 withFrame:(struct CGRect)arg2;
 - (void)setLoadingProgress:(double)arg1 text:(id)arg2;
 - (void)showLoadingView:(_Bool)arg1;
 - (void)viewDidLoad;
 - (void)viewWillDisappear:(_Bool)arg1;
+- (void)updateSubViewsLayout;
 - (void)viewWillLayoutSubviews;
 - (void)viewWillAppear:(_Bool)arg1;
 - (void)loadView;

@@ -14,6 +14,7 @@
 {
     int _svrType;
     unsigned int _reMatchType;
+    unsigned int _getNowAdsReason;
     unsigned int _nearbyAvStatus;
     long long _latitude;
     long long _longitude;
@@ -23,6 +24,7 @@
 
 @property(copy, nonatomic) NSString *roomID; // @synthesize roomID=_roomID;
 @property(nonatomic) unsigned int nearbyAvStatus; // @synthesize nearbyAvStatus=_nearbyAvStatus;
+@property(nonatomic) unsigned int getNowAdsReason; // @synthesize getNowAdsReason=_getNowAdsReason;
 @property(nonatomic) unsigned int reMatchType; // @synthesize reMatchType=_reMatchType;
 @property(retain, nonatomic) NSArray *filterInfoArr; // @synthesize filterInfoArr=_filterInfoArr;
 @property(nonatomic) long long longitude; // @synthesize longitude=_longitude;

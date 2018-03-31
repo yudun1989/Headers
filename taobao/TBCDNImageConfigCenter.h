@@ -71,6 +71,7 @@
 - (id)aliCdnExactExcludeDomain;
 - (id)aliCdnFuzzyExcludePath;
 - (id)aliCdnDomain;
+- (_Bool)gifLimitForWebViewSwitch;
 - (id)imageQualitySuffixDictForModule:(id)arg1;
 - (long long)qualityValueForModule:(id)arg1;
 - (id)imageQualitySuffixForModule:(id)arg1;

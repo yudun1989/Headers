@@ -14,9 +14,11 @@
 
 + (id)platform;
 + (id)sharedInstance;
+- (void)commitDownloadStatisticsWithBizName:(id)arg1 packageId:(id)arg2 errorType:(long long)arg3 errorCode:(long long)arg4 successCount:(double)arg5 failCount:(double)arg6 downloadedTime:(double)arg7;
 - (void)commitInferenceLayerStatisticsWithModelBusinessName:(id)arg1 packageId:(id)arg2 modelName:(id)arg3 layerCount:(int)arg4 layerTimeElapsed:(float *)arg5;
 - (void)commitInferenceStatisticsWithModelBusinessName:(id)arg1 packageId:(id)arg2 modelName:(id)arg3 errorCode:(id)arg4 successCount:(double)arg5 failCount:(double)arg6 inferenceTime:(double)arg7 memoryAdd:(double)arg8 layerCount:(int)arg9 layerTimeElapsed:(float *)arg10;
 - (id)commonDimensionValueSet;
+- (void)registerWithMonitorPoint:(id)arg1 dimensions:(id)arg2 measures:(id)arg3;
 
 @end
 

@@ -8,28 +8,39 @@
 
 #import "MCPluginBaseProtocol-Protocol.h"
 #import "MCRecentSessionDelegate-Protocol.h"
-#import "MCRecommendPresenterDelegate-Protocol.h"
+#import "MCRecommendModelDelegate-Protocol.h"
 
-@class MCRecommendPresenter, NSDictionary, NSString;
+@class MCRecommendModel, NSDictionary, NSString, UITableView;
 @protocol MCRecentContactCustomInterface;
 
-@interface MCRecentContactRecommendPlugin : NSObject <MCRecentSessionDelegate, MCRecommendPresenterDelegate, MCPluginBaseProtocol>
+@interface MCRecentContactRecommendPlugin : NSObject <MCRecentSessionDelegate, MCRecommendModelDelegate, MCPluginBaseProtocol>
 {
     id <MCRecentContactCustomInterface> _recentContactCustomInterface;
-    MCRecommendPresenter *_recommendPresenter;
-    MCRecommendPresenter *_longRecommendPresenter;
+    MCRecommendModel *_recommendModule;
+    UITableView *_tableView;
 }
 
-@property(retain, nonatomic) MCRecommendPresenter *longRecommendPresenter; // @synthesize longRecommendPresenter=_longRecommendPresenter;
-@property(retain, nonatomic) MCRecommendPresenter *recommendPresenter; // @synthesize recommendPresenter=_recommendPresenter;
+@property(nonatomic) __weak UITableView *tableView; // @synthesize tableView=_tableView;
+@property(retain, nonatomic) MCRecommendModel *recommendModule; // @synthesize recommendModule=_recommendModule;
 @property(nonatomic) __weak id <MCRecentContactCustomInterface> recentContactCustomInterface; // @synthesize recentContactCustomInterface=_recentContactCustomInterface;
 - (void).cxx_destruct;
-- (void)recommendPresenterViewHeightChange:(id)arg1;
-- (void)recommendPresenterViewFinishLoad:(id)arg1;
+- (_Bool)orangeRecommendOn;
+- (void)recommendExposure;
+- (void)handleExposure;
+- (_Bool)recommendEnable;
+- (void)moreItemClicked:(id)arg1;
+- (id)sectionHeaderView;
+- (void)recommendModel:(id)arg1 uniqueId:(id)arg2 subcribeResult:(_Bool)arg3 error:(id)arg4;
+- (void)recommendModel:(id)arg1 recommendData:(id)arg2;
+- (void)presenter:(id)arg1 tableView:(id)arg2 didSelectRowAtIndexPath:(id)arg3;
+- (id)presenter:(id)arg1 tableView:(id)arg2 cellForRowAtIndexPath:(id)arg3;
+- (unsigned long long)presenter:(id)arg1 tableView:(id)arg2 numberOfRowsInSection:(long long)arg3;
+- (double)presenter:(id)arg1 tableView:(id)arg2 rowHeightForIndexPath:(id)arg3;
+- (id)presenter:(id)arg1 tableView:(id)arg2 viewForHeaderInSection:(long long)arg3;
 - (id)presenter:(id)arg1 tableView:(id)arg2 viewForFooterInSection:(long long)arg3;
 - (double)presenter:(id)arg1 tableView:(id)arg2 heightForFooterInSection:(long long)arg3;
-- (void)viewWillAppear:(_Bool)arg1;
-- (void)onAppBecomeActive:(id)arg1;
+- (double)presenter:(id)arg1 tableView:(id)arg2 heightForHeaderInSection:(long long)arg3;
+- (void)presenterDataLoadOver:(id)arg1;
 - (void)processPage:(id)arg1;
 - (void)unLoad:(id)arg1;
 - (void)load:(id)arg1;

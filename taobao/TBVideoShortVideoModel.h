@@ -6,7 +6,7 @@
 
 #import "TBJSONModel.h"
 
-@class NSArray, NSString, TBVideoSVAttach, TBVideoSVAuthorAccountInfo, TBVideoSVTopicItem;
+@class NSArray, NSString, TBVideoSVAttach, TBVideoSVAuthorAccountInfo, TBVideoSVMarkModel, TBVideoSVTopicItem;
 @protocol TBVideoSVGoodsItemInfo, TBVideoSVTagItem;
 
 @interface TBVideoShortVideoModel : TBJSONModel
@@ -25,6 +25,7 @@
     NSString *_videoUrl;
     NSString *_coverImg;
     long long _maxItemNum;
+    TBVideoSVMarkModel *_mark;
     NSArray<TBVideoSVGoodsItemInfo> *_goodList;
     TBVideoSVAuthorAccountInfo *_videoProducer;
     NSArray<TBVideoSVTagItem> *_tagList;
@@ -32,8 +33,14 @@
     TBVideoSVAttach *_attatch;
     long long _barrageId;
     NSString *_reportUrl;
+    NSString *_favorId;
+    NSString *_favorNamespace;
+    NSString *_playId;
 }
 
+@property(copy, nonatomic) NSString *playId; // @synthesize playId=_playId;
+@property(copy, nonatomic) NSString *favorNamespace; // @synthesize favorNamespace=_favorNamespace;
+@property(copy, nonatomic) NSString *favorId; // @synthesize favorId=_favorId;
 @property(copy, nonatomic) NSString *reportUrl; // @synthesize reportUrl=_reportUrl;
 @property(nonatomic) long long barrageId; // @synthesize barrageId=_barrageId;
 @property(retain, nonatomic) TBVideoSVAttach *attatch; // @synthesize attatch=_attatch;
@@ -41,6 +48,7 @@
 @property(retain, nonatomic) NSArray<TBVideoSVTagItem> *tagList; // @synthesize tagList=_tagList;
 @property(retain, nonatomic) TBVideoSVAuthorAccountInfo *videoProducer; // @synthesize videoProducer=_videoProducer;
 @property(retain, nonatomic) NSArray<TBVideoSVGoodsItemInfo> *goodList; // @synthesize goodList=_goodList;
+@property(retain, nonatomic) TBVideoSVMarkModel *mark; // @synthesize mark=_mark;
 @property(nonatomic) long long maxItemNum; // @synthesize maxItemNum=_maxItemNum;
 @property(copy, nonatomic) NSString *coverImg; // @synthesize coverImg=_coverImg;
 @property(copy, nonatomic) NSString *videoUrl; // @synthesize videoUrl=_videoUrl;

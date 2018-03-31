@@ -13,7 +13,6 @@
 {
     _Bool _isNeedBeShortLenth;
     int _inputTextWidth;
-    int _ALBBInputBoxName;
     NSString *_leftLabelText;
     NSString *_textFieldPlaceHolder;
     UIFont *_textFieldFont;
@@ -22,12 +21,13 @@
     ALBBTextField *_textField;
     UIButton *_rightAccessoryBtn;
     id <ALBBInputBoxDelegate> _delegate;
+    unsigned long long _ALBBInputBoxName;
     NSDictionary *_origialRightAccessoryBtnImages;
 }
 
 @property(retain, nonatomic) NSDictionary *origialRightAccessoryBtnImages; // @synthesize origialRightAccessoryBtnImages=_origialRightAccessoryBtnImages;
 @property(nonatomic) _Bool isNeedBeShortLenth; // @synthesize isNeedBeShortLenth=_isNeedBeShortLenth;
-@property(nonatomic) int ALBBInputBoxName; // @synthesize ALBBInputBoxName=_ALBBInputBoxName;
+@property(nonatomic) unsigned long long ALBBInputBoxName; // @synthesize ALBBInputBoxName=_ALBBInputBoxName;
 @property(nonatomic) __weak id <ALBBInputBoxDelegate> delegate; // @synthesize delegate=_delegate;
 @property(retain, nonatomic) UIButton *rightAccessoryBtn; // @synthesize rightAccessoryBtn=_rightAccessoryBtn;
 @property(retain, nonatomic) ALBBTextField *textField; // @synthesize textField=_textField;
@@ -43,7 +43,7 @@
 - (void)textFieldDidChange:(id)arg1;
 - (void)onRightBtnClick;
 - (void)createSubviews;
-- (void)inputBoxWithLeftLabelText:(id)arg1 textFieldPlaceHodler:(id)arg2 textFieldFont:(id)arg3 rightAccessoryBtnImages:(id)arg4 delegate:(id)arg5 ALBBInputBoxName:(int)arg6;
+- (void)inputBoxWithLeftLabelText:(id)arg1 textFieldPlaceHodler:(id)arg2 textFieldFont:(id)arg3 rightAccessoryBtnImages:(id)arg4 delegate:(id)arg5 ALBBInputBoxName:(unsigned long long)arg6;
 
 @end
 

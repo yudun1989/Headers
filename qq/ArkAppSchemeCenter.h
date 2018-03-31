@@ -15,7 +15,7 @@
 
 + (id)sharedInstance;
 - (void).cxx_destruct;
-- (_Bool)navigate:(id)arg1 data:(id)arg2 appType:(long long)arg3;
+- (_Bool)navigate:(id)arg1 data:(id)arg2 appType:(long long)arg3 appID:(const char *)arg4;
 - (id)init;
 
 @end

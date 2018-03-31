@@ -6,22 +6,64 @@
 
 #import <UIKit/UIView.h>
 
-@class NSString, TBVideoTweSVVC, UIButton;
+#import "TBShareDelegate-Protocol.h"
 
-@interface TBVideoSVRightAreaView : UIView
+@class NSString, TBVideoSVBarrageButton, TBVideoSVFollowButton, TBVideoSVLikeButton, TBVideoSVShareButton, TBVideoShortVideoModel, TBVideoTweSVVC;
+@protocol TBVideoSVRightAreaViewDelegate;
+
+@interface TBVideoSVRightAreaView : UIView <TBShareDelegate>
 {
-    UIButton *_likeButton;
-    NSString *_favorId;
+    _Bool _isPortrait;
+    id <TBVideoSVRightAreaViewDelegate> _delegate;
     TBVideoTweSVVC *_superVC;
+    TBVideoSVLikeButton *_likeButton;
+    TBVideoSVShareButton *_shareButton;
+    TBVideoSVBarrageButton *_barrageButton;
+    TBVideoSVFollowButton *_followButton;
+    NSString *_favorId;
+    NSString *_nameSpace;
+    TBVideoShortVideoModel *_videoModel;
+    long long _barrageCount;
 }
 
-@property(nonatomic) __weak TBVideoTweSVVC *superVC; // @synthesize superVC=_superVC;
+@property(nonatomic) long long barrageCount; // @synthesize barrageCount=_barrageCount;
+@property(nonatomic) _Bool isPortrait; // @synthesize isPortrait=_isPortrait;
+@property(retain, nonatomic) TBVideoShortVideoModel *videoModel; // @synthesize videoModel=_videoModel;
+@property(retain, nonatomic) NSString *nameSpace; // @synthesize nameSpace=_nameSpace;
 @property(retain, nonatomic) NSString *favorId; // @synthesize favorId=_favorId;
-@property(retain, nonatomic) UIButton *likeButton; // @synthesize likeButton=_likeButton;
+@property(retain, nonatomic) TBVideoSVFollowButton *followButton; // @synthesize followButton=_followButton;
+@property(retain, nonatomic) TBVideoSVBarrageButton *barrageButton; // @synthesize barrageButton=_barrageButton;
+@property(retain, nonatomic) TBVideoSVShareButton *shareButton; // @synthesize shareButton=_shareButton;
+@property(retain, nonatomic) TBVideoSVLikeButton *likeButton; // @synthesize likeButton=_likeButton;
+@property(nonatomic) __weak TBVideoTweSVVC *superVC; // @synthesize superVC=_superVC;
+@property(nonatomic) __weak id <TBVideoSVRightAreaViewDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
+- (id)getUtParams;
+- (void)didFailedShare:(id)arg1 toTarget:(id)arg2 errorCode:(id)arg3 errorMsg:(id)arg4;
+- (void)didSuccessShare:(id)arg1 toTarget:(id)arg2;
+- (void)didCancelShare:(id)arg1 toTarget:(id)arg2;
+- (void)didStartedShare:(id)arg1 toTarget:(id)arg2;
+- (void)trackDataWithFollowState:(_Bool)arg1;
+- (void)refreshLayoutAfterRotate:(_Bool)arg1;
+- (void)updateBarrageCount;
+- (void)lightenLikeButtonIfNeeded;
+- (void)setupVideoModel:(id)arg1;
+- (void)taowaShare:(id)arg1 type:(unsigned long long)arg2;
+- (void)followButtonTapped;
+- (void)barrageButtonTapped;
+- (void)shareButtonTapped;
+- (void)triggerShareEvent;
 - (struct CGPoint)originWithTimeBox:(id)arg1 screenType:(id)arg2;
 - (void)setupSubviews;
+- (void)layoutSubviews;
+- (id)initWithFrame:(struct CGRect)arg1 favorId:(id)arg2 nameSpace:(id)arg3 superVC:(id)arg4;
 - (id)initWithFrame:(struct CGRect)arg1 favorId:(id)arg2 superVC:(id)arg3;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly, copy) NSString *description;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
 
 @end
 

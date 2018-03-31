@@ -23,6 +23,7 @@
 - (id)getImageModuleTypeforParam:(long long)arg1;
 - (id)setImageByURL:(id)arg1 forImageFrame:(struct CGRect)arg2 moduleType:(id)arg3 cutType:(long long)arg4 widthHighRatio:(double)arg5 withImageOption:(unsigned long long)arg6 withImageConfig:(id)arg7 completed:(CDUnknownBlockType)arg8;
 - (id)downloadImageWithURL:(id)arg1 imageFrame:(struct CGRect)arg2 userInfo:(id)arg3 completed:(CDUnknownBlockType)arg4;
+- (void)setImageViewWithURL:(id)arg1 url:(id)arg2 placeholderImage:(id)arg3 options:(id)arg4 progress:(CDUnknownBlockType)arg5 completed:(CDUnknownBlockType)arg6;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

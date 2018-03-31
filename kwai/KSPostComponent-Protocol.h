@@ -9,7 +9,6 @@
 @class UIGestureRecognizer;
 
 @protocol KSPostComponent <KSCameraWarmable>
-@property(nonatomic) _Bool active;
 - (long long)preferredBottomBarStyle;
 - (void)prepareComponentPermissions;
 - (_Bool)disablePageGestureRecognizerShouldBegin:(UIGestureRecognizer *)arg1;

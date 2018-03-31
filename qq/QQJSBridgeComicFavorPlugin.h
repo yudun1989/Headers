@@ -21,6 +21,7 @@
 - (void)excuteAddMantuCallBackWithResult:(long long)arg1 failNum:(long long)arg2 succNum:(long long)arg3 errMSg:(id)arg4;
 - (void)onDownloadResult:(int)arg1 failNum:(long long)arg2 successNum:(long long)arg3;
 - (id)mantuInfoFromItem:(id)arg1;
+- (void)handleJsBridgeRequest_comicFavor_syncFavEmoji:(id)arg1;
 - (void)handleJsBridgeRequest_comicFavor_enterComicCenter:(id)arg1;
 - (void)handleJsBridgeRequest_comicFavor_openComicCenter:(id)arg1;
 - (void)handleJsBridgeRequest_comicFavor_setComicEmoji:(id)arg1;

@@ -10,7 +10,7 @@
 #import "UIGestureRecognizerDelegate-Protocol.h"
 #import "UIScrollViewDelegate-Protocol.h"
 
-@class NSMutableArray, NSMutableDictionary, NSMutableSet, NSString, TBCPhotoBrowseHeaderView, TBCVideoPlayView, UIScrollView;
+@class NSMutableArray, NSMutableDictionary, NSMutableSet, NSString, TBCGradientMaskView, TBCPhotoBrowseHeaderView, TBCVideoPlayView, UIScrollView;
 @protocol TBCPhotoBrowseViewDelegate;
 
 @interface TBCPhotoBrowseView : UIView <UIScrollViewDelegate, UIActionSheetDelegate, UIGestureRecognizerDelegate>
@@ -44,6 +44,7 @@
     CDUnknownBlockType _videoPlayUT;
     CDUnknownBlockType _videoVoiceSwitchUT;
     UIScrollView *_scrollView;
+    TBCGradientMaskView *_gradientMaskView;
     NSMutableSet *_reusedPhotoViewSet;
     NSMutableDictionary *_visiblePhotoViewDic;
     NSMutableArray *_photoArray;
@@ -80,6 +81,7 @@
 @property(retain, nonatomic) NSMutableArray *photoArray; // @synthesize photoArray=_photoArray;
 @property(retain, nonatomic) NSMutableDictionary *visiblePhotoViewDic; // @synthesize visiblePhotoViewDic=_visiblePhotoViewDic;
 @property(retain, nonatomic) NSMutableSet *reusedPhotoViewSet; // @synthesize reusedPhotoViewSet=_reusedPhotoViewSet;
+@property(retain, nonatomic) TBCGradientMaskView *gradientMaskView; // @synthesize gradientMaskView=_gradientMaskView;
 @property(retain, nonatomic) UIScrollView *scrollView; // @synthesize scrollView=_scrollView;
 @property(copy, nonatomic) CDUnknownBlockType videoVoiceSwitchUT; // @synthesize videoVoiceSwitchUT=_videoVoiceSwitchUT;
 @property(copy, nonatomic) CDUnknownBlockType videoPlayUT; // @synthesize videoPlayUT=_videoPlayUT;
@@ -145,6 +147,7 @@
 - (void)appendPicUrls:(id)arg1;
 - (void)setPicUrls:(id)arg1 urlImageViewDic:(id)arg2;
 - (void)setPicUrls:(id)arg1;
+- (void)renderGradientMaskView;
 - (void)createScrollView;
 - (id)initWithFrame:(struct CGRect)arg1;
 

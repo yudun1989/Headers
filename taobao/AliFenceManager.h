@@ -8,15 +8,34 @@
 
 #import "AMapGeoFenceManagerDelegate-Protocol.h"
 
-@class AMapGeoFenceManager, NSMutableArray, NSMutableDictionary, NSString, NSTimer;
+@class AMapGeoFenceManager, NSDate, NSMutableArray, NSMutableDictionary, NSString, NSTimer, SentryRegion;
 @protocol OS_dispatch_semaphore;
 
 @interface AliFenceManager : NSObject <AMapGeoFenceManagerDelegate>
 {
-    NSTimer *_timer;
-    NSMutableArray *_detectFences;
+    NSTimer *_collectTimer;
+    NSTimer *_fenceDetectTimer;
+    NSDate *_startCollectDate;
+    NSDate *_durationStartDate;
+    unsigned long long _detectInterval;
+    unsigned long long _detectDuration;
+    unsigned long long _detectedFenceCount;
+    NSMutableArray *_detectedFences;
+    NSMutableArray *_collectedFences;
     NSObject<OS_dispatch_semaphore> *_lock;
     NSObject<OS_dispatch_semaphore> *_lock2;
+    NSObject<OS_dispatch_semaphore> *_fenceComparelock;
+    NSObject<OS_dispatch_semaphore> *_detectedFenceLock;
+    SentryRegion *_assistRegion;
+    NSDate *_detectStartDate;
+    NSTimer *_beaconSceneTimer;
+    NSTimer *_sonicSceneTimer;
+    NSTimer *_p2pSceneTimer;
+    NSTimer *_wifiSceneTimer;
+    long long _useBeaconTimer;
+    long long _useSonicTimer;
+    long long _useP2PTimer;
+    long long _useWifiTimer;
     CDUnknownBlockType _orderFencesCallBack;
     NSString *_bizID;
     NSMutableDictionary *_holdFences;
@@ -34,11 +53,25 @@
 @property(copy, nonatomic) CDUnknownBlockType orderFencesCallBack; // @synthesize orderFencesCallBack=_orderFencesCallBack;
 - (void).cxx_destruct;
 - (_Bool)makeGeoManager;
+- (void)dealloc;
+- (void)modifyDetectInterval:(unsigned long long)arg1;
+- (id)createSpecialScene:(unsigned long long)arg1 withType:(unsigned long long)arg2;
+- (void)detectTimer:(id)arg1;
+- (void)reStartDetect;
 - (void)regionsCollect;
 - (void)regionsCompare:(id)arg1;
+- (double)slowDown:(double)arg1;
+- (double)clamp:(double)arg1;
 - (void)amapGeoFenceManager:(id)arg1 didGeoFencesStatusChangedForRegion:(id)arg2 customID:(id)arg3 error:(id)arg4;
 - (void)amapGeoFenceManager:(id)arg1 didAddRegionForMonitoringFinished:(id)arg2 customID:(id)arg3 error:(id)arg4;
 - (_Bool)addNFFence:(id)arg1;
+- (void)stopSceneTimer4Fence;
+- (void)launchSceneTimer4Fence:(id)arg1;
+- (void)setSceneTimer:(unsigned long long)arg1 beReSet:(_Bool)arg2;
+- (void)sceneTimer:(id)arg1;
+- (void)uploadData:(id)arg1 Timer:(long long)arg2;
+- (void)uploadSceneTimeOffline;
+- (void)uploadSceneTimeOnline:(long long)arg1;
 - (_Bool)addGeoFence:(id)arg1;
 - (_Bool)removeAliFence:(id)arg1;
 - (_Bool)addAliFence:(id)arg1;

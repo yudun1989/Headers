@@ -19,18 +19,18 @@
     int _numberOfLines;
 }
 
-@property(nonatomic) double lineSpace; // @synthesize lineSpace=_lineSpace;
+@property double lineSpace; // @synthesize lineSpace=_lineSpace;
+@property(retain) NSString *type; // @synthesize type=_type;
+@property(retain) NSString *html; // @synthesize html=_html;
+@property(retain) NSString *size; // @synthesize size=_size;
+@property(retain) NSString *style; // @synthesize style=_style;
+@property(retain) NSString *color; // @synthesize color=_color;
 - (id)getTextColor;
 - (_Bool)isBold;
 - (void)dealloc;
 
 // Remaining properties
-@property(retain, nonatomic) NSString *color; // @dynamic color;
-@property(retain, nonatomic) NSString *html; // @dynamic html;
 @property(nonatomic) int numberOfLines; // @dynamic numberOfLines;
-@property(retain, nonatomic) NSString *size; // @dynamic size;
-@property(retain, nonatomic) NSString *style; // @dynamic style;
-@property(retain, nonatomic) NSString *type; // @dynamic type;
 
 @end
 

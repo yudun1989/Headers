@@ -44,6 +44,7 @@
     _Bool _isClearUndealCountNew;
     _Bool _isRefreshPassiveFeed;
     _Bool _isGamebarExpose;
+    _Bool _isWeishiExpose;
     long long _uin;
     NSString *_redBonusIconStr;
     long long _grayOperateMask;
@@ -64,6 +65,7 @@
 + (id)instance;
 @property(readonly, nonatomic) long long grayOperateMask; // @synthesize grayOperateMask=_grayOperateMask;
 @property(retain, nonatomic) NSString *redBonusIconStr; // @synthesize redBonusIconStr=_redBonusIconStr;
+@property(nonatomic) _Bool isWeishiExpose; // @synthesize isWeishiExpose=_isWeishiExpose;
 @property(nonatomic) _Bool isGamebarExpose; // @synthesize isGamebarExpose=_isGamebarExpose;
 @property(nonatomic) _Bool isRefreshPassiveFeed; // @synthesize isRefreshPassiveFeed=_isRefreshPassiveFeed;
 @property(nonatomic) long long uin; // @synthesize uin=_uin;
@@ -99,7 +101,6 @@
 - (id)countInfoOfDictById:(long long)arg1;
 - (id)traceInfoOfCountInfoDictById:(long long)arg1;
 - (id)countOfCountInfoDictById:(long long)arg1;
-- (long long)onGetFeedAlertNotify:(id)arg1;
 - (long long)onGetUnreadCountNotify:(id)arg1;
 - (void)getUndealCountWhenActiveDisappear;
 - (void)onAutoGetUnreadTimer:(id)arg1;
@@ -127,6 +128,7 @@
 - (void)notifyFeedUnreadNumberState;
 - (void)notifyRedBonusIconChange:(id)arg1;
 - (id)arrayForActiveVCTabBar;
+- (_Bool)isactiveVCBarHasPassive;
 - (_Bool)checkQZoneVersionChanged;
 - (void)onRegisterFinishGetMessage:(id)arg1;
 - (id)init;

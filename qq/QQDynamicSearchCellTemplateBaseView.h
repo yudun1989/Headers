@@ -6,19 +6,21 @@
 
 #import <UIKit/UIView.h>
 
-@class QQDynamicSearchResultModel;
+@class FTSDynamicSearchResultsListViewModel, QQDynamicSearchResultModel;
 
 @interface QQDynamicSearchCellTemplateBaseView : UIView
 {
     UIView *_contentView;
     QQDynamicSearchResultModel *_datasource;
+    FTSDynamicSearchResultsListViewModel *_listViewModel;
 }
 
++ (id)covertItemTextToAttributedString:(id)arg1;
 + (id)createSubCellWithResultItemModel:(id)arg1 frame:(struct CGRect)arg2;
+@property(nonatomic) __weak FTSDynamicSearchResultsListViewModel *listViewModel; // @synthesize listViewModel=_listViewModel;
 @property(retain, nonatomic) QQDynamicSearchResultModel *datasource; // @synthesize datasource=_datasource;
 @property(retain, nonatomic) UIView *contentView; // @synthesize contentView=_contentView;
 - (void).cxx_destruct;
-- (id)covertItemTextToAttributedString:(id)arg1;
 - (_Bool)isNightMode;
 - (double)calHeightForCell;
 - (void)updateHeightForCell;

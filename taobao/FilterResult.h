@@ -10,12 +10,12 @@
 
 @interface FilterResult : NSObject
 {
-    int _action;
+    unsigned long long _action;
     MtopExtResponse *_response;
 }
 
 @property(retain, nonatomic) MtopExtResponse *response; // @synthesize response=_response;
-@property(nonatomic) int action; // @synthesize action=_action;
+@property(nonatomic) unsigned long long action; // @synthesize action=_action;
 - (void).cxx_destruct;
 - (id)description;
 

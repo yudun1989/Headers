@@ -6,20 +6,21 @@
 
 #import <UIKit/UIView.h>
 
-@class TBVideoSVBroadCastInfoView, TBVideoSVTagAreaView, TBVideoShortVideoModel, TBVideoTweSVVC, UILabel;
+@class TBVideoSVTagAreaView, TBVideoShortVideoModel, TBVideoTweSVVC, UIImageView, UILabel;
 
 @interface TBVideoSVIntroduceView : UIView
 {
     _Bool _hideAccount;
-    TBVideoSVBroadCastInfoView *_broadcastView;
     TBVideoSVTagAreaView *_tagAreaView;
     UILabel *_titleLabel;
     TBVideoShortVideoModel *_model;
     double _bottom;
     TBVideoTweSVVC *_superVC;
     double _broadcastInfoViewStartY;
+    UIImageView *_markImageView;
 }
 
+@property(retain, nonatomic) UIImageView *markImageView; // @synthesize markImageView=_markImageView;
 @property(nonatomic) double broadcastInfoViewStartY; // @synthesize broadcastInfoViewStartY=_broadcastInfoViewStartY;
 @property(nonatomic) __weak TBVideoTweSVVC *superVC; // @synthesize superVC=_superVC;
 @property(nonatomic) _Bool hideAccount; // @synthesize hideAccount=_hideAccount;
@@ -27,13 +28,12 @@
 @property(retain, nonatomic) TBVideoShortVideoModel *model; // @synthesize model=_model;
 @property(retain, nonatomic) UILabel *titleLabel; // @synthesize titleLabel=_titleLabel;
 @property(retain, nonatomic) TBVideoSVTagAreaView *tagAreaView; // @synthesize tagAreaView=_tagAreaView;
-@property(retain, nonatomic) TBVideoSVBroadCastInfoView *broadcastView; // @synthesize broadcastView=_broadcastView;
 - (void).cxx_destruct;
 - (void)refreshIntroduceViewWithPortrait:(_Bool)arg1;
 - (struct CGPoint)originWithItemCard:(id)arg1;
-- (void)setupBroadcastView;
 - (void)setupTagAreaView;
 - (void)setupTitleLabel;
+- (void)setupMakeImageView;
 - (void)setupSubviews;
 - (id)initWithModel:(id)arg1 hideAccount:(_Bool)arg2 superVC:(id)arg3;
 

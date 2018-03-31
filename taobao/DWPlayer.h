@@ -49,6 +49,7 @@
 - (void)playerViewDidTapToPlay:(id)arg1;
 - (void)playerViewDidTapToPause:(id)arg1;
 - (void)playerViewWillResume:(id)arg1;
+- (void)playerViewShowPromptView:(id)arg1;
 - (void)playerViewShowFailView:(id)arg1 error:(id)arg2;
 - (void)playerViewDidPause:(id)arg1;
 - (void)playerLoadedProgressChanged:(double)arg1;

@@ -8,7 +8,7 @@
 
 #import <QQMainProject/MQQRCodeReaderDelegate-Protocol.h>
 
-@class MQQRCodeReaderViewController, NSMutableDictionary, NSString, NearFilePlug, QRCodeCommonBizPlug, TXBizPlug, TXQRLoginConfirmViewController, WebViewPlug;
+@class MQQRCodeReaderViewController, NSMutableDictionary, NSString, NearFilePlug, PersonalityCodePlugObj, QRCodeCommonBizPlug, TXBizPlug, TXQRLoginConfirmViewController, WebViewPlug;
 
 @interface TwoDimensionBarcodeManager : NSObject <MQQRCodeReaderDelegate>
 {
@@ -17,6 +17,7 @@
     TXQRLoginConfirmViewController *_txQRLoginPlugObj;
     QRCodeCommonBizPlug *_commonBizPlug;
     NearFilePlug *_nearFilePlugObj;
+    PersonalityCodePlugObj *_personalityCodePlugObj;
     NSMutableDictionary *_Plugs;
     id _WloginSdkObj;
     NSString *_qrcodeResult;

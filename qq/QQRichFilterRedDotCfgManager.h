@@ -13,6 +13,7 @@
 + (id)cfgPath;
 + (id)getInstance;
 - (void)handleAccountLogout;
+- (void)updateConfig:(id)arg1;
 
 @end
 

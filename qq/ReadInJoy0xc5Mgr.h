@@ -11,6 +11,7 @@
 }
 
 + (id)getInstance;
+- (void)updateSubscribeTabTipToHasConsumed;
 - (void)updateSubscribeTabTipToHasShown;
 - (unsigned long long)getMsgTime:(id)arg1;
 - (void)updateMsgTime:(unsigned long long)arg1 msgType:(id)arg2;

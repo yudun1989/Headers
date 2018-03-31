@@ -16,6 +16,7 @@
 - (id)digitalTypeCheckForKey:(id)arg1;
 - (id)numberSafeForKey:(id)arg1;
 - (id)dataSafeForKey:(id)arg1;
+- (id)getMainProjectBaseAddress:(id)arg1;
 - (id)reportNIL:(_Bool)arg1;
 - (id)stringSafeForKey:(id)arg1;
 - (long long)integerSafeForKey:(id)arg1 defaultV:(long long)arg2;

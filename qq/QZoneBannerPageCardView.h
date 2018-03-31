@@ -6,12 +6,24 @@
 
 #import <QQMainProject/QZoneBannerAdView.h>
 
-@class NSDictionary;
+@class NSDictionary, QZAutoPlayGifView, UIView;
 
 @interface QZoneBannerPageCardView : QZoneBannerAdView
 {
+    _Bool _noCloseBtn;
+    int _cardCornerRadius;
+    int _cardIndex;
     NSDictionary *_pageCardDataDict;
+    QZAutoPlayGifView *_gifADImageview;
+    UIView *_staticADImageview;
 }
+
+@property(nonatomic) int cardIndex; // @synthesize cardIndex=_cardIndex;
+@property(nonatomic) int cardCornerRadius; // @synthesize cardCornerRadius=_cardCornerRadius;
+@property(retain, nonatomic) UIView *staticADImageview; // @synthesize staticADImageview=_staticADImageview;
+@property(retain, nonatomic) QZAutoPlayGifView *gifADImageview; // @synthesize gifADImageview=_gifADImageview;
+@property(nonatomic) _Bool noCloseBtn; // @synthesize noCloseBtn=_noCloseBtn;
+@property(retain, nonatomic) NSDictionary *pageCardDataDict; // @synthesize pageCardDataDict=_pageCardDataDict;
 
 @end
 

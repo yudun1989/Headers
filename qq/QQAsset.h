@@ -27,6 +27,7 @@
 @property(retain, nonatomic) NSString *groupID; // @synthesize groupID=_groupID;
 @property(nonatomic) struct CGSize thumbnailSize; // @synthesize thumbnailSize=_thumbnailSize;
 - (void).cxx_destruct;
+- (long long)syncAssetFileSizeEx;
 - (id)debugInfo;
 - (_Bool)bTimeWastingAsset;
 - (_Bool)isWideAsset;

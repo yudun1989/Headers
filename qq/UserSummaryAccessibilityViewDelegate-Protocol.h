@@ -9,6 +9,6 @@
 @class NSArray;
 
 @protocol UserSummaryAccessibilityViewDelegate <NSObject>
-- (NSArray *)accessibleElementsInUserSummary;
+- (NSArray *)accessibleElementsInAccessibilityView;
 @end
 

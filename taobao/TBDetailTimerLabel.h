@@ -10,8 +10,8 @@
 
 @interface TBDetailTimerLabel : UILabel
 {
-    int _timerType;
-    int _timeUnitType;
+    unsigned long long _timerType;
+    unsigned long long _timeUnitType;
     long long _maxCountTime;
     long long _startTime;
     double _timeInterval;
@@ -27,7 +27,7 @@
 - (void)updateTimeCountUp;
 - (void)updateTimeCountDown;
 - (void)updateText;
-- (id)initWithType:(int)arg1 unitType:(int)arg2 maxTime:(long long)arg3 finishBlock:(CDUnknownBlockType)arg4;
+- (id)initWithType:(unsigned long long)arg1 unitType:(unsigned long long)arg2 maxTime:(long long)arg3 finishBlock:(CDUnknownBlockType)arg4;
 - (id)formatTimeFromMicroSeconds:(long long)arg1;
 - (id)formatTimeFromSeconds:(long long)arg1;
 - (void)stopTimerAndCallBack;
@@ -35,8 +35,8 @@
 - (void)stopTimer;
 - (void)startTimer:(long long)arg1;
 - (void)initTime:(long long)arg1;
-- (id)initCountUp:(int)arg1 max:(long long)arg2;
-- (id)initCountDown:(int)arg1;
+- (id)initCountUp:(unsigned long long)arg1 max:(long long)arg2;
+- (id)initCountDown:(unsigned long long)arg1;
 - (void)dealloc;
 
 @end

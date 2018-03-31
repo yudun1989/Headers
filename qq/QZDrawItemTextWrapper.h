@@ -77,6 +77,7 @@
 @property(nonatomic) _Bool isWrapping;
 @property(nonatomic) int lineBreakMode;
 - (void)setImage:(id)arg1 font:(id)arg2;
+- (void)setImage:(id)arg1 font:(id)arg2 needResize:(_Bool)arg3;
 - (void)setFeedUser:(id)arg1 font:(id)arg2 color:(id)arg3 actionType:(long long)arg4 param:(id)arg5;
 - (void)setFeedUser:(id)arg1 font:(id)arg2 color:(id)arg3 actionType:(long long)arg4;
 - (void)setFeedUser:(id)arg1 font:(id)arg2 color:(id)arg3 param:(id)arg4;

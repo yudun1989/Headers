@@ -8,7 +8,7 @@
 
 #import "XSearchFooterCell-Protocol.h"
 
-@class NSIndexPath, NSString, XSearchContext, XSearchService;
+@class NSIndexPath, NSString, XSearchContext, XSearchMultipleContainerView, XSearchService;
 
 @interface XSearchFooterCell : UICollectionReusableView <XSearchFooterCell>
 {
@@ -20,10 +20,13 @@
     id _delegate;
     id _vcdelegate;
     id _bizVCDelegate;
+    XSearchMultipleContainerView *_containerView;
 }
 
-+ (double)HeightWithModel:(id)arg1 searchService:(id)arg2 layoutStyle:(long long)arg3;
++ (id)identifierForFooter;
++ (double)HeightWithSearchService:(id)arg1;
 + (id)reuseIdentifierString;
+@property(retain, nonatomic) XSearchMultipleContainerView *containerView; // @synthesize containerView=_containerView;
 @property(nonatomic) __weak id bizVCDelegate; // @synthesize bizVCDelegate=_bizVCDelegate;
 @property(nonatomic) __weak id vcdelegate; // @synthesize vcdelegate=_vcdelegate;
 @property(nonatomic) __weak id delegate; // @synthesize delegate=_delegate;
@@ -33,7 +36,10 @@
 @property(nonatomic) long long layoutStyle; // @synthesize layoutStyle=_layoutStyle;
 @property(retain, nonatomic) NSIndexPath *indexPath; // @synthesize indexPath=_indexPath;
 - (void).cxx_destruct;
+- (void)headerLayout;
+- (void)reloadItem;
 - (void)render;
+- (id)initWithFrame:(struct CGRect)arg1;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

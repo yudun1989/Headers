@@ -6,16 +6,14 @@
 
 #import <UIKit/UIView.h>
 
-@class ProgressView, ReadViewToolBar;
+@class ReadViewToolBar;
 
 @interface QRBottomView : UIView
 {
-    ProgressView *_progressView;
     ReadViewToolBar *_toolBar;
 }
 
 @property(retain, nonatomic) ReadViewToolBar *toolBar; // @synthesize toolBar=_toolBar;
-@property(retain, nonatomic) ProgressView *progressView; // @synthesize progressView=_progressView;
 - (void)dealloc;
 
 @end

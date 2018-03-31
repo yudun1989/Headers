@@ -17,7 +17,6 @@
 @interface KSLiveViewController : KSStillCameraViewController <UITextFieldDelegate, KSSelfTimerCoordinatorDelegate, GPUImageVideoCameraDelegate, KSPostComponent, KSLiveComponentContainer>
 {
     _Bool _isPrepareShooting;
-    _Bool _active;
     _Bool _inTransition;
     _Bool _isPushing;
     _Bool _needStartPushWhenCoverImageAvailable;
@@ -106,7 +105,6 @@
 @property(retain, nonatomic) UIButton *retakeButton; // @synthesize retakeButton=_retakeButton;
 @property(retain, nonatomic) UILabel *shootCoverTipsLabel; // @synthesize shootCoverTipsLabel=_shootCoverTipsLabel;
 @property(nonatomic) _Bool inTransition; // @synthesize inTransition=_inTransition;
-@property(nonatomic) _Bool active; // @synthesize active=_active;
 @property(retain, nonatomic) NSMutableArray *components; // @synthesize components;
 - (void).cxx_destruct;
 - (void)_addQuizEntryShowEvent;

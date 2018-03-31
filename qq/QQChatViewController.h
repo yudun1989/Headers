@@ -97,10 +97,14 @@
     QshipAnimationView *_shipAnimationView;
     unsigned long long _giftWantedUin;
     QQViewController *_campusCircleWebVC;
+    NSDictionary *_webParams;
+    QQMessageModel *_lastInsertedFriendHSMessage;
 }
 
 @property(nonatomic) UIActivityIndicatorView *indicatorView; // @synthesize indicatorView=_indicatorView;
 @property(nonatomic) UIView *loadingView; // @synthesize loadingView=_loadingView;
+@property(retain, nonatomic) QQMessageModel *lastInsertedFriendHSMessage; // @synthesize lastInsertedFriendHSMessage=_lastInsertedFriendHSMessage;
+@property(copy, nonatomic) NSDictionary *webParams; // @synthesize webParams=_webParams;
 @property(nonatomic) _Bool isTIMAppearance; // @synthesize isTIMAppearance=_isTIMAppearance;
 @property(nonatomic) _Bool isTIMAIONavigationBarBgSwitchOn; // @synthesize isTIMAIONavigationBarBgSwitchOn=_isTIMAIONavigationBarBgSwitchOn;
 @property(nonatomic) _Bool isTIMOnline; // @synthesize isTIMOnline=_isTIMOnline;
@@ -125,6 +129,7 @@
 @property _Bool ifint; // @synthesize ifint;
 @property _Bool KeyBoard; // @synthesize KeyBoard;
 @property(retain, nonatomic) NSTimer *timer; // @synthesize timer;
+- (void)setMsgAtMemArr:(id)arg1;
 - (void)setQIMOnlineTableCorner;
 - (void)highlightSubtitle:(id)arg1;
 - (void)normalizeSubtitle:(id)arg1;
@@ -152,7 +157,7 @@
 - (void)actionInputbarPTV:(id)arg1;
 - (void)sendReadConfirmForBabyQGuideMessage:(id)arg1;
 - (void)handleRecommendedFriendDidTap:(id)arg1;
-- (void)loadPersonalTagOrMedalInfo;
+- (void)loadPersonalTagOrMedalInfoOrSayHonest;
 - (_Bool)shouldLoadNewMedalInfo;
 - (_Bool)shouldLoadNewPersonalTag;
 - (void)loadLocalGameTeamBuleTips;
@@ -215,6 +220,7 @@
 - (void)didRecieveVASReminderPaySuccessNotification;
 - (void)checkForVASReminder:(id)arg1;
 - (void)PushUpdateDeleteFriend:(id)arg1;
+- (void)doSendLargeMsgOptimizeMsg:(id)arg1 picUrl:(id)arg2 resendModel:(id)arg3;
 - (_Bool)doSendTextMsg:(id)arg1 showText:(id)arg2 isLocation:(_Bool)arg3 resendModel:(id)arg4 hideFakeMsg:(_Bool)arg5 emojiStickerInfo:(id)arg6;
 - (_Bool)doSendTextMsg:(id)arg1 showText:(id)arg2 isLocation:(_Bool)arg3 resendModel:(id)arg4 hideFakeMsg:(_Bool)arg5;
 - (_Bool)doSendTextMsg:(id)arg1 showText:(id)arg2 isLocation:(_Bool)arg3 resendModel:(id)arg4;
@@ -324,6 +330,10 @@
 - (id)generateMessageModelByUuid:(id)arg1 picInfo:(id)arg2 bodyType:(int)arg3 saveMsg:(_Bool)arg4 content:(id)arg5;
 - (id)generateMessageModelByUuid:(id)arg1 picInfo:(id)arg2 bodyType:(int)arg3 saveMsg:(_Bool)arg4;
 - (void)appendAIONearFilePromoteTip;
+- (void)shouldLoadNewSayHonest:(CDUnknownBlockType)arg1;
+- (_Bool)isFirstSendMessageAboutTheHSTopic;
+- (void)setHonestSayMessageModel:(id)arg1;
+- (void)deleteLastInsertedFriendHSMessage;
 - (void)goToAudioChat;
 - (void)gotoAudioChatFromCorner;
 - (_Bool)handleP2PAVBannerTipViewClick:(id)arg1;

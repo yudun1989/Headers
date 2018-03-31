@@ -225,6 +225,8 @@
 - (void)pausePlayVideo;
 - (void)mediaPlayer:(id)arg1 log:(id)arg2 andLogLevel:(int)arg3;
 - (_Bool)isNetworkAvailableNow;
+- (void)mediaPlayer:(id)arg1 canGetScreenShot:(_Bool)arg2;
+- (void)mediaPlayer:(id)arg1 becomePlayable:(_Bool)arg2;
 - (void)mediaPlayer:(id)arg1 getNatureSize:(struct CGSize)arg2;
 - (void)showPlayVideoError:(id)arg1;
 - (void)handleDataReportByState:(int)arg1;
@@ -269,6 +271,7 @@
 - (id)getConverImage;
 - (void)updateStateTag:(int)arg1;
 - (void)addAddressLable;
+- (void)setLineSliderTintColor:(id)arg1;
 - (void)setLineSliderHidden:(_Bool)arg1;
 - (void)onNetworkChanged:(id)arg1;
 - (void)restFlowPlayingLayout;

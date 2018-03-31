@@ -11,6 +11,7 @@
 @interface TBVideoTweSVEntity : NSObject
 {
     _Bool _hideAccountInfo;
+    _Bool _isShare;
     NSString *_from;
     NSString *_slicemode;
     NSString *_originType;
@@ -23,10 +24,13 @@
     NSString *_trackInfo;
     NSString *_source;
     NSString *_spm;
+    NSString *_playType;
     NSMutableArray *_recommandVideoList;
 }
 
 @property(retain, nonatomic) NSMutableArray *recommandVideoList; // @synthesize recommandVideoList=_recommandVideoList;
+@property(nonatomic) _Bool isShare; // @synthesize isShare=_isShare;
+@property(copy, nonatomic) NSString *playType; // @synthesize playType=_playType;
 @property(copy, nonatomic) NSString *spm; // @synthesize spm=_spm;
 @property(copy, nonatomic) NSString *source; // @synthesize source=_source;
 @property(nonatomic) _Bool hideAccountInfo; // @synthesize hideAccountInfo=_hideAccountInfo;

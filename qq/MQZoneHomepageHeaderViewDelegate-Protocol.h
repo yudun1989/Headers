@@ -15,6 +15,7 @@
 - (void)clickPersonalizeView;
 - (void)clickMyFollowView;
 - (void)clickMyFansFollowButton;
+- (void)clickMVideoView;
 - (void)clickMyFansView;
 - (void)clickTabButtonAtIndex:(long long)arg1;
 @end

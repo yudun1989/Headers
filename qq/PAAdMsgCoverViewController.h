@@ -31,6 +31,7 @@
 - (void)cancelStatusCheck;
 - (void)updateProgressWithPlayed:(double)arg1 total:(double)arg2;
 - (void)pauseProgressView;
+- (void)hideProgressView:(_Bool)arg1;
 - (void)reloadProgressView;
 - (void)preloadNextVideoModel:(long long)arg1;
 - (void)videoPageflipOver;

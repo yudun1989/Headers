@@ -20,8 +20,6 @@
 - (void).cxx_destruct;
 - (void)updateFinished;
 - (void)reportMessage:(id)arg1;
-- (void)updateApp;
-- (void)updateAppConfig;
 - (void)update;
 - (id)baseUrl;
 - (id)initWithAppName:(id)arg1 withCallback:(CDUnknownBlockType)arg2;

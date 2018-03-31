@@ -16,6 +16,7 @@
 - (void)clickCancleBtn;
 - (void)tapBlankToHideMusicView;
 - (void)start;
+- (id)init;
 
 @end
 

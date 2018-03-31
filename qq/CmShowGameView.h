@@ -30,6 +30,7 @@
     _Bool _qavIsWorking;
     _Bool _qavHasAudioSession;
     _Bool _qavUseAudioSession;
+    _Bool _isPushed;
     _Bool _hasGivenGameOpenKey;
     int _aioType;
     unsigned int _gameId;
@@ -39,6 +40,7 @@
     int _fromType;
     float _qavBeauty;
     int _screenMode;
+    int _gameOrientation;
     int _src;
     id <CmShowGameViewDelegate> _delegate;
     sa_gl_view *_gameGLView;
@@ -67,9 +69,11 @@
 
 @property(nonatomic) _Bool hasGivenGameOpenKey; // @synthesize hasGivenGameOpenKey=_hasGivenGameOpenKey;
 @property(retain, nonatomic) NSMutableArray *muArrGameAsyncGetDataReq; // @synthesize muArrGameAsyncGetDataReq=_muArrGameAsyncGetDataReq;
+@property(nonatomic) _Bool isPushed; // @synthesize isPushed=_isPushed;
 @property(nonatomic) int src; // @synthesize src=_src;
 @property(nonatomic) double lastSendShareMsgTime; // @synthesize lastSendShareMsgTime=_lastSendShareMsgTime;
 @property(nonatomic) double lastSendMsgTime; // @synthesize lastSendMsgTime=_lastSendMsgTime;
+@property(nonatomic) int gameOrientation; // @synthesize gameOrientation=_gameOrientation;
 @property(nonatomic) int screenMode; // @synthesize screenMode=_screenMode;
 @property(nonatomic) _Bool qavUseAudioSession; // @synthesize qavUseAudioSession=_qavUseAudioSession;
 @property(nonatomic) NSMutableDictionary *identifiersMap; // @synthesize identifiersMap=_identifiersMap;
@@ -172,7 +176,7 @@
 - (void)onEditorClick;
 - (void)keyboardWillHide:(id)arg1;
 - (void)keyboardWillShow:(id)arg1;
-- (_Bool)initEditorKeyBoard;
+- (id)textField;
 - (void)showKeyboardEditor;
 - (id)spriteReadOfflineImage:(id)arg1;
 - (id)initWithFrame:(struct CGRect)arg1;

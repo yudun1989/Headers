@@ -12,6 +12,7 @@
 
 @interface TBRDRateListViewDataController : TBRDBaseDataController <TBCRequestProtocol>
 {
+    _Bool _skuFilter;
     int _sourceType;
     NSString *_itemId;
     NSString *_shopId;
@@ -19,6 +20,10 @@
     NSString *_defaultSelectExpression;
     NSDictionary *_dicAskInfo;
     NSArray *_arrImpressionInfo;
+    NSDictionary *_itemInfo;
+    NSDictionary *_skuBase;
+    NSArray *_skuFilterData;
+    NSString *_skuVids;
     NSMutableArray *_arrRateData;
     NSDictionary *_shopGardenCardData;
     NSDictionary *_albumCardData;
@@ -37,6 +42,11 @@
 @property(retain, nonatomic) NSDictionary *albumCardData; // @synthesize albumCardData=_albumCardData;
 @property(retain, nonatomic) NSDictionary *shopGardenCardData; // @synthesize shopGardenCardData=_shopGardenCardData;
 @property(retain, nonatomic) NSMutableArray *arrRateData; // @synthesize arrRateData=_arrRateData;
+@property(copy, nonatomic) NSString *skuVids; // @synthesize skuVids=_skuVids;
+@property(retain, nonatomic) NSArray *skuFilterData; // @synthesize skuFilterData=_skuFilterData;
+@property(nonatomic) _Bool skuFilter; // @synthesize skuFilter=_skuFilter;
+@property(retain, nonatomic) NSDictionary *skuBase; // @synthesize skuBase=_skuBase;
+@property(retain, nonatomic) NSDictionary *itemInfo; // @synthesize itemInfo=_itemInfo;
 @property(retain, nonatomic) NSArray *arrImpressionInfo; // @synthesize arrImpressionInfo=_arrImpressionInfo;
 @property(retain, nonatomic) NSDictionary *dicAskInfo; // @synthesize dicAskInfo=_dicAskInfo;
 @property(copy, nonatomic) NSString *defaultSelectExpression; // @synthesize defaultSelectExpression=_defaultSelectExpression;
@@ -45,6 +55,7 @@
 @property(copy, nonatomic) NSString *shopId; // @synthesize shopId=_shopId;
 @property(copy, nonatomic) NSString *itemId; // @synthesize itemId=_itemId;
 - (void).cxx_destruct;
+- (void)requestSkuFilterDataComplete:(CDUnknownBlockType)arg1;
 - (void)requestAlbumEntranceDataComplete:(CDUnknownBlockType)arg1;
 - (void)photoBrowseDataFromTagRateData:(id)arg1 indexUrl:(id)arg2 indexRateId:(id)arg3 urlImageViewDic:(id)arg4 complete:(CDUnknownBlockType)arg5;
 - (_Bool)engineHasMoreData:(id)arg1;
@@ -53,7 +64,7 @@
 - (long long)indexOfDefaultSelectExpression;
 - (void)generateTagDataFromRequestData:(id)arg1;
 - (void)generateTagDataFromExpression;
-- (void)getRateListWithItemId:(id)arg1 rateType:(id)arg2 hasContext:(_Bool)arg3 pageNo:(long long)arg4 pageSize:(long long)arg5 orderType:(id)arg6 expression:(id)arg7 complete:(CDUnknownBlockType)arg8;
+- (void)getRateListWithRateType:(id)arg1 hasContext:(_Bool)arg2 pageNo:(long long)arg3 pageSize:(long long)arg4 orderType:(id)arg5 expression:(id)arg6 complete:(CDUnknownBlockType)arg7;
 - (void)setupComponentEngine;
 - (id)initWithQuery:(id)arg1;
 

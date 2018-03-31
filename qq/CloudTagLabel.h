@@ -24,6 +24,7 @@
 @property(retain, nonatomic) CloudWord *word; // @synthesize word=_word;
 - (void).cxx_destruct;
 - (void)drawRect:(struct CGRect)arg1;
+- (id)wordFont:(id)arg1;
 - (void)textDrawRun:(id)arg1 run:(struct __CTRun *)arg2 context:(struct CGContext *)arg3 ranges:(id)arg4 verticalOffset:(double)arg5;
 - (struct CGColor *)cloudTextGetCGColor:(struct CGColor *)arg1;
 - (void)drawText:(struct CGPoint)arg1;

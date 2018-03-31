@@ -11,10 +11,13 @@
 }
 
 + (int)getNamePlateBubbleIdWithUin:(id)arg1 direction:(int)arg2;
++ (int)getPetNamePlateBubbleIdWithRoleId:(long long)arg1 direction:(int)arg2;
 + (void)loadActionRspWithModel:(id)arg1 callBack:(CDUnknownBlockType)arg2;
 + (void)loadActionSpriteRspWithModel:(id)arg1 isPreviewAction:(_Bool)arg2 isShowNamePlate:(_Bool)arg3 isC2C:(_Bool)arg4 callBack:(CDUnknownBlockType)arg5;
 + (void)loadActionDataWithModel:(id)arg1 isPreviewAction:(_Bool)arg2 isShowNamePlate:(_Bool)arg3 isC2C:(_Bool)arg4 callBack:(CDUnknownBlockType)arg5;
++ (void)loadActionSpritesDataWithModel:(id)arg1 isPreviewAction:(_Bool)arg2 isShowNamePlate:(_Bool)arg3 isC2C:(_Bool)arg4 callBack:(CDUnknownBlockType)arg5;
 + (void)loadInitSpriteWithModel:(id)arg1 callBack:(CDUnknownBlockType)arg2;
++ (void)loadPetsResWithUins:(id)arg1 isC2C:(_Bool)arg2 callback:(CDUnknownBlockType)arg3;
 
 @end
 

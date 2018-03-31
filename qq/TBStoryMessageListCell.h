@@ -6,7 +6,7 @@
 
 #import <QQMainProject/QQMoreOptionTableViewCell.h>
 
-@class CALayer, QQStoryUrlImageView, QQStoryUserIconView, TBAvatarView, UILabel;
+@class CALayer, QQStoryUrlImageView, QQStoryUserIconView, TBAvatarView, TBStoryVideoVoteView, TBVideoPollInfoModel, UIImage, UILabel;
 @protocol TBStoryMessageListCellDelegate;
 
 @interface TBStoryMessageListCell : QQMoreOptionTableViewCell
@@ -21,8 +21,14 @@
     UILabel *_msgContentView;
     CALayer *_bottomLine;
     id <TBStoryMessageListCellDelegate> _delegate;
+    UIImage *_coverDefaultImage;
+    TBVideoPollInfoModel *_pollModel;
+    TBStoryVideoVoteView *_voteView;
 }
 
+@property(retain, nonatomic) TBStoryVideoVoteView *voteView; // @synthesize voteView=_voteView;
+@property(retain, nonatomic) TBVideoPollInfoModel *pollModel; // @synthesize pollModel=_pollModel;
+@property(retain, nonatomic) UIImage *coverDefaultImage; // @synthesize coverDefaultImage=_coverDefaultImage;
 @property(nonatomic) id <TBStoryMessageListCellDelegate> delegate; // @synthesize delegate=_delegate;
 @property(retain, nonatomic) CALayer *bottomLine; // @synthesize bottomLine=_bottomLine;
 @property(retain, nonatomic) UILabel *msgContentView; // @synthesize msgContentView=_msgContentView;
@@ -30,6 +36,7 @@
 @property(retain, nonatomic) QQStoryUrlImageView *storyCoverView; // @synthesize storyCoverView=_storyCoverView;
 @property(retain, nonatomic) UILabel *nickNameView; // @synthesize nickNameView=_nickNameView;
 @property(retain, nonatomic) TBAvatarView *avatarView; // @synthesize avatarView=_avatarView;
+- (void)updateVoteView;
 - (void)_setupDeleteTips:(id)arg1;
 - (void)_loadAvatar:(id)arg1;
 - (void)setLayout:(id)arg1;

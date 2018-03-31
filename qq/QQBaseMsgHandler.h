@@ -16,6 +16,7 @@
 
 - (void)parseReplySourceMsgElem:(const struct RichText *)arg1 toModel:(id)arg2;
 - (void)processGoldMsg:(const struct Elem *)arg1 toModel:(id)arg2;
+- (void)processHonestSayMsg:(const struct Elem *)arg1 toModel:(id)arg2;
 - (void)parseDoodle:(const struct Elem *)arg1 toModel:(id)arg2;
 - (void)processGiftMsg:(const struct DeliverGiftMsg *)arg1 toModel:(id)arg2;
 - (void)processForSchedule:(const struct Elem *)arg1 toModel:(id)arg2;

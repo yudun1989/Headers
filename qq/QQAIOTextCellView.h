@@ -27,6 +27,7 @@
 - (void).cxx_destruct;
 - (void)setTextColorForQIMStyleBubble;
 - (void)clickDetailUrl;
+- (void)redrawTextWithColorDefinedInBubbleConfig;
 - (void)rePlayAnimation;
 - (void)tableView:(id)arg1 didEndDisplayingCell:(id)arg2 forRowAtIndexPath:(id)arg3;
 - (void)tableView:(id)arg1 willDisplayCell:(id)arg2 forRowAtIndexPath:(id)arg3;
@@ -55,7 +56,6 @@
 - (id)accessibilityMagicTapItmes;
 - (id)touchableAreas;
 - (_Bool)didTouchEnded:(id)arg1 withEvent:(id)arg2;
-- (void)letOtherCellRedraw;
 - (void)setHighlighted:(_Bool)arg1;
 - (void)drawContent:(struct CGRect)arg1;
 - (struct CGRect)frameForMsgSendFail;

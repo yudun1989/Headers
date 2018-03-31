@@ -8,7 +8,7 @@
 
 #import "UITextFieldDelegate-Protocol.h"
 
-@class AliCartStepperButton, NSString, StyleKitContext, UIColor, UITextField;
+@class AliCartStepperButton, AliCartStepperTextField, NSString, StyleKitContext;
 
 @interface AliCartStepper : UIControl <UITextFieldDelegate>
 {
@@ -16,9 +16,7 @@
     _Bool _allowLessThanMinQuantityInput;
     _Bool _allowMultipleItemInput;
     _Bool _valueChangedFlag;
-    int _currentChange;
-    int _seperateLineStyle;
-    UITextField *_editField;
+    AliCartStepperTextField *_editField;
     AliCartStepperButton *_increaseButton;
     AliCartStepperButton *_decreaseButton;
     CDUnknownBlockType _keyboardPopUpBlock;
@@ -27,23 +25,21 @@
     CDUnknownBlockType _shouldEndEditBlock;
     CDUnknownBlockType _valueChangedBlock;
     CDUnknownBlockType _lessThanMinQuantityInputBlock;
+    long long _currentChange;
     long long _currentValue;
     long long _minimumValue;
     long long _maximumValue;
     long long _stepValue;
     double _autoRepeatInterval;
-    UIColor *_borderColor;
-    double _borderWidth;
     double _operateButtonWidth;
+    double _spaceBetweenOpertionAndEditionView;
     StyleKitContext *_styleKitContext;
 }
 
 @property(retain, nonatomic) StyleKitContext *styleKitContext; // @synthesize styleKitContext=_styleKitContext;
 @property(nonatomic) _Bool valueChangedFlag; // @synthesize valueChangedFlag=_valueChangedFlag;
+@property(nonatomic) double spaceBetweenOpertionAndEditionView; // @synthesize spaceBetweenOpertionAndEditionView=_spaceBetweenOpertionAndEditionView;
 @property(nonatomic) double operateButtonWidth; // @synthesize operateButtonWidth=_operateButtonWidth;
-@property(nonatomic) double borderWidth; // @synthesize borderWidth=_borderWidth;
-@property(nonatomic) int seperateLineStyle; // @synthesize seperateLineStyle=_seperateLineStyle;
-@property(retain, nonatomic) UIColor *borderColor; // @synthesize borderColor=_borderColor;
 @property(nonatomic) double autoRepeatInterval; // @synthesize autoRepeatInterval=_autoRepeatInterval;
 @property(nonatomic) _Bool allowMultipleItemInput; // @synthesize allowMultipleItemInput=_allowMultipleItemInput;
 @property(nonatomic) _Bool allowLessThanMinQuantityInput; // @synthesize allowLessThanMinQuantityInput=_allowLessThanMinQuantityInput;
@@ -52,7 +48,7 @@
 @property(nonatomic) long long maximumValue; // @synthesize maximumValue=_maximumValue;
 @property(nonatomic) long long minimumValue; // @synthesize minimumValue=_minimumValue;
 @property(nonatomic) long long currentValue; // @synthesize currentValue=_currentValue;
-@property(nonatomic) int currentChange; // @synthesize currentChange=_currentChange;
+@property(nonatomic) long long currentChange; // @synthesize currentChange=_currentChange;
 @property(copy, nonatomic) CDUnknownBlockType lessThanMinQuantityInputBlock; // @synthesize lessThanMinQuantityInputBlock=_lessThanMinQuantityInputBlock;
 @property(copy, nonatomic) CDUnknownBlockType valueChangedBlock; // @synthesize valueChangedBlock=_valueChangedBlock;
 @property(copy, nonatomic) CDUnknownBlockType shouldEndEditBlock; // @synthesize shouldEndEditBlock=_shouldEndEditBlock;
@@ -61,7 +57,7 @@
 @property(copy, nonatomic) CDUnknownBlockType keyboardPopUpBlock; // @synthesize keyboardPopUpBlock=_keyboardPopUpBlock;
 @property(retain, nonatomic) AliCartStepperButton *decreaseButton; // @synthesize decreaseButton=_decreaseButton;
 @property(retain, nonatomic) AliCartStepperButton *increaseButton; // @synthesize increaseButton=_increaseButton;
-@property(retain, nonatomic) UITextField *editField; // @synthesize editField=_editField;
+@property(retain, nonatomic) AliCartStepperTextField *editField; // @synthesize editField=_editField;
 - (void).cxx_destruct;
 - (void)textFieldDidEndEditing:(id)arg1;
 - (_Bool)textFieldShouldEndEditing:(id)arg1;

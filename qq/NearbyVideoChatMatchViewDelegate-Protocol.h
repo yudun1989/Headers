@@ -11,6 +11,7 @@
 @protocol NearbyVideoChatMatchViewDelegate <NSObject>
 - (void)matchPanelCloseBtnClick:(UIButton *)arg1;
 - (void)closeActionOnMatch;
+- (void)matchTimeout;
 - (void)changeChaterMatchingExceptionHandle;
 - (void)changeChaterMatchingManual;
 @end

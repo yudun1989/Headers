@@ -6,34 +6,19 @@
 
 #import <UIKit/UIButton.h>
 
-#import <QQMainProject/MQZoneActiveMessageViewDelegate-Protocol.h>
-
-@class MQZoneBadgeView, NSArray, NSString, QZAvatarView, UIColor, UIImageView, UILabel;
+@class NSArray, UIColor;
 @protocol MQZoneActiveMessageViewDelegate;
 
-@interface MQZoneActiveMessageView : UIButton <MQZoneActiveMessageViewDelegate>
+@interface MQZoneActiveMessageView : UIButton
 {
-    UILabel *_passiveLabel;
-    UIImageView *_arrow;
-    QZAvatarView *_atView;
-    QZAvatarView *_faceView;
     NSArray *_configArray;
-    NSString *_passiveText;
     UIColor *_newStyleTextColor;
-    _Bool _isNeedPassiveNum;
-    long long _passiveWidthNORedNum;
-    UILabel *_message;
-    MQZoneBadgeView *_badgeView;
     long long _msgCount;
-    long long _lastUin;
     id <MQZoneActiveMessageViewDelegate> _delegate;
 }
 
 @property(nonatomic) __weak id <MQZoneActiveMessageViewDelegate> delegate; // @synthesize delegate=_delegate;
-@property(nonatomic) long long lastUin; // @synthesize lastUin=_lastUin;
 @property(nonatomic) long long msgCount; // @synthesize msgCount=_msgCount;
-@property(retain, nonatomic) MQZoneBadgeView *badgeView; // @synthesize badgeView=_badgeView;
-@property(retain, nonatomic) UILabel *message; // @synthesize message=_message;
 - (void).cxx_destruct;
 - (void)dealloc;
 - (_Bool)isNewStyle;
@@ -41,24 +26,14 @@
 - (void)adjustNaviDeco:(id)arg1;
 - (void)magicColor:(id)arg1;
 - (int)colorWithHue:(double)arg1 saturation:(double)arg2 brightness:(double)arg3;
-- (void)restoreHead;
-- (void)updateMessage:(long long)arg1;
 - (void)onFeedUnreadNumberUpdateByEntranceId:(long long)arg1;
 - (void)onFeedUnreadNumberUpdateAll;
-- (struct CGSize)messageSizeWithCount:(long long)arg1;
 - (void)onClickUILable:(id)arg1;
 - (id)naviItemConfig;
 - (void)createNewMessageView:(struct CGRect)arg1 unreadCount:(long long)arg2;
-- (void)createMessageViewPassive:(struct CGRect)arg1 label:(id)arg2;
 - (void)createMessageViewRedDot:(id)arg1 label:(id)arg2 press:(id)arg3 offset:(long long)arg4;
 - (void)onPhotoEventChange:(id)arg1;
 - (id)initWithFrame:(struct CGRect)arg1 unreadCount:(long long)arg2 textColor:(id)arg3;
-
-// Remaining properties
-@property(readonly, copy) NSString *debugDescription;
-@property(readonly, copy) NSString *description;
-@property(readonly) unsigned long long hash;
-@property(readonly) Class superclass;
 
 @end
 

@@ -12,12 +12,10 @@
 {
     AVCaptureStillImageOutput *photoOutput;
     _Bool requiresFrontCameraTextureCacheCorruptionWorkaround;
-    _Bool _highResolutionStillImageOutputEnabled;
     NSDictionary *_currentCaptureMetadata;
     double _jpegCompressionQuality;
 }
 
-@property(readonly, nonatomic) _Bool highResolutionStillImageOutputEnabled; // @synthesize highResolutionStillImageOutputEnabled=_highResolutionStillImageOutputEnabled;
 @property double jpegCompressionQuality; // @synthesize jpegCompressionQuality=_jpegCompressionQuality;
 @property(readonly) NSDictionary *currentCaptureMetadata; // @synthesize currentCaptureMetadata=_currentCaptureMetadata;
 - (void).cxx_destruct;
@@ -31,7 +29,6 @@
 - (void)capturePhotoAsSampleBufferWithCompletionHandler:(CDUnknownBlockType)arg1;
 - (void)removeInputsAndOutputs;
 - (id)init;
-- (id)initWithSessionPreset:(id)arg1 cameraPosition:(long long)arg2 highResolutionStillImageOutputEnabled:(_Bool)arg3;
 - (id)initWithSessionPreset:(id)arg1 cameraPosition:(long long)arg2;
 
 @end

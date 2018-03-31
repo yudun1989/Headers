@@ -11,8 +11,8 @@
 @interface QQSubtitleAudioToTextProcessingCenter : NSObject
 {
     unsigned int _silkSeq;
-    unsigned int _sumSampleCount;
-    _Bool _bAllowFiltering;
+    _Bool _bAllowFilter;
+    _Bool _bNeedSendHead;
     unsigned int _voiceSmall;
     _Bool _isRuning;
     _Bool _isRecording;
@@ -20,19 +20,19 @@
     long long _startRecordTime;
     NSMutableData *_cacheSendSilkData;
     QQSilkCodec *_silkEncoder;
-    NSMutableData *_originalPcmData;
     NSMutableArray *_arrCacheInvalidVoice;
     NSOperationQueue *_encodeOperationQueue;
-    NSTimer *_filteringControllTimer;
+    NSTimer *_FilterControllTimer;
+    NSTimer *_headTimer;
     QQSubtitlePCMDataHandleCenter *_pcmDataHandleCenter;
 }
 
 + (id)getInstance;
 @property(retain, nonatomic) QQSubtitlePCMDataHandleCenter *pcmDataHandleCenter; // @synthesize pcmDataHandleCenter=_pcmDataHandleCenter;
-@property(retain, nonatomic) NSTimer *filteringControllTimer; // @synthesize filteringControllTimer=_filteringControllTimer;
+@property(retain, nonatomic) NSTimer *headTimer; // @synthesize headTimer=_headTimer;
+@property(retain, nonatomic) NSTimer *FilterControllTimer; // @synthesize FilterControllTimer=_FilterControllTimer;
 @property(retain, nonatomic) NSOperationQueue *encodeOperationQueue; // @synthesize encodeOperationQueue=_encodeOperationQueue;
 @property(retain, nonatomic) NSMutableArray *arrCacheInvalidVoice; // @synthesize arrCacheInvalidVoice=_arrCacheInvalidVoice;
-@property(retain, nonatomic) NSMutableData *originalPcmData; // @synthesize originalPcmData=_originalPcmData;
 @property(retain, nonatomic) QQSilkCodec *silkEncoder; // @synthesize silkEncoder=_silkEncoder;
 @property(retain, nonatomic) NSMutableData *cacheSendSilkData; // @synthesize cacheSendSilkData=_cacheSendSilkData;
 @property(readonly, nonatomic) long long startRecordTime; // @synthesize startRecordTime=_startRecordTime;
@@ -42,6 +42,7 @@
 - (_Bool)isEnabledSubtitle;
 - (id)getInvalidVoiceData;
 - (void)saveInvalidVoiceData:(id)arg1;
+- (_Bool)judgmentFilter:(id)arg1;
 - (void)handleAudioSampleBuffer:(struct opaqueCMSampleBuffer *)arg1;
 - (void)appendAudioSampleBuffer:(struct opaqueCMSampleBuffer *)arg1;
 - (void)readyStopRun;

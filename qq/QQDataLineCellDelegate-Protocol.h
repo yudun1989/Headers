@@ -6,13 +6,12 @@
 
 #import <QQMainProject/NSObject-Protocol.h>
 
-@class QQDataLineCell, QQDataLineModel;
+@class QQDataLineCell;
 
 @protocol QQDataLineCellDelegate <NSObject>
 
 @optional
-- (void)didCell:(QQDataLineCell *)arg1 browseFileForDataLineModel:(QQDataLineModel *)arg2;
-- (void)didCell:(QQDataLineCell *)arg1 touchHeadForDataLineModel:(QQDataLineModel *)arg2;
-- (void)didCell:(QQDataLineCell *)arg1 forDataLineModel:(QQDataLineModel *)arg2;
+- (void)didBrowseCell:(QQDataLineCell *)arg1;
+- (void)didActionCell:(QQDataLineCell *)arg1;
 @end
 

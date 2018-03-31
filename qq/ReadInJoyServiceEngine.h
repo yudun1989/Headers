@@ -54,6 +54,8 @@
 - (_Bool)fetchTabFollowedAndFans:(id)arg1 completionBlock:(CDUnknownBlockType)arg2;
 - (void)readTopicWithID:(unsigned long long)arg1 time:(double)arg2;
 - (double)readTimeWithTopicID:(unsigned long long)arg1;
+- (_Bool)handleFetchKanDianArticleFavoriteStatusResponse:(basic_string_075b6133 *)arg1 Sequence:(int)arg2;
+- (int)fetchKanDianArticleFavoriteStatus:(id)arg1 Completion:(CDUnknownBlockType)arg2;
 - (_Bool)handleFetchArticleCommentCountResponseWithMessage:(CDStruct_7895f40e)arg1 Sequence:(int)arg2;
 - (void)fetchArticleCommentCount:(id)arg1 Completion:(CDUnknownBlockType)arg2;
 - (_Bool)handleCreateArticleCommentResponseWithMessage:(CDStruct_7895f40e)arg1 Sequence:(int)arg2;
@@ -130,6 +132,9 @@
 - (_Bool)handleArticleDislike:(basic_string_075b6133 *)arg1 sequence:(unsigned int)arg2;
 - (void)setArticleDislike:(id)arg1 dislikeTagArray:(id)arg2 completionBlock:(CDUnknownBlockType)arg3;
 - (void)sendReportData:(struct CPBMessageEncoder *)arg1;
+- (void)reportGallerySocial:(id)arg1 AddDic:(id)arg2;
+- (void)reportGalleryClick:(id)arg1 AddDic:(id)arg2;
+- (void)reportGalleryExp:(id)arg1 AddDic:(id)arg2;
 - (void)reportKandianRedDotExporseOrClick:(unsigned long long)arg1 strategyId:(unsigned int)arg2 algorithmId:(unsigned int)arg3 folderStatus:(unsigned int)arg4 reportType:(int)arg5;
 - (void)reportReadInJoyClickFollowStatusButton:(id)arg1;
 - (void)reportReadInJoyCommandofRead:(id)arg1 operation:(unsigned int)arg2 pageSrc:(unsigned int)arg3 videoPlayTime:(unsigned int)arg4;

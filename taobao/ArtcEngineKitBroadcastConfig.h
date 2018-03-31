@@ -10,9 +10,11 @@
 
 @interface ArtcEngineKitBroadcastConfig : NSObject
 {
+    int _bitrate;
     NSString *_rtmpUrl;
 }
 
+@property(nonatomic) int bitrate; // @synthesize bitrate=_bitrate;
 @property(retain, nonatomic) NSString *rtmpUrl; // @synthesize rtmpUrl=_rtmpUrl;
 - (void).cxx_destruct;
 

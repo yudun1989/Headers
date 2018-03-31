@@ -39,7 +39,7 @@
 #import <QQMainProject/UserSummaryTableHeaderViewTagsPresenter-Protocol.h>
 #import <QQMainProject/UserSummaryTouchControlDelegate-Protocol.h>
 
-@class AddFriendSendMessageViewController, CALayer, CMMotionManager, CloudLayoutManager, DIYEditView, FriendsVerifyMsgStructMsgModle, LOTAnimationView, NSArray, NSData, NSDictionary, NSIndexPath, NSMutableArray, NSNumber, NSString, NSTimer, NewMedalPopupController, QQAPNGImageView, QQAlertView, QQAvatarView, QQBubbleTipsView, QQGroupMemberCardModel, QQGroupMemberRecentChatManager, QQGroupSettingModel, QQProfileModel, QQTableViewForHighlightEffectButton, QQToastView, QQTroopRemarkModel, QUIActionSheet, QUICheckBoxAlertView, QZonePhotoWallCacheInfo, RichStateModel, ShoppingPersonalCardModel, SpriteMultiImageView, ThirdBusinessShowModel, UIImage, UIImagePickerController, UIImageView, UILongPressGestureRecognizer, UINavigationController, UIView, UIViewController, UIWebView, USPersonalTagModel, UserSpriteModel, UserSummaryModel, UserSummaryNavigationBar, UserSummaryPersonalTagCell, UserSummaryPhotoCoverFootView, UserSummaryPhotosWallImageModel, UserSummaryPtotosWallManager, UserSummaryTableHeaderView, UserSummaryTouchControl, ZanRequestManager;
+@class AddFriendSendMessageViewController, CALayer, CMMotionManager, CloudLayoutManager, DIYEditView, FriendsVerifyMsgStructMsgModle, LOTAnimationView, NSArray, NSData, NSDictionary, NSIndexPath, NSMutableArray, NSNumber, NSString, NSTimer, NewMedalPopupController, QQAPNGImageView, QQAlertView, QQAvatarView, QQBubbleTipsView, QQGroupMemberCardModel, QQGroupMemberRecentChatManager, QQGroupSettingModel, QQProfileModel, QQTableViewForHighlightEffectButton, QQToastView, QQTroopRemarkModel, QUIActionSheet, QUICheckBoxAlertView, QZonePhotoWallCacheInfo, RichStateModel, ShoppingPersonalCardModel, SpriteMultiImageView, ThirdBusinessShowModel, UIImage, UIImagePickerController, UIImageView, UILongPressGestureRecognizer, UINavigationController, UIView, UIViewController, UIWebView, USPersonalTagModel, UserSpriteModel, UserSummaryGameInfoGuideView, UserSummaryModel, UserSummaryNavigationBar, UserSummaryPersonalTagCell, UserSummaryPhotoCoverFootView, UserSummaryPhotosWallImageModel, UserSummaryPtotosWallManager, UserSummaryTableHeaderView, UserSummaryTouchControl, ZanRequestManager;
 @protocol QQWebviewExecuteJSDelegate;
 
 @interface UserSummaryViewController : QQViewController <UserSummaryTableHeaderViewPhotoDelegate, UserSummaryAccessibilityViewDelegate, SpriteMultiImgDelegate, UserSummaryPhotosWallCellDelegate, UserSummaryPhotosWallBrowserViewContollerDelegate, UserSummaryPhotoCoverFootViewDelegate, TBBizNetworkLogicDelegate, QUIAlertViewDelegate, QQGroupMemberRecentChatDelegate, GetTroopMemberProtocol, GetTroopRemarkProtocol, QQGroupMemberCardDelegate, ActionSheetDataDelegate, UITableViewDelegate, UITableViewDataSource, QUIActionSheetDelegate, UIAlertViewDelegate, UserSummaryTouchControlDelegate, UserSummaryTableHeaderViewDelegate, UserSummaryTableHeaderViewDataSource, MFMessageComposeViewControllerDelegate, UINavigationControllerDelegate, UIImagePickerControllerDelegate, UIGestureRecognizerDelegate, CustomSummaryCardZipDelegate, QQBannerTipViewDelegate, UserSummaryEachBusinessEnterDelegate, UserSummaryNavBarItemDelagate, UserSummaryTableHeaderViewTagsPresenter, RequestSetCardDelegate, UserSummaryEmptyPhotoWallDelegate, CAAnimationDelegate>
@@ -171,6 +171,7 @@
     QQGroupMemberCardModel *_memberCardModel;
     QQTroopRemarkModel *_remarkModel;
     QQGroupSettingModel *_groupSettingModel;
+    _Bool _hasCheckGameInfoGuide;
     _Bool _callEntry;
     ZanRequestManager *_zanRequest;
     QQToastView *_toastView;
@@ -193,6 +194,7 @@
     NSArray *_cloudWords;
     USPersonalTagModel *_personalTagModel;
     QUICheckBoxAlertView *_addGameFriendAlertView;
+    UserSummaryGameInfoGuideView *_gameInfoGuideView;
     struct CGSize _cloudWordRegionSize;
 }
 
@@ -214,6 +216,7 @@
 + (id)viewControllerWithGroupCode:(long long)arg1 groupCode:(long long)arg2;
 + (id)viewControllerWithUin:(long long)arg1;
 + (id)viewControllerWithUin:(long long)arg1 type:(int)arg2;
+@property(retain, nonatomic) UserSummaryGameInfoGuideView *gameInfoGuideView; // @synthesize gameInfoGuideView=_gameInfoGuideView;
 @property(retain, nonatomic) QQGroupSettingModel *groupSettingModel; // @synthesize groupSettingModel=_groupSettingModel;
 @property(retain, nonatomic) QQGroupMemberCardModel *memberCardModel; // @synthesize memberCardModel=_memberCardModel;
 @property(retain, nonatomic) QUICheckBoxAlertView *addGameFriendAlertView; // @synthesize addGameFriendAlertView=_addGameFriendAlertView;
@@ -244,6 +247,9 @@
 @property(nonatomic) int supNaviBarStyle; // @synthesize supNaviBarStyle=_supNaviBarStyle;
 @property(retain, nonatomic) NSString *cardRmarkMobile; // @synthesize cardRmarkMobile=_cardRmarkMobile;
 - (void).cxx_destruct;
+- (void)refreshGameInfoGuideView;
+- (void)updateGameInfoGuideView;
+- (void)showGameInfoGuideView;
 - (id)sortHobbiesArrayForGroup:(id)arg1;
 - (id)getMemberNormalNickName;
 - (id)getMemberShowName;
@@ -396,6 +402,7 @@
 - (void)scrollViewDidEndDecelerating:(id)arg1;
 - (void)scrollViewDidEndDragging:(id)arg1 willDecelerate:(_Bool)arg2;
 - (void)bannerTipViewDidClick:(id)arg1;
+- (void)handleQQAccountLogoutNotification:(id)arg1;
 - (void)handleTemplateChange:(id)arg1;
 - (_Bool)openPriviledgeWebView;
 - (id)today;
@@ -499,8 +506,10 @@
 - (void)showChangeHeadActionSheet;
 - (void)resetUIBusy;
 - (id)getSimpleTextAndPhotosCell:(id)arg1 type:(int)arg2 imageName:(id)arg3 simpleText:(id)arg4 accessoryType:(_Bool)arg5;
+- (id)getGameInfoCell:(id)arg1 type:(int)arg2 imageName:(id)arg3 cardModel:(id)arg4 accessoryType:(_Bool)arg5;
 - (id)getSimpleTextCell:(id)arg1 type:(int)arg2 imageName:(id)arg3 simpleText:(id)arg4 accessoryType:(_Bool)arg5;
 - (_Bool)addSumItemIfAvailable:(id)arg1 type:(int)arg2;
+- (id)getIndexPathForSumItemType:(int)arg1;
 - (_Bool)getAccessoryType:(int)arg1;
 - (id)getDisplayName;
 - (id)getSimpleText:(int)arg1;
@@ -533,6 +542,7 @@
 - (double)tableView:(id)arg1 heightForFooterInSection:(long long)arg2;
 - (void)resetImageRefreshCount;
 - (void)setBackgroundImageInMainThread;
+- (void)onAppWillEnterForeground:(id)arg1;
 - (void)startBgAnimation;
 - (void)setBackgroundImage;
 - (void)loadBackgroundResFail;
@@ -613,6 +623,7 @@
 - (int)getSummaryType;
 - (long long)getUin;
 - (id)getCampusCircleNick;
+- (id)accessibleElementsInAccessibilityView;
 - (id)accessibleElementsInUserSummary;
 - (void)onMorePhotoWallButtonClicked:(id)arg1;
 - (void)onEditPhotoWallButtonClicked;

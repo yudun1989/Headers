@@ -54,6 +54,7 @@
     NSDictionary *_playItem;
     NSDictionary *_feed;
     NSString *_initialURL;
+    NSString *_tag;
     long long _downloadSpeed;
     long long _lc;
 }
@@ -61,6 +62,7 @@
 @property(nonatomic) long long lc; // @synthesize lc=_lc;
 @property(nonatomic) long long downloadSpeed; // @synthesize downloadSpeed=_downloadSpeed;
 @property(nonatomic) _Bool hw; // @synthesize hw=_hw;
+@property(copy, nonatomic) NSString *tag; // @synthesize tag=_tag;
 @property(copy, nonatomic) NSString *initialURL; // @synthesize initialURL=_initialURL;
 @property(copy, nonatomic) NSDictionary *feed; // @synthesize feed=_feed;
 @property(copy, nonatomic) NSDictionary *playItem; // @synthesize playItem=_playItem;

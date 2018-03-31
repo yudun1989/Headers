@@ -6,16 +6,20 @@
 
 #import <Foundation/NSObject.h>
 
+#import <QQMainProject/NSCoding-Protocol.h>
+
 @class NSMutableDictionary;
 @protocol OS_dispatch_queue;
 
-@interface VASLockDictionary : NSObject
+@interface VASLockDictionary : NSObject <NSCoding>
 {
     NSMutableDictionary *_dict;
     NSObject<OS_dispatch_queue> *_lockQueue;
 }
 
 + (id)dictionaryWithMutableDictionary:(id)arg1;
+@property(retain, nonatomic) NSObject<OS_dispatch_queue> *lockQueue; // @synthesize lockQueue=_lockQueue;
+@property(retain, nonatomic) NSMutableDictionary *dict; // @synthesize dict=_dict;
 - (id)mutableDicSafeForKey:(id)arg1;
 - (id)mutableArraySafeForKey:(id)arg1;
 - (double)doubleSafeForKey:(id)arg1;
@@ -36,6 +40,8 @@
 - (_Bool)boolSafeForKey:(id)arg1;
 - (id)objectForKey:(id)arg1 type:(Class)arg2;
 - (void)dealloc;
+- (void)encodeWithCoder:(id)arg1;
+- (id)initWithCoder:(id)arg1;
 - (id)fetchDictionary;
 - (unsigned long long)count;
 - (void)removeObjectsForKeys:(id)arg1;

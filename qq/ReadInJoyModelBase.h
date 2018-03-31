@@ -26,7 +26,6 @@
 - (id)saveEntityList:(id)arg1 deletePrevious:(_Bool)arg2 toDb:(id)arg3;
 - (void)onDbAsyncCallback:(id)arg1 userdata:(id)arg2 workID:(int)arg3;
 - (unsigned long long)getTableSign;
-- (_Bool)updateEntityList:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (_Bool)saveEntityList:(id)arg1 deletePrevious:(_Bool)arg2 completionBlock:(CDUnknownBlockType)arg3;
 - (void)createTableIfNeededInDb:(id)arg1;
 - (void)onDBChanged:(id)arg1;

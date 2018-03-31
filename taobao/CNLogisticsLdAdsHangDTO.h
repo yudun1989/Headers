@@ -10,10 +10,12 @@
 
 @interface CNLogisticsLdAdsHangDTO : TBJSONModel
 {
+    _Bool _showPos;
     NSString *_hangPic;
     NSString *_hangLink;
 }
 
+@property(nonatomic) _Bool showPos; // @synthesize showPos=_showPos;
 @property(retain, nonatomic) NSString *hangLink; // @synthesize hangLink=_hangLink;
 @property(retain, nonatomic) NSString *hangPic; // @synthesize hangPic=_hangPic;
 - (void).cxx_destruct;

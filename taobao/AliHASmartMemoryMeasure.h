@@ -12,6 +12,7 @@
 {
     _Bool _enableContextLog;
     _Bool _enableNSLog;
+    _Bool _enableDebugMode;
     _Bool _inMonitor;
     _Bool _shouldSaveHistoryData;
     int _uploadCount;
@@ -37,7 +38,7 @@
 
 @property(nonatomic) float uploadToServerRate; // @synthesize uploadToServerRate=_uploadToServerRate;
 @property(retain, nonatomic) NSMutableArray *viewControllerPtrList; // @synthesize viewControllerPtrList=_viewControllerPtrList;
-@property(retain, nonatomic) NSString *reportExceptionType; // @synthesize reportExceptionType=_reportExceptionType;
+@property(copy, nonatomic) NSString *reportExceptionType; // @synthesize reportExceptionType=_reportExceptionType;
 @property(nonatomic) int maxUploadCount; // @synthesize maxUploadCount=_maxUploadCount;
 @property(nonatomic) int uploadCount; // @synthesize uploadCount=_uploadCount;
 @property(nonatomic) _Bool shouldSaveHistoryData; // @synthesize shouldSaveHistoryData=_shouldSaveHistoryData;
@@ -48,13 +49,14 @@
 @property(nonatomic) double startupProtectTime; // @synthesize startupProtectTime=_startupProtectTime;
 @property(nonatomic) double sampleInterval; // @synthesize sampleInterval=_sampleInterval;
 @property(retain, nonatomic) NSMutableArray *performanceSampleList; // @synthesize performanceSampleList=_performanceSampleList;
-@property(retain, nonatomic) NSString *currentViewControllerIdentifier; // @synthesize currentViewControllerIdentifier=_currentViewControllerIdentifier;
+@property(copy, nonatomic) NSString *currentViewControllerIdentifier; // @synthesize currentViewControllerIdentifier=_currentViewControllerIdentifier;
 @property(nonatomic) __weak UIViewController *currentViewController; // @synthesize currentViewController=_currentViewController;
 @property(retain, nonatomic) NSMutableArray *viewControllerIdentifierList; // @synthesize viewControllerIdentifierList=_viewControllerIdentifierList;
 @property(retain, nonatomic) NSMutableArray *currentViewControllerFootprintList; // @synthesize currentViewControllerFootprintList=_currentViewControllerFootprintList;
 @property(retain, nonatomic) NSMutableDictionary *viewControllerMemoryMap; // @synthesize viewControllerMemoryMap=_viewControllerMemoryMap;
 @property(retain, nonatomic) NSMutableDictionary *historyViewControllerMemoryMap; // @synthesize historyViewControllerMemoryMap=_historyViewControllerMemoryMap;
-@property(nonatomic) NSDictionary *parameters; // @synthesize parameters=_parameters;
+@property(copy, nonatomic) NSDictionary *parameters; // @synthesize parameters=_parameters;
+@property(nonatomic) _Bool enableDebugMode; // @synthesize enableDebugMode=_enableDebugMode;
 @property(nonatomic) _Bool enableNSLog; // @synthesize enableNSLog=_enableNSLog;
 @property(nonatomic) _Bool enableContextLog; // @synthesize enableContextLog=_enableContextLog;
 @property(nonatomic) __weak id context; // @synthesize context=_context;

@@ -10,6 +10,7 @@
 {
 }
 
++ (void)reportNegativeFeedbackWithFeedModel:(id)arg1;
 + (void)reportLikeCommentServiceWithFeedModel:(id)arg1 feedIndex:(long long)arg2;
 + (void)reportCGTAdvEvent:(id)arg1;
 + (void)ugcAdvReportWithFeedModel:(id)arg1 controller:(id)arg2 event:(id)arg3 params:(id)arg4;
@@ -17,6 +18,7 @@
 + (_Bool)isGDTAdv:(id)arg1;
 + (void)handleGDTFeedAdvClickWithModel:(id)arg1 actionType:(unsigned long long)arg2 controller:(id)arg3 params:(id)arg4;
 + (void)reportTraceEventWithModel:(id)arg1 params:(id)arg2;
++ (void)expourseGDTAdvInVideoFeedWithAdvModel:(id)arg1 controller:(id)arg2 params:(id)arg3;
 + (void)expourseGDTAdvInVideoFeedWithModel:(id)arg1 controller:(id)arg2 params:(id)arg3;
 + (void)expourseGDTAdvInFeedWithModel:(id)arg1 feedIndex:(long long)arg2;
 + (void)reportClickEventWithFeedModel:(id)arg1 controller:(id)arg2 clickEvent:(id)arg3 param:(id)arg4;

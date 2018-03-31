@@ -15,11 +15,13 @@
 @interface MemCustomSearchBar : UIView <SubMemHeaderOpDelegate, SubMemInputTextFieldDelegate>
 {
     SubMemHeaderSelectedView *_subMemHeaderSelectedView;
+    _Bool _shouldAddMemberWithoutAnimation;
     NSMutableArray *_expandingMembers;
     id <MemCustomSearchBarDelegate> _memCustomSearchBarDelegate;
     SubMemSearchInput *_subMemSearchInput;
 }
 
+@property(nonatomic) _Bool shouldAddMemberWithoutAnimation; // @synthesize shouldAddMemberWithoutAnimation=_shouldAddMemberWithoutAnimation;
 @property(retain, nonatomic) SubMemSearchInput *subMemSearchInput; // @synthesize subMemSearchInput=_subMemSearchInput;
 @property(nonatomic) __weak id <MemCustomSearchBarDelegate> memCustomSearchBarDelegate; // @synthesize memCustomSearchBarDelegate=_memCustomSearchBarDelegate;
 @property(retain, nonatomic) NSMutableArray *expandingMembers; // @synthesize expandingMembers=_expandingMembers;
@@ -31,6 +33,7 @@
 - (void)refreshMemCustomSearchBar:(int)arg1;
 - (void)resignInputTextField:(_Bool)arg1 andKeyBoard:(_Bool)arg2;
 - (void)removeMemeber:(id)arg1 needDeleteAction:(_Bool)arg2 noAnimation:(_Bool)arg3;
+- (void)addMemeber:(id)arg1 noAnimation:(_Bool)arg2;
 - (void)addMemeber:(id)arg1;
 - (void)initUI;
 - (id)initWithFrame:(struct CGRect)arg1;

@@ -20,7 +20,10 @@
 + (id)mappingUrlNotMatch:(id)arg1 withMappingUrl:(id)arg2 withUrl:(id)arg3;
 + (id)mappingUrlNotFound:(id)arg1;
 + (id)configNotFound:(id)arg1;
++ (id)pngCRCFailed:(id)arg1 seq:(unsigned long long)arg2;
 + (id)tooLittleDataAfterIEND:(id)arg1 seq:(unsigned long long)arg2;
++ (id)invalidIENDDataLength:(unsigned long long)arg1 appName:(id)arg2 seq:(unsigned long long)arg3;
++ (id)tooLittleDataBeforeIEND:(id)arg1 seq:(unsigned long long)arg2;
 + (id)IENDNotFound:(id)arg1 seq:(unsigned long long)arg2;
 + (id)zipVerify:(id)arg1 withOriginal:(id)arg2 failed:(id)arg3 seq:(unsigned long long)arg4;
 + (id)resVerifyFailed:(id)arg1;
@@ -44,7 +47,6 @@
 + (id)invalidZipUrl:(id)arg1;
 + (id)userCancelledUpdate;
 + (id)appNameMismatch:(id)arg1;
-+ (id)splitFailed:(id)arg1;
 + (id)invalidPrefixesRule:(id)arg1;
 + (id)mtopConfig:(id)arg1 error:(id)arg2;
 + (id)mtopNotSupported;

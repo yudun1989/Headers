@@ -11,7 +11,7 @@
 #import <QQMainProject/QQStructureMsgUtilityDelegate-Protocol.h>
 #import <QQMainProject/RichMsgPreviewDialogDelegate-Protocol.h>
 
-@class NSArray, NSString, PGCStoryModel, QQFriendSelectedViewController, QQNavigationController, QQStoryMsgExInfo, QQStructureMsgUtility, TBHotTopicPackModel, TBQQUserInfoModel;
+@class NSArray, NSString, PGCStoryModel, QQFriendSelectedViewController, QQNavigationController, QQStoryMsgExInfo, QQStructureMsgUtility, TBHotTopicPackModel, TBQQUserInfoModel, TBVideoPollInfoModel;
 @protocol QQStoryShareControllerDelegate;
 
 @interface QQStoryShareController : QQActivityViewController <QQFriendSelectedViewControllerDelegate, QQStructureMsgUtilityDelegate, QQStroyLinkDelegate, RichMsgPreviewDialogDelegate>
@@ -27,10 +27,12 @@
     id <QQStoryShareControllerDelegate> _delegate;
     PGCStoryModel *_storyModel;
     TBHotTopicPackModel *_ugcModel;
+    TBVideoPollInfoModel *_videoPollInfo;
     TBQQUserInfoModel *_userModel;
 }
 
 @property(retain, nonatomic) TBQQUserInfoModel *userModel; // @synthesize userModel=_userModel;
+@property(retain, nonatomic) TBVideoPollInfoModel *videoPollInfo; // @synthesize videoPollInfo=_videoPollInfo;
 @property(retain, nonatomic) TBHotTopicPackModel *ugcModel; // @synthesize ugcModel=_ugcModel;
 @property(retain, nonatomic) PGCStoryModel *storyModel; // @synthesize storyModel=_storyModel;
 @property(nonatomic) __weak id <QQStoryShareControllerDelegate> delegate; // @synthesize delegate=_delegate;

@@ -4,18 +4,13 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-#import "TBDLayoutViewItem.h"
+#import "TBDBaseLayoutViewItem.h"
 
-@interface TBDLinearLayoutViewItem : TBDLayoutViewItem
+@interface TBDLinearLayoutViewItem : TBDBaseLayoutViewItem
 {
-    unsigned long long _orientation;
 }
 
-+ (unsigned long long)baseLayoutWithOrientation:(id)arg1 defaultLayout:(unsigned long long)arg2;
-@property(nonatomic) unsigned long long orientation; // @synthesize orientation=_orientation;
-- (void)layoutSubViewItems;
-- (void)updateViewSizeWithData:(id)arg1 context:(id)arg2 error:(id *)arg3;
-- (void)devideAttributeWithKey:(id)arg1 value:(id)arg2 stop:(_Bool *)arg3;
+- (id)dLayoutType;
 - (id)init;
 
 @end

@@ -6,17 +6,50 @@
 
 #import <UIKit/UIView.h>
 
-@class QZFeedVideoView;
+#import <QQMainProject/QZFeedVideoViewDelegate-Protocol.h>
 
-@interface QZFeedVideoContainerView : UIView
+@class NSString, QZCFrameAnimationView, QZFeedPhotoView, QZFeedVideoView, UILabel;
+
+@interface QZFeedVideoContainerView : UIView <QZFeedVideoViewDelegate>
 {
+    UILabel *_timeLabel;
+    QZCFrameAnimationView *_soundDynamicEffectIcon;
+    UILabel *_remarkLabel;
+    _Bool _showBottomView;
+    QZFeedPhotoView *_gaussBackgroundView;
     QZFeedVideoView *_videoView;
+    double _duration;
+    double _currentTime;
+    NSString *_remarkText;
 }
 
+@property(retain, nonatomic) NSString *remarkText; // @synthesize remarkText=_remarkText;
+@property(nonatomic) double currentTime; // @synthesize currentTime=_currentTime;
+@property(nonatomic) double duration; // @synthesize duration=_duration;
+@property(nonatomic) _Bool showBottomView; // @synthesize showBottomView=_showBottomView;
 @property(retain, nonatomic) QZFeedVideoView *videoView; // @synthesize videoView=_videoView;
+@property(retain, nonatomic) QZFeedPhotoView *gaussBackgroundView; // @synthesize gaussBackgroundView=_gaussBackgroundView;
 - (void).cxx_destruct;
-- (void)setFrame:(struct CGRect)arg1;
+- (void)playerViewStopPlay;
+- (void)playerViewPausePlay;
+- (void)updateCurrentPlayTime:(double)arg1;
+- (void)playerViewFailed:(id)arg1;
+- (void)playerViewEnd;
+- (void)playerViewStarted;
+- (void)setSoundDynamicEffectIconHidden:(_Bool)arg1;
+- (void)timeLabelSizeToFit;
+- (void)createTimeLabel;
+- (void)setDurationLabelHidden:(_Bool)arg1;
+- (void)updateRemarkFrame;
+- (void)setRemarkLabelHIdden:(_Bool)arg1;
+- (void)reset;
 - (id)initWithParam:(id)arg1;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly, copy) NSString *description;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
 
 @end
 

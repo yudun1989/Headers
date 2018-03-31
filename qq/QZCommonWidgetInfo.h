@@ -26,6 +26,7 @@
 @property(nonatomic) double marginToRightBorder; // @dynamic marginToRightBorder;
 @property(nonatomic) long long marginToTopBorder; // @dynamic marginToTopBorder;
 @property(retain, nonatomic) QZNumberInfo *numberInfo; // @dynamic numberInfo;
+@property(retain, nonatomic) NSString *traceInfo; // @dynamic traceInfo;
 @property(nonatomic) long long type; // @dynamic type;
 @property(nonatomic) long long uin; // @dynamic uin;
 @property(retain, nonatomic) NSString *widgetUrl; // @dynamic widgetUrl;

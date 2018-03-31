@@ -16,6 +16,7 @@
 + (id)encodeQQEmotionString:(id)arg1;
 + (id)parse:(const char *)arg1 length:(int)arg2;
 + (id)parse:(id)arg1;
++ (id)removeControlCharacterSet:(id)arg1;
 + (id)parseByString:(id)arg1;
 + (id)decodeHTMLString:(id)arg1;
 

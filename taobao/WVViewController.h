@@ -28,7 +28,7 @@
     UIView<WVWebViewProtocol> *_webView;
     long long _useWKWebView;
     WKWebViewConfiguration *_WKWebViewConfiguration;
-    CDUnknownBlockType _souldStartLoadAction;
+    CDUnknownBlockType _shouldStartLoadAction;
     CDUnknownBlockType _didStartLoadAction;
     CDUnknownBlockType _didFinishLoadAction;
     CDUnknownBlockType _didFailLoadAction;
@@ -39,7 +39,7 @@
 @property(copy, nonatomic) CDUnknownBlockType didFailLoadAction; // @synthesize didFailLoadAction=_didFailLoadAction;
 @property(copy, nonatomic) CDUnknownBlockType didFinishLoadAction; // @synthesize didFinishLoadAction=_didFinishLoadAction;
 @property(copy, nonatomic) CDUnknownBlockType didStartLoadAction; // @synthesize didStartLoadAction=_didStartLoadAction;
-@property(copy, nonatomic) CDUnknownBlockType souldStartLoadAction; // @synthesize souldStartLoadAction=_souldStartLoadAction;
+@property(copy, nonatomic) CDUnknownBlockType shouldStartLoadAction; // @synthesize shouldStartLoadAction=_shouldStartLoadAction;
 @property(retain, nonatomic) WKWebViewConfiguration *WKWebViewConfiguration; // @synthesize WKWebViewConfiguration=_WKWebViewConfiguration;
 @property(nonatomic, getter=isUseWKWebView) long long useWKWebView; // @synthesize useWKWebView=_useWKWebView;
 - (void).cxx_destruct;
@@ -61,7 +61,6 @@
 @property(nonatomic, getter=isOpenLocalService) _Bool openLocalService;
 - (void)h5ActiveFrom:(id)arg1 withData:(id)arg2;
 - (void)viewWillDisappear:(_Bool)arg1;
-- (void)viewDidAppear:(_Bool)arg1;
 - (void)viewWillAppear:(_Bool)arg1;
 - (void)webViewReload;
 - (void)webViewStopLoading;

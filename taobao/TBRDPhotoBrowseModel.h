@@ -6,28 +6,33 @@
 
 #import "TBJSONModel.h"
 
-@class NSArray, NSDictionary, NSString, TBRDRateShareModel;
+@class NSArray, NSDictionary, NSString;
 
 @interface TBRDPhotoBrowseModel : TBJSONModel
 {
     _Bool _allowComment;
     _Bool _allowInteract;
-    _Bool _hasDetail;
     _Bool _isVideo;
     NSString *_uniqueId;
-    NSString *_rateId;
-    NSString *_picUrl;
+    NSString *_contentId;
+    NSString *_shopId;
+    NSString *_sellerId;
+    NSString *_content;
+    NSString *_detailUrl;
+    NSString *_cLikeNamespace;
+    NSString *_pLikeNamespace;
+    NSString *_vLikeNamespace;
+    NSString *_browseNamespace;
+    NSString *_sourceType;
     NSDictionary *_pic;
-    NSString *_feedback;
+    NSDictionary *_video;
+    NSDictionary *_itemInfo;
+    NSDictionary *_shopInfo;
+    NSDictionary *_userInfo;
+    NSDictionary *_contentInteract;
     NSString *_appendFeedback;
     NSArray *_structureTextList;
-    NSDictionary *_interactInfo;
     NSDictionary *_skuMap;
-    NSDictionary *_rater;
-    TBRDRateShareModel *_share;
-    NSString *_detailUrl;
-    NSDictionary *_video;
-    NSString *_sourceType;
     NSDictionary *_mediaInteract;
     NSString *_bizType;
 }
@@ -35,22 +40,27 @@
 @property(copy, nonatomic) NSString *bizType; // @synthesize bizType=_bizType;
 @property(retain, nonatomic) NSDictionary *mediaInteract; // @synthesize mediaInteract=_mediaInteract;
 @property(nonatomic) _Bool isVideo; // @synthesize isVideo=_isVideo;
-@property(copy, nonatomic) NSString *sourceType; // @synthesize sourceType=_sourceType;
-@property(retain, nonatomic) NSDictionary *video; // @synthesize video=_video;
-@property(copy, nonatomic) NSString *detailUrl; // @synthesize detailUrl=_detailUrl;
-@property(retain, nonatomic) TBRDRateShareModel *share; // @synthesize share=_share;
-@property(retain, nonatomic) NSDictionary *rater; // @synthesize rater=_rater;
 @property(retain, nonatomic) NSDictionary *skuMap; // @synthesize skuMap=_skuMap;
-@property(retain, nonatomic) NSDictionary *interactInfo; // @synthesize interactInfo=_interactInfo;
 @property(retain, nonatomic) NSArray *structureTextList; // @synthesize structureTextList=_structureTextList;
-@property(nonatomic) _Bool hasDetail; // @synthesize hasDetail=_hasDetail;
+@property(copy, nonatomic) NSString *appendFeedback; // @synthesize appendFeedback=_appendFeedback;
 @property(nonatomic) _Bool allowInteract; // @synthesize allowInteract=_allowInteract;
 @property(nonatomic) _Bool allowComment; // @synthesize allowComment=_allowComment;
-@property(copy, nonatomic) NSString *appendFeedback; // @synthesize appendFeedback=_appendFeedback;
-@property(copy, nonatomic) NSString *feedback; // @synthesize feedback=_feedback;
+@property(retain, nonatomic) NSDictionary *contentInteract; // @synthesize contentInteract=_contentInteract;
+@property(retain, nonatomic) NSDictionary *userInfo; // @synthesize userInfo=_userInfo;
+@property(retain, nonatomic) NSDictionary *shopInfo; // @synthesize shopInfo=_shopInfo;
+@property(retain, nonatomic) NSDictionary *itemInfo; // @synthesize itemInfo=_itemInfo;
+@property(retain, nonatomic) NSDictionary *video; // @synthesize video=_video;
 @property(retain, nonatomic) NSDictionary *pic; // @synthesize pic=_pic;
-@property(copy, nonatomic) NSString *picUrl; // @synthesize picUrl=_picUrl;
-@property(copy, nonatomic) NSString *rateId; // @synthesize rateId=_rateId;
+@property(copy, nonatomic) NSString *sourceType; // @synthesize sourceType=_sourceType;
+@property(copy, nonatomic) NSString *browseNamespace; // @synthesize browseNamespace=_browseNamespace;
+@property(copy, nonatomic) NSString *vLikeNamespace; // @synthesize vLikeNamespace=_vLikeNamespace;
+@property(copy, nonatomic) NSString *pLikeNamespace; // @synthesize pLikeNamespace=_pLikeNamespace;
+@property(copy, nonatomic) NSString *cLikeNamespace; // @synthesize cLikeNamespace=_cLikeNamespace;
+@property(copy, nonatomic) NSString *detailUrl; // @synthesize detailUrl=_detailUrl;
+@property(copy, nonatomic) NSString *content; // @synthesize content=_content;
+@property(copy, nonatomic) NSString *sellerId; // @synthesize sellerId=_sellerId;
+@property(copy, nonatomic) NSString *shopId; // @synthesize shopId=_shopId;
+@property(copy, nonatomic) NSString *contentId; // @synthesize contentId=_contentId;
 @property(copy, nonatomic) NSString *uniqueId; // @synthesize uniqueId=_uniqueId;
 - (void).cxx_destruct;
 - (id)init;

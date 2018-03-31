@@ -69,6 +69,7 @@
     _Bool _hasShowMultRecordTips;
     _Bool _hasShowEndRecordTips;
     _Bool _isRecordMoreThan10SecReport;
+    unsigned int _maxClipDuration;
     unsigned int _music_type;
     float _progressOldValue;
     int _lat;
@@ -81,10 +82,12 @@
     QQStoryViewController *_mainPageVC;
     unsigned long long _mediaSource;
     NSString *_ugcGuideLabel;
+    NSString *_reportDeptm;
     QQStoryLocalMediaModel *_localMediaModel;
     UIImage *_captureImage;
     NSString *_shareStoryGroupUnionID;
     NSString *_shareStoryGrouptitle;
+    TBMultimediaEditDataReportEngine *_editDataReportEngine;
     UIView *_transitionView;
     NSDictionary *_tagDetaiDic;
     long long _captureEnterSource;
@@ -101,7 +104,6 @@
     TBEditViewContainer *_editViewContainer;
     TBVideoClipsPreView *_videoClipsPreView;
     UIImageView *_deletVideoClipIcon;
-    TBMultimediaEditDataReportEngine *_editDataReportEngine;
     NSMutableArray *_videoTimeRangeArray;
     UIView *_coverContainerView;
     UIImageView *_coverImageView;
@@ -110,6 +112,7 @@
     UILabel *_multRecordTips;
 }
 
++ (_Bool)checkAblityForOpeningCamera;
 @property(nonatomic) _Bool isRecordMoreThan10SecReport; // @synthesize isRecordMoreThan10SecReport=_isRecordMoreThan10SecReport;
 @property(retain, nonatomic) UILabel *multRecordTips; // @synthesize multRecordTips=_multRecordTips;
 @property(nonatomic) _Bool hasShowEndRecordTips; // @synthesize hasShowEndRecordTips=_hasShowEndRecordTips;
@@ -119,7 +122,6 @@
 @property(retain, nonatomic) UIImageView *coverImageView; // @synthesize coverImageView=_coverImageView;
 @property(retain, nonatomic) UIView *coverContainerView; // @synthesize coverContainerView=_coverContainerView;
 @property(retain, nonatomic) NSMutableArray *videoTimeRangeArray; // @synthesize videoTimeRangeArray=_videoTimeRangeArray;
-@property(retain, nonatomic) TBMultimediaEditDataReportEngine *editDataReportEngine; // @synthesize editDataReportEngine=_editDataReportEngine;
 @property(retain, nonatomic) UIImageView *deletVideoClipIcon; // @synthesize deletVideoClipIcon=_deletVideoClipIcon;
 @property(retain, nonatomic) TBVideoClipsPreView *videoClipsPreView; // @synthesize videoClipsPreView=_videoClipsPreView;
 @property(retain, nonatomic) TBEditViewContainer *editViewContainer; // @synthesize editViewContainer=_editViewContainer;
@@ -144,11 +146,13 @@
 @property(retain, nonatomic) TBVideoTagInfoBase *videoTagInfo; // @synthesize videoTagInfo=_videoTagInfo;
 @property(nonatomic) _Bool authMic; // @synthesize authMic=_authMic;
 @property(nonatomic) _Bool authCamera; // @synthesize authCamera=_authCamera;
+@property(nonatomic) unsigned int maxClipDuration; // @synthesize maxClipDuration=_maxClipDuration;
 @property(nonatomic) long long captureEnterSource; // @synthesize captureEnterSource=_captureEnterSource;
 @property(nonatomic) _Bool isShowedTagAlert; // @synthesize isShowedTagAlert=_isShowedTagAlert;
 @property(nonatomic) _Bool isFromVideoTagWeb; // @synthesize isFromVideoTagWeb=_isFromVideoTagWeb;
 @property(retain, nonatomic) NSDictionary *tagDetaiDic; // @synthesize tagDetaiDic=_tagDetaiDic;
 @property(nonatomic) __weak UIView *transitionView; // @synthesize transitionView=_transitionView;
+@property(retain, nonatomic) TBMultimediaEditDataReportEngine *editDataReportEngine; // @synthesize editDataReportEngine=_editDataReportEngine;
 @property(retain, nonatomic) NSString *shareStoryGrouptitle; // @synthesize shareStoryGrouptitle=_shareStoryGrouptitle;
 @property(retain, nonatomic) NSString *shareStoryGroupUnionID; // @synthesize shareStoryGroupUnionID=_shareStoryGroupUnionID;
 @property(nonatomic) _Bool isNeedPublicLimit; // @synthesize isNeedPublicLimit=_isNeedPublicLimit;
@@ -158,6 +162,7 @@
 @property(nonatomic) _Bool isLoadinginPicker; // @synthesize isLoadinginPicker=_isLoadinginPicker;
 @property(retain, nonatomic) QQStoryLocalMediaModel *localMediaModel; // @synthesize localMediaModel=_localMediaModel;
 @property(nonatomic) _Bool isLocal; // @synthesize isLocal=_isLocal;
+@property(copy, nonatomic) NSString *reportDeptm; // @synthesize reportDeptm=_reportDeptm;
 @property(copy, nonatomic) NSString *ugcGuideLabel; // @synthesize ugcGuideLabel=_ugcGuideLabel;
 @property(nonatomic) unsigned long long mediaSource; // @synthesize mediaSource=_mediaSource;
 @property(nonatomic) _Bool isFromShareGroup; // @synthesize isFromShareGroup=_isFromShareGroup;
@@ -187,6 +192,7 @@
 - (void)clipVCnextBtnClicked:(id)arg1;
 - (void)presentImagePickerAnimated:(_Bool)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)QQMediaPickerVideoControlPanel:(id)arg1 onCustomButtonClick:(id)arg2;
+- (int)assetFilter;
 - (void)AVCaptureController:(id)arg1 didSelectLocalVideo:(id)arg2;
 - (void)AVCaptureController:(id)arg1 didFinishCapturePhotoWithImage:(id)arg2 deviceOrientation:(long long)arg3;
 - (void)AVCaptureController:(id)arg1 didFinishCaptureVideoWithFile:(id)arg2 error:(id)arg3;
@@ -241,6 +247,8 @@
 - (void)videoSeekWithSelectedEditViewID:(long long)arg1 lastEditViewID:(long long)arg2;
 - (void)videoClipsPreView:(id)arg1 didSelectItem:(id)arg2;
 - (id)editViewContainer:(id)arg1 editViewAtIndex:(unsigned long long)arg2;
+- (id)createEditView:(id)arg1;
+- (id)editComponents;
 - (void)realTimeFilterReport;
 - (void)eventWithAction:(long long)arg1;
 - (void)savePhotosToAlbum:(id)arg1;

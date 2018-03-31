@@ -58,7 +58,7 @@
 - (void)finishDelete:(_Bool)arg1 Device:(id)arg2;
 - (void)showAccountSecurityStatusWebView;
 - (void)showDeviceProtectView;
-- (void)SetGesturePassword;
+- (void)setGesturePassword;
 - (void)tableView:(id)arg1 didSelectRowAtIndexPath:(id)arg2;
 - (void)attributedLabel:(id)arg1 didSelectTextCheckingResult:(id)arg2 atPoint:(struct CGPoint)arg3;
 - (void)showHistoryDeviceList;

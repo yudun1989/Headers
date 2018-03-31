@@ -6,10 +6,13 @@
 
 #import "TBOrderObject.h"
 
-@class NSMutableArray, NSMutableDictionary, NSString, TBOrderMainModel;
+@class NSMutableArray, NSMutableDictionary, NSNumber, NSString, TBOrderMainModel;
 
 @interface TBOrderModel : TBOrderObject
 {
+    _Bool _needUpdate;
+    _Bool _needEstimateHeight;
+    NSNumber *_dinamicCellHeight;
     NSString *_cellType;
     NSMutableArray *_cellData;
     TBOrderMainModel *_main;
@@ -20,6 +23,9 @@
 @property(nonatomic) __weak TBOrderMainModel *main; // @synthesize main=_main;
 @property(retain, nonatomic) NSMutableArray *cellData; // @synthesize cellData=_cellData;
 @property(retain, nonatomic) NSString *cellType; // @synthesize cellType=_cellType;
+@property(retain, nonatomic) NSNumber *dinamicCellHeight; // @synthesize dinamicCellHeight=_dinamicCellHeight;
+@property(nonatomic) _Bool needEstimateHeight; // @synthesize needEstimateHeight=_needEstimateHeight;
+@property(nonatomic) _Bool needUpdate; // @synthesize needUpdate=_needUpdate;
 - (void).cxx_destruct;
 - (id)storage;
 - (id)mainOrderId;

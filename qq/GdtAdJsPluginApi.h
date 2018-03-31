@@ -10,6 +10,7 @@
 {
 }
 
+- (void)handleJsBridgeRequest_qq_gdt_ad_showCanvas:(id)arg1;
 - (void)handleJsBridgeRequest_qq_gdt_ad_scrollToApp:(id)arg1;
 - (void)handleJsBridgeRequest_qq_gdt_ad_doAppJump:(id)arg1;
 - (void)handleJsBridgeRequest_qq_gdt_ad_preLoadApp:(id)arg1;

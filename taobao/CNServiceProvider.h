@@ -16,6 +16,7 @@
     NSString *_typeDesc;
     NSString *_providerId;
     NSString *_providerName;
+    NSString *_logoUrl;
     NSString *_providerAvatar;
     NSString *_deliveryCode;
     NSString *_infoUrl;
@@ -29,8 +30,10 @@
     NSString *_starLevel;
     NSString *_imUrl;
     long long _unreadCount;
+    long long _waitPackage;
 }
 
+@property(nonatomic) long long waitPackage; // @synthesize waitPackage=_waitPackage;
 @property(nonatomic) long long unreadCount; // @synthesize unreadCount=_unreadCount;
 @property(copy, nonatomic) NSString *imUrl; // @synthesize imUrl=_imUrl;
 @property(copy, nonatomic) NSString *starLevel; // @synthesize starLevel=_starLevel;
@@ -46,6 +49,7 @@
 @property(copy, nonatomic) NSString *deliveryCode; // @synthesize deliveryCode=_deliveryCode;
 @property(nonatomic) float score; // @synthesize score=_score;
 @property(copy, nonatomic) NSString *providerAvatar; // @synthesize providerAvatar=_providerAvatar;
+@property(copy, nonatomic) NSString *logoUrl; // @synthesize logoUrl=_logoUrl;
 @property(copy, nonatomic) NSString *providerName; // @synthesize providerName=_providerName;
 @property(copy, nonatomic) NSString *providerId; // @synthesize providerId=_providerId;
 @property(copy, nonatomic) NSString *typeDesc; // @synthesize typeDesc=_typeDesc;

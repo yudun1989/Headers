@@ -10,6 +10,7 @@
 
 @interface UIImageTitleButton : UIButton
 {
+    _Bool _isQzGame;
     UIImageView *_iconView;
     UILabel *_buttonTitleLabel;
 }
@@ -19,6 +20,7 @@
 - (void)setFrame:(struct CGRect)arg1;
 - (void)dealloc;
 - (id)initWithTitle:(id)arg1 andIcon:(id)arg2;
+- (id)initWithTitle:(id)arg1 andIcon:(id)arg2 isQzGame:(_Bool)arg3;
 
 @end
 

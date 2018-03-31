@@ -9,7 +9,6 @@
 @class QZVideoPlayerSlider;
 
 @protocol QZFullScreenVideoControlToVideoState <NSObject>
-- (void)danmaku_switchDanmakuStatus:(_Bool)arg1;
 - (void)openHD;
 - (_Bool)rePlay;
 - (void)stop;
@@ -21,5 +20,8 @@
 - (void)sliderValueChanged:(QZVideoPlayerSlider *)arg1;
 - (void)sliderBeginSeek;
 - (double)getDuration;
+
+@optional
+- (void)danmaku_switchDanmakuStatus:(_Bool)arg1;
 @end
 

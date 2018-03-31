@@ -22,6 +22,11 @@
 - (void).cxx_destruct;
 - (void)unCompress;
 - (int)actionWithCmd:(int)arg1;
+- (void)clearQBossAdvWithType:(long long)arg1 delegate:(id)arg2;
+- (id)getCachedQBossAdvInfoWithType:(long long)arg1;
+- (_Bool)checkQBossAdvNeedUpdateWithAdvInfo:(id)arg1;
+- (void)setCacheQBossAdv:(id)arg1 advTraceInfo:(id)arg2 type:(long long)arg3;
+- (void)getQBossAdvWithType:(long long)arg1 delegate:(id)arg2;
 - (void)cancelDelegate:(id)arg1;
 - (id)removeRequestForKey:(id)arg1;
 - (void)onNotifyFail:(id)arg1 WithCMD:(int)arg2 Seq:(long long)arg3;

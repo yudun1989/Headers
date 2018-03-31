@@ -6,17 +6,22 @@
 
 #import <UIKit/UIView.h>
 
-@class QQAsynUrlImageView, UIImageView;
+@class NSDictionary, NearbyFriendCellTag, QQAsynUrlImageView, UIImageView;
 
 @interface QQDynamicSearchCellTemplateLeftImageView : UIView
 {
     UIImageView *_richMediaIcon;
+    NearbyFriendCellTag *_cellTag;
     QQAsynUrlImageView *_avatarImageView;
+    NSDictionary *_layoutContentInfo;
     long long _imageType;
 }
 
++ (struct CGSize)imageSizeForContentInfo:(id)arg1;
 @property(nonatomic) long long imageType; // @synthesize imageType=_imageType;
+@property(retain, nonatomic) NSDictionary *layoutContentInfo; // @synthesize layoutContentInfo=_layoutContentInfo;
 @property(retain, nonatomic) QQAsynUrlImageView *avatarImageView; // @synthesize avatarImageView=_avatarImageView;
+- (void)clearLeftImgContent:(id)arg1;
 - (void)loadUrlImage:(id)arg1;
 - (void)dealloc;
 - (id)initWithFrame:(struct CGRect)arg1;

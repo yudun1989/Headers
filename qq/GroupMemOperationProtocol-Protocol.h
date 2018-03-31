@@ -9,6 +9,6 @@
 @class NSArray, NSDictionary, NSString;
 
 @protocol GroupMemOperationProtocol <NSObject>
-- (void)didCompleteWithTroopArray:(NSArray *)arg1 andRelationDic:(NSDictionary *)arg2 memberAddStateDic:(NSDictionary *)arg3 success:(_Bool)arg4 groupCode:(NSString *)arg5;
+- (void)didCompleteWithTroopArray:(NSArray *)arg1 andRelationDic:(NSDictionary *)arg2 memberAddStateDic:(NSDictionary *)arg3 remarkDic:(NSDictionary *)arg4 success:(_Bool)arg5 groupCode:(NSString *)arg6;
 @end
 

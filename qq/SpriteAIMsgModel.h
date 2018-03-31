@@ -30,7 +30,6 @@
 @property(nonatomic) int msgTag; // @synthesize msgTag=_msgTag;
 @property(retain, nonatomic) NSString *content; // @synthesize content=_content;
 @property(nonatomic) int msgType; // @synthesize msgType=_msgType;
-- (id)description;
 - (void)dealloc;
 
 @end

@@ -9,7 +9,7 @@
 @class NSString, UINavigationBar, UIView;
 
 @protocol NCNoCaptchaProtocol <NSObject>
-- (void)verifyDidFinishedWithStatus:(int)arg1 token:(NSString *)arg2 signature:(NSString *)arg3 session:(NSString *)arg4;
+- (void)verifyDidFinishedWithStatus:(long long)arg1 token:(NSString *)arg2 signature:(NSString *)arg3 session:(NSString *)arg4;
 
 @optional
 - (void)appearanceOfNavigationBar:(UINavigationBar *)arg1;

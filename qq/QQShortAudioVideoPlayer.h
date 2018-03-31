@@ -154,6 +154,7 @@
 - (void)autoDisappear;
 - (void)setSelected:(_Bool)arg1 animated:(_Bool)arg2;
 - (void)resetStateView;
+@property(retain, nonatomic) UIButton *volumeButton;
 @property(nonatomic, getter=isSelected) _Bool selected;
 @property(retain, nonatomic) UIButton *zoomButton;
 @property(retain, nonatomic) UIButton *centerButton;

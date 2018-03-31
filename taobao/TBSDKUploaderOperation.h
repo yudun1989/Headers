@@ -10,11 +10,11 @@
 
 @interface TBSDKUploaderOperation : NSOperation
 {
-    NSMutableURLRequest *_request;
-    unsigned long long _options;
     _Bool _executing;
     _Bool _finished;
     _Bool _progressInvoked;
+    unsigned long long _options;
+    NSMutableURLRequest *_request;
     unsigned long long _totalBytesWritten;
     unsigned long long _expectedTotalBytes;
     CDUnknownBlockType _progressBlock;

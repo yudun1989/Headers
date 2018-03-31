@@ -8,20 +8,21 @@
 
 #import "AVAudioPlayerDelegate-Protocol.h"
 
-@class NSString;
+@class MCAudioPlayer, NSString;
 
 @interface MCChatAudioBubbleHandler : MCChatBubbleHandler <AVAudioPlayerDelegate>
 {
     _Bool _lastMessageIsFirstPlay;
+    MCAudioPlayer *_player;
 }
 
+@property(retain, nonatomic) MCAudioPlayer *player; // @synthesize player=_player;
 @property(nonatomic) _Bool lastMessageIsFirstPlay; // @synthesize lastMessageIsFirstPlay=_lastMessageIsFirstPlay;
+- (void).cxx_destruct;
 - (void)stopCurrentMessagePlay:(id)arg1;
 - (void)applicationWillResignActiveNotificationShouldShutdown:(id)arg1;
-- (void)sensorStateChange:(id)arg1;
 - (void)playWithCellObject:(id)arg1;
-- (void)audioPlayerDecodeErrorDidOccur:(id)arg1 error:(id)arg2;
-- (void)audioPlayerDidFinishPlaying:(id)arg1 successfully:(_Bool)arg2;
+- (void)audioPlayFinished;
 - (void)stopAction;
 - (void)actionWithCellModel:(id)arg1 bubble:(id)arg2 context:(id)arg3 actionType:(long long)arg4;
 - (id)init;

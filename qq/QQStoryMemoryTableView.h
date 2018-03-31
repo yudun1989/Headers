@@ -9,7 +9,6 @@
 #import <QQMainProject/MQZoneTableFootLoadingViewDelegate-Protocol.h>
 #import <QQMainProject/MulMemSelBusiProcessDelegate-Protocol.h>
 #import <QQMainProject/QQStoryFeedCellDelegate-Protocol.h>
-#import <QQMainProject/QQStoryMemoryVideoTypeCellDelagete-Protocol.h>
 #import <QQMainProject/TBBizNetworkLogicDelegate-Protocol.h>
 #import <QQMainProject/TBStoryMgrDelegate-Protocol.h>
 #import <QQMainProject/TBStoryVideoSelectorDelegate-Protocol.h>
@@ -18,7 +17,7 @@
 
 @class CAShapeLayer, MQZoneTableFootLoadingView, NSArray, NSMutableArray, NSMutableDictionary, NSString, ODRefreshControl, QQStoryEmptyView, QQStoryMemoryTabDataMgr, QQStoryMemoryViewController, TBStoryCommentFaceTextView, TBStoryMgr, TBStoryVideoSelectorViewController, UIButton, UILabel;
 
-@interface QQStoryMemoryTableView : UITableView <UITableViewDataSource, UITableViewDelegate, MQZoneTableFootLoadingViewDelegate, TBBizNetworkLogicDelegate, QQStoryMemoryVideoTypeCellDelagete, MulMemSelBusiProcessDelegate, TBStoryMgrDelegate, QQStoryFeedCellDelegate, TBStoryVideoSelectorDelegate>
+@interface QQStoryMemoryTableView : UITableView <UITableViewDataSource, UITableViewDelegate, MQZoneTableFootLoadingViewDelegate, TBBizNetworkLogicDelegate, MulMemSelBusiProcessDelegate, TBStoryMgrDelegate, QQStoryFeedCellDelegate, TBStoryVideoSelectorDelegate>
 {
     UILabel *_loadingLabel;
     TBStoryVideoSelectorViewController *_videoSelectorVC;
@@ -28,15 +27,11 @@
     ODRefreshControl *_refresh;
     MQZoneTableFootLoadingView *_loadMoreFooter;
     NSMutableDictionary *_cellLastScrollPosition;
-    QQStoryEmptyView *_emptyView;
     unsigned long long _seq;
     NSMutableArray *_videoCollectionList;
     CAShapeLayer *_timeLineLayer;
     NSArray *_tableSectionArray;
-    long long _videoType;
-    NSMutableArray *_shareGroupFeedList;
     QQStoryMemoryTabDataMgr *_storyTabDataMgr;
-    QQStoryMemoryTabDataMgr *_shareVideoTabDataMgr;
     TBStoryMgr *_dataMgr;
     NSMutableArray *_feedListArr;
     long long _requestMoreCount;
@@ -51,15 +46,11 @@
 @property(nonatomic) long long requestMoreCount; // @synthesize requestMoreCount=_requestMoreCount;
 @property(retain, nonatomic) NSMutableArray *feedListArr; // @synthesize feedListArr=_feedListArr;
 @property(retain, nonatomic) TBStoryMgr *dataMgr; // @synthesize dataMgr=_dataMgr;
-@property(retain, nonatomic) QQStoryMemoryTabDataMgr *shareVideoTabDataMgr; // @synthesize shareVideoTabDataMgr=_shareVideoTabDataMgr;
 @property(retain, nonatomic) QQStoryMemoryTabDataMgr *storyTabDataMgr; // @synthesize storyTabDataMgr=_storyTabDataMgr;
-@property(retain, nonatomic) NSMutableArray *shareGroupFeedList; // @synthesize shareGroupFeedList=_shareGroupFeedList;
-@property(nonatomic) long long videoType; // @synthesize videoType=_videoType;
 @property(retain, nonatomic) NSArray *tableSectionArray; // @synthesize tableSectionArray=_tableSectionArray;
 @property(retain, nonatomic) CAShapeLayer *timeLineLayer; // @synthesize timeLineLayer=_timeLineLayer;
 @property(retain, nonatomic) NSMutableArray *videoCollectionList; // @synthesize videoCollectionList=_videoCollectionList;
 @property(nonatomic) unsigned long long seq; // @synthesize seq=_seq;
-@property(retain, nonatomic) QQStoryEmptyView *emptyView; // @synthesize emptyView=_emptyView;
 @property(retain, nonatomic) NSMutableDictionary *cellLastScrollPosition; // @synthesize cellLastScrollPosition=_cellLastScrollPosition;
 @property(retain, nonatomic) MQZoneTableFootLoadingView *loadMoreFooter; // @synthesize loadMoreFooter=_loadMoreFooter;
 @property(retain, nonatomic) ODRefreshControl *refresh; // @synthesize refresh=_refresh;
@@ -102,10 +93,6 @@
 - (long long)numberOfSectionsInTableView:(id)arg1;
 - (void)onBusinessProcessPopCancelMulMemSelector:(id)arg1 currentViewControllerClass:(id)arg2 selectedMember:(id)arg3;
 - (void)onBusinessProcessWithSelectedMems:(id)arg1 currentViewControllerClass:(id)arg2 currentViewController:(id)arg3;
-- (void)onClickShareTabNoData;
-- (void)refreshVideoTabCell;
-- (void)handleShareVideoCollectionList:(id)arg1;
-- (void)appendShareVideoCollectionModelList:(id)arg1;
 - (void)handleEmptyData;
 - (void)addStrangerData:(id)arg1;
 - (void)insertTodayData;
@@ -121,7 +108,6 @@
 - (void)loadMoreData:(id)arg1;
 - (_Bool)endStatusForCurrentTab;
 - (_Bool)hasNoDataForCurrentTab;
-- (void)memoryVideoTypeClicked:(id)arg1;
 - (void)stopLoadingWithErr:(_Bool)arg1;
 - (void)tableFootLoadingViewDidTriggerLoading:(id)arg1;
 - (void)scrollViewDidScroll:(id)arg1;
@@ -138,10 +124,8 @@
 - (_Bool)hasStoryInCache;
 - (void)showEmptyViewIfNeeded;
 - (void)showEmptyView;
-- (_Bool)isShareVideoTab;
 - (void)setupCaptureButton;
 - (void)hiddenCaptureButtonIfNeeded;
-- (void)setHeight:(double)arg1;
 - (void)setFriendStatus:(_Bool)arg1;
 - (void)setEndStatus:(_Bool)arg1;
 - (_Bool)isEnd;

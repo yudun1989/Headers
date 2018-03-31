@@ -6,39 +6,30 @@
 
 #import <UIKit/UIImageView.h>
 
-@class UIButton, UILabel, UIView;
-@protocol MQZoneTopBarDelegat;
+@class UIButton, UILabel;
 
 @interface MQZoneTopBar : UIImageView
 {
-    UILabel *_titlePage;
+    UILabel *_mainTitleLabel;
+    UILabel *_subTitleLabel;
     UIImageView *_backGround;
-    UILabel *_titleNameLabel;
-    _Bool _showTitleName;
-    _Bool _showLeftBack;
-    _Bool _oneShowPage;
-    UIView *_rightLabelBg;
+    long long _style;
     _Bool _isLandscape;
     _Bool _canShowOriginButton;
     UIButton *_rightButtonMore;
     UIButton *_leftButtonback;
-    UIButton *_enableFaceMarkButton;
-    id <MQZoneTopBarDelegat> _delegate;
 }
 
-@property(nonatomic) __weak id <MQZoneTopBarDelegat> delegate; // @synthesize delegate=_delegate;
 @property(nonatomic) _Bool canShowOriginButton; // @synthesize canShowOriginButton=_canShowOriginButton;
 @property(nonatomic) _Bool isLandscape; // @synthesize isLandscape=_isLandscape;
-@property(readonly, nonatomic) UIButton *enableFaceMarkButton; // @synthesize enableFaceMarkButton=_enableFaceMarkButton;
 @property(readonly, nonatomic) UIButton *leftButtonback; // @synthesize leftButtonback=_leftButtonback;
 @property(readonly, nonatomic) UIButton *rightButtonMore; // @synthesize rightButtonMore=_rightButtonMore;
 - (void).cxx_destruct;
-- (void)updateFaceMarkBtn;
-- (void)enableFaceMarkButtonClick:(id)arg1;
-- (void)setAlphaOfPageView:(double)arg1;
-- (void)updateTitleName:(id)arg1;
+- (void)hide:(_Bool)arg1 animate:(_Bool)arg2;
+- (void)updateTitleLabels;
+- (void)updateSubTitle:(id)arg1;
 - (void)updateTitle:(id)arg1;
-- (id)initWithFrame:(struct CGRect)arg1 showTitleName:(_Bool)arg2 titleName:(id)arg3;
+- (id)initWithFrame:(struct CGRect)arg1 style:(long long)arg2 tile:(id)arg3 subTitle:(id)arg4;
 
 @end
 

@@ -15,6 +15,7 @@
 
 + (id)modelURL;
 + (id)modelSaveDir;
++ (id)modelSaveBaseDir;
 + (id)babyTagIndexArray;
 + (id)tagCategories;
 + (id)tagTresholds;

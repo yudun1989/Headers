@@ -8,16 +8,19 @@
 
 #import "TBDinamicDataParsePattern-Protocol.h"
 
-@class NSString, TBDinamicDataParsePatternData;
+@class NSString, TDMTMDataParser;
 
 @interface TDMTemplateDataParser : NSObject <TBDinamicDataParsePattern>
 {
-    TBDinamicDataParsePatternData *_dataParser;
+    TDMTMDataParser *_dataParser;
 }
 
 + (id)prefixName;
-@property(retain, nonatomic) TBDinamicDataParsePatternData *dataParser; // @synthesize dataParser=_dataParser;
+@property(retain, nonatomic) TDMTMDataParser *dataParser; // @synthesize dataParser=_dataParser;
 - (void).cxx_destruct;
+- (id)indexOfOrderOp:(id)arg1 data:(id)arg2;
+- (id)unitTemplateFromMtopData:(id)arg1 tag:(id)arg2 code:(id)arg3;
+- (id)templateInfo:(id)arg1 tag:(id)arg2 code:(id)arg3 optional:(id)arg4;
 - (id)parseExpression:(id)arg1 withData:(id)arg2 module:(id)arg3 context:(id)arg4;
 - (id)init;
 

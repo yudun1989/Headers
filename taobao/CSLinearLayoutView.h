@@ -12,13 +12,13 @@
 {
     _Bool _autoAdjustFrameSize;
     _Bool _autoAdjustContentSize;
-    int _orientation;
     NSMutableArray *_items;
+    unsigned long long _orientation;
 }
 
 @property(nonatomic) _Bool autoAdjustContentSize; // @synthesize autoAdjustContentSize=_autoAdjustContentSize;
 @property(nonatomic) _Bool autoAdjustFrameSize; // @synthesize autoAdjustFrameSize=_autoAdjustFrameSize;
-@property(nonatomic) int orientation; // @synthesize orientation=_orientation;
+@property(nonatomic) unsigned long long orientation; // @synthesize orientation=_orientation;
 @property(readonly, nonatomic) NSMutableArray *items; // @synthesize items=_items;
 - (void).cxx_destruct;
 - (void)swapItem:(id)arg1 withItem:(id)arg2;

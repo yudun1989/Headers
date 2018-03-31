@@ -10,7 +10,7 @@
 #import <QQMainProject/TBBizNetworkLogicDelegate-Protocol.h>
 #import <QQMainProject/UIActionSheetDelegate-Protocol.h>
 
-@class NSString, QQAlertView, QQStoryMemoryFollowView, QQStoryMemoryMoreOptionsHandler, QQStoryMemoryTableView, UserSummaryNavigationBar;
+@class NSString, QQAlertView, QQStoryMemoryFollowView, QQStoryMemoryMoreOptionsHandler, QQStoryMemoryTableView, TBQQUserInfoModel, UserSummaryNavigationBar;
 
 @interface QQStoryMemoryViewController : QQViewController <UIActionSheetDelegate, TBBizNetworkLogicDelegate, QQVideoCaptureViewControllerDelegate>
 {
@@ -25,6 +25,7 @@
     NSString *_unionID;
     unsigned long long _currentUin;
     UserSummaryNavigationBar *_userNavigationBar;
+    TBQQUserInfoModel *_userInfo;
     QQStoryMemoryTableView *_tableView;
     QQAlertView *_alert;
     QQStoryMemoryFollowView *_followView;
@@ -36,6 +37,7 @@
 @property(retain, nonatomic) QQAlertView *alert; // @synthesize alert=_alert;
 @property(nonatomic, getter=isDragToBack) _Bool dragToBack; // @synthesize dragToBack=_dragToBack;
 @property(retain, nonatomic) QQStoryMemoryTableView *tableView; // @synthesize tableView=_tableView;
+@property(retain, nonatomic) TBQQUserInfoModel *userInfo; // @synthesize userInfo=_userInfo;
 @property(nonatomic, getter=shouldUpdateFollowView) _Bool updateFollowView; // @synthesize updateFollowView=_updateFollowView;
 @property(retain, nonatomic) UserSummaryNavigationBar *userNavigationBar; // @synthesize userNavigationBar=_userNavigationBar;
 @property(nonatomic, getter=isSubscribe) _Bool subscribe; // @synthesize subscribe=_subscribe;
@@ -47,8 +49,6 @@
 @property(nonatomic) _Bool needRefresh; // @synthesize needRefresh=_needRefresh;
 @property(nonatomic) unsigned long long entry; // @synthesize entry=_entry;
 - (void)onProcessResultNotification:(id)arg1;
-- (void)handleAddCircleMemberRsp:(id)arg1;
-- (void)handleQuitCircleRsp:(id)arg1;
 - (void)handleDeleteVideoRsp:(id)arg1;
 - (void)didReceivedData:(unsigned long long)arg1 requestModel:(id)arg2 classModel:(id)arg3;
 - (void)updateTitle:(unsigned long long)arg1 withUnionID:(id)arg2;

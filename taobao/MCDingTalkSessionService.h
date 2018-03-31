@@ -20,6 +20,7 @@
 @property(retain, nonatomic) YHMuticastDelegate<MCDingTalkSessionDelegate> *mutiCastDelegate; // @synthesize mutiCastDelegate=_mutiCastDelegate;
 @property(nonatomic) long long count; // @synthesize count=_count;
 - (void).cxx_destruct;
+- (id)userIDsFromSessions:(id)arg1;
 - (void)removeDelegate:(id)arg1;
 - (void)addDelegate:(id)arg1;
 - (void)allSessions:(CDUnknownBlockType)arg1;

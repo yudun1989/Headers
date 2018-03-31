@@ -6,11 +6,12 @@
 
 #import <QQMainProject/QQRichMsgPreviewDialog.h>
 
-@class ArkCardModel, ArkUIView, NSString;
+@class ArkAppLoadingView, ArkCardModel, ArkUIView, NSString;
 
 @interface QQArkMsgPreviewDialog : QQRichMsgPreviewDialog
 {
     ArkUIView *_arkView;
+    ArkAppLoadingView *_arkLoadingView;
     struct CGRect _arkVideRect;
     NSString *_failedDesc;
     double _maxArkHeight;
@@ -22,6 +23,7 @@
 - (struct CGSize)layoutContentView:(struct CGSize)arg1;
 - (void)dismiss;
 - (void)show;
+- (void)showError:(id)arg1;
 - (void)dealloc;
 - (id)initWithModel:(id)arg1 title:(id)arg2 type:(unsigned long long)arg3 srcDes:(id)arg4 failedDesc:(id)arg5 rightBtnText:(id)arg6 delegate:(id)arg7;
 - (id)initWithModel:(id)arg1 title:(id)arg2 srcDes:(id)arg3 failedDesc:(id)arg4 rightBtnText:(id)arg5 delegate:(id)arg6;

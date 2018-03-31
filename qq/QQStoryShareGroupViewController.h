@@ -152,7 +152,6 @@
 - (void)refreshNavigationBarForPublicShareGroup;
 - (void)configNormalCustomNavgationBar;
 - (id)captureButtonWithFrame:(struct CGRect)arg1;
-- (void)showDisBandView;
 - (void)showCaptureButton;
 - (void)checkModeForShareGroup;
 - (void)initUIForGroup;

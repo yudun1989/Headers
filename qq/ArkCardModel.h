@@ -10,7 +10,6 @@
 
 @interface ArkCardModel : NSObject
 {
-    _Bool _equalInputText;
     _Bool _isBabyMsg;
     _Bool _usingDefaultCardWidth;
     _Bool _canSend;
@@ -19,6 +18,7 @@
     int _contextMatchType;
     int _accostType;
     int _flag;
+    int _positionIndex;
     NSString *_appPath;
     NSString *_appName;
     NSString *_appViewName;
@@ -44,6 +44,7 @@
 }
 
 + (id)cardModelWithAppInfo:(id)arg1 accostType:(int)arg2 isBabyQMsg:(_Bool)arg3;
+@property(nonatomic) int positionIndex; // @synthesize positionIndex=_positionIndex;
 @property(nonatomic) int flag; // @synthesize flag=_flag;
 @property(copy, nonatomic) NSString *reportExtra; // @synthesize reportExtra=_reportExtra;
 @property(copy, nonatomic) NSNumber *reportTypeNum; // @synthesize reportTypeNum=_reportTypeNum;
@@ -67,7 +68,6 @@
 @property(nonatomic) _Bool isBabyMsg; // @synthesize isBabyMsg=_isBabyMsg;
 @property(nonatomic) int accostType; // @synthesize accostType=_accostType;
 @property(nonatomic) int contextMatchType; // @synthesize contextMatchType=_contextMatchType;
-@property(nonatomic) _Bool equalInputText; // @synthesize equalInputText=_equalInputText;
 @property(retain, nonatomic) ArkKeyword *keyword; // @synthesize keyword=_keyword;
 @property(copy, nonatomic) NSString *appViewID; // @synthesize appViewID=_appViewID;
 @property(copy, nonatomic) NSString *meta; // @synthesize meta=_meta;

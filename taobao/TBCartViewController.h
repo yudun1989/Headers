@@ -16,8 +16,6 @@
 
 @interface TBCartViewController : TBViewController <AliCartBizProtocol, AliCartRecmdEventProtocol, TBCartSKUServiceDelegate, TBModelStatusDelegate, TBCartShakeServiceDelegate>
 {
-    SEL _selectorForEmpty;
-    TBModelStatusHandler *_statusHandler;
     _Bool _isUserNewRecmd;
     AliCartKit *_cartInstance;
     TBCartSKUService *_SKUService;
@@ -33,12 +31,15 @@
     NSString *_pushCartId;
     NSString *_emptyTitle;
     NSString *_subEmptyTitle;
+    TBModelStatusHandler *_statusHandler;
+    SEL _selectorForEmpty;
     TBBarButtonItem *_customMoreItem;
     TBCartShakeService *_shakeService;
 }
 
 @property(retain, nonatomic) TBCartShakeService *shakeService; // @synthesize shakeService=_shakeService;
 @property(retain, nonatomic) TBBarButtonItem *customMoreItem; // @synthesize customMoreItem=_customMoreItem;
+@property(nonatomic) SEL selectorForEmpty; // @synthesize selectorForEmpty=_selectorForEmpty;
 @property(nonatomic) _Bool isUserNewRecmd; // @synthesize isUserNewRecmd=_isUserNewRecmd;
 @property(retain, nonatomic) TBModelStatusHandler *statusHandler; // @synthesize statusHandler=_statusHandler;
 @property(copy, nonatomic) NSString *subEmptyTitle; // @synthesize subEmptyTitle=_subEmptyTitle;
@@ -56,10 +57,10 @@
 @property(retain, nonatomic) TBCartSKUService *SKUService; // @synthesize SKUService=_SKUService;
 @property(retain, nonatomic) AliCartKit *cartInstance; // @synthesize cartInstance=_cartInstance;
 - (void).cxx_destruct;
+- (_Bool)isMsoaEnabled;
 - (_Bool)isEnableQuerySecondPageUsePost;
 - (void)gotoHomeView;
 - (void)forceReload;
-- (SEL)selectorForEmpty;
 - (SEL)selectorForError:(id)arg1;
 - (_Bool)needShowTabbarTips;
 - (void)detailEnter:(id)arg1;
@@ -105,6 +106,7 @@
 - (_Bool)canPromotionShowSelf;
 - (void)showCleanShopCart;
 - (void)logCartNativeFailed:(id)arg1 data:(id)arg2;
+- (void)commintAddCartUmbrellaPoint:(_Bool)arg1;
 - (void)logCartResponse:(id)arg1 actionType:(unsigned long long)arg2 isFailed:(_Bool)arg3;
 - (void)mainCartPerformanceEnd:(id)arg1 eventType:(id)arg2 data:(id)arg3;
 - (void)mainCartPerformanceBegin:(id)arg1 eventType:(id)arg2 data:(id)arg3;
@@ -144,6 +146,8 @@
 - (_Bool)hasAdditionalData;
 - (_Bool)isNeedShowAdditionalData;
 - (void)interceptorDidNeedClean;
+- (id)selectedItems;
+- (void)share;
 - (void)cleanInvildItems;
 - (void)cartQueryEndPageDataSuccess;
 - (void)cartQueryData;

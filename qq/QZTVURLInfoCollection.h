@@ -19,7 +19,6 @@
 @property(retain, nonatomic) NSMutableDictionary *allUrlInfo; // @synthesize allUrlInfo=_allUrlInfo;
 - (void).cxx_destruct;
 - (_Bool)isHevc:(id)arg1;
-- (id)expireUrlsForForCacheFileName:(id)arg1;
 - (double)durationForFakeUrl:(id)arg1;
 - (id)videoIDFromFakeUrl:(id)arg1;
 - (id)realUrlFromCacheFileName:(id)arg1;

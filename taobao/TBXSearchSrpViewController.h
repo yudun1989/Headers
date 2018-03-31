@@ -9,7 +9,7 @@
 #import "TBXSearchSrpViewModelDelegate-Protocol.h"
 #import "XSearchSDKDelegate-Protocol.h"
 
-@class NSDictionary, NSString, NSURL, TBXSearchFloatView, TBXSearchSrpViewModel, XSearchContext, XSearchSDKViewController;
+@class NSDictionary, NSString, NSURL, TBXSearchSrpViewModel, XSearchContext, XSearchSDKViewController;
 
 @interface TBXSearchSrpViewController : UIViewController <XSearchSDKDelegate, TBXSearchSrpViewModelDelegate>
 {
@@ -18,16 +18,18 @@
     NSDictionary *_savedQuery;
     NSURL *_url;
     TBXSearchSrpViewModel *_viewModel;
-    TBXSearchFloatView *_floatBar;
 }
 
-@property(retain, nonatomic) TBXSearchFloatView *floatBar; // @synthesize floatBar=_floatBar;
 @property(retain, nonatomic) TBXSearchSrpViewModel *viewModel; // @synthesize viewModel=_viewModel;
 @property(retain, nonatomic) NSURL *url; // @synthesize url=_url;
 @property(retain, nonatomic) NSDictionary *savedQuery; // @synthesize savedQuery=_savedQuery;
 @property(retain, nonatomic) XSearchSDKViewController *searchVC; // @synthesize searchVC=_searchVC;
 @property(retain, nonatomic) XSearchContext *searchContext; // @synthesize searchContext=_searchContext;
 - (void).cxx_destruct;
+- (void)setFestivalNavibar;
+- (_Bool)tbfestival_isFestivalEnable;
+- (void)changeStatusBarWithStyle:(long long)arg1;
+- (long long)getSearchCurrentStatusBarStyle;
 - (void)setSDKVCViewFrame;
 - (double)statusBarHeight;
 - (void)tabBarComponentClickTabItem:(id)arg1;
@@ -41,9 +43,12 @@
 - (void)filterSearchFail:(id)arg1;
 - (void)filterSearchSuccess;
 - (void)filterSearchStart;
+- (void)searchLoadMore;
 - (void)fixSearchFail:(id)arg1;
 - (void)fixSearchSuccess;
 - (void)fixSearchStart;
+- (void)searchReset;
+- (void)setNavigationBarHidden:(_Bool)arg1 animated:(_Bool)arg2;
 - (void)tabDidHiddenForPageDisAppear;
 - (void)updatePageNameAndArgs;
 - (void)didReceiveMemoryWarning;
@@ -52,8 +57,9 @@
 - (void)viewDidAppear:(_Bool)arg1;
 - (void)viewWillAppear:(_Bool)arg1;
 - (void)viewDidLoad;
+- (void)reuseOldVCToSearchWithParams:(id)arg1;
 - (void)searchWithParams:(id)arg1;
-- (void)fixedSearch:(id)arg1;
+- (void)fixSearch:(id)arg1 reSearch:(_Bool)arg2;
 - (id)initWithNavigatorURL:(id)arg1 query:(id)arg2;
 - (id)loadViewModel;
 - (void)dealloc;

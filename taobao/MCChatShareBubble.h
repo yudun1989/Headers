@@ -40,6 +40,8 @@
 - (void)shareShopViewActionTapped:(id)arg1;
 - (void)shareShopViewTapped:(id)arg1;
 - (void)shareItemViewTapped:(id)arg1;
+- (void)shareItemRightBtnAction:(id)arg1;
+- (void)shareItemLeftBtnAction:(id)arg1;
 - (void)chatBubbleBackgroundViewLongPress:(id)arg1;
 - (void)chatBubbleBackgroundViewTapped:(id)arg1;
 - (void)recycle;

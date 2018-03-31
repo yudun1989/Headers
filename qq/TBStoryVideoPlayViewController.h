@@ -128,6 +128,7 @@
     NSMutableArray *_memoryCollectionList;
     NSMutableArray *_didGetMemoryDataCIDList;
     NSMutableDictionary *_videoVScollectionIDMap;
+    NSMutableArray *_vidListForTag;
     long long _shareTimeZone;
     TBStoryDesModel *_expireVideoModel;
     long long _beginSeq;
@@ -151,8 +152,10 @@
     NSMutableArray *_videoListToReplace;
     long long _videoListToPlayIndex;
     TBVideoPublishPerformLogger *_performLogger;
+    unsigned long long _loadingWithWordCost;
 }
 
+@property(nonatomic) unsigned long long loadingWithWordCost; // @synthesize loadingWithWordCost=_loadingWithWordCost;
 @property(retain, nonatomic) TBVideoPublishPerformLogger *performLogger; // @synthesize performLogger=_performLogger;
 @property(retain, nonatomic) TBExtendedHitButton *loadingCloseButton; // @synthesize loadingCloseButton=_loadingCloseButton;
 @property(nonatomic) _Bool isReplacingData; // @synthesize isReplacingData=_isReplacingData;
@@ -187,6 +190,7 @@
 @property(nonatomic) long long beginSeq; // @synthesize beginSeq=_beginSeq;
 @property(retain, nonatomic) TBStoryDesModel *expireVideoModel; // @synthesize expireVideoModel=_expireVideoModel;
 @property(nonatomic) long long shareTimeZone; // @synthesize shareTimeZone=_shareTimeZone;
+@property(retain, nonatomic) NSMutableArray *vidListForTag; // @synthesize vidListForTag=_vidListForTag;
 @property(nonatomic) int memoryCidListIndex; // @synthesize memoryCidListIndex=_memoryCidListIndex;
 @property(copy, nonatomic) NSMutableDictionary *videoVScollectionIDMap; // @synthesize videoVScollectionIDMap=_videoVScollectionIDMap;
 @property(retain, nonatomic) NSMutableArray *didGetMemoryDataCIDList; // @synthesize didGetMemoryDataCIDList=_didGetMemoryDataCIDList;
@@ -307,6 +311,7 @@
 - (void)TBVideoPlayerWaitViewDidShow:(id)arg1;
 - (void)onVideoItemPlayDidPause:(id)arg1;
 - (void)onVideoItemPlayProgeress:(id)arg1 currentPos:(double)arg2 totalTime:(double)arg3;
+- (void)playerLoadingDataReport:(id)arg1 playerLoadingTime:(unsigned long long)arg2 vid:(id)arg3;
 - (void)onVideoItemPlayDidStart:(id)arg1 totalTime:(double)arg2;
 - (void)onVideoItemPlayWillStart:(id)arg1;
 - (_Bool)onVideoItemCanStartPlay:(id)arg1;
@@ -476,6 +481,7 @@
 - (id)getReportDict:(int)arg1;
 - (void)addToCircle:(id)arg1;
 - (void)actionSheet:(id)arg1 clickedButtonAtIndex:(long long)arg2;
+- (long long)tipOffEviTypeWithButtonIndex:(long long)arg1;
 - (id)createShareModel:(id)arg1;
 - (void)p_saveVideo:(id)arg1;
 - (id)p_isHostForReport:(id)arg1;

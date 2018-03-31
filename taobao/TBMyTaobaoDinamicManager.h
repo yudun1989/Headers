@@ -24,6 +24,7 @@
 - (void)registPaser;
 - (void)registHandler;
 - (void)updateABTestSwitch;
+- (id)init;
 
 @end
 

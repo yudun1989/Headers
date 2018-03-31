@@ -29,7 +29,6 @@
     long long _maxMessageResultCount;
     long long _maxFunctionResultCount;
     _Bool _dontSearchLocal;
-    _Bool _dontShowReturnButton;
     long long _ftsFliter;
     NSString *_lastNetSearchKeyWord;
     NSString *_ftsLastSearchKeyword;
@@ -40,7 +39,6 @@
 @property(retain, nonatomic) NSArray *searchedResultArray; // @synthesize searchedResultArray=_searchedResultArray;
 @property(copy, nonatomic) NSString *ftsLastSearchKeyword; // @synthesize ftsLastSearchKeyword=_ftsLastSearchKeyword;
 @property(copy, nonatomic) NSString *lastNetSearchKeyWord; // @synthesize lastNetSearchKeyWord=_lastNetSearchKeyWord;
-@property(nonatomic) _Bool dontShowReturnButton; // @synthesize dontShowReturnButton=_dontShowReturnButton;
 @property(nonatomic) _Bool dontSearchLocal; // @synthesize dontSearchLocal=_dontSearchLocal;
 @property(nonatomic) long long ftsFliter; // @synthesize ftsFliter=_ftsFliter;
 - (void)setSearchFlagState:(long long)arg1 boolState:(_Bool)arg2;

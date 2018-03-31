@@ -11,13 +11,14 @@
 
 @class CmShowGameView, CmShowGameViewController, NSString;
 
-@interface CmShowGameManager : NSObject <CmShowGameViewControllerDelegate, CmShowGameViewDelegate>
+@interface CmShowGameManager : NSObject <CmShowGameViewDelegate, CmShowGameViewControllerDelegate>
 {
     CmShowGameView *_cmShowGameView;
     CmShowGameViewController *_cmShowGameVC;
 }
 
 + (id)sharedInstance;
+@property(retain, nonatomic) CmShowGameViewController *cmShowGameVC; // @synthesize cmShowGameVC=_cmShowGameVC;
 @property(retain, nonatomic) CmShowGameView *cmShowGameView; // @synthesize cmShowGameView=_cmShowGameView;
 - (_Bool)isCurrentGameViewContext:(void *)arg1;
 - (void)destroyGameView:(id)arg1;

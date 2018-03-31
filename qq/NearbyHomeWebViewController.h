@@ -16,6 +16,7 @@
     UIView *_loadingView;
     UILabel *_errorPromptLabel;
     UIView *_containerView;
+    _Bool _loadFinished;
     _Bool _loadSuccess;
     id <NearbyHomeWebViewControllerDelegete> _nearbyWebDelegate;
 }
@@ -32,6 +33,7 @@
 - (void)viewWillLayoutSubviews;
 - (void)adjustLoadingViewWithResult:(_Bool)arg1;
 - (void)onWebContentLoaded;
+- (void)showLoadingContainerView;
 - (void)setupLoadingView;
 - (void)registerNotification;
 - (void)dealloc;

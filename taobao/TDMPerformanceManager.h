@@ -7,21 +7,20 @@
 #import <Foundation/NSObject.h>
 
 @class NSNumber;
-@protocol OS_dispatch_queue;
 
 @interface TDMPerformanceManager : NSObject
 {
     NSNumber *_startTime;
-    NSObject<OS_dispatch_queue> *_performanceQueue;
 }
 
++ (void)recordPage:(id)arg1 loadTime:(double)arg2 cellsTime:(double)arg3 isDynamicOpen:(_Bool)arg4;
++ (void)registerPageLoadStat;
 + (double)decimalNumberHandle:(double)arg1;
-+ (void)commitStat:(long long)arg1 template:(id)arg2 tag:(id)arg3 time:(double)arg4;
-+ (void)registerStat;
-+ (void)finishMeasurePerformance:(id)arg1 tag:(id)arg2 type:(long long)arg3;
-+ (void)startMeasurePerformance:(id)arg1 tag:(id)arg2 type:(long long)arg3;
++ (void)commitStat:(long long)arg1 template:(id)arg2 tag:(id)arg3 pageName:(id)arg4 time:(double)arg5;
++ (void)registerComponentStat;
++ (void)finishMeasurePerformance:(id)arg1 tag:(id)arg2 pageName:(id)arg3 type:(long long)arg4;
++ (void)startMeasurePerformance:(id)arg1 tag:(id)arg2 pageName:(id)arg3 type:(long long)arg4;
 + (id)sharedInstance;
-@property(retain, nonatomic) NSObject<OS_dispatch_queue> *performanceQueue; // @synthesize performanceQueue=_performanceQueue;
 @property(retain, nonatomic) NSNumber *startTime; // @synthesize startTime=_startTime;
 - (void).cxx_destruct;
 

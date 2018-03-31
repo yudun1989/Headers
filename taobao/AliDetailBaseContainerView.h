@@ -17,8 +17,8 @@
     double beginPanY;
     CDUnknownBlockType contractPhoneFinshed;
     _Bool _needSendRequest;
-    int _animationType;
     UIViewController<AliDetailParentVCDelegate> *_parentVC;
+    unsigned long long _animationType;
     UIPanGestureRecognizer *_detailPanGesture;
     UIView *_parentView;
     double _animationTime;
@@ -28,7 +28,7 @@
 @property(nonatomic) _Bool needSendRequest; // @synthesize needSendRequest=_needSendRequest;
 @property(nonatomic) __weak UIView *parentView; // @synthesize parentView=_parentView;
 @property(retain, nonatomic) UIPanGestureRecognizer *detailPanGesture; // @synthesize detailPanGesture=_detailPanGesture;
-@property(nonatomic) int animationType; // @synthesize animationType=_animationType;
+@property(nonatomic) unsigned long long animationType; // @synthesize animationType=_animationType;
 @property(nonatomic) __weak UIViewController<AliDetailParentVCDelegate> *parentVC; // @synthesize parentVC=_parentVC;
 - (void).cxx_destruct;
 - (void)executeParentVCViewWillDisappearAfterSubPageShow;

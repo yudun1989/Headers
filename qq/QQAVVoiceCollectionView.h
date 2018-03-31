@@ -25,6 +25,7 @@
 @property(nonatomic) id <QQAVVoiceCollectionViewDelegate> selectDelegate; // @synthesize selectDelegate=_selectDelegate;
 @property(retain, nonatomic) UIColor *textColor; // @synthesize textColor=_textColor;
 @property(nonatomic) int selectedVoiceType; // @synthesize selectedVoiceType=_selectedVoiceType;
+- (struct UIEdgeInsets)collectionView:(id)arg1 layout:(id)arg2 insetForSectionAtIndex:(long long)arg3;
 - (id)collectionView:(id)arg1 cellForItemAtIndexPath:(id)arg2;
 - (long long)collectionView:(id)arg1 numberOfItemsInSection:(long long)arg2;
 - (void)collectionViewDidSelectItemAtIndexPath:(id)arg1;

@@ -26,6 +26,8 @@
     QQVideoGiftAnimator *_animator;
     _Bool _waitCheck;
     _Bool _playingPicShow;
+    NSMutableArray *_showGiftFrequencyArray;
+    NSMutableArray *_lastSaveFrequencyArray;
     _Bool _isOnGroupVideo;
     QQGroupDeliverGiftAnimationViewController *_viewController;
 }
@@ -56,7 +58,14 @@
 - (_Bool)playGiftAnimationImmediately:(id)arg1;
 - (_Bool)playGiftAnimationInTmpList:(id)arg1;
 - (void)chatViewControllerDidDisppear:(id)arg1;
+- (_Bool)checkIsFromAIOOutSide:(id)arg1;
+- (_Bool)isFrequencyPlayModel:(id)arg1;
+- (long long)getFrequency;
+- (void)saveGiftFrequency;
+- (long long)getGiftFrequencyCount;
+- (void)restrictGifShowFrequency;
 - (void)chatViewControllerDidAppear:(id)arg1;
+- (_Bool)restrictTabGifShowFrequency:(id)arg1;
 - (void)removePlayListWithGroupCode:(id)arg1;
 - (void)addToPlaylist:(id)arg1 isReplay:(_Bool)arg2;
 - (void)handlerDidPlayingGiftModel:(id)arg1;

@@ -6,14 +6,12 @@
 
 #import <objc/NSObject.h>
 
-@class NSNumber, UIImage, UIImageView;
+@class UIImage, UIImageView;
 
 @interface LikableAnimation : NSObject
 {
     _Bool _animationOver;
     UIImage *_likeImage;
-    NSNumber *_fromAngle;
-    NSNumber *_toAngle;
     UIImageView *_likeIcon;
     CDUnknownBlockType _completion;
 }
@@ -22,15 +20,12 @@
 @property(copy, nonatomic) CDUnknownBlockType completion; // @synthesize completion=_completion;
 @property(nonatomic) _Bool animationOver; // @synthesize animationOver=_animationOver;
 @property(retain, nonatomic) UIImageView *likeIcon; // @synthesize likeIcon=_likeIcon;
-@property(retain, nonatomic) NSNumber *toAngle; // @synthesize toAngle=_toAngle;
-@property(retain, nonatomic) NSNumber *fromAngle; // @synthesize fromAngle=_fromAngle;
 @property(retain, nonatomic) UIImage *likeImage; // @synthesize likeImage=_likeImage;
 - (void).cxx_destruct;
 - (void)hide;
 - (void)animationStep3;
 - (void)animationStep2;
 - (void)showLikeAnimationInView:(id)arg1 rect:(struct CGRect)arg2 removeOnCompletion:(_Bool)arg3 completion:(CDUnknownBlockType)arg4;
-- (void)showLikeAnimation:(id)arg1 atPosition:(struct CGPoint)arg2;
 - (void)showLikeAnimation:(id)arg1;
 - (id)init;
 

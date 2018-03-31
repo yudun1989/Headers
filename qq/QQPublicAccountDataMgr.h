@@ -233,7 +233,6 @@
 - (_Bool)SendFollowRequest:(unsigned long long)arg1 extValue:(id)arg2 Seq:(long long *)arg3 accountType:(int)arg4 accessType:(int)arg5;
 - (_Bool)SendFollowRequest:(unsigned long long)arg1 accountType:(int)arg2 requestSource:(int)arg3;
 - (_Bool)SendFollowRequest:(unsigned long long)arg1 Seq:(long long *)arg2 accountType:(int)arg3 requestSource:(int)arg4;
-- (void)initMpPortal;
 - (_Bool)UpdatePublicAccountMenu:(unsigned long long)arg1 Seq:(long long *)arg2;
 - (_Bool)UpdateUserPublicAccountDetailInfo:(unsigned long long)arg1 Seq:(long long *)arg2 andEntryType:(unsigned long long)arg3;
 - (_Bool)UpdatePublicAccountInfo:(unsigned long long)arg1 Seq:(long long *)arg2;

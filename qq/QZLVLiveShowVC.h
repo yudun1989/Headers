@@ -18,15 +18,16 @@
     _Bool _isInitialPos;
     _Bool _isClearMode;
     _Bool _isAllow;
+    _Bool _isPanoramaLive;
+    NSDictionary *_registerLiveQuery;
     QZLiveViewController *_parentController;
     UIPanGestureRecognizer *_slideRecognizer;
     UITapGestureRecognizer *_tapRecognizer;
     long long _panDirection;
-    NSDictionary *_registerLiveQuery;
     struct CGPoint _startTouchPoint;
 }
 
-@property(retain, nonatomic) NSDictionary *registerLiveQuery; // @synthesize registerLiveQuery=_registerLiveQuery;
+@property(nonatomic) _Bool isPanoramaLive; // @synthesize isPanoramaLive=_isPanoramaLive;
 @property(nonatomic) _Bool isAllow; // @synthesize isAllow=_isAllow;
 @property(nonatomic) _Bool isClearMode; // @synthesize isClearMode=_isClearMode;
 @property(nonatomic) long long panDirection; // @synthesize panDirection=_panDirection;
@@ -36,43 +37,9 @@
 @property(nonatomic) _Bool isInitialPos; // @synthesize isInitialPos=_isInitialPos;
 @property(nonatomic) _Bool isMoving; // @synthesize isMoving=_isMoving;
 @property(nonatomic) __weak QZLiveViewController *parentController; // @synthesize parentController=_parentController;
+@property(retain, nonatomic) NSDictionary *registerLiveQuery; // @synthesize registerLiveQuery=_registerLiveQuery;
 - (void).cxx_destruct;
-- (void)showTip:(id)arg1;
-- (void)hideInputBar;
-- (_Bool)gestureRecognizer:(id)arg1 shouldReceiveTouch:(id)arg2;
-- (void)dispatchToJsOperationCode:(unsigned long long)arg1;
-- (void)dispatchToJsStatusCode:(unsigned long long)arg1;
-- (void)hideExitButton:(_Bool)arg1;
-- (void)onMicMsg:(id)arg1;
-- (void)checkLiveState:(id)arg1;
-- (void)openOtherLive:(id)arg1 hostUin:(id)arg2 fromRoomId:(id)arg3 fromUin:(id)arg4;
-- (void)openOtherLive:(id)arg1 hostUin:(id)arg2;
-- (void)registerLiveState:(id)arg1;
-- (void)h5HostLeave;
-- (void)configGesture;
-- (void)OnChangeRoleDelegate:(int)arg1 WithErrinfo:(id)arg2;
-- (void)changeRoleDebug:(id)arg1;
-- (void)hideOrShowChangeRoleButton;
-- (void)addChangeRoleButton;
-- (void)configCustomUI;
-- (void)isAllowClean:(id)arg1;
-- (void)viewWillDisappear:(_Bool)arg1;
-- (void)viewWillAppear:(_Bool)arg1;
-- (void)dealloc;
-- (void)viewDidLoad;
-- (void)tapRecognizerReceiver:(id)arg1;
-- (void)moveToInitial;
-- (void)moveToTarget;
-- (void)paningGestureReceive:(id)arg1;
-- (void)checkPanDirection:(id)arg1;
-- (float)checkOffsetX:(float)arg1;
-- (void)moveViewToX:(float)arg1;
-- (void)targetFrame;
-- (void)initialFrame;
-- (void)panStop;
-- (void)panStart;
-- (id)topView;
-- (void)installPanGestureRecognizer;
+- (void)navigationBarHandle;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

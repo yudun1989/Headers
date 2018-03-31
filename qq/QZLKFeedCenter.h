@@ -6,14 +6,17 @@
 
 #import <Foundation/NSObject.h>
 
-@class NSMutableDictionary, NSMutableSet;
+@class NSDictionary, NSMutableDictionary, NSMutableSet;
 @protocol OS_dispatch_queue;
 
 @interface QZLKFeedCenter : NSObject
 {
+    _Bool _isRemoteFilesUpdated;
     NSMutableDictionary *_fileMD5Cache;
-    NSMutableDictionary *_templateCache;
-    NSMutableDictionary *_jsFileContentCache;
+    NSDictionary *_templateCache;
+    NSMutableDictionary *_templateTempCache;
+    NSDictionary *_jsFileContentCache;
+    NSMutableDictionary *_jsTempCache;
     NSObject<OS_dispatch_queue> *_fileProcessQueue;
     NSMutableDictionary *_feedInfoKeeper;
     NSMutableSet *_expiredCacheKeySet;
@@ -26,9 +29,12 @@
 @property(retain, nonatomic) NSMutableSet *expiredCacheKeySet; // @synthesize expiredCacheKeySet=_expiredCacheKeySet;
 @property(retain, nonatomic) NSMutableDictionary *feedInfoKeeper; // @synthesize feedInfoKeeper=_feedInfoKeeper;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *fileProcessQueue; // @synthesize fileProcessQueue=_fileProcessQueue;
-@property(retain, nonatomic) NSMutableDictionary *jsFileContentCache; // @synthesize jsFileContentCache=_jsFileContentCache;
-@property(retain, nonatomic) NSMutableDictionary *templateCache; // @synthesize templateCache=_templateCache;
+@property(retain, nonatomic) NSMutableDictionary *jsTempCache; // @synthesize jsTempCache=_jsTempCache;
+@property(retain) NSDictionary *jsFileContentCache; // @synthesize jsFileContentCache=_jsFileContentCache;
+@property(retain, nonatomic) NSMutableDictionary *templateTempCache; // @synthesize templateTempCache=_templateTempCache;
+@property(retain) NSDictionary *templateCache; // @synthesize templateCache=_templateCache;
 @property(retain, nonatomic) NSMutableDictionary *fileMD5Cache; // @synthesize fileMD5Cache=_fileMD5Cache;
+@property(nonatomic) _Bool isRemoteFilesUpdated; // @synthesize isRemoteFilesUpdated=_isRemoteFilesUpdated;
 - (void).cxx_destruct;
 - (id)syncGetValueForKey:(id)arg1 fromDict:(id)arg2;
 - (void)syncSetEntries:(id)arg1 toDict:(id)arg2;
@@ -38,6 +44,7 @@
 - (id)presenterForFeedModel:(id)arg1 scene:(id)arg2;
 - (id)searchForNewFeedInfoIfTemplateChange:(id)arg1 scene:(id)arg2;
 - (_Bool)checkIfLayouted:(id)arg1 scene:(id)arg2;
+- (void)formatCell:(id)arg1 isPartialRefresh:(_Bool)arg2;
 - (_Bool)updateView:(id)arg1 forFeedModel:(id)arg2 context:(id)arg3 scene:(id)arg4;
 - (_Bool)updateView:(id)arg1 forFeedModel:(id)arg2 context:(id)arg3;
 - (id)viewForFeedModel:(id)arg1 context:(id)arg2 scene:(id)arg3;
@@ -51,13 +58,17 @@
 - (id)md5OfNSData:(id)arg1;
 - (void)clearCacheForModel:(id)arg1;
 - (void)clearAllCachedFiles;
+- (void)clearALlCachedFeedInfo;
 - (void)clearCacheNotInModelList:(id)arg1;
 - (void)writeAllCacheFile;
-- (void)replaceAndRestoreFiles:(id)arg1;
+- (void)didReceivedRemoteFiles:(id)arg1;
+- (void)synchronizeRemoteFiles;
 - (id)cachedFilePath;
 - (void)loadAllFileInfoAyncWhenComplete:(CDUnknownBlockType)arg1;
 - (void)loadFileCache;
 - (id)lkFileMD5Mapping;
+- (id)getTemplateForKey:(id)arg1;
+- (id)getJsFileContentForKey:(id)arg1;
 - (void)setupLayoutKit;
 - (void)setupLayoutKitGlobalJS;
 - (id)init;

@@ -12,7 +12,6 @@
 #import "TBPSAVCameraViewControllerDelegate-Protocol.h"
 #import "TBPSButtomViewDelegate-Protocol.h"
 #import "TBPSImagePickerViewControllerDelegate-Protocol.h"
-#import "TBPSOperationActivityViewDelegate-Protocol.h"
 #import "TBPSPhotoSearchResultViewControllerDelegate-Protocol.h"
 #import "TBPSPopoverMenuViewDelegate-Protocol.h"
 #import "TBPSScanObjectViewDelegate-Protocol.h"
@@ -21,10 +20,10 @@
 #import "UINavigationControllerDelegate-Protocol.h"
 #import "WindVaneUIWbeViewDelegate-Protocol.h"
 
-@class CMMotionManager, NSArray, NSDate, NSDictionary, NSMutableArray, NSMutableDictionary, NSString, TBPSARRecognizeView, TBPSAVButton, TBPSAVCameraViewController, TBPSButtomView, TBPSEvaluator, TBPSLoadingView, TBPSOperationActivityView, TBPSPhotoSearchResultViewController, TBPSPopoverMenuView, TBPSScanCaptureButton, TBPSScanObject, TBPSSlider, TBPSTorchButton, TBPSWVPopLayer, TBPSWebViewController, UIButton, UIImage, UIImageView, UILabel, UIPinchGestureRecognizer, UISwipeGestureRecognizer, UIView;
+@class CMMotionManager, NSArray, NSDate, NSDictionary, NSMutableArray, NSMutableDictionary, NSString, TBPSARRecognizeView, TBPSAVButton, TBPSAVCameraViewController, TBPSButtomView, TBPSEvaluator, TBPSLoadingView, TBPSPhotoSearchResultViewController, TBPSPopoverMenuView, TBPSScanCaptureButton, TBPSScanObject, TBPSSlider, TBPSTorchButton, TBPSWVPopLayer, TBPSWXOperationActivityView, TBPSWebViewController, UIButton, UIImage, UIImageView, UILabel, UIPinchGestureRecognizer, UISwipeGestureRecognizer, UIView;
 @protocol TBPSAVCaptureViewControllerDelegate;
 
-@interface TBPSAVCaptureViewController : TBPSBaseViewController <UIGestureRecognizerDelegate, AVCaptureVideoDataOutputSampleBufferDelegate, TBPSButtomViewDelegate, TBPSPopoverMenuViewDelegate, TBPSAVCameraViewControllerDelegate, TBPSOperationActivityViewDelegate, WindVaneUIWbeViewDelegate, CAAnimationDelegate, TBPSPhotoSearchResultViewControllerDelegate, TBPSImagePickerViewControllerDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate, ETSDKServerDelegate, TBPSScanObjectViewDelegate>
+@interface TBPSAVCaptureViewController : TBPSBaseViewController <UIGestureRecognizerDelegate, AVCaptureVideoDataOutputSampleBufferDelegate, TBPSButtomViewDelegate, TBPSPopoverMenuViewDelegate, TBPSAVCameraViewControllerDelegate, WindVaneUIWbeViewDelegate, CAAnimationDelegate, TBPSPhotoSearchResultViewControllerDelegate, TBPSImagePickerViewControllerDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate, ETSDKServerDelegate, TBPSScanObjectViewDelegate>
 {
     unsigned int _soundQR;
     UIView *_topView;
@@ -62,7 +61,6 @@
     UIView *_captureBottomBar;
     _Bool _isLowMemory;
     _Bool _isLowDevice;
-    TBPSOperationActivityView *_operationActivityView;
     TBPSWVPopLayer *_WVPopLayer;
     NSMutableDictionary *_dimensionValueDict;
     NSMutableDictionary *_measureValueDict;
@@ -114,19 +112,21 @@
     NSMutableArray *_detectViewArray;
     TBPSLoadingView *_loadingView;
     TBPSPhotoSearchResultViewController *_resultViewController;
-    NSArray *_arActivityList;
     TBPSARRecognizeView *_arRecognizeView;
     TBPSWebViewController *_arWebViewController;
     NSMutableDictionary *_branchEvaluatorSetting;
     TBPSScanObject *_lastScanObject;
+    TBPSWXOperationActivityView *_searchTabWXActivityView;
+    NSString *_activityID;
     struct CGSize _uploadImageSize;
 }
 
+@property(copy, nonatomic) NSString *activityID; // @synthesize activityID=_activityID;
+@property(retain, nonatomic) TBPSWXOperationActivityView *searchTabWXActivityView; // @synthesize searchTabWXActivityView=_searchTabWXActivityView;
 @property(retain, nonatomic) TBPSScanObject *lastScanObject; // @synthesize lastScanObject=_lastScanObject;
 @property(retain, nonatomic) NSMutableDictionary *branchEvaluatorSetting; // @synthesize branchEvaluatorSetting=_branchEvaluatorSetting;
 @property(retain, nonatomic) TBPSWebViewController *arWebViewController; // @synthesize arWebViewController=_arWebViewController;
 @property(retain, nonatomic) TBPSARRecognizeView *arRecognizeView; // @synthesize arRecognizeView=_arRecognizeView;
-@property(retain, nonatomic) NSArray *arActivityList; // @synthesize arActivityList=_arActivityList;
 @property(nonatomic) _Bool isShowTestScanObjects; // @synthesize isShowTestScanObjects=_isShowTestScanObjects;
 @property(nonatomic) _Bool isRunABTestForUseClientScanObjects; // @synthesize isRunABTestForUseClientScanObjects=_isRunABTestForUseClientScanObjects;
 @property(retain, nonatomic) TBPSPhotoSearchResultViewController *resultViewController; // @synthesize resultViewController=_resultViewController;
@@ -157,13 +157,13 @@
 @property(readonly, nonatomic) TBPSScanCaptureButton *btnCapture; // @synthesize btnCapture=_btnCapture;
 @property(nonatomic) unsigned long long statusMode; // @synthesize statusMode=_statusMode;
 @property(nonatomic) _Bool isShowBottomBar; // @synthesize isShowBottomBar=_isShowBottomBar;
+@property(readonly, nonatomic) TBPSSlider *slider; // @synthesize slider=_slider;
 @property(readonly, nonatomic) UILabel *statusLabel; // @synthesize statusLabel=_statusLabel;
 @property(nonatomic) _Bool isCanARCapture; // @synthesize isCanARCapture=_isCanARCapture;
 @property(nonatomic) _Bool isPauseScanning; // @synthesize isPauseScanning=_isPauseScanning;
 @property(retain, nonatomic) UIView *regionView; // @synthesize regionView=_regionView;
 @property(nonatomic) _Bool isSubjectAreaDidChange; // @synthesize isSubjectAreaDidChange=_isSubjectAreaDidChange;
 @property(retain, nonatomic) TBPSWVPopLayer *WVPopLayer; // @synthesize WVPopLayer=_WVPopLayer;
-@property(readonly, nonatomic) TBPSOperationActivityView *operationActivityView; // @synthesize operationActivityView=_operationActivityView;
 @property(retain, nonatomic) NSDictionary *buttonSetting; // @synthesize buttonSetting=_buttonSetting;
 @property(retain, nonatomic) NSDictionary *dataDict; // @synthesize dataDict=_dataDict;
 @property(nonatomic) unsigned long long prevViewMode; // @synthesize prevViewMode=_prevViewMode;
@@ -226,12 +226,13 @@
 - (void)captureViewSubViewsHidden:(_Bool)arg1;
 - (void)clearARWebViewController;
 - (void)presentARViewWithData:(id)arg1;
-- (void)requestARActivityList;
 - (void)requestARViewWithTfskey:(id)arg1;
 - (void)uploadImageData:(id)arg1;
+- (void)updateActivityID:(id)arg1;
 - (void)takeARCapture:(id)arg1;
 - (void)attemptToARCapture;
 - (void)loadARActivityBanner;
+- (void)loadSearchTabWXActivity;
 - (void)closeUserGuider:(id)arg1;
 - (void)showUserGuider:(id)arg1;
 - (void)showUserGuider:(id)arg1 withView:(id)arg2;
@@ -284,16 +285,8 @@
 - (void)handlePinchGesture:(id)arg1;
 - (void)blurTransition;
 - (void)blurTransitionForUseImage:(id)arg1;
-- (void)operationActivityDidDismiss:(id)arg1;
-- (void)operationActivityDidClicked:(id)arg1;
 - (void)recoverCamera;
 - (void)resetCamera:(_Bool)arg1;
-- (void)showOperationActivity:(id)arg1 withImage:(id)arg2;
-- (void)showOperationActivity:(id)arg1;
-- (void)showOperationActivityBanner:(id)arg1;
-- (void)downloadImageWithBanner:(id)arg1;
-- (void)checkOperationActivity;
-- (void)checkOperationActivityBanner;
 - (void)toMagicMirror:(id)arg1;
 - (void)resetStatusBarStyle;
 - (void)viewDidAppear:(_Bool)arg1;
@@ -308,6 +301,8 @@
 - (void)setupTopView;
 - (void)showStatusText:(id)arg1;
 - (void)setupStatus;
+- (void)registerActivityModule;
+- (void)setupSearchTabWXActivityView;
 - (void)setupARRecognizeView;
 - (void)viewDidLoad;
 - (void)buildEvaluator;

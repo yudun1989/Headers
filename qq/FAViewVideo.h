@@ -10,7 +10,7 @@
 #import <QQMainProject/TVKLitePlaybackDelegate-Protocol.h>
 #import <QQMainProject/UIGestureRecognizerDelegate-Protocol.h>
 
-@class FASupportView, NSString, NSTimerNonRetain, NSURL, QQGradientView, QQViewController, SSProgressView, TVKLitePlayer, UIButton, UIImageView, UILabel, UISlider, UIView;
+@class AVAsset, AVPlayer, AVPlayerItem, AVPlayerLayer, FASupportView, ICloudLoadingView, NSString, NSTimerNonRetain, NSURL, QQAsset, QQGradientView, QQViewController, SSProgressView, TVKLitePlayer, UIButton, UIImageView, UILabel, UISlider, UIView;
 
 @interface FAViewVideo : FAViewBase <TVKLitePlaybackDelegate, UIGestureRecognizerDelegate, QQAudioSessionManagerDelegate>
 {
@@ -43,10 +43,31 @@
     _Bool _hideMenu;
     _Bool _hasAudioSession;
     QQViewController *_hostViewContoller;
+    AVPlayerLayer *_albumPlayerLayer;
+    AVPlayer *_albumPlayer;
+    AVAsset *_avasset;
+    AVPlayerItem *_albumPlayerItem;
+    QQAsset *_asset;
+    ICloudLoadingView *_loadingView;
 }
 
+@property(retain, nonatomic) ICloudLoadingView *loadingView; // @synthesize loadingView=_loadingView;
+@property(retain, nonatomic) QQAsset *asset; // @synthesize asset=_asset;
+@property(retain, nonatomic) AVPlayerItem *albumPlayerItem; // @synthesize albumPlayerItem=_albumPlayerItem;
+@property(retain, nonatomic) AVAsset *avasset; // @synthesize avasset=_avasset;
+@property(retain, nonatomic) AVPlayer *albumPlayer; // @synthesize albumPlayer=_albumPlayer;
+@property(retain, nonatomic) AVPlayerLayer *albumPlayerLayer; // @synthesize albumPlayerLayer=_albumPlayerLayer;
 @property(nonatomic) QQViewController *hostViewContoller; // @synthesize hostViewContoller=_hostViewContoller;
 - (void).cxx_destruct;
+- (void)onAlbumPlayEnd:(id)arg1;
+- (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void *)arg4;
+- (void)updateVideoPlayProgress:(double)arg1 total:(double)arg2;
+- (void)addProgressObserver;
+- (void)removeAlbumPlayerView;
+- (void)initAlbumPlayerView;
+- (void)onICloudFileDownloadProgress:(double)arg1 error:(id)arg2;
+- (void)playAlumVideo;
+- (void)prepareAlumVideo;
 - (void)onAppWillEnterForeground;
 - (void)onVideoActive;
 - (void)onVideoDeActive;
@@ -83,6 +104,8 @@
 - (void)stopTimer;
 - (void)startTimer;
 - (void)updateControlPanel;
+- (double)getTotalDuration;
+- (double)getCurrentTime;
 - (void)updateVideoScrubber:(double)arg1;
 - (void)onVideoScrubberTimer;
 - (void)resumeForSeek;
@@ -107,6 +130,7 @@
 - (void)weakenControlPanel;
 - (void)initMoreButtonFromView:(id)arg1;
 - (void)initPlayContolPanel;
+- (void)removePlayerView;
 - (void)initPlayerView;
 - (void)onOperateClick;
 - (void)onCancleClick;

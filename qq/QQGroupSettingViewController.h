@@ -40,7 +40,7 @@
 #import <QQMainProject/UserSummaryNavBarItemDelagate-Protocol.h>
 #import <QQMainProject/UserSummaryTouchControlDelegate-Protocol.h>
 
-@class FaceWallBackGroundView, GroupSignInInfoModle, NSArray, NSDictionary, NSMutableArray, NSString, NSURLConnection, QQAdjustOpenIDEngine, QQAsynUrlImagesPlayer, QQGroupFaceWallLogic, QQGroupFaceWallUI, QQGroupJoinHelper, QQGroupLinkForwardHelper, QQGroupLinkShareController, QQGroupRichNameSpaceView, QQGroupSettingInitialHeadView, QQGroupSettingItem, QQGroupSettingMatureHeadView, QQGroupSettingModel, QQGroupSettingViewAppCell, QQGroupSettingViewMemberCountCell, QQTroopRemarkModel, UIButton, UIColor, UIImage, UIImageView, UILabel, UINavigationController, UISwitch, UITableView, UITableViewCell, UIView, UserSummaryNavigationBar, UserSummaryTouchControl;
+@class GroupSignInInfoModle, NSArray, NSDictionary, NSMutableArray, NSString, NSURLConnection, QQAdjustOpenIDEngine, QQAsynUrlImagesPlayer, QQGroupAppsExtraInfo, QQGroupFaceWallLogic, QQGroupFaceWallUI, QQGroupJoinHelper, QQGroupLinkForwardHelper, QQGroupLinkShareController, QQGroupRichNameSpaceView, QQGroupSettingInitialHeadView, QQGroupSettingItem, QQGroupSettingMatureHeadView, QQGroupSettingModel, QQGroupSettingViewAppCell, QQGroupSettingViewMemberCountCell, QQTroopRemarkModel, UIButton, UIColor, UIImage, UIImageView, UILabel, UINavigationController, UISwitch, UITableView, UITableViewCell, UIView, UserSummaryNavigationBar, UserSummaryTouchControl;
 
 @interface QQGroupSettingViewController : QQViewController <QQEditGroupLocationDelegate, QQNGEffectiveOperationDelegate, QQAsynUrlImagesPlayerDelegae, QQAsynUrlImagesPlayerIndictorPattern, AvatarServiceDelegate, SimpleAlertViewDelegate, QQAdjustOpenIDDelegate, QQGroupSettingViewHeadIconsCellDelegate, QQGroupSettingViewAppCellDelegate, QQGroupSettingViewMembersDelegate, EditMemberCardProtocal, QQGroupSettingHeadViewDelegate, QQGroupSettingInitialHeadViewDelegate, QQGroupSettingViewIntroDelegate, UITableViewDataSource, UITableViewDelegate, UIActionSheetDelegate, QUIActionSheetDelegate, IQQGroupProfileViewController, QQFriendSelectedViewControllerDelegate, UIAlertViewDelegate, DBAsyncCallbackProtocol, GetTroopRemarkProtocol, IEditViewControllerObserver, QQGroupCategoryListViewControllerDelegate, QQGroupFaceWallLogicDelegate, QQEmotionLabelDelegate, MFMailComposeViewControllerDelegate, QQGroupRichNameSpaceViewDelegate, UserSummaryNavBarItemDelagate, UserSummaryTouchControlDelegate, NSURLConnectionDataDelegate, MulMemSelBusiProcessDelegate>
 {
@@ -82,6 +82,7 @@
     UIButton *_certificatedButton;
     _Bool _isQidianGroup;
     _Bool _isHomeworkGroup;
+    _Bool _isGameGroup;
     UIButton *_operationButton;
     UIView *_divideLineView;
     _Bool *_shouldUpdateBulletin;
@@ -95,8 +96,8 @@
     UINavigationController *_navi;
     NSString *_joinKey;
     NSArray *_groupAppsInfo;
+    QQGroupAppsExtraInfo *_groupAppsExtraInfo;
     NSString *_moreGroupAppsUrl;
-    FaceWallBackGroundView *_blackBg;
     _Bool _isphotoBrowserViewShow;
     UILabel *_groupNameLabel;
     NSMutableArray *_memberDistributionModel;
@@ -237,6 +238,8 @@
 - (void)modifyGroupInfoCallback:(id)arg1;
 - (void)didModifyGroupProfile:(unsigned int)arg1 groupName:(id)arg2 groupPost:(id)arg3 groupMemo:(id)arg4 groupRichMemo:(id)arg5 groudAdmissionType:(int)arg6 groupCategory:(int)arg7 groupFaceId:(int)arg8 groupLocation:(id)arg9 groupTribeID:(long long)arg10 groupTribeName:(id)arg11 groupTribeType:(unsigned int)arg12;
 - (void)didModifyGroupProfile:(unsigned int)arg1 groupName:(id)arg2 groupPost:(id)arg3 groupMemo:(id)arg4 groudAdmissionType:(int)arg5 groupCategory:(int)arg6 groupFaceId:(int)arg7 groupLocation:(id)arg8 groupTribeID:(long long)arg9 groupTribeName:(id)arg10 groupTribeType:(unsigned int)arg11;
+- (void)onGroupDismissNotification:(id)arg1;
+- (void)onEditGroupNameNotification:(id)arg1;
 - (void)actionKickGroupMemberResponse:(id)arg1;
 - (void)actionSheet:(id)arg1 clickedButtonAtIndex:(long long)arg2;
 - (void)alertView:(id)arg1 clickedButtonAtIndex:(long long)arg2;
@@ -276,6 +279,11 @@
 - (long long)tableView:(id)arg1 numberOfRowsInSection:(long long)arg2;
 - (long long)numberOfSectionsInTableView:(id)arg1;
 - (void)rePointeXinView;
+- (void)p_GameGroupDataReport:(id)arg1 withReportType:(id)arg2;
+- (void)gameGroupCellClickDataReport:(id)arg1;
+- (void)gameGroupCellExposureDataReport;
+- (void)updateGameGroupCell:(id)arg1 withTabInfo:(id)arg2;
+- (id)tableView:(id)arg1 cellForGameGroupAtIndexPath:(id)arg2;
 - (id)tableView:(id)arg1 cellForGroupSettingMenuItem:(id)arg2;
 - (void)updateMenuCell;
 - (void)onMsgRemindToggleChanged:(id)arg1;
@@ -322,9 +330,12 @@
 - (void)onClickRightBtn;
 - (void)onClickShareGroup;
 - (void)loadView;
+- (void)onReceivedGameGroupRedDotPush:(id)arg1;
+- (void)gameUnbindSuccessNotification:(id)arg1;
 - (void)onTransferGroupSuccNotify:(id)arg1;
 - (void)onGroupActivityRecv:(id)arg1;
 - (void)onGroupInfoCardActivityRecv:(id)arg1;
+- (void)onGameGroupExtraInfoRecv:(id)arg1;
 - (void)onGroupExtraAppsInfoRecv:(id)arg1;
 - (void)setAppsInfo:(id)arg1;
 - (void)onGetGroupTagNotify:(id)arg1;

@@ -6,17 +6,19 @@
 
 #import <Foundation/NSObject.h>
 
+#import <QQMainProject/IQZUrlDownloaderDelegate-Protocol.h>
 #import <QQMainProject/QUIActionSheetDelegate-Protocol.h>
 #import <QQMainProject/QZUPnPSearchDelegate-Protocol.h>
 
 @class MPVolumeView, NSMutableArray, NSString, QUIActionSheet, QZUPnPControl, QZUPnPModel, UIActivityIndicatorView, UIButton, UIImageView, UIViewController;
 @protocol QZUPnpCommonDelegate;
 
-@interface QZUPnpCommonUI : NSObject <QZUPnPSearchDelegate, QUIActionSheetDelegate>
+@interface QZUPnpCommonUI : NSObject <QZUPnPSearchDelegate, QUIActionSheetDelegate, IQZUrlDownloaderDelegate>
 {
     struct CGRect _frame;
     _Bool _showAlert;
     _Bool _needAnimation;
+    NSString *_guideViewUrl;
     _Bool _hidden;
     _Bool _isAlive;
     QZUPnPControl *_upnpControl;
@@ -28,8 +30,10 @@
     UIViewController<QZUPnpCommonDelegate> *_delegate;
     UIButton *_projectBtn;
     MPVolumeView *_airplayView;
+    double _bottomBarHeight;
 }
 
+@property(nonatomic) double bottomBarHeight; // @synthesize bottomBarHeight=_bottomBarHeight;
 @property(nonatomic) _Bool isAlive; // @synthesize isAlive=_isAlive;
 @property(nonatomic) _Bool hidden; // @synthesize hidden=_hidden;
 @property(retain, nonatomic) MPVolumeView *airplayView; // @synthesize airplayView=_airplayView;

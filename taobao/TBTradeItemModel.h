@@ -10,6 +10,7 @@
 {
 }
 
+- (id)bizCode;
 - (id)reason;
 - (_Bool)valid;
 - (id)cartId;

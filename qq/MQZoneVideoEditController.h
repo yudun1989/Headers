@@ -81,6 +81,8 @@
 - (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void *)arg4;
 - (unsigned long long)supportedInterfaceOrientations;
 - (void)viewDidAppear:(_Bool)arg1;
+- (void)viewWillDisappear:(_Bool)arg1;
+- (void)viewWillAppear:(_Bool)arg1;
 - (id)publishInfoDictionary;
 - (void)setSliderCurrentTime:(double)arg1;
 - (void)setBottomVideoPlayState:(_Bool)arg1;

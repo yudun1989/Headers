@@ -9,10 +9,10 @@
 @interface AliCartStrikeLabel : UILabel
 {
     _Bool _strikeThroughEnabled;
-    int _style;
+    long long _style;
 }
 
-@property(nonatomic) int style; // @synthesize style=_style;
+@property(nonatomic) long long style; // @synthesize style=_style;
 @property(nonatomic) _Bool strikeThroughEnabled; // @synthesize strikeThroughEnabled=_strikeThroughEnabled;
 - (void)drawTextInRect:(struct CGRect)arg1;
 - (id)initWithFrame:(struct CGRect)arg1;

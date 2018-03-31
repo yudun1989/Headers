@@ -23,12 +23,16 @@
     _Bool _isPttHotChat;
     _Bool _isSupportSILK;
     _Bool _isDiscussGroup;
+    int _hsTopicId;
     int _accSourceType;
+    long long _hsConfessorUin;
     NSMutableDictionary *_cmShowGameMessages;
 }
 
 @property(retain, nonatomic) NSMutableDictionary *cmShowGameMessages; // @synthesize cmShowGameMessages=_cmShowGameMessages;
 @property(nonatomic) int accSourceType; // @synthesize accSourceType=_accSourceType;
+@property(nonatomic) int hsTopicId; // @synthesize hsTopicId=_hsTopicId;
+@property(nonatomic) long long hsConfessorUin; // @synthesize hsConfessorUin=_hsConfessorUin;
 @property(nonatomic) _Bool isDiscussGroup; // @synthesize isDiscussGroup=_isDiscussGroup;
 @property(nonatomic) _Bool isSupportSILK; // @synthesize isSupportSILK=_isSupportSILK;
 @property(nonatomic) _Bool isPttHotChat; // @synthesize isPttHotChat=_isPttHotChat;

@@ -128,7 +128,6 @@
 - (void).cxx_destruct;
 - (long long)beforStartOpCount;
 - (long long)currentOpCount;
-- (id)getVideoDebugInfo;
 - (long long)getVideoSizeWithNoPlayVideoSize:(long long *)arg1;
 - (void)setStepPoint:(double)arg1 forkey:(long long)arg2;
 - (void)QZTXVideoSDKDelegateDownloadInfo:(id)arg1;

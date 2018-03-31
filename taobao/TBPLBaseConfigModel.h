@@ -16,6 +16,7 @@
     _Bool _forcePopRespectingPriority;
     _Bool _exlusive;
     _Bool _embed;
+    _Bool _openDirectly;
     NSString *_jsonString;
     NSString *_mustAppearIn;
     NSDate *_startTime;
@@ -30,6 +31,7 @@
     NSDictionary *_extra;
 }
 
+@property(nonatomic) _Bool openDirectly; // @synthesize openDirectly=_openDirectly;
 @property(copy, nonatomic) NSDictionary *extra; // @synthesize extra=_extra;
 @property(nonatomic) _Bool embed; // @synthesize embed=_embed;
 @property(nonatomic) _Bool exlusive; // @synthesize exlusive=_exlusive;
@@ -50,6 +52,7 @@
 @property(copy, nonatomic) NSString *jsonString; // @synthesize jsonString=_jsonString;
 - (void).cxx_destruct;
 - (id)analyseDate:(id)arg1;
+- (id)initWithJSONDictionary:(id)arg1 error:(id *)arg2;
 
 @end
 

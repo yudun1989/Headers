@@ -17,7 +17,7 @@
     NSArray *_anchorList;
     NSDictionary *_filterInfo;
     QQNearByFilterModel *_filterModel;
-    NSArray *_redDotRelateArray;
+    NSDictionary *_redDotRelateDic;
     NSArray *_nearbyRedDotNewVersionInfo;
     NSArray *_nearbyRedDotOldVersionInfo;
 }
@@ -25,7 +25,7 @@
 + (id)sharedInstance;
 @property(retain, nonatomic) NSArray *nearbyRedDotOldVersionInfo; // @synthesize nearbyRedDotOldVersionInfo=_nearbyRedDotOldVersionInfo;
 @property(retain, nonatomic) NSArray *nearbyRedDotNewVersionInfo; // @synthesize nearbyRedDotNewVersionInfo=_nearbyRedDotNewVersionInfo;
-@property(retain, nonatomic) NSArray *redDotRelateArray; // @synthesize redDotRelateArray=_redDotRelateArray;
+@property(retain, nonatomic) NSDictionary *redDotRelateDic; // @synthesize redDotRelateDic=_redDotRelateDic;
 @property(retain, nonatomic) QQNearByFilterModel *filterModel; // @synthesize filterModel=_filterModel;
 @property(retain, nonatomic) NSDictionary *filterInfo; // @synthesize filterInfo=_filterInfo;
 @property(retain, nonatomic) NSArray *anchorList; // @synthesize anchorList=_anchorList;
@@ -43,8 +43,8 @@
 - (void)saveNearbyFilterInfo:(id)arg1;
 - (void)requestNearbyAnchorInfo;
 - (id)loadHeaderListModels;
-- (_Bool)shouldShowReddotForTabId:(int)arg1;
-- (void)clearRedDotInfoForTabId:(int)arg1;
+- (_Bool)shouldShowReddotForBannerId:(int)arg1;
+- (void)clearRedDotInfoForBannerId:(int)arg1;
 - (id)init;
 
 // Remaining properties

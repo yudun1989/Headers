@@ -29,7 +29,7 @@
 - (id)syncDataPstnMemFromExpandingMemList:(id)arg1;
 - (id)getCommonDiscussList;
 - (id)getAllDiscussList;
-- (void)getAllTroopList:(id *)arg1 commTrooplist:(id *)arg2 ownerTroopList:(id *)arg3 adminTroopList:(id *)arg4 memberTroopList:(id *)arg5;
+- (void)getAllTroopList:(id *)arg1 commTrooplist:(id *)arg2 ownerTroopList:(id *)arg3 adminTroopList:(id *)arg4 memberTroopList:(id *)arg5 unnamedTroopList:(id *)arg6;
 - (int)getCheckboxStateByFriendFolder:(id)arg1;
 - (int)getCheckboxStateByPhoneNum:(id)arg1;
 - (int)getCheckboxStateByUin:(id)arg1;

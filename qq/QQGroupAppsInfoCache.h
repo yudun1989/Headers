@@ -6,17 +6,19 @@
 
 #import <Foundation/NSObject.h>
 
-@class NSMutableDictionary;
+@class QQLockDictionary;
 
 @interface QQGroupAppsInfoCache : NSObject
 {
-    NSMutableDictionary *_groupAppsInfoCache;
+    QQLockDictionary *_groupAppsInfoCache;
 }
 
 + (id)getInstance;
 - (void)setUnreadCount:(int)arg1 withGroupCode:(id)arg2 appID:(unsigned long long)arg3;
 - (id)cachedAppsInfoForGroupCode:(unsigned long long)arg1;
+- (void)onGetGameGroupExtraInfoRecv:(id)arg1;
 - (void)onGetAppsInfoRecv:(id)arg1;
+- (void)getGroupExtraAppsInfoWithGroupModel:(id)arg1 serviceType:(unsigned int)arg2;
 - (void)getGroupExtraAppsInfo:(long long)arg1;
 - (void)dealloc;
 - (id)init;

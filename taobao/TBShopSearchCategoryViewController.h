@@ -62,9 +62,12 @@
 - (void)reloadCategoryData;
 - (void)dealloc;
 - (void)viewDidAppear:(_Bool)arg1;
+- (void)viewDidDisappear:(_Bool)arg1;
 - (void)viewWillAppear:(_Bool)arg1;
 - (void)viewDidLoad;
 - (void)didReceiveMemoryWarning;
+- (void)updatePageProperties;
+- (id)defaultTracker;
 - (id)initWithNavigatorURL:(id)arg1 query:(id)arg2;
 
 // Remaining properties

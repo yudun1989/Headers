@@ -15,20 +15,19 @@
 #import <QQMainProject/QQFriendSelectedViewControllerDelegate-Protocol.h>
 #import <QQMainProject/QQMultiBiuEditControllerDelegate-Protocol.h>
 #import <QQMainProject/QQNavigationControllerEventDelegate-Protocol.h>
-#import <QQMainProject/QQReadInJoyVideoCommentSendingViewDelegate-Protocol.h>
 #import <QQMainProject/QQReadInJoyVideoFullScreenTopViewDelegate-Protocol.h>
 #import <QQMainProject/QUIAlertPlusViewDelegate-Protocol.h>
-#import <QQMainProject/UINavigationControllerDelegate-Protocol.h>
 #import <QQMainProject/UIScrollViewDelegate-Protocol.h>
 #import <QQMainProject/UITableViewDataSource-Protocol.h>
 #import <QQMainProject/UITableViewDelegate-Protocol.h>
 
-@class BarrageWebView, FullScreenReadInJoyVideoCellModel, FullScreenShortVideoCellModel, FullScreenVideoCellModel, FullScreenVideoTableViewCell, NSArray, NSIndexPath, NSMutableArray, NSMutableDictionary, NSMutableSet, NSString, NSTimer, NSURL, NavigationTransitionCoverVerticalpercentDrivenInteractiveAnimator, QQMessageModel, QQReadInJoyVideoCommentSendingView, QQReadInJoyVideoFullScreenTopView, QQReadInJoyVideoView, QQWebShareActionSheet, QUIAlertPlusView, ReadInJoyChannelArticle, ReadInJoyVideoArticleModel, UIActivityIndicatorView, UIButton, UIDocumentInteractionController, UITableView, ViewControllerMaskView;
+@class BarrageWebView, FullScreenReadInJoyVideoCellModel, FullScreenShortVideoCellModel, FullScreenVideoCellModel, FullScreenVideoTableViewCell, NSArray, NSIndexPath, NSMutableArray, NSMutableDictionary, NSMutableSet, NSString, NSTimer, NSURL, QQMessageModel, QQReadInJoyVideoFullScreenTopView, QQReadInJoyVideoView, QQWebShareActionSheet, QUIAlertPlusView, ReadInJoyChannelArticle, ReadInJoyVideoArticleModel, UIActivityIndicatorView, UIButton, UIDocumentInteractionController, UITableView, UIView, ViewControllerMaskView;
 
-@interface QQReadInJoyVideoFullScreenViewController : QQViewController <UITableViewDataSource, UITableViewDelegate, UIScrollViewDelegate, FullScreenVideoCellDelegate, FullScreenPublicVideoCellDelegate, QQFriendSelectedViewControllerDelegate, ActionSheetDataDelegate, QQReadInJoyVideoFullScreenTopViewDelegate, UINavigationControllerDelegate, QQAudioSessionManagerDelegate, QQReadInJoyVideoCommentSendingViewDelegate, QQMultiBiuEditControllerDelegate, QUIAlertPlusViewDelegate, QQNavigationControllerEventDelegate, NavigationTranstionSource, NavigationTranstionDestination>
+@interface QQReadInJoyVideoFullScreenViewController : QQViewController <UITableViewDataSource, UITableViewDelegate, UIScrollViewDelegate, FullScreenVideoCellDelegate, FullScreenPublicVideoCellDelegate, QQFriendSelectedViewControllerDelegate, ActionSheetDataDelegate, QQReadInJoyVideoFullScreenTopViewDelegate, QQAudioSessionManagerDelegate, QQMultiBiuEditControllerDelegate, QUIAlertPlusViewDelegate, QQNavigationControllerEventDelegate, NavigationTranstionSource, NavigationTranstionDestination>
 {
     NSIndexPath *startDraggingMiddleIndex;
     double MAXCellAlphaOffset;
+    _Bool _is_show_readinjoy_entrance;
     _Bool _disableRecommendation;
     _Bool _popUpTransition;
     _Bool _manuallyShowTopBar;
@@ -47,6 +46,7 @@
     _Bool _hasPopViewController;
     _Bool _isBiuViewShow;
     _Bool _hasGotoFullVC;
+    unsigned int _video_from_type;
     unsigned int _videoEntranceChannel;
     UITableView *_tableView;
     QQReadInJoyVideoFullScreenTopView *_topBar;
@@ -77,6 +77,7 @@
     FullScreenReadInJoyVideoCellModel *_sharingCellModel;
     ViewControllerMaskView *_guideView;
     QUIAlertPlusView *_networkChangedAlertView;
+    UIView *_tableFooterView;
     UIDocumentInteractionController *_documentController;
     NSMutableDictionary *_commentDrafts;
     unsigned long long _fetchCount;
@@ -85,7 +86,6 @@
     FullScreenVideoTableViewCell *_lastVideoCell;
     FullScreenVideoCellModel *_lastVideoCellModel;
     NSIndexPath *_middleIndexPath;
-    NavigationTransitionCoverVerticalpercentDrivenInteractiveAnimator *_interactiveTransition;
     NSMutableArray *_recommendationExposeReportArticles;
     NSMutableArray *_exposedToMiddleRecommendationVideoIndexs;
     NSMutableArray *_playedVideoBehavious;
@@ -101,7 +101,6 @@
     NSTimer *_advertExposureTimer;
     double _lastReportAdvertTime;
     double _enterTimeStamp;
-    QQReadInJoyVideoCommentSendingView *_commentSendingView;
     UIButton *_bottomButton;
     long long _cacheForSelectIndex;
     long long _flowForeCastSelectIndex;
@@ -113,7 +112,6 @@
 @property(nonatomic) long long flowForeCastSelectIndex; // @synthesize flowForeCastSelectIndex=_flowForeCastSelectIndex;
 @property(nonatomic) long long cacheForSelectIndex; // @synthesize cacheForSelectIndex=_cacheForSelectIndex;
 @property(retain, nonatomic) UIButton *bottomButton; // @synthesize bottomButton=_bottomButton;
-@property(retain, nonatomic) QQReadInJoyVideoCommentSendingView *commentSendingView; // @synthesize commentSendingView=_commentSendingView;
 @property(nonatomic) _Bool isBiuViewShow; // @synthesize isBiuViewShow=_isBiuViewShow;
 @property(nonatomic) double enterTimeStamp; // @synthesize enterTimeStamp=_enterTimeStamp;
 @property(nonatomic) double lastReportAdvertTime; // @synthesize lastReportAdvertTime=_lastReportAdvertTime;
@@ -131,7 +129,6 @@
 @property(retain, nonatomic) NSMutableArray *exposedToMiddleRecommendationVideoIndexs; // @synthesize exposedToMiddleRecommendationVideoIndexs=_exposedToMiddleRecommendationVideoIndexs;
 @property(retain, nonatomic) NSMutableArray *recommendationExposeReportArticles; // @synthesize recommendationExposeReportArticles=_recommendationExposeReportArticles;
 @property(nonatomic) _Bool hasPopViewController; // @synthesize hasPopViewController=_hasPopViewController;
-@property(retain, nonatomic) NavigationTransitionCoverVerticalpercentDrivenInteractiveAnimator *interactiveTransition; // @synthesize interactiveTransition=_interactiveTransition;
 @property(nonatomic) _Bool lowProfile; // @synthesize lowProfile=_lowProfile;
 @property(retain, nonatomic) NSIndexPath *middleIndexPath; // @synthesize middleIndexPath=_middleIndexPath;
 @property(retain, nonatomic) FullScreenVideoCellModel *lastVideoCellModel; // @synthesize lastVideoCellModel=_lastVideoCellModel;
@@ -148,6 +145,7 @@
 @property(nonatomic, getter=isEditingComment) _Bool editingComment; // @synthesize editingComment=_editingComment;
 @property(retain, nonatomic) NSMutableDictionary *commentDrafts; // @synthesize commentDrafts=_commentDrafts;
 @property(retain, nonatomic) UIDocumentInteractionController *documentController; // @synthesize documentController=_documentController;
+@property(retain, nonatomic) UIView *tableFooterView; // @synthesize tableFooterView=_tableFooterView;
 @property(retain, nonatomic) QUIAlertPlusView *networkChangedAlertView; // @synthesize networkChangedAlertView=_networkChangedAlertView;
 @property(retain, nonatomic) ViewControllerMaskView *guideView; // @synthesize guideView=_guideView;
 @property(retain, nonatomic) FullScreenReadInJoyVideoCellModel *sharingCellModel; // @synthesize sharingCellModel=_sharingCellModel;
@@ -184,10 +182,20 @@
 @property(retain, nonatomic) ReadInJoyVideoArticleModel *currentVideoArticleModel; // @synthesize currentVideoArticleModel=_currentVideoArticleModel;
 @property(retain, nonatomic) ReadInJoyVideoArticleModel *videoArticleModel; // @synthesize videoArticleModel=_videoArticleModel;
 @property(retain, nonatomic) ReadInJoyChannelArticle *articleModel; // @synthesize articleModel=_articleModel;
+@property(nonatomic) _Bool is_show_readinjoy_entrance; // @synthesize is_show_readinjoy_entrance=_is_show_readinjoy_entrance;
+@property(nonatomic) unsigned int video_from_type; // @synthesize video_from_type=_video_from_type;
 @property(nonatomic) unsigned long long firstVideoSourceType; // @synthesize firstVideoSourceType=_firstVideoSourceType;
 @property(retain, nonatomic) QQReadInJoyVideoFullScreenTopView *topBar; // @synthesize topBar=_topBar;
 @property(retain, nonatomic) UITableView *tableView; // @synthesize tableView=_tableView;
 - (void).cxx_destruct;
+- (void)deleteFavoriteNotification:(id)arg1;
+- (void)addFavoriteResultNotification:(id)arg1;
+- (void)deleteFavorite:(id)arg1;
+- (void)addFavorite:(id)arg1;
+- (void)fetchFavoriteWithInnerIDs:(id)arg1;
+- (void)delayNotifyOtherAppAudioSessionActive;
+- (void)notifyOtherAppAudioSessionActive;
+- (void)activeAudioSession;
 - (void)onIntterruptBegin;
 - (void)onAudioSessionActive;
 - (struct CGRect)destinationFrame;
@@ -196,7 +204,6 @@
 - (struct CGRect)sourceViewFrame;
 - (id)sourceView;
 - (void)qqNavigationControllerDidPopViewController;
-- (id)navigationController:(id)arg1 animationControllerForOperation:(long long)arg2 fromViewController:(id)arg3 toViewController:(id)arg4;
 - (void)bottomButtonDidClick:(id)arg1;
 - (void)didPan:(id)arg1;
 - (void)volumeChanged:(id)arg1;
@@ -222,6 +229,9 @@
 - (void)updateTopBarAtIndexPath:(id)arg1;
 - (void)behavioursSequence;
 - (void)behavioursOnCell:(id)arg1;
+- (id)reportFavoriteR5:(id)arg1;
+- (void)report902F:(id)arg1;
+- (void)report901C:(id)arg1;
 - (void)report8AEE:(id)arg1;
 - (void)report7A5C:(id)arg1;
 - (void)report7A5B:(id)arg1;
@@ -241,23 +251,23 @@
 - (void)reportAdvertExpose;
 - (void)clearAdvertExposureTimer;
 - (void)beginAdvertExposureTimer;
+- (void)tableView:(id)arg1 changeCellAlphaAccordingToPoint:(struct CGPoint)arg2 forCell:(id)arg3;
 - (void)tableView:(id)arg1 changeCellAlphaAccordingToPoint:(struct CGPoint)arg2 atIndexPath:(id)arg3;
-- (void)commentSendingView:(id)arg1 willActiveKeyboard:(_Bool)arg2 notification:(id)arg3;
-- (_Bool)commentSendingView:(id)arg1 shouldSendCommentWithComment:(id)arg2;
-- (void)tableView:(id)arg1 prepareSendCommentForCell:(id)arg2 atIndexPath:(id)arg3;
-- (void)resetCommentSendingViewState;
+- (void)tableView:(id)arg1 commentActive:(_Bool)arg2 forCell:(id)arg3 atIndexPath:(id)arg4;
+- (id)tableView:(id)arg1 viewForCommentContainerInCell:(id)arg2 atIndexPath:(id)arg3;
 - (_Bool)tableView:(id)arg1 shouldSendCommentForCell:(id)arg2 atIndexPath:(id)arg3;
 - (void)showGuideView;
 - (void)closeButtonDidClick:(id)arg1;
 - (void)shareShortVideoToFriendWithMessage:(id)arg1;
+- (void)collectUrl;
 - (void)shareWithSinaWeibo;
 - (void)shareWithQZone;
 - (void)shareWithFriend;
 - (id)getDataForShareItem:(id)arg1 onThisItem:(int)arg2;
+- (void)tableViewVideoCell:(id)arg1 favoriteDidChange:(_Bool)arg2;
 - (void)tableViewVideoCell:(id)arg1 willDisplayLabel:(id)arg2 forIndex:(unsigned long long)arg3;
 - (void)tableViewVideoCell:(id)arg1 didSelectLabel:(id)arg2 forIndex:(unsigned long long)arg3;
 - (id)getReportDicForCell:(id)arg1;
-- (void)tableViewVideoCell:(id)arg1 didGetVideoNatureSize:(struct CGSize)arg2;
 - (_Bool)isLightedUpForCell:(id)arg1;
 - (void)tableViewVideoCell:(id)arg1 didStopPlayVideoAtTime:(double)arg2 withImage:(id)arg3 articleID:(unsigned long long)arg4;
 - (void)videoPlayStopReport:(id)arg1;
@@ -289,6 +299,8 @@
 - (double)tableView:(id)arg1 heightForHeaderInSection:(long long)arg2;
 - (void)updateContainerFrameWithAdCell:(id)arg1;
 - (double)tableView:(id)arg1 heightForRowAtIndexPath:(id)arg2;
+- (void)gdt_auto_test_feed:(id)arg1 adIdentifier:(id)arg2;
+- (void)jubao;
 - (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;
 - (void)setAdvertClickAction:(id)arg1 andCell:(id)arg2;
 - (long long)tableView:(id)arg1 numberOfRowsInSection:(long long)arg2;
@@ -298,7 +310,6 @@
 - (_Bool)isMiddleCell:(id)arg1;
 - (void)tableViewVideoCell:(id)arg1 didShowVideoErrorCode:(long long)arg2;
 - (id)indexPathsVideoToBePreLoadAfterIndexPath:(id)arg1;
-- (void)keyBoardWillShow:(id)arg1;
 - (void)onGdtAdSKStoreAppear:(id)arg1;
 - (void)onGdtAdSKStoreDisappear:(id)arg1;
 - (void)willResignActive:(id)arg1;
@@ -311,6 +322,9 @@
 - (void)tableView:(id)arg1 didSelectLikeType:(unsigned long long)arg2 ForCell:(id)arg3 forRowAtIndexPath:(id)arg4;
 - (void)tableView:(id)arg1 fetchLikeCountForCell:(id)arg2 atIndexPath:(id)arg3;
 - (void)tableView:(id)arg1 fetchLikeTypeRequestForCell:(id)arg2 forRowAtIndexPath:(id)arg3;
+- (long long)indexOfFavoriteCid:(id)arg1;
+- (long long)indexOfArticleFavoriteLocalID:(unsigned long long)arg1;
+- (long long)indexOfInnerID:(id)arg1;
 - (void)fetchVideoListWithArticleID:(id)arg1;
 - (_Bool)isValidVideoArticleModel:(id)arg1;
 - (id)getCurrentLocalAdInfo;
@@ -328,6 +342,10 @@
 - (void)showNetAlert;
 - (void)setDisableToShowNetAlert:(_Bool)arg1;
 - (_Bool)prefersStatusBarHidden;
+- (void)removeNotificationsAtViewDidDisappear;
+- (void)addNotificationsAtViewDidAppear;
+- (void)removeNotificationsAtDealloc;
+- (void)addNotificationsAtViewDidLoad;
 - (void)viewDidDisappear:(_Bool)arg1;
 - (void)viewWillDisappear:(_Bool)arg1;
 - (void)viewDidAppear:(_Bool)arg1;

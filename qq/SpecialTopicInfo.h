@@ -10,14 +10,30 @@
 
 @interface SpecialTopicInfo : NSObject
 {
+    unsigned int _iconShape;
     NSString *_headerIconUrl;
     NSString *_headerTitle;
     NSMutableArray *_jumpInfoArray;
     NSString *_headerJumpUrl;
+    unsigned long long _postTime;
+    NSString *_postTimeStr;
+    NSString *_recommendReason;
+    unsigned long long _accountUin;
+    unsigned long long _topicId;
+    unsigned long long _strategyId;
+    unsigned long long _algorithmId;
 }
 
 + (_Bool)isValidWithSpecialTopicInfo:(id)arg1;
 + (id)specialInfoFromDecoder:(struct CPBMessageDecoder *)arg1;
+@property(nonatomic) unsigned int iconShape; // @synthesize iconShape=_iconShape;
+@property(nonatomic) unsigned long long algorithmId; // @synthesize algorithmId=_algorithmId;
+@property(nonatomic) unsigned long long strategyId; // @synthesize strategyId=_strategyId;
+@property(nonatomic) unsigned long long topicId; // @synthesize topicId=_topicId;
+@property(nonatomic) unsigned long long accountUin; // @synthesize accountUin=_accountUin;
+@property(retain, nonatomic) NSString *recommendReason; // @synthesize recommendReason=_recommendReason;
+@property(copy, nonatomic) NSString *postTimeStr; // @synthesize postTimeStr=_postTimeStr;
+@property(nonatomic) unsigned long long postTime; // @synthesize postTime=_postTime;
 @property(retain, nonatomic) NSString *headerJumpUrl; // @synthesize headerJumpUrl=_headerJumpUrl;
 @property(retain, nonatomic) NSMutableArray *jumpInfoArray; // @synthesize jumpInfoArray=_jumpInfoArray;
 @property(retain, nonatomic) NSString *headerTitle; // @synthesize headerTitle=_headerTitle;

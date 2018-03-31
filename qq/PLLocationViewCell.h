@@ -14,11 +14,6 @@
 }
 
 @property(retain, nonatomic) UIImageView *selectedImageView; // @synthesize selectedImageView=_selectedImageView;
-- (void)layoutSubviews;
-- (void)setModel:(id)arg1 markKeyword:(id)arg2 selected:(_Bool)arg3;
-- (void)setModel:(id)arg1 selected:(_Bool)arg2;
-- (void)dealloc;
-- (id)initWithStyle:(long long)arg1 reuseIdentifier:(id)arg2;
 
 @end
 

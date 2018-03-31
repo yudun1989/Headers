@@ -6,11 +6,14 @@
 
 #import "NSObject-Protocol.h"
 
-@class NSArray, NSString, UIView;
+@class NSArray, NSDictionary, NSString, UIView;
 
 @protocol TBIctAddWeexCallbackProtocol <NSObject>
 
 @optional
+- (void)showAllInteractiveCmp:(_Bool)arg1;
+- (void)share:(NSDictionary *)arg1 level:(unsigned long long)arg2 index:(unsigned long long)arg3 type:(unsigned long long)arg4;
+- (void)openNewVideoWithLevel:(unsigned long long)arg1 index:(unsigned long long)arg2 videoListInfo:(NSArray *)arg3 isUserChecked:(_Bool)arg4;
 - (void)onWXCmpDismiss:(NSString *)arg1;
 - (void)onWXCmpExistOrNot:(NSArray *)arg1;
 - (_Bool)add:(UIView *)arg1 cmpType:(NSString *)arg2 screenType:(NSString *)arg3;

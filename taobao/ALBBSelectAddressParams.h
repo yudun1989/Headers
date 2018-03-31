@@ -21,6 +21,8 @@
     NSString *_source;
     NSString *_isSupportAgency;
     NSString *_agencyReceive;
+    NSString *_agencyReceiveH5Url;
+    NSString *_agencyReceiveHelpUrl;
     NSString *_addressId;
     NSString *_ownerId;
     NSString *_relationId;
@@ -35,6 +37,8 @@
 @property(copy, nonatomic) NSString *relationId; // @synthesize relationId=_relationId;
 @property(copy, nonatomic) NSString *ownerId; // @synthesize ownerId=_ownerId;
 @property(copy, nonatomic) NSString *addressId; // @synthesize addressId=_addressId;
+@property(copy, nonatomic) NSString *agencyReceiveHelpUrl; // @synthesize agencyReceiveHelpUrl=_agencyReceiveHelpUrl;
+@property(copy, nonatomic) NSString *agencyReceiveH5Url; // @synthesize agencyReceiveH5Url=_agencyReceiveH5Url;
 @property(copy, nonatomic) NSString *agencyReceive; // @synthesize agencyReceive=_agencyReceive;
 @property(copy, nonatomic) NSString *isSupportAgency; // @synthesize isSupportAgency=_isSupportAgency;
 @property(copy, nonatomic) NSString *source; // @synthesize source=_source;

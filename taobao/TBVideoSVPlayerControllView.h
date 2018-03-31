@@ -36,6 +36,7 @@
 - (void)controlShowOrHidden;
 - (void)playOrPauseVideo;
 - (void)resetView;
+- (void)updatePlayButtonPositon;
 - (void)updateViewWithPortrait:(_Bool)arg1;
 - (void)updateVideoProgress:(double)arg1 current:(double)arg2 duration:(double)arg3;
 - (void)updateControllStatus:(_Bool)arg1;

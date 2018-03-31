@@ -87,7 +87,6 @@
 - (void)viewCall:(id)arg1 Callback:(CDUnknownBlockType)arg2;
 - (id)convertToBigSale:(id)arg1;
 - (id)convertToNameValue:(id)arg1;
-- (struct CGPoint)getCenterAnimate:(double)arg1;
 - (double)getHeight:(id)arg1 rowHeight:(double)arg2;
 - (void)resetOffsetToZero:(id)arg1;
 - (void)scrollViewDidEndScrollingAnimation:(id)arg1;
@@ -103,8 +102,6 @@
 - (long long)tbfestival_defaultStatusBarStyle;
 - (_Bool)tbfestival_isFestivalEnable;
 - (void)onReloadCollectionViewLayout;
-- (void)onAdvertCardImageLoadFinish;
-- (void)onMytaobaoPageRefresh;
 - (void)toolsImageClicked:(id)arg1;
 - (void)toolsBtnClicked:(id)arg1;
 - (void)messageButtonClicked:(id)arg1;
@@ -127,6 +124,7 @@
 - (void)TBMyTaobaoMainViewServiceDelegateIsSuccess:(_Bool)arg1 data:(id)arg2 type:(unsigned long long)arg3;
 - (void)deleteHomeCardCell:(id)arg1;
 - (void)refreshIsForce:(_Bool)arg1 isFirstLoad:(_Bool)arg2 isLoginOut:(_Bool)arg3;
+- (void)refreshHomeList;
 - (void)refreshHomePageByDefaultOption;
 - (void)setDataSource:(id)arg1 type:(unsigned long long)arg2;
 - (void)generateToolsView;

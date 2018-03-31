@@ -6,7 +6,7 @@
 
 #import "WXComponent.h"
 
-@class NSString, UIViewController;
+@class JSContext, NSString, UIViewController, WXSDKInstance;
 
 @interface WXWeb : WXComponent
 {
@@ -15,19 +15,30 @@
     _Bool _failLoadEvent;
     UIViewController *_viewController;
     NSString *_url;
+    NSString *_source;
+    JSContext *_jsContext;
+    WXSDKInstance *_instance;
+    NSString *_inInitsource;
 }
 
++ (id)wx_export_method_27;
+@property(retain, nonatomic) NSString *inInitsource; // @synthesize inInitsource=_inInitsource;
+@property(retain, nonatomic) WXSDKInstance *instance; // @synthesize instance=_instance;
+@property(retain, nonatomic) JSContext *jsContext; // @synthesize jsContext=_jsContext;
 @property(nonatomic) _Bool failLoadEvent; // @synthesize failLoadEvent=_failLoadEvent;
 @property(nonatomic) _Bool finishLoadEvent; // @synthesize finishLoadEvent=_finishLoadEvent;
 @property(nonatomic) _Bool startLoadEvent; // @synthesize startLoadEvent=_startLoadEvent;
+@property(retain, nonatomic) NSString *source; // @synthesize source=_source;
 @property(retain, nonatomic) NSString *url; // @synthesize url=_url;
 @property(retain, nonatomic) UIViewController *viewController; // @synthesize viewController=_viewController;
 - (void).cxx_destruct;
+- (void)rebind:(id)arg1;
 - (id)baseInfo;
 - (void)goForward;
 - (void)goBack;
 - (void)reload;
 - (void)loadURL:(id)arg1;
+- (void)postMessage:(id)arg1;
 - (void)addEvent:(id)arg1;
 - (void)updateAttributes:(id)arg1;
 - (void)viewDidLoad;

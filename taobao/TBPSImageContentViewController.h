@@ -33,6 +33,7 @@
 - (void)didSelectCellWithImage:(id)arg1 WithMetaInfo:(id)arg2;
 - (void)layoutSubviews;
 - (void)loadGroup:(id)arg1;
+- (void)leftButtonClick:(id)arg1;
 - (void)backItemClicked:(id)arg1;
 - (void)handleAssetGroupDidChange:(id)arg1;
 - (void)viewDidLoad;

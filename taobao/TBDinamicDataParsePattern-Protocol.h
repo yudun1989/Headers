@@ -6,11 +6,12 @@
 
 #import "NSObject-Protocol.h"
 
-@class NSDictionary, NSObject, NSString;
+@class NSDictionary, NSObject, NSString, TBDParameter;
 
 @protocol TBDinamicDataParsePattern <NSObject>
 
 @optional
+- (NSObject *)parseExpression:(NSString *)arg1 withParam:(TBDParameter *)arg2;
 - (NSObject *)parseExpression:(NSString *)arg1 withData:(id)arg2 module:(NSString *)arg3 context:(id)arg4;
 - (NSObject *)parseExpression:(NSString *)arg1 withDataDict:(NSDictionary *)arg2;
 @end

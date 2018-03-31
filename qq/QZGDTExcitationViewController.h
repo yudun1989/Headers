@@ -21,12 +21,16 @@
     UIButton *_countDownButton;
     int _countDownTime;
     int _topPadding;
+    int _leftPadding;
     int _height;
+    int _width;
     unsigned long long _orientations;
     _Bool _isHandup;
     _Bool _isFail;
     _Bool _isVideoPlayEnd;
     _Bool _backFromAdv;
+    _Bool _hasLayoutBottom;
+    _Bool _hasLayoutBackgroundMask;
     QZVideoSectionInfo *_sectionInfo;
     UILabel *_countDownTimeLabel;
     UILabel *_textLabel;
@@ -39,11 +43,17 @@
     NSDictionary *_params;
     QzoneFeedModel *_feedmodel;
     QzoneFeedVideo *_video;
+    UIView *_bgView;
+    UIImageView *_advBgMaskView;
+    UIView *_advBgView;
+    double _seekTo;
 }
 
 - (void).cxx_destruct;
+- (void)playerViewWillPausePlay:(id)arg1 playInfo:(id)arg2;
 - (void)playerViewOneLoopToEnd:(id)arg1 playInfo:(id)arg2;
 - (void)generateNoResourceLayout;
+- (void)layoutBottomRecomm;
 - (void)setComponentImage:(id)arg1 view:(id)arg2 needExpourse:(_Bool)arg3;
 - (struct CGRect)calcCoverFrame;
 - (void)timeoutAction;
@@ -60,6 +70,10 @@
 - (void)applicationDidBecomeActive:(id)arg1;
 - (void)applicationWillResignActive:(id)arg1;
 - (void)viewWillDisappear:(_Bool)arg1;
+- (void)addMaskToBackground:(id)arg1;
+- (void)layoutMaskBackground:(id)arg1;
+- (void)layoutBlackBackGround;
+- (id)convertToBlurImage:(id)arg1;
 - (void)viewWillAppear:(_Bool)arg1;
 - (void)viewDidLoad;
 - (void)dealloc;

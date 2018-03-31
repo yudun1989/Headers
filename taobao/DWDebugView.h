@@ -10,11 +10,14 @@
 {
     CDUnknownBlockType _avplayerBlock;
     CDUnknownBlockType _ijkplayerBlock;
+    CDUnknownBlockType _dnaplayerBlock;
 }
 
+@property(copy, nonatomic) CDUnknownBlockType dnaplayerBlock; // @synthesize dnaplayerBlock=_dnaplayerBlock;
 @property(copy, nonatomic) CDUnknownBlockType ijkplayerBlock; // @synthesize ijkplayerBlock=_ijkplayerBlock;
 @property(copy, nonatomic) CDUnknownBlockType avplayerBlock; // @synthesize avplayerBlock=_avplayerBlock;
 - (void).cxx_destruct;
+- (void)dnaplayer;
 - (void)ijkplayer;
 - (void)avplayer;
 - (void)setFrame:(struct CGRect)arg1;

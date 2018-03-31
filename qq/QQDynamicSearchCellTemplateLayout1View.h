@@ -22,7 +22,9 @@
 
 - (double)calHeightForCell;
 - (void)resetContentViewFrame;
+- (void)layoutViewsWithResult:(id)arg1;
 - (void)layoutRightView;
+- (_Bool)leftLongImageType;
 - (void)layoutLeftView;
 - (double)calRightViewHeight;
 - (double)calRightViewWidth;

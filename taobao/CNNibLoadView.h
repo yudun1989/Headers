@@ -13,6 +13,7 @@
 
 @property(retain, nonatomic) UIView *view; // @synthesize view=_view;
 - (void).cxx_destruct;
+- (_Bool)isNoNibMode;
 - (void)addtionalInitialization;
 - (id)nibName;
 - (void)setUIStyle;

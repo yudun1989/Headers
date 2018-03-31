@@ -48,7 +48,7 @@
 - (void)setWhitelistEnabled:(_Bool)arg1;
 - (void)removeDelegate:(id)arg1;
 - (void)addDelegate:(id)arg1;
-- (void)logout;
+- (void)logoutCompletion:(CDUnknownBlockType)arg1;
 - (void)login;
 - (void)authLogoutCompletion;
 - (void)authLoginSuccess;

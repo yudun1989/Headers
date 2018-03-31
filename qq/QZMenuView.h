@@ -34,6 +34,8 @@
 - (void)onClickDeleteMenu:(id)arg1;
 - (void)showNewOnIconWithTitle:(id)arg1;
 - (id)getNewIcon;
+- (void)addFollowTipForView:(id)arg1 withTip:(id)arg2 topMargin:(double)arg3 leftMargin:(double)arg4;
+- (void)hideTipView;
 - (void)layoutMenuItems:(id)arg1 withID:(int)arg2;
 - (id)initWithFrame:(struct CGRect)arg1;
 - (double)getMenuHeight;

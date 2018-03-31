@@ -6,15 +6,18 @@
 
 #import "TBDetailEventBaseSubscriber.h"
 
-@class TBPLWebLayer;
+#import "TBPLBaseLayerProtocol-Protocol.h"
 
-@interface TBDetailUtilitiesSubscriber : TBDetailEventBaseSubscriber
+@class NSString, TBPLWebLayer;
+
+@interface TBDetailUtilitiesSubscriber : TBDetailEventBaseSubscriber <TBPLBaseLayerProtocol>
 {
     TBPLWebLayer *_weblayer;
 }
 
 @property(retain, nonatomic) TBPLWebLayer *weblayer; // @synthesize weblayer=_weblayer;
 - (void).cxx_destruct;
+- (void)popLayerViewReceiveCloseActionWithPopRequest:(id)arg1 attachVC:(id)arg2;
 - (void)showPopLayer:(id)arg1;
 - (void)showShareControl:(id)arg1 shareUrl:(id)arg2 pintuanShareParams:(id)arg3;
 - (id)appPushIntentWithData:(id)arg1;
@@ -29,6 +32,12 @@
 - (id)handleShareItemEvent:(id)arg1;
 - (struct _NSRange)eventRange;
 - (id)handleEvent:(id)arg1;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly, copy) NSString *description;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
 
 @end
 

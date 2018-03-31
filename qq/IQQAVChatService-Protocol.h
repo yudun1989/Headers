@@ -11,6 +11,8 @@
 - (void)writeQuaReportInfoWhenTerminate;
 - (void)writeQuaReportInfoWhenCrash;
 - (_Bool)isQuaReportExist;
+- (void)writeReportToFileWhenExist:(NSString *)arg1 reportSValue:(NSString *)arg2;
+- (void)writeReportToFileWhenExist:(NSString *)arg1 reportValue:(NSString *)arg2;
 - (void)makePhoneCall:(NSString *)arg1;
 - (void)resetTotalUnreadCount;
 - (void)resetUnreadCount:(NSString *)arg1 accType:(int)arg2;

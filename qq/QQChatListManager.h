@@ -86,7 +86,6 @@
 - (id)GetMessageModelByModel:(id)arg1;
 - (void)onMsgStateChange:(id)arg1;
 - (_Bool)shouldUseModelState;
-- (_Bool)isMsg:(id)arg1 pieceOfLargeMsg:(id)arg2;
 - (void)onPublicAccountAssistantSettingChanged_delay;
 - (void)onPublicAccountAssistantSettingChanged:(id)arg1;
 - (void)handlePublicAccountNotificationInChatList:(id)arg1;
@@ -161,10 +160,12 @@
 - (_Bool)checkPriorityForSpecialFriends:(id)arg1;
 - (void)onUnReadCountRefreshed:(id)arg1 unreadCount:(int)arg2 type:(int)arg3;
 - (_Bool)onMessageCreated:(id)arg1 causedBy:(int)arg2 offlineMsgFlag:(_Bool)arg3;
-- (void)onMessageAdded:(id)arg1;
+- (void)onMessageAdded:(id)arg1 inCause:(int)arg2;
 - (void)updateTroopExinfo:(id)arg1 type:(int)arg2;
 - (_Bool)checkIsPCOpenGroupMessage:(id)arg1;
 - (_Bool)onMessageArrayReceived:(id)arg1 offlineMsgFlag:(_Bool)arg2;
+- (void)addMessage:(id)arg1 inCause:(int)arg2;
+- (void)addMessageForInit:(id)arg1;
 - (void)addMessage:(id)arg1;
 - (void)onlyForUpdateSummaryInRecentModel:(id)arg1;
 - (void)tryToAlert;
@@ -239,6 +240,7 @@
 - (id)createExpertMessageWith:(id)arg1 causedBy:(int)arg2 isNew:(_Bool)arg3;
 - (id)createMassScheduleMessageWith:(id)arg1 causedBy:(int)arg2 isNew:(_Bool)arg3;
 - (id)createMassBlessingMessageWith:(id)arg1 causedBy:(int)arg2 isNew:(_Bool)arg3;
+- (id)createIMaxIdMessageWith:(id)arg1 causedBy:(int)arg2 isNew:(_Bool)arg3;
 - (id)createActivateFriendsMessageWith:(id)arg1 causedBy:(int)arg2 isNew:(_Bool)arg3;
 - (id)createBindAccountsClusterMessageModel;
 - (id)createPubAccountMessageWith:(id)arg1 causedBy:(int)arg2;

@@ -18,6 +18,7 @@
 + (id)factoryKey;
 @property(retain, nonatomic) NSIndexPath *indexPath; // @synthesize indexPath=_indexPath;
 - (void).cxx_destruct;
+- (void)findSimilarClicked;
 - (void)extendBtnClicked;
 - (void)cardLongPressed;
 - (_Bool)hasSimilar;

@@ -10,22 +10,28 @@
 
 @interface QQStoryMemoryProfileBriefContentView : UIView
 {
+    _Bool _isVip;
     _Bool _guest;
     unsigned int _fanNum;
+    unsigned int _videoNum;
     unsigned int _increaseFanNum;
     unsigned long long _subscribeNum;
     UILabel *_fanNumLabel;
     UILabel *_subscribeNumLabel;
+    UILabel *_videoNumLabel;
     QQStoryMemoryIncreaseRedPointView *_fanNumIncreasedView;
     NSMutableArray *_separatorArray;
 }
 
 @property(retain, nonatomic) NSMutableArray *separatorArray; // @synthesize separatorArray=_separatorArray;
 @property(retain, nonatomic) QQStoryMemoryIncreaseRedPointView *fanNumIncreasedView; // @synthesize fanNumIncreasedView=_fanNumIncreasedView;
+@property(retain, nonatomic) UILabel *videoNumLabel; // @synthesize videoNumLabel=_videoNumLabel;
 @property(retain, nonatomic) UILabel *subscribeNumLabel; // @synthesize subscribeNumLabel=_subscribeNumLabel;
 @property(retain, nonatomic) UILabel *fanNumLabel; // @synthesize fanNumLabel=_fanNumLabel;
 @property(nonatomic, getter=isGuest) _Bool guest; // @synthesize guest=_guest;
+@property(nonatomic) _Bool isVip; // @synthesize isVip=_isVip;
 @property(nonatomic) unsigned int increaseFanNum; // @synthesize increaseFanNum=_increaseFanNum;
+@property(nonatomic) unsigned int videoNum; // @synthesize videoNum=_videoNum;
 @property(nonatomic) unsigned long long subscribeNum; // @synthesize subscribeNum=_subscribeNum;
 @property(nonatomic) unsigned int fanNum; // @synthesize fanNum=_fanNum;
 - (void)updateLayout;

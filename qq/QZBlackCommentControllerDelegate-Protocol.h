@@ -14,6 +14,7 @@
 - (void)handleOpenHomepage:(long long)arg1 nick:(NSString *)arg2;
 
 @optional
+- (void)blackCommentViewDidHiddenComplete:(QzoneFeedModel *)arg1;
 - (void)blackCommentViewDidDisapper:(QzoneFeedModel *)arg1;
 @end
 

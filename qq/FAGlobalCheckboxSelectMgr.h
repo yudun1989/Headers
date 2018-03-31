@@ -21,9 +21,13 @@
     int _selectedRecentCount;
     int _selectedLocalCount;
     int _selectedWYCount;
+    _Bool _compressVideo;
+    long long _albumVideoCount;
 }
 
 + (id)getInstance;
+@property(nonatomic) long long albumVideoCount; // @synthesize albumVideoCount=_albumVideoCount;
+@property(nonatomic) _Bool compressVideo; // @synthesize compressVideo=_compressVideo;
 - (void)resetLastPhoto;
 - (void)rememberLastPhoto;
 - (void)saveLastPhoto;

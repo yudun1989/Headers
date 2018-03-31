@@ -18,8 +18,7 @@
 + (void)registerHandler;
 + (void)initSDKEngine:(unsigned long long)arg1 withFrameworkJS:(id)arg2;
 + (void)initWeexSDKEnviroment;
-+ (void)setAliWeexVersion;
-+ (void)initPrerender;
++ (void)setAliWeexEnvironment;
 + (void)initWeexSDKEnviromentWithFrameworkJS:(id)arg1;
 
 @end

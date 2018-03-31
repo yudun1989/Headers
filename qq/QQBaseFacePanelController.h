@@ -44,6 +44,7 @@
 - (void)switchMainView:(id)arg1;
 - (struct CGRect)getQQFaceShowRectNew:(struct CGRect)arg1;
 - (struct CGRect)getQQFaceHideRectNew:(struct CGRect)arg1;
+- (double)getTabbarWidth;
 - (_Bool)attachMainView:(id)arg1;
 
 // Remaining properties

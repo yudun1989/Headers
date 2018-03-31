@@ -27,7 +27,9 @@
     NSString *_nickName;
     NSString *_mobilePhone;
     AddFriendSendMessageViewController *_addFriendController;
+    _Bool _isRequestingTinyIdForReport;
     QQViewController *_campusCircleWebVC;
+    long long _tinyId;
     FriendsVerifyMsgStructMsgModle *_verifyModel;
     NSDictionary *_mobaGameNick;
 }
@@ -36,6 +38,8 @@
 + (int)summaryTypeFromAccostType:(int)arg1;
 @property(retain, nonatomic) NSDictionary *mobaGameNick; // @synthesize mobaGameNick=_mobaGameNick;
 @property(retain, nonatomic) FriendsVerifyMsgStructMsgModle *verifyModel; // @synthesize verifyModel=_verifyModel;
+@property(nonatomic) long long tinyId; // @synthesize tinyId=_tinyId;
+@property(nonatomic) _Bool isRequestingTinyIdForReport; // @synthesize isRequestingTinyIdForReport=_isRequestingTinyIdForReport;
 @property(retain, nonatomic) QQViewController *campusCircleWebVC; // @synthesize campusCircleWebVC=_campusCircleWebVC;
 - (void).cxx_destruct;
 - (void)followNearbyUser:(id)arg1;

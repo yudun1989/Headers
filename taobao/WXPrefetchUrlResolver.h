@@ -25,6 +25,7 @@
 @property(retain, nonatomic) WXPrefetchContext *context; // @synthesize context=_context;
 @property(retain, nonatomic) NSURL *URL; // @synthesize URL=_URL;
 - (void).cxx_destruct;
+- (void)replacePattern:(id)arg1;
 - (id)replaceDynamicParam;
 - (id)replaceDataWithParam:(id)arg1;
 - (id)prefetchMap;

@@ -74,6 +74,7 @@
     id <QQMultiImagePickerControllerDelegate> _pickerDelegateForQQTroopAlbum;
     long long _curTroopCode;
     long long _totalMaxCount;
+    unsigned long long _maxSelectedSize;
     long long _maxVideoNum;
     long long _maxVideoDur;
     QQBaseChatViewController *_receiptPicHandler;
@@ -114,6 +115,7 @@
 @property(nonatomic) float maxHPixels; // @synthesize maxHPixels=_maxHPixels;
 @property(nonatomic) float minHWProportion; // @synthesize minHWProportion=_minHWProportion;
 @property(nonatomic) float maxHWProportion; // @synthesize maxHWProportion=_maxHWProportion;
+@property(nonatomic) unsigned long long maxSelectedSize; // @synthesize maxSelectedSize=_maxSelectedSize;
 @property(nonatomic) long long totalMaxCount; // @synthesize totalMaxCount=_totalMaxCount;
 @property(nonatomic) _Bool isShowSend2TroopAlbumBar; // @synthesize isShowSend2TroopAlbumBar=_isShowSend2TroopAlbumBar;
 @property(nonatomic) long long curTroopCode; // @synthesize curTroopCode=_curTroopCode;

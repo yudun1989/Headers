@@ -29,7 +29,7 @@
 - (id)modelAtAtIndexPath:(id)arg1;
 - (id)cellNameFromModel:(id)arg1;
 - (Class)cellClassFromModel:(id)arg1;
-- (void)rebuildWithAddressList:(id)arg1 supportStation:(_Bool)arg2 abroadStation:(_Bool)arg3 withSites:(id)arg4 withToken:(id)arg5;
+- (void)rebuildWithAddressList:(id)arg1 supportStation:(_Bool)arg2 abroadStation:(_Bool)arg3 withSites:(id)arg4 withToken:(id)arg5 agencyReceiveHelpUrl:(id)arg6;
 - (long long)dataCount;
 - (id)init;
 

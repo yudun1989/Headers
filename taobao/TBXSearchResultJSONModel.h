@@ -6,7 +6,7 @@
 
 #import "TBJSONModel.h"
 
-@class NSArray, NSDictionary, NSString, TBCustomerData, TBPriceRange, TBSearchBotSearchModel, TBSearchDynPromotion, TBSearchEmptyViewModel, TBSearchNXModel, TBSearchOnesearchModel, TBSearchPromotionBanner, TBSearchPushButtonModel, TBSearchRelatedRecommendModel, TBSearchReview, TBSearchSelectHelper, TBSearchTheme, TBXSearchInShopCompass, TBXSearchSortbarModel, TBXSearchTopBarModel;
+@class NSArray, NSDictionary, NSString, TBCustomerData, TBPriceRange, TBSearchBotSearchModel, TBSearchDynPromotion, TBSearchEmptyViewModel, TBSearchNXModel, TBSearchOnesearchModel, TBSearchPromotionBanner, TBSearchPushButtonModel, TBSearchRelatedRecommendModel, TBSearchReview, TBSearchTheme, TBXSearchInShopCompass, TBXSearchSortbarModel, TBXSearchTopBarModel;
 @protocol TBSearchNXModel, TBSearchSpuItem, TBXSearchTabItem;
 
 @interface TBXSearchResultJSONModel : TBJSONModel
@@ -35,7 +35,6 @@
     NSDictionary *_searchHint;
     TBCustomerData *_userdoc;
     TBPriceRange *_priceRange;
-    TBSearchSelectHelper *_selecthelper;
     NSDictionary *_compass;
     TBXSearchInShopCompass *_inshopCompass;
     NSString *_activityFlag;
@@ -83,7 +82,6 @@
 @property(retain, nonatomic) NSString *activityFlag; // @synthesize activityFlag=_activityFlag;
 @property(retain, nonatomic) TBXSearchInShopCompass *inshopCompass; // @synthesize inshopCompass=_inshopCompass;
 @property(retain, nonatomic) NSDictionary *compass; // @synthesize compass=_compass;
-@property(retain, nonatomic) TBSearchSelectHelper *selecthelper; // @synthesize selecthelper=_selecthelper;
 @property(retain, nonatomic) TBPriceRange *priceRange; // @synthesize priceRange=_priceRange;
 @property(retain, nonatomic) TBCustomerData *userdoc; // @synthesize userdoc=_userdoc;
 @property(retain, nonatomic) NSDictionary *searchHint; // @synthesize searchHint=_searchHint;

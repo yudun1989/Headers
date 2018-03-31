@@ -6,7 +6,7 @@
 
 #import <Foundation/NSObject.h>
 
-@class NSMutableArray, NSString, OnlineTag, QRBookInfo, QRSetting, ReaderRender, TextBaseViewController;
+@class NSArray, NSMutableArray, NSString, OnlineTag, QRBookInfo, QRBookMarkInfo, QRSetting, ReaderRender, TextBaseViewController;
 
 @interface QRReadingDataSource : NSObject
 {
@@ -31,13 +31,16 @@
     _Bool _pageAnimationFinished;
     int _onlineReadingErrorType;
     long long _onlineReadingErrorValue;
+    NSArray *_localChapterInfoList;
 }
 
+@property(retain, nonatomic) NSArray *localChapterInfoList; // @synthesize localChapterInfoList=_localChapterInfoList;
 @property(nonatomic) long long onlineReadingErrorValue; // @synthesize onlineReadingErrorValue=_onlineReadingErrorValue;
 @property(nonatomic) int onlineReadingErrorType; // @synthesize onlineReadingErrorType=_onlineReadingErrorType;
 @property(retain, nonatomic) QRSetting *setting; // @dynamic setting;
 @property(nonatomic) _Bool setPageViewControllerFinished; // @dynamic setPageViewControllerFinished;
 @property(nonatomic) _Bool isLoadingNewChapter; // @dynamic isLoadingNewChapter;
+@property(readonly, nonatomic) QRBookMarkInfo *currentLocalChapter;
 - (_Bool)hasNextChapter;
 - (_Bool)hasLastChapter;
 - (double)commentSeizeParaPosY;
@@ -70,6 +73,7 @@
 - (void)setChapterAlreadyDownloadWithOnlineTag:(id)arg1;
 - (void)setChapterListWithOnlineTag:(id)arg1;
 - (void)setChapterInfoWithDefaultInfoFromChapterId:(long long)arg1 toChapterId:(long long)arg2;
+@property(nonatomic) _Bool isOnlineReading; // @dynamic isOnlineReading;
 - (void)resetEngineConfig;
 - (void)jumpToParaOffset:(long long)arg1;
 - (void)jumpToChapretID:(long long)arg1 paraOffset:(long long)arg2;
@@ -89,7 +93,6 @@
 @property(retain, nonatomic) NSString *chapterTitleOnCoverPage; // @dynamic chapterTitleOnCoverPage;
 @property(retain, nonatomic) NSMutableArray *charpterInfoList; // @dynamic charpterInfoList;
 @property(nonatomic) _Bool isDayMode; // @dynamic isDayMode;
-@property(nonatomic) _Bool isOnlineReading; // @dynamic isOnlineReading;
 @property(nonatomic) _Bool isOnlineReadingError; // @dynamic isOnlineReadingError;
 @property(retain, nonatomic) OnlineTag *onlineTag; // @dynamic onlineTag;
 @property(nonatomic) _Bool pageAnimationFinished; // @dynamic pageAnimationFinished;

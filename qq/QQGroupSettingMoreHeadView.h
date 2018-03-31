@@ -8,20 +8,22 @@
 
 #import <QQMainProject/QQGroupRichNameSpaceViewDelegate-Protocol.h>
 
-@class NSString, QQGroupRichNameSpaceView, QQGroupSettingModel, UILabel;
+@class EmotionParseResult, NSString, QQEmotionLabel, QQGroupRichNameSpaceView, QQGroupSettingModel;
 @protocol QQGroupSettingHeadViewDelegate;
 
 @interface QQGroupSettingMoreHeadView : UIView <QQGroupRichNameSpaceViewDelegate>
 {
     QQGroupRichNameSpaceView *_richNameSpaceview;
     QQGroupSettingModel *_groupModel;
-    UILabel *_groupNameLabel;
+    EmotionParseResult *_parseResult;
+    QQEmotionLabel *_groupNameLabel;
     UIView *_bottomLineView;
     id <QQGroupSettingHeadViewDelegate> _headViewDelegate;
 }
 
 @property(nonatomic) __weak id <QQGroupSettingHeadViewDelegate> headViewDelegate; // @synthesize headViewDelegate=_headViewDelegate;
 - (void).cxx_destruct;
+- (void)updateIfRichNameNeedHide;
 - (void)copyGroupNameAndCode;
 - (void)didGroupCodeViewLongTap;
 - (void)didLevelViewClick;
@@ -34,6 +36,7 @@
 - (void)makeLabelText;
 - (_Bool)showGroupNameLabel;
 - (void)updateRichNameSpaceView;
+- (void)setShowName:(id)arg1;
 - (void)updateGroupModel:(id)arg1;
 - (id)initWithFrame:(struct CGRect)arg1;
 - (void)dealloc;

@@ -8,7 +8,7 @@
 
 #import <QQMainProject/IEngineDispatchDelegate-Protocol.h>
 
-@class NSArray, NSString, QQGroupRedDotDictionary, QQGroupRedDotNearbyItem, QQGroupRedDotStoryItem, QQGroupRedDotTribeItem;
+@class NSArray, NSString, QQGroupRedDotDictionary, QQGroupRedDotNearbyItem, QQGroupRedDotStoryItem, QQGroupRedDotTaskEntryItem, QQGroupRedDotTribeItem;
 
 @interface QQGroupRedDotEngine : NSObject <IEngineDispatchDelegate>
 {
@@ -22,12 +22,14 @@
     QQGroupRedDotTribeItem *_tribeItem;
     long long _storyRedDotNumberType;
     QQGroupRedDotNearbyItem *_nearbyItem;
+    QQGroupRedDotTaskEntryItem *_taskEntryItem;
     NSString *_currentSSOIp;
 }
 
 + (id)getInstance;
 @property(copy, nonatomic) NSString *currentSSOIp; // @synthesize currentSSOIp=_currentSSOIp;
 @property _Bool hasFetchedRedDot; // @synthesize hasFetchedRedDot=_hasFetchedRedDot;
+@property(retain, nonatomic) QQGroupRedDotTaskEntryItem *taskEntryItem; // @synthesize taskEntryItem=_taskEntryItem;
 @property(retain, nonatomic) QQGroupRedDotNearbyItem *nearbyItem; // @synthesize nearbyItem=_nearbyItem;
 @property _Bool isStoryShowInMsgTab; // @synthesize isStoryShowInMsgTab=_isStoryShowInMsgTab;
 @property long long storyRedDotNumberType; // @synthesize storyRedDotNumberType=_storyRedDotNumberType;
@@ -47,6 +49,7 @@
 - (void)didRecievedMsg:(CDStruct_7895f40e)arg1;
 - (_Bool)isDisplayRedDotForAppid:(unsigned int)arg1;
 - (_Bool)isNearbyRedDotForAppid:(unsigned int)arg1;
+- (_Bool)isTaskEntryRedDotForAppid:(unsigned int)arg1;
 - (_Bool)isTribeRedDotForAppid:(unsigned int)arg1;
 - (_Bool)isStoryRedDotForAppid:(unsigned int)arg1;
 - (int)sendClearRedDotRequest:(unsigned long long)arg1 serviceType:(int)arg2 args:(id)arg3;

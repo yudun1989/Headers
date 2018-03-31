@@ -25,9 +25,9 @@
     AliDetailModel *_detailModel;
     TBMiniDetailBuilder *_miniDetailBuilder;
     NSString *_eventToken;
+    TBDetailFloatContainerViewControl *_floatControl;
     TBDetailNavigationBarViewControl *_navibarControl;
     TBDetailHomeScrollView *_containerView;
-    TBDetailFloatContainerViewControl *_floatControl;
     NSMutableArray *_subViewControls;
     NSDictionary *_viewControlCacheMaps;
 }
@@ -39,9 +39,9 @@
 @property(nonatomic) _Bool hasUnload; // @synthesize hasUnload=_hasUnload;
 @property(nonatomic) _Bool registered; // @synthesize registered=_registered;
 @property(nonatomic) _Bool refresh; // @synthesize refresh=_refresh;
-@property(retain, nonatomic) TBDetailFloatContainerViewControl *floatControl; // @synthesize floatControl=_floatControl;
 @property(retain, nonatomic) TBDetailHomeScrollView *containerView; // @synthesize containerView=_containerView;
 @property(nonatomic) __weak TBDetailNavigationBarViewControl *navibarControl; // @synthesize navibarControl=_navibarControl;
+@property(retain, nonatomic) TBDetailFloatContainerViewControl *floatControl; // @synthesize floatControl=_floatControl;
 @property(retain, nonatomic) NSString *eventToken; // @synthesize eventToken=_eventToken;
 @property(retain, nonatomic) TBMiniDetailBuilder *miniDetailBuilder; // @synthesize miniDetailBuilder=_miniDetailBuilder;
 @property(retain, nonatomic) AliDetailModel *detailModel; // @synthesize detailModel=_detailModel;

@@ -12,6 +12,7 @@
 
 @interface TBVideoSVCommentInputView : UIView <UITextViewDelegate>
 {
+    CDUnknownBlockType _sendFinishBlock;
     TBVideoTweSVVC *_superVC;
     TBVideoUIButtonWithBlock *_fullScreenBGView;
     UIView *_contentView;
@@ -24,6 +25,7 @@
 @property(retain, nonatomic) UIView *contentView; // @synthesize contentView=_contentView;
 @property(retain, nonatomic) TBVideoUIButtonWithBlock *fullScreenBGView; // @synthesize fullScreenBGView=_fullScreenBGView;
 @property(nonatomic) __weak TBVideoTweSVVC *superVC; // @synthesize superVC=_superVC;
+@property(copy, nonatomic) CDUnknownBlockType sendFinishBlock; // @synthesize sendFinishBlock=_sendFinishBlock;
 - (void).cxx_destruct;
 - (_Bool)textView:(id)arg1 shouldChangeTextInRange:(struct _NSRange)arg2 replacementText:(id)arg3;
 - (void)commentTapEvent;

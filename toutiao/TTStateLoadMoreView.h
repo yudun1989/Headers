@@ -70,6 +70,7 @@
 - (void)willMoveToSuperview:(id)arg1;
 - (void)buidupView;
 - (id)initWithFrame:(struct CGRect)arg1 pullDirection:(int)arg2;
+- (void)dealloc;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

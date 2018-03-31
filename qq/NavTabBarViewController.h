@@ -53,7 +53,6 @@
 - (void)addParentUIView:(id)arg1 parentViewController:(id)arg2;
 - (void)addParentController:(id)arg1;
 - (void)setNavTabbarColor:(id)arg1;
-- (struct CGPoint)centerForButtonIndex:(unsigned long long)arg1;
 - (void)initUI;
 - (void)initData;
 - (void)viewDidLoad;

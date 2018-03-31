@@ -34,6 +34,7 @@
 - (void)removeCacheWithSectionID:(id)arg1;
 - (void)addCacheWithSectionModel:(id)arg1;
 - (long long)getInsertIndexAtModelCache:(id)arg1;
+- (long long)getPageIndexWithSectionId:(id)arg1 picID:(id)arg2;
 - (long long)getPageIndexWithSectionId:(id)arg1;
 - (long long)getSectionIndex:(id)arg1;
 - (void)removeReadModelCacheWithID:(id)arg1;

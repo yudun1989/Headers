@@ -26,9 +26,15 @@
     double _mFSRenderTime;
     double _mFSStartTime;
     double _mFSAllTime;
+    double _mFSBundleNetworkTime;
+    double _mFSBundleExecTime;
+    double _mFSBundleRenderTime;
 }
 
 + (id)sharedInstance;
+@property(nonatomic) double mFSBundleRenderTime; // @synthesize mFSBundleRenderTime=_mFSBundleRenderTime;
+@property(nonatomic) double mFSBundleExecTime; // @synthesize mFSBundleExecTime=_mFSBundleExecTime;
+@property(nonatomic) double mFSBundleNetworkTime; // @synthesize mFSBundleNetworkTime=_mFSBundleNetworkTime;
 @property(nonatomic) double mFSAllTime; // @synthesize mFSAllTime=_mFSAllTime;
 @property(nonatomic) double mFSStartTime; // @synthesize mFSStartTime=_mFSStartTime;
 @property(nonatomic) double mFSRenderTime; // @synthesize mFSRenderTime=_mFSRenderTime;

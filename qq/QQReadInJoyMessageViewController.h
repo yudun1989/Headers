@@ -35,8 +35,8 @@
     NSDate *_startTime;
 }
 
-+ (void)resetTableViewOffset;
 + (void)handleMsgUnreadCountCleanWithUin:(id)arg1;
++ (_Bool)mainFeedsInMessageNeedRefresh;
 @property(retain, nonatomic) NSDate *startTime; // @synthesize startTime=_startTime;
 @property(nonatomic) id <ReadInJoyScrollViewDelegate> scrollViewDelegate; // @synthesize scrollViewDelegate=_scrollViewDelegate;
 @property(nonatomic) _Bool firstAppearFromTab; // @synthesize firstAppearFromTab=_firstAppearFromTab;

@@ -10,6 +10,7 @@
 {
 }
 
+- (void)trackDingTalkWithMessage:(id)arg1 WithCellModel:(id)arg2;
 - (void)actionWithCellModel:(id)arg1 bubble:(id)arg2 context:(id)arg3 actionType:(long long)arg4;
 
 @end

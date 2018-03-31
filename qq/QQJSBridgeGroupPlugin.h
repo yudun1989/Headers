@@ -26,6 +26,7 @@
 
 @property(retain, nonatomic) NSMutableDictionary *schoolTroopCreatHandlers; // @synthesize schoolTroopCreatHandlers=_schoolTroopCreatHandlers;
 - (id)handleJsBridgeRequest_Troop_returnToTroopAIO:(id)arg1;
+- (_Bool)handleJsBridgeRequest_homework_clearRedPoint:(id)arg1;
 - (void)onTroopInfoUpdated:(id)arg1;
 - (_Bool)handleJsBridgeRequest_Troop_notifyCreateTroops:(id)arg1;
 - (_Bool)handleJsBridgeRequest_Troop_notifyTroopEnterEffectStatus:(id)arg1;

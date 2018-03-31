@@ -11,7 +11,7 @@
 #import <QQMainProject/QZFeedCellDelegate-Protocol.h>
 #import <QQMainProject/UIScrollViewDelegate-Protocol.h>
 
-@class NSString, QZContainerBaseScrollView, QzoneFeedLayoutView, QzoneFeedModel, UIPageControl;
+@class NSMutableArray, NSString, QZContainerBaseScrollView, QZContainerCellModel, QzoneFeedLayoutView, QzoneFeedModel, UIPageControl;
 
 @interface QZoneGroupFeedCell : QzoneFeedCell <QZContainerBaseScrollViewDelegate, QZContainerBaseScrollViewScrollDelegate, UIScrollViewDelegate, QZFeedCellDelegate>
 {
@@ -25,6 +25,8 @@
     QzoneFeedLayoutView *_specialCareRemindFootInfoView;
     QzoneFeedLayoutView *_multiAdvTypeFootInfoView;
     UIPageControl *_advFullScreenPageCtr;
+    NSMutableArray *_visibleCellModels;
+    QZContainerCellModel *_currentCellModel;
     long long _type;
 }
 
@@ -32,22 +34,30 @@
 + (double)heightWithFeedModel:(id)arg1;
 @property(nonatomic) long long type; // @synthesize type=_type;
 - (void).cxx_destruct;
+- (void)setUpContentInfoViewBackgroundColor:(id)arg1 feedModel:(id)arg2;
 - (id)getCellMainContentInfoView:(id)arg1 index:(long long)arg2 withFrame:(struct CGRect)arg3;
 - (void)didMoveToWindow;
 - (id)getCurrentVideoView;
+- (void)videoPlayRightCalc:(_Bool)arg1;
+- (void)updateVisibleCellModels;
 - (id)getVisibleVideoViews;
+- (id)getVideoView:(id)arg1;
 - (void)groupFeedVisitReport:(id)arg1;
 - (void)cancelAllGroupFeedReportExceptIndexSet:(id)arg1;
 - (void)clickToPage:(long long)arg1;
 - (void)moveToPage:(long long)arg1;
 - (long long)shouldMoveToNextPage:(long long)arg1;
+- (double)getPageWidthWithIndex:(unsigned long long)arg1;
 - (void)setContainerViewCurrentPage:(unsigned long long)arg1;
 - (_Bool)needResponseAction:(unsigned long long)arg1;
 - (void)refreshSpecialCellInfo:(id)arg1 withParam:(id)arg2;
 - (void)onFeedCell:(id)arg1 action:(unsigned long long)arg2 param:(id)arg3 feedModel:(id)arg4;
 - (void)setIndex:(long long)arg1;
 - (void)cellExposure;
-- (void)containerViewDidEndScrollingAnimation:(long long)arg1 oldPage:(long long)arg2;
+- (void)willDisplayCell:(id)arg1 forItemAtIndexPath:(id)arg2;
+- (void)containerBaseScrollViewDidEndDragging;
+- (void)containerBaseScrollViewWillBeginDragging;
+- (void)pageExposure:(unsigned long long)arg1;
 - (void)checkAutoPlayViewEvent:(long long)arg1 params:(id)arg2;
 - (void)containerViewDidEndDraggingWithPage:(long long)arg1 oldPage:(long long)arg2 decelerate:(_Bool)arg3;
 - (id)getFeedModel:(unsigned long long)arg1;
@@ -66,7 +76,9 @@
 - (void)setBackgroundAlpha:(double)arg1;
 - (struct CGRect)frameForCollectionView;
 - (void)layoutSubviews;
+- (void)initLayoutViews;
 - (id)initWithStyle:(long long)arg1 reuseIdentifier:(id)arg2;
+- (id)initWithStyle:(long long)arg1 reuseIdentifier:(id)arg2 isForPluto:(_Bool)arg3;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

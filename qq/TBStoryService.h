@@ -48,6 +48,10 @@
 + (void)video_compositeDataReportWithErro:(id)arg1 userData:(id)arg2;
 + (void)operateEndDataReport:(id)arg1 opName:(id)arg2 operateKey:(id)arg3 userData:(id)arg4 errorInfo:(id)arg5;
 + (void)operateStartDataReport:(id)arg1 opName:(id)arg2 operateKey:(id)arg3 userData:(id)arg4;
++ (id)getThumbImage:(id)arg1 withStartTime:(double)arg2 withEndTime:(double)arg3 withFilter:(id)arg4 withEffectType:(long long)arg5 withCoverPath:(id)arg6 withThumbScale:(double)arg7 withError:(id *)arg8;
++ (id)createThumbImage:(id)arg1 publishParams:(id)arg2 piecesInfo:(id)arg3;
++ (long long)orientationOfVideoFileWithURL:(id)arg1;
++ (struct CGSize)sizeOfVideoFileWithURL:(id)arg1;
 + (id)NTProcessStoryVideoResult;
 + (id)NTProcessStoryVideoBegin;
 + (id)NTGetHotTopicInfo;
@@ -61,6 +65,7 @@
 + (id)NTGetConfig;
 + (id)NTSetConfig;
 + (id)NTVideoFeatureInfoChange;
++ (id)NTStoryPlayerTagInfo;
 + (id)NTReportCommentVideo;
 + (id)NTDelFeedComment;
 + (id)NTAddFeedComment;
@@ -184,8 +189,6 @@
 - (unsigned long long)getCreateTime:(id)arg1;
 - (_Bool)restoreFileFrom:(id)arg1 to:(id)arg2;
 - (id)getFitVideoPath:(id)arg1;
-- (id)getThumbImage:(id)arg1 withStartTime:(double)arg2 withEndTime:(double)arg3 withFilter:(id)arg4 withEffectType:(long long)arg5 withCoverPath:(id)arg6 withThumbScale:(double)arg7 withError:(id *)arg8;
-- (id)createThumbImage:(id)arg1 publishParams:(id)arg2 piecesInfo:(id)arg3;
 - (void)onSendResult:(id)arg1;
 - (void)doInitPublishNotification;
 - (void)postEndProcessNotify:(id)arg1 withErrorCode:(unsigned int)arg2 withErrorDesc:(id)arg3 withUserData:(id)arg4;
@@ -201,10 +204,8 @@
 - (void)retryProcessAndPublishVideo:(id)arg1;
 - (void)processAndPublishVideo:(id)arg1 publishParams:(id)arg2 piecesInfo:(id)arg3;
 - (id)getUserShareGroupInfoListFromCache:(id)arg1;
-- (unsigned long long)requestUserShareGroupList:(id)arg1 nextCookie:(id)arg2 pageSize:(unsigned int)arg3 withUserData:(id)arg4 withDelegate:(id)arg5;
 - (id)getHotTopicInfo:(unsigned long long)arg1;
 - (unsigned long long)requestGetHotTopicInfo:(unsigned long long)arg1 withUserData:(id)arg2 withDelegate:(id)arg3;
-- (unsigned long long)requestBatchRemoveMembers:(id)arg1 withMemeberList:(id)arg2 withRemoveStory:(unsigned int)arg3 withUserData:(id)arg4 withDelegate:(id)arg5;
 - (_Bool)getMyselfSecretCircleBlackStatus;
 - (_Bool)getMyselfPublicCircleBlackStatus;
 - (id)getUserBlackListInCaches:(id)arg1;
@@ -299,6 +300,8 @@
 - (id)getBatchVideoSimpleInfoCacheWithVid:(id)arg1 withVidAry:(id)arg2 withNeedComplete:(_Bool)arg3;
 - (id)getUserVideoBasicInfoCacheWithUnionID:(id)arg1 withVidAry:(id)arg2 withNeedComplete:(_Bool)arg3;
 - (id)getBatchVideoBasicInfoCacheWithVid:(id)arg1 withVidAry:(id)arg2 withNeedComplete:(_Bool)arg3;
+- (unsigned long long)updateVideoBasicInfoWithVidList:(id)arg1 withUserData:(id)arg2 delegate:(id)arg3;
+- (id)getVideoTagInfo:(id)arg1;
 - (id)getVideoBasicInfoCacheWithVid:(id)arg1 withVid:(id)arg2;
 - (unsigned long long)requestGetGroupVidList:(id)arg1 withPullType:(unsigned int)arg2 withUserData:(id)arg3 withDelegate:(id)arg4;
 - (unsigned long long)requestGetBatchUserVidListOfMax20:(id)arg1 withPullType:(unsigned int)arg2 withUserData:(id)arg3 withDelegate:(id)arg4;

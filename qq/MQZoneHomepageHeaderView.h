@@ -9,14 +9,14 @@
 #import <QQMainProject/CAAnimationDelegate-Protocol.h>
 #import <QQMainProject/IQZUrlDownloaderDelegate-Protocol.h>
 #import <QQMainProject/MQZHomepageNickNameViewDelegate-Protocol.h>
+#import <QQMainProject/MQZoneHomepageHeaderTitleViewDelegate-Protocol.h>
 #import <QQMainProject/MQZoneMusicCellDelegate-Protocol.h>
 
-@class MQZoneHomepageHeadButton, MQZoneMusicPlayView, MQzoneFollowTipView, NSString, NSTimer, QZJMainPageSCampusQz, QZJMainPageSRedComm, QZJNsQmallCoverQzmallCustomNavi, UIImageView, UIView, UIViewController;
+@class MQZoneMusicPlayView, MQzoneFollowTipView, NSString, NSTimer, QZJMainPageSCampusQz, QZJMainPageSRedComm, QZJNsQmallCoverQzmallCustomNavi, UIImageView, UIView, UIViewController;
 @protocol MQZoneHomepageHeaderViewDelegate><QZAvatarWidgetDelegate;
 
-@interface MQZoneHomepageHeaderView : MQZoneCoverHeaderView <MQZoneMusicCellDelegate, IQZUrlDownloaderDelegate, CAAnimationDelegate, MQZHomepageNickNameViewDelegate>
+@interface MQZoneHomepageHeaderView : MQZoneCoverHeaderView <MQZoneMusicCellDelegate, IQZUrlDownloaderDelegate, CAAnimationDelegate, MQZHomepageNickNameViewDelegate, MQZoneHomepageHeaderTitleViewDelegate>
 {
-    MQZoneHomepageHeadButton *_buttons[5];
     NSTimer *_timer;
     QZJMainPageSRedComm *_redinfo;
     int _currentPos;
@@ -31,8 +31,8 @@
     _Bool _buttonsHidden;
     _Bool _hasPermission;
     _Bool _isManualCloseMusicBar;
-    UIView *_myFansView;
     UIView *_myFollowView;
+    UIView *_mVideoView;
     UIView *_personalizeView;
     UIView *_giftView;
     MQZoneMusicPlayView *_musicPlayView;
@@ -56,8 +56,8 @@
 @property(retain, nonatomic) MQZoneMusicPlayView *musicPlayView; // @synthesize musicPlayView=_musicPlayView;
 @property(retain, nonatomic) UIView *giftView; // @synthesize giftView=_giftView;
 @property(retain, nonatomic) UIView *personalizeView; // @synthesize personalizeView=_personalizeView;
+@property(retain, nonatomic) UIView *mVideoView; // @synthesize mVideoView=_mVideoView;
 @property(retain, nonatomic) UIView *myFollowView; // @synthesize myFollowView=_myFollowView;
-@property(retain, nonatomic) UIView *myFansView; // @synthesize myFansView=_myFansView;
 @property(nonatomic) _Bool buttonsHidden; // @synthesize buttonsHidden=_buttonsHidden;
 @property(nonatomic) _Bool intimacyViewNeedHidden; // @synthesize intimacyViewNeedHidden=_intimacyViewNeedHidden;
 - (void).cxx_destruct;
@@ -84,7 +84,6 @@
 - (void)setProfile:(id)arg1;
 - (id)checkShouldShowCell:(_Bool)arg1 naviDeco:(id)arg2 originX:(double)arg3 isTop:(_Bool *)arg4 headerCellType:(long long)arg5;
 - (void)clearCell:(id)arg1;
-- (void)visitorCountAnimation:(unsigned long long)arg1;
 - (void)updateHeaderCells;
 - (void)setHiddenBarBGView:(_Bool)arg1;
 - (void)removeIntimacyView;
@@ -97,17 +96,18 @@
 - (void)nextUser;
 - (void)setBirthdayRedinfo:(id)arg1;
 - (void)updatePersonalizeBarPoint;
-- (void)clickButton:(id)arg1;
+- (void)clickTabButtonAtIndex:(long long)arg1;
 - (void)setTotal:(id)arg1;
+- (void)visitorCountAnimation:(unsigned long long)arg1;
 - (void)clickMusicCellView:(id)arg1;
 - (void)clickGiftView:(id)arg1;
 - (void)clickLoversSpaceView:(id)arg1;
 - (void)clickCampusSpaceView:(id)arg1;
 - (void)clickFamousQZoneView:(id)arg1;
 - (void)clickPersonalizeView:(id)arg1;
+- (void)clickMVideoView;
 - (void)clickMyFollowView:(id)arg1;
 - (void)doFollow;
-- (void)clickMyFansView:(id)arg1;
 - (id)createHeaderCellView:(long long)arg1 offy:(long long)arg2 lineX:(_Bool)arg3 headerCellType:(long long)arg4;
 - (void)dealloc;
 - (void)updateNickNameView:(long long)arg1 showCare:(_Bool)arg2;
@@ -115,6 +115,7 @@
 - (void)clickMyFansView;
 - (void)addNickName:(id)arg1 followerNum:(long long)arg2 showCare:(_Bool)arg3 vip:(_Bool)arg4;
 - (void)adjustAvatar;
+- (void)onUpdateCustomDiamond:(id)arg1;
 - (id)initWithFrame:(struct CGRect)arg1 withUin:(long long)arg2 withViewControler:(id)arg3 withProfile:(id)arg4 hasPermission:(_Bool)arg5 hybridCover:(_Bool)arg6;
 @property(nonatomic) __weak id <MQZoneHomepageHeaderViewDelegate><QZAvatarWidgetDelegate> delegate; // @dynamic delegate;
 

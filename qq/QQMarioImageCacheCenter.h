@@ -25,7 +25,6 @@
 - (void)appWillTerminate;
 - (void)appDidEnterBackground;
 - (void)deleteAllData:(id)arg1;
-- (void)saveMetaDatas:(id)arg1 path:(id)arg2;
 - (void)saveAllMetas;
 - (void)deleteOneImageMeta:(id)arg1;
 - (void)eliminateMetaData;

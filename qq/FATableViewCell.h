@@ -25,14 +25,25 @@
     long long _row;
     FAModel *_fileModel;
     _Bool _hideViewButton;
+    UIButton *_icloudButton;
+    UILabel *_icloudProgressLabel;
     _Bool _hidePreviewIcon;
+    _Bool _downloadingFromIcloud;
 }
 
+@property(nonatomic) _Bool downloadingFromIcloud; // @synthesize downloadingFromIcloud=_downloadingFromIcloud;
 @property(nonatomic) _Bool hidePreviewIcon; // @synthesize hidePreviewIcon=_hidePreviewIcon;
 @property(nonatomic) _Bool check; // @synthesize check=_check;
 @property(nonatomic) long long row; // @synthesize row=_row;
 @property(retain, nonatomic) FAModel *fileModel; // @synthesize fileModel=_fileModel;
 @property(nonatomic) _Bool hideViewButton; // @synthesize hideViewButton=_hideViewButton;
+- (void)onIcloudFileDownloadSuccess:(id)arg1;
+- (void)onICloudFileDownloadProgress:(double)arg1 error:(id)arg2;
+- (_Bool)checkICloudFile;
+- (void)actionDownloadIcloud:(id)arg1;
+- (void)relayoutICloudView;
+- (void)initICloudView;
+- (void)setICloudView;
 - (void)onThumbnailDone:(id)arg1;
 - (void)setDeleteLoading:(_Bool)arg1;
 - (void)setHighlighted:(_Bool)arg1 animated:(_Bool)arg2;
@@ -50,6 +61,7 @@
 - (void)dealloc;
 - (void)initUI;
 - (void)initEvent;
+- (void)prepareForReuse;
 - (id)initWithStyle:(long long)arg1 reuseIdentifier:(id)arg2;
 
 @end

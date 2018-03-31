@@ -91,6 +91,7 @@
 - (void)displayConnectState:(id)arg1;
 - (void)handleReqMatchChatterTimeOut:(id)arg1;
 - (void)refreshBackgroundViewWithColorIndex:(int)arg1;
+- (void)stopMatchState;
 - (void)displayMatchState;
 - (void)closeInAnimationMode:(CDUnknownBlockType)arg1;
 - (void)openRoundBallViewComplete:(CDUnknownBlockType)arg1;
@@ -98,6 +99,7 @@
 - (void)showInDefaultMode;
 - (void)updateRoundBallViewFrame:(struct CGPoint)arg1;
 - (id)viewForRoundBall;
+@property(readonly, nonatomic) UIView *backgroundView;
 - (void)loadView;
 - (void)loadContent;
 - (id)getBackgroundGradientLayer:(struct CGRect)arg1;

@@ -8,7 +8,7 @@
 
 #import <QQMainProject/QZPhotoModuleDownloaderInterfaceDelegate-Protocol.h>
 
-@class NSString, QzonePhotoModel, UIImageView, UILabel, UILongPressGestureRecognizer, UIView;
+@class NSDictionary, NSString, QzonePhotoModel, UIImageView, UILabel, UILongPressGestureRecognizer, UIView;
 
 @interface MQZCommonPhotoButton : UIButton <QZPhotoModuleDownloaderInterfaceDelegate>
 {
@@ -33,8 +33,10 @@
     _Bool _useHeadImage;
     QzonePhotoModel *_photoModel;
     UIView *_editIconClkView;
+    NSDictionary *_assetsForIdentifiers;
 }
 
+@property(retain, nonatomic) NSDictionary *assetsForIdentifiers; // @synthesize assetsForIdentifiers=_assetsForIdentifiers;
 @property(nonatomic) _Bool useHeadImage; // @synthesize useHeadImage=_useHeadImage;
 @property(nonatomic) _Bool showShareLabel; // @synthesize showShareLabel=_showShareLabel;
 @property(nonatomic) _Bool showCheckBox; // @synthesize showCheckBox=_showCheckBox;

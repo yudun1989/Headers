@@ -60,19 +60,6 @@
 @property(nonatomic) struct CGSize frameSize; // @synthesize frameSize=_frameSize;
 @property(nonatomic) __weak id <PLVideoClipViewDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
-- (void)scrollViewDidEndDragging:(id)arg1 willDecelerate:(_Bool)arg2;
-- (void)scrollViewDidEndDecelerating:(id)arg1;
-- (void)scrollViewDidScroll:(id)arg1;
-- (void)updateMaskView;
-- (void)showToast:(_Bool)arg1;
-- (_Bool)checkCanDrag:(id)arg1 offset:(double)arg2;
-- (void)handlePanGesture:(id)arg1;
-- (void)finishClip;
-- (void)startClip;
-- (void)calculateClipRange;
-- (id)createButton:(id)arg1;
-- (void)setupFrameImage:(id)arg1 index:(unsigned long long)arg2;
-- (id)initWithFrame:(struct CGRect)arg1 duration:(double)arg2;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

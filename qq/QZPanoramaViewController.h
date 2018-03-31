@@ -6,14 +6,17 @@
 
 #import <QQMainProject/QZoneViewController.h>
 
+#import <QQMainProject/QZPanoramaViewDelegate-Protocol.h>
+
 @class NSString, QZPanoramaView, UIImage;
 
-@interface QZPanoramaViewController : QZoneViewController
+@interface QZPanoramaViewController : QZoneViewController <QZPanoramaViewDelegate>
 {
     QZPanoramaView *_panoramaView;
     _Bool _shouldPostExistNotify;
     NSString *_panoramaUrl;
     UIImage *_panoramaImage;
+    UIImage *_panoramaBgImage;
     long long _panoramaType;
     CDUnknownBlockType _panoramaViewControllerExit;
 }
@@ -21,6 +24,7 @@
 @property(copy, nonatomic) CDUnknownBlockType panoramaViewControllerExit; // @synthesize panoramaViewControllerExit=_panoramaViewControllerExit;
 @property(nonatomic) _Bool shouldPostExistNotify; // @synthesize shouldPostExistNotify=_shouldPostExistNotify;
 @property(nonatomic) long long panoramaType; // @synthesize panoramaType=_panoramaType;
+@property(retain, nonatomic) UIImage *panoramaBgImage; // @synthesize panoramaBgImage=_panoramaBgImage;
 @property(retain, nonatomic) UIImage *panoramaImage; // @synthesize panoramaImage=_panoramaImage;
 @property(copy, nonatomic) NSString *panoramaUrl; // @synthesize panoramaUrl=_panoramaUrl;
 - (void).cxx_destruct;
@@ -32,8 +36,15 @@
 - (void)viewWillDisappear:(_Bool)arg1;
 - (void)viewDidAppear:(_Bool)arg1;
 - (void)viewWillAppear:(_Bool)arg1;
+- (void)processImageLoadFinish;
 - (void)viewDidLoad;
 - (void)dealloc;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly, copy) NSString *description;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
 
 @end
 

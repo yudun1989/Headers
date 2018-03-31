@@ -49,6 +49,10 @@
 - (void)requestRedPointTask;
 - (void)requestRedPointRead;
 - (void)requestRedPointReq;
+- (unsigned int)getHonestFriendReceivedTime;
+- (unsigned long long)sayHonestFriendReceivedUnreadCount;
+- (id)sayHonestFriendReceivedModel;
+- (void)postSayHonestFriendDidReceiveCommentNotiWithRedPointModel:(id)arg1;
 - (void)pushUpdateRedPointInfo:(id)arg1;
 - (void)addObjectReadRP:(id)arg1;
 - (void)removeAllObjectReadRP;
@@ -66,6 +70,8 @@
 - (void)readShowRedPoint:(id)arg1 seq:(unsigned long long)arg2;
 - (id)getShowRedPointWithID:(id)arg1;
 - (void)readRedPoint:(id)arg1 seq:(unsigned long long)arg2;
+- (void)removeSayHonestRedPointCache;
+- (void)readSayHonestRedPoint;
 - (void)readRedPoint:(id)arg1;
 - (id)getRedPointWithID:(id)arg1;
 - (void)clearMemoryData;

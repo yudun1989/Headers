@@ -20,9 +20,6 @@
 - (id)generateLanguageString;
 - (id)resourceContentForURL:(id)arg1 withHeader:(id *)arg2;
 - (_Bool)handleMainBundleWhenFinishLoading:(id)arg1;
-- (_Bool)handleRequest:(id)arg1 customInfo:(id)arg2 delegate:(id)arg3;
-- (_Bool)handleRequest:(id)arg1 withZcache:(id)arg2 header:(id)arg3 customInfo:(id)arg4 delegate:(id)arg5;
-- (_Bool)connectionCanUseWeexCache:(id)arg1;
 - (void)connectionDidFinishLoading:(id)arg1;
 - (void)connection:(id)arg1 didFailWithError:(id)arg2;
 - (void)connection:(id)arg1 didReceiveData:(id)arg2;

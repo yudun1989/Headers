@@ -36,8 +36,6 @@
 + (id)getAppPath:(id)arg1 isZCache1:(_Bool)arg2;
 + (id)getTempPath:(id *)arg1;
 + (id)tempPath;
-+ (id)zcacheMapPath;
-+ (id)packageConfigPath;
 + (void)initialize;
 
 @end

@@ -6,15 +6,21 @@
 
 #import <QQMainProject/SpritePackageModel.h>
 
-@class NSMutableArray;
+@class NSMutableArray, NSString;
 
 @interface SpriteGamePkgModel : SpritePackageModel
 {
     NSMutableArray *_gameSet;
     NSMutableArray *_gameButtonArray;
     NSMutableArray *_gameModeArray;
+    NSString *_entranceBkgUrl;
+    NSString *_entranceUrl;
+    NSString *_entranceName;
 }
 
+@property(retain, nonatomic) NSString *entranceName; // @synthesize entranceName=_entranceName;
+@property(retain, nonatomic) NSString *entranceUrl; // @synthesize entranceUrl=_entranceUrl;
+@property(retain, nonatomic) NSString *entranceBkgUrl; // @synthesize entranceBkgUrl=_entranceBkgUrl;
 @property(retain, nonatomic) NSMutableArray *gameModeArray; // @synthesize gameModeArray=_gameModeArray;
 @property(retain, nonatomic) NSMutableArray *gameButtonArray; // @synthesize gameButtonArray=_gameButtonArray;
 @property(retain, nonatomic) NSMutableArray *gameSet; // @synthesize gameSet=_gameSet;

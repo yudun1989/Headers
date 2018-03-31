@@ -14,6 +14,7 @@
 {
     _Bool _muted;
     _Bool _isLoadingFromCache;
+    float _playbackRate;
     int _playerStatus;
     long long _playerContentMode;
     double _preferredForwardBufferDuration;
@@ -77,6 +78,7 @@
 @property(readonly, nonatomic) double cacheDuration;
 @property(readonly, nonatomic) double duration; // @synthesize duration=_duration;
 @property(nonatomic) double currentPlaybackTime; // @synthesize currentPlaybackTime=_currentPlaybackTime;
+@property(nonatomic) float playbackRate; // @synthesize playbackRate=_playbackRate;
 @property(nonatomic) double preferredForwardBufferDuration; // @synthesize preferredForwardBufferDuration=_preferredForwardBufferDuration;
 
 // Remaining properties

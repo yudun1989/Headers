@@ -11,7 +11,7 @@
 #import <QQMainProject/UITableViewDataSource-Protocol.h>
 #import <QQMainProject/UITableViewDelegate-Protocol.h>
 
-@class FTSBaseSearchCondition, FTSCustomSearchBar, FTSGroupResultsTabViewController, FTSNoResultView, NSLock, NSMutableArray, NSString, QQDynamicSearchTableFootLoadingView, UITableView;
+@class FTSBaseSearchCondition, FTSCustomSearchBar, FTSNoResultView, NSLock, NSMutableArray, NSString, QQDynamicSearchTableFootLoadingView, UITableView;
 
 @interface FTSResultMoreBaseViewController : QQViewController <FTSNoResultsProtocol, FTSCustomSearchBarDelegate, UITableViewDataSource, UITableViewDelegate>
 {
@@ -29,7 +29,6 @@
     NSLock *_dataSourceLock;
     FTSCustomSearchBar *_ftsContainerSearchBar;
     QQDynamicSearchTableFootLoadingView *_footLoadingView;
-    FTSGroupResultsTabViewController *_ftsGroupResultsTabViewController;
     FTSNoResultView *_noResultView;
 }
 
@@ -37,7 +36,6 @@
 @property(retain, nonatomic) FTSNoResultView *noResultView; // @synthesize noResultView=_noResultView;
 @property(nonatomic) unsigned long long uiStyle; // @synthesize uiStyle=_uiStyle;
 @property(nonatomic) _Bool isFTSEngineConstructBySelf; // @synthesize isFTSEngineConstructBySelf=_isFTSEngineConstructBySelf;
-@property(nonatomic) __weak FTSGroupResultsTabViewController *ftsGroupResultsTabViewController; // @synthesize ftsGroupResultsTabViewController=_ftsGroupResultsTabViewController;
 @property(retain, nonatomic) QQDynamicSearchTableFootLoadingView *footLoadingView; // @synthesize footLoadingView=_footLoadingView;
 @property(nonatomic) _Bool showSearchBar; // @synthesize showSearchBar=_showSearchBar;
 @property(retain, nonatomic) FTSCustomSearchBar *ftsContainerSearchBar; // @synthesize ftsContainerSearchBar=_ftsContainerSearchBar;

@@ -6,7 +6,7 @@
 
 #import <TlibDy/JceObjectV2.h>
 
-@class QZJPhotoDailyConfigEventcard;
+@class QZJPhotoDailyConfigEventcard, QZJPhotoDailyRecommendStatus;
 
 @interface QZJPhotoGetDailyConfigRsp : JceObjectV2
 {
@@ -18,6 +18,7 @@
 // Remaining properties
 @property(nonatomic, getter=jce_uin, setter=setJce_uin:) long long jcev2_p_0_r_uin; // @dynamic jcev2_p_0_r_uin;
 @property(retain, nonatomic, getter=jce_eventCard_conf, setter=setJce_eventCard_conf:) QZJPhotoDailyConfigEventcard *jcev2_p_1_o_eventCard_conf; // @dynamic jcev2_p_1_o_eventCard_conf;
+@property(retain, nonatomic, getter=jce_recommend_status, setter=setJce_recommend_status:) QZJPhotoDailyRecommendStatus *jcev2_p_2_o_recommend_status; // @dynamic jcev2_p_2_o_recommend_status;
 
 @end
 

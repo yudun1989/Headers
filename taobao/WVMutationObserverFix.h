@@ -19,6 +19,7 @@
 - (void).cxx_destruct;
 - (void)updateJS;
 - (void)configUpdateFinished:(id)arg1;
+- (void)dealloc;
 - (id)init;
 
 @end

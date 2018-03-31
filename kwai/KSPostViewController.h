@@ -25,6 +25,7 @@
     _Bool _forceOpenMagicFaceTag;
     _Bool _forceUseFrontCamera;
     _Bool _bottomBarHidden;
+    _Bool _visible;
     int _videoLengthType;
     NSString *_initalCaption;
     KSMusicItem *_defaultMusic;
@@ -50,6 +51,7 @@
 
 + (id)ks_portalPath;
 + (id)searchIndexItem;
+@property(nonatomic) _Bool visible; // @synthesize visible=_visible;
 @property(nonatomic) long long bottomBarStyle; // @synthesize bottomBarStyle=_bottomBarStyle;
 @property(retain, nonatomic) NSArray *viewControllers; // @synthesize viewControllers=_viewControllers;
 @property(retain, nonatomic) KSLiveViewController *liveViewController; // @synthesize liveViewController=_liveViewController;
@@ -85,6 +87,7 @@
 - (void)willDisappearAssetPickViewController:(id)arg1;
 - (void)setUpPageURL;
 - (void)logClickOnIndex:(long long)arg1;
+- (void)logClickOnIndex:(long long)arg1 type:(int)arg2;
 - (_Bool)showLiveButtonLock;
 - (_Bool)liveLocked;
 - (_Bool)showLiveBtn;
@@ -92,17 +95,19 @@
 - (void)setBottomBarHidden:(_Bool)arg1 animated:(_Bool)arg2;
 - (void)scrollViewWillEndDragging:(id)arg1 withVelocity:(struct CGPoint)arg2 targetContentOffset:(inout struct CGPoint *)arg3;
 - (void)scrollViewDidScroll:(id)arg1;
-- (void)updateActivity;
 - (void)updateAdditionalSafeAreaInsets;
-- (void)updateCurrentIndex:(long long)arg1;
 - (_Bool)showLiveAuthorizeIfNeeded;
+- (void)setCurrentIndex:(long long)arg1 animated:(_Bool)arg2 changeOffset:(_Bool)arg3;
 - (void)setCurrentIndex:(long long)arg1 animated:(_Bool)arg2;
 - (void)didClickButton:(id)arg1;
 - (id)childViewControllerForStatusBarHidden;
 - (id)childViewControllerForStatusBarStyle;
+- (void)viewDidDisappear:(_Bool)arg1;
 - (void)viewDidAppear:(_Bool)arg1;
 - (void)viewWillDisappear:(_Bool)arg1;
 - (void)viewWillAppear:(_Bool)arg1;
+- (id)currentViewController;
+- (_Bool)shouldAutomaticallyForwardAppearanceMethods;
 - (_Bool)gestureRecognizer:(id)arg1 shouldRecognizeSimultaneouslyWithGestureRecognizer:(id)arg2;
 - (_Bool)gestureRecognizerShouldBegin:(id)arg1;
 - (void)handleDisablePageGesturer:(id)arg1;

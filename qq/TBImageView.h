@@ -39,7 +39,6 @@
 - (void)setImageByUIImage:(id)arg1;
 - (id)scaleAndResizeCIImage:(id)arg1 forRect:(struct CGRect)arg2;
 - (id)renderedCIImageInRect:(struct CGRect)arg1;
-- (id)renderedUIImageInRect:(struct CGRect)arg1;
 - (void)setNeedsDisplay;
 - (void)unloadContext;
 - (void)layoutSubviews;

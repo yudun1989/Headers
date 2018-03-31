@@ -8,7 +8,7 @@
 
 #import <QQMainProject/UIScrollViewDelegate-Protocol.h>
 
-@class ArkCardsPickerPannel, NSMutableArray, NSMutableDictionary, NSString, QQBaseChatViewController, UIScrollView;
+@class ArkAppPanelView, ArkCardsPickerPannel, NSMutableArray, NSMutableDictionary, NSString, QQBaseChatViewController, UIScrollView;
 
 @interface ArkRecommendLogic : NSObject <UIScrollViewDelegate>
 {
@@ -24,6 +24,7 @@
     _Bool _msgParseArkAI;
     NSString *_inputText;
     ArkCardsPickerPannel *_arkPanel;
+    ArkAppPanelView *_arkAppPanelView;
 }
 
 + (void)fillAIDataToMsgModel:(id)arg1 msg:(id)arg2;
@@ -31,6 +32,7 @@
 + (void)setTextModelReported:(id)arg1;
 + (void)showInputArkViewWithSelectedAppInfo:(id)arg1 allAppInfos:(id)arg2 hostViewController:(id)arg3;
 + (id)recommendLogicWithControllor:(id)arg1;
+@property(retain, nonatomic) ArkAppPanelView *arkAppPanelView; // @synthesize arkAppPanelView=_arkAppPanelView;
 @property(retain, nonatomic) ArkCardsPickerPannel *arkPanel; // @synthesize arkPanel=_arkPanel;
 @property(retain) NSString *inputText; // @synthesize inputText=_inputText;
 - (void).cxx_destruct;
@@ -66,21 +68,24 @@
 - (void)parseArkAIText:(id)arg1 msgModel:(id)arg2;
 - (void)parseMessage:(id)arg1;
 - (id)filterAtGroupMember:(id)arg1;
-- (void)handleContext:(const struct ContextItem *)arg1 rawItem:(const struct ContextItem *)arg2 history:(const struct ContextItem *)arg3 msg:(id)arg4 inputText:(id)arg5 fromServer:(_Bool)arg6;
-- (id)msgItemsFromContextInfo:(const struct ContextItem *)arg1 rawItem:(const struct ContextItem *)arg2 equalInputText:(_Bool)arg3 contextMatchType:(int)arg4;
-- (void)handleContextForMsg:(id)arg1 msg:(id)arg2 isArkAI:(_Bool)arg3;
+- (void)handleContextForInput_WithContextInfo:(id)arg1 inputText:(id)arg2 fromServer:(_Bool)arg3;
+- (void)handleContextForInput_WithContextItem:(const struct ContextItem *)arg1 inputText:(id)arg2 fromServer:(_Bool)arg3;
+- (id)getTitleFromSemantics:(id)arg1 viewDesc:(id)arg2;
+- (void)getContextItemFromContextInfo:(id)arg1 message:(id)arg2 callback:(CDUnknownBlockType)arg3;
+- (id)contextInfoToDictionary:(id)arg1;
+- (void)handleContextForMsg2:(id)arg1 msg:(id)arg2 isArkAI:(_Bool)arg3;
+- (void)handleContextForMsg:(id)arg1 msg:(id)arg2 text:(id)arg3 isArkAI:(_Bool)arg4;
 - (void)handleContextForInput:(id)arg1 semantic:(id)arg2 appInfos:(id)arg3;
 - (_Bool)checkIsShowing:(id)arg1 semantic:(id)arg2 appInfos:(id)arg3;
 - (_Bool)addAppInfoToList:(id)arg1 list:(id)arg2;
-- (_Bool)checkValuesContian:(id)arg1 to:(id)arg2;
-- (_Bool)checkValuesEqual:(id)arg1 to:(id)arg2;
-- (int)getSemanticCheckType:(id)arg1 ori:(id)arg2;
+- (int)getTitleCheckType:(id)arg1 ori:(id)arg2;
 - (void)destroyInputArkView;
 - (void)onInputItemSelected:(id)arg1;
 - (void)clearInputCacheState;
 - (void)onChangeInputViewText:(id)arg1;
 - (void)onBubbleClickNotify:(id)arg1;
 - (void)createInputbarArkView:(id)arg1 index:(unsigned long long)arg2;
+- (void)showArkAppPanelView;
 - (void)clearInputState;
 - (void)doLayoutBubble;
 - (struct CGRect)getTableContentRect;
@@ -96,7 +101,6 @@
 - (_Bool)checkBubblesBar;
 - (_Bool)equalInputTextFromContextInfo:(const struct ContextItem *)arg1 inputText:(id)arg2;
 - (id)keywordFromContextInfo:(id)arg1;
-- (id)metaListFromContextInfo:(const struct ContextItem *)arg1;
 - (const char *)wcharFromString:(id)arg1;
 - (id)stringFromWchar:(const basic_string_51d50be7 *)arg1;
 - (void)onClearContextNotify:(id)arg1;

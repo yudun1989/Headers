@@ -42,8 +42,8 @@
 - (id)defaultSectionHeaderViewWithTitle:(id)arg1 forTableView:(id)arg2 marginTop:(double)arg3;
 - (double)searchResultHeightForRowAtIndexPath:(id)arg1;
 - (void)FTSDynamicSearchDataReportSelectedItem:(id)arg1;
-- (_Bool)jumpToNetSearchOnlyNetSearchJumpToWeb:(id)arg1 searchSource:(long long)arg2;
 - (id)preProcessJumpURL:(id)arg1 keyword:(id)arg2 searchSource:(long long)arg3;
+- (_Bool)jumpToNetSearchOnlyNetSearchJumpToWeb:(id)arg1 searchSource:(long long)arg2;
 - (void)netSearchEnterClickOnlyNetSearchJumpToWeb:(id)arg1 searchSource:(long long)arg2;
 - (void)netSearchEnterClickOnlyNetSearchJumpToWeb:(id)arg1;
 - (_Bool)jumpToNetSearch:(id)arg1 searchSource:(long long)arg2;
@@ -52,12 +52,7 @@
 - (void)qqDynamicSearchDidSelectedResultItem:(id)arg1;
 - (void)tableView:(id)arg1 didSelectRowAtIndexPath:(id)arg2;
 - (double)tableViewHeightForCellAtIndexPath:(id)arg1;
-- (double)tableView:(id)arg1 heightForRowAtIndexPath:(id)arg2;
 - (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;
-- (id)tableView:(id)arg1 viewForFooterInSection:(long long)arg2;
-- (double)tableView:(id)arg1 heightForFooterInSection:(long long)arg2;
-- (id)tableView:(id)arg1 viewForHeaderInSection:(long long)arg2;
-- (double)tableView:(id)arg1 heightForHeaderInSection:(long long)arg2;
 - (void)dealloc;
 - (id)init;
 

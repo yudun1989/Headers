@@ -6,15 +6,21 @@
 
 #import <Foundation/NSObject.h>
 
-@class TBMPBPlayerView;
+@class NSString, TBMPBPlayerView;
 
 @interface MCVideoPlayHandler : NSObject
 {
     TBMPBPlayerView *_playerView;
+    NSString *_originAudioSessionCategory;
+    unsigned long long _originAudioSessionCategoryOptions;
 }
 
+@property(nonatomic) unsigned long long originAudioSessionCategoryOptions; // @synthesize originAudioSessionCategoryOptions=_originAudioSessionCategoryOptions;
+@property(nonatomic) NSString *originAudioSessionCategory; // @synthesize originAudioSessionCategory=_originAudioSessionCategory;
 @property(retain, nonatomic) TBMPBPlayerView *playerView; // @synthesize playerView=_playerView;
 - (void).cxx_destruct;
+- (void)recoverAudioSession;
+- (void)setupAudioSession;
 - (void)upSetupView;
 - (void)playerViewBeenTapped:(id)arg1;
 - (void)playVideoWithUrlStr:(id)arg1;

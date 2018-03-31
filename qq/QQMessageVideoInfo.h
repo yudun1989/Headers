@@ -25,6 +25,7 @@
     float fvideoProgress;
     int errorCode;
     unsigned int videoAttr;
+    unsigned int _subBusiType;
     unsigned int _specialVideoType;
     unsigned int _redEnvelopeType;
     unsigned int _videoMsgTailType;
@@ -45,10 +46,12 @@
     NSString *_hotUrl;
     NSString *_hotSubIcon;
     NSString *_shortVideoId;
+    NSString *_animojiModelId;
 }
 
 + (id)parseFromJson:(id)arg1;
 + (id)toJson:(id)arg1;
+@property(retain, nonatomic) NSString *animojiModelId; // @synthesize animojiModelId=_animojiModelId;
 @property(nonatomic) unsigned int videoMsgTailType; // @synthesize videoMsgTailType=_videoMsgTailType;
 @property(retain, nonatomic) NSString *shortVideoId; // @synthesize shortVideoId=_shortVideoId;
 @property(nonatomic) unsigned int redEnvelopeType; // @synthesize redEnvelopeType=_redEnvelopeType;
@@ -60,6 +63,7 @@
 @property(retain, nonatomic) NSString *hotSourceIcon; // @synthesize hotSourceIcon=_hotSourceIcon;
 @property(nonatomic) _Bool delayRefreshFlag; // @synthesize delayRefreshFlag=_delayRefreshFlag;
 @property(retain, nonatomic) NSArray *broadcastUins; // @synthesize broadcastUins=_broadcastUins;
+@property(nonatomic) unsigned int subBusiType; // @synthesize subBusiType=_subBusiType;
 @property(nonatomic) _Bool isPreUploading; // @synthesize isPreUploading=_isPreUploading;
 @property(nonatomic) _Bool tinyVideoMerging; // @synthesize tinyVideoMerging=_tinyVideoMerging;
 @property(nonatomic) _Bool reportFlag; // @synthesize reportFlag;

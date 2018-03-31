@@ -56,7 +56,7 @@
 #import <QQMainProject/UITextFieldDelegate-Protocol.h>
 #import <QQMainProject/VoiceToTextDelegate-Protocol.h>
 
-@class AddFriendSendMessageViewController, ArkActiveSearchLogic, ArkRecommendLogic, CALayer, CmShowGameBanner, CmShowScriptManager, DirectionMoviePlayerViewController, EmojiEggView, FlappyEggManager, FlashPictureCacheMsgHandler, MarketFaceInfo, MsgBehaviorMonitor, NSArray, NSDate, NSDictionary, NSMutableArray, NSMutableDictionary, NSNumber, NSString, QQAIOAnimationLayer, QQAIOBizAgentManager, QQAIOEventModule, QQAIOFlashChatPanel, QQAIOFlashChatPreviewView, QQAIONotificationCenter, QQAIORecallHandler, QQAIOSpriteActionModel, QQAIOTinyVideoStateChangeNotification, QQAudioInputView, QQBaseChatImage, QQBaseChatMessage, QQBaseChatModel, QQBaseChatTipManager, QQBaseChatUIOperation, QQBaseFacePanelController, QQBubbleTipsView, QQDoodleBottomBorad, QQGeneralAmrPlayer, QQGroupGiftSelectionView, QQGroupKeyFrameImageView, QQHotPicView, QQLightInteractionInputView, QQLightInteractionMPAView, QQMessageModel, QQPttPlayer, QQPublicPlatformCustomMenu, QQRecentMessageModel, QQRecentPicPreview, QQRichKeyBorad, QQRichMediaPickerController, QQWalletGoldMsgAIOAnimationView, QQWalletInputBubbleView, QUIActionSheet, QUIPopupController, ShoppingEntranceView, ShoppingRedBagFailMask, ShoppingRedBagMaskView, SpriteFastReplyActionView, SpriteGameModel, SpriteMatchBannerView, SpritePanelGameView, SpritePanelView, SpriteS2CDrawerInfoModel, UIButton, UIImageView, UILabel, UITapGestureRecognizer, UIView, UIWindow, sa_gl_view;
+@class AddFriendSendMessageViewController, ArkActiveSearchLogic, ArkRecommendLogic, CALayer, CmShowGameBanner, CmShowScriptManager, EmojiEggView, FlappyEggManager, FlashPictureCacheMsgHandler, MarketFaceInfo, MsgBehaviorMonitor, NSArray, NSDate, NSDictionary, NSMutableArray, NSMutableDictionary, NSNumber, NSString, QQAIOAnimationLayer, QQAIOBizAgentManager, QQAIOEventModule, QQAIOFlashChatPanel, QQAIOFlashChatPreviewView, QQAIONotificationCenter, QQAIORecallHandler, QQAIOSpriteActionModel, QQAIOTinyVideoStateChangeNotification, QQAnimojiBubbleTipsView, QQAudioInputView, QQBaseChatImage, QQBaseChatMessage, QQBaseChatModel, QQBaseChatTipManager, QQBaseChatUIOperation, QQBaseFacePanelController, QQBubbleTipsView, QQDoodleBottomBorad, QQGeneralAmrPlayer, QQGroupGiftSelectionView, QQGroupKeyFrameImageView, QQHotPicView, QQLightInteractionInputView, QQLightInteractionMPAView, QQMessageModel, QQPttPlayer, QQPublicPlatformCustomMenu, QQRecentMessageModel, QQRecentPicPreview, QQRichKeyBorad, QQRichMediaPickerController, QQWalletGoldMsgAIOAnimationView, QQWalletInputBubbleView, QUIActionSheet, QUIPopupController, ShoppingEntranceView, ShoppingRedBagFailMask, ShoppingRedBagMaskView, SpriteFastReplyActionView, SpriteGameModel, SpriteMatchBannerView, SpritePanelGameView, SpritePanelView, SpriteS2CDrawerInfoModel, UIButton, UIImageView, UILabel, UITapGestureRecognizer, UIView, UIWindow, sa_gl_view;
 @protocol MulMemSelBusiProcessDelegate, QQVCPushPopAnimationDelegate;
 
 @interface QQBaseChatViewController : QQInputDefaultTextViewController <QQVoiceToTextDelegate, VoiceToTextDelegate, DynaDoodleAIODelegate, QQVipPokeWindowAnimatorDelegate, CmShowGameBannerDelegate, SpritePanelGameViewDelagate, QQSVOriginalCellDelegete, QQGroupGiftSelectionViewDelegate, SpriteFastReplyActionViewDelegate, QQBaseFacePanelDelegate, AudioRouteChangeProtocol, QQPttPlayerDelegate, QQPttRecorderDelegate, QQPttRecordBtnDelegate, QQAuditionDelegate, RichTransferAIODelegate, QQFACellEventDelegate, IFAChooserDelegate, SKStoreProductViewControllerDelegate, PreviewSecretPictureViewControllerDelegate, QQDoodleBottomBoradDelegate, QQAIOInputbarDelegate, UITextFieldDelegate, QUIActionSheetDelegate, UINavigationControllerDelegate, UIImagePickerControllerDelegate, MFMailComposeViewControllerDelegate, QQChatViewTableDelegate, QQTextFieldDelegate, SimpleAlertViewDelegate, QQFriendSelectedViewControllerDelegate, SelectLocationDelegate, UIAlertViewDelegate, QQRichKeyBoradDelegate, QC2CRoamMessageDelegate, QQFaceKeyBoardDelegate, QQRichStateJsHelperDelegate, PPCustomMenuDelegate, QQBannerTipViewDelegate, QQPopMenuDelegate, QQBaseChatTipManagerDelegate, QQBizTaskDelegate, QQRecentPicPreviewDelegate, QQBaseChatMessageDelegate, QQWalletInputBubbleViewDelegate, JDEggDataDelegate, QQLightInteractionDelegate, QQAIODouTuComboDelegate, QQDoutuViewDelegate>
@@ -172,6 +172,7 @@
     ArkRecommendLogic *_recommendLogic;
     int _pokeStatus;
     _Bool _shouldAutoShowKeyBoard;
+    _Bool _isAIOPlusVideo;
     NSMutableDictionary *_canShowAppGrayTipInfo;
     _Bool _isReceiptMessageMode;
     NSDictionary *_videoForwardInfo;
@@ -179,7 +180,7 @@
     QQWalletGoldMsgAIOAnimationView *_goldMsgAniView;
     ArkActiveSearchLogic *_arkSearchLogic;
     id <QQVCPushPopAnimationDelegate> _ppAnimationDelegate;
-    DirectionMoviePlayerViewController *_widgetVideoPlayerViewController;
+    _Bool _isAnimojiTipsShowing;
     _Bool _hasShowedVASGiftVipTip;
     UIView *_receiptMsgNavMaskView;
     UIView *_receiptMsgTableMaskView;
@@ -213,6 +214,7 @@
     QQMessageModel *_recordModel;
     CALayer *_layerForNightMode;
     QQAIOBizAgentManager *_bizAgentManager;
+    QQMessageModel *_reEditModel;
     QQBubbleTipsView *_inputBarTips;
     QQBubbleTipsView *_magicFontTips;
     QQBubbleTipsView *_marioGuideTips;
@@ -226,6 +228,7 @@
     QQAIOAnimationLayer *_backgroundAnimationLayer;
     NSString *_picLightCommentRichStr;
     QQMessageModel *_quoteMsgModel;
+    QQAnimojiBubbleTipsView *_animojiTips;
     QQWalletInputBubbleView *_inputBubbleView;
     NSString *_line1TitleStr;
     NSString *_line2TitleStr;
@@ -246,6 +249,7 @@
 @property(retain, nonatomic) NSString *line1TitleStr; // @synthesize line1TitleStr=_line1TitleStr;
 @property(readonly, nonatomic) QQWalletInputBubbleView *inputBubbleView; // @synthesize inputBubbleView=_inputBubbleView;
 @property(retain, nonatomic) NSMutableDictionary *SMPttCache; // @synthesize SMPttCache=_SMPttCache;
+@property(retain, nonatomic) QQAnimojiBubbleTipsView *animojiTips; // @synthesize animojiTips=_animojiTips;
 @property(retain, nonatomic) QQMessageModel *quoteMsgModel; // @synthesize quoteMsgModel=_quoteMsgModel;
 @property(retain, nonatomic) NSString *picLightCommentRichStr; // @synthesize picLightCommentRichStr=_picLightCommentRichStr;
 @property(nonatomic) _Bool isPicLightCommentModel; // @synthesize isPicLightCommentModel=_isPicLightCommentModel;
@@ -267,6 +271,7 @@
 @property(retain, nonatomic) SpriteMatchBannerView *spriteMatchBanner; // @synthesize spriteMatchBanner=_spriteMatchBanner;
 @property(retain, nonatomic) NSDictionary *openSpritePanelDict; // @synthesize openSpritePanelDict=_openSpritePanelDict;
 @property(nonatomic) int spriteStatus; // @synthesize spriteStatus=_spriteStatus;
+@property(retain, nonatomic) EmojiEggView *emojiEggView; // @synthesize emojiEggView=_emojiEggView;
 @property(retain, nonatomic) SpriteS2CDrawerInfoModel *spriteS2CModel; // @synthesize spriteS2CModel=_spriteS2CModel;
 @property(nonatomic) _Bool isCheckGameJsonUpdate; // @synthesize isCheckGameJsonUpdate=_isCheckGameJsonUpdate;
 @property(retain, nonatomic) SpriteGameModel *waitGameModel; // @synthesize waitGameModel=_waitGameModel;
@@ -277,6 +282,7 @@
 @property(retain, nonatomic) QQBubbleTipsView *magicFontTips; // @synthesize magicFontTips=_magicFontTips;
 @property(retain, nonatomic) QQBubbleTipsView *inputBarTips; // @synthesize inputBarTips=_inputBarTips;
 @property(retain, nonatomic) QQAIOSpriteActionModel *gifActionModel; // @synthesize gifActionModel=_gifActionModel;
+@property(retain, nonatomic) QQMessageModel *reEditModel; // @synthesize reEditModel=_reEditModel;
 @property(retain, nonatomic) QQAIOBizAgentManager *bizAgentManager; // @synthesize bizAgentManager=_bizAgentManager;
 @property(nonatomic) _Bool showAniamtionScrollEnabel; // @synthesize showAniamtionScrollEnabel=_showAniamtionScrollEnabel;
 @property(retain, nonatomic) id <MulMemSelBusiProcessDelegate> mMemSelOpDelegateCallback; // @synthesize mMemSelOpDelegateCallback=_mMemSelOpDelegateCallback;
@@ -323,6 +329,9 @@
 @property(retain, nonatomic) QQAudioInputView *audioInputView; // @synthesize audioInputView=_audioInputView;
 @property(retain, nonatomic) QQBaseFacePanelController *facePanelController; // @synthesize facePanelController=_facePanelController;
 @property(nonatomic) struct _originalMsgState originalMsg; // @synthesize originalMsg=_originalMsg;
+- (void)setAtStatus;
+- (void)replaceReEditMsgTip:(id)arg1;
+- (void)updateReEditMsgModel;
 - (void)addQuoteMsAtInfo:(id)arg1;
 - (void)actionReply:(id)arg1 isPresentKeyboard:(_Bool)arg2;
 - (void)actionReply:(id)arg1;
@@ -542,6 +551,7 @@
 - (void)forwardSharedImageMsg:(id)arg1;
 - (void)forwardVideoMsg:(id)arg1;
 - (void)forwardMultiMsgSingle:(id)arg1;
+- (void)doSendLargeMsgOptimizeMsg:(id)arg1 picUrl:(id)arg2 resendModel:(id)arg3;
 - (void)delaySendMultiMsgSingle:(id)arg1;
 - (id)prepareUploadReceiptMsg:(id)arg1 isForward:(_Bool)arg2 resType:(long long)arg3;
 - (void)forwardMultiMsgs:(id)arg1;
@@ -678,9 +688,8 @@
 - (void)initHighBoomMsgModel:(id)arg1;
 - (_Bool)sendHighBoomMsgWithHighBoomFontModel:(id)arg1 aioText:(id)arg2 resendModel:(id)arg3;
 - (void)onBusinessProcessWithSelectedMems_re:(id)arg1 currentViewControllerClass:(id)arg2 currentViewController:(id)arg3;
-- (void)didMultiTelSelect:(id)arg1 clickedButtonAtIndex:(long long)arg2;
-- (void)multiTelSelect:(long long)arg1;
-- (void)didShowMultiTelSelActionSheet;
+- (void)multiTelSelect:(long long)arg1 entranceType:(int)arg2;
+- (void)didShowMultiTelSelActionSheet:(int)arg1;
 - (id)appTypeFromMsg:(id)arg1;
 - (id)tipInfoWithMsg:(id)arg1;
 - (_Bool)checkAppTipAIOType:(id)arg1;
@@ -744,7 +753,7 @@
 - (void)actionVideo;
 - (void)actionDynaDoodle;
 - (void)actionFreeQDCall;
-- (void)actionShowMultiTelSelActionSheet;
+- (void)actionShowMultiTelSelActionSheet:(int)arg1;
 - (void)actionShakeWindowMsg;
 - (void)actionSetLocationSheet;
 - (void)actionSendMyLocation;
@@ -772,7 +781,7 @@
 - (void)actionNearbySendFlowers;
 - (void)actionMusic;
 - (void)actionGroupStory;
-- (void)actionGroupVideo:(int)arg1;
+- (void)actionGroupAudio:(int)arg1;
 - (void)actionGoldMsgMode:(id)arg1 richAIOFlag:(unsigned long long)arg2;
 - (void)actionSettingGroupAnonymousMode:(id)arg1;
 - (void)actionGroupQuitAnonymousMode:(id)arg1;
@@ -780,7 +789,7 @@
 - (void)actionGroupHomework;
 - (void)actionDeliverGift;
 - (void)actionGroupDeliverGift;
-- (void)actionGroupAudio:(int)arg1;
+- (void)actionGroupVideo;
 - (void)actionGroupApp;
 - (void)actionGroupAnonymousMode:(id)arg1;
 - (void)actionGroupActivity;
@@ -825,15 +834,16 @@
 - (id)getEnterType;
 - (void)didUpdateGamePanelList:(id)arg1;
 - (unsigned long long)currentGameId;
-- (void)p_refreshGameItemModelWithGameModel:(id)arg1;
 - (id)getGameItemModels;
 - (void)onGamePanelBtnClicked:(id)arg1 type:(int)arg2;
 - (void)onGoBackGame:(id)arg1;
 - (void)onStartGameClicked:(id)arg1 type:(unsigned long long)arg2;
 - (void)cmGameStartWithGameModel:(id)arg1 msgModel:(id)arg2 localVersion:(id)arg3;
 - (void)joinGameWithAIOGameModel:(id)arg1 isHotChatTopBar:(_Bool)arg2;
+- (void)checkNeedGetSpriteGameRankChange;
 - (void)setupTopInsetForGameBanner:(_Bool)arg1;
 - (void)checkNeedShowSpriteGameBanner;
+- (void)checkNeedShowSpriteGame;
 - (void)sendSpriteStructMessage;
 - (void)sendSpriteGameMsg:(id)arg1 roomID:(unsigned long long)arg2 shareArkJson:(id)arg3 subType:(int)arg4;
 - (void)sendSpriteGameMsg:(id)arg1 roomID:(unsigned long long)arg2 shareArkJson:(id)arg3;
@@ -876,6 +886,7 @@
 - (id)getDynamicPluginAppItems;
 - (void)configRichKeyboardItems;
 - (void)QQAIOScheduleMessageCellDidAction:(id)arg1;
+- (void)hideAnimojiTips;
 - (unsigned long long)glViewLevel;
 - (void)setGLViewLevel:(unsigned long long)arg1;
 - (id)glViewLevelStore;
@@ -909,8 +920,6 @@
 - (void)onSpriteLongPressed:(id)arg1;
 - (void)onSpriteAreaClicked:(id)arg1;
 - (void)onSpriteClicked:(id)arg1;
-- (void)petClicked:(id)arg1;
-- (_Bool)isPet:(id)arg1;
 - (void)notifiSaveToAlbumRet:(int)arg1;
 - (void)saveSpriteGifToAlbum;
 - (void)didClickSpriteGifActionSheet:(long long)arg1;
@@ -953,6 +962,8 @@
 - (void)getCmShowActionData:(id)arg1;
 - (void)getCmShowDressData:(id)arg1;
 - (id)getAIOEnterActionResource:(id)arg1;
+- (id)getAIOPetActionResource:(id)arg1;
+- (id)checkResPath:(id)arg1;
 - (id)isAllowedPlayAudio;
 - (void)onAioDbClick:(id)arg1;
 - (void)logoutSpriteEventNotification;
@@ -985,11 +996,14 @@
 - (void)setCmShowFooterView;
 - (id)initCmShowSpriteView;
 - (void)destroyCmShowSpriteView;
+- (void)setupSpritesWithLoadingResult:(_Bool)arg1 response:(id)arg2 glview:(id)arg3 scriptManager:(id)arg4 startTime:(double)arg5 petRsps:(id)arg6 petsDefaultActions:(id)arg7 callback:(CDUnknownBlockType)arg8;
 - (void)loadCmShowSpriteView:(CDUnknownBlockType)arg1;
 - (_Bool)canShowSprite;
 - (void)setupSpriteGLView;
 - (void)viewDidLayoutSubviewsCmShow;
 - (void)cm_afterViewDidAppear;
+- (id)jsCmdHandler;
+- (void)setjsCmdHandler:(id)arg1;
 - (id)isLayoutSubviewsCalled;
 - (void)setisLayoutSubviewsCalled:(id)arg1;
 - (void)emojiDraged:(id)arg1 emojiStickerInfo:(id)arg2;
@@ -1049,6 +1063,12 @@
 - (void)sendFlashChatMsgModel:(id)arg1;
 - (void)initFlashChatMsgModel:(id)arg1;
 - (_Bool)sendFlashChatMsg:(id)arg1 AIOText:(id)arg2 resendModel:(id)arg3;
+- (void)audioIconBeClicked;
+- (_Bool)isSchoolCard;
+- (_Bool)isShowAnimojiTips;
+- (void)hideAnimojiTips;
+- (void)showAnimojiTips;
+- (void)sendAnimojiVideo:(id)arg1 withModelId:(id)arg2 completion:(CDUnknownBlockType)arg3;
 - (id)getOnewayFriendTips;
 - (id)findOnewayFriendTipsMessage;
 - (void)deleteUIOnewayFriendTips;
@@ -1066,6 +1086,7 @@
 - (void)updateTableFooterViewForGoldMsg;
 - (void)startGoldMsgAnimationWithMsg:(id)arg1;
 - (void)showGolgMsgAnimationIfNeeded:(id)arg1;
+- (void)reportGoldMsgSubOperationName:(id)arg1;
 - (void)didRefreshConfig:(id)arg1 forKey:(id)arg2;
 - (void)configNotifications;
 - (void)invokePlugin:(CDUnknownBlockType)arg1 showFailedToast:(_Bool)arg2;

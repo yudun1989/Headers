@@ -6,29 +6,42 @@
 
 #import <UIKit/UIView.h>
 
-@class NSMutableDictionary, PBInteractButton, UIImage;
+@class NSMutableDictionary, NSString, PBInteractButton, PBUserIconView, UIImage;
 
 @interface TBRDPhotoBrowseInteractView : UIView
 {
     CDUnknownBlockType _meidaZangClickCallback;
     CDUnknownBlockType _contentZangClickCallback;
     CDUnknownBlockType _commentClickCallback;
+    CDUnknownBlockType _userClickCallback;
+    NSString *_pn;
+    NSString *_vn;
+    NSString *_cn;
     PBInteractButton *_vZang;
     PBInteractButton *_vComment;
+    PBUserIconView *_userView;
     UIImage *_zangImage;
     UIImage *_unZangImage;
-    NSMutableDictionary *_data;
+    NSMutableDictionary *_interact;
+    NSMutableDictionary *_userInfo;
 }
 
-@property(retain, nonatomic) NSMutableDictionary *data; // @synthesize data=_data;
+@property(retain, nonatomic) NSMutableDictionary *userInfo; // @synthesize userInfo=_userInfo;
+@property(retain, nonatomic) NSMutableDictionary *interact; // @synthesize interact=_interact;
 @property(retain, nonatomic) UIImage *unZangImage; // @synthesize unZangImage=_unZangImage;
 @property(retain, nonatomic) UIImage *zangImage; // @synthesize zangImage=_zangImage;
+@property(retain, nonatomic) PBUserIconView *userView; // @synthesize userView=_userView;
 @property(retain, nonatomic) PBInteractButton *vComment; // @synthesize vComment=_vComment;
 @property(retain, nonatomic) PBInteractButton *vZang; // @synthesize vZang=_vZang;
+@property(copy, nonatomic) NSString *cn; // @synthesize cn=_cn;
+@property(copy, nonatomic) NSString *vn; // @synthesize vn=_vn;
+@property(copy, nonatomic) NSString *pn; // @synthesize pn=_pn;
+@property(copy, nonatomic) CDUnknownBlockType userClickCallback; // @synthesize userClickCallback=_userClickCallback;
 @property(copy, nonatomic) CDUnknownBlockType commentClickCallback; // @synthesize commentClickCallback=_commentClickCallback;
 @property(copy, nonatomic) CDUnknownBlockType contentZangClickCallback; // @synthesize contentZangClickCallback=_contentZangClickCallback;
 @property(copy, nonatomic) CDUnknownBlockType meidaZangClickCallback; // @synthesize meidaZangClickCallback=_meidaZangClickCallback;
 - (void).cxx_destruct;
+- (void)userTap:(id)arg1;
 - (void)commentTap:(id)arg1;
 - (void)zangTap:(id)arg1;
 - (id)numTransfer:(id)arg1;

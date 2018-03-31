@@ -42,7 +42,6 @@
 @property(retain, nonatomic) NSString *roomID; // @synthesize roomID=_roomID;
 @property(nonatomic) unsigned int gameID; // @synthesize gameID=_gameID;
 @property(nonatomic) int gameState; // @synthesize gameState=_gameState;
-- (id)description;
 - (id)init;
 - (void)dealloc;
 

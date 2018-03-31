@@ -16,6 +16,7 @@
     int _refreshType;
     long long _seriesNo;
     int _refreshTime;
+    int _action;
     double _lastReqTime;
     NSString *_commonMsg;
     NSMutableDictionary *_mConfig;
@@ -24,6 +25,8 @@
     NSMutableDictionary *_lastReqTimeDic;
     NSMutableDictionary *_refreshTimeDic;
     _Bool _isInstanceInit;
+    int _reqWhen;
+    int _batchReqCount;
 }
 
 + (id)shareManager;
@@ -51,8 +54,10 @@
 - (double)currentConfigTime;
 - (long long)getCurrentSeriesNo;
 - (_Bool)isTimeToReqValid:(long long)arg1;
+- (void)setConfigUserSessionParams:(id)arg1;
 - (void)requestConfigForBusiness:(long long)arg1 params:(id)arg2 completion:(CDUnknownBlockType)arg3;
 - (id)getConfigObject:(id)arg1 path:(id)arg2;
+- (id)handleConfig:(id)arg1 forKey:(id)arg2;
 - (id)getConfigObject:(id)arg1 forClass:(Class)arg2;
 - (id)getConfig:(id)arg1;
 - (void)unregisterObserver:(id)arg1 forKey:(id)arg2;

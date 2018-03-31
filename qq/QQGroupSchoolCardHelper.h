@@ -23,6 +23,7 @@
 + (_Bool)shouldShowIndentityAlert:(id)arg1;
 + (_Bool)isSchoolIdentityEmpty:(id)arg1 troopModel:(id)arg2;
 + (_Bool)isSchoolIdentityEmptyWithIdentity:(unsigned int)arg1;
++ (int)schoolIdentityForGroup:(id)arg1;
 + (_Bool)isSchoolIdentityEmpty:(id)arg1;
 + (id)getMemberModelWithGroupCode:(id)arg1;
 + (_Bool)isSchoolGroupWithModel:(id)arg1;

@@ -25,7 +25,13 @@
     QZJPhotoDailyConfigEventcard *_nnjrConfigEventCard;
 }
 
++ (long long)eventTypeFromEventDict:(id)arg1;
++ (id)convertQQAssetToPhotoModel:(id)arg1 eventDict:(id)arg2;
++ (_Bool)shouldScanRecentPhotoAfterLogin;
++ (id)photoEventRecommendStatus;
++ (void)updatePhotoEventRecommendStatus:(id)arg1;
 + (_Bool)isVideoQQAssetReachLimit:(id)arg1;
++ (_Bool)shouldShowVideoMaker:(id)arg1;
 + (id)assetsFromEventDict:(id)arg1;
 + (id)photoBrowserForPhotoEvent:(id)arg1 currentPage:(long long)arg2 eventIndex:(long long)arg3 delegate:(id)arg4 fromType:(long long)arg5;
 + (id)eventDescOfAssets:(id)arg1;
@@ -38,6 +44,7 @@
 @property(retain) QZJPhotoDailyConfigEventcard *nnjrConfigEventCard; // @synthesize nnjrConfigEventCard=_nnjrConfigEventCard;
 @property(retain) NSDictionary *nnjrDict; // @synthesize nnjrDict=_nnjrDict;
 - (void).cxx_destruct;
+- (void)requestRecommendStatus:(CDUnknownBlockType)arg1;
 - (void)enterPhotoEventDetailWithEventDict:(id)arg1 parentCtrl:(id)arg2;
 - (void)enterPhotoEventDetail:(id)arg1 parentCtrl:(id)arg2;
 - (void)enterPhotoEventDetailWithParam:(id)arg1 parentCtrl:(id)arg2;
@@ -95,6 +102,7 @@
 - (void)albumlistScanEventLoadMoreCachesPhotos:(id)arg1 onComplete:(CDUnknownBlockType)arg2;
 - (void)albumlistScanEventPhotoWithCacheBlock:(CDUnknownBlockType)arg1 onComplete:(CDUnknownBlockType)arg2 operationID:(id)arg3;
 - (void)recordManualCloseForEventPhoto;
+- (void)realBeginActiveFeedScanPhoto;
 - (void)activeFeedScanPhotoEvent;
 - (void)requestConfigEventWithQualifiedEvents:(id)arg1 beforNormalEventsBeforeDays:(id)arg2 entrance:(long long)arg3 cacheEventPhotos:(id)arg4 eventMinPhotoCount:(long long)arg5 onComplete:(CDUnknownBlockType)arg6 operationID:(id)arg7 source:(id)arg8;
 - (id)getConfigEventsBetweenStartTime:(double)arg1 endTime:(double)arg2 cachesPhotos:(id)arg3;

@@ -30,7 +30,7 @@
 - (void)configView:(id)arg1 context:(id)arg2;
 - (void)setTextToTextWrapperNeedFinish:(_Bool)arg1;
 - (struct CGSize)computeSizeWithStraintSize:(struct CGSize)arg1;
-- (void)setUpForItemConfiguration:(id)arg1 globalConfiguration:(id)arg2;
+- (void)setUpForItemAttribute:(id)arg1 globalSetting:(id)arg2;
 
 @end
 

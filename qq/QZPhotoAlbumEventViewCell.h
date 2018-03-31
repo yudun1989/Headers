@@ -16,7 +16,6 @@
     NSDictionary *_eventDict;
     UIView *_bgView;
     CATextLayer *_titleLabel;
-    UILabel *_descLabel;
     NSArray *_imgViewArray;
     UILabel *_imgCountLabel;
     UIView *_moreMaskView;
@@ -24,6 +23,7 @@
     UIView *_bottomLineView;
     NSString *_dateStr;
     UIView *_cardView;
+    UIView *_cardInfoView;
     MQZoneAutoPlayImageView *_coverImgView;
     QZAutoPlayGifView *_gifImageView;
     UILabel *_numLabel;
@@ -33,12 +33,18 @@
     NSString *_currentImageKey;
     QZPhotoEventImageManager *_imageManager;
     int _xo;
+    _Bool _showVideoMaker;
     id <QZPhotoAlbumEventViewCellDelegate> _delegate;
     UIImageView *_decorationImgView;
+    UIImageView *_maskView;
+    UIButton *_videoMakerBtn;
 }
 
+@property(retain, nonatomic) UIButton *videoMakerBtn; // @synthesize videoMakerBtn=_videoMakerBtn;
+@property(nonatomic) _Bool showVideoMaker; // @synthesize showVideoMaker=_showVideoMaker;
 @property(retain, nonatomic) NSString *decorationUrl; // @synthesize decorationUrl=_decorationUrl;
 @property(retain, nonatomic) NSString *title; // @synthesize title=_title;
+@property(retain, nonatomic) UIImageView *maskView; // @synthesize maskView=_maskView;
 @property(retain, nonatomic) UIImageView *decorationImgView; // @synthesize decorationImgView=_decorationImgView;
 @property(nonatomic) __weak id <QZPhotoAlbumEventViewCellDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
@@ -47,12 +53,12 @@
 // Remaining properties
 @property(retain, nonatomic) UIView *bgView; // @dynamic bgView;
 @property(retain, nonatomic) UIView *bottomLineView; // @dynamic bottomLineView;
+@property(retain, nonatomic) UIView *cardInfoView; // @dynamic cardInfoView;
 @property(retain, nonatomic) UIView *cardView; // @dynamic cardView;
 @property(retain, nonatomic) MQZoneAutoPlayImageView *coverImgView; // @dynamic coverImgView;
 @property(retain, nonatomic) NSString *currentImageKey; // @dynamic currentImageKey;
 @property(retain, nonatomic) NSString *dateStr; // @dynamic dateStr;
 @property(readonly, copy) NSString *debugDescription;
-@property(retain, nonatomic) UILabel *descLabel; // @dynamic descLabel;
 @property(readonly, copy) NSString *description;
 @property(retain, nonatomic) NSDictionary *eventDict; // @dynamic eventDict;
 @property(retain, nonatomic) QZAutoPlayGifView *gifImageView; // @dynamic gifImageView;

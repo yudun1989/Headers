@@ -16,6 +16,7 @@
 @property(retain, nonatomic) NSDictionary *data; // @synthesize data=_data;
 - (void).cxx_destruct;
 - (id)highlightColor;
+- (id)align;
 - (id)backgroundColor;
 - (_Bool)italic;
 - (_Bool)bold;

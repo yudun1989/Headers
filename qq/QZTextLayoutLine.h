@@ -15,10 +15,12 @@
     _Bool _truncationNotShowMore;
     NSAttributedString *_lineText;
     UIImage *_backgroundImage;
+    struct __CTLine *_textline;
     struct _NSRange _lineRange;
     struct QZTextRect _textRect;
 }
 
+@property(nonatomic) struct __CTLine *textline; // @synthesize textline=_textline;
 @property(retain, nonatomic) UIImage *backgroundImage; // @synthesize backgroundImage=_backgroundImage;
 @property(nonatomic) _Bool truncationNotShowMore; // @synthesize truncationNotShowMore=_truncationNotShowMore;
 @property(retain, nonatomic) NSAttributedString *lineText; // @synthesize lineText=_lineText;
@@ -36,6 +38,7 @@
 - (id)getAttributedTextWithStyle:(id)arg1 range:(struct _NSRange)arg2 styleRange:(struct _NSRange)arg3;
 - (id)initWithLineText:(id)arg1 lineRage:(struct _NSRange)arg2 textRect:(struct QZTextRect)arg3;
 - (id)initWithLineText:(id)arg1 lineRage:(struct _NSRange)arg2 textRect:(struct QZTextRect)arg3 backgroundImage:(id)arg4;
+- (id)initWithLineText:(id)arg1 lineRage:(struct _NSRange)arg2 textRect:(struct QZTextRect)arg3 backgroundImage:(id)arg4 line:(struct __CTLine *)arg5;
 
 @end
 

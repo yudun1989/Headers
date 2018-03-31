@@ -25,6 +25,7 @@
 @property(nonatomic) __weak id <AliSelectionControlDelegate> delegate; // @synthesize delegate=_delegate;
 @property(retain, nonatomic) NSString *title; // @synthesize title=_title;
 @property(retain, nonatomic) NSMutableArray *buttons; // @synthesize buttons=_buttons;
+@property(nonatomic) double prevWidth; // @synthesize prevWidth=_prevWidth;
 - (void).cxx_destruct;
 - (struct CGSize)sizeThatFits:(struct CGSize)arg1;
 - (void)performLayoutSubviews;
@@ -43,7 +44,7 @@
 - (void)setEnabled:(_Bool)arg1 atIndex:(unsigned long long)arg2;
 - (id)init;
 - (unsigned long long)numberOfSegments;
-@property(nonatomic) long long selectedIndex;
+@property(nonatomic) long long selectedIndex; // @synthesize selectedIndex=_selectedIndex;
 
 @end
 

@@ -6,14 +6,16 @@
 
 #import "TTRequestModel.h"
 
-@class NSNumber;
+@class NSNumber, NSString;
 @protocol Optional;
 
 @interface WDWendaFetchTipsRequestModel : TTRequestModel
 {
     NSNumber<Optional> *_tips_source;
+    NSString<Optional> *_qid;
 }
 
+@property(retain, nonatomic) NSString<Optional> *qid; // @synthesize qid=_qid;
 @property(retain, nonatomic) NSNumber<Optional> *tips_source; // @synthesize tips_source=_tips_source;
 - (void).cxx_destruct;
 - (id)_requestParams;

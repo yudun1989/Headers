@@ -28,6 +28,7 @@
 @property(retain, nonatomic) UIImage *currentImage; // @synthesize currentImage=_currentImage;
 @property(nonatomic) struct CGRect currentImageViewFrame; // @synthesize currentImageViewFrame=_currentImageViewFrame;
 @property(nonatomic) struct CGRect beforeImageViewFrame; // @synthesize beforeImageViewFrame=_beforeImageViewFrame;
+- (void)setPopTransitionImage:(id)arg1;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

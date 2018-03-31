@@ -10,8 +10,12 @@
 {
     _Bool _isPanoramic;
     UIView *_videoView;
+    double _topHeightScale;
+    double _bottomHeightScale;
 }
 
+@property(nonatomic) double bottomHeightScale; // @synthesize bottomHeightScale=_bottomHeightScale;
+@property(nonatomic) double topHeightScale; // @synthesize topHeightScale=_topHeightScale;
 @property(retain, nonatomic) UIView *videoView; // @synthesize videoView=_videoView;
 @property(nonatomic) _Bool isPanoramic; // @synthesize isPanoramic=_isPanoramic;
 - (id)hitTest:(struct CGPoint)arg1 withEvent:(id)arg2;

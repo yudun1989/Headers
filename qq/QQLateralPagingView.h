@@ -27,7 +27,6 @@
 - (void)scrollViewDidEndDragging:(id)arg1 willDecelerate:(_Bool)arg2;
 - (struct CGRect)rectForPageView:(id)arg1 atIndex:(long long)arg2;
 - (long long)numberOfPages;
-- (void)loadPageAtIndex:(long long)arg1;
 - (void)dealloc;
 - (void)layoutSubviews;
 - (id)initWithFrame:(struct CGRect)arg1;

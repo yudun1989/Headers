@@ -10,12 +10,14 @@
 {
     int _x;
     int _y;
+    int _z;
     int _width;
     int _height;
 }
 
 @property(nonatomic) int height; // @synthesize height=_height;
 @property(nonatomic) int width; // @synthesize width=_width;
+@property(nonatomic) int z; // @synthesize z=_z;
 @property(nonatomic) int y; // @synthesize y=_y;
 @property(nonatomic) int x; // @synthesize x=_x;
 

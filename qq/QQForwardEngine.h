@@ -135,6 +135,7 @@
 - (void)gotoTransferQRcode:(_Bool)arg1;
 - (void)gotoPayCodeView:(_Bool)arg1 entry:(long long)arg2;
 - (void)forwardRightMenuVC:(int)arg1 isQuicAction:(_Bool)arg2;
+- (void)ActionReadInJoyOpenAtlas:(id)arg1;
 - (void)ActionReadInJoyOpenAlbum:(id)arg1;
 - (void)ActionOpenReadInJoyUGC:(id)arg1;
 - (id)getCurrentVCFrom:(id)arg1;

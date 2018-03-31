@@ -22,7 +22,8 @@
 - (void)setControlBarShow:(_Bool)arg1;
 - (_Bool)isSubtitlesStart;
 - (void)stopSubtitles;
-- (void)startSubtitles:(unsigned long long)arg1;
+- (void)startSubtitles:(unsigned long long)arg1 sessionID:(id)arg2;
+- (void)startSubtitles:(unsigned long long)arg1 succ:(CDUnknownBlockType)arg2 fail:(CDUnknownBlockType)arg3;
 - (void)dealloc;
 - (id)init;
 

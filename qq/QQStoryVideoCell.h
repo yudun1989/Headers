@@ -8,7 +8,7 @@
 
 #import <QQMainProject/UIActionSheetDelegate-Protocol.h>
 
-@class NSString, QQStoryUrlImageView, QQStoryVideoDisplayModel, TBCircularProgressView, UIImageView, UILabel, UIView;
+@class NSString, QQStoryUrlImageView, QQStoryVideoDisplayModel, TBCircularProgressView, TBStoryVideoVoteView, UIImage, UIImageView, UILabel, UIView;
 @protocol TBStoryUnsuccessCellDelegate;
 
 @interface QQStoryVideoCell : QQMoreOptionTableViewCell <UIActionSheetDelegate>
@@ -29,10 +29,15 @@
     _Bool _isNeedSeparateLine;
     UIView *_separateLine;
     id <TBStoryUnsuccessCellDelegate> _cellDelegate;
+    UIImage *_coverDefaultImage;
+    TBStoryVideoVoteView *_voteView;
 }
 
+@property(retain, nonatomic) TBStoryVideoVoteView *voteView; // @synthesize voteView=_voteView;
+@property(retain, nonatomic) UIImage *coverDefaultImage; // @synthesize coverDefaultImage=_coverDefaultImage;
 @property(nonatomic) __weak id <TBStoryUnsuccessCellDelegate> cellDelegate; // @synthesize cellDelegate=_cellDelegate;
 - (void).cxx_destruct;
+- (void)updateVoteView;
 - (double)calculateTextLength:(id)arg1 font:(id)arg2;
 @property(readonly, nonatomic) UIView *videoImageView;
 - (void)onTapRetry:(id)arg1;

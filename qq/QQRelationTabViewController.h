@@ -11,7 +11,7 @@
 #import <QQMainProject/RLFriendListCellDynamicAvatarDelegate-Protocol.h>
 #import <QQMainProject/TableViewCellStyleButtonDelagate-Protocol.h>
 
-@class GroopAndDiscussViewController, GroupListGuideView, HeadButtonLongPress, NSMutableArray, NSMutableDictionary, NSString, ODRefreshControlOfQQRelationTab, QQRelationTabNavTabBarViewController, QQRelationTabScrollView, QQRelationViewController, RecommendCardVC, TableViewCellStyleButton, ThemeBackgroundAnimateImageView, UIView;
+@class GroopAndDiscussViewController, HeadButtonLongPress, NSMutableArray, NSMutableDictionary, NSString, ODRefreshControlOfQQRelationTab, QQRelationTabNavTabBarViewController, QQRelationTabScrollView, QQRelationViewController, RecommendCardVC, TableViewCellStyleButton, ThemeBackgroundAnimateImageView, UIView;
 
 @interface QQRelationTabViewController : QQSearchBaseViewController <TableViewCellStyleButtonDelagate, NavTabBarSubViewsScrollDelegate, MulMemSelBusiProcessDelegate, RLFriendListCellDynamicAvatarDelegate>
 {
@@ -31,14 +31,10 @@
     NSMutableDictionary *_subViewOfNavTabBarToAdd;
     _Bool _isAppearing;
     int _currentCreateGroupSeq;
-    _Bool _hasCheckGroupListGuide;
     HeadButtonLongPress *_headButton;
     NSMutableArray *_memberArrary;
-    GroupListGuideView *_groupListGuideView;
 }
 
-@property(nonatomic) _Bool hasCheckGroupListGuide; // @synthesize hasCheckGroupListGuide=_hasCheckGroupListGuide;
-@property(retain, nonatomic) GroupListGuideView *groupListGuideView; // @synthesize groupListGuideView=_groupListGuideView;
 @property(retain, nonatomic) NSMutableArray *memberArrary; // @synthesize memberArrary=_memberArrary;
 @property(retain, nonatomic) HeadButtonLongPress *headButton; // @synthesize headButton=_headButton;
 - (void)orientationDidChanged:(id)arg1;
@@ -82,9 +78,6 @@
 - (void)initNavTabBarVCParentView;
 - (void)initTabScrollView;
 - (void)notifyRecommendCardHidden;
-- (void)updateGroupListGuideView;
-- (void)showGroupListGuideView;
-- (struct CGPoint)centerForGroupListTab;
 - (void)updateNavTabBarFrameOriginY;
 - (void)handleQQAccountLogoutNotification:(id)arg1;
 - (void)handleQQAccountLogSuccessNotification:(id)arg1;

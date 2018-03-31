@@ -18,6 +18,7 @@
     _Bool _popupMenu;
     _Bool _isWatingDanceResource;
     _Bool _isWatingSingleResource;
+    _Bool _isAdvertise;
     int _filter_id;
     int _funcType;
     float _progressSingle;
@@ -43,6 +44,7 @@
     long long _gestureGapCount;
     long long _gestureGapTime;
     NSString *_catagoryID;
+    NSString *_catagoryName;
     NSString *_openURL;
     NSString *_storeURL;
     NSString *_badgeURL;
@@ -55,8 +57,15 @@
     NSString *_btnBgColor;
     NSString *_selectColor;
     NSString *_downloadColor;
+    NSString *_advertiseStr;
+    NSString *_advertiseIconUrl;
+    NSString *_advertiseWebUrl;
 }
 
+@property(retain, nonatomic) NSString *advertiseWebUrl; // @synthesize advertiseWebUrl=_advertiseWebUrl;
+@property(retain, nonatomic) NSString *advertiseIconUrl; // @synthesize advertiseIconUrl=_advertiseIconUrl;
+@property(retain, nonatomic) NSString *advertiseStr; // @synthesize advertiseStr=_advertiseStr;
+@property(nonatomic) _Bool isAdvertise; // @synthesize isAdvertise=_isAdvertise;
 @property(copy, nonatomic) NSString *downloadColor; // @synthesize downloadColor=_downloadColor;
 @property(copy, nonatomic) NSString *selectColor; // @synthesize selectColor=_selectColor;
 @property(nonatomic) float minSystemVersion; // @synthesize minSystemVersion=_minSystemVersion;
@@ -78,6 +87,7 @@
 @property(copy, nonatomic) NSString *storeURL; // @synthesize storeURL=_storeURL;
 @property(copy, nonatomic) NSString *openURL; // @synthesize openURL=_openURL;
 @property(nonatomic) _Bool isAdvertisement; // @synthesize isAdvertisement=_isAdvertisement;
+@property(copy, nonatomic) NSString *catagoryName; // @synthesize catagoryName=_catagoryName;
 @property(retain, nonatomic) NSString *catagoryID; // @synthesize catagoryID=_catagoryID;
 @property(nonatomic) long long gestureGapTime; // @synthesize gestureGapTime=_gestureGapTime;
 @property(nonatomic) long long gestureGapCount; // @synthesize gestureGapCount=_gestureGapCount;

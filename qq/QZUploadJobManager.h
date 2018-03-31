@@ -26,6 +26,7 @@
 - (void)reportSQLiteError:(int)arg1;
 - (void)updateOutBoxNum;
 - (void)retryFinishedOperation:(id)arg1;
+- (void)reportMedioUploadInfoWithJob:(id)arg1;
 - (id)addJob:(id)arg1;
 - (_Bool)allOperationFailed;
 - (void)increaseBatchFailureCount:(id)arg1 onComplete:(CDUnknownBlockType)arg2;

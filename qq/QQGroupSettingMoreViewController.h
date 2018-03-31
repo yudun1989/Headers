@@ -35,6 +35,7 @@
 @property(nonatomic) unsigned int subSrcID; // @synthesize subSrcID=_subSrcID;
 @property(nonatomic) unsigned int sourceID; // @synthesize sourceID=_sourceID;
 - (void)didExtendTap;
+- (void)updateHeadView;
 - (void)onGroupInfoCardActivityRecv:(id)arg1;
 - (_Bool)isVaildLocation;
 - (void)onGroupMemberDistriRspCallback:(id)arg1;
@@ -63,7 +64,6 @@
 - (void)updateNavigationActiveViewState:(_Bool)arg1;
 - (void)onTroopInfoUpdated:(id)arg1;
 - (void)getGroupSettingModel;
-- (void)appWillEnterForegroundNotification;
 - (void)reloadData;
 - (void)initSettingDataSource;
 - (void)initController;

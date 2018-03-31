@@ -6,7 +6,7 @@
 
 #import <UIKit/UIControl.h>
 
-@class NSTimer, QZFeedLiveAnimationManager, QzoneFeedModel, UIImageView, UILabel, UIView;
+@class NSTimer, QZFeedLiveAnimationManager, QzoneFeedModel, UIButton, UIImageView, UILabel, UIView;
 
 @interface QzoneFeedLiveView : UIControl
 {
@@ -18,7 +18,9 @@
     UILabel *_liveLikeLabel;
     UIImageView *_liveTimeIcon;
     UILabel *_liveTimeLable;
-    UIImageView *_livePlayIcon;
+    UIView *_livePlayIcon;
+    UIImageView *_ordinaryLivePlayIcon;
+    UIButton *_panoramalLivePlayIcon;
     UIImageView *_coverImageView;
     QzoneFeedModel *_feedModel;
     long long _roomStatus;
@@ -32,6 +34,7 @@
     UIImageView *_topGraientView;
     UIImageView *_buttomGradientView;
     QZFeedLiveAnimationManager *_animationManager;
+    _Bool _isPanoramaLive;
     NSTimer *_blinkTimer;
 }
 
@@ -60,8 +63,6 @@
 - (void)setLiveInfoViewsHidden:(_Bool)arg1;
 - (void)setMessageViewsHidden:(_Bool)arg1;
 - (void)layoutPlayIcon;
-- (id)strFromInt:(long long)arg1;
-- (id)strFormatWithInt:(long long)arg1;
 - (void)layoutLikeNum:(id)arg1;
 - (void)layoutUserCount:(id)arg1;
 - (void)layoutLiveTime:(id)arg1;
@@ -70,6 +71,8 @@
 - (id)checkStatusImgForRoomStatus:(long long)arg1;
 - (void)updateRoomStatusView:(long long)arg1;
 - (void)updateQZDrawItem:(id)arg1 withFeedModel:(id)arg2;
+- (id)panoramalLivePlayIcon;
+- (id)ordinaryLivePlayIcon;
 - (id)initWithQZDrawItem:(id)arg1 withFeedModel:(id)arg2;
 
 @end

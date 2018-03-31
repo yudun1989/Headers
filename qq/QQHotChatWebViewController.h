@@ -21,7 +21,6 @@
 - (void)onDismiss;
 - (struct CGRect)webViewRectByStyleAndOrientation;
 - (void)actionCreateHotChatRoom2;
-- (void)showCreateButton2:(id)arg1;
 - (void)actionCreateHotChatRoom;
 - (void)showCreateButton:(id)arg1;
 - (void)viewDidAppear:(_Bool)arg1;

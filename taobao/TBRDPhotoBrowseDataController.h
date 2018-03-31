@@ -16,10 +16,9 @@
     NSString *_sellerId;
     TBCEngine *_engine;
     NSMutableArray *_pbmList;
-    NSString *_preRateId;
+    NSString *_preContentId;
     long long _totalPage;
     long long _pageNo;
-    long long _pageSize;
     NSDictionary *_pagination;
     NSMutableDictionary *_trackDic;
     long long _startIndex;
@@ -34,10 +33,9 @@
 @property(nonatomic) long long startIndex; // @synthesize startIndex=_startIndex;
 @property(retain, nonatomic) NSMutableDictionary *trackDic; // @synthesize trackDic=_trackDic;
 @property(retain, nonatomic) NSDictionary *pagination; // @synthesize pagination=_pagination;
-@property(nonatomic) long long pageSize; // @synthesize pageSize=_pageSize;
 @property(nonatomic) long long pageNo; // @synthesize pageNo=_pageNo;
 @property(nonatomic) long long totalPage; // @synthesize totalPage=_totalPage;
-@property(copy, nonatomic) NSString *preRateId; // @synthesize preRateId=_preRateId;
+@property(copy, nonatomic) NSString *preContentId; // @synthesize preContentId=_preContentId;
 @property(retain, nonatomic) NSMutableArray *pbmList; // @synthesize pbmList=_pbmList;
 @property(retain, nonatomic) TBCEngine *engine; // @synthesize engine=_engine;
 @property(copy, nonatomic) NSString *sellerId; // @synthesize sellerId=_sellerId;

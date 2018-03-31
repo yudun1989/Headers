@@ -22,6 +22,7 @@
 - (id)creatXMLMessageStringWithRichData:(id)arg1;
 - (_Bool)checkShareDataSourceIsValid:(id)arg1;
 - (void)_specialHandleJoinDisGroupData;
+- (void)shareTribeVideoInfoToFriend:(id)arg1;
 - (void)shareToFriend:(id)arg1;
 - (void)doShare:(id)arg1;
 - (_Bool)shareWebRichMsg:(id)arg1;

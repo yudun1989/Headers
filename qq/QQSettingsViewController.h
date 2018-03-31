@@ -16,11 +16,12 @@
 @interface QQSettingsViewController : QQViewController <UITableViewDelegate, UITableViewDataSource, UIActionSheetDelegate, QQDeviceLockStatusQueryDelegate>
 {
     NSMutableArray *listContentData;
-    UITableView *listContenttableView;
     int _deviceLockStatusResult;
+    UITableView *_listContenttableView;
 }
 
 + (_Bool)CheckIfAboutHaveNew;
+@property(retain, nonatomic) UITableView *listContenttableView; // @synthesize listContenttableView=_listContenttableView;
 - (void).cxx_destruct;
 - (id)tableView:(id)arg1 redPointPathForIndex:(id)arg2;
 - (id)redPointTableView;

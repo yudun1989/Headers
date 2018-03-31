@@ -16,6 +16,8 @@
 + (id)sharedManager;
 @property(retain, nonatomic) NSDictionary *viewDics; // @synthesize viewDics=_viewDics;
 - (void).cxx_destruct;
+- (struct CGRect)rectForLayoutId:(long long)arg1 withContainer:(struct CGSize)arg2 withOffsetY:(double *)arg3;
+- (double)heightForLayoutId:(long long)arg1;
 - (id)composedView:(long long)arg1;
 - (id)init;
 

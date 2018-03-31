@@ -6,21 +6,26 @@
 
 #import <UIKit/UIView.h>
 
-@class UIImageView, UILabel, UIProgressView;
+@class NSDictionary, UIImageView, UILabel, UIProgressView;
 
 @interface DWPlayerControlHUD : UIView
 {
     UIImageView *_iconImageView;
     UILabel *_progressInfoLabel;
     UIProgressView *_valueProgressView;
+    UIView *_progressView;
+    NSDictionary *_info;
 }
 
+@property(retain, nonatomic) NSDictionary *info; // @synthesize info=_info;
+@property(retain, nonatomic) UIView *progressView; // @synthesize progressView=_progressView;
 @property(retain, nonatomic) UIProgressView *valueProgressView; // @synthesize valueProgressView=_valueProgressView;
 @property(retain, nonatomic) UILabel *progressInfoLabel; // @synthesize progressInfoLabel=_progressInfoLabel;
 @property(retain, nonatomic) UIImageView *iconImageView; // @synthesize iconImageView=_iconImageView;
 - (void).cxx_destruct;
 - (void)setHidden:(_Bool)arg1;
 - (void)updateWithStatus:(long long)arg1 info:(id)arg2;
+- (void)layoutSubviews;
 - (id)init;
 
 @end

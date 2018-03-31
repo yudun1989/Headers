@@ -10,13 +10,13 @@
 
 @interface AliCartTipsDisplay : UIView
 {
-    int _displayArrow;
-    int _displayType;
     CAShapeLayer *_shapeLayer;
     UIView *_backgroundView;
     UILabel *_textLabel;
     UILabel *_descLabel;
     AliCartBlockButton *_tipButton;
+    long long _displayArrow;
+    long long _displayType;
     double _arrowBase;
     double _arrowHeight;
     double _cornerRadius;
@@ -28,8 +28,8 @@
 @property(nonatomic) double cornerRadius; // @synthesize cornerRadius=_cornerRadius;
 @property(nonatomic) double arrowHeight; // @synthesize arrowHeight=_arrowHeight;
 @property(nonatomic) double arrowBase; // @synthesize arrowBase=_arrowBase;
-@property(nonatomic) int displayType; // @synthesize displayType=_displayType;
-@property(nonatomic) int displayArrow; // @synthesize displayArrow=_displayArrow;
+@property(nonatomic) long long displayType; // @synthesize displayType=_displayType;
+@property(nonatomic) long long displayArrow; // @synthesize displayArrow=_displayArrow;
 @property(retain, nonatomic) AliCartBlockButton *tipButton; // @synthesize tipButton=_tipButton;
 @property(retain, nonatomic) UILabel *descLabel; // @synthesize descLabel=_descLabel;
 @property(retain, nonatomic) UILabel *textLabel; // @synthesize textLabel=_textLabel;

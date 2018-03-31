@@ -27,6 +27,7 @@
 + (void)activate;
 + (id)getInstance;
 - (id)responseWithURL:(id)arg1 withContent:(id)arg2 mimeType:(id)arg3;
+- (void)recordSystemCachedResponse:(id)arg1 request:(id)arg2;
 - (id)cachedResponseForRequest:(id)arg1;
 - (void)removeRequestRecord:(id)arg1 cachedResponse:(id)arg2;
 - (void)removeAllCachedResponses;

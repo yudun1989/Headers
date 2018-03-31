@@ -18,6 +18,7 @@
 @property(retain, nonatomic) QQDynamicSearchResultSubItemModel *datasource; // @synthesize datasource=_datasource;
 @property(retain, nonatomic) UIView *contentView; // @synthesize contentView=_contentView;
 - (void).cxx_destruct;
+- (_Bool)canResponseClickAction;
 - (_Bool)isNightMode;
 - (double)calHeightForCell;
 - (void)updateHeightForCell;

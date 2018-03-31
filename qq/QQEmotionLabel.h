@@ -8,7 +8,7 @@
 
 #import <QQMainProject/UIGestureRecognizerDelegate-Protocol.h>
 
-@class EmotionParseResult, NSString, NSTimer, ParseRange, ParseRect, UIColor, UIFont, UILongPressGestureRecognizer, UITapGestureRecognizer;
+@class EmotionParseResult, NSString, NSTimer, ParseRange, ParseRect, UIColor, UIColorFont, UIFont, UILongPressGestureRecognizer, UITapGestureRecognizer;
 @protocol QQEmotionLabelDelegate;
 
 @interface QQEmotionLabel : UIView <UIGestureRecognizerDelegate>
@@ -53,16 +53,25 @@
     long long _frameNum;
     void *_descriptor;
     void *_diyFontHandler;
+    long long _frameInterval;
     int _xo;
     double _textlineHeight;
     long long _alignment;
     long long _lineBreakMode;
+    NSString *_founderFontAnimationId;
+    UIColorFont *_founderColorFont;
 }
 
++ (void)forceUpdateExInfoToDB:(id)arg1;
+@property(retain, nonatomic) UIColorFont *founderColorFont; // @synthesize founderColorFont=_founderColorFont;
+@property(copy, nonatomic) NSString *founderFontAnimationId; // @synthesize founderFontAnimationId=_founderFontAnimationId;
 @property(nonatomic) long long lineBreakMode; // @synthesize lineBreakMode=_lineBreakMode;
 @property(nonatomic) long long alignment; // @synthesize alignment=_alignment;
 @property(nonatomic) double textlineHeight; // @synthesize textlineHeight=_textlineHeight;
 @property(retain, nonatomic) UIColor *shadowBlurColor; // @synthesize shadowBlurColor=_shadowBlurColor;
+- (double)getMagicFontSizeByType:(unsigned long long)arg1;
+- (id)getFounderAnimationRenderInfo;
+- (id)getFounderFontAnimationId:(id)arg1;
 - (void)resetDiyFontProperty;
 - (void)setDiyFontPropertyWithAioModel:(id)arg1;
 - (_Bool)isAnimating;
@@ -70,9 +79,9 @@
 - (void)releaseTimer;
 - (id)replaceAtUnvisibleCharacter:(id)arg1;
 - (long long)lastLineWidth;
-- (void)setAnimateFontProperty;
+- (void)setAnimateFontProperty:(id)arg1;
 - (void)resetAnimateFontProperty;
-- (void)rePlayAnimation;
+- (void)rePlayAnimation:(id)arg1;
 - (void)stopAnimation;
 - (void)startAnimationWithAioModel:(id)arg1;
 - (void)startPlay:(long long)arg1 aioModel:(id)arg2;

@@ -14,8 +14,8 @@
     NSDictionary *_args;
 }
 
-@property(retain, nonatomic) NSDictionary *args; // @synthesize args=_args;
-@property(retain, nonatomic) NSString *callStack; // @synthesize callStack=_callStack;
+@property(copy, nonatomic) NSDictionary *args; // @synthesize args=_args;
+@property(copy, nonatomic) NSString *callStack; // @synthesize callStack=_callStack;
 - (void).cxx_destruct;
 
 @end

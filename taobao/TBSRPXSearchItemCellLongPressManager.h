@@ -16,17 +16,17 @@
     TBLongPressButton *_collectionBtn;
     TBSearchWapItem *_item;
     TBSRPXSearchService *_searchService;
-    id _delegate;
     long long _style;
 }
 
 + (id)getSimilarURLItem:(id)arg1 Style:(long long)arg2;
 + (_Bool)gotoSimilar:(id)arg1 Service:(id)arg2 FromView:(id)arg3 Style:(long long)arg4;
 + (_Bool)gotoSame:(id)arg1 Service:(id)arg2 FromView:(id)arg3;
++ (_Bool)gotoSimilarAndSame:(id)arg1 service:(id)arg2 fromView:(id)arg3;
++ (_Bool)hasSimilarAndSame:(id)arg1;
 + (_Bool)hasSimilar:(id)arg1;
 + (_Bool)hasSame:(id)arg1;
 @property(nonatomic) long long style; // @synthesize style=_style;
-@property(nonatomic) __weak id delegate; // @synthesize delegate=_delegate;
 @property(nonatomic) __weak TBSRPXSearchService *searchService; // @synthesize searchService=_searchService;
 @property(retain, nonatomic) TBSearchWapItem *item; // @synthesize item=_item;
 @property(retain, nonatomic) TBLongPressButton *collectionBtn; // @synthesize collectionBtn=_collectionBtn;

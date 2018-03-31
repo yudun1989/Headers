@@ -22,7 +22,6 @@
 @property(nonatomic) int from; // @synthesize from=_from;
 @property(nonatomic) int endTs; // @synthesize endTs=_endTs;
 @property(nonatomic) int beginTs; // @synthesize beginTs=_beginTs;
-- (id)description;
 - (id)initWithDict:(id)arg1;
 - (_Bool)isEqual:(id)arg1;
 

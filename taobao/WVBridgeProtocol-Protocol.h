@@ -6,12 +6,13 @@
 
 #import "NSObject-Protocol.h"
 
-@class NSURLRequest;
+@class NSString, NSURLRequest;
 @protocol WVBridgeContext;
 
 @protocol WVBridgeProtocol <NSObject>
 
 @optional
++ (_Bool)isThreadSafe:(NSString *)arg1;
 + (unsigned long long)instanceScope;
 @property(nonatomic) __weak id <WVBridgeContext> context;
 - (void)resumeWithContext:(id <WVBridgeContext>)arg1;

@@ -7,6 +7,7 @@
 #import <QQMainProject/PLPersonalCenterSubtabViewController.h>
 
 #import <QQMainProject/PLFeedsBaseCellDelegate-Protocol.h>
+#import <QQMainProject/PLFeedsEnterFailedCellDelegate-Protocol.h>
 #import <QQMainProject/PLFeedsLogicDelegate-Protocol.h>
 #import <QQMainProject/PLLoadStatusDelegate-Protocol.h>
 #import <QQMainProject/UITableViewDataSource-Protocol.h>
@@ -15,13 +16,14 @@
 @class NSString, PLFeedsLogic, UIImageView, UIView;
 @protocol PLFeedsContentDelegate;
 
-@interface PLFeedsViewController : PLPersonalCenterSubtabViewController <UITableViewDataSource, UITableViewDelegate, PLLoadStatusDelegate, PLFeedsLogicDelegate, PLFeedsBaseCellDelegate>
+@interface PLFeedsViewController : PLPersonalCenterSubtabViewController <UITableViewDataSource, UITableViewDelegate, PLLoadStatusDelegate, PLFeedsLogicDelegate, PLFeedsBaseCellDelegate, PLFeedsEnterFailedCellDelegate>
 {
     _Bool _isPullRefresh;
     _Bool _isNeedRefreshData;
     _Bool _isFirstAppear;
     _Bool _isAppear;
     _Bool _isSelf;
+    _Bool _isFirstShow;
     int _user_age;
     int _user_gender;
     unsigned int _user_level;
@@ -32,6 +34,7 @@
     UIImageView *_shortVideoPublishView;
 }
 
+@property(nonatomic) _Bool isFirstShow; // @synthesize isFirstShow=_isFirstShow;
 @property(retain, nonatomic) UIImageView *shortVideoPublishView; // @synthesize shortVideoPublishView=_shortVideoPublishView;
 @property(retain, nonatomic) UIView *noMoreFooterView; // @synthesize noMoreFooterView=_noMoreFooterView;
 @property(nonatomic) _Bool isSelf; // @synthesize isSelf=_isSelf;
@@ -46,11 +49,14 @@
 @property(nonatomic) int user_gender; // @synthesize user_gender=_user_gender;
 @property(nonatomic) int user_age; // @synthesize user_age=_user_age;
 - (void).cxx_destruct;
+- (void)enterFailedViewController;
 - (void)onFailedViewControllerDeleteNotification:(id)arg1;
 - (void)onVideoPlayerViewContentChangeNotification:(id)arg1;
 - (void)onFeedDeleteFromPlayerView:(id)arg1;
 - (void)didReceiveMemoryWarning;
 - (void)onAddressCellJumpBtClicked:(id)arg1 Cell:(id)arg2;
+- (void)reportRetransmissionModule:(id)arg1 model:(id)arg2;
+- (void)onFailedCellRetryBtClicked:(id)arg1 Cell:(id)arg2;
 - (void)onFailedCellDeleteBtClicked:(id)arg1 Cell:(id)arg2;
 - (void)onCoverClickFeed:(id)arg1;
 - (void)onFeedsDeleteSuccess:(id)arg1 feedsArray:(id)arg2;
@@ -66,10 +72,9 @@
 - (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;
 - (long long)tableView:(id)arg1 numberOfRowsInSection:(long long)arg2;
 - (long long)numberOfSectionsInTableView:(id)arg1;
-- (void)onShortVideoDeliverFailedNotification:(id)arg1;
+- (void)onShortVideoImageDeliverFailedNotification:(id)arg1;
 - (void)onShortVideoDeliveringNotification:(id)arg1;
-- (void)onImagePublishSucessNotification:(id)arg1;
-- (void)onShortVideoDeliverSucessNotification:(id)arg1;
+- (void)onShortVideoImageDeliverSucessNotification:(id)arg1;
 - (void)onKSongLiveEnd:(id)arg1;
 - (void)onLiveEnd:(id)arg1;
 - (void)initNoMoreFooterView;

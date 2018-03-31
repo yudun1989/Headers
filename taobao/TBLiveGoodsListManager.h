@@ -66,6 +66,7 @@
 - (void)closeGoodsListWeexView;
 - (void)openGoodsListWeexView:(id)arg1;
 - (void)onStartAction;
+- (void)open:(id)arg1;
 - (void)setupInitGoodsListWeexView:(struct CGRect)arg1 params:(id)arg2;
 - (void)prepareWeexGoodsList:(id)arg1 overlayViewType:(long long)arg2;
 - (void)prepare:(id)arg1 overlayViewType:(long long)arg2;

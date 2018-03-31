@@ -30,8 +30,9 @@
     _Bool _isHintShowed;
     ODChatMsgBufferBucket *_chatMsgBufBucket;
     long long _sequenceTest;
-    NSObject<OS_dispatch_queue> *_cellLayoutQueue;
+    NSObject<OS_dispatch_queue> *_cellModelPreQueue;
     _Bool _flushCellSwitch;
+    double _rightMarginDymc;
     UITableView *_tableView;
     id <ODLiveChatViewDelegate> _cDelegate;
 }
@@ -39,7 +40,10 @@
 @property(nonatomic) __weak id <ODLiveChatViewDelegate> cDelegate; // @synthesize cDelegate=_cDelegate;
 @property(retain, nonatomic) UITableView *tableView; // @synthesize tableView=_tableView;
 - (void).cxx_destruct;
-- (void)addCellModel2TVInternal:(id)arg1;
+- (void)resetCellWidth:(double)arg1;
+- (void)setRightMarginDymc:(double)arg1;
+- (void)addCellModels2TVInternal:(id)arg1;
+- (void)addCellModelToChatTVDirect:(id)arg1;
 - (void)scrollViewWillEndDragging:(id)arg1 withVelocity:(struct CGPoint)arg2 targetContentOffset:(inout struct CGPoint *)arg3;
 
 // Remaining properties

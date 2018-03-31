@@ -11,11 +11,15 @@
 }
 
 + (id)getArticleKey:(id)arg1;
-+ (long long)dianDianReleaseSwitch;
++ (_Bool)KandianZhiTuSwitch;
++ (long long)getReadInJoyConfigureSwitch:(id)arg1;
++ (void)gdt_auto_test:(id)arg1 identifier:(id)arg2;
++ (void)gdt_auto_test_feed:(id)arg1 isAd:(_Bool)arg2;
 + (_Bool)canOpenLocalApp:(id)arg1;
 + (_Bool)isBigImgAppAdFeeds:(id)arg1;
 + (_Bool)isAppAdFeeds:(id)arg1;
 + (_Bool)isAdFeeds:(id)arg1;
++ (_Bool)isTopicCardUGCFeeds:(unsigned long long)arg1;
 + (_Bool)isTopicCardFeeds:(unsigned long long)arg1;
 + (void)allInOneJump:(id)arg1 viewController:(id)arg2;
 + (_Bool)isTopicFeeds:(unsigned long long)arg1;
@@ -32,6 +36,7 @@
 + (id)getUGCFeedsContentCoverUrl:(id)arg1;
 + (_Bool)isUGCFeedsContent:(id)arg1;
 + (_Bool)isSocializedFeeds:(unsigned long long)arg1;
++ (_Bool)isHorizonCollectionView:(id)arg1;
 + (_Bool)isBiuTopicFeeds:(id)arg1;
 + (_Bool)isUGCFeeds:(unsigned long long)arg1;
 + (_Bool)isPGCFeed:(unsigned long long)arg1;
@@ -51,7 +56,7 @@
 + (id)urlStrWithPtSize:(struct CGSize)arg1 FromOriginUrlStr:(id)arg2 cellTitle:(id)arg3;
 + (id)getLinesArrayOfStringInLabel:(id)arg1;
 + (_Bool)isSupportChangeLineBreak;
-+ (_Bool)calculateIsNeedToChangeLineBreakForNoCacheInLabel:(id)arg1;
++ (_Bool)calculateIsNeedToChangeLineBreakForNoCacheInLabel:(id)arg1 model:(id)arg2;
 + (_Bool)isNeedToChangeLineBreakInLabel:(id)arg1 withModel:(id)arg2;
 + (double)heightForText:(id)arg1 fontSize:(double)arg2 constraintWidth:(double)arg3 constrainLength:(int)arg4;
 + (double)heightForTitleWithBold:(id)arg1 fontSize:(double)arg2 lineSpace:(double)arg3 constraintWidth:(double)arg4;

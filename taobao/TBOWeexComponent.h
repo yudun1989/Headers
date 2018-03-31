@@ -6,27 +6,39 @@
 
 #import <UIKit/UIView.h>
 
-@class NSString, TBWVBaseController, WXSDKInstance;
+#import "WVWebViewDelegate-Protocol.h"
 
-@interface TBOWeexComponent : UIView
+@class NSString, TBWVBaseController, WVWebView, WXSDKInstance;
+
+@interface TBOWeexComponent : UIView <WVWebViewDelegate>
 {
     NSString *_url;
     WXSDKInstance *_weex;
     TBWVBaseController *_wvController;
+    WVWebView *_webView;
     UIView *_rootView;
 }
 
 + (id)toJSonString:(id)arg1;
 + (void)attrsTNodeMapper:(id)arg1;
 @property(nonatomic) __weak UIView *rootView; // @synthesize rootView=_rootView;
+@property(retain, nonatomic) WVWebView *webView; // @synthesize webView=_webView;
 @property(retain, nonatomic) TBWVBaseController *wvController; // @synthesize wvController=_wvController;
 @property(retain, nonatomic) WXSDKInstance *weex; // @synthesize weex=_weex;
 @property(copy, nonatomic) NSString *url; // @synthesize url=_url;
 - (void).cxx_destruct;
 - (void)loadWeb:(id)arg1;
+- (_Bool)webView:(id)arg1 shouldStartLoadWithRequest:(id)arg2 navigationType:(long long)arg3;
+- (void)webViewDidFinishLoad:(id)arg1;
 - (struct CGSize)sizeThatFits:(struct CGSize)arg1;
 - (void)dealloc;
 - (id)initWithFrame:(struct CGRect)arg1;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly, copy) NSString *description;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
 
 @end
 

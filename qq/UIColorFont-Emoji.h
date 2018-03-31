@@ -7,6 +7,6 @@
 #import <TlibDy/UIColorFont.h>
 
 @interface UIColorFont (Emoji)
-- (struct CGSize)processText:(id)arg1 isDraw:(_Bool)arg2 point:(struct CGPoint)arg3 context:(struct CGContext *)arg4;
+- (struct CGSize)processText:(id)arg1 isDraw:(_Bool)arg2 point:(struct CGPoint)arg3 context:(struct CGContext *)arg4 contextSize:(struct CGSize)arg5 fragmentTextType:(long long)arg6 animationId:(id)arg7 frameIndex:(long long)arg8;
 @end
 

@@ -46,6 +46,8 @@
     NSDate *_dynamicAvatarLastDate;
     LYStorage *_storage;
     struct CGPoint _lastTableViewContentOffset;
+    _Bool _haveNoBindMatchStatus;
+    _Bool _isNoBindMatchStatus;
     _Bool _fromGuiderView;
     _Bool _showMatchedAddressBook;
     _Bool _embedMode;
@@ -68,6 +70,11 @@
 @property(nonatomic) _Bool showMatchedAddressBook; // @synthesize showMatchedAddressBook=_showMatchedAddressBook;
 @property(nonatomic) _Bool fromGuiderView; // @synthesize fromGuiderView=_fromGuiderView;
 @property(retain, nonatomic) NSMutableArray *expandedSectionIds; // @synthesize expandedSectionIds=_expandedSectionIds;
+- (void)notifyBindPhoneCode:(id)arg1;
+- (void)notifyUpdateBindingInfo:(id)arg1;
+- (void)asynFetchNoBindMatchStatus;
+- (_Bool)fetchNoBindMatchStatus;
+- (_Bool)isNoBindMatch;
 - (void)actionOnModifyGameIconInfo:(id)arg1;
 - (void)imageDownloadSuccess:(id)arg1;
 - (_Bool)gestureRecognizer:(id)arg1 shouldBeRequiredToFailByGestureRecognizer:(id)arg2;

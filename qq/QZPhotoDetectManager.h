@@ -6,15 +6,11 @@
 
 #import <Foundation/NSObject.h>
 
-@class CIDetector;
-
 @interface QZPhotoDetectManager : NSObject
 {
-    CIDetector *_faceDetector;
 }
 
 + (id)sharedManager;
-- (void).cxx_destruct;
 - (_Bool)checkBlackImage:(id)arg1;
 - (double)saturationOfColorRed:(double)arg1 green:(double)arg2 blue:(double)arg3;
 - (double)saturationOfImage:(id)arg1;
@@ -36,8 +32,6 @@
 - (void)makeAnimatedGif:(id)arg1 filePath:(id)arg2 ration:(double)arg3;
 - (id)makeAnimatedGif:(id)arg1 filename:(id)arg2 ration:(double)arg3;
 - (id)makeAnimatedGif:(id)arg1;
-- (_Bool)systemAPIDetectFacesInImage:(id)arg1;
-- (id)init;
 
 @end
 

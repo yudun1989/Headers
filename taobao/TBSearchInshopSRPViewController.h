@@ -31,9 +31,11 @@
     TBBarButtonItem *_searchCategoryItem;
     TBXSearchShopViewController *_inshopViewController;
     NSString *_pageName;
+    NSString *_spm;
 }
 
 @property(nonatomic) _Bool hasDoneJustOnce; // @synthesize hasDoneJustOnce=_hasDoneJustOnce;
+@property(retain, nonatomic) NSString *spm; // @synthesize spm=_spm;
 @property(retain, nonatomic) NSString *pageName; // @synthesize pageName=_pageName;
 @property(retain, nonatomic) TBXSearchShopViewController *inshopViewController; // @synthesize inshopViewController=_inshopViewController;
 @property(retain, nonatomic) TBBarButtonItem *searchCategoryItem; // @synthesize searchCategoryItem=_searchCategoryItem;

@@ -26,6 +26,7 @@
 @property(retain, nonatomic) NSDictionary *logoData; // @synthesize logoData=_logoData;
 - (void).cxx_destruct;
 - (void)pickURL;
+- (void)pickURL2;
 - (void)requestWithVideoInfo:(id)arg1 interactiveInfo:(id)arg2;
 - (void)dealloc;
 - (id)initWithContexnt:(id)arg1;

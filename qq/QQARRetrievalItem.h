@@ -12,6 +12,7 @@
 {
     int _iClass;
     int _iSource;
+    int _iAutoJump;
     NSString *_sClass;
     double _dProb;
     NSString *_sItemID;
@@ -23,6 +24,7 @@
     const char *_sCdbRes;
 }
 
+@property(nonatomic) int iAutoJump; // @synthesize iAutoJump=_iAutoJump;
 @property(nonatomic) const char *sCdbRes; // @synthesize sCdbRes=_sCdbRes;
 @property(retain, nonatomic) NSString *sJumpUrl; // @synthesize sJumpUrl=_sJumpUrl;
 @property(retain, nonatomic) NSString *sWiki; // @synthesize sWiki=_sWiki;

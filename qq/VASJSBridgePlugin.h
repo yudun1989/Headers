@@ -7,6 +7,7 @@
 #import <QQMainProject/QQWebViewPluginQQBizBase.h>
 
 #import <QQMainProject/QQFriendSelectedViewControllerDelegate-Protocol.h>
+#import <QQMainProject/QQKingCardAlertViewDelegate-Protocol.h>
 #import <QQMainProject/QQLoadObserver-Protocol.h>
 #import <QQMainProject/RichStateTodoTabViewControllerDelegate-Protocol.h>
 #import <QQMainProject/SSOJsbridgeDelegate-Protocol.h>
@@ -14,7 +15,7 @@
 
 @class NSMutableArray, NSMutableDictionary, NSString, QQWebView, SpriteWebView;
 
-@interface VASJSBridgePlugin : QQWebViewPluginQQBizBase <QQLoadObserver, SSOJsbridgeDelegate, RichStateTodoTabViewControllerDelegate, UIAlertViewDelegate, QQFriendSelectedViewControllerDelegate>
+@interface VASJSBridgePlugin : QQWebViewPluginQQBizBase <QQLoadObserver, SSOJsbridgeDelegate, RichStateTodoTabViewControllerDelegate, QQKingCardAlertViewDelegate, UIAlertViewDelegate, QQFriendSelectedViewControllerDelegate>
 {
     double _nClickStart;
     double _nPageStart;
@@ -95,6 +96,9 @@
 @property(retain, nonatomic) NSMutableDictionary *callbackDic; // @synthesize callbackDic=_callbackDic;
 @property(nonatomic) __weak QQWebView *webView; // @synthesize webView=_webView;
 - (void).cxx_destruct;
+- (void)alertViewClickContiue:(id)arg1;
+- (void)alertViewClickCancel:(id)arg1;
+- (void)alertView:(id)arg1 clickGuideWithUrl:(id)arg2;
 - (void)handleJsBridgeRequest_qlbq_openGroupEmotion:(id)arg1;
 - (void)handleJsBridgeRequest_face_setup:(id)arg1;
 - (void)onColorfulFloatingScreenResDownloadFail:(id)arg1;
@@ -117,12 +121,11 @@
 - (_Bool)friendSelectedViewController:(id)arg1 didSelectFriend:(id)arg2 type:(int)arg3;
 - (void)handleJsBridgeRequest_praise_setup:(id)arg1;
 - (void)handleJsBridgeRequest_praise_queryLocal:(id)arg1;
-- (void)handleJsBridgeRequest_apollo_startQQSportRedPacketActivity:(id)arg1;
-- (void)handleJsBridgeRequest_apollo_reportQQSportData:(id)arg1;
 - (void)handleJsBridgeRequest_apollo_chooseFriendPlayGame:(id)arg1;
 - (void)handleJsBridgeRequest_apollo_setLeftViewIcon:(id)arg1;
 - (void)handleJsBridgeRequest_apollo_checkGameStatus:(id)arg1;
 - (void)handleJsBridgeRequest_apollo_startApolloGame:(id)arg1;
+- (void)handleJsBridgeRequest_apollo_setCapsuleOpened:(id)arg1;
 - (void)handleJsBridgeRequest_apollo_delGame:(id)arg1;
 - (void)handleJsBridgeRequest_apollo_updateGameList:(id)arg1;
 - (void)handleJsBridgeRequest_apollo_addGame:(id)arg1;
@@ -150,6 +153,7 @@
 - (void)handleJsBridgeRequest_apollo_openFloatTransparentView:(id)arg1;
 - (void)handleJsBridgeRequest_apollo_openBox:(id)arg1;
 - (void)handleJsBridgeRequest_apollo_closeWebview:(id)arg1;
+- (void)handleJsBridgeRequest_apollo_getUserInfo:(id)arg1;
 - (void)handleJsBridgeRequest_apollo_getSwitch:(id)arg1;
 - (void)handleJsBridgeRequest_apollo_changeRole:(id)arg1;
 - (void)handleJsBridgeRequest_apollo_setup:(id)arg1;

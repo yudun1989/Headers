@@ -25,9 +25,15 @@
 - (void)setExposureView:(id)arg1 controlName:(id)arg2 viewIndex:(id)arg3 args:(id)arg4;
 - (void)sender:(id)arg1 isSync:(_Bool)arg2;
 - (void)send:(id)arg1;
+- (id)getScmPre:(id)arg1;
+- (id)getUtParamPre:(id)arg1;
+- (id)getUtParamUrl:(id)arg1;
 - (id)getPageSpmPre:(id)arg1;
 - (id)getPageSpmUrl:(id)arg1;
 - (id)getPageProperties:(id)arg1;
+- (void)_rollbackUtParamUrlWithPageItem:(id)arg1;
+- (void)_updateNextScmWithPageItem:(id)arg1;
+- (void)_updateNextSpmWithPageItem:(id)arg1;
 - (void)skipPage:(id)arg1;
 - (void)updatePageStatus:(id)arg1 status:(int)arg2;
 - (void)updatePageUrl:(id)arg1 url:(id)arg2;
@@ -39,6 +45,7 @@
 - (void)updatePageProperties:(id)arg1 properties:(id)arg2;
 - (void)updatePageName:(id)arg1 pageName:(id)arg2;
 - (void)pageDisAppear:(id)arg1;
+- (void)setUtIsbkManuallyForPageObject:(id)arg1;
 - (void)pageAppear:(id)arg1 withPageName:(id)arg2;
 - (void)pageAppear:(id)arg1;
 - (id)getGlobalProperty:(id)arg1;

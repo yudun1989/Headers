@@ -126,7 +126,7 @@
 - (void)notifyGameTeamWebRefreshAudioStaus;
 - (void)closeSession;
 - (void)startSession;
-- (void)showWindow:(id)arg1 withAnimationType:(int)arg2;
+- (void)pushAVViewController:(id)arg1 withAnimateType:(int)arg2 withAnimationDuration:(float)arg3 withBarAnimation:(_Bool)arg4;
 - (void)dealloc;
 - (void)collectionView:(id)arg1 didSelectItemAtIndexPath:(id)arg2;
 - (_Bool)collectionView:(id)arg1 shouldSelectItemAtIndexPath:(id)arg2;

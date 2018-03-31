@@ -32,6 +32,7 @@
 - (void)callBackToJSWithJSONObject:(id)arg1 callbackName:(id)arg2;
 - (void)callBackToJSWithParams:(id)arg1 callbackName:(id)arg2;
 - (void)handleJsBridgeRequest_JSbookshelf_setPrivateReading:(id)arg1;
+- (void)handleJsBridgeRequest_JSContent_getRedPoint:(id)arg1;
 - (void)handleJsBridgeRequest_JSTopRightButton_setGray:(id)arg1;
 - (void)handleJsBridgeRequest_JSTypeface_opTypeface:(id)arg1;
 - (void)handleJsBridgeRequest_JSTypeface_getTypefaceDownloadStatus:(id)arg1;

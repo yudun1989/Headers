@@ -13,10 +13,20 @@
 + (void)addStringFromSrcDic:(id)arg1 WithKey:(id)arg2 toDesDic:(id)arg3 WithKey:(id)arg4;
 + (id)encodeEvidenceStr:(id)arg1;
 + (void)addEvidenceStrFromDic:(id)arg1 WithKey:(id)arg2 toPostParam:(id)arg3 WithKey:(id)arg4;
++ (void)tipOffStoryVideo:(id)arg1 evilType:(long long)arg2 uin:(long long)arg3 completion:(CDUnknownBlockType)arg4;
++ (void)tipOffStoryComment:(id)arg1 evilType:(long long)arg2 uin:(long long)arg3 completion:(CDUnknownBlockType)arg4;
++ (void)tipOffStoryUserInfo:(id)arg1 evilType:(long long)arg2 completion:(CDUnknownBlockType)arg3;
++ (void)tipOffStory:(id)arg1 completion:(CDUnknownBlockType)arg2;
++ (id)urlEncodedParamsString:(id)arg1;
++ (id)urlEncode:(id)arg1;
++ (id)tipoffEngineSubmitUrl;
++ (void)addCookie:(id)arg1;
++ (id)tipOffStoryCommonParams;
 + (void)TipOffWithInfo:(id)arg1 nav:(id)arg2 WithProgress:(_Bool)arg3 Timeout:(double)arg4 Completion:(CDUnknownBlockType)arg5;
 + (id)getBasePostParamWithUin:(long long)arg1 AndEncodeParaStr:(id)arg2 ofScene:(int)arg3;
 + (id)customContent:(id)arg1 uin:(id)arg2 msgType:(int)arg3;
 + (id)senderUinWithMsgModel:(id)arg1 isC2C:(_Bool)arg2;
++ (void)TipOff:(long long)arg1 withExInfo:(id)arg2 ofScene:(int)arg3 nav:(id)arg4 tinyId:(long long)arg5;
 + (void)TipOff:(long long)arg1 withExInfo:(id)arg2 ofScene:(int)arg3 nav:(id)arg4;
 + (void)TipOff:(long long)arg1 withExInfo:(id)arg2 ofScene:(int)arg3 inView:(id)arg4;
 

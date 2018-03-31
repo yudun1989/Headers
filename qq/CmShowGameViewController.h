@@ -9,19 +9,23 @@
 #import <QQMainProject/CmShowGameViewDelegate-Protocol.h>
 #import <QQMainProject/QQFriendSelectedViewControllerDelegate-Protocol.h>
 
-@class CmShowGameView, NSDictionary, NSString, SpriteGameModel, UIView;
+@class CMMotionManager, CmShowGameView, NSDictionary, NSString, UIView;
 @protocol CmShowGameViewControllerDelegate;
 
 @interface CmShowGameViewController : QQViewController <CmShowGameViewDelegate, QQFriendSelectedViewControllerDelegate>
 {
     UIView *_bgView;
     CmShowGameView *_cmShowGameView;
-    SpriteGameModel *_gameModel;
-    long long _gameOrientation;
+    NSString *_sessionId;
+    int _aioType;
     _Bool _isFirstShow;
     int _screenMode;
-    _Bool _isPushed;
     _Bool _isClosed;
+    _Bool _needToPortrait;
+    int _src;
+    _Bool _needRotateAnimation;
+    long long _gameOrientation;
+    CMMotionManager *_motionManager;
     int _selectedType;
     id <CmShowGameViewControllerDelegate> _delegate;
     NSDictionary *_sendMsgParam;
@@ -30,22 +34,30 @@
 @property(nonatomic) int selectedType; // @synthesize selectedType=_selectedType;
 @property(retain, nonatomic) NSDictionary *sendMsgParam; // @synthesize sendMsgParam=_sendMsgParam;
 @property(nonatomic) id <CmShowGameViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
+- (id)p_getReportPackUpGameEnter;
 - (_Bool)isSupportInterruputRightDragToGoBack;
 - (_Bool)isSupportRightDragToGoBack;
 - (int)sessionType:(int)arg1;
 - (id)getChatViewControllerWithUin:(id)arg1 friendType:(int)arg2;
 - (_Bool)friendSelectedViewController:(id)arg1 didSelectFriend:(id)arg2 type:(int)arg3;
+- (void)noticeEngineChangeScreenWithMode:(int)arg1;
+- (void)deviceMotion:(id)arg1;
+- (void)stopMotionManager;
+- (void)startMotionManager;
 - (void)onStartPushing:(id)arg1;
 - (void)viewWillTransitionToSize:(struct CGSize)arg1 withTransitionCoordinator:(id)arg2;
+- (void)setNeedRotateAnimation:(_Bool)arg1;
 - (_Bool)shouldAutorotate;
 - (unsigned long long)supportedInterfaceOrientations;
 - (void)rotateViewWithOrientation:(long long)arg1;
+- (void)refreshGameScreenOrientationToPortrait;
+- (void)refreshGameScreenOrientation:(long long)arg1;
+- (void)refreshScreenOrientationInMainThread:(long long)arg1;
 - (void)refreshScreenOrientation:(long long)arg1;
-- (void)refreshBGView;
 - (void)packUpScreenAnimated;
 - (void)exitFullscreen;
-- (void)enterAnimationWithFrame:(struct CGRect)arg1;
 - (void)enterFullScreen;
+- (void)updateRankChangeInfo;
 - (void)cmShowGameViewOpenFriendSelectedVCWith:(id)arg1 selectType:(int)arg2;
 - (void)cmShowGameViewOpenWebViewWithoutUrl:(id)arg1 param:(id)arg2;
 - (void)cmShowGameViewClose:(id)arg1;
@@ -53,7 +65,7 @@
 - (void)viewWillDisappear:(_Bool)arg1;
 - (void)viewDidAppear:(_Bool)arg1;
 - (void)viewWillAppear:(_Bool)arg1;
-- (id)initWithGameView:(id)arg1 gameModel:(id)arg2 gameOrientation:(long long)arg3 isFirstShow:(_Bool)arg4 screenMode:(int)arg5;
+- (id)initWithGameView:(id)arg1 sessionId:(id)arg2 aioType:(int)arg3 gameOrientation:(long long)arg4 isFirstShow:(_Bool)arg5 screenMode:(int)arg6 src:(int)arg7;
 - (void)dealloc;
 
 // Remaining properties

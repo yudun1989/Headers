@@ -4,25 +4,23 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-#import "MCComposedMessageView.h"
+#import "MCComposedRichTextView.h"
 
-@class UIImageView, UILabel;
+@class UIImageView;
 
-@interface MCComposedImageTextView : MCComposedMessageView
+@interface MCComposedImageTextView : MCComposedRichTextView
 {
-    UILabel *_titleLab;
     UIImageView *_imageView;
-    UILabel *_subLab;
 }
 
 + (struct CGSize)bubbleSizeForCellObject:(id)arg1 withContainer:(struct CGSize)arg2;
-@property(retain, nonatomic) UILabel *subLab; // @synthesize subLab=_subLab;
 @property(retain, nonatomic) UIImageView *imageView; // @synthesize imageView=_imageView;
-@property(retain, nonatomic) UILabel *titleLab; // @synthesize titleLab=_titleLab;
 - (void).cxx_destruct;
+- (void)generateImageView:(id)arg1;
+- (void)generateExtLabel:(id)arg1;
+- (void)generateLabel:(id)arg1;
 - (void)layoutSubviews;
 - (void)updateView:(id)arg1 bubbleHandler:(id)arg2 atIndexPath:(id)arg3;
-- (id)createLab:(id)arg1 font:(double)arg2;
 - (id)initWithFrame:(struct CGRect)arg1;
 
 @end

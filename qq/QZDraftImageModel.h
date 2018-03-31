@@ -11,12 +11,16 @@
 @interface QZDraftImageModel : QZoneModel
 {
     _Bool _isQzoneImage;
+    _Bool _isVideoComposeCompleted;
     MQZFacePicModel *_facePicModel;
     QzonePhotoModel *_photoModel;
     UIImage *_editedVideoCover;
     NSString *_editedVideoPath;
+    double _videoDur;
 }
 
+@property(nonatomic) _Bool isVideoComposeCompleted; // @synthesize isVideoComposeCompleted=_isVideoComposeCompleted;
+@property(nonatomic) double videoDur; // @synthesize videoDur=_videoDur;
 @property(retain, nonatomic) NSString *editedVideoPath; // @synthesize editedVideoPath=_editedVideoPath;
 @property(retain, nonatomic) UIImage *editedVideoCover; // @synthesize editedVideoCover=_editedVideoCover;
 @property(retain, nonatomic) QzonePhotoModel *photoModel; // @synthesize photoModel=_photoModel;

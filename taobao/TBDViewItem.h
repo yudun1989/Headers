@@ -12,6 +12,7 @@
 {
     _Bool _isWidthMatchContent;
     _Bool _isHeightMatchContent;
+    _Bool _needResize;
     int _layoutGravity;
     TBDTemplateItem *_exactTemplateItem;
     NSDictionary *_originalTemplateDict;
@@ -19,7 +20,7 @@
     NSString *_identify;
     NSString *_module;
     TBDLayoutViewItem *_parentItem;
-    NSMutableDictionary *_originalAttrDict;
+    NSDictionary *_originalAttrDict;
     NSMutableDictionary *_layoutAttrDict;
     NSMutableDictionary *_constAttrDict;
     NSMutableDictionary *_bindAttrDict;
@@ -29,11 +30,13 @@
 }
 
 + (id)layoutAttributeKeys;
++ (void)parseTemplate:(id)arg1 forIdentify:(id *)arg2 andAttributes:(id *)arg3;
 @property(retain, nonatomic) NSMutableDictionary *eventAttrDict; // @synthesize eventAttrDict=_eventAttrDict;
 @property(retain, nonatomic) NSMutableDictionary *bindAttrDict; // @synthesize bindAttrDict=_bindAttrDict;
 @property(retain, nonatomic) NSMutableDictionary *constAttrDict; // @synthesize constAttrDict=_constAttrDict;
 @property(retain, nonatomic) NSMutableDictionary *layoutAttrDict; // @synthesize layoutAttrDict=_layoutAttrDict;
-@property(retain, nonatomic) NSMutableDictionary *originalAttrDict; // @synthesize originalAttrDict=_originalAttrDict;
+@property(retain, nonatomic) NSDictionary *originalAttrDict; // @synthesize originalAttrDict=_originalAttrDict;
+@property(nonatomic) _Bool needResize; // @synthesize needResize=_needResize;
 @property(readonly, nonatomic) _Bool isHeightMatchContent; // @synthesize isHeightMatchContent=_isHeightMatchContent;
 @property(readonly, nonatomic) _Bool isWidthMatchContent; // @synthesize isWidthMatchContent=_isWidthMatchContent;
 @property(nonatomic) struct CGRect originFrame; // @synthesize originFrame=_originFrame;
@@ -46,20 +49,20 @@
 @property(readonly, nonatomic) NSDictionary *originalTemplateDict; // @synthesize originalTemplateDict=_originalTemplateDict;
 @property(readonly, nonatomic) TBDTemplateItem *exactTemplateItem; // @synthesize exactTemplateItem=_exactTemplateItem;
 - (void).cxx_destruct;
-@property(readonly, nonatomic) struct CGSize estimatedViewSize;
 @property(readonly, nonatomic) struct CGSize renderedViewSize;
 @property(retain, nonatomic) NSString *templateHeight;
 @property(retain, nonatomic) NSString *templateWidth;
 - (id)optimizedLength:(id)arg1 withMargin:(id)arg2;
 - (void)handleWidthHeight;
 - (void)handleLayoutGravity;
-- (void)handleMatchParentWidthHeight;
 - (void)devideOriginalAttrDict:(id)arg1;
 - (void)preprocessDividedAttrDict;
 - (void)devideAttributeWithKey:(id)arg1 value:(id)arg2 stop:(_Bool *)arg3;
-- (unsigned long long)visibilityForData:(id)arg1 context:(id)arg2;
-- (struct CGSize)estimatedViewSizeWithData:(id)arg1 context:(id)arg2 error:(id *)arg3;
-- (void)layoutViewItemWithData:(id)arg1 context:(id)arg2 error:(id *)arg3;
+- (double)viewItemWidthWithParam:(id)arg1;
+- (double)viewItemHeightWithParam:(id)arg1;
+- (unsigned long long)visibilityForParam:(id)arg1;
+- (struct CGSize)estimatedViewSizeWithParam:(id)arg1;
+- (void)layoutViewItemWithParam:(id)arg1;
 - (id)initWithTemplateDict:(id)arg1 exactTemplateItem:(id)arg2 parentItem:(id)arg3 module:(id)arg4;
 - (void)destroyView;
 - (_Bool)updateViewItemWithData:(id)arg1 context:(id)arg2 error:(id *)arg3;

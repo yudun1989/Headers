@@ -25,7 +25,6 @@
 @property(nonatomic) id <RequestDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
 - (void)dealloc;
-- (id)stringLossyAllowedWithData:(id)arg1 encoding:(unsigned long long)arg2;
 - (id)generatePostBody:(id)arg1;
 - (void)didConnectionFailed:(id)arg1;
 - (void)didConnectionFinished;

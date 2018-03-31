@@ -109,9 +109,9 @@
 - (_Bool)IsPassView;
 - (void)CloseRecordView;
 - (_Bool)IsBackground;
-- (_Bool)topViewNeedDissmiss:(id)arg1;
+- (_Bool)topViewControllerNeedDissmiss:(id)arg1;
 - (_Bool)needHideNotifceBar:(id)arg1;
-- (_Bool)parentViewNeedDismiss:(id)arg1;
+- (_Bool)visibleViewControllerNeedDismiss:(id)arg1;
 - (id)GetTopView;
 - (id)GetvisibleView;
 - (void)OnPhoneCallAction:(id)arg1;

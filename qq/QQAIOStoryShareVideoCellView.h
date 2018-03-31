@@ -8,21 +8,25 @@
 
 #import <QQMainProject/QQAIOStoryVideoPlayViewDelegate-Protocol.h>
 
-@class NSString, QQAIOStorySharePlayerView, QQStoryShareVideoInfo, UIButton;
+@class NSString, QQAIOStorySharePlayerView, QQStoryShareVideoInfo, TBStoryVideoVoteView, UIButton;
 
 @interface QQAIOStoryShareVideoCellView : QQAIOCommonCellView <QQAIOStoryVideoPlayViewDelegate>
 {
     UIButton *_sourceView;
+    _Bool _hasObserverPlayerViewFrameChange;
     QQAIOStorySharePlayerView *_videoPlayerView;
     QQStoryShareVideoInfo *_videoInfo;
+    TBStoryVideoVoteView *_voteView;
     struct CGSize _thumbSize;
 }
 
+@property(retain, nonatomic) TBStoryVideoVoteView *voteView; // @synthesize voteView=_voteView;
 @property(retain, nonatomic) QQStoryShareVideoInfo *videoInfo; // @synthesize videoInfo=_videoInfo;
 @property(retain, nonatomic) QQAIOStorySharePlayerView *videoPlayerView; // @synthesize videoPlayerView=_videoPlayerView;
 @property(nonatomic) struct CGSize thumbSize; // @synthesize thumbSize=_thumbSize;
 - (void)QQAIOStoryViewPlayWillStart:(id)arg1;
 - (void)sourceBtnClicked:(id)arg1;
+- (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void *)arg4;
 - (void)showPlayButton;
 - (void)showErrorTips:(id)arg1;
 - (void)hideLoading;
@@ -39,6 +43,7 @@
 - (void)play;
 - (void)showAndPlay:(_Bool)arg1;
 - (void)setCanAutoDownload:(_Bool)arg1;
+- (void)showVideoVoteInfoWithVideoInfoModel:(id)arg1;
 - (id)playerPresentView;
 - (struct CGRect)playerRect;
 - (void)updateComeFromFrame;
@@ -49,6 +54,7 @@
 - (double)getProgressViewRadiusDiff;
 - (double)getProgressViewMideRadius;
 - (void)initSourceView;
+- (void)destroy;
 - (void)dealloc;
 - (void)initUI;
 - (id)initWithFrame:(struct CGRect)arg1 chatViewTable:(id)arg2;

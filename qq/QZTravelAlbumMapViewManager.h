@@ -11,7 +11,13 @@
 @interface QZTravelAlbumMapViewManager : NSObject
 {
     MKMapView *_mapView;
-    CDStruct_b7cb895d _defaultRegion;
+    struct {
+        struct CLLocationCoordinate2D center;
+        struct {
+            double latitudeDelta;
+            double longitudeDelta;
+        } span;
+    } _defaultRegion;
     _Bool _isFullyRendered;
 }
 

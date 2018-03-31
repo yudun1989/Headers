@@ -6,7 +6,7 @@
 
 #import <TlibDy/JceObjectV2.h>
 
-@class QZJNsQmallCoverQzmallCustomPassivePraise, QZJNsQmallCoverQzmallCustomPraise, QZJNsQmallCoverQzmallCustomVip, QZJNsQmallCoverQzmallFeedAvatar, QZJNsQmallCoverQzmallFeedSkin;
+@class QZJNsQmallCoverQzmallCustomBubbleSkin, QZJNsQmallCoverQzmallCustomPassivePraise, QZJNsQmallCoverQzmallCustomPraise, QZJNsQmallCoverQzmallCustomVip, QZJNsQmallCoverQzmallFacade, QZJNsQmallCoverQzmallFeedAvatar, QZJNsQmallCoverQzmallFeedSkin;
 
 @interface QZJNsQmallCoverFeedQzmallDeco : JceObjectV2
 {
@@ -19,5 +19,7 @@
 @property(retain, nonatomic, getter=jce_stCustomPassivePraise, setter=setJce_stCustomPassivePraise:) QZJNsQmallCoverQzmallCustomPassivePraise *jcev2_p_2_o_stCustomPassivePraise; // @dynamic jcev2_p_2_o_stCustomPassivePraise;
 @property(retain, nonatomic, getter=jce_stCustomPraise, setter=setJce_stCustomPraise:) QZJNsQmallCoverQzmallCustomPraise *jcev2_p_3_o_stCustomPraise; // @dynamic jcev2_p_3_o_stCustomPraise;
 @property(retain, nonatomic, getter=jce_stFeedSkin, setter=setJce_stFeedSkin:) QZJNsQmallCoverQzmallFeedSkin *jcev2_p_4_o_stFeedSkin; // @dynamic jcev2_p_4_o_stFeedSkin;
+@property(retain, nonatomic, getter=jce_stFacade, setter=setJce_stFacade:) QZJNsQmallCoverQzmallFacade *jcev2_p_5_o_stFacade; // @dynamic jcev2_p_5_o_stFacade;
+@property(retain, nonatomic, getter=jce_stBubbleSkin, setter=setJce_stBubbleSkin:) QZJNsQmallCoverQzmallCustomBubbleSkin *jcev2_p_6_o_stBubbleSkin; // @dynamic jcev2_p_6_o_stBubbleSkin;
 @end
 

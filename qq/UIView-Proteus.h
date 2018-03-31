@@ -18,7 +18,9 @@
 - (void)setBorderWidthString:(id)arg1;
 - (void)setBorderColorString:(id)arg1;
 - (void)setFrameString:(id)arg1;
-@property(nonatomic) id object; // @dynamic object;
 @property(nonatomic) NSString *viewId; // @dynamic viewId;
+@property(copy, nonatomic) NSString *eventCmd; // @dynamic eventCmd;
+@property(nonatomic) __weak id attatchInfo; // @dynamic attatchInfo;
+@property(nonatomic) __weak id object; // @dynamic object;
 @end
 

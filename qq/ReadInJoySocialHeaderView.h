@@ -6,7 +6,7 @@
 
 #import <UIKit/UIView.h>
 
-@class NSMutableArray, QQAvatarView, ReadInJoyChannelArticle, UIButton, UIImageView, UILabel;
+@class NSMutableArray, QQAvatarView, ReadInJoyChannelArticle, ReadInjoyAsynImageView, UIButton, UIImageView, UILabel;
 
 @interface ReadInJoySocialHeaderView : UIView
 {
@@ -18,11 +18,16 @@
     UIView *avatarWrapperView;
     UIImageView *vView;
     QQAvatarView *avatar;
+    UIImageView *hotImageView;
     _Bool _needLine;
     ReadInJoyChannelArticle *_feedsModel;
     UIButton *_followButton;
+    UIView *_topicCoverBg;
+    ReadInjoyAsynImageView *_topicCover;
 }
 
+@property(retain, nonatomic) ReadInjoyAsynImageView *topicCover; // @synthesize topicCover=_topicCover;
+@property(retain, nonatomic) UIView *topicCoverBg; // @synthesize topicCoverBg=_topicCoverBg;
 @property(retain, nonatomic) UIButton *followButton; // @synthesize followButton=_followButton;
 @property(nonatomic) _Bool needLine; // @synthesize needLine=_needLine;
 @property(retain, nonatomic) ReadInJoyChannelArticle *feedsModel; // @synthesize feedsModel=_feedsModel;
@@ -37,6 +42,7 @@
 - (double)getSocialMaxTitleX;
 - (void)layoutWithNickName:(id)arg1 pos:(float)arg2;
 - (void)layoutSubviewsExt;
+- (void)layoutCollectionView;
 - (void)layoutSubviews;
 - (void)initSubviews;
 - (id)initWithFrame:(struct CGRect)arg1;

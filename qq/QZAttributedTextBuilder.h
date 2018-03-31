@@ -56,6 +56,7 @@
 - (void)markAsRichText:(id)arg1 normalText:(_Bool)arg2;
 - (void)setUrlToNormalText:(id)arg1 textColor:(id)arg2 Attr:(id)arg3 isAllNormal:(_Bool)arg4;
 - (void)replaceETTextAttributedString:(id)arg1 font:(id)arg2;
+- (id)buildImageAttributedString:(id)arg1 font:(id)arg2 needResize:(_Bool)arg3;
 - (id)buildImageAttributedString:(id)arg1 font:(id)arg2;
 - (id)buildEmotionAttributedString:(id)arg1 font:(id)arg2 color:(id)arg3;
 - (id)buildNicknameAttributedStringWithNickname:(id)arg1 uin:(long long)arg2 isShowAtSymbol:(_Bool)arg3 font:(id)arg4 color:(id)arg5 actionType:(long long)arg6 actionUrl:(id)arg7 isAllNormal:(_Bool)arg8 param:(id)arg9;
@@ -67,6 +68,7 @@
 - (id)buildNewlineAttributedString:(id)arg1 font:(id)arg2 color:(id)arg3;
 - (id)buildNormalTextAttributedString:(id)arg1 font:(id)arg2 color:(id)arg3 attribute:(id)arg4;
 - (int)nodeTypeFor:(id)arg1 atRange:(struct _NSRange)arg2;
+- (void)appendImage:(id)arg1 font:(id)arg2 needResize:(_Bool)arg3;
 - (void)appendImage:(id)arg1 font:(id)arg2;
 - (void)appendNickname:(id)arg1 uin:(long long)arg2 font:(id)arg3 color:(id)arg4 actionType:(long long)arg5 actionUrl:(id)arg6 param:(id)arg7;
 - (void)appendAttributedText:(id)arg1 range:(struct _NSRange)arg2 type:(int)arg3 font:(id)arg4 color:(id)arg5 attribute:(id)arg6 linkColor:(id)arg7 isAllNormal:(_Bool)arg8;

@@ -14,7 +14,6 @@
 
 @interface QQVipComicConfigJsonManager : NSObject <ISCListenerCallback, ISCBusinessCallback>
 {
-    _Bool _usingSimpleComicInfo;
     _Bool _openStoryBoard;
     NSObject<OS_dispatch_queue> *_comicConfigQueue;
     NSMutableDictionary *_configDic;
@@ -24,7 +23,6 @@
 @property(retain, nonatomic) NSMutableDictionary *configDic; // @synthesize configDic=_configDic;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *comicConfigQueue; // @synthesize comicConfigQueue=_comicConfigQueue;
 @property(nonatomic) _Bool openStoryBoard; // @synthesize openStoryBoard=_openStoryBoard;
-@property(nonatomic) _Bool usingSimpleComicInfo; // @synthesize usingSimpleComicInfo=_usingSimpleComicInfo;
 - (void).cxx_destruct;
 - (id)getQQVipComicConfigDic;
 - (void)dealWithComicConfig;

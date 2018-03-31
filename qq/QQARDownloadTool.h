@@ -22,8 +22,6 @@
     CDUnknownBlockType _mDownloadingProgressNotification;
 }
 
-+ (void)stopDownLoadAll;
-+ (id)downloadStart:(id)arg1 sucessTaskBlock:(CDUnknownBlockType)arg2 failTaskBlock:(CDUnknownBlockType)arg3 downloadingProgressNotification:(CDUnknownBlockType)arg4;
 @property(nonatomic) long long totalSize; // @synthesize totalSize=_totalSize;
 @property(copy, nonatomic) CDUnknownBlockType mDownloadingProgressNotification; // @synthesize mDownloadingProgressNotification=_mDownloadingProgressNotification;
 @property(copy, nonatomic) CDUnknownBlockType mFailTaskBlock; // @synthesize mFailTaskBlock=_mFailTaskBlock;

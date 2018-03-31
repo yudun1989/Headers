@@ -25,8 +25,8 @@
 - (void)connectionDidFinishLoading:(id)arg1;
 - (void)connection:(id)arg1 didReceiveData:(id)arg2;
 - (void)connection:(id)arg1 didReceiveResponse:(id)arg2;
-- (void)cancelTask;
-- (void)startTask;
+- (void)cancelOperation;
+- (void)executeOperation;
 - (void)dealloc;
 - (id)initWithRequest:(id)arg1;
 

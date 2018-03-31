@@ -40,7 +40,6 @@
 @property(retain, nonatomic) NSString *strShopUrl; // @synthesize strShopUrl=_strShopUrl;
 @property(copy, nonatomic) NSString *strAddr; // @synthesize strAddr=_strAddr;
 @property(copy, nonatomic) NSString *strName; // @synthesize strName=_strName;
-- (void)dealloc;
 
 @end
 

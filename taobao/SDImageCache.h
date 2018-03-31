@@ -89,9 +89,11 @@
 - (void)removeImageForKey:(id)arg1 module:(id)arg2 fromDisk:(_Bool)arg3 withCompletion:(CDUnknownBlockType)arg4;
 - (void)removeImageForKey:(id)arg1 fromDisk:(_Bool)arg2;
 - (void)removeImageForKey:(id)arg1;
+- (id)queryDiskCacheForKey:(id)arg1 viewSize:(struct CGSize)arg2 needPlaceHolder:(_Bool)arg3 options:(unsigned long long)arg4 extParam:(id)arg5 done:(CDUnknownBlockType)arg6;
 - (id)queryDiskCacheForKey:(id)arg1 needPlaceHolder:(_Bool)arg2 options:(unsigned long long)arg3 extParam:(id)arg4 done:(CDUnknownBlockType)arg5;
 - (id)queryDiskCacheForKey:(id)arg1 done:(CDUnknownBlockType)arg2;
 - (id)scaledImageForKey:(id)arg1 image:(id)arg2;
+- (id)diskImageForKey:(id)arg1 viewSize:(struct CGSize)arg2 needSmallCopy:(_Bool)arg3 needPlaceHolder:(_Bool)arg4 extParam:(id)arg5;
 - (id)diskImageForKey:(id)arg1 needSmallCopy:(_Bool)arg2 needPlaceHolder:(_Bool)arg3 extParam:(id)arg4;
 - (id)diskImageForKey:(id)arg1;
 - (id)diskImageDataBySearchingAllPathsForKey:(id)arg1 extParam:(id)arg2;

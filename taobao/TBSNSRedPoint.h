@@ -44,7 +44,7 @@
 - (void)removeRpIcon;
 - (void)removeAllIcon;
 - (void)sendRequest;
-- (void)initRedPoint;
+- (void)initRedPoint:(id)arg1;
 - (void)timerHandler:(id)arg1;
 - (void)stopTimer;
 - (void)startTimer;

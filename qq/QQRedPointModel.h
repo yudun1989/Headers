@@ -9,7 +9,7 @@
 #import <QQMainProject/NSCopying-Protocol.h>
 #import <QQMainProject/NSMutableCopying-Protocol.h>
 
-@class NSString, RedPointExtraModel, TaskInfo;
+@class NSMutableArray, NSString, RedPointExtraModel, TaskInfo;
 
 @interface QQRedPointModel : QQModel <NSCopying, NSMutableCopying>
 {
@@ -24,8 +24,10 @@
     RedPointExtraModel *_redPointExtraModel;
     TaskInfo *_task;
     NSString *_configVer;
+    NSMutableArray *_messageRecArray;
 }
 
+@property(retain, nonatomic) NSMutableArray *messageRecArray; // @synthesize messageRecArray=_messageRecArray;
 @property(nonatomic) _Bool isReadCurNode; // @synthesize isReadCurNode=_isReadCurNode;
 @property(copy, nonatomic) NSString *configVer; // @synthesize configVer=_configVer;
 @property(retain, nonatomic) TaskInfo *task; // @synthesize task=_task;

@@ -14,7 +14,7 @@
     _Bool _foldingEnabled;
     _Bool _folded;
     HLRichLabel *_magicFaceLabel;
-    HLRichLabel *_musicLabel;
+    UIView *_musicLabel;
     HLRichLabel *_locationLabel;
     UILabel *_playTimesLabel;
     UILabel *_timeLabel;
@@ -69,7 +69,7 @@
 @property(retain, nonatomic) UILabel *timeLabel; // @synthesize timeLabel=_timeLabel;
 @property(retain, nonatomic) UILabel *playTimesLabel; // @synthesize playTimesLabel=_playTimesLabel;
 @property(retain, nonatomic) HLRichLabel *locationLabel; // @synthesize locationLabel=_locationLabel;
-@property(retain, nonatomic) HLRichLabel *musicLabel; // @synthesize musicLabel=_musicLabel;
+@property(retain, nonatomic) UIView *musicLabel; // @synthesize musicLabel=_musicLabel;
 @property(retain, nonatomic) HLRichLabel *magicFaceLabel; // @synthesize magicFaceLabel=_magicFaceLabel;
 - (void).cxx_destruct;
 - (_Bool)_useHorizontalToolBar;

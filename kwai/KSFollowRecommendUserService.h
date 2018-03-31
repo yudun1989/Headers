@@ -4,16 +4,20 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-#import "KSRecommendUserService.h"
+#import "KSRecommendStatService.h"
 
-@interface KSFollowRecommendUserService : KSRecommendUserService
+@class NSString;
+
+@interface KSFollowRecommendUserService : KSRecommendStatService
 {
+    NSString *_followRecommendSource;
 }
 
+@property(retain, nonatomic) NSString *followRecommendSource; // @synthesize followRecommendSource=_followRecommendSource;
+- (void).cxx_destruct;
+- (id)actionStatRequest;
 - (id)statRequestWithUsers:(id)arg1 isMorePage:(_Bool)arg2;
 - (id)request;
-- (void)deleteAllUsersWithCompletion:(CDUnknownBlockType)arg1;
-- (void)deleteUser:(id)arg1 withCompletion:(CDUnknownBlockType)arg2;
 - (id)init;
 
 @end

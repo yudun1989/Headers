@@ -14,6 +14,7 @@
 @interface TBSDKConnection : NSObject <NSURLConnectionDelegate>
 {
     _Bool _isFinished;
+    _Bool _unHostedByNetWork;
     _Bool _isHttp;
     _Bool _shouldRedirect;
     _Bool _isSynchronous;
@@ -66,6 +67,7 @@
 @property(nonatomic) int postGzipSize; // @synthesize postGzipSize=_postGzipSize;
 @property(retain, nonatomic) NSMutableArray *postData; // @synthesize postData=_postData;
 @property(nonatomic) _Bool isHttp; // @synthesize isHttp=_isHttp;
+@property(nonatomic) _Bool unHostedByNetWork; // @synthesize unHostedByNetWork=_unHostedByNetWork;
 @property _Bool isFinished; // @synthesize isFinished=_isFinished;
 @property(retain, nonatomic) NSMutableData *postBody; // @synthesize postBody=_postBody;
 @property(retain, nonatomic) NSHTTPURLResponse *response; // @synthesize response=_response;

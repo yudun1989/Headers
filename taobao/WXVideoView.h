@@ -6,24 +6,37 @@
 
 #import <UIKit/UIView.h>
 
-@class AVPlayerItem, UIViewController, WXSDKInstance;
+@class AVPlayerItem, UIImageView, UIViewController, WXSDKInstance;
+@protocol WXImageOperationProtocol;
 
 @interface WXVideoView : UIView
 {
+    _Bool _playerDidPlayed;
     CDUnknownBlockType _playbackStateChanged;
+    CDUnknownBlockType _posterClickHandle;
     UIViewController *_playerViewController;
     AVPlayerItem *_playerItem;
     WXSDKInstance *_weexSDKInstance;
+    UIImageView *_posterImageView;
+    id <WXImageOperationProtocol> _imageOperation;
 }
 
+@property(nonatomic) _Bool playerDidPlayed; // @synthesize playerDidPlayed=_playerDidPlayed;
+@property(retain, nonatomic) id <WXImageOperationProtocol> imageOperation; // @synthesize imageOperation=_imageOperation;
+@property(retain, nonatomic) UIImageView *posterImageView; // @synthesize posterImageView=_posterImageView;
 @property(retain, nonatomic) WXSDKInstance *weexSDKInstance; // @synthesize weexSDKInstance=_weexSDKInstance;
 @property(retain, nonatomic) AVPlayerItem *playerItem; // @synthesize playerItem=_playerItem;
 @property(retain, nonatomic) UIViewController *playerViewController; // @synthesize playerViewController=_playerViewController;
+@property(copy, nonatomic) CDUnknownBlockType posterClickHandle; // @synthesize posterClickHandle=_posterClickHandle;
 @property(copy, nonatomic) CDUnknownBlockType playbackStateChanged; // @synthesize playbackStateChanged=_playbackStateChanged;
 - (void).cxx_destruct;
+- (void)cancelImage;
+- (id)imageLoader;
+- (void)posterTapHandler;
 - (void)pause;
 - (void)play;
 - (void)playFinish;
+- (void)setPosterURL:(id)arg1;
 - (void)setURL:(id)arg1;
 - (void)setFrame:(struct CGRect)arg1;
 - (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void *)arg4;

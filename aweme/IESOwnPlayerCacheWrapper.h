@@ -6,30 +6,16 @@
 
 #import <Foundation/NSObject.h>
 
-#import "IESVideoCacheProtocol-Protocol.h"
-
-@class NSString;
-@protocol IESVideoDownloadSpeedDelegate;
-
-@interface IESOwnPlayerCacheWrapper : NSObject <IESVideoCacheProtocol>
+@interface IESOwnPlayerCacheWrapper : NSObject
 {
-    id <IESVideoDownloadSpeedDelegate> _speedDelegate;
 }
 
 + (id)sharedCache;
-@property(nonatomic) __weak id <IESVideoDownloadSpeedDelegate> speedDelegate; // @synthesize speedDelegate=_speedDelegate;
-- (void).cxx_destruct;
 - (_Bool)hasEnoughCacheForURLString:(id)arg1 videoDuration:(double)arg2 networkSpeed:(double)arg3;
 - (void)getCacheSizeWithCompletion:(CDUnknownBlockType)arg1;
 - (void)clearAllCache;
 - (void)hasCacheForVideoID:(id)arg1 URLString:(id)arg2 completion:(CDUnknownBlockType)arg3;
 - (void)setCacheSizeLimit:(unsigned long long)arg1;
-
-// Remaining properties
-@property(readonly, copy) NSString *debugDescription;
-@property(readonly, copy) NSString *description;
-@property(readonly) unsigned long long hash;
-@property(readonly) Class superclass;
 
 @end
 

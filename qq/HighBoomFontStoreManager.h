@@ -28,6 +28,7 @@
 - (id)resDirPathWithBizType:(long long)arg1;
 - (id)baseDirPathWithBizType:(long long)arg1;
 - (id)highBoomFontRootPath;
+- (void)clearMemoryCache;
 - (id)getHighBoomFontModelByFontID:(long long)arg1 bizType:(long long)arg2;
 - (void)dealWithHighBoomFontStatusNotExists:(id)arg1;
 - (id)getHighBoomFontModelWithFontID:(long long)arg1 bizType:(long long)arg2;

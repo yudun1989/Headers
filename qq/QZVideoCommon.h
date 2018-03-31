@@ -17,8 +17,6 @@
 + (void)reportVideoPlayOnWifiToPf00064:(id)arg1 firstAction:(long long)arg2 secondAction:(long long)arg3;
 + (id)sharedInstance;
 - (void).cxx_destruct;
-- (_Bool)canShowVideoDebugInfo;
-- (void)setCanShowVideoDebugInfo:(_Bool)arg1;
 - (void)showTipIsSetVideoPlayOnWifi:(id)arg1 videoView:(id)arg2;
 - (_Bool)canShowTipIsSetVideoPlayOnWifi:(id)arg1;
 - (void)hideTipIsSetVideoPlayOnwifi;

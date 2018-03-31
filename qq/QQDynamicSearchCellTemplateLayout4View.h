@@ -21,6 +21,7 @@
 - (void)resetContentViewFrame;
 - (double)calContentViewWidth;
 - (double)calContentViewHeight;
+- (void)layoutViewsWithResult:(id)arg1;
 - (void)layoutContentView;
 - (void)dealloc;
 - (id)initWithFrame:(struct CGRect)arg1;

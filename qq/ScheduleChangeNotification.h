@@ -10,6 +10,7 @@
 
 @interface ScheduleChangeNotification : NSObject
 {
+    _Bool _isHomeGroupType;
     int _textEnumType;
     unsigned int _mainType;
     unsigned int _subType;
@@ -28,8 +29,13 @@
     unsigned long long _startTime;
     unsigned long long _endTime;
     NSString *_discussUIN;
+    NSString *_homeGroupJumpURL;
+    NSString *_homeGroupUin;
 }
 
+@property(nonatomic) _Bool isHomeGroupType; // @synthesize isHomeGroupType=_isHomeGroupType;
+@property(copy, nonatomic) NSString *homeGroupUin; // @synthesize homeGroupUin=_homeGroupUin;
+@property(copy, nonatomic) NSString *homeGroupJumpURL; // @synthesize homeGroupJumpURL=_homeGroupJumpURL;
 @property(nonatomic) int remindBellSwitch; // @synthesize remindBellSwitch=_remindBellSwitch;
 @property(copy, nonatomic) NSString *discussUIN; // @synthesize discussUIN=_discussUIN;
 @property(nonatomic) int changeType; // @synthesize changeType=_changeType;

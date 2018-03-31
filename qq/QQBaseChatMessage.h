@@ -90,7 +90,6 @@
 - (int)getIndexFromChatMessage:(long long)arg1;
 - (int)getUnreadMarkIndexFromChatMessage;
 - (void)checkSeqAction;
-- (void)getGroupMessage:(id)arg1 toGroupSeq:(long long)arg2;
 - (id)filterMessageList:(id)arg1;
 - (id)getDuplicateMessage:(id)arg1;
 - (_Bool)_isValidMsgSeqFromMessage:(id)arg1;
@@ -104,6 +103,7 @@
 - (id)checkLongMessage:(id)arg1 andNeedDwon:(_Bool)arg2;
 - (id)largeMsgIDsFromMinModel;
 - (void)handleBabyQLoadMoreMessage;
+- (void)handleHonestSayLoadMoreMessage;
 - (void)handleC2CRoamMsg;
 - (void)_GetOffLineTroopMessageAction:(id)arg1;
 - (void)hotChatGroupGayTipsRemoveDouble:(id)arg1;
@@ -113,7 +113,6 @@
 - (_Bool)deleteEmptyPttMsg:(id)arg1;
 - (id)filterDuplicateSeqGroupMsg:(id)arg1;
 - (id)filterInvalidGroupMsg:(id)arg1;
-- (id)filterNearbyLiveMsg:(id)arg1;
 - (id)filterEmptyPttMsg:(id)arg1;
 - (void)asynMsgListByInsertingLatestRichSigInToList:(id)arg1;
 - (void)asynMsgListByInsertingLatestNewestQZoneFeedList:(id)arg1;

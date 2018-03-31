@@ -43,7 +43,7 @@
 - (void)setIcon:(id)arg1 title:(id)arg2 subTitle:(id)arg3 buttonTitle:(id)arg4 bounds:(struct CGRect)arg5;
 - (void)layoutSubviews;
 - (id)initWithFrame:(struct CGRect)arg1;
-- (void)updateWithTBState:(int)arg1;
+- (void)updateWithTBState:(unsigned long long)arg1;
 - (void)updateWithState:(long long)arg1 preferredhintText:(id)arg2 hintIcon:(id)arg3;
 - (void)configParentContentView:(id)arg1 loadingViewInsets:(struct UIEdgeInsets)arg2 action:(CDUnknownBlockType)arg3;
 

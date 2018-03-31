@@ -11,7 +11,7 @@
 #import <QQMainProject/QZFullScreenVideoControlToVideoState-Protocol.h>
 #import <QQMainProject/QZVideoAdvViewDelegate-Protocol.h>
 
-@class NSMutableArray, NSString, QZAutoPlayGifView, QZCImageView, QZVideoAdvView, QZVideoDanmakuView, QZVideoPlayerToolbar, QZVideoSummaryView, QzoneFeedModel, QzoneFeedVideoTag, UIColor, UIImageView, UILabel, UIView;
+@class NSMutableArray, NSString, QZAutoPlayGifView, QZCImageView, QZVideoAdvView, QZVideoDanmakuView, QZVideoPlayerToolbar, QZVideoSummaryView, QzoneFeedModel, UIColor, UIImageView, UILabel, UIView;
 @protocol QZCornerAdvDelegate, QZFullScreenVideoControlDelegateFromVideoState, QZLayerVideoStateViewDelegate;
 
 @interface QZLayerVideoStateView : QZVideoStateView <QZVideoAdvViewDelegate, CAAnimationDelegate, QZAutoPlayGifViewDelegate, QZFullScreenVideoControlToVideoState>
@@ -30,6 +30,7 @@
     double _lastSingleTapTime;
     UIView *_playToEndMaskView;
     UIView *_playToEndControl;
+    UIView *_after_pastera_adv_view;
     NSMutableArray *_advFeedModels;
     _Bool _needHidePlayToEndView;
     _Bool _isVideoControlHiddenInFullScreen;
@@ -37,18 +38,12 @@
     QZVideoSummaryView *_summaryView;
     UILabel *_videoLayerTimeLabel;
     UIImageView *_videoLayerTimeBgBar;
-    UIView *_commonComponentView;
-    QZCImageView *_iconView;
-    UILabel *_contentLabel;
-    QzoneFeedVideoTag *_commonComponentTag;
-    struct CGPoint _commonComponentShowCenter;
-    struct CGPoint _commonComponentHideCenter;
-    _Bool _isCommonWidgetAppear;
     QZAutoPlayGifView *_cornerGifView;
     QZCImageView *_cornerCloseIcon;
     QZCImageView *_cornerAdvIcon;
     long long _gifState;
     _Bool _danmaku_hasAddedVideoControlKVO;
+    QzoneFeedModel *_afterPasterAdvModel;
     _Bool _hasHD;
     _Bool _isHDDownloaded;
     _Bool _enableRedpacket;
@@ -80,13 +75,6 @@
 - (void).cxx_destruct;
 - (void)setFrame:(struct CGRect)arg1;
 - (_Bool)isVideoControlHidden;
-- (_Bool)showCommonComponentView:(double)arg1;
-- (void)animationDidStop:(id)arg1 finished:(_Bool)arg2;
-- (void)showCommonComponentViewAnimWithFromValue:(struct CGPoint)arg1 EndValue:(struct CGPoint)arg2 forKey:(id)arg3;
-- (void)hideCommonComponentView;
-- (void)commonComponentViewClicked;
-- (void)commonComponentViewAppear:(_Bool)arg1 WithAnim:(_Bool)arg2;
-- (void)createCommonComponentView;
 - (void)gifPlayToEnd:(id)arg1;
 - (void)gifDownloadSuccess:(id)arg1;
 - (void)touchesEnded:(id)arg1 withEvent:(id)arg2;
@@ -155,9 +143,10 @@
 - (void)showReadMore;
 - (void)setAdvViewFullScreen;
 - (void)stopAdvAniamtion;
-- (void)onStartAdvAniamtionNotify;
+- (void)startAdvAniamtion;
 - (void)didAdvAnimationEnd:(id)arg1;
 - (void)didSelectAdv:(id)arg1 selectedArea:(unsigned long long)arg2;
+- (_Bool)isLandscape;
 - (void)hideAdvView:(_Bool)arg1 isScroll:(_Bool)arg2;
 - (id)setFeedModelVideoAdvStatus:(long long)arg1;
 - (void)updateAdvView;
@@ -166,7 +155,7 @@
 - (void)timeLabelSizeToFit;
 - (void)setVideoLayerDurationLabelHidden:(_Bool)arg1;
 - (void)setSummaryViewHidden:(_Bool)arg1;
-- (void)doHideCornerAdv;
+- (void)destroyCornerAdv;
 - (void)touchCornerAdvClose:(id)arg1;
 - (void)touchCornerAdvGif:(id)arg1;
 - (void)setAdvCornerViewWithTime:(long long)arg1 isShouldShow:(_Bool)arg2;
@@ -175,6 +164,15 @@
 - (void)setPlayToEndMaskHidden:(_Bool)arg1;
 - (void)moreVideoClick;
 - (void)redpacketClick;
+- (void)touchAfterPasterAdvClose:(id)arg1;
+- (void)touchAfterPasterAdvButton:(id)arg1;
+- (void)touchAfterPasterAdvRemark:(id)arg1;
+- (void)touchAfterPasterAdvImgview:(id)arg1;
+- (void)destroyAfterPasterAdv;
+- (void)setAfterPasterAdvHidden:(_Bool)arg1;
+- (void)addMediaGainSharingToAdvModel:(id)arg1;
+- (void)setupAfterPasterAdv:(id)arg1;
+- (void)playAfterPasteraAdv:(id)arg1;
 - (void)setupPlayEndControl;
 - (_Bool)needShowVideoPlayControl;
 - (void)setPlayToEndControlHidden:(_Bool)arg1;

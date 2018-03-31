@@ -25,12 +25,12 @@
     _Bool _stopScroll;
     _Bool _isPageControlCenter;
     _Bool _disablePageClick;
-    int _pageControlStyle;
     unsigned long long _pagegap;
     long long _curViewCount;
+    long long _pageControlStyle;
 }
 
-@property(nonatomic) int pageControlStyle; // @synthesize pageControlStyle=_pageControlStyle;
+@property(nonatomic) long long pageControlStyle; // @synthesize pageControlStyle=_pageControlStyle;
 @property(nonatomic) long long curViewCount; // @synthesize curViewCount=_curViewCount;
 @property(nonatomic) unsigned long long pagegap; // @synthesize pagegap=_pagegap;
 @property(nonatomic) _Bool disablePageClick; // @synthesize disablePageClick=_disablePageClick;

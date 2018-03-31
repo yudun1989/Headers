@@ -19,6 +19,7 @@
     _Bool _disableResponseStateViewDisappear;
     _Bool _portraitExit;
     int _volumeType;
+    float _systemVolume;
     long long _enterOrientation;
     CDUnknownBlockType _completion;
     CDUnknownBlockType _disappearCompletion;
@@ -48,6 +49,7 @@
 @property(retain, nonatomic) CAGradientLayer *trailingGradientLayer; // @synthesize trailingGradientLayer=_trailingGradientLayer;
 @property(retain, nonatomic) CAGradientLayer *leadingGradientLayer; // @synthesize leadingGradientLayer=_leadingGradientLayer;
 @property(retain, nonatomic) CAGradientLayer *topGradientLayer; // @synthesize topGradientLayer=_topGradientLayer;
+@property(nonatomic) float systemVolume; // @synthesize systemVolume=_systemVolume;
 @property(retain, nonatomic) ItemFullScreenVideoProgressIndicator *progressIndicator; // @synthesize progressIndicator=_progressIndicator;
 @property(retain, nonatomic) ItemFullScreenVideoIndicator *volumeIndicator; // @synthesize volumeIndicator=_volumeIndicator;
 @property(retain, nonatomic) ItemFullScreenVideoIndicator *brightnessIndicator; // @synthesize brightnessIndicator=_brightnessIndicator;
@@ -73,9 +75,13 @@
 @property(copy, nonatomic) CDUnknownBlockType completion; // @synthesize completion=_completion;
 @property(nonatomic) long long enterOrientation; // @synthesize enterOrientation=_enterOrientation;
 - (void).cxx_destruct;
+- (void)delayNotifyOtherAppAudioSessionActive;
+- (void)notifyOtherAppAudioSessionActive;
+- (void)activeAudioSession;
 - (void)onBarrageButtonTap:(id)arg1;
 - (void)updateBarrageButtonStatus;
 - (void)onCloseButtonTap;
+- (void)closeWithCompletion:(CDUnknownBlockType)arg1;
 - (void)volumeValueDidChanged:(id)arg1;
 - (void)volumeChanged:(id)arg1;
 - (void)qqNavigationControllerDidPopViewController;
@@ -114,6 +120,7 @@
 - (int)getCallTime;
 - (void)autoDismissTopBar;
 - (void)setTopBarHidden:(_Bool)arg1 animated:(_Bool)arg2;
+- (void)viewDidDisappear:(_Bool)arg1;
 - (void)viewWillDisappear:(_Bool)arg1;
 - (void)viewDidAppear:(_Bool)arg1;
 - (void)viewWillAppear:(_Bool)arg1;

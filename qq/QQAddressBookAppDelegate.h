@@ -9,6 +9,7 @@
 #import <QQMainProject/PKPushRegistryDelegate-Protocol.h>
 #import <QQMainProject/QQAudioSessionManagerWebViewDelegate-Protocol.h>
 #import <QQMainProject/QQFriendSelectedViewControllerDelegate-Protocol.h>
+#import <QQMainProject/QQSafeModeViewControllerDelegate-Protocol.h>
 #import <QQMainProject/SimpleAlertViewDelegate-Protocol.h>
 #import <QQMainProject/SplashManagerDelegate-Protocol.h>
 #import <QQMainProject/UIAlertViewDelegate-Protocol.h>
@@ -19,7 +20,7 @@
 
 @class DiscussGroup, NSString, NSTimer, PassWordView, QQDBMigrationProgressWindow, QQNavigationController, QQPlatform, QQTabBarController, QUIAlertView, UIAlertView, UIApplication, UIImageView, UIWindow;
 
-@interface QQAddressBookAppDelegate : UIResponder <SplashManagerDelegate, QQAudioSessionManagerWebViewDelegate, UIApplicationDelegate, UIAlertViewDelegate, UITabBarControllerDelegate, SimpleAlertViewDelegate, QQFriendSelectedViewControllerDelegate, WXApiDelegate, PKPushRegistryDelegate, UNUserNotificationCenterDelegate>
+@interface QQAddressBookAppDelegate : UIResponder <SplashManagerDelegate, QQAudioSessionManagerWebViewDelegate, QQSafeModeViewControllerDelegate, UIApplicationDelegate, UIAlertViewDelegate, UITabBarControllerDelegate, SimpleAlertViewDelegate, QQFriendSelectedViewControllerDelegate, WXApiDelegate, PKPushRegistryDelegate, UNUserNotificationCenterDelegate>
 {
     UIWindow *window;
     NSString *upgradeUrl;
@@ -88,6 +89,8 @@
 @property(retain, nonatomic) NSString *upgradeUrl; // @synthesize upgradeUrl;
 @property(retain, nonatomic) QQTabBarController *tabCtr; // @synthesize tabCtr;
 @property(retain, nonatomic) UIWindow *window; // @synthesize window;
+- (void)startFromSafeMode;
+- (_Bool)isInSafeMode;
 - (_Bool)needShowGesturePassView;
 - (void)onSplashDismiss;
 - (void)pushRegistry:(id)arg1 didInvalidatePushTokenForType:(id)arg2;
@@ -221,9 +224,9 @@
 - (void)delayLoad;
 - (void)firstInitApplication:(id)arg1 withOptions:(id)arg2;
 - (void)launchAfterGuideWindow;
+- (_Bool)qq_application:(id)arg1 didFinishLaunchingWithOptions:(id)arg2;
 - (_Bool)application:(id)arg1 didFinishLaunchingWithOptions:(id)arg2;
 - (void)app:(id)arg1 initWithOption:(id)arg2;
-- (void)startCrashReporterWrapper:(_Bool)arg1;
 - (id)init;
 @property(readonly, nonatomic) _Bool storyTabSelected;
 @property(readonly, nonatomic) QQNavigationController *storyTabController;

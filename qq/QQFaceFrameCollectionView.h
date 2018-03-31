@@ -27,6 +27,7 @@
     QQFacePreview *_preview;
     UIView *_editMaskView;
     NSDictionary *_footerJumpInfo;
+    _Bool _forQzone;
     long long _tabID;
     unsigned long long _packageId;
     id <QQFaceEmojiCollectionViewDelegate> _collectionDelegate;
@@ -42,12 +43,14 @@
 @property(retain, nonatomic) QQFacePreview *preview; // @synthesize preview=_preview;
 @property(retain, nonatomic) UIImage *defaultImage; // @synthesize defaultImage=_defaultImage;
 @property(retain, nonatomic) UIView *updateView; // @synthesize updateView=_updateView;
-@property(nonatomic) id textDelegate; // @synthesize textDelegate=_textDelegate;
-@property(nonatomic) id <QQFaceEmojiCollectionViewDelegate> collectionDelegate; // @synthesize collectionDelegate=_collectionDelegate;
+@property(nonatomic) __weak id textDelegate; // @synthesize textDelegate=_textDelegate;
+@property(nonatomic) __weak id <QQFaceEmojiCollectionViewDelegate> collectionDelegate; // @synthesize collectionDelegate=_collectionDelegate;
 @property(nonatomic) unsigned long long packageId; // @synthesize packageId=_packageId;
 @property(nonatomic) long long tabID; // @synthesize tabID=_tabID;
 @property(nonatomic) double pageWidth; // @synthesize pageWidth=_pageWidth;
+@property(nonatomic) _Bool forQzone; // @synthesize forQzone=_forQzone;
 @property(nonatomic) unsigned long long columnPerPage; // @synthesize columnPerPage=_columnPerPage;
+- (void).cxx_destruct;
 - (void)onJumpToUrl:(id)arg1;
 - (int)previewStyleByCell:(id)arg1;
 - (int)previewStyle;

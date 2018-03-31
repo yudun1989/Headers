@@ -11,36 +11,27 @@
 @interface QZTickerLabel : UIView
 {
     float _singleWidth;
-    float _characterWidth;
     float _changeTextAnimationDuration;
-    NSString *_text;
+    float _characterWidth;
     UIFont *_font;
     UIColor *_textColor;
+    NSString *_text;
     UIColor *_shadowColor;
     NSMutableArray *_characterViewsArray;
     NSArray *_charactersArray;
     CAShapeLayer *_maskLayer;
 }
 
+@property(nonatomic) float characterWidth; // @synthesize characterWidth=_characterWidth;
 @property(retain, nonatomic) CAShapeLayer *maskLayer; // @synthesize maskLayer=_maskLayer;
 @property(retain, nonatomic) NSArray *charactersArray; // @synthesize charactersArray=_charactersArray;
 @property(retain, nonatomic) NSMutableArray *characterViewsArray; // @synthesize characterViewsArray=_characterViewsArray;
 @property(retain, nonatomic) UIColor *shadowColor; // @synthesize shadowColor=_shadowColor;
 @property(nonatomic) float changeTextAnimationDuration; // @synthesize changeTextAnimationDuration=_changeTextAnimationDuration;
-@property(retain, nonatomic) UIColor *textColor; // @synthesize textColor=_textColor;
-@property(nonatomic) float characterWidth; // @synthesize characterWidth=_characterWidth;
-@property(nonatomic) float singleWidth; // @synthesize singleWidth=_singleWidth;
-@property(retain, nonatomic) UIFont *font; // @synthesize font=_font;
 @property(retain, nonatomic) NSString *text; // @synthesize text=_text;
-- (void).cxx_destruct;
-- (void)updateTickerCharacterViewsTextColor;
-- (void)updateTickerCharacterViewsFont;
-- (void)updateUIFrames;
-- (void)updateTickerCharacterViewsFrames;
-- (void)updateViewFrame;
-- (void)deleteCharacterView;
-- (void)insertNewTickerCharacterView;
-- (id)initWithFrame:(struct CGRect)arg1;
+@property(nonatomic) float singleWidth; // @synthesize singleWidth=_singleWidth;
+@property(retain, nonatomic) UIColor *textColor; // @synthesize textColor=_textColor;
+@property(retain, nonatomic) UIFont *font; // @synthesize font=_font;
 
 @end
 

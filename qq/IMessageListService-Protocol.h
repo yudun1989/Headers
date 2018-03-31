@@ -36,6 +36,7 @@
 - (void)deleteMessage:(QQMessageModel *)arg1;
 - (void)deleteMessageWithKeys:(NSArray *)arg1;
 - (_Bool)isValidMsgModelForMsgList:(QQMessageModel *)arg1;
+- (void)addMessageForInit:(QQMessageModel *)arg1;
 - (void)addMessage:(QQMessageModel *)arg1;
 - (void)onlyForUpdateSummaryInRecentModel:(QQMessageModel *)arg1;
 - (void)updateMessageModel:(QQMessageModel *)arg1;

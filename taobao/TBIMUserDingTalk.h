@@ -6,14 +6,17 @@
 
 #import "TBIMUserAMP.h"
 
+@class NSString;
 @protocol WKUserProtocol;
 
 @interface TBIMUserDingTalk : TBIMUserAMP
 {
+    NSString *_shopGuideName;
     id <WKUserProtocol> _userData;
 }
 
 @property(retain, nonatomic) id <WKUserProtocol> userData; // @synthesize userData=_userData;
+@property(retain, nonatomic) NSString *shopGuideName; // @synthesize shopGuideName=_shopGuideName;
 - (void).cxx_destruct;
 - (_Bool)isFriend;
 - (_Bool)isSelf;

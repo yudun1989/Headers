@@ -119,7 +119,6 @@
 - (void)loginSucceed:(id)arg1 Uin:(unsigned int)arg2 Nickname:(id)arg3 loginType:(int)arg4;
 - (void)gotoAuthorizationWithUin:(unsigned int)arg1 andNickName:(id)arg2 andSkey:(id)arg3;
 - (_Bool)doLogin;
-- (_Bool)doLoginWithA2D2;
 - (void)onLoginTimeout;
 - (void)stopLoginTimer;
 - (void)startLoginTimer;

@@ -29,7 +29,6 @@
 - (void)minusCrashCount;
 - (void)incCrashCount;
 - (void)onCrashed;
-- (_Bool)isCurrentInQzonePage;
 - (_Bool)needClearCacheWhenLauch;
 - (void)dealCrashCount;
 - (void)qzoneRootExit:(id)arg1;

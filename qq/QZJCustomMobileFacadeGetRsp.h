@@ -17,5 +17,6 @@
 @property(nonatomic, getter=jce_iCode, setter=setJce_iCode:) int jcev2_p_0_o_iCode; // @dynamic jcev2_p_0_o_iCode;
 @property(retain, nonatomic, getter=jce_stFacade, setter=setJce_stFacade:) QZJCustomFacade *jcev2_p_1_o_stFacade; // @dynamic jcev2_p_1_o_stFacade;
 @property(retain, nonatomic, getter=jce_mapExtInfo, setter=setJce_mapExtInfo:) NSDictionary *jcev2_p_2_o_mapExtInfo__b0x9i_M09ONSStringONSString; // @dynamic jcev2_p_2_o_mapExtInfo__b0x9i_M09ONSStringONSString;
+@property(nonatomic, getter=jce_iShowOnFriDyn, setter=setJce_iShowOnFriDyn:) int jcev2_p_3_o_iShowOnFriDyn; // @dynamic jcev2_p_3_o_iShowOnFriDyn;
 @end
 

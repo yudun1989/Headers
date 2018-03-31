@@ -15,12 +15,15 @@
     NSString *_partnerName;
     NSString *_packageTitle;
     NSString *_partnerCode;
+    NSString *_partnerIconUrl;
     NSString *_mailNo;
     NSString *_stationFetchType;
     NSString *_stationChannel;
     NSString *_orderCode;
     NSString *_subtitle1;
     NSString *_statusCode;
+    long long _statusCodeSeq;
+    NSString *_sellerWangWangId;
     NSString *_logisticStatus;
     NSString *_logisticStatusDesc;
     NSString *_logisticStatusDesc2;
@@ -54,8 +57,10 @@
     CNLogisticOnlineTouchSettingDTO *_onlineTouchSettingDTO;
     CNExtPackageAttr *_extPackageAttr;
     NSNumber *_showStationDelivery;
+    NSString *_tradeId;
 }
 
+@property(retain, nonatomic) NSString *tradeId; // @synthesize tradeId=_tradeId;
 @property(retain, nonatomic) NSNumber *showStationDelivery; // @synthesize showStationDelivery=_showStationDelivery;
 @property(retain, nonatomic) CNExtPackageAttr *extPackageAttr; // @synthesize extPackageAttr=_extPackageAttr;
 @property(retain, nonatomic) CNLogisticOnlineTouchSettingDTO *onlineTouchSettingDTO; // @synthesize onlineTouchSettingDTO=_onlineTouchSettingDTO;
@@ -89,12 +94,15 @@
 @property(retain, nonatomic) NSString *logisticStatusDesc2; // @synthesize logisticStatusDesc2=_logisticStatusDesc2;
 @property(retain, nonatomic) NSString *logisticStatusDesc; // @synthesize logisticStatusDesc=_logisticStatusDesc;
 @property(retain, nonatomic) NSString *logisticStatus; // @synthesize logisticStatus=_logisticStatus;
+@property(retain, nonatomic) NSString *sellerWangWangId; // @synthesize sellerWangWangId=_sellerWangWangId;
+@property(nonatomic) long long statusCodeSeq; // @synthesize statusCodeSeq=_statusCodeSeq;
 @property(retain, nonatomic) NSString *statusCode; // @synthesize statusCode=_statusCode;
 @property(retain, nonatomic) NSString *subtitle1; // @synthesize subtitle1=_subtitle1;
 @property(retain, nonatomic) NSString *orderCode; // @synthesize orderCode=_orderCode;
 @property(retain, nonatomic) NSString *stationChannel; // @synthesize stationChannel=_stationChannel;
 @property(retain, nonatomic) NSString *stationFetchType; // @synthesize stationFetchType=_stationFetchType;
 @property(retain, nonatomic) NSString *mailNo; // @synthesize mailNo=_mailNo;
+@property(retain, nonatomic) NSString *partnerIconUrl; // @synthesize partnerIconUrl=_partnerIconUrl;
 @property(retain, nonatomic) NSString *partnerCode; // @synthesize partnerCode=_partnerCode;
 @property(retain, nonatomic) NSString *packageTitle; // @synthesize packageTitle=_packageTitle;
 @property(retain, nonatomic) NSString *partnerName; // @synthesize partnerName=_partnerName;

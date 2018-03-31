@@ -19,6 +19,7 @@
     long long _lastModify_ts;
     long long _diffForMoreTab;
     int _xo;
+    _Bool _isNearyVideoViewShow;
     unsigned long long _jumpTinyId;
     CEncounterInfo *_jumpPeopleInfo;
     NSArray *_nearByTabConfig;
@@ -27,7 +28,6 @@
     long long _currentInitType;
 }
 
-+ (void)sendRealTimeRedPointPushRequest;
 + (id)redPointPathForType:(long long)arg1;
 + (void)IPDirectAttach:(id)arg1 withSession:(id)arg2;
 + (void)toMeiliZhiWebIntroduce:(unsigned long long)arg1;
@@ -35,6 +35,7 @@
 @property(nonatomic) long long currentInitType; // @synthesize currentInitType=_currentInitType;
 @property(nonatomic) __weak NearbyTabBarController *tabBarController; // @synthesize tabBarController=_tabBarController;
 @property(nonatomic) long long currentEntryForReport; // @synthesize currentEntryForReport=_currentEntryForReport;
+@property(nonatomic) _Bool isNearyVideoViewShow; // @synthesize isNearyVideoViewShow=_isNearyVideoViewShow;
 @property(retain, nonatomic) NSArray *nearByTabConfig; // @synthesize nearByTabConfig=_nearByTabConfig;
 @property(retain, nonatomic) CEncounterInfo *jumpPeopleInfo; // @synthesize jumpPeopleInfo=_jumpPeopleInfo;
 @property(nonatomic) unsigned long long jumpTinyId; // @synthesize jumpTinyId=_jumpTinyId;

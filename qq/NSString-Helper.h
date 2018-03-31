@@ -10,6 +10,7 @@
 + (_Bool)checkMoneyFormat:(id)arg1 replacement:(id)arg2;
 + (id)getParamsFromUrl:(id)arg1;
 + (id)safeStr:(id)arg1;
+- (id)appendCustomContent:(id)arg1 font:(id)arg2 appContent:(id)arg3;
 - (id)stringByUnescapingFromURLQuery;
 - (id)stringByEscapingForURLQuery;
 - (struct CGSize)sizeWithFontTP:(id)arg1 constrainedToSize:(struct CGSize)arg2 lineBreakMode:(long long)arg3;

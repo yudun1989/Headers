@@ -14,7 +14,6 @@
 + (void)updateContextConfig:(id)arg1;
 + (int)getFluidControlScene:(int)arg1;
 + (int)getFluidControlConfigVer:(int)arg1;
-+ (int)getAudioCategoryConf:(int)arg1 withRole:(id)arg2;
 + (id)getFluidControlConfig:(int)arg1;
 + (void)saveFluidControlConfig:(id)arg1 appid:(int)arg2 version:(int)arg3 scene:(int)arg4;
 

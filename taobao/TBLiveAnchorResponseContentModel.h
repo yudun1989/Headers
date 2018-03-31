@@ -18,10 +18,12 @@
     NSString *_content;
     NSString *_headerline;
     NSString *_targetText;
+    NSString *_targetType;
     NSString *_targetUrl;
 }
 
 @property(copy, nonatomic) NSString *targetUrl; // @synthesize targetUrl=_targetUrl;
+@property(copy, nonatomic) NSString *targetType; // @synthesize targetType=_targetType;
 @property(copy, nonatomic) NSString *targetText; // @synthesize targetText=_targetText;
 @property(copy, nonatomic) NSString *headerline; // @synthesize headerline=_headerline;
 @property(copy, nonatomic) NSString *content; // @synthesize content=_content;

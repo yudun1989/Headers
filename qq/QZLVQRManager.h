@@ -29,6 +29,7 @@
     _Bool _isEnterLiveUnNormal;
     _Bool _shouldIgnoreSdkEnterRoomResult;
     NSString *_liveType;
+    int _videoPlaySource;
     NSObject<OS_dispatch_queue> *_reportQueue;
     NSObject<OS_dispatch_source> *_timer;
     NSMutableDictionary *_allEventRetCodes;

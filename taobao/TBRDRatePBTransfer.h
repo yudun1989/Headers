@@ -4,14 +4,15 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-#import <Foundation/NSObject.h>
-
-#import "TBRDPBDataTransferProtocol-Protocol.h"
+#import "TBRDCommonTransfer.h"
 
 @class NSDictionary, NSString;
 
-@interface TBRDRatePBTransfer : NSObject <TBRDPBDataTransferProtocol>
+@interface TBRDRatePBTransfer : TBRDCommonTransfer
 {
+    _Bool hasLoadMore;
+    _Bool hasLastPage;
+    _Bool hasMoreData;
     id localData;
     NSDictionary *requestParams;
     NSString *pageName;
@@ -19,21 +20,25 @@
     NSDictionary *commonTrackParams;
 }
 
-@property(retain, nonatomic) NSDictionary *commonTrackParams; // @synthesize commonTrackParams;
-@property(retain, nonatomic) NSDictionary *pageTrackParams; // @synthesize pageTrackParams;
-@property(copy, nonatomic) NSString *pageName; // @synthesize pageName;
-@property(retain, nonatomic) NSDictionary *requestParams; // @synthesize requestParams;
-@property(retain, nonatomic) id localData; // @synthesize localData;
+- (void)setHasMoreData:(_Bool)arg1;
+- (_Bool)hasMoreData;
+- (void)setHasLastPage:(_Bool)arg1;
+- (_Bool)hasLastPage;
+- (void)setHasLoadMore:(_Bool)arg1;
+- (_Bool)hasLoadMore;
+- (void)setCommonTrackParams:(id)arg1;
+- (id)commonTrackParams;
+- (void)setPageTrackParams:(id)arg1;
+- (id)pageTrackParams;
+- (void)setPageName:(id)arg1;
+- (id)pageName;
+- (void)setRequestParams:(id)arg1;
+- (id)requestParams;
+- (void)setLocalData:(id)arg1;
+- (id)localData;
 - (void).cxx_destruct;
 - (void)requestDataWithParams:(id)arg1 complete:(CDUnknownBlockType)arg2;
 - (void)transferLocalDataComplete:(CDUnknownBlockType)arg1;
-- (id)tbc_mFromModel:(id)arg1;
-
-// Remaining properties
-@property(readonly, copy) NSString *debugDescription;
-@property(readonly, copy) NSString *description;
-@property(readonly) unsigned long long hash;
-@property(readonly) Class superclass;
 
 @end
 

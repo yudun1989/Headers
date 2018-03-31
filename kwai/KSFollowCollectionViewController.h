@@ -6,12 +6,13 @@
 
 #import "KSHomeCollectionViewController.h"
 
+#import "KSHomeRecommendViewDelegate-Protocol.h"
 #import "UIImagePickerControllerDelegate-Protocol.h"
 #import "UINavigationControllerDelegate-Protocol.h"
 
-@class KSHomeRecommendView, KSNoMoreContentsView, KSUShowEvent, KSUUrlPackage, NSString;
+@class KSFollowModel, KSFollowRecommendUserService, KSHomeRecommendView, KSNoMoreContentsView, KSUShowEvent, KSUUrlPackage, NSString;
 
-@interface KSFollowCollectionViewController : KSHomeCollectionViewController <UIImagePickerControllerDelegate, UINavigationControllerDelegate>
+@interface KSFollowCollectionViewController : KSHomeCollectionViewController <UIImagePickerControllerDelegate, UINavigationControllerDelegate, KSHomeRecommendViewDelegate>
 {
     _Bool _shouldShowRecommendAfterLoadFeed;
     _Bool _finishLoadWithError;
@@ -21,8 +22,12 @@
     NSString *_followRefer;
     KSUShowEvent *_emptyMessageViewShowEvent;
     KSUUrlPackage *_emptyMessageViewUrlPackage;
+    KSFollowModel *_followModel;
+    KSFollowRecommendUserService *_recommendUserService;
 }
 
+@property(retain, nonatomic) KSFollowRecommendUserService *recommendUserService; // @synthesize recommendUserService=_recommendUserService;
+@property(retain, nonatomic) KSFollowModel *followModel; // @synthesize followModel=_followModel;
 @property(retain, nonatomic) KSUUrlPackage *emptyMessageViewUrlPackage; // @synthesize emptyMessageViewUrlPackage=_emptyMessageViewUrlPackage;
 @property(retain, nonatomic) KSUShowEvent *emptyMessageViewShowEvent; // @synthesize emptyMessageViewShowEvent=_emptyMessageViewShowEvent;
 @property(nonatomic) _Bool showFollowEmptyMessageView; // @synthesize showFollowEmptyMessageView=_showFollowEmptyMessageView;
@@ -41,6 +46,13 @@
 - (void)didTapContactsButtonInFollowEmptyMessageView;
 - (void)didTapQQButtonInFollowEmptyMessageView;
 - (void)didTapRecommendButtonInFollowEmptyMessageView;
+- (void)recommendViewDidCloseAll:(id)arg1;
+- (void)recommendView:(id)arg1 didSelectItem:(id)arg2;
+- (void)recommendView:(id)arg1 didFollowItem:(id)arg2;
+- (void)recommendView:(id)arg1 didCloseItem:(id)arg2;
+- (void)recommendView:(id)arg1 didDisplayedItems:(id)arg2 completion:(CDUnknownBlockType)arg3;
+- (void)loadRecommendUsers:(id)arg1;
+- (void)didReceiveFollowNotification:(id)arg1;
 - (void)setRecommendViewHidden:(_Bool)arg1;
 - (void)showRecommendView;
 - (void)showRecommendViewIfNeeded;
@@ -59,6 +71,7 @@
 - (void)viewDidDisappear:(_Bool)arg1;
 - (void)viewDidAppear:(_Bool)arg1;
 - (void)viewDidLoad;
+- (void)dealloc;
 - (id)init;
 
 // Remaining properties

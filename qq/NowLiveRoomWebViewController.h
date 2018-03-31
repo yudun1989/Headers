@@ -35,7 +35,7 @@
     double startTime4;
     _Bool _isDeatived;
     int sdkType;
-    NoRetainTimer *_liuchangTimer;
+    _Bool _isNowLiveLoading;
     int _hdindex;
     _Bool _handelGestureRecognizer;
     _Bool _isInPageVC;
@@ -82,8 +82,12 @@
     NSString *_fromid;
     NowLiveRoomBackGroundView *_backView;
     NSString *_nearbyVideoTimeStampCallback;
+    NSString *_errWording;
+    NSString *_loadingWord;
 }
 
+@property(copy, nonatomic) NSString *loadingWord; // @synthesize loadingWord=_loadingWord;
+@property(copy, nonatomic) NSString *errWording; // @synthesize errWording=_errWording;
 @property(retain, nonatomic) NSString *nearbyVideoTimeStampCallback; // @synthesize nearbyVideoTimeStampCallback=_nearbyVideoTimeStampCallback;
 @property(retain, nonatomic) NowLiveRoomBackGroundView *backView; // @synthesize backView=_backView;
 @property(nonatomic) _Bool isPanoramic; // @synthesize isPanoramic=_isPanoramic;
@@ -153,6 +157,7 @@
 - (void)resetlayout;
 - (void)reStartPlay;
 - (id)navigationController;
+- (id)mqq_app_setClientConfig:(id)arg1;
 - (id)mqq_app_setVideoTimeStampCallback:(id)arg1;
 - (id)mqq_app_changeVideoRate:(id)arg1;
 - (id)mqq_app_contentLoaded:(id)arg1;
@@ -236,9 +241,7 @@
 - (void)webViewDidFinishLoad:(id)arg1;
 - (void)webView:(id)arg1 didFailLoadWithError:(id)arg2;
 - (void)startEnterRoom:(id)arg1;
-- (void)qiehuanliuchang;
 - (void)getRoomInfo;
-- (void)reGetPlayUrl;
 - (void)leftButtonClick:(id)arg1;
 - (void)reportModuleTime;
 - (void)dealloc;

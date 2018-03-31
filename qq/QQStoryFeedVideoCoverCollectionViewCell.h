@@ -6,14 +6,22 @@
 
 #import <UIKit/UICollectionViewCell.h>
 
-@class QQStoryVideoCoverView;
+@class QQStoryVideoCoverView, TBFeedVideoInfoModel, TBStoryVideoVoteView;
 
 @interface QQStoryFeedVideoCoverCollectionViewCell : UICollectionViewCell
 {
     QQStoryVideoCoverView *_videoCoverView;
+    TBFeedVideoInfoModel *_videoInfoModel;
+    TBStoryVideoVoteView *_videoVoteView;
+    struct CGSize _coverSize;
 }
 
+@property(retain, nonatomic) TBStoryVideoVoteView *videoVoteView; // @synthesize videoVoteView=_videoVoteView;
+@property(nonatomic) struct CGSize coverSize; // @synthesize coverSize=_coverSize;
+@property(retain, nonatomic) TBFeedVideoInfoModel *videoInfoModel; // @synthesize videoInfoModel=_videoInfoModel;
 @property(retain, nonatomic) QQStoryVideoCoverView *videoCoverView; // @synthesize videoCoverView=_videoCoverView;
+- (void)showVideoVoteInfo:(id)arg1 coverSize:(struct CGSize)arg2;
+- (void)configureCellWithModel:(id)arg1 coverSize:(struct CGSize)arg2;
 - (void)setup;
 - (void)dealloc;
 - (id)initWithFrame:(struct CGRect)arg1;

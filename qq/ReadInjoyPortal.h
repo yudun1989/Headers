@@ -17,17 +17,12 @@
     TabDataItem *_tabDataSelect;
     long long _source;
     _Bool _isFirstEnter;
-    NSArray *_subVCdataSource;
     RDVTabBarController *_tab;
 }
 
 + (id)shareInstance;
 @property(nonatomic) __weak RDVTabBarController *tab; // @synthesize tab=_tab;
-@property(copy, nonatomic) NSArray *subVCdataSource; // @synthesize subVCdataSource=_subVCdataSource;
 - (void).cxx_destruct;
-- (void)releaseDatasource;
-- (void)cancelReleaseDataSource;
-- (void)delayReleaseDataSource;
 - (id)generateReadInJoyVC:(unsigned long long)arg1;
 - (void)setReadinJoyTop:(_Bool)arg1;
 - (_Bool)isTopedReadinJoy;

@@ -6,14 +6,37 @@
 
 #import "TBLiveTableViewCell.h"
 
-@interface TBLiveHPWYSIWYGHomeCell : TBLiveTableViewCell
+#import "TBLiveHPPlayerDelegate-Protocol.h"
+
+@class NSString;
+
+@interface TBLiveHPWYSIWYGHomeCell : TBLiveTableViewCell <TBLiveHPPlayerDelegate>
 {
+    _Bool _enabledPlaying;
+    NSString *_targetURL;
+    NSString *_livingURL;
 }
 
 + (struct CGSize)viewSizeWithModel:(id)arg1;
-- (void)setSelected:(_Bool)arg1 animated:(_Bool)arg2;
+@property(nonatomic) _Bool enabledPlaying; // @synthesize enabledPlaying=_enabledPlaying;
+@property(copy, nonatomic) NSString *livingURL; // @synthesize livingURL=_livingURL;
+@property(copy, nonatomic) NSString *targetURL; // @synthesize targetURL=_targetURL;
+- (void).cxx_destruct;
+- (void)liveHPPlayer:(id)arg1 changeEvent:(int)arg2;
+- (void)stopShortVideo;
+- (void)playShortVideo;
+- (void)updatePlayShortVideo;
+- (void)stopScrollView;
+- (void)buttonClickEvent:(id)arg1;
+- (void)refreshWithModel:(id)arg1;
 - (void)setupSubview;
 - (id)initWithStyle:(long long)arg1 reuseIdentifier:(id)arg2;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly, copy) NSString *description;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
 
 @end
 

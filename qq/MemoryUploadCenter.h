@@ -30,8 +30,6 @@
 - (double)freeMemory;
 - (void)appReceiveMemoryWarning;
 - (id)singleLoginMaxMemoryDir;
-- (id)readLastMaxHeapMemory;
-- (void)saveLastMaxHeapMemory;
 - (void)saveLastSingleLoginMaxMemory;
 - (double)getThreshold;
 - (void)uploadLastSingleLoginMaxMemory;

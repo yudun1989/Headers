@@ -8,7 +8,7 @@
 
 #import <QQMainProject/NIAttributedLabelDelegate-Protocol.h>
 
-@class NIAttributedLabel, NSString;
+@class NIAttributedLabel, NSMutableArray, NSString;
 
 @interface QQAIOTipFriendOriginCellView : QQAIOCellView <NIAttributedLabelDelegate>
 {
@@ -16,9 +16,14 @@
     _Bool _touchBegan;
     NIAttributedLabel *_tipsLabel;
     struct CGRect _bgRect;
+    NSMutableArray *_accessibleElements;
 }
 
+@property(retain, nonatomic) NSMutableArray *accessibleElements; // @synthesize accessibleElements=_accessibleElements;
 - (void).cxx_destruct;
+- (long long)indexOfAccessibilityElement:(id)arg1;
+- (id)accessibilityElementAtIndex:(long long)arg1;
+- (long long)accessibilityElementCount;
 - (void)attributedLabel:(id)arg1 didSelectTextCheckingResult:(id)arg2 atPoint:(struct CGPoint)arg3;
 - (void)touchesEnded:(id)arg1 withEvent:(id)arg2;
 - (void)touchesBegan:(id)arg1 withEvent:(id)arg2;

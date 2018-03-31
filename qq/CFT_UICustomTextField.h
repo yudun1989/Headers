@@ -4,18 +4,15 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-#import <UIKit/UITextField.h>
+#import <QQMainProject/CFT_UIFormatField.h>
 
-@interface CFT_UICustomTextField : UITextField
+@interface CFT_UICustomTextField : CFT_UIFormatField
 {
-    struct CGPoint rectInset;
 }
 
-- (struct CGRect)editingRectForBounds:(struct CGRect)arg1;
-- (struct CGRect)textRectForBounds:(struct CGRect)arg1;
-- (void)drawPlaceholderInRect:(struct CGRect)arg1;
+- (void)setPlaceholder:(id)arg1;
+- (id)initWithFrame:(struct CGRect)arg1 style:(unsigned long long)arg2;
 - (id)initWithFrame:(struct CGRect)arg1 andEditPlaceInset:(struct CGPoint)arg2;
-- (id)init;
 
 @end
 

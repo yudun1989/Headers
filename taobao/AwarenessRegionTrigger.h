@@ -14,7 +14,6 @@
 @interface AwarenessRegionTrigger : AwarenessTrigger <AMapGeoFenceManagerDelegate>
 {
     NSObject<OS_dispatch_semaphore> *_lock;
-    NSObject<OS_dispatch_semaphore> *_pushlock;
     _Bool _isListening;
     AMapGeoFenceManager *_geoFenceManager;
     NSMutableArray *_enterArray;
@@ -30,12 +29,10 @@
 - (void)loadAMapBundle;
 - (void)amapGeoFenceManager:(id)arg1 didGeoFencesStatusChangedForRegion:(id)arg2 customID:(id)arg3 error:(id)arg4;
 - (void)amapGeoFenceManager:(id)arg1 didAddRegionForMonitoringFinished:(id)arg2 customID:(id)arg3 error:(id)arg4;
-- (void)clearAllAwarenessLBSPush;
 - (void)stopMonitors;
 - (_Bool)startMonitors;
 - (void)addRegionWithLatitude:(double)arg1 longitude:(double)arg2 radius:(double)arg3 uuid:(id)arg4;
 - (void)setTriggerParam:(id)arg1;
-- (id)init;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

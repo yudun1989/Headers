@@ -6,37 +6,11 @@
 
 #import "TBDViewPropertySetter.h"
 
-@class NSString, UIColor;
-
 @interface TBDTextViewPropertySetter : TBDViewPropertySetter
 {
-    NSString *_tbdText;
-    NSString *_tbdTextSize;
-    NSString *_tbdTextStyle;
-    NSString *_tbdTextColor;
-    NSString *_tbdTextAlignment;
-    NSString *_tbdMaxLines;
-    NSString *_tbdLineBreakMode;
-    NSString *_tbdMaxWidth;
-    NSString *_tbdWidth;
-    NSString *_tbdHeight;
-    NSString *_dTextStyle;
 }
 
-@property(readonly, copy, nonatomic) NSString *dTextStyle; // @synthesize dTextStyle=_dTextStyle;
-- (void).cxx_destruct;
-@property(readonly, nonatomic) long long dMaxLines;
-@property(readonly, nonatomic) double dMaxWidth;
-@property(readonly, nonatomic) UIColor *dTextColor;
-- (id)fontWithStyle:(id)arg1 textSize:(double)arg2;
-- (id)font;
-@property(readonly, nonatomic) long long dTextAlignment;
-@property(readonly, nonatomic) long long dLineBreakMode;
-@property(readonly, nonatomic) double dTextSize;
-@property(readonly, copy, nonatomic) NSString *dText;
-- (void)setDViewPropertyWithAttributes:(id)arg1 inView:(id)arg2;
 - (void)setDViewDefaultPropertyWithView:(id)arg1;
-- (void)setPrivateVariablesWithAttributes:(id)arg1;
 
 @end
 

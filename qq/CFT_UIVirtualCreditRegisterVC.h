@@ -6,7 +6,7 @@
 
 #import <QQMainProject/CFT_UIBaseDialogViewControllerN.h>
 
-@class NSMutableDictionary, UIButton, UIImageView, UILabel;
+@class NSMutableDictionary, NSString, UIButton, UIImageView, UILabel;
 @protocol VirtualCreditRegisterResultDelegate;
 
 @interface CFT_UIVirtualCreditRegisterVC : CFT_UIBaseDialogViewControllerN
@@ -14,6 +14,10 @@
     UILabel *title;
     UIImageView *img1;
     _Bool isHiddenTips;
+    NSString *url1;
+    NSString *url2;
+    NSString *lb1Title;
+    NSString *agreeTitle;
     id <VirtualCreditRegisterResultDelegate> _delegate;
     UIButton *_helpButton;
     NSMutableDictionary *_payOrderInfo;
@@ -24,16 +28,8 @@
 @property(retain, nonatomic) NSMutableDictionary *payOrderInfo; // @synthesize payOrderInfo=_payOrderInfo;
 @property(retain, nonatomic) UIButton *helpButton; // @synthesize helpButton=_helpButton;
 @property(nonatomic) id <VirtualCreditRegisterResultDelegate> delegate; // @synthesize delegate=_delegate;
-- (void)clickRegisterVirCard;
-- (void)qpay_ctpay_guide;
-- (void)requestViewContent;
-- (void)clickBtn:(id)arg1;
-- (void)layoutSubviewsOnView;
-- (void)initSubView;
 - (void)dealloc;
-- (void)viewWillDisappear:(_Bool)arg1;
-- (void)viewWillAppear:(_Bool)arg1;
-- (void)viewDidLoad;
+- (id)getVirCreditBankTypeStr;
 
 @end
 

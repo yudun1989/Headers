@@ -6,12 +6,46 @@
 
 #import <QQMainProject/QQWebViewPluginQQBizBase.h>
 
-@interface QQJSBridgeBabyQPlugin : QQWebViewPluginQQBizBase
+#import <QQMainProject/IGroupSelectDelegate-Protocol.h>
+
+@class AddFriendSendMessageViewController, NSString, UserSummaryModel, ZanRequestManager;
+
+@interface QQJSBridgeBabyQPlugin : QQWebViewPluginQQBizBase <IGroupSelectDelegate>
 {
+    ZanRequestManager *_zanRequest;
+    NSString *_setGroupCallback;
+    NSString *_getZanVoteCallback;
+    AddFriendSendMessageViewController *_addFriend;
+    UserSummaryModel *_model;
 }
 
+- (void).cxx_destruct;
+- (void)notifySelectedGroupID:(int)arg1;
+- (void)handleJsBridgeRequest_babyQ_setPushStatus:(id)arg1;
+- (void)handleJsBridgeRequest_babyQ_getPushStatus:(id)arg1;
+- (void)handleJsBridgeRequest_babyQ_reportFriend:(id)arg1;
+- (void)handleJsBridgeRequest_babyQ_setFriendGrouping:(id)arg1;
+- (void)handleJsBridgeRequest_babyQ_getFriendGrouping:(id)arg1;
+- (void)onDeleteFriend:(id)arg1;
+- (void)handleJsBridgeRequest_babyQ_deleteFriend:(id)arg1;
+- (void)popToBabyQAio;
+- (void)handleJsBridgeRequest_babyQ_sendmsg:(id)arg1;
+- (void)handleJsBridgeRequest_babyQ_addFriend:(id)arg1;
+- (void)updateStrangerModelInfo;
+- (int)requestUserSummaryInfo;
+- (void)createSummaryModel;
+- (void)onResponseSummaryNotification:(id)arg1;
+- (void)handleJsBridgeRequest_babyQ_requestZan:(id)arg1;
+- (void)handleJsBridgeRequest_babyQ_getZanVoteCount:(id)arg1;
 - (void)handleJsBridgeRequest_babyQ_setFriendStatus:(id)arg1;
 - (void)handleJsBridgeRequest_babyQ_getFriendStatus:(id)arg1;
+- (id)init;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly, copy) NSString *description;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
 
 @end
 

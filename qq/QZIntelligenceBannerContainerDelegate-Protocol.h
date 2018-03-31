@@ -6,7 +6,7 @@
 
 #import <QQMainProject/NSObject-Protocol.h>
 
-@class NSArray, NSNumber, QZIntelligenceBannerBaseView, QzoneBannerUnreadBannerView;
+@class NSArray, NSNumber, NSString, QZIntelligenceBannerBaseView, QzoneBannerUnreadBannerView;
 
 @protocol QZIntelligenceBannerContainerDelegate <NSObject>
 
@@ -18,6 +18,8 @@
 - (void)startShortVideo;
 - (void)didBannerClosed;
 - (void)clickIntelligenceBannerView:(QZIntelligenceBannerBaseView *)arg1 index:(long long)arg2;
+- (void)willSwipeIntelligenceBannerView;
+- (void)clickIntelligenceBannerView:(NSString *)arg1 scheme:(NSString *)arg2;
 - (void)clickIntelligenceBannerView:(QZIntelligenceBannerBaseView *)arg1;
 @end
 

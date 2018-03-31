@@ -19,6 +19,7 @@
 
 @property(nonatomic) _Bool blCustom; // @synthesize blCustom=_blCustom;
 - (void).cxx_destruct;
+- (void)tintColorDidChange;
 - (void)updateThemeCustom:(_Bool)arg1;
 - (_Bool)updateSendbox:(unsigned long long)arg1 showTips:(_Bool)arg2;
 - (void)packetAnimation;

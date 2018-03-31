@@ -4,15 +4,14 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-#import "WXHCEmbed.h"
+#import "WXEmbed.h"
 
 #import "UIScrollViewDelegate-Protocol.h"
-#import "WXNestedScrollProtocol-Protocol.h"
 
 @class HUDActivityView, NSString, UIWebView;
 @protocol WXNestedScrollHandlerProtocol;
 
-@interface TBWVEmbed : WXHCEmbed <UIScrollViewDelegate, WXNestedScrollProtocol>
+@interface TBWVEmbed : WXEmbed <UIScrollViewDelegate>
 {
     _Bool _nestedScrollEnabled;
     _Bool _naviBarControl;
@@ -35,7 +34,10 @@
 - (void)setNestedHandler:(id)arg1;
 - (void)bindParent;
 - (void)updateNestedScrollEnable:(id)arg1;
+- (_Bool)isWXHCViewContrller;
 - (_Bool)prefetchMtop;
+- (_Bool)wxJSBundleProcessWhenDownloadFinish:(id)arg1 request:(id)arg2 data:(id)arg3 error:(id)arg4 callback:(CDUnknownBlockType)arg5;
+- (_Bool)wxJSBundleCanUseCache:(id)arg1 callback:(CDUnknownBlockType)arg2;
 - (void)wxHidePageLoadingIndicator;
 - (void)wxShowPageLoadingIndicator:(id)arg1;
 - (void)wxShowWarningBar:(id)arg1;

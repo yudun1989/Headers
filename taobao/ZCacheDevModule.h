@@ -15,6 +15,7 @@
 }
 
 + (void)registerModule;
++ (id)wx_export_method_29;
 + (id)wx_export_method_28;
 + (id)wx_export_method_27;
 + (id)wx_export_method_26;
@@ -25,7 +26,6 @@
 + (id)wx_export_method_21;
 + (id)wx_export_method_20;
 + (id)wx_export_method_19;
-+ (id)wx_export_method_18;
 - (void)previewApp:(id)arg1 withSuccess:(CDUnknownBlockType)arg2 withFailure:(CDUnknownBlockType)arg3;
 - (void)cleanUp:(id)arg1 withSuccess:(CDUnknownBlockType)arg2 withFailure:(CDUnknownBlockType)arg3;
 - (void)update:(id)arg1 withSuccess:(CDUnknownBlockType)arg2 withFailure:(CDUnknownBlockType)arg3;

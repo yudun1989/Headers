@@ -11,16 +11,23 @@
 @interface QQJSBridgeNearbyPlugin : QQWebViewPluginQQBizBase
 {
     NSString *_uploadVideoFinishedCallback;
+    NSString *_uploadVideoFailedCallback;
     NSString *_nearbyFeedDeleteCallback;
 }
 
 @property(retain, nonatomic) NSString *nearbyFeedDeleteCallback; // @synthesize nearbyFeedDeleteCallback=_nearbyFeedDeleteCallback;
+@property(retain, nonatomic) NSString *uploadVideoFailedCallback; // @synthesize uploadVideoFailedCallback=_uploadVideoFailedCallback;
 @property(retain, nonatomic) NSString *uploadVideoFinishedCallback; // @synthesize uploadVideoFinishedCallback=_uploadVideoFinishedCallback;
-- (void)handleJsBridgeRequest_nearby_preloadVideos:(id)arg1;
+- (void)handleJsBridgeRequest_nearby_preloadVideosNew:(id)arg1;
 - (void)handleJsBridgeRequest_nearby_preloadImage:(id)arg1;
 - (void)deleteFeed:(id)arg1;
+- (void)uploadVideoPhotoFailed:(id)arg1;
 - (void)uploadVideoPhotoSuccess:(id)arg1;
+- (id)PLUploadShortVideoModelToDic:(id)arg1;
 - (void)handleJsBridgeRequest_nearby_setDeleteShortVideoCallback:(id)arg1;
+- (void)handleJsBridgeRequest_nearby_setUpLoadVideoFailedCallback:(id)arg1;
+- (void)handleJsBridgeRequest_nearby_getVideoPublishFailedNum:(id)arg1;
+- (void)handleJsBridgeRequest_nearby_openVideoPublishFailedPage:(id)arg1;
 - (void)handleJsBridgeRequest_nearby_setUpLoadVideoFinishedCallback:(id)arg1;
 - (void)handleJsBridgeRequest_nearby_wolfWebViewLoaded:(id)arg1;
 - (void)handleJsBridgeRequest_nearby_enterRoomWithPOIInfo:(id)arg1;

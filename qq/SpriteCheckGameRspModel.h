@@ -32,10 +32,12 @@
     unsigned long long _packageSize;
     unsigned long long _tipsSize;
     NSString *_ssoCmdRule;
+    NSData *_extInfo;
 }
 
 @property(nonatomic) unsigned int isPreload; // @synthesize isPreload=_isPreload;
 @property(nonatomic) unsigned int gameId; // @synthesize gameId=_gameId;
+@property(retain, nonatomic) NSData *extInfo; // @synthesize extInfo=_extInfo;
 @property(retain, nonatomic) NSString *ssoCmdRule; // @synthesize ssoCmdRule=_ssoCmdRule;
 @property(nonatomic) unsigned long long tipsSize; // @synthesize tipsSize=_tipsSize;
 @property(nonatomic) unsigned long long packageSize; // @synthesize packageSize=_packageSize;

@@ -6,7 +6,7 @@
 
 #import <QQMainProject/NSObject-Protocol.h>
 
-@class GAInputBar, NSString;
+@class GAInputBar, NSDictionary, NSString;
 
 @protocol GAInputBarDelegate <NSObject>
 - (_Bool)inputBar:(GAInputBar *)arg1 sendAction:(NSString *)arg2;
@@ -21,5 +21,6 @@
 - (void)inputBarBeingDeactive:(GAInputBar *)arg1 willChangeOffset:(double)arg2 changeHeight:(double)arg3;
 - (void)inputBarDidActive:(GAInputBar *)arg1;
 - (void)inputBarBeingActive:(GAInputBar *)arg1 willChangeOffset:(double)arg2 changeHeight:(double)arg3;
+- (void)sendGifViewWithinputBar:(GAInputBar *)arg1 param:(NSDictionary *)arg2;
 @end
 

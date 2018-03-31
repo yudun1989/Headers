@@ -77,7 +77,6 @@
 - (void)createFilterPanel;
 - (void)createUI;
 - (void)getPublishInfo:(id)arg1;
-- (void)loadPreEditInfo:(id)arg1 deviceOrientation:(long long)arg2;
 - (void)getPreEditInfo:(id)arg1;
 - (void)onSendFinishComponentHandle;
 - (void)firstOpenCamera;

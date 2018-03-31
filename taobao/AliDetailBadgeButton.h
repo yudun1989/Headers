@@ -8,10 +8,10 @@
 
 @interface AliDetailBadgeButton : UIButton
 {
-    int _style;
+    unsigned long long _style;
 }
 
-@property(nonatomic) int style; // @synthesize style=_style;
+@property(nonatomic) unsigned long long style; // @synthesize style=_style;
 - (void)hideBadge;
 - (void)setSize:(struct CGSize)arg1;
 - (void)badageStyleWhite;
@@ -20,7 +20,7 @@
 - (void)animation;
 - (void)setNumberStyle:(long long)arg1;
 - (void)setPointStyle;
-- (void)changeColor:(int)arg1;
+- (void)changeColor:(unsigned long long)arg1;
 - (void)updateBadgeCount:(long long)arg1 messagetype:(long long)arg2 animation:(_Bool)arg3;
 - (id)initWithFrame:(struct CGRect)arg1;
 

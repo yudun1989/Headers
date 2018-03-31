@@ -17,8 +17,10 @@
     NSString *_storyId;
     NSArray *_shareGroupVideoList;
     unsigned long long _videoIndex;
+    NSString *_vid;
 }
 
+@property(retain, nonatomic) NSString *vid; // @synthesize vid=_vid;
 @property(nonatomic) unsigned long long videoIndex; // @synthesize videoIndex=_videoIndex;
 @property(retain, nonatomic) NSArray *shareGroupVideoList; // @synthesize shareGroupVideoList=_shareGroupVideoList;
 @property(copy, nonatomic) NSString *storyId; // @synthesize storyId=_storyId;

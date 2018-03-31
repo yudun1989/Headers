@@ -10,12 +10,12 @@
 
 @interface Error : NSObject
 {
-    int httpResponseCode;
-    NSString *code;
-    NSString *msg;
-    NSString *subCode;
-    NSString *subMsg;
+    int _httpResponseCode;
+    NSString *_code;
+    NSString *_msg;
     NSString *_originalMsg;
+    NSString *_subCode;
+    NSString *_subMsg;
     NSError *_rawError;
     NSString *_mappingCode;
     NSError *_uikitError;
@@ -24,16 +24,16 @@
 
 + (id)createRawError:(id)arg1 msg:(id)arg2 responseCode:(id)arg3 mappingCode:(id)arg4;
 + (id)succeed;
-@property(retain, nonatomic) NSString *limitFlowRawCode; // @synthesize limitFlowRawCode=_limitFlowRawCode;
+@property(copy, nonatomic) NSString *limitFlowRawCode; // @synthesize limitFlowRawCode=_limitFlowRawCode;
 @property(retain, nonatomic) NSError *uikitError; // @synthesize uikitError=_uikitError;
-@property(retain, nonatomic) NSString *mappingCode; // @synthesize mappingCode=_mappingCode;
-@property(retain, nonatomic) NSError *rawError; // @synthesize rawError=_rawError;
-@property(retain, nonatomic) NSString *originalMsg; // @synthesize originalMsg=_originalMsg;
-@property(retain, nonatomic) NSString *subMsg; // @synthesize subMsg;
-@property(retain, nonatomic) NSString *subCode; // @synthesize subCode;
-@property(retain, nonatomic) NSString *msg; // @synthesize msg;
-@property(retain, nonatomic) NSString *code; // @synthesize code;
-@property(nonatomic) int httpResponseCode; // @synthesize httpResponseCode;
+@property(copy, nonatomic) NSString *mappingCode; // @synthesize mappingCode=_mappingCode;
+@property(copy, nonatomic) NSError *rawError; // @synthesize rawError=_rawError;
+@property(copy, nonatomic) NSString *subMsg; // @synthesize subMsg=_subMsg;
+@property(copy, nonatomic) NSString *subCode; // @synthesize subCode=_subCode;
+@property(copy, nonatomic) NSString *originalMsg; // @synthesize originalMsg=_originalMsg;
+@property(copy, nonatomic) NSString *msg; // @synthesize msg=_msg;
+@property(copy, nonatomic) NSString *code; // @synthesize code=_code;
+@property(nonatomic) int httpResponseCode; // @synthesize httpResponseCode=_httpResponseCode;
 - (void).cxx_destruct;
 - (id)description;
 - (_Bool)isResponseDataParseError;

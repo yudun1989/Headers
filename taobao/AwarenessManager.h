@@ -21,24 +21,22 @@
     CBCentralManager *_centralManager;
 }
 
++ (void)locationAuthority;
 + (id)shareInstance;
-+ (_Bool)locationAuthority;
-+ (_Bool)isWiFiEnabled;
 @property(retain, nonatomic) CBCentralManager *centralManager; // @synthesize centralManager=_centralManager;
 @property(retain, nonatomic) NSMutableDictionary *awarenessListeningTask; // @synthesize awarenessListeningTask=_awarenessListeningTask;
 @property(retain, nonatomic) NSMutableDictionary *hybridTriggers; // @synthesize hybridTriggers=_hybridTriggers;
 - (void).cxx_destruct;
 - (void)triggerChange:(long long)arg1 withObject:(id)arg2;
-- (void)unregisterTriggerWithId:(id)arg1;
+- (void)unregisterWithUuid:(id)arg1;
 - (void)registerTriggerWithType:(long long)arg1 Params:(id)arg2 andTriggerBack:(CDUnknownBlockType)arg3;
-- (void)registerTriggerWithTypeName:(id)arg1 executorType:(id)arg2 triggerId:(id)arg3 params:(id)arg4 andTriggerBack:(CDUnknownBlockType)arg5;
+- (void)registerTriggerWithTypeName:(id)arg1 uuid:(id)arg2 params:(id)arg3 andTriggerBack:(CDUnknownBlockType)arg4;
 - (id)triggerName:(long long)arg1;
 - (_Bool)registerTriggerWithModel:(id)arg1 byPageName:(id)arg2;
 - (void)checkTimes4Model:(id)arg1;
-- (void)pageChanged:(id)arg1;
-- (id)init;
 - (void)centralManagerDidUpdateState:(id)arg1;
 - (void)accessToReport;
+- (id)init;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

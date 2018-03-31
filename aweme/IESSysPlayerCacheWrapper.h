@@ -6,31 +6,12 @@
 
 #import <Foundation/NSObject.h>
 
-#import "AWEVideoCDNRequestDelegate-Protocol.h"
-#import "AWEVideoDownloadDelegate-Protocol.h"
-#import "IESVideoCacheProtocol-Protocol.h"
-
-@class NSString;
-@protocol IESVideoDownloadSpeedDelegate;
-
-@interface IESSysPlayerCacheWrapper : NSObject <AWEVideoCDNRequestDelegate, AWEVideoDownloadDelegate, IESVideoCacheProtocol>
+@interface IESSysPlayerCacheWrapper : NSObject
 {
-    id <IESVideoDownloadSpeedDelegate> _speedDelegate;
-    CDUnknownBlockType _requestBlock;
-    CDUnknownBlockType _responseBlock;
 }
 
 + (id)sharedCache;
-@property(copy, nonatomic) CDUnknownBlockType responseBlock; // @synthesize responseBlock=_responseBlock;
-@property(copy, nonatomic) CDUnknownBlockType requestBlock; // @synthesize requestBlock=_requestBlock;
-@property(nonatomic) __weak id <IESVideoDownloadSpeedDelegate> speedDelegate; // @synthesize speedDelegate=_speedDelegate;
-- (void).cxx_destruct;
-- (void)videoDidDownloadDataLength:(unsigned long long)arg1 interval:(double)arg2;
-- (void)videoDidReceiveResponse:(id)arg1 forRequest:(id)arg2;
-- (void)videoWillRequest:(id)arg1 isRedirectRequest:(_Bool)arg2;
 - (_Bool)hasEnoughCacheForURLString:(id)arg1 videoDuration:(double)arg2 networkSpeed:(double)arg3;
-- (void)setPlayerDidFinishRequestURLBlock:(CDUnknownBlockType)arg1;
-- (void)setPlayerDidStartRequestURLBlock:(CDUnknownBlockType)arg1;
 - (void)setCacheReportBlock:(CDUnknownBlockType)arg1;
 - (void)setCacheKeyParserBlock:(CDUnknownBlockType)arg1;
 - (void)getCacheSizeWithCompletion:(CDUnknownBlockType)arg1;
@@ -38,12 +19,6 @@
 - (void)hasCacheForVideoID:(id)arg1 URLString:(id)arg2 completion:(CDUnknownBlockType)arg3;
 - (void)setCacheSizeLimit:(unsigned long long)arg1;
 - (id)init;
-
-// Remaining properties
-@property(readonly, copy) NSString *debugDescription;
-@property(readonly, copy) NSString *description;
-@property(readonly) unsigned long long hash;
-@property(readonly) Class superclass;
 
 @end
 

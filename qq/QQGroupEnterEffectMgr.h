@@ -11,18 +11,18 @@
 @interface QQGroupEnterEffectMgr : NSObject
 {
     _Bool _isPlaying;
+    QQGroupChatViewController *_currentViewController;
     QQLockDictionary *_playListDict;
     QQLockDictionary *_downloadList;
     unsigned long long _currentGroupCode;
-    QQGroupChatViewController *_currentViewController;
 }
 
 + (id)sharedInstance;
-@property(retain, nonatomic) QQGroupChatViewController *currentViewController; // @synthesize currentViewController=_currentViewController;
 @property(nonatomic) unsigned long long currentGroupCode; // @synthesize currentGroupCode=_currentGroupCode;
 @property(nonatomic) _Bool isPlaying; // @synthesize isPlaying=_isPlaying;
 @property(retain, nonatomic) QQLockDictionary *downloadList; // @synthesize downloadList=_downloadList;
 @property(retain, nonatomic) QQLockDictionary *playListDict; // @synthesize playListDict=_playListDict;
+@property(retain, nonatomic) QQGroupChatViewController *currentViewController; // @synthesize currentViewController=_currentViewController;
 - (void).cxx_destruct;
 - (void)handleScreenShot;
 - (void)handleAccountLogout;

@@ -21,6 +21,7 @@
 @property(retain, nonatomic) UIImageView *linkIcon; // @synthesize linkIcon=_linkIcon;
 @property(nonatomic) __weak TBTradeSelectModel *model; // @synthesize model=_model;
 - (void).cxx_destruct;
+- (void)dealloc;
 - (void)setAccessibilityLabelAndTraits:(id)arg1;
 - (void)showDetail:(id)arg1;
 - (void)cellDidSelected;

@@ -9,6 +9,7 @@
 @class NSString;
 
 @protocol DWShareProtocol <NSObject>
+- (void)shareWithurl:(NSString *)arg1 imgUrl:(NSString *)arg2 title:(NSString *)arg3 businessId:(NSString *)arg4 description:(NSString *)arg5 delegate:(id)arg6;
 - (void)shareWithurl:(NSString *)arg1 imgUrl:(NSString *)arg2 title:(NSString *)arg3 businessId:(NSString *)arg4 description:(NSString *)arg5;
 - (void)shareWithurl:(NSString *)arg1 imgUrl:(NSString *)arg2 title:(NSString *)arg3;
 @end

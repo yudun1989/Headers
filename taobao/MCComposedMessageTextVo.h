@@ -11,8 +11,10 @@
 @interface MCComposedMessageTextVo : MCComposedMessageVo
 {
     NSString *_text;
+    NSString *_textColor;
 }
 
+@property(retain, nonatomic) NSString *textColor; // @synthesize textColor=_textColor;
 @property(retain, nonatomic) NSString *text; // @synthesize text=_text;
 - (void).cxx_destruct;
 - (id)initWithDatas:(id)arg1;

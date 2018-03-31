@@ -66,7 +66,9 @@
     _Bool _recordVideo;
     _Bool _hasDetectedFace;
     _Bool _isRecommendGif;
+    _Bool _isAnimojiVideo;
     _Bool _isVideoComposeCompleted;
+    _Bool _isAddPhotoIcon;
     int _assetType;
     QzonePhotoModel *_photoModel;
     double _videoDur;
@@ -79,15 +81,17 @@
     MQZFacePicModel *_facePicModel;
 }
 
-+ (double)lowQuality;
-+ (double)highQuality;
++ (double)lowQualityForHEVC:(_Bool)arg1;
++ (double)highQualityForHEVC:(_Bool)arg1;
 + (int)qualityArrays:(id)arg1;
 @property(retain, nonatomic) MQZFacePicModel *facePicModel; // @synthesize facePicModel=_facePicModel;
 @property(nonatomic) unsigned long long uploadSize; // @synthesize uploadSize=_uploadSize;
+@property(nonatomic) _Bool isAddPhotoIcon; // @synthesize isAddPhotoIcon=_isAddPhotoIcon;
 @property(retain, nonatomic) NSString *videoUploadPath; // @synthesize videoUploadPath=_videoUploadPath;
 @property(retain, nonatomic) NSString *editedVideoPath; // @synthesize editedVideoPath=_editedVideoPath;
 @property(nonatomic) _Bool isVideoComposeCompleted; // @synthesize isVideoComposeCompleted=_isVideoComposeCompleted;
 @property(retain, nonatomic) NSDictionary *editedVideoInfo; // @synthesize editedVideoInfo=_editedVideoInfo;
+@property(nonatomic) _Bool isAnimojiVideo; // @synthesize isAnimojiVideo=_isAnimojiVideo;
 @property(retain, nonatomic) NSArray *recommendGifImages; // @synthesize recommendGifImages=_recommendGifImages;
 @property(nonatomic) double ration; // @synthesize ration=_ration;
 @property(nonatomic) _Bool isRecommendGif; // @synthesize isRecommendGif=_isRecommendGif;
@@ -102,6 +106,8 @@
 @property(retain, nonatomic) UIImage *faceImage; // @synthesize faceImage=_faceImage;
 @property(nonatomic) _Bool supportHEVCEncode; // @synthesize supportHEVCEncode=_supportHEVCEncode;
 - (void).cxx_destruct;
+- (void)requestImageFinishBlock:(CDUnknownBlockType)arg1;
+- (void)setVideoCover:(id)arg1;
 - (_Bool)isPanoramaPhoto;
 - (id)youTuUploadParamDict;
 - (void)filterDeleteTags;
@@ -114,7 +120,7 @@
 @property(retain, nonatomic) UIImage *bigImage; // @dynamic bigImage;
 @property(retain, nonatomic) UIImage *thumbImage; // @dynamic thumbImage;
 - (void)updateThumbImage:(id)arg1;
-- (void)thumbImageAsync:(CDUnknownBlockType)arg1;
+- (void)getThumbnail:(CDUnknownBlockType)arg1;
 @property(readonly, nonatomic) struct CGSize oriImgSize; // @dynamic oriImgSize;
 - (id)getAVassetPath;
 - (id)getUploadOrgImagePath;
@@ -138,6 +144,8 @@
 - (void)updatePathWhenInvalid;
 - (void)prepareForImagePath;
 - (void)loadAsset;
+- (_Bool)needReWriteOriImage:(id)arg1;
+- (_Bool)needCompressImage:(id)arg1;
 - (id)writeExifToImage:(id)arg1 quality:(double)arg2 dataUTI:(struct __CFString *)arg3;
 - (_Bool)writeData:(id)arg1 toFile:(id)arg2;
 - (void)writeThumbImageToFile;

@@ -47,7 +47,6 @@
 - (void)sadeIn:(id)arg1;
 - (void)closeView;
 - (void)addLinkBt:(struct CGRect)arg1 type:(int)arg2;
-- (void)loadPersonSkinImgview;
 - (void)loadSkinImageView;
 - (void)dealloc;
 - (void)newLayoutRedview;
@@ -57,6 +56,7 @@
 - (void)loadVoiceHbScoreAni;
 - (void)loadPersonAnimation;
 - (void)showRedGiftAnimation;
+- (void)loadPersonSkinImgview;
 - (void)startAnimation;
 - (void)addDefaultBgview;
 - (void)initUIContent;

@@ -112,6 +112,7 @@
 - (void)inputBarDidActive:(id)arg1;
 - (void)inputBarShowOpenYellowVip;
 - (_Bool)inputBarSendText:(id)arg1 param:(id)arg2;
+- (id)getInputBarParam;
 - (void)invokeInputBarWithParam:(id)arg1 displayOffset:(double)arg2;
 - (id)creatInputBarOutsizeScreen:(_Bool)arg1 hidden:(_Bool)arg2;
 - (double)navigationBarBottomY;
@@ -120,6 +121,7 @@
 - (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;
 - (long long)tableView:(id)arg1 numberOfRowsInSection:(long long)arg2;
 - (void)tableView:(id)arg1 didEndDisplayingCell:(id)arg2 forRowAtIndexPath:(id)arg3;
+- (_Bool)needAutoPlay;
 - (void)tableView:(id)arg1 willDisplayCell:(id)arg2 forRowAtIndexPath:(id)arg3;
 - (void)onUpdateScrollState;
 - (void)destroyShimmeringLabelAnimating;
@@ -148,6 +150,7 @@
 - (void)scrollViewDidScrollToTop:(id)arg1;
 - (void)scrollViewDidScroll:(id)arg1;
 - (void)checkLoadMore:(id)arg1;
+- (_Bool)shouldLoadMore;
 - (_Bool)supportPreload;
 - (void)finishLoading:(id)arg1;
 - (void)onNotify:(id)arg1;

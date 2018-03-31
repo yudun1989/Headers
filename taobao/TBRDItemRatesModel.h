@@ -12,6 +12,7 @@
 {
     _Bool _latestSort;
     _Bool _allowInteract;
+    _Bool _skuFilter;
     int _userType;
     NSString *_total;
     NSString *_totalPage;
@@ -28,6 +29,7 @@
 }
 
 + (id)modelContainerClassMapDictioanry;
+@property(nonatomic) _Bool skuFilter; // @synthesize skuFilter=_skuFilter;
 @property(retain, nonatomic) NSDictionary *foldInfo; // @synthesize foldInfo=_foldInfo;
 @property(nonatomic) _Bool allowInteract; // @synthesize allowInteract=_allowInteract;
 @property(nonatomic) int userType; // @synthesize userType=_userType;
@@ -44,6 +46,7 @@
 @property(copy, nonatomic) NSString *totalPage; // @synthesize totalPage=_totalPage;
 @property(copy, nonatomic) NSString *total; // @synthesize total=_total;
 - (void).cxx_destruct;
+- (id)init;
 
 @end
 

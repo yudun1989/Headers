@@ -8,6 +8,7 @@
 
 @interface UIApplication (AlibcFcOpenURL)
 + (void)initAlibcFcOpenURLCheck;
+- (void)sendOutSccessMtopRequestWithVisa:(id)arg1 scheme:(id)arg2 url:(id)arg3;
 - (_Bool)swizzedSafeOpenURL:(id)arg1;
 - (void)swizzedSafeOpenURLFor10:(id)arg1 options:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;
 @end

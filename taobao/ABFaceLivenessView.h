@@ -20,7 +20,6 @@
     ABFacePromptView *_promptView;
     ABScrollLabel *_actionPromptLabel;
     UIImageView *_actionPromptImageView;
-    UIImageView *_actionPromptBackgroundImageView;
     UILabel *_tipLabel;
     UIView *_tipView;
     UIView *_actionMaskTop;
@@ -38,10 +37,12 @@
     ABAudio *_audio;
     UIView *_waitingView;
     UIImageView *_waitingImageView;
+    UILabel *_waitingLabel;
     struct CGPoint _circleCenter;
     struct CGRect _circleInnerFrame;
 }
 
+@property(retain, nonatomic) UILabel *waitingLabel; // @synthesize waitingLabel=_waitingLabel;
 @property(retain, nonatomic) UIImageView *waitingImageView; // @synthesize waitingImageView=_waitingImageView;
 @property(retain, nonatomic) UIView *waitingView; // @synthesize waitingView=_waitingView;
 @property(retain, nonatomic) ABAudio *audio; // @synthesize audio=_audio;
@@ -64,7 +65,6 @@
 @property(nonatomic) struct CGPoint circleCenter; // @synthesize circleCenter=_circleCenter;
 @property(retain, nonatomic) UIView *tipView; // @synthesize tipView=_tipView;
 @property(retain, nonatomic) UILabel *tipLabel; // @synthesize tipLabel=_tipLabel;
-@property(retain, nonatomic) UIImageView *actionPromptBackgroundImageView; // @synthesize actionPromptBackgroundImageView=_actionPromptBackgroundImageView;
 @property(retain, nonatomic) UIImageView *actionPromptImageView; // @synthesize actionPromptImageView=_actionPromptImageView;
 @property(retain, nonatomic) ABScrollLabel *actionPromptLabel; // @synthesize actionPromptLabel=_actionPromptLabel;
 @property(retain, nonatomic) ABFacePromptView *promptView; // @synthesize promptView=_promptView;
@@ -87,6 +87,7 @@
 - (struct CGAffineTransform)transformForOrientation;
 - (void)cancelActionPrompt;
 - (void)actionPromptAfter:(double)arg1;
+- (void)actionPromptAni;
 - (void)actionPrompt:(id)arg1;
 - (void)cancelShowtimeoutAlertView;
 - (void)showtimeoutAlertViewafter:(double)arg1;

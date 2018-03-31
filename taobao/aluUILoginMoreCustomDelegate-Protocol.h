@@ -11,6 +11,8 @@
 @protocol aluUILoginMoreCustomDelegate <NSObject>
 
 @optional
+- (double)headImageTopLength;
+- (double)viewAnimateWhenTextChanged;
 - (double)registPageScrollerHeight;
 - (_Bool)msgCodeTipStyle2;
 - (int)msgCodeTextSize;

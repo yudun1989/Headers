@@ -30,6 +30,7 @@
     NSMutableArray *_needZipFile;
     _Bool _isFirstEnter;
     long long _sizeLimit;
+    _Bool _outOfSize;
     NSString *_logFilePath;
 }
 

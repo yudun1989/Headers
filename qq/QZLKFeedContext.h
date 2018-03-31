@@ -9,14 +9,15 @@
 #import <QQMainProject/QZLKFeedContextExport-Protocol.h>
 
 @class QzoneFeedModel, UIView;
-@protocol LKViewDelegate, QZAutoPlayGifViewDelegate, QZFeedCellDelegate, QZFeedVideoViewDelegate, QZPhotoThumbViewDelegate;
+@protocol PTPageControlDelegate, PTViewDelegate, QZAutoPlayGifViewDelegate, QZFeedCellDelegate, QZFeedVideoViewDelegate, QZPhotoThumbViewDelegate;
 
 @interface QZLKFeedContext : NSObject <QZLKFeedContextExport>
 {
     _Bool _isPartialRefresh;
     UIView *_buttonDelegate;
     QzoneFeedModel *_model;
-    id <LKViewDelegate> _rootViewDelegate;
+    id <PTViewDelegate> _rootViewDelegate;
+    id <PTPageControlDelegate> _pageControlDelegate;
     id <QZFeedCellDelegate> _richLabelDelegate;
     id <QZPhotoThumbViewDelegate> _photoThumbDelegate;
     id <QZFeedVideoViewDelegate> _videoViewDelegate;
@@ -28,7 +29,8 @@
 @property(nonatomic) __weak id <QZFeedVideoViewDelegate> videoViewDelegate; // @synthesize videoViewDelegate=_videoViewDelegate;
 @property(nonatomic) __weak id <QZPhotoThumbViewDelegate> photoThumbDelegate; // @synthesize photoThumbDelegate=_photoThumbDelegate;
 @property(nonatomic) __weak id <QZFeedCellDelegate> richLabelDelegate; // @synthesize richLabelDelegate=_richLabelDelegate;
-@property(nonatomic) __weak id <LKViewDelegate> rootViewDelegate; // @synthesize rootViewDelegate=_rootViewDelegate;
+@property(nonatomic) __weak id <PTPageControlDelegate> pageControlDelegate; // @synthesize pageControlDelegate=_pageControlDelegate;
+@property(nonatomic) __weak id <PTViewDelegate> rootViewDelegate; // @synthesize rootViewDelegate=_rootViewDelegate;
 @property(retain, nonatomic) QzoneFeedModel *model; // @synthesize model=_model;
 @property(nonatomic) __weak UIView *buttonDelegate; // @synthesize buttonDelegate=_buttonDelegate;
 - (void).cxx_destruct;

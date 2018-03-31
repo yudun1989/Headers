@@ -11,6 +11,7 @@
 @interface AliNFScene : NSObject
 {
     _Bool _fromP2P;
+    _Bool _beDetected;
     int _rssi;
     NSString *_sceneIdentify;
     unsigned long long _sceneType;
@@ -25,6 +26,7 @@
 }
 
 @property(readonly, nonatomic) NSDictionary *sceneModel; // @synthesize sceneModel=_sceneModel;
+@property(nonatomic) _Bool beDetected; // @synthesize beDetected=_beDetected;
 @property(nonatomic) _Bool fromP2P; // @synthesize fromP2P=_fromP2P;
 @property(nonatomic) int rssi; // @synthesize rssi=_rssi;
 @property(copy, nonatomic) NSString *bssid; // @synthesize bssid=_bssid;

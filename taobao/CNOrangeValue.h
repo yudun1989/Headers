@@ -12,7 +12,13 @@
 
 + (id)stationFetch:(id)arg1;
 + (id)upgradeSMSTitle;
++ (id)upgradeSMSImageUrl;
 + (id)upgradeSMSUrl;
++ (id)getComplaintUrl;
++ (_Bool)tryToShowRecommendEvenNotSigned;
++ (_Bool)hiddenMap;
++ (_Bool)isDegraded;
++ (_Bool)use3DModel;
 + (_Bool)pushGuideSwitch;
 + (_Bool)businessChatEntry;
 + (_Bool)stationServiceCardEntry;

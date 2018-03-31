@@ -23,8 +23,10 @@
     QQAIOVideoCellTipsView *_failTipsView;
     CAGradientLayer *_infoGradientLayer;
     QQTwinkleCircleView *_ssProgressView;
+    _Bool _isHiddenInfoView;
 }
 
+@property(nonatomic) _Bool isHiddenInfoView; // @synthesize isHiddenInfoView=_isHiddenInfoView;
 - (void)hideLoading;
 - (void)showLoading;
 - (void)setFailTipsText:(id)arg1;

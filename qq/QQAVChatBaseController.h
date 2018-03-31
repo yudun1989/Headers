@@ -81,10 +81,10 @@
 - (void)setVideoPreset:(id)arg1;
 - (void)initVideoWithPreset:(id)arg1 format:(int)arg2 fps:(int)arg3;
 - (void)addviewToWindow:(id)arg1;
-- (void)removeControllerFromWindow:(int)arg1;
-- (void)dismissWindow:(int)arg1;
-- (void)showWindow:(id)arg1 withAnimationType:(int)arg2;
-- (void)addControllerToWindow:(id)arg1 withAnimateType:(int)arg2;
+- (void)popAVViewController:(int)arg1 withBarAnimation:(_Bool)arg2;
+- (void)popAVViewController:(int)arg1;
+- (void)pushAVViewController:(id)arg1 withAnimateType:(int)arg2 withAnimationDuration:(float)arg3 withBarAnimation:(_Bool)arg4;
+- (void)pushAVViewController:(id)arg1 withAnimateType:(int)arg2;
 - (id)init;
 
 // Remaining properties

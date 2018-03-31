@@ -6,9 +6,12 @@
 
 #import <QQMainProject/NSObject-Protocol.h>
 
+@class MulMemSelSubPageTableView;
+
 @protocol MulMemSelSubPageTableViewDelegate <NSObject>
 
 @optional
+- (_Bool)tableView:(MulMemSelSubPageTableView *)arg1 shouldActionSelectAll:(_Bool)arg2;
 - (_Bool)CheckOverSelectLimit:(unsigned long long)arg1;
 - (_Bool)onDidSelectAll:(_Bool)arg1;
 - (void)onScrollViewWillBeginDragging;

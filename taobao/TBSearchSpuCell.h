@@ -17,7 +17,6 @@
     UILabel *_soldLabel;
     UILabel *_tagInfoLabel;
     UILabel *_salesNumber;
-    UIView *_splitLineView;
     UIButton *_moreButton;
     UIButton *_maskView;
     UIImageView *_reducePriceIconImageView;
@@ -39,7 +38,6 @@
 @property(retain, nonatomic) UIImageView *reducePriceIconImageView; // @synthesize reducePriceIconImageView=_reducePriceIconImageView;
 @property(retain, nonatomic) UIButton *maskView; // @synthesize maskView=_maskView;
 @property(retain, nonatomic) UIButton *moreButton; // @synthesize moreButton=_moreButton;
-@property(retain, nonatomic) UIView *splitLineView; // @synthesize splitLineView=_splitLineView;
 @property(retain, nonatomic) UILabel *salesNumber; // @synthesize salesNumber=_salesNumber;
 @property(retain, nonatomic) UILabel *tagInfoLabel; // @synthesize tagInfoLabel=_tagInfoLabel;
 @property(retain, nonatomic) UILabel *soldLabel; // @synthesize soldLabel=_soldLabel;
@@ -52,7 +50,6 @@
 - (void)longPress:(id)arg1;
 - (void)hideMask;
 - (void)didSelect;
-- (void)updateConstraints;
 - (void)adjustViews;
 - (id)addAttrToPrefixString:(id)arg1 valueString:(id)arg2;
 - (void)setCellAccessibilty;

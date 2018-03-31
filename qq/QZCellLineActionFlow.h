@@ -12,7 +12,6 @@
 {
 }
 
-- (id)description;
 - (_Bool)isEqualActionFlow:(id)arg1;
 - (long long)getActionHierarchy;
 

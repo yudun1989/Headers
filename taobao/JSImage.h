@@ -8,7 +8,7 @@
 
 #import "TNodeMessageHandler-Protocol.h"
 
-@class CAGradientLayer, NSString, TGradient, UIColor;
+@class CAGradientLayer, CAShapeLayer, NSString, TGradient, UIColor;
 
 @interface JSImage : UIImageView <TNodeMessageHandler>
 {
@@ -16,10 +16,20 @@
     CAGradientLayer *_gradientLayer;
     UIColor *_foregroundColor;
     NSString *_src;
+    double _borderTLRadius;
+    double _borderTRRadius;
+    double _borderBLRadius;
+    double _borderBRRadius;
+    CAShapeLayer *_shapeLayer;
 }
 
 + (void)attrsTNodeMapper:(id)arg1;
 + (struct UIView *)makeTNodeComponent:(id)arg1;
+@property(retain, nonatomic) CAShapeLayer *shapeLayer; // @synthesize shapeLayer=_shapeLayer;
+@property(nonatomic) double borderBRRadius; // @synthesize borderBRRadius=_borderBRRadius;
+@property(nonatomic) double borderBLRadius; // @synthesize borderBLRadius=_borderBLRadius;
+@property(nonatomic) double borderTRRadius; // @synthesize borderTRRadius=_borderTRRadius;
+@property(nonatomic) double borderTLRadius; // @synthesize borderTLRadius=_borderTLRadius;
 @property(copy, nonatomic) NSString *src; // @synthesize src=_src;
 @property(retain, nonatomic) UIColor *foregroundColor; // @synthesize foregroundColor=_foregroundColor;
 @property(retain, nonatomic) CAGradientLayer *gradientLayer; // @synthesize gradientLayer=_gradientLayer;

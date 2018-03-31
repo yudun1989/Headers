@@ -9,7 +9,7 @@
 #import "TBCEventHandleProtocol-Protocol.h"
 #import "UIActionSheetDelegate-Protocol.h"
 
-@class NSString, TBCEmptyView, TBCNineBlockImageComponent, TBCTableView, TBCVideoPlayView, TBRDAskAllView, TBRDFilterTagView, TBRDRateListAllLoadedFooterView, TBRDRateListDefaultPraiseView, TBRDRateListLoadingView, TBRDRateListViewDataController;
+@class NSString, TBCEmptyView, TBCNineBlockImageComponent, TBCTableView, TBCVideoPlayView, TBRDAskView, TBRDFilterTagView, TBRDRateListAllLoadedFooterView, TBRDRateListDefaultPraiseView, TBRDRateListLoadingView, TBRDRateListViewDataController, TBRDSKUFilterPopView, TBRDSKUFilterView;
 
 @interface TBRDRateListViewController : TBRDBaseViewController <TBCEventHandleProtocol, UIActionSheetDelegate>
 {
@@ -19,14 +19,17 @@
     _Bool isHandleShopGardenCard;
     _Bool isHandleAlbumCard;
     _Bool isShowAlbumCard;
+    _Bool isSkuFilterViewExposure;
     NSString *_expression;
     CDUnknownBlockType _requestCompleteCallback;
     TBRDRateListViewDataController *_dataController;
-    TBRDAskAllView *_askView;
+    TBRDSKUFilterView *_skuFilterView;
+    TBRDSKUFilterPopView *_skuFilterPopView;
+    TBRDAskView *_askView;
     TBRDFilterTagView *_filterTagView;
     TBCTableView *_tableView;
     TBRDRateListLoadingView *_loadingView;
-    TBRDRateListDefaultPraiseView *_defaultPraiseVie;
+    TBRDRateListDefaultPraiseView *_defaultPraiseView;
     TBCEmptyView *_emptyView;
     TBRDRateListAllLoadedFooterView *_allLoadedFooterView;
     NSString *_rateIdForUnLike;
@@ -34,8 +37,10 @@
     TBCNineBlockImageComponent *_currentPlayingVideoC;
     NSString *_orangeAutoVideoPlayResult;
     NSString *_orangeAlbumEntranceResult;
+    NSString *_orangeSkuOpenResult;
 }
 
+@property(copy, nonatomic) NSString *orangeSkuOpenResult; // @synthesize orangeSkuOpenResult=_orangeSkuOpenResult;
 @property(copy, nonatomic) NSString *orangeAlbumEntranceResult; // @synthesize orangeAlbumEntranceResult=_orangeAlbumEntranceResult;
 @property(copy, nonatomic) NSString *orangeAutoVideoPlayResult; // @synthesize orangeAutoVideoPlayResult=_orangeAutoVideoPlayResult;
 @property(retain, nonatomic) TBCNineBlockImageComponent *currentPlayingVideoC; // @synthesize currentPlayingVideoC=_currentPlayingVideoC;
@@ -43,11 +48,13 @@
 @property(copy, nonatomic) NSString *rateIdForUnLike; // @synthesize rateIdForUnLike=_rateIdForUnLike;
 @property(retain, nonatomic) TBRDRateListAllLoadedFooterView *allLoadedFooterView; // @synthesize allLoadedFooterView=_allLoadedFooterView;
 @property(retain, nonatomic) TBCEmptyView *emptyView; // @synthesize emptyView=_emptyView;
-@property(retain, nonatomic) TBRDRateListDefaultPraiseView *defaultPraiseVie; // @synthesize defaultPraiseVie=_defaultPraiseVie;
+@property(retain, nonatomic) TBRDRateListDefaultPraiseView *defaultPraiseView; // @synthesize defaultPraiseView=_defaultPraiseView;
 @property(retain, nonatomic) TBRDRateListLoadingView *loadingView; // @synthesize loadingView=_loadingView;
 @property(retain, nonatomic) TBCTableView *tableView; // @synthesize tableView=_tableView;
 @property(retain, nonatomic) TBRDFilterTagView *filterTagView; // @synthesize filterTagView=_filterTagView;
-@property(retain, nonatomic) TBRDAskAllView *askView; // @synthesize askView=_askView;
+@property(retain, nonatomic) TBRDAskView *askView; // @synthesize askView=_askView;
+@property(retain, nonatomic) TBRDSKUFilterPopView *skuFilterPopView; // @synthesize skuFilterPopView=_skuFilterPopView;
+@property(retain, nonatomic) TBRDSKUFilterView *skuFilterView; // @synthesize skuFilterView=_skuFilterView;
 @property(retain, nonatomic) TBRDRateListViewDataController *dataController; // @synthesize dataController=_dataController;
 @property(copy, nonatomic) CDUnknownBlockType requestCompleteCallback; // @synthesize requestCompleteCallback=_requestCompleteCallback;
 @property(copy, nonatomic) NSString *expression; // @synthesize expression=_expression;
@@ -70,8 +77,16 @@
 - (void)showAlbumCard;
 - (void)hanldeAlbumEntranceCardData;
 - (void)handleShopGardenCardRequestComplete:(CDUnknownBlockType)arg1;
+- (void)handleSkuSelectAction;
+- (void)renderSkuFilterView;
 - (void)setupFilterTagView;
+- (struct CGRect)errorViewRect;
+- (struct CGRect)emptyViewRect;
+- (struct CGRect)tableViewCententRectInView;
 - (void)setupTableViewDelegate;
+- (void)resetViewController;
+- (void)resetSkuData;
+- (void)refreshViewControllerAfterSkuSelete;
 - (void)refreshViewController;
 - (void)updateZangStateOfRate:(id)arg1 withAlreadyLike:(id)arg2 withLikeCount:(id)arg3;
 - (void)viewWillDisappear:(_Bool)arg1;

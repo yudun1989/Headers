@@ -17,6 +17,7 @@
 + (_Bool)isFileNeedShowMenuRecall:(id)arg1;
 + (_Bool)isMarketFaceNeedShowMenuRecall:(id)arg1;
 + (_Bool)isConferenceMsg:(id)arg1;
++ (_Bool)isGroupAdminRecallSystemUin:(unsigned long long)arg1;
 + (_Bool)isGroupAdminCanRecallWithMsgModel:(id)arg1;
 + (_Bool)isGroupAdminCanRecall:(id)arg1;
 + (_Bool)isGroupMessageNeedShowMenuRecall:(id)arg1;

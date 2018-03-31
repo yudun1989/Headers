@@ -13,6 +13,7 @@
     AliHAConfigImpl *_aliHAConfig;
 }
 
++ (void)enableDebugMode;
 @property(retain, nonatomic) AliHAConfigImpl *aliHAConfig; // @synthesize aliHAConfig=_aliHAConfig;
 - (void).cxx_destruct;
 - (void)appDidFinishLaunchingWithConfiguration:(id)arg1;

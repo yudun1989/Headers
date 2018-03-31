@@ -65,7 +65,6 @@
 - (void)changeCurrentRecommendedWordIndex;
 - (id)dynamicSearchBarDisplayWord;
 - (id)cacheContentRecommmendDict;
-- (void)updateContentRecommmendTime;
 - (_Bool)currentContentRecommmendValid;
 - (void)updateCurrentContentRecommmendWithTimeLimit:(unsigned long long)arg1;
 - (id)cacheDiscoveryDict:(unsigned long long)arg1;

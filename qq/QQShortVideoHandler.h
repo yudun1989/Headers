@@ -26,14 +26,18 @@
     QQAsset *_alasset;
     NSString *_md5;
     QQRichShortVideoPreviewViewController *_previewPlayer;
+    _Bool _bIsAnimojiVideo;
     int _compressResult;
     unsigned int _videoMsgTailType;
     CDUnknownBlockType _complete_handle;
+    NSString *_animojiModelId;
 }
 
 + (_Bool)checkShortVideoDurationAndFileSize:(id)arg1 limitFileSize:(id)arg2;
 + (void)setMsgModelDetailAndSaveUtils:(id)arg1 vc:(id)arg2;
 + (_Bool)hasQQShortVideoHandlerInstance;
+@property(retain, nonatomic) NSString *animojiModelId; // @synthesize animojiModelId=_animojiModelId;
+@property(nonatomic) _Bool bIsAnimojiVideo; // @synthesize bIsAnimojiVideo=_bIsAnimojiVideo;
 @property(nonatomic) unsigned int videoMsgTailType; // @synthesize videoMsgTailType=_videoMsgTailType;
 @property(copy, nonatomic) CDUnknownBlockType complete_handle; // @synthesize complete_handle=_complete_handle;
 @property int compressResult; // @synthesize compressResult=_compressResult;

@@ -15,12 +15,12 @@
     UIButton *_backButton;
     UIButton *_quitButoon;
     UILabel *_pageLabel;
-    UILabel *_timeLabel;
+    UILabel *_timesLabel;
     KS_feed *_feed;
 }
 
 @property(retain, nonatomic) KS_feed *feed; // @synthesize feed=_feed;
-@property(retain, nonatomic) UILabel *timeLabel; // @synthesize timeLabel=_timeLabel;
+@property(retain, nonatomic) UILabel *timesLabel; // @synthesize timesLabel=_timesLabel;
 @property(retain, nonatomic) UILabel *pageLabel; // @synthesize pageLabel=_pageLabel;
 @property(retain, nonatomic) UIButton *quitButoon; // @synthesize quitButoon=_quitButoon;
 @property(retain, nonatomic) UIButton *backButton; // @synthesize backButton=_backButton;

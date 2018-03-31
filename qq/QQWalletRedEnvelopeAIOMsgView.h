@@ -16,7 +16,6 @@
 {
     QQChatViewTable *_chatViewTable;
     UIImageView *_backgroudView;
-    UIImageView *_bgEnsureView;
     UIImageView *_themeImageView;
     UILabel *_title;
     UIImageView *_logoView;
@@ -82,7 +81,6 @@
 
 // Remaining properties
 @property(retain, nonatomic) UIImageView *backgroudView; // @dynamic backgroudView;
-@property(retain, nonatomic) UIImageView *bgEnsureView; // @dynamic bgEnsureView;
 @property(nonatomic) __weak QQChatViewTable *chatViewTable; // @dynamic chatViewTable;
 @property(readonly, copy) NSString *debugDescription;
 @property(readonly, copy) NSString *description;

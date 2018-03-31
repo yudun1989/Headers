@@ -4,38 +4,13 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-#import <QQMainProject/SimpleAlertView.h>
+#import <QQMainProject/QQWalletAlertDialog.h>
 
-#import <QQMainProject/SimpleAlertViewDelegate-Protocol.h>
-
-@class NSMutableArray, NSString;
-@protocol TPAlertDialogDelegate;
-
-@interface CFT_TPAlertDialog : SimpleAlertView <SimpleAlertViewDelegate>
+@interface CFT_TPAlertDialog : QQWalletAlertDialog
 {
-    long long _selfRetainCount;
-    _Bool _hadShownInView;
-    CDUnknownBlockType _clickAction;
-    id <TPAlertDialogDelegate> _dispatchDelegate;
-    NSMutableArray *_dispatchSubViews;
 }
 
-+ (void)dismissCurDialog;
-@property(retain, nonatomic) NSMutableArray *dispatchSubViews; // @synthesize dispatchSubViews=_dispatchSubViews;
-@property(nonatomic) id <TPAlertDialogDelegate> dispatchDelegate; // @synthesize dispatchDelegate=_dispatchDelegate;
-@property(copy, nonatomic) CDUnknownBlockType clickAction; // @synthesize clickAction=_clickAction;
 - (void)simpleAlertView:(id)arg1 didSelectUrl:(id)arg2;
-- (void)buttonClick:(id)arg1 atIndex:(int)arg2;
-- (void)dealloc;
-- (void)dismiss;
-- (void)showInView:(id)arg1;
-- (id)initWithTitle:(id)arg1 message:(id)arg2 hyperlinkMapper:(id)arg3 delegate:(id)arg4 cancelButtonTitle:(id)arg5 otherButtonTitle:(id)arg6;
-
-// Remaining properties
-@property(readonly, copy) NSString *debugDescription;
-@property(readonly, copy) NSString *description;
-@property(readonly) unsigned long long hash;
-@property(readonly) Class superclass;
 
 @end
 

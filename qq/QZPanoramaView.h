@@ -4,17 +4,17 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-#import <GLKit/GLKView.h>
+#import <UIKit/UIView.h>
 
 #import <QQMainProject/DirectionViewDelegate-Protocol.h>
 #import <QQMainProject/GLKViewDelegate-Protocol.h>
 #import <QQMainProject/IQZUrlDownloaderDelegate-Protocol.h>
 #import <QQMainProject/UIGestureRecognizerDelegate-Protocol.h>
 
-@class CADisplayLink, CMAttitude, CMMotionManager, NSMutableSet, NSString, PituGLProgram, QZDirectionView, QZPanoramaGuideView, QZPanoramaLoadingView, QZRotateRadius, UIImage, UIImageView;
+@class CADisplayLink, CMAttitude, CMMotionManager, GLKView, NSMutableSet, NSString, PituGLProgram, QZDirectionView, QZPanoramaGuideView, QZPanoramaLoadingView, QZRotateRadius, UIImage, UIImageView;
 @protocol QZPanoramaViewDelegate;
 
-@interface QZPanoramaView : GLKView <GLKViewDelegate, UIGestureRecognizerDelegate, IQZUrlDownloaderDelegate, DirectionViewDelegate>
+@interface QZPanoramaView : UIView <GLKViewDelegate, UIGestureRecognizerDelegate, IQZUrlDownloaderDelegate, DirectionViewDelegate>
 {
     union _GLKMatrix4 _modelViewMatrix;
     union _GLKMatrix4 _projectionMatrix;
@@ -35,6 +35,7 @@
     unsigned int _lastVertexBufferID;
     unsigned int _lastVertexTexCoordID;
     unsigned int _lastVertexIndicesBufferID;
+    double _beginTime;
     _Bool _needShowGuideView;
     _Bool _hasInitAttitude;
     _Bool _shouldRestorePanoramaView;
@@ -51,6 +52,7 @@
     UIImage *_bgImage;
     long long _scene;
     id <QZPanoramaViewDelegate> _panoramaDelegate;
+    GLKView *_glkView;
     long long _type;
     UIImageView *_bgImageView;
     CMMotionManager *_motionManager;
@@ -64,6 +66,7 @@
     struct CGPoint _lastPanPos;
 }
 
+@property(nonatomic) _Bool isInBackgroud; // @synthesize isInBackgroud=_isInBackgroud;
 @property(nonatomic) _Bool shouldRestorePanoramaView; // @synthesize shouldRestorePanoramaView=_shouldRestorePanoramaView;
 @property(retain, nonatomic) QZDirectionView *indicatorView; // @synthesize indicatorView=_indicatorView;
 @property(retain, nonatomic) QZPanoramaGuideView *guideView; // @synthesize guideView=_guideView;
@@ -84,6 +87,7 @@
 @property(retain, nonatomic) CMMotionManager *motionManager; // @synthesize motionManager=_motionManager;
 @property(retain, nonatomic) UIImageView *bgImageView; // @synthesize bgImageView=_bgImageView;
 @property(nonatomic) long long type; // @synthesize type=_type;
+@property(retain, nonatomic) GLKView *glkView; // @synthesize glkView=_glkView;
 @property(nonatomic) __weak id <QZPanoramaViewDelegate> panoramaDelegate; // @synthesize panoramaDelegate=_panoramaDelegate;
 @property(nonatomic) _Bool needShowGuideView; // @synthesize needShowGuideView=_needShowGuideView;
 @property(nonatomic) long long scene; // @synthesize scene=_scene;
@@ -104,8 +108,9 @@
 - (double)getIndicatorRadian;
 - (void)modifyTimerFrameInterval:(double)arg1;
 - (id)getRotateRadius;
-- (void)update;
+- (_Bool)update;
 - (void)commitRender;
+- (_Bool)canRender;
 - (double)getRadianOfPoint;
 - (void)onIndicatorClicked;
 - (void)calculateOffsetOfDeacceleration;

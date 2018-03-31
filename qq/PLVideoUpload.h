@@ -18,20 +18,6 @@
 + (unsigned long long)getUniqueNumber;
 + (id)sharedInstance;
 @property(retain, nonatomic) NSMutableDictionary *uploadModelDic; // @synthesize uploadModelDic=_uploadModelDic;
-- (void)didEnterForeground;
-- (void)didEnterBackground;
-- (void)doQualityReport:(id)arg1 step:(long long)arg2 withErrorCode:(long long)arg3 withError:(id)arg4 withUploadUrl:(id)arg5 withVideoPath:(id)arg6 withStartTime:(double)arg7;
-- (void)uploadBlock:(id)arg1 withProgress:(double)arg2 withSuccess:(_Bool)arg3 withResult:(id)arg4;
-- (id)parseResult:(id)arg1;
-- (_Bool)isCGIUploadFinish:(id)arg1;
-- (id)getTLV:(id)arg1;
-- (_Bool)isCGIUploadSuccess:(id)arg1;
-- (unsigned long long)getCGIUploadFileSize:(id)arg1;
-- (void)uploadNextPack:(id)arg1 withUrl:(id)arg2 withAuthKay:(id)arg3 withMd5:(id)arg4 withPath:(id)arg5 withStartTime:(double)arg6;
-- (void)doUploadVideo:(id)arg1 withCheckKey:(id)arg2 withPath:(id)arg3 withSHA1:(id)arg4 withSize:(unsigned long long)arg5 withMd5:(id)arg6 withStartTime:(double)arg7;
-- (void)upload:(id)arg1 withPort:(unsigned int)arg2 withCheckKey:(id)arg3 withPath:(id)arg4 withSHA1:(id)arg5 withSize:(unsigned long long)arg6 withMd5:(id)arg7 withDelegate:(id)arg8 withUserData:(id)arg9;
-- (void)dealloc;
-- (id)init;
 
 @end
 

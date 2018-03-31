@@ -47,6 +47,7 @@
 @property(nonatomic) _Bool shouldCatchClosePanel; // @synthesize shouldCatchClosePanel=_shouldCatchClosePanel;
 @property(nonatomic) _Bool shouldCatchHeightChange; // @synthesize shouldCatchHeightChange=_shouldCatchHeightChange;
 @property(nonatomic) _Bool hasRegisterAnchorCallbackNotification; // @synthesize hasRegisterAnchorCallbackNotification=_hasRegisterAnchorCallbackNotification;
+- (void)handleJsBridgeRequest_Qzone_setShouldScanPhotoEventState:(id)arg1;
 - (id)voiceRecordVCInWebViewController:(id)arg1;
 - (void)setAlbumPickerViewControllerAlbumFilterBlock:(id)arg1 fromType:(id)arg2;
 - (id)generateDicFromObject:(id)arg1 untilNSObject:(_Bool)arg2;
@@ -58,6 +59,7 @@
 - (void)handleJsBridgeRequest_Qzone_RefreshFlowerWidget:(id)arg1;
 - (void)handleJsBridgeRequest_Qzone_getShowRooftop:(id)arg1;
 - (void)handleJsBridgeRequest_Qzone_setShowRooftop:(id)arg1;
+- (void)handleJsBridgeRequest_Qzone_deleteUnpublishedShuoShuo:(id)arg1;
 - (void)handleJsBridgeRequest_Qzone_hideCloseButton:(id)arg1;
 - (void)handleJsBridgeRequest_Qzone_searchVideoKey:(id)arg1;
 - (void)handleJsBridgeRequest_Qzone_videoProxySaveVideoToAlbum:(id)arg1;
@@ -72,6 +74,9 @@
 - (void)handleJsBridgeRequest_Qzone_enterPhotoEventDetail:(id)arg1;
 - (void)handleJsBridgeRequest_Qzone_getRecommendPhotoEvent:(id)arg1;
 - (void)handleJsBridgeRequest_Qzone_WidgetAIEnterH5Begin:(id)arg1;
+- (void)handleJsBridgeRequest_Qzone_stopPanoramaLiveGuideAnimation:(id)arg1;
+- (void)handleJsBridgeRequest_Qzone_startPanoramaLiveGuideAnimation:(id)arg1;
+- (void)handleJsBridgeRequest_Qzone_touchEvent:(id)arg1;
 - (_Bool)checkLiveWebView;
 - (void)handleJsBridgeRequest_Qzone_checkAllowRecom:(id)arg1;
 - (void)handleJsBridgeRequest_Qzone_playSuperLikeMusic:(id)arg1;

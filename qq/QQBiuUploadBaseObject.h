@@ -53,6 +53,7 @@
 - (void)onBusinessProcessWithSelectedMems:(id)arg1 currentViewControllerClass:(id)arg2 currentViewController:(id)arg3;
 - (void)showFriendSelectController:(long long)arg1 andNavi:(id)arg2 andOutAt:(_Bool)arg3;
 - (void)showFriendSelectController:(long long)arg1 andNavi:(id)arg2;
+- (void)adjustSubviewsLayoutWithMode:(unsigned long long)arg1;
 - (void)setToolbarMode:(unsigned long long)arg1 andOutAt:(_Bool)arg2;
 - (void)setToolbarMode:(unsigned long long)arg1;
 - (void)showTextCountLable;

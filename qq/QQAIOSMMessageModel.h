@@ -17,6 +17,7 @@
     _Bool _uploading;
     NSString *_process;
     _Bool _bNeedRefreshUI;
+    _Bool _isMenuShow;
     NSMutableArray *_subMsgArray;
     QQAIOSMMessageModel *_parentModel;
 }
@@ -24,6 +25,7 @@
 + (id)modelWithMessageModel:(id)arg1;
 @property(nonatomic) __weak QQAIOSMMessageModel *parentModel; // @synthesize parentModel=_parentModel;
 @property(retain, nonatomic) NSMutableArray *subMsgArray; // @synthesize subMsgArray=_subMsgArray;
+@property(nonatomic) _Bool isMenuShow; // @synthesize isMenuShow=_isMenuShow;
 @property(nonatomic) _Bool bNeedRefreshUI; // @synthesize bNeedRefreshUI=_bNeedRefreshUI;
 - (void).cxx_destruct;
 - (id)getRichModelPictureName;

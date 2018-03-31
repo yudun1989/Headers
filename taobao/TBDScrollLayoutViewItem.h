@@ -10,8 +10,8 @@
 {
 }
 
-- (void)layoutSubViewItems;
-- (void)updateViewSizeWithData:(id)arg1 context:(id)arg2 error:(id *)arg3;
+- (void)layoutSubViewItemsWithParam:(id)arg1;
+- (void)updateViewSizeWithParam:(id)arg1;
 - (id)init;
 
 @end

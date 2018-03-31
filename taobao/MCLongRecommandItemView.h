@@ -8,7 +8,7 @@
 
 #import "MCRecommandItemViewProtocol-Protocol.h"
 
-@class MCSubscribeButton, NSString, UIImageView, UILabel, UITapGestureRecognizer;
+@class MCSubscribeButton, NSString, UIImageView, UILabel;
 
 @interface MCLongRecommandItemView : UIView <MCRecommandItemViewProtocol>
 {
@@ -20,10 +20,8 @@
     UILabel *_subTitleLabel;
     MCSubscribeButton *_subscribeButton;
     UIView *_divideLine;
-    UITapGestureRecognizer *_tapGestureRecognizer;
 }
 
-@property(retain, nonatomic) UITapGestureRecognizer *tapGestureRecognizer; // @synthesize tapGestureRecognizer=_tapGestureRecognizer;
 @property(retain, nonatomic) UIView *divideLine; // @synthesize divideLine=_divideLine;
 @property(retain, nonatomic) MCSubscribeButton *subscribeButton; // @synthesize subscribeButton=_subscribeButton;
 @property(retain, nonatomic) UILabel *subTitleLabel; // @synthesize subTitleLabel=_subTitleLabel;
@@ -31,9 +29,7 @@
 @property(retain, nonatomic) UIImageView *iconImageView; // @synthesize iconImageView=_iconImageView;
 @property(copy, nonatomic) NSString *iconUrl; // @synthesize iconUrl=_iconUrl;
 - (void).cxx_destruct;
-- (void)clickItemArea:(id)arg1;
 - (void)setTag:(long long)arg1;
-- (void)setItemTarget:(id)arg1 action:(SEL)arg2;
 - (void)setSubscribeTarget:(id)arg1 action:(SEL)arg2;
 - (void)setLastItem:(_Bool)arg1;
 @property(copy, nonatomic) NSString *subTitleText; // @dynamic subTitleText;

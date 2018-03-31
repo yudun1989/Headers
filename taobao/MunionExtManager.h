@@ -6,10 +6,11 @@
 
 #import <Foundation/NSObject.h>
 
-@class NSMutableDictionary;
+@class NSDictionary, NSMutableDictionary;
 
 @interface MunionExtManager : NSObject
 {
+    NSDictionary *_adDataForFlowLimit;
     NSMutableDictionary *_extModelDic;
     NSMutableDictionary *_successBlockDic;
     NSMutableDictionary *_failBlockDic;
@@ -19,7 +20,12 @@
 @property(retain, nonatomic) NSMutableDictionary *failBlockDic; // @synthesize failBlockDic=_failBlockDic;
 @property(retain, nonatomic) NSMutableDictionary *successBlockDic; // @synthesize successBlockDic=_successBlockDic;
 @property(retain, nonatomic) NSMutableDictionary *extModelDic; // @synthesize extModelDic=_extModelDic;
+@property(retain, nonatomic) NSDictionary *adDataForFlowLimit; // @synthesize adDataForFlowLimit=_adDataForFlowLimit;
 - (void).cxx_destruct;
+- (_Bool)checkEqualityOfData:(id)arg1 andConfiguration:(id)arg2;
+- (void)loadFileCacheForFlowLimit;
+- (void)updateAdDataForFlowLimitConfiguration:(id)arg1;
+- (void)preloadDataForFlowLimitConfiguration:(id)arg1;
 - (void)zuanzanCallBackNameSpace:(id)arg1 data:(id)arg2 caller:(id)arg3;
 - (void)sdkResolveCacheImageErrorUT;
 - (void)triggerMunionReqDataErrUT;
@@ -27,6 +33,8 @@
 - (void)getMunionDataUT:(id)arg1;
 - (void)sdkInitIsCalledUT:(id)arg1 pids:(id)arg2;
 - (void)timeOfLoadCache:(long long)arg1 nameSpace:(id)arg2;
+- (void)recordFlowLimitStartDataQueryWithConfiguration:(id)arg1;
+- (void)recordFlowLimitHandleSuccessWithConfiguration:(id)arg1;
 - (id)analiseMemoryDataToCacheData:(id)arg1;
 - (void)replaceDataAndSaveToCacheOnGlobalQ:(id)arg1 fileName:(id)arg2;
 - (void)replaceCpmCacheAndSave:(id)arg1 nameSpace:(id)arg2;
@@ -52,6 +60,7 @@
 - (void)munionInitRequest:(int)arg1 nameSpace:(id)arg2 pids:(id)arg3;
 - (void)setAsyncMuionParm:(id)arg1 adType:(int)arg2 nameSpace:(id)arg3 pids:(id)arg4 onSuccessBlock:(CDUnknownBlockType)arg5 onFailBlock:(CDUnknownBlockType)arg6;
 - (void)setAsyncMuionParm:(id)arg1 adType:(int)arg2 nameSpace:(id)arg3 pids:(id)arg4 callBackBlock:(CDUnknownBlockType)arg5;
+- (void)loadFlowLimitConfiguration;
 - (id)init;
 
 @end

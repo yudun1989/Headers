@@ -15,6 +15,7 @@
 #import <QQMainProject/QQMultimediaSubtitlerDelegate-Protocol.h>
 #import <QQMainProject/QQRichMediaPickerDelegate-Protocol.h>
 #import <QQMainProject/QQRichPostureRecognizerGamingViewDelegate-Protocol.h>
+#import <QQMainProject/QQWebViewControllerDelegate-Protocol.h>
 #import <QQMainProject/TBMultimediaEditComponentDelegate-Protocol.h>
 #import <QQMainProject/TBMultimediaEditViewDelegate-Protocol.h>
 #import <QQMainProject/UIActionSheetDelegate-Protocol.h>
@@ -23,10 +24,10 @@
 #import <QQMainProject/UIImagePickerControllerDelegate-Protocol.h>
 #import <QQMainProject/UINavigationControllerDelegate-Protocol.h>
 
-@class LbsPendentEngine, MQZMultiImagePickerWrapper, NSArray, NSDictionary, NSString, NSTimer, NightModeTipsView, PostureRecognizerGameResultInfo, QQAVCaptureGuideTipsLabel, QQAVDecorationDataModule, QQAsset, QQBubbleTipsView, QQMediaPickerVideoControlPanel, QQPhotoPreEditView, QQRichMediaPicker, QQRichTinyVideoClips, QQRichTinyVideoPreviewView, UIButton, UIImage, UIImageView, UILabel, UIPinchGestureRecognizer, UITapGestureRecognizer, UIView;
+@class LbsPendentEngine, MQZMultiImagePickerWrapper, NSArray, NSDictionary, NSString, NSTimer, NightModeTipsView, PostureRecognizerGameResultInfo, QQAVCaptureGuideTipsLabel, QQAVDecorationDataModule, QQAdWebButton, QQAsset, QQBubbleTipsView, QQMediaPickerVideoControlPanel, QQPhotoPreEditView, QQRichMediaPicker, QQRichTinyVideoClips, QQRichTinyVideoPreviewView, UIButton, UIImage, UIImageView, UILabel, UIPinchGestureRecognizer, UITapGestureRecognizer, UIView;
 @protocol QQAVCaptureControllerDelegate, QQRichMediaPickerReportDelegate;
 
-@interface QQAVCaptureViewController : UIViewController <LbsPendentEngineDelegate, QQRichMediaPickerDelegate, UIActionSheetDelegate, UINavigationControllerDelegate, UIImagePickerControllerDelegate, UIGestureRecognizerDelegate, MQZMultiImagePickerWrapperDelegate, QQMultimediaEditFilterDelegate, TBMultimediaEditViewDelegate, QQRichPostureRecognizerGamingViewDelegate, QQMultimediaSubtitlerDelegate, QQMediaPickerVideoControlPanelDelegate, PhotoEditDelegate, UIAlertViewDelegate, QQMultimediaEditBeautyDelegate, TBMultimediaEditComponentDelegate>
+@interface QQAVCaptureViewController : UIViewController <LbsPendentEngineDelegate, QQRichMediaPickerDelegate, UIActionSheetDelegate, UINavigationControllerDelegate, UIImagePickerControllerDelegate, UIGestureRecognizerDelegate, MQZMultiImagePickerWrapperDelegate, QQMultimediaEditFilterDelegate, TBMultimediaEditViewDelegate, QQRichPostureRecognizerGamingViewDelegate, QQMultimediaSubtitlerDelegate, QQMediaPickerVideoControlPanelDelegate, PhotoEditDelegate, UIAlertViewDelegate, QQMultimediaEditBeautyDelegate, TBMultimediaEditComponentDelegate, QQWebViewControllerDelegate>
 {
     MQZMultiImagePickerWrapper *_picker;
     _Bool _isFirstSampleBuffer;
@@ -38,7 +39,9 @@
     int _mcTmpItemCount;
     unsigned long long _subTitleType;
     double _postureSavedMaxRecordDuration;
+    _Bool _enableAdWebView;
     _Bool _supportLocalVideo;
+    _Bool _needFilterDanceItem;
     _Bool _enableDynamicDecoration;
     _Bool _supportDD;
     _Bool _unfoldDD;
@@ -70,6 +73,7 @@
     _Bool _hasFirstCallH5;
     _Bool _hasFirstCallFastSendVideo;
     _Bool _hasFirstCreateOperatingBtn;
+    _Bool _uiInitFlag;
     int _sessionType;
     float _currentRecordTime;
     int _clipsPosition;
@@ -152,6 +156,7 @@
     NSString *_willCategoryName;
     NSString *_willCategoryID;
     NSString *_willItemID;
+    QQAdWebButton *_adWebView;
     struct CGSize _deviceCaptureSolution;
     struct CGSize _deviceCaptureSolutionFront;
     struct CGSize _deviceNightModeSolution;
@@ -159,6 +164,8 @@
 
 + (void)preloadAIOCaptureSession;
 + (void)preloadCaptureSession:(struct CGSize)arg1 frontResolution:(struct CGSize)arg2;
+@property(retain, nonatomic) QQAdWebButton *adWebView; // @synthesize adWebView=_adWebView;
+@property _Bool uiInitFlag; // @synthesize uiInitFlag=_uiInitFlag;
 @property(nonatomic) _Bool hasFirstCreateOperatingBtn; // @synthesize hasFirstCreateOperatingBtn=_hasFirstCreateOperatingBtn;
 @property(retain, nonatomic) NSString *willItemID; // @synthesize willItemID=_willItemID;
 @property(retain, nonatomic) NSString *willCategoryID; // @synthesize willCategoryID=_willCategoryID;
@@ -264,6 +271,7 @@
 @property(nonatomic) _Bool enableDynamicDecoration; // @synthesize enableDynamicDecoration=_enableDynamicDecoration;
 @property(nonatomic) long long defaultCameraDevicePosition; // @synthesize defaultCameraDevicePosition=_defaultCameraDevicePosition;
 @property(retain, nonatomic) QQMediaPickerVideoControlPanel *videoControlPanel; // @synthesize videoControlPanel=_videoControlPanel;
+@property(nonatomic) _Bool needFilterDanceItem; // @synthesize needFilterDanceItem=_needFilterDanceItem;
 @property(nonatomic) unsigned long long localVideoSizeLimit; // @synthesize localVideoSizeLimit=_localVideoSizeLimit;
 @property(nonatomic) unsigned long long localVideoMaxDuration; // @synthesize localVideoMaxDuration=_localVideoMaxDuration;
 @property(nonatomic) _Bool supportLocalVideo; // @synthesize supportLocalVideo=_supportLocalVideo;
@@ -274,6 +282,7 @@
 @property(nonatomic) long long chatBusinessType; // @synthesize chatBusinessType=_chatBusinessType;
 @property(nonatomic) long long businessType; // @synthesize businessType=_businessType;
 @property(nonatomic) long long panelType; // @synthesize panelType=_panelType;
+@property(nonatomic) _Bool enableAdWebView; // @synthesize enableAdWebView=_enableAdWebView;
 @property(nonatomic) __weak id <QQRichMediaPickerReportDelegate> reportDelegate; // @synthesize reportDelegate=_reportDelegate;
 @property(nonatomic) __weak id <QQAVCaptureControllerDelegate> avCaptureControllerDelegate; // @synthesize avCaptureControllerDelegate=_avCaptureControllerDelegate;
 - (void).cxx_destruct;
@@ -394,6 +403,7 @@
 - (void)addDoubleTapGesture;
 - (void)removeRenderView;
 - (void)loadDefaultVideoItemIndex;
+- (void)loadAllSDK;
 - (void)addRenderView;
 - (void)createPreviewView;
 - (void)createNavigationBar;
@@ -407,6 +417,17 @@
 - (void)showOperatingEntranceButton;
 - (void)createOperatingEntranceButton;
 - (_Bool)needShowOperatingEntrance;
+- (void)checkNeedShowAdWebView:(id)arg1;
+- (id)adWebIconPath:(id)arg1;
+- (_Bool)isAdIconExsit:(id)arg1;
+- (void)downloadIconImage:(id)arg1;
+- (void)onLeftButtonClick;
+- (void)onAdWebViewClicked:(id)arg1;
+- (void)dismissAdWebView;
+- (void)appearAnimation;
+- (void)showAdWebView;
+- (void)showDifAdWebView:(id)arg1;
+- (void)createAdWebView:(id)arg1;
 - (void)componentButtonClicked:(id)arg1;
 - (void)dismissGuideLabel;
 - (void)createGuideLabel;

@@ -8,12 +8,13 @@
 
 @interface AliNNFaceDetectionNet : AliNNBaseNet
 {
+    float _scale;
     void *_face_handle;
 }
 
+@property(nonatomic) float scale; // @synthesize scale=_scale;
 @property(nonatomic) void *face_handle; // @synthesize face_handle=_face_handle;
 - (void)dealloc;
-- (void)setScale:(float)arg1;
 - (id)detectYChannel:(char *)arg1 width:(int)arg2 height:(int)arg3 angle:(unsigned long long)arg4;
 - (struct mobile_face_info_t)detectRawOutputYChannel:(char *)arg1 width:(int)arg2 height:(int)arg3 angle:(unsigned long long)arg4;
 - (struct mobile_face_info_t)detectRawOutputCVPixelBuffer:(struct __CVBuffer *)arg1 withAngle:(unsigned long long)arg2;
@@ -23,6 +24,7 @@
 - (id)detectImage:(id)arg1 rotate:(unsigned long long)arg2;
 - (id)detectImage:(id)arg1;
 - (void)prepareSSDNetworkWithDetectionType:(unsigned long long)arg1 detectionModelPath:(id)arg2 weightPath:(id)arg3 alignmentModelPath:(id)arg4 weightPath:(id)arg5 successCallback:(CDUnknownBlockType)arg6 failCallback:(CDUnknownBlockType)arg7;
+- (void)prepareFasterRCNNNetworkWithDetectionType:(unsigned long long)arg1 detectionModelPath:(id)arg2 weightPath:(id)arg3 alignmentModelPath:(id)arg4 weightPath:(id)arg5 successCallback:(CDUnknownBlockType)arg6 failCallback:(CDUnknownBlockType)arg7;
 - (void)prepareNetworkWithType:(unsigned long long)arg1 successCallback:(CDUnknownBlockType)arg2 failCallback:(CDUnknownBlockType)arg3;
 
 @end

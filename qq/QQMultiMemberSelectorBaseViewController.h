@@ -31,10 +31,10 @@
     _Bool _isFromGroupAndDiscussViewController;
     _Bool _isWithoutDiscuss;
     _Bool _isWithoutRightBtn;
-    _Bool _isUseForInvite;
     _Bool _isKeyBoardDisplay;
     NSString *_fromClassStr;
     long long _tag;
+    NSString *_bottomTextStr;
     long long _showInviteWarn;
     InviteGroupKit *_inviteGroupKit;
     CreateGroupKit *_createGroupKit;
@@ -44,7 +44,7 @@
 @property(retain, nonatomic) CreateGroupKit *createGroupKit; // @synthesize createGroupKit=_createGroupKit;
 @property(retain, nonatomic) InviteGroupKit *inviteGroupKit; // @synthesize inviteGroupKit=_inviteGroupKit;
 @property(nonatomic) long long showInviteWarn; // @synthesize showInviteWarn=_showInviteWarn;
-@property(nonatomic) _Bool isUseForInvite; // @synthesize isUseForInvite=_isUseForInvite;
+@property(copy, nonatomic) NSString *bottomTextStr; // @synthesize bottomTextStr=_bottomTextStr;
 @property(nonatomic) _Bool isWithoutRightBtn; // @synthesize isWithoutRightBtn=_isWithoutRightBtn;
 @property(nonatomic) _Bool isWithoutDiscuss; // @synthesize isWithoutDiscuss=_isWithoutDiscuss;
 @property(nonatomic) _Bool isFromGroupAndDiscussViewController; // @synthesize isFromGroupAndDiscussViewController=_isFromGroupAndDiscussViewController;

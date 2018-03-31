@@ -12,9 +12,11 @@
 @interface QQTextViewInternal : GATextViewInternal
 {
     _Bool _isDictationPlaceholderShow;
+    _Bool _isShortVideo;
     UIResponder *_overrideNextResponder;
 }
 
+@property(nonatomic) _Bool isShortVideo; // @synthesize isShortVideo=_isShortVideo;
 @property(nonatomic) __weak UIResponder *overrideNextResponder; // @synthesize overrideNextResponder=_overrideNextResponder;
 @property(nonatomic) _Bool isDictationPlaceholderShow; // @synthesize isDictationPlaceholderShow=_isDictationPlaceholderShow;
 - (void).cxx_destruct;

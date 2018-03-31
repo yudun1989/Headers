@@ -21,6 +21,7 @@
     NSDictionary *_queueOrderTrackParam;
     NSString *_pageUrl;
     long long _responseStatusCode;
+    NSString *_currentBizCode;
     UIViewController *_viewController;
     NSMutableDictionary *_queryParams;
     UIView *_bottomBar;
@@ -85,6 +86,7 @@
 @property(retain, nonatomic) UIView *bottomBar; // @synthesize bottomBar=_bottomBar;
 @property(retain, nonatomic) NSMutableDictionary *queryParams; // @synthesize queryParams=_queryParams;
 @property(nonatomic) __weak UIViewController *viewController; // @synthesize viewController=_viewController;
+@property(retain, nonatomic) NSString *currentBizCode; // @synthesize currentBizCode=_currentBizCode;
 @property(nonatomic) long long responseStatusCode; // @synthesize responseStatusCode=_responseStatusCode;
 @property(retain, nonatomic) NSString *pageUrl; // @synthesize pageUrl=_pageUrl;
 @property(retain, nonatomic) NSDictionary *queueOrderTrackParam; // @synthesize queueOrderTrackParam=_queueOrderTrackParam;

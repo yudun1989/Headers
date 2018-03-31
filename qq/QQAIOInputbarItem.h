@@ -11,6 +11,8 @@
     long long _type;
 }
 
++ (id)schoolHomeworkItem;
++ (id)noticeItem;
 + (id)singlPokeItem;
 + (id)doobleItem;
 + (id)pokeItem;

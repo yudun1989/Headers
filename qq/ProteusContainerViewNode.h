@@ -12,8 +12,12 @@
 {
     unsigned long long _layoutType;
     NSMutableDictionary *_subviewDic;
+    struct ProteusSize _wSize;
+    struct ProteusSize _hSize;
 }
 
+@property(nonatomic) struct ProteusSize hSize; // @synthesize hSize=_hSize;
+@property(nonatomic) struct ProteusSize wSize; // @synthesize wSize=_wSize;
 @property(retain, nonatomic) NSMutableDictionary *subviewDic; // @synthesize subviewDic=_subviewDic;
 @property(nonatomic) unsigned long long layoutType; // @synthesize layoutType=_layoutType;
 - (void)dealloc;

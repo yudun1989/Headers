@@ -6,7 +6,7 @@
 
 #import "WXComponent.h"
 
-@class WXSwitchView;
+@class UIColor, WXSwitchView;
 
 @interface WXSwitchComponent : WXComponent
 {
@@ -14,8 +14,14 @@
     _Bool _checked;
     _Bool _disabled;
     WXSwitchView *_switchView;
+    UIColor *_onTintColor;
+    UIColor *_thumbTintColor;
+    UIColor *_tintColor;
 }
 
+@property(retain, nonatomic) UIColor *tintColor; // @synthesize tintColor=_tintColor;
+@property(retain, nonatomic) UIColor *thumbTintColor; // @synthesize thumbTintColor=_thumbTintColor;
+@property(retain, nonatomic) UIColor *onTintColor; // @synthesize onTintColor=_onTintColor;
 @property(nonatomic) _Bool disabled; // @synthesize disabled=_disabled;
 @property(nonatomic) _Bool checked; // @synthesize checked=_checked;
 @property(nonatomic) _Bool changeEvent; // @synthesize changeEvent=_changeEvent;

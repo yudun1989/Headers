@@ -53,12 +53,14 @@
     _Bool _isUsedForShowingAvatarView;
     _Bool _ignoreMakeRedEnv;
     _Bool _isSupportAutoRotate;
+    _Bool _thumIsNeedFullScreen;
     _Bool _hasAudioSession;
     int _menuFrom;
     UIImage *_firstImageViewThumbImage;
 }
 
 @property(nonatomic) _Bool hasAudioSession; // @synthesize hasAudioSession=_hasAudioSession;
+@property(nonatomic) _Bool thumIsNeedFullScreen; // @synthesize thumIsNeedFullScreen=_thumIsNeedFullScreen;
 @property(nonatomic) _Bool isSupportAutoRotate; // @synthesize isSupportAutoRotate=_isSupportAutoRotate;
 @property(retain, nonatomic) QZFaceScanManager *faceScanManager; // @synthesize faceScanManager=_faceScanManager;
 @property(nonatomic) _Bool isEnbleMarkPeople; // @synthesize isEnbleMarkPeople=_isEnbleMarkPeople;

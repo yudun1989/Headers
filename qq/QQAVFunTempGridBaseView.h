@@ -41,6 +41,7 @@
 @property(retain, nonatomic) NSMutableArray *unVisibleArray; // @synthesize unVisibleArray=_unVisibleArray;
 @property(retain, nonatomic) NSMutableArray *downloadArray; // @synthesize downloadArray=_downloadArray;
 @property(retain, nonatomic) NSMutableArray *tempArray; // @synthesize tempArray=_tempArray;
+- (struct UIEdgeInsets)collectionView:(id)arg1 layout:(id)arg2 insetForSectionAtIndex:(long long)arg3;
 - (void)dealloc;
 - (void)onCancelSelectedItem;
 - (void)downloadResourceFail:(id)arg1;

@@ -56,6 +56,7 @@
 - (void)refreshADImage;
 - (void)showAdvertiseImage:(id)arg1 topNavView:(id)arg2;
 - (void)setDesView:(id)arg1 originY:(double)arg2;
+- (void)reLayoutImage0rViedeo;
 - (void)layoutImage0rViedeo:(id)arg1 withData:(id)arg2 superView:(id)arg3 topNavView:(id)arg4;
 - (void)refreshContentView:(id)arg1 superView:(id)arg2 topNavView:(id)arg3;
 - (void)_doInitUI;

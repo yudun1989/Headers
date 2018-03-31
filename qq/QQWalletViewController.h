@@ -6,15 +6,15 @@
 
 #import <QQMainProject/QQWalletBaseViewController.h>
 
+#import <QQMainProject/QQWalletAlertDialogDelegate-Protocol.h>
 #import <QQMainProject/QQWalletHomePageCellDelegate-Protocol.h>
 #import <QQMainProject/QQWalletImageDownloaderDelegate-Protocol.h>
 #import <QQMainProject/QQWalletPopBoxViewDelegate-Protocol.h>
 #import <QQMainProject/QQWalletPullAnimationViewDelegate-Protocol.h>
-#import <QQMainProject/SimpleAlertViewDelegate-Protocol.h>
 
 @class NSArray, NSDictionary, NSError, NSMutableArray, NSString, QQWalletDatas, QQWalletDoubleTitleButton, QQWalletGetHomePageRsp, QQWalletImageDownloader, QQWalletPopBoxView, QQWalletPopWndInfo, QQWalletPullAnimationView, QQWalletTenpayFreezeData, QQWalletVacAuthCodeManager, UIEnteringView, UIImageView, UIView, ValueAddedServiceAppInfo;
 
-@interface QQWalletViewController : QQWalletBaseViewController <QQWalletPullAnimationViewDelegate, SimpleAlertViewDelegate, QQWalletImageDownloaderDelegate, QQWalletPopBoxViewDelegate, QQWalletHomePageCellDelegate>
+@interface QQWalletViewController : QQWalletBaseViewController <QQWalletPullAnimationViewDelegate, QQWalletImageDownloaderDelegate, QQWalletPopBoxViewDelegate, QQWalletHomePageCellDelegate, QQWalletAlertDialogDelegate>
 {
     long long redPointId;
     long long redPointSubId;
@@ -56,6 +56,7 @@
     NSMutableArray *appExposureArray;
     NSMutableArray *unExposureCellTags;
     _Bool _showTitle;
+    _Bool _needShowPrivatePolicy;
 }
 
 - (void).cxx_destruct;
@@ -83,7 +84,11 @@
 - (id)indexPathForScrollToRedPoint;
 - (void)handleRequestError:(id)arg1;
 - (void)parseQQWalletRecommend:(id)arg1 source:(unsigned long long)arg2;
-- (void)buttonClick:(id)arg1 atIndex:(int)arg2;
+- (void)alertDialog:(id)arg1 clickedButtonAtIndex:(long long)arg2;
+- (void)setLocalAgreePrivatePolicy;
+- (void)setAgreePrivatePolicy;
+- (_Bool)isLocalAgreePrivatePolicy;
+- (void)showPolicyAlertDialogIfNeed;
 - (void)showMyDeals;
 - (void)QQWalletServiceWillStart:(id)arg1;
 - (void)didTapServiceGridCell:(id)arg1 atSection:(long long)arg2 index:(long long)arg3;

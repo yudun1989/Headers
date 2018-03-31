@@ -29,6 +29,7 @@
     double _contentScale;
 }
 
+- (void)layoutSubviews;
 - (void)destoryRenderAndFrameBuffer;
 - (void)setVideoFrame:(id)arg1;
 - (void)setupFrameAndRenderBuffer;

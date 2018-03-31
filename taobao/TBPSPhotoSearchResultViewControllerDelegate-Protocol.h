@@ -6,22 +6,10 @@
 
 #import "NSObject-Protocol.h"
 
-@class NSArray, NSDictionary, NSString, UIScrollView;
-
 @protocol TBPSPhotoSearchResultViewControllerDelegate <NSObject>
 
 @optional
 - (void)cancelAnimation:(_Bool)arg1;
-- (void)shouldContract:(UIScrollView *)arg1;
-- (void)shouldExpand:(UIScrollView *)arg1;
-- (void)showSearchBar:(NSDictionary *)arg1;
-- (void)share:(id)arg1;
-- (void)adjustNaviBarTitle;
-- (void)showShare;
-- (void)showMenu:(NSArray *)arg1;
-- (void)showNaviBar;
-- (void)TBOpenURL:(NSString *)arg1;
-- (void)camera:(id)arg1;
 - (void)backView:(id)arg1;
 @end
 

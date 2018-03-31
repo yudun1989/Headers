@@ -6,8 +6,6 @@
 
 #import <QQMainProject/QZAlbumListAction.h>
 
-@class NSNotification;
-
 @interface QZAlbumListEditingAction : QZAlbumListAction
 {
     unsigned long long _actionType;
@@ -23,9 +21,6 @@
 - (id)onMovePhotos:(id)arg1 state:(id)arg2;
 - (id)apply:(id)arg1;
 - (void)dealloc;
-
-// Remaining properties
-@property(retain, nonatomic) NSNotification *payload;
 
 @end
 

@@ -17,7 +17,7 @@
 }
 
 + (_Bool)dismiss;
-+ (void)showInView:(id)arg1;
++ (_Bool)showInView:(id)arg1;
 @property(nonatomic) _Bool isRecursive; // @synthesize isRecursive=_isRecursive;
 @property(retain, nonatomic) UIImageView *ivHand; // @synthesize ivHand=_ivHand;
 @property(retain, nonatomic) UIImageView *ivLine; // @synthesize ivLine=_ivLine;

@@ -43,7 +43,7 @@
     WXLoadingComponent *_loadingComponent;
 }
 
-+ (id)wx_export_method_95;
++ (id)wx_export_method_91;
 @property(nonatomic) __weak WXLoadingComponent *loadingComponent; // @synthesize loadingComponent=_loadingComponent;
 @property(nonatomic) __weak WXRefreshComponent *refreshComponent; // @synthesize refreshComponent=_refreshComponent;
 @property(retain, nonatomic) NSMutableArray *listenerArray; // @synthesize listenerArray=_listenerArray;

@@ -30,7 +30,6 @@
     id <QQImageViewDelegate> _touchDelegate;
     QQBasePhoto *_photo;
     _Bool _imageLoading;
-    UIButton *_openBrowserBtn;
     _Bool _enableCorrectThumbnailRect;
     UILabel *_overSizeLabel;
     UILabel *_picSourceLabel;
@@ -78,8 +77,6 @@
 - (void)notifyAnimationFinished:(id)arg1;
 - (void)notifyDownloadThumbFail:(id)arg1;
 - (void)notifyDownloadThumbSuccess:(id)arg1;
-- (void)browserOpenPhoto:(id)arg1;
-- (void)processDownloadFail;
 - (void)notifyDownloadFail:(id)arg1;
 - (void)notifyNetWorkError:(id)arg1;
 - (void)notifyAsynLoadImageFail:(id)arg1;
@@ -158,7 +155,6 @@
 @property(nonatomic) _Bool imageLoading; // @dynamic imageLoading;
 @property(readonly, nonatomic) int imageState; // @dynamic imageState;
 @property(readonly, nonatomic) UIView *imageView; // @dynamic imageView;
-@property(retain, nonatomic) UIButton *openBrowserBtn; // @dynamic openBrowserBtn;
 @property(readonly, nonatomic) QQBasePhoto *photo; // @dynamic photo;
 @property(readonly, nonatomic) QQImageViewSrollView *scrollView; // @dynamic scrollView;
 @property(readonly) Class superclass;

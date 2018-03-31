@@ -21,6 +21,10 @@
 @property(retain, nonatomic) NSString *validItemRecommendUrl; // @synthesize validItemRecommendUrl=_validItemRecommendUrl;
 @property(retain, nonatomic) NSMutableDictionary *data; // @synthesize data=_data;
 - (void).cxx_destruct;
+- (id)favorTipsOfContentPreSell;
+- (id)deleteTipsOfContentPreSell;
+- (id)deleteTipsOfTitlePreSell;
+- (id)preSell;
 - (id)favorTipsOfContentPriorityBuy;
 - (id)favorTipsOfTitlePriorityBuy;
 - (id)deleteTipsOfContentPriorityBuy;

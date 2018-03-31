@@ -59,7 +59,6 @@
 @property(nonatomic) _Bool supportLongPress; // @synthesize supportLongPress=_supportLongPress;
 @property(nonatomic) _Bool canEditRowForItem; // @synthesize canEditRowForItem=_canEditRowForItem;
 @property(retain, nonatomic) NSMutableArray *memberArrary; // @synthesize memberArrary=_memberArrary;
-- (void)superGroupOwnerEntryExpReport;
 - (void)doSelectedAction;
 - (void)scrollListToTop;
 - (void)resetListState;
@@ -85,6 +84,7 @@
 - (void)groupListViewWillBeginDragging:(id)arg1;
 - (void)groupListViewDidEndDragging:(id)arg1 willDecelerate:(_Bool)arg2;
 - (void)groupListViewDidScroll:(id)arg1;
+- (void)reallyRefreshDiscusslist;
 - (void)doRefreshDiscussList;
 - (void)refreshDiscussListWithFrequencyControl:(double)arg1;
 - (void)refreshDiscussListPeriodically;

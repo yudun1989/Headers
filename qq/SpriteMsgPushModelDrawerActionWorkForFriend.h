@@ -23,7 +23,6 @@
 @property(nonatomic) int actionId; // @synthesize actionId=_actionId;
 @property(nonatomic) long long toUin; // @synthesize toUin=_toUin;
 - (void)dealloc;
-- (id)description;
 
 @end
 

@@ -6,23 +6,44 @@
 
 #import <UIKit/UITableViewCell.h>
 
-@class NSArray, UIScrollView, UIView, UIViewController;
+#import <QQMainProject/UIScrollViewDelegate-Protocol.h>
 
-@interface QZRecommondVideoCell : UITableViewCell
+@class NSArray, NSMutableArray, NSString, QZRichTextLabel, QzoneFeedModel, UILabel, UIScrollView, UIView, UIViewController;
+@protocol QZRecommondVideoCellDelegate;
+
+@interface QZRecommondVideoCell : UITableViewCell <UIScrollViewDelegate>
 {
     UIView *_headerView;
+    UILabel *_adOwnerLabel;
+    QZRichTextLabel *_adText;
     UIScrollView *_videoScrollView;
     NSArray *_recommendFeedsModels;
     NSArray *_recommendModels;
+    QzoneFeedModel *_adFeedModel;
     UIViewController *_parentViewController;
+    id <QZRecommondVideoCellDelegate> _cellDelegate;
+    NSMutableArray *_adBoxHasExposure;
+    NSMutableArray *_adBoxFrame;
 }
 
+@property(retain, nonatomic) NSMutableArray *adBoxFrame; // @synthesize adBoxFrame=_adBoxFrame;
+@property(retain, nonatomic) NSMutableArray *adBoxHasExposure; // @synthesize adBoxHasExposure=_adBoxHasExposure;
+@property(retain, nonatomic) id <QZRecommondVideoCellDelegate> cellDelegate; // @synthesize cellDelegate=_cellDelegate;
 @property(nonatomic) __weak UIViewController *parentViewController; // @synthesize parentViewController=_parentViewController;
+@property(nonatomic) __weak QzoneFeedModel *adFeedModel; // @synthesize adFeedModel=_adFeedModel;
 @property(retain, nonatomic) NSArray *recommendModels; // @synthesize recommendModels=_recommendModels;
 @property(retain, nonatomic) NSArray *recommendFeedsModels; // @synthesize recommendFeedsModels=_recommendFeedsModels;
 @property(retain, nonatomic) UIScrollView *videoScrollView; // @synthesize videoScrollView=_videoScrollView;
+@property(retain, nonatomic) QZRichTextLabel *adText; // @synthesize adText=_adText;
+@property(retain, nonatomic) UILabel *adOwnerLabel; // @synthesize adOwnerLabel=_adOwnerLabel;
 @property(retain, nonatomic) UIView *headerView; // @synthesize headerView=_headerView;
 - (void).cxx_destruct;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly, copy) NSString *description;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
 
 @end
 

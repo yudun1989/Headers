@@ -72,6 +72,7 @@
 - (void)Callback_GetShareUrl:(int)arg1 ErrorType:(int)arg2 Cid:(id)arg3 Url:(id)arg4;
 - (void)Callback_DetailFetch:(int)arg1 ErrorType:(int)arg2 model:(id)arg3;
 - (void)Callback_DelFav:(int)arg1 ErrorType:(int)arg2 CId:(id)arg3;
+- (int)delFavWithCids:(id)arg1;
 - (int)delFav:(id)arg1;
 - (void)retryAddFav:(id)arg1;
 - (int)sendAddCmdAndNotify:(id)arg1 userInfo:(id)arg2;

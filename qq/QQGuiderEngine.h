@@ -27,7 +27,6 @@
 - (void)userDidLogout:(id)arg1;
 - (void)userDidLoginAndUIClear:(id)arg1;
 - (void)setValue:(_Bool)arg1 forKeyPrefix:(id)arg2;
-- (_Bool)valueWithKeyPrefix:(id)arg1;
 - (id)keyWithPrefix:(id)arg1;
 - (void)initialize;
 - (void)dealloc;

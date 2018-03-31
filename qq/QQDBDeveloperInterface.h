@@ -14,6 +14,7 @@
 + (void)cleanMsgTable:(id)arg1 selector:(SEL)arg2;
 + (long long)getUinFromC2cTableName:(id)arg1;
 + (id)getTroopMsgTableNameWithGroupCode:(id)arg1;
++ (id)getHonestTalkingTableNameWithUin:(id)arg1;
 + (id)getC2CTableNameWithUin:(id)arg1;
 + (void)removeVersionMgrOfDb:(id)arg1;
 + (void)setTableVersion:(unsigned short)arg1 tableSign:(unsigned long long)arg2 inDatabase:(id)arg3;

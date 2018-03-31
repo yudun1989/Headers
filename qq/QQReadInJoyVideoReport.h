@@ -22,9 +22,11 @@
 + (id)info7409BaseR5:(id)arg1 watchDuration:(long long)arg2 currentDuration:(long long)arg3 videoDuration:(long long)arg4 videoIndex:(long long)arg5 extensionDic:(id)arg6;
 + (id)info7409BaseR5:(id)arg1 vid:(id)arg2 aid:(id)arg3 watchDuration:(long long)arg4 currentDuration:(long long)arg5 videoDuration:(long long)arg6 fans:(_Bool)arg7 algorithm_id:(unsigned long long)arg8 strategy_id:(unsigned int)arg9 videoIndex:(long long)arg10 extensionDic:(id)arg11;
 + (id)reportInfoBaseR5:(id)arg1;
++ (void)reportTo1160:(id)arg1 targetUin:(id)arg2 R2:(id)arg3 R3:(id)arg4 R4:(id)arg5 R5:(id)arg6;
 + (void)reportTo1160:(id)arg1 R2:(id)arg2 R3:(id)arg3 R4:(id)arg4 R5:(id)arg5;
 + (int)getPlayStatusWidthVideoView:(int)arg1;
 + (id)getSession;
++ (id)getVersion;
 + (int)rdmNetType;
 + (int)getNetInfo;
 + (int)ShareItemFlagToReportType:(int)arg1;

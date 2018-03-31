@@ -18,7 +18,7 @@
 @property(copy, nonatomic) CDUnknownBlockType didFailLoadAction;
 @property(copy, nonatomic) CDUnknownBlockType didFinishLoadAction;
 @property(copy, nonatomic) CDUnknownBlockType didStartLoadAction;
-@property(copy, nonatomic) CDUnknownBlockType souldStartLoadAction;
+@property(copy, nonatomic) CDUnknownBlockType shouldStartLoadAction;
 @property(readonly, nonatomic) _Bool webViewCanGoForward;
 @property(readonly, nonatomic) _Bool webViewCanGoBack;
 @property(nonatomic) _Bool mediaPlaybackRequiresUserAction;
@@ -36,6 +36,7 @@
 @property(nonatomic, getter=isUseWKWebView) long long useWKWebView;
 - (WVBridge *)webviewJSBContext;
 - (void)registerHandler:(NSString *)arg1 withBlock:(void (^)(NSDictionary *, id <WVBridgeCallbackContext>))arg2;
+- (void)h5ActiveFrom:(NSString *)arg1 withData:(id)arg2;
 - (void)webViewReload;
 - (void)webViewStopLoading;
 - (void)webViewGoForward;

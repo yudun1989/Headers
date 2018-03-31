@@ -13,12 +13,13 @@
 #import <QQMainProject/MQZoneDragCollectionViewDelegate-Protocol.h>
 #import <QQMainProject/MQZonePhotoDescriptionDelegate-Protocol.h>
 #import <QQMainProject/QUIActionSheetDelegate-Protocol.h>
+#import <QQMainProject/QZAnimojiUploadDelegate-Protocol.h>
 #import <QQMainProject/UIAlertViewDelegate-Protocol.h>
 
 @class MQZCameraWrapper, MQZMultiImagePickerWrapper, MQZoneDragCollectionView, MQzoneFollowTipView, NSIndexPath, NSMutableArray, NSMutableDictionary, NSString, QUIActionSheet, QZFaceScanManager, QZoneViewController, UIButton;
 @protocol MQZonePhotoViewDelegate;
 
-@interface MQZonePhotoView : NSObject <QUIActionSheetDelegate, UIAlertViewDelegate, MQZDragCollectionViewDataSource, MQZoneDragCollectionViewDelegate, MQZonePhotoDescriptionDelegate, MQZImagePickerDelegate, MQZMultiImagePickerWrapperDelegate, MQZoneDragCollectionViewCellDelegate>
+@interface MQZonePhotoView : NSObject <QUIActionSheetDelegate, UIAlertViewDelegate, MQZDragCollectionViewDataSource, MQZoneDragCollectionViewDelegate, MQZonePhotoDescriptionDelegate, MQZImagePickerDelegate, MQZMultiImagePickerWrapperDelegate, MQZoneDragCollectionViewCellDelegate, QZAnimojiUploadDelegate>
 {
     MQZoneDragCollectionView *_collectionView;
     QZoneViewController<MQZonePhotoViewDelegate> *_delegate;
@@ -88,6 +89,7 @@
 - (long long)numberOfSectionsInCollectionView:(id)arg1;
 - (long long)collectionView:(id)arg1 numberOfItemsInSection:(long long)arg2;
 - (void)didMQZImagePicker:(id)arg1 selectedImages:(id)arg2;
+- (void)didQZAnimojiUpload:(id)arg1;
 - (void)onQZVideoComposeComplete;
 - (void)onEditVideoWithProvider:(id)arg1 videoInfo:(id)arg2;
 - (void)onEditIndex:(long long)arg1 toImage:(id)arg2;

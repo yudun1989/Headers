@@ -35,6 +35,8 @@
 + (int)massBlessFaceUVersion;
 + (id)localDefaultConfig;
 + (_Bool)hasCategory:(id)arg1;
++ (void)switchToLastConfigDic;
++ (void)disableDanceItemTemporary;
 + (id)getPandentList:(_Bool)arg1;
 + (void)saveTipsConfig:(id)arg1;
 + (void)savePendantRedDotConfig:(id)arg1;
@@ -58,6 +60,7 @@
 + (void)downloadGestureSDK;
 + (id)pendantListResourcePath;
 + (id)filterDanceItem:(id)arg1;
++ (id)filterDanceItemByDevice:(id)arg1;
 + (_Bool)postureDanceStageResourceIsExist;
 + (_Bool)faceDanceSharedResourceIsExist;
 + (void)checkPostureDanceResourceIsComplete:(id)arg1;

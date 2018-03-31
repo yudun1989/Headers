@@ -30,6 +30,7 @@
 - (void)setEditing:(_Bool)arg1 animated:(_Bool)arg2;
 - (void)thumbReloadSelectedStyleAnimated:(_Bool)arg1;
 - (_Bool)checkAllCheckedAndLeftBarTitle;
+- (void)checkAllAction:(id)arg1;
 - (id)defalutCheckAllItem;
 - (void)closeEmptyView;
 - (void)showEmptyView;

@@ -20,10 +20,11 @@
     NSArray *_discoveryModelArray;
     unsigned long long _entranceTabType;
     NSMutableDictionary *_dataReportDict;
-    _Bool _isNeedChangeBackgroundColor;
+    _Bool _isPlanB;
     id <QQDynamicSearchDiscoveryViewDelegate> _discoveryViewdelegate;
 }
 
+@property(nonatomic) _Bool isPlanB; // @synthesize isPlanB=_isPlanB;
 @property(nonatomic) __weak id <QQDynamicSearchDiscoveryViewDelegate> discoveryViewdelegate; // @synthesize discoveryViewdelegate=_discoveryViewdelegate;
 - (void).cxx_destruct;
 - (void)QQDynamicSelectTypeCollectionViewDidSelectItemAtIndexPath:(id)arg1 itemModel:(id)arg2 modelCount:(long long)arg3;
@@ -43,6 +44,7 @@
 - (long long)tableView:(id)arg1 numberOfRowsInSection:(long long)arg2;
 - (long long)numberOfSectionsInTableView:(id)arg1;
 - (void)scrollViewWillBeginDragging:(id)arg1;
+- (void)handleDiscoveryModelArray;
 - (void)changeTableViewBackgroundColor;
 - (void)reloadData;
 - (id)modelArrayForRowAtIndexPath:(id)arg1;

@@ -15,6 +15,9 @@
 }
 
 + (int)getCellHeight:(id)arg1;
+- (long long)indexOfAccessibilityElement:(id)arg1;
+- (id)accessibilityElementAtIndex:(long long)arg1;
+- (long long)accessibilityElementCount;
 - (void)setHighlighted:(_Bool)arg1;
 - (void)LongPressedEnded;
 - (void)setIsLongPressed;

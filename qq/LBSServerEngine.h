@@ -75,7 +75,6 @@
 - (void)deleteBlackList:(id)arg1 type:(int)arg2;
 - (void)insertBlackList:(id)arg1 type:(int)arg2;
 - (void)getBlackList:(long long)arg1;
-- (void)sendEncounterSelfClientMsg:(id)arg1 accostType:(int)arg2 msgType:(int)arg3 toUin:(long long)arg4 actionUrl:(id)arg5;
 - (void)sendEncounterClientMsg:(id)arg1 accostType:(int)arg2 msgType:(int)arg3 toUin:(long long)arg4 extraInfo:(id)arg5;
 - (int)getMsgItemType:(int)arg1;
 - (void)didHandleShareTraceList:(struct ShareTraceList *)arg1;

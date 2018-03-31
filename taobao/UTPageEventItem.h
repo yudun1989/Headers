@@ -35,6 +35,7 @@
 - (void).cxx_destruct;
 - (void)refreshWhenSwitchForeGround;
 - (void)refreshWhenSwitchBackGround;
+- (id)correctScm;
 - (id)correctSpm;
 - (id)init;
 

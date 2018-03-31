@@ -17,7 +17,7 @@
     _Bool isUploading;
     long long winSize;
     float averagePackageSize;
-    int _allowedNetoworkStatus;
+    unsigned long long _allowedNetoworkStatus;
     unsigned long long _uploadFailCount;
     unsigned long long _upLoadSuccessCount;
     NSMutableDictionary *_eidMap;
@@ -60,7 +60,7 @@
 - (void)uploadLogs;
 - (void)setConfig:(id)arg1;
 - (_Bool)isAllowedNetoworkStatus;
-- (void)setAllowedNetoworkStatus:(int)arg1;
+- (void)setAllowedNetoworkStatus:(unsigned long long)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)init;
 

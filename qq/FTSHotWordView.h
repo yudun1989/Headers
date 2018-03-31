@@ -9,13 +9,15 @@
 #import <QQMainProject/UICollectionViewDataSource-Protocol.h>
 #import <QQMainProject/UICollectionViewDelegate-Protocol.h>
 
-@class FTSEqualSpaceFlowLayout, NSArray, NSString, UICollectionView;
+@class FTSEqualSpaceFlowLayout, NSArray, NSString, UICollectionView, UILabel;
 @protocol FTSHotWordViewDelegate;
 
 @interface FTSHotWordView : UIView <UICollectionViewDelegate, UICollectionViewDataSource>
 {
     UICollectionView *_collectionView;
     FTSEqualSpaceFlowLayout *_layout;
+    struct CGRect _hotWordFrame;
+    UILabel *_titleLabel;
     NSArray *_cellModelArray;
     id <FTSHotWordViewDelegate> _delegate;
 }
@@ -23,6 +25,8 @@
 @property(nonatomic) id <FTSHotWordViewDelegate> delegate; // @synthesize delegate=_delegate;
 @property(retain, nonatomic) NSArray *cellModelArray; // @synthesize cellModelArray=_cellModelArray;
 - (void).cxx_destruct;
+- (void)collectionView:(id)arg1 didUnhighlightItemAtIndexPath:(id)arg2;
+- (void)collectionView:(id)arg1 didHighlightItemAtIndexPath:(id)arg2;
 - (void)collectionView:(id)arg1 didSelectItemAtIndexPath:(id)arg2;
 - (double)collectionView:(id)arg1 layout:(id)arg2 minimumLineSpacingForSectionAtIndex:(long long)arg3;
 - (struct CGSize)collectionView:(id)arg1 layout:(id)arg2 sizeForItemAtIndexPath:(id)arg3;

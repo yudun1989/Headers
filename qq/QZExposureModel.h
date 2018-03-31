@@ -16,7 +16,6 @@
 
 @property(nonatomic) long long feedPageType; // @synthesize feedPageType=_feedPageType;
 @property(retain, nonatomic) NSIndexPath *indexPath; // @synthesize indexPath=_indexPath;
-- (void).cxx_destruct;
 
 // Remaining properties
 @property(retain, nonatomic) NSString *actionLineIdentity; // @dynamic actionLineIdentity;

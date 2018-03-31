@@ -7,6 +7,7 @@
 #import <QQMainProject/QQVIPFunctionComicBaseViewController.h>
 
 #import <QQMainProject/ActionSheetDataDelegate-Protocol.h>
+#import <QQMainProject/ComicReadProgressTipDelegate-Protocol.h>
 #import <QQMainProject/QQVIPComicCollectAlertViewDelegate-Protocol.h>
 #import <QQMainProject/QQVIPComicReadTableViewCellDelegate-Protocol.h>
 #import <QQMainProject/QQVIPFunctionComicNavigationBarViewDelegate-Protocol.h>
@@ -31,10 +32,10 @@
 #import <QQMainProject/UITableViewDataSource-Protocol.h>
 #import <QQMainProject/UITableViewDelegate-Protocol.h>
 
-@class ComicInfoModel, ComicPicReadReportManager, ComicReadContext, ComicSectionModel, NSArray, NSDate, NSMutableArray, NSMutableDictionary, NSMutableSet, NSObject, NSString, QQAlertView, QQComicColorEggsAlertView, QQComicOCRView, QQComicStoryBoardView, QQComicTableView, QQComicTencentComicBannerInfo, QQComicTencentComicBannerView, QQLockDictionary, QQToastView, QQVIPComicCollectAlertView, QQVIPFunctionComicLoadingView, QQVIPFunctionComicProgressView, QQVIPFunctionComicReadNavBarView, QQVIPFunctionComicReaderLogic, QQVIPFunctionComicReaderTabBarItemView, QQVIPFunctionComicReaderTabBarView, QQVIPFunctionComicScrollView, QQVIPFunctionLockMutableArray, QQVIPFunctionOneComicPayInfoManager, QQVIPFunctionReaderModelManager, QQVIPFunctionShareActionSheet, QQVipComicReadSecTipsView, QQVipComicReaderDropDownView, QQVipComicReaderSettingView, QQVipComicRecommandPageModel, QQVipComicRecommandView, QQVipComicSectionReadRecord, QQVipComicShowCollectTipsRecord, QQVipDanmakuMenuView, QQVipDanmuController, QQVipFunctionRetryBuyButtons, UIButton, UIImageView, UIView;
+@class ComicInfoModel, ComicPicReadReportManager, ComicReadContext, ComicReadProgressInfo, ComicReadProgressTipView, ComicSectionModel, NSArray, NSDate, NSMutableArray, NSMutableDictionary, NSMutableSet, NSObject, NSString, QQAlertView, QQComicColorEggsAlertView, QQComicOCRView, QQComicStoryBoardView, QQComicTableView, QQComicTencentComicBannerInfo, QQComicTencentComicBannerView, QQLockDictionary, QQToastView, QQVIPComicCollectAlertView, QQVIPFunctionComicLoadingView, QQVIPFunctionComicProgressView, QQVIPFunctionComicReadNavBarView, QQVIPFunctionComicReaderLogic, QQVIPFunctionComicReaderTabBarItemView, QQVIPFunctionComicReaderTabBarView, QQVIPFunctionComicScrollView, QQVIPFunctionLockMutableArray, QQVIPFunctionOneComicPayInfoManager, QQVIPFunctionReaderModelManager, QQVIPFunctionShareActionSheet, QQVipComicReadSecTipsView, QQVipComicReaderDropDownView, QQVipComicReaderSettingView, QQVipComicRecommandPageModel, QQVipComicRecommandView, QQVipComicSectionReadRecord, QQVipComicShowCollectTipsRecord, QQVipDanmakuMenuView, QQVipDanmuController, QQVipFunctionRetryBuyButtons, UIButton, UIImageView, UIView;
 @protocol ComicSectionPicInfoModel, OS_dispatch_queue;
 
-@interface QQVIPFunctionComicReadViewController : QQVIPFunctionComicBaseViewController <QQVipDanmakuMenuViewDelegate, QQVipDanmakuMenuViewDatasource, QQVipComicReaderDropDownViewDelegate, QQVipComicReaderSettingViewDelegate, QQVipComicAdvertiseDelegate, QQVipComicAdvertiseDoEventDelegate, UITableViewDelegate, UITableViewDataSource, QQVIPFunctionComicNavigationBarViewDelegate, QQVIPFunctionComicReaderTabBarViewDelegate, QQVipFunctionDownloadProtocol, QQVIPFunctionComicReaderPatchLogicDelegate, UIScrollViewDelegate, QQVIPComicReadTableViewCellDelegate, QQVIPFunctionComicScrollActionDelegate, UIGestureRecognizerDelegate, UIAlertViewDelegate, QQVIPFunctionOneComicPayInfoManagerdelegete, SimpleAlertViewDelegate, QQVIPFunctionWebViewPresentingDelegate, QQVIPFunctionComicReadNavBarViewDelegate, ActionSheetDataDelegate, QQVipComicReadTableViewBaseCellDelegate, QQVIPComicCollectAlertViewDelegate>
+@interface QQVIPFunctionComicReadViewController : QQVIPFunctionComicBaseViewController <QQVipDanmakuMenuViewDelegate, QQVipDanmakuMenuViewDatasource, QQVipComicReaderDropDownViewDelegate, QQVipComicReaderSettingViewDelegate, QQVipComicAdvertiseDelegate, QQVipComicAdvertiseDoEventDelegate, UITableViewDelegate, UITableViewDataSource, QQVIPFunctionComicNavigationBarViewDelegate, QQVIPFunctionComicReaderTabBarViewDelegate, QQVipFunctionDownloadProtocol, QQVIPFunctionComicReaderPatchLogicDelegate, UIScrollViewDelegate, QQVIPComicReadTableViewCellDelegate, QQVIPFunctionComicScrollActionDelegate, UIGestureRecognizerDelegate, UIAlertViewDelegate, QQVIPFunctionOneComicPayInfoManagerdelegete, SimpleAlertViewDelegate, QQVIPFunctionWebViewPresentingDelegate, QQVIPFunctionComicReadNavBarViewDelegate, ActionSheetDataDelegate, QQVipComicReadTableViewBaseCellDelegate, QQVIPComicCollectAlertViewDelegate, ComicReadProgressTipDelegate>
 {
     QQVipFunctionRetryBuyButtons *_retryBuyComicButton;
     QQLockDictionary *_buyStateDic;
@@ -42,6 +43,7 @@
     QQVipComicRecommandView *_recommandView;
     QQVipComicRecommandPageModel *_recommandModel;
     _Bool _isRecommandViewShowing;
+    _Bool _isRecommandViewAdShowing;
     UIImageView *_acTencetComicBannerBgView;
     QQComicTencentComicBannerView *_acTencetComicBannerView;
     QQComicStoryBoardView *storyBoardView;
@@ -102,6 +104,8 @@
     ComicInfoModel *_comicModel;
     ComicSectionModel *_sectionModel;
     NSArray<ComicSectionPicInfoModel> *_picInfoModels;
+    ComicReadProgressInfo *_readProgressInfo;
+    ComicReadProgressTipView *_progressTipView;
     QQVIPFunctionComicReaderLogic *_readerLogic;
     _Bool _isBackward;
     double _lastSliderValue;
@@ -121,6 +125,7 @@
     _Bool _isNeedToRegisteredScreenshotNotiAgain;
     _Bool _isWaitingToJumpToNewSection;
     _Bool _isJumpingToNewSection;
+    _Bool _isJumpingToReadProgressSection;
     _Bool _isRequestAllUserBuyInfo;
     _Bool _allUserBuyInfoBack;
     _Bool _presentingToChapterList;
@@ -186,6 +191,7 @@
 - (void)gotoAdvertiseFromButton:(id)arg1;
 - (void)gotoAdvertiseFromPicture:(id)arg1;
 - (void)clickLeftTopToPopup:(id)arg1;
+- (void)reportTSAShowAdvertise:(id)arg1;
 - (void)reportShowAdvertise:(id)arg1;
 - (void)reportLoadAdvertiseIsLastSection:(_Bool)arg1 adModel:(id)arg2;
 - (int)reportReadMode;
@@ -229,6 +235,13 @@
 - (void)singleTapOnCellTiplabelWithPageKey:(id)arg1;
 - (void)singleTapOnCell:(id)arg1;
 - (unsigned long long)buyStateForComic:(id)arg1 andSection:(id)arg2 andPage:(id)arg3;
+- (void)removeReadProgressTip;
+- (void)comicReadProgressTipViewClick;
+- (void)comicReadProgressTipCancelClick;
+- (void)updateReadProgressTipView;
+- (void)alertViewClickCancel:(id)arg1;
+- (void)alertView:(id)arg1 clickGuideWithUrl:(id)arg2;
+- (void)alertViewClickContiue:(id)arg1;
 - (void)tryReportOpenReaderDuration:(id)arg1;
 - (void)handleSwipe:(id)arg1;
 - (_Bool)needBuyCurrentReadModel:(id)arg1 quitOffset:(double)arg2;
@@ -303,6 +316,7 @@
 - (void)requestPicImage:(long long)arg1 isFirstPic:(_Bool)arg2;
 - (void)prepareTotalCell;
 - (void)checkSectionNeedShowAd:(id)arg1;
+- (_Bool)needUpdateCurrentIndexWhenADBack:(id)arg1;
 - (void)acDownloadOpNoti:(id)arg1;
 - (void)showAcDownloadBannerIfNeed;
 - (void)updateAcDownloadViewUI;

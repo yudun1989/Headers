@@ -24,7 +24,6 @@
 - (void)stopLoading;
 - (void)startLoading;
 - (void)dataLoaded;
-- (id)getSDKVCDelegate;
 - (id)initWithFrame:(struct CGRect)arg1 Service:(id)arg2;
 
 @end

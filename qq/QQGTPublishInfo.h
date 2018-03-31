@@ -19,7 +19,7 @@
 @property(retain, nonatomic) NSString *getContentTextViewInputText; // @dynamic getContentTextViewInputText;
 @property(retain, nonatomic) NSString *getPublishCategory; // @dynamic getPublishCategory;
 @property(retain, nonatomic) NSDictionary *getPublishOtherParams; // @dynamic getPublishOtherParams;
-@property(nonatomic) int selectedMediaType; // @dynamic selectedMediaType;
+@property(nonatomic) unsigned long long selectedMediaType; // @dynamic selectedMediaType;
 @property(retain, nonatomic) NSString *titleTextFieldInputText; // @dynamic titleTextFieldInputText;
 @end
 

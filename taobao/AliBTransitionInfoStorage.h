@@ -16,6 +16,7 @@
 
 + (void)clearMock;
 + (void)mockTransitionInfo:(id)arg1;
++ (void)transitionInfoEffect:(id)arg1;
 + (id)getTransitionInfo;
 + (id)shareInstance;
 @property(retain, nonatomic) AliBatonOrange *orange; // @synthesize orange=_orange;

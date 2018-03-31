@@ -6,21 +6,16 @@
 
 #import <UIKit/UIView.h>
 
-#import "KSAsyncNode-Protocol.h"
+@class UIButton, UIImageView;
 
-@class HLRichLabel, NSString, UIButton, UIImageView;
-
-@interface KSFeedBigCellCommentsView : UIView <KSAsyncNode>
+@interface KSFeedBigCellCommentsView : UIView
 {
     struct CGSize _contentSize;
     UIImageView *_commentIcon;
-    HLRichLabel *_commentLabel;
     UIButton *_moreButton;
 }
 
-+ (struct CGSize)calculateSizeThatFits:(struct CGSize)arg1 forModel:(struct KS_feed *)arg2;
 @property(retain, nonatomic) UIButton *moreButton; // @synthesize moreButton=_moreButton;
-@property(retain, nonatomic) HLRichLabel *commentLabel; // @synthesize commentLabel=_commentLabel;
 @property(retain, nonatomic) UIImageView *commentIcon; // @synthesize commentIcon=_commentIcon;
 - (void).cxx_destruct;
 - (void)drawWithModel:(struct KS_feed *)arg1;
@@ -29,12 +24,6 @@
 - (void)commonInit;
 - (id)initWithFrame:(struct CGRect)arg1;
 - (id)initWithCoder:(id)arg1;
-
-// Remaining properties
-@property(readonly, copy) NSString *debugDescription;
-@property(readonly, copy) NSString *description;
-@property(readonly) unsigned long long hash;
-@property(readonly) Class superclass;
 
 @end
 

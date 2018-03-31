@@ -7,6 +7,7 @@
 #import <UIKit/UIImageView.h>
 
 @interface UIImageView (MTBSetImage)
+- (void)mtbSetImage:(id)arg1 placeholder:(id)arg2 options:(unsigned long long)arg3;
 - (void)mtbSetImage:(id)arg1 placeholder:(id)arg2;
 - (void)mtbSetImage:(id)arg1;
 @end

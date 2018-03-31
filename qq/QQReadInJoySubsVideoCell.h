@@ -9,15 +9,16 @@
 #import <QQMainProject/BarrageWebViewTableCellDelegate-Protocol.h>
 #import <QQMainProject/FullVideoStateViewDelegate-Protocol.h>
 #import <QQMainProject/QQReadInJoyFullVideoViewDelegate-Protocol.h>
+#import <QQMainProject/QQReadInJoySubsVideoCellBottomViewDelegate-Protocol.h>
 #import <QQMainProject/QQReadInJoyVideoCellShareDelegate-Protocol.h>
 #import <QQMainProject/QQReadInJoyVideoViewDelegate-Protocol.h>
 #import <QQMainProject/UICollectionViewDataSource-Protocol.h>
 #import <QQMainProject/UICollectionViewDelegate-Protocol.h>
 
-@class CAGradientLayer, FullScreenVideoStateView, MQZoneShadowBlurLabel, NSString, QQAvatarView, QQReadInJoyVideoItemFullScreenViewController, QQReadInJoyVideoReport, QQReadInJoyVideoView, ReadInJoyChannel, ReadInJoyChannelArticle, UIButton, UICollectionView, UIControl, UIImageView, UILabel, UIView;
+@class CAGradientLayer, FullScreenVideoStateView, MQZoneShadowBlurLabel, NSString, QQReadInJoySubsVideoCellBottomView, QQReadInJoyVideoItemFullScreenViewController, QQReadInJoyVideoReport, QQReadInJoyVideoView, ReadInJoyChannel, ReadInJoyChannelArticle, UIButton, UIImageView, UIView;
 @protocol BarrageWebViewDelegate, QQReadInJoySubsVideoCellDelegate;
 
-@interface QQReadInJoySubsVideoCell : QQReadInJoySubsTableViewCell <FullVideoStateViewDelegate, QQReadInJoyVideoViewDelegate, UICollectionViewDataSource, UICollectionViewDelegate, QQReadInJoyFullVideoViewDelegate, BarrageWebViewTableCellDelegate, QQReadInJoyVideoCellShareDelegate>
+@interface QQReadInJoySubsVideoCell : QQReadInJoySubsTableViewCell <FullVideoStateViewDelegate, QQReadInJoySubsVideoCellBottomViewDelegate, QQReadInJoyVideoViewDelegate, UICollectionViewDataSource, UICollectionViewDelegate, QQReadInJoyFullVideoViewDelegate, BarrageWebViewTableCellDelegate, QQReadInJoyVideoCellShareDelegate>
 {
     _Bool _needLayout;
     _Bool _isDisplaying;
@@ -28,15 +29,9 @@
     QQReadInJoyVideoView *_videoView;
     ReadInJoyChannelArticle *_articleInfo;
     id <QQReadInJoySubsVideoCellDelegate> _videoDelegate;
-    UIButton *_shareButton;
     UIButton *_likeButton;
-    UIButton *_recommendButton;
-    UIButton *_commentButton;
     FullScreenVideoStateView *_stateView;
     MQZoneShadowBlurLabel *_playCountLabel;
-    QQAvatarView *_avatar;
-    UILabel *_accountTitleLabel;
-    UICollectionView *_labelsCollection;
     ReadInJoyChannel *_channel;
     QQReadInJoyVideoReport *_videoReport;
     QQReadInJoyVideoItemFullScreenViewController *_itemFullScreenVC;
@@ -46,16 +41,17 @@
     CDUnknownBlockType _tapAction;
     unsigned long long _labelsShowingCount;
     CAGradientLayer *_titleGradientLayer;
-    UIControl *_emptyView;
     UIView *_videoPlayerContainer;
     UIImageView *_imageViewForCorner;
+    QQReadInJoySubsVideoCellBottomView *_bottomView;
     struct CGSize _videoSize;
 }
 
++ (struct CGRect)readInJoyVideoViewFrame;
+@property(retain, nonatomic) QQReadInJoySubsVideoCellBottomView *bottomView; // @synthesize bottomView=_bottomView;
 @property(retain, nonatomic) UIImageView *imageViewForCorner; // @synthesize imageViewForCorner=_imageViewForCorner;
 @property(nonatomic) int lastState; // @synthesize lastState=_lastState;
 @property(retain, nonatomic) UIView *videoPlayerContainer; // @synthesize videoPlayerContainer=_videoPlayerContainer;
-@property(retain, nonatomic) UIControl *emptyView; // @synthesize emptyView=_emptyView;
 @property(nonatomic) _Bool willHideTitle; // @synthesize willHideTitle=_willHideTitle;
 @property(retain, nonatomic) CAGradientLayer *titleGradientLayer; // @synthesize titleGradientLayer=_titleGradientLayer;
 @property(nonatomic) unsigned long long labelsShowingCount; // @synthesize labelsShowingCount=_labelsShowingCount;
@@ -71,15 +67,9 @@
 @property(retain, nonatomic) QQReadInJoyVideoReport *videoReport; // @synthesize videoReport=_videoReport;
 @property(nonatomic) _Bool needLayout; // @synthesize needLayout=_needLayout;
 @property(retain, nonatomic) ReadInJoyChannel *channel; // @synthesize channel=_channel;
-@property(retain, nonatomic) UICollectionView *labelsCollection; // @synthesize labelsCollection=_labelsCollection;
-@property(retain, nonatomic) UILabel *accountTitleLabel; // @synthesize accountTitleLabel=_accountTitleLabel;
-@property(retain, nonatomic) QQAvatarView *avatar; // @synthesize avatar=_avatar;
 @property(retain, nonatomic) MQZoneShadowBlurLabel *playCountLabel; // @synthesize playCountLabel=_playCountLabel;
 @property(retain, nonatomic) FullScreenVideoStateView *stateView; // @synthesize stateView=_stateView;
-@property(retain, nonatomic) UIButton *commentButton; // @synthesize commentButton=_commentButton;
-@property(retain, nonatomic) UIButton *recommendButton; // @synthesize recommendButton=_recommendButton;
 @property(retain, nonatomic) UIButton *likeButton; // @synthesize likeButton=_likeButton;
-@property(retain, nonatomic) UIButton *shareButton; // @synthesize shareButton=_shareButton;
 @property(nonatomic) __weak id <QQReadInJoySubsVideoCellDelegate> videoDelegate; // @synthesize videoDelegate=_videoDelegate;
 @property(retain, nonatomic) ReadInJoyChannelArticle *articleInfo; // @synthesize articleInfo=_articleInfo;
 @property(retain, nonatomic) QQReadInJoyVideoView *videoView; // @synthesize videoView=_videoView;
@@ -100,6 +90,8 @@
 - (void)hideTitle:(int)arg1;
 - (void)removeConverImage;
 - (void)setConverImage;
+- (void)subsVideoCellBottomView:(id)arg1 didSelectChannel:(id)arg2;
+- (void)subsVideoCellBottomView:(id)arg1 willDisplayChannel:(id)arg2;
 - (id)getVideoviewInfo;
 - (unsigned int)getVideoChannelID;
 - (id)getVideoInnerId;
@@ -157,11 +149,6 @@
 - (struct CGSize)getVideoSize;
 - (id)getVideoTitle;
 - (id)getVideoParentView;
-- (struct CGSize)itemNameSizeWithPrefix:(id)arg1;
-- (void)collectionView:(id)arg1 willDisplayCell:(id)arg2 forItemAtIndexPath:(id)arg3;
-- (void)collectionView:(id)arg1 didSelectItemAtIndexPath:(id)arg2;
-- (id)collectionView:(id)arg1 cellForItemAtIndexPath:(id)arg2;
-- (long long)collectionView:(id)arg1 numberOfItemsInSection:(long long)arg2;
 - (void)resetVideoView:(id)arg1 toIndex:(unsigned long long)arg2;
 - (id)getTitle;
 - (void)updatePlayCount:(id)arg1;

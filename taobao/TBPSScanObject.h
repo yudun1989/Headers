@@ -16,8 +16,10 @@
     double _y1;
     double _y2;
     double _alpha;
+    NSString *_data;
 }
 
+@property(retain, nonatomic) NSString *data; // @synthesize data=_data;
 @property(nonatomic) double alpha; // @synthesize alpha=_alpha;
 @property(nonatomic) double y2; // @synthesize y2=_y2;
 @property(nonatomic) double y1; // @synthesize y1=_y1;

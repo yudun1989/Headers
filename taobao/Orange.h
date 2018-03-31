@@ -24,7 +24,9 @@
 + (void)setOrangeAckReportOnlineHost:(id)arg1 debugHost:(id)arg2 dailyHost:(id)arg3;
 + (void)setOrangeDataCenterOnlineHost:(id)arg1 debugHost:(id)arg2 dailyHost:(id)arg3;
 + (void)setProbeModeOnlineHost:(id)arg1 debugHost:(id)arg2 dailyHost:(id)arg3;
++ (id)getGroupConfigByGroupName:(id)arg1 returnType:(unsigned long long)arg2;
 + (id)getGroupConfigByGroupName:(id)arg1;
++ (id)getGroupConfigWithGroupName:(id)arg1;
 + (id)getCustomGroupConfigByGroupName:(id)arg1;
 + (id)getConfigByGroupName:(id)arg1 key:(id)arg2 defaultConfig:(id)arg3 isDefault:(_Bool *)arg4;
 + (void)updateIndex;

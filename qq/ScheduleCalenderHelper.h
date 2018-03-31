@@ -21,10 +21,13 @@
 }
 
 + (id)getInstance;
+- (void)innerDoCgiChangeShortUrl:(id)arg1 Title:(id)arg2 StartDate:(double)arg3 EndDate:(double)arg4 Notes:(id)arg5 Location:(id)arg6 HGScheJumpURL:(id)arg7;
 - (void)innerDoCgiChangeShortUrl:(id)arg1 Title:(id)arg2 StartDate:(double)arg3 EndDate:(double)arg4 Notes:(id)arg5 Location:(id)arg6;
 - (void)doCgiChangeShortUrl:(id)arg1 Title:(id)arg2 StartDate:(double)arg3 EndDate:(double)arg4 Notes:(id)arg5 Location:(id)arg6;
+- (void)addHGScheduleToCalender:(id)arg1;
 - (id)parseShortURL:(id)arg1;
 - (id)createPostBody:(id)arg1;
+- (void)addHGActionToQueue:(id)arg1;
 - (void)addActionToQueue:(short)arg1 scheduleId:(id)arg2;
 - (void)innerOnActionResult:(id)arg1;
 - (void)OnActionResult:(id)arg1;

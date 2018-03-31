@@ -4,9 +4,9 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-#import "TBDViewConstructor.h"
+#import <Foundation/NSObject.h>
 
-@interface TBDViewAdvancedConstructor : TBDViewConstructor
+@interface TBDViewAdvancedConstructor : NSObject
 {
 }
 
@@ -41,12 +41,12 @@
 - (id)methodKeysMap;
 - (void)traverseMethodsInClass:(Class)arg1 toMethodKeysMap:(id)arg2 toMethodsArray:(id)arg3;
 - (void)buildMethodKeysMap;
-- (struct CGSize)viewSizeWithAttributes:(id)arg1 withValueDict:(id)arg2 context:(id)arg3 module:(id)arg4;
-- (void)setAttributes:(id)arg1 withValueDict:(id)arg2 inView:(id)arg3 context:(id)arg4 module:(id)arg5;
-- (void)setPropertyAndEventWithAttr:(id)arg1 constAttr:(id)arg2 withData:(id)arg3 context:(id)arg4 module:(id)arg5 error:(id *)arg6 needParse:(_Bool)arg7 inView:(id)arg8;
-- (struct CGSize)viewSizeForData:(id)arg1 bindAttr:(id)arg2 constAttr:(id)arg3 context:(id)arg4 module:(id)arg5 error:(id *)arg6;
-- (void)bindData:(id)arg1 withAttr:(id)arg2 constAttr:(id)arg3 context:(id)arg4 module:(id)arg5 error:(id *)arg6 inView:(id)arg7;
-- (id)createViewWithAttr:(id)arg1 context:(id)arg2 module:(id)arg3 error:(id *)arg4;
+- (struct CGSize)viewSizeWithAttributes:(id)arg1 withValueDict:(id)arg2 param:(id)arg3;
+- (void)setAttributes:(id)arg1 withValueDict:(id)arg2 inView:(id)arg3 param:(id)arg4;
+- (void)setPropertyAndEventWithAttr:(id)arg1 constAttr:(id)arg2 withParam:(id)arg3 needParse:(_Bool)arg4 inView:(id)arg5;
+- (struct CGSize)viewSizeForParam:(id)arg1 bindAttr:(id)arg2 constAttr:(id)arg3;
+- (void)bindDataForParam:(id)arg1 withAttr:(id)arg2 constAttr:(id)arg3 inView:(id)arg4;
+- (id)createViewWithAttr:(id)arg1 param:(id)arg2;
 - (id)init;
 
 @end

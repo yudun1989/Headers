@@ -14,7 +14,6 @@
 @interface ALBBSMSBox : UIView <UITextFieldDelegate>
 {
     _Bool _hasChangeTextFild;
-    int _smsType;
     int _currentTime;
     int _stayTime;
     UIView *_mobileInputView;
@@ -32,6 +31,7 @@
     NSTimer *_autoTimer;
     double _inputViewHeight;
     id <ALBBSmsBoxDelegate> _delegate;
+    unsigned long long _smsType;
     ALBBCountryButton *_countryButton;
     long long _padding;
     NSString *_loginBtnLable;
@@ -45,7 +45,7 @@
 @property(nonatomic) int currentTime; // @synthesize currentTime=_currentTime;
 @property(nonatomic) long long padding; // @synthesize padding=_padding;
 @property(nonatomic) __weak ALBBCountryButton *countryButton; // @synthesize countryButton=_countryButton;
-@property(nonatomic) int smsType; // @synthesize smsType=_smsType;
+@property(nonatomic) unsigned long long smsType; // @synthesize smsType=_smsType;
 @property(nonatomic) __weak id <ALBBSmsBoxDelegate> delegate; // @synthesize delegate=_delegate;
 @property(nonatomic) double inputViewHeight; // @synthesize inputViewHeight=_inputViewHeight;
 @property(retain, nonatomic) NSTimer *autoTimer; // @synthesize autoTimer=_autoTimer;
@@ -79,7 +79,7 @@
 - (id)getRealTextFromIdTextField;
 - (void)layout;
 - (void)createSendMsgTipWiew;
-- (void)initWithType:(int)arg1 Delegate:(id)arg2;
+- (void)initWithType:(unsigned long long)arg1 Delegate:(id)arg2;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

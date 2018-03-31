@@ -40,7 +40,7 @@
 - (_Bool)detailDescExposure:(_Bool)arg1;
 - (void)loadNativeView;
 - (void)performanceTrack;
-- (void)showErrorView:(_Bool)arg1 state:(int)arg2;
+- (void)showErrorView:(_Bool)arg1 state:(unsigned long long)arg2;
 - (void)reloadView;
 - (void)handleResponse:(id)arg1 isTemplate:(_Bool)arg2 error:(id)arg3;
 - (void)requestProductModel;

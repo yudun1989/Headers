@@ -12,8 +12,10 @@
 {
     QQAsynUrlImageView *_gameImageView;
     UIImageView *_leftTopImgView;
+    UIView *_rightTopView;
     UILabel *_gameNameLbl;
     _Bool _isRecommended;
+    _Bool _isRankChange;
     UIView *_redPointView;
 }
 
@@ -21,7 +23,9 @@
 + (double)bottomLabelHeight;
 + (struct CGSize)sizeOfCell;
 @property(retain, nonatomic) UIView *redPointView; // @synthesize redPointView=_redPointView;
+@property(nonatomic) _Bool isRankChange; // @synthesize isRankChange=_isRankChange;
 @property(readonly, nonatomic) _Bool isRecommended; // @synthesize isRecommended=_isRecommended;
+- (id)rightTopView;
 - (void)p_refreshTipsViewWithGameId:(int)arg1;
 - (void)dealloc;
 - (void)reloadUIWith:(id)arg1;

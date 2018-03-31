@@ -16,8 +16,6 @@
 {
     QQLockDictionary *_seqDict;
     QQLockDictionary *_appListDict;
-    QQLockDictionary *_oftenListDict;
-    QQLockDictionary *_oftenAppConfig;
     QQLockDictionary *_appClickDict;
     unsigned long long _reportTime;
 }
