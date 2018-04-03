@@ -15,10 +15,7 @@
 {
     NSMutableArray *_drawObjs;
     NSMutableDictionary *_context;
-    double _lineWidth;
-    int _lineCap;
-    int _lineJoin;
-    double _miterLimit;
+    NSMutableArray *_contextStack;
     long long _touchId;
     NSMutableDictionary *_touches;
     _Bool _touched;
@@ -43,7 +40,9 @@
 - (void)touchesBegan:(id)arg1 withEvent:(id)arg2;
 - (long long)getTouchID:(id)arg1 remove:(_Bool)arg2;
 - (id)hitTest:(struct CGPoint)arg1 withEvent:(id)arg2;
-- (double)getContextHeght;
+- (void)recreateContext;
+- (void)restoreContext;
+- (void)saveContext;
 - (void)removeContext:(id)arg1;
 - (void)setContext:(id)arg1 forKey:(id)arg2;
 - (id)getContext:(id)arg1;

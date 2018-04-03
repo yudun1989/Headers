@@ -40,8 +40,10 @@
     NSString *_favor_req_extend;
     NSArray *_favor_list;
     BusiF2FFavorCommResp *_favor_comm_resp;
+    NSString *_mch_info_string;
 }
 
+@property(retain, nonatomic) NSString *mch_info_string; // @synthesize mch_info_string=_mch_info_string;
 @property(nonatomic) unsigned int get_favor_interval; // @synthesize get_favor_interval=_get_favor_interval;
 @property(nonatomic) unsigned int photo_style; // @synthesize photo_style=_photo_style;
 @property(retain, nonatomic) BusiF2FFavorCommResp *favor_comm_resp; // @synthesize favor_comm_resp=_favor_comm_resp;

@@ -8,11 +8,12 @@
 
 #import "IClearDataMgrExt-Protocol.h"
 #import "MMService-Protocol.h"
+#import "WCCdnDownloadImageDelegate-Protocol.h"
 
-@class NSMutableArray, NSMutableDictionary, NSObject, NSRecursiveLock, NSString;
+@class NSMutableArray, NSMutableDictionary, NSObject, NSRecursiveLock, NSString, WCDownloadImageCdnMgr;
 @protocol OS_dispatch_queue;
 
-@interface WCCanvasImageLoader : MMService <IClearDataMgrExt, MMService>
+@interface WCCanvasImageLoader : MMService <IClearDataMgrExt, WCCdnDownloadImageDelegate, MMService>
 {
     NSRecursiveLock *m_lock;
     NSObject<OS_dispatch_queue> *_request_queue;
@@ -23,10 +24,19 @@
     unsigned int m_gifDataSize;
     NSMutableDictionary *m_gifDataCaches;
     NSMutableArray *m_gifDataCacheFIFO;
+    WCDownloadImageCdnMgr *_cdnMgr;
 }
 
+@property(retain, nonatomic) WCDownloadImageCdnMgr *cdnMgr; // @synthesize cdnMgr=_cdnMgr;
 @property(retain, nonatomic) NSRecursiveLock *m_lock; // @synthesize m_lock;
 - (void).cxx_destruct;
+- (void)onCdnDownloadImageProcessChanged:(id)arg1 downloadType:(int)arg2 current:(long long)arg3 total:(long long)arg4;
+- (void)onCdnDownloadImageCancel:(id)arg1 downloadType:(int)arg2;
+- (void)onCdnDownloadImageBegin:(id)arg1 downloadType:(int)arg2;
+- (void)onCdnDownloadImageAddedQueue:(id)arg1 downloadType:(int)arg2;
+- (id)cdnGetSnsOperationsWithFeedId:(id)arg1;
+- (void)onCdnDownloadImageFail:(id)arg1 downloadType:(int)arg2;
+- (void)onCdnDownloadImageFinish:(id)arg1 downloadType:(int)arg2;
 - (void)onDiskStorageWarningCleanedSize:(unsigned long long *)arg1 CacheMask:(unsigned int)arg2;
 - (void)onDiskStorageWarningCleanedSize:(unsigned long long *)arg1 subQueue:(id)arg2;
 - (void)onDiskStorageWarningCleanedSize:(unsigned long long *)arg1;
@@ -45,9 +55,8 @@
 - (_Bool)isImageLoaded:(id)arg1;
 - (void)cancelLoadAllURLs:(id)arg1;
 - (void)cancelLoadForURL:(id)arg1 oberver:(id)arg2;
-- (void)loadImageForURL:(id)arg1 withAuthorizationCode:(id)arg2 observer:(id)arg3;
 - (void)loadImageForURL:(id)arg1 observer:(id)arg2;
-- (void)loadImageForURL:(id)arg1 observer:(id)arg2 atScene:(unsigned int)arg3 isPreload:(_Bool)arg4;
+- (void)loadImageForURL:(id)arg1 observer:(id)arg2 atScene:(unsigned int)arg3 isPreload:(_Bool)arg4 useSnsCdnDownload:(_Bool)arg5;
 - (id)imagePathForURL:(id)arg1;
 - (id)imageDataForURL:(id)arg1 LoadOnMainThread:(_Bool)arg2;
 - (id)imageCacheForURL:(id)arg1 LoadOnMainThread:(_Bool)arg2;

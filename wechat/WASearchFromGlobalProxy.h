@@ -10,11 +10,12 @@
 #import "UIScrollViewDelegate-Protocol.h"
 #import "WAAppCanvasWrapperViewDelegate-Protocol.h"
 #import "WASearchActionDelegate-Protocol.h"
+#import "WAWidgetJSEventHandlerDelegate-Protocol.h"
 
-@class MMUIViewController, NSDictionary, NSMutableDictionary, NSString, WASearchResultLogic;
+@class MMUIViewController, NSDictionary, NSMutableArray, NSMutableDictionary, NSString, WASearchResultLogic;
 @protocol WASearchFromGlobalProxyDelegate;
 
-@interface WASearchFromGlobalProxy : NSObject <WASearchActionDelegate, UIScrollViewDelegate, WAAppCanvasWrapperViewDelegate, IWSViewControllerLifeCycleExt>
+@interface WASearchFromGlobalProxy : NSObject <WASearchActionDelegate, UIScrollViewDelegate, WAAppCanvasWrapperViewDelegate, IWSViewControllerLifeCycleExt, WAWidgetJSEventHandlerDelegate>
 {
     NSDictionary *_initParams;
     MMUIViewController *_containerController;
@@ -25,13 +26,18 @@
     id <WASearchFromGlobalProxyDelegate> _delegate;
     WASearchResultLogic *_searchResultLogic;
     NSMutableDictionary *_widgetViewCache;
+    NSMutableArray *_eventHandlerList;
 }
 
+@property(retain, nonatomic) NSMutableArray *eventHandlerList; // @synthesize eventHandlerList=_eventHandlerList;
 @property(retain, nonatomic) NSMutableDictionary *widgetViewCache; // @synthesize widgetViewCache=_widgetViewCache;
 @property(retain, nonatomic) WASearchResultLogic *searchResultLogic; // @synthesize searchResultLogic=_searchResultLogic;
 @property(nonatomic) __weak id <WASearchFromGlobalProxyDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
 - (void)scrollViewDidScroll:(id)arg1;
+- (void)onWAWidgetJSEventHandler:(id)arg1 wrapperView:(id)arg2 endWithResult:(id)arg3;
+- (void)onWrapperView:(id)arg1 showDatePickerView:(id)arg2;
+- (void)onWrapperView:(id)arg1 showPickerView:(id)arg2;
 - (void)onWrapperView:(id)arg1 dataUpdated:(id)arg2;
 - (void)onWrapperView:(id)arg1 viewStateChanged:(unsigned long long)arg2;
 - (void)onWrapperView:(id)arg1 authorizeSuccess:(id)arg2;

@@ -8,14 +8,15 @@
 
 #import "ILinkEventExt-Protocol.h"
 #import "IdleTimerUtilExt-Protocol.h"
+#import "MMTipsViewControllerDelegate-Protocol.h"
 #import "WCActionSheetDelegate-Protocol.h"
 #import "WCPayFacingQRCodeImageViewDelegate-Protocol.h"
 #import "WCPayNoticeBannerDelegate-Protocol.h"
 
-@class MMUILabel, NSMutableArray, NSString, RichTextView, UIButton, UIColor, UIImage, UIImageView, UIView, WCPayBannerNotice, WCPayFacingQRCodeImageView, WCUIAlertView;
+@class MMTipsViewController, MMUILabel, NSMutableArray, NSString, RichTextView, UIButton, UIColor, UIImage, UIImageView, UIView, WCPayBannerNotice, WCPayFacingQRCodeImageView, WCUIAlertView;
 @protocol WCPayFacingReceiveQRCodeViewControllerDelegate;
 
-@interface WCPayFacingReceiveQRCodeViewController : WCPayBaseViewController <IdleTimerUtilExt, WCPayNoticeBannerDelegate, ILinkEventExt, WCActionSheetDelegate, WCPayFacingQRCodeImageViewDelegate>
+@interface WCPayFacingReceiveQRCodeViewController : WCPayBaseViewController <MMTipsViewControllerDelegate, IdleTimerUtilExt, WCPayNoticeBannerDelegate, ILinkEventExt, WCActionSheetDelegate, WCPayFacingQRCodeImageViewDelegate>
 {
     UIButton *m_footerButton;
     id <WCPayFacingReceiveQRCodeViewControllerDelegate> m_delegate;
@@ -37,6 +38,7 @@
     _Bool _bNeedRemoveReddotFromOtherView;
     WCUIAlertView *_screenShotAlert;
     WCPayBannerNotice *_m_bannerNotice;
+    MMTipsViewController *_m_screenShotTipsView;
     UIImageView *_detailReddotImgView;
     MMUILabel *_detailSubLabel;
 }
@@ -44,10 +46,13 @@
 @property(nonatomic) _Bool bNeedRemoveReddotFromOtherView; // @synthesize bNeedRemoveReddotFromOtherView=_bNeedRemoveReddotFromOtherView;
 @property(retain, nonatomic) MMUILabel *detailSubLabel; // @synthesize detailSubLabel=_detailSubLabel;
 @property(retain, nonatomic) UIImageView *detailReddotImgView; // @synthesize detailReddotImgView=_detailReddotImgView;
+@property(retain, nonatomic) MMTipsViewController *m_screenShotTipsView; // @synthesize m_screenShotTipsView=_m_screenShotTipsView;
 @property(retain, nonatomic) WCPayBannerNotice *m_bannerNotice; // @synthesize m_bannerNotice=_m_bannerNotice;
 @property(retain, nonatomic) WCUIAlertView *screenShotAlert; // @synthesize screenShotAlert=_screenShotAlert;
 @property(retain, nonatomic) WCPayFacingQRCodeImageView *imageQRCodeBackgroundView; // @synthesize imageQRCodeBackgroundView;
 - (void).cxx_destruct;
+- (void)reportApplyWithScene:(unsigned long long)arg1;
+- (void)onClickTipsBtn:(id)arg1 Index:(long long)arg2;
 - (id)genDetailEnteranceViewWithNeedBottomCorner:(_Bool)arg1;
 - (id)getBizF2FHeadImageViewWithImageSize:(struct CGSize)arg1;
 - (void)saveReceiveCodeImgToAlbumFromAlert;
@@ -59,7 +64,11 @@
 - (void)banner:(id)arg1 clickWithUrl:(id)arg2;
 - (_Bool)useTransparentNavibar;
 - (void)onIdleTimerUtilVoipQuit;
+- (_Bool)OnWCPayFacingQRCodeImageViewShowMaterial;
+- (void)OnWCPayFacingQRCodeImageViewJumpMaterial;
 - (void)OnWCPayFacingQRCodeImageViewSaveButtonDone;
+- (void)applyMaterial;
+- (void)saveImageThenShowMaterialTips;
 - (void)saveQRCodeImageButtonPress;
 - (id)getSaveAlbumImageView;
 - (id)getNewSaveAlbumImageView;

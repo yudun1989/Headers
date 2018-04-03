@@ -26,6 +26,8 @@
 @property(nonatomic) __weak id <WAWebViewJSLogicDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
 - (void)printConsoleLog:(id)arg1;
+- (_Bool)isIgnoreRemoteCheckDomain;
+- (id)GetWeAppPluginByName:(id)arg1;
 - (id)GetWebViewPluginByName:(id)arg1;
 - (void)performResult:(id)arg1 callid:(unsigned int)arg2;
 - (void)endWithResult:(id)arg1 handler:(id)arg2 callbackID:(unsigned int)arg3;

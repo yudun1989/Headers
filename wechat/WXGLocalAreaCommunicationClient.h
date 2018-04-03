@@ -6,13 +6,14 @@
 
 #import <objc/NSObject.h>
 
+#import "CNetworkStatusExt-Protocol.h"
 #import "LocalAreaNetworkClientDelegate-Protocol.h"
 #import "LocalAreaPeerClientDelegate-Protocol.h"
 
-@class LocalAreaNetworkClient, LocalAreaPeerClient, MMTimer, NSData, NSString;
+@class LocalAreaNetworkClient, LocalAreaPeerClient, MMTimer, NSArray, NSData, NSDate, NSMutableString, NSString;
 @protocol LocalAreaCommunicationClientDelegate;
 
-@interface WXGLocalAreaCommunicationClient : NSObject <LocalAreaNetworkClientDelegate, LocalAreaPeerClientDelegate>
+@interface WXGLocalAreaCommunicationClient : NSObject <LocalAreaNetworkClientDelegate, LocalAreaPeerClientDelegate, CNetworkStatusExt>
 {
     LocalAreaPeerClient *m_peerClient;
     LocalAreaNetworkClient *m_networkClient;
@@ -22,6 +23,26 @@
     MMTimer *m_reconnectTimer;
     MMTimer *m_cutConnectionTimer;
     MMTimer *m_transferSpeedTimer;
+    _Bool m_isTestSpeed;
+    _Bool m_networkFirstTest;
+    NSDate *m_networkStartTestDate;
+    unsigned long long m_networkTestCount;
+    double m_networkCostTime;
+    _Bool m_peerFirstTest;
+    NSDate *m_peerStartTestDate;
+    unsigned long long m_peerTestCount;
+    double m_peerCostTime;
+    _Bool m_networkTestEnd;
+    _Bool m_peerTestEnd;
+    NSMutableString *m_connectInfoString;
+    NSDate *m_timeStartReconnect;
+    NSDate *m_timeTryToCut;
+    double m_slowCutInterval;
+    float m_slowGapSpeed;
+    NSArray *m_resendTimeIntervalArray;
+    _Bool m_detectReach;
+    double m_testSpeedDiff;
+    _Bool m_testSpeedOpen;
     _Bool _shoudNeedReconnect;
     _Bool _supportReconnect;
     _Bool _tryPeer;
@@ -49,7 +70,8 @@
 @property(retain, nonatomic) NSString *server_ip; // @synthesize server_ip=_server_ip;
 @property(nonatomic) __weak id <LocalAreaCommunicationClientDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
-- (_Bool)isPeerTransferData;
+- (id)getDebugInfo;
+- (void)ReachabilityChange:(unsigned int)arg1;
 - (unsigned long long)getClientOpenTime;
 - (unsigned long long)getTotalReceiveLength;
 - (unsigned long long)getTotalSendLength;
@@ -58,22 +80,38 @@
 - (void)onPeerConnected;
 - (void)onPeerConnectFailed;
 - (void)onPeerDisconnect;
-- (void)onPeerReciveData:(id)arg1;
-- (void)onNetworkConnectFailWithFirstPacketData:(id)arg1;
+- (void)onPeerReceiveData:(id)arg1;
+- (void)onNetworkTestSpeedFail;
+- (void)onNetworkStartTestSpeed;
+- (void)onNetworkConnectFail;
 - (void)onNetworkDisconnect;
 - (void)onNetworkReciveData:(id)arg1 andLength:(unsigned int)arg2;
+- (_Bool)tryToReconnect;
+- (unsigned long long)sendPeerSpeedTestPacket;
+- (unsigned long long)testPeerSpeed;
+- (unsigned long long)sendNetworkSpeedTestPacket;
+- (unsigned long long)testNetworkSpeed;
+- (unsigned long long)firstTestNetworkSpeed;
+- (void)startTestSpeed;
+- (void)choosePeerChannel;
+- (void)chooseNetworkChannel;
+- (void)makeChannelDecision;
+- (void)markTestSpeedClose;
+- (void)markTestSpeedOpen;
+- (_Bool)canHaveMultipeer;
+- (_Bool)isPeerTransferData;
 - (void)checkReconnect;
-- (void)p_tryPeer;
 - (void)p_stopPeerClient;
 - (void)p_stopNetworkClient;
 - (void)clientReconnect;
 - (void)clientDisconnect;
 - (unsigned long long)clientSendData:(id)arg1 andLength:(unsigned int)arg2;
-- (void)initiativeToTerminateClient;
+- (void)p_initiativeToTerminateClient;
 - (void)checkTransferSpeed;
-- (void)resetNetworkClient;
-- (void)dealloc;
+- (void)p_resetPeerClient;
+- (void)p_resetNetworkClient;
 - (id)initWithServerIP:(id)arg1 serverPort:(unsigned short)arg2 serverID:(id)arg3 serverHello:(id)arg4 serverOk:(id)arg5;
+- (void)dealloc;
 - (id)init;
 
 // Remaining properties

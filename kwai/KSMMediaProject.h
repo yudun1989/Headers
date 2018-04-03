@@ -6,7 +6,7 @@
 
 #import <objc/NSObject.h>
 
-@class KSEVideoEditorProject, KSMTimeEffectItem, NSMutableArray;
+@class KSEVideoEditorProject, KSMBeautyFilterItem, KSMColorFilterItem, KSMTheme, KSMTimeEffectItem, NSMutableArray;
 
 @interface KSMMediaProject : NSObject
 {
@@ -15,8 +15,16 @@
     KSMTimeEffectItem *_timeEffectItem;
     NSMutableArray *_textures;
     NSMutableArray *_cutItems;
+    KSMColorFilterItem *_colorFilter;
+    KSMBeautyFilterItem *_beautyFilter;
+    NSMutableArray *_audioAssets;
+    KSMTheme *_theme;
 }
 
+@property(retain, nonatomic) KSMTheme *theme; // @synthesize theme=_theme;
+@property(retain, nonatomic) NSMutableArray *audioAssets; // @synthesize audioAssets=_audioAssets;
+@property(retain, nonatomic) KSMBeautyFilterItem *beautyFilter; // @synthesize beautyFilter=_beautyFilter;
+@property(retain, nonatomic) KSMColorFilterItem *colorFilter; // @synthesize colorFilter=_colorFilter;
 @property(retain, nonatomic) NSMutableArray *cutItems; // @synthesize cutItems=_cutItems;
 @property(retain, nonatomic) NSMutableArray *textures; // @synthesize textures=_textures;
 @property(retain, nonatomic) KSMTimeEffectItem *timeEffectItem; // @synthesize timeEffectItem=_timeEffectItem;
@@ -27,15 +35,29 @@
 - (void)synchronizeTimeEffect;
 - (void)synchronizeCuts;
 - (void)synchronizeTextures;
+- (void)synchronizeColorFilter;
+- (void)synchronizeBeautyFilter;
+- (void)synchronizeAudioAssets;
 - (void)clearTextureImages;
 - (void)updateProject;
 @property(readonly, nonatomic) struct CGSize resolution;
 @property(readonly, nonatomic) double frameDuration;
 @property(readonly, nonatomic) double duration;
 - (void)dealloc;
-- (id)initWithVideoPath:(id)arg1 error:(id *)arg2;
-- (void)ks_enableBGM;
-- (void)ks_disableBGM;
+- (void)commonInitWithResourcePath:(id)arg1;
+- (id)initWithPhotoMoviePaths:(id)arg1 resourcePath:(id)arg2 error:(id *)arg3 logCallback:(CDUnknownFunctionPointerType)arg4;
+- (id)initWithVideoPath:(id)arg1 resourcePath:(id)arg2 error:(id *)arg3 logCallback:(CDUnknownFunctionPointerType)arg4;
+- (struct CGSize)ks_thumbnailSizeToWidth:(double)arg1;
+- (struct CGSize)ks_thumbnailSizeToHeight:(double)arg1;
+- (struct CGSize)ks_previewSize;
+- (int)ks_rotateDegree;
+- (double)ks_playTimeWithInternalTime:(double)arg1;
+- (double)ks_internalTimeWithPlayTime:(double)arg1;
+- (float)ks_playSpeed;
+- (double)ks_playDuration;
+- (double)ks_sampleIntervalWithSamplingNumber:(long long)arg1;
+- (void)ks_popAdvItems;
+- (void)ks_pushAdvItems;
 
 @end
 

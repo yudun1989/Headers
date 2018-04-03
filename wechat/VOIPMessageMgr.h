@@ -22,12 +22,15 @@
 
 + (_Bool)openVoipViewByVoipMonoMsg:(id)arg1 haveAnswered:(_Bool)arg2;
 + (_Bool)startVoipViewByVoipMonoMsg:(id)arg1;
++ (void)handleVoipLocalBusy:(id)arg1;
++ (id)genMessageForBusyVoip:(id)arg1 RoomId:(int)arg2 RoomKey:(long long)arg3 InviteType:(unsigned int)arg4 CreateTime:(unsigned int)arg5;
 + (id)genInviteMessageFromVoipMonoMsg:(id)arg1;
-+ (id)genMessageForCancleVoip:(id)arg1 RoomId:(int)arg2 RoomKey:(long long)arg3 InviteType:(unsigned int)arg4 CreateTime:(unsigned int)arg5;
++ (id)genMessageForCancelVoip:(id)arg1 RoomId:(int)arg2 RoomKey:(long long)arg3 InviteType:(unsigned int)arg4 CreateTime:(unsigned int)arg5;
 + (void)reportAckWithCallResult:(int)arg1 ByVoipMsg:(id)arg2;
 @property(retain, nonatomic) VoipGetRoomInfoCgi *m_getRoomInfoCgi; // @synthesize m_getRoomInfoCgi;
 - (void).cxx_destruct;
 - (void)onReceiveVoIPPushInfo:(id)arg1;
+- (void)handleVoipBusy:(id)arg1 MsgWrap:(id)arg2;
 - (void)handleVoipInvite:(id)arg1 withMessageWrap:(id)arg2;
 - (void)handleVoipRemind:(id)arg1 MsgWrap:(id)arg2;
 - (void)receiveInviteFromSync:(id)arg1 MsgWrap:(id)arg2;

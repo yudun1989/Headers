@@ -14,6 +14,6 @@
 - (void)onPeerDisconnect;
 - (void)onPeerConnected;
 - (void)onPeerConnecting;
-- (void)onPeerReciveData:(NSData *)arg1;
+- (void)onPeerReceiveData:(NSData *)arg1;
 @end
 

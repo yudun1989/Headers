@@ -10,6 +10,7 @@
 #import "ContactPickerViewDelegate-Protocol.h"
 #import "FTSAddressBookFriendCellDelegate-Protocol.h"
 #import "FTSContactCellDelegate-Protocol.h"
+#import "FTSFeatureDetailViewDelegate-Protocol.h"
 #import "FTSResultViewDelegate-Protocol.h"
 #import "FTSWebSearchViewDelegate-Protocol.h"
 #import "IFTSContactMgrExt-Protocol.h"
@@ -24,13 +25,14 @@
 #import "PBMessageObserverDelegate-Protocol.h"
 #import "WCActionSheetDelegate-Protocol.h"
 #import "WCPayWalletLockVerifyLogicDelegate-Protocol.h"
+#import "WCWebSearchViewControllerDelegate-Protocol.h"
 #import "WebSearchLocalPageCellDelegate-Protocol.h"
 #import "contactInfoDelegate-Protocol.h"
 #import "contactVerifyLogicDelegate-Protocol.h"
 
-@class AddressBookFriend, AttributeLabel, CContact, CContactVerifyLogic, ContactInfoViewController, FTSSearchLocalPageResultWrap, FTSWebSearchController, NSMutableArray, NSMutableDictionary, NSString, UIPercentDrivenInteractiveTransition, UIView, WAMainListViewController, WCTimeLineFooterView;
+@class AddressBookFriend, AttributeLabel, CContact, CContactVerifyLogic, ContactInfoViewController, FTSSearchLocalPageResultWrap, FTSWebSearchController, NSMutableArray, NSMutableDictionary, NSString, UIPercentDrivenInteractiveTransition, UIView, WAMainListViewController, WCTimeLineFooterView, WCWebSearchViewControllerNewH5;
 
-@interface FTSVoiceSearchBarController : MMVoiceSearchBar <FTSWebSearchViewDelegate, IWALocalSearchExt, ContactPickerViewDelegate, WCPayWalletLockVerifyLogicDelegate, IFtsWebSearchExt, WebSearchLocalPageCellDelegate, IMiniGameSearchExt, FTSContactCellDelegate, FTSAddressBookFriendCellDelegate, contactInfoDelegate, ContactInfoViewControllerDelegate, PBMessageObserverDelegate, contactVerifyLogicDelegate, FTSResultViewDelegate, IFTSContactMgrExt, IFTSMessageMgrExt, IFTSFavMgrExt, IFTSMemorySearchMgrExt, MFMessageComposeViewControllerDelegate, WCActionSheetDelegate, MMUIViewControllerDelegate>
+@interface FTSVoiceSearchBarController : MMVoiceSearchBar <FTSWebSearchViewDelegate, IWALocalSearchExt, ContactPickerViewDelegate, WCPayWalletLockVerifyLogicDelegate, IFtsWebSearchExt, WebSearchLocalPageCellDelegate, IMiniGameSearchExt, FTSFeatureDetailViewDelegate, WCWebSearchViewControllerDelegate, FTSContactCellDelegate, FTSAddressBookFriendCellDelegate, contactInfoDelegate, ContactInfoViewControllerDelegate, PBMessageObserverDelegate, contactVerifyLogicDelegate, FTSResultViewDelegate, IFTSContactMgrExt, IFTSMessageMgrExt, IFTSFavMgrExt, IFTSMemorySearchMgrExt, MFMessageComposeViewControllerDelegate, WCActionSheetDelegate, MMUIViewControllerDelegate>
 {
     struct map<unsigned int, unsigned int, std::__1::less<unsigned int>, std::__1::allocator<std::__1::pair<const unsigned int, unsigned int>>> _mapSearchSectionType;
     AddressBookFriend *_curAddressBookFriend;
@@ -54,6 +56,7 @@
     FTSSearchLocalPageResultWrap *_localPageResultWrap;
     UIView *_weakFTSWebSearchLocalPageCell;
     NSMutableArray *_arrHasLogSearchLocalPageShowQuery;
+    WCWebSearchViewControllerNewH5 *_webSearchViewController;
     int _currentFeatureId;
     UIPercentDrivenInteractiveTransition *_interactiveTransition;
 }
@@ -65,6 +68,10 @@
 @property(nonatomic) int searchScene; // @synthesize searchScene=_searchScene;
 - (id).cxx_construct;
 - (void).cxx_destruct;
+- (id)preOpenWebSearchView:(id)arg1 baseUrlParams:(id)arg2;
+- (void)onForbidCacheWCWebSearchView;
+- (void)onWCWebSearchViewReturn;
+- (void)tryPreloadWCWebSearchWebview;
 - (void)onSelectCancel;
 - (void)onCreateChatRoom:(id)arg1;
 - (void)openContactPickerView;
@@ -128,6 +135,8 @@
 - (void)searchGameItems:(int)arg1;
 - (void)selectWCGameItem:(id)arg1;
 - (void)selectFeatureItem:(id)arg1;
+- (void)onFeatureDetailViewSelectItem:(id)arg1;
+- (void)searchMoreFeatureItems;
 - (void)openPrivateConfigView;
 - (void)openWeSportFeature;
 - (void)openChatMigrationVC;

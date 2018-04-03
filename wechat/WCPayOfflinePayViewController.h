@@ -101,6 +101,8 @@
 @property(nonatomic) _Bool isViewDidAppear; // @synthesize isViewDidAppear=_isViewDidAppear;
 @property(nonatomic) int entryScene; // @synthesize entryScene=_entryScene;
 - (void).cxx_destruct;
+- (void)viewCotnrollerDidBecomeActive:(id)arg1;
+- (void)viewControllerWillResignActive:(id)arg1;
 - (void)OnGetT2BCEntryMsg;
 - (void)wcPayOfflinePayNoCodeTipsViewClickRefreshBtn;
 - (void)hideNoCodeTipsView;

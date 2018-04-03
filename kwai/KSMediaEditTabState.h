@@ -4,29 +4,21 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-#import <objc/NSObject.h>
+#import "LYWState.h"
 
-#import "LYWStateType-Protocol.h"
+@class NSArray;
 
-@class NSMutableArray, NSString;
-
-@interface KSMediaEditTabState : NSObject <LYWStateType>
+@interface KSMediaEditTabState : LYWState
 {
-    int _selectedTab;
-    NSMutableArray *_tabItems;
+    unsigned long long _selectedTab;
+    NSArray *_displayTabs;
+    NSArray *_moreDisplayTabs;
 }
 
-@property(retain, nonatomic) NSMutableArray *tabItems; // @synthesize tabItems=_tabItems;
-@property(nonatomic) int selectedTab; // @synthesize selectedTab=_selectedTab;
+@property(retain, nonatomic) NSArray *moreDisplayTabs; // @synthesize moreDisplayTabs=_moreDisplayTabs;
+@property(retain, nonatomic) NSArray *displayTabs; // @synthesize displayTabs=_displayTabs;
+@property(nonatomic) unsigned long long selectedTab; // @synthesize selectedTab=_selectedTab;
 - (void).cxx_destruct;
-@property(readonly, copy) NSString *description;
-- (id)copyWithZone:(struct _NSZone *)arg1;
-- (_Bool)isEqual:(id)arg1;
-@property(readonly) unsigned long long hash;
-
-// Remaining properties
-@property(readonly, copy) NSString *debugDescription;
-@property(readonly) Class superclass;
 
 @end
 

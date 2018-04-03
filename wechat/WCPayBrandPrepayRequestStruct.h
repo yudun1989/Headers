@@ -22,8 +22,10 @@
     NSString *extInfo;
     unsigned int payScene;
     unsigned int _payScene;
+    unsigned int _weappEnterScene;
 }
 
+@property(nonatomic) unsigned int weappEnterScene; // @synthesize weappEnterScene=_weappEnterScene;
 @property(nonatomic) unsigned int payScene; // @synthesize payScene=_payScene;
 @property(retain, nonatomic) NSString *extInfo; // @synthesize extInfo;
 @property(nonatomic) unsigned int payChannel; // @synthesize payChannel;

@@ -47,7 +47,6 @@
 - (void)onOAuthConfirm:(id)arg1;
 - (void)onOAuthError:(int)arg1 errMsg:(id)arg2;
 - (void)onOAuthCancel;
-- (void)onTopBarFrameChanged;
 - (_Bool)useBlackStatusbar;
 - (void)handleConfirmResponse:(id)arg1;
 - (void)handleOauthResponse:(id)arg1;

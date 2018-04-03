@@ -66,7 +66,6 @@
 @property(nonatomic) __weak id <MMTipsViewControllerDelegate> m_delegate; // @synthesize m_delegate;
 - (void).cxx_destruct;
 - (void)dealloc;
-- (void)onTopBarFrameChanged;
 - (void)tapGestureInProcess:(id)arg1;
 - (void)keyboardDidHide;
 - (void)textViewTextDidChange;
@@ -98,6 +97,7 @@
 - (void)hideTips;
 - (void)configBlurBgOnView:(id)arg1;
 - (id)initWithTitle:(id)arg1 andContent:(id)arg2 andTextFieldPlaceholder:(id)arg3 withMaxCount:(unsigned int)arg4 andCancelText:(id)arg5 andConfirmText:(id)arg6;
+- (id)initWithTitle:(id)arg1 andContent:(id)arg2 andButtons:(id)arg3;
 - (id)initWithTitle:(id)arg1 andContent:(id)arg2 andBtn:(id)arg3;
 - (id)initWithTitle:(id)arg1 andImageName:(id)arg2 andContent:(id)arg3 andCancelText:(id)arg4 andConfirmText:(id)arg5;
 - (id)initWithTitle:(id)arg1 andImageName:(id)arg2 andContent:(id)arg3 andCancelText:(id)arg4;

@@ -15,6 +15,7 @@
 
 @property(nonatomic) __weak id <FileDetailLogicDelegate> m_fileDetailLogicDelegate; // @synthesize m_fileDetailLogicDelegate=_m_fileDetailLogicDelegate;
 - (void).cxx_destruct;
+- (void)shareToFriend;
 - (_Bool)canShowScheduleBtn;
 - (id)GetFileName;
 - (id)GetTmpFilePath;

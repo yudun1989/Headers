@@ -13,17 +13,18 @@
 
 @interface KSEExportTaskImpl : NSObject <KSEExportTask>
 {
-    struct NativeExportTask *_nativeExportTask;
-    int _enteredBackground;
-    int _exportFinished;
+    struct shared_ptr<kuaishou::editorsdk2::NativeExportTask> _nativeExportTask;
+    _Bool _enteredBackground;
+    _Bool _exportFinished;
     id <KSEExportTaskDelegate> _delegate;
     KSEEditorError *_error;
 }
 
-@property(nonatomic) int exportFinished; // @synthesize exportFinished=_exportFinished;
-@property(nonatomic) int enteredBackground; // @synthesize enteredBackground=_enteredBackground;
+@property(nonatomic) _Bool exportFinished; // @synthesize exportFinished=_exportFinished;
+@property(nonatomic) _Bool enteredBackground; // @synthesize enteredBackground=_enteredBackground;
 @property(retain, nonatomic) KSEEditorError *error; // @synthesize error=_error;
 @property(nonatomic) __weak id <KSEExportTaskDelegate> delegate; // @synthesize delegate=_delegate;
+- (id).cxx_construct;
 - (void).cxx_destruct;
 - (void)onNativeEvent:(id)arg1;
 - (void)registerOnNativeEventCallback:(CDUnknownBlockType)arg1;
@@ -32,8 +33,11 @@
 - (void)run;
 - (void)dealloc;
 - (void)applicationDidBecomeActive:(id)arg1;
+- (void)setFilterResourcePath:(id)arg1;
 - (void)applicationWillEnterBackground:(id)arg1;
-- (id)initWithNativeExportTask:(struct NativeExportTask *)arg1;
+- (id)initWithProject:(id)arg1 outputPath:(id)arg2 options:(id)arg3;
+- (unsigned long long)taskId;
+- (struct ExportTaskQueue *)nativeExportTaskQueue;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

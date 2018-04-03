@@ -6,9 +6,11 @@
 
 #import "GPUImageOutput.h"
 
-@class AVAsset, AVAssetReader, AVAssetTrack, AVPlayer, AVPlayerItem, GLProgram, GPUImageMovieWriter, NSBlockOperation, NSCondition, NSOperationQueue, NSTimer, NSURL;
+#import "KSGPUImageMedia-Protocol.h"
 
-@interface KSGPUMovie : GPUImageOutput
+@class AVAsset, AVAssetReader, AVAssetTrack, AVPlayer, AVPlayerItem, GLProgram, GPUImageMovieWriter, NSBlockOperation, NSCondition, NSOperationQueue, NSString, NSTimer, NSURL;
+
+@interface KSGPUMovie : GPUImageOutput <KSGPUImageMedia>
 {
     const float *_preferredConversion;
     _Bool isFullYUVRange;
@@ -105,6 +107,17 @@
 - (void)process:(_Bool)arg1;
 - (void)dealloc;
 - (id)initWithVideoURL:(id)arg1;
+- (id)previewImage;
+- (void)seekToTime:(CDStruct_1b6d18a9)arg1;
+- (_Bool)isMovieMedia;
+- (void)stop;
+- (void)play;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly, copy) NSString *description;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
 
 @end
 

@@ -4,14 +4,14 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-#import <objc/NSObject.h>
+#import "LYWBaseAction.h"
 
-#import "LYWServiceAction-Protocol.h"
+#import "LYWServicePassThroughAction-Protocol.h"
 
-@class KSMPreviewPlayer, NSString;
+@class KSMPreviewPlayer, NSObject, NSString;
 @protocol KSMediaPreviewAsset;
 
-@interface KSMediaEditPreviewInitializedAction : NSObject <LYWServiceAction>
+@interface KSMediaEditPreviewInitializedAction : LYWBaseAction <LYWServicePassThroughAction>
 {
     NSObject<KSMediaPreviewAsset> *_asset;
     KSMPreviewPlayer *_player;
@@ -20,10 +20,10 @@
 @property(retain, nonatomic) KSMPreviewPlayer *player; // @synthesize player=_player;
 @property(retain, nonatomic) NSObject<KSMediaPreviewAsset> *asset; // @synthesize asset=_asset;
 - (void).cxx_destruct;
-@property(readonly, copy) NSString *description;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;
+@property(readonly, copy) NSString *description;
 @property(readonly) unsigned long long hash;
 @property(readonly) Class superclass;
 

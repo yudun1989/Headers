@@ -13,6 +13,7 @@
 }
 
 + (_Bool)canCreateMessageViewModelWithMessageWrap:(id)arg1;
+@property(readonly, nonatomic) double labelMaxWidth;
 - (struct CGSize)calculateTitleViewSize;
 @property(readonly, nonatomic) NSString *timeText;
 - (double)messageNodeViewHeight;

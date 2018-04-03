@@ -44,6 +44,8 @@
 - (void)onGetDemoDownloadUrlFinish:(id)arg1 url:(id)arg2 checksum:(id)arg3 errCode:(int)arg4 scene:(unsigned int)arg5;
 - (void)onGetDebugDownloadUrlFinish:(id)arg1 url:(id)arg2 checksum:(id)arg3 errCode:(int)arg4 scene:(unsigned int)arg5;
 - (void)onLaunchAppId:(id)arg1 debugMode:(unsigned int)arg2 reqVersion:(unsigned long long)arg3 permissonInfo:(id)arg4 latestVersion:(unsigned long long)arg5 latestChecksum:(id)arg6 errCode:(int)arg7 scene:(unsigned int)arg8;
+- (void)onJSCore:(unsigned int)arg1 showDatePickerView:(id)arg2;
+- (void)onJSCore:(unsigned int)arg1 showPickerView:(id)arg2;
 - (void)onJSCore:(unsigned int)arg1 dataUpdated:(id)arg2;
 - (void)onJSCore:(unsigned int)arg1 authorizeSuccess:(id)arg2;
 - (void)onJSCore:(unsigned int)arg1 openApp:(id)arg2;
@@ -56,6 +58,7 @@
 - (void)delayPerformViewStateChange:(unsigned long long)arg1 withCoreId:(unsigned int)arg2;
 - (void)viewStateChange:(unsigned long long)arg1 withCoreList:(id)arg2;
 - (void)viewStateChange:(unsigned long long)arg1 withCoreId:(unsigned int)arg2;
+- (void)notifyEventEndWithResult:(id)arg1 coreId:(unsigned int)arg2;
 - (void)notifyOnTapWithCoreId:(unsigned int)arg1 atPoint:(struct CGPoint)arg2 forEvent:(id)arg3 completion:(CDUnknownBlockType)arg4;
 - (id)getJSLogMetaInfoWithCoreId:(unsigned int)arg1;
 - (id)getJSLogWithCoreId:(unsigned int)arg1;

@@ -4,37 +4,49 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-#import <GLKit/GLKViewController.h>
+#import <UIKit/UIViewController.h>
 
-#import "GLKViewDelegate-Protocol.h"
+@class CADisplayLink, KSEPreviewPlayer, NSObject;
+@protocol OS_dispatch_queue;
 
-@class KSEPreviewPlayer, NSLock, NSString;
-
-@interface KSEPreviewViewController : GLKViewController <GLKViewDelegate>
+@interface KSEPreviewViewController : UIViewController
 {
-    _Bool _attachCalled;
+    _Bool _paused;
+    _Bool _isSuspend;
+    _Bool _isRendering;
+    unsigned int _renderbuffer;
+    unsigned int _framebuffer;
     KSEPreviewPlayer *_previewPlayer;
-    NSLock *_lock;
+    NSObject<OS_dispatch_queue> *_renderQueue;
+    struct EglObject *_renderEglObject;
+    struct EglObject *_eglObject;
+    CADisplayLink *_displayLink;
 }
 
-@property(nonatomic) _Bool attachCalled; // @synthesize attachCalled=_attachCalled;
-@property(retain, nonatomic) NSLock *lock; // @synthesize lock=_lock;
+@property(nonatomic) _Bool isRendering; // @synthesize isRendering=_isRendering;
+@property(nonatomic) _Bool isSuspend; // @synthesize isSuspend=_isSuspend;
+@property(nonatomic) unsigned int framebuffer; // @synthesize framebuffer=_framebuffer;
+@property(nonatomic) unsigned int renderbuffer; // @synthesize renderbuffer=_renderbuffer;
+@property(retain, nonatomic) CADisplayLink *displayLink; // @synthesize displayLink=_displayLink;
+@property(nonatomic) struct EglObject *eglObject; // @synthesize eglObject=_eglObject;
+@property(nonatomic) struct EglObject *renderEglObject; // @synthesize renderEglObject=_renderEglObject;
+@property(retain, nonatomic) NSObject<OS_dispatch_queue> *renderQueue; // @synthesize renderQueue=_renderQueue;
+@property(nonatomic) _Bool paused; // @synthesize paused=_paused;
 - (void).cxx_destruct;
 - (void)viewWillLayoutSubviews;
-- (void)glkView:(id)arg1 drawInRect:(struct CGRect)arg2;
 - (void)didReceiveMemoryWarning;
-- (void)viewWillAppear:(_Bool)arg1;
+- (void)render;
 - (void)viewWillDisappear:(_Bool)arg1;
+- (void)viewDidAppear:(_Bool)arg1;
 - (void)viewDidLoad;
 @property(retain, nonatomic) KSEPreviewPlayer *previewPlayer; // @synthesize previewPlayer=_previewPlayer;
 - (float)glViewScale;
+- (void)applicationWillResignActive:(id)arg1;
+- (void)applicationDidBecomeActive:(id)arg1;
+- (void)dealloc;
 - (id)init;
-
-// Remaining properties
-@property(readonly, copy) NSString *debugDescription;
-@property(readonly, copy) NSString *description;
-@property(readonly) unsigned long long hash;
-@property(readonly) Class superclass;
+- (struct VideoEditorSession *)nativeSession;
+- (void)loadView;
 
 @end
 

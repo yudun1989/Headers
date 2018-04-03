@@ -4,31 +4,22 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-#import <MMCommon/MMObject.h>
+#import "FavoritesBaseUploadMgr.h"
 
-#import "CNetworkStatusExt-Protocol.h"
 #import "FavoritesAsyncUploaderDelegate-Protocol.h"
-#import "IFavoritesRepairSvrDataExt-Protocol.h"
 
-@class FavoritesAsyncUploader, FavoritesCDNInfoDB, FavoritesItemDB, NSMutableArray, NSString;
+@class FavoritesAsyncUploader, NSString;
 @protocol FavoritesAsyncUploadMgrDelegate;
 
-@interface FavoritesAsyncUploadMgr : MMObject <IFavoritesRepairSvrDataExt, CNetworkStatusExt, FavoritesAsyncUploaderDelegate>
+@interface FavoritesAsyncUploadMgr : FavoritesBaseUploadMgr <FavoritesAsyncUploaderDelegate>
 {
-    NSMutableArray *_uploadingQueue;
-    NSMutableArray *_failedQueue;
-    NSMutableArray *_activeQueue;
-    _Bool _isUploading;
-    FavoritesCDNInfoDB *_favCdnDB;
-    FavoritesItemDB *_favItemDB;
     FavoritesAsyncUploader *_favUploader;
     id <FavoritesAsyncUploadMgrDelegate> _delegate;
 }
 
 @property(nonatomic) __weak id <FavoritesAsyncUploadMgrDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
-- (void)onRepairCheckFavItemAvailable:(unsigned int)arg1 occupied:(_Bool *)arg2;
-- (void)ReachabilityChange:(unsigned int)arg1;
+- (void)reUploadFavItem:(id)arg1;
 - (_Bool)deleteCdnInfoByFavoritesItemLocalId:(unsigned int)arg1;
 - (_Bool)updateItemXMLInItemDB:(id)arg1;
 - (void)onUploadFavItem:(id)arg1 LocalDataId:(id)arg2 FinishedLength:(int)arg3 TotalLength:(int)arg4;
@@ -38,6 +29,8 @@
 - (id)getUploadPausedItemList;
 - (id)getUploadItemList;
 - (void)changeToNoWifi;
+- (void)changeToWifi;
+- (void)stopAsyncUploadFavoritesItem:(unsigned int)arg1;
 - (_Bool)pauseAsyncUploadFavoritesItem:(unsigned int)arg1;
 - (_Bool)restartAllAsyncUploadFailedItems;
 - (_Bool)startAsyncUploadItem:(id)arg1 IsPriority:(_Bool)arg2;

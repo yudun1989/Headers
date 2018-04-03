@@ -14,6 +14,7 @@
 }
 
 - (void).cxx_destruct;
+- (id)packageManager;
 - (id)httpSetting;
 - (id)syncVersionSetting;
 - (unsigned int)widgetImageFlowLimitMaxSize;
@@ -39,6 +40,10 @@
 - (unsigned int)appMaxRunningCount;
 - (id)defaultCDNBaseURL;
 - (id)cdnBaseURL;
+- (unsigned int)packageSweeperClientStorageMinMB;
+- (unsigned int)packageSweeperClientStorageMaxPercent;
+- (unsigned int)packageSweeperWithoutContactOutdatedDuration;
+- (unsigned int)packageSweeperCheckInterval;
 - (long long)gamePerfCollectInterval;
 - (double)gamePerfCollectSamplePercentage;
 - (unsigned int)defaultPullVersionMaxCountPerRequest;

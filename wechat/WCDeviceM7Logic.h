@@ -6,7 +6,7 @@
 
 #import <MMCommon/MMObject.h>
 
-@class CMStepCounter, NSMutableArray, WCDeviceStepObject;
+@class CMPedometer, CMStepCounter, NSMutableArray, WCDeviceStepObject;
 @protocol WCDeviceM7LogicDelegate;
 
 @interface WCDeviceM7Logic : MMObject
@@ -21,11 +21,15 @@
     int m_lastGetStepTime;
     _Bool m_bHKAuthorized;
     _Bool m_bDataChanged;
+    _Bool _bSwitchToCMPedometer;
     NSMutableArray *m_aryWhiteList;
-    CMStepCounter *_m_cmStepCounter;
+    CMStepCounter *_cmStepCounter;
+    CMPedometer *_cmPedometer;
 }
 
-@property(retain, nonatomic) CMStepCounter *m_cmStepCounter; // @synthesize m_cmStepCounter=_m_cmStepCounter;
+@property(nonatomic) _Bool bSwitchToCMPedometer; // @synthesize bSwitchToCMPedometer=_bSwitchToCMPedometer;
+@property(retain, nonatomic) CMPedometer *cmPedometer; // @synthesize cmPedometer=_cmPedometer;
+@property(retain, nonatomic) CMStepCounter *cmStepCounter; // @synthesize cmStepCounter=_cmStepCounter;
 @property(nonatomic) _Bool m_bDataChanged; // @synthesize m_bDataChanged;
 @property(retain, nonatomic) NSMutableArray *m_aryWhiteList; // @synthesize m_aryWhiteList;
 @property(nonatomic) __weak id <WCDeviceM7LogicDelegate> delegate; // @synthesize delegate=_delegate;

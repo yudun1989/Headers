@@ -23,7 +23,7 @@
 + (_Bool)updateMetadata:(id)arg1 ofWorkspace:(id)arg2 error:(id *)arg3;
 + (_Bool)moveItem:(id)arg1 intoWorkSpace:(id)arg2 error:(id *)arg3;
 + (id)createPersistenceWithPath:(id)arg1 error:(id *)arg2;
-+ (id)createWorkspaceWithPictureOperationContext:(id)arg1 rootPath:(id)arg2 pictures:(id)arg3 type:(long long)arg4 error:(id *)arg5;
++ (id)createWorkspaceWithMetaData:(id)arg1 rootPath:(id)arg2 dataSource:(id)arg3 type:(long long)arg4 error:(id *)arg5;
 @property(readonly, nonatomic) NSString *metadataFilePath; // @synthesize metadataFilePath=_metadataFilePath;
 @property(retain, nonatomic) NSBundle *bundle; // @synthesize bundle=_bundle;
 @property(readonly) KSLocalAlbumWorkspaceMetadata *metadata; // @synthesize metadata=_metadata;
@@ -33,8 +33,7 @@
 - (id)p_metaDataFileName;
 - (_Bool)updateMetadata:(id)arg1 error:(id *)arg2;
 - (id)initWithPersistentPath:(id)arg1;
-- (id)loadToCachedImageArrayWithNameSpace:(id)arg1 onCreateProgress:(CDUnknownBlockType)arg2;
-- (id)p_addImages:(id)arg1 toCache:(id)arg2;
+- (id)createAtlasLocalAssetDataSourceWithType:(unsigned long long)arg1 progress:(id *)arg2;
 - (id)picturesThumbnailImage;
 
 @end

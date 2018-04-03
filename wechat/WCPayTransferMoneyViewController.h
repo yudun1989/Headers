@@ -28,7 +28,6 @@
     WCPayNoticeBanner *noticeBanner;
     UIView *headerView;
     UIView *footerView;
-    _Bool m_isPushed;
     _Bool _disableEditMoney;
     _Bool _bIsFeeTextFieldFirstTimeAutoFocus;
     NSString *_remark;
@@ -112,6 +111,7 @@
 - (void)viewDidBePoped:(_Bool)arg1;
 - (void)viewDidLayoutSubviews;
 - (void)viewDidAppear:(_Bool)arg1;
+- (void)reportWithAction:(unsigned long long)arg1;
 - (void)viewDidLoad;
 - (void)dealloc;
 - (id)init;

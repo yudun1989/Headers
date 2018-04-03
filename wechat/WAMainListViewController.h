@@ -39,6 +39,8 @@
     _Bool _hasClickNearBySection;
     _Bool _isViewAppeared;
     UIView *_movingFakeCell;
+    _Bool _lastSearchBarStatus;
+    _Bool _isDuringSearch;
     _Bool _needLogRedDot;
     unsigned int _onRedDotTime;
     unsigned long long m_scene;
@@ -83,8 +85,10 @@
 - (id)mmNavigationController:(id)arg1 interactionControllerForAnimationController:(id)arg2;
 - (id)mmNavigationController:(id)arg1 animationControllerForOperation:(long long)arg2 fromViewController:(id)arg3 toViewController:(id)arg4;
 - (void)onLaunchPermissionUpdateHistoryList:(id)arg1;
+- (void)fixTableViewAndSearchBarPos;
 - (void)fixTableViewOffset;
 - (void)didEndSearch;
+- (void)willEndSearch;
 - (void)willBeginSearch;
 - (_Bool)isInSearch;
 - (void)reportDestopOpWithAppItem:(id)arg1 eventId:(unsigned long long)arg2;

@@ -8,7 +8,7 @@
 
 #import "C2ObjcClientCallBackExt-Protocol.h"
 
-@class MMTimer, NSData, NSDate, NSString, WXGSpeedFilter;
+@class MMTimer, NSDate, NSString, WXGSpeedFilter;
 @protocol LocalAreaNetworkClientDelegate;
 
 @interface LocalAreaNetworkClient : MMObject <C2ObjcClientCallBackExt>
@@ -22,10 +22,14 @@
     NSDate *m_reciveStartDate;
     WXGSpeedFilter *m_sendSpeedFilter;
     WXGSpeedFilter *m_recveSpeedFilter;
-    _Bool m_bFirstPacket;
-    _Bool m_bFirstPacketOK;
+    _Bool m_bIsInDisconnect;
+    _Bool m_bFirstBusinessPacket;
+    _Bool m_bFirstPacketOKofBusiness;
     MMTimer *m_firstPacketTimer;
-    NSData *m_firstPacketData;
+    _Bool m_bFirstTestPacket;
+    _Bool m_bFirstTestPacketOK;
+    MMTimer *m_testSpeedTimer;
+    _Bool m_bTestSpeedOpen;
     unsigned short _server_port;
     id <LocalAreaNetworkClientDelegate> _delegate;
     NSString *_server_ip;
@@ -40,11 +44,14 @@
 - (unsigned long long)getTotalSendLength;
 - (float)getClientSendSpeed;
 - (float)getClientRecvSpeed;
+- (void)p_checkFirstTestPacket;
+- (void)p_checkFirstPacket;
 - (void)onDisconnect:(id)arg1 port:(unsigned short)arg2;
 - (void)onRecv:(id)arg1 port:(unsigned short)arg2 data:(id)arg3 length:(unsigned int)arg4;
-- (void)p_checkFirstPacket;
 - (unsigned long long)sendData:(id)arg1 andLength:(unsigned int)arg2;
 - (void)stopClient;
+- (void)markTestSpeedClose;
+- (void)markTestSpeedOpen;
 - (void)dealloc;
 - (void)reset;
 - (id)init;

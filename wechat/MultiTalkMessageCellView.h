@@ -6,17 +6,25 @@
 
 #import "BaseMessageCellView.h"
 
+#import "ChatBackgroundExt-Protocol.h"
+
 @class MultiTalkMessageViewModel, UIImageView;
 
-@interface MultiTalkMessageCellView : BaseMessageCellView
+@interface MultiTalkMessageCellView : BaseMessageCellView <ChatBackgroundExt>
 {
     UIImageView *m_backgroundImageView;
+    _Bool _useLightStyle;
 }
 
+@property(nonatomic) _Bool useLightStyle; // @synthesize useLightStyle=_useLightStyle;
 - (void).cxx_destruct;
+- (void)onChatBackgroundChanged:(id)arg1;
 - (void)onLongTouch;
 - (id)getBkgImage;
 - (void)layoutContentView;
+- (_Bool)needUpdateLightStyle;
+- (void)dealloc;
+- (id)initWithViewModel:(id)arg1;
 
 // Remaining properties
 @property(readonly, nonatomic) MultiTalkMessageViewModel *viewModel; // @dynamic viewModel;

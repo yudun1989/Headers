@@ -26,9 +26,8 @@
 @property(retain, nonatomic) NSObject<KSMediaPreviewAsset><KSMediaEditExportable> *asset; // @synthesize asset=_asset;
 @property(retain, nonatomic) KSMPreviewPlayer *player; // @synthesize player=_player;
 - (void).cxx_destruct;
-- (id)videoMakeTaskWithCancellationToken:(id)arg1;
-- (void)fillVideoInfo;
-- (void)fillMovieInfoWithRanges:(id)arg1;
+- (id)videoMakeTaskWithCancellationToken:(id)arg1 onProgress:(CDUnknownBlockType)arg2;
+- (void)fillMovieInfoWithRanges:(id)arg1 mediaProject:(id)arg2 movieInfo:(id)arg3 asset:(id)arg4;
 - (void)dealloc;
 - (id)initWithPlayer:(id)arg1 asset:(id)arg2;
 

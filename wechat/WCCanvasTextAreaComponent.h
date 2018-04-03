@@ -14,13 +14,11 @@
 @interface WCCanvasTextAreaComponent : WCCanvasComponent <RichTextLayoutDelegate, WCCanvasImageLoaderObserver>
 {
     RichTextView *_contentLabel;
-    long long _currentAlignment;
 }
 
 + (struct CGSize)calcContentSizeForCanvasItem:(id)arg1 dataItem:(id)arg2 orientation:(long long)arg3 width:(double)arg4;
 + (struct CGSize)calcSizeForCanvasItem:(id)arg1 dataItem:(id)arg2 orientation:(long long)arg3;
 + (id)getRichTextFromSvrResponse:(id)arg1;
-@property(nonatomic) long long currentAlignment; // @synthesize currentAlignment=_currentAlignment;
 @property(retain, nonatomic) RichTextView *contentLabel; // @synthesize contentLabel=_contentLabel;
 - (void).cxx_destruct;
 - (void)alignText:(long long)arg1;

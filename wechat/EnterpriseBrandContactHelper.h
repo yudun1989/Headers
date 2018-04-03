@@ -7,13 +7,14 @@
 #import <MMCommon/MMObject.h>
 
 #import "IEnterpriseBrandContactMgrExt-Protocol.h"
+#import "PBMessageObserverDelegate-Protocol.h"
 #import "UIAlertViewDelegate-Protocol.h"
 #import "WCActionSheetDelegate-Protocol.h"
 
 @class NSString;
 @protocol EnterpriseBrandContactHelperDelegate;
 
-@interface EnterpriseBrandContactHelper : MMObject <WCActionSheetDelegate, IEnterpriseBrandContactMgrExt, UIAlertViewDelegate>
+@interface EnterpriseBrandContactHelper : MMObject <WCActionSheetDelegate, IEnterpriseBrandContactMgrExt, UIAlertViewDelegate, PBMessageObserverDelegate>
 {
     NSString *_contextBrandUserName;
     unsigned int _contextScene;
@@ -26,6 +27,9 @@
 - (void)onEnterpriseBrandSyncToSvrCompleted:(id)arg1 extParams:(id)arg2;
 - (void)alertView:(id)arg1 clickedButtonAtIndex:(long long)arg2;
 - (void)actionSheet:(id)arg1 clickedButtonAtIndex:(long long)arg2;
+- (void)MessageReturn:(id)arg1 Event:(unsigned int)arg2;
+- (void)handleReportImmediatelyType:(id)arg1;
+- (void)reportImmediatelyType:(unsigned int)arg1 mainAttr:(id)arg2 operation:(unsigned int)arg3 scene:(unsigned int)arg4 flag:(unsigned long long)arg5;
 - (void)reportWeWorkBannerNew:(unsigned int)arg1;
 - (void)reportWeWork:(unsigned int)arg1;
 - (void)openWeWorkApp;

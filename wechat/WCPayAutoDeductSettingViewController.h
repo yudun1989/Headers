@@ -7,28 +7,19 @@
 #import "WCPayBaseViewController.h"
 
 #import "ILinkEventExt-Protocol.h"
-#import "WCPayPickerViewDelegate-Protocol.h"
 
-@class NSString, RichTextView, UILabel, UISwitch, WCPayEntrustPayInfo, WCPayOrderDetail, WCPayPickerView;
+@class NSString, RichTextView, UISwitch, WCPayEntrustPayInfo, WCPayOrderDetail;
 @protocol WCPayAutoDeductSettingViewControllerDelegate;
 
-@interface WCPayAutoDeductSettingViewController : WCPayBaseViewController <ILinkEventExt, WCPayPickerViewDelegate>
+@interface WCPayAutoDeductSettingViewController : WCPayBaseViewController <ILinkEventExt>
 {
     id <WCPayAutoDeductSettingViewControllerDelegate> m_delegate;
     UISwitch *_switchButton;
     RichTextView *_richTextView;
     WCPayOrderDetail *_order;
     WCPayEntrustPayInfo *_entrustPayInfo;
-    WCPayPickerView *_pickerView;
-    UILabel *_cardInfoLabel;
-    NSString *_pickerTitle;
-    NSString *_autoDeductDesc;
 }
 
-@property(copy, nonatomic) NSString *autoDeductDesc; // @synthesize autoDeductDesc=_autoDeductDesc;
-@property(copy, nonatomic) NSString *pickerTitle; // @synthesize pickerTitle=_pickerTitle;
-@property(retain, nonatomic) UILabel *cardInfoLabel; // @synthesize cardInfoLabel=_cardInfoLabel;
-@property(retain, nonatomic) WCPayPickerView *pickerView; // @synthesize pickerView=_pickerView;
 @property(retain, nonatomic) WCPayEntrustPayInfo *entrustPayInfo; // @synthesize entrustPayInfo=_entrustPayInfo;
 @property(retain, nonatomic) WCPayOrderDetail *order; // @synthesize order=_order;
 @property(retain, nonatomic) RichTextView *richTextView; // @synthesize richTextView=_richTextView;
@@ -37,25 +28,23 @@
 - (void)viewWillAppear:(_Bool)arg1;
 - (void)onLinkClicked:(id)arg1 withRect:(struct CGRect)arg2;
 - (_Bool)isCNY;
-- (id)cardInfoString:(id)arg1;
-- (void)selectCardInfo;
 - (void)OnFooterButtonClick:(id)arg1;
 - (void)changeSwitch:(id)arg1;
 - (void)OnCancel;
-- (void)requestWording;
 - (void)setupData;
 - (void)setDelegate:(id)arg1;
 - (id)getShowInfoView:(id)arg1;
-- (void)makeSelectCardCell:(id)arg1 cellInfo:(id)arg2;
-- (void)makeInfoCell:(id)arg1 cellInfo:(id)arg2;
 - (void)setupBottomTextView;
 - (id)footerView;
-- (id)selectCardInfoSection;
-- (id)infoSection;
+- (void)makeInfoSectionContentView:(id)arg1;
+- (void)makeHeaderContent;
 - (void)reloadTableView;
 - (void)initNavigationBar;
 - (void)viewDidTransitionToNewSize;
 - (void)viewDidLoad;
+- (_Bool)useBlackStatusbar;
+- (id)navigationBarBackgroundColor;
+- (id)init;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

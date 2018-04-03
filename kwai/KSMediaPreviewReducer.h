@@ -4,23 +4,18 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-#import <objc/NSObject.h>
+#import "LYWBaseReducer.h"
 
-#import "LYWReducer-Protocol.h"
+@class KSMediaEditTextureCanvasReducer;
 
-@class NSString;
-
-@interface KSMediaPreviewReducer : NSObject <LYWReducer>
+@interface KSMediaPreviewReducer : LYWBaseReducer
 {
+    KSMediaEditTextureCanvasReducer *_textureCanvasReducer;
 }
 
+@property(retain, nonatomic) KSMediaEditTextureCanvasReducer *textureCanvasReducer; // @synthesize textureCanvasReducer=_textureCanvasReducer;
+- (void).cxx_destruct;
 - (id)handleAction:(id)arg1 state:(id)arg2;
-
-// Remaining properties
-@property(readonly, copy) NSString *debugDescription;
-@property(readonly, copy) NSString *description;
-@property(readonly) unsigned long long hash;
-@property(readonly) Class superclass;
 
 @end
 

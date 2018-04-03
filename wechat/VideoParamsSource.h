@@ -6,9 +6,11 @@
 
 #import <objc/NSObject.h>
 
+#import "NSCoding-Protocol.h"
+
 @class MMAsset, NSURL;
 
-@interface VideoParamsSource : NSObject
+@interface VideoParamsSource : NSObject <NSCoding>
 {
     NSURL *_videoURL;
     MMAsset *_videoMMAsset;
@@ -23,6 +25,8 @@
 - (id)genVideoParamsInfoFromMMAsset:(id)arg1;
 - (id)genVideoParamsInfoFromURL:(id)arg1;
 - (id)genVideoParamsInfo;
+- (id)initWithCoder:(id)arg1;
+- (void)encodeWithCoder:(id)arg1;
 
 @end
 

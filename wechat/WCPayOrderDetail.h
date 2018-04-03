@@ -6,7 +6,7 @@
 
 #import <objc/NSObject.h>
 
-@class NSArray, NSMutableArray, NSString, WCPayOrderDetailActivityInfo, WCPayOrderDetailSubscribeBrandInfo, WCPayOrderDetailTinyAppInfo;
+@class NSArray, NSMutableArray, NSString, WCPayOrderDetailActivityInfo, WCPayOrderDetailRemarksInfo, WCPayOrderDetailSubscribeBrandInfo, WCPayOrderDetailTinyAppInfo;
 
 @interface WCPayOrderDetail : NSObject
 {
@@ -99,8 +99,10 @@
     WCPayOrderDetailTinyAppInfo *_tinyAppInfo;
     NSString *_m_nsBannerContent;
     NSString *_m_nsBannerUrl;
+    WCPayOrderDetailRemarksInfo *_remarks_info;
 }
 
+@property(retain, nonatomic) WCPayOrderDetailRemarksInfo *remarks_info; // @synthesize remarks_info=_remarks_info;
 @property(retain, nonatomic) NSString *m_nsBannerUrl; // @synthesize m_nsBannerUrl=_m_nsBannerUrl;
 @property(retain, nonatomic) NSString *m_nsBannerContent; // @synthesize m_nsBannerContent=_m_nsBannerContent;
 @property(retain, nonatomic) WCPayOrderDetailTinyAppInfo *tinyAppInfo; // @synthesize tinyAppInfo=_tinyAppInfo;

@@ -72,8 +72,6 @@
 - (void)onFullScreenDragToRect:(struct CGRect)arg1;
 - (void)onFullScreenClose;
 - (void)onFullScreenSingleTap;
-- (void)onVideoVoipViewDisappear;
-- (void)onVideoVoipViewDidAppear:(id)arg1;
 - (void)alertView:(id)arg1 clickedButtonAtIndex:(long long)arg2;
 - (void)OnMsgRevoked:(id)arg1 n64MsgId:(long long)arg2;
 - (void)stopPlaying;

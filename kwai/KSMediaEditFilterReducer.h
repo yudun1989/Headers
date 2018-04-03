@@ -4,13 +4,9 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-#import <objc/NSObject.h>
+#import "LYWBaseReducer.h"
 
-#import "LYWReducer-Protocol.h"
-
-@class NSString;
-
-@interface KSMediaEditFilterReducer : NSObject <LYWReducer>
+@interface KSMediaEditFilterReducer : LYWBaseReducer
 {
 }
 
@@ -18,15 +14,10 @@
 - (void)_updatePreviewImageAction:(id)arg1 state:(id)arg2;
 - (void)_disableBeautifyAction:(id)arg1 state:(id)arg2;
 - (void)_setFilterValueAction:(id)arg1 state:(id)arg2;
-- (void)_showFilterValueEditingAction:(id)arg1 state:(id)arg2;
+- (void)_editFilterAction:(id)arg1 state:(id)arg2;
 - (void)_selectFilterAction:(id)arg1 state:(id)arg2;
+- (void)_restoreFilterAction:(id)arg1 state:(id)arg2;
 - (id)handleAction:(id)arg1 state:(id)arg2;
-
-// Remaining properties
-@property(readonly, copy) NSString *debugDescription;
-@property(readonly, copy) NSString *description;
-@property(readonly) unsigned long long hash;
-@property(readonly) Class superclass;
 
 @end
 

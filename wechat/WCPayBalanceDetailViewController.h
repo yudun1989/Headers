@@ -40,8 +40,7 @@
 - (void)actionSheet:(id)arg1 clickedButtonAtIndex:(long long)arg2;
 - (void)onOperate;
 - (void)viewDidBePoped:(_Bool)arg1;
-- (void)viewWillDisappear:(_Bool)arg1;
-- (void)viewWillAppear:(_Bool)arg1;
+- (_Bool)useBlackStatusbar;
 - (void)viewDidLoad;
 - (_Bool)useTransparentNavibar;
 - (void)initNavigationBar;

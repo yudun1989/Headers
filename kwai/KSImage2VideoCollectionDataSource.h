@@ -8,19 +8,21 @@
 
 #import "LXReorderableCollectionViewDataSource-Protocol.h"
 
-@class KSCachedImageArray, NSMutableArray, NSString, UICollectionView;
+@class KSAtlasEditLibraryAssetDataSourceCreator, KSCachedImageArray, NSMutableArray, NSString, UICollectionView;
 
 @interface KSImage2VideoCollectionDataSource : NSObject <LXReorderableCollectionViewDataSource>
 {
     _Bool _isAppendingAsset;
     KSCachedImageArray *_cachedImages;
     NSMutableArray *_cachedAssets;
+    KSAtlasEditLibraryAssetDataSourceCreator *_atlasCreator;
     UICollectionView *_collectionView;
 }
 
 + (id)assetIdWithAsset:(id)arg1;
 @property(nonatomic) _Bool isAppendingAsset; // @synthesize isAppendingAsset=_isAppendingAsset;
 @property(nonatomic) __weak UICollectionView *collectionView; // @synthesize collectionView=_collectionView;
+@property(retain, nonatomic) KSAtlasEditLibraryAssetDataSourceCreator *atlasCreator; // @synthesize atlasCreator=_atlasCreator;
 @property(readonly, nonatomic) NSMutableArray *cachedAssets; // @synthesize cachedAssets=_cachedAssets;
 @property(readonly, nonatomic) KSCachedImageArray *cachedImages; // @synthesize cachedImages=_cachedImages;
 - (void).cxx_destruct;

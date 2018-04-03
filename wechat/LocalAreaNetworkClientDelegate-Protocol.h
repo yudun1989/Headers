@@ -9,7 +9,9 @@
 @class NSData;
 
 @protocol LocalAreaNetworkClientDelegate <NSObject>
-- (void)onNetworkConnectFailWithFirstPacketData:(NSData *)arg1;
+- (void)onNetworkTestSpeedFail;
+- (void)onNetworkStartTestSpeed;
+- (void)onNetworkConnectFail;
 - (void)onNetworkDisconnect;
 - (void)onNetworkReciveData:(NSData *)arg1 andLength:(unsigned int)arg2;
 @end

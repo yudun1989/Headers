@@ -10,10 +10,14 @@
 {
 }
 
++ (id)decodeWidgetAppIdFromSceneNote:(id)arg1;
++ (unsigned int)decodeCoreIdFromWidgetId:(id)arg1;
++ (unsigned int)decodeCoreIdFromSceneNote:(id)arg1;
 + (id)decodedQueryOfUrl:(id)arg1;
 + (id)pathOfUrl:(id)arg1;
 + (unsigned int)uint32ForKey:(id)arg1 inParam:(id)arg2;
 + (unsigned long long)uint64ForKey:(id)arg1 inParam:(id)arg2;
++ (_Bool)shouldStickySearchBar;
 + (void)removeWeAppUpdatedH5;
 + (id)makeDictionaryFromPath:(id)arg1;
 + (void)reloadDownloadConfig;

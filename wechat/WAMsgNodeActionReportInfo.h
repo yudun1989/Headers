@@ -18,8 +18,10 @@
     NSMutableDictionary *_apiUsageDict;
     NSMutableArray *_alarmKeys;
     NSString *_cacheKey;
+    NSString *_jumpUserName;
 }
 
+@property(retain, nonatomic) NSString *jumpUserName; // @synthesize jumpUserName=_jumpUserName;
 @property(retain, nonatomic) NSString *cacheKey; // @synthesize cacheKey=_cacheKey;
 @property(retain, nonatomic) NSMutableArray *alarmKeys; // @synthesize alarmKeys=_alarmKeys;
 @property(retain, nonatomic) NSMutableDictionary *apiUsageDict; // @synthesize apiUsageDict=_apiUsageDict;

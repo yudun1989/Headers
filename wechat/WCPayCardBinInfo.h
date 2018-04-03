@@ -48,10 +48,12 @@
     _Bool m_needShowProtocol;
     NSString *m_usrName;
     NSString *m_nsFetchArriveTimeWording;
+    NSString *_pre_auth_word;
     NSString *_m_arriveType;
 }
 
 @property(retain, nonatomic) NSString *m_arriveType; // @synthesize m_arriveType=_m_arriveType;
+@property(retain, nonatomic) NSString *pre_auth_word; // @synthesize pre_auth_word=_pre_auth_word;
 @property(nonatomic) _Bool m_needShowProtocol; // @synthesize m_needShowProtocol;
 @property(retain, nonatomic) NSString *m_nsAvailableSaveInfo; // @synthesize m_nsAvailableSaveInfo;
 @property(retain, nonatomic) NSString *m_nsFetchArriveTimeWording; // @synthesize m_nsFetchArriveTimeWording;

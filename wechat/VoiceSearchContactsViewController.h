@@ -38,7 +38,6 @@
 - (void)didAppear;
 - (void)loadView;
 - (id)initByResults:(_Bool)arg1;
-- (void)onTopBarFrameChanged;
 - (void)setErrorLabelViewText:(id)arg1;
 - (void)initTableView;
 

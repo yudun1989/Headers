@@ -6,8 +6,10 @@
 
 #import <MMCommon/MMObject.h>
 
+#import "FavBaseSearchViewControllerDelegate-Protocol.h"
 #import "FavForwardLogicDelegate-Protocol.h"
 #import "FavFullScreenImageViewControllerDelegate-Protocol.h"
+#import "FavSearchTopFilterViewDelegate-Protocol.h"
 #import "FavTagSearchFilterDelegate-Protocol.h"
 #import "IFavoritesExt-Protocol.h"
 #import "IFavoritesRepairSvrDataExt-Protocol.h"
@@ -17,10 +19,10 @@
 #import "UITableViewDataSource-Protocol.h"
 #import "UITableViewDelegate-Protocol.h"
 
-@class FMSearchBar, FavForwardLogicController, FavTagSearchFilter, MsgFastBrowseView, NSMutableArray, NSMutableDictionary, NSString, UIButton, UILabel, UISearchDisplayController, UITextField, UIView;
+@class FMSearchBar, FavForwardLogicController, FavSearchTopFilterView, FavTagSearchFilter, MsgFastBrowseView, NSMutableArray, NSMutableDictionary, NSString, UIButton, UILabel, UISearchDisplayController, UITextField, UIView;
 @protocol FavSearchControllerDelegate;
 
-@interface MMFavoritesSearchController : MMObject <IFavoritesRepairSvrDataExt, FavFullScreenImageViewControllerDelegate, FavTagSearchFilterDelegate, UISearchDisplayDelegate, UITableViewDataSource, UITableViewDelegate, UISearchBarDelegate, MsgFastBrowseViewDelegate, FavForwardLogicDelegate, IFavoritesExt>
+@interface MMFavoritesSearchController : MMObject <IFavoritesRepairSvrDataExt, FavFullScreenImageViewControllerDelegate, FavSearchTopFilterViewDelegate, FavBaseSearchViewControllerDelegate, FavTagSearchFilterDelegate, UISearchDisplayDelegate, UITableViewDataSource, UITableViewDelegate, UISearchBarDelegate, MsgFastBrowseViewDelegate, FavForwardLogicDelegate, IFavoritesExt>
 {
     NSString *m_searchText;
     NSString *m_tagText;
@@ -45,23 +47,31 @@
     NSMutableArray *m_arrSelectedItems;
     NSMutableDictionary *m_dicCellComponentCache;
     _Bool m_ChangeToEditingStatusAnimating;
+    FavSearchTopFilterView *m_searchTopFilterView;
+    UIView *m_savedHeaderView;
     UIView *m_loadingView;
     UILabel *m_loadingLabel;
     FavForwardLogicController *m_favForwardController;
     _Bool _m_bUseFilter;
+    _Bool _m_bShowFilterView;
     int m_nCurrentType;
     unsigned int _entranceScene;
 }
 
 @property(nonatomic) unsigned int entranceScene; // @synthesize entranceScene=_entranceScene;
+@property(nonatomic) _Bool m_bShowFilterView; // @synthesize m_bShowFilterView=_m_bShowFilterView;
 @property(nonatomic) _Bool m_bUseFilter; // @synthesize m_bUseFilter=_m_bUseFilter;
 @property(nonatomic) int m_nCurrentType; // @synthesize m_nCurrentType;
 @property(retain, nonatomic) NSString *m_tagText; // @synthesize m_tagText;
 @property(retain, nonatomic) NSString *m_searchText; // @synthesize m_searchText;
 @property(nonatomic) __weak id <FavSearchControllerDelegate> m_delegate; // @synthesize m_delegate;
 - (void).cxx_destruct;
-- (void)onRepairCheckFavItemAvailable:(unsigned int)arg1 occupied:(_Bool *)arg2;
+- (_Bool)onSearchCellViewCanShowMenuItems;
 - (void)onShowFavContext:(id)arg1 DataItem:(id)arg2 NeedReport:(_Bool)arg3 FromScene:(unsigned int)arg4 FavIndex:(unsigned int)arg5;
+- (void)onSelectFavDataItem:(id)arg1 tableView:(id)arg2 atIndexPath:(id)arg3;
+- (void)onSelectFavItem:(id)arg1 tableView:(id)arg2 atIndexPath:(id)arg3 FromScene:(unsigned int)arg4 FavIndex:(unsigned int)arg5 withCell:(id)arg6;
+- (void)onClickSearchFilter:(id)arg1 type:(unsigned int)arg2;
+- (void)onRepairCheckFavItemAvailable:(unsigned int)arg1 occupied:(_Bool *)arg2;
 - (void)updateForwardBtnWithCount:(unsigned long long)arg1;
 - (void)msgFastBrowseView:(id)arg1 didChangeCheckMarkTo:(_Bool)arg2 withMsgInfo:(id)arg3;
 - (_Bool)msgFastBrowseView:(id)arg1 willChangeCheckMarkTo:(_Bool)arg2 withMsgInfo:(id)arg3;
@@ -79,7 +89,6 @@
 - (void)addFilterFooterView:(id)arg1;
 - (void)initFastBrowserView;
 - (void)updateFastBrowserData;
-- (id)convertFavDataToSimpleInfo:(id)arg1 inItem:(id)arg2;
 - (void)doSearchAgain;
 - (void)OnUpdateItems:(id)arg1;
 - (void)OnDelFavoritesItem:(unsigned int)arg1;
@@ -102,6 +111,8 @@
 - (long long)numberOfSectionsInTableView:(id)arg1;
 - (id)tableView:(id)arg1 viewForHeaderInSection:(long long)arg2;
 - (double)tableView:(id)arg1 heightForHeaderInSection:(long long)arg2;
+- (id)findContainerView:(id)arg1;
+- (void)tryHideDimmingView;
 - (void)hideKeyboard;
 - (void)hideKeyboardOnScroll;
 - (void)doSearch;
@@ -120,13 +131,14 @@
 - (void)searchBarTextDidBeginEditing:(id)arg1;
 - (void)searchBar:(id)arg1 textDidChange:(id)arg2;
 - (_Bool)searchBar:(id)arg1 shouldChangeTextInRange:(struct _NSRange)arg2 replacementText:(id)arg3;
+- (int)getCurrentType;
 - (void)onViewBePoped;
 - (void)resetStatusBarStyle;
 - (void)UISplitViewWillChangeSplitMode;
-- (void)willAnimateRotationToInterfaceOrientation:(long long)arg1 duration:(double)arg2;
 - (void)relayoutSubviews;
 - (void)reloadSearchIcon;
 - (void)dealloc;
+- (void)initSearchTopFilterView;
 - (id)initWithViewController:(id)arg1 SuperView:(id)arg2 ShowEditBtn:(_Bool)arg3;
 - (void)onViewControllerBeDeleted;
 - (_Bool)isSearchActive;

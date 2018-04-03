@@ -45,7 +45,6 @@
     FavTagTableView *m_favTagView;
     NSMutableArray *m_arrFilteredObject;
     NSArray *m_arrContactTags;
-    double m_normalKeyboardHeight;
     _Bool bIsAddedBlurEffect;
     NSString *nsCurrentSelectTagName;
     NSMutableArray *m_arrSearchTagFilteredObject;

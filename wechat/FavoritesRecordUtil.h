@@ -14,6 +14,7 @@
 + (id)getWebpageFavDataUrl:(id)arg1;
 + (id)ConvertImgRecorData2MsgWrap:(id)arg1;
 + (id)ConvertImgRecordData2WCUploadTask:(id)arg1;
++ (id)ConvertFavDataList:(id)arg1 toMsgWrap:(id)arg2 inFavItem:(id)arg3 hasSetThumb:(_Bool)arg4;
 + (id)ConvertRecordFavItem2MsgWrap:(id)arg1;
 + (id)ConvertSightFavData2MsgWrap:(id)arg1;
 + (id)ConvertLocFavData2MsgWrap:(id)arg1;
@@ -22,7 +23,9 @@
 + (id)getMessageWrapTitleFromMsgList:(id)arg1;
 + (id)ConvertMsgList2MsgWrap:(id)arg1;
 + (id)ConvertFavData2FavItem:(id)arg1;
-+ (id)ConvertRecordMsg2FavData:(id)arg1;
++ (id)ConvertAppBrandMsg2FavData:(id)arg1;
++ (id)convertMsgDataListToFavItemDataList:(id)arg1;
++ (id)ConvertRecordMsg2FavData:(id)arg1 forFav:(_Bool)arg2;
 + (id)ConvertShortVideoMsg2FavData:(id)arg1;
 + (id)ConvertShareCardMsg2FavData:(id)arg1;
 + (id)ConvertReaderWrap2FavData:(id)arg1;
@@ -40,6 +43,7 @@
 + (id)ConvertMsg2FavData:(id)arg1 forFav:(_Bool)arg2;
 + (id)GetRecordForwardReportInfo:(id)arg1;
 + (id)GetRecordInfo:(id)arg1;
++ (id)GetRecordDesc:(id)arg1 fromFav:(_Bool)arg2;
 + (id)GetRecordDesc:(id)arg1;
 + (void)GetTextTitleAndDesc:(id)arg1 toTitle:(id *)arg2 toDesc:(id *)arg3 needBreakLines:(_Bool)arg4;
 + (id)GetNoteDescForSession:(id)arg1;

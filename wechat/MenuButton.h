@@ -6,12 +6,17 @@
 
 #import <UIKit/UIButton.h>
 
+@class MMMultiMenuItem;
+
 @interface MenuButton : UIButton
 {
     double _targetWidth;
+    MMMultiMenuItem *_menuItem;
 }
 
+@property(retain, nonatomic) MMMultiMenuItem *menuItem; // @synthesize menuItem=_menuItem;
 @property(nonatomic) double targetWidth; // @synthesize targetWidth=_targetWidth;
+- (void).cxx_destruct;
 - (struct CGRect)imageRectForContentRect:(struct CGRect)arg1;
 - (struct CGRect)titleRectForContentRect:(struct CGRect)arg1;
 

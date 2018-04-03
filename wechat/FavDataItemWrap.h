@@ -21,6 +21,7 @@
 @property(retain, nonatomic) FavoritesItem *parent; // @synthesize parent=m_parent;
 @property(retain, nonatomic) FavoritesItemDataField *dataItem; // @synthesize dataItem=m_dataItem;
 - (void).cxx_destruct;
+- (void)IsUrlWeAppThumbPath:(id *)arg1 ThumbUrl:(id *)arg2;
 - (_Bool)StartDownload;
 - (id)GetSightPath;
 - (id)GetThumbPath;
@@ -36,6 +37,7 @@
 - (_Bool)IsUrlVideoThumbPath:(id *)arg1;
 - (unsigned int)GetVoiceFormat;
 - (id)GetAudioInfo;
+- (id)GetImgArrayWithDataList:(id)arg1;
 - (id)GetImgArray;
 - (unsigned int)GetImgCount;
 - (int)GetParentDownloadStatus;

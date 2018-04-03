@@ -40,6 +40,7 @@
     _Bool _bIsNaviBarHide;
     UITapGestureRecognizer *_singleTapRec;
     _Bool _bIsDisableTapRec;
+    struct CGPoint m_lastContentOffset;
     UIButton *m_shareToFriendBtn;
     _Bool m_showInfoOnly;
     NSString *_m_tmpFilePath;
@@ -53,6 +54,7 @@
 - (void)webView:(id)arg1 didFailNavigation:(id)arg2 withError:(id)arg3;
 - (void)webView:(id)arg1 didFinishNavigation:(id)arg2;
 - (void)webView:(id)arg1 didCommitNavigation:(id)arg2;
+- (id)getCurrentViewController;
 - (void)onCanShareToFriendByButton;
 - (void)onRevoked;
 - (void)onDownloadFilePartLen:(unsigned int)arg1 TotalLen:(unsigned long long)arg2;
@@ -64,7 +66,9 @@
 - (_Bool)gestureRecognizer:(id)arg1 shouldBeRequiredToFailByGestureRecognizer:(id)arg2;
 - (_Bool)gestureRecognizer:(id)arg1 shouldRecognizeSimultaneouslyWithGestureRecognizer:(id)arg2;
 - (void)scrollViewDidScroll:(id)arg1;
+- (void)scrollViewWillBeginDragging:(id)arg1;
 - (void)resetPdfViewFrame;
+- (_Bool)hasPdfView;
 - (void)setNaviBarHide:(_Bool)arg1 animation:(_Bool)arg2;
 - (void)viewWillDisappear:(_Bool)arg1;
 - (void)actionSheet:(id)arg1 clickedButtonAtIndex:(long long)arg2;
@@ -86,6 +90,7 @@
 - (void)OnLookDetail;
 - (void)InitInfoiew;
 - (void)InitPreview;
+- (void)updateWebScrollViewInset;
 - (void)viewDidLayoutSubviews;
 - (void)viewDidAppear:(_Bool)arg1;
 - (void)viewDidLoad;

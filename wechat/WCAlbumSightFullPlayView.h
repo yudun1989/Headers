@@ -26,7 +26,6 @@
     WXFullScreenGestureRecognizer *m_gesture;
     _Bool _stopped;
     _Bool m_isImageReady;
-    _Bool m_isSightReady;
     unsigned long long index;
     UIActivityIndicatorView *mActivityIndicator;
     WCMediaItem *m_mediaData;
@@ -34,7 +33,6 @@
 }
 
 @property(nonatomic) _Bool m_isSightVisible; // @synthesize m_isSightVisible;
-@property(readonly, nonatomic) _Bool m_isSightReady; // @synthesize m_isSightReady;
 @property(readonly, nonatomic) _Bool m_isImageReady; // @synthesize m_isImageReady;
 @property(nonatomic) __weak id <WCAlbumSightFullPlayViewDelegate> m_delegate; // @synthesize m_delegate;
 @property(readonly, nonatomic) WCMediaItem *m_mediaData; // @synthesize m_mediaData;
@@ -82,7 +80,7 @@
 - (void)createAndSetupPlayer;
 - (void)willMoveToSuperview:(id)arg1;
 - (void)setDataAndView:(id)arg1;
-- (void)displaySightwithMediaItem:(id)arg1;
+- (void)displaySightWithMediaItem:(id)arg1;
 @property(nonatomic) _Bool enableDragToClose;
 - (id)initWithMediaData:(id)arg1;
 - (void)systemActived:(id)arg1;

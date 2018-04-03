@@ -27,6 +27,7 @@
     unsigned int m_itemShowType;
     struct CGSize m_titleSize;
     struct CGSize m_digestSize;
+    double m_labelMaxWidth;
     NSMutableArray *m_titleStyles;
     NSMutableArray *m_digestStyles;
     UIImageView *m_headImageBk;
@@ -41,6 +42,7 @@
 @property(retain, nonatomic) NSMutableArray *m_digestStyles; // @synthesize m_digestStyles;
 @property(retain, nonatomic) NSMutableArray *m_titleStyles; // @synthesize m_titleStyles;
 @property(nonatomic) unsigned int m_itemShowType; // @synthesize m_itemShowType;
+@property(nonatomic) double m_labelMaxWidth; // @synthesize m_labelMaxWidth;
 @property(nonatomic) struct CGSize m_digestSize; // @synthesize m_digestSize;
 @property(nonatomic) struct CGSize m_titleSize; // @synthesize m_titleSize;
 @property(retain, nonatomic) UIImageView *m_headImageBk; // @synthesize m_headImageBk;

@@ -19,7 +19,7 @@
 #import "WCPayThirdLaunchNotify-Protocol.h"
 #import "WCPayWalletLockVerifyLogicDelegate-Protocol.h"
 
-@class CMMVector, MMMainViewController, MMSplitViewController, MMTabBarController, NSMutableArray, NSString, PreEnterWechatLogic, SplitViewEmptyViewController, SvrErrorTipWindow, UIViewController, UIWindow;
+@class CMMVector, MMMainViewController, MMSplitViewController, MMTabBarController, NSMutableArray, NSString, PreEnterWechatLogic, SplitViewEmptyViewController, UIViewController, UIWindow;
 
 @interface CAppViewControllerManager : MMObject <WCPayThirdLaunchNotify, MMTabBarControllerDelegate, WCPayWalletLockVerifyLogicDelegate, UISplitViewControllerDelegate, AppUserInterfaceSizeDelegate, UITabBarControllerDelegate, MMThemeManagerExt, MMKernelExt, IMsgExt, IVoiceReminderExt, WCFacadeExt, UIAlertViewDelegate>
 {
@@ -30,7 +30,6 @@
     CMMVector *m_vecViewController;
     _Bool m_bFromReg;
     _Bool m_isChangingTheme;
-    SvrErrorTipWindow *m_svrErrorTipWindow;
     PreEnterWechatLogic *m_PreEnterWechatLogic;
     MMTabBarController *m_tabbarController;
     MMMainViewController *m_mainViewController;

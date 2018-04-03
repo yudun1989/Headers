@@ -33,7 +33,6 @@
 - (void).cxx_destruct;
 - (void)adjustSubviewRects;
 - (void)adjustView;
-- (void)onTopBarFrameChanged;
 - (void)willDisappear;
 - (void)willAppear;
 - (void)tableView:(id)arg1 commitEditingStyle:(long long)arg2 forRowAtIndexPath:(id)arg3;

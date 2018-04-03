@@ -10,7 +10,7 @@
 {
 }
 
-+ (void)reportVoiceSearchEvent:(int)arg1 sessionid:(id)arg2 subSessionid:(id)arg3 query:(id)arg4;
++ (void)reportVoiceSearchEvent:(int)arg1 sessionid:(id)arg2 subSessionid:(id)arg3 query:(id)arg4 scene:(unsigned int)arg5 isNavVoice:(_Bool)arg6;
 + (void)reportRtnBackEvent:(int)arg1 scene:(unsigned int)arg2 ishomepage:(_Bool)arg3 query:(id)arg4;
 + (void)reportPreviewWebviewAction:(int)arg1 biz:(int)arg2 timecost:(unsigned long long)arg3;
 + (void)reportWebviewError:(int)arg1 scene:(unsigned int)arg2 h5version:(unsigned int)arg3 errorCode:(int)arg4 errorMsg:(id)arg5;

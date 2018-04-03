@@ -35,8 +35,6 @@
 - (void)onClickWeAppOutItem:(id)arg1 index:(long long)arg2;
 - (void)onLaunchWeAppList;
 - (void)onClickWithData:(id)arg1;
-- (void)keyboardWillHide:(id)arg1;
-- (void)keyboardDidShow:(id)arg1;
 - (void)onSearchConfigDataUpdated;
 - (void)onSearchConfigDataFailToUpdate;
 - (void)updateDynamicView;

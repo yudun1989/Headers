@@ -21,8 +21,9 @@
 #import "MMInputToolViewDelegate-Protocol.h"
 #import "MMMultiSelectToolViewDelegate-Protocol.h"
 #import "MMNewTipsMgrExt-Protocol.h"
+#import "MMRTCMenuResponderDelegate-Protocol.h"
 #import "MMReadMailViewDelegate-Protocol.h"
-#import "MMRichTextCopyEventDelegate-Protocol.h"
+#import "MMRichTextSelectEventDelegate-Protocol.h"
 #import "MMScrollActionSheetDelegate-Protocol.h"
 #import "MessageNodeViewDelegate-Protocol.h"
 #import "MsgDelegate-Protocol.h"
@@ -52,7 +53,7 @@
 @class BadRoomLogicController, BaseChatViewModel, CMessageWrap, FirstUnReadTipView, MMDropManager, MMInputToolView, MMLoadingView, MMMultiSelectToolView, MMRichTextCoverView, MMScrollActionSheet, MMTableView, MMTimer, MMUIWindow, MsgImgFullScreenWindow, MsgSearchHelper, MultiTalkTipsView, NSMutableArray, NSString, RichTextView, ShareMessageConfirmLogicHelper, StreamVoiceInputViewController, TipsView, TrackRoomTipsView, UIActivityIndicatorView, UIBarButtonItem, UIImageView, UIView, UIWindow;
 @protocol BaseMsgContentDelgate, BaseMsgContentInBackgroundThreadDelgate, UIViewControllerPreviewing;
 
-@interface BaseMsgContentViewController : MMSearchBarDisplayController <MsgSearchHelperDelegate, MsgImgFullScreenWindowDelegate, BannerToastExt, IdleTimerUtilExt, BadRoomLogicControllerDelegate, MsgImgFullScreenViewControllerDelegate, WCCanvasPageViewControllerDelegate, ChatBackgroundExt, UIViewControllerPreviewingDelegate, StreamVoiceInputViewControllerDelegate, WXGImportMessageNotification, WXGChatLogDelMsgNotification, INewSyncExt, MMNewTipsMgrExt, UITableViewDelegate, UITableViewDataSource, WCActionSheetDelegate, UIAlertViewDelegate, UINavigationControllerDelegate, UIDocumentInteractionControllerDelegate, tableViewDelegate, TypingControllerDelgate, MessageNodeViewDelegate, ChatViewModelDelegate, contactInfoDelegate, MsgDelegate, MMInputToolViewDelegate, ShareMessageConfirmLogicHelperDelegate, MMReadMailViewDelegate, IVOIPExt, AppDetailDelegate, TipsViewDelegate, TrackRoomTipsViewDelegate, IMsgExt, IMsgRevokeExt, IVOIPUILogicMgrExt, MMMultiSelectToolViewDelegate, MultiSelectContactsViewControllerDelegate, MMScrollActionSheetDelegate, FirstUnReadTipViewDelegate, WCNetworkMediaPlayerDelegate, MMRichTextCopyEventDelegate>
+@interface BaseMsgContentViewController : MMSearchBarDisplayController <MsgSearchHelperDelegate, MsgImgFullScreenWindowDelegate, BannerToastExt, IdleTimerUtilExt, BadRoomLogicControllerDelegate, MsgImgFullScreenViewControllerDelegate, WCCanvasPageViewControllerDelegate, ChatBackgroundExt, UIViewControllerPreviewingDelegate, StreamVoiceInputViewControllerDelegate, WXGImportMessageNotification, WXGChatLogDelMsgNotification, INewSyncExt, MMNewTipsMgrExt, UITableViewDelegate, UITableViewDataSource, WCActionSheetDelegate, UIAlertViewDelegate, UINavigationControllerDelegate, UIDocumentInteractionControllerDelegate, tableViewDelegate, TypingControllerDelgate, MessageNodeViewDelegate, ChatViewModelDelegate, contactInfoDelegate, MsgDelegate, MMInputToolViewDelegate, ShareMessageConfirmLogicHelperDelegate, MMReadMailViewDelegate, IVOIPExt, AppDetailDelegate, TipsViewDelegate, TrackRoomTipsViewDelegate, IMsgExt, IMsgRevokeExt, IVOIPUILogicMgrExt, MMMultiSelectToolViewDelegate, MultiSelectContactsViewControllerDelegate, MMScrollActionSheetDelegate, FirstUnReadTipViewDelegate, WCNetworkMediaPlayerDelegate, MMRichTextSelectEventDelegate, MMRTCMenuResponderDelegate>
 {
     NSMutableArray *m_arrMessageNodeData;
     unsigned int m_uLastTime;
@@ -171,13 +172,12 @@
 - (void)onNotifyToShowTips:(id)arg1;
 - (void)onRichTextViewExit;
 - (id)getForwardingMenuActionTarget:(SEL)arg1;
-- (void)onTextMessageCellMenuClick:(SEL)arg1;
+- (void)forwardMenuClickEventWithAction:(SEL)arg1;
 - (id)getTextMsgCellViewForCoverView;
 - (void)onDoubleClick;
 - (void)exitSelectState;
 - (void)onRemoveTextSelectView;
 - (void)onTouchBeginMsg:(id)arg1 Touch:(id)arg2;
-- (struct CGRect)getMsgVisibleFrame;
 - (id)getCurrentViewController;
 - (id)getScrollView;
 - (id)getTableView;
@@ -268,7 +268,6 @@
 - (long long)preferredInterfaceOrientationForPresentation;
 - (void)PreviewAppNode:(id)arg1 MsgWrap:(id)arg2 Pop:(_Bool)arg3;
 - (void)updateToolViewOrigin;
-- (void)onTopBarFrameChanged;
 - (void)adjustViewAndNavBarRect;
 - (void)adjustDeleteViewRect;
 - (void)hideToolViewAnimated:(_Bool)arg1;
@@ -334,7 +333,6 @@
 - (void)viewDidAppear:(_Bool)arg1;
 - (_Bool)isUseDefaultChatBkgImage;
 - (void)onChatBackgroundChanged:(id)arg1;
-- (_Bool)shouldEnableKeyboardInteractivePop;
 - (_Bool)shouldInteractivePop;
 - (void)willDismissAndShow;
 - (void)viewWillAppear:(_Bool)arg1;

@@ -12,16 +12,18 @@
 #import "WCBaseControlLogicDeleagte-Protocol.h"
 #import "WCBaseControlMgrExt-Protocol.h"
 #import "WCPayBizF2FTransferControlLogicDelegate-Protocol.h"
+#import "WCPayF2FMiddleViewControllerDelegate-Protocol.h"
 #import "WCPayF2FPayCheckCgiDelegate-Protocol.h"
 #import "WCPayPayMoneyLogicDelegate-Protocol.h"
+#import "WCPaySubLogicDelegate-Protocol.h"
 #import "WCPayTransferMoneyViewControllerDelegate-Protocol.h"
 #import "WCPayTransferPayCheckCgiDelegate-Protocol.h"
 #import "WCPayTransferSelectContactsViewControllerDelegate-Protocol.h"
 #import "WCPayTransferSelectSessionViewControllerDelegate-Protocol.h"
 
-@class JSEvent, NSString, WCPayBizF2FTransferControlLogic, WCPayF2FPayCheckCgi, WCPayPayMoneyLogic, WCPayTransferPayCheckCgi;
+@class JSEvent, NSString, WCPayBizF2FTransferControlLogic, WCPayF2FMiddlePageSubLogic, WCPayF2FPayCheckCgi, WCPayPayMoneyLogic, WCPayTransferPayCheckCgi;
 
-@interface WCPayTransferMoneyControlLogic : WCPayControlLogic <UIAlertViewDelegate, WCPayF2FPayCheckCgiDelegate, WCPayBizF2FTransferControlLogicDelegate, WCPayTransferPayCheckCgiDelegate, WCBaseControlLogicDeleagte, WCPayPayMoneyLogicDelegate, WCPayTransferSelectContactsViewControllerDelegate, WCPayTransferSelectSessionViewControllerDelegate, WCPayTransferMoneyViewControllerDelegate, WCBaseControlMgrExt, IStrangerContactMgrExt, MMTipsViewControllerDelegate>
+@interface WCPayTransferMoneyControlLogic : WCPayControlLogic <WCPaySubLogicDelegate, WCPayF2FMiddleViewControllerDelegate, UIAlertViewDelegate, WCPayF2FPayCheckCgiDelegate, WCPayBizF2FTransferControlLogicDelegate, WCPayTransferPayCheckCgiDelegate, WCBaseControlLogicDeleagte, WCPayPayMoneyLogicDelegate, WCPayTransferSelectContactsViewControllerDelegate, WCPayTransferSelectSessionViewControllerDelegate, WCPayTransferMoneyViewControllerDelegate, WCBaseControlMgrExt, IStrangerContactMgrExt, MMTipsViewControllerDelegate>
 {
     WCPayPayMoneyLogic *m_payLogic;
     int m_enWCPayTransferMoneyControlLogicScene;
@@ -30,14 +32,18 @@
     _Bool _disableEditMoney;
     _Bool _stopFromBizF2FLogic;
     unsigned int _doubleCheckAmount;
+    unsigned int _m_dynamicCodeSource;
     NSString *_curAlertRightUrl;
     WCPayF2FPayCheckCgi *_f2fPayCheckCgi;
     WCPayBizF2FTransferControlLogic *_bizF2FTransferLogic;
     WCPayTransferPayCheckCgi *_transferPayCheckCgi;
     NSString *_doubleCheckWording;
     NSString *_interruptDesc;
+    WCPayF2FMiddlePageSubLogic *_m_middlePageSubLogic;
 }
 
+@property(nonatomic) unsigned int m_dynamicCodeSource; // @synthesize m_dynamicCodeSource=_m_dynamicCodeSource;
+@property(retain, nonatomic) WCPayF2FMiddlePageSubLogic *m_middlePageSubLogic; // @synthesize m_middlePageSubLogic=_m_middlePageSubLogic;
 @property(retain, nonatomic) NSString *interruptDesc; // @synthesize interruptDesc=_interruptDesc;
 @property(nonatomic) unsigned int doubleCheckAmount; // @synthesize doubleCheckAmount=_doubleCheckAmount;
 @property(retain, nonatomic) NSString *doubleCheckWording; // @synthesize doubleCheckWording=_doubleCheckWording;
@@ -47,6 +53,9 @@
 @property(retain, nonatomic) WCPayF2FPayCheckCgi *f2fPayCheckCgi; // @synthesize f2fPayCheckCgi=_f2fPayCheckCgi;
 @property(retain, nonatomic) NSString *curAlertRightUrl; // @synthesize curAlertRightUrl=_curAlertRightUrl;
 - (void).cxx_destruct;
+- (void)reportWithAction:(unsigned long long)arg1;
+- (void)onWCPayF2FMiddleViewControllerClickTransfer:(unsigned int)arg1;
+- (void)onWCPayF2FMiddleViewControllerBack;
 - (void)clickContinueInUnarriveMoneyAlert;
 - (void)showTransferDoubleCheckTipsView:(id)arg1 transferAmount:(unsigned int)arg2;
 - (void)onGetTransferPayCheckResp:(id)arg1;

@@ -20,6 +20,7 @@
 @property(nonatomic) unsigned int id; // @dynamic id;
 @property(retain, nonatomic) NSMutableArray *keys; // @dynamic keys;
 @property(retain, nonatomic) NSString *query; // @dynamic query;
+@property(retain, nonatomic) NSString *username; // @dynamic username;
 
 @end
 

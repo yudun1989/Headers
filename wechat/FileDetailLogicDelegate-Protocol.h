@@ -6,7 +6,10 @@
 
 #import "NSObject-Protocol.h"
 
+@class UIViewController;
+
 @protocol FileDetailLogicDelegate <NSObject>
+- (UIViewController *)getCurrentViewController;
 - (void)onCanShareToFriendByButton;
 - (void)onRevoked;
 - (void)onDownloadFilePartLen:(unsigned int)arg1 TotalLen:(unsigned long long)arg2;

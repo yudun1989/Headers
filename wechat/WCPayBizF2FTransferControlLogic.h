@@ -20,14 +20,16 @@
 #import "WCPayBusiF2FZeroCallBackCgiDelegate-Protocol.h"
 #import "WCPayF2FDrawLotteryCgiDelegate-Protocol.h"
 #import "WCPayF2FGetLotteryCgiDelegate-Protocol.h"
+#import "WCPayF2FMiddleViewControllerDelegate-Protocol.h"
 #import "WCPayF2FModifyExposureCgiDelegate-Protocol.h"
 #import "WCPayGetZeroPayTokenCgiDelegate-Protocol.h"
 #import "WCPayPayMoneyLogicDelegate-Protocol.h"
+#import "WCPaySubLogicDelegate-Protocol.h"
 
-@class DrawLotteryResponse, ExposureInfo, ExposureInfoModifyResponse, GetLotteryResponse, MMWebViewController, NSString, WCPayBizF2FActQryCgi, WCPayBizF2FPayCheckCgi, WCPayBizF2FPlaceOrderCgi, WCPayBizF2FZeroCallBackAutoRetryCgi, WCPayBizF2FZeroPayConfirmView, WCPayBusiF2FSucPageCgi, WCPayBusiF2FUnlockFavorCgi, WCPayF2FDrawLotteryCgi, WCPayF2FGetLotteryCgi, WCPayF2FModifyExposureCgi, WCPayGetZeroPayTokenCgi, WCPayPayMoneyLogic;
+@class DrawLotteryResponse, ExposureInfo, ExposureInfoModifyResponse, GetLotteryResponse, MMWebViewController, NSString, WCPayBizF2FActQryCgi, WCPayBizF2FPayCheckCgi, WCPayBizF2FPlaceOrderCgi, WCPayBizF2FZeroCallBackAutoRetryCgi, WCPayBizF2FZeroPayConfirmView, WCPayBusiF2FSucPageCgi, WCPayBusiF2FUnlockFavorCgi, WCPayF2FDrawLotteryCgi, WCPayF2FGetLotteryCgi, WCPayF2FMiddlePageSubLogic, WCPayF2FModifyExposureCgi, WCPayGetZeroPayTokenCgi, WCPayPayMoneyLogic;
 @protocol WCPayBizF2FTransferControlLogicDelegate;
 
-@interface WCPayBizF2FTransferControlLogic : WCPayControlLogic <WCPayBusiF2FZeroCallBackCgiDelegate, WCPayGetZeroPayTokenCgiDelegate, WCPayBizF2FZeroPayConfirmViewDelegate, WCPayBusiF2FSucPageCgiDelegate, WCPayBusiF2FUnlockFavorCgiDelegate, WCPayBizF2FTransferMoneyViewControllerDelegate, WCPayBizF2FPaidSuccViewControllerDelegate, WCPayPayMoneyLogicDelegate, WCPayBizF2FPlaceOrderCgiDelegate, WCPayBizF2FActQryCgiDelegate, WCPayBizF2FPayCheckCgiDelegate, WCBaseControlLogicDeleagte, WCPayF2FDrawLotteryCgiDelegate, WCPayF2FModifyExposureCgiDelegate, WCPayF2FGetLotteryCgiDelegate, WAAppTaskMgrExt, MMWebViewDelegate>
+@interface WCPayBizF2FTransferControlLogic : WCPayControlLogic <WCPaySubLogicDelegate, WCPayF2FMiddleViewControllerDelegate, WCPayBusiF2FZeroCallBackCgiDelegate, WCPayGetZeroPayTokenCgiDelegate, WCPayBizF2FZeroPayConfirmViewDelegate, WCPayBusiF2FSucPageCgiDelegate, WCPayBusiF2FUnlockFavorCgiDelegate, WCPayBizF2FTransferMoneyViewControllerDelegate, WCPayBizF2FPaidSuccViewControllerDelegate, WCPayPayMoneyLogicDelegate, WCPayBizF2FPlaceOrderCgiDelegate, WCPayBizF2FActQryCgiDelegate, WCPayBizF2FPayCheckCgiDelegate, WCBaseControlLogicDeleagte, WCPayF2FDrawLotteryCgiDelegate, WCPayF2FModifyExposureCgiDelegate, WCPayF2FGetLotteryCgiDelegate, WAAppTaskMgrExt, MMWebViewDelegate>
 {
     _Bool _bHasPaySucc;
     _Bool _isModifyExposureInfo;
@@ -50,8 +52,10 @@
     MMWebViewController *_getLotteryViewController;
     WCPayBizF2FZeroPayConfirmView *_m_zeroPayConfirmView;
     NSString *_m_fingerdata;
+    WCPayF2FMiddlePageSubLogic *_m_middlePageSubLogic;
 }
 
+@property(retain, nonatomic) WCPayF2FMiddlePageSubLogic *m_middlePageSubLogic; // @synthesize m_middlePageSubLogic=_m_middlePageSubLogic;
 @property(nonatomic) _Bool isModifyExposureInfo; // @synthesize isModifyExposureInfo=_isModifyExposureInfo;
 @property(nonatomic) _Bool bHasPaySucc; // @synthesize bHasPaySucc=_bHasPaySucc;
 @property(retain, nonatomic) NSString *m_fingerdata; // @synthesize m_fingerdata=_m_fingerdata;
@@ -74,6 +78,9 @@
 @property(retain, nonatomic) WCPayBizF2FPlaceOrderCgi *placeOrderCgi; // @synthesize placeOrderCgi=_placeOrderCgi;
 @property(nonatomic) __weak id <WCPayBizF2FTransferControlLogicDelegate> bizF2FLogicDelagte; // @synthesize bizF2FLogicDelagte=_bizF2FLogicDelagte;
 - (void).cxx_destruct;
+- (void)reportWithAction:(unsigned long long)arg1;
+- (void)onWCPayF2FMiddleViewControllerClickTransfer:(unsigned int)arg1;
+- (void)onWCPayF2FMiddleViewControllerBack;
 - (void)onWCPayBusiF2FZeroCallBackCgiError:(id)arg1;
 - (void)onWCPayBusiF2FZeroCallBackCgiResp:(id)arg1;
 - (void)onResetPwdConfirm:(id)arg1;

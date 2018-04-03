@@ -184,6 +184,7 @@
 - (const map_490096f0 *)getValueTagIndexMap;
 - (id)getValueTypeTable;
 - (_Bool)isNormalFriendContact;
+- (_Bool)isContactValid;
 - (_Bool)isBlockWeAppTemplateMessage;
 - (_Bool)isBlockWeAppSessionMessage;
 - (_Bool)isWeAppContact;

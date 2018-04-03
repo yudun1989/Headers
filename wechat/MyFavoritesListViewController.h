@@ -39,7 +39,7 @@
 - (void).cxx_destruct;
 - (void)scrollViewDidScroll:(id)arg1;
 - (_Bool)shouldShowSearchResult:(id)arg1;
-- (void)onSelectFavItem:(id)arg1 tableView:(id)arg2 atIndexPath:(id)arg3 FromScene:(unsigned int)arg4 FavIndex:(unsigned int)arg5;
+- (void)onSelectFavItem:(id)arg1 tableView:(id)arg2 atIndexPath:(id)arg3 FromScene:(unsigned int)arg4 FavIndex:(unsigned int)arg5 withCell:(id)arg6;
 - (id)getCurrentViewController;
 - (void)OnNewFavoritesItemUpdate:(id)arg1;
 - (void)OnGetNextPageFavoritesItemList:(id)arg1 ErrCode:(int)arg2 HasMoreItems:(_Bool)arg3;
@@ -51,6 +51,9 @@
 - (id)getFavForawrdViewController;
 - (void)OnForwardDone;
 - (void)didSelectFavItem:(id)arg1;
+- (void)autoScrollForSearchBar:(id)arg1;
+- (void)scrollViewDidEndDecelerating:(id)arg1;
+- (void)scrollViewDidEndDragging:(id)arg1 willDecelerate:(_Bool)arg2;
 - (void)tableView:(id)arg1 didUnhighlightRowAtIndexPath:(id)arg2;
 - (void)tableView:(id)arg1 didHighlightRowAtIndexPath:(id)arg2;
 - (void)tableView:(id)arg1 didSelectRowAtIndexPath:(id)arg2;

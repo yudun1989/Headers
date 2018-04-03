@@ -10,7 +10,7 @@
 #import "KSUploadItem-Protocol.h"
 #import "KSVideoCoverUploadItem-Protocol.h"
 
-@class KSEncodeConfig, KSMusicItem, KSPoi, NSArray, NSNumber, NSString, UIImage;
+@class KSEncodeConfig, KSMusicItem, KSPoi, KSVideoProcessState, NSArray, NSNumber, NSString, UIImage;
 
 @interface KSUploadItem : NSObject <KSVideoCoverUploadItem, KSChunkedUploadItem, KSUploadItem>
 {
@@ -19,6 +19,7 @@
     _Bool _magicFaceTag;
     _Bool _liveCover;
     _Bool _disableNearbyShow;
+    KSVideoProcessState *_videoProcessState;
     NSString *_videoPath;
     NSString *_originalVideoPath;
     NSString *_depthVideoPath;
@@ -66,6 +67,7 @@
 @property(copy, nonatomic) NSString *depthVideoPath; // @synthesize depthVideoPath=_depthVideoPath;
 @property(copy, nonatomic) NSString *originalVideoPath; // @synthesize originalVideoPath=_originalVideoPath;
 @property(retain, nonatomic) NSString *videoPath; // @synthesize videoPath=_videoPath;
+@property(retain, nonatomic) KSVideoProcessState *videoProcessState; // @synthesize videoProcessState=_videoProcessState;
 - (void).cxx_destruct;
 - (void)configMovieInfo;
 @property(readonly, nonatomic) _Bool isH265;

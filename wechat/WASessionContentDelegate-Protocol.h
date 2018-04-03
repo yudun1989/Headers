@@ -6,9 +6,10 @@
 
 #import "BaseMsgContentDelgate-Protocol.h"
 
-@class NSData;
+@class NSData, NSMutableArray;
 
 @protocol WASessionContentDelegate <BaseMsgContentDelgate>
+- (NSMutableArray *)getScanQrCodeBlackList;
 - (void)onSessionContentViewDidBePoped;
 - (void)onClickQuickSendSessionMsgBtn:(NSData *)arg1;
 - (void)onHideQuickSendSessionMsgBtn;

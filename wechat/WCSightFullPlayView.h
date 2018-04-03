@@ -8,13 +8,12 @@
 
 #import "FullScreenGestureDelegate-Protocol.h"
 #import "SightViewDelegate-Protocol.h"
-#import "UIActionSheetDelegate-Protocol.h"
 #import "WCFacadeExt-Protocol.h"
 
 @class NSString, SightView, UIActivityIndicatorView, UIButton, WCMediaItem, WXFullScreenGestureRecognizer;
 @protocol WCSightFullPlayViewDelegate;
 
-@interface WCSightFullPlayView : UIView <UIActionSheetDelegate, WCFacadeExt, SightViewDelegate, FullScreenGestureDelegate>
+@interface WCSightFullPlayView : UIView <WCFacadeExt, SightViewDelegate, FullScreenGestureDelegate>
 {
     _Bool m_bIsLongPressHandled;
     _Bool m_isSightVisible;

@@ -11,7 +11,7 @@
 #import "WCForceTouchPreviewProtocol-Protocol.h"
 #import "WCForceTouchTriggerLongPressProtocol-Protocol.h"
 
-@class BaseMessageViewModel, NSArray, NSString, UIImageView, UIView;
+@class BaseMessageViewModel, NSArray, NSSet, NSString, UIImageView, UIView;
 
 @interface BaseMessageCellView : BaseChatCellView <WCActionSheetDelegate, WCForceTouchTriggerLongPressProtocol, WCForceTouchPreviewProtocol, UIViewForceTouchShakeProtocol>
 {
@@ -22,14 +22,17 @@
     _Bool m_bDisableAllOperation;
     _Bool m_bIsLongPressHandled;
     _Bool m_isConverting3dTouchToLongPress;
+    NSSet *_touches;
 }
 
+@property(retain, nonatomic) NSSet *touches; // @synthesize touches=_touches;
 - (void).cxx_destruct;
 - (struct CGRect)previewingSourceRectForLocation:(struct CGPoint)arg1 inCoordinateView:(id)arg2;
 - (_Bool)canPeek;
 @property(readonly, nonatomic) __weak UIView *forceTouchShakeView;
 - (void)onTouchCancel;
 - (void)onLongTouch;
+- (void)onLongTouch:(struct CGPoint)arg1;
 - (void)onTouchEnded;
 - (void)onTouchUpInside;
 - (void)onTouchDownRepeat;
@@ -96,7 +99,6 @@
 - (id)operationMenuItems;
 - (void)handleMenuControllerWillHideMenuNotification:(id)arg1;
 - (void)showOperationMenu;
-- (_Bool)shouldAppendMoreToLast:(id)arg1;
 - (id)generateOperationMenu;
 - (struct CGRect)targetRectForMenuController;
 

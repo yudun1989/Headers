@@ -14,8 +14,10 @@
 
 @interface KSMediaCoverSlideViewController : UIViewController <KSMediaCoverSliderDelegate, KSMediaCoverSliderDataSource, KSMediaCoverPickSlider>
 {
+    _Bool _dragging;
     _Bool _needsReloadData;
-    CDUnknownBlockType _slidingImageUpdated;
+    CDUnknownBlockType _onSlidingChanged;
+    CDUnknownBlockType _onSlidingEnded;
     KSMediaCoverSlider *_slider;
     _KSMediaCoverSlideFetchThrottler *_fetchQueue;
     struct CGSize _sliderSize;
@@ -25,7 +27,9 @@
 @property(nonatomic) struct CGSize sliderSize; // @synthesize sliderSize=_sliderSize;
 @property(retain, nonatomic) _KSMediaCoverSlideFetchThrottler *fetchQueue; // @synthesize fetchQueue=_fetchQueue;
 @property(retain, nonatomic) KSMediaCoverSlider *slider; // @synthesize slider=_slider;
-@property(copy, nonatomic) CDUnknownBlockType slidingImageUpdated; // @synthesize slidingImageUpdated=_slidingImageUpdated;
+@property(nonatomic) _Bool dragging; // @synthesize dragging=_dragging;
+@property(copy, nonatomic) CDUnknownBlockType onSlidingEnded; // @synthesize onSlidingEnded=_onSlidingEnded;
+@property(copy, nonatomic) CDUnknownBlockType onSlidingChanged; // @synthesize onSlidingChanged=_onSlidingChanged;
 - (void).cxx_destruct;
 - (_Bool)edited;
 - (void)setCurrentSlideOffset:(double)arg1 animated:(_Bool)arg2;

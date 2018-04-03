@@ -4,45 +4,50 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-#import <objc/NSObject.h>
+#import "LYWState.h"
 
-#import "LYWStateType-Protocol.h"
+@class KSMediaEditAudioState, KSMediaEditBaseTimeLineState, KSMediaEditCoverState, KSMediaEditFilterState, KSMediaEditNavigationState, KSMediaEditOnlineResourceState, KSMediaEditRotateState, KSMediaEditSpeedState, KSMediaEditTabState, KSMediaEditTextureState, KSMediaEditThemeState, KSMediaEditTrimmingState, KSMediaPreviewState, NSError, NSString;
 
-@class KSMediaEditAudioState, KSMediaEditFilterState, KSMediaEditNavigationState, KSMediaEditOnlineResourceState, KSMediaEditTabState, KSMediaEditTrimmingState, KSMediaPreviewStates, NSError, NSString;
-
-@interface KSMediaEditState : NSObject <LYWStateType>
+@interface KSMediaEditState : LYWState
 {
+    _Bool _fullScreen;
+    _Bool _back;
     KSMediaEditFilterState *_filter;
     KSMediaEditAudioState *_audio;
     KSMediaEditTabState *_tab;
-    KSMediaPreviewStates *_previewStates;
+    KSMediaPreviewState *_previewState;
     KSMediaEditNavigationState *_navigationState;
     KSMediaEditTrimmingState *_trimmingState;
     KSMediaEditOnlineResourceState *_onlineResource;
+    KSMediaEditSpeedState *_speedState;
+    KSMediaEditRotateState *_rotateState;
+    KSMediaEditTextureState *_textureState;
+    KSMediaEditBaseTimeLineState *_baseTimeLineState;
+    KSMediaEditCoverState *_coverState;
+    KSMediaEditThemeState *_themeState;
     NSString *_source;
-    NSError *_error;
+    NSError *_displayingError;
 }
 
-@property(retain, nonatomic) NSError *error; // @synthesize error=_error;
+@property(nonatomic) _Bool back; // @synthesize back=_back;
+@property(retain, nonatomic) NSError *displayingError; // @synthesize displayingError=_displayingError;
 @property(retain, nonatomic) NSString *source; // @synthesize source=_source;
+@property(nonatomic) _Bool fullScreen; // @synthesize fullScreen=_fullScreen;
+@property(retain, nonatomic) KSMediaEditThemeState *themeState; // @synthesize themeState=_themeState;
+@property(retain, nonatomic) KSMediaEditCoverState *coverState; // @synthesize coverState=_coverState;
+@property(retain, nonatomic) KSMediaEditBaseTimeLineState *baseTimeLineState; // @synthesize baseTimeLineState=_baseTimeLineState;
+@property(retain, nonatomic) KSMediaEditTextureState *textureState; // @synthesize textureState=_textureState;
+@property(retain, nonatomic) KSMediaEditRotateState *rotateState; // @synthesize rotateState=_rotateState;
+@property(retain, nonatomic) KSMediaEditSpeedState *speedState; // @synthesize speedState=_speedState;
 @property(retain, nonatomic) KSMediaEditOnlineResourceState *onlineResource; // @synthesize onlineResource=_onlineResource;
 @property(retain, nonatomic) KSMediaEditTrimmingState *trimmingState; // @synthesize trimmingState=_trimmingState;
 @property(retain, nonatomic) KSMediaEditNavigationState *navigationState; // @synthesize navigationState=_navigationState;
-@property(retain, nonatomic) KSMediaPreviewStates *previewStates; // @synthesize previewStates=_previewStates;
+@property(retain, nonatomic) KSMediaPreviewState *previewState; // @synthesize previewState=_previewState;
 @property(retain, nonatomic) KSMediaEditTabState *tab; // @synthesize tab=_tab;
 @property(retain, nonatomic) KSMediaEditAudioState *audio; // @synthesize audio=_audio;
 @property(retain, nonatomic) KSMediaEditFilterState *filter; // @synthesize filter=_filter;
 - (void).cxx_destruct;
-@property(readonly, copy) NSString *description;
-- (id)copyWithZone:(struct _NSZone *)arg1;
-@property(readonly) unsigned long long hash;
-- (_Bool)isEqualToState:(id)arg1;
-- (_Bool)isEqual:(id)arg1;
 - (double)trimmedDuration;
-
-// Remaining properties
-@property(readonly, copy) NSString *debugDescription;
-@property(readonly) Class superclass;
 
 @end
 

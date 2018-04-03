@@ -43,6 +43,8 @@
     NSString *m_nsMsgMd5;
     NSString *m_nsNewMd5;
     int m_nDownloadLimit;
+    NSString *m_nsAttachFileKey;
+    unsigned int m_uiContinueUploadCount;
     unsigned int m_uiPreDownloadPercent;
     unsigned int m_uiPreDownloadNetType;
     CMessageWrap *m_refMessageWrap;
@@ -54,6 +56,8 @@
 + (void)CreateVideoMsg:(id)arg1 ToUsr:(id)arg2 VideoInfo:(id)arg3 MsgType:(unsigned int)arg4 retMessageWrap:(id *)arg5;
 + (void)CreateExtendInfoWithType:(unsigned int)arg1 retExtendInfo:(id *)arg2;
 @property(retain, nonatomic) VideoUploadStatInfo *m_oVideoUploadStatInfo; // @synthesize m_oVideoUploadStatInfo=_m_oVideoUploadStatInfo;
+@property(nonatomic) unsigned int m_uiContinueUploadCount; // @synthesize m_uiContinueUploadCount;
+@property(retain, nonatomic) NSString *m_nsAttachFileKey; // @synthesize m_nsAttachFileKey;
 @property(retain, nonatomic) NSString *m_nsNoPreDownloadRange; // @synthesize m_nsNoPreDownloadRange;
 @property(nonatomic) unsigned int m_uiPreDownloadNetType; // @synthesize m_uiPreDownloadNetType;
 @property(nonatomic) unsigned int m_uiPreDownloadPercent; // @synthesize m_uiPreDownloadPercent;

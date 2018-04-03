@@ -6,11 +6,12 @@
 
 #import "MMTableViewCell.h"
 
-@class AttributeLabel, FTSFeatureItem, MMBrandHeadImageView, NSString;
+@class AttributeLabel, FTSFeatureItem, MMBrandHeadImageView, NSString, SearchMatchTip;
 
 @interface FTSFeatureCell : MMTableViewCell
 {
     FTSFeatureItem *_featureItem;
+    SearchMatchTip *_matchTip;
     NSString *_searchText;
     MMBrandHeadImageView *_thumbImageView;
     AttributeLabel *_titleLabel;
@@ -19,7 +20,7 @@
 
 @property(retain, nonatomic) NSString *searchText; // @synthesize searchText=_searchText;
 - (void).cxx_destruct;
-- (void)updateFeatureItem:(id)arg1 searchText:(id)arg2;
+- (void)updateFeatureItem:(id)arg1 matchTip:(id)arg2 searchText:(id)arg3;
 - (void)updateStatus:(_Bool)arg1;
 - (id)hitTest:(struct CGPoint)arg1 withEvent:(id)arg2;
 - (void)initView;

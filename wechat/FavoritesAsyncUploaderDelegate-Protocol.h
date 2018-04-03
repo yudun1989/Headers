@@ -9,6 +9,7 @@
 @class FavoritesCDNInfo, FavoritesItem, NSString;
 
 @protocol FavoritesAsyncUploaderDelegate <NSObject>
+- (void)reUploadFavItem:(FavoritesItem *)arg1;
 - (FavoritesCDNInfo *)getUploadCdnInfoByLocalItemDataId:(NSString *)arg1 andType:(int)arg2;
 - (_Bool)deleteCdnInfoByFavoritesItemLocalId:(unsigned int)arg1;
 - (_Bool)updateItemXMLInItemDB:(FavoritesItem *)arg1;

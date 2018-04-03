@@ -10,7 +10,35 @@
 {
 }
 
+- (void)scanAndCleanInvalidNotifyInfo;
+- (void)scanAndCleanInvalidModuleInfoData;
+- (void)scanAndCleanInvalidEncryptInfoData;
+- (void)scanAndCleanInvalidNormalInfoData;
+- (void)scanAndCleanInvalidInfoData;
+- (void)scanAndCleanDebugPkgForAppId:(id)arg1;
+- (void)scanAndCleanReleaseModulePkgForAppId:(id)arg1;
+- (void)scanAndCleanReleaseEncryptPkgForAppId:(id)arg1;
+- (void)scanAndCleanReleaseNormalPkgForAppId:(id)arg1;
+- (void)scanAndCleanReleasePkgForAppId:(id)arg1;
+- (void)scanAndCleanDebugDir;
+- (void)scanAndCleanReleaseDir;
+- (void)sweepContactAndDatas:(id)arg1;
+- (void)sweepLocalPkgWithContactNewLogic:(id)arg1 debugType:(unsigned long long)arg2 force:(_Bool)arg3;
+- (void)sweepLocalPkgWithContactOldLogic:(id)arg1 debugType:(unsigned long long)arg2 force:(_Bool)arg3;
 - (void)sweepLocalPkgWithContact:(id)arg1 debugType:(unsigned long long)arg2 force:(_Bool)arg3;
+- (void)sweepNormalPkgUnderVersion:(unsigned long long)arg1 forAppid:(id)arg2;
+- (void)checkLocalStorage;
+- (void)checkToSweepContactAndDatas:(id)arg1;
+- (void)sweepLowerVersionPkgAndContactIfNeededForContacts:(id)arg1;
+- (void)sweepOutDatedEncryptPkgForContacts:(id)arg1;
+- (void)sweepOutDatedModulePkg;
+- (void)sweepOutDatedNormalPkgForContacts:(id)arg1;
+- (void)sweepInvalidPkgAndInfoData;
+- (void)saveCheckPointTime;
+- (_Bool)isCurrentTimeReachCheckPoint;
+- (void)reportCheckAction;
+- (void)sweepLocalPkgWhenEnterBackgroundNewLogic;
+- (void)sweepLocalPkgWhenEnterBackgroundOldLogic;
 - (void)sweepLocalPkgWhenEnterBackground;
 
 @end

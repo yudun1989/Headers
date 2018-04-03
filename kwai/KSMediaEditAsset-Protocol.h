@@ -6,7 +6,11 @@
 
 #import "KSMediaPreviewAsset-Protocol.h"
 
+@class NSArray;
+
 @protocol KSMediaEditAsset <KSMediaPreviewAsset>
-- (int)editOptions;
+- (_Bool)useTheme;
+- (NSArray *)moreDisplayTabs;
+- (NSArray *)editOptions;
 @end
 

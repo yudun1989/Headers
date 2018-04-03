@@ -37,16 +37,22 @@
     unsigned int video_height;
     _Bool _isEdited;
     unsigned int _m_forwardType;
+    unsigned int _m_uiContinueUploadCount;
+    unsigned int _m_uiPercent;
     NSString *_video_assetId;
     NSString *_m_md5;
     NSString *_m_newMd5;
     VideoUploadStatInfo *_m_statInfo;
     EditVideoAttr *_editVideoAttr;
     MMImageExifLogInfo *_exifLogInfo;
+    NSString *_m_nsAttachFileKey;
 }
 
 + (int)getVideoDurationForAsset:(id)arg1;
 + (id)genVideoInfoWithVideoUrl:(id)arg1 thumb:(id)arg2;
+@property(nonatomic) unsigned int m_uiPercent; // @synthesize m_uiPercent=_m_uiPercent;
+@property(nonatomic) unsigned int m_uiContinueUploadCount; // @synthesize m_uiContinueUploadCount=_m_uiContinueUploadCount;
+@property(retain, nonatomic) NSString *m_nsAttachFileKey; // @synthesize m_nsAttachFileKey=_m_nsAttachFileKey;
 @property(retain, nonatomic) MMImageExifLogInfo *exifLogInfo; // @synthesize exifLogInfo=_exifLogInfo;
 @property(retain, nonatomic) EditVideoAttr *editVideoAttr; // @synthesize editVideoAttr=_editVideoAttr;
 @property(nonatomic) _Bool isEdited; // @synthesize isEdited=_isEdited;

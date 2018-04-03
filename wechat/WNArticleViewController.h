@@ -64,7 +64,6 @@
 - (void)keyboardWillShow:(id)arg1;
 - (void)keyboardDidHide:(id)arg1;
 - (void)keyboardDidShow:(id)arg1;
-- (struct CGRect)CGRectConvertWindowRectToCurOri:(struct CGRect)arg1;
 - (void)viewDidTransitionToNewSize;
 - (_Bool)BeEditable;
 - (void)onHideSelectAllView;
@@ -127,6 +126,7 @@
 - (id)AddNewActionSheetCell2Array:(id)arg1 WithText:(id)arg2 WithImage:(id)arg3;
 - (void)onForwardNote2WC;
 - (void)forwardNote;
+- (id)tryRemoveChatVoiceBeforeForward:(id)arg1;
 - (void)saveNote;
 - (void)backupNote;
 - (void)disMissSelf;

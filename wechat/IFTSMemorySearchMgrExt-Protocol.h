@@ -9,6 +9,7 @@
 @protocol IFTSMemorySearchMgrExt <NSObject>
 
 @optional
+- (void)onFTSMemorySearchResultChangedForFeatureDetailPage;
 - (void)onFTSMemorySearchResultChangedForGameDetailPage:(_Bool)arg1;
 - (void)onFTSMemorySearchResultChanged:(_Bool)arg1;
 @end

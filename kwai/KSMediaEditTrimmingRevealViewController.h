@@ -6,7 +6,7 @@
 
 #import <UIKit/UIViewController.h>
 
-@class KSAdvanceEditTimeLineSliderOutline, UIScrollView, UIView;
+@class KSAdvanceEditTimeLineSliderOutline, UIScrollView, _KSMediaEditTrimmingRevealViewCoverView;
 
 @interface KSMediaEditTrimmingRevealViewController : UIViewController
 {
@@ -15,8 +15,8 @@
     double _minRevealWidth;
     double _edge;
     CDUnknownBlockType _onPan;
-    UIView *_leftCoverView;
-    UIView *_rightCoverView;
+    _KSMediaEditTrimmingRevealViewCoverView *_leftCoverView;
+    _KSMediaEditTrimmingRevealViewCoverView *_rightCoverView;
     double _leftStartX;
     double _rightStartX;
     double _leftScrollViewOffset;
@@ -31,15 +31,17 @@
 @property(nonatomic) double leftScrollViewOffset; // @synthesize leftScrollViewOffset=_leftScrollViewOffset;
 @property(nonatomic) double rightStartX; // @synthesize rightStartX=_rightStartX;
 @property(nonatomic) double leftStartX; // @synthesize leftStartX=_leftStartX;
-@property(retain, nonatomic) UIView *rightCoverView; // @synthesize rightCoverView=_rightCoverView;
-@property(retain, nonatomic) UIView *leftCoverView; // @synthesize leftCoverView=_leftCoverView;
+@property(retain, nonatomic) _KSMediaEditTrimmingRevealViewCoverView *rightCoverView; // @synthesize rightCoverView=_rightCoverView;
+@property(retain, nonatomic) _KSMediaEditTrimmingRevealViewCoverView *leftCoverView; // @synthesize leftCoverView=_leftCoverView;
 @property(copy, nonatomic) CDUnknownBlockType onPan; // @synthesize onPan=_onPan;
 @property(nonatomic) double edge; // @synthesize edge=_edge;
 @property(nonatomic) double minRevealWidth; // @synthesize minRevealWidth=_minRevealWidth;
 @property(nonatomic) double revealEnd; // @synthesize revealEnd=_revealEnd;
 @property(nonatomic) double revealStart; // @synthesize revealStart=_revealStart;
 - (void).cxx_destruct;
+- (void)_calculateRangeValueOnTouchUp:(_Bool)arg1;
 - (void)calculateRangeValueOnTouchUp:(_Bool)arg1;
+- (void)updateCoverEdge;
 - (void)onPanRightCoverView:(id)arg1;
 - (void)onPanLeftCoverView:(id)arg1;
 - (void)viewDidLoad;

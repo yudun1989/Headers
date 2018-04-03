@@ -27,6 +27,7 @@
 - (void)shareAuthViewControllerDidSuccess:(id)arg1;
 - (void)shareAuthViewControllerDidCancel:(id)arg1;
 - (void)doAppAuth;
+- (void)removeFavSourcePathFileWithDataList:(id)arg1;
 - (void)OnShareFavoritesItemCancel:(id)arg1;
 - (void)OnShareFavoritesItemFail:(id)arg1 WithError:(int)arg2;
 - (void)OnShareFavoritesItemOK:(id)arg1;

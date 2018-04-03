@@ -19,12 +19,14 @@
 @property(retain, nonatomic) NSString *appiconUrl; // @dynamic appiconUrl;
 @property(retain, nonatomic) NSString *appname; // @dynamic appname;
 @property(retain, nonatomic) AuthorizeUserIDBaseResponse *authBaseResponse; // @dynamic authBaseResponse;
+@property(nonatomic) _Bool authChecked; // @dynamic authChecked;
 @property(retain, nonatomic) NSString *authWording; // @dynamic authWording;
 @property(retain, nonatomic) BaseResponse *baseResponse; // @dynamic baseResponse;
 @property(retain, nonatomic) NSString *businessWording; // @dynamic businessWording;
 @property(retain, nonatomic) NSString *confirmWording; // @dynamic confirmWording;
 @property(retain, nonatomic) NSMutableArray *jumpList; // @dynamic jumpList;
 @property(retain, nonatomic) AuthorizeUserIDJumpItem *protocolJump; // @dynamic protocolJump;
+@property(retain, nonatomic) NSString *protocolPrefix; // @dynamic protocolPrefix;
 @property(nonatomic) unsigned int showStatus; // @dynamic showStatus;
 @property(retain, nonatomic) NSString *ticket; // @dynamic ticket;
 @property(retain, nonatomic) NSString *title; // @dynamic title;

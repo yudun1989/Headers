@@ -7,7 +7,9 @@
 #import "FullScreenViewController.h"
 
 #import "BaseScanLogicDelegate-Protocol.h"
+#import "EditImageForwardAndEditLogicDelegate-Protocol.h"
 #import "FavImageFullScreenViewContainerDelegate-Protocol.h"
+#import "ForwardMessageLogicDelegate-Protocol.h"
 #import "UIScrollViewDelegate-Protocol.h"
 #import "WCActionSheetDelegate-Protocol.h"
 #import "WCCommitViewResultDelegate-Protocol.h"
@@ -16,7 +18,7 @@
 @class EditImageForwardAndEditLogicController, ForwardMessageLogicController, MMScrollView, NSMutableArray, NSString, ScanQRCodeLogicController, SimpleImgInfo, UIView, WCActionSheet;
 @protocol FavFullScreenImageViewControllerDelegate;
 
-@interface FavFullScreenImageViewController : FullScreenViewController <UIScrollViewDelegate, scrollViewDelegate, FavImageFullScreenViewContainerDelegate, WCCommitViewResultDelegate, WCActionSheetDelegate, BaseScanLogicDelegate>
+@interface FavFullScreenImageViewController : FullScreenViewController <ForwardMessageLogicDelegate, EditImageForwardAndEditLogicDelegate, UIScrollViewDelegate, scrollViewDelegate, FavImageFullScreenViewContainerDelegate, WCCommitViewResultDelegate, WCActionSheetDelegate, BaseScanLogicDelegate>
 {
     UIView *m_fakeScreenView;
     struct CGRect m_originImageRectInScreen;

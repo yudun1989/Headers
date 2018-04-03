@@ -4,22 +4,29 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-#import "LYWReuseableAction.h"
+#import "LYWBaseAction.h"
 
-@class KSMusicItem, NSString;
+@class KSMusicItem, NSDictionary, NSString;
 
-@interface KSSetAudioItemSelectedActionAction : LYWReuseableAction
+@interface KSSetAudioItemSelectedActionAction : LYWBaseAction
 {
+    long long _type;
     unsigned long long _selectedIndex;
     NSString *_audioPath;
     KSMusicItem *_cloudMusicItem;
+    NSString *_statisticalName;
+    NSString *_title;
+    NSDictionary *_metadata;
 }
 
+@property(retain, nonatomic) NSDictionary *metadata; // @synthesize metadata=_metadata;
+@property(retain, nonatomic) NSString *title; // @synthesize title=_title;
+@property(retain, nonatomic) NSString *statisticalName; // @synthesize statisticalName=_statisticalName;
 @property(retain, nonatomic) KSMusicItem *cloudMusicItem; // @synthesize cloudMusicItem=_cloudMusicItem;
 @property(copy, nonatomic) NSString *audioPath; // @synthesize audioPath=_audioPath;
 @property(nonatomic) unsigned long long selectedIndex; // @synthesize selectedIndex=_selectedIndex;
+@property(nonatomic) long long type; // @synthesize type=_type;
 - (void).cxx_destruct;
-- (id)description;
 
 @end
 

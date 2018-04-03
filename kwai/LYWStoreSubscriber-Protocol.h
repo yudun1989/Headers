@@ -9,6 +9,11 @@
 @protocol LYWStateType;
 
 @protocol LYWStoreSubscriber <NSObject>
+- (void)newState:(id <LYWStateType>)arg1;
+
+@optional
+- (id)dispatchResultNewState:(id <LYWStateType>)arg1;
+- (id)dispatchResultNewState:(id <LYWStateType>)arg1 oldState:(id <LYWStateType>)arg2;
 - (void)newState:(id <LYWStateType>)arg1 oldState:(id <LYWStateType>)arg2;
 @end
 

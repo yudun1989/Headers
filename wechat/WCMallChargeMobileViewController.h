@@ -48,6 +48,7 @@
 @property(retain, nonatomic) NSDictionary *specialItem; // @synthesize specialItem=_specialItem;
 @property(nonatomic) _Bool doNotUpdateAfterKeyboardDismiss; // @synthesize doNotUpdateAfterKeyboardDismiss=_doNotUpdateAfterKeyboardDismiss;
 - (void).cxx_destruct;
+- (void)openTinyAppWithUserName:(id)arg1 path:(id)arg2;
 - (id)getTextColorWithFunctionIndex:(unsigned long long)arg1;
 - (_Bool)isNumberMayInvalidTips:(id)arg1;
 - (void)onClickTipsBtn:(id)arg1 Index:(long long)arg2;
@@ -102,6 +103,7 @@
 - (void)refreshViewWithData:(id)arg1;
 - (void)reloadBannerView;
 - (_Bool)checkTips;
+- (void)reloadAllContents;
 - (void)reloadTableView;
 - (void)reloadDescTipsView;
 - (void)OnLeftBarButtonDone;

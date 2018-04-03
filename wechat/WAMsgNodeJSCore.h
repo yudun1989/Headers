@@ -68,6 +68,7 @@
 - (void)startRunloop:(id)arg1;
 - (void)destroyThread;
 - (void)createThread;
+- (void)notifyEventEndWithResult:(id)arg1;
 - (void)onTapCallback:(id)arg1 event:(unsigned int)arg2;
 - (void)notifyOnTapAtPoint:(struct CGPoint)arg1 forEvent:(id)arg2 completion:(CDUnknownBlockType)arg3;
 - (id)getJSLogList;
@@ -79,6 +80,8 @@
 - (void)onAuthorizeRequest:(id)arg1 debugMode:(unsigned long long)arg2 responseWithRet:(int)arg3 error:(id)arg4 appName:(id)arg5 iconUrl:(id)arg6 scopeList:(id)arg7 userInfo:(id)arg8;
 - (void)onRequestMgrSendRequest:(id)arg1 callbackId:(id)arg2 resp:(id)arg3 nextReqTime:(unsigned int)arg4;
 - (void)updateLogicData:(id)arg1;
+- (void)showDatePickerView:(id)arg1 event:(unsigned int)arg2;
+- (void)showPickerView:(id)arg1 event:(unsigned int)arg2;
 - (void)authorize:(id)arg1 event:(unsigned int)arg2;
 - (void)makePhoneCall:(id)arg1 event:(unsigned int)arg2;
 - (void)openApp:(id)arg1 event:(unsigned int)arg2;

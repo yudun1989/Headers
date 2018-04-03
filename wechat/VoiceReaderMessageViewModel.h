@@ -15,6 +15,7 @@
 
 + (_Bool)canCreateMessageViewModelWithMessageWrap:(id)arg1;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) double labelMaxWidth;
 - (struct CGSize)calculateTitleViewSize;
 @property(readonly, nonatomic) MMMusicInfo *musicInfo;
 @property(readonly, nonatomic) NSString *timeText;

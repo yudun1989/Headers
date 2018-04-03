@@ -10,6 +10,7 @@
 
 @interface UserIdAuthorizePageInfo : MMObject
 {
+    _Bool _authChecked;
     NSString *_appid;
     NSString *_title;
     NSString *_appIconUrl;
@@ -22,8 +23,11 @@
     NSMutableArray *_jumpItemList;
     NSString *_ticket;
     VerifyWxPayReqInfo *_verifyPayReq;
+    NSString *_protocolPrefix;
 }
 
+@property(copy, nonatomic) NSString *protocolPrefix; // @synthesize protocolPrefix=_protocolPrefix;
+@property(nonatomic) _Bool authChecked; // @synthesize authChecked=_authChecked;
 @property(retain, nonatomic) VerifyWxPayReqInfo *verifyPayReq; // @synthesize verifyPayReq=_verifyPayReq;
 @property(copy, nonatomic) NSString *ticket; // @synthesize ticket=_ticket;
 @property(retain, nonatomic) NSMutableArray *jumpItemList; // @synthesize jumpItemList=_jumpItemList;

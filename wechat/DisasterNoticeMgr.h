@@ -7,21 +7,25 @@
 #import <MMCommon/MMService.h>
 
 #import "IMsgExt-Protocol.h"
+#import "ISvrErrorExt-Protocol.h"
 #import "MMService-Protocol.h"
 #import "PBMessageObserverDelegate-Protocol.h"
 
-@class NSMutableDictionary, NSString;
+@class NSMutableDictionary, NSString, SvrErrorTipWindow;
 
-@interface DisasterNoticeMgr : MMService <PBMessageObserverDelegate, IMsgExt, MMService>
+@interface DisasterNoticeMgr : MMService <PBMessageObserverDelegate, IMsgExt, ISvrErrorExt, MMService>
 {
     _Bool m_isGettingDisasterInfo;
     NSMutableDictionary *m_dicSvrErrorInfo;
     NSMutableDictionary *m_dictBannerInfos;
     NSMutableDictionary *m_dictCloseTime;
     unsigned int m_manualAuthNoticeId;
+    SvrErrorTipWindow *_svrErrorTipWindow;
 }
 
+@property(retain, nonatomic) SvrErrorTipWindow *svrErrorTipWindow; // @synthesize svrErrorTipWindow=_svrErrorTipWindow;
 - (void).cxx_destruct;
+- (void)OnGetSvrError:(id)arg1 Url:(id)arg2 Tips:(id)arg3 TimeOut:(unsigned int)arg4;
 - (void)HandleXmlMessage:(id)arg1;
 - (void)OnGetNewXmlMsg:(id)arg1 Type:(id)arg2 MsgWrap:(id)arg3;
 - (_Bool)hasNotice;

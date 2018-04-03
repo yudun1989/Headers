@@ -41,6 +41,7 @@
 @property(nonatomic) __weak id <WAAppCanvasWrapperViewDelegate> delegate; // @synthesize delegate=_delegate;
 @property(readonly, nonatomic) unsigned int coreId; // @synthesize coreId=_coreId;
 - (void).cxx_destruct;
+- (void)notifyEventEndWithResult:(id)arg1;
 - (void)hideDefaultLogoBgView;
 - (void)hideLoadingView;
 - (void)showDisabledView;
@@ -51,6 +52,8 @@
 - (void)goDownloadFail;
 - (void)tryGoTimeOut;
 - (void)goLoading;
+- (void)onJSCore:(unsigned int)arg1 showDatePickerView:(id)arg2;
+- (void)onJSCore:(unsigned int)arg1 showPickerView:(id)arg2;
 - (void)onJSCore:(unsigned int)arg1 dataUpdated:(id)arg2;
 - (void)onJSCore:(unsigned int)arg1 authorizeSuccess:(id)arg2;
 - (void)onJSCore:(unsigned int)arg1 openApp:(id)arg2;

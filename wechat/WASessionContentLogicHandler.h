@@ -11,13 +11,14 @@
 #import "WAAppActionSheetDelegate-Protocol.h"
 #import "WCActionSheetDelegate-Protocol.h"
 
-@class NSString, WAAppActionSheet;
+@class NSMutableArray, NSString, WAAppActionSheet;
 @protocol WASessionContentLogicHandlerDelegate;
 
 @interface WASessionContentLogicHandler : NSObject <PBMessageObserverDelegate, WCActionSheetDelegate, UIAlertViewDelegate, WAAppActionSheetDelegate>
 {
     _Bool _isRequestedEnterSession;
     WAAppActionSheet *_actionSheet;
+    NSMutableArray *_scanQrCodeBlackList;
     id <WASessionContentLogicHandlerDelegate> _delegate;
 }
 
@@ -47,7 +48,10 @@
 - (id)getSessionContentViewController;
 - (id)getNavigationController;
 - (id)getContact;
+- (void)onResponseFetchKFSessionInfo:(id)arg1;
 - (void)onResponseEnterSession:(id)arg1;
+- (id)getScanQrCodeBlackList;
+- (void)fetchKFSessionInfo;
 - (void)onClickWeAppReceiveSessionMsg;
 - (id)menubuttonTitleArray;
 - (void)dismissRightBtnActionSheet;

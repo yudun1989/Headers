@@ -19,6 +19,7 @@
 - (void).cxx_destruct;
 - (_Bool)CanOpenServiceAppList;
 - (_Bool)isShakeEnabled;
+- (void)onDeleteMsg:(id)arg1;
 - (void)deleteAllMsg;
 - (void)onTopBarFrameChanged;
 - (void)onPopFromNavigationController;

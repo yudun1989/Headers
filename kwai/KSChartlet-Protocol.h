@@ -11,14 +11,14 @@
 @protocol KSChartletView;
 
 @protocol KSChartlet <NSObject, NSCopying>
+@property(nonatomic) struct CGAffineTransform transform;
+@property(nonatomic) struct CGRect bounds;
+@property(nonatomic) struct CGPoint position;
 @property(retain, nonatomic) NSString *text;
 - (UIView<KSChartletView> *)createChartletView;
 - (id)copy;
 - (_Bool)isEqual:(id)arg1;
 - (void)drawInContext:(struct CGContext *)arg1;
-- (struct CGAffineTransform)transform;
-- (struct CGRect)bounds;
-- (struct CGPoint)position;
 - (_Bool)hasText;
 - (NSString *)name;
 @end

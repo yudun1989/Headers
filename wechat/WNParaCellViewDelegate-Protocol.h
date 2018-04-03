@@ -11,6 +11,7 @@
 @protocol WNParaCellViewDelegate <NSObject>
 
 @optional
+@property(nonatomic) _Bool m_bMemuSelectText;
 - (void)onCellStopRecordAlertViewWillShow;
 - (_Bool)ifTextLengthExceedLimit:(long long)arg1;
 - (void)onTextViewPaste;

@@ -17,6 +17,7 @@
 // Remaining properties
 @property(retain, nonatomic) BaseResponse *baseResponse; // @dynamic baseResponse;
 @property(retain, nonatomic) PopItem *guideInfo; // @dynamic guideInfo;
+@property(nonatomic) _Bool isReuseExistingEcard; // @dynamic isReuseExistingEcard;
 @property(nonatomic) _Bool isTokenInvalid; // @dynamic isTokenInvalid;
 @property(retain, nonatomic) NSString *reqSerial; // @dynamic reqSerial;
 @property(nonatomic) unsigned int retCode; // @dynamic retCode;

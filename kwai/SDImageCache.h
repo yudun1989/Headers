@@ -24,6 +24,7 @@
 
 + (id)sharedImageCache;
 + (id)avatarImageCache;
++ (id)ksAtlas_editCache;
 + (id)magicFaceShareImageCache;
 @property(nonatomic) struct dispatch_queue_s *ioQueue; // @synthesize ioQueue=_ioQueue;
 @property(retain, nonatomic) NSMutableArray *customPaths; // @synthesize customPaths=_customPaths;
@@ -77,6 +78,8 @@
 - (_Bool)ks_thumbnailImageExistedForFeed:(id)arg1;
 - (void)cacheImage:(id)arg1 forRequest:(id)arg2;
 - (id)cachedImageForRequest:(id)arg1;
+- (void)ksAtlas_cacheImage:(id)arg1 forElement:(id)arg2;
+- (id)ksAtlas_imageWithibraryAssetEditElement:(id)arg1;
 - (id)imageFromDiskCacheForURL:(id)arg1;
 
 // Remaining properties

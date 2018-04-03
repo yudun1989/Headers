@@ -16,7 +16,7 @@
 #import "QMapViewDelegate-Protocol.h"
 #import "WCActionSheetDelegate-Protocol.h"
 
-@class FavForwardLogicController, FavLocationLabelView, FavoritesItem, MMHeadImageAnnotation, NSString, NSURL, NavigateLogicController, QMapView, UIButton;
+@class FavForwardLogicController, FavLocationLabelView, FavoritesBrowseDetailReportData, FavoritesItem, MMHeadImageAnnotation, NSString, NSURL, NavigateLogicController, QMapView, UIButton;
 
 @interface FavLocationDetailViewController : MMUIViewController <FavTagViewDelegate, QMapViewDelegate, ILocationMgrExt, FavLocRemarkDelegate, WCActionSheetDelegate, FavForwardLogicDelegate, NavigateLogicControllerDelegate, IScanStreetViewMgrExt, FavlocationLabelViewDelegate>
 {
@@ -39,8 +39,10 @@
     FavForwardLogicController *m_favForwardController;
     NavigateLogicController *m_navigateLogicController;
     _Bool _hasReportLocateError;
+    FavoritesBrowseDetailReportData *_reportData;
 }
 
+@property(retain, nonatomic) FavoritesBrowseDetailReportData *reportData; // @synthesize reportData=_reportData;
 - (void).cxx_destruct;
 - (id)getFavForawrdViewController;
 - (void)onHeadingError:(int)arg1 withTag:(unsigned long long)arg2;
@@ -78,6 +80,7 @@
 - (void)OnSendStreetViewLocation:(id)arg1 Err:(int)arg2;
 - (void)openStreetView;
 - (void)startGetStreetViewUrl;
+- (void)viewDidBePoped:(_Bool)arg1;
 - (void)startGetLocation;
 - (void)reloadStreetBtn;
 - (void)initView;

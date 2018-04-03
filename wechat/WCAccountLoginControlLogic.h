@@ -14,10 +14,11 @@
 #import "WCAccountManualAuthControlLogicDelegate-Protocol.h"
 #import "WCAccountSetPasswordViewControllerDelegate-Protocol.h"
 #import "WCAccountVerifyCodeHandlerDelegate-Protocol.h"
+#import "WCBaseControlMgrExt-Protocol.h"
 
 @class NSString, VoicePrintHandler, WCAccountLoginLastUserViewController, WCAccountManualAuthControlLogic, WCAccountVerifyCodeHandler;
 
-@interface WCAccountLoginControlLogic : WCAccountBaseControlLogic <IMMFacebookMgrExt, WCAccountLoginFirstViewControllerDelegate, WCAccountLoginLastUserViewControllerDelegate, WCAccountManualAuthControlLogicDelegate, WCAccountBackDeviceFirstViewControllerDelegate, WCAccountMainLoginViewControllerDelegate, WCAccountSetPasswordViewControllerDelegate, WCAccountVerifyCodeHandlerDelegate>
+@interface WCAccountLoginControlLogic : WCAccountBaseControlLogic <IMMFacebookMgrExt, WCAccountLoginFirstViewControllerDelegate, WCAccountLoginLastUserViewControllerDelegate, WCAccountManualAuthControlLogicDelegate, WCAccountBackDeviceFirstViewControllerDelegate, WCAccountMainLoginViewControllerDelegate, WCAccountSetPasswordViewControllerDelegate, WCAccountVerifyCodeHandlerDelegate, WCBaseControlMgrExt>
 {
     _Bool m_bFromLogout;
     unsigned int m_uiPwdErrCount;

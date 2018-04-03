@@ -11,6 +11,7 @@
     struct CGSize _contentSize;
 }
 
++ (Class)layerClass;
 @property(nonatomic) struct CGSize contentSize; // @synthesize contentSize=_contentSize;
 - (_Bool)pointInside:(struct CGPoint)arg1 withEvent:(id)arg2;
 - (void)commonInit;

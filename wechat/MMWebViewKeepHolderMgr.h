@@ -14,6 +14,7 @@
 {
     MMWebViewController *_webViewVCForNewMainFrameBanner;
     MMWebViewController *_webViewVCForArticleReadingBanner;
+    NSString *_musicBarUrl;
     NSMutableArray *_dpArrOpenedWebview;
     NSMutableDictionary *_dicBackgroundWebviewTask;
     NSMutableArray *_arrTaskOrder;
@@ -44,8 +45,9 @@
 - (void)setDelayLoading:(_Bool)arg1;
 - (_Bool)hasDelayLoadingTask;
 - (void)cancelHoldWebViewVCForReadingBanner;
+- (id)getKeepHoldMusicBarUrl;
 - (id)getKeepHoldWebViewVCForReadingBanner;
-- (void)keepHoldWebViewVCForReadingBanner:(id)arg1;
+- (void)keepHoldWebViewVCForReadingBanner:(id)arg1 musicBarUrl:(id)arg2;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

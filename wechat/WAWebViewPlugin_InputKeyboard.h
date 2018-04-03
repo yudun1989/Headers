@@ -25,6 +25,7 @@
     _Bool _canShowKeyboard;
     _Bool _hidding;
     double _offset;
+    double _customNavBarY;
     _Bool _modalMask;
     _Bool _durationSwith;
     _Bool _systemKeyboard;

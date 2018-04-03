@@ -30,6 +30,7 @@
     NSString *_mmUserAgent;
 }
 
++ (_Bool)isUseNewPackageSweepLogic;
 + (_Bool)isClosePubDelayUnpack;
 + (_Bool)isCloseSearchEntry;
 + (long long)getABTestNearByEntranceMode;

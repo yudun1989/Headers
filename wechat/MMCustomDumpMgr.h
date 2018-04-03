@@ -6,16 +6,27 @@
 
 #import <objc/NSObject.h>
 
-@interface MMCustomDumpMgr : NSObject
+#import "IMiniGamePerformace-Protocol.h"
+
+@class NSString;
+
+@interface MMCustomDumpMgr : NSObject <IMiniGamePerformace>
 {
 }
 
 + (_Bool)dumpTypeCanBeCustomDump:(unsigned long long)arg1;
 + (id)shareInstance;
+- (void)onMiniGamePerformace;
 - (void)asyncDump:(id)arg1;
 - (void)syncDump:(id)arg1;
 - (void)dealloc;
 - (id)init;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly, copy) NSString *description;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
 
 @end
 

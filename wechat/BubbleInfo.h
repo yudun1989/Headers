@@ -23,10 +23,11 @@
 @property(nonatomic) unsigned long long position; // @synthesize position=_position;
 @property(nonatomic) unsigned long long type; // @synthesize type=_type;
 @property(nonatomic) struct UIEdgeInsets edgeInsets; // @synthesize edgeInsets=_edgeInsets;
+@property(nonatomic) struct UIEdgeInsets margin; // @synthesize margin=_margin;
 @property(retain, nonatomic) NSString *bubbleNameHL; // @synthesize bubbleNameHL=_bubbleNameHL;
 @property(retain, nonatomic) NSString *bubbleName; // @synthesize bubbleName=_bubbleName;
-@property(nonatomic) struct UIEdgeInsets margin; // @synthesize margin=_margin;
 - (void).cxx_destruct;
+- (id)getNewBubbleImage:(_Bool)arg1;
 - (id)getBubbleImage:(_Bool)arg1;
 - (id)init;
 

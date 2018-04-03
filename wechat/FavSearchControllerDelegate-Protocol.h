@@ -6,18 +6,20 @@
 
 #import "NSObject-Protocol.h"
 
-@class FavDataItemWrap, FavoritesItem, FavoritesItemDataField, MMUIViewController, NSIndexPath, UITableView, UIView;
+@class FavDataItemWrap, FavoritesItem, FavoritesItemDataField, MMFavCellComponent, MMUIViewController, NSArray, NSIndexPath, NSMutableArray, NSString, UITableView, UIView;
 
 @protocol FavSearchControllerDelegate <NSObject>
 - (void)resetHeaderView:(UIView *)arg1;
 - (_Bool)shouldShowSearchResult:(FavoritesItem *)arg1;
-- (void)onSelectFavItem:(FavoritesItem *)arg1 tableView:(UITableView *)arg2 atIndexPath:(NSIndexPath *)arg3 FromScene:(unsigned int)arg4 FavIndex:(unsigned int)arg5;
+- (void)onSelectFavItem:(FavoritesItem *)arg1 tableView:(UITableView *)arg2 atIndexPath:(NSIndexPath *)arg3 FromScene:(unsigned int)arg4 FavIndex:(unsigned int)arg5 withCell:(MMFavCellComponent *)arg6;
 - (MMUIViewController *)getCurrentViewController;
 
 @optional
+- (void)furtherSearchFilter:(NSMutableArray *)arg1 withSearchText:(NSString *)arg2 withSearchType:(unsigned int)arg3 withTagList:(NSArray *)arg4;
 - (void)onShowFavContext:(FavoritesItem *)arg1 DataItem:(FavoritesItemDataField *)arg2 NeedReport:(_Bool)arg3 FromScene:(unsigned int)arg4 FavIndex:(unsigned int)arg5;
 - (_Bool)onSearchCellViewCanShowMenuItems;
 - (void)onBtnEdit;
+- (void)onDidEndSearch;
 - (void)onWillEndSearch;
 - (void)onWillBeginSearch;
 - (void)onSelectFavDataItem:(FavDataItemWrap *)arg1 tableView:(UITableView *)arg2 atIndexPath:(NSIndexPath *)arg3;

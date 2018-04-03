@@ -19,7 +19,9 @@
     struct CGSize m_contentTextSize;
     struct CGSize m_translatedTextSize;
     NSMutableArray *m_contentTextStyles;
+    NSMutableArray *m_translateTextStyles;
     _Bool m_isLongSplitMsg;
+    NSMutableArray *_translateTextStyles;
     double _translatedLineY;
     double _contentMidY;
     NSMutableArray *_originContentTextStyles;
@@ -31,12 +33,14 @@
 @property(retain, nonatomic) NSMutableArray *originContentTextStyles; // @synthesize originContentTextStyles=_originContentTextStyles;
 @property(nonatomic) double contentMidY; // @synthesize contentMidY=_contentMidY;
 @property(nonatomic) double translatedLineY; // @synthesize translatedLineY=_translatedLineY;
+@property(retain, nonatomic) NSMutableArray *translateTextStyles; // @synthesize translateTextStyles=_translateTextStyles;
 @property(retain, nonatomic) NSMutableArray *contentTextStyles; // @synthesize contentTextStyles=m_contentTextStyles;
 @property(nonatomic) struct CGSize translatedTextSize; // @synthesize translatedTextSize=m_translatedTextSize;
 @property(nonatomic) struct CGSize contentTextSize; // @synthesize contentTextSize=m_contentTextSize;
 @property(readonly, nonatomic) double contentTextFontLineHeight; // @synthesize contentTextFontLineHeight=m_contentTextFontLineHeight;
 - (void).cxx_destruct;
 - (void)adjustTableOffset:(struct CGRect)arg1 delayForReloadTable:(_Bool)arg2;
+- (struct CGRect)getInputToolViewFrame;
 - (id)getMsgTableView;
 - (struct CGRect)realFrameByCurFrame:(struct CGRect)arg1;
 - (void)setLinkHighlighted:(_Bool)arg1 url:(id)arg2;

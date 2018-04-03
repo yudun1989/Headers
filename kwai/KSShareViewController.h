@@ -145,7 +145,7 @@
 - (void)dealloc;
 - (void)_commonInit;
 - (id)initWithPhotoCollectionSourceTask:(id)arg1 type:(long long)arg2;
-- (id)initWithVideoSourceTask:(id)arg1 cancellationTokenSource:(id)arg2 customCoverTimestamp:(id)arg3;
+- (id)initWithVideoSourceTask:(id)arg1 cancellationTokenSource:(id)arg2 customCoverTimestamp:(id)arg3 videoProcessState:(id)arg4;
 - (id)initWithVideoSourceTask:(id)arg1 cancellationTokenSource:(id)arg2;
 - (id)initWithPhoto:(id)arg1 movieInfo:(id)arg2;
 - (_Bool)ks_presentViewControllerWithContext:(id)arg1;

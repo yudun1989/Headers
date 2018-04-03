@@ -48,6 +48,8 @@
     _Bool m_isTempSessionMsg;
     _Bool m_isEnterpriseMsg;
     unsigned int m_sequenceId;
+    NSString *m_firstSendMsgId;
+    unsigned int m_firstSendTime;
     _Bool m_isP8Msg;
     _Bool m_bIsFromBrandSession;
     _Bool m_bIsBrandSendMass;
@@ -126,6 +128,8 @@
 @property(retain, nonatomic) NSString *m_bizMsgMenuID; // @synthesize m_bizMsgMenuID;
 @property(nonatomic) _Bool m_bIsBrandSendMass; // @synthesize m_bIsBrandSendMass;
 @property(nonatomic) _Bool m_bIsFromBrandSession; // @synthesize m_bIsFromBrandSession;
+@property(nonatomic) unsigned int m_firstSendTime; // @synthesize m_firstSendTime;
+@property(retain, nonatomic) NSString *m_firstSendMsgId; // @synthesize m_firstSendMsgId;
 @property(retain, nonatomic) NSString *m_nsDisplayName; // @synthesize m_nsDisplayName;
 @property(nonatomic) unsigned int m_sequenceId; // @synthesize m_sequenceId;
 @property(nonatomic) _Bool m_isEnterpriseMsg; // @synthesize m_isEnterpriseMsg;
@@ -166,6 +170,7 @@
 @property(nonatomic) long long m_n64MesSvrID; // @synthesize m_n64MesSvrID;
 @property(nonatomic) unsigned int m_uiMesLocalID; // @synthesize m_uiMesLocalID;
 - (void).cxx_destruct;
+- (_Bool)canUseContineUpload;
 - (_Bool)isSentOK;
 - (_Bool)IsNewInvitationApprove;
 - (_Bool)IsNewInvitation;
@@ -181,6 +186,7 @@
 - (_Bool)IsNeedAddWCPayMsgBizExt;
 - (id)getWCPayMsgExtBizIdWithType:(unsigned int)arg1;
 - (_Bool)isNewWCPayBizExtMsg:(int *)arg1;
+- (_Bool)isOverseaHBMessageForNewWCPayBizExt;
 - (_Bool)isAAMessageForNewWCPayBizExt;
 - (_Bool)isHongBaoMessageForNewWCPayBizExt;
 - (_Bool)isTransferMessageForNewWCPayBizExt;
@@ -308,6 +314,7 @@
 @property(retain, nonatomic) NSString *m_nsAppMessageExt; // @dynamic m_nsAppMessageExt;
 @property(retain, nonatomic) NSString *m_nsAppName; // @dynamic m_nsAppName;
 @property(retain, nonatomic) NSString *m_nsAssetId; // @dynamic m_nsAssetId;
+@property(retain, nonatomic) NSString *m_nsAttachFileKey; // @dynamic m_nsAttachFileKey;
 @property(retain, nonatomic) NSString *m_nsAutoDownloadControl; // @dynamic m_nsAutoDownloadControl;
 @property(retain, nonatomic) NSString *m_nsDesc; // @dynamic m_nsDesc;
 @property(retain, nonatomic) NSString *m_nsDesignerId; // @dynamic m_nsDesignerId;
@@ -385,6 +392,7 @@
 @property(nonatomic) unsigned int m_uiAppMsgInnerType; // @dynamic m_uiAppMsgInnerType;
 @property(nonatomic) unsigned int m_uiAppVersion; // @dynamic m_uiAppVersion;
 @property(nonatomic) unsigned int m_uiCameraType; // @dynamic m_uiCameraType;
+@property(nonatomic) unsigned int m_uiContinueUploadCount; // @dynamic m_uiContinueUploadCount;
 @property(nonatomic) unsigned int m_uiDownloadPercent; // @dynamic m_uiDownloadPercent;
 @property(nonatomic) unsigned int m_uiEmoticonHeight; // @dynamic m_uiEmoticonHeight;
 @property(nonatomic) unsigned int m_uiEmoticonType; // @dynamic m_uiEmoticonType;

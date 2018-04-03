@@ -6,30 +6,44 @@
 
 #import <objc/NSObject.h>
 
-@class NSString, UIImage;
+#import "KSLocalAlbumWorkSpaceMusicConvertable-Protocol.h"
+#import "KSMediaEditCellData-Protocol.h"
 
-@interface KSMediaEditAudioItem : NSObject
+@class KSMusicItem, NSString, NSURL, UIImage;
+
+@interface KSMediaEditAudioItem : NSObject <KSLocalAlbumWorkSpaceMusicConvertable, KSMediaEditCellData>
 {
     _Bool _highlight;
-    int _type;
-    UIImage *_backgroundImage;
-    UIImage *_forgroundImage;
-    UIImage *_highlightForgroundImage;
+    long long _type;
+    UIImage *_previewImage;
+    UIImage *_normalIcon;
+    UIImage *_selectedIcon;
     NSString *_title;
     NSString *_highlightTitle;
-    CDUnknownBlockType _appearance;
+    NSString *_statisticalName;
 }
 
-@property(copy, nonatomic) CDUnknownBlockType appearance; // @synthesize appearance=_appearance;
++ (id)makeItemsForMediaEdit;
+@property(retain, nonatomic) NSString *statisticalName; // @synthesize statisticalName=_statisticalName;
 @property(nonatomic) _Bool highlight; // @synthesize highlight=_highlight;
 @property(retain, nonatomic) NSString *highlightTitle; // @synthesize highlightTitle=_highlightTitle;
 @property(retain, nonatomic) NSString *title; // @synthesize title=_title;
-@property(retain, nonatomic) UIImage *highlightForgroundImage; // @synthesize highlightForgroundImage=_highlightForgroundImage;
-@property(retain, nonatomic) UIImage *forgroundImage; // @synthesize forgroundImage=_forgroundImage;
-@property(retain, nonatomic) UIImage *backgroundImage; // @synthesize backgroundImage=_backgroundImage;
-@property(nonatomic) int type; // @synthesize type=_type;
+@property(retain, nonatomic) UIImage *selectedIcon; // @synthesize selectedIcon=_selectedIcon;
+@property(retain, nonatomic) UIImage *normalIcon; // @synthesize normalIcon=_normalIcon;
+@property(retain, nonatomic) UIImage *previewImage; // @synthesize previewImage=_previewImage;
+@property(nonatomic) long long type; // @synthesize type=_type;
 - (void).cxx_destruct;
-- (id)description;
+@property(readonly, copy) NSString *description;
+- (_Bool)isTheSameTypeOfAudioItemWith:(id)arg1;
+- (id)audioWithMusic:(id)arg1 workspacePath:(id)arg2;
+- (id)metaMusic;
+@property(retain, nonatomic) KSMusicItem *musicItem;
+@property(retain, nonatomic) NSURL *audioURL;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
 
 @end
 

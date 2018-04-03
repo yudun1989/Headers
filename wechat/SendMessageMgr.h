@@ -10,7 +10,7 @@
 #import "MMService-Protocol.h"
 #import "PBMessageObserverDelegate-Protocol.h"
 
-@class CMMDB, NSDate, NSRecursiveLock, NSString;
+@class CMMDB, NSDate, NSMutableArray, NSRecursiveLock, NSString;
 
 @interface SendMessageMgr : MMService <PBMessageObserverDelegate, INewSyncExt, MMService>
 {
@@ -20,6 +20,7 @@
     unsigned int m_uiSyncSendCount;
     NSDate *m_dtLastSyncSend;
     NSString *m_path;
+    NSMutableArray *m_messageQueue;
     CMMDB *m_oMMDB;
 }
 

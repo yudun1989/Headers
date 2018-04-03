@@ -6,12 +6,13 @@
 
 #import <objc/NSObject.h>
 
+#import "MonoServiceLogicExt-Protocol.h"
 #import "TXLivePlayListener-Protocol.h"
 
 @class NSString, TXLiveContainerView, TXLivePlayer;
 @protocol TXLivePlayJSAdapterDelegate;
 
-@interface TXLivePlayJSAdapter : NSObject <TXLivePlayListener>
+@interface TXLivePlayJSAdapter : NSObject <TXLivePlayListener, MonoServiceLogicExt>
 {
     _Bool _bIsMannualPause;
     _Bool _isFullScreen;
@@ -61,6 +62,7 @@
 - (void).cxx_destruct;
 - (void)onNetStatus:(id)arg1;
 - (void)onPlayEvent:(int)arg1 withParam:(id)arg2;
+- (void)onMonoServiceDidEnd;
 - (void)removeNotification;
 - (void)addNotification;
 - (void)onAppWillEnterForeground:(id)arg1;
@@ -75,6 +77,7 @@
 - (void)pause;
 - (void)stop;
 - (void)play;
+- (void)setAudioRoute;
 - (void)setObjectFit;
 - (void)setOrientation;
 - (void)parseConfigs:(id)arg1;

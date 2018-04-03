@@ -6,11 +6,12 @@
 
 #import "NSObject-Protocol.h"
 
-@class WSStreamPlayerView, WSVideoFlowTableViewCell, WSVideoModel;
+@class WSStreamPlayerView, WSVideoFlowTableViewCell, WSVideoModel, WSVideoTagInfo;
 
 @protocol WSVideoFlowTableViewCellDelegate <NSObject>
 
 @optional
+- (void)onPlayerViewMaskPlayButtonClick:(WSVideoFlowTableViewCell *)arg1;
 - (void)onDelayToHideControlViews:(WSVideoFlowTableViewCell *)arg1;
 - (void)onShowControlViews:(WSVideoFlowTableViewCell *)arg1;
 - (_Bool)hasPlayAnyVideo;
@@ -19,7 +20,7 @@
 - (WSVideoModel *)onTryPlayNext:(_Bool)arg1 currentVideo:(WSVideoModel *)arg2;
 - (_Bool)canLoadNextWithCurrent:(WSVideoFlowTableViewCell *)arg1;
 - (void)onRealBeginPlay:(WSVideoFlowTableViewCell *)arg1 autoPlay:(_Bool)arg2;
-- (void)onClickCellRecommend:(WSVideoModel *)arg1;
+- (void)onClickCellTag:(WSVideoTagInfo *)arg1 sender:(WSVideoFlowTableViewCell *)arg2;
 - (void)onClickCellSource:(WSVideoModel *)arg1;
 - (void)onClickCellTitle:(WSVideoModel *)arg1;
 - (void)onClickShare:(WSVideoModel *)arg1;

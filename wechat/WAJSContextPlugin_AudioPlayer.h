@@ -16,18 +16,21 @@
 @interface WAJSContextPlugin_AudioPlayer : WAJSContextPluginBase <IWAAudioPlayerDelegate, ISysCallCheckExt, MonoServiceLogicExt>
 {
     struct ALCcontext_struct *_alcContext;
-    NSObject<OS_dispatch_queue> *_backgroundQueue;
     _Bool _obeyMuteSwitch;
     _Bool _bResumeContextOnWXBecomingActive;
-    _Bool _bInteruptExternalMusic;
-    _Bool _bShouldResume3rdAppMusic;
     _Bool _isGameApp;
+    _Bool _isNeedResumeWXMusic;
     id <IJSContextPluginDelegate> _resultDelegate;
+    NSObject<OS_dispatch_queue> *_backgroundQueue;
+    NSObject<OS_dispatch_queue> *_fileQueue;
     NSMutableDictionary *_playerDic;
 }
 
+@property(nonatomic) _Bool isNeedResumeWXMusic; // @synthesize isNeedResumeWXMusic=_isNeedResumeWXMusic;
 @property(nonatomic) _Bool isGameApp; // @synthesize isGameApp=_isGameApp;
 @property(retain, nonatomic) NSMutableDictionary *playerDic; // @synthesize playerDic=_playerDic;
+@property(retain, nonatomic) NSObject<OS_dispatch_queue> *fileQueue; // @synthesize fileQueue=_fileQueue;
+@property(retain, nonatomic) NSObject<OS_dispatch_queue> *backgroundQueue; // @synthesize backgroundQueue=_backgroundQueue;
 @property(nonatomic) __weak id <IJSContextPluginDelegate> resultDelegate; // @synthesize resultDelegate=_resultDelegate;
 - (void).cxx_destruct;
 - (void)onMonoServiceDidEnd;
@@ -39,15 +42,16 @@
 - (void)BeginInterruption;
 - (void)resumeMusicIfNeed:(_Bool)arg1;
 - (_Bool)handleEvent:(long long)arg1 userInfo:(id)arg2;
+- (void)asyncClearAudioCache;
+- (void)removeObserver;
+- (void)addObserver;
 - (void)resumeAudioContext;
 - (void)forcePauseAllPlayer;
 - (void)stopAllPlayer;
 - (void)activeAudioSession;
-- (id)getBackgroundQueue;
+- (void)onDownloadAudioData:(id)arg1 src:(id)arg2;
 - (void)setCurrentContext;
 - (void)onPlayerStateChange:(long long)arg1 audioId:(id)arg2 errCode:(long long)arg3 errMsg:(id)arg4;
-- (void)removeObserver;
-- (void)addObserver;
 - (_Bool)isPlayingAudio;
 - (id)getPlayerWithAudioId:(id)arg1;
 - (double)getPlayerVolume:(id)arg1;
@@ -70,8 +74,9 @@
 - (_Bool)isAudioPlayerExist:(id)arg1;
 - (id)createAudioInstance;
 - (id)localPathByAudioData:(id)arg1 pathExtension:(id)arg2;
-- (id)audioCachePathByfileName:(id)arg1;
-- (id)audioCacheRootPath;
+- (id)audioCacheDataPathForSrc:(id)arg1;
+- (id)audioTmpPathByfileName:(id)arg1;
+- (id)audioTmpRootPath;
 - (id)init;
 - (void)dealloc;
 

@@ -6,7 +6,7 @@
 
 #import "GPBMessage.h"
 
-@class KSEBeautyFilterParam, KSEColorFilterParam, KSETimeEffectParam, NSMutableArray;
+@class KSEBeautyFilterParam, KSEColor, KSEColorFilterParam, KSEKwaiPhotoMovieParam, KSETimeEffectParam, KSETouchEffectParam, KSEVideoEditorProjectPrivate, NSMutableArray;
 
 @interface KSEVideoEditorProject : GPBMessage
 {
@@ -19,23 +19,34 @@
 @property(retain, nonatomic) NSMutableArray *audioAssetsArray; // @dynamic audioAssetsArray;
 @property(readonly, nonatomic) unsigned long long audioAssetsArray_Count; // @dynamic audioAssetsArray_Count;
 @property(retain, nonatomic) KSEBeautyFilterParam *beautyFilter; // @dynamic beautyFilter;
+@property(nonatomic) _Bool blurPaddingArea; // @dynamic blurPaddingArea;
 @property(retain, nonatomic) KSEColorFilterParam *colorFilter; // @dynamic colorFilter;
 @property(retain, nonatomic) NSMutableArray *deletedRangesArray; // @dynamic deletedRangesArray;
 @property(readonly, nonatomic) unsigned long long deletedRangesArray_Count; // @dynamic deletedRangesArray_Count;
 @property(nonatomic) double globalVolume; // @dynamic globalVolume;
 @property(nonatomic) _Bool hasBeautyFilter; // @dynamic hasBeautyFilter;
 @property(nonatomic) _Bool hasColorFilter; // @dynamic hasColorFilter;
+@property(nonatomic) _Bool hasKwaiPhotoMovieParam; // @dynamic hasKwaiPhotoMovieParam;
+@property(nonatomic) _Bool hasMarginColor; // @dynamic hasMarginColor;
+@property(nonatomic) _Bool hasPaddingColor; // @dynamic hasPaddingColor;
+@property(nonatomic) _Bool hasPrivateData; // @dynamic hasPrivateData;
 @property(nonatomic) _Bool hasTimeEffect; // @dynamic hasTimeEffect;
+@property(nonatomic) _Bool hasTouchEffects; // @dynamic hasTouchEffects;
 @property(nonatomic) _Bool isKwaiPhotoMovie; // @dynamic isKwaiPhotoMovie;
+@property(retain, nonatomic) KSEKwaiPhotoMovieParam *kwaiPhotoMovieParam; // @dynamic kwaiPhotoMovieParam;
+@property(retain, nonatomic) KSEColor *marginColor; // @dynamic marginColor;
 @property(nonatomic) unsigned int muteFlags; // @dynamic muteFlags;
-@property(nonatomic) double projectDuration; // @dynamic projectDuration;
-@property(nonatomic) double projectFps; // @dynamic projectFps;
-@property(nonatomic) int projectHeight; // @dynamic projectHeight;
+@property(retain, nonatomic) KSEColor *paddingColor; // @dynamic paddingColor;
+@property(retain, nonatomic) KSEVideoEditorProjectPrivate *privateData; // @dynamic privateData;
 @property(nonatomic) long long projectId; // @dynamic projectId;
-@property(nonatomic) int projectWidth; // @dynamic projectWidth;
+@property(nonatomic) int projectOutputHeight; // @dynamic projectOutputHeight;
+@property(nonatomic) int projectOutputWidth; // @dynamic projectOutputWidth;
 @property(retain, nonatomic) NSMutableArray *subAssetsArray; // @dynamic subAssetsArray;
 @property(readonly, nonatomic) unsigned long long subAssetsArray_Count; // @dynamic subAssetsArray_Count;
 @property(retain, nonatomic) KSETimeEffectParam *timeEffect; // @dynamic timeEffect;
+@property(retain, nonatomic) NSMutableArray *touchDataArray; // @dynamic touchDataArray;
+@property(readonly, nonatomic) unsigned long long touchDataArray_Count; // @dynamic touchDataArray_Count;
+@property(retain, nonatomic) KSETouchEffectParam *touchEffects; // @dynamic touchEffects;
 @property(retain, nonatomic) NSMutableArray *trackAssetsArray; // @dynamic trackAssetsArray;
 @property(readonly, nonatomic) unsigned long long trackAssetsArray_Count; // @dynamic trackAssetsArray_Count;
 @property(retain, nonatomic) NSMutableArray *visualEffectsArray; // @dynamic visualEffectsArray;

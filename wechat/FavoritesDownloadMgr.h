@@ -28,10 +28,12 @@
 @property(nonatomic) __weak id <FavoritesDownloadMgrDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
 - (void)ReachabilityChange:(unsigned int)arg1;
+- (void)checkWrongFileTypeError:(int)arg1 localDataId:(id)arg2 withDataList:(id)arg3;
 - (void)onDownloadFavItemFail:(id)arg1 LocalDataId:(id)arg2 errCode:(int)arg3;
 - (void)onDownloadFavItemSuccess:(id)arg1 LocalDataId:(id)arg2;
 - (void)onDownloadFavItem:(id)arg1 LocalDataId:(id)arg2 FinishedLength:(int)arg3 TotalLength:(int)arg4;
 - (void)onDownloadFail:(id)arg1 ErrCode:(int)arg2;
+- (_Bool)checkHasAsyncUploadingDataWithDataList:(id)arg1;
 - (void)onDownloadFinished:(id)arg1;
 - (id)getDownloadPausedItemList;
 - (id)getDownloadingItemList;
@@ -44,9 +46,11 @@
 - (_Bool)updateDownloadCdnInfo:(id)arg1;
 - (void)TryStartDownload;
 - (void)checkAndTryStartDownload;
+- (id)getNextDownloadCdnInfoByFavCheckId:(id)arg1 withLocalId:(unsigned int)arg2 withDataList:(id)arg3;
 - (id)getNextDownloadCdnInfoByFavCheckId:(id)arg1;
 - (void)setItemDownloadFail:(id)arg1 ErrCode:(int)arg2;
 - (_Bool)delDownloadItem:(id)arg1;
+- (_Bool)addDownloadItem:(id)arg1 withDataList:(id)arg2;
 - (_Bool)addDownloadItem:(id)arg1;
 - (_Bool)loadFailedQueue;
 - (_Bool)loadDownloadingQueue;

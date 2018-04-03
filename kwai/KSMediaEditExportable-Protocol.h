@@ -9,6 +9,7 @@
 @class NSString;
 
 @protocol KSMediaEditExportable <NSObject>
+- (NSString *)videoEncoderName;
 - (double)duration;
 - (struct CGSize)exportSize;
 - (NSString *)exportComment;

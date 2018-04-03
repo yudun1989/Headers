@@ -38,6 +38,7 @@
     UILongPressGestureRecognizer *_exitlongPressRecognizer;
     WAPopOverTaskBarlogic *_popOverLogic;
     WAPopOverView *_popOverView;
+    long long _fpsTestNum;
     long long _orientation;
     UIView *_inputBackground;
     id <WAGameKeyboardDelegate> _keyboardDelegate;
@@ -105,9 +106,9 @@
 - (void)setTitleInterfaceOritation:(long long)arg1;
 - (void)webViewDidFinishLoad:(id)arg1;
 - (void)initOpenGLView:(id)arg1;
-- (id)getWxAppInfoJSON;
 - (id)getAppLaunchConfig;
 - (void)internalInitWithBaseURL:(id)arg1 query:(id)arg2 extraInfo:(id)arg3 delegate:(id)arg4;
+- (void)printGameFPS;
 - (id)initWithBaseURL:(id)arg1 query:(id)arg2 extraInfo:(id)arg3 delegate:(id)arg4;
 - (void)textInputDidChange:(id)arg1;
 - (void)keyboardDidHideNotification:(id)arg1;

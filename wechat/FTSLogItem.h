@@ -28,6 +28,7 @@
     unsigned int _addressBookCount;
     unsigned int _weAppCount;
     unsigned int _miniGameCount;
+    unsigned int _sectionPos;
     unsigned int _resultCount;
     unsigned long long _row;
     unsigned long long _bussinessRow;
@@ -39,6 +40,7 @@
 
 @property(retain, nonatomic) NSString *query; // @synthesize query=_query;
 @property(nonatomic) unsigned int resultCount; // @synthesize resultCount=_resultCount;
+@property(nonatomic) unsigned int sectionPos; // @synthesize sectionPos=_sectionPos;
 @property(nonatomic) unsigned int miniGameCount; // @synthesize miniGameCount=_miniGameCount;
 @property(nonatomic) unsigned int weAppCount; // @synthesize weAppCount=_weAppCount;
 @property(nonatomic) unsigned int addressBookCount; // @synthesize addressBookCount=_addressBookCount;

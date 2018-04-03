@@ -4,39 +4,36 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-#import <objc/NSObject.h>
+#import "LYWState.h"
 
-#import "LYWStateType-Protocol.h"
+@class KSMusicItem, NSDictionary, NSString;
 
-@class KSMusicItem, NSString, NSURL;
-
-@interface KSMediaEditAudioState : NSObject <LYWStateType>
+@interface KSMediaEditAudioState : LYWState
 {
-    _Bool _originalAudio;
     float _originalVolume;
     float _bgmVolume;
-    unsigned long long _bgmIndex;
-    NSURL *_audioURL;
-    KSMusicItem *_cloudMusicItem;
+    long long _type;
+    long long _selectedIndex;
+    NSString *_audioPath;
+    KSMusicItem *_musicItem;
+    NSString *_title;
+    NSDictionary *_metadata;
+    NSString *_statisticalName;
+    NSString *_maxRecordDurationUUID;
 }
 
-@property(retain, nonatomic) KSMusicItem *cloudMusicItem; // @synthesize cloudMusicItem=_cloudMusicItem;
+@property(retain, nonatomic) NSString *maxRecordDurationUUID; // @synthesize maxRecordDurationUUID=_maxRecordDurationUUID;
+@property(retain, nonatomic) NSString *statisticalName; // @synthesize statisticalName=_statisticalName;
+@property(retain, nonatomic) NSDictionary *metadata; // @synthesize metadata=_metadata;
+@property(retain, nonatomic) NSString *title; // @synthesize title=_title;
+@property(retain, nonatomic) KSMusicItem *musicItem; // @synthesize musicItem=_musicItem;
 @property(nonatomic) float bgmVolume; // @synthesize bgmVolume=_bgmVolume;
 @property(nonatomic) float originalVolume; // @synthesize originalVolume=_originalVolume;
-@property(retain, nonatomic) NSURL *audioURL; // @synthesize audioURL=_audioURL;
-@property(nonatomic) unsigned long long bgmIndex; // @synthesize bgmIndex=_bgmIndex;
-@property(nonatomic) _Bool originalAudio; // @synthesize originalAudio=_originalAudio;
+@property(retain, nonatomic) NSString *audioPath; // @synthesize audioPath=_audioPath;
+@property(nonatomic) long long selectedIndex; // @synthesize selectedIndex=_selectedIndex;
+@property(nonatomic) long long type; // @synthesize type=_type;
 - (void).cxx_destruct;
-@property(readonly, copy) NSString *description;
-- (id)copyWithZone:(struct _NSZone *)arg1;
-@property(readonly) unsigned long long hash;
-- (_Bool)isEqualToState:(id)arg1;
-- (_Bool)isEqual:(id)arg1;
 - (id)init;
-
-// Remaining properties
-@property(readonly, copy) NSString *debugDescription;
-@property(readonly) Class superclass;
 
 @end
 

@@ -11,11 +11,12 @@
 
 @protocol WAAudioSource <NSObject>
 @property(nonatomic) __weak id <WAAudioSourceDelegate> delegate;
-@property(retain, nonatomic) NSString *audioId;
+@property(nonatomic) _Bool loop;
 @property(nonatomic) float currentTime;
 @property(nonatomic) float duration;
-@property(retain, nonatomic) NSString *path;
 @property(nonatomic) long long state;
+@property(copy, nonatomic) NSString *src;
+@property(copy, nonatomic) NSString *audioId;
 - (_Bool)isPaused;
 - (_Bool)isPlaying;
 - (void)setPlaybackRate:(float)arg1;
@@ -26,6 +27,6 @@
 - (void)forcePause;
 - (void)pause;
 - (void)play;
-- (id)initWithPath:(NSString *)arg1 filData:(NSData *)arg2;
+- (id)initWithAudioId:(NSString *)arg1 src:(NSString *)arg2 fileData:(NSData *)arg3;
 @end
 

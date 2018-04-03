@@ -36,6 +36,8 @@
 @property(retain, nonatomic) NSDictionary *dicSessionContentContext; // @synthesize dicSessionContentContext=_dicSessionContentContext;
 @property(nonatomic) unsigned long long enterScene; // @synthesize enterScene=_enterScene;
 - (void).cxx_destruct;
+- (void)fetchKFSessionInfo;
+- (id)getScanQrCodeBlackList;
 - (double)getCustomizedAreaWidth;
 - (void)onSessionContentViewDidBePoped;
 - (void)onClickQuickSendSessionMsgBtn:(id)arg1;

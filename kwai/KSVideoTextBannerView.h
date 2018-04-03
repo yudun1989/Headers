@@ -32,6 +32,7 @@
 - (void)textViewDidEndEditing:(id)arg1;
 - (void)touchesEnded:(id)arg1 withEvent:(id)arg2;
 - (void)touchesBegan:(id)arg1 withEvent:(id)arg2;
+- (void)didTapBanner;
 - (void)didLongPress:(id)arg1;
 - (void)didDragBanner:(id)arg1;
 - (id)initWithStorage:(id)arg1;

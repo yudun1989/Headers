@@ -10,7 +10,7 @@
 #import "MMUIViewControllerDelegate-Protocol.h"
 #import "UIGestureRecognizerDelegate-Protocol.h"
 
-@class MMDelegateProxy, MMLoadingView, MMTitleView, MMUINavigationBar, NSMutableArray, NSMutableDictionary, NSString, UIBarButtonItem, UIColor, UILabel, UINavigationController, UIResponder, UIView, WCEventTrackingSystemConfig;
+@class MMDelegateProxy, MMLoadingView, MMTitleView, MMUINavigationBar, NSMutableArray, NSMutableDictionary, NSString, UIBarButtonItem, UIColor, UILabel, UINavigationController, UIView, WCEventTrackingSystemConfig;
 @protocol UIGestureRecognizerDelegate;
 
 @interface MMUIViewController : UIViewController <IUiUtilExt, MMUIViewControllerDelegate, UIGestureRecognizerDelegate>
@@ -18,7 +18,6 @@
     _Bool m_isPopByClickingURL;
     MMLoadingView *m_loadingViewX;
     unsigned int m_uiVcType;
-    _Bool m_bKeyboardShowForGesture;
     UILabel *m_newsTitleRecordLabel;
     NSMutableArray *m_fullScreenViews;
     _Bool m_bAnimated;
@@ -32,11 +31,11 @@
     NSMutableDictionary *m_dicContentInsetAutolayout;
     NSMutableArray *m_arrEndUserOpInfo;
     MMDelegateProxy<UIGestureRecognizerDelegate> *m_interactivePopGestureRecognizerDelegate;
-    UIResponder *previousResponder;
     UIBarButtonItem *m_leftBarBtnItem;
     UIBarButtonItem *m_rightBarBtnItem;
     UIColor *m_titleColor;
     MMUINavigationBar *fakeNaviView;
+    UIView *m_navHeaderView;
     _Bool m_hasAppear;
     _Bool _m_bAnimating;
     _Bool _m_bStopPopWhenDeleteContact;
@@ -52,12 +51,10 @@
 @property(nonatomic) __weak UIViewController *presentedModalViewController; // @synthesize presentedModalViewController=_presentedModalViewController;
 @property(nonatomic) __weak UIViewController *presentingModalViewController; // @synthesize presentingModalViewController=_presentingModalViewController;
 @property(retain, nonatomic) NSMutableArray *m_arrEndUserOpInfo; // @synthesize m_arrEndUserOpInfo;
-@property(nonatomic) __weak UIResponder *previousResponder; // @synthesize previousResponder;
 @property(nonatomic) _Bool m_bDisableAdjustInsetAndOffset; // @synthesize m_bDisableAdjustInsetAndOffset;
 @property(nonatomic) _Bool m_bInteractivePopEnabled; // @synthesize m_bInteractivePopEnabled;
 @property(nonatomic) _Bool m_bIsBeingPoped; // @synthesize m_bIsBeingPoped;
 @property(nonatomic) _Bool m_bAnimated; // @synthesize m_bAnimated;
-@property(retain, nonatomic) NSMutableArray *m_fullScreenViews; // @synthesize m_fullScreenViews;
 @property(retain, nonatomic) UIView *bottomView; // @synthesize bottomView;
 @property(retain, nonatomic) UILabel *m_newsTitleRecordLabel; // @synthesize m_newsTitleRecordLabel;
 @property(nonatomic) unsigned int m_uiVcType; // @synthesize m_uiVcType;
@@ -71,18 +68,12 @@
 - (id)getVCWithDeepLinkName:(id)arg1;
 - (void)setDeepLinkParam:(id)arg1;
 - (void)initDeepLinkConfig;
-- (void)safeSetEdgesForExtendedLayout:(unsigned long long)arg1;
 - (_Bool)gestureRecognizer:(id)arg1 shouldBeRequiredToFailByGestureRecognizer:(id)arg2;
 - (_Bool)gestureRecognizer:(id)arg1 shouldRequireFailureOfGestureRecognizer:(id)arg2;
-- (_Bool)shouldEnableKeyboardInteractivePop;
 - (_Bool)shouldInteractivePop;
 - (_Bool)gestureRecognizerShouldBegin:(id)arg1;
 - (_Bool)interactivePopGestureRecognizerShouldBegin:(id)arg1;
 - (_Bool)gestureRecognizer:(id)arg1 shouldReceiveTouch:(id)arg2;
-- (void)traitCollectionDidChange:(id)arg1;
-- (void)keyboardDidHide:(id)arg1;
-- (void)keyboardWillShow:(id)arg1;
-- (void)didEndEditing:(id)arg1;
 - (void)didBeginEditing:(id)arg1;
 - (_Bool)isSubviewResponder:(id)arg1;
 - (void)resignSubviewResponder:(id)arg1;
@@ -116,8 +107,6 @@
 - (void)removeDuplicateBarButton;
 - (void)didMoveToParentViewController:(id)arg1;
 - (void)viewWillAppear:(_Bool)arg1;
-- (void)beginAppearanceTransition:(_Bool)arg1 animated:(_Bool)arg2;
-- (void)willAppearanceTransition;
 - (_Bool)isPresentedIn;
 - (_Bool)isPushedIn;
 - (id)tagForCurrentPage;
@@ -141,9 +130,6 @@
 - (void)setStatusBarHidden:(_Bool)arg1;
 - (void)setTopBarsHidden:(_Bool)arg1 animated:(_Bool)arg2;
 - (void)changeTopBarsHiddenAnimated:(_Bool)arg1;
-- (void)postNotification;
-- (void)setOutLine:(_Bool)arg1;
-- (void)setSubView:(id)arg1 OutLine:(_Bool)arg2;
 - (double)tableView:(id)arg1 heightForFooterInSection:(long long)arg2;
 - (double)tableView:(id)arg1 heightForHeaderInSection:(long long)arg2;
 - (id)tableView:(id)arg1 viewForFooterInSection:(long long)arg2;
@@ -165,14 +151,9 @@
 - (void)adjustView;
 - (void)willAppear;
 - (void)setIsPopByClickingURL;
-- (void)handleUrl:(id)arg1 DisableFirstGetA8Key:(_Bool)arg2 extraInfo:(id)arg3;
 - (void)restoreNavigationBarBkg;
 - (void)removeNavigationBarBkg;
 - (void)onMainWindowFrameChanged;
-- (void)RemoveFullScreenViewList;
-- (void)AddViewToFullScreenViewList:(id)arg1;
-- (void)onTopBarFrameChanged;
-- (void)ReLayoutFullScreenViews;
 - (void)viewDidLayoutSubviews;
 - (void)viewDidTransitionToNewSize;
 - (void)setAutolayoutTopOffset:(double)arg1 forView:(id)arg2;
@@ -191,7 +172,6 @@
 - (void)viewDidLoad;
 - (_Bool)accessibilityPerformEscape;
 - (void)disMissSelf;
-- (void)windowCancelCover;
 - (_Bool)prefersHomeIndicatorAutoHidden;
 - (void)adjustViewAndNavBarRect;
 - (void)adjustSubviewRects;

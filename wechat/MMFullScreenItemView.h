@@ -8,7 +8,7 @@
 
 #import "FavSightViewDelegate-Protocol.h"
 
-@class FavSightView, MMUILabel, MMWebImageView, NSString, SightIconView, SimpleImgInfo, UIImageView;
+@class FavSightView, MMUILabel, MMWebImageView, NSString, SightIconView, SimpleImgInfo;
 @protocol FavSightViewDelegate;
 
 @interface MMFullScreenItemView : UIView <FavSightViewDelegate>
@@ -17,8 +17,7 @@
     MMUILabel *m_hintLabel;
     _Bool m_isItemShowing;
     FavSightView *sightView;
-    UIImageView *imageView;
-    MMWebImageView *gifView;
+    MMWebImageView *imageView;
     _Bool _isReady;
     SimpleImgInfo *_imgInfo;
     id <FavSightViewDelegate> _delegate;

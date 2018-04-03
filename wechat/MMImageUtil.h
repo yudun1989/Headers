@@ -10,6 +10,7 @@
 {
 }
 
++ (id)generateVideoThumbImageWithAsset:(id)arg1 atTime:(double)arg2;
 + (id)generateVideoThumbImage:(id)arg1 atTime:(double)arg2;
 + (id)genarateOriginImageDataFromUIImage:(id)arg1;
 + (unsigned int)getCGIOrientationFromImage:(id)arg1;

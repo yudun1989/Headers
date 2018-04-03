@@ -20,6 +20,7 @@
 @property(nonatomic) __weak LYWStore *store; // @synthesize store=_store;
 @property(retain, nonatomic) id <LYWMiddleware> next; // @synthesize next=_next;
 - (void).cxx_destruct;
+- (void)dealloc;
 - (id)dispatchAction:(id)arg1;
 
 // Remaining properties

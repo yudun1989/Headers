@@ -4,7 +4,7 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-#import <UIKit/UIButton.h>
+#import <UIKit/UIView.h>
 
 #import "UICollectionViewDataSource-Protocol.h"
 #import "UICollectionViewDelegate-Protocol.h"
@@ -12,7 +12,7 @@
 @class ABTestItem, MMTimer, NSArray, NSString, UICollectionView, UICollectionViewFlowLayout;
 @protocol MMQuickSendEmoticonViewDelegate;
 
-@interface MMQuickSendEmoticonView : UIButton <UICollectionViewDelegate, UICollectionViewDataSource>
+@interface MMQuickSendEmoticonView : UIView <UICollectionViewDelegate, UICollectionViewDataSource>
 {
     UICollectionView *m_collectionView;
     UICollectionViewFlowLayout *m_collectionLayout;

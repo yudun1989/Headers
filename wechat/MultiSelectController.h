@@ -103,7 +103,7 @@
 - (void)addMultiMsgToMyFav:(id)arg1 WithUserName:(id)arg2;
 - (void)addMsgListToFavInternal;
 - (void)CheckMsgForFavAdd;
-- (_Bool)canBeAddToFav:(id)arg1;
+- (_Bool)canBeAddToFav:(id)arg1 singleMsg:(_Bool)arg2;
 - (void)EndMultiEdit;
 - (id)getMultiMsgWithMsgIDList:(id)arg1 AndUserName:(id)arg2;
 - (void)Reset;

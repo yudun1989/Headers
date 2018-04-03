@@ -45,7 +45,6 @@
 - (_Bool)HasMoreDetailList;
 - (void)WCRedEnvelopesRedEnvelopesDetailViewControllerBack;
 - (id)gotoViewController:(Class)arg1 withData:(id)arg2 Present:(_Bool)arg3 Animation:(_Bool)arg4;
-- (void)onFailMsg:(id)arg1;
 - (void)onFailMsgAndStopLogic:(id)arg1;
 - (void)OnFaceHBGetLogicCancel;
 - (void)stopLogic;

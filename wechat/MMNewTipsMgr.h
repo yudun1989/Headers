@@ -32,11 +32,12 @@
 - (void)registerDynamicTips:(unsigned int)arg1 FilterClass:(id)arg2 Path:(id)arg3;
 - (void)registerDynamicTips:(unsigned int)arg1;
 - (void)registerLocalTips:(unsigned int)arg1 Version:(unsigned int)arg2 Key:(id)arg3;
-- (void)checkPointPathWithPathKey:(id)arg1;
-- (id)getPathDicWithPathKey:(id)arg1;
 - (id)getNewTipsInfoWithId:(unsigned int)arg1;
 - (void)reportPageStayTimeWithTipsId:(unsigned int)arg1;
 - (void)disposeTipsWithId:(unsigned int)arg1;
+- (void)onClickRedPathPointWithKey:(id)arg1;
+- (id)getPathDicWithPathKey:(id)arg1;
+- (void)checkPointPathWithPathKey:(id)arg1;
 - (void)disposeRedPathPointWithKey:(id)arg1;
 - (_Bool)canShowRedPathPointWithKey:(id)arg1;
 - (void)dealloc;

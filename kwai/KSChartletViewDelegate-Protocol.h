@@ -6,7 +6,7 @@
 
 #import "NSObject-Protocol.h"
 
-@class UIView;
+@class UITextView, UIView;
 @protocol KSChartletView;
 
 @protocol KSChartletViewDelegate <NSObject>
@@ -17,6 +17,8 @@
 - (void)didSelectChartletView:(UIView<KSChartletView> *)arg1;
 
 @optional
+- (void)textViewDidBeginEditing:(UITextView *)arg1;
+- (void)onMovingChartletView:(UIView<KSChartletView> *)arg1;
 - (void)textDidChangeOfChartletView:(UIView<KSChartletView> *)arg1;
 @end
 

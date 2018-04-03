@@ -6,15 +6,22 @@
 
 #import <objc/NSObject.h>
 
+@class NSMutableDictionary;
+
 @interface SessionMenuAdjuester : NSObject
 {
     double _systemFontSize;
     double _textFontSize;
+    NSMutableDictionary *_fontDic;
 }
 
 + (id)sharedSessionMenuAdjuester;
+@property(retain, nonatomic) NSMutableDictionary *fontDic; // @synthesize fontDic=_fontDic;
 @property(nonatomic) double textFontSize; // @synthesize textFontSize=_textFontSize;
 @property(nonatomic) double systemFontSize; // @synthesize systemFontSize=_systemFontSize;
+- (void).cxx_destruct;
+- (id)GetPathOfSystemMenuFontDic;
+- (void)syncSystemMenuFontDicToFile;
 - (_Bool)isMenuItemBtn:(id)arg1 MenuItems:(id)arg2;
 - (double)getMenuFontSizeWithSystemFontSize:(double)arg1;
 - (double)getTotalTitleWidthWithMenus:(id)arg1;

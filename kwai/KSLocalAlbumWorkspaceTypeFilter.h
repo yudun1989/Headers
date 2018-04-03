@@ -11,7 +11,7 @@
     int _type;
 }
 
-+ (Class)effectClass;
++ (Class)filterClass;
 @property(nonatomic) int type; // @synthesize type=_type;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;

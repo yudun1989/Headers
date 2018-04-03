@@ -398,11 +398,14 @@
 - (id)getTabChildWebViewWithRelativeURL:(id)arg1;
 - (id)getParentTabViewController;
 - (void)setTailBackGroundColor:(id)arg1;
+- (void)setWebViewTopViewColor:(id)arg1;
+- (void)setWebViewBackgroundColor:(id)arg1;
 - (_Bool)getFullScreen;
 - (void)setFullScreen:(_Bool)arg1;
 - (void)disableFullScreen;
 - (void)enableFullScreen;
-- (void)adjustCustomNavBar:(double)arg1;
+- (void)setCustomNavBarOffset:(double)arg1;
+- (double)getCustomNavBarOffset;
 - (void)setNavLoading:(_Bool)arg1;
 - (void)setNavRightButtonHidden:(_Bool)arg1;
 - (void)setNavTitle:(id)arg1;

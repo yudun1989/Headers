@@ -7,15 +7,13 @@
 #import "WNParaObjectBaseView.h"
 
 #import "FavFullScreenImageViewControllerDelegate-Protocol.h"
-#import "MMWebImageViewDelegate-Protocol.h"
 #import "WNParaImageViewDelegate-Protocol.h"
 
-@class FavFullScreenImageViewController, MMWebImageView, NSString, WNParaImageView;
+@class FavFullScreenImageViewController, NSString, WNParaImageView;
 
-@interface WNParaObjectImageView : WNParaObjectBaseView <MMWebImageViewDelegate, FavFullScreenImageViewControllerDelegate, WNParaImageViewDelegate>
+@interface WNParaObjectImageView : WNParaObjectBaseView <FavFullScreenImageViewControllerDelegate, WNParaImageViewDelegate>
 {
     WNParaImageView *m_imageView;
-    MMWebImageView *m_gifView;
     NSString *_localImagePath;
     FavFullScreenImageViewController *_favImageVC;
 }
@@ -24,7 +22,6 @@
 - (void).cxx_destruct;
 - (void)onFavFullScreenEditImageAt:(unsigned int)arg1 withImage:(id)arg2;
 - (void)onLoadComplete:(id)arg1 SourcePath:(id)arg2;
-- (void)onLoadImageOK:(id)arg1;
 - (void)onLongPressObject;
 - (void)onEdit:(id)arg1;
 - (void)openImageWithEdit:(_Bool)arg1;

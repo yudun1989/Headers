@@ -37,14 +37,12 @@
 + (id)mediaListFromXmlNode:(struct XmlReaderNode_t *)arg1;
 + (id)mediaItemFromXmlNode:(struct XmlReaderNode_t *)arg1;
 + (id)urlFromXmlNode:(struct XmlReaderNode_t *)arg1;
-+ (void)setVideoFlowInfo:(id)arg1 byXmlNode:(struct XmlReaderNode_t *)arg2;
 + (void)setWeAppInfo:(id)arg1 byXmlNode:(struct XmlReaderNode_t *)arg2;
 + (void)setStreamVideoInfo:(id)arg1 byXmlNode:(struct XmlReaderNode_t *)arg2;
 + (void)setMusicInfo:(id)arg1 byXmlNode:(struct XmlReaderNode_t *)arg2;
 + (void)setActionInfo:(id)arg1 byXmlNode:(struct XmlReaderNode_t *)arg2;
 + (void)setAppInfo:(id)arg1 byXmlNode:(struct XmlReaderNode_t *)arg2;
 + (void)setLocationInfo:(id)arg1 byXmlNode:(struct XmlReaderNode_t *)arg2;
-+ (id)xmlOfVideoFlowInfo:(id)arg1;
 + (id)xmlOfStreamVideoInfo:(id)arg1;
 + (id)xmlOfWeAppInfo:(id)arg1;
 + (id)xmlOfMusicInfo:(id)arg1;

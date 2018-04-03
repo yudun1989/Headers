@@ -384,6 +384,7 @@ struct AVCodecContext {
     unsigned int _field202;
     struct AVPacketSideData *_field203;
     int _field204;
+    int _field205;
 };
 
 struct AVCodecDefault;
@@ -605,13 +606,6 @@ struct AVFrame {
     int _field46;
     struct AVBufferRef *_field47;
     double _field48;
-};
-
-struct AVFrameRgbaTextureConverter {
-    struct ShaderProgramPool *_field1;
-    struct SwsContext *_field2;
-    struct unique_ptr<AVFrame, void (*)(AVFrame *)> _field3;
-    struct __CVOpenGLESTextureCache *_field4;
 };
 
 struct AVFrameSideData;
@@ -866,8 +860,6 @@ struct AudioFrameDesc {
     int _field4;
 };
 
-struct AudioPlay;
-
 struct AudioQueueBuffer {
     unsigned int _field1;
     void *_field2;
@@ -932,28 +924,6 @@ struct BlockingQueue<double> {
     int _field6;
     _Bool _field7;
     struct function<double ()> _field8;
-};
-
-struct BlockingQueue<kuaishou::editorsdk2::ThumbnailJob> {
-    CDUnknownFunctionPointerType *_field1;
-    struct vector<kuaishou::editorsdk2::ThumbnailJob, std::__1::allocator<kuaishou::editorsdk2::ThumbnailJob>> _field2;
-    struct mutex _field3;
-    struct condition_variable _field4;
-    struct condition_variable _field5;
-    int _field6;
-    _Bool _field7;
-    struct function<kuaishou::editorsdk2::ThumbnailJob ()> _field8;
-};
-
-struct BlockingQueue<std::__1::unique_ptr<AVFrame, void (*)(AVFrame *)>> {
-    CDUnknownFunctionPointerType *_field1;
-    struct vector<std::__1::unique_ptr<AVFrame, void (*)(AVFrame *)>, std::__1::allocator<std::__1::unique_ptr<AVFrame, void (*)(AVFrame *)>>> _field2;
-    struct mutex _field3;
-    struct condition_variable _field4;
-    struct condition_variable _field5;
-    int _field6;
-    _Bool _field7;
-    struct function<std::__1::unique_ptr<AVFrame, void (*)(AVFrame *)>()> _field8;
 };
 
 struct BorderOp;
@@ -1780,24 +1750,7 @@ struct CGSize {
     double height;
 };
 
-struct CKSAssetRenderRange {
-    long long _field1;
-    int _field2;
-    int _field3;
-};
-
 struct CKSCNNModeInfo;
-
-struct CKSEffectRange;
-
-struct CKSForUIOper {
-    struct KSAProject _field1;
-    struct KSAPlayInfo _field2;
-    _Bool _field3;
-    _Bool _field4;
-    struct _opaque_pthread_mutex_t _field5;
-    struct _opaque_pthread_mutex_t _field6;
-};
 
 struct CKSHandGestureDetect;
 
@@ -1807,17 +1760,10 @@ struct CKSMPSRender;
 
 struct CKSModelBase;
 
-struct CKSProject;
-
 struct CKSTimeAverage {
     vector_3f7ffb82 m_Data;
     int m_MaxNum;
     long long mIndex;
-};
-
-struct CKSTimeRange {
-    double _field1;
-    double _field2;
 };
 
 struct CKSTimeShow {
@@ -1982,17 +1928,9 @@ struct ChangeRoleDelegate<tencent::av::AVRoomProxy>;
 
 struct ChangeRoleTotallyDelegate<tencent::av::AVRoomProxy>;
 
-struct ColorFilterParam {
-    CDUnknownFunctionPointerType *_field1;
-    struct ArenaStringPtr _field2;
-    struct Arena *_field3;
-    _Bool _field4;
-    double _field5;
-    unsigned long long _field6;
-    struct RepeatedPtrField<std::__1::basic_string<char>> _field7;
-    int _field8;
-    int _field9;
-};
+struct Color;
+
+struct ColorFilterParam;
 
 struct CopyMesh {
     struct function<std::__1::vector<float, std::__1::allocator<float>>()> _positionBufferCallback;
@@ -2041,15 +1979,13 @@ struct DepthProc {
 
 struct DilationOp;
 
-struct EditorSdkError {
+struct EglObject {
     CDUnknownFunctionPointerType *_field1;
-    struct ArenaStringPtr _field2;
-    struct Arena *_field3;
-    _Bool _field4;
-    struct ArenaStringPtr _field5;
-    int _field6;
-    int _field7;
-    int _field8;
+    void *_field2;
+    int _field3;
+    int _field4;
+    _Bool _field5;
+    struct shared_ptr<std::__1::mutex> _field6;
 };
 
 struct EncoderAdapter {
@@ -2080,27 +2016,11 @@ struct ExpansionInfo {
     id _field4;
 };
 
-struct ExportOptions {
-    CDUnknownFunctionPointerType *_field1;
-    struct ArenaStringPtr _field2;
-    struct Arena *_field3;
-    _Bool _field4;
-    int _field5;
-    int _field6;
-    long long _field7;
-    int _field8;
-    int _field9;
-    struct ArenaStringPtr _field10;
-    struct ArenaStringPtr _field11;
-    struct Rational *_field12;
-    long long _field13;
-    int _field14;
-    int _field15;
-    unsigned long long _field16;
-    struct ArenaStringPtr _field17;
-    int _field18;
-    int _field19;
+struct ExportTaskQueue {
+    struct unique_ptr<kuaishou::editorsdk2::ExportTaskQueueImpl, std::__1::default_delete<kuaishou::editorsdk2::ExportTaskQueueImpl>> _field1;
 };
+
+struct ExportTaskQueueImpl;
 
 struct FBOState;
 
@@ -2528,67 +2448,16 @@ struct JKTokenValue {
 
 struct JointBilateralOp;
 
-struct KSAAsset;
-
-struct KSAPlayInfo {
-    long long _field1;
-    _Bool _field2;
-    float _field3;
-    float _field4;
-    float _field5;
-    int _field6;
-    long long _field7;
-    int _field8;
-    long long _field9;
-    _Bool _field10;
-    long long _field11;
-    long long _field12;
-    double _field13;
-    int _field14;
+struct KSAdvEditTimeLineSliderItemAdapter {
+    Class _field1;
 };
 
-struct KSAProject {
-    int _field1;
-    int _field2;
-    int _field3;
-    int _field4;
-    int _field5;
-    float _field6;
-    float _field7;
-    long long _field8;
-    basic_string_a490aa4c _field9;
-    long long _field10;
-    _Bool _field11;
-    _Bool _field12;
-    _Bool _field13;
-    _Bool _field14;
-    float _field15;
-    basic_string_a490aa4c _field16;
-    float _field17;
-    _Bool _field18;
-    _Bool _field19;
-    _Bool _field20;
-    _Bool _field21;
-    _Bool _field22;
-    _Bool _field23;
-    _Bool _field24;
-    _Bool _field25;
-    float _field26;
-    struct vector<KSAAsset *, std::__1::allocator<KSAAsset *>> _field27;
-    struct vector<KSAAsset *, std::__1::allocator<KSAAsset *>> _field28;
-    struct vector<KSAAsset *, std::__1::allocator<KSAAsset *>> _field29;
-    struct vector<KSAAsset *, std::__1::allocator<KSAAsset *>> _field30;
-    struct vector<KSAAsset *, std::__1::allocator<KSAAsset *>> _field31;
-    struct KSAAsset *_field32;
-    basic_string_a490aa4c _field33;
-    struct vector<CKSTimeRange, std::__1::allocator<CKSTimeRange>> _field34;
-    struct vector<CKSEffectRange, std::__1::allocator<CKSEffectRange>> _field35;
-    int _field36;
-    struct CKSTimeRange _field37;
-    double _field38;
-    int _field39;
-    int _field40;
-    int _field41;
+struct KSAdvEditTimeLineSliderStyle {
+    Class _field1;
+};
+
+struct KSAtlasEditCollectionAtlasPageContentViewController {
+    Class _field1;
 };
 
 struct KSBinaryNet {
@@ -2694,6 +2563,10 @@ struct KSBinaryNet {
 
 struct KSCNNPoseInfo;
 
+struct KSChartletBottomDetailView {
+    Class _field1;
+};
+
 struct KSDescParam {
     int strideX;
     int strideY;
@@ -2708,47 +2581,6 @@ struct KSDescParam {
     struct vector<float, std::__1::allocator<float>> weights;
     struct vector<float, std::__1::allocator<float>> biases;
     _Bool depthwise;
-};
-
-struct KSEBeautyWrapper;
-
-struct KSEditorProjectObj {
-    int _field1;
-    int _field2;
-    int _field3;
-    long long _field4;
-    _Bool _field5;
-    float _field6;
-    float _field7;
-    float _field8;
-    int _field9;
-    int _field10;
-    long long _field11;
-    long long _field12;
-    _Bool _field13;
-    _Bool _field14;
-    float _field15;
-    float _field16[12];
-    float _field17[8];
-    int _field18;
-    int _field19;
-    int _field20;
-    int _field21;
-    _Bool _field22;
-    int _field23;
-    int _field24;
-    int _field25;
-    long long _field26;
-    long long _field27;
-    int _field28;
-    int _field29;
-    double _field30;
-    double _field31;
-    double _field32;
-    double _field33;
-    int _field34;
-    struct vector<KSPlaybackEvent, std::__1::allocator<KSPlaybackEvent>> _field35;
-    struct CKSProject *_field36;
 };
 
 struct KSGestureInfo;
@@ -2806,6 +2638,10 @@ struct KSLiveGiftEdge {
 
 struct KSLiveHeartGPUInstance;
 
+struct KSMediaEditActivityController {
+    Class _field1;
+};
+
 struct KSNetRenderParam {
     int _field1;
     _Bool _field2;
@@ -2815,6 +2651,10 @@ struct KSNetRenderParam {
     _Bool _field6;
     _Bool _field7;
     _Bool _field8;
+};
+
+struct KSPicturesCoverSlider {
+    Class _field1;
 };
 
 struct KSPopoverSize {
@@ -2829,11 +2669,8 @@ struct KSPoseOut {
     struct vector<KSPoseInfo, std::__1::allocator<KSPoseInfo>> _field1;
 };
 
-struct KSRect {
-    float _field1;
-    float _field2;
-    float _field3;
-    float _field4;
+struct KSPostPhotosNavigationTitleLabel {
+    Class _field1;
 };
 
 struct KSRenderCallbackCtx {
@@ -2856,6 +2693,10 @@ struct KSUIDCSpeedTester {
 };
 
 struct KSUIDCTestRequestGenerator;
+
+struct KSValueLabelSlider {
+    Class _field1;
+};
 
 struct KSYStreamerBaseMetricSnapshot {
     Class _field1;
@@ -2921,12 +2762,7 @@ struct KsyQosInfo {
     char *_field29;
 };
 
-struct LRUFrameCache {
-    struct mutex _field1;
-    unsigned long long _field2;
-    struct unordered_map<long long, std::__1::__list_iterator<kuaishou::editorsdk2::LRUFrameCache::Item, void *>, std::__1::hash<long long>, std::__1::equal_to<long long>, std::__1::allocator<std::__1::pair<const long long, std::__1::__list_iterator<kuaishou::editorsdk2::LRUFrameCache::Item, void *>>>> _field3;
-    struct list<kuaishou::editorsdk2::LRUFrameCache::Item, std::__1::allocator<kuaishou::editorsdk2::LRUFrameCache::Item>> _field4;
-};
+struct KwaiPhotoMovieParam;
 
 struct LiquidationPath {
     int _field1[24];
@@ -3192,84 +3028,10 @@ struct NSArray {
     Class _field1;
 };
 
-struct NativeExportTask {
-    CDUnknownFunctionPointerType *_field1;
-    int _field2;
-    int _field3;
-    _Bool _field4;
-    _Bool _field5;
-    _Bool _field6;
-    struct ExportOptions _field7;
-    struct TrackVideoDecodeService _field8;
-    struct TrackAudioDecodeService _field9;
-    struct SubAssetDecodeService _field10;
-    struct SubAssetRenderRangeBuilder _field11;
-    struct function<void (kuaishou::editorsdk2::model::ExportEvent)> _field12;
-    basic_string_a490aa4c _field13;
-    basic_string_a490aa4c _field14;
-    struct VideoColorProperties _field15;
-    struct mutex _field16;
-    struct thread _field17;
-    struct BlockingQueue<std::__1::unique_ptr<AVFrame, void (*)(AVFrame *)>> _field18;
-    struct thread _field19;
-    struct condition_variable _field20;
-    struct VideoEditorProject _field21;
-    struct PerfLogger _field22;
-    struct EditorSdkError _field23;
-    struct function<void (unsigned char *, unsigned char *, const kuaishou::editorsdk2::model::FrameBeautyDesc &, int *)> _field24;
-};
+struct NativeExportTask;
 
-struct NativePreviewPlayer {
+struct NativeThumbnailGeneratorInterface {
     CDUnknownFunctionPointerType *_field1;
-    struct TrackAudioDecodeService _field2;
-    _Bool _field3;
-    struct EditorSdkError _field4;
-    _Bool _field5;
-    _Bool _field6;
-    struct mutex _field7;
-    _Bool _field8;
-    _Bool _field9;
-    _Bool _field10;
-    _Bool _field11;
-    int _field12;
-    _Bool _field13;
-    _Bool _field14;
-    double _field15;
-    _Bool _field16;
-    int _field17;
-    struct PerfLogger _field18;
-    struct VideoEditorProject _field19;
-    struct ProjectRenderer _field20;
-    struct TrackVideoDecodeService _field21;
-    struct SubAssetDecodeService _field22;
-    struct RefClock _field23;
-    struct unique_ptr<AudioPlay, std::__1::default_delete<AudioPlay>> _field24;
-    struct TimeMessageCenter _field25;
-    struct function<void (kuaishou::editorsdk2::model::PerfEntry)> _field26;
-    struct function<void (kuaishou::editorsdk2::model::PreviewEvent)> _field27;
-    basic_string_a490aa4c _field28;
-};
-
-struct NativeThumbnailGenerator {
-    CDUnknownFunctionPointerType *_field1;
-    struct VideoEditorProject _field2;
-    struct TrackVideoDecodeService _field3;
-    struct SubAssetDecodeService _field4;
-    struct ProjectRenderer _field5;
-    struct unique_ptr<SwsContext, void (*)(SwsContext *)> _field6;
-    struct LRUFrameCache _field7;
-    struct BlockingQueue<kuaishou::editorsdk2::ThumbnailJob> _field8;
-    struct mutex _field9;
-    struct mutex _field10;
-    struct condition_variable _field11;
-    struct thread _field12;
-    double _field13;
-    int _field14;
-    int _field15;
-    int _field16;
-    int _field17;
-    _Bool _field18;
-    _Bool _field19;
 };
 
 struct Network;
@@ -3298,16 +3060,6 @@ struct ParseResult {
 };
 
 struct PassThroughOp;
-
-struct PerfLogger {
-    CDUnknownFunctionPointerType *_field1;
-    struct map<std::__1::basic_string<char>, std::__1::vector<double, std::__1::allocator<double>>, std::__1::less<std::__1::basic_string<char>>, std::__1::allocator<std::__1::pair<const std::__1::basic_string<char>, std::__1::vector<double, std::__1::allocator<double>>>>> _field2;
-    struct map<std::__1::basic_string<char>, std::__1::function<void (kuaishou::editorsdk2::model::PerfEntry)>, std::__1::less<std::__1::basic_string<char>>, std::__1::allocator<std::__1::pair<const std::__1::basic_string<char>, std::__1::function<void (kuaishou::editorsdk2::model::PerfEntry)>>>> _field3;
-    struct mutex _field4;
-    struct condition_variable _field5;
-    struct thread _field6;
-    _Bool _field7;
-};
 
 struct Plane {
     struct Mat {
@@ -3484,31 +3236,6 @@ struct ProgramObject {
     unsigned int m_programID;
 };
 
-struct ProjectRenderer {
-    _Bool _field1;
-    int _field2;
-    int _field3;
-    int _field4;
-    int _field5;
-    int _field6;
-    int _field7;
-    int _field8;
-    struct unordered_map<unsigned long long, bool, std::__1::hash<unsigned long long>, std::__1::equal_to<unsigned long long>, std::__1::allocator<std::__1::pair<const unsigned long long, bool>>> _field9;
-    struct mutex _field10;
-    struct VideoEditorProject _field11;
-    struct VideoColorProperties _field12;
-    struct ShaderProgramPool _field13;
-    struct unique_ptr<AVFrame, void (*)(AVFrame *)> _field14;
-    struct AVFrameRgbaTextureConverter _field15;
-    struct unique_ptr<kuaishou::editorsdk2::KSEBeautyWrapper, std::__1::default_delete<kuaishou::editorsdk2::KSEBeautyWrapper>> _field16;
-    struct ColorFilterParam _field17;
-    float _field18;
-    struct PerfLogger *_field19;
-    struct function<void (unsigned char *, unsigned char *, const kuaishou::editorsdk2::model::FrameBeautyDesc &, int *)> _field20;
-    basic_string_a490aa4c _field21;
-    basic_string_a490aa4c _field22;
-};
-
 struct Property {
     float leftEyeGap;
     float rightEyeGap;
@@ -3543,8 +3270,6 @@ struct QAVAudioFrameDesc {
 
 struct RGB2YUVOp;
 
-struct Rational;
-
 struct RcOverride;
 
 struct Rect {
@@ -3562,16 +3287,22 @@ struct RefClock {
     unsigned long long _field5;
     _Bool _field6;
     _Bool _field7;
-    struct mutex _field8;
+    double _field8;
+    struct mutex _field9;
 };
-
-struct RenderRange;
 
 struct RenderTexture;
 
 struct Rep;
 
 struct RepeatedPtrField<kuaishou::editorsdk2::model::AudioAsset> {
+    struct Arena *_field1;
+    int _field2;
+    int _field3;
+    struct Rep *_field4;
+};
+
+struct RepeatedPtrField<kuaishou::editorsdk2::model::MagicTouchOverall> {
     struct Arena *_field1;
     int _field2;
     int _field3;
@@ -3600,13 +3331,6 @@ struct RepeatedPtrField<kuaishou::editorsdk2::model::TrackAsset> {
 };
 
 struct RepeatedPtrField<kuaishou::editorsdk2::model::VisualEffectParam> {
-    struct Arena *_field1;
-    int _field2;
-    int _field3;
-    struct Rep *_field4;
-};
-
-struct RepeatedPtrField<std::__1::basic_string<char>> {
     struct Arena *_field1;
     int _field2;
     int _field3;
@@ -3796,33 +3520,6 @@ struct ShaderObject {
     unsigned int m_shaderType;
     unsigned int m_shaderID;
 };
-
-struct ShaderProgram;
-
-struct ShaderProgramCopyBgra;
-
-struct ShaderProgramCopyRgba;
-
-struct ShaderProgramMix;
-
-struct ShaderProgramNv12ToRgba;
-
-struct ShaderProgramPool {
-    struct unique_ptr<kuaishou::editorsdk2::ShaderProgram, std::__1::default_delete<kuaishou::editorsdk2::ShaderProgram>> _field1;
-    struct unique_ptr<kuaishou::editorsdk2::ShaderProgramShowProject, std::__1::default_delete<kuaishou::editorsdk2::ShaderProgramShowProject>> _field2;
-    struct unique_ptr<kuaishou::editorsdk2::ShaderProgramYuv420ToRgb, std::__1::default_delete<kuaishou::editorsdk2::ShaderProgramYuv420ToRgb>> _field3;
-    struct unique_ptr<kuaishou::editorsdk2::ShaderProgramNv12ToRgba, std::__1::default_delete<kuaishou::editorsdk2::ShaderProgramNv12ToRgba>> _field4;
-    struct unique_ptr<kuaishou::editorsdk2::ShaderProgramCopyRgba, std::__1::default_delete<kuaishou::editorsdk2::ShaderProgramCopyRgba>> _field5;
-    struct unique_ptr<kuaishou::editorsdk2::ShaderProgramCopyBgra, std::__1::default_delete<kuaishou::editorsdk2::ShaderProgramCopyBgra>> _field6;
-    struct unique_ptr<kuaishou::editorsdk2::ShaderProgramMix, std::__1::default_delete<kuaishou::editorsdk2::ShaderProgramMix>> _field7;
-    basic_string_a490aa4c _field8;
-    struct list<std::__1::pair<kuaishou::editorsdk2::model::ColorFilterParam, std::__1::unique_ptr<kuaishou::editorsdk2::LegacyColorFilter, std::__1::default_delete<kuaishou::editorsdk2::LegacyColorFilter>>>, std::__1::allocator<std::__1::pair<kuaishou::editorsdk2::model::ColorFilterParam, std::__1::unique_ptr<kuaishou::editorsdk2::LegacyColorFilter, std::__1::default_delete<kuaishou::editorsdk2::LegacyColorFilter>>>>> _field9;
-    struct unordered_map<int, std::__1::unique_ptr<kuaishou::editorsdk2::VisualEffectBase, std::__1::default_delete<kuaishou::editorsdk2::VisualEffectBase>>, std::__1::hash<int>, std::__1::equal_to<int>, std::__1::allocator<std::__1::pair<const int, std::__1::unique_ptr<kuaishou::editorsdk2::VisualEffectBase, std::__1::default_delete<kuaishou::editorsdk2::VisualEffectBase>>>>> _field10;
-};
-
-struct ShaderProgramShowProject;
-
-struct ShaderProgramYuv420ToRgb;
 
 struct SharedTexture {
     int _field1;
@@ -4294,27 +3991,6 @@ struct String {
     char *_field3;
 };
 
-struct SubAssetDecodeService {
-    _Bool _field1;
-    double _field2;
-    struct map<unsigned long long, AVFrame *, std::__1::less<unsigned long long>, std::__1::allocator<std::__1::pair<const unsigned long long, AVFrame *>>> _field3;
-    struct unique_ptr<kuaishou::editorsdk2::DecodePositionChangeRequest, std::__1::default_delete<kuaishou::editorsdk2::DecodePositionChangeRequest>> _field4;
-    struct mutex _field5;
-    struct mutex _field6;
-    struct condition_variable _field7;
-    struct condition_variable _field8;
-    struct thread _field9;
-    struct VideoEditorProject _field10;
-    struct vector<kuaishou::editorsdk2::model::EditorSdkError, std::__1::allocator<kuaishou::editorsdk2::model::EditorSdkError>> _field11;
-    basic_string_a490aa4c _field12;
-};
-
-struct SubAssetRenderRangeBuilder {
-    int _field1;
-    struct vector<kuaishou::editorsdk2::model::RenderRange, std::__1::allocator<kuaishou::editorsdk2::model::RenderRange>> _field2;
-    struct unordered_map<unsigned long long, int, std::__1::hash<unsigned long long>, std::__1::equal_to<unsigned long long>, std::__1::allocator<std::__1::pair<const unsigned long long, int>>> _field3;
-};
-
 struct SwsContext;
 
 struct TAGPBExtensionDescription {
@@ -4404,8 +4080,6 @@ struct TextureDrawerYUV;
 
 struct TextureMeshData;
 
-struct ThumbnailJob;
-
 struct TimeActionInterfaceAbstract;
 
 struct TimeEffectParam;
@@ -4436,6 +4110,8 @@ struct TimeMessageCenter {
     struct BlockingQueue<double> _field7;
 };
 
+struct TouchEffectParam;
+
 struct TouchState;
 
 struct TouchStateMachine {
@@ -4445,47 +4121,29 @@ struct TouchStateMachine {
 
 struct TrackAudioDecodeService {
     CDUnknownFunctionPointerType *_field1;
-    _Bool _field2;
-    _Bool _field3;
-    _Bool _field4;
-    _Bool _field5;
-    int _field6;
-    int _field7;
-    int _field8;
-    struct unique_ptr<kuaishou::editorsdk2::DecodePositionChangeRequest, std::__1::default_delete<kuaishou::editorsdk2::DecodePositionChangeRequest>> _field9;
-    struct mutex _field10;
-    struct mutex _field11;
-    struct thread _field12;
-    struct AudioSampleRingBuffer<unsigned char> _field13;
-    int _field14;
-    struct VideoEditorProject _field15;
-    struct condition_variable _field16;
-    struct unique_ptr<editorsdksoundtouch::SoundTouch, std::__1::default_delete<editorsdksoundtouch::SoundTouch>> _field17;
-};
-
-struct TrackVideoDecodeService {
-    CDUnknownFunctionPointerType *_field1;
-    _Bool _field2;
-    _Bool _field3;
-    _Bool _field4;
+    struct mutex _field2;
+    struct mutex _field3;
+    struct condition_variable _field4;
     _Bool _field5;
     _Bool _field6;
-    int _field7;
-    struct unordered_map<unsigned long long, std::__1::unique_ptr<kuaishou::editorsdk2::ReverseFrameCache, std::__1::default_delete<kuaishou::editorsdk2::ReverseFrameCache>>, std::__1::hash<unsigned long long>, std::__1::equal_to<unsigned long long>, std::__1::allocator<std::__1::pair<const unsigned long long, std::__1::unique_ptr<kuaishou::editorsdk2::ReverseFrameCache, std::__1::default_delete<kuaishou::editorsdk2::ReverseFrameCache>>>>> _field8;
-    struct unique_ptr<kuaishou::editorsdk2::DecodePositionChangeRequest, std::__1::default_delete<kuaishou::editorsdk2::DecodePositionChangeRequest>> _field9;
-    struct unique_ptr<kuaishou::editorsdk2::DecodePositionChangeRequest, std::__1::default_delete<kuaishou::editorsdk2::DecodePositionChangeRequest>> _field10;
-    struct mutex _field11;
-    struct mutex _field12;
-    struct mutex _field13;
-    struct condition_variable _field14;
-    struct thread _field15;
-    struct thread _field16;
-    struct BlockingQueue<std::__1::unique_ptr<AVFrame, void (*)(AVFrame *)>> _field17;
-    struct VideoEditorProject _field18;
-    struct PerfLogger *_field19;
-    struct EditorSdkError _field20;
-    _Bool _field21;
-    basic_string_a490aa4c _field22;
+    _Bool _field7;
+    _Bool _field8;
+    basic_string_a490aa4c _field9;
+    _Bool _field10;
+    struct VideoEditorProject _field11;
+    struct unique_ptr<kuaishou::editorsdk2::DecodePositionChangeRequest, std::__1::default_delete<kuaishou::editorsdk2::DecodePositionChangeRequest>> _field12;
+    int _field13;
+    int _field14;
+    int _field15;
+    struct unique_ptr<kuaishou::editorsdk2::RefClock, std::__1::default_delete<kuaishou::editorsdk2::RefClock>> _field16;
+    struct vector<std::__1::unique_ptr<kuaishou::editorsdk2::AssetAudioDecoder, std::__1::default_delete<kuaishou::editorsdk2::AssetAudioDecoder>>, std::__1::allocator<std::__1::unique_ptr<kuaishou::editorsdk2::AssetAudioDecoder, std::__1::default_delete<kuaishou::editorsdk2::AssetAudioDecoder>>>> _field17;
+    struct AudioSampleRingBuffer<unsigned char> _field18;
+    double _field19;
+    double _field20;
+    struct unique_ptr<audiodspsoundtouch::SoundTouch, std::__1::default_delete<audiodspsoundtouch::SoundTouch>> _field21;
+    double _field22;
+    struct thread _field23;
+    double _field24;
 };
 
 struct TransformOp;
@@ -4582,41 +4240,42 @@ struct VideoCallback {
     void *_field5;
 };
 
-struct VideoColorProperties {
-    CDUnknownFunctionPointerType *_field1;
-    struct ArenaStringPtr _field2;
-    struct Arena *_field3;
-    _Bool _field4;
-    int _field5;
-    int _field6;
-    int _field7;
-    int _field8;
-    int _field9;
-};
-
 struct VideoEditorProject {
     CDUnknownFunctionPointerType *_field1;
     struct ArenaStringPtr _field2;
     struct Arena *_field3;
     _Bool _field4;
     long long _field5;
-    int _field6;
-    int _field7;
-    double _field8;
-    struct RepeatedPtrField<kuaishou::editorsdk2::model::TrackAsset> _field9;
-    struct RepeatedPtrField<kuaishou::editorsdk2::model::SubAsset> _field10;
-    struct RepeatedPtrField<kuaishou::editorsdk2::model::AudioAsset> _field11;
-    struct RepeatedPtrField<kuaishou::editorsdk2::model::TimeRange> _field12;
-    struct RepeatedPtrField<kuaishou::editorsdk2::model::VisualEffectParam> _field13;
-    struct TimeEffectParam *_field14;
-    struct ColorFilterParam *_field15;
-    struct BeautyFilterParam *_field16;
-    double _field17;
-    unsigned int _field18;
+    struct RepeatedPtrField<kuaishou::editorsdk2::model::TrackAsset> _field6;
+    struct RepeatedPtrField<kuaishou::editorsdk2::model::SubAsset> _field7;
+    struct RepeatedPtrField<kuaishou::editorsdk2::model::AudioAsset> _field8;
+    struct RepeatedPtrField<kuaishou::editorsdk2::model::TimeRange> _field9;
+    struct RepeatedPtrField<kuaishou::editorsdk2::model::VisualEffectParam> _field10;
+    struct TimeEffectParam *_field11;
+    struct ColorFilterParam *_field12;
+    struct BeautyFilterParam *_field13;
+    double _field14;
+    struct Color *_field15;
+    struct Color *_field16;
+    unsigned int _field17;
+    _Bool _field18;
     _Bool _field19;
-    double _field20;
-    int _field21;
+    struct TouchEffectParam *_field20;
+    struct VideoEditorProjectPrivate *_field21;
+    int _field22;
+    int _field23;
+    struct RepeatedPtrField<kuaishou::editorsdk2::model::MagicTouchOverall> _field24;
+    struct KwaiPhotoMovieParam *_field25;
+    int _field26;
 };
+
+struct VideoEditorProjectPrivate;
+
+struct VideoEditorSession {
+    struct unique_ptr<kuaishou::editorsdk2::VideoEditorSessionImpl, std::__1::default_delete<kuaishou::editorsdk2::VideoEditorSessionImpl>> _field1;
+};
+
+struct VideoEditorSessionImpl;
 
 struct VideoFrame {
     basic_string_1cdf7af0 _field1;
@@ -4924,28 +4583,6 @@ struct _TC_RightEyebrow {
 
 struct __CVBuffer;
 
-struct __CVOpenGLESTextureCache;
-
-struct __hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<int, std::__1::unique_ptr<kuaishou::editorsdk2::VisualEffectBase, std::__1::default_delete<kuaishou::editorsdk2::VisualEffectBase>>>, void *>*> {
-    struct __hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<int, std::__1::unique_ptr<kuaishou::editorsdk2::VisualEffectBase, std::__1::default_delete<kuaishou::editorsdk2::VisualEffectBase>>>, void *>*> *_field1;
-};
-
-struct __hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<long long, std::__1::__list_iterator<kuaishou::editorsdk2::LRUFrameCache::Item, void *>>, void *>*> {
-    struct __hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<long long, std::__1::__list_iterator<kuaishou::editorsdk2::LRUFrameCache::Item, void *>>, void *>*> *_field1;
-};
-
-struct __hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<unsigned long long, bool>, void *>*> {
-    struct __hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<unsigned long long, bool>, void *>*> *_field1;
-};
-
-struct __hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<unsigned long long, int>, void *>*> {
-    struct __hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<unsigned long long, int>, void *>*> *_field1;
-};
-
-struct __hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<unsigned long long, std::__1::unique_ptr<kuaishou::editorsdk2::ReverseFrameCache, std::__1::default_delete<kuaishou::editorsdk2::ReverseFrameCache>>>, void *>*> {
-    struct __hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<unsigned long long, std::__1::unique_ptr<kuaishou::editorsdk2::ReverseFrameCache, std::__1::default_delete<kuaishou::editorsdk2::ReverseFrameCache>>>, void *>*> *_field1;
-};
-
 struct __list_node_base<CGETextureInfo, void *> {
     struct __list_node_base<CGETextureInfo, void *> *_field1;
     struct __list_node_base<CGETextureInfo, void *> *_field2;
@@ -4956,19 +4593,14 @@ struct __list_node_base<KSLiveHeartInstance *, void *> {
     struct __list_node_base<KSLiveHeartInstance *, void *> *__next_;
 };
 
-struct __list_node_base<kuaishou::editorsdk2::LRUFrameCache::Item, void *> {
-    struct __list_node_base<kuaishou::editorsdk2::LRUFrameCache::Item, void *> *_field1;
-    struct __list_node_base<kuaishou::editorsdk2::LRUFrameCache::Item, void *> *_field2;
-};
-
-struct __list_node_base<std::__1::pair<kuaishou::editorsdk2::model::ColorFilterParam, std::__1::unique_ptr<kuaishou::editorsdk2::LegacyColorFilter, std::__1::default_delete<kuaishou::editorsdk2::LegacyColorFilter>>>, void *> {
-    struct __list_node_base<std::__1::pair<kuaishou::editorsdk2::model::ColorFilterParam, std::__1::unique_ptr<kuaishou::editorsdk2::LegacyColorFilter, std::__1::default_delete<kuaishou::editorsdk2::LegacyColorFilter>>>, void *> *_field1;
-    struct __list_node_base<std::__1::pair<kuaishou::editorsdk2::model::ColorFilterParam, std::__1::unique_ptr<kuaishou::editorsdk2::LegacyColorFilter, std::__1::default_delete<kuaishou::editorsdk2::LegacyColorFilter>>>, void *> *_field2;
-};
-
 struct __list_node_base<std::__1::shared_ptr<POPAnimatorItem>, void *> {
     struct __list_node_base<std::__1::shared_ptr<POPAnimatorItem>, void *> *__prev_;
     struct __list_node_base<std::__1::shared_ptr<POPAnimatorItem>, void *> *__next_;
+};
+
+struct __list_node_base<std::__1::weak_ptr<kuaishou::editorsdk2::VideoEditorSession>, void *> {
+    struct __list_node_base<std::__1::weak_ptr<kuaishou::editorsdk2::VideoEditorSession>, void *> *__prev_;
+    struct __list_node_base<std::__1::weak_ptr<kuaishou::editorsdk2::VideoEditorSession>, void *> *__next_;
 };
 
 struct __list_node_base<unsigned int, void *> {
@@ -5076,16 +4708,6 @@ struct function<double ()> {
     struct __base<double ()> *_field2;
 };
 
-struct function<kuaishou::editorsdk2::ThumbnailJob ()> {
-    struct type _field1;
-    struct __base<kuaishou::editorsdk2::ThumbnailJob ()> *_field2;
-};
-
-struct function<std::__1::unique_ptr<AVFrame, void (*)(AVFrame *)>()> {
-    struct type _field1;
-    struct __base<std::__1::unique_ptr<AVFrame, void (*)(AVFrame *)>()> *_field2;
-};
-
 struct function<std::__1::vector<CGPUImage::CGPUImageRenderTexture, std::__1::allocator<CGPUImage::CGPUImageRenderTexture>>()> {
     struct type __buf_;
     struct __base<std::__1::vector<CGPUImage::CGPUImageRenderTexture, std::__1::allocator<CGPUImage::CGPUImageRenderTexture>>()> *__f_;
@@ -5109,26 +4731,6 @@ struct function<void ()> {
 struct function<void (double)> {
     struct type _field1;
     struct __base<void (double)> *_field2;
-};
-
-struct function<void (kuaishou::editorsdk2::model::ExportEvent)> {
-    struct type _field1;
-    struct __base<void (kuaishou::editorsdk2::model::ExportEvent)> *_field2;
-};
-
-struct function<void (kuaishou::editorsdk2::model::PerfEntry)> {
-    struct type _field1;
-    struct __base<void (kuaishou::editorsdk2::model::PerfEntry)> *_field2;
-};
-
-struct function<void (kuaishou::editorsdk2::model::PreviewEvent)> {
-    struct type _field1;
-    struct __base<void (kuaishou::editorsdk2::model::PreviewEvent)> *_field2;
-};
-
-struct function<void (unsigned char *, unsigned char *, const kuaishou::editorsdk2::model::FrameBeautyDesc &, int *)> {
-    struct type _field1;
-    struct __base<void (unsigned char *, unsigned char *, const kuaishou::editorsdk2::model::FrameBeautyDesc &, int *)> *_field2;
 };
 
 struct gzFile_s {
@@ -5163,25 +4765,18 @@ struct list<KSLiveHeartInstance *, std::__1::allocator<KSLiveHeartInstance *>> {
     } __size_alloc_;
 };
 
-struct list<kuaishou::editorsdk2::LRUFrameCache::Item, std::__1::allocator<kuaishou::editorsdk2::LRUFrameCache::Item>> {
-    struct __list_node_base<kuaishou::editorsdk2::LRUFrameCache::Item, void *> _field1;
-    struct __compressed_pair<unsigned long, std::__1::allocator<std::__1::__list_node<kuaishou::editorsdk2::LRUFrameCache::Item, void *>>> {
-        unsigned long long _field1;
-    } _field2;
-};
-
-struct list<std::__1::pair<kuaishou::editorsdk2::model::ColorFilterParam, std::__1::unique_ptr<kuaishou::editorsdk2::LegacyColorFilter, std::__1::default_delete<kuaishou::editorsdk2::LegacyColorFilter>>>, std::__1::allocator<std::__1::pair<kuaishou::editorsdk2::model::ColorFilterParam, std::__1::unique_ptr<kuaishou::editorsdk2::LegacyColorFilter, std::__1::default_delete<kuaishou::editorsdk2::LegacyColorFilter>>>>> {
-    struct __list_node_base<std::__1::pair<kuaishou::editorsdk2::model::ColorFilterParam, std::__1::unique_ptr<kuaishou::editorsdk2::LegacyColorFilter, std::__1::default_delete<kuaishou::editorsdk2::LegacyColorFilter>>>, void *> _field1;
-    struct __compressed_pair<unsigned long, std::__1::allocator<std::__1::__list_node<std::__1::pair<kuaishou::editorsdk2::model::ColorFilterParam, std::__1::unique_ptr<kuaishou::editorsdk2::LegacyColorFilter, std::__1::default_delete<kuaishou::editorsdk2::LegacyColorFilter>>>, void *>>> {
-        unsigned long long _field1;
-    } _field2;
-};
-
 struct list<std::__1::shared_ptr<KS::SpeedTestResult>, std::__1::allocator<std::__1::shared_ptr<KS::SpeedTestResult>>>;
 
 struct list<std::__1::shared_ptr<POPAnimatorItem>, std::__1::allocator<std::__1::shared_ptr<POPAnimatorItem>>> {
     struct __list_node_base<std::__1::shared_ptr<POPAnimatorItem>, void *> __end_;
     struct __compressed_pair<unsigned long, std::__1::allocator<std::__1::__list_node<std::__1::shared_ptr<POPAnimatorItem>, void *>>> {
+        unsigned long long __first_;
+    } __size_alloc_;
+};
+
+struct list<std::__1::weak_ptr<kuaishou::editorsdk2::VideoEditorSession>, std::__1::allocator<std::__1::weak_ptr<kuaishou::editorsdk2::VideoEditorSession>>> {
+    struct __list_node_base<std::__1::weak_ptr<kuaishou::editorsdk2::VideoEditorSession>, void *> __end_;
+    struct __compressed_pair<unsigned long, std::__1::allocator<std::__1::__list_node<std::__1::weak_ptr<kuaishou::editorsdk2::VideoEditorSession>, void *>>> {
         unsigned long long __first_;
     } __size_alloc_;
 };
@@ -5281,42 +4876,6 @@ struct map<std::__1::basic_string<char>, std::__1::function<void ()>, std::__1::
     } __tree_;
 };
 
-struct map<std::__1::basic_string<char>, std::__1::function<void (kuaishou::editorsdk2::model::PerfEntry)>, std::__1::less<std::__1::basic_string<char>>, std::__1::allocator<std::__1::pair<const std::__1::basic_string<char>, std::__1::function<void (kuaishou::editorsdk2::model::PerfEntry)>>>> {
-    struct __tree<std::__1::__value_type<std::__1::basic_string<char>, std::__1::function<void (kuaishou::editorsdk2::model::PerfEntry)>>, std::__1::__map_value_compare<std::__1::basic_string<char>, std::__1::__value_type<std::__1::basic_string<char>, std::__1::function<void (kuaishou::editorsdk2::model::PerfEntry)>>, std::__1::less<std::__1::basic_string<char>>, true>, std::__1::allocator<std::__1::__value_type<std::__1::basic_string<char>, std::__1::function<void (kuaishou::editorsdk2::model::PerfEntry)>>>> {
-        struct __tree_end_node<std::__1::__tree_node_base<void *>*> *_field1;
-        struct __compressed_pair<std::__1::__tree_end_node<std::__1::__tree_node_base<void *>*>, std::__1::allocator<std::__1::__tree_node<std::__1::__value_type<std::__1::basic_string<char>, std::__1::function<void (kuaishou::editorsdk2::model::PerfEntry)>>, void *>>> {
-            struct __tree_end_node<std::__1::__tree_node_base<void *>*> _field1;
-        } _field2;
-        struct __compressed_pair<unsigned long, std::__1::__map_value_compare<std::__1::basic_string<char>, std::__1::__value_type<std::__1::basic_string<char>, std::__1::function<void (kuaishou::editorsdk2::model::PerfEntry)>>, std::__1::less<std::__1::basic_string<char>>, true>> {
-            unsigned long long _field1;
-        } _field3;
-    } _field1;
-};
-
-struct map<std::__1::basic_string<char>, std::__1::vector<double, std::__1::allocator<double>>, std::__1::less<std::__1::basic_string<char>>, std::__1::allocator<std::__1::pair<const std::__1::basic_string<char>, std::__1::vector<double, std::__1::allocator<double>>>>> {
-    struct __tree<std::__1::__value_type<std::__1::basic_string<char>, std::__1::vector<double, std::__1::allocator<double>>>, std::__1::__map_value_compare<std::__1::basic_string<char>, std::__1::__value_type<std::__1::basic_string<char>, std::__1::vector<double, std::__1::allocator<double>>>, std::__1::less<std::__1::basic_string<char>>, true>, std::__1::allocator<std::__1::__value_type<std::__1::basic_string<char>, std::__1::vector<double, std::__1::allocator<double>>>>> {
-        struct __tree_end_node<std::__1::__tree_node_base<void *>*> *_field1;
-        struct __compressed_pair<std::__1::__tree_end_node<std::__1::__tree_node_base<void *>*>, std::__1::allocator<std::__1::__tree_node<std::__1::__value_type<std::__1::basic_string<char>, std::__1::vector<double, std::__1::allocator<double>>>, void *>>> {
-            struct __tree_end_node<std::__1::__tree_node_base<void *>*> _field1;
-        } _field2;
-        struct __compressed_pair<unsigned long, std::__1::__map_value_compare<std::__1::basic_string<char>, std::__1::__value_type<std::__1::basic_string<char>, std::__1::vector<double, std::__1::allocator<double>>>, std::__1::less<std::__1::basic_string<char>>, true>> {
-            unsigned long long _field1;
-        } _field3;
-    } _field1;
-};
-
-struct map<unsigned long long, AVFrame *, std::__1::less<unsigned long long>, std::__1::allocator<std::__1::pair<const unsigned long long, AVFrame *>>> {
-    struct __tree<std::__1::__value_type<unsigned long long, AVFrame *>, std::__1::__map_value_compare<unsigned long long, std::__1::__value_type<unsigned long long, AVFrame *>, std::__1::less<unsigned long long>, true>, std::__1::allocator<std::__1::__value_type<unsigned long long, AVFrame *>>> {
-        struct __tree_end_node<std::__1::__tree_node_base<void *>*> *_field1;
-        struct __compressed_pair<std::__1::__tree_end_node<std::__1::__tree_node_base<void *>*>, std::__1::allocator<std::__1::__tree_node<std::__1::__value_type<unsigned long long, AVFrame *>, void *>>> {
-            struct __tree_end_node<std::__1::__tree_node_base<void *>*> _field1;
-        } _field2;
-        struct __compressed_pair<unsigned long, std::__1::__map_value_compare<unsigned long long, std::__1::__value_type<unsigned long long, AVFrame *>, std::__1::less<unsigned long long>, true>> {
-            unsigned long long _field1;
-        } _field3;
-    } _field1;
-};
-
 struct mutex {
     struct _opaque_pthread_mutex_t __m_;
 };
@@ -5327,12 +4886,6 @@ struct objc_method_description {
 };
 
 struct re_guts;
-
-struct sKSExportParam {
-    int outputSize_;
-    int bitrate_;
-    int rotation_;
-};
 
 struct scoped_refptr<QAVBase::internal::BindStateBase> {
     struct BindStateBase *_field1;
@@ -5368,8 +4921,18 @@ struct shared_ptr<ar::Frame> {
     struct __shared_weak_count *_field2;
 };
 
+struct shared_ptr<kuaishou::editorsdk2::NativeExportTask> {
+    struct NativeExportTask *__ptr_;
+    struct __shared_weak_count *__cntrl_;
+};
+
 struct shared_ptr<std::__1::list<std::__1::shared_ptr<KS::SpeedTestResult>, std::__1::allocator<std::__1::shared_ptr<KS::SpeedTestResult>>>> {
     struct list<std::__1::shared_ptr<KS::SpeedTestResult>, std::__1::allocator<std::__1::shared_ptr<KS::SpeedTestResult>>> *_field1;
+    struct __shared_weak_count *_field2;
+};
+
+struct shared_ptr<std::__1::mutex> {
+    struct mutex *_field1;
     struct __shared_weak_count *_field2;
 };
 
@@ -5480,28 +5043,8 @@ struct type {
     unsigned char __lx[24];
 };
 
-struct unique_ptr<AVFrame, void (*)(AVFrame *)> {
-    struct __compressed_pair<AVFrame *, void (*)(AVFrame *)> {
-        struct AVFrame *_field1;
-        CDUnknownFunctionPointerType _field2;
-    } _field1;
-};
-
-struct unique_ptr<AudioPlay, std::__1::default_delete<AudioPlay>> {
-    struct __compressed_pair<AudioPlay *, std::__1::default_delete<AudioPlay>> {
-        struct AudioPlay *_field1;
-    } _field1;
-};
-
-struct unique_ptr<SwsContext, void (*)(SwsContext *)> {
-    struct __compressed_pair<SwsContext *, void (*)(SwsContext *)> {
-        struct SwsContext *_field1;
-        CDUnknownFunctionPointerType _field2;
-    } _field1;
-};
-
-struct unique_ptr<editorsdksoundtouch::SoundTouch, std::__1::default_delete<editorsdksoundtouch::SoundTouch>> {
-    struct __compressed_pair<editorsdksoundtouch::SoundTouch *, std::__1::default_delete<editorsdksoundtouch::SoundTouch>> {
+struct unique_ptr<audiodspsoundtouch::SoundTouch, std::__1::default_delete<audiodspsoundtouch::SoundTouch>> {
+    struct __compressed_pair<audiodspsoundtouch::SoundTouch *, std::__1::default_delete<audiodspsoundtouch::SoundTouch>> {
         struct SoundTouch *_field1;
     } _field1;
 };
@@ -5512,57 +5055,29 @@ struct unique_ptr<kuaishou::base::Pts [], std::__1::default_delete<kuaishou::bas
     } _field1;
 };
 
+struct unique_ptr<kuaishou::editorsdk2::AssetAudioDecoder, std::__1::default_delete<kuaishou::editorsdk2::AssetAudioDecoder>>;
+
 struct unique_ptr<kuaishou::editorsdk2::DecodePositionChangeRequest, std::__1::default_delete<kuaishou::editorsdk2::DecodePositionChangeRequest>> {
     struct __compressed_pair<kuaishou::editorsdk2::DecodePositionChangeRequest *, std::__1::default_delete<kuaishou::editorsdk2::DecodePositionChangeRequest>> {
         struct DecodePositionChangeRequest *_field1;
     } _field1;
 };
 
-struct unique_ptr<kuaishou::editorsdk2::KSEBeautyWrapper, std::__1::default_delete<kuaishou::editorsdk2::KSEBeautyWrapper>> {
-    struct __compressed_pair<kuaishou::editorsdk2::KSEBeautyWrapper *, std::__1::default_delete<kuaishou::editorsdk2::KSEBeautyWrapper>> {
-        struct KSEBeautyWrapper *_field1;
+struct unique_ptr<kuaishou::editorsdk2::ExportTaskQueueImpl, std::__1::default_delete<kuaishou::editorsdk2::ExportTaskQueueImpl>> {
+    struct __compressed_pair<kuaishou::editorsdk2::ExportTaskQueueImpl *, std::__1::default_delete<kuaishou::editorsdk2::ExportTaskQueueImpl>> {
+        struct ExportTaskQueueImpl *_field1;
     } _field1;
 };
 
-struct unique_ptr<kuaishou::editorsdk2::ShaderProgram, std::__1::default_delete<kuaishou::editorsdk2::ShaderProgram>> {
-    struct __compressed_pair<kuaishou::editorsdk2::ShaderProgram *, std::__1::default_delete<kuaishou::editorsdk2::ShaderProgram>> {
-        struct ShaderProgram *_field1;
+struct unique_ptr<kuaishou::editorsdk2::RefClock, std::__1::default_delete<kuaishou::editorsdk2::RefClock>> {
+    struct __compressed_pair<kuaishou::editorsdk2::RefClock *, std::__1::default_delete<kuaishou::editorsdk2::RefClock>> {
+        struct RefClock *_field1;
     } _field1;
 };
 
-struct unique_ptr<kuaishou::editorsdk2::ShaderProgramCopyBgra, std::__1::default_delete<kuaishou::editorsdk2::ShaderProgramCopyBgra>> {
-    struct __compressed_pair<kuaishou::editorsdk2::ShaderProgramCopyBgra *, std::__1::default_delete<kuaishou::editorsdk2::ShaderProgramCopyBgra>> {
-        struct ShaderProgramCopyBgra *_field1;
-    } _field1;
-};
-
-struct unique_ptr<kuaishou::editorsdk2::ShaderProgramCopyRgba, std::__1::default_delete<kuaishou::editorsdk2::ShaderProgramCopyRgba>> {
-    struct __compressed_pair<kuaishou::editorsdk2::ShaderProgramCopyRgba *, std::__1::default_delete<kuaishou::editorsdk2::ShaderProgramCopyRgba>> {
-        struct ShaderProgramCopyRgba *_field1;
-    } _field1;
-};
-
-struct unique_ptr<kuaishou::editorsdk2::ShaderProgramMix, std::__1::default_delete<kuaishou::editorsdk2::ShaderProgramMix>> {
-    struct __compressed_pair<kuaishou::editorsdk2::ShaderProgramMix *, std::__1::default_delete<kuaishou::editorsdk2::ShaderProgramMix>> {
-        struct ShaderProgramMix *_field1;
-    } _field1;
-};
-
-struct unique_ptr<kuaishou::editorsdk2::ShaderProgramNv12ToRgba, std::__1::default_delete<kuaishou::editorsdk2::ShaderProgramNv12ToRgba>> {
-    struct __compressed_pair<kuaishou::editorsdk2::ShaderProgramNv12ToRgba *, std::__1::default_delete<kuaishou::editorsdk2::ShaderProgramNv12ToRgba>> {
-        struct ShaderProgramNv12ToRgba *_field1;
-    } _field1;
-};
-
-struct unique_ptr<kuaishou::editorsdk2::ShaderProgramShowProject, std::__1::default_delete<kuaishou::editorsdk2::ShaderProgramShowProject>> {
-    struct __compressed_pair<kuaishou::editorsdk2::ShaderProgramShowProject *, std::__1::default_delete<kuaishou::editorsdk2::ShaderProgramShowProject>> {
-        struct ShaderProgramShowProject *_field1;
-    } _field1;
-};
-
-struct unique_ptr<kuaishou::editorsdk2::ShaderProgramYuv420ToRgb, std::__1::default_delete<kuaishou::editorsdk2::ShaderProgramYuv420ToRgb>> {
-    struct __compressed_pair<kuaishou::editorsdk2::ShaderProgramYuv420ToRgb *, std::__1::default_delete<kuaishou::editorsdk2::ShaderProgramYuv420ToRgb>> {
-        struct ShaderProgramYuv420ToRgb *_field1;
+struct unique_ptr<kuaishou::editorsdk2::VideoEditorSessionImpl, std::__1::default_delete<kuaishou::editorsdk2::VideoEditorSessionImpl>> {
+    struct __compressed_pair<kuaishou::editorsdk2::VideoEditorSessionImpl *, std::__1::default_delete<kuaishou::editorsdk2::VideoEditorSessionImpl>> {
+        struct VideoEditorSessionImpl *_field1;
     } _field1;
 };
 
@@ -5572,139 +5087,9 @@ struct unique_ptr<short [], std::__1::default_delete<short []>> {
     } _field1;
 };
 
-struct unique_ptr<std::__1::__hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<int, std::__1::unique_ptr<kuaishou::editorsdk2::VisualEffectBase, std::__1::default_delete<kuaishou::editorsdk2::VisualEffectBase>>>, void *>*>*[], std::__1::__bucket_list_deallocator<std::__1::allocator<std::__1::__hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<int, std::__1::unique_ptr<kuaishou::editorsdk2::VisualEffectBase, std::__1::default_delete<kuaishou::editorsdk2::VisualEffectBase>>>, void *>*>*>>> {
-    struct __compressed_pair<std::__1::__hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<int, std::__1::unique_ptr<kuaishou::editorsdk2::VisualEffectBase, std::__1::default_delete<kuaishou::editorsdk2::VisualEffectBase>>>, void *>*>**, std::__1::__bucket_list_deallocator<std::__1::allocator<std::__1::__hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<int, std::__1::unique_ptr<kuaishou::editorsdk2::VisualEffectBase, std::__1::default_delete<kuaishou::editorsdk2::VisualEffectBase>>>, void *>*>*>>> {
-        struct __hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<int, std::__1::unique_ptr<kuaishou::editorsdk2::VisualEffectBase, std::__1::default_delete<kuaishou::editorsdk2::VisualEffectBase>>>, void *>*> **_field1;
-        struct __bucket_list_deallocator<std::__1::allocator<std::__1::__hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<int, std::__1::unique_ptr<kuaishou::editorsdk2::VisualEffectBase, std::__1::default_delete<kuaishou::editorsdk2::VisualEffectBase>>>, void *>*>*>> {
-            struct __compressed_pair<unsigned long, std::__1::allocator<std::__1::__hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<int, std::__1::unique_ptr<kuaishou::editorsdk2::VisualEffectBase, std::__1::default_delete<kuaishou::editorsdk2::VisualEffectBase>>>, void *>*>*>> {
-                unsigned long long _field1;
-            } _field1;
-        } _field2;
-    } _field1;
-};
-
-struct unique_ptr<std::__1::__hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<long long, std::__1::__list_iterator<kuaishou::editorsdk2::LRUFrameCache::Item, void *>>, void *>*>*[], std::__1::__bucket_list_deallocator<std::__1::allocator<std::__1::__hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<long long, std::__1::__list_iterator<kuaishou::editorsdk2::LRUFrameCache::Item, void *>>, void *>*>*>>> {
-    struct __compressed_pair<std::__1::__hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<long long, std::__1::__list_iterator<kuaishou::editorsdk2::LRUFrameCache::Item, void *>>, void *>*>**, std::__1::__bucket_list_deallocator<std::__1::allocator<std::__1::__hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<long long, std::__1::__list_iterator<kuaishou::editorsdk2::LRUFrameCache::Item, void *>>, void *>*>*>>> {
-        struct __hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<long long, std::__1::__list_iterator<kuaishou::editorsdk2::LRUFrameCache::Item, void *>>, void *>*> **_field1;
-        struct __bucket_list_deallocator<std::__1::allocator<std::__1::__hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<long long, std::__1::__list_iterator<kuaishou::editorsdk2::LRUFrameCache::Item, void *>>, void *>*>*>> {
-            struct __compressed_pair<unsigned long, std::__1::allocator<std::__1::__hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<long long, std::__1::__list_iterator<kuaishou::editorsdk2::LRUFrameCache::Item, void *>>, void *>*>*>> {
-                unsigned long long _field1;
-            } _field1;
-        } _field2;
-    } _field1;
-};
-
-struct unique_ptr<std::__1::__hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<unsigned long long, bool>, void *>*>*[], std::__1::__bucket_list_deallocator<std::__1::allocator<std::__1::__hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<unsigned long long, bool>, void *>*>*>>> {
-    struct __compressed_pair<std::__1::__hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<unsigned long long, bool>, void *>*>**, std::__1::__bucket_list_deallocator<std::__1::allocator<std::__1::__hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<unsigned long long, bool>, void *>*>*>>> {
-        struct __hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<unsigned long long, bool>, void *>*> **_field1;
-        struct __bucket_list_deallocator<std::__1::allocator<std::__1::__hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<unsigned long long, bool>, void *>*>*>> {
-            struct __compressed_pair<unsigned long, std::__1::allocator<std::__1::__hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<unsigned long long, bool>, void *>*>*>> {
-                unsigned long long _field1;
-            } _field1;
-        } _field2;
-    } _field1;
-};
-
-struct unique_ptr<std::__1::__hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<unsigned long long, int>, void *>*>*[], std::__1::__bucket_list_deallocator<std::__1::allocator<std::__1::__hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<unsigned long long, int>, void *>*>*>>> {
-    struct __compressed_pair<std::__1::__hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<unsigned long long, int>, void *>*>**, std::__1::__bucket_list_deallocator<std::__1::allocator<std::__1::__hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<unsigned long long, int>, void *>*>*>>> {
-        struct __hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<unsigned long long, int>, void *>*> **_field1;
-        struct __bucket_list_deallocator<std::__1::allocator<std::__1::__hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<unsigned long long, int>, void *>*>*>> {
-            struct __compressed_pair<unsigned long, std::__1::allocator<std::__1::__hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<unsigned long long, int>, void *>*>*>> {
-                unsigned long long _field1;
-            } _field1;
-        } _field2;
-    } _field1;
-};
-
-struct unique_ptr<std::__1::__hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<unsigned long long, std::__1::unique_ptr<kuaishou::editorsdk2::ReverseFrameCache, std::__1::default_delete<kuaishou::editorsdk2::ReverseFrameCache>>>, void *>*>*[], std::__1::__bucket_list_deallocator<std::__1::allocator<std::__1::__hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<unsigned long long, std::__1::unique_ptr<kuaishou::editorsdk2::ReverseFrameCache, std::__1::default_delete<kuaishou::editorsdk2::ReverseFrameCache>>>, void *>*>*>>> {
-    struct __compressed_pair<std::__1::__hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<unsigned long long, std::__1::unique_ptr<kuaishou::editorsdk2::ReverseFrameCache, std::__1::default_delete<kuaishou::editorsdk2::ReverseFrameCache>>>, void *>*>**, std::__1::__bucket_list_deallocator<std::__1::allocator<std::__1::__hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<unsigned long long, std::__1::unique_ptr<kuaishou::editorsdk2::ReverseFrameCache, std::__1::default_delete<kuaishou::editorsdk2::ReverseFrameCache>>>, void *>*>*>>> {
-        struct __hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<unsigned long long, std::__1::unique_ptr<kuaishou::editorsdk2::ReverseFrameCache, std::__1::default_delete<kuaishou::editorsdk2::ReverseFrameCache>>>, void *>*> **_field1;
-        struct __bucket_list_deallocator<std::__1::allocator<std::__1::__hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<unsigned long long, std::__1::unique_ptr<kuaishou::editorsdk2::ReverseFrameCache, std::__1::default_delete<kuaishou::editorsdk2::ReverseFrameCache>>>, void *>*>*>> {
-            struct __compressed_pair<unsigned long, std::__1::allocator<std::__1::__hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<unsigned long long, std::__1::unique_ptr<kuaishou::editorsdk2::ReverseFrameCache, std::__1::default_delete<kuaishou::editorsdk2::ReverseFrameCache>>>, void *>*>*>> {
-                unsigned long long _field1;
-            } _field1;
-        } _field2;
-    } _field1;
-};
-
 struct unique_ptr<unsigned char [], std::__1::default_delete<unsigned char []>> {
     struct __compressed_pair<unsigned char *, std::__1::default_delete<unsigned char []>> {
         char *_field1;
-    } _field1;
-};
-
-struct unordered_map<int, std::__1::unique_ptr<kuaishou::editorsdk2::VisualEffectBase, std::__1::default_delete<kuaishou::editorsdk2::VisualEffectBase>>, std::__1::hash<int>, std::__1::equal_to<int>, std::__1::allocator<std::__1::pair<const int, std::__1::unique_ptr<kuaishou::editorsdk2::VisualEffectBase, std::__1::default_delete<kuaishou::editorsdk2::VisualEffectBase>>>>> {
-    struct __hash_table<std::__1::__hash_value_type<int, std::__1::unique_ptr<kuaishou::editorsdk2::VisualEffectBase, std::__1::default_delete<kuaishou::editorsdk2::VisualEffectBase>>>, std::__1::__unordered_map_hasher<int, std::__1::__hash_value_type<int, std::__1::unique_ptr<kuaishou::editorsdk2::VisualEffectBase, std::__1::default_delete<kuaishou::editorsdk2::VisualEffectBase>>>, std::__1::hash<int>, true>, std::__1::__unordered_map_equal<int, std::__1::__hash_value_type<int, std::__1::unique_ptr<kuaishou::editorsdk2::VisualEffectBase, std::__1::default_delete<kuaishou::editorsdk2::VisualEffectBase>>>, std::__1::equal_to<int>, true>, std::__1::allocator<std::__1::__hash_value_type<int, std::__1::unique_ptr<kuaishou::editorsdk2::VisualEffectBase, std::__1::default_delete<kuaishou::editorsdk2::VisualEffectBase>>>>> {
-        struct unique_ptr<std::__1::__hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<int, std::__1::unique_ptr<kuaishou::editorsdk2::VisualEffectBase, std::__1::default_delete<kuaishou::editorsdk2::VisualEffectBase>>>, void *>*>*[], std::__1::__bucket_list_deallocator<std::__1::allocator<std::__1::__hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<int, std::__1::unique_ptr<kuaishou::editorsdk2::VisualEffectBase, std::__1::default_delete<kuaishou::editorsdk2::VisualEffectBase>>>, void *>*>*>>> _field1;
-        struct __compressed_pair<std::__1::__hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<int, std::__1::unique_ptr<kuaishou::editorsdk2::VisualEffectBase, std::__1::default_delete<kuaishou::editorsdk2::VisualEffectBase>>>, void *>*>, std::__1::allocator<std::__1::__hash_node<std::__1::__hash_value_type<int, std::__1::unique_ptr<kuaishou::editorsdk2::VisualEffectBase, std::__1::default_delete<kuaishou::editorsdk2::VisualEffectBase>>>, void *>>> {
-            struct __hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<int, std::__1::unique_ptr<kuaishou::editorsdk2::VisualEffectBase, std::__1::default_delete<kuaishou::editorsdk2::VisualEffectBase>>>, void *>*> _field1;
-        } _field2;
-        struct __compressed_pair<unsigned long, std::__1::__unordered_map_hasher<int, std::__1::__hash_value_type<int, std::__1::unique_ptr<kuaishou::editorsdk2::VisualEffectBase, std::__1::default_delete<kuaishou::editorsdk2::VisualEffectBase>>>, std::__1::hash<int>, true>> {
-            unsigned long long _field1;
-        } _field3;
-        struct __compressed_pair<float, std::__1::__unordered_map_equal<int, std::__1::__hash_value_type<int, std::__1::unique_ptr<kuaishou::editorsdk2::VisualEffectBase, std::__1::default_delete<kuaishou::editorsdk2::VisualEffectBase>>>, std::__1::equal_to<int>, true>> {
-            float _field1;
-        } _field4;
-    } _field1;
-};
-
-struct unordered_map<long long, std::__1::__list_iterator<kuaishou::editorsdk2::LRUFrameCache::Item, void *>, std::__1::hash<long long>, std::__1::equal_to<long long>, std::__1::allocator<std::__1::pair<const long long, std::__1::__list_iterator<kuaishou::editorsdk2::LRUFrameCache::Item, void *>>>> {
-    struct __hash_table<std::__1::__hash_value_type<long long, std::__1::__list_iterator<kuaishou::editorsdk2::LRUFrameCache::Item, void *>>, std::__1::__unordered_map_hasher<long long, std::__1::__hash_value_type<long long, std::__1::__list_iterator<kuaishou::editorsdk2::LRUFrameCache::Item, void *>>, std::__1::hash<long long>, true>, std::__1::__unordered_map_equal<long long, std::__1::__hash_value_type<long long, std::__1::__list_iterator<kuaishou::editorsdk2::LRUFrameCache::Item, void *>>, std::__1::equal_to<long long>, true>, std::__1::allocator<std::__1::__hash_value_type<long long, std::__1::__list_iterator<kuaishou::editorsdk2::LRUFrameCache::Item, void *>>>> {
-        struct unique_ptr<std::__1::__hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<long long, std::__1::__list_iterator<kuaishou::editorsdk2::LRUFrameCache::Item, void *>>, void *>*>*[], std::__1::__bucket_list_deallocator<std::__1::allocator<std::__1::__hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<long long, std::__1::__list_iterator<kuaishou::editorsdk2::LRUFrameCache::Item, void *>>, void *>*>*>>> _field1;
-        struct __compressed_pair<std::__1::__hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<long long, std::__1::__list_iterator<kuaishou::editorsdk2::LRUFrameCache::Item, void *>>, void *>*>, std::__1::allocator<std::__1::__hash_node<std::__1::__hash_value_type<long long, std::__1::__list_iterator<kuaishou::editorsdk2::LRUFrameCache::Item, void *>>, void *>>> {
-            struct __hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<long long, std::__1::__list_iterator<kuaishou::editorsdk2::LRUFrameCache::Item, void *>>, void *>*> _field1;
-        } _field2;
-        struct __compressed_pair<unsigned long, std::__1::__unordered_map_hasher<long long, std::__1::__hash_value_type<long long, std::__1::__list_iterator<kuaishou::editorsdk2::LRUFrameCache::Item, void *>>, std::__1::hash<long long>, true>> {
-            unsigned long long _field1;
-        } _field3;
-        struct __compressed_pair<float, std::__1::__unordered_map_equal<long long, std::__1::__hash_value_type<long long, std::__1::__list_iterator<kuaishou::editorsdk2::LRUFrameCache::Item, void *>>, std::__1::equal_to<long long>, true>> {
-            float _field1;
-        } _field4;
-    } _field1;
-};
-
-struct unordered_map<unsigned long long, bool, std::__1::hash<unsigned long long>, std::__1::equal_to<unsigned long long>, std::__1::allocator<std::__1::pair<const unsigned long long, bool>>> {
-    struct __hash_table<std::__1::__hash_value_type<unsigned long long, bool>, std::__1::__unordered_map_hasher<unsigned long long, std::__1::__hash_value_type<unsigned long long, bool>, std::__1::hash<unsigned long long>, true>, std::__1::__unordered_map_equal<unsigned long long, std::__1::__hash_value_type<unsigned long long, bool>, std::__1::equal_to<unsigned long long>, true>, std::__1::allocator<std::__1::__hash_value_type<unsigned long long, bool>>> {
-        struct unique_ptr<std::__1::__hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<unsigned long long, bool>, void *>*>*[], std::__1::__bucket_list_deallocator<std::__1::allocator<std::__1::__hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<unsigned long long, bool>, void *>*>*>>> _field1;
-        struct __compressed_pair<std::__1::__hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<unsigned long long, bool>, void *>*>, std::__1::allocator<std::__1::__hash_node<std::__1::__hash_value_type<unsigned long long, bool>, void *>>> {
-            struct __hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<unsigned long long, bool>, void *>*> _field1;
-        } _field2;
-        struct __compressed_pair<unsigned long, std::__1::__unordered_map_hasher<unsigned long long, std::__1::__hash_value_type<unsigned long long, bool>, std::__1::hash<unsigned long long>, true>> {
-            unsigned long long _field1;
-        } _field3;
-        struct __compressed_pair<float, std::__1::__unordered_map_equal<unsigned long long, std::__1::__hash_value_type<unsigned long long, bool>, std::__1::equal_to<unsigned long long>, true>> {
-            float _field1;
-        } _field4;
-    } _field1;
-};
-
-struct unordered_map<unsigned long long, int, std::__1::hash<unsigned long long>, std::__1::equal_to<unsigned long long>, std::__1::allocator<std::__1::pair<const unsigned long long, int>>> {
-    struct __hash_table<std::__1::__hash_value_type<unsigned long long, int>, std::__1::__unordered_map_hasher<unsigned long long, std::__1::__hash_value_type<unsigned long long, int>, std::__1::hash<unsigned long long>, true>, std::__1::__unordered_map_equal<unsigned long long, std::__1::__hash_value_type<unsigned long long, int>, std::__1::equal_to<unsigned long long>, true>, std::__1::allocator<std::__1::__hash_value_type<unsigned long long, int>>> {
-        struct unique_ptr<std::__1::__hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<unsigned long long, int>, void *>*>*[], std::__1::__bucket_list_deallocator<std::__1::allocator<std::__1::__hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<unsigned long long, int>, void *>*>*>>> _field1;
-        struct __compressed_pair<std::__1::__hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<unsigned long long, int>, void *>*>, std::__1::allocator<std::__1::__hash_node<std::__1::__hash_value_type<unsigned long long, int>, void *>>> {
-            struct __hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<unsigned long long, int>, void *>*> _field1;
-        } _field2;
-        struct __compressed_pair<unsigned long, std::__1::__unordered_map_hasher<unsigned long long, std::__1::__hash_value_type<unsigned long long, int>, std::__1::hash<unsigned long long>, true>> {
-            unsigned long long _field1;
-        } _field3;
-        struct __compressed_pair<float, std::__1::__unordered_map_equal<unsigned long long, std::__1::__hash_value_type<unsigned long long, int>, std::__1::equal_to<unsigned long long>, true>> {
-            float _field1;
-        } _field4;
-    } _field1;
-};
-
-struct unordered_map<unsigned long long, std::__1::unique_ptr<kuaishou::editorsdk2::ReverseFrameCache, std::__1::default_delete<kuaishou::editorsdk2::ReverseFrameCache>>, std::__1::hash<unsigned long long>, std::__1::equal_to<unsigned long long>, std::__1::allocator<std::__1::pair<const unsigned long long, std::__1::unique_ptr<kuaishou::editorsdk2::ReverseFrameCache, std::__1::default_delete<kuaishou::editorsdk2::ReverseFrameCache>>>>> {
-    struct __hash_table<std::__1::__hash_value_type<unsigned long long, std::__1::unique_ptr<kuaishou::editorsdk2::ReverseFrameCache, std::__1::default_delete<kuaishou::editorsdk2::ReverseFrameCache>>>, std::__1::__unordered_map_hasher<unsigned long long, std::__1::__hash_value_type<unsigned long long, std::__1::unique_ptr<kuaishou::editorsdk2::ReverseFrameCache, std::__1::default_delete<kuaishou::editorsdk2::ReverseFrameCache>>>, std::__1::hash<unsigned long long>, true>, std::__1::__unordered_map_equal<unsigned long long, std::__1::__hash_value_type<unsigned long long, std::__1::unique_ptr<kuaishou::editorsdk2::ReverseFrameCache, std::__1::default_delete<kuaishou::editorsdk2::ReverseFrameCache>>>, std::__1::equal_to<unsigned long long>, true>, std::__1::allocator<std::__1::__hash_value_type<unsigned long long, std::__1::unique_ptr<kuaishou::editorsdk2::ReverseFrameCache, std::__1::default_delete<kuaishou::editorsdk2::ReverseFrameCache>>>>> {
-        struct unique_ptr<std::__1::__hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<unsigned long long, std::__1::unique_ptr<kuaishou::editorsdk2::ReverseFrameCache, std::__1::default_delete<kuaishou::editorsdk2::ReverseFrameCache>>>, void *>*>*[], std::__1::__bucket_list_deallocator<std::__1::allocator<std::__1::__hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<unsigned long long, std::__1::unique_ptr<kuaishou::editorsdk2::ReverseFrameCache, std::__1::default_delete<kuaishou::editorsdk2::ReverseFrameCache>>>, void *>*>*>>> _field1;
-        struct __compressed_pair<std::__1::__hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<unsigned long long, std::__1::unique_ptr<kuaishou::editorsdk2::ReverseFrameCache, std::__1::default_delete<kuaishou::editorsdk2::ReverseFrameCache>>>, void *>*>, std::__1::allocator<std::__1::__hash_node<std::__1::__hash_value_type<unsigned long long, std::__1::unique_ptr<kuaishou::editorsdk2::ReverseFrameCache, std::__1::default_delete<kuaishou::editorsdk2::ReverseFrameCache>>>, void *>>> {
-            struct __hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<unsigned long long, std::__1::unique_ptr<kuaishou::editorsdk2::ReverseFrameCache, std::__1::default_delete<kuaishou::editorsdk2::ReverseFrameCache>>>, void *>*> _field1;
-        } _field2;
-        struct __compressed_pair<unsigned long, std::__1::__unordered_map_hasher<unsigned long long, std::__1::__hash_value_type<unsigned long long, std::__1::unique_ptr<kuaishou::editorsdk2::ReverseFrameCache, std::__1::default_delete<kuaishou::editorsdk2::ReverseFrameCache>>>, std::__1::hash<unsigned long long>, true>> {
-            unsigned long long _field1;
-        } _field3;
-        struct __compressed_pair<float, std::__1::__unordered_map_equal<unsigned long long, std::__1::__hash_value_type<unsigned long long, std::__1::unique_ptr<kuaishou::editorsdk2::ReverseFrameCache, std::__1::default_delete<kuaishou::editorsdk2::ReverseFrameCache>>>, std::__1::equal_to<unsigned long long>, true>> {
-            float _field1;
-        } _field4;
     } _field1;
 };
 
@@ -5902,22 +5287,6 @@ struct vector<CGPUImage::RotationEx, std::__1::allocator<CGPUImage::RotationEx>>
 
 struct vector<CGPUImage::Triangle, std::__1::allocator<CGPUImage::Triangle>>;
 
-struct vector<CKSEffectRange, std::__1::allocator<CKSEffectRange>> {
-    struct CKSEffectRange *_field1;
-    struct CKSEffectRange *_field2;
-    struct __compressed_pair<CKSEffectRange *, std::__1::allocator<CKSEffectRange>> {
-        struct CKSEffectRange *_field1;
-    } _field3;
-};
-
-struct vector<CKSTimeRange, std::__1::allocator<CKSTimeRange>> {
-    struct CKSTimeRange *_field1;
-    struct CKSTimeRange *_field2;
-    struct __compressed_pair<CKSTimeRange *, std::__1::allocator<CKSTimeRange>> {
-        struct CKSTimeRange *_field1;
-    } _field3;
-};
-
 struct vector<CMRotationMatrix, std::__1::allocator<CMRotationMatrix>> {
     CDStruct_183601bc *__begin_;
     CDStruct_183601bc *__end_;
@@ -5966,14 +5335,6 @@ struct vector<GLMatrix, std::__1::allocator<GLMatrix>> {
     } __end_cap_;
 };
 
-struct vector<KSAAsset *, std::__1::allocator<KSAAsset *>> {
-    struct KSAAsset **_field1;
-    struct KSAAsset **_field2;
-    struct __compressed_pair<KSAAsset **, std::__1::allocator<KSAAsset *>> {
-        struct KSAAsset **_field1;
-    } _field3;
-};
-
 struct vector<KSCNNPoseInfo, std::__1::allocator<KSCNNPoseInfo>> {
     struct KSCNNPoseInfo *_field1;
     struct KSCNNPoseInfo *_field2;
@@ -5996,14 +5357,6 @@ struct vector<KSLiveHeartGPUInstance, std::__1::allocator<KSLiveHeartGPUInstance
     struct __compressed_pair<KSLiveHeartGPUInstance *, std::__1::allocator<KSLiveHeartGPUInstance>> {
         struct KSLiveHeartGPUInstance *__first_;
     } __end_cap_;
-};
-
-struct vector<KSPlaybackEvent, std::__1::allocator<KSPlaybackEvent>> {
-    int *_field1;
-    int *_field2;
-    struct __compressed_pair<KSPlaybackEvent *, std::__1::allocator<KSPlaybackEvent>> {
-        int *_field1;
-    } _field3;
 };
 
 struct vector<KSPoseInfo, std::__1::allocator<KSPoseInfo>> {
@@ -6070,30 +5423,6 @@ struct vector<int, std::__1::allocator<int>> {
     } __end_cap_;
 };
 
-struct vector<kuaishou::editorsdk2::ThumbnailJob, std::__1::allocator<kuaishou::editorsdk2::ThumbnailJob>> {
-    struct ThumbnailJob *_field1;
-    struct ThumbnailJob *_field2;
-    struct __compressed_pair<kuaishou::editorsdk2::ThumbnailJob *, std::__1::allocator<kuaishou::editorsdk2::ThumbnailJob>> {
-        struct ThumbnailJob *_field1;
-    } _field3;
-};
-
-struct vector<kuaishou::editorsdk2::model::EditorSdkError, std::__1::allocator<kuaishou::editorsdk2::model::EditorSdkError>> {
-    struct EditorSdkError *_field1;
-    struct EditorSdkError *_field2;
-    struct __compressed_pair<kuaishou::editorsdk2::model::EditorSdkError *, std::__1::allocator<kuaishou::editorsdk2::model::EditorSdkError>> {
-        struct EditorSdkError *_field1;
-    } _field3;
-};
-
-struct vector<kuaishou::editorsdk2::model::RenderRange, std::__1::allocator<kuaishou::editorsdk2::model::RenderRange>> {
-    struct RenderRange *_field1;
-    struct RenderRange *_field2;
-    struct __compressed_pair<kuaishou::editorsdk2::model::RenderRange *, std::__1::allocator<kuaishou::editorsdk2::model::RenderRange>> {
-        struct RenderRange *_field1;
-    } _field3;
-};
-
 struct vector<ncv::Point2f, std::__1::allocator<ncv::Point2f>> {
     struct Point2f *__begin_;
     struct Point2f *__end_;
@@ -6126,11 +5455,11 @@ struct vector<std::__1::map<std::__1::basic_string<char>, std::__1::basic_string
     } _field3;
 };
 
-struct vector<std::__1::unique_ptr<AVFrame, void (*)(AVFrame *)>, std::__1::allocator<std::__1::unique_ptr<AVFrame, void (*)(AVFrame *)>>> {
-    struct unique_ptr<AVFrame, void (*)(AVFrame *)> *_field1;
-    struct unique_ptr<AVFrame, void (*)(AVFrame *)> *_field2;
-    struct __compressed_pair<std::__1::unique_ptr<AVFrame, void (*)(AVFrame *)>*, std::__1::allocator<std::__1::unique_ptr<AVFrame, void (*)(AVFrame *)>>> {
-        struct unique_ptr<AVFrame, void (*)(AVFrame *)> *_field1;
+struct vector<std::__1::unique_ptr<kuaishou::editorsdk2::AssetAudioDecoder, std::__1::default_delete<kuaishou::editorsdk2::AssetAudioDecoder>>, std::__1::allocator<std::__1::unique_ptr<kuaishou::editorsdk2::AssetAudioDecoder, std::__1::default_delete<kuaishou::editorsdk2::AssetAudioDecoder>>>> {
+    struct unique_ptr<kuaishou::editorsdk2::AssetAudioDecoder, std::__1::default_delete<kuaishou::editorsdk2::AssetAudioDecoder>> *_field1;
+    struct unique_ptr<kuaishou::editorsdk2::AssetAudioDecoder, std::__1::default_delete<kuaishou::editorsdk2::AssetAudioDecoder>> *_field2;
+    struct __compressed_pair<std::__1::unique_ptr<kuaishou::editorsdk2::AssetAudioDecoder, std::__1::default_delete<kuaishou::editorsdk2::AssetAudioDecoder>>*, std::__1::allocator<std::__1::unique_ptr<kuaishou::editorsdk2::AssetAudioDecoder, std::__1::default_delete<kuaishou::editorsdk2::AssetAudioDecoder>>>> {
+        struct unique_ptr<kuaishou::editorsdk2::AssetAudioDecoder, std::__1::default_delete<kuaishou::editorsdk2::AssetAudioDecoder>> *_field1;
     } _field3;
 };
 
@@ -6201,6 +5530,11 @@ struct vector<unsigned short, std::__1::allocator<unsigned short>> {
 struct weak_ptr<VirtualFaceProcessor> {
     struct VirtualFaceProcessor *__ptr_;
     struct __shared_weak_count *__cntrl_;
+};
+
+struct weak_ptr<kuaishou::editorsdk2::VideoEditorSession> {
+    struct VideoEditorSession *_field1;
+    struct __shared_weak_count *_field2;
 };
 
 #if 0
@@ -6760,6 +6094,11 @@ typedef struct vector<slamar::MapPoint *, std::__1::allocator<slamar::MapPoint *
         struct MapPoint **_field1;
     } _field3;
 } vector_5353283d;
+
+typedef struct weak_ptr<kuaishou::editorsdk2::VideoEditorSession> {
+    struct VideoEditorSession *_field1;
+    struct __shared_weak_count *_field2;
+} weak_ptr_e07fac59;
 
 #pragma mark Named Unions
 

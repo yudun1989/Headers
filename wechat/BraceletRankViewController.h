@@ -14,14 +14,13 @@
 #import "MMImageLoaderObserver-Protocol.h"
 #import "MMSightCameraViewControllerDelegate-Protocol.h"
 #import "MMWebImageViewDelegate-Protocol.h"
-#import "UIActionSheetDelegate-Protocol.h"
 #import "UITableViewDataSource-Protocol.h"
 #import "UITableViewDelegate-Protocol.h"
 #import "WCActionSheetDelegate-Protocol.h"
 
 @class BraceletRankUtils, DeviceRankInfo, ForwardMessageLogicController, MMHeadImageView, MMTableView, MMUIImageView, MMUILabel, MMWebImageView, NSArray, NSDictionary, NSMutableArray, NSMutableSet, NSString, NSTimer, UIImage, UIImageView, UILabel, UIView;
 
-@interface BraceletRankViewController : MMUIViewController <MMSightCameraViewControllerDelegate, UITableViewDelegate, UITableViewDataSource, UIActionSheetDelegate, IDeviceRankSnsMgrExt, IDeviceRankProfileMgrExt, WCActionSheetDelegate, MMWebImageViewDelegate, ForwardMessageLogicDelegate, MMImageLoaderObserver, BraceletAbroadRankViewDelegate, BraceletRankProfileViewControllerDelegate>
+@interface BraceletRankViewController : MMUIViewController <MMSightCameraViewControllerDelegate, UITableViewDelegate, UITableViewDataSource, IDeviceRankSnsMgrExt, IDeviceRankProfileMgrExt, WCActionSheetDelegate, MMWebImageViewDelegate, ForwardMessageLogicDelegate, MMImageLoaderObserver, BraceletAbroadRankViewDelegate, BraceletRankProfileViewControllerDelegate>
 {
     MMTableView *_tableView;
     UIView *_tableHeaderView;

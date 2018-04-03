@@ -93,6 +93,7 @@
 - (void)OnRecordDenied;
 - (void)voiceSearchByMainFrameRealDone;
 - (void)voiceSearchStartByNewMainFrame;
+- (void)reportVSAction:(int)arg1;
 - (void)adjustDimmingViewRect;
 - (void)voiceSearchBtnRealDone;
 - (void)voiceSearchButtonDone;

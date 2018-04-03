@@ -35,6 +35,7 @@
 - (void)OnModEnterpriseMsg:(id)arg1 Brand:(id)arg2 WrapMsg:(id)arg3;
 - (void)OnMsgRevoked:(id)arg1 n64MsgId:(long long)arg2;
 - (void)onCheckAppAttachRet:(id)arg1 isExistInSvr:(_Bool)arg2 taskInfo:(id)arg3;
+- (void)shareToFriend;
 - (unsigned long long)GetTempSize;
 - (id)GetTmpFilePath;
 - (id)GetFilePath;

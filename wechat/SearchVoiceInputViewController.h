@@ -30,7 +30,9 @@
     _Bool _willHide;
     _Bool _bUseBlackStatusbar;
     _Bool _bAlwayShowMaskView;
+    _Bool _isNavVoice;
     int _inputStatus;
+    unsigned int _scene;
     id <SearchVoiceInputViewControllerDelegate> _delegate;
     NSString *_sessionId;
     NSString *_subSessionId;
@@ -58,6 +60,8 @@
 @property(retain, nonatomic) UIView *containerView; // @synthesize containerView=_containerView;
 @property(retain, nonatomic) NSString *subSessionId; // @synthesize subSessionId=_subSessionId;
 @property(retain, nonatomic) NSString *sessionId; // @synthesize sessionId=_sessionId;
+@property(nonatomic) _Bool isNavVoice; // @synthesize isNavVoice=_isNavVoice;
+@property(nonatomic) unsigned int scene; // @synthesize scene=_scene;
 @property(nonatomic) _Bool bAlwayShowMaskView; // @synthesize bAlwayShowMaskView=_bAlwayShowMaskView;
 @property(nonatomic) _Bool bUseBlackStatusbar; // @synthesize bUseBlackStatusbar=_bUseBlackStatusbar;
 @property(nonatomic) int inputStatus; // @synthesize inputStatus=_inputStatus;

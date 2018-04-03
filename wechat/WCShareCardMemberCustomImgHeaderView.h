@@ -34,6 +34,7 @@
 - (id)getBrandColor;
 - (id)insertSpaceChar:(id)arg1 hasTransline:(_Bool)arg2;
 - (id)genLabelWithFontSize:(double)arg1 text:(id)arg2 textColor:(id)arg3 x:(double)arg4 y:(double)arg5 maxWidth:(double)arg6 superView:(id)arg7 needShadow:(_Bool)arg8;
+- (void)setFrame:(struct CGRect)arg1;
 - (id)createSecondaryFieldView;
 - (id)createCardImgView;
 - (id)createBannerView;

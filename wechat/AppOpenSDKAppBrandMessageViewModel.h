@@ -24,7 +24,6 @@
 @property(readonly, nonatomic) UIImage *thumbImage;
 @property(readonly, nonatomic) double imageHeight;
 @property(readonly, nonatomic) double titleHeight; // @synthesize titleHeight=m_titleHeight;
-- (_Bool)souceIconBgIsShow;
 - (id)sourceIcon;
 - (id)sourceTitle;
 - (_Bool)isShowSourceView;

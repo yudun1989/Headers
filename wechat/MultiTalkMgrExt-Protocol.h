@@ -28,6 +28,7 @@
 - (void)onMultiTalkMgrVideoSessionStopComplete;
 - (void)onMultiTalkMgrVideoSessionStartComplete;
 - (void)onMultiTalkAudioDeviceUnPlugin;
+- (void)onMultiTalkAudioDevicePlugin;
 - (void)onMultiTalkMsgCellIconChange:(NSString *)arg1;
 - (void)onMultiTalkBannerChange:(MultiTalkBannerItem *)arg1 status:(unsigned int)arg2;
 - (void)onReceiveVideoMemberChangeMsg:(WXCMultiTalkGroup *)arg1 extDic:(NSDictionary *)arg2;

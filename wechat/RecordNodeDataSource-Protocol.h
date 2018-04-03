@@ -9,6 +9,7 @@
 @class FavAudioInfo, FavoritesItemDataField, MMMusicInfo, NSMutableArray, NSString;
 
 @protocol RecordNodeDataSource <NSObject>
+- (void)IsUrlWeAppThumbPath:(id *)arg1 ThumbUrl:(id *)arg2;
 - (_Bool)StartDownload;
 - (NSString *)GetSightPath;
 - (NSString *)GetThumbPath;

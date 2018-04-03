@@ -55,6 +55,7 @@
 - (void)CheckQueue:(int)arg1;
 - (void)CheckAllQueue;
 - (void)StopDownloadImage:(id)arg1 downloadType:(int)arg2;
+- (void)StartDownloadImage:(id)arg1 downloadType:(int)arg2 needNotify:(_Bool)arg3 force:(_Bool)arg4 preloadItem:(id)arg5 isAd:(_Bool)arg6;
 - (void)StartDownloadImage:(id)arg1 downloadType:(int)arg2 needNotify:(_Bool)arg3 force:(_Bool)arg4 preloadItem:(id)arg5;
 - (void)StartDownloadImage:(id)arg1 downloadType:(int)arg2 needNotify:(_Bool)arg3 force:(_Bool)arg4;
 - (void)StartDownloadImage:(id)arg1 downloadType:(int)arg2;

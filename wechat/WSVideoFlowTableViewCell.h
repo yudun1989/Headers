@@ -8,7 +8,7 @@
 
 #import "WSVideoPlayerViewDelegate-Protocol.h"
 
-@class MMBrandHeadImageView, MMUILabel, NSString, UIButton, UIImageView, UIView, WSStreamPlayerView, WSVideoModel;
+@class MMBrandHeadImageView, MMUILabel, NSMutableArray, NSString, UIButton, UIImageView, UIView, WSStreamPlayerView, WSVideoModel;
 @protocol WSVideoFlowTableViewCellDelegate;
 
 @interface WSVideoFlowTableViewCell : MMTableViewCell <WSVideoPlayerViewDelegate>
@@ -17,27 +17,30 @@
     MMBrandHeadImageView *_sourceHeadImgView;
     MMUILabel *_sourceLabel;
     UIImageView *_sourceArrow;
-    UIButton *_recommendButton;
     UIButton *_shareButton;
     MMUILabel *_titleLabel;
     MMUILabel *_countLabel;
+    NSMutableArray *_arrTagButton;
     UIView *_divLine;
     UIView *_shareButtonDivLine;
     UIView *_videoMaskView;
     UIView *_videoTopMaskView;
     UIView *_videoBottomMaskView;
+    _Bool _needIPhoneXLayout;
     id <WSVideoFlowTableViewCellDelegate> _delegate;
     WSStreamPlayerView *_videoPlayerView;
     WSVideoModel *_videoModel;
 }
 
-+ (double)HeightForBottomRecommendPanel:(id)arg1;
++ (double)HeightForBottomTagPanel:(id)arg1;
++ (double)HeightBottomCountLabel:(id)arg1;
 + (double)HeightForDescLabel:(id)arg1 maxWidth:(double)arg2;
 + (double)HeightForBottomPanel:(id)arg1 maxWidth:(double)arg2;
 + (double)HeightForVideoModel:(id)arg1 maxWidth:(double)arg2;
 + (double)EstimatedCellHeight;
 + (double)HeightForVideoPlayerView;
 + (double)OffsetYForVideoPlayerView;
+@property(nonatomic) _Bool needIPhoneXLayout; // @synthesize needIPhoneXLayout=_needIPhoneXLayout;
 @property(retain, nonatomic) WSVideoModel *videoModel; // @synthesize videoModel=_videoModel;
 @property(readonly, nonatomic) WSStreamPlayerView *videoPlayerView; // @synthesize videoPlayerView=_videoPlayerView;
 @property(nonatomic) __weak id <WSVideoFlowTableViewCellDelegate> delegate; // @synthesize delegate=_delegate;
@@ -45,6 +48,7 @@
 - (void)weakenCell:(_Bool)arg1 animated:(_Bool)arg2;
 - (void)resetSurroundMask;
 - (void)weakenSurrounds:(_Bool)arg1;
+- (void)onMaskPlayButtonClick:(id)arg1;
 - (void)onDelayToHideControlViews;
 - (void)onShowControlViews;
 - (_Bool)hasPlayAnyVideo;
@@ -60,8 +64,8 @@
 - (void)removePlayerView;
 - (void)layoutDivLine;
 - (void)layoutMaskView;
+- (void)layoutTag;
 - (void)layoutCountLabel;
-- (void)layoutRecommendButton;
 - (void)layoutDescLabel;
 - (void)layoutVideoPlayerView;
 - (void)layoutShareDivLine;
@@ -71,9 +75,10 @@
 - (void)layoutSubviews;
 - (void)onTapSurroundings:(id)arg1;
 - (void)onTapMaskView:(id)arg1;
+- (void)delayTapTag:(id)arg1;
+- (void)onTapTag:(id)arg1;
 - (void)onTapTitle:(id)arg1;
 - (void)onTapSource:(id)arg1;
-- (void)onItemOperate:(id)arg1;
 - (void)onShare:(id)arg1;
 - (void)playVideoForce:(_Bool)arg1;
 - (void)forcePlayVideo;
@@ -86,7 +91,8 @@
 - (void)initDivLine;
 - (void)initMaskView;
 - (void)initCountLabel;
-- (void)initRecommedButton;
+- (void)initTagButton;
+- (id)genTagButton;
 - (void)initDescLabel;
 - (void)initShareDivLine;
 - (void)initShareButton;

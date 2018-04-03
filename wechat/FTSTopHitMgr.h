@@ -37,6 +37,9 @@
 - (void)checkAndFillTimestamp;
 - (void)doReportTopHitStatus;
 - (void)tryReportTopHitStatus;
+- (_Bool)isOpenRemovalABTest;
+- (_Bool)isContactType:(unsigned int)arg1;
+- (void)removeTopHitItem:(id)arg1 forTopHitType:(unsigned int)arg2;
 - (void)onAppTerminate;
 - (void)onClearData;
 - (void)onReloadData;
@@ -73,6 +76,8 @@
 - (_Bool)isTopHitList:(id)arg1 keyContainsValue:(id)arg2;
 - (void)trySearchMemberGroup:(id)arg1 andTargetKeys:(id)arg2 dictionary:(id)arg3 dicMatchTip:(id)arg4;
 - (void)searchTopHit:(id)arg1 dicCheckList:(id)arg2 matchTips:(id)arg3 maxCount:(unsigned int)arg4;
+- (_Bool)isSessionActiveForContact:(id)arg1;
+- (_Bool)isNormalOrChatRoomContact:(id)arg1;
 - (void)searchTopHit:(id)arg1 dicCheckList:(id)arg2 matchTips:(id)arg3;
 - (void)setNeedsSearchNextTime;
 - (void)cancelSearch;

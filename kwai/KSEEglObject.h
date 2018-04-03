@@ -23,13 +23,18 @@
 @property(nonatomic) struct __CVBuffer *pixelBufferRef; // @synthesize pixelBufferRef=_pixelBufferRef;
 @property(nonatomic) unsigned int frameBuffer; // @synthesize frameBuffer=_frameBuffer;
 - (void).cxx_destruct;
+- (void)makeCurrent;
 - (void)destroy;
 - (void)readPixels:(char *)arg1;
-- (_Bool)init:(int)arg1 height:(int)arg2;
+- (_Bool)init:(int)arg1 height:(int)arg2 shared:(id)arg3;
 - (void)createFrameBufferObject;
 - (void)createPixelBuffer;
 - (_Bool)setupOpenGLESTextureCache;
-- (_Bool)setupContext;
+- (_Bool)setupContextWithShared:(id)arg1;
+- (void)dealloc;
+- (id)init;
+- (void)resetEglSize:(int)arg1 height:(int)arg2;
+- (id)nativeContext;
 
 @end
 

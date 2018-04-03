@@ -35,6 +35,7 @@
 - (void)setDisableWebViewScrollViewPullUp;
 - (void)setDisableWebViewScrollViewPullDown;
 - (void)realStopAction;
+- (void)changePullRefreshMode:(int)arg1;
 - (void)stopPullRefresh;
 - (void)startPullRefresh;
 - (void)disablePullRefresh;

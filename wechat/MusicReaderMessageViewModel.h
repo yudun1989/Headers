@@ -16,6 +16,7 @@
 + (_Bool)canCreateMessageViewModelWithMessageWrap:(id)arg1;
 @property(retain, nonatomic) UIImage *musicSourceIcon; // @synthesize musicSourceIcon=_musicSourceIcon;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) double labelMaxWidth;
 - (struct CGSize)calculateTitleViewSize;
 @property(readonly, nonatomic) MMMusicInfo *musicInfo;
 - (double)messageNodeViewHeight;

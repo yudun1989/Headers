@@ -28,6 +28,7 @@
 + (long long)getVirtualMemory;
 + (long long)getResidentMemory;
 + (float)getCurrentCpuUsage;
++ (void)printCurrentAllThreadCPU;
 + (id)shareInstance;
 @property unsigned int bStopMonitorCPUAverageCount; // @synthesize bStopMonitorCPUAverageCount=_bStopMonitorCPUAverageCount;
 - (void).cxx_destruct;

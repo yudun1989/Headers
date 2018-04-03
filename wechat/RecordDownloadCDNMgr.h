@@ -33,13 +33,14 @@
 - (void)CheckDownloadRecordData;
 - (void)StartDownloadCurMsg;
 - (void)AddDownloadTasksFromDataList:(id)arg1;
+- (_Bool)needDownloadFromDataList:(id)arg1 inMsgWrap:(id)arg2;
 - (id)getDownloadInfo:(id)arg1 DataId:(id)arg2 thumb:(_Bool)arg3 data:(_Bool)arg4;
 - (id)findRecordDataInList:(id)arg1 WithLocalDataId:(id)arg2;
 - (void)StopDownloadRecordMsg:(id)arg1;
 - (void)StartDownloadByRecordData:(id)arg1 DataId:(id)arg2 thumb:(_Bool)arg3 data:(_Bool)arg4 prior:(_Bool)arg5;
 - (void)StartDownloadByRecordData:(id)arg1 DataId:(id)arg2 thumb:(_Bool)arg3 data:(_Bool)arg4;
 - (void)StartDownloadByRecordData:(id)arg1 DataId:(id)arg2;
-- (void)StartDownloadByRecordMsg:(id)arg1;
+- (_Bool)StartDownloadByRecordMsg:(id)arg1;
 - (void)dealloc;
 - (id)init;
 

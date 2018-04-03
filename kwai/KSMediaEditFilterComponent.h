@@ -6,37 +6,60 @@
 
 #import "LYWComponent.h"
 
+#import "KSMediaEditActivity-Protocol.h"
 #import "UICollectionViewDataSource-Protocol.h"
 #import "UICollectionViewDelegate-Protocol.h"
 
-@class NSArray, NSString, UICollectionView, UICollectionViewFlowLayout;
+@class KSMediaEditActivityController, KSMediaEditFilterStateSnapshot, KSValueLabelSlider, NSArray, NSObject, NSString, UICollectionView;
+@protocol OS_dispatch_queue;
 
-@interface KSMediaEditFilterComponent : LYWComponent <UICollectionViewDelegate, UICollectionViewDataSource>
+@interface KSMediaEditFilterComponent : LYWComponent <KSMediaEditActivity, UICollectionViewDelegate, UICollectionViewDataSource>
 {
-    _Bool _beautifyEnabled;
+    _Bool _beauty;
     UICollectionView *_selectView;
-    UICollectionViewFlowLayout *_layout;
     NSArray *_filters;
+    NSArray *_cellItems;
     id _editResourceUpdatedObserver;
+    NSObject<OS_dispatch_queue> *_cellProcessQueue;
+    KSValueLabelSlider *_slider;
+    unsigned long long _selectedNormalFilterIndex;
+    long long _editingIndex;
+    KSMediaEditActivityController *_activityController;
+    KSMediaEditFilterStateSnapshot *_filterStateSnapshot;
 }
 
-@property(nonatomic) _Bool beautifyEnabled; // @synthesize beautifyEnabled=_beautifyEnabled;
++ (id)createLayout;
++ (id)createCollectionView;
+@property(retain, nonatomic) KSMediaEditFilterStateSnapshot *filterStateSnapshot; // @synthesize filterStateSnapshot=_filterStateSnapshot;
+@property(nonatomic) __weak KSMediaEditActivityController *activityController; // @synthesize activityController=_activityController;
+@property(nonatomic) long long editingIndex; // @synthesize editingIndex=_editingIndex;
+@property(nonatomic) unsigned long long selectedNormalFilterIndex; // @synthesize selectedNormalFilterIndex=_selectedNormalFilterIndex;
+@property(nonatomic) _Bool beauty; // @synthesize beauty=_beauty;
+@property(retain, nonatomic) KSValueLabelSlider *slider; // @synthesize slider=_slider;
+@property(retain, nonatomic) NSObject<OS_dispatch_queue> *cellProcessQueue; // @synthesize cellProcessQueue=_cellProcessQueue;
 @property(retain, nonatomic) id editResourceUpdatedObserver; // @synthesize editResourceUpdatedObserver=_editResourceUpdatedObserver;
+@property(retain, nonatomic) NSArray *cellItems; // @synthesize cellItems=_cellItems;
 @property(retain, nonatomic) NSArray *filters; // @synthesize filters=_filters;
-@property(retain, nonatomic) UICollectionViewFlowLayout *layout; // @synthesize layout=_layout;
 @property(retain, nonatomic) UICollectionView *selectView; // @synthesize selectView=_selectView;
 - (void).cxx_destruct;
+- (void)_showOrHideSlideBar:(_Bool)arg1 completion:(CDUnknownBlockType)arg2;
+- (id)currentFilter;
 - (void)reloadFilters;
 - (void)_setupFilters;
 - (id)_filterState;
 - (void)collectionView:(id)arg1 didSelectItemAtIndexPath:(id)arg2;
 - (id)collectionView:(id)arg1 cellForItemAtIndexPath:(id)arg2;
 - (long long)collectionView:(id)arg1 numberOfItemsInSection:(long long)arg2;
-- (void)newState:(id)arg1 oldState:(id)arg2;
+- (void)_makeSnapshotIfNeeded;
+- (void)newState:(id)arg1;
 - (void)viewDidLoad;
 - (void)dealloc;
-- (void)loadView;
-- (id)initWithStore:(id)arg1 selector:(CDUnknownBlockType)arg2 beautifyEnabled:(_Bool)arg3;
+- (id)initWithStore:(id)arg1;
+- (void)activityDidFinish;
+- (void)activityDidCancel;
+- (void)activityWillShow;
+- (double)activityHeight;
+- (void)activityDidAddedToController:(id)arg1;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

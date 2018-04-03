@@ -23,6 +23,7 @@
 - (void)onStateOfLoading;
 - (void)onStateOfNormal;
 - (void)onStateOfPulling;
+- (void)setMode:(int)arg1;
 - (id)initWithFrame:(struct CGRect)arg1 withMode:(int)arg2;
 - (void)setFrame:(struct CGRect)arg1;
 - (void)setIsDragView:(_Bool)arg1;

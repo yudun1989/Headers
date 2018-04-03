@@ -19,7 +19,7 @@
     PasswordLogic *m_checkPasswdLogic;
     WCAccountBindPhoneControlLogic *m_bindPhoneLogic;
     unsigned long long m_status;
-    _Bool m_bHaveBind;
+    NSString *m_nsBindUserName;
     id <WCAccountLogoutLogicDelegate> _delegate;
 }
 

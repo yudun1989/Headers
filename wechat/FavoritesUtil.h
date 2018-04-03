@@ -10,6 +10,17 @@
 {
 }
 
++ (void)tryRemoveChatVoiceInfo:(id)arg1;
++ (id)makeTxtTypeItemDataWithDescription:(id)arg1;
++ (id)convertRecordDataListToNoteDataList:(id)arg1;
++ (id)convertDataToNoteData:(id)arg1;
++ (id)ConvertFavItemToNoteFavItem:(id)arg1;
++ (_Bool)canConvertToNoteFavItem:(id)arg1;
++ (int)getConvertWebviewSourceType:(int)arg1;
++ (int)getFavChatSourceTypeOfUsername:(id)arg1;
++ (int)getFavChatSourceTypeOfMes:(id)arg1;
++ (_Bool)findSourcePath:(id)arg1 inDataList:(id)arg2;
++ (id)findMessageWrapExistsSourcePath:(id)arg1 withSourceDataId:(id)arg2 withFavItem:(id)arg3;
 + (_Bool)noteCanSaveAsImage:(id)arg1;
 + (id)getFavClipMidImagePath:(id)arg1;
 + (id)getFavMidImagePath:(id)arg1;
@@ -39,6 +50,7 @@
 + (id)ConvertImgFavItem2WCUploadTask:(id)arg1;
 + (id)ConvertMallProductFavItem2MsgWrap:(id)arg1;
 + (id)ConvertSightFavItem2VideoInfo:(id)arg1;
++ (id)ConvertWeAppFavItem2MsgWrap:(id)arg1;
 + (id)ConvertTVFavItem2MsgWrap:(id)arg1;
 + (id)ConvertGoodsFavItem2MsgWrap:(id)arg1;
 + (id)ConvertWebPageFavItem2MsgWrap:(id)arg1;
@@ -54,7 +66,9 @@
 + (id)ConvertTextFavItem2MsgWrap:(id)arg1;
 + (id)ConvertSNSNoteShare2FavItem:(id)arg1;
 + (id)ConvertMsgList2FavItem:(id)arg1;
++ (id)ConvertWeAppMsg2FavItem:(id)arg1;
 + (id)ConvertMultiReaderMsg2FavItem:(id)arg1;
++ (id)ConvertRecordMsg:(id)arg1 toFavDataListWithDataList:(id)arg2 withParentSourceId:(id)arg3;
 + (id)ConvertRecordMsg2FavItem:(id)arg1;
 + (id)ConvertTVWC2FavItem:(id)arg1;
 + (id)ConvertTVMsg2FavItem:(id)arg1;
@@ -88,7 +102,7 @@
 + (id)ConvertImgPost2FavItem:(id)arg1 ThumbPath:(id)arg2;
 + (id)ConvertImgSNS2FavItem:(id)arg1 ThumbUrl:(id)arg2 SourceDataPath:(id)arg3 FromUser:(id)arg4 EventId:(id)arg5 mediaId:(id)arg6 AppId:(id)arg7 SrcCreateTime:(unsigned int)arg8;
 + (id)ConvertImgMsg2FavItem:(id)arg1;
-+ (id)ConvertUrlWeb2FavItem:(id)arg1 Title:(id)arg2 Desc:(id)arg3 ThumbUrl:(id)arg4 AppId:(id)arg5 UserName:(id)arg6 ContentAttributeFlag:(unsigned int)arg7 publisherUsername:(id)arg8;
++ (id)ConvertUrlWeb2FavItem:(id)arg1 Title:(id)arg2 Desc:(id)arg3 ThumbUrl:(id)arg4 AppId:(id)arg5 UserName:(id)arg6 ContentAttributeFlag:(unsigned int)arg7 publisherUsername:(id)arg8 PublishId:(id)arg9;
 + (id)ConvertCanvasUrlSNS2FavItem:(id)arg1 Title:(id)arg2 EventId:(id)arg3 FromUser:(id)arg4 AppId:(id)arg5 ThumbUrl:(id)arg6 SrcCreateTime:(unsigned int)arg7 ContentAttributeFlag:(unsigned int)arg8 CanvasInfoXml:(id)arg9;
 + (id)ConvertUrlSNS2FavItem:(id)arg1 Title:(id)arg2 EventId:(id)arg3 FromUser:(id)arg4 AppId:(id)arg5 ThumbUrl:(id)arg6 SrcCreateTime:(unsigned int)arg7 ContentAttributeFlag:(unsigned int)arg8;
 + (id)ConvertUrlSNS2FavItem:(id)arg1 Desc:(id)arg2 Title:(id)arg3 EventId:(id)arg4 FromUser:(id)arg5 AppId:(id)arg6 ThumbUrl:(id)arg7 SrcCreateTime:(unsigned int)arg8 ContentAttributeFlag:(unsigned int)arg9 ThumbPath:(id)arg10;

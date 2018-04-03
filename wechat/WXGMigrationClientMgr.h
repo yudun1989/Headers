@@ -55,6 +55,7 @@
 @property(retain, nonatomic) NSData *server_key; // @synthesize server_key=_server_key;
 @property(retain, nonatomic) NSString *server_id; // @synthesize server_id=_server_id;
 - (void).cxx_destruct;
+- (id)getConnectDebugInfo;
 - (void)onMigrationImportMessageCurrentSession:(unsigned long long)arg1 totalSession:(unsigned long long)arg2;
 - (void)onMigrationImportMessageCurrentCount:(unsigned long long)arg1 totalCount:(unsigned long long)arg2;
 - (void)onMigrationImportMessageFinish;

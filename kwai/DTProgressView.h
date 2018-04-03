@@ -6,10 +6,12 @@
 
 #import "DTShapeView.h"
 
-@class CAValueFunction;
+@class CAValueFunction, UIBezierPath;
 
 @interface DTProgressView : DTShapeView
 {
+    UIBezierPath *_defaultPath;
+    struct CGSize _defaultPathSize;
     double _animationDuration;
     CAValueFunction *_animationFunction;
 }
@@ -26,8 +28,10 @@
 - (float)normalizedProgressValueFromValue:(float)arg1;
 - (void)setProgress:(float)arg1 animated:(_Bool)arg2;
 @property(readonly, nonatomic) float progress;
+- (void)layoutSubviews;
 - (id)initWithFrame:(struct CGRect)arg1;
 - (id)initWithCoder:(id)arg1;
+- (void)setUpDefaultPath;
 - (void)commonSetup;
 
 @end

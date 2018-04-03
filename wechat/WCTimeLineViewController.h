@@ -175,6 +175,7 @@
 - (void)onUpdateDataItem:(id)arg1 oldHeight:(double)arg2 newHeight:(double)arg3;
 - (void)onCommentDataItem:(id)arg1 point:(struct CGPoint)arg2;
 - (void)onAdvertiseAction:(id)arg1 point:(struct CGPoint)arg2;
+- (void)onActionFloatView:(id)arg1 didSelectFeedbackItem:(id)arg2;
 - (void)onActionFloatView:(id)arg1 didSelectReason:(id)arg2;
 - (void)onRemoveAd;
 - (void)onAdActoin:(id)arg1;

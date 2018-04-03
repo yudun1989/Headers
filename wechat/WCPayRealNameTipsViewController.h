@@ -16,7 +16,7 @@
 {
     id <WCPayRealNameTipsViewControllerDelegate> _delegate;
     WCPayRealnameGuideInfo *_realNameInfo;
-    UIButton *_backgroundButton;
+    UIView *_backgroundView;
     UIScrollView *_contentView;
     UIButton *_closeButton;
     UIImageView *_icon;
@@ -39,7 +39,7 @@
 @property(retain, nonatomic) UIImageView *icon; // @synthesize icon=_icon;
 @property(retain, nonatomic) UIButton *closeButton; // @synthesize closeButton=_closeButton;
 @property(retain, nonatomic) UIScrollView *contentView; // @synthesize contentView=_contentView;
-@property(retain, nonatomic) UIButton *backgroundButton; // @synthesize backgroundButton=_backgroundButton;
+@property(retain, nonatomic) UIView *backgroundView; // @synthesize backgroundView=_backgroundView;
 @property(retain, nonatomic) WCPayRealnameGuideInfo *realNameInfo; // @synthesize realNameInfo=_realNameInfo;
 @property(nonatomic) __weak id <WCPayRealNameTipsViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
@@ -50,7 +50,6 @@
 - (void)openWeb:(id)arg1;
 - (void)confirm;
 - (void)close;
-- (void)clickBackgroundButton;
 - (void)viewDidLayoutSubviews;
 - (void)viewDidLoad;
 - (id)init;

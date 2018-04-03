@@ -23,6 +23,8 @@
 @property(nonatomic) _Bool hasTimeBase; // @dynamic hasTimeBase;
 @property(nonatomic) _Bool hasVideoColorProperties; // @dynamic hasVideoColorProperties;
 @property(nonatomic) int height; // @dynamic height;
+@property(nonatomic) int nbFrames; // @dynamic nbFrames;
+@property(nonatomic) int pixFmt; // @dynamic pixFmt;
 @property(nonatomic) int rotation; // @dynamic rotation;
 @property(retain, nonatomic) KSERational *sampleAspectRatio; // @dynamic sampleAspectRatio;
 @property(retain, nonatomic) KSERational *timeBase; // @dynamic timeBase;

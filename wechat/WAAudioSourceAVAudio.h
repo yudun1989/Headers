@@ -20,19 +20,19 @@
     _Bool _obeyMuteSwitch;
     _Bool _loop;
     float _duration;
-    long long _state;
-    NSString *_path;
     NSString *_audioId;
+    NSString *_src;
+    long long _state;
     id <WAAudioSourceDelegate> _delegate;
 }
 
 @property(nonatomic) __weak id <WAAudioSourceDelegate> delegate; // @synthesize delegate=_delegate;
 @property(nonatomic) _Bool loop; // @synthesize loop=_loop;
 @property(nonatomic) _Bool obeyMuteSwitch; // @synthesize obeyMuteSwitch=_obeyMuteSwitch;
-@property(retain, nonatomic) NSString *audioId; // @synthesize audioId=_audioId;
 @property(nonatomic) float duration; // @synthesize duration=_duration;
-@property(retain, nonatomic) NSString *path; // @synthesize path=_path;
 @property(nonatomic) long long state; // @synthesize state=_state;
+@property(copy, nonatomic) NSString *src; // @synthesize src=_src;
+@property(copy, nonatomic) NSString *audioId; // @synthesize audioId=_audioId;
 - (void).cxx_destruct;
 - (void)audioPlayerDecodeErrorDidOccur:(id)arg1 error:(id)arg2;
 - (void)audioPlayerDidFinishPlaying:(id)arg1 successfully:(_Bool)arg2;
@@ -48,7 +48,7 @@
 - (void)pause;
 - (void)play;
 - (void)dealloc;
-- (id)initWithPath:(id)arg1 filData:(id)arg2;
+- (id)initWithAudioId:(id)arg1 src:(id)arg2 fileData:(id)arg3;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

@@ -151,7 +151,6 @@
 - (void)continueMainLaunching:(id)arg1;
 - (void)tryProtectLaunchBeforeDeviceFirstUnlock;
 - (void)beforeMainLauching;
-- (void)logEssencialInfo;
 - (void)LogFeatureIdKey:(unsigned int)arg1 key:(unsigned int)arg2 value:(unsigned int)arg3 isKeyLog:(_Bool)arg4;
 - (void)LogFeatureExt:(unsigned int)arg1 logExt:(id)arg2 isReportNow:(_Bool)arg3 isImportant:(_Bool)arg4;
 - (void)NetworkLogOutput:(id)arg1;

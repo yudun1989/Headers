@@ -26,6 +26,7 @@
 @property(retain, nonatomic) WCPayCurrencyInputLogic *m_inputlogic; // @synthesize m_inputlogic=_m_inputlogic;
 @property(nonatomic) __weak id <WCPayCurrencyInputViewDelegate> m_delegate; // @synthesize m_delegate=_m_delegate;
 - (void).cxx_destruct;
+- (void)textFieldDidChanged:(id)arg1;
 - (void)onWCPayCurrencyInputLogicStringChangeTo:(id)arg1;
 - (unsigned long long)getAmount;
 - (void)updateFontSize:(double)arg1;

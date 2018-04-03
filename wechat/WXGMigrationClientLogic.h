@@ -40,6 +40,7 @@
 
 @property(nonatomic) __weak id <WXGMigrationClientLogicDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
+- (id)getConnectDebugInfo;
 - (_Bool)isSupportShowRescanButton;
 - (_Bool)isSupportBackupNewFeature;
 - (void)p_notifyOnMianThreadProcessSize;

@@ -51,7 +51,7 @@
 - (_Bool)isEqual:(id)arg1;
 - (_Bool)hasText;
 - (id)name;
-- (struct CGAffineTransform)transform;
+@property(nonatomic) struct CGAffineTransform transform;
 @property(nonatomic) struct CGRect frame;
 @property(nonatomic) struct CGRect bounds;
 - (id)initWithPrototype:(id)arg1 contentScaleFactor:(double)arg2;

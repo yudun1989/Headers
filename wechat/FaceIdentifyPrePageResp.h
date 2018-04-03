@@ -17,6 +17,7 @@
 // Remaining properties
 @property(retain, nonatomic) BaseResponse *baseResponse; // @dynamic baseResponse;
 @property(retain, nonatomic) NSString *bizNickName; // @dynamic bizNickName;
+@property(retain, nonatomic) NSString *complainUrl; // @dynamic complainUrl;
 @property(retain, nonatomic) NSString *feedbackUrl; // @dynamic feedbackUrl;
 @property(retain, nonatomic) NSString *headerPromptWording; // @dynamic headerPromptWording;
 @property(retain, nonatomic) NSMutableArray *itemList; // @dynamic itemList;

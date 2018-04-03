@@ -70,6 +70,7 @@
 - (void)onReloadData;
 - (void)asyncDetailSearch:(id)arg1 handler:(CDUnknownBlockType)arg2;
 - (id)syncSearchTextForSingleContact:(id)arg1 limitCount:(unsigned int)arg2;
+- (_Bool)isTopHitContactActive:(id)arg1;
 - (_Bool)isTopHitAddressBookReady;
 - (_Bool)isTopHitContactReady;
 - (id)getNickNameToFriendsDictionary;

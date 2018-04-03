@@ -31,6 +31,7 @@
 @property(nonatomic) unsigned int m_uiSeekTime; // @synthesize m_uiSeekTime=_m_uiSeekTime;
 @property(nonatomic) __weak id <NSObject><VideoStreamPlayerViewModeDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
+- (void)onDownloadVideoReturnCode:(int)arg1;
 - (void)OnSnsVideoChanged;
 - (void)ShouldUpdateVideoThumbImage:(id)arg1;
 - (void)onDownloadVideoSuccess;

@@ -6,12 +6,12 @@
 
 #import "NSObject-Protocol.h"
 
-@class KSPicturesCoverSlider, UIImage;
+@class KSPicturesCoverSlider;
 
 @protocol KSPictureCoverSliderDataSource <NSObject>
-- (UIImage *)slider:(KSPicturesCoverSlider *)arg1 displayingImageCombinedWithRange:(struct _NSRange)arg2;
-- (UIImage *)slider:(KSPicturesCoverSlider *)arg1 displayingImageAtIndex:(unsigned long long)arg2;
-- (UIImage *)slider:(KSPicturesCoverSlider *)arg1 thumbnailImageAtIndex:(unsigned long long)arg2;
+- (BFTask * (^)(BFCancellationToken *))slider:(KSPicturesCoverSlider *)arg1 requestForDisplayingImageCombinedWithRange:(struct _NSRange)arg2;
+- (BFTask * (^)(BFCancellationToken *))slider:(KSPicturesCoverSlider *)arg1 requestForDisplayingImageAtIndex:(unsigned long long)arg2;
+- (BFTask * (^)(BFCancellationToken *))slider:(KSPicturesCoverSlider *)arg1 requestForThumbnailImageAtIndex:(unsigned long long)arg2;
 - (unsigned long long)numberOfCoversInSlider:(KSPicturesCoverSlider *)arg1;
 @end
 

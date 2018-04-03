@@ -25,8 +25,12 @@
     NSString *_msgDesc;
     NSString *_msgIconUrl;
     unsigned long long _toScene;
+    unsigned long long _sendToFriendsTimes;
+    unsigned long long _shareTimelineTimes;
 }
 
+@property(nonatomic) unsigned long long shareTimelineTimes; // @synthesize shareTimelineTimes=_shareTimelineTimes;
+@property(nonatomic) unsigned long long sendToFriendsTimes; // @synthesize sendToFriendsTimes=_sendToFriendsTimes;
 @property(nonatomic) unsigned long long toScene; // @synthesize toScene=_toScene;
 @property(retain, nonatomic) NSString *msgIconUrl; // @synthesize msgIconUrl=_msgIconUrl;
 @property(retain, nonatomic) NSString *msgDesc; // @synthesize msgDesc=_msgDesc;
@@ -47,6 +51,7 @@
 - (void)recordCurrentUrl:(id)arg1 currentTitle:(id)arg2 currentAppId:(id)arg3;
 - (void)recordPreMsgUrl:(id)arg1 preMsgTitle:(id)arg2 preMsgDesc:(id)arg3 preMsgIconUrl:(id)arg4 preMsgAppId:(id)arg5 fromScence:(unsigned long long)arg6;
 - (void)uploadKV;
+- (id)init;
 
 @end
 

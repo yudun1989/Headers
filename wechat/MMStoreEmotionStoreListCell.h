@@ -14,19 +14,22 @@
     MMWebImageView *_m_tagImageView;
     UIImageView *_m_newImageView;
     UIImageView *_m_rightArrowImage;
+    UIView *_m_lineView;
     UILabel *_m_nameLabel;
     UILabel *_m_introduceLabel;
-    UIView *_m_lineView;
+    struct UIEdgeInsets _contentInsets;
 }
 
-@property(retain, nonatomic) UIView *m_lineView; // @synthesize m_lineView=_m_lineView;
 @property(retain, nonatomic) UILabel *m_introduceLabel; // @synthesize m_introduceLabel=_m_introduceLabel;
 @property(retain, nonatomic) UILabel *m_nameLabel; // @synthesize m_nameLabel=_m_nameLabel;
+@property(nonatomic) struct UIEdgeInsets contentInsets; // @synthesize contentInsets=_contentInsets;
+@property(retain, nonatomic) UIView *m_lineView; // @synthesize m_lineView=_m_lineView;
 @property(retain, nonatomic) UIImageView *m_rightArrowImage; // @synthesize m_rightArrowImage=_m_rightArrowImage;
 @property(retain, nonatomic) UIImageView *m_newImageView; // @synthesize m_newImageView=_m_newImageView;
 @property(retain, nonatomic) MMWebImageView *m_tagImageView; // @synthesize m_tagImageView=_m_tagImageView;
 @property(retain, nonatomic) MMWebImageView *m_webImageView; // @synthesize m_webImageView=_m_webImageView;
 - (void).cxx_destruct;
+- (void)layoutSubviews;
 - (void)adjustLabelsWidthWithRightViewX:(double)arg1;
 - (void)setIntroduceLabelText:(id)arg1;
 - (void)setNameLabelText:(id)arg1;

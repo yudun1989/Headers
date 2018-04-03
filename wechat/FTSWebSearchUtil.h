@@ -10,6 +10,14 @@
 {
 }
 
++ (void)ReportWebRecommendReddotCovered:(id)arg1;
++ (void)ReportWebRecommendReddotExpired:(id)arg1;
++ (void)ReportWebRecommendReddotCgiConsumed:(id)arg1;
++ (void)ReportWebRecommendReddotConsumed:(id)arg1;
++ (void)ReportWebRecommendReddotDisplay:(id)arg1;
++ (void)ReportWebRecommendReddotReceived:(id)arg1;
++ (void)InternalReportWebRecommendReddot:(id)arg1 opCode:(unsigned int)arg2;
++ (id)extractWidgetJumpAppInfoFromUrl:(id)arg1;
 + (_Bool)shouldIgnoreLink:(id)arg1;
 + (_Bool)isRecordHistoryOpen;
 + (id)getFFWebSearchTitle;

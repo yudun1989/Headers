@@ -23,7 +23,6 @@
 - (_Bool)isShowSendFailView;
 - (_Bool)isShowSendingView;
 - (_Bool)isShowAppMessageBlockButton;
-- (_Bool)souceIconBgIsShow;
 - (id)sourceTag;
 - (id)sourceIcon;
 - (id)sourceTitle;

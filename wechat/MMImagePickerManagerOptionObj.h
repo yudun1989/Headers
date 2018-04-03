@@ -18,7 +18,6 @@
     _Bool _canSendVideoMessage;
     _Bool _canSendMultiImage;
     _Bool _needThumbImage;
-    _Bool _isShowForMessage;
     _Bool m_isJustReturnMMAsset;
     _Bool m_directToFirstAlbum;
     _Bool _canSendGif;
@@ -51,7 +50,6 @@
 @property(nonatomic) unsigned long long m_adjustRevertIndex; // @synthesize m_adjustRevertIndex;
 @property(nonatomic) int m_pickerScene; // @synthesize m_pickerScene;
 @property(nonatomic) _Bool m_isJustReturnMMAsset; // @synthesize m_isJustReturnMMAsset;
-@property(nonatomic) _Bool isShowForMessage; // @synthesize isShowForMessage=_isShowForMessage;
 @property(nonatomic) __weak id delegateObj; // @synthesize delegateObj=_delegateObj;
 @property(nonatomic) int finishWordMode; // @synthesize finishWordMode=_finishWordMode;
 @property(retain, nonatomic) NSArray *selectedImageAssets; // @synthesize selectedImageAssets=_selectedImageAssets;

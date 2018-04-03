@@ -6,7 +6,7 @@
 
 #import <MMCommon/WXPBGeneratedMessage.h>
 
-@class BaseResponse, MenuItem, NSMutableArray, NSString;
+@class BaseResponse, MenuItem, MiniProgramInfo, NSMutableArray, NSString;
 
 @interface CgiF2FQrcodeResp : WXPBGeneratedMessage
 {
@@ -20,6 +20,8 @@
 @property(retain, nonatomic) NSString *bottomLeftIconUrl; // @dynamic bottomLeftIconUrl;
 @property(nonatomic) _Bool bottomRightArrowFlag; // @dynamic bottomRightArrowFlag;
 @property(nonatomic) unsigned int busiType; // @dynamic busiType;
+@property(retain, nonatomic) MiniProgramInfo *buyMaterialInfo; // @dynamic buyMaterialInfo;
+@property(nonatomic) unsigned int guideMaterialFlag; // @dynamic guideMaterialFlag;
 @property(retain, nonatomic) NSString *mchName; // @dynamic mchName;
 @property(retain, nonatomic) NSString *mchPhoto; // @dynamic mchPhoto;
 @property(retain, nonatomic) NSString *trueName; // @dynamic trueName;

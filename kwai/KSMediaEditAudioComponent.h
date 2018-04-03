@@ -6,37 +6,67 @@
 
 #import "LYWComponent.h"
 
+#import "KSMediaEditActivity-Protocol.h"
 #import "UICollectionViewDataSource-Protocol.h"
 #import "UICollectionViewDelegate-Protocol.h"
 
-@class KSMusicItem, NSArray, NSString, UICollectionView, UICollectionViewFlowLayout;
+@class KSMediaEditActivityController, KSMediaEditAudioState, KSMusicItem, KSValueLabelSlider, NSArray, NSObject, NSString, UICollectionView, UICollectionViewFlowLayout, UILabel;
+@protocol OS_dispatch_queue;
 
-@interface KSMediaEditAudioComponent : LYWComponent <UICollectionViewDataSource, UICollectionViewDelegate>
+@interface KSMediaEditAudioComponent : LYWComponent <KSMediaEditActivity, UICollectionViewDataSource, UICollectionViewDelegate>
 {
+    UICollectionView *_selectView;
+    NSArray *_audioItems;
+    NSArray *_cellItems;
+    UILabel *_originalAudioLabel;
+    struct KSValueLabelSlider *_originalAudioSlider;
+    UILabel *_bgmSliderLabel;
+    struct KSValueLabelSlider *_bgmSlider;
+    NSObject<OS_dispatch_queue> *_cellProcessQueue;
     NSString *_initialAudio;
     KSMusicItem *_defaultMusic;
-    UICollectionView *_selectView;
     UICollectionViewFlowLayout *_layout;
-    NSArray *_audioItems;
+    unsigned long long _selectedIndex;
+    KSMediaEditActivityController *_activityController;
+    KSMediaEditAudioState *_audioStateSnapshot;
 }
 
-@property(retain, nonatomic) NSArray *audioItems; // @synthesize audioItems=_audioItems;
++ (id)createLayout;
++ (id)createCollectionView;
+@property(retain, nonatomic) KSMediaEditAudioState *audioStateSnapshot; // @synthesize audioStateSnapshot=_audioStateSnapshot;
+@property(nonatomic) __weak KSMediaEditActivityController *activityController; // @synthesize activityController=_activityController;
+@property(nonatomic) unsigned long long selectedIndex; // @synthesize selectedIndex=_selectedIndex;
 @property(retain, nonatomic) UICollectionViewFlowLayout *layout; // @synthesize layout=_layout;
-@property(retain, nonatomic) UICollectionView *selectView; // @synthesize selectView=_selectView;
 @property(retain, nonatomic) KSMusicItem *defaultMusic; // @synthesize defaultMusic=_defaultMusic;
 @property(retain, nonatomic) NSString *initialAudio; // @synthesize initialAudio=_initialAudio;
+@property(retain, nonatomic) NSObject<OS_dispatch_queue> *cellProcessQueue; // @synthesize cellProcessQueue=_cellProcessQueue;
+@property(retain, nonatomic) KSValueLabelSlider *bgmSlider; // @synthesize bgmSlider=_bgmSlider;
+@property(retain, nonatomic) UILabel *bgmSliderLabel; // @synthesize bgmSliderLabel=_bgmSliderLabel;
+@property(retain, nonatomic) KSValueLabelSlider *originalAudioSlider; // @synthesize originalAudioSlider=_originalAudioSlider;
+@property(retain, nonatomic) UILabel *originalAudioLabel; // @synthesize originalAudioLabel=_originalAudioLabel;
+@property(retain, nonatomic) NSArray *cellItems; // @synthesize cellItems=_cellItems;
+@property(retain, nonatomic) NSArray *audioItems; // @synthesize audioItems=_audioItems;
+@property(retain, nonatomic) UICollectionView *selectView; // @synthesize selectView=_selectView;
 - (void).cxx_destruct;
+- (void)_storeStateIfNeededAndDispatchAction:(id)arg1;
 - (void)_configAudioItems;
 - (id)_player;
-- (void)_dispatchAudioSelectActionWithIndex:(long long)arg1 audioPath:(id)arg2 audioName:(id)arg3;
+- (void)_dispatchAudioSelectActionWithIndex:(long long)arg1 type:(long long)arg2 audioPath:(id)arg3 title:(id)arg4 statisticalName:(id)arg5;
+- (id)_createSliderLabel;
+- (struct KSValueLabelSlider *)_createSlider;
 - (void)collectionView:(id)arg1 didSelectItemAtIndexPath:(id)arg2;
 - (id)collectionView:(id)arg1 cellForItemAtIndexPath:(id)arg2;
 - (long long)collectionView:(id)arg1 numberOfItemsInSection:(long long)arg2;
-- (void)newState:(id)arg1 oldState:(id)arg2;
+- (void)newState:(id)arg1;
 - (void)viewWillAppear:(_Bool)arg1;
 - (void)viewDidLoad;
-- (void)loadView;
-- (id)initWithStore:(id)arg1 selector:(CDUnknownBlockType)arg2 initialAudio:(id)arg3 defaultMusic:(id)arg4;
+- (id)initWithStore:(id)arg1;
+- (void)activityDidFinish;
+- (void)activityDidCancel;
+- (void)activityWillShow;
+- (double)activityHeight;
+- (void)activityDidRemovedFromController:(id)arg1;
+- (void)activityDidAddedToController:(id)arg1;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

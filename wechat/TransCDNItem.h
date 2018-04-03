@@ -17,6 +17,7 @@
 // Remaining properties
 @property(retain, nonatomic) NSString *aesKey; // @dynamic aesKey;
 @property(nonatomic) unsigned int clientId; // @dynamic clientId;
+@property(retain, nonatomic) NSString *clientStrId; // @dynamic clientStrId;
 @property(nonatomic) unsigned int favDataType; // @dynamic favDataType;
 @property(retain, nonatomic) NSString *fileId; // @dynamic fileId;
 @property(nonatomic) unsigned long long size; // @dynamic size;

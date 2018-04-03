@@ -16,6 +16,8 @@
 + (void)setUIImageView:(id)arg1 FromDictionary:(id)arg2;
 + (void)setUILabel:(id)arg1 FromDictionary:(id)arg2;
 + (void)setUIView:(id)arg1 FromDictionary:(id)arg2;
++ (void)parseColorDeclarations:(id)arg1 toValues:(id)arg2;
++ (id)parseOneColor:(id)arg1 fromDeclarations:(id)arg2 intoValues:(id)arg3;
 + (id)parseColorFromValues:(id)arg1;
 + (struct UIEdgeInsets)parseEdgeInsetsFromValues:(id)arg1;
 + (struct CGRect)parseRectFromValues:(id)arg1;

@@ -22,7 +22,6 @@
 - (void)onWCPayJSApiResult:(id)arg1;
 - (void)onWCPayPayMoneySuccess:(id)arg1;
 - (id)getWCPayPayParam;
-- (unsigned int)transferEnterSceneToPayChannel;
 - (void)handleJSEvent:(id)arg1;
 - (void)dealloc;
 

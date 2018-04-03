@@ -57,6 +57,7 @@
 @property(retain, nonatomic) BlueManager *m_blueMgr; // @synthesize m_blueMgr;
 - (void).cxx_destruct;
 - (_Bool)getHKAuthorizationStatus;
+- (void)startSync:(id)arg1;
 - (void)onPreEnterWechatDone;
 - (void)onWCDeviceAccountBound:(id)arg1;
 - (void)onWCDeviceAccountUnbind:(id)arg1;
@@ -186,6 +187,7 @@
 - (id)getBlueMgr;
 - (void)exchange:(id)arg1;
 - (void)dealloc;
+- (void)delayInit;
 - (id)init;
 
 // Remaining properties

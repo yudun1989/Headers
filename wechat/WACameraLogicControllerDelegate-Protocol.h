@@ -6,7 +6,7 @@
 
 #import "NSObject-Protocol.h"
 
-@class NSString, UIImage;
+@class NSDictionary, NSString, UIImage;
 
 @protocol WACameraLogicControllerDelegate <NSObject>
 
@@ -14,6 +14,7 @@
 - (void)onCameraVideoRecordingWithFrameImg:(UIImage *)arg1;
 - (void)onCameraVideoTaken:(NSString *)arg1 thumbImg:(UIImage *)arg2 isMuted:(_Bool)arg3;
 - (void)onCameraPictureTaken:(UIImage *)arg1 withFrontCamera:(_Bool)arg2;
+- (void)onCameraScanCode:(NSDictionary *)arg1;
 - (void)onCameraStopRecord;
 - (void)onCameraStartRecord;
 - (void)onCameraStop;

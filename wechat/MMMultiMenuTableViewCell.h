@@ -32,12 +32,16 @@
     _Bool _contextMenuEnabled;
     _Bool _disablePanOnHideAnimated;
     _Bool _bNeedCopyBackgroundView;
+    _Bool _keepSwipeStateOnResue;
     NSIndexPath *_indexPath;
     NSMutableArray *_arrMenuItems;
     UIColor *_menuBackgroundColor;
     double _fCardRightMargin;
+    UIView *_rootContentView;
 }
 
+@property(retain, nonatomic) UIView *rootContentView; // @synthesize rootContentView=_rootContentView;
+@property(nonatomic) _Bool keepSwipeStateOnResue; // @synthesize keepSwipeStateOnResue=_keepSwipeStateOnResue;
 @property(nonatomic) double fCardRightMargin; // @synthesize fCardRightMargin=_fCardRightMargin;
 @property(nonatomic) _Bool bNeedCopyBackgroundView; // @synthesize bNeedCopyBackgroundView=_bNeedCopyBackgroundView;
 @property(retain, nonatomic) UIColor *menuBackgroundColor; // @synthesize menuBackgroundColor=_menuBackgroundColor;
@@ -75,6 +79,7 @@
 - (void)setMenuItemsWithDefaultDeleteBtn:(id)arg1;
 - (void)setMenuItemsWithNoDeleteBtn:(id)arg1;
 - (void)checkAndAddDeleteItem;
+- (void)setFrame:(struct CGRect)arg1;
 - (_Bool)isMenuHidden;
 - (_Bool)isPointInMenu:(struct CGPoint)arg1;
 - (void)dropSessionDidExit;

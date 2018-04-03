@@ -17,6 +17,9 @@
     _Bool _enabled;
     UIColor *m_bkgColor;
     double m_totalHeight;
+    _Bool m_hasSetFavSearchStyle;
+    _Bool _useFavSearchStyle;
+    _Bool _searchBarActive;
     UIButton *cancelButton;
     UIButton *editButton;
     UITextField *textField;
@@ -27,6 +30,8 @@
     UIColor *textFieldActiveColor;
 }
 
+@property(nonatomic) _Bool searchBarActive; // @synthesize searchBarActive=_searchBarActive;
+@property(nonatomic) _Bool useFavSearchStyle; // @synthesize useFavSearchStyle=_useFavSearchStyle;
 @property(retain, nonatomic) UIColor *textFieldActiveColor; // @synthesize textFieldActiveColor;
 @property(retain, nonatomic) UIColor *textFieldNormalColor; // @synthesize textFieldNormalColor;
 @property(nonatomic) double editButtonWidth; // @synthesize editButtonWidth;

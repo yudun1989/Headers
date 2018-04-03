@@ -9,7 +9,8 @@
 @class NSObject, NSString;
 
 @protocol IMMQuartz2DContextDelegate <NSObject>
-- (double)getContextHeght;
+- (void)restoreContext;
+- (void)saveContext;
 - (void)removeContext:(NSString *)arg1;
 - (void)setContext:(NSObject *)arg1 forKey:(NSString *)arg2;
 - (NSObject *)getContext:(NSString *)arg1;

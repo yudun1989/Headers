@@ -59,6 +59,7 @@
 - (void)viewWillBePoped:(_Bool)arg1;
 - (void)willShow;
 - (void)viewWillDisappear:(_Bool)arg1;
+- (void)viewDidDisappear:(_Bool)arg1;
 - (void)willAppear;
 - (void)viewDidAppear:(_Bool)arg1;
 - (void)viewDidLoad;

@@ -48,6 +48,7 @@
 
 + (_Bool)supportsSecureCoding;
 + (id)webFileDownloadManager;
++ (id)webFileDownloadManager;
 @property(copy, nonatomic) CDUnknownBlockType downloadTaskDidResume; // @synthesize downloadTaskDidResume=_downloadTaskDidResume;
 @property(copy, nonatomic) CDUnknownBlockType downloadTaskDidWriteData; // @synthesize downloadTaskDidWriteData=_downloadTaskDidWriteData;
 @property(copy, nonatomic) CDUnknownBlockType downloadTaskDidFinishDownloading; // @synthesize downloadTaskDidFinishDownloading=_downloadTaskDidFinishDownloading;

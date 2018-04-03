@@ -26,8 +26,8 @@
 - (void)performCallExt:(id)arg1;
 - (void)delayCallExt:(id)arg1 md5:(id)arg2;
 - (void)doReportWithBeginTime:(unsigned long long)arg1 endTime:(unsigned long long)arg2 respLength:(unsigned long long)arg3;
-- (void)internalSenddRequest:(id)arg1 md5:(id)arg2 data:(id)arg3 scene:(unsigned int)arg4;
-- (void)sendRequest:(id)arg1 data:(id)arg2 scene:(unsigned int)arg3 shouldUseCache:(_Bool)arg4;
+- (void)internalSenddRequest:(id)arg1 md5:(id)arg2 data:(id)arg3 scene:(unsigned int)arg4 coreId:(unsigned int)arg5;
+- (void)sendRequest:(id)arg1 data:(id)arg2 scene:(unsigned int)arg3 shouldUseCache:(_Bool)arg4 coreId:(unsigned int)arg5;
 - (id)getCallbackIdWithAppId:(id)arg1 data:(id)arg2;
 - (void)saveLocalCache:(id)arg1 scene:(unsigned int)arg2;
 - (void)loadLocalCache:(id)arg1 scene:(unsigned int)arg2;

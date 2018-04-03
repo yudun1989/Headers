@@ -7,21 +7,30 @@
 #import <MMCommon/MMObject.h>
 
 #import "ICdnComMgrExt-Protocol.h"
+#import "MsgDataDownloadDelegate-Protocol.h"
 #import "PBMessageObserverDelegate-Protocol.h"
 
-@class FavoritesCDNInfo, FavoritesItem, NSString;
+@class FavoritesCDNInfo, FavoritesItem, MsgDataDownloadLogic, NSString;
 @protocol FavoritesAsyncUploaderDelegate;
 
-@interface FavoritesAsyncUploader : MMObject <PBMessageObserverDelegate, ICdnComMgrExt>
+@interface FavoritesAsyncUploader : MMObject <MsgDataDownloadDelegate, PBMessageObserverDelegate, ICdnComMgrExt>
 {
     FavoritesItem *_favItem;
     id <FavoritesAsyncUploaderDelegate> _delegate;
     int _runningState;
     FavoritesCDNInfo *_uploadingInfo;
+    _Bool _waitingForDownloading;
+    MsgDataDownloadLogic *_msgDataDownloadLogic;
 }
 
+@property(nonatomic) _Bool waitingForDownloading; // @synthesize waitingForDownloading=_waitingForDownloading;
+@property(retain, nonatomic) MsgDataDownloadLogic *msgDataDownloadLogic; // @synthesize msgDataDownloadLogic=_msgDataDownloadLogic;
 @property(nonatomic) __weak id <FavoritesAsyncUploaderDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
+- (void)onDownloadCancel:(id)arg1;
+- (void)onDownloadCommonFail:(id)arg1;
+- (void)onDownloadExpireFail:(id)arg1;
+- (void)onDownloadSuccess:(id)arg1;
 - (void)MessageReturn:(id)arg1 Event:(unsigned int)arg2;
 - (void)HandleModifyFavItemResp:(id)arg1 Event:(unsigned int)arg2;
 - (void)OnCdnUpload:(id)arg1;
@@ -29,9 +38,12 @@
 - (void)BroadcastUploadFail:(int)arg1;
 - (void)convertHevc:(id)arg1;
 - (void)uploadFavMedia:(id)arg1;
+- (void)reportSameUrlAndKeyWithDataList:(id)arg1;
 - (void)tryStartNextData;
 - (void)doModifyItemCGI:(id)arg1;
+- (void)updateFavoritesItemCDNInfo:(id)arg1 withDataList:(id)arg2;
 - (id)updateFavoritesItemCDNInfo;
+- (void)checkNeedDownloadBeforeUpload:(id)arg1;
 - (id)getItem;
 - (_Bool)stop;
 - (void)run;

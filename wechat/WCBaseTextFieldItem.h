@@ -15,6 +15,7 @@
     WCUITextField *m_textField;
     int m_iMaxInputLen;
     _Bool m_bRealLen;
+    _Bool m_bTextFieldHasBecomeFirstResponder;
 }
 
 - (void).cxx_destruct;
@@ -35,6 +36,8 @@
 - (void)setKeyboardType:(long long)arg1;
 - (id)getTextField;
 - (void)resignFirstResponder;
+- (void)_becomeFristResponderOnce;
+- (void)becomeFirstResponderOnce;
 - (void)becomeFirstResponder;
 - (void)dealloc;
 - (id)initWithTitle:(id)arg1 tip:(id)arg2 key:(id)arg3;

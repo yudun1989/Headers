@@ -11,7 +11,7 @@
 @protocol LocalAreaPeerClientDelegate <NSObject>
 - (void)onPeerConnectFailed;
 - (void)onPeerDisconnect;
-- (void)onPeerReciveData:(NSData *)arg1;
+- (void)onPeerReceiveData:(NSData *)arg1;
 
 @optional
 - (void)onPeerConnected;

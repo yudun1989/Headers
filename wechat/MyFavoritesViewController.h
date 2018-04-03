@@ -103,7 +103,7 @@
 - (void)onWillEndSearch;
 - (void)onWillBeginSearch;
 - (void)onSelectFavDataItem:(id)arg1 tableView:(id)arg2 atIndexPath:(id)arg3;
-- (void)onSelectFavItem:(id)arg1 tableView:(id)arg2 atIndexPath:(id)arg3 FromScene:(unsigned int)arg4 FavIndex:(unsigned int)arg5;
+- (void)onSelectFavItem:(id)arg1 tableView:(id)arg2 atIndexPath:(id)arg3 FromScene:(unsigned int)arg4 FavIndex:(unsigned int)arg5 withCell:(id)arg6;
 - (void)hideWarningBanner;
 - (void)showWarningBanner;
 - (void)showCapacityWarningTips;
@@ -112,6 +112,7 @@
 - (_Bool)checkForCapacityWarningBanner;
 - (_Bool)checkForFailBanner;
 - (void)checkForBanner;
+- (void)hideVisibleCellMenu;
 - (void)goToCapacityViewController;
 - (void)restartAllFailedItem;
 - (void)viewDidBePoped:(_Bool)arg1;
@@ -140,7 +141,6 @@
 - (void)onBackButtonClicked;
 - (void)updateSelectActionView;
 - (void)reLayoutSubviews;
-- (void)willAnimateRotationToInterfaceOrientation:(long long)arg1 duration:(double)arg2;
 - (void)viewDidTransitionToNewSize;
 - (void)viewDidLayoutSubviews;
 - (void)viewDidBePushed:(_Bool)arg1;

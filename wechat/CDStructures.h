@@ -45,9 +45,9 @@ struct AndroidReport_t {
 };
 
 struct AudioBuffer {
-    unsigned int mNumberChannels;
-    unsigned int mDataByteSize;
-    void *mData;
+    unsigned int _field1;
+    unsigned int _field2;
+    void *_field3;
 };
 
 struct AudioBufferList {
@@ -83,6 +83,7 @@ struct AudioCoder {
     void *_field12;
     short _field13[5][320];
     int _field14[5][2];
+    void *_field15;
 };
 
 struct AudioDecoder {
@@ -95,6 +96,7 @@ struct AudioDecoder {
     int _field7;
     int _field8;
     int _field9;
+    void *_field10;
 };
 
 struct AudioQueueBuffer {
@@ -314,203 +316,6 @@ struct CSGroupRecord {
 };
 
 struct CSpeedTestChannel;
-
-struct CTXFlvContainer;
-
-struct CTXFlvParser {
-    CDUnknownFunctionPointerType *_field1;
-    char *_field2;
-    int _field3;
-    _Bool _field4;
-    int _field5;
-    int _field6;
-    int _field7;
-    int _field8;
-    int _field9;
-    int _field10;
-    vector_36fe4106 _field11;
-    int _field12;
-    vector_36fe4106 _field13;
-    int _field14;
-    struct __sFILE *_field15;
-};
-
-struct CTXFlvStreamRecvThread {
-    CDUnknownFunctionPointerType *_field1;
-    struct TXCMutex _field2;
-    _Bool _field3;
-    _Bool _field4;
-    struct TXCThread *_field5;
-    CDUnknownFunctionPointerType *_field6;
-    struct CTXFlvContainer *_field7;
-    basic_string_a490aa4c _field8;
-    char *_field9;
-    unsigned int _field10;
-    unsigned int _field11;
-    unsigned int _field12;
-    unsigned int _field13;
-    unsigned long long _field14;
-    _Bool _field15;
-    int _field16;
-    _Bool _field17;
-    struct TXCMutex _field18;
-    struct TXCMutex _field19;
-    void *_field20;
-    struct stDownloadCB _field21;
-};
-
-struct CTXLiveStrategy {
-    CDUnknownFunctionPointerType *_field1;
-    int _field2;
-};
-
-struct CTXQuicRealTimeStrategy {
-    CDUnknownFunctionPointerType *_field1;
-    int _field2;
-    int _field3;
-    double _field4;
-    int _field5;
-    int _field6;
-    int _field7;
-    int _field8;
-    _Bool _field9;
-    double _field10;
-    int _field11;
-    int _field12;
-    double _field13;
-    struct list<QuicInfoListItem, std::__1::allocator<QuicInfoListItem>> _field14;
-    struct list<QuicInfoListItem, std::__1::allocator<QuicInfoListItem>> _field15;
-};
-
-struct CTXRtmpChunkHelper {
-    CDUnknownFunctionPointerType *_field1;
-    basic_string_a490aa4c _field2;
-    basic_string_a490aa4c _field3;
-    struct _RTMPSendMetadata _field4;
-    int _field5;
-    int _field6;
-    char *_field7;
-    char *_field8;
-    long long _field9;
-    int _field10;
-    int _field11;
-    int _field12;
-};
-
-struct CTXRtmpCoreWrapper {
-    CDUnknownFunctionPointerType *_field1;
-    struct RTMP *_field2;
-    void *_field3;
-};
-
-struct CTXRtmpRecvThread {
-    CDUnknownFunctionPointerType *_field1;
-    int _field2;
-    basic_string_a490aa4c _field3;
-    basic_string_a490aa4c _field4;
-    _Bool _field5;
-    struct RTMP *_field6;
-    struct TXCAudioParser _field7;
-    struct CTXFlvParser _field8;
-    struct _RtmpRecvStats _field9;
-    struct stDownloadCB _field10;
-    void *_field11;
-    _Bool _field12;
-    _Bool _field13;
-};
-
-struct CTXRtmpSendConfig {
-    basic_string_a490aa4c _field1;
-    basic_string_a490aa4c _field2;
-    _Bool _field3;
-    _Bool _field4;
-    int _field5;
-    int _field6;
-    int _field7;
-    int _field8;
-    int _field9;
-    int _field10;
-    int _field11;
-    int _field12;
-    int _field13;
-    int _field14;
-    _Bool _field15;
-    _Bool _field16;
-    _Bool _field17;
-    _Bool _field18;
-    _Bool _field19;
-    _Bool _field20;
-    int _field21;
-    _Bool _field22;
-    _Bool _field23;
-    _Bool _field24;
-    int _field25;
-    unsigned long long _field26;
-    unsigned long long _field27;
-    basic_string_a490aa4c _field28;
-    double _field29;
-    long long _field30;
-    long long _field31;
-    double _field32;
-    double _field33;
-    long long _field34;
-    long long _field35;
-    double _field36;
-    long long _field37;
-};
-
-struct CTXRtmpSendQueue {
-    CDUnknownFunctionPointerType *_field1;
-    struct list<_RTMPSendQueueItem *, std::__1::allocator<_RTMPSendQueueItem *>> _field2;
-    struct list<_RTMPSendQueueItem *, std::__1::allocator<_RTMPSendQueueItem *>> _field3;
-    int _field4;
-    int _field5;
-    struct TXCMutex _field6;
-    struct TXCMutex _field7;
-    void *_field8;
-};
-
-struct CTXRtmpSendStrategy {
-    CDUnknownFunctionPointerType *_field1;
-    struct CTXLiveStrategy _field2;
-    struct CTXTcpRealTimeStrategy _field3;
-    struct CTXQuicRealTimeStrategy _field4;
-    struct TXIRTMPSendStrategy *_field5;
-    int _field6;
-};
-
-struct CTXRtmpSendThread {
-    CDUnknownFunctionPointerType *_field1;
-    int _field2;
-    struct _SendNetWorkStats _field3;
-    void *_field4;
-    CDUnknownFunctionPointerType _field5;
-    struct CTXRtmpSendStrategy _field6;
-    struct CTXRtmpChunkHelper _field7;
-    struct CTXRtmpSendConfig _field8;
-    struct CTXRtmpCoreWrapper _field9;
-    struct CTXRtmpSendQueue _field10;
-    _Bool _field11;
-    struct TXCMutex _field12;
-    struct vector<PendingVideoFrame *, std::__1::allocator<PendingVideoFrame *>> _field13;
-};
-
-struct CTXTcpRealTimeStrategy {
-    CDUnknownFunctionPointerType *_field1;
-    int _field2;
-    int _field3;
-    double _field4;
-    struct list<nWriteInfoListItem, std::__1::allocator<nWriteInfoListItem>> _field5;
-    int _field6;
-    double _field7;
-    int _field8;
-    int _field9;
-    int _field10;
-    long long _field11;
-    long long _field12;
-    _Bool _field13;
-    _Bool _field14;
-};
 
 struct CTransportChannel;
 
@@ -934,10 +739,6 @@ struct MyRect {
     int _field4;
 };
 
-struct NSDictionary {
-    Class _field1;
-};
-
 struct NSObject {
     Class _field1;
 };
@@ -1107,6 +908,10 @@ struct NewRelayReport {
     unsigned int _field54;
     unsigned int _field55;
     unsigned int _field56;
+    int _field57;
+    int _field58;
+    int _field59;
+    int _field60;
 };
 
 struct OpaqueAudioComponentInstance;
@@ -1138,8 +943,6 @@ struct PSTNChannelAdapter {
 struct PSTNNetNotifier {
     CDUnknownFunctionPointerType *_field1;
 };
-
-struct PendingVideoFrame;
 
 struct PlayerState {
     id _field1;
@@ -1233,8 +1036,6 @@ struct QBar {
 };
 
 struct QBarCore;
-
-struct RTMP;
 
 struct RapidnetInstance {
     CDUnknownFunctionPointerType *_field1;
@@ -1382,8 +1183,6 @@ struct SensorEventSnapshot {
     float _field4;
 };
 
-struct SoundTouch;
-
 struct SpeexBits {
     char *chars;
     int nbBits;
@@ -1428,173 +1227,6 @@ struct StateUnit {
     int _field6;
     int _field7;
 };
-
-struct TXCAudioCodec {
-    CDUnknownFunctionPointerType *_field1;
-    struct TXIAudioEncoder *_field2;
-    struct TXIAudioDecoder *_field3;
-    int _field4;
-    _Bool _field5;
-    int _field6;
-    int _field7;
-    int _field8;
-    _Bool _field9;
-};
-
-struct TXCAudioJitterBuffer {
-    CDUnknownFunctionPointerType *_field1;
-    struct list<_TXSAudioData *, std::__1::allocator<_TXSAudioData *>> _field2;
-    void *_field3;
-    int _field4;
-    int _field5;
-    _Bool _field6;
-    float _field7;
-    float _field8;
-    float _field9;
-    unsigned long long _field10;
-    unsigned long long _field11;
-    _Bool _field12;
-    _Bool _field13;
-    struct SoundTouch *_field14;
-    float _field15;
-    unsigned long long _field16;
-    struct list<int, std::__1::allocator<int>> _field17;
-    unsigned long long _field18;
-    unsigned long long _field19;
-    int _field20;
-    unsigned long long _field21;
-    unsigned long long _field22;
-    int _field23;
-    _Bool _field24;
-    unsigned long long _field25;
-    int _field26;
-    unsigned long long _field27;
-    unsigned int _field28;
-    unsigned long long _field29;
-    _Bool _field30;
-    struct _AudioJitterReportInfo _field31;
-    unsigned long long _field32;
-    unsigned int _field33;
-    _Bool _field34;
-    unsigned long long _field35;
-    struct _AudioJitterReportInfo _field36;
-    struct TXCAudioCodec *_field37;
-};
-
-struct TXCAudioParser {
-    char *_field1;
-    int _field2;
-    int _field3;
-    int _field4;
-    _Bool _field5;
-    int _field6;
-};
-
-struct TXCAudioPlayerCallback {
-    CDUnknownFunctionPointerType *_field1;
-    id _field2;
-};
-
-struct TXCAudioSpeeder {
-    CDUnknownFunctionPointerType *_field1;
-    struct SoundTouch *_field2;
-    struct _TXSAudioData _field3;
-    struct _TXSAudioData _field4;
-    float _field5;
-    int _field6;
-    int _field7;
-    float _field8;
-    int _field9;
-};
-
-struct TXCMutex {
-    _Bool _recursive;
-    struct recursive_mutex *_recursive_mutex;
-    struct mutex *_mutex;
-};
-
-struct TXCQoSCore {
-    _Bool _field1;
-    int _field2;
-    int _field3;
-    int _field4;
-    int _field5;
-    int _field6;
-    int _field7;
-    int _field8;
-    int _field9;
-    int _field10;
-    int _field11;
-    _Bool _field12;
-    _Bool _field13;
-    unsigned long long _field14;
-    int _field15;
-    int _field16;
-    int _field17;
-    int _field18;
-    int _field19;
-    int _field20;
-    int _field21;
-    int _field22;
-    int _field23;
-    int _field24;
-    _Bool _field25;
-    int _field26;
-    int _field27;
-    int _field28;
-    _Bool _field29;
-    _Bool _field30;
-    int _field31;
-    unsigned long long _field32;
-    unsigned long long _field33;
-    unsigned long long _field34;
-    unsigned long long _field35;
-    int _field36;
-    struct stRealTimeItem _field37;
-};
-
-struct TXCResampleMixer {
-    CDUnknownFunctionPointerType *_vptr$TXCResampleMixer;
-    struct TrackItem *mTrackCache[5];
-    struct _TXSAudioData mTmpData;
-    struct _TXSAudioData mReChlBuffer;
-};
-
-struct TXCThread;
-
-struct TXIAudioDecoder;
-
-struct TXIAudioEncoder;
-
-struct TXIRTMPSendStrategy;
-
-struct TXSMatrix3x3 {
-    struct TXSVector3 one;
-    struct TXSVector3 two;
-    struct TXSVector3 three;
-};
-
-struct TXSMatrix4x4 {
-    struct TXSVector4 one;
-    struct TXSVector4 two;
-    struct TXSVector4 three;
-    struct TXSVector4 four;
-};
-
-struct TXSVector3 {
-    float one;
-    float two;
-    float three;
-};
-
-struct TXSVector4 {
-    float one;
-    float two;
-    float three;
-    float four;
-};
-
-struct TrackItem;
 
 struct UIEdgeInsets {
     double top;
@@ -2015,22 +1647,6 @@ struct XmlReaderNode_t {
     int _field9;
 };
 
-struct _AudioJitterReportInfo {
-    unsigned int _field1;
-    unsigned int _field2;
-    unsigned long long _field3;
-    unsigned int _field4;
-    unsigned int _field5;
-    unsigned int _field6;
-    unsigned int _field7;
-    unsigned int _field8;
-    unsigned int _field9;
-    int _field10;
-    int _field11;
-    unsigned int _field12;
-    unsigned int _field13;
-};
-
 struct _LzRange {
     unsigned long long location;
     unsigned long long length;
@@ -2119,51 +1735,11 @@ struct _ProtobufCMessageDescriptor;
 
 struct _ProtobufCMessageUnknownField;
 
-struct _RTMPSendMetadata {
-    unsigned int _field1;
-    unsigned int _field2;
-    unsigned int _field3;
-    unsigned int _field4;
-    char *_field5;
-    unsigned int _field6;
-    char *_field7;
-};
-
 struct _Rect {
     int _field1;
     int _field2;
     int _field3;
     int _field4;
-};
-
-struct _RtmpRecvStats {
-    long long _field1;
-    long long _field2;
-    long long _field3;
-    long long _field4;
-    unsigned long long _field5;
-    unsigned long long _field6;
-    unsigned long long _field7;
-    unsigned long long _field8;
-    unsigned long long _field9;
-    basic_string_a490aa4c _field10;
-};
-
-struct _SendNetWorkStats {
-    long long _field1;
-    long long _field2;
-    long long _field3;
-    long long _field4;
-    long long _field5;
-    long long _field6;
-    long long _field7;
-    long long _field8;
-    unsigned long long _field9;
-    unsigned long long _field10;
-    unsigned long long _field11;
-    basic_string_a490aa4c _field12;
-    basic_string_a490aa4c _field13;
-    basic_string_a490aa4c _field14;
 };
 
 struct _SpeedTestInfo {
@@ -2237,21 +1813,6 @@ struct _TRSpeexEncodeContex {
     struct SpeexBits bits;
     int frame_size;
     struct PCMFifoBuffer *pFifo;
-};
-
-struct _TXSAudioData {
-    char *buffer;
-    int buffer_len;
-    int buffer_max_len;
-    int buffer_read_len;
-    float speed;
-    int sampleRate;
-    int channel;
-    int bits;
-    unsigned long long nTimeStamp;
-    unsigned int timeline;
-    int nTagType;
-    int nAudioType;
 };
 
 struct _VoIPRingBufferElement;
@@ -2365,26 +1926,6 @@ struct __hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<int, E
     struct __hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<int, EJFontGlyphInfo>, void *>*> *__next_;
 };
 
-struct __list_node_base<QuicInfoListItem, void *> {
-    struct __list_node_base<QuicInfoListItem, void *> *_field1;
-    struct __list_node_base<QuicInfoListItem, void *> *_field2;
-};
-
-struct __list_node_base<_RTMPSendQueueItem *, void *> {
-    struct __list_node_base<_RTMPSendQueueItem *, void *> *_field1;
-    struct __list_node_base<_RTMPSendQueueItem *, void *> *_field2;
-};
-
-struct __list_node_base<_TXSAudioData *, void *> {
-    struct __list_node_base<_TXSAudioData *, void *> *_field1;
-    struct __list_node_base<_TXSAudioData *, void *> *_field2;
-};
-
-struct __list_node_base<audioDataItem, void *> {
-    struct __list_node_base<audioDataItem, void *> *_field1;
-    struct __list_node_base<audioDataItem, void *> *_field2;
-};
-
 struct __list_node_base<const WCDB::Order, void *> {
     struct __list_node_base<const WCDB::Order, void *> *_field1;
     struct __list_node_base<const WCDB::Order, void *> *_field2;
@@ -2393,16 +1934,6 @@ struct __list_node_base<const WCDB::Order, void *> {
 struct __list_node_base<const WCTProperty, void *> {
     struct __list_node_base<const WCTProperty, void *> *_field1;
     struct __list_node_base<const WCTProperty, void *> *_field2;
-};
-
-struct __list_node_base<int, void *> {
-    struct __list_node_base<int, void *> *_field1;
-    struct __list_node_base<int, void *> *_field2;
-};
-
-struct __list_node_base<nWriteInfoListItem, void *> {
-    struct __list_node_base<nWriteInfoListItem, void *> *_field1;
-    struct __list_node_base<nWriteInfoListItem, void *> *_field2;
 };
 
 struct __list_node_base<std::__1::shared_ptr<POPAnimatorItem>, void *> {
@@ -2529,51 +2060,9 @@ struct layer_res {
     int _field3;
 };
 
-struct list<QuicInfoListItem, std::__1::allocator<QuicInfoListItem>> {
-    struct __list_node_base<QuicInfoListItem, void *> _field1;
-    struct __compressed_pair<unsigned long, std::__1::allocator<std::__1::__list_node<QuicInfoListItem, void *>>> {
-        unsigned long long _field1;
-    } _field2;
-};
-
-struct list<_RTMPSendQueueItem *, std::__1::allocator<_RTMPSendQueueItem *>> {
-    struct __list_node_base<_RTMPSendQueueItem *, void *> _field1;
-    struct __compressed_pair<unsigned long, std::__1::allocator<std::__1::__list_node<_RTMPSendQueueItem *, void *>>> {
-        unsigned long long _field1;
-    } _field2;
-};
-
-struct list<_TXSAudioData *, std::__1::allocator<_TXSAudioData *>> {
-    struct __list_node_base<_TXSAudioData *, void *> _field1;
-    struct __compressed_pair<unsigned long, std::__1::allocator<std::__1::__list_node<_TXSAudioData *, void *>>> {
-        unsigned long long _field1;
-    } _field2;
-};
-
-struct list<audioDataItem, std::__1::allocator<audioDataItem>> {
-    struct __list_node_base<audioDataItem, void *> _field1;
-    struct __compressed_pair<unsigned long, std::__1::allocator<std::__1::__list_node<audioDataItem, void *>>> {
-        unsigned long long _field1;
-    } _field2;
-};
-
 struct list<const WCDB::Order, std::__1::allocator<const WCDB::Order>> {
     struct __list_node_base<const WCDB::Order, void *> _field1;
     struct __compressed_pair<unsigned long, std::__1::allocator<std::__1::__list_node<const WCDB::Order, void *>>> {
-        unsigned long long _field1;
-    } _field2;
-};
-
-struct list<int, std::__1::allocator<int>> {
-    struct __list_node_base<int, void *> _field1;
-    struct __compressed_pair<unsigned long, std::__1::allocator<std::__1::__list_node<int, void *>>> {
-        unsigned long long _field1;
-    } _field2;
-};
-
-struct list<nWriteInfoListItem, std::__1::allocator<nWriteInfoListItem>> {
-    struct __list_node_base<nWriteInfoListItem, void *> _field1;
-    struct __compressed_pair<unsigned long, std::__1::allocator<std::__1::__list_node<nWriteInfoListItem, void *>>> {
         unsigned long long _field1;
     } _field2;
 };
@@ -2866,8 +2355,6 @@ struct rapidnet {
     struct rpd_ctrl *_field1;
 };
 
-struct recursive_mutex;
-
 struct rpd_blob<float> {
     int shape_[4];
     float *data_;
@@ -2958,14 +2445,6 @@ struct sockaddr_storage {
     char __ss_pad2[112];
 };
 
-struct stDownloadCB {
-    CDUnknownFunctionPointerType _field1;
-    CDUnknownFunctionPointerType _field2;
-    CDUnknownFunctionPointerType _field3;
-    CDUnknownFunctionPointerType _field4;
-    CDUnknownFunctionPointerType _field5;
-};
-
 struct stEntryRow {
     int _field1;
     _Bool _field2;
@@ -2976,24 +2455,6 @@ struct stEntryRow {
     id _field7;
     id _field8;
     id _field9;
-};
-
-struct stRealTimeItem {
-    int _field1;
-    _Bool _field2;
-    int _field3;
-    int _field4;
-    int _field5;
-    int _field6;
-    int _field7;
-    int _field8;
-    int _field9;
-    int _field10;
-    int _field11;
-    int _field12;
-    int _field13;
-    int _field14;
-    int _field15;
 };
 
 struct stWeixinEntryRow {
@@ -3374,11 +2835,6 @@ struct tagDirectReport {
     unsigned char _field42;
 };
 
-struct tagH264CodecDoneData {
-    long long _field1;
-    long long _field2;
-};
-
 struct tagRelayReport {
     unsigned long long _field1;
     unsigned int _field2;
@@ -3425,17 +2881,6 @@ struct tagRelayReport {
     unsigned char _field43;
 };
 
-struct tagTXSVideoEncoderParam {
-    unsigned int _field1;
-    unsigned int _field2;
-    unsigned int _field3;
-    unsigned int _field4;
-    int _field5;
-    int _field6;
-    _Bool _field7;
-    _Bool _field8;
-};
-
 struct tagVCodec2EngineReport {
     unsigned int _field1;
     unsigned int _field2;
@@ -3469,34 +2914,6 @@ struct tagVHWEngineReport {
     unsigned short _field5;
     unsigned char _field6;
     unsigned char _field7;
-};
-
-struct tag_aduio_data {
-    char *_field1;
-    int _field2;
-    int _field3;
-    int _field4;
-    int _field5;
-    unsigned int _field6;
-    unsigned int _field7;
-    unsigned int _field8;
-    unsigned int _field9;
-};
-
-struct tag_decode_data {
-    int _field1;
-    int _field2;
-    int _field3;
-    int _field4;
-    char *_field5;
-    int _field6;
-    int _field7;
-    int _field8;
-    unsigned int _field9;
-    unsigned int _field10;
-    unsigned long long _field11;
-    struct tagH264CodecDoneData _field12;
-    int _field13;
 };
 
 struct timeval {
@@ -3571,14 +2988,6 @@ struct vector<MSensorInsight::StateUnit, std::__1::allocator<MSensorInsight::Sta
     struct StateUnit *_field2;
     struct __compressed_pair<MSensorInsight::StateUnit *, std::__1::allocator<MSensorInsight::StateUnit>> {
         struct StateUnit *_field1;
-    } _field3;
-};
-
-struct vector<PendingVideoFrame *, std::__1::allocator<PendingVideoFrame *>> {
-    struct PendingVideoFrame **_field1;
-    struct PendingVideoFrame **_field2;
-    struct __compressed_pair<PendingVideoFrame **, std::__1::allocator<PendingVideoFrame *>> {
-        struct PendingVideoFrame **_field1;
     } _field3;
 };
 
@@ -4007,13 +3416,6 @@ typedef struct basic_string<char, std::__1::char_traits<char>, std::__1::allocat
         } __first_;
     } __r_;
 } basic_string_a490aa4c;
-
-typedef struct list<audioDataItem, std::__1::allocator<audioDataItem>> {
-    struct __list_node_base<audioDataItem, void *> _field1;
-    struct __compressed_pair<unsigned long, std::__1::allocator<std::__1::__list_node<audioDataItem, void *>>> {
-        unsigned long long _field1;
-    } _field2;
-} list_3e119c15;
 
 typedef struct list<const WCDB::Order, std::__1::allocator<const WCDB::Order>> {
     struct __list_node_base<const WCDB::Order, void *> _field1;

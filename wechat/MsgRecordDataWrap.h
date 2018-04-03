@@ -23,6 +23,7 @@
 @property(retain, nonatomic) FavoritesItemDataField *m_dataItem; // @synthesize m_dataItem;
 @property(retain, nonatomic) CMessageWrap *m_parent; // @synthesize m_parent;
 - (void).cxx_destruct;
+- (void)IsUrlWeAppThumbPath:(id *)arg1 ThumbUrl:(id *)arg2;
 - (_Bool)StartDownload;
 - (id)GetSightPath;
 - (id)GetFilePath;

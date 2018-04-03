@@ -6,7 +6,7 @@
 
 #import "MMUIViewControllerDelegate-Protocol.h"
 
-@class CContact, MMMultiMenuTableViewCell, NSArray, NSDictionary, NSIndexPath, UITableView, UITableViewCell;
+@class CContact, NSArray, NSDictionary, NSIndexPath, UITableView, UITableViewCell;
 
 @protocol ContactSelectViewDelegate <MMUIViewControllerDelegate>
 - (void)onSelectContact:(CContact *)arg1;
@@ -14,7 +14,6 @@
 @optional
 - (void)onContactsDataNeedChange;
 - (void)actionMenu:(long long)arg1 tableView:(UITableView *)arg2 indexPath:(NSIndexPath *)arg3 contact:(CContact *)arg4;
-- (void)makeMoreMenu:(CContact *)arg1 cell:(MMMultiMenuTableViewCell *)arg2;
 - (void)onViewContact:(CContact *)arg1;
 - (void)makeTopCell:(UITableViewCell *)arg1;
 - (void)onSelectTopCell;

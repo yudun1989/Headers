@@ -19,10 +19,22 @@
     NSString *m_nsProducetDesc;
     NSString *m_nsFacingPaidID;
     unsigned int m_uiPayChannel;
+    unsigned int _dynamic_code_source;
     NSString *_m_nsF2FPayerDesc;
     NSString *_maskTrueName;
+    NSString *_receiver_openid;
+    NSString *_dynamic_code_url;
+    NSString *_mch_name;
+    NSString *_nickname;
+    NSString *_receiver_true_name;
 }
 
+@property(nonatomic) unsigned int dynamic_code_source; // @synthesize dynamic_code_source=_dynamic_code_source;
+@property(retain, nonatomic) NSString *receiver_true_name; // @synthesize receiver_true_name=_receiver_true_name;
+@property(retain, nonatomic) NSString *nickname; // @synthesize nickname=_nickname;
+@property(retain, nonatomic) NSString *mch_name; // @synthesize mch_name=_mch_name;
+@property(retain, nonatomic) NSString *dynamic_code_url; // @synthesize dynamic_code_url=_dynamic_code_url;
+@property(retain, nonatomic) NSString *receiver_openid; // @synthesize receiver_openid=_receiver_openid;
 @property(copy, nonatomic) NSString *maskTrueName; // @synthesize maskTrueName=_maskTrueName;
 @property(retain, nonatomic) NSString *m_nsF2FPayerDesc; // @synthesize m_nsF2FPayerDesc=_m_nsF2FPayerDesc;
 @property(nonatomic) unsigned int m_uiPayChannel; // @synthesize m_uiPayChannel;

@@ -13,18 +13,21 @@
 
 @interface WAMsgNodeActionReportMgr : MMService <PBMessageObserverDelegate, MMService>
 {
-    NSMutableDictionary *_coreId2ReportInfo;
+    NSMutableDictionary *_appCoreId2ReportInfo;
 }
 
 - (void).cxx_destruct;
 - (void)MessageReturn:(id)arg1 Event:(unsigned int)arg2;
-- (void)logAlarmReportForCore:(id)arg1 key:(long long)arg2;
-- (void)logJSApiCallForCore:(id)arg1 withName:(id)arg2;
-- (void)reportForCore:(id)arg1;
-- (void)stopLogForCore:(id)arg1;
-- (void)logActionForCore:(id)arg1 withActionInfo:(id)arg2;
-- (void)logActionForCore:(id)arg1 withType:(int)arg2;
-- (void)startLogForCore:(id)arg1 withStatId:(id)arg2 debugMode:(unsigned int)arg3 serviceType:(long long)arg4 cacheKey:(id)arg5;
+- (id)genReportKeyWithAppId:(id)arg1 coreId:(unsigned int)arg2;
+- (void)tryLogLandPageRequestErrorIfFromWidget:(id)arg1 sceneNote:(id)arg2;
+- (void)tryLogPageErrorAlarmIfFromWidget:(id)arg1;
+- (void)logAlarmReportForCore:(id)arg1 coreId:(unsigned int)arg2 key:(long long)arg3;
+- (void)logJSApiCallForCore:(id)arg1 coreId:(unsigned int)arg2 withName:(id)arg3;
+- (void)reportForCore:(id)arg1 coreId:(unsigned int)arg2;
+- (void)stopLogForCore:(id)arg1 coreId:(unsigned int)arg2;
+- (void)logActionForCore:(id)arg1 coreId:(unsigned int)arg2 withActionInfo:(id)arg3;
+- (void)logActionForCore:(id)arg1 coreId:(unsigned int)arg2 withType:(int)arg3;
+- (void)startLogForCore:(id)arg1 coreId:(unsigned int)arg2 withStatId:(id)arg3 debugMode:(unsigned int)arg4 userInfo:(id)arg5;
 - (void)dealloc;
 - (void)onServiceReloadData;
 - (void)onServiceTerminate;

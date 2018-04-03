@@ -29,8 +29,7 @@
 - (void)updateView;
 - (void)viewDidLoad;
 - (void)viewDidLayoutSubviews;
-- (void)viewWillDisappear:(_Bool)arg1;
-- (void)viewWillAppear:(_Bool)arg1;
+- (_Bool)useBlackStatusbar;
 - (_Bool)useTransparentNavibar;
 - (void)dealloc;
 

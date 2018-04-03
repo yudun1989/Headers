@@ -71,6 +71,7 @@
 @property(retain, nonatomic) NSData *server_key; // @synthesize server_key=_server_key;
 @property(retain, nonatomic) NSString *server_id; // @synthesize server_id=_server_id;
 - (void).cxx_destruct;
+- (id)getConnectDebugInfo;
 - (void)onManulLogOut;
 - (void)onKickQuit;
 - (void)onAuthOK;

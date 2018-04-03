@@ -12,11 +12,12 @@
 #import "UITableViewDataSource-Protocol.h"
 #import "UITableViewDelegate-Protocol.h"
 #import "WCCreateNewGroupDemoViewControllerDelegate-Protocol.h"
+#import "WCFacadeExt-Protocol.h"
 
 @class MMTableView, NSArray, NSMutableArray, NSMutableDictionary, NSMutableSet, NSString, WCCreateNewGroupDemoViewController;
 @protocol WCGroupTagViewControllerDelegate;
 
-@interface WCGroupTagDemoViewController : MMUIViewController <WCCreateNewGroupDemoViewControllerDelegate, IContactLabelMgrExt, MultiSelectContactsViewControllerDelegate, UITableViewDataSource, UITableViewDelegate, UIAlertViewDelegate>
+@interface WCGroupTagDemoViewController : MMUIViewController <WCCreateNewGroupDemoViewControllerDelegate, WCFacadeExt, IContactLabelMgrExt, MultiSelectContactsViewControllerDelegate, UITableViewDataSource, UITableViewDelegate, UIAlertViewDelegate>
 {
     int m_originProviacy;
     _Bool m_privacyGroupHidden;

@@ -8,7 +8,7 @@
 
 #import "NSCopying-Protocol.h"
 
-@class NSArray, NSString;
+@class NSArray, NSMutableArray, NSString;
 
 @interface WSVideoModel : NSObject <NSCopying>
 {
@@ -36,8 +36,6 @@
     NSString *_videoApi;
     NSString *_thumbUrl;
     NSArray *_arrVideoUrl;
-    NSString *_shareString;
-    NSString *_shareStringUrl;
     NSString *_sourceImgUrl;
     NSString *_source;
     NSString *_sourceUrl;
@@ -51,9 +49,12 @@
     NSString *_openId;
     NSString *_sessionId;
     NSString *_itemExpand;
+    NSMutableArray *_extParams;
+    NSArray *_arrTagInfo;
     double _cacheForTitleHeight;
 }
 
++ (id)containerFromJSON:(id)arg1;
 + (id)fromXML:(struct XmlReaderNode_t *)arg1;
 + (id)parseFromWCVideoFlowInfo:(id)arg1;
 + (id)ParseFromNewDictionary:(id)arg1;
@@ -64,6 +65,8 @@
 @property(nonatomic) _Bool startByAutoPlay; // @synthesize startByAutoPlay=_startByAutoPlay;
 @property(nonatomic) int eUrlStatus; // @synthesize eUrlStatus=_eUrlStatus;
 @property(nonatomic) double cacheForTitleHeight; // @synthesize cacheForTitleHeight=_cacheForTitleHeight;
+@property(retain, nonatomic) NSArray *arrTagInfo; // @synthesize arrTagInfo=_arrTagInfo;
+@property(retain, nonatomic) NSMutableArray *extParams; // @synthesize extParams=_extParams;
 @property(retain, nonatomic) NSString *itemExpand; // @synthesize itemExpand=_itemExpand;
 @property(nonatomic) unsigned int itemType; // @synthesize itemType=_itemType;
 @property(nonatomic) unsigned int resultType; // @synthesize resultType=_resultType;
@@ -81,8 +84,6 @@
 @property(retain, nonatomic) NSString *sourceUrl; // @synthesize sourceUrl=_sourceUrl;
 @property(retain, nonatomic) NSString *source; // @synthesize source=_source;
 @property(retain, nonatomic) NSString *sourceImgUrl; // @synthesize sourceImgUrl=_sourceImgUrl;
-@property(retain, nonatomic) NSString *shareStringUrl; // @synthesize shareStringUrl=_shareStringUrl;
-@property(retain, nonatomic) NSString *shareString; // @synthesize shareString=_shareString;
 @property(nonatomic) unsigned int duration; // @synthesize duration=_duration;
 @property(nonatomic) unsigned int pxHeight; // @synthesize pxHeight=_pxHeight;
 @property(nonatomic) unsigned int pxWidth; // @synthesize pxWidth=_pxWidth;
@@ -98,6 +99,7 @@
 @property(retain, nonatomic) NSString *title; // @synthesize title=_title;
 @property(retain, nonatomic) NSString *vid; // @synthesize vid=_vid;
 - (void).cxx_destruct;
+- (id)generateJSONForArrTagInfo;
 - (id)toXML;
 - (id)parseToWCVideoFlowInfo;
 - (void)compatShareModel;

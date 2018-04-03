@@ -27,10 +27,12 @@
     CDUnknownBlockType _onProgress;
     CDUnknownBlockType _onSuccess;
     CDUnknownBlockType _onError;
+    CDUnknownBlockType _onCancelled;
 }
 
 + (id)keyPathsForValuesAffectingPlaying;
 @property(nonatomic) unsigned int previousMuteFlags; // @synthesize previousMuteFlags=_previousMuteFlags;
+@property(copy, nonatomic) CDUnknownBlockType onCancelled; // @synthesize onCancelled=_onCancelled;
 @property(copy, nonatomic) CDUnknownBlockType onError; // @synthesize onError=_onError;
 @property(copy, nonatomic) CDUnknownBlockType onSuccess; // @synthesize onSuccess=_onSuccess;
 @property(copy, nonatomic) CDUnknownBlockType onProgress; // @synthesize onProgress=_onProgress;
@@ -54,13 +56,15 @@
 - (void)playerEnded:(id)arg1;
 - (void)playerLoadedData:(id)arg1;
 - (void)player:(id)arg1 didRenderFrame:(double)arg2 withAssets:(id)arg3;
+- (void)exportTaskDidCancelled:(id)arg1;
 - (void)exportTask:(id)arg1 updateProgress:(double)arg2;
 - (void)exportTask:(id)arg1 didFailWithError:(id)arg2;
 - (void)exportTaskDidFinish:(id)arg1 assetRenderRanges:(id)arg2;
-- (void)cancelExport;
+- (void)cancelExportOnFinish:(CDUnknownBlockType)arg1;
 - (void)exportWithPath:(id)arg1 options:(id)arg2 progress:(CDUnknownBlockType)arg3 onSuccess:(CDUnknownBlockType)arg4 onError:(CDUnknownBlockType)arg5;
 - (void)playUntilEffectFinishes:(_Bool)arg1;
 - (void)play;
+- (void)loadTextureDataWithItem:(id)arg1 onFinish:(CDUnknownBlockType)arg2;
 - (void)updateProject;
 - (id)init;
 - (id)initWithMediaProject:(id)arg1;

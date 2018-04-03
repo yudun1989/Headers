@@ -6,7 +6,7 @@
 
 #import "GPBMessage.h"
 
-@class KSEBeautyFilterParam, KSEColorFilterParam, KSEInputFileOptions, KSEProbedFile, KSETimeRange, NSString;
+@class KSEAudioFilterParam, KSEBeautyFilterParam, KSEColorFilterParam, KSEInputFileOptions, KSEProbedFile, KSETimeRange, NSString;
 
 @interface KSETrackAsset : GPBMessage
 {
@@ -20,10 +20,12 @@
 @property(copy, nonatomic) NSString *assetPath; // @dynamic assetPath;
 @property(retain, nonatomic) KSEInputFileOptions *assetPathOptions; // @dynamic assetPathOptions;
 @property(nonatomic) double assetSpeed; // @dynamic assetSpeed;
+@property(retain, nonatomic) KSEAudioFilterParam *audioFilterParam; // @dynamic audioFilterParam;
 @property(retain, nonatomic) KSEBeautyFilterParam *beautyFilter; // @dynamic beautyFilter;
 @property(retain, nonatomic) KSETimeRange *clippedRange; // @dynamic clippedRange;
 @property(retain, nonatomic) KSEColorFilterParam *colorFilter; // @dynamic colorFilter;
 @property(nonatomic) _Bool hasAssetPathOptions; // @dynamic hasAssetPathOptions;
+@property(nonatomic) _Bool hasAudioFilterParam; // @dynamic hasAudioFilterParam;
 @property(nonatomic) _Bool hasBeautyFilter; // @dynamic hasBeautyFilter;
 @property(nonatomic) _Bool hasClippedRange; // @dynamic hasClippedRange;
 @property(nonatomic) _Bool hasColorFilter; // @dynamic hasColorFilter;
@@ -31,6 +33,7 @@
 @property(nonatomic) _Bool hasProbedAssetFile; // @dynamic hasProbedAssetFile;
 @property(retain, nonatomic) KSEProbedFile *probedAssetAudioFile; // @dynamic probedAssetAudioFile;
 @property(retain, nonatomic) KSEProbedFile *probedAssetFile; // @dynamic probedAssetFile;
+@property(nonatomic) int rotationDeg; // @dynamic rotationDeg;
 @property(nonatomic) double volume; // @dynamic volume;
 
 @end

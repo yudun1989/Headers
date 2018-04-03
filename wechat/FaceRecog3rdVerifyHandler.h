@@ -13,6 +13,7 @@
 
 @interface FaceRecog3rdVerifyHandler : FaceRecogReadNumHandler <PBMessageObserverDelegate, FaceRecogBaseHandlerDelegate>
 {
+    NSString *_feedbackUrl;
     NSString *_verifyInfo;
 }
 
@@ -22,7 +23,7 @@
 - (void)MessageReturn:(id)arg1 Event:(unsigned int)arg2;
 - (void)didUploadFaceData:(id)arg1;
 - (id)faceRecogVerifyGetFeedbackUrl;
-- (void)startVerifyFor3rdParty:(id)arg1 verifyInfo:(id)arg2 needVideo:(_Bool)arg3;
+- (void)startVerifyFor3rdParty:(id)arg1 verifyInfo:(id)arg2 needVideo:(_Bool)arg3 feedbackUrl:(id)arg4;
 - (void)dealloc;
 
 // Remaining properties

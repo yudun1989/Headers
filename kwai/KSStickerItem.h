@@ -9,7 +9,8 @@
 #import "KSAdvTextureEdit-Protocol.h"
 #import "KSChartletViewDelegate-Protocol.h"
 
-@class KSVideoShapePrototype, KSVideoShapeView, NSString;
+@class KSVideoShapePrototype, KSVideoShapeView, NSObject, NSString;
+@protocol KSChartlet;
 
 @interface KSStickerItem : KSMTextureItem <KSChartletViewDelegate, KSAdvTextureEdit>
 {
@@ -18,14 +19,22 @@
     CDUnknownBlockType _onTapItem;
     CDUnknownBlockType _onTapCloseBtn;
     CDUnknownBlockType _onChanged;
+    CDUnknownBlockType _onMoving;
+    CDUnknownBlockType _didMove;
     KSVideoShapeView *_textureView;
+    NSObject<KSChartlet> *_chartlet;
     struct CGSize _canvasSize;
+    struct CGPoint _center;
 }
 
+@property(retain, nonatomic) NSObject<KSChartlet> *chartlet; // @synthesize chartlet=_chartlet;
 @property(retain, nonatomic) KSVideoShapeView *textureView; // @synthesize textureView=_textureView;
+@property(copy, nonatomic) CDUnknownBlockType didMove; // @synthesize didMove=_didMove;
+@property(copy, nonatomic) CDUnknownBlockType onMoving; // @synthesize onMoving=_onMoving;
 @property(copy, nonatomic) CDUnknownBlockType onChanged; // @synthesize onChanged=_onChanged;
 @property(copy, nonatomic) CDUnknownBlockType onTapCloseBtn; // @synthesize onTapCloseBtn=_onTapCloseBtn;
 @property(copy, nonatomic) CDUnknownBlockType onTapItem; // @synthesize onTapItem=_onTapItem;
+@property(nonatomic) struct CGPoint center; // @synthesize center=_center;
 @property(nonatomic) _Bool editing; // @synthesize editing=_editing;
 @property(nonatomic) struct CGSize canvasSize; // @synthesize canvasSize=_canvasSize;
 @property(retain, nonatomic) KSVideoShapePrototype *stickerMaterial; // @synthesize stickerMaterial=_stickerMaterial;
@@ -33,6 +42,7 @@
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (void)didEndEditTextOfChartletView:(id)arg1;
 - (void)willBeginEditTextOfChartletView:(id)arg1;
+- (void)onMovingChartletView:(id)arg1;
 - (void)didMoveChartletView:(id)arg1;
 - (void)didLongPressChartletView:(id)arg1;
 - (void)didSelectChartletView:(id)arg1;
@@ -44,6 +54,7 @@
 @property(readonly, copy) NSString *debugDescription;
 @property(readonly, copy) NSString *description;
 @property(readonly) unsigned long long hash;
+@property(copy, nonatomic) CDUnknownBlockType onStartEditItem;
 @property(readonly) Class superclass;
 
 @end

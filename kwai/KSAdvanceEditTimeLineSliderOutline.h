@@ -12,9 +12,11 @@
 {
     UIColor *_strokeColor;
     UIColor *_fillColor;
+    UIColor *_indicatorColor;
     struct UIEdgeInsets _edgeInsets;
 }
 
+@property(retain, nonatomic) UIColor *indicatorColor; // @synthesize indicatorColor=_indicatorColor;
 @property(retain, nonatomic) UIColor *fillColor; // @synthesize fillColor=_fillColor;
 @property(retain, nonatomic) UIColor *strokeColor; // @synthesize strokeColor=_strokeColor;
 @property(nonatomic) struct UIEdgeInsets edgeInsets; // @synthesize edgeInsets=_edgeInsets;

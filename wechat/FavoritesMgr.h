@@ -19,7 +19,7 @@
 #import "PBMessageObserverDelegate-Protocol.h"
 #import "WCScheduleLogicControllerDelegate-Protocol.h"
 
-@class FavSecurityLogic, FavoritesAsyncUploadMgr, FavoritesBatchDelMgr, FavoritesBatchGetMgr, FavoritesDownloadMgr, FavoritesItemDB, FavoritesRepairSvrDataLogic, FavoritesReportLogic, FavoritesSearchMgr, FavoritesSetting, FavoritesSyncMgr, FavoritesTagMgr, FavoritesUploadMgr, MyFavoritesDB, NSMutableArray, NSObject, NSString, WCScheduleLogicController;
+@class FavSecurityLogic, FavoritesAsyncUploadMgr, FavoritesBatchDelMgr, FavoritesBatchGetMgr, FavoritesDownloadMgr, FavoritesItemDB, FavoritesRepairSvrDataLogic, FavoritesReportLogic, FavoritesSearchMgr, FavoritesSetting, FavoritesSyncMgr, FavoritesTagMgr, FavoritesUploadMgr, MyFavoritesDB, NSMutableArray, NSMutableDictionary, NSObject, NSString, WCScheduleLogicController;
 @protocol OS_dispatch_semaphore;
 
 @interface FavoritesMgr : MMService <IClearDataMgrExt, WCScheduleLogicControllerDelegate, MMService, PBMessageObserverDelegate, FavoritesUploadMgrDelegate, FavoritesDownloadMgrDelegate, FavoritesBatchGetMgrDelegate, FavoritesSearchMgrDelegate, FavoritesSyncMgrDelegate, FavoritesAsyncUploadMgrDelegate, FavoritesBatchDelMgrDelegate, FavSecurityDelegate>
@@ -44,6 +44,8 @@
     _Bool m_bCustomUsedCapacity_on;
     int m_usedCapacity;
     WCScheduleLogicController *_scheduleLogicController;
+    NSMutableDictionary *_dispatchQueueDic;
+    NSMutableDictionary *_dispatchQueueRerefenceDic;
     FavoritesReportLogic *_reportLogic;
 }
 
@@ -69,12 +71,15 @@
 - (_Bool)updateItemXml:(id)arg1;
 - (void)onSecurityCheckFail:(int)arg1;
 - (void)onSecurityCheckOK:(int)arg1;
+- (void)releaseDispatchQueueWithSrcDataPath:(id)arg1;
+- (id)getDispatchQueueWithSrcDataPath:(id)arg1;
 - (id)getSemaphore;
 - (void)onBatchDelItemSuccess;
 - (void)OnNeedUpdateFavInfo;
 - (void)OnSyncResult:(int)arg1;
 - (void)OnSearch:(id)arg1;
 - (id)GetNextBatchGetList;
+- (_Bool)checkNeedAsyncUploadAfterBatchDownload:(id)arg1;
 - (void)batchDownloadItemList:(id)arg1;
 - (void)onBatchGetItemList:(id)arg1 ErrCode:(int)arg2;
 - (void)onDownloadFavoritesItemFail:(id)arg1 LocalDataId:(id)arg2;
@@ -85,6 +90,7 @@
 - (void)onUploadFavoritesItem:(id)arg1 LocalDataId:(id)arg2 FinishedLength:(int)arg3 TotalLength:(int)arg4;
 - (void)onUploadFavoritesItemFinished:(id)arg1 ErrCode:(int)arg2;
 - (void)onUsedCapacityUpdate:(unsigned long long)arg1;
+- (_Bool)onUploadFavoritesItemFinishedSuccess:(id)arg1 withDataList:(id)arg2;
 - (void)onAsyncUploadFavoritesItemFinished:(id)arg1 ErrCode:(int)arg2;
 - (void)BroadcastAddFavoritesItemResult:(id)arg1 ErrCode:(int)arg2;
 - (void)MessageReturn:(id)arg1 Event:(unsigned int)arg2;
@@ -123,6 +129,7 @@
 - (void)search:(id)arg1 byType:(int)arg2;
 - (_Bool)delAllFavoritesItems;
 - (_Bool)batchDelFavoritesItem:(id)arg1;
+- (void)removeItemFile:(id)arg1 withDataList:(id)arg2;
 - (void)removeItemFile:(id)arg1;
 - (_Bool)delFavoritesItems:(id)arg1;
 - (_Bool)delFavoritesItem:(id)arg1;

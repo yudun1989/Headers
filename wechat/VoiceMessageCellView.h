@@ -64,6 +64,7 @@
 - (_Bool)isTouchInView:(id)arg1;
 - (_Bool)canShowVoiceTransMenu;
 - (id)operationMenuItems;
+- (void)onLongTouch;
 - (_Bool)canBecomeFirstResponder;
 - (_Bool)canPerformAction:(SEL)arg1 withSender:(id)arg2;
 - (void)addTranslateViewMenus;

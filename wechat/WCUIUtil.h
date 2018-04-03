@@ -21,6 +21,7 @@
 + (id)getLocalizedArrayGroupName:(id)arg1;
 + (id)getLocalizedGroupName:(id)arg1;
 + (id)getWCGroupDemoPrivacyContent:(id)arg1;
++ (id)intersectArrayFrom:(id)arg1 array2:(id)arg2;
 + (id)getWCGroupPrivacyContent;
 
 @end

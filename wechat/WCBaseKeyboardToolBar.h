@@ -19,7 +19,7 @@
     UIBarButtonItem *m_FinishButtonItem;
     UIToolbar *m_toolBar;
     UIScrollView *m_scrollView;
-    struct CGRect m_keyboardRect;
+    double m_keyboardHeight;
     NSMutableArray *m_arrItem;
     long long m_uiCurrentItemIndex;
     _Bool m_bTouchHide;

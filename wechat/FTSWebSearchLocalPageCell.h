@@ -6,21 +6,34 @@
 
 #import <UIKit/UITableViewCell.h>
 
-@class FTSSearchLocalPageResultWrap;
+#import "UITableViewDataSource-Protocol.h"
+#import "UITableViewDelegate-Protocol.h"
+
+@class FTSSearchLocalPageResultWrap, NSString, UITableView;
 @protocol WebSearchLocalPageCellDelegate;
 
-@interface FTSWebSearchLocalPageCell : UITableViewCell
+@interface FTSWebSearchLocalPageCell : UITableViewCell <UITableViewDataSource, UITableViewDelegate>
 {
     FTSSearchLocalPageResultWrap *_resultWrap;
+    UITableView *_resultTableView;
     id <WebSearchLocalPageCellDelegate> _delegate;
 }
 
 + (double)heightForData:(id)arg1;
 @property(nonatomic) __weak id <WebSearchLocalPageCellDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
-- (void)onClickButton:(id)arg1;
-- (id)makeNewButton:(id)arg1;
+- (void)tableView:(id)arg1 didSelectRowAtIndexPath:(id)arg2;
+- (double)tableView:(id)arg1 heightForRowAtIndexPath:(id)arg2;
+- (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;
+- (long long)tableView:(id)arg1 numberOfRowsInSection:(long long)arg2;
+- (long long)numberOfSectionsInTableView:(id)arg1;
 - (void)configureWithData:(id)arg1;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly, copy) NSString *description;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
 
 @end
 

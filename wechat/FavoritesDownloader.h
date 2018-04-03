@@ -26,6 +26,7 @@
 - (void)OnFavCdnDownloadProgress:(id)arg1;
 - (void)OnFavCdnDownloadStartError:(id)arg1;
 - (void)BroadcastDownloadFail:(int)arg1;
+- (void)modifyDownloadingMediaInfo:(id)arg1 withDataList:(id)arg2;
 - (void)tryStartNextData;
 - (id)getItem;
 - (_Bool)stop;

@@ -60,6 +60,7 @@
 - (void)getMoreMsg;
 - (_Bool)HandleGetChatRoomMsgResp:(id)arg1 Event:(unsigned int)arg2;
 - (void)MessageReturn:(id)arg1 Event:(unsigned int)arg2;
+- (void)getChatRoomMsg:(unsigned int)arg1 getOld:(_Bool)arg2 filterSeq:(unsigned int)arg3;
 - (void)getChatRoomMsg:(unsigned int)arg1 getOld:(_Bool)arg2;
 - (id)getFirstUnreadMsg;
 - (void)onEnterRoom:(id)arg1;

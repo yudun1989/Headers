@@ -6,20 +6,25 @@
 
 #import <UIKit/UIView.h>
 
-@class NSAttributedString, UIColor;
+@class NSAttributedString, NSDictionary, NSString, UIColor;
 
 @interface KSOuterStrokeLabel : UIView
 {
+    struct CGSize _textSize;
     double _strokeWidth;
     UIColor *_strokeColor;
     NSAttributedString *_attributedText;
+    NSDictionary *_textAttributes;
 }
 
+@property(retain, nonatomic) NSDictionary *textAttributes; // @synthesize textAttributes=_textAttributes;
 @property(retain, nonatomic) NSAttributedString *attributedText; // @synthesize attributedText=_attributedText;
 @property(retain, nonatomic) UIColor *strokeColor; // @synthesize strokeColor=_strokeColor;
 @property(nonatomic) double strokeWidth; // @synthesize strokeWidth=_strokeWidth;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSString *text; // @dynamic text;
 - (void)drawRect:(struct CGRect)arg1;
+- (struct CGSize)intrinsicContentSize;
 - (void)commonInit;
 - (id)initWithFrame:(struct CGRect)arg1;
 - (id)initWithCoder:(id)arg1;

@@ -34,7 +34,7 @@
 - (int)frameCount;
 - (int)currentFrameId;
 - (id)currentFrameImage;
-- (void)seekToNextFrame;
+- (_Bool)seekToNextFrame;
 - (id)initWithData:(id)arg1;
 - (void)dealloc;
 

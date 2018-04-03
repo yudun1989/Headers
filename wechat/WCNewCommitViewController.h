@@ -25,16 +25,17 @@
 #import "WCDragableSelectorViewDelegate-Protocol.h"
 #import "WCFacadeExt-Protocol.h"
 #import "WCGroupTagViewControllerDelegate-Protocol.h"
+#import "WCTableViewMgrDelegate-Protocol.h"
 #import "WCTimelinePOIPickerViewControllerDelegate-Protocol.h"
 #import "scrollViewDelegate-Protocol.h"
 
-@class CLLocation, ContactsSelectorController, EmoticonBoardView, ImageSelectorController, MMAsset, MMGrowTextView, MMLoadingView, MMTableViewInfo, MMTimer, NSArray, NSMutableArray, NSString, SightDraft, SightIconView, SightView, UIActivityIndicatorView, UIButton, UIImage, UIImageView, UIView, WCDataItem, WCDragDeleteBarView, WCDragTipView, WCHeadViewCellInfo, WCInputController, WCLocationInfo, WCMusicInfo, WCPOIStarView, WCSelectorView, WCTimelinePOIPickerViewController;
+@class CLLocation, ContactsSelectorController, EmoticonBoardView, ImageSelectorController, MMAsset, MMGrowTextView, MMLoadingView, MMTimer, NSArray, NSMutableArray, NSString, SightDraft, SightIconView, SightView, UIActivityIndicatorView, UIButton, UIImage, UIImageView, UIView, WCDataItem, WCDragDeleteBarView, WCDragTipView, WCHeadViewCellInfo, WCInputController, WCLocationInfo, WCMusicInfo, WCPOIStarView, WCSelectorView, WCTableViewManager, WCTimelinePOIPickerViewController;
 @protocol WCCommitViewAnimationDelegate;
 
-@interface WCNewCommitViewController : MMUIViewController <InputControllerDelegate, BaseEmoticonViewDelegate, IMMAssetICloudExt, WCGroupTagViewControllerDelegate, SightViewDelegate, FacebookViewControllerDelegate, WCDragableSelectorViewDelegate, UIScrollViewDelegate, scrollViewDelegate, UITextViewDelegate, SelectorControllerDelegate, MMTableViewInfoDelegate, ContactsSelectorControllerDelegate, UIAlertViewDelegate, IMsgExt, WCFacadeExt, MMTwitterAuthExt, IMMFacebookMgrExt, IFacebookAuthExt, IMMGrowTextViewExt, WCTimelinePOIPickerViewControllerDelegate>
+@interface WCNewCommitViewController : MMUIViewController <InputControllerDelegate, BaseEmoticonViewDelegate, IMMAssetICloudExt, WCGroupTagViewControllerDelegate, SightViewDelegate, FacebookViewControllerDelegate, WCDragableSelectorViewDelegate, WCTableViewMgrDelegate, UIScrollViewDelegate, scrollViewDelegate, UITextViewDelegate, SelectorControllerDelegate, MMTableViewInfoDelegate, ContactsSelectorControllerDelegate, UIAlertViewDelegate, IMsgExt, WCFacadeExt, MMTwitterAuthExt, IMMFacebookMgrExt, IFacebookAuthExt, IMMGrowTextViewExt, WCTimelinePOIPickerViewControllerDelegate>
 {
-    MMTableViewInfo *_tableViewInfo;
     MMGrowTextView *_textView;
+    WCTableViewManager *m_tableViewManager;
     UIView *_headView;
     WCSelectorView *_withImageView;
     WCSelectorView *_withContactView;
@@ -135,6 +136,8 @@
 - (_Bool)processImage;
 - (void)cancelIcloudActivity;
 - (void)doExit;
+- (void)showSaveOrNotAlert:(long long)arg1;
+- (_Bool)shouldShowAlert:(long long)arg1;
 - (void)OnReturn;
 - (void)OnFacebookBinded;
 - (void)onTwitterClicked:(id)arg1;
@@ -154,19 +157,22 @@
 - (void)viewDidAppear:(_Bool)arg1;
 - (void)viewDidLoad;
 - (void)shareOptionsCheck;
+- (void)initTextViewContent;
 - (void)initView;
 - (void)reloadType;
+- (void)reloadHeadViewSubviewsY;
 - (void)reloadData;
+- (void)makeContactCell:(id)arg1;
+- (void)makeCell:(id)arg1;
 - (id)getShowAddress;
 - (void)setDeleteBarHidden:(_Bool)arg1;
 - (void)createSubviews;
+- (_Bool)useTransparentNavibar;
+- (_Bool)useBlackStatusbar;
 - (void)saveShareOptions;
 - (void)restoreLastShareOptions;
 - (_Bool)shouldShowEvaluatePOI;
 - (void)makeEvaluatePOICell:(id)arg1 CellInfo:(id)arg2;
-- (void)removeOldText;
-- (void)writeOldText:(id)arg1;
-- (id)openOldText;
 - (id)getViewController;
 - (id)initWithSightDraft:(id)arg1;
 - (id)initWithImages:(id)arg1 contacts:(id)arg2;
@@ -189,6 +195,7 @@
 - (void)initInputController;
 - (void)initEmoticonView;
 - (void)initInputToolView;
+- (void)wcScrollViewDidScroll:(id)arg1;
 - (void)scrollViewDidScroll:(id)arg1;
 - (void)touchesBegan_ScrollView:(id)arg1 withEvent:(id)arg2;
 - (void)GroupTagViewSelectTempContacts:(id)arg1;

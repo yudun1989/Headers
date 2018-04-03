@@ -7,6 +7,10 @@
 #import "NSObject-Protocol.h"
 
 @protocol WCPayFacingQRCodeImageViewDelegate <NSObject>
+
+@optional
+- (void)OnWCPayFacingQRCodeImageViewJumpMaterial;
+- (_Bool)OnWCPayFacingQRCodeImageViewShowMaterial;
 - (void)OnWCPayFacingQRCodeImageViewSaveButtonDone;
 @end
 

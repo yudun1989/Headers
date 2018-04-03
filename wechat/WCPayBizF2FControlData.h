@@ -6,7 +6,7 @@
 
 #import <objc/NSObject.h>
 
-@class BusiF2FActQryResp, BusiF2FPayOkResp, BusiF2FPlaceOrderReq, BusiF2FPlaceOrderResp, BusiF2FSucPageResp, NSString, WCPayTranferGetUserNameResponse;
+@class BusiF2FActQryResp, BusiF2FPayOkResp, BusiF2FPlaceOrderReq, BusiF2FPlaceOrderResp, BusiF2FSucPageResp, CgiF2FDynamicCodeResp, NSString, WCPayTranferGetUserNameResponse;
 
 @interface WCPayBizF2FControlData : NSObject
 {
@@ -28,8 +28,10 @@
     WCPayTranferGetUserNameResponse *_transferScanQrCodeResp;
     BusiF2FPlaceOrderReq *_m_placeOrderReq;
     BusiF2FSucPageResp *_m_bizSucPageResp;
+    CgiF2FDynamicCodeResp *_m_f2fDynamicCodeResp;
 }
 
+@property(retain, nonatomic) CgiF2FDynamicCodeResp *m_f2fDynamicCodeResp; // @synthesize m_f2fDynamicCodeResp=_m_f2fDynamicCodeResp;
 @property(retain, nonatomic) BusiF2FSucPageResp *m_bizSucPageResp; // @synthesize m_bizSucPageResp=_m_bizSucPageResp;
 @property(retain, nonatomic) BusiF2FPlaceOrderReq *m_placeOrderReq; // @synthesize m_placeOrderReq=_m_placeOrderReq;
 @property(retain, nonatomic) WCPayTranferGetUserNameResponse *transferScanQrCodeResp; // @synthesize transferScanQrCodeResp=_transferScanQrCodeResp;

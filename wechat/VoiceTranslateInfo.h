@@ -14,6 +14,7 @@
 {
     _Bool _bShowAnimation;
     _Bool _bAutoScrollUp;
+    _Bool _hadLocalTranslateRet;
     unsigned int mesLocalId;
     unsigned long long translatedTime;
     NSString *_voiceId;
@@ -28,6 +29,7 @@
 + (void)initialize;
 @property(retain, nonatomic) CMessageWrap *messageWrap; // @synthesize messageWrap=_messageWrap;
 @property(nonatomic) long long status; // @synthesize status=_status;
+@property(nonatomic) _Bool hadLocalTranslateRet; // @synthesize hadLocalTranslateRet=_hadLocalTranslateRet;
 @property(nonatomic) _Bool bAutoScrollUp; // @synthesize bAutoScrollUp=_bAutoScrollUp;
 @property(nonatomic) _Bool bShowAnimation; // @synthesize bShowAnimation=_bShowAnimation;
 @property(nonatomic) unsigned long long fristTranslateTime; // @synthesize fristTranslateTime=_fristTranslateTime;

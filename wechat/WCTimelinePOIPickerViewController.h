@@ -114,6 +114,7 @@
 - (void)showDataProviderInfo:(id)arg1;
 - (void)showSearchTableLoadMore;
 - (void)adjustSubviewRects;
+- (void)setSelectedItemByLocationInfo:(id)arg1;
 - (void)addSelectedItem;
 - (void)addNotCheckInItem;
 - (void)initTableView;

@@ -9,6 +9,7 @@
 @class UIImage;
 
 @protocol KSVideoFrameDisplaySource <NSObject>
+@property(readonly, nonatomic) struct CGSize imageSize;
 @property(readonly, nonatomic) unsigned long long frameCount;
 - (UIImage *)frameImageAtIndex:(unsigned long long)arg1;
 

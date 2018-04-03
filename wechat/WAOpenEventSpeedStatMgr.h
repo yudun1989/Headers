@@ -21,6 +21,7 @@
     _Bool m_isTriggerDownload;
     _Bool m_isSyncUpdateContact;
     _Bool m_isSyncLaunchCgi;
+    unsigned int m_syncUpdateReason;
     unsigned long long m_preloadPageFrameBeginTime;
     unsigned long long m_preloadPageFrameJSBeginTime;
 }
@@ -29,7 +30,7 @@
 - (void)markEventEnd:(unsigned long long)arg1 appType:(unsigned int)arg2;
 - (void)markEventBegin:(unsigned long long)arg1;
 - (void)markEventSyncLaunchCgi:(id)arg1;
-- (void)markEventSyncUpdateContact:(id)arg1;
+- (void)markEventSyncUpdateContact:(id)arg1 reason:(unsigned int)arg2;
 - (void)markEventTriggerDownload:(id)arg1;
 - (void)registerOpenWeAppInfo:(id)arg1 appVersion:(long long)arg2 appState:(unsigned long long)arg3 scene:(unsigned long long)arg4;
 - (id)init;

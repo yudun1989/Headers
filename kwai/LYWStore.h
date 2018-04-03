@@ -9,23 +9,25 @@
 #import "LYWDispatch-Protocol.h"
 #import "LYWSubscribe-Protocol.h"
 
-@class NSString, _LYWStore;
-@protocol LYWMiddleware;
+@class NSString;
+@protocol LYWMiddleware, LYWReducerStore><LYWSubscribe;
 
 @interface LYWStore : NSObject <LYWSubscribe, LYWDispatch>
 {
-    _LYWStore *_store;
+    id <LYWReducerStore><LYWSubscribe> _reducerStore;
     id <LYWMiddleware> _headerMiddleware;
 }
 
 @property(retain, nonatomic) id <LYWMiddleware> headerMiddleware; // @synthesize headerMiddleware=_headerMiddleware;
-@property(retain, nonatomic) _LYWStore *store; // @synthesize store=_store;
+@property(retain, nonatomic) id <LYWReducerStore><LYWSubscribe> reducerStore; // @synthesize reducerStore=_reducerStore;
 - (void).cxx_destruct;
 - (void)setupHeaderMiddleware:(id)arg1;
 - (void)unsubscribe:(id)arg1;
 - (void)subscribe:(id)arg1 selector:(CDUnknownBlockType)arg2;
 - (id)dispatchAction:(id)arg1;
 - (id)state;
+- (id)initWithReducer:(id)arg1 reducerStore:(id)arg2 middleware:(id)arg3;
+- (id)initNewStateStoreWithReducer:(id)arg1 middleware:(id)arg2;
 - (id)initWithReducer:(id)arg1 middleware:(id)arg2;
 
 // Remaining properties

@@ -62,9 +62,6 @@
 - (void)configBlurBackground;
 - (void)updateNetStatus;
 - (void)initView;
-- (void)viewWillAppear:(_Bool)arg1;
-- (void)didReceiveMemoryWarning;
-- (void)viewDidLayoutSubviews;
 - (void)viewDidLoad;
 - (void)dealloc;
 

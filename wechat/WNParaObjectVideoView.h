@@ -6,11 +6,12 @@
 
 #import "WNParaObjectBaseView.h"
 
+#import "IUiUtilExt-Protocol.h"
 #import "WNParaImageViewDelegate-Protocol.h"
 
 @class NSString, SightIconView, WNParaImageView, WNSightViewController;
 
-@interface WNParaObjectVideoView : WNParaObjectBaseView <WNParaImageViewDelegate>
+@interface WNParaObjectVideoView : WNParaObjectBaseView <WNParaImageViewDelegate, IUiUtilExt>
 {
     WNParaImageView *_imageView;
     SightIconView *_playIconView;

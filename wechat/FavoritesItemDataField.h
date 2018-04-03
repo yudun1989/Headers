@@ -6,7 +6,7 @@
 
 #import <objc/NSObject.h>
 
-@class FavLocationItem, FavProductItem, FavStreamVideoItem, FavTVItem, FavURLItem, FavoritesDataItemSource, NSArray, NSMutableArray, NSString;
+@class FavLocationItem, FavProductItem, FavStreamVideoItem, FavTVItem, FavURLItem, FavWeAppItem, FavoritesDataItemSource, NSArray, NSMutableArray, NSString;
 
 @interface FavoritesItemDataField : NSObject
 {
@@ -56,6 +56,7 @@
     unsigned int _srcMsgLocalId;
     unsigned int _srcMsgCreateTime;
     NSString *_htmlId;
+    FavWeAppItem *_weAppItem;
     NSString *_srcChatName;
 }
 
@@ -65,6 +66,7 @@
 @property(nonatomic) unsigned int srcMsgLocalId; // @synthesize srcMsgLocalId=_srcMsgLocalId;
 @property(retain, nonatomic) NSString *srcChatName; // @synthesize srcChatName=_srcChatName;
 @property(nonatomic) unsigned int fileType; // @synthesize fileType=_fileType;
+@property(retain, nonatomic) FavWeAppItem *weAppItem; // @synthesize weAppItem=_weAppItem;
 @property(nonatomic) int illegalType; // @synthesize illegalType=_illegalType;
 @property(retain, nonatomic) NSString *canvasPageXml; // @synthesize canvasPageXml=_canvasPageXml;
 @property(retain, nonatomic) NSString *statExtStr; // @synthesize statExtStr=_statExtStr;

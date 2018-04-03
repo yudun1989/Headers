@@ -14,6 +14,7 @@
 - (void)onDownloadSuccess;
 - (void)ShouldUpdateThumbImage:(NSString *)arg1;
 - (void)onDownloadProgress:(unsigned int)arg1;
+- (void)onDownloadVideoReturnCode:(int)arg1;
 - (void)OnVideoDownloadErrorExpired:(_Bool)arg1;
 - (void)checkPlayerState;
 - (double)getVideoCurrentSeconde;

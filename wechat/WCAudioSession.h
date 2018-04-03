@@ -29,11 +29,16 @@
 - (_Bool)isOtherAudioPlaying;
 - (unsigned long long)getCurrentAudioMode;
 - (void)enableBluetoothInput;
-- (void)setSpeaker:(_Bool)arg1;
+- (_Bool)setSpeaker:(_Bool)arg1 error:(id *)arg2;
+- (_Bool)setSpeaker:(_Bool)arg1;
 - (void)reportSetCategoryError:(id)arg1;
-- (_Bool)setCategroy:(unsigned long long)arg1 options:(unsigned long long)arg2;
+- (_Bool)setCategroy:(unsigned long long)arg1 mode:(id)arg2 options:(unsigned long long)arg3 error:(id *)arg4;
+- (_Bool)setMode:(id)arg1 error:(id *)arg2;
 - (_Bool)setCategroy:(unsigned long long)arg1 defaultToSpeaker:(_Bool)arg2 mixWithOthers:(_Bool)arg3;
+- (_Bool)setCategroy:(unsigned long long)arg1 options:(unsigned long long)arg2 error:(id *)arg3;
+- (_Bool)setCategroy:(unsigned long long)arg1 options:(unsigned long long)arg2;
 - (_Bool)setCategroy:(unsigned long long)arg1;
+- (_Bool)setActive:(_Bool)arg1 error:(id *)arg2;
 - (_Bool)setActive:(_Bool)arg1;
 - (void)restart;
 - (void)updateDelegate:(id)arg1;

@@ -7,33 +7,37 @@
 #import "CommonMessageCellView.h"
 
 #import "ILinkEventExt-Protocol.h"
+#import "IMsgRevokeExt-Protocol.h"
 #import "ITranslateMsgMgrExt-Protocol.h"
 #import "MMTipsViewControllerDelegate-Protocol.h"
 #import "RichTextLayoutDelegate-Protocol.h"
 #import "TextFloatPreviewDelegate-Protocol.h"
 #import "WCActionSheetDelegate-Protocol.h"
 
-@class MMTipsViewController, NSArray, NSString, NavigateLogicController, RichTextView, TextMessageViewModel, TopLeftLabel, UIActivityIndicatorView, UIImageView, UILabel, UIView, WCUIActionSheet;
+@class MMTipsViewController, NSArray, NSString, NavigateLogicController, RichTextView, TextFloatViewController, TextMessageViewModel, UIActivityIndicatorView, UIImageView, UILabel, UIView, WCUIActionSheet;
 
-@interface TextMessageCellView : CommonMessageCellView <ILinkEventExt, RichTextLayoutDelegate, WCActionSheetDelegate, MMTipsViewControllerDelegate, TextFloatPreviewDelegate, ITranslateMsgMgrExt>
+@interface TextMessageCellView : CommonMessageCellView <ILinkEventExt, RichTextLayoutDelegate, WCActionSheetDelegate, MMTipsViewControllerDelegate, TextFloatPreviewDelegate, ITranslateMsgMgrExt, IMsgRevokeExt>
 {
     RichTextView *m_richTextView;
     MMTipsViewController *m_oTranslateIntroView;
     WCUIActionSheet *m_uiActionSheet;
     NavigateLogicController *m_navigationLogic;
-    TopLeftLabel *m_oTranslateTextLabel;
     UIView *m_translateView;
+    RichTextView *m_translateRichTextView;
     UIActivityIndicatorView *m_oTranslateLoadingView;
     UILabel *m_translateSuccessLabel;
     UIImageView *m_translateSuccessIconView;
     NSArray *m_translateMenus;
+    TextFloatViewController *m_oFloatViewController;
 }
 
 - (void).cxx_destruct;
 - (id)getOperateMenuItem;
-- (_Bool)addCoverViewToControllerTable;
+- (_Bool)addCoverViewToControllerTable:(_Bool)arg1;
 - (_Bool)highLightSearchKeyWords:(id)arg1;
-- (_Bool)touchIntoSelectCopyState;
+- (id)getTranslateMenuItems;
+- (_Bool)pressIntoSelectCopyStatusWithTranlateText:(_Bool)arg1;
+- (void)OnMsgRevoked:(id)arg1 n64MsgId:(long long)arg2;
 - (void)onAddressClicked:(id)arg1 withRect:(struct CGRect)arg2;
 - (void)onPhoneClicked:(id)arg1 withRect:(struct CGRect)arg2;
 - (void)onWeAppLinkClicked:(id)arg1 withRect:(struct CGRect)arg2;
@@ -46,9 +50,7 @@
 - (void)onClickTipsBtn:(id)arg1 Index:(long long)arg2 tipTag:(long long)arg3;
 - (void)onWindowHide;
 - (void)onHide;
-- (_Bool)isTouchInView:(id)arg1;
-- (void)triggerLongPressFor3DTouchAtLocation:(struct CGPoint)arg1 inCoordinateView:(id)arg2;
-- (void)onLongTouch;
+- (void)onLongTouch:(struct CGPoint)arg1;
 - (void)onTouchDownRepeat;
 - (void)translateMsg;
 - (void)onTranslateMsg:(id)arg1;
@@ -59,6 +61,7 @@
 - (void)actionSheet:(id)arg1 clickedButtonAtIndex:(long long)arg2;
 - (void)onLinkLongPressed:(id)arg1 withRect:(struct CGRect)arg2;
 - (void)onCopyLinkText:(id)arg1;
+- (_Bool)translatePreventLongPressLink;
 - (_Bool)preventLongPressLink;
 - (struct CGRect)previewingSourceRectForLocation:(struct CGPoint)arg1 inCoordinateView:(id)arg2;
 - (id)viewControllerToPreviewWithFromController:(id)arg1 forLocation:(struct CGPoint)arg2 inCoordinateView:(id)arg3;
@@ -71,7 +74,7 @@
 - (double)contentViewCenterY;
 - (void)setHighlighted:(_Bool)arg1;
 - (void)updateStatus;
-- (void)updateContentOffset:(_Bool)arg1;
+- (void)updateContentOffset;
 - (void)retryTranslate;
 - (_Bool)isNetworkAvailable;
 - (void)onReTryTranslate:(id)arg1;
@@ -82,13 +85,12 @@
 - (void)onCopyTranslate:(id)arg1;
 - (void)handleTranslateMenuWillHideMenuNotification:(id)arg1;
 - (void)addTranslateViewMenus;
-- (void)onLongPressTranslateView:(id)arg1;
 - (void)onDoubleTapTranslateView:(id)arg1;
 - (void)onTapTranslateView:(id)arg1;
 - (void)setTranslateText;
 - (void)updateTranslateSuccessView;
 - (void)updateTranslateStatusButton;
-- (void)initTranslateTextLabel;
+- (void)initTranslateRichTextView;
 - (void)initTranslateView;
 - (void)layoutContentView;
 - (_Bool)canBeReused;

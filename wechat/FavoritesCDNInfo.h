@@ -26,15 +26,16 @@
     NSString *head256Md5;
     NSString *streamId;
     NSString *dataFmt;
+    NSString *clientMsgID;
     NSString *StrRes1;
     NSString *StrRes2;
-    NSString *_clientMsgID;
 }
 
 + (const struct WCTProperty *)StrRes2;
 + (const struct WCTProperty *)StrRes1;
 + (const struct WCTProperty *)IntRes2;
 + (const struct WCTProperty *)IntRes1;
++ (const struct WCTProperty *)clientMsgID;
 + (const struct WCTProperty *)dataFmt;
 + (const struct WCTProperty *)streamId;
 + (const struct WCTProperty *)dataType;
@@ -51,11 +52,11 @@
 + (const struct WCTAnyProperty *)AnyProperty;
 + (const struct WCTPropertyList *)AllProperties;
 + (const struct WCTBinding *)objectRelationalMappingForWCDB;
-@property(retain, nonatomic) NSString *clientMsgID; // @synthesize clientMsgID=_clientMsgID;
 @property(retain, nonatomic) NSString *StrRes2; // @synthesize StrRes2;
 @property(retain, nonatomic) NSString *StrRes1; // @synthesize StrRes1;
 @property(nonatomic) unsigned int IntRes2; // @synthesize IntRes2;
 @property(nonatomic) unsigned int IntRes1; // @synthesize IntRes1;
+@property(retain, nonatomic) NSString *clientMsgID; // @synthesize clientMsgID;
 @property(retain, nonatomic) NSString *dataFmt; // @synthesize dataFmt;
 @property(retain, nonatomic) NSString *streamId; // @synthesize streamId;
 @property(nonatomic) int dataType; // @synthesize dataType;

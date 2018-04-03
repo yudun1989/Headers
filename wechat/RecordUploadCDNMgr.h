@@ -39,6 +39,7 @@
 - (_Bool)SendCurAppMsg;
 - (void)RemoveMsgWrap:(id)arg1;
 - (void)BatchTransCDNItemForFav;
+- (id)genBatchTransItemArrayWithDataList:(id)arg1 withClientStrId:(id)arg2;
 - (void)BatchTransCDNItemForMsg:(_Bool)arg1;
 - (void)AddUploadTaskForDataList:(id)arg1 isFromRecord:(_Bool)arg2;
 - (void)UploadRecordData;

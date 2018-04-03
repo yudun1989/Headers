@@ -46,8 +46,10 @@
 - (void).cxx_destruct;
 - (id)hitTest:(struct CGPoint)arg1 withEvent:(id)arg2;
 - (void)onFavProductReturn:(unsigned int)arg1 errMsg:(id)arg2;
+- (_Bool)getUseSnsCdnDownloadMode:(id)arg1;
 - (_Bool)isSearchCanvas;
 - (id)getReportMgr;
+- (id)tryAppendAdParamsForWeappPath:(id)arg1;
 - (id)getWeAppSceneNoteForComponent:(id)arg1;
 - (id)getAdUxInfo;
 - (void)hideActionSheet;

@@ -49,6 +49,7 @@
 + (id)getUpdateInfo;
 + (id)getMainSettingExt;
 + (id)getMainSetting;
++ (void)logNotificationSetting:(_Bool)arg1;
 
 @end
 

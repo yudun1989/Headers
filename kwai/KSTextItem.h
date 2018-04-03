@@ -10,36 +10,45 @@
 #import "KSAdvTextViewDelegate-Protocol.h"
 #import "KSAdvTextureEdit-Protocol.h"
 
-@class KSChartletToolItem, KSVideoShapePrototype, NSString, UIView;
-@protocol KSChartletView;
+@class KSChartletToolItem, KSVideoShapePrototype, NSObject, NSString, UIView;
+@protocol KSChartlet, KSChartletView;
 
 @interface KSTextItem : KSMTextureItem <KSAdvTextViewDelegate, KSAdvTextBannerViewDelegate, KSAdvTextureEdit>
 {
     _Bool _editing;
-    NSString *_text;
     KSVideoShapePrototype *_imageMaterial;
     KSChartletToolItem *_viewMaterial;
     CDUnknownBlockType _onTapItem;
     CDUnknownBlockType _onTapCloseBtn;
     CDUnknownBlockType _onChanged;
+    CDUnknownBlockType _onMoving;
+    CDUnknownBlockType _didMove;
+    CDUnknownBlockType _onStartEditItem;
     UIView<KSChartletView> *_textureView;
+    NSObject<KSChartlet> *_chartlet;
     struct CGSize _canvasSize;
+    struct CGPoint _center;
 }
 
+@property(retain, nonatomic) NSObject<KSChartlet> *chartlet; // @synthesize chartlet=_chartlet;
 @property(retain, nonatomic) UIView<KSChartletView> *textureView; // @synthesize textureView=_textureView;
+@property(copy, nonatomic) CDUnknownBlockType onStartEditItem; // @synthesize onStartEditItem=_onStartEditItem;
+@property(copy, nonatomic) CDUnknownBlockType didMove; // @synthesize didMove=_didMove;
+@property(copy, nonatomic) CDUnknownBlockType onMoving; // @synthesize onMoving=_onMoving;
 @property(copy, nonatomic) CDUnknownBlockType onChanged; // @synthesize onChanged=_onChanged;
 @property(copy, nonatomic) CDUnknownBlockType onTapCloseBtn; // @synthesize onTapCloseBtn=_onTapCloseBtn;
 @property(copy, nonatomic) CDUnknownBlockType onTapItem; // @synthesize onTapItem=_onTapItem;
+@property(nonatomic) struct CGPoint center; // @synthesize center=_center;
 @property(nonatomic) _Bool editing; // @synthesize editing=_editing;
 @property(nonatomic) struct CGSize canvasSize; // @synthesize canvasSize=_canvasSize;
 @property(retain, nonatomic) KSChartletToolItem *viewMaterial; // @synthesize viewMaterial=_viewMaterial;
 @property(retain, nonatomic) KSVideoShapePrototype *imageMaterial; // @synthesize imageMaterial=_imageMaterial;
-@property(retain, nonatomic) NSString *text; // @synthesize text=_text;
 - (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone *)arg1;
-- (void)textDidChangeOfChartletView:(id)arg1;
 - (void)didEndEditTextOfChartletView:(id)arg1;
+- (void)textViewDidBeginEditing:(id)arg1;
 - (void)willBeginEditTextOfChartletView:(id)arg1;
+- (void)onMovingChartletView:(id)arg1;
 - (void)didMoveChartletView:(id)arg1;
 - (void)didLongPressChartletView:(id)arg1;
 - (void)didSelectChartletView:(id)arg1;

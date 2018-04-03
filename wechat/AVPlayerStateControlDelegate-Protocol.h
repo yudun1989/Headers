@@ -18,6 +18,7 @@
 - (void)startToPlayVideo;
 
 @optional
+- (void)onDownloadVideoReturnCode:(int)arg1;
 - (void)OnDownloadPercent:(double)arg1;
 - (void)OnCurrentTimeUpdate:(double)arg1;
 - (void)OnPlayToEnd;

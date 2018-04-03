@@ -6,7 +6,7 @@
 
 #import "KSPlayerView.h"
 
-@class KSSimpleProgressView, KSSlideProgressView, KS_feed, NSDate, NSString;
+@class DTProgressView, KSSlideProgressView, KS_feed, NSDate, NSString;
 @protocol KSFeedDetailVideoPlayerViewDelegate;
 
 @interface KSFeedDetailVideoPlayerView : KSPlayerView
@@ -29,7 +29,7 @@
     double _totalStalledTime;
     NSDate *_startPlayDate;
     id <KSFeedDetailVideoPlayerViewDelegate> _delegate;
-    KSSimpleProgressView *_progressView;
+    DTProgressView *_progressView;
     long long _videoUsedIndex;
     long long _videoFailSum;
     long long _videoSuccessSum;
@@ -54,7 +54,7 @@
 @property(nonatomic) long long videoSuccessSum; // @synthesize videoSuccessSum=_videoSuccessSum;
 @property(nonatomic) long long videoFailSum; // @synthesize videoFailSum=_videoFailSum;
 @property(nonatomic) long long videoUsedIndex; // @synthesize videoUsedIndex=_videoUsedIndex;
-@property(retain, nonatomic) KSSimpleProgressView *progressView; // @synthesize progressView=_progressView;
+@property(retain, nonatomic) DTProgressView *progressView; // @synthesize progressView=_progressView;
 @property(nonatomic) __weak id <KSFeedDetailVideoPlayerViewDelegate> delegate; // @synthesize delegate=_delegate;
 @property(retain, nonatomic) NSDate *startPlayDate; // @synthesize startPlayDate=_startPlayDate;
 @property(nonatomic) double totalStalledTime; // @synthesize totalStalledTime=_totalStalledTime;

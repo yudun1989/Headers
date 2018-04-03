@@ -13,7 +13,7 @@
 #import "WCActionSheetDelegate-Protocol.h"
 #import "WXGChatLogSessionViewControllerDelegate-Protocol.h"
 
-@class CTRichTextView, MMUILabel, NSString, UIButton, UIImageView, UIScrollView, UIView, WXGChatLogSessionViewController, WXGDotDotDotLabel;
+@class CTRichTextView, MMUILabel, NSString, UIButton, UIImageView, UILabel, UIScrollView, UIView, WXGChatLogSessionViewController, WXGDotDotDotLabel;
 @protocol WXGBackupEntryViewControllerDelegate;
 
 @interface WXGBackupEntryViewController : MMWindowViewController <WXGChatLogSessionViewControllerDelegate, IBackupExt, MMLoadSessionExt, UIAlertViewDelegate, ILinkEventExt, WCActionSheetDelegate>
@@ -49,6 +49,7 @@
     WXGChatLogSessionViewController *m_selectSessionViewController;
     unsigned long long m_transferSpeedCount;
     _Bool m_bSelectAllTime;
+    UILabel *m_debugInfoLabel;
     id <WXGBackupEntryViewControllerDelegate> _delegate;
 }
 
@@ -86,6 +87,7 @@
 - (void)onSendCancelAndCloseView;
 - (void)onCloseView;
 - (void)onMinimizeView;
+- (void)p_addDebugInfoView;
 - (void)addSmallTipsLabel;
 - (void)addTipsLabel;
 - (void)addGreyButton;

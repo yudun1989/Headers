@@ -12,8 +12,10 @@
 {
     NSArray *_filters;
     KSLocalAlbumWorkspaceMusic *_music;
+    NSArray *_pixelSizes;
 }
 
+@property(retain, nonatomic) NSArray *pixelSizes; // @synthesize pixelSizes=_pixelSizes;
 @property(retain, nonatomic) KSLocalAlbumWorkspaceMusic *music; // @synthesize music=_music;
 @property(retain, nonatomic) NSArray *filters; // @synthesize filters=_filters;
 - (void).cxx_destruct;

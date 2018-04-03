@@ -9,13 +9,13 @@
 #import "IFavoritesExt-Protocol.h"
 #import "IRecordDownloadExt-Protocol.h"
 
-@class NSString, UIImageView, UIView;
+@class MMWebImageView, NSString, UIView;
 @protocol FavImagePreViewDelegate, RecordNodeDataSource;
 
 @interface FavImagePreView : MMUIImageView <IFavoritesExt, IRecordDownloadExt>
 {
     UIView *m_maskView;
-    UIImageView *m_imgPreView;
+    MMWebImageView *m_imgPreView;
     NSString *m_imageLocalPath;
     unsigned int imageDataSize;
     MMUIImageView *m_imgvBack;

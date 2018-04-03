@@ -461,6 +461,7 @@
 + (void *)_ptr_to_func_blendEquation;
 + (void *)_ptr_to_func_blendColor;
 + (void *)_ptr_to_func_bindTexture;
++ (void *)_ptr_to_func_wxBindCanvasTexture;
 + (void *)_ptr_to_func_bindFramebuffer;
 + (void *)_ptr_to_func_bindRenderbuffer;
 + (void *)_ptr_to_func_bindBuffer;
@@ -599,6 +600,7 @@
 - (struct OpaqueJSValue *)_func_blendEquation:(struct OpaqueJSContext *)arg1 argc:(unsigned long long)arg2 argv:(const struct OpaqueJSValue **)arg3;
 - (struct OpaqueJSValue *)_func_blendColor:(struct OpaqueJSContext *)arg1 argc:(unsigned long long)arg2 argv:(const struct OpaqueJSValue **)arg3;
 - (struct OpaqueJSValue *)_func_bindTexture:(struct OpaqueJSContext *)arg1 argc:(unsigned long long)arg2 argv:(const struct OpaqueJSValue **)arg3;
+- (struct OpaqueJSValue *)_func_wxBindCanvasTexture:(struct OpaqueJSContext *)arg1 argc:(unsigned long long)arg2 argv:(const struct OpaqueJSValue **)arg3;
 - (struct OpaqueJSValue *)_func_bindFramebuffer:(struct OpaqueJSContext *)arg1 argc:(unsigned long long)arg2 argv:(const struct OpaqueJSValue **)arg3;
 - (struct OpaqueJSValue *)_func_bindRenderbuffer:(struct OpaqueJSContext *)arg1 argc:(unsigned long long)arg2 argv:(const struct OpaqueJSValue **)arg3;
 - (struct OpaqueJSValue *)_func_bindBuffer:(struct OpaqueJSContext *)arg1 argc:(unsigned long long)arg2 argv:(const struct OpaqueJSValue **)arg3;

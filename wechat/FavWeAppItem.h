@@ -16,14 +16,20 @@
     NSString *_thumbUrl;
     NSString *_pagePath;
     unsigned int _debugMode;
+    unsigned int _appType;
+    unsigned int _pkgType;
+    NSString *_userName;
+    NSString *_sourceDisplayName;
+    NSString *_appId;
 }
 
-@property(nonatomic) unsigned int debugMode; // @synthesize debugMode=_debugMode;
-@property(retain, nonatomic) NSString *pagePath; // @synthesize pagePath=_pagePath;
-@property(retain, nonatomic) NSString *thumbUrl; // @synthesize thumbUrl=_thumbUrl;
-@property(retain, nonatomic) NSString *desc; // @synthesize desc=_desc;
-@property(retain, nonatomic) NSString *title; // @synthesize title=_title;
-@property(retain, nonatomic) NSString *appUserName; // @synthesize appUserName=_appUserName;
+@property(nonatomic) unsigned int pkgType; // @synthesize pkgType=_pkgType;
+@property(nonatomic) unsigned int appType; // @synthesize appType=_appType;
+@property(copy, nonatomic) NSString *appId; // @synthesize appId=_appId;
+@property(copy, nonatomic) NSString *sourceDisplayName; // @synthesize sourceDisplayName=_sourceDisplayName;
+@property(copy, nonatomic) NSString *pagePath; // @synthesize pagePath=_pagePath;
+@property(copy, nonatomic) NSString *thumbUrl; // @synthesize thumbUrl=_thumbUrl;
+@property(copy, nonatomic) NSString *userName; // @synthesize userName=_userName;
 - (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)initWithCoder:(id)arg1;

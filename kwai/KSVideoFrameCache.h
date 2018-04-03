@@ -34,7 +34,9 @@
 - (id)imageAtIndex:(unsigned long long)arg1 loadToMemoryIfNeed:(_Bool)arg2;
 - (void)dealloc;
 - (id)initWithNamespace:(id)arg1;
+- (id)imageFiles;
 - (void)copyImagesIntoDirectory:(id)arg1 completion:(CDUnknownBlockType)arg2;
+- (void)copyImagesIntoDirectory:(id)arg1 atIndexes:(id)arg2 completion:(CDUnknownBlockType)arg3;
 
 @end
 

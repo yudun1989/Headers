@@ -20,6 +20,7 @@
 @property(nonatomic) _Bool needRelayout; // @synthesize needRelayout=_needRelayout;
 @property(retain, nonatomic) NSMutableDictionary *viewContainer; // @synthesize viewContainer=_viewContainer;
 - (void).cxx_destruct;
+- (_Bool)getUseSnsCdnDownloadMode:(id)arg1;
 - (void)onFavProductReturn:(unsigned int)arg1 errMsg:(id)arg2;
 - (_Bool)isCurSectionBlackMoreThanWhite:(long long)arg1;
 - (id)getBackGroundColorWhenLoading:(long long)arg1;
@@ -28,6 +29,7 @@
 - (void)tryShowDownArrowAnimate:(long long)arg1;
 - (void)canvasComponent:(id)arg1 shouldForceHideArrowDownImage:(_Bool)arg2;
 - (id)getReportMgr;
+- (id)tryAppendAdParamsForWeappPath:(id)arg1;
 - (id)getWeAppSceneNoteForComponent:(id)arg1;
 - (id)getAdUxInfo;
 - (_Bool)isSearchCanvas;

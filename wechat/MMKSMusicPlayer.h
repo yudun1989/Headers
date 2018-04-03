@@ -12,7 +12,7 @@
 #import "KSAudioPlayerUserDefineProtocol-Protocol.h"
 #import "MMService-Protocol.h"
 
-@class KSSongInfo, NSObject, NSString;
+@class KSSongInfo, NSString;
 @protocol KSAudioPlayerProtocol;
 
 @interface MMKSMusicPlayer : MMService <IRemoteControlMusicPlayerExt, KSAudioPlayerDelegate, KSAudioPlayerUserDefineProtocol, KSAudioLogProtocol, MMService>
@@ -20,7 +20,7 @@
     id <KSAudioPlayerProtocol> m_audioPlayer;
     _Bool m_isQQMusicWifiPlay;
     _Bool m_isCyclePlay;
-    NSObject *m_clientInfo;
+    NSString *m_clientInfo;
     _Bool m_isQQMusicPlay;
     _Bool m_isPlayerResuming;
     _Bool m_shouldRecevingRemoteControl;
@@ -42,13 +42,14 @@
 - (id)bcdStringHanding:(id)arg1;
 - (unsigned long long)playerStateByInnerStatus:(unsigned long long)arg1 params:(id)arg2;
 - (void)activeAudioSession;
+- (void)setPlayerState:(unsigned long long)arg1 errInfo:(id)arg2;
 - (void)log:(long long)arg1 file:(const char *)arg2 func:(const char *)arg3 line:(int)arg4 module:(id)arg5 EFDict:(id)arg6 fullmsg:(id)arg7;
 - (id)limitNetParam;
 - (unsigned int)downloadRetryCnt;
 - (id)createAudioDownloader;
 - (_Bool)isNetOk;
 - (void)delayEndRecevingRemoteControl;
-- (void)deactiveAudioSession;
+- (void)endRecevingRemoteControl;
 - (void)audioPlayer:(id)arg1 dataBuffering:(double)arg2;
 - (void)audioPlayer:(id)arg1 status:(unsigned long long)arg2 params:(id)arg3;
 - (void)cleanUpCache;

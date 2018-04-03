@@ -6,22 +6,18 @@
 
 #import <objc/NSObject.h>
 
-@class KSPictureOperationContext;
 @protocol OS_dispatch_queue;
 
 @interface KSPostPicturesMaker : NSObject
 {
-    KSPictureOperationContext *_context;
     NSObject<OS_dispatch_queue> *_processQueue;
 }
 
 + (id)tempWorkspaceRootPath;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *processQueue; // @synthesize processQueue=_processQueue;
-@property(retain, nonatomic) KSPictureOperationContext *context; // @synthesize context=_context;
 - (void).cxx_destruct;
-- (id)operationWithTarget:(id)arg1 type:(long long)arg2 completionHandler:(CDUnknownBlockType)arg3;
 - (id)processWithTarget:(id)arg1 type:(long long)arg2;
-- (id)initWithContext:(id)arg1;
+- (id)init;
 
 @end
 

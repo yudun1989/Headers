@@ -20,9 +20,11 @@
 - (void)parseRedPointCtrlMsg:(id)arg1;
 - (void)OnGetNewXmlMsg:(id)arg1 Type:(id)arg2 MsgWrap:(id)arg3;
 - (id)getWSRedPointInfo:(_Bool)arg1;
+- (void)tryUpdateSearchReddotClearedTimeStamps:(unsigned int)arg1;
 - (void)tryUpdateRecommendReddotClearedTimeStamps:(unsigned int)arg1;
 - (void)clearFFBrowseRedot;
 - (void)clearFFSearchRedot;
+- (_Bool)isFFBrowseRedotClearByConsume;
 - (_Bool)shouldShowFFBrowseRedot:(_Bool)arg1;
 - (_Bool)shouldShowFFSearchRedot:(_Bool)arg1;
 - (_Bool)shouldShowFindFriendTabRedotForSearch:(_Bool)arg1;

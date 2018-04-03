@@ -16,14 +16,14 @@
     NSString *_relativePath;
 }
 
-+ (Class)effectClass;
++ (Class)audioClass;
 @property(nonatomic) float volume; // @synthesize volume=_volume;
 @property(retain, nonatomic) NSString *relativePath; // @synthesize relativePath=_relativePath;
 - (void).cxx_destruct;
 - (id)init;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
-- (id)effectWithWorkspacePath:(id)arg1;
+- (id)audioWithWorkspacePath:(id)arg1;
 
 @end
 

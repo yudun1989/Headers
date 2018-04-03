@@ -15,7 +15,7 @@
 }
 
 @property(copy, nonatomic) CDUnknownBlockType selector; // @synthesize selector=_selector;
-@property(nonatomic) __weak id <LYWStoreSubscriber> subscriber; // @synthesize subscriber=_subscriber;
+@property(retain, nonatomic) id <LYWStoreSubscriber> subscriber; // @synthesize subscriber=_subscriber;
 - (void).cxx_destruct;
 - (_Bool)isEqual:(id)arg1;
 - (unsigned long long)hash;

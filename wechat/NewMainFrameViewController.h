@@ -77,6 +77,7 @@
     _Bool m_dragCancelPreviousHideTableHeaderTopView;
     long long m_lastRowNum;
     NSString *m_confirmingSessionName;
+    MMSessionInfo *m_swipedSession;
     unsigned int _startTime;
     id <UIViewControllerPreviewing> _previewingContext;
     UIDynamicAnimator *_animator;

@@ -55,6 +55,7 @@
 - (void)initView;
 - (void)initTableView;
 - (void)initTitleView;
+- (void)tryUpdateResource;
 - (id)initWithOpenIMAcctype:(id)arg1 contactsDataSourceLogic:(id)arg2;
 
 // Remaining properties

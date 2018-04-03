@@ -17,13 +17,17 @@
     UIColor *_navigationRightItemColor;
     unsigned long long _statusBarColor;
     UIColor *_backgroundColor;
+    UIColor *_backcontainerColor;
     NSString *_navigationLeftIconName;
     NSString *_navigationBarTitle;
+    UIColor *_addressLabelColor;
 }
 
+@property(retain, nonatomic) UIColor *addressLabelColor; // @synthesize addressLabelColor=_addressLabelColor;
 @property(nonatomic) _Bool bUseBlurBackground; // @synthesize bUseBlurBackground=_bUseBlurBackground;
 @property(copy, nonatomic) NSString *navigationBarTitle; // @synthesize navigationBarTitle=_navigationBarTitle;
 @property(retain, nonatomic) NSString *navigationLeftIconName; // @synthesize navigationLeftIconName=_navigationLeftIconName;
+@property(retain, nonatomic) UIColor *backcontainerColor; // @synthesize backcontainerColor=_backcontainerColor;
 @property(retain, nonatomic) UIColor *backgroundColor; // @synthesize backgroundColor=_backgroundColor;
 @property(nonatomic) unsigned long long statusBarColor; // @synthesize statusBarColor=_statusBarColor;
 @property(retain, nonatomic) UIColor *navigationRightItemColor; // @synthesize navigationRightItemColor=_navigationRightItemColor;

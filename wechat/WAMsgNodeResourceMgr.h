@@ -29,11 +29,11 @@
 - (void)reportCostTimeWithReportItem:(id)arg1 eventId:(unsigned long long)arg2 result:(_Bool)arg3 beginTime:(unsigned long long)arg4 endTime:(unsigned long long)arg5 dataSize:(unsigned int)arg6 isSync:(_Bool)arg7;
 - (void)onDownloadTaskCompletion:(long long)arg1 taskUrl:(id)arg2 filePath:(id)arg3;
 - (void)onImageUrlDownloaded:(id)arg1;
-- (void)downloadImageByUrl:(id)arg1 appId:(id)arg2 statId:(id)arg3 scene:(unsigned int)arg4;
+- (void)downloadImageByUrl:(id)arg1 appId:(id)arg2 statId:(id)arg3 scene:(unsigned int)arg4 coreId:(unsigned int)arg5 completion:(CDUnknownBlockType)arg6;
 - (void)insertImage:(id)arg1 ByAppId:(id)arg2 md5:(id)arg3;
 - (id)getImageByAppId:(id)arg1 md5:(id)arg2;
 - (id)grayImageToRGBAImage:(id)arg1;
-- (id)getImage:(id)arg1 withAppId:(id)arg2 version:(unsigned long long)arg3 debugMode:(unsigned int)arg4 statId:(id)arg5 scene:(unsigned int)arg6;
+- (id)getImage:(id)arg1 withAppId:(id)arg2 version:(unsigned long long)arg3 debugMode:(unsigned int)arg4 statId:(id)arg5 scene:(unsigned int)arg6 coreId:(unsigned int)arg7;
 - (void)updateScriptPkgWithAppId:(id)arg1 url:(id)arg2 version:(unsigned long long)arg3 debugMode:(unsigned int)arg4 checksum:(id)arg5 scene:(unsigned int)arg6;
 - (id)getFile:(id)arg1 withAppId:(id)arg2 version:(unsigned long long)arg3 debugMode:(unsigned int)arg4 scene:(unsigned int)arg5;
 - (id)getScriptWithAppId:(id)arg1 version:(unsigned long long)arg2 debugMode:(unsigned int)arg3 scene:(unsigned int)arg4;

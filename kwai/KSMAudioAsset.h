@@ -6,28 +6,20 @@
 
 #import <objc/NSObject.h>
 
-#import "KSMTimeRange-Protocol.h"
+@class KSEAudioAsset;
 
-@class KSEAudioAsset, NSString;
-
-@interface KSMAudioAsset : NSObject <KSMTimeRange>
+@interface KSMAudioAsset : NSObject
 {
+    int _source;
     KSEAudioAsset *_gpbObj;
 }
 
+@property(nonatomic) int source; // @synthesize source=_source;
 @property(retain, nonatomic) KSEAudioAsset *gpbObj; // @synthesize gpbObj=_gpbObj;
 - (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone *)arg1;
-- (void)_createDisplayRangeIfNeed;
-@property(nonatomic) double duration;
-@property(nonatomic) double location;
 - (id)init;
-
-// Remaining properties
-@property(readonly, copy) NSString *debugDescription;
-@property(readonly, copy) NSString *description;
-@property(readonly) unsigned long long hash;
-@property(readonly) Class superclass;
+- (id)initWithPath:(id)arg1 error:(id *)arg2;
 
 @end
 

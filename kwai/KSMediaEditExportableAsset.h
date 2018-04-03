@@ -26,11 +26,11 @@
 - (double)duration;
 - (struct CGSize)_size;
 - (id)_encodeConfigShouldUse;
-- (_Bool)_shouldHardwareEncode;
 - (id)encodeConfigShouldUse;
 - (int)exportKeyFrameInterval;
 - (_Bool)exportSetKeyFrameInterval;
 - (long long)exportBitRate;
+- (id)videoEncoderName;
 - (id)exportX264Params;
 - (id)exportComment;
 - (struct CGSize)exportSize;

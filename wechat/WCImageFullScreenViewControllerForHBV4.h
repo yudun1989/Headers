@@ -92,7 +92,6 @@
 - (unsigned long long)supportedInterfaceOrientations;
 - (_Bool)shouldRotateToInterfaceOrientation:(long long)arg1;
 - (_Bool)useTransparentNavibar;
-- (void)onTopBarFrameChanged;
 - (void)dealloc;
 - (id)getDataItem;
 - (void)showTipView:(id)arg1;

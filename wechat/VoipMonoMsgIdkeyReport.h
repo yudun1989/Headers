@@ -10,6 +10,7 @@
 {
 }
 
++ (void)receiveIncomingCallUseCallKit;
 + (void)msgSyncInviteInActiveState;
 + (void)pushKitFormMsgOkShowNotification;
 + (void)pushKitRoomInfoBroken;

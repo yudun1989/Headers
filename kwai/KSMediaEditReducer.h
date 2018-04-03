@@ -4,13 +4,11 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-#import <objc/NSObject.h>
+#import "LYWBaseReducer.h"
 
-#import "LYWReducer-Protocol.h"
+@class KSMediaEditAudioReducer, KSMediaEditBaseTimeLineReducer, KSMediaEditCoverReducer, KSMediaEditFilterReducer, KSMediaEditNavigationReducer, KSMediaEditOnlineResourceReducer, KSMediaEditTabReducer, KSMediaEditTrimmingReducer, KSMediaPreviewReducer;
 
-@class KSMediaEditAudioReducer, KSMediaEditFilterReducer, KSMediaEditNavigationReducer, KSMediaEditOnlineResourceReducer, KSMediaEditTabReducer, KSMediaEditTrimmingReducer, KSMediaPreviewReducer, NSString;
-
-@interface KSMediaEditReducer : NSObject <LYWReducer>
+@interface KSMediaEditReducer : LYWBaseReducer
 {
     KSMediaEditFilterReducer *_filterReducer;
     KSMediaEditAudioReducer *_audioReducer;
@@ -19,8 +17,12 @@
     KSMediaEditNavigationReducer *_navigationReducer;
     KSMediaEditTrimmingReducer *_trimmingReducer;
     KSMediaEditOnlineResourceReducer *_onlineResourceReducer;
+    KSMediaEditBaseTimeLineReducer *_baseTimeLineReducer;
+    KSMediaEditCoverReducer *_coverReducer;
 }
 
+@property(retain, nonatomic) KSMediaEditCoverReducer *coverReducer; // @synthesize coverReducer=_coverReducer;
+@property(retain, nonatomic) KSMediaEditBaseTimeLineReducer *baseTimeLineReducer; // @synthesize baseTimeLineReducer=_baseTimeLineReducer;
 @property(retain, nonatomic) KSMediaEditOnlineResourceReducer *onlineResourceReducer; // @synthesize onlineResourceReducer=_onlineResourceReducer;
 @property(retain, nonatomic) KSMediaEditTrimmingReducer *trimmingReducer; // @synthesize trimmingReducer=_trimmingReducer;
 @property(retain, nonatomic) KSMediaEditNavigationReducer *navigationReducer; // @synthesize navigationReducer=_navigationReducer;
@@ -29,15 +31,10 @@
 @property(retain, nonatomic) KSMediaEditAudioReducer *audioReducer; // @synthesize audioReducer=_audioReducer;
 @property(retain, nonatomic) KSMediaEditFilterReducer *filterReducer; // @synthesize filterReducer=_filterReducer;
 - (void).cxx_destruct;
+- (void)_fullScreenAction:(id)arg1 state:(id)arg2;
 - (void)_setErrorActionIfNeed:(id)arg1 state:(id)arg2;
 - (void)_setMediaSourceActionIfNeed:(id)arg1 state:(id)arg2;
 - (id)handleAction:(id)arg1 state:(id)arg2;
-
-// Remaining properties
-@property(readonly, copy) NSString *debugDescription;
-@property(readonly, copy) NSString *description;
-@property(readonly) unsigned long long hash;
-@property(readonly) Class superclass;
 
 @end
 

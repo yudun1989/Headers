@@ -50,7 +50,6 @@
 - (_Bool)textFieldShouldReturn:(id)arg1;
 - (void)buttonClicked:(id)arg1;
 - (void)ontap;
-- (void)keyboardDidShow:(id)arg1;
 - (void)dealloc;
 - (void)initView:(id)arg1;
 - (struct CGPoint)getPositionForView:(id)arg1 withWidth:(double)arg2 behindButton:(id)arg3;

@@ -96,6 +96,8 @@
     int m_nDownloadLimit;
     unsigned int m_uiDownloadPercent;
     WSVideoModel *m_videoFlowInfo;
+    NSString *m_nsAttachFileKey;
+    unsigned int m_uiContinueUploadCount;
     _Bool m_isDirectSend;
     _Bool m_bAppAttachExistInSvr;
     _Bool m_isReaderForbidForward;
@@ -117,6 +119,8 @@
 
 + (void)CreateExtendInfoWithType:(unsigned int)arg1 retExtendInfo:(id *)arg2;
 @property(retain, nonatomic) GiftCardItem *m_oGiftCardItem; // @synthesize m_oGiftCardItem=_m_oGiftCardItem;
+@property(nonatomic) unsigned int m_uiContinueUploadCount; // @synthesize m_uiContinueUploadCount;
+@property(retain, nonatomic) NSString *m_nsAttachFileKey; // @synthesize m_nsAttachFileKey;
 @property(retain, nonatomic) WCPayThirdInfo *m_thirdC2CInfo; // @synthesize m_thirdC2CInfo;
 @property(retain, nonatomic) AppMMScheduleItem *m_scheduleItem; // @synthesize m_scheduleItem;
 @property(retain, nonatomic) WSVideoModel *m_videoFlowInfo; // @synthesize m_videoFlowInfo;

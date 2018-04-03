@@ -4,20 +4,18 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-#import <objc/NSObject.h>
+#import "LYWBaseAction.h"
 
 #import "LYWServiceAction-Protocol.h"
 
 @class NSString;
 
-@interface KSSetFilterValueServiceAction : NSObject <LYWServiceAction>
+@interface KSSetFilterValueServiceAction : LYWBaseAction <LYWServiceAction>
 {
     _Bool _isBeautify;
     float _value;
-    unsigned long long _type;
 }
 
-@property(nonatomic) unsigned long long type; // @synthesize type=_type;
 @property(nonatomic) _Bool isBeautify; // @synthesize isBeautify=_isBeautify;
 @property(nonatomic) float value; // @synthesize value=_value;
 

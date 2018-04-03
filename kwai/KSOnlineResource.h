@@ -43,6 +43,10 @@
 - (id)refreshMeta;
 - (_Bool)addSkipBackupAttributeToItemAtURL:(id)arg1;
 - (id)init;
+- (id)URLForResourceDirectory:(id)arg1;
+- (id)pathForResourceDirectory:(id)arg1;
+- (id)URLForResource:(id)arg1 ofType:(id)arg2 inDirectory:(id)arg3;
+- (id)pathForResource:(id)arg1 ofType:(id)arg2 inDirectory:(id)arg3;
 - (id)URLForResource:(id)arg1 withExtension:(id)arg2;
 - (id)pathForResource:(id)arg1 ofType:(id)arg2;
 - (void)stopObservingEditResourceDownloadingStatus:(id)arg1;

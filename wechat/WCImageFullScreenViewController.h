@@ -103,7 +103,6 @@
 - (unsigned long long)supportedInterfaceOrientations;
 - (_Bool)shouldAutorotate;
 - (_Bool)shouldRotateToInterfaceOrientation:(long long)arg1;
-- (void)onTopBarFrameChanged;
 - (void)dealloc;
 - (void)viewWillDisappear:(_Bool)arg1;
 - (void)viewDidAppear:(_Bool)arg1;

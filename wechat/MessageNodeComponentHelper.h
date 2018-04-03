@@ -10,9 +10,7 @@
 {
 }
 
-+ (id)getSourceViewWithTitle:(id)arg1 iconImage:(id)arg2 maxWidth:(double)arg3 withBkgImg:(_Bool)arg4 withTailTag:(id)arg5;
-+ (id)getSourceViewWithTitle:(id)arg1 iconName:(id)arg2 maxWidth:(double)arg3;
-+ (id)getSourceViewWithTitle:(id)arg1 iconImage:(id)arg2 maxWidth:(double)arg3 withBkgImg:(_Bool)arg4 withTailTag:(id)arg5 withTailImage:(id)arg6;
++ (id)getSourceViewWithTitle:(id)arg1 iconImage:(id)arg2 maxWidth:(double)arg3 withTailTag:(id)arg4;
 
 @end
 

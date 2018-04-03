@@ -28,6 +28,7 @@
 @property(retain, nonatomic) NSString *signType; // @dynamic signType;
 @property(retain, nonatomic) NSString *timestamp; // @dynamic timestamp;
 @property(retain, nonatomic) NSString *webViewUrl; // @dynamic webViewUrl;
+@property(nonatomic) int wxAppScene; // @dynamic wxAppScene;
 
 @end
 

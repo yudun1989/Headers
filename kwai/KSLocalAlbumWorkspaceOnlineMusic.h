@@ -13,7 +13,7 @@
     KSMusicItem *_item;
 }
 
-+ (Class)effectClass;
++ (Class)audioClass;
 @property(retain, nonatomic) KSMusicItem *item; // @synthesize item=_item;
 - (void).cxx_destruct;
 - (void)encodeWithCoder:(id)arg1;

@@ -4,13 +4,11 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-#import <objc/NSObject.h>
+#import "LYWBaseAction.h"
 
-#import "LYWAction-Protocol.h"
+@class NSError;
 
-@class NSError, NSString;
-
-@interface KSMediaEditFetchStepAction : NSObject <LYWAction>
+@interface KSMediaEditFetchStepAction : LYWBaseAction
 {
     int _state;
     NSError *_error;
@@ -19,12 +17,6 @@
 @property(retain, nonatomic) NSError *error; // @synthesize error=_error;
 @property(nonatomic) int state; // @synthesize state=_state;
 - (void).cxx_destruct;
-@property(readonly, copy) NSString *description;
-
-// Remaining properties
-@property(readonly, copy) NSString *debugDescription;
-@property(readonly) unsigned long long hash;
-@property(readonly) Class superclass;
 
 @end
 

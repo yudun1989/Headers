@@ -8,10 +8,15 @@
 
 @interface KSUBlurView : UIView
 {
+    long long _style;
+    UIView *_blurView;
 }
 
-+ (id)blurViewWithStyle:(long long)arg1 alpha:(double)arg2;
-- (id)iOS7ViewWithStyle:(long long)arg1;
+@property(retain, nonatomic) UIView *blurView; // @synthesize blurView=_blurView;
+@property(readonly, nonatomic) long long style; // @synthesize style=_style;
+- (void).cxx_destruct;
+- (id)legacyBlurViewWithStyle:(long long)arg1;
+- (id)initWithFrame:(struct CGRect)arg1 style:(long long)arg2;
 
 @end
 

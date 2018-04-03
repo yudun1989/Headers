@@ -6,7 +6,7 @@
 
 #import <objc/NSObject.h>
 
-@class KSVideoFrameCache, NSMutableArray, NSString;
+@class KSMovieInfo, KSVideoFrameCache, NSMutableArray, NSString;
 
 @interface KSCachedImageArray : NSObject
 {
@@ -18,6 +18,7 @@
     unsigned long long _count;
 }
 
++ (void)clearDeprecatedCachedImages;
 + (void)clearAllCachedImages;
 @property(nonatomic) unsigned long long count; // @synthesize count=_count;
 @property(retain, nonatomic) NSMutableArray *indexMap; // @synthesize indexMap=_indexMap;
@@ -41,16 +42,9 @@
 - (void)removeMemoryImageAtIndex:(unsigned long long)arg1;
 @property unsigned long long playEndLimit;
 - (id)initWithNameSpace:(id)arg1;
-- (id)uniqueImageAtIndex:(unsigned long long)arg1 loadToMemoryIfNeed:(_Bool)arg2;
-- (unsigned long long)uniqueImageCount;
-- (void)buildUniqueIndexes;
-- (void)replaceImage:(id)arg1 atIndex:(unsigned long long)arg2 toMemory:(_Bool)arg3 withIdentifier:(id)arg4;
-- (void)deleteImageAtIndex:(unsigned long long)arg1 useMemory:(_Bool)arg2 withIdentifer:(id)arg3;
-- (void)addImage:(id)arg1 toMemory:(_Bool)arg2 withIdentifier:(id)arg3;
-- (id)_ids;
-- (id)_indexes;
-- (void)updateImagesWithAmount:(unsigned long long)arg1 imageProvider:(CDUnknownBlockType)arg2 resizer:(CDUnknownBlockType)arg3 cropOption:(unsigned long long)arg4 progress:(id)arg5 completion:(CDUnknownBlockType)arg6;
+@property(readonly, nonatomic) KSMovieInfo *movieInfo;
 - (struct CGSize)videoSize;
+- (id)generatePhotoMovieWithProgress:(CDUnknownBlockType)arg1 cancelToken:(id)arg2;
 
 @end
 

@@ -6,66 +6,49 @@
 
 #import "LYWComponent.h"
 
-#import "KSLocalMusicPickViewControllerDelegate-Protocol.h"
+@class KSMediaEditActivityController, KSMediaEditPreviewComponent, KSMediaEditTabComponent, NSArray, NSDictionary;
 
-@class KSMediaEditAudioVolumeComponent, KSMediaEditConfiguration, KSMediaEditCoverComponent, KSMediaEditFilterValueComponent, KSMediaEditTabComponent, NSDictionary, NSNumber, NSString;
-@protocol KSMediaPreviewAssetContainer;
-
-@interface KSMediaEditComponent : LYWComponent <KSLocalMusicPickViewControllerDelegate>
+@interface KSMediaEditComponent : LYWComponent
 {
-    long long _advanceEditActiveDuration;
+    _Bool _fullScreen;
+    int _nextPage;
+    KSMediaEditActivityController *_activityController;
     NSDictionary *_tabComponentTab;
-    NSDictionary *_featureLayout;
     KSMediaEditTabComponent *_tabComponent;
-    KSMediaEditFilterValueComponent *_filterValueComponent;
-    KSMediaEditAudioVolumeComponent *_audioVolumeComponent;
-    LYWComponent<KSMediaPreviewAssetContainer> *_previewComponent;
-    KSMediaEditCoverComponent *_coverComponent;
-    KSMediaEditConfiguration *_configuration;
+    KSMediaEditPreviewComponent *_previewComponent;
+    unsigned long long _selectedTab;
     double _maxTrimDuration;
+    NSArray *_displayTabs;
+    NSArray *_moreDisplayTabs;
 }
 
+@property(nonatomic) int nextPage; // @synthesize nextPage=_nextPage;
+@property(retain, nonatomic) NSArray *moreDisplayTabs; // @synthesize moreDisplayTabs=_moreDisplayTabs;
+@property(retain, nonatomic) NSArray *displayTabs; // @synthesize displayTabs=_displayTabs;
+@property(nonatomic) _Bool fullScreen; // @synthesize fullScreen=_fullScreen;
 @property(readonly, nonatomic) double maxTrimDuration; // @synthesize maxTrimDuration=_maxTrimDuration;
-@property(retain, nonatomic) KSMediaEditConfiguration *configuration; // @synthesize configuration=_configuration;
-@property(retain, nonatomic) KSMediaEditCoverComponent *coverComponent; // @synthesize coverComponent=_coverComponent;
-@property(retain, nonatomic) LYWComponent<KSMediaPreviewAssetContainer> *previewComponent; // @synthesize previewComponent=_previewComponent;
-@property(retain, nonatomic) KSMediaEditAudioVolumeComponent *audioVolumeComponent; // @synthesize audioVolumeComponent=_audioVolumeComponent;
-@property(retain, nonatomic) KSMediaEditFilterValueComponent *filterValueComponent; // @synthesize filterValueComponent=_filterValueComponent;
+@property(nonatomic) unsigned long long selectedTab; // @synthesize selectedTab=_selectedTab;
+@property(retain, nonatomic) KSMediaEditPreviewComponent *previewComponent; // @synthesize previewComponent=_previewComponent;
 @property(retain, nonatomic) KSMediaEditTabComponent *tabComponent; // @synthesize tabComponent=_tabComponent;
-@property(retain, nonatomic) NSDictionary *featureLayout; // @synthesize featureLayout=_featureLayout;
 @property(retain, nonatomic) NSDictionary *tabComponentTab; // @synthesize tabComponentTab=_tabComponentTab;
-@property(nonatomic) long long advanceEditActiveDuration; // @synthesize advanceEditActiveDuration=_advanceEditActiveDuration;
+@property(retain, nonatomic) KSMediaEditActivityController *activityController; // @synthesize activityController=_activityController;
 - (void).cxx_destruct;
+- (void)_registerTabComponentsIfNeedWithNewState:(id)arg1;
+- (void)_updateFullScreen:(id)arg1;
 - (double)_musicMaxTrimDuration;
-- (void)_hiddenTextures;
-- (void)_displayTextures;
-- (void)_enablePhotoVideoBGMIfNeed;
-- (void)_disableVideoPhotoBGMIfNeed;
-- (void)_goAdvanceEditWithState:(id)arg1 tabType:(int)arg2 operationInterval:(int)arg3 onCancel:(CDUnknownBlockType)arg4 onFinish:(CDUnknownBlockType)arg5;
-- (void)_dispatchAudioSelectActionWithIndex:(long long)arg1 audioPath:(id)arg2 localMusicName:(id)arg3 onlineMusic:(id)arg4;
-- (void)_goNextPageIfNeed:(id)arg1 oldState:(id)arg2;
+- (void)_dispatchAudioSelectActionWithIndex:(long long)arg1 audioPath:(id)arg2 musicItem:(id)arg3;
+- (void)_goNextPageIfNeed:(id)arg1;
 - (_Bool)shouldAutomaticallyForwardAppearanceMethods;
-@property(readonly, nonatomic) NSString *coverTitle;
-@property(readonly, nonatomic) NSNumber *coverTimestamp;
-- (void)localMusicPickViewController:(id)arg1 didSelectLocalMusic:(id)arg2 startTimeProportion:(float)arg3;
 - (void)_showTabContentWithNewState:(id)arg1 animation:(_Bool)arg2;
 - (id)_featureStateWithRootState:(id)arg1;
 - (id)_appearingChildViewControllers;
-@property(readonly, nonatomic) _Bool coverEdited;
-@property(readonly, nonatomic) CDUnknownBlockType coverGenerator;
-- (void)newState:(id)arg1 oldState:(id)arg2;
+- (void)newState:(id)arg1;
 - (void)viewDidDisappear:(_Bool)arg1;
 - (void)viewWillDisappear:(_Bool)arg1;
 - (void)viewDidAppear:(_Bool)arg1;
 - (void)viewWillAppear:(_Bool)arg1;
 - (void)viewDidLoad;
-- (id)initWithStore:(id)arg1 previewComponent:(id)arg2 configuration:(CDUnknownBlockType)arg3 stateSelector:(CDUnknownBlockType)arg4;
-
-// Remaining properties
-@property(readonly, copy) NSString *debugDescription;
-@property(readonly, copy) NSString *description;
-@property(readonly) unsigned long long hash;
-@property(readonly) Class superclass;
+- (id)initWithStore:(id)arg1;
 
 @end
 

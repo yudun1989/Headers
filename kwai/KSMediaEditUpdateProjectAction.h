@@ -4,25 +4,17 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-#import <objc/NSObject.h>
+#import "LYWBaseAction.h"
 
-#import "LYWAction-Protocol.h"
+@class KSMMediaProject;
 
-@class KSPencilMediaProject, NSString;
-
-@interface KSMediaEditUpdateProjectAction : NSObject <LYWAction>
+@interface KSMediaEditUpdateProjectAction : LYWBaseAction
 {
-    KSPencilMediaProject *_project;
+    KSMMediaProject *_project;
 }
 
-@property(retain, nonatomic) KSPencilMediaProject *project; // @synthesize project=_project;
+@property(retain, nonatomic) KSMMediaProject *project; // @synthesize project=_project;
 - (void).cxx_destruct;
-@property(readonly, copy) NSString *description;
-
-// Remaining properties
-@property(readonly, copy) NSString *debugDescription;
-@property(readonly) unsigned long long hash;
-@property(readonly) Class superclass;
 
 @end
 

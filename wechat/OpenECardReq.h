@@ -20,6 +20,7 @@
 @property(retain, nonatomic) BaseRequest *baseRequest; // @dynamic baseRequest;
 @property(retain, nonatomic) NSString *ecardType; // @dynamic ecardType;
 @property(nonatomic) int isRepeatSend; // @dynamic isRepeatSend;
+@property(nonatomic) _Bool isReuseExistingEcard; // @dynamic isReuseExistingEcard;
 @property(retain, nonatomic) NSString *mobileNo; // @dynamic mobileNo;
 @property(nonatomic) unsigned int openScene; // @dynamic openScene;
 @property(retain, nonatomic) NSString *parentBindSerialno; // @dynamic parentBindSerialno;

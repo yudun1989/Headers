@@ -119,6 +119,7 @@
 - (void)pushFullScreenH5FloatLayer:(id)arg1 HomeViewController:(id)arg2;
 - (id)getGameCenterEntryInfo;
 - (id)topBackgroundColor;
+- (id)globalStatusBarStyle;
 - (_Bool)useTopWhiteStyle;
 - (id)getDetailUrlGlobalSearch:(id)arg1;
 - (void)MessageReturn:(id)arg1 Event:(unsigned int)arg2;

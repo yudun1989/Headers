@@ -4,13 +4,11 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-#import <objc/NSObject.h>
+#import "LYWState.h"
 
-#import "LYWStateType-Protocol.h"
+@class NSError;
 
-@class NSError, NSString;
-
-@interface KSMediaEditOnlineResourceState : NSObject <LYWStateType>
+@interface KSMediaEditOnlineResourceState : LYWState
 {
     int _state;
     float _progress;
@@ -21,15 +19,6 @@
 @property(retain, nonatomic) NSError *error; // @synthesize error=_error;
 @property(nonatomic) int state; // @synthesize state=_state;
 - (void).cxx_destruct;
-@property(readonly, copy) NSString *description;
-- (id)copyWithZone:(struct _NSZone *)arg1;
-@property(readonly) unsigned long long hash;
-- (_Bool)isEqualToState:(id)arg1;
-- (_Bool)isEqual:(id)arg1;
-
-// Remaining properties
-@property(readonly, copy) NSString *debugDescription;
-@property(readonly) Class superclass;
 
 @end
 

@@ -17,7 +17,7 @@
 #import "WCActionSheetDelegate-Protocol.h"
 #import "scrollViewDelegate-Protocol.h"
 
-@class FavForwardLogicController, FavSightView, FavoritesItemDataField, ForwardMessageLogicController, NSString, ScanQRCodeLogicController, UIView, WCActionSheet;
+@class FavForwardLogicController, FavSightView, FavoritesItemDataField, ForwardMessageLogicController, NSArray, NSString, ScanQRCodeLogicController, UIView, WCActionSheet;
 
 @interface FavRecordDetailViewController : FavBaseDetailViewController <ForwardMessageLogicDelegate, BaseScanLogicDelegate, WCActionSheetDelegate, scrollViewDelegate, FavSightViewDelegate, FavRecordNodeViewDelegate, ViewLocationDelegate, FavFileDetailDelegate, FavVideoDetailDelegate, FavForwardLogicDelegate>
 {
@@ -34,6 +34,8 @@
     double lastContentOffset;
     _Bool isDragging;
     ForwardMessageLogicController *m_forwardLogic;
+    NSArray *m_dataList;
+    _Bool m_isFavHomePage;
     ScanQRCodeLogicController *_scanQRCodeLogic;
     int m_qrcodeActionSheetIndex;
     WCActionSheet *favImgLongPressAction;
@@ -74,10 +76,12 @@
 - (void)onForwardFavDataWrap2WC;
 - (void)onForwardFavDataWrap2Msg;
 - (void)onAction:(id)arg1;
+- (_Bool)canShowConvertToNoteActionSheet;
 - (void)genContent:(id)arg1 indexPath:(id)arg2;
 - (void)genTimeCell:(id)arg1;
 - (double)getHeightForRowAtIndexPath:(id)arg1;
 - (long long)getRowsInContentSection;
+- (id)baseBackgroundColor;
 - (void)adjustViewAndNavBarRect;
 - (void)pulseAnimationDidStop:(id)arg1 finished:(id)arg2 context:(void *)arg3;
 - (void)viewDidBePoped:(_Bool)arg1;
@@ -87,12 +91,14 @@
 - (void)scrollToIndex:(long long)arg1 atScrollPosition:(long long)arg2 needHighlight:(_Bool)arg3 animation:(_Bool)arg4;
 - (void)viewDidAppear:(_Bool)arg1;
 - (void)viewWillDisappear:(_Bool)arg1;
+- (void)reloadFooterView;
 - (void)viewDidLoad;
 - (void)viewDidTransitionToNewSize;
 - (void)viewWillAppear:(_Bool)arg1;
 - (_Bool)useTransparentNavibar;
 - (void)initNavigationBar;
 - (void)dealloc;
+- (id)initWithDataWrap:(id)arg1;
 - (id)initWithFavItem:(id)arg1;
 
 // Remaining properties

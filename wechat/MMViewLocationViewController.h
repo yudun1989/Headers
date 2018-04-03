@@ -116,6 +116,7 @@
 - (void)stopViewingLocation;
 - (void)startViewingLocation;
 - (id)getLocationText:(struct CLLocationCoordinate2D)arg1;
+- (_Bool)useBlackStatusbar;
 - (void)viewWillDisappear:(_Bool)arg1;
 - (void)viewWillAppear:(_Bool)arg1;
 - (void)reloadStreetBtn;

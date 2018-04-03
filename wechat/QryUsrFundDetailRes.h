@@ -37,6 +37,7 @@
 @property(retain, nonatomic) NSMutableArray *protocolLst; // @dynamic protocolLst;
 @property(nonatomic) int retCode; // @dynamic retCode;
 @property(retain, nonatomic) NSString *retMsg; // @dynamic retMsg;
+@property(retain, nonatomic) NSString *spid; // @dynamic spid;
 @property(retain, nonatomic) NSString *totalGainDesc; // @dynamic totalGainDesc;
 @property(nonatomic) unsigned int totalGainVal; // @dynamic totalGainVal;
 

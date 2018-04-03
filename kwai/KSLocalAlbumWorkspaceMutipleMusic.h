@@ -14,7 +14,7 @@
     unsigned long long _index;
 }
 
-+ (Class)effectClass;
++ (Class)audioClass;
 @property(nonatomic) unsigned long long index; // @synthesize index=_index;
 @property(retain, nonatomic) NSArray *names; // @synthesize names=_names;
 - (void).cxx_destruct;

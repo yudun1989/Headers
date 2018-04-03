@@ -10,19 +10,21 @@
 
 @interface KSPostPhotosNavigationTitleView : UIControl
 {
-    NSArray *_titles;
-    unsigned long long _selectedIndex;
-    NSArray *_buttons;
+    double _contentWidth;
+    double _fullContentWidth;
+    NSArray *_titleInfos;
+    unsigned long long _selectedType;
+    NSArray *_labels;
 }
 
-@property(retain, nonatomic) NSArray *buttons; // @synthesize buttons=_buttons;
-@property(nonatomic) unsigned long long selectedIndex; // @synthesize selectedIndex=_selectedIndex;
-@property(readonly, nonatomic) NSArray *titles; // @synthesize titles=_titles;
+@property(retain, nonatomic) NSArray *labels; // @synthesize labels=_labels;
+@property(nonatomic) unsigned long long selectedType; // @synthesize selectedType=_selectedType;
+@property(readonly, nonatomic) NSArray *titleInfos; // @synthesize titleInfos=_titleInfos;
 - (void).cxx_destruct;
-- (void)setNeedsAdjustToSameFont;
+- (void)layoutSubviews;
 - (struct CGSize)intrinsicContentSize;
-- (void)updateSelectionWithButton:(id)arg1;
-- (id)initWithTitles:(id)arg1 statisticsNames:(id)arg2;
+- (void)updateSelectionWithLabel:(struct KSPostPhotosNavigationTitleLabel *)arg1;
+- (id)initWithInfos:(id)arg1;
 
 @end
 

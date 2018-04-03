@@ -6,29 +6,26 @@
 
 #import <UIKit/UIView.h>
 
-@class UIColor;
+@class KSMediaEditRulerStyle;
 
 @interface KSMediaEditRuler : UIView
 {
     double _divWidth;
     double _edge;
-    UIColor *_lineColor;
-    UIColor *_titleColor;
-    double _fontSize;
+    KSMediaEditRulerStyle *_style;
 }
 
-@property(nonatomic) double fontSize; // @synthesize fontSize=_fontSize;
-@property(retain, nonatomic) UIColor *titleColor; // @synthesize titleColor=_titleColor;
-@property(retain, nonatomic) UIColor *lineColor; // @synthesize lineColor=_lineColor;
+@property(readonly, nonatomic) KSMediaEditRulerStyle *style; // @synthesize style=_style;
 @property(nonatomic) double edge; // @synthesize edge=_edge;
 @property(nonatomic) double divWidth; // @synthesize divWidth=_divWidth;
 - (void).cxx_destruct;
-- (void)_drawLineWithContext:(struct CGContext *)arg1 atOrigin:(struct CGPoint)arg2 size:(struct CGSize)arg3;
-- (void)_drawLongLineWithContext:(struct CGContext *)arg1 atX:(double)arg2;
-- (void)_drawShotLineWithContext:(struct CGContext *)arg1 atX:(double)arg2;
-- (void)_drawTitle:(id)arg1 atCenter:(struct CGPoint)arg2;
+- (void)_drawLineWithContext:(struct CGContext *)arg1 color:(id)arg2 atX:(double)arg3 size:(struct CGSize)arg4;
+- (void)_drawTitle:(id)arg1 atX:(double)arg2;
 - (void)drawRect:(struct CGRect)arg1;
-- (id)init;
+- (id)initWithFrame:(struct CGRect)arg1 style:(id)arg2;
+- (void)_commonInitWithStyle:(id)arg1;
+- (id)initWithFrame:(struct CGRect)arg1;
+- (id)initWithCoder:(id)arg1;
 
 @end
 

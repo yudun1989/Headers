@@ -11,6 +11,7 @@
 
 @interface KSMediaCoverSlider : UIControl
 {
+    _Bool _draggingSlider;
     _Bool _dragging;
     id <KSMediaCoverSliderDataSource> _dataSource;
     id <KSMediaCoverSliderDelegate> _delegate;
@@ -28,6 +29,7 @@
 @property(readonly, nonatomic) UIImageView *slidingView; // @synthesize slidingView=_slidingView;
 @property(readonly, nonatomic) NSArray *snapshots; // @synthesize snapshots=_snapshots;
 @property(readonly, nonatomic) double edgeMargin; // @synthesize edgeMargin=_edgeMargin;
+@property(nonatomic) _Bool draggingSlider; // @synthesize draggingSlider=_draggingSlider;
 @property(readonly, nonatomic) long long numberOfSnapshots; // @synthesize numberOfSnapshots=_numberOfSnapshots;
 @property(nonatomic) __weak id <KSMediaCoverSliderDelegate> delegate; // @synthesize delegate=_delegate;
 @property(nonatomic) __weak id <KSMediaCoverSliderDataSource> dataSource; // @synthesize dataSource=_dataSource;
@@ -45,6 +47,7 @@
 - (void)updateSlidingViewWithImage:(id)arg1;
 - (void)setCurrentSlideOffset:(double)arg1 animated:(_Bool)arg2;
 - (void)reloadData;
+- (id)initWithFrame:(struct CGRect)arg1 snapshotSize:(struct CGSize)arg2;
 - (id)initWithFrame:(struct CGRect)arg1;
 
 @end

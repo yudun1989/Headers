@@ -6,40 +6,33 @@
 
 #import <UIKit/UIView.h>
 
-@class KSPainterView, NSArray, NSMutableArray, UIImage, UIImageView;
-@protocol KSOperationImageViewDelegate;
+@class NSArray, NSMutableArray, UIImage, UIImageView;
 
 @interface KSOperationImageView : UIView
 {
-    NSMutableArray *_chartletViews;
-    id <KSOperationImageViewDelegate> _delegate;
+    NSMutableArray *_chartletArray;
     UIView *_contentView;
-    KSPainterView *_painterView;
     UIImageView *_imageView;
-    double _imageScale;
-    struct CGSize _imageSize;
+    struct CGSize _canvasSize;
 }
 
-@property(nonatomic) double imageScale; // @synthesize imageScale=_imageScale;
-@property(nonatomic) struct CGSize imageSize; // @synthesize imageSize=_imageSize;
 @property(retain, nonatomic) UIImageView *imageView; // @synthesize imageView=_imageView;
-@property(retain, nonatomic) KSPainterView *painterView; // @synthesize painterView=_painterView;
 @property(retain, nonatomic) UIView *contentView; // @synthesize contentView=_contentView;
-@property(nonatomic) __weak id <KSOperationImageViewDelegate> delegate; // @synthesize delegate=_delegate;
+@property(retain, nonatomic) NSMutableArray *chartletArray; // @synthesize chartletArray=_chartletArray;
+@property(nonatomic) struct CGSize canvasSize; // @synthesize canvasSize=_canvasSize;
 - (void).cxx_destruct;
-- (void)didTapOperationViewAtPoint:(struct CGPoint)arg1;
+- (void)didRecognizeTap:(id)arg1;
 - (void)endEditChartletViews;
 - (void)resetWithImage:(id)arg1 chartlets:(id)arg2 chartletViewDelegate:(id)arg3;
 - (void)selectChartletView:(id)arg1;
 - (void)removeChartletView:(id)arg1;
 - (void)addChartletView:(id)arg1;
 @property(readonly, nonatomic) NSArray *chartletViews; // @dynamic chartletViews;
-@property(nonatomic) _Bool painterViewEnabled; // @dynamic painterViewEnabled;
 @property(retain, nonatomic) UIImage *image; // @dynamic image;
-- (void)touchesEnded:(id)arg1 withEvent:(id)arg2;
 - (void)layoutSubviews;
+- (void)commonInit;
 - (id)initWithFrame:(struct CGRect)arg1;
-- (id)init;
+- (id)initWithCoder:(id)arg1;
 
 @end
 

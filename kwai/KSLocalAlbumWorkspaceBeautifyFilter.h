@@ -10,7 +10,7 @@
 {
 }
 
-+ (Class)effectClass;
++ (Class)filterClass;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 

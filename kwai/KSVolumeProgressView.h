@@ -13,7 +13,7 @@
 
 @property(nonatomic) float progress; // @synthesize progress=_progress;
 - (void)drawRect:(struct CGRect)arg1;
-- (id)initWithCoder:(id)arg1;
+- (id)init;
 
 @end
 

@@ -55,7 +55,6 @@
 - (void).cxx_destruct;
 - (void)setSelectAttachmentViewAccessibility:(_Bool)arg1;
 - (void)adjustViewAndNavBarRect;
-- (void)onTopBarFrameChanged;
 - (void)OnAppSettingChanged;
 - (void)OnNewAppStatusChanged;
 - (void)OnAppIconChanged:(id)arg1;

@@ -8,7 +8,7 @@
 
 #import "NSCoding-Protocol.h"
 
-@class NSMutableArray, NSMutableDictionary, NSString, WCADBodyWrap, WCADCanvasInfo, WCADChainStrengthenInfo, WCADCommentWrap, WCADPageWrap, WCADPoiInfo, WCADTurnInfo, WCADVideoWrap, WCADVoteInfo, WCAdCardInfo, WCAdDislikeInfo, WCAdFeedDisplayInfo, WCAdSelectInfo, WCAdWeAppInfo, WCMultiLanguageItem;
+@class NSMutableArray, NSMutableDictionary, NSString, WCADBodyWrap, WCADCanvasInfo, WCADChainStrengthenInfo, WCADCommentWrap, WCADPageWrap, WCADPoiInfo, WCADTurnInfo, WCADVideoWrap, WCADVoteInfo, WCAdCardInfo, WCAdDislikeInfo, WCAdFeedDisplayInfo, WCAdFeedbackInfo, WCAdSelectInfo, WCAdWeAppInfo, WCMultiLanguageItem;
 
 @interface WCAdvertiseInfo : NSObject <NSCoding>
 {
@@ -90,6 +90,7 @@
     NSString *_originUxInfo;
     NSString *_originSnsId;
     WCAdDislikeInfo *_adDislikeInfo;
+    WCAdFeedbackInfo *_adFeedbackInfo;
     NSString *_adClickDislikeReasonId;
     NSString *_adCanvasExt;
     NSMutableArray *_dynamicInfos;
@@ -100,6 +101,7 @@
 @property(retain, nonatomic) NSMutableArray *dynamicInfos; // @synthesize dynamicInfos=_dynamicInfos;
 @property(retain, nonatomic) NSString *adCanvasExt; // @synthesize adCanvasExt=_adCanvasExt;
 @property(retain, nonatomic) NSString *adClickDislikeReasonId; // @synthesize adClickDislikeReasonId=_adClickDislikeReasonId;
+@property(retain, nonatomic) WCAdFeedbackInfo *adFeedbackInfo; // @synthesize adFeedbackInfo=_adFeedbackInfo;
 @property(retain, nonatomic) WCAdDislikeInfo *adDislikeInfo; // @synthesize adDislikeInfo=_adDislikeInfo;
 @property(nonatomic) unsigned int originAdType; // @synthesize originAdType=_originAdType;
 @property(retain, nonatomic) NSString *originSnsId; // @synthesize originSnsId=_originSnsId;
@@ -178,6 +180,7 @@
 @property(retain, nonatomic) NSString *adDescription; // @synthesize adDescription;
 @property(nonatomic) int adType; // @synthesize adType;
 - (void).cxx_destruct;
+- (_Bool)shouldShowFeedbackList;
 - (_Bool)shouldShowDislikeReasonList;
 - (_Bool)isInCanvaAdDetailLinkJumpExp;
 - (_Bool)shouldAdActionJumpCanvasPage;

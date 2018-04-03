@@ -11,6 +11,13 @@
 @interface SettingDiscoverEntranceViewController : SettingBaseViewController
 {
     struct map<unsigned long, unsigned int, std::__1::less<unsigned long>, std::__1::allocator<std::__1::pair<const unsigned long, unsigned int>>> m_mapRowToRowType;
+    double settingDiscoverEntranceViewCellHeight;
+    double settingDiscoverEntranceViewCellContentLeftMargin;
+    double settingDiscoverEntranceViewCellIconSize;
+    double settingDiscoverEntranceViewCellIconLabelInterval;
+    double settingDiscoverEntranceViewCellLabelWidth;
+    double settingDiscoverEntranceViewCellWidth;
+    double settingDiscoverEntranceViewCellContentRightMargin;
     _Bool _hasChangedSwitch;
     DelaySwitchSettingLogic *_delaySwitchLogic;
 }
@@ -21,6 +28,8 @@
 - (void).cxx_destruct;
 - (void)onSwitchChanged:(id)arg1;
 - (void)tableView:(id)arg1 didSelectRowAtIndexPath:(id)arg2;
+- (id)tableView:(id)arg1 viewForFooterInSection:(long long)arg2;
+- (id)tableView:(id)arg1 titleForFooterInSection:(long long)arg2;
 - (id)tableView:(id)arg1 viewForHeaderInSection:(long long)arg2;
 - (id)tableView:(id)arg1 titleForHeaderInSection:(long long)arg2;
 - (double)tableView:(id)arg1 heightForHeaderInSection:(long long)arg2;
@@ -36,6 +45,7 @@
 - (void)viewWillAppear:(_Bool)arg1;
 - (void)didReceiveMemoryWarning;
 - (void)viewDidLoad;
+- (id)init;
 
 @end
 

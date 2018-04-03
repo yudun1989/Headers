@@ -7,12 +7,12 @@
 #import <objc/NSObject.h>
 
 #import "IMMDumpReporterMgrExt-Protocol.h"
-#import "MMPatchMgrExt-Protocol.h"
 #import "MMResourceMgrExt-Protocol.h"
+#import "WCUpdateMgrExt-Protocol.h"
 
 @class MMSafeModeReport, NSDictionary, NSMutableArray, NSString;
 
-@interface MMSafeModeMgr : NSObject <MMResourceMgrExt, MMPatchMgrExt, IMMDumpReporterMgrExt>
+@interface MMSafeModeMgr : NSObject <MMResourceMgrExt, WCUpdateMgrExt, IMMDumpReporterMgrExt>
 {
     NSString *m_crashUsrName;
     NSMutableArray *m_localUsrNameMd5List;

@@ -17,8 +17,10 @@
     CDUnknownBlockType _onSuccess;
     CDUnknownBlockType _onError;
     long long _categoryIndex;
+    NSString *_outputPath;
 }
 
+@property(retain, nonatomic) NSString *outputPath; // @synthesize outputPath=_outputPath;
 @property(nonatomic) long long categoryIndex; // @synthesize categoryIndex=_categoryIndex;
 @property(nonatomic) _Bool isCancelling; // @synthesize isCancelling=_isCancelling;
 @property(copy, nonatomic) CDUnknownBlockType onError; // @synthesize onError=_onError;

@@ -16,8 +16,6 @@
     unsigned int _favType;
     unsigned int _favSource;
     unsigned int _favSourceTime;
-    unsigned int _favFirstPageBrowseTime;
-    unsigned int _favSecondPageBrowseTime;
     unsigned int _needOtherAppOpen;
     unsigned int _enterSecondPageTimes;
     unsigned int _sendToFriendsTimes;
@@ -26,13 +24,16 @@
     unsigned int _editTagTimes;
     unsigned int _deleteFav;
     unsigned int _scrollToBottom;
-    unsigned int _enterFirstPageLogTime;
-    unsigned int _enterSecondPageLogTime;
     NSString *_favInfoLength;
+    NSString *_favSourceInfo;
+    unsigned long long _favFirstPageBrowseTime;
+    unsigned long long _favSecondPageBrowseTime;
+    unsigned long long _enterFirstPageLogTime;
+    unsigned long long _enterSecondPageLogTime;
 }
 
-@property(nonatomic) unsigned int enterSecondPageLogTime; // @synthesize enterSecondPageLogTime=_enterSecondPageLogTime;
-@property(nonatomic) unsigned int enterFirstPageLogTime; // @synthesize enterFirstPageLogTime=_enterFirstPageLogTime;
+@property(nonatomic) unsigned long long enterSecondPageLogTime; // @synthesize enterSecondPageLogTime=_enterSecondPageLogTime;
+@property(nonatomic) unsigned long long enterFirstPageLogTime; // @synthesize enterFirstPageLogTime=_enterFirstPageLogTime;
 @property(nonatomic) unsigned int scrollToBottom; // @synthesize scrollToBottom=_scrollToBottom;
 @property(nonatomic) unsigned int deleteFav; // @synthesize deleteFav=_deleteFav;
 @property(nonatomic) unsigned int editTagTimes; // @synthesize editTagTimes=_editTagTimes;
@@ -41,8 +42,9 @@
 @property(nonatomic) unsigned int sendToFriendsTimes; // @synthesize sendToFriendsTimes=_sendToFriendsTimes;
 @property(nonatomic) unsigned int enterSecondPageTimes; // @synthesize enterSecondPageTimes=_enterSecondPageTimes;
 @property(nonatomic) unsigned int needOtherAppOpen; // @synthesize needOtherAppOpen=_needOtherAppOpen;
-@property(nonatomic) unsigned int favSecondPageBrowseTime; // @synthesize favSecondPageBrowseTime=_favSecondPageBrowseTime;
-@property(nonatomic) unsigned int favFirstPageBrowseTime; // @synthesize favFirstPageBrowseTime=_favFirstPageBrowseTime;
+@property(nonatomic) unsigned long long favSecondPageBrowseTime; // @synthesize favSecondPageBrowseTime=_favSecondPageBrowseTime;
+@property(nonatomic) unsigned long long favFirstPageBrowseTime; // @synthesize favFirstPageBrowseTime=_favFirstPageBrowseTime;
+@property(nonatomic) NSString *favSourceInfo; // @synthesize favSourceInfo=_favSourceInfo;
 @property(nonatomic) unsigned int favSourceTime; // @synthesize favSourceTime=_favSourceTime;
 @property(nonatomic) unsigned int favSource; // @synthesize favSource=_favSource;
 @property(retain, nonatomic) NSString *favInfoLength; // @synthesize favInfoLength=_favInfoLength;

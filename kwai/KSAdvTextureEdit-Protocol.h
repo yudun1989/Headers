@@ -11,11 +11,15 @@
 
 @protocol KSAdvTextureEdit <KSTimeRangeItemEditable>
 @property(copy, nonatomic) CDUnknownBlockType onTapItem;
+@property(nonatomic) struct CGPoint center;
 @property(nonatomic) _Bool editing;
 @property(nonatomic) struct CGSize canvasSize;
 - (UIView<KSChartletView> *)textureView;
 
 @optional
+@property(copy, nonatomic) CDUnknownBlockType didMove;
+@property(copy, nonatomic) CDUnknownBlockType onMoving;
+@property(copy, nonatomic) CDUnknownBlockType onStartEditItem;
 @property(copy, nonatomic) CDUnknownBlockType onChanged;
 @property(copy, nonatomic) CDUnknownBlockType onTapCloseBtn;
 @end

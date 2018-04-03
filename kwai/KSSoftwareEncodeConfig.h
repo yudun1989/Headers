@@ -16,11 +16,15 @@
     NSNumber *_height;
     NSString *_x264Params;
     NSString *_x264ParamsCellular;
+    NSString *_videoEncoderName;
+    NSNumber *_bitrate;
 }
 
 + (void)saveToDiskCache:(id)arg1;
 + (id)loadFromDiskCache;
 + (id)defaultConfig;
+@property(retain, nonatomic) NSNumber *bitrate; // @synthesize bitrate=_bitrate;
+@property(copy, nonatomic) NSString *videoEncoderName; // @synthesize videoEncoderName=_videoEncoderName;
 @property(copy, nonatomic) NSString *x264ParamsCellular; // @synthesize x264ParamsCellular=_x264ParamsCellular;
 @property(copy, nonatomic) NSString *x264Params; // @synthesize x264Params=_x264Params;
 @property(retain, nonatomic) NSNumber *height; // @synthesize height=_height;

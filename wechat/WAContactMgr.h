@@ -29,8 +29,8 @@
 - (void).cxx_destruct;
 - (id)getUsernameForAppid:(id)arg1;
 - (void)MessageReturn:(id)arg1 Event:(unsigned int)arg2;
-- (void)workThread_processBatchWxaAttrSyncResponse:(id)arg1 completeHandlerOnMainThread:(CDUnknownBlockType)arg2;
-- (void)processBatchWxaAttrSyncResponse:(id)arg1 completeHandlerOnMainThread:(CDUnknownBlockType)arg2;
+- (void)workThread_processBatchWxaAttrSyncWithRequestedBufferDic:(id)arg1 response:(id)arg2 completeHandlerOnMainThread:(CDUnknownBlockType)arg3;
+- (void)processBatchWxaAttrSyncWithRequestedBufferDic:(id)arg1 response:(id)arg2 completeHandlerOnMainThread:(CDUnknownBlockType)arg3;
 - (void)onResponseBatchWxaAttrSync:(id)arg1;
 - (_Bool)requestBatchWxaAttrSync:(id)arg1 versionList:(id)arg2;
 - (void)checkBatchWxaAttrSyncWaitQueue;

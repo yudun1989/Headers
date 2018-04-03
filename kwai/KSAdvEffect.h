@@ -6,25 +6,23 @@
 
 #import <objc/NSObject.h>
 
-@class KSAdvEffectCollectionViewCellConfig, NSString, NSURL, UIColor;
+@class KSEffectCollectionViewCellConfig, NSURL, UIColor;
 @protocol KSMTimeRange;
 
 @interface KSAdvEffect : NSObject
 {
-    KSAdvEffectCollectionViewCellConfig *_cellConfig;
+    KSEffectCollectionViewCellConfig *_cellConfig;
     NSURL *_previewURL;
     id <KSMTimeRange> _effectItem;
-    NSString *_statName;
     CDUnknownBlockType _filterEffectItemFactory;
     UIColor *_filterEffectColor;
 }
 
 @property(retain, nonatomic) UIColor *filterEffectColor; // @synthesize filterEffectColor=_filterEffectColor;
 @property(copy, nonatomic) CDUnknownBlockType filterEffectItemFactory; // @synthesize filterEffectItemFactory=_filterEffectItemFactory;
-@property(retain, nonatomic) NSString *statName; // @synthesize statName=_statName;
 @property(retain, nonatomic) id <KSMTimeRange> effectItem; // @synthesize effectItem=_effectItem;
 @property(retain, nonatomic) NSURL *previewURL; // @synthesize previewURL=_previewURL;
-@property(retain, nonatomic) KSAdvEffectCollectionViewCellConfig *cellConfig; // @synthesize cellConfig=_cellConfig;
+@property(retain, nonatomic) KSEffectCollectionViewCellConfig *cellConfig; // @synthesize cellConfig=_cellConfig;
 - (void).cxx_destruct;
 
 @end

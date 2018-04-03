@@ -7,7 +7,6 @@
 #import "NSObject-Protocol.h"
 
 @protocol KSVideoPlayer <NSObject>
-@property(nonatomic) _Bool mute;
 - (void)pause;
 - (void)play;
 - (void)seekToTime:(CDStruct_1b6d18a9)arg1;

@@ -10,6 +10,7 @@
 {
 }
 
++ (void)reportPathTapEventWithPathKey:(id)arg1 TipsIds:(id)arg2;
 + (void)reportWithNewTipsInfo:(id)arg1 Scene:(unsigned int)arg2;
 
 @end

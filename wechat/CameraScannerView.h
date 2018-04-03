@@ -30,12 +30,15 @@
     _Bool _observingFocus;
     _Bool _hasFocused;
     NSObject<OS_dispatch_queue> *_sessionQueue;
+    float _compareBrightness;
+    _Bool _stopTimerCheck;
     unsigned int _lightMode;
     NSMutableString *_zoomOplog;
 }
 
 + (void)releaseInstance;
 + (id)sharedInstance;
+@property(nonatomic) _Bool stopTimerCheck; // @synthesize stopTimerCheck=_stopTimerCheck;
 @property(readonly, nonatomic) unsigned int lightMode; // @synthesize lightMode=_lightMode;
 @property(readonly, nonatomic) NSMutableString *zoomOplog; // @synthesize zoomOplog=_zoomOplog;
 @property(readonly, nonatomic) NSRecursiveLock *cameraLock; // @synthesize cameraLock=_cameraLock;
@@ -69,6 +72,7 @@
 - (void)start;
 - (void)setPreviewScale:(float)arg1;
 - (void)onCaptureTimeout;
+- (void)showTorchButtonWithSeconds:(unsigned int)arg1;
 - (void)captureOutput:(id)arg1 didOutputSampleBuffer:(struct opaqueCMSampleBuffer *)arg2 fromConnection:(id)arg3;
 - (void)initCaptureWithPreviewScale:(float)arg1;
 - (float)getRotateRadius:(long long)arg1;

@@ -6,13 +6,11 @@
 
 #import "NSObject-Protocol.h"
 
-@class KSChartletBottomDetailView, KSChartletToolItem, KSPencilItem, KSVideoShapePrototype;
+@class KSChartletBottomDetailView, KSChartletToolItem, KSVideoShapePrototype;
 
 @protocol KSChartletBottomDetailViewDelegate <NSObject>
 - (void)chartletBottomDetailView:(KSChartletBottomDetailView *)arg1 didSelectEraserItem:(KSChartletToolItem *)arg2;
 - (void)chartletBottomDetailView:(KSChartletBottomDetailView *)arg1 didTapUndoItem:(KSChartletToolItem *)arg2;
-- (void)chartletBottomDetailView:(KSChartletBottomDetailView *)arg1 didChangePenSize:(double)arg2;
-- (void)chartletBottomDetailView:(KSChartletBottomDetailView *)arg1 didSelectPenItem:(KSPencilItem *)arg2;
 - (void)chartletBottomDetailView:(KSChartletBottomDetailView *)arg1 didSelectChartletItem:(KSVideoShapePrototype *)arg2;
 - (void)chartletBottomDetailView:(KSChartletBottomDetailView *)arg1 didSelectTextItem:(KSVideoShapePrototype *)arg2;
 - (void)chartletBottomDetailView:(KSChartletBottomDetailView *)arg1 didTapMoreTextItem:(KSChartletToolItem *)arg2;

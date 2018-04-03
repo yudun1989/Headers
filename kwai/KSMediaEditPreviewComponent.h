@@ -6,33 +6,33 @@
 
 #import "LYWComponent.h"
 
-#import "KSMediaPreviewAssetContainer-Protocol.h"
 #import "KSMediaPreviewFilterSwitchableControlDelegate-Protocol.h"
 
-@class KSEPreviewViewController, KSMediaPreviewFilterSwitchableControl, NSObject, NSString;
-@protocol KSMediaPreviewAsset;
+@class KSEPreviewViewController, KSMediaEditCoverPreviewComponent, KSMediaEditTextureCanvasComponent, KSMediaPreviewFilterSwitchableControl, NSString;
 
-@interface KSMediaEditPreviewComponent : LYWComponent <KSMediaPreviewFilterSwitchableControlDelegate, KSMediaPreviewAssetContainer>
+@interface KSMediaEditPreviewComponent : LYWComponent <KSMediaPreviewFilterSwitchableControlDelegate>
 {
-    NSObject<KSMediaPreviewAsset> *_asset;
     KSEPreviewViewController *_previewVC;
     KSMediaPreviewFilterSwitchableControl *_switcher;
+    KSMediaEditTextureCanvasComponent *_textureCanvasComponent;
+    KSMediaEditCoverPreviewComponent *_coverPreviewComponent;
 }
 
+@property(retain, nonatomic) KSMediaEditCoverPreviewComponent *coverPreviewComponent; // @synthesize coverPreviewComponent=_coverPreviewComponent;
+@property(retain, nonatomic) KSMediaEditTextureCanvasComponent *textureCanvasComponent; // @synthesize textureCanvasComponent=_textureCanvasComponent;
 @property(retain, nonatomic) KSMediaPreviewFilterSwitchableControl *switcher; // @synthesize switcher=_switcher;
 @property(retain, nonatomic) KSEPreviewViewController *previewVC; // @synthesize previewVC=_previewVC;
-@property(retain, nonatomic) NSObject<KSMediaPreviewAsset> *asset; // @synthesize asset=_asset;
 - (void).cxx_destruct;
 - (id)currentTitleForSwitchableControl:(id)arg1;
 - (void)switchableControl:(id)arg1 didEndSwitching:(_Bool)arg2 fromRight:(_Bool)arg3;
 - (void)switchableControl:(id)arg1 willEndSwitching:(_Bool)arg2 fromRight:(_Bool)arg3;
 - (void)switchableControl:(id)arg1 swipingAtProgress:(double)arg2 fromRight:(_Bool)arg3 animating:(_Bool)arg4;
 - (void)switchableControl:(id)arg1 willBeginSwitchingFromRight:(_Bool)arg2;
-- (void)newState:(id)arg1 oldState:(id)arg2;
+- (void)newState:(id)arg1;
 - (void)viewWillDisappear:(_Bool)arg1;
 - (void)viewWillAppear:(_Bool)arg1;
 - (void)viewDidLoad;
-- (id)initWithStore:(id)arg1 selector:(CDUnknownBlockType)arg2 asset:(id)arg3;
+- (id)initWithStore:(id)arg1;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

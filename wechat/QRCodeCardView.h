@@ -8,7 +8,7 @@
 
 #import "IMMQRCodeExt-Protocol.h"
 
-@class CContact, MMHeadImageView, NSString, UIActivityIndicatorView, UIButton, UILabel;
+@class CContact, MMHeadImageView, NSString, UIActivityIndicatorView, UILabel, UIView;
 
 @interface QRCodeCardView : UIImageView <IMMQRCodeExt>
 {
@@ -21,7 +21,7 @@
     CContact *m_contact;
     UILabel *changHintLabel;
     _Bool m_bIsNotAllowAddMeByQRCode;
-    UIButton *m_bkgBtn;
+    UIView *m_bkgBtn;
 }
 
 @property(readonly, nonatomic) UIActivityIndicatorView *m_loadingView; // @synthesize m_loadingView;

@@ -6,27 +6,23 @@
 
 #import <UIKit/UICollectionViewCell.h>
 
-@class KSPreviewMainStageCellItem, NSString, UIImage, UIImageView, UILabel;
+@class KSOuterStrokeLabel, KSPreviewMainStageCellItem, NSDictionary, UIImageView;
 
 @interface KSPreviewMainStageCell : UICollectionViewCell
 {
     KSPreviewMainStageCellItem *_item;
     UIImageView *_iconView;
-    UILabel *_titleLabel;
-    UIImage *_highlightImage;
-    UIImage *_normalImage;
-    NSString *_highlightKVOId;
+    KSOuterStrokeLabel *_titleLabel;
+    NSDictionary *_textAttributes;
 }
 
-@property(retain, nonatomic) NSString *highlightKVOId; // @synthesize highlightKVOId=_highlightKVOId;
-@property(retain, nonatomic) UIImage *normalImage; // @synthesize normalImage=_normalImage;
-@property(retain, nonatomic) UIImage *highlightImage; // @synthesize highlightImage=_highlightImage;
-@property(nonatomic) __weak UILabel *titleLabel; // @synthesize titleLabel=_titleLabel;
-@property(nonatomic) __weak UIImageView *iconView; // @synthesize iconView=_iconView;
+@property(retain, nonatomic) NSDictionary *textAttributes; // @synthesize textAttributes=_textAttributes;
+@property(retain, nonatomic) KSOuterStrokeLabel *titleLabel; // @synthesize titleLabel=_titleLabel;
+@property(retain, nonatomic) UIImageView *iconView; // @synthesize iconView=_iconView;
 @property(retain, nonatomic) KSPreviewMainStageCellItem *item; // @synthesize item=_item;
 - (void).cxx_destruct;
 - (void)setHighlighted:(_Bool)arg1;
-- (void)awakeFromNib;
+- (id)initWithFrame:(struct CGRect)arg1;
 
 @end
 

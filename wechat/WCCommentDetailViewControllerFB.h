@@ -211,6 +211,7 @@
 - (void)onDontLikeWithOtherReason:(id)arg1 QuestionExp:(id)arg2;
 - (void)onClickTipBtn:(id)arg1;
 - (void)onHideAdvertise:(id)arg1;
+- (void)onActionFloatView:(id)arg1 didSelectFeedbackItem:(id)arg2;
 - (void)onActionFloatView:(id)arg1 didSelectReason:(id)arg2;
 - (void)onRemoveAd;
 - (void)onAdActoin:(id)arg1;

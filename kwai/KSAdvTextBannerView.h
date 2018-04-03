@@ -32,6 +32,7 @@
 @property(retain, nonatomic) NSString *text;
 - (id)chartlet;
 - (id)contentView;
+- (void)textViewDidBeginEditing:(id)arg1;
 - (void)textViewDidEndEditing:(id)arg1;
 - (void)textViewDidChange:(id)arg1;
 - (void)didTapBanner;

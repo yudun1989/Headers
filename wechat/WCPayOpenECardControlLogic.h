@@ -7,9 +7,9 @@
 #import "WCPayECardBaseControlLogic.h"
 
 #import "MMWebViewDelegate-Protocol.h"
+#import "WCPayAddPayCardDelegate-Protocol.h"
 #import "WCPayBindECardCgiDelegate-Protocol.h"
 #import "WCPayECardBankCardListViewControllerDelegate-Protocol.h"
-#import "WCPayECardFillCardInfoViewControllerDelegate-Protocol.h"
 #import "WCPayECardSelectCardTypeViewControllerDelegate-Protocol.h"
 #import "WCPayECardSuccessViewControllerDelegate-Protocol.h"
 #import "WCPayLQTDetailControlLogicDelegate-Protocol.h"
@@ -23,9 +23,11 @@
 @class NSString, WCPayBindECardCgi, WCPayLQTDetailControlLogic, WCPayLQTOpenLqbAccountCgi, WCPayOpenECardAuthCgi, WCPayOpenECardCgi, WCPayQryBankList4BindCgi;
 @protocol WCPayOpenECardControlLogicDelegate;
 
-@interface WCPayOpenECardControlLogic : WCPayECardBaseControlLogic <WCPayOpenECardAuthCgiDelegate, WCPayQryBankList4BindCgiDelegate, WCPayOpenECardCgiDelegate, WCPayBindECardCgiDelegate, WCPayPayPwdViewControllerDelegate, WCPayECardBankCardListViewControllerDelegate, WCPayECardFillCardInfoViewControllerDelegate, WCPayECardSelectCardTypeViewControllerDelegate, WCPayVerifyPayCardViewControllerDelegate, MMWebViewDelegate, WCPayECardSuccessViewControllerDelegate, WCPayLQTOpenLqbAccountCgiDelegate, WCPayLQTDetailControlLogicDelegate>
+@interface WCPayOpenECardControlLogic : WCPayECardBaseControlLogic <WCPayOpenECardAuthCgiDelegate, WCPayQryBankList4BindCgiDelegate, WCPayOpenECardCgiDelegate, WCPayBindECardCgiDelegate, WCPayPayPwdViewControllerDelegate, WCPayECardBankCardListViewControllerDelegate, WCPayECardSelectCardTypeViewControllerDelegate, WCPayVerifyPayCardViewControllerDelegate, MMWebViewDelegate, WCPayECardSuccessViewControllerDelegate, WCPayLQTOpenLqbAccountCgiDelegate, WCPayLQTDetailControlLogicDelegate, WCPayAddPayCardDelegate>
 {
     _Bool _bIsOpenECardSucc;
+    _Bool _bIsReuseExistingEcard;
+    _Bool _bIsQryBankListAfterBindCard;
     id <WCPayOpenECardControlLogicDelegate> _delegate;
     WCPayOpenECardAuthCgi *_openECardAuthCgi;
     WCPayQryBankList4BindCgi *_bankListCgi;
@@ -35,8 +37,12 @@
     NSString *_jsapiToken;
     NSString *_jsapiExtraData;
     WCPayLQTDetailControlLogic *_lqtDetailControlLogic;
+    NSString *_bindCardSerial;
 }
 
+@property(nonatomic) _Bool bIsQryBankListAfterBindCard; // @synthesize bIsQryBankListAfterBindCard=_bIsQryBankListAfterBindCard;
+@property(retain, nonatomic) NSString *bindCardSerial; // @synthesize bindCardSerial=_bindCardSerial;
+@property(nonatomic) _Bool bIsReuseExistingEcard; // @synthesize bIsReuseExistingEcard=_bIsReuseExistingEcard;
 @property(nonatomic) _Bool bIsOpenECardSucc; // @synthesize bIsOpenECardSucc=_bIsOpenECardSucc;
 @property(retain, nonatomic) WCPayLQTDetailControlLogic *lqtDetailControlLogic; // @synthesize lqtDetailControlLogic=_lqtDetailControlLogic;
 @property(retain, nonatomic) NSString *jsapiExtraData; // @synthesize jsapiExtraData=_jsapiExtraData;
@@ -48,6 +54,10 @@
 @property(retain, nonatomic) WCPayOpenECardAuthCgi *openECardAuthCgi; // @synthesize openECardAuthCgi=_openECardAuthCgi;
 @property(nonatomic) __weak id <WCPayOpenECardControlLogicDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
+- (void)openECardAfterBindNewCard;
+- (void)queryBankListForBindFailOrCancel;
+- (void)onAddPayCardResult:(_Bool)arg1 newCardBindSerial:(id)arg2;
+- (void)startAddPayCardLogic;
 - (void)onLQTDetailControlLogicStop;
 - (void)gotoLQTDetailControLogic;
 - (void)clickLqbOpenAccountError;
@@ -71,7 +81,6 @@
 - (void)VerifyPayCardNext:(id)arg1;
 - (void)VerifyPayCardBack;
 - (void)vc:(id)arg1 didSelectCardType:(id)arg2;
-- (void)fillCardInfoVC:(id)arg1 didFilledWithCardNumber:(id)arg2 phoneNumber:(id)arg3;
 - (void)eCardBankListVCDidChoseNewCard:(id)arg1;
 - (void)eCardBankListVC:(id)arg1 didSelectedCard:(id)arg2;
 - (void)VerifyPayPwdNext:(id)arg1;

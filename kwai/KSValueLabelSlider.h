@@ -12,10 +12,12 @@
 {
     _Bool _hideValueLabel;
     UILabel *_valueLabel;
+    double _trackHeight;
     CDUnknownBlockType _valueFormatter;
 }
 
 @property(copy, nonatomic) CDUnknownBlockType valueFormatter; // @synthesize valueFormatter=_valueFormatter;
+@property(nonatomic) double trackHeight; // @synthesize trackHeight=_trackHeight;
 - (void).cxx_destruct;
 - (void)ks_valueChanged:(id)arg1;
 - (void)setValueLabelHidden:(_Bool)arg1;

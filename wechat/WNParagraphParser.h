@@ -21,6 +21,7 @@
 - (void)parseXmlNode:(struct XmlReaderNode_t *)arg1 toArray:(id)arg2;
 - (id)convertHtmlFromAttibutedString:(id)arg1;
 - (_Bool)parse:(id)arg1 toArray:(id)arg2;
+- (void)dealloc;
 
 @end
 

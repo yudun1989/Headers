@@ -9,7 +9,7 @@
 @class KSLocalAlbumWorkspaceMusic, NSString;
 
 @protocol KSLocalAlbumWorkSpaceMusicConvertable <NSObject>
-- (id)effectWithMusic:(KSLocalAlbumWorkspaceMusic *)arg1 workspacePath:(NSString *)arg2;
+- (id)audioWithMusic:(KSLocalAlbumWorkspaceMusic *)arg1 workspacePath:(NSString *)arg2;
 - (KSLocalAlbumWorkspaceMusic *)metaMusic;
 @end
 

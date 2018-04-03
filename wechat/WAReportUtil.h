@@ -22,6 +22,8 @@
 + (void)reportWeAppLog:(int)arg1 item:(id)arg2;
 + (void)reportWithItem:(id)arg1;
 + (void)reportError:(unsigned long long)arg1 contact:(id)arg2 appType:(unsigned long long)arg3 scene:(unsigned long long)arg4 sceneNote:(id)arg5;
++ (void)reportPackageCheckAction:(id)arg1;
++ (void)reportPackageDeleteAction:(id)arg1;
 + (void)reportMainFrameTaskBarAction:(id)arg1;
 + (void)reportGameRenerAction:(id)arg1;
 + (void)reportPhoneAction:(id)arg1;

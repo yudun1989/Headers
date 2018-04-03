@@ -6,6 +6,7 @@
 
 #import "MMUIViewController.h"
 
+#import "IContactMgrExt-Protocol.h"
 #import "MMImagePickerManagerDelegate-Protocol.h"
 #import "MMSightCameraViewControllerDelegate-Protocol.h"
 #import "MessageObserverDelegate-Protocol.h"
@@ -18,7 +19,7 @@
 @class CContact, MMHeadImageView, MMLoadingView, MMTableView, NSString, UIButton, UILabel, UIView;
 @protocol SetHeaderImageViewDelegate;
 
-@interface SetHeaderImageViewController : MMUIViewController <MMSightCameraViewControllerDelegate, UITableViewDelegate, UITableViewDataSource, UINavigationControllerDelegate, UIImagePickerControllerDelegate, WCActionSheetDelegate, MMImagePickerManagerDelegate, MessageObserverDelegate>
+@interface SetHeaderImageViewController : MMUIViewController <MMSightCameraViewControllerDelegate, IContactMgrExt, UITableViewDelegate, UITableViewDataSource, UINavigationControllerDelegate, UIImagePickerControllerDelegate, WCActionSheetDelegate, MMImagePickerManagerDelegate, MessageObserverDelegate>
 {
     MMTableView *m_tableView;
     MMHeadImageView *m_headView;

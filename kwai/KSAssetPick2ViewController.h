@@ -13,7 +13,7 @@
 #import "UINavigationControllerDelegate-Protocol.h"
 #import "UIScrollViewDelegate-Protocol.h"
 
-@class KSAlbumListViewController, KSAssetPick2ViewModel, KSAssetPreviewView, KSAssetsCollectionViewController, KSImage2VideoCollectionDataSource, KSPhotoToVideoProcessor, NSLayoutConstraint, NSString, UIButton, UICollectionView, UIImageView, UIScrollView, UIView;
+@class KSAlbumListViewController, KSAssetPick2ViewModel, KSAssetPreviewView, KSAssetsCollectionViewController, KSAtlasEditLibraryAssetDataSourceCreator, KSImage2VideoCollectionDataSource, NSLayoutConstraint, NSString, UIButton, UICollectionView, UIImageView, UIScrollView, UIView;
 @protocol KSAssetPickViewControllerDelegate, KSPickAssetGroup;
 
 @interface KSAssetPick2ViewController : KSBaseViewController <KSVideoImageFullScreenViewControllerDelegate, KSAssetPickViewControllerProtocol, UICollectionViewDelegate, UIScrollViewDelegate, UINavigationControllerDelegate, KSPostComponent>
@@ -22,8 +22,7 @@
     id <KSAssetPickViewControllerDelegate> _delegate;
     KSAssetPick2ViewModel *_viewModel;
     double _initialConstant;
-    KSPhotoToVideoProcessor *_photoToVideoProcessor;
-    CDUnknownBlockType _photoVideoGenerateBlock;
+    KSAtlasEditLibraryAssetDataSourceCreator *_atlasDataSourceCreator;
     KSAssetsCollectionViewController *_assetsVC;
     UICollectionView *_atlasCollectionView;
     NSLayoutConstraint *_assetAndAtlasVerticalConstraint;
@@ -48,6 +47,9 @@
 }
 
 + (id)assetPickViewController;
++ (void)clearExportDirectory;
++ (id)exportDirectory;
++ (id)exportPathOfAssetKey:(id)arg1;
 @property(retain, nonatomic) KSImage2VideoCollectionDataSource *image2videoCollectionDataSource; // @synthesize image2videoCollectionDataSource=_image2videoCollectionDataSource;
 @property(retain, nonatomic) id <KSPickAssetGroup> assetGroup; // @synthesize assetGroup=_assetGroup;
 @property(nonatomic) unsigned long long assetMediaTypes; // @synthesize assetMediaTypes=_assetMediaTypes;
@@ -67,8 +69,7 @@
 @property(retain, nonatomic) NSLayoutConstraint *assetAndAtlasVerticalConstraint; // @synthesize assetAndAtlasVerticalConstraint=_assetAndAtlasVerticalConstraint;
 @property(retain, nonatomic) UICollectionView *atlasCollectionView; // @synthesize atlasCollectionView=_atlasCollectionView;
 @property(retain, nonatomic) KSAssetsCollectionViewController *assetsVC; // @synthesize assetsVC=_assetsVC;
-@property(copy, nonatomic) CDUnknownBlockType photoVideoGenerateBlock; // @synthesize photoVideoGenerateBlock=_photoVideoGenerateBlock;
-@property(retain, nonatomic) KSPhotoToVideoProcessor *photoToVideoProcessor; // @synthesize photoToVideoProcessor=_photoToVideoProcessor;
+@property(retain, nonatomic) KSAtlasEditLibraryAssetDataSourceCreator *atlasDataSourceCreator; // @synthesize atlasDataSourceCreator=_atlasDataSourceCreator;
 @property(nonatomic) _Bool catchingAssetCollectionPan; // @synthesize catchingAssetCollectionPan=_catchingAssetCollectionPan;
 @property(nonatomic) double initialConstant; // @synthesize initialConstant=_initialConstant;
 @property(nonatomic) struct CGPoint initialLocationInView; // @synthesize initialLocationInView=_initialLocationInView;
@@ -78,16 +79,12 @@
 - (void).cxx_destruct;
 - (id)ksuShowMetaData;
 - (void)editVideoWith:(id)arg1 originalVideoAsset:(id)arg2 movieInfo:(id)arg3 maxDuration:(double)arg4;
-- (void)generatePhotoVideoOnFinish:(CDUnknownBlockType)arg1 onProgress:(CDUnknownBlockType)arg2;
-- (void)applicationDidBecomeActive;
-- (void)applicationWillResignActive;
 - (long long)preferredBottomBarStyle;
 - (void)prepareComponentPermissions;
 - (_Bool)disablePageGestureRecognizerShouldBegin:(id)arg1;
 - (void)resumePreviewing;
 - (void)pausePreviewing;
 @property(nonatomic) _Bool active;
-- (void)processSelectedPicturesProgress:(CDUnknownBlockType)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)centerPreviewIfNeeded;
 - (void)scrollViewDidZoom:(id)arg1;
 - (id)viewForZoomingInScrollView:(id)arg1;
@@ -97,7 +94,6 @@
 - (void)removeLastImageInAtlas;
 - (void)insertImage2Video:(id)arg1 asset:(id)arg2;
 - (void)finishSingleSelectImage:(id)arg1 info:(id)arg2;
-- (void)finishSingleSelectALAsset:(id)arg1;
 - (void)finishSingleSelectPHAsset:(id)arg1 movieInfo:(id)arg2;
 - (void)didClickConfirm:(id)arg1;
 - (void)updateAssetPreviewsWithCurrentAsset;
@@ -146,10 +142,9 @@
 - (void)setupAssetCollectionView;
 - (void)setupNavigationBar;
 - (void)exportAndEditVideoAsset:(id)arg1 movieInfo:(id)arg2;
-- (void)exportPHVideoAsset:(id)arg1 exportPreset:(id)arg2 slow:(_Bool)arg3 movieInfo:(id)arg4;
+- (void)exportVideoAsset:(id)arg1 exportPreset:(id)arg2 slow:(_Bool)arg3 movieInfo:(id)arg4;
 - (void)setProgressTimer:(id)arg1;
 - (id)progressTimer;
-- (id)avExportVideoOperationQueue;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

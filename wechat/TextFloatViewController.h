@@ -7,14 +7,15 @@
 #import "MMUIViewController.h"
 
 #import "ILinkEventExt-Protocol.h"
-#import "MMRichTextCopyEventDelegate-Protocol.h"
+#import "MMRTCMenuResponderDelegate-Protocol.h"
+#import "MMRichTextSelectEventDelegate-Protocol.h"
 #import "TransitioningAnimationDelegate-Protocol.h"
 #import "scrollViewDelegate-Protocol.h"
 
 @class CTRichTextView, CrossfadeAnimationController, MMRichTextCoverView, MMScrollView, NSString, UIButton, UIFont, UIView;
 @protocol ILinkEventExt, TextFloatPreviewDelegate;
 
-@interface TextFloatViewController : MMUIViewController <TransitioningAnimationDelegate, ILinkEventExt, scrollViewDelegate, MMRichTextCopyEventDelegate>
+@interface TextFloatViewController : MMUIViewController <TransitioningAnimationDelegate, MMRTCMenuResponderDelegate, ILinkEventExt, scrollViewDelegate, MMRichTextSelectEventDelegate>
 {
     UIView *m_oBackView;
     UIButton *m_view;
@@ -39,6 +40,7 @@
 @property(retain, nonatomic) NSString *nsContent; // @synthesize nsContent=_nsContent;
 @property(nonatomic) __weak id <TextFloatPreviewDelegate> m_delegate; // @synthesize m_delegate;
 - (void).cxx_destruct;
+- (id)getCurrentViewController;
 - (id)getScrollView;
 - (void)onRichTextViewExit;
 - (_Bool)respondsToSelector:(SEL)arg1;

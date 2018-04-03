@@ -6,11 +6,13 @@
 
 #import "NSObject-Protocol.h"
 
-@class NSArray, NSString, WAAppCanvasWrapperView;
+@class NSArray, NSDictionary, NSString, WAAppCanvasWrapperView;
 
 @protocol WAAppCanvasWrapperViewDelegate <NSObject>
 
 @optional
+- (void)onWrapperView:(WAAppCanvasWrapperView *)arg1 showDatePickerView:(NSDictionary *)arg2;
+- (void)onWrapperView:(WAAppCanvasWrapperView *)arg1 showPickerView:(NSDictionary *)arg2;
 - (void)onWrapperView:(WAAppCanvasWrapperView *)arg1 dataUpdated:(NSString *)arg2;
 - (void)onWrapperView:(WAAppCanvasWrapperView *)arg1 viewStateChanged:(unsigned long long)arg2;
 - (void)onWrapperView:(WAAppCanvasWrapperView *)arg1 authorizeSuccess:(NSArray *)arg2;

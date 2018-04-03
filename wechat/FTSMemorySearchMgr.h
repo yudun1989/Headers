@@ -12,18 +12,13 @@
 #import "MMKernelExt-Protocol.h"
 #import "MMPackageDownloadMgrExt-Protocol.h"
 
-@class FTSTopHitMgr, NSArray, NSMutableArray, NSMutableDictionary, NSString, Package;
+@class FTSTopHitMgr, NSMutableArray, NSMutableDictionary, NSString, Package;
 
 @interface FTSMemorySearchMgr : NSObject <IMMLanguageMgrExt, MMKernelExt, MMPackageDownloadMgrExt, IGameCenterExt, FTSTopHitDelegate>
 {
     _Bool _hasInited;
     _Bool _isLocalGameCacheUpdating;
     unsigned long long _gameCacheModifyTime;
-    NSString *_lastQueryText;
-    NSString *_newestQueryText;
-    NSMutableArray *_arrLastQueryKeywords;
-    NSMutableDictionary *_dicSearchMatchTip;
-    NSMutableArray *_arrFeatureResultItem;
     NSMutableDictionary *_dicSourceFeatureSearchItem;
     unsigned int _curFeatureListVersion;
     unsigned int _lastCheckPackageTime;
@@ -32,6 +27,14 @@
     NSMutableArray *_arrWCGameResultItem;
     NSMutableArray *_arrDetailPageWCGameResultItem;
     NSMutableDictionary *_dicChinesePinYin;
+    _Bool _isForbidWCGame;
+    NSString *_lastQueryText;
+    NSString *_newestQueryText;
+    NSMutableArray *_arrLastQueryKeywords;
+    NSMutableArray *_arrFeatureResultItem;
+    NSMutableArray *_arrFeatureResultItemForDetail;
+    NSMutableDictionary *_dicFeatureMatchTip;
+    NSMutableDictionary *_dicFeatureMatchTipForDetail;
     NSMutableDictionary *_dicGameMatchTip;
     NSMutableDictionary *_dicGameMatchTipForDetail;
     NSString *_newestDetailPageQueryText;
@@ -44,9 +47,14 @@
 @property(retain, nonatomic) NSMutableArray *arrDetailPageLastQueryKeywords; // @synthesize arrDetailPageLastQueryKeywords=_arrDetailPageLastQueryKeywords;
 @property(retain, nonatomic) NSString *lastDetailPageQueryText; // @synthesize lastDetailPageQueryText=_lastDetailPageQueryText;
 @property(retain, nonatomic) NSString *newestDetailPageQueryText; // @synthesize newestDetailPageQueryText=_newestDetailPageQueryText;
-@property(retain, nonatomic) NSMutableDictionary *dicGameMatchTipForDetail; // @synthesize dicGameMatchTipForDetail=_dicGameMatchTipForDetail;
-@property(retain, nonatomic) NSMutableDictionary *dicGameMatchTip; // @synthesize dicGameMatchTip=_dicGameMatchTip;
-@property(retain, nonatomic) NSArray *arrLastQueryKeywords; // @synthesize arrLastQueryKeywords=_arrLastQueryKeywords;
+@property(readonly, nonatomic) NSMutableDictionary *dicGameMatchTipForDetail; // @synthesize dicGameMatchTipForDetail=_dicGameMatchTipForDetail;
+@property(readonly, nonatomic) NSMutableDictionary *dicGameMatchTip; // @synthesize dicGameMatchTip=_dicGameMatchTip;
+@property(readonly, nonatomic) NSMutableDictionary *dicFeatureMatchTipForDetail; // @synthesize dicFeatureMatchTipForDetail=_dicFeatureMatchTipForDetail;
+@property(readonly, nonatomic) NSMutableDictionary *dicFeatureMatchTip; // @synthesize dicFeatureMatchTip=_dicFeatureMatchTip;
+@property(readonly, nonatomic) NSMutableArray *arrFeatureResultItemForDetail; // @synthesize arrFeatureResultItemForDetail=_arrFeatureResultItemForDetail;
+@property(readonly, nonatomic) NSMutableArray *arrFeatureResultItem; // @synthesize arrFeatureResultItem=_arrFeatureResultItem;
+@property(nonatomic) _Bool isForbidWCGame; // @synthesize isForbidWCGame=_isForbidWCGame;
+@property(retain, nonatomic) NSMutableArray *arrLastQueryKeywords; // @synthesize arrLastQueryKeywords=_arrLastQueryKeywords;
 @property(retain, nonatomic) NSString *newestQueryText; // @synthesize newestQueryText=_newestQueryText;
 @property(retain, nonatomic) NSString *lastQueryText; // @synthesize lastQueryText=_lastQueryText;
 - (void).cxx_destruct;
@@ -79,6 +87,9 @@
 - (_Bool)hasGameSearchResult:(id)arg1;
 - (void)cancelSearchForGameDetailPage;
 - (void)asyncSearchTextForGameDetailPage:(id)arg1;
+- (_Bool)hasSearchDoneForFeatureDetailPage:(id)arg1;
+- (void)cancelSearchForFeatureDetailPage;
+- (void)asyncSearchFeatureForDetailPage:(id)arg1;
 - (id)getWCGameItem:(id)arg1 index:(unsigned long long)arg2;
 - (id)getMatchTip:(id)arg1 featureID:(unsigned int)arg2;
 - (id)getFeatureItem:(id)arg1 index:(unsigned long long)arg2;

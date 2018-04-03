@@ -4,22 +4,25 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-#import <objc/NSObject.h>
+#import "LYWBaseAction.h"
 
 #import "LYWServiceAction-Protocol.h"
 
 @class NSString;
 
-@interface KSSelectTabAction : NSObject <LYWServiceAction>
+@interface KSSelectTabAction : LYWBaseAction <LYWServiceAction>
 {
-    int _selectedTab;
+    unsigned long long _selectedTab;
+    NSString *_statisticalName;
 }
 
-@property(nonatomic) int selectedTab; // @synthesize selectedTab=_selectedTab;
-@property(readonly, copy) NSString *description;
+@property(retain, nonatomic) NSString *statisticalName; // @synthesize statisticalName=_statisticalName;
+@property(nonatomic) unsigned long long selectedTab; // @synthesize selectedTab=_selectedTab;
+- (void).cxx_destruct;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;
+@property(readonly, copy) NSString *description;
 @property(readonly) unsigned long long hash;
 @property(readonly) Class superclass;
 

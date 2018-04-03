@@ -83,8 +83,6 @@
 - (void)delayHiddenMusicPlayBannerIfPlayerIdle:(id)arg1;
 - (void)reloadMusicBanner;
 - (void)updateMusicPlayBanner:(id)arg1;
-- (void)onResumeMusic:(id)arg1;
-- (void)onPlayMusic:(id)arg1 fromScene:(int)arg2;
 - (void)onMusicPlayInnerStatusChanged:(unsigned long long)arg1 musicInfo:(id)arg2 errInfo:(id)arg3;
 - (void)showCancelMusicPlay;
 - (void)processArticleReadWebview:(_Bool)arg1;

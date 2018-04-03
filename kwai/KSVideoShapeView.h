@@ -56,6 +56,7 @@
 - (void)touchesBegan:(id)arg1 withEvent:(id)arg2;
 - (void)didLongPress:(id)arg1;
 - (void)didDragBubbleView:(id)arg1;
+- (void)didTapBanner;
 - (void)didPinchBubbleView:(id)arg1;
 - (void)didRotateBubbleView:(id)arg1;
 - (void)didTapMenuButton:(id)arg1;

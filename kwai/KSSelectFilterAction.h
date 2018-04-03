@@ -4,30 +4,29 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-#import <objc/NSObject.h>
-
-#import "LYWAction-Protocol.h"
+#import "LYWBaseAction.h"
 
 @class NSString;
 
-@interface KSSelectFilterAction : NSObject <LYWAction>
+@interface KSSelectFilterAction : LYWBaseAction
 {
+    _Bool _shouldEdit;
     _Bool _isLast;
     _Bool _isFirst;
     _Bool _isSwipped;
     unsigned long long _selectedIndex;
+    NSString *_filterSelectType;
 }
 
+@property(retain, nonatomic) NSString *filterSelectType; // @synthesize filterSelectType=_filterSelectType;
 @property(nonatomic) _Bool isSwipped; // @synthesize isSwipped=_isSwipped;
 @property(nonatomic) _Bool isFirst; // @synthesize isFirst=_isFirst;
 @property(nonatomic) _Bool isLast; // @synthesize isLast=_isLast;
+@property(nonatomic) _Bool shouldEdit; // @synthesize shouldEdit=_shouldEdit;
 @property(nonatomic) unsigned long long selectedIndex; // @synthesize selectedIndex=_selectedIndex;
-@property(readonly, copy) NSString *description;
-
-// Remaining properties
-@property(readonly, copy) NSString *debugDescription;
-@property(readonly) unsigned long long hash;
-@property(readonly) Class superclass;
+- (void).cxx_destruct;
+- (id)initWithSelectedIndex:(unsigned long long)arg1 isLast:(_Bool)arg2 isFirst:(_Bool)arg3 isSwipped:(_Bool)arg4 filterSelectType:(id)arg5;
+- (id)initWithSelectedIndex:(unsigned long long)arg1 isLast:(_Bool)arg2 isFirst:(_Bool)arg3 isSwipped:(_Bool)arg4;
 
 @end
 

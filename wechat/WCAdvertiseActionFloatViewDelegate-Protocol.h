@@ -6,9 +6,10 @@
 
 #import "NSObject-Protocol.h"
 
-@class WCAdDislikeReason, WCAdvertiseActionFloatView;
+@class WCAdDislikeReason, WCAdFeedbackItem, WCAdvertiseActionFloatView;
 
 @protocol WCAdvertiseActionFloatViewDelegate <NSObject>
+- (void)onActionFloatView:(WCAdvertiseActionFloatView *)arg1 didSelectFeedbackItem:(WCAdFeedbackItem *)arg2;
 - (void)onActionFloatView:(WCAdvertiseActionFloatView *)arg1 didSelectReason:(WCAdDislikeReason *)arg2;
 @end
 

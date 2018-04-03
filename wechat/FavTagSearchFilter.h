@@ -24,9 +24,11 @@
     id <FavTagSearchFilterDelegate> m_delegate;
     SGTopEntryView *m_guideEntryView;
     UIView *m_sepLine;
+    _Bool _m_bShowFilterView;
     int m_currentType;
 }
 
+@property(nonatomic) _Bool m_bShowFilterView; // @synthesize m_bShowFilterView=_m_bShowFilterView;
 @property(nonatomic) __weak id <FavTagSearchFilterDelegate> m_delegate; // @synthesize m_delegate;
 @property(nonatomic) int m_currentType; // @synthesize m_currentType;
 - (void).cxx_destruct;

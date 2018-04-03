@@ -6,41 +6,56 @@
 
 #import <objc/NSObject.h>
 
+#import "KSLocalAlbumWorkSpaceFilterConvertable-Protocol.h"
+
 @class NSArray, NSString, UIImage;
 
-@interface KSMediaEditFilter : NSObject
+@interface KSMediaEditFilter : NSObject <KSLocalAlbumWorkSpaceFilterConvertable>
 {
-    _Bool _selected;
-    _Bool _isBeautify;
     float _value;
     int _type;
-    float _originalValue;
-    float _finalValue;
     NSString *_title;
     UIImage *_previewImage;
-    CDUnknownBlockType _appearance;
+    unsigned long long _status;
     NSArray *_resources;
     NSArray *_resourceNames;
+    NSString *_nonLocalizedName;
+    NSString *_statisticalName;
 }
 
++ (id)filterWithTitle:(id)arg1 resources:(id)arg2 value:(float)arg3 type:(int)arg4 statisticalName:(id)arg5;
++ (id)oldMapFilterTypeByFilterName;
++ (id)makeFiltersForAtlasEdit;
++ (id)makeFiltersForVideoEdit;
+@property(retain, nonatomic) NSString *statisticalName; // @synthesize statisticalName=_statisticalName;
+@property(readonly, nonatomic) NSString *nonLocalizedName; // @synthesize nonLocalizedName=_nonLocalizedName;
 @property(retain, nonatomic) NSArray *resourceNames; // @synthesize resourceNames=_resourceNames;
-@property(nonatomic) float finalValue; // @synthesize finalValue=_finalValue;
-@property(nonatomic) float originalValue; // @synthesize originalValue=_originalValue;
-@property(nonatomic) _Bool isBeautify; // @synthesize isBeautify=_isBeautify;
 @property(retain, nonatomic) NSArray *resources; // @synthesize resources=_resources;
 @property(nonatomic) int type; // @synthesize type=_type;
-@property(copy, nonatomic) CDUnknownBlockType appearance; // @synthesize appearance=_appearance;
-@property(nonatomic) _Bool selected; // @synthesize selected=_selected;
+@property(nonatomic) unsigned long long status; // @synthesize status=_status;
 @property(nonatomic) float value; // @synthesize value=_value;
 @property(retain, nonatomic) UIImage *previewImage; // @synthesize previewImage=_previewImage;
 @property(retain, nonatomic) NSString *title; // @synthesize title=_title;
 - (void).cxx_destruct;
 - (id)_lookupPathForResourceName:(id)arg1;
+- (_Bool)editable;
 - (_Bool)resourceReady;
 - (void)reloadResource;
-- (id)description;
+@property(readonly, copy) NSString *description;
+- (id)initWithTitle:(id)arg1 resources:(id)arg2 value:(float)arg3 type:(int)arg4 statisticalName:(id)arg5;
+- (id)makeFilter;
 - (id)makeBeautifyFilter;
 - (id)makeColorFilter;
+- (_Bool)isTheSameTypeOfFilterAs:(id)arg1;
+- (id)initWithMetaFilter:(id)arg1;
+- (id)metaFilter;
+- (void)encodeWithCoder:(id)arg1;
+- (id)initWithCoder:(id)arg1;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
 
 @end
 

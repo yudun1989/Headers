@@ -6,18 +6,28 @@
 
 #import "LYWComponent.h"
 
-@class KSMediaEditTrimmingViewController;
+@class KSMMediaProject, KSMediaEditTrimmingViewController, NSArray;
 
 @interface KSMediaEditTrimmingComponent : LYWComponent
 {
+    int _rotateDegree;
     KSMediaEditTrimmingViewController *_trimmingViewController;
+    double _currentPlayTime;
+    NSArray *_deleteRange;
+    KSMMediaProject *_project;
+    double _maxTrimmingDuration;
 }
 
+@property(nonatomic) double maxTrimmingDuration; // @synthesize maxTrimmingDuration=_maxTrimmingDuration;
+@property(retain, nonatomic) KSMMediaProject *project; // @synthesize project=_project;
+@property(retain, nonatomic) NSArray *deleteRange; // @synthesize deleteRange=_deleteRange;
+@property(nonatomic) double currentPlayTime; // @synthesize currentPlayTime=_currentPlayTime;
+@property(nonatomic) int rotateDegree; // @synthesize rotateDegree=_rotateDegree;
 @property(retain, nonatomic) KSMediaEditTrimmingViewController *trimmingViewController; // @synthesize trimmingViewController=_trimmingViewController;
 - (void).cxx_destruct;
 - (_Bool)_stateObserveThrottled;
-- (void)_setupTrimmingWithNewState:(id)arg1 oldState:(id)arg2;
-- (void)newState:(id)arg1 oldState:(id)arg2;
+- (void)_setupTrimmingWithNewState:(id)arg1;
+- (void)newState:(id)arg1;
 - (id)initWithStore:(id)arg1;
 
 @end

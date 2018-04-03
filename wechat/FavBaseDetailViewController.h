@@ -31,6 +31,8 @@
 - (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;
 - (long long)tableView:(id)arg1 numberOfRowsInSection:(long long)arg2;
 - (long long)numberOfSectionsInTableView:(id)arg1;
+- (void)convertToNoteViewController;
+- (_Bool)canShowConvertToNoteActionSheet;
 - (void)genAddTime:(id)arg1 indexPath:(id)arg2;
 - (void)genTagsView:(id)arg1 indexPath:(id)arg2;
 - (void)genHeadCell:(id)arg1 indexPath:(id)arg2;
@@ -38,11 +40,13 @@
 - (double)getHeightForRowAtIndexPath:(id)arg1;
 - (long long)getRowsInContentSection;
 - (void)onAction:(id)arg1;
+- (id)baseBackgroundColor;
 - (void)initTableView;
 - (void)initNavigationBar;
 - (void)didReceiveMemoryWarning;
 - (void)viewDidLayoutSubviews;
 - (void)viewDidBePoped:(_Bool)arg1;
+- (_Bool)isNeedDownloadWithDataList:(id)arg1;
 - (void)viewDidLoad;
 - (void)dealloc;
 - (id)initWithFavItem:(id)arg1;

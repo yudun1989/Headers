@@ -32,6 +32,7 @@
     WXGSpeedFilter *m_receiveSpeedFilter;
     NSDate *m_sendStartDate;
     NSDate *m_receiveStartDate;
+    _Bool m_bTestSpeedOpen;
     id <LocalAreaPeerClientDelegate> _delegate;
 }
 
@@ -56,6 +57,8 @@
 - (void)stopClient;
 - (void)p_checkConnected;
 - (void)startClientWithDiscoverInfo:(id)arg1 withAnswerInfo:(id)arg2 withServiceType:(id)arg3;
+- (void)markTestSpeedClose;
+- (void)markTestSpeedOpen;
 - (void)dealloc;
 - (id)init;
 

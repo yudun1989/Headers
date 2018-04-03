@@ -15,7 +15,10 @@
 + (id)getPublicResPathWithDebugModeType:(unsigned long long)arg1 version:(unsigned long long)arg2;
 + (id)getWeAppLocalCacheFileNameWithVersion:(unsigned long long)arg1;
 + (id)getWeAppLocalCacheRootDirPathWithAppid:(id)arg1;
++ (id)getReleaseAppLocalCacheRootDirPath;
 + (id)getWeAppDebugLocalCacheRootDirPathWithAppid:(id)arg1;
++ (id)getDebugWeAppLocalCacheRootDirPath;
++ (id)getWeAppLocalCacheFilePathWithAppInfo:(id)arg1;
 + (id)getWeAppLocalCacheFilePathWithAppid:(id)arg1 version:(unsigned long long)arg2 isDebugMode:(unsigned long long)arg3 packageType:(unsigned long long)arg4 moduleName:(id)arg5 encryptType:(unsigned long long)arg6;
 + (id)downloadCachesDirectoryPath;
 

@@ -11,11 +11,16 @@
 #import "ILinkEventExt-Protocol.h"
 #import "UIAlertViewDelegate-Protocol.h"
 
-@class FaceRecog3rdVerifyConfirmLogic, FaceRecog3rdVerifyHandler, MMTableViewInfo, MMUILabel, NSString, UIButton, UIImageView;
+@class FaceRecog3rdVerifyConfirmLogic, FaceRecog3rdVerifyHandler, MMTableViewInfo, MMUILabel, NSString, RichTextView, UIButton, UIImageView;
 @protocol FaceRecog3rdVerifyConfirmViewControllerDelegate;
 
 @interface FaceRecog3rdVerifyConfirmViewController : MMUIViewController <FaceRecog3rdVerifyConfirmLogicDelegate, FaceRecogHandlerDelegate, ILinkEventExt, UIAlertViewDelegate>
 {
+    UIButton *_readAgreementBtn;
+    RichTextView *_agreementView;
+    UIButton *_feedbackButton;
+    _Bool _bAgreement;
+    UIImageView *_imageCheckBox;
     _Bool _needVideo;
     unsigned int _scene;
     id <FaceRecog3rdVerifyConfirmViewControllerDelegate> _delegate;
@@ -52,7 +57,10 @@
 - (void)initData;
 - (void)onStartFaceReco;
 - (void)doStartFaceReco;
+- (void)onFeedback;
+- (id)faceRecogVerifyGetFeedbackUrl;
 - (void)initBottomRulesView:(id)arg1;
+- (void)onClickCheckBox;
 - (void)initConfirmButton:(id)arg1;
 - (void)makeInfoCell:(id)arg1 CellInfo:(id)arg2;
 - (void)initFooterView;

@@ -4,13 +4,13 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-#import <UIKit/UIButton.h>
+#import <UIKit/UIView.h>
 
 #import "MMWebImageViewDelegate-Protocol.h"
 
 @class MMWebImageView, NSString;
 
-@interface MMDeviceHeadImageView : UIButton <MMWebImageViewDelegate>
+@interface MMDeviceHeadImageView : UIView <MMWebImageViewDelegate>
 {
     MMWebImageView *m_headView;
     _Bool m_borderRadius;

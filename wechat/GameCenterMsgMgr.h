@@ -82,6 +82,11 @@
 - (void)filterUserInfoList:(id)arg1 DbMsg:(id)arg2;
 - (_Bool)mergeOriginXmlFromDB:(id)arg1;
 - (unsigned int)saveMsg:(id)arg1;
+- (void)tryCheckUpdateWithDownloadTriggerType:(unsigned int)arg1;
+- (void)tryCheckUpdateWhenEnterFindFriend;
+- (void)tryCheckUpdateWhenEnterForeground;
+- (void)trySavePkgIdForFutureCheckUpdate:(id)arg1 DownloadTriggerType:(unsigned int)arg2;
+- (void)tryDownloadOrSave:(id)arg1 DownloadTriggerType:(unsigned int)arg2;
 - (void)wePkgMsgReceived:(struct XmlReaderNode_t *)arg1;
 - (void)notifyMsgReceived:(id)arg1 RootNode:(struct XmlReaderNode_t *)arg2;
 - (void)OnGetNewXmlMsg:(id)arg1 Type:(id)arg2 MsgWrap:(id)arg3;

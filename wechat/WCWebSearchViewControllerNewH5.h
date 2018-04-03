@@ -14,7 +14,7 @@
 #import "UITextFieldDelegate-Protocol.h"
 #import "WSTagSearchDelegate-Protocol.h"
 
-@class MMTagTextField, MMUILabel, MMWebSearchController, NSDictionary, NSString, SGTopEntryView, SearchVoiceInputViewController, UIButton, UIImageView, UIView, WCFullScreenTitleView, WCStatTimerHelper, WSLabelIconButton, WSTagSearchLogic;
+@class MMTagTextField, MMUILabel, MMWebSearchController, NSDictionary, NSString, SGTopEntryView, SearchVoiceInputViewController, UIButton, UIImageView, UIView, WCFullScreenTitleView, WCStatTimerHelper, WSTagSearchLogic;
 @protocol WCWebSearchViewControllerDelegate, YYWebViewInterface;
 
 @interface WCWebSearchViewControllerNewH5 : MMUIViewController <UITextFieldDelegate, SGTopEntryViewDelegate, MMWebSearchViewDelegate, WSTagSearchDelegate, SearchVoiceInputViewControllerDelegate, IStreamVoiceInputExt, IRecordPermissionCheckExt>
@@ -22,18 +22,14 @@
     NSString *_lastFormatQueryFromMultiStageForFixingWKSearchBug;
     UIView *_navBarBkg;
     UIView *_navBarShadowView;
-    UIView *_navBarSwitchContentBackView;
-    UIView *_navBarSwitchContentView;
-    SGTopEntryView *_navBarSwitchPanel;
-    UIButton *_navBarSwitchAllButton;
     unsigned long long _currentSwitchBusinessType;
     WCFullScreenTitleView *_titleView;
     UIView *_navContentView;
     UIView *_navContentRightDivideView;
-    WSLabelIconButton *_navSwitchButton;
     MMTagTextField *_navSearchTextField;
     UIImageView *_navSearchLeftView;
     MMUILabel *_navTitleLabel;
+    UIButton *_navVoiceInputButton;
     UIView *_cornerWrapView;
     UIView *_cornerClipView;
     UIView *_contentSearchTextFieldWrapView;
@@ -47,7 +43,6 @@
     WSTagSearchLogic *_tagSearchLogic;
     _Bool _isAnimatingToWebSearch;
     int _sugOpStat;
-    _Bool _vertSearchMayHasData;
     _Bool _isFirstPage;
     UIView<YYWebViewInterface> *_firstPageWebView;
     _Bool _isSencondPageFromVerticalEntrance;
@@ -97,8 +92,6 @@
 - (double)webSearchViewPosY;
 - (void)startCommonSearch:(id)arg1 withSugId:(id)arg2;
 - (void)startVerticalWebSearch:(unsigned long long)arg1;
-- (void)updateNavBarSwitchAllButtonColorWithText:(id)arg1;
-- (void)setSwitchButtonText:(id)arg1;
 - (void)onSwitchSearchContext:(int)arg1 andType:(unsigned long long)arg2 andQuery:(id)arg3;
 - (void)onClickWithData:(id)arg1;
 - (_Bool)textFieldShouldReturn:(id)arg1;
@@ -117,7 +110,7 @@
 - (void)animateShowVoiceInputController;
 - (void)contentSearchBtnClicked:(id)arg1 isVoiceInputBtnClick:(_Bool)arg2;
 - (void)onContentSearchHitBtnClick:(id)arg1;
-- (void)onClickContentVoiceInput:(id)arg1;
+- (void)onClickVoiceInput:(id)arg1;
 - (_Bool)isDetailSearch;
 - (_Bool)isVertSearh;
 - (_Bool)isMixSearch;
@@ -132,6 +125,7 @@
 - (void)beginWebSearchAnimation;
 - (void)didEndWebSearch;
 - (void)willEndWebSearch;
+- (void)tryInitNavVoiceButton;
 - (void)didBeginWebSearch;
 - (void)willBeginWebSearch;
 - (void)setPlaceImage:(id)arg1;
@@ -143,13 +137,6 @@
 - (void)layoutNavContentForNormalStatus;
 - (void)layoutNavContentForEditStatus;
 - (void)layoutContent;
-- (void)layoutNavBarSwitchContent;
-- (void)onTapNavSwitchContentBackView:(id)arg1;
-- (void)onSwitchSearchTypeForDefault:(id)arg1;
-- (_Bool)isDisplayingSwitchPanel;
-- (void)initNavBarSwitchContent;
-- (void)updateSwitchIndicator;
-- (void)onClickNavSwitchButton:(id)arg1;
 - (void)onNavigationCancelItemClick:(id)arg1;
 - (void)onNavigationBackItemClick:(id)arg1;
 - (void)updateNavBarShadow;
@@ -158,7 +145,6 @@
 - (void)setNavCancelButtonHidden:(_Bool)arg1;
 - (void)setFakeNavBarHidden:(_Bool)arg1 slideAnimated:(_Bool)arg2;
 - (void)resetNavSearch;
-- (void)updateSwitchButtonSize;
 - (void)tryShowStreamVoiceInputViewController;
 - (void)initNavigationBar;
 - (void)reportGuideEntryViewExposure;

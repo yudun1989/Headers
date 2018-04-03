@@ -6,11 +6,12 @@
 
 #import <MMCommon/MMObject.h>
 
+#import "NSCoding-Protocol.h"
 #import "PBCoding-Protocol.h"
 
 @class MMImageExifLogInfo, NSMutableArray, NSString, VideoUploadStatInfo;
 
-@interface SightDraft : MMObject <PBCoding>
+@interface SightDraft : MMObject <PBCoding, NSCoding>
 {
     int draftID;
     int date;
@@ -33,6 +34,8 @@
 - (void)addItem:(id)arg1;
 - (void)dealloc;
 - (id)init;
+- (id)initWithCoder:(id)arg1;
+- (void)encodeWithCoder:(id)arg1;
 - (const map_490096f0 *)getValueTagIndexMap;
 - (id)getValueTypeTable;
 - (void)saveToPhotoLibraryWithTips:(_Bool)arg1;

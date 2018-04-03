@@ -15,5 +15,8 @@
 - (void)OnDownloadVideoErrorExpired:(_Bool)arg1;
 - (void)onGetFristPartAVData;
 - (void)onGetAVDataFromNetOffset:(unsigned int)arg1 Length:(unsigned int)arg2 NeedNotifyToPlay:(_Bool)arg3;
+
+@optional
+- (void)onDownloadVideoReturnCode:(int)arg1;
 @end
 

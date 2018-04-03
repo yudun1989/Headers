@@ -8,28 +8,35 @@
 
 #import "UICollectionViewDataSource-Protocol.h"
 #import "UICollectionViewDelegate-Protocol.h"
+#import "UICollectionViewDelegateFlowLayout-Protocol.h"
 
-@class NSMutableArray, NSString, UICollectionView, UICollectionViewFlowLayout;
+@class NSArray, NSMutableArray, NSString, UICollectionView;
 
-@interface KSMediaEditTabComponent : LYWComponent <UICollectionViewDelegate, UICollectionViewDataSource>
+@interface KSMediaEditTabComponent : LYWComponent <UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout>
 {
     NSMutableArray *_tabItems;
-    UICollectionViewFlowLayout *_layout;
-    UICollectionView *_collectioinView;
+    UICollectionView *_collectionView;
+    NSArray *_displayTabs;
+    unsigned long long _selectedTab;
 }
 
-@property(retain, nonatomic) UICollectionView *collectioinView; // @synthesize collectioinView=_collectioinView;
-@property(retain, nonatomic) UICollectionViewFlowLayout *layout; // @synthesize layout=_layout;
++ (id)createFlowLayout;
++ (id)createCollectionView;
+@property(nonatomic) unsigned long long selectedTab; // @synthesize selectedTab=_selectedTab;
+@property(retain, nonatomic) NSArray *displayTabs; // @synthesize displayTabs=_displayTabs;
+@property(retain, nonatomic) UICollectionView *collectionView; // @synthesize collectionView=_collectionView;
 @property(retain, nonatomic) NSMutableArray *tabItems; // @synthesize tabItems=_tabItems;
 - (void).cxx_destruct;
-- (void)_configTabsWithState:(id)arg1;
+- (void)_hightTabWithNewState:(id)arg1;
+- (void)_configTabsWithNewState:(id)arg1;
+- (struct CGSize)collectionView:(id)arg1 layout:(id)arg2 sizeForItemAtIndexPath:(id)arg3;
 - (void)collectionView:(id)arg1 didSelectItemAtIndexPath:(id)arg2;
 - (id)collectionView:(id)arg1 cellForItemAtIndexPath:(id)arg2;
 - (long long)collectionView:(id)arg1 numberOfItemsInSection:(long long)arg2;
-- (void)newState:(id)arg1 oldState:(id)arg2;
+- (void)newState:(id)arg1;
 - (void)viewDidLoad;
 - (void)loadView;
-- (id)initWithStore:(id)arg1 selector:(CDUnknownBlockType)arg2;
+- (id)initWithStore:(id)arg1;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

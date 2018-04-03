@@ -48,6 +48,7 @@
 - (void)handlePushWxACmdMsg:(id)arg1;
 - (void)handleBatchSyncVersion:(id)arg1;
 - (void)MessageReturn:(id)arg1 Event:(unsigned int)arg2;
+- (id)fetchNeedSyncUsageInfoAndClearOutdatedUsageInfo;
 - (_Bool)sendRequest:(id)arg1 Retry:(unsigned int)arg2;
 - (_Bool)requestVersionSyncForUsernameList:(id)arg1;
 - (void)checkWaitingQueue;

@@ -29,6 +29,7 @@
 - (void)getNoticeBanners:(CDUnknownBlockType)arg1;
 - (void)jsUnbindBankCard:(id)arg1;
 - (void)jsSelectWalletCurrency:(id)arg1;
+- (unsigned int)startPlathbPayMoneyLogic:(id)arg1 prepayId:(id)arg2 logicDelegate:(id)arg3;
 - (unsigned int)JumpPayCardListLogic:(id)arg1 JSEvent:(id)arg2 delegate:(id)arg3 param:(id)arg4;
 - (unsigned int)startJSOpenOfflinePayControlLogic:(id)arg1 paramDict:(id)arg2;
 - (unsigned int)startT2BCQueryDetailLogicFromHistory:(id)arg1 billId:(id)arg2 state:(unsigned long long)arg3;

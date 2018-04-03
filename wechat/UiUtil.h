@@ -14,7 +14,6 @@
 + (_Bool)isiPadSplitViewModeNow;
 + (_Bool)isiPadSplitViewMinimizeModeNow;
 + (void)setStatusBarStyle:(long long)arg1;
-+ (void)refreshStatusBarStyle;
 + (void)setStatusBarFontBlack;
 + (void)setStatusBarFontWhite;
 + (double)tabBarHeight;

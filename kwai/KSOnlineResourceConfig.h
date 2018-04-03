@@ -16,6 +16,7 @@
     NSString *_edit_resource_v3;
     NSString *_edit_resource_v4;
     NSString *_edit_resource_v5;
+    NSString *_edit_resource_v6;
     NSString *_magic_emoji_resource;
     NSString *_magic_emoji_resource_v2;
     NSString *_magic_emoji_resource_v3;
@@ -60,6 +61,7 @@
 @property(retain, nonatomic) NSString *magic_emoji_resource_v3; // @synthesize magic_emoji_resource_v3=_magic_emoji_resource_v3;
 @property(retain, nonatomic) NSString *magic_emoji_resource_v2; // @synthesize magic_emoji_resource_v2=_magic_emoji_resource_v2;
 @property(retain, nonatomic) NSString *magic_emoji_resource; // @synthesize magic_emoji_resource=_magic_emoji_resource;
+@property(retain, nonatomic) NSString *edit_resource_v6; // @synthesize edit_resource_v6=_edit_resource_v6;
 @property(retain, nonatomic) NSString *edit_resource_v5; // @synthesize edit_resource_v5=_edit_resource_v5;
 @property(retain, nonatomic) NSString *edit_resource_v4; // @synthesize edit_resource_v4=_edit_resource_v4;
 @property(retain, nonatomic) NSString *edit_resource_v3; // @synthesize edit_resource_v3=_edit_resource_v3;

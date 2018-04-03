@@ -23,7 +23,7 @@
 - (void)updateTitleAndSubTitleView:(id)arg1;
 - (void)updateTitleView:(id)arg1;
 - (id)getRightBarButton;
-- (void)PreviewImage:(id)arg1;
+- (void)PreviewImage:(id)arg1 soundable:(_Bool)arg2 snapshotView:(id)arg3 needEdit:(_Bool)arg4;
 - (void)headerImageClicked:(id)arg1;
 - (void)filterShowMenuItem:(id)arg1 sender:(id)arg2;
 - (void)onWeAppSessionMsgBtnClick:(id)arg1;

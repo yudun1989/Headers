@@ -15,31 +15,27 @@
 {
     _Bool _manualProcessInterrup;
     _Bool _pauseOnHeadPhoneOut;
-    _Bool _isPauseByManual;
-    _Bool _isObservering;
-    unsigned int _secondCacheCnt;
+    _Bool _bIsObservering;
+    _Bool _bIsManualPaused;
     KSSongInfo *_curSong;
     id <KSAudioPlayerDelegate> _delegate;
     unsigned long long _status;
-    double _playTimeWithNoPause;
     AVPlayer *_player;
     AVPlayerItem *_currentPlayerItem;
     double _cacheProgress;
     double _bufferTime;
-    double _startTime;
+    double _seekTime;
     double _resumeTime;
 }
 
-@property(nonatomic) _Bool isObservering; // @synthesize isObservering=_isObservering;
-@property(nonatomic) _Bool isPauseByManual; // @synthesize isPauseByManual=_isPauseByManual;
+@property(nonatomic) _Bool bIsManualPaused; // @synthesize bIsManualPaused=_bIsManualPaused;
+@property(nonatomic) _Bool bIsObservering; // @synthesize bIsObservering=_bIsObservering;
 @property(nonatomic) double resumeTime; // @synthesize resumeTime=_resumeTime;
-@property(nonatomic) double startTime; // @synthesize startTime=_startTime;
+@property(nonatomic) double seekTime; // @synthesize seekTime=_seekTime;
 @property(nonatomic) double bufferTime; // @synthesize bufferTime=_bufferTime;
 @property(nonatomic) double cacheProgress; // @synthesize cacheProgress=_cacheProgress;
 @property(retain, nonatomic) AVPlayerItem *currentPlayerItem; // @synthesize currentPlayerItem=_currentPlayerItem;
 @property(retain, nonatomic) AVPlayer *player; // @synthesize player=_player;
-@property(readonly, nonatomic) double playTimeWithNoPause; // @synthesize playTimeWithNoPause=_playTimeWithNoPause;
-@property(readonly, nonatomic) unsigned int secondCacheCnt; // @synthesize secondCacheCnt=_secondCacheCnt;
 @property(nonatomic) _Bool pauseOnHeadPhoneOut; // @synthesize pauseOnHeadPhoneOut=_pauseOnHeadPhoneOut;
 @property(nonatomic) _Bool manualProcessInterrup; // @synthesize manualProcessInterrup=_manualProcessInterrup;
 @property(readonly, nonatomic) unsigned long long status; // @synthesize status=_status;
@@ -53,6 +49,8 @@
 - (void)releasePlayer;
 - (void)setStatus:(unsigned long long)arg1 error:(id)arg2;
 - (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void *)arg4;
+@property(readonly, nonatomic) double playTimeWithNoPause;
+@property(readonly, nonatomic) unsigned int secondCacheCnt;
 @property(readonly, nonatomic) double curTime;
 @property(readonly, nonatomic) double duration;
 - (unsigned long long)errType;

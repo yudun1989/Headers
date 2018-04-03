@@ -13,6 +13,8 @@
 @property(readonly, nonatomic) NSError *error;
 @property(readonly, nonatomic) NSString *path;
 @property(nonatomic) __weak id <KSEExportTaskDelegate> delegate;
+- (unsigned long long)taskId;
+- (void)setFilterResourcePath:(NSString *)arg1;
 - (void)cancel;
 - (void)run;
 @end

@@ -8,14 +8,13 @@
 
 #import "KSMediaCoverPickSlider-Protocol.h"
 
-@class GPUImageOutput, NSMutableArray, NSObject, NSString, UIImage, UIImageView, UIView;
+@class BFExecutor, GPUImageOutput, NSMutableArray, NSObject, NSString, UIImage, UIImageView, UIView;
 @protocol KSPictureCoverSliderDataSource, OS_dispatch_queue;
 
 @interface KSPicturesCoverSlider : UIControl <KSMediaCoverPickSlider>
 {
     _Bool _dragging;
     unsigned long long _currentIndex;
-    GPUImageOutput *_gpuImageFilter;
     UIImage *_currentFrameImage;
     id <KSPictureCoverSliderDataSource> _dataSource;
     NSMutableArray *_snapshots;
@@ -26,22 +25,23 @@
     NSObject<OS_dispatch_queue> *_filterQueue;
     UIView *_leftOverlay;
     UIView *_rightOverlay;
+    BFExecutor *_filterExecutor;
     struct CGPoint _initialTouchPoint;
 }
 
+@property(retain, nonatomic) BFExecutor *filterExecutor; // @synthesize filterExecutor=_filterExecutor;
 @property(retain, nonatomic) UIView *rightOverlay; // @synthesize rightOverlay=_rightOverlay;
 @property(retain, nonatomic) UIView *leftOverlay; // @synthesize leftOverlay=_leftOverlay;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *filterQueue; // @synthesize filterQueue=_filterQueue;
 @property(nonatomic) unsigned long long numberOfSnapshotInSlider; // @synthesize numberOfSnapshotInSlider=_numberOfSnapshotInSlider;
-@property(nonatomic) _Bool dragging; // @synthesize dragging=_dragging;
 @property(nonatomic) struct CGPoint initialTouchPoint; // @synthesize initialTouchPoint=_initialTouchPoint;
 @property(retain, nonatomic) UIImageView *slidingView; // @synthesize slidingView=_slidingView;
 @property(nonatomic) double rightEdgeMargin; // @synthesize rightEdgeMargin=_rightEdgeMargin;
 @property(nonatomic) double leftEdgeMargin; // @synthesize leftEdgeMargin=_leftEdgeMargin;
 @property(retain, nonatomic) NSMutableArray *snapshots; // @synthesize snapshots=_snapshots;
 @property(nonatomic) __weak id <KSPictureCoverSliderDataSource> dataSource; // @synthesize dataSource=_dataSource;
+@property(nonatomic) _Bool dragging; // @synthesize dragging=_dragging;
 @property(readonly, nonatomic) UIImage *currentFrameImage; // @synthesize currentFrameImage=_currentFrameImage;
-@property(retain) GPUImageOutput *gpuImageFilter; // @synthesize gpuImageFilter=_gpuImageFilter;
 @property(nonatomic) unsigned long long currentIndex; // @synthesize currentIndex=_currentIndex;
 - (void).cxx_destruct;
 @property(readonly, nonatomic) unsigned long long numberOfSnaphots;
@@ -51,19 +51,20 @@
 - (void)cancelTrackingWithEvent:(id)arg1;
 - (_Bool)continueTrackingWithTouch:(id)arg1 withEvent:(id)arg2;
 - (_Bool)beginTrackingWithTouch:(id)arg1 withEvent:(id)arg2;
+- (void)scrollToIndex:(unsigned long long)arg1 animated:(_Bool)arg2;
+- (double)positionOfIndex:(unsigned long long)arg1;
 - (long long)indexOfCurrentPosition;
 - (void)updateSlidingViewWithImage:(id)arg1;
-- (void)updateSlidingViewImageCompletion:(CDUnknownBlockType)arg1;
-- (id)filteredImageWithImage:(id)arg1;
-- (void)updateSlidingViewSync;
-- (void)updateSlidingViewAsync;
-- (void)updateSnapshotsCompletion:(CDUnknownBlockType)arg1;
-- (void)updateSnapshotsSynchronously;
+- (id)_requestTaskForImage;
+- (id)updateSlidingViewAsync;
+- (id)reloadData;
+- (id)updateSnapshots;
 - (id)initWithFrame:(struct CGRect)arg1 dataSource:(id)arg2;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;
 @property(readonly, copy) NSString *description;
+@property(retain) GPUImageOutput *gpuImageFilter;
 @property(readonly) unsigned long long hash;
 @property(readonly) Class superclass;
 

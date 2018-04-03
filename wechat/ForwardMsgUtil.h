@@ -15,6 +15,7 @@
 + (id)locMsgFromMsgWrap:(id)arg1;
 + (id)cardMsgFromMsgWrap:(id)arg1;
 + (id)emojiMsgFromMsgWrap:(id)arg1;
++ (id)checkSourcePathFileFromMsg:(id)arg1 withDataList:(id)arg2;
 + (id)genForwardAppRecordItemFromMsg:(id)arg1;
 + (id)appMsgFromMsgWrap:(id)arg1;
 + (id)imgMsgFromMsgWrap:(id)arg1;

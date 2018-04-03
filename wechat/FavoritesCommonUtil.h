@@ -10,6 +10,7 @@
 {
 }
 
++ (_Bool)SelectCanvasFavItem:(id)arg1 FromViewController:(id)arg2 thumbView:(id)arg3 showNavigationBar:(_Bool)arg4;
 + (_Bool)SelectCanvasFavItem:(id)arg1 FromViewController:(id)arg2 thumbView:(id)arg3;
 + (void)selectFileData:(id)arg1 FromViewController:(id)arg2;
 + (void)selectLocationData:(id)arg1 FromViewController:(id)arg2 Delegate:(id)arg3;

@@ -6,11 +6,13 @@
 
 #import "NSObject-Protocol.h"
 
-@class NSArray, NSString;
+@class NSArray, NSDictionary, NSString;
 
 @protocol IWAMsgNodeJSCoreDelegate <NSObject>
 
 @optional
+- (void)onJSCore:(unsigned int)arg1 showDatePickerView:(NSDictionary *)arg2;
+- (void)onJSCore:(unsigned int)arg1 showPickerView:(NSDictionary *)arg2;
 - (void)onJSCore:(unsigned int)arg1 dataUpdated:(NSString *)arg2;
 - (void)onJSCore:(unsigned int)arg1 authorizeSuccess:(NSArray *)arg2;
 - (void)onJSCore:(unsigned int)arg1 openApp:(NSString *)arg2;

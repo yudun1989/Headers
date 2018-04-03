@@ -17,7 +17,12 @@
 // Remaining properties
 @property(retain, nonatomic) BaseResponse *baseResponse; // @dynamic baseResponse;
 @property(nonatomic) unsigned int canUseFingerprint; // @dynamic canUseFingerprint;
+@property(nonatomic) unsigned int dynamicCodeAmount; // @dynamic dynamicCodeAmount;
+@property(retain, nonatomic) NSString *dynamicCodeSpamWording; // @dynamic dynamicCodeSpamWording;
 @property(retain, nonatomic) NSString *f2FId; // @dynamic f2FId;
+@property(retain, nonatomic) NSString *getDynamicCodeExtend; // @dynamic getDynamicCodeExtend;
+@property(nonatomic) unsigned int getDynamicCodeFlag; // @dynamic getDynamicCodeFlag;
+@property(retain, nonatomic) NSString *getDynamicCodeSign; // @dynamic getDynamicCodeSign;
 @property(retain, nonatomic) NSString *interruptDesc; // @dynamic interruptDesc;
 @property(nonatomic) int needChangeAuthKey; // @dynamic needChangeAuthKey;
 @property(retain, nonatomic) NSString *paycheckExtend; // @dynamic paycheckExtend;
@@ -27,6 +32,7 @@
 @property(retain, nonatomic) NSString *reqKey; // @dynamic reqKey;
 @property(nonatomic) unsigned int retCode; // @dynamic retCode;
 @property(retain, nonatomic) NSString *retMsg; // @dynamic retMsg;
+@property(retain, nonatomic) NSString *showPayingWording; // @dynamic showPayingWording;
 @property(retain, nonatomic) ShowMessage *showmessage; // @dynamic showmessage;
 @property(retain, nonatomic) NSString *sucPageExtend; // @dynamic sucPageExtend;
 @property(retain, nonatomic) TokeMess *tockMess; // @dynamic tockMess;

@@ -6,13 +6,11 @@
 
 #import <objc/NSObject.h>
 
-#import "KSVideoFrameDisplaySource-Protocol.h"
+@class KSEVideoEditorProject;
 
-@class KSEVideoEditorProject, NSString;
-
-@interface KSEThumbnailGenerator : NSObject <KSVideoFrameDisplaySource>
+@interface KSEThumbnailGenerator : NSObject
 {
-    struct NativeThumbnailGenerator *_nativeThumbnailGenerator;
+    struct NativeThumbnailGeneratorInterface *_nativeThumbnailGenerator;
     double _timeInterval;
     struct CGSize _imageSize;
     _Bool _ignoreClippedRange;
@@ -22,32 +20,28 @@
 @property(nonatomic) _Bool ignoreClippedRange; // @synthesize ignoreClippedRange=_ignoreClippedRange;
 @property(retain, nonatomic) KSEVideoEditorProject *project; // @synthesize project=_project;
 - (void).cxx_destruct;
+- (void)thumbnailAtIndex:(unsigned long long)arg1 size:(struct CGSize)arg2 renderFlags:(int)arg3 callback:(CDUnknownBlockType)arg4;
 - (void)thumbnailAtIndex:(unsigned long long)arg1 renderFlags:(int)arg2 callback:(CDUnknownBlockType)arg3;
+- (void)thumbnailAtIndex:(unsigned long long)arg1 size:(struct CGSize)arg2 callback:(CDUnknownBlockType)arg3;
 - (void)thumbnailAtIndex:(unsigned long long)arg1 callback:(CDUnknownBlockType)arg2;
+- (id)thumbnailAtIndex:(unsigned long long)arg1 size:(struct CGSize)arg2 renderFlags:(int)arg3 error:(id *)arg4;
 - (id)thumbnailAtIndex:(unsigned long long)arg1 renderFlags:(int)arg2 error:(id *)arg3;
+- (id)thumbnailAtIndex:(unsigned long long)arg1 size:(struct CGSize)arg2 error:(id *)arg3;
 - (id)thumbnailAtIndex:(unsigned long long)arg1 error:(id *)arg2;
 - (int)CreateCGImageFromCVPixelBuffer:(struct __CVBuffer *)arg1 imageOut:(struct CGImage **)arg2;
 - (void)updateProject;
 - (void)updateProject:(id)arg1;
 - (void)setFilterResourcePath:(id)arg1;
 @property(readonly, nonatomic) unsigned long long count;
-@property(readonly, nonatomic) struct CGSize imageSize;
 @property(readonly, nonatomic) double timeInterval;
+- (void)applicationDidReceiveMemoryWarning;
 - (void)applicationDidBecomeActive;
 - (void)applicationWillResignActive;
 - (void)dealloc;
+@property(readonly, nonatomic) struct CGSize imageSize;
 - (id)initWithTimeInterval:(double)arg1 size:(struct CGSize)arg2 cacheLimitBytes:(long long)arg3;
 - (id)initWithImageSize:(struct CGSize)arg1;
 - (id)init;
-- (void)update;
-@property(readonly, nonatomic) unsigned long long frameCount;
-- (id)frameImageAtIndex:(unsigned long long)arg1;
-
-// Remaining properties
-@property(readonly, copy) NSString *debugDescription;
-@property(readonly, copy) NSString *description;
-@property(readonly) unsigned long long hash;
-@property(readonly) Class superclass;
 
 @end
 

@@ -11,7 +11,7 @@
 #import "MMKernelExt-Protocol.h"
 #import "MMWebViewDelegate-Protocol.h"
 
-@class NSString, NSURL, UINavigationController;
+@class IPadOAuthFromPhoneHandler, NSString, NSURL, UINavigationController;
 
 @interface NewAuthHandler : MMObject <IAppDataExt, MMWebViewDelegate, MMKernelExt, IPreEnterWechatLogicExt>
 {
@@ -20,6 +20,7 @@
     NSString *m_nsBundleId;
     UINavigationController *m_oAuthViewController;
     _Bool m_isDoing;
+    IPadOAuthFromPhoneHandler *m_oAuthFromPhoneHandler;
     NSString *_m_nsScope;
     NSString *_m_nsState;
 }

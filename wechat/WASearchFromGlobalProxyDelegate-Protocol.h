@@ -6,7 +6,7 @@
 
 #import "NSObject-Protocol.h"
 
-@class NSDictionary, UISearchBar, UIView;
+@class NSDictionary, NSString, UISearchBar, UIView;
 @protocol YYWebViewInterface><WebSearchInterface;
 
 @protocol WASearchFromGlobalProxyDelegate <NSObject>
@@ -15,6 +15,7 @@
 @optional
 - (void)onWAProxyCGISearch:(NSDictionary *)arg1;
 - (void)onWAProxyWillBeginDetailSearch:(UIView<YYWebViewInterface><WebSearchInterface> *)arg1;
+- (void)onWAProxySetSearchPlaceHolder:(NSString *)arg1;
 - (void)onWAProxySearchInputChanged:(NSDictionary *)arg1;
 - (void)onWAProxyHideKeyboard;
 @end

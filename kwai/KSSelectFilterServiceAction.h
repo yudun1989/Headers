@@ -4,24 +4,29 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-#import <objc/NSObject.h>
+#import "LYWBaseAction.h"
 
 #import "LYWServiceAction-Protocol.h"
 
 @class NSString;
 
-@interface KSSelectFilterServiceAction : NSObject <LYWServiceAction>
+@interface KSSelectFilterServiceAction : LYWBaseAction <LYWServiceAction>
 {
     _Bool _isLast;
     _Bool _isFirst;
     _Bool _isSwipped;
+    _Bool _isClicked;
     unsigned long long _selectedIndex;
+    NSString *_statisticalName;
 }
 
+@property(nonatomic) _Bool isClicked; // @synthesize isClicked=_isClicked;
 @property(nonatomic) _Bool isSwipped; // @synthesize isSwipped=_isSwipped;
 @property(nonatomic) _Bool isFirst; // @synthesize isFirst=_isFirst;
 @property(nonatomic) _Bool isLast; // @synthesize isLast=_isLast;
+@property(retain, nonatomic) NSString *statisticalName; // @synthesize statisticalName=_statisticalName;
 @property(nonatomic) unsigned long long selectedIndex; // @synthesize selectedIndex=_selectedIndex;
+- (void).cxx_destruct;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

@@ -10,7 +10,6 @@
 #import "IHDHeadImageViewExt-Protocol.h"
 #import "ILinkEventExt-Protocol.h"
 #import "IMMImagePickerManagerExt-Protocol.h"
-#import "ISvrErrorExt-Protocol.h"
 #import "IUiUtilExt-Protocol.h"
 #import "IViewControllerExt-Protocol.h"
 #import "RichTextLayoutDelegate-Protocol.h"
@@ -18,7 +17,7 @@
 
 @class NSString, RichTextView, SvrErrorTipViewController, UIButton, UIView;
 
-@interface SvrErrorTipWindow : MMUIWindow <CAAnimationDelegate, ISvrErrorExt, IUiUtilExt, IViewControllerExt, IHDHeadImageViewExt, IMMImagePickerManagerExt, RichTextLayoutDelegate, ILinkEventExt, SvrErrorTipViewControllerDelegate>
+@interface SvrErrorTipWindow : MMUIWindow <CAAnimationDelegate, IUiUtilExt, IViewControllerExt, IHDHeadImageViewExt, IMMImagePickerManagerExt, RichTextLayoutDelegate, ILinkEventExt, SvrErrorTipViewControllerDelegate>
 {
     RichTextView *_tipView;
     UIButton *_closeButton;

@@ -19,6 +19,7 @@
 @property(retain, nonatomic) BaseRequest *baseRequest; // @dynamic baseRequest;
 @property(retain, nonatomic) NSString *fundCode; // @dynamic fundCode;
 @property(nonatomic) unsigned int purchaseFee; // @dynamic purchaseFee;
+@property(retain, nonatomic) NSString *spid; // @dynamic spid;
 
 @end
 

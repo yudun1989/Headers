@@ -8,18 +8,16 @@
 
 #import "KSChunkedUploadDelegate-Protocol.h"
 
-@class BFCancellationTokenSource, KSUploadItem, KS_feed, NSProgress, NSString, NSTimer;
+@class BFCancellationTokenSource, KSUploadItem, KS_feed, NSProgress, NSString;
 @protocol KSFeedUploader;
 
 @interface KSMediaUploadOperation : NSOperation <KSChunkedUploadDelegate>
 {
-    float _uploadProgress;
-    float _mockProress;
+    float _progress;
     int _uploadStatus;
     KSUploadItem *_item;
     long long _failedCount;
     KS_feed *_feed;
-    NSTimer *_progressTimer;
     BFCancellationTokenSource *_uploadCancellation;
     NSProgress *_uploadNSProgress;
     id <KSFeedUploader> _mediaUploader;
@@ -28,12 +26,10 @@
 @property(retain, nonatomic) id <KSFeedUploader> mediaUploader; // @synthesize mediaUploader=_mediaUploader;
 @property(retain, nonatomic) NSProgress *uploadNSProgress; // @synthesize uploadNSProgress=_uploadNSProgress;
 @property(retain, nonatomic) BFCancellationTokenSource *uploadCancellation; // @synthesize uploadCancellation=_uploadCancellation;
-@property(retain, nonatomic) NSTimer *progressTimer; // @synthesize progressTimer=_progressTimer;
 @property(retain, nonatomic) KS_feed *feed; // @synthesize feed=_feed;
 @property(nonatomic) long long failedCount; // @synthesize failedCount=_failedCount;
 @property(nonatomic) int uploadStatus; // @synthesize uploadStatus=_uploadStatus;
-@property(nonatomic) float mockProress; // @synthesize mockProress=_mockProress;
-@property(nonatomic) float uploadProgress; // @synthesize uploadProgress=_uploadProgress;
+@property(nonatomic) float progress; // @synthesize progress=_progress;
 @property(readonly, nonatomic) KSUploadItem *item; // @synthesize item=_item;
 - (void).cxx_destruct;
 - (void)shareFeed:(id)arg1 withItem:(id)arg2;
@@ -41,10 +37,6 @@
 - (void)cancel;
 - (void)main;
 - (id)initWithItem:(id)arg1;
-- (void)sendingProress;
-- (void)stopProgress;
-- (void)startProgress;
-- (void)dealloc;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

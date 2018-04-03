@@ -12,6 +12,7 @@
 
 + (int)ParseScoreInterval:(unsigned int)arg1;
 + (void)PrintLogs;
++ (_Bool)isSupportTopHitRemoval;
 + (unsigned int)CalDeclineScoreForMMGroup:(unsigned int)arg1;
 + (unsigned int)CalDeclineScore:(unsigned int)arg1;
 + (unsigned int)CalRaiseScore:(unsigned int)arg1;

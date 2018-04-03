@@ -22,7 +22,7 @@
 #import "WXVideoPlayerViewDelegate-Protocol.h"
 #import "WXVideoPlayerViewTouchDelegate-Protocol.h"
 
-@class CMessageWrap, EditImageForwardAndEditLogicController, ForwardMessageLogicController, ImageScrollView, MMProgressViewEx, MMTimer, MMToastViewController, MsgImgDataLogic, MsgImgFullScreenContainer, MsgImgPreviewData, NSMutableDictionary, NSMutableSet, NSOperationQueue, NSString, ScanQRCodeLogicController, ShareDataToOpenSDKController, UIActivityIndicatorView, UIButton, UIView, WCActionSheet;
+@class CMessageWrap, EditImageForwardAndEditLogicController, ForwardMessageLogicController, ImageScrollView, MMProgressViewEx, MMTimer, MMToastViewController, MsgImgDataLogic, MsgImgFullScreenContainer, MsgImgPreviewData, NSArray, NSMutableDictionary, NSMutableSet, NSOperationQueue, NSString, ScanQRCodeLogicController, ShareDataToOpenSDKController, UIActivityIndicatorView, UIButton, UIView, WCActionSheet;
 @protocol MsgImgFullScreenViewControllerDelegate;
 
 @interface MsgImgFullScreenViewController : MMUIViewController <BaseScanLogicDelegate, WXVideoPlayerViewDelegate, WXVideoPlayerViewTouchDelegate, MsgImgDataLogicDelegate, UIViewControllerAnimatedTransitioning, MMToastViewControllerDelegate, ForwardMessageLogicDelegate, EditImageForwardAndEditLogicDelegate, UIViewControllerTransitioningDelegate, WCActionSheetDelegate, UIAlertViewDelegate, MsgImgFullScreenContainerDelegate, IDownloadImageExt, IMsgExt, IMsgRevokeExt>
@@ -77,8 +77,8 @@
     _Bool _lockRotate;
     long long _orientationWhenInit;
     _Bool m_hasPreviewVideo;
-    _Bool _isOnlyAllowSaveOnActionSheet;
     NSMutableDictionary *m_videoViewDic;
+    NSArray *_scanCodePrefixBlackList;
     unsigned long long _m_eScene;
     MMTimer *_sliderUpdateTimer;
     ForwardMessageLogicController *_m_forwardLogicController;
@@ -87,7 +87,7 @@
 @property(retain, nonatomic) ForwardMessageLogicController *m_forwardLogicController; // @synthesize m_forwardLogicController=_m_forwardLogicController;
 @property(retain, nonatomic) MMTimer *sliderUpdateTimer; // @synthesize sliderUpdateTimer=_sliderUpdateTimer;
 @property(nonatomic) unsigned long long m_eScene; // @synthesize m_eScene=_m_eScene;
-@property(nonatomic) _Bool isOnlyAllowSaveOnActionSheet; // @synthesize isOnlyAllowSaveOnActionSheet=_isOnlyAllowSaveOnActionSheet;
+@property(retain, nonatomic) NSArray *scanCodePrefixBlackList; // @synthesize scanCodePrefixBlackList=_scanCodePrefixBlackList;
 @property(nonatomic) _Bool m_hasPreviewVideo; // @synthesize m_hasPreviewVideo;
 @property(retain, nonatomic) NSMutableDictionary *m_videoViewDic; // @synthesize m_videoViewDic;
 @property(nonatomic) _Bool isFromMsgContentView; // @synthesize isFromMsgContentView=_isFromMsgContentView;

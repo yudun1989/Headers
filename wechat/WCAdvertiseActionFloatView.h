@@ -22,6 +22,7 @@
     UIView *m_lineView;
     UITableView *m_dislikeTableView;
     struct CGPoint m_showPoint;
+    UITableView *m_feedbackTableView;
     id <WCAdvertiseActionFloatViewDelegate> _delegate;
 }
 

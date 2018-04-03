@@ -18,6 +18,8 @@
 - (void)canvasComponent:(WCCanvasComponent *)arg1 willExistAndJumpUrl:(NSString *)arg2;
 
 @optional
+- (NSString *)tryAppendAdParamsForWeappPath:(NSString *)arg1;
+- (_Bool)getUseSnsCdnDownloadMode:(WCCanvasComponent *)arg1;
 - (void)onFavProductReturn:(unsigned int)arg1 errMsg:(NSString *)arg2;
 - (NSString *)getWeAppSceneNoteForComponent:(WCCanvasComponent *)arg1;
 - (void)reloadData;

@@ -23,6 +23,7 @@
 + (id)resourceRootPath;
 - (void).cxx_destruct;
 - (void)MessageReturn:(id)arg1 Event:(unsigned int)arg2;
+- (_Bool)doUpdateOpenImResourceFromServer:(id)arg1 wordings:(id)arg2 checkTime:(_Bool)arg3;
 - (_Bool)updateOpenImResourceFromServer:(id)arg1 wordings:(id)arg2;
 - (id)openimWordingShortPY:(id)arg1 Appid:(id)arg2;
 - (id)openimWordingQuanPin:(id)arg1 Appid:(id)arg2;
@@ -40,7 +41,7 @@
 - (id)openimAcctType:(id)arg1;
 - (id)GetOpenImAppidResource:(id)arg1;
 - (_Bool)tryUpdateOpenImResource:(id)arg1 wordings:(id)arg2;
-- (_Bool)checkOpenImResourceReady:(id)arg1 wordings:(id)arg2;
+- (_Bool)checkOpenImResourceReady:(id)arg1 wordings:(id)arg2 checkTime:(_Bool)arg3;
 - (void)saveOpenImResource:(id)arg1 Appid:(id)arg2;
 - (id)tryLoadOpenImResource:(id)arg1;
 - (void)saveOpenImTypeResource;

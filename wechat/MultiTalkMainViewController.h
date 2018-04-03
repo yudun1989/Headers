@@ -194,6 +194,7 @@
 - (void)onMultiTalkMgrOpenVideoServerNotAllowed;
 - (void)OnVideoStateChange:(_Bool)arg1 VideoOn:(_Bool)arg2;
 - (void)onMultiTalkAudioDeviceUnPlugin;
+- (void)onMultiTalkAudioDevicePlugin;
 - (void)onAddMultiTalkMemberResult:(_Bool)arg1 groupInfo:(id)arg2;
 - (void)onAlertError;
 - (void)onErr:(int)arg1;

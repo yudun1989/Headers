@@ -6,11 +6,12 @@
 
 #import <MMCommon/MMObject.h>
 
-@class NSArray, NSString;
+@class NSArray, NSString, WANearByPreViewItem;
 
 @interface WANearByInfo : MMObject
 {
     _Bool _disappearOneClick;
+    _Bool _openWxa;
     unsigned int _displayStrategyId;
     unsigned int _nearByAppH5LifeSpan;
     unsigned int _appCount;
@@ -23,8 +24,11 @@
     NSString *_wordingColor;
     NSString *_noticeWording;
     NSString *_noticeWordingBgColor;
+    WANearByPreViewItem *_nearByEntry;
 }
 
+@property(retain, nonatomic) WANearByPreViewItem *nearByEntry; // @synthesize nearByEntry=_nearByEntry;
+@property(nonatomic) _Bool openWxa; // @synthesize openWxa=_openWxa;
 @property(nonatomic) _Bool disappearOneClick; // @synthesize disappearOneClick=_disappearOneClick;
 @property(copy, nonatomic) NSString *noticeWordingBgColor; // @synthesize noticeWordingBgColor=_noticeWordingBgColor;
 @property(copy, nonatomic) NSString *noticeWording; // @synthesize noticeWording=_noticeWording;

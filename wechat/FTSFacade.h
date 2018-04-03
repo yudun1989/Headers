@@ -7,6 +7,7 @@
 #import <MMCommon/MMService.h>
 
 #import "FTSDBDelegate-Protocol.h"
+#import "IMsgExt-Protocol.h"
 #import "MMDBRRepairerExt-Protocol.h"
 #import "MMKernelExt-Protocol.h"
 #import "MMService-Protocol.h"
@@ -14,7 +15,7 @@
 
 @class AsyncTaskQueueEngine, FTSContactMgr, FTSDB, FTSFavMgr, FTSMemorySearchMgr, FTSMessageMgr, FTSReportMgr, FTSTopHitMgr, FTSWebSearchMgr, MCSBrandContactMgr, MiniGameSearchMgr, NSMutableSet, NSRecursiveLock, NSString, WALocalSearchMgr, WAShowOutLogic, WSMusicMgr, WebSearchRedotMgr;
 
-@interface FTSFacade : MMService <FTSDBDelegate, MMDBRRepairerExt, WXGChatLogDelMsgNotification, MMService, MMKernelExt>
+@interface FTSFacade : MMService <FTSDBDelegate, MMDBRRepairerExt, WXGChatLogDelMsgNotification, IMsgExt, MMService, MMKernelExt>
 {
     FTSDB *_ftsDB;
     AsyncTaskQueueEngine *_asyncTaskQueueEngine;
@@ -57,6 +58,7 @@
 @property(retain, nonatomic) FTSContactMgr *ftsContactMgr; // @synthesize ftsContactMgr=_ftsContactMgr;
 - (void).cxx_destruct;
 - (id)getWSRedPointInfo:(_Bool)arg1;
+- (void)tryUpdateSearchReddotClearedTimeStamps:(unsigned int)arg1;
 - (void)tryUpdateRecommendReddotClearedTimeStamps:(unsigned int)arg1;
 - (void)clearFFBrowseRedot;
 - (void)clearFFSearchRedot;
@@ -77,6 +79,7 @@
 - (void)onDeleteMessageFinish;
 - (void)willRepairDB:(unsigned int)arg1 needCatch:(_Bool *)arg2;
 - (void)onRecoverFTSDB;
+- (void)OnDelMsg:(id)arg1 DelAll:(_Bool)arg2;
 - (void)onAuthOK;
 - (void)doInitMiniGameSearchMgrIfNeeded;
 - (_Bool)isOpenMiniGame;

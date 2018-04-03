@@ -24,6 +24,7 @@
 - (void)OnCdnDownload:(id)arg1;
 - (void)OnCdnDownloadProgress:(id)arg1;
 - (void)tryNext;
+- (void)StartDownloadFavMedia:(id)arg1 prior:(_Bool)arg2;
 - (void)StartDownloadFavMedia:(id)arg1;
 - (void)dealloc;
 - (id)init;

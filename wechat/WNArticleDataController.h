@@ -9,6 +9,7 @@
 #import "FavForwardLogicDelegate-Protocol.h"
 #import "IFavoritesExt-Protocol.h"
 #import "IFavoritesRepairSvrDataExt-Protocol.h"
+#import "IMsgExt-Protocol.h"
 #import "IRecordDownloadExt-Protocol.h"
 #import "UITableViewDataSource-Protocol.h"
 #import "UITableViewDelegate-Protocol.h"
@@ -18,7 +19,7 @@
 @class CMessageWrap, FavForwardLogicController, FavoritesItem, FavoritesItemDataField, NSMutableArray, NSString, WCDataItem, WNEditingInfo, WNParagraphCellView, WNParagraphMgr;
 @protocol WNArticleControllerDelegate;
 
-@interface WNArticleDataController : MMObject <FavForwardLogicDelegate, IFavoritesRepairSvrDataExt, UITableViewDataSource, UITableViewDelegate, WNParaCellViewDelegate, WNArticleToolViewDelegate, IFavoritesExt, IRecordDownloadExt>
+@interface WNArticleDataController : MMObject <FavForwardLogicDelegate, IFavoritesRepairSvrDataExt, IMsgExt, UITableViewDataSource, UITableViewDelegate, WNParaCellViewDelegate, WNArticleToolViewDelegate, IFavoritesExt, IRecordDownloadExt>
 {
     unsigned int _editTime;
     WNParagraphCellView *m_EditReminderCellView;
@@ -31,6 +32,7 @@
     _Bool bEditable;
     _Bool bEdited;
     _Bool bFromPreView;
+    _Bool _m_bMemuSelectText;
     id <WNArticleControllerDelegate> m_delegate;
     NSMutableArray *m_paraArray;
     NSMutableArray *m_allParaInfoArray;
@@ -40,6 +42,7 @@
     FavoritesItemDataField *_listeningDeleteData;
 }
 
+@property(nonatomic) _Bool m_bMemuSelectText; // @synthesize m_bMemuSelectText=_m_bMemuSelectText;
 @property(retain, nonatomic) FavoritesItemDataField *listeningDeleteData; // @synthesize listeningDeleteData=_listeningDeleteData;
 @property(retain, nonatomic) WCDataItem *m_wcDataItem; // @synthesize m_wcDataItem;
 @property(retain, nonatomic) CMessageWrap *m_recordMsg; // @synthesize m_recordMsg;
@@ -51,6 +54,7 @@
 @property(retain, nonatomic) NSMutableArray *m_paraArray; // @synthesize m_paraArray;
 @property(nonatomic) __weak id <WNArticleControllerDelegate> m_delegate; // @synthesize m_delegate;
 - (void).cxx_destruct;
+- (void)onChatNewMsgSent:(id)arg1;
 - (void)onRepairCheckFavItemAvailable:(unsigned int)arg1 occupied:(_Bool *)arg2;
 - (void)OnDownloadRecordMessageFail:(id)arg1 DataId:(id)arg2;
 - (void)OnDownloadRecordMessageExpired:(id)arg1 DataId:(id)arg2;

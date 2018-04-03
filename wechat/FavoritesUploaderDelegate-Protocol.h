@@ -9,6 +9,7 @@
 @class FavoritesCDNInfo, FavoritesItem, NSString;
 
 @protocol FavoritesUploaderDelegate <NSObject>
+- (void)reUploadFavItem:(FavoritesItem *)arg1;
 - (void)onUsedCapacityUpdate:(unsigned long long)arg1;
 - (_Bool)deleteCdnInfoByFavoritesItemLocalIdIgnoringStatus:(unsigned int)arg1;
 - (_Bool)deleteCdnInfoByFavoritesItemLocalId:(unsigned int)arg1;
@@ -18,8 +19,5 @@
 - (void)onUploadFavItem:(FavoritesItem *)arg1 LocalDataId:(NSString *)arg2 FinishedLength:(int)arg3 TotalLength:(int)arg4;
 - (void)onUploadFail:(FavoritesItem *)arg1 ErrCode:(int)arg2;
 - (void)onUploadFinished:(FavoritesItem *)arg1;
-
-@optional
-- (void)onCopyFileFinished:(FavoritesItem *)arg1;
 @end
 

@@ -6,16 +6,16 @@
 
 #import <objc/NSObject.h>
 
-@class UIImage;
+@class NSString, UIImage;
 
 @interface _KSPictureCoverIndexedImage : NSObject
 {
+    NSString *_identifier;
     UIImage *_image;
-    unsigned long long _index;
 }
 
-@property(nonatomic) unsigned long long index; // @synthesize index=_index;
 @property(retain, nonatomic) UIImage *image; // @synthesize image=_image;
+@property(retain, nonatomic) NSString *identifier; // @synthesize identifier=_identifier;
 - (void).cxx_destruct;
 
 @end

@@ -6,7 +6,11 @@
 
 #import "GPUImageOutput.h"
 
-@interface GPUImagePicture : GPUImageOutput
+#import "KSGPUImageMedia-Protocol.h"
+
+@class NSString;
+
+@interface GPUImagePicture : GPUImageOutput <KSGPUImageMedia>
 {
     struct CGSize pixelSizeOfImage;
     _Bool hasProcessedImage;
@@ -33,10 +37,28 @@
 - (id)initWithRGBAdata:(const void *)arg1 size:(struct CGSize)arg2 smoothlyScaleOutput:(_Bool)arg3;
 - (struct CGSize)nextPOTsize:(struct CGSize)arg1;
 - (id)imageFromRGBAdata:(const void *)arg1 size:(struct CGSize)arg2;
+- (id)ks_initWithImage:(id)arg1;
+- (id)previewImage;
+- (void)stop;
+- (_Bool)mute;
+- (void)setMute:(_Bool)arg1;
+- (_Bool)isPlaying;
+- (_Bool)isMovieMedia;
+- (double)duration;
+- (void)seekToTime:(CDStruct_1b6d18a9)arg1;
+- (void)play;
+- (void)pause;
+@property(nonatomic) long long preferredOrientation;
 - (void)replaceTextureWithSubCGImage:(struct CGImage *)arg1 inRect:(struct CGRect)arg2;
 - (void)replaceTextureWithSubimage:(id)arg1 inRect:(struct CGRect)arg2;
 - (void)replaceTextureWithSubCGImage:(struct CGImage *)arg1;
 - (void)replaceTextureWithSubimage:(id)arg1;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly, copy) NSString *description;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
 
 @end
 

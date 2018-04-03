@@ -13,14 +13,18 @@
 
 @interface FaceRecog3rdVerifyConfirmLogic : MMObject <PBMessageObserverDelegate>
 {
+    _Bool _bDefaultConfirm;
     id <FaceRecog3rdVerifyConfirmLogicDelegate> _delegate;
     NSMutableArray *_confirmInfos;
     NSDictionary *_prompts;
     NSString *_bizNickName;
     NSString *_headerPromptWording;
     NSString *_feedbackUrl;
+    NSString *_feedbackUrlForConfirmView;
 }
 
+@property(nonatomic) _Bool bDefaultConfirm; // @synthesize bDefaultConfirm=_bDefaultConfirm;
+@property(copy, nonatomic) NSString *feedbackUrlForConfirmView; // @synthesize feedbackUrlForConfirmView=_feedbackUrlForConfirmView;
 @property(copy, nonatomic) NSString *feedbackUrl; // @synthesize feedbackUrl=_feedbackUrl;
 @property(copy, nonatomic) NSString *headerPromptWording; // @synthesize headerPromptWording=_headerPromptWording;
 @property(copy, nonatomic) NSString *bizNickName; // @synthesize bizNickName=_bizNickName;

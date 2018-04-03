@@ -45,6 +45,7 @@
 - (void)photoHitBtnClick;
 - (_Bool)loadCacheCodeViewIfExist;
 - (id)getSelfHeaderImageViewWithImgLen:(double)arg1;
+- (void)updateAccessibility;
 - (void)setupContentView;
 - (id)initWithFrame:(struct CGRect)arg1 codeDelegate:(id)arg2 controlData:(id)arg3;
 - (void)dealloc;

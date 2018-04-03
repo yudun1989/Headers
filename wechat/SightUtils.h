@@ -17,7 +17,10 @@
 + (_Bool)shouldUpdateThumbImageWithSightVideoPath:(id)arg1 thumbImagePath:(id)arg2;
 + (_Bool)generateThumbImageFromVideo:(id)arg1 toThumbImage:(id)arg2;
 + (_Bool)isVideoPlayable:(id)arg1;
-+ (id)thumbForVideoWithAsset:(id)arg1;
++ (id)thumbForVideoWithAsset:(id)arg1 maxWidth:(int)arg2 andMaxHeight:(int)arg3;
++ (id)generateVideoThumbImageWithAsset:(id)arg1 atTime:(double)arg2;
++ (id)resizeVideoThumb:(id)arg1;
++ (id)thumbForVideoWithAsset:(id)arg1 atTime:(double)arg2;
 + (id)thumbForVideoWithPath:(id)arg1;
 + (id)imageFromSampleBuffer:(struct opaqueCMSampleBuffer *)arg1 orientation:(long long)arg2;
 

@@ -24,16 +24,16 @@
     NSData *poiBuff;
     unsigned int showFlag;
     unsigned int showType;
-    StoreWXaRedirectInfoItem *storeWXaRedirectInfoItem;
     NSString *poiUrl;
+    StoreWXaRedirectInfoItem *_storeWXaRedirectInfoItem;
     NSString *_country;
     NSString *_displayPoiAddressName;
 }
 
 @property(retain, nonatomic) NSString *displayPoiAddressName; // @synthesize displayPoiAddressName=_displayPoiAddressName;
 @property(retain, nonatomic) NSString *country; // @synthesize country=_country;
+@property(retain, nonatomic) StoreWXaRedirectInfoItem *storeWXaRedirectInfoItem; // @synthesize storeWXaRedirectInfoItem=_storeWXaRedirectInfoItem;
 @property(retain, nonatomic) NSString *poiUrl; // @synthesize poiUrl;
-@property(retain, nonatomic) StoreWXaRedirectInfoItem *storeWXaRedirectInfoItem; // @synthesize storeWXaRedirectInfoItem;
 @property(nonatomic) unsigned int showType; // @synthesize showType;
 @property(nonatomic) unsigned int showFlag; // @synthesize showFlag;
 @property(retain, nonatomic) NSData *poiBuff; // @synthesize poiBuff;

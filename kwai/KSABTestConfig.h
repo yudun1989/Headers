@@ -42,6 +42,7 @@
     NSNumber *_prefetch;
     NSNumber *_enablePhotoPicker4Ios;
     NSNumber *_fineControlBeautyEnabled;
+    NSNumber *_enablePhotoMovieScenes;
     NSNumber *_fineControlBeautyEnabledForLive;
     NSNumber *_liveIconLayoutStyle;
     NSNumber *_slideDisplayType;
@@ -53,6 +54,7 @@
 @property(retain, nonatomic) NSNumber *slideDisplayType; // @synthesize slideDisplayType=_slideDisplayType;
 @property(retain, nonatomic) NSNumber *liveIconLayoutStyle; // @synthesize liveIconLayoutStyle=_liveIconLayoutStyle;
 @property(retain, nonatomic) NSNumber *fineControlBeautyEnabledForLive; // @synthesize fineControlBeautyEnabledForLive=_fineControlBeautyEnabledForLive;
+@property(retain, nonatomic) NSNumber *enablePhotoMovieScenes; // @synthesize enablePhotoMovieScenes=_enablePhotoMovieScenes;
 @property(retain, nonatomic) NSNumber *fineControlBeautyEnabled; // @synthesize fineControlBeautyEnabled=_fineControlBeautyEnabled;
 @property(retain, nonatomic) NSNumber *enablePhotoPicker4Ios; // @synthesize enablePhotoPicker4Ios=_enablePhotoPicker4Ios;
 @property(retain, nonatomic) NSNumber *prefetch; // @synthesize prefetch=_prefetch;

@@ -8,13 +8,14 @@
 
 #import "PBMessageObserverDelegate-Protocol.h"
 
-@class FTSWebSearchMgr, NSMutableArray, NSMutableDictionary, NSString, WSVideoModel;
+@class FTSWebSearchMgr, NSMutableArray, NSMutableDictionary, NSString, WSVideoModel, WSVideoTagInfo;
 @protocol WSVideoFlowDataDelegate;
 
 @interface WSVideoFlowDataLogic : NSObject <PBMessageObserverDelegate>
 {
     _Bool _isWorking;
     _Bool _isFakeInitVideo;
+    _Bool _bDisplayNoInitVideo;
     int _cgiStatus;
     NSString *_searchId;
     NSString *_sessionId;
@@ -38,12 +39,15 @@
     NSMutableArray *_arrVideoModel;
     NSMutableDictionary *_dicVideoModel;
     WSVideoModel *_defaultVideo;
+    WSVideoTagInfo *_defaultVideoTagInfo;
     long long _lastExposedIndex;
     NSString *_reqQuery;
     long long _blockType;
     long long _resultType;
+    WSVideoTagInfo *_defaultTagInfo;
 }
 
+@property(retain, nonatomic) WSVideoTagInfo *defaultTagInfo; // @synthesize defaultTagInfo=_defaultTagInfo;
 @property(nonatomic) long long resultType; // @synthesize resultType=_resultType;
 @property(nonatomic) long long blockType; // @synthesize blockType=_blockType;
 @property(retain, nonatomic) NSString *reqQuery; // @synthesize reqQuery=_reqQuery;
@@ -51,7 +55,8 @@
 @property(nonatomic) _Bool isHomepage; // @synthesize isHomepage=_isHomepage;
 @property(nonatomic) long long lastExposedIndex; // @synthesize lastExposedIndex=_lastExposedIndex;
 @property(readonly, nonatomic) _Bool isEnablePrefetch; // @synthesize isEnablePrefetch=_isEnablePrefetch;
-@property(readonly, nonatomic) unsigned int offset; // @synthesize offset=_offset;
+@property(nonatomic) unsigned int offset; // @synthesize offset=_offset;
+@property(readonly, nonatomic) WSVideoTagInfo *defaultVideoTagInfo; // @synthesize defaultVideoTagInfo=_defaultVideoTagInfo;
 @property(readonly, nonatomic) WSVideoModel *defaultVideo; // @synthesize defaultVideo=_defaultVideo;
 @property(readonly, nonatomic) NSMutableDictionary *dicVideoModel; // @synthesize dicVideoModel=_dicVideoModel;
 @property(readonly, nonatomic) NSMutableArray *arrVideoModel; // @synthesize arrVideoModel=_arrVideoModel;
@@ -60,7 +65,8 @@
 - (void).cxx_destruct;
 - (unsigned int)getCachedVideoPlayTime:(id)arg1;
 - (void)cacheVideoPlayTime:(unsigned int)arg1 forVideo:(id)arg2;
-- (void)reportSuccessShare:(id)arg1 types:(id)arg2;
+- (void)reportVideoClickWithRealSharer:(id)arg1 andSession:(id)arg2 andScene:(unsigned int)arg3;
+- (void)reportSuccessShare:(id)arg1 types:(id)arg2 users:(id)arg3;
 - (void)reportBrowseInfo;
 - (void)markBeginBrowse;
 - (void)updateExposeTimeForVideo:(id)arg1;
@@ -70,6 +76,7 @@
 - (_Bool)isRequestingExposeInfoOutOfDate:(id)arg1;
 - (void)markOperateVideo:(id)arg1;
 - (void)reportVideoPlay:(id)arg1;
+- (void)reportItemClick:(id)arg1 clickType:(int)arg2 extObj:(id)arg3;
 - (void)reportItemClick:(id)arg1 clickType:(int)arg2;
 - (void)reportExposeBatchVideoIfNeeded;
 - (void)sendRealTimeExposeReport:(id)arg1;
@@ -88,10 +95,13 @@
 - (unsigned int)getValidScene;
 - (id)findKvItemByKey:(id)arg1 array:(id)arg2;
 - (void)asyncGetWebRecommendVideo;
+- (id)getNetType;
+- (id)genInitParams;
+- (void)parseInitParams:(id)arg1;
 - (_Bool)hasReachEnd;
 - (void)commonInit;
 - (void)dealloc;
-- (id)initWithDefaultVideo:(id)arg1 isFakeInitVideo:(_Bool)arg2;
+- (id)initWithDefaultVideo:(id)arg1 defaultTagInfo:(id)arg2 isFakeInitVideo:(_Bool)arg3 displayNoInitVideo:(_Bool)arg4;
 
 @end
 

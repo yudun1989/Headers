@@ -6,9 +6,11 @@
 
 #import <objc/NSObject.h>
 
+#import "NSCoding-Protocol.h"
+
 @class NSString, VideoParamsInfo, VideoParamsSource;
 
-@interface VideoUploadStatInfo : NSObject
+@interface VideoUploadStatInfo : NSObject <NSCoding>
 {
     _Bool _sourceVideoContainsWXTag;
     unsigned int _uploadStartTime;
@@ -49,6 +51,8 @@
 - (void)mergeInfoFromTaskInfo:(id)arg1;
 - (void)mergeInfoFromUploadTaskInfo:(id)arg1;
 - (id)init;
+- (id)initWithCoder:(id)arg1;
+- (void)encodeWithCoder:(id)arg1;
 
 @end
 

@@ -6,9 +6,11 @@
 
 #import <objc/NSObject.h>
 
+#import "NSCoding-Protocol.h"
+
 @class NSString;
 
-@interface MMImageExifLogInfo : NSObject
+@interface MMImageExifLogInfo : NSObject <NSCoding>
 {
     NSString *_localID;
     unsigned long long _mediaType;
@@ -69,6 +71,8 @@
 - (_Bool)isYUV422Image;
 - (void)updateForWechatSight;
 - (void)report;
+- (id)initWithCoder:(id)arg1;
+- (void)encodeWithCoder:(id)arg1;
 
 @end
 

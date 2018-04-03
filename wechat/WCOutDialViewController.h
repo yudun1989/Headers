@@ -77,8 +77,6 @@
 - (void)initView;
 - (void)viewWillBePoped:(_Bool)arg1;
 - (void)viewWillAppear:(_Bool)arg1;
-- (void)didReceiveMemoryWarning;
-- (void)viewDidLayoutSubviews;
 - (void)viewDidLoad;
 - (void)dealloc;
 - (id)initWithInput:(id)arg1 PhoneNum:(id)arg2 DialScece:(unsigned long long)arg3;

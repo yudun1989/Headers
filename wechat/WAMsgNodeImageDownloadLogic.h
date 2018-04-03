@@ -29,7 +29,7 @@
 - (_Bool)isDownloadingUrl:(id)arg1;
 - (void)copyFileFrom:(id)arg1 url:(id)arg2;
 - (void)doReportWithBeginTime:(struct timeval)arg1 fileLength:(unsigned long long)arg2;
-- (void)addImageUrl:(id)arg1 appId:(id)arg2 statId:(id)arg3 scene:(unsigned int)arg4;
+- (void)addImageUrl:(id)arg1 appId:(id)arg2 statId:(id)arg3 scene:(unsigned int)arg4 coreId:(unsigned int)arg5 completion:(CDUnknownBlockType)arg6;
 
 @end
 

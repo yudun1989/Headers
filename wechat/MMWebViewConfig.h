@@ -10,6 +10,7 @@
 {
 }
 
++ (_Bool)shouldUseNewWxjs;
 + (_Bool)abtestAllowCallJsapiBeforeLoad;
 + (_Bool)canPreinjectWXJS;
 + (long long)abTestTriggerReportCount;

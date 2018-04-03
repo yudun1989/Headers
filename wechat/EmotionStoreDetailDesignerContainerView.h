@@ -27,6 +27,7 @@
 - (void).cxx_destruct;
 - (void)stopLoading;
 - (void)startLoading;
+- (void)setContentInsets:(struct UIEdgeInsets)arg1;
 - (void)setIsShowLineInTop:(_Bool)arg1 IsShowLineInBottom:(_Bool)arg2;
 - (void)setDesignerHeaderSideLen:(double)arg1;
 - (void)initView;

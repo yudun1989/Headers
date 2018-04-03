@@ -29,6 +29,7 @@
 - (void)onCameraVideoTaken:(id)arg1 thumbImg:(id)arg2 isMuted:(_Bool)arg3;
 - (void)onCameraPictureTaken:(id)arg1 withFrontCamera:(_Bool)arg2;
 - (void)onCameraVideoRecordingWithFrameImg:(id)arg1;
+- (void)onCameraScanCode:(id)arg1;
 - (void)onCameraStopRecord;
 - (void)onCameraStartRecord;
 - (void)onCameraStop;
@@ -38,6 +39,7 @@
 - (void)operateCamera:(id)arg1 cameraId:(unsigned int)arg2 compelete:(CDUnknownBlockType)arg3;
 - (void)resizeVideo:(unsigned int)arg1 frame:(struct CGRect)arg2;
 - (unsigned int)insertCameraWithConfig:(id)arg1 pos:(struct CGRect)arg2 cameraId:(unsigned int)arg3 parentId:(unsigned int)arg4;
+- (void)setScanArea:(id)arg1;
 - (void)setCameraViewMaskWithRect:(struct CGRect)arg1;
 - (struct CGRect)fixCameraRect:(struct CGRect)arg1;
 - (_Bool)handleEvent:(unsigned long long)arg1 userInfo:(id)arg2;

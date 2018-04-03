@@ -13,7 +13,7 @@
 #import "UINavigationControllerDelegate-Protocol.h"
 #import "UIScrollViewDelegate-Protocol.h"
 
-@class ALAssetsFilter, BFCancellationTokenSource, BFTask, GPUImageVideoCamera, GPUImageiOSBlurFilter, KSAlbumListViewController, KSAssetCollectionDataSource, KSAssetPreviewView, KSImage2VideoCollectionDataSource, KSPhotoToVideoProcessor, KSPoi, NSArray, NSLayoutConstraint, NSOperationQueue, NSString, NSTimer, PHAssetCollection, PHCachingImageManager, UIButton, UICollectionView, UIImageView, UIScrollView, UIView;
+@class ALAssetsFilter, BFCancellationTokenSource, BFTask, GPUImageVideoCamera, GPUImageiOSBlurFilter, KSAlbumListViewController, KSAssetCollectionDataSource, KSAssetPreviewView, KSAtlasEditLibraryAssetDataSourceCreator, KSImage2VideoCollectionDataSource, KSPoi, NSArray, NSLayoutConstraint, NSOperationQueue, NSString, NSTimer, PHAssetCollection, PHCachingImageManager, UIButton, UICollectionView, UIImageView, UIScrollView, UIView;
 @protocol KSAssetPickViewControllerDelegate, KSPostAsset;
 
 @interface KSAssetPickViewController : KSBaseViewController <KSAssetPickViewControllerProtocol, KSVideoImageFullScreenViewControllerDelegate, UICollectionViewDelegate, UIScrollViewDelegate, UINavigationControllerDelegate, KSPostComponent>
@@ -51,11 +51,10 @@
     NSOperationQueue *_exportVideoOperationQueue;
     NSTimer *_progressTimer;
     double _initialConstant;
-    KSPhotoToVideoProcessor *_photoToVideoProcessor;
-    CDUnknownBlockType _photoVideoGenerateBlock;
     id <KSPostAsset> _showPreviewTipAsset;
     GPUImageVideoCamera *_camera;
     GPUImageiOSBlurFilter *_blurFilter;
+    KSAtlasEditLibraryAssetDataSourceCreator *_atlasDataSourceCreator;
     UIView *_captureView;
     BFTask *_cameraWarmUpTask;
     BFCancellationTokenSource *_cameraWarmUpCancellationTokenSource;
@@ -64,15 +63,17 @@
     struct CGRect _previousPreheatRect;
 }
 
++ (void)clearExportDirectory;
++ (id)exportDirectory;
++ (id)exportPathOfAssetKey:(id)arg1;
 + (id)assetPickViewController;
 @property(retain, nonatomic) BFCancellationTokenSource *cameraWarmUpCancellationTokenSource; // @synthesize cameraWarmUpCancellationTokenSource=_cameraWarmUpCancellationTokenSource;
 @property(retain, nonatomic) BFTask *cameraWarmUpTask; // @synthesize cameraWarmUpTask=_cameraWarmUpTask;
 @property(retain, nonatomic) UIView *captureView; // @synthesize captureView=_captureView;
+@property(retain, nonatomic) KSAtlasEditLibraryAssetDataSourceCreator *atlasDataSourceCreator; // @synthesize atlasDataSourceCreator=_atlasDataSourceCreator;
 @property(retain, nonatomic) GPUImageiOSBlurFilter *blurFilter; // @synthesize blurFilter=_blurFilter;
 @property(retain, nonatomic) GPUImageVideoCamera *camera; // @synthesize camera=_camera;
 @property(retain, nonatomic) id <KSPostAsset> showPreviewTipAsset; // @synthesize showPreviewTipAsset=_showPreviewTipAsset;
-@property(copy, nonatomic) CDUnknownBlockType photoVideoGenerateBlock; // @synthesize photoVideoGenerateBlock=_photoVideoGenerateBlock;
-@property(retain, nonatomic) KSPhotoToVideoProcessor *photoToVideoProcessor; // @synthesize photoToVideoProcessor=_photoToVideoProcessor;
 @property(nonatomic) _Bool catchingAssetCollectionPan; // @synthesize catchingAssetCollectionPan=_catchingAssetCollectionPan;
 @property(nonatomic) double initialConstant; // @synthesize initialConstant=_initialConstant;
 @property(nonatomic) struct CGPoint initialLocationInView; // @synthesize initialLocationInView=_initialLocationInView;
@@ -112,9 +113,6 @@
 - (void).cxx_destruct;
 - (id)ksuShowMetaData;
 - (void)editVideoWith:(id)arg1 originalVideoAsset:(id)arg2 movieInfo:(id)arg3 maxDuration:(double)arg4;
-- (void)generatePhotoVideoOnFinish:(CDUnknownBlockType)arg1 onProgress:(CDUnknownBlockType)arg2;
-- (void)applicationDidBecomeActive;
-- (void)applicationWillResignActive;
 - (void)cameraDidLoad;
 - (void)loadCamera;
 - (id)requiredMediaTypes;
@@ -130,7 +128,6 @@
 - (void)didSelectVideoAsset:(id)arg1;
 - (void)didSelectPHVideoAsset:(id)arg1 movieInfo:(id)arg2;
 - (void)exportVideoAsset:(id)arg1 exportPreset:(id)arg2 slow:(_Bool)arg3 movieInfo:(id)arg4;
-- (void)processSelectedPicturesProgress:(CDUnknownBlockType)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)centerPreviewIfNeeded;
 - (void)scrollViewDidZoom:(id)arg1;
 - (void)scrollViewDidScroll:(id)arg1;
@@ -158,6 +155,7 @@
 - (void)finishSingleSelectALAsset:(id)arg1;
 - (void)finishSingleSelectPHAsset:(id)arg1 movieInfo:(id)arg2;
 - (void)didClickConfirm:(id)arg1;
+- (void)_didSelectedLivePhoto:(id)arg1 movieInfo:(id)arg2;
 - (void)didClickClose:(id)arg1;
 - (void)setupNavigationBar;
 - (void)updateListUIForSelectedAsset:(id)arg1;

@@ -7,6 +7,9 @@
 #import <UIKit/UIImage.h>
 
 @interface UIImage (KSVideo)
++ (id)ks_firstGifImageWithAssetURL:(id)arg1;
++ (void)_ks_loadAnimatedGifImageWithAssetURL:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
++ (void)ks_loadCachedGifAnimatedImageWithAssetURL:(id)arg1 cacheKey:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;
 + (void)ks_loadCachedAnimatedImageWithAssetURL:(id)arg1 cacheKey:(id)arg2 maximumSize:(struct CGSize)arg3 completionHandler:(CDUnknownBlockType)arg4;
 + (void)ks_loadAnimatedImageWithAssetURL:(id)arg1 maximumSize:(struct CGSize)arg2 completionHandler:(CDUnknownBlockType)arg3;
 + (void)_ks_loadAnimatedImageWithAssetURL:(id)arg1 maximumSize:(struct CGSize)arg2 completionHandler:(CDUnknownBlockType)arg3;

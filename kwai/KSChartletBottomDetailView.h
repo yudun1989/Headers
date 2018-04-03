@@ -8,42 +8,26 @@
 
 #import "UICollectionViewDelegateFlowLayout-Protocol.h"
 
-@class KSCharletButtomDetailDataSource, KSChartletBottomDetailViewDotView, NSString, UICollectionView, UICollectionViewFlowLayout;
+@class KSCharletButtomDetailDataSource, NSString, UICollectionView, UICollectionViewFlowLayout;
 @protocol KSChartletBottomDetailViewDelegate;
 
 @interface KSChartletBottomDetailView : UIView <UICollectionViewDelegateFlowLayout>
 {
-    _Bool _processing;
     id <KSChartletBottomDetailViewDelegate> _delegate;
     KSCharletButtomDetailDataSource *_dataSource;
-    double _penSizeScale;
     UICollectionView *_listView;
-    UIView *_listContainerView;
     UICollectionViewFlowLayout *_flowLayout;
-    UIView *_penSizeSlider;
-    KSChartletBottomDetailViewDotView *_penDotView;
 }
 
-@property(nonatomic) _Bool processing; // @synthesize processing=_processing;
-@property(retain, nonatomic) KSChartletBottomDetailViewDotView *penDotView; // @synthesize penDotView=_penDotView;
-@property(retain, nonatomic) UIView *penSizeSlider; // @synthesize penSizeSlider=_penSizeSlider;
 @property(retain, nonatomic) UICollectionViewFlowLayout *flowLayout; // @synthesize flowLayout=_flowLayout;
-@property(retain, nonatomic) UIView *listContainerView; // @synthesize listContainerView=_listContainerView;
 @property(retain, nonatomic) UICollectionView *listView; // @synthesize listView=_listView;
-@property(nonatomic) double penSizeScale; // @synthesize penSizeScale=_penSizeScale;
 @property(retain, nonatomic) KSCharletButtomDetailDataSource *dataSource; // @synthesize dataSource=_dataSource;
 @property(nonatomic) __weak id <KSChartletBottomDetailViewDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
 - (void)collectionView:(id)arg1 didSelectItemAtIndexPath:(id)arg2;
 - (struct CGSize)collectionView:(id)arg1 layout:(id)arg2 sizeForItemAtIndexPath:(id)arg3;
-- (void)deselectCurrentPencil;
-- (void)didChangePenSlider:(id)arg1;
-- (void)reloadData;
-@property(nonatomic) unsigned long long type; // @dynamic type;
-- (void)commonInit;
-- (id)initWithFrame:(struct CGRect)arg1;
-- (id)initWithCoder:(id)arg1;
-- (id)init;
+@property(readonly, nonatomic) unsigned long long type; // @dynamic type;
+- (id)initWithFrame:(struct CGRect)arg1 type:(unsigned long long)arg2;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

@@ -8,7 +8,7 @@
 
 #import "LYWStoreSubscriber-Protocol.h"
 
-@class LYWStore, NSString, UIView;
+@class LYWStore, NSString;
 
 @interface LYWComponent : UIViewController <LYWStoreSubscriber>
 {
@@ -16,13 +16,11 @@
     CDUnknownBlockType _stateSelector;
 }
 
-+ (id)ks_createPreviewComponentWithStore:(id)arg1 selector:(CDUnknownBlockType)arg2 asset:(id)arg3;
 @property(copy, nonatomic) CDUnknownBlockType stateSelector; // @synthesize stateSelector=_stateSelector;
 @property(nonatomic) __weak LYWStore *store; // @synthesize store=_store;
 - (void).cxx_destruct;
 - (void)dealloc;
 - (id)observedState;
-- (void)newState:(id)arg1 oldState:(id)arg2;
 - (id)initWithStore:(id)arg1 selector:(CDUnknownBlockType)arg2;
 
 // Remaining properties
@@ -30,7 +28,6 @@
 @property(readonly, copy) NSString *description;
 @property(readonly) unsigned long long hash;
 @property(readonly) Class superclass;
-@property(readonly, nonatomic) UIView *view;
 
 @end
 

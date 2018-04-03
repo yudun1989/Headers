@@ -44,6 +44,7 @@
     _Bool m_bForbidFavMenu;
     _Bool _m_bAllowFirstSightVoice;
     _Bool _shouldGenForwardAdXml;
+    _Bool _shouldHideNavigationWhenPop;
     _Bool _m_bClickedCloseBtn;
     _Bool _m_bHasTryDownloadAllPage;
     _Bool _m_bHasDrag;
@@ -116,6 +117,7 @@
 @property(nonatomic) struct CGPoint toOffsetAfterScroll; // @synthesize toOffsetAfterScroll=_toOffsetAfterScroll;
 @property(nonatomic) struct CGPoint fromOffsetBeforeScoll; // @synthesize fromOffsetBeforeScoll=_fromOffsetBeforeScoll;
 @property(nonatomic) struct CGPoint offsetBeforeDragging; // @synthesize offsetBeforeDragging=_offsetBeforeDragging;
+@property(nonatomic) _Bool shouldHideNavigationWhenPop; // @synthesize shouldHideNavigationWhenPop=_shouldHideNavigationWhenPop;
 @property(nonatomic) _Bool shouldGenForwardAdXml; // @synthesize shouldGenForwardAdXml=_shouldGenForwardAdXml;
 @property(retain, nonatomic) NSString *fromCanvasId; // @synthesize fromCanvasId=_fromCanvasId;
 @property(retain, nonatomic) NSString *currentCanvasId; // @synthesize currentCanvasId=_currentCanvasId;
@@ -195,6 +197,7 @@
 - (unsigned int)getAdType;
 - (id)getUxInfo;
 - (id)getSnsId;
+- (_Bool)getUseSnsCdnDownloadMode:(id)arg1;
 - (_Bool)isSearchCanvas;
 - (_Bool)isCurrentVCFromCanvasAd;
 - (void)tableView:(id)arg1 didEndDisplayingCell:(id)arg2 forRowAtIndexPath:(id)arg3;
@@ -207,6 +210,7 @@
 - (double)tableView:(id)arg1 heightForRowAtIndexPath:(id)arg2;
 - (long long)tableView:(id)arg1 numberOfRowsInSection:(long long)arg2;
 - (long long)numberOfSectionsInTableView:(id)arg1;
+- (id)tryAppendAdParamsForWeappPath:(id)arg1;
 - (void)actionSheetCancel:(id)arg1;
 - (void)hideActionSheet;
 - (void)showActionSheet:(id)arg1 body:(id)arg2 withIcon:(id)arg3 hideHeader:(_Bool)arg4 showCancelAction:(_Bool)arg5;

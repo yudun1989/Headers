@@ -20,6 +20,7 @@
 
 - (void).cxx_destruct;
 - (void)onAppTaskLaunch:(id)arg1;
+- (_Bool)haveFreeSpace:(id)arg1 writeSize:(unsigned long long)arg2;
 - (void)workThread_unzipWithAppID:(id)arg1 localID:(id)arg2 targetDirectory:(id)arg3 handler:(CDUnknownBlockType)arg4;
 - (void)workthread_writeFileDataWithAppID:(id)arg1 localID:(id)arg2 isUpdate:(_Bool)arg3 fromPosition:(unsigned long long)arg4 data:(id)arg5 handler:(CDUnknownBlockType)arg6;
 - (void)workthread_readFileDataWithAppID:(id)arg1 localID:(id)arg2 fromPosition:(unsigned long long)arg3 length:(unsigned long long)arg4 handler:(CDUnknownBlockType)arg5;

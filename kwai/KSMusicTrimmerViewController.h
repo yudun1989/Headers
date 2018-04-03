@@ -7,7 +7,7 @@
 #import "KSBaseViewController.h"
 
 @class GPUImageView, KSAVPlayerView, KSLyricsSmoothTimestampController, KSMusicItem, KSMusicPreviewTool, KSMusicTrimContext, KSMusicTrimmerGeneralInfoView, KSMusicTrimmerSlider, KSMusicTrimmerViewModel, KSNavAlertView, KSRefreshableNavigationBar, KSVideoMusicRealTimeLogService, NSObject, UIActivityIndicatorView, UIImageView, UIView, _KSBalancedGroupOperation;
-@protocol KSAttachmentAudioMedia, OS_dispatch_group;
+@protocol KSGPUImageMedia, OS_dispatch_group;
 
 @interface KSMusicTrimmerViewController : KSBaseViewController
 {
@@ -16,7 +16,7 @@
     _Bool _disablePlayProgress;
     _Bool _completeDownloadMusic;
     long long _trimDuration;
-    NSObject<KSAttachmentAudioMedia> *_media;
+    NSObject<KSGPUImageMedia> *_media;
     CDUnknownBlockType _trimCompletion;
     KSMusicTrimContext *_trimContext;
     KSMusicItem *_music;
@@ -77,7 +77,7 @@
 @property(retain, nonatomic) KSMusicTrimContext *trimContext; // @synthesize trimContext=_trimContext;
 @property(nonatomic) _Bool autoSeeking; // @synthesize autoSeeking=_autoSeeking;
 @property(copy, nonatomic) CDUnknownBlockType trimCompletion; // @synthesize trimCompletion=_trimCompletion;
-@property(retain, nonatomic) NSObject<KSAttachmentAudioMedia> *media; // @synthesize media=_media;
+@property(retain, nonatomic) NSObject<KSGPUImageMedia> *media; // @synthesize media=_media;
 @property(nonatomic) long long trimDuration; // @synthesize trimDuration=_trimDuration;
 - (void).cxx_destruct;
 - (id)createRotationFilter;

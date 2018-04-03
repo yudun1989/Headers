@@ -6,9 +6,11 @@
 
 #import <UIKit/UIImage.h>
 
+#import "NSCoding-Protocol.h"
+
 @class EditImageAttr, MMAsset, MMImageExifLogInfo, MMImageLocation, NSData, NSString, NSURL;
 
-@interface MMImage : UIImage
+@interface MMImage : UIImage <NSCoding>
 {
     long long _mattID;
     NSString *_dataPath;
@@ -35,6 +37,8 @@
 @property(retain, nonatomic) NSString *dataPath; // @synthesize dataPath=_dataPath;
 @property(nonatomic) long long mattID; // @synthesize mattID=_mattID;
 - (void).cxx_destruct;
+- (id)initWithCoder:(id)arg1;
+- (void)encodeWithCoder:(id)arg1;
 - (id)initWithImage:(id)arg1;
 - (id)init;
 - (void)commonInit;

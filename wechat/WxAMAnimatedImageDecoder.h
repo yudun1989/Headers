@@ -39,7 +39,7 @@
 - (void)uninitDecoder;
 - (void)setScale:(double)arg1;
 - (id)currentFrameImage;
-- (void)seekToNextFrame;
+- (_Bool)seekToNextFrame;
 - (id)initWithData:(id)arg1;
 - (void)dealloc;
 

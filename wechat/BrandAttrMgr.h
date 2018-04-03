@@ -20,13 +20,13 @@
     BizAttrSyncCtrl *_syncCtrl;
 }
 
-@property(retain, nonatomic) BizAttrSyncCtrl *syncCtrl; // @synthesize syncCtrl=_syncCtrl;
-@property(retain, nonatomic) NSMutableDictionary *syncBufList; // @synthesize syncBufList=_syncBufList;
 - (void).cxx_destruct;
 - (void)loadCtrlInfo;
 - (void)saveCtrlInfo;
+- (void)tryLoadSyncCtrl;
 - (void)loadBufCache;
 - (void)saveBufCache;
+- (void)tryLoadSyncBufList;
 - (void)deleteSyncBufferWithBrandUserNameList:(id)arg1;
 - (void)deleteSyncBuf:(id)arg1;
 - (void)updateBrandContact:(id)arg1 withSyncBuf:(id)arg2;

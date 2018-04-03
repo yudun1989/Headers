@@ -18,7 +18,6 @@
 - (void).cxx_destruct;
 - (unsigned long long)supportedInterfaceOrientations;
 - (_Bool)shouldAutorotate;
-- (void)onTopBarFrameChanged;
 - (_Bool)useBlackStatusbar;
 - (void)viewDidLoad;
 - (id)initWithWindow:(id)arg1;

@@ -4,27 +4,26 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-#import <objc/NSObject.h>
+#import "LYWBaseAction.h"
 
-#import "LYWServiceAction-Protocol.h"
-#import "NSCopying-Protocol.h"
+#import "LYWServicePassThroughAction-Protocol.h"
 
 @class NSString;
 
-@interface KSMediaEditGoToPageAction : NSObject <LYWServiceAction, NSCopying>
+@interface KSMediaEditGoToPageAction : LYWBaseAction <LYWServicePassThroughAction>
 {
     int _page;
+    NSString *_statisticalName;
 }
 
+@property(retain, nonatomic) NSString *statisticalName; // @synthesize statisticalName=_statisticalName;
 @property(nonatomic) int page; // @synthesize page=_page;
-@property(readonly, copy) NSString *description;
-- (id)copyWithZone:(struct _NSZone *)arg1;
-@property(readonly) unsigned long long hash;
-- (_Bool)isEqualToAction:(id)arg1;
-- (_Bool)isEqual:(id)arg1;
+- (void).cxx_destruct;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;
+@property(readonly, copy) NSString *description;
+@property(readonly) unsigned long long hash;
 @property(readonly) Class superclass;
 
 @end

@@ -30,8 +30,8 @@
 }
 
 @property(nonatomic) __weak id <IWAAudioPlayerDelegate> delegate; // @synthesize delegate=_delegate;
-@property(retain, nonatomic) id <WAAudioSource> source; // @synthesize source=_source;
-@property(retain, nonatomic) NSData *fileData; // @synthesize fileData=_fileData;
+@property(retain) id <WAAudioSource> source; // @synthesize source=_source;
+@property(retain) NSData *fileData; // @synthesize fileData=_fileData;
 @property(nonatomic) double volume; // @synthesize volume=_volume;
 @property(nonatomic) _Bool obeyMuteSwitch; // @synthesize obeyMuteSwitch=_obeyMuteSwitch;
 @property(nonatomic) _Bool autoPlay; // @synthesize autoPlay=_autoPlay;
@@ -52,8 +52,8 @@
 - (void)setOpenALContext;
 - (void)setState:(long long)arg1 error:(id)arg2;
 - (void)endLoad;
-- (void)backgroundLoad:(id)arg1;
-- (void)load:(id)arg1;
+- (void)backgroundInitSource;
+- (_Bool)backgroundLoadData:(id)arg1 src:(id)arg2;
 @property(readonly, nonatomic) long long state;
 @property(readonly, nonatomic) double duration;
 @property(readonly, nonatomic) double curTime;

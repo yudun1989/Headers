@@ -18,7 +18,7 @@
     CDUnknownBlockType _selectBlock;
 }
 
-+ (id)itemsWithTab:(int)arg1;
++ (id)itemsWithTab:(id)arg1;
 + (id)itemWithType:(unsigned long long)arg1;
 @property(copy, nonatomic) CDUnknownBlockType selectBlock; // @synthesize selectBlock=_selectBlock;
 @property(retain, nonatomic) NSNumber *identity; // @synthesize identity=_identity;

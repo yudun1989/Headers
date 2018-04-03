@@ -4,25 +4,17 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-#import <objc/NSObject.h>
+#import "LYWBaseAction.h"
 
-#import "LYWAction-Protocol.h"
+@class NSArray;
 
-@class NSArray, NSString;
-
-@interface KSMediaEditUpdateDeleteRangeAction : NSObject <LYWAction>
+@interface KSMediaEditUpdateDeleteRangeAction : LYWBaseAction
 {
     NSArray *_deleteRange;
 }
 
 @property(retain, nonatomic) NSArray *deleteRange; // @synthesize deleteRange=_deleteRange;
 - (void).cxx_destruct;
-@property(readonly, copy) NSString *description;
-
-// Remaining properties
-@property(readonly, copy) NSString *debugDescription;
-@property(readonly) unsigned long long hash;
-@property(readonly) Class superclass;
 
 @end
 

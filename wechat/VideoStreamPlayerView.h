@@ -37,6 +37,7 @@
 - (void)OnSnsVideoChanged;
 - (void)onDownloadSuccess;
 - (void)ShouldUpdateThumbImage:(id)arg1;
+- (void)onDownloadVideoReturnCode:(int)arg1;
 - (void)OnVideoDownloadErrorExpired:(_Bool)arg1;
 - (void)tryToBeginPlayVideo;
 - (void)tryToPlayAndStopLoading;

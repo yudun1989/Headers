@@ -14,6 +14,7 @@
 + (void)clearRedDotAtWalletWithReport:(_Bool)arg1;
 + (void)clearRedDotAtWallet;
 + (void)clearRedDotAtPayCenter;
++ (id)wordingAtWallet;
 + (_Bool)showRedDotAtMe;
 + (_Bool)showRedDotAtWallet;
 + (_Bool)showRedDotAtPayCenter;

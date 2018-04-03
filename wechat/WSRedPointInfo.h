@@ -13,6 +13,7 @@
 @interface WSRedPointInfo : NSObject <PBCoding>
 {
     _Bool bFFShowRedot;
+    _Bool bCheckedExpired;
     unsigned int entranceShowRed;
     unsigned int clientVersion;
     unsigned int h5TemplateVersion;
@@ -27,6 +28,7 @@
 }
 
 + (void)initialize;
+@property(nonatomic) _Bool bCheckedExpired; // @synthesize bCheckedExpired;
 @property(nonatomic) int clear; // @synthesize clear;
 @property(nonatomic) unsigned int recieveTime; // @synthesize recieveTime;
 @property(nonatomic) unsigned int redotTimeStamp; // @synthesize redotTimeStamp;

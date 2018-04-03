@@ -4,28 +4,30 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-#import <objc/NSObject.h>
+#import "LYWBaseAction.h"
 
 #import "LYWServiceAction-Protocol.h"
 
 @class KSMusicItem, NSDictionary, NSString;
 
-@interface KSSetAudioItemSelectedServiceAction : NSObject <LYWServiceAction>
+@interface KSSetAudioItemSelectedServiceAction : LYWBaseAction <LYWServiceAction>
 {
-    int _type;
-    unsigned long long _selectedIndex;
+    long long _type;
+    long long _selectedIndex;
+    NSString *_statisticalName;
     NSString *_audioPath;
     NSString *_title;
     NSDictionary *_metadata;
-    KSMusicItem *_cloudMusicItem;
+    KSMusicItem *_musicItem;
 }
 
-@property(retain, nonatomic) KSMusicItem *cloudMusicItem; // @synthesize cloudMusicItem=_cloudMusicItem;
+@property(retain, nonatomic) KSMusicItem *musicItem; // @synthesize musicItem=_musicItem;
 @property(retain, nonatomic) NSDictionary *metadata; // @synthesize metadata=_metadata;
 @property(retain, nonatomic) NSString *title; // @synthesize title=_title;
-@property(nonatomic) int type; // @synthesize type=_type;
 @property(copy, nonatomic) NSString *audioPath; // @synthesize audioPath=_audioPath;
-@property(nonatomic) unsigned long long selectedIndex; // @synthesize selectedIndex=_selectedIndex;
+@property(retain, nonatomic) NSString *statisticalName; // @synthesize statisticalName=_statisticalName;
+@property(nonatomic) long long selectedIndex; // @synthesize selectedIndex=_selectedIndex;
+@property(nonatomic) long long type; // @synthesize type=_type;
 - (void).cxx_destruct;
 
 // Remaining properties

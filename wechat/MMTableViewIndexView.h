@@ -6,10 +6,12 @@
 
 #import "MMUIView.h"
 
-@class MMTableView, NSArray, NSMutableArray, UIImageView, UILabel;
+#import "MMUIViewControllerExt-Protocol.h"
+
+@class MMTableView, NSArray, NSMutableArray, NSString, UIImageView, UILabel;
 @protocol MMTableViewIndexViewDelegate;
 
-@interface MMTableViewIndexView : MMUIView
+@interface MMTableViewIndexView : MMUIView <MMUIViewControllerExt>
 {
     MMTableView *_mmtableView;
     id <MMTableViewIndexViewDelegate> _delegate;
@@ -24,6 +26,7 @@
 }
 
 - (void).cxx_destruct;
+- (void)MMUIViewControllerWillAppear:(id)arg1;
 - (void)hideContactIndexShape;
 - (void)showContactIndexShape:(long long)arg1;
 - (void)handleTouchToIndex:(long long)arg1;
@@ -42,9 +45,17 @@
 - (void)scrollToSectionIndex:(long long)arg1;
 - (void)totallyReloadView;
 - (void)reloadIndexView;
+- (struct UIEdgeInsets)getTableViewContentInset;
 - (void)reloadView;
 - (id)hitTest:(struct CGPoint)arg1 withEvent:(id)arg2;
+- (void)dealloc;
 - (id)initWithTableView:(id)arg1 withDelegate:(id)arg2;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly, copy) NSString *description;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
 
 @end
 

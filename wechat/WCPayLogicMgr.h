@@ -403,6 +403,7 @@
 - (void)handleWCPayTransferOverTime:(id)arg1;
 - (void)handleOverseaFacingReceiveMoneyMsg:(id)arg1;
 - (void)handleTransToBankCardEntryMsg:(id)arg1;
+- (void)handleOverseaRedEnvelopeMsg:(id)arg1;
 - (void)OnGetNewXmlMsg:(id)arg1 Type:(id)arg2 MsgWrap:(id)arg3 IsPull:(_Bool)arg4;
 - (void)OnGetNewXmlMsg:(id)arg1 Type:(id)arg2 MsgWrap:(id)arg3;
 - (void)handleReceiveOrPayRedDotMsg:(id)arg1;
@@ -479,7 +480,7 @@
 - (void)updateTokenAfterSeconds:(double)arg1 withUserInfo:(id)arg2;
 - (void)ScheduleUpdateTokenWhenShitHappened;
 - (_Bool)isUserBindQueryEnable;
-- (void)GetPayCardListAndUsrVerifiedInfoForOfflinePay:(int)arg1;
+- (void)SendOfflinePayUserBindqueryRequestWithEntryScene:(int)arg1;
 - (void)reportRemainNum:(long long)arg1 entryScene:(unsigned int)arg2 isSnapshot:(_Bool)arg3 statDic:(id)arg4 isUserViewDigit:(_Bool)arg5;
 - (void)reportRemainNum:(long long)arg1;
 - (void)GetBarCodeFromQRCode:(id)arg1;

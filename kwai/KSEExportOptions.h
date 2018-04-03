@@ -22,11 +22,12 @@
 @property(copy, nonatomic) NSString *comment; // @dynamic comment;
 @property(nonatomic) _Bool hasVideoFrameRate; // @dynamic hasVideoFrameRate;
 @property(nonatomic) int height; // @dynamic height;
+@property(nonatomic) _Bool separateAudioTrack; // @dynamic separateAudioTrack;
+@property(copy, nonatomic) NSString *separateAudioTrackPath; // @dynamic separateAudioTrackPath;
 @property(nonatomic) long long videoBitrate; // @dynamic videoBitrate;
 @property(nonatomic) int videoEncoderType; // @dynamic videoEncoderType;
 @property(retain, nonatomic) KSERational *videoFrameRate; // @dynamic videoFrameRate;
 @property(nonatomic) int videoGopSize; // @dynamic videoGopSize;
-@property(nonatomic) int videoPixFmt; // @dynamic videoPixFmt;
 @property(nonatomic) int width; // @dynamic width;
 @property(copy, nonatomic) NSString *x264Params; // @dynamic x264Params;
 @property(copy, nonatomic) NSString *x264Preset; // @dynamic x264Preset;

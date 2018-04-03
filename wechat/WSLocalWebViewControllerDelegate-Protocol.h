@@ -10,6 +10,6 @@
 
 @optional
 - (void)onForbidCacheWSLocalWebView;
-- (void)onWSLocalWebViewReturn;
+- (void)onWSLocalWebViewReturn:(id)arg1;
 @end
 

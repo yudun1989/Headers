@@ -11,12 +11,14 @@
 @interface WANearByPreViewItem : MMObject
 {
     unsigned int _appVersion;
+    unsigned int _debugMode;
     NSString *_userName;
     NSString *_previewNickName;
     NSString *_headImageUrlString;
     NSString *_path;
 }
 
+@property(nonatomic) unsigned int debugMode; // @synthesize debugMode=_debugMode;
 @property(nonatomic) unsigned int appVersion; // @synthesize appVersion=_appVersion;
 @property(copy, nonatomic) NSString *path; // @synthesize path=_path;
 @property(copy, nonatomic) NSString *headImageUrlString; // @synthesize headImageUrlString=_headImageUrlString;

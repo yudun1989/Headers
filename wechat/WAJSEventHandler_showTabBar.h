@@ -10,6 +10,7 @@
 {
 }
 
+- (void)showTabbarWithAnimate:(_Bool)arg1 webview:(id)arg2;
 - (void)handleJSEvent:(id)arg1;
 
 @end

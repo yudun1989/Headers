@@ -6,14 +6,26 @@
 
 #import <objc/NSObject.h>
 
+@class KSEBeautyFilterParam, KSEColorFilterParam;
+
 @interface KSEImageFilterRenderer : NSObject
 {
+    struct AVFrame *_frame;
+    KSEColorFilterParam *_colorParam;
+    KSEBeautyFilterParam *_beautifyParam;
 }
 
 + (struct CGContext *)newBitmapRGBA8ContextFromImage:(struct CGImage *)arg1;
 + (id)convertBitmapRGBA8ToUIImage:(char *)arg1 withWidth:(int)arg2 withHeight:(int)arg3;
 + (char *)convertUIImageToBitmapRGBA8:(struct CGImage *)arg1;
-- (id)filterImage:(id)arg1 withBeautyFilterParam:(id)arg2 colorFilterParam:(id)arg3;
++ (id)filterImage:(id)arg1 withBeautyFilterParam:(id)arg2 colorFilterParam:(id)arg3;
+@property(retain, nonatomic) KSEBeautyFilterParam *beautifyParam; // @synthesize beautifyParam=_beautifyParam;
+@property(retain, nonatomic) KSEColorFilterParam *colorParam; // @synthesize colorParam=_colorParam;
+- (void).cxx_destruct;
+- (id)filteredImageWithIntensity:(float)arg1;
+- (void)dealloc;
+- (void)unloadCurrentImage;
+- (_Bool)loadImage:(id)arg1;
 
 @end
 

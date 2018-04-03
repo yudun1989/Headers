@@ -34,7 +34,7 @@
 @property(readonly, nonatomic) double currentFrameDuration; // @synthesize currentFrameDuration=_currentFrameDuration;
 @property(readonly, nonatomic) UIImage *currentFrameImage; // @synthesize currentFrameImage=_currentFrameImage;
 - (void).cxx_destruct;
-- (void)seekToNextFrame;
+- (_Bool)seekToNextFrame;
 
 @end
 

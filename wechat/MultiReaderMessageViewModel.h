@@ -24,6 +24,7 @@
 - (_Bool)isItemNoCover:(id)arg1;
 - (struct CGSize)calculateDigestLabelSize:(unsigned int)arg1;
 - (id)digestStylesForIndex:(unsigned int)arg1;
+- (double)labelMaxWidthOfIndex:(unsigned int)arg1;
 - (struct CGSize)digestSizeOfIndex:(unsigned int)arg1;
 - (struct CGSize)calculateTitleLabelSize:(unsigned int)arg1;
 - (id)titleStylesForIndex:(unsigned int)arg1;

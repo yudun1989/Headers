@@ -14,6 +14,7 @@
 - (id)getTitle;
 - (void)setSubTitle:(id)arg1;
 - (void)setTitle:(id)arg1;
+- (_Bool)pointInside:(struct CGPoint)arg1 withEvent:(id)arg2;
 - (id)initWithFrame:(struct CGRect)arg1;
 
 @end

@@ -11,7 +11,6 @@
 }
 
 + (id)descriptor;
-- (void)setBeautifyValue:(double)arg1;
 
 // Remaining properties
 @property(nonatomic) unsigned int bright; // @dynamic bright;

@@ -98,7 +98,7 @@
 - (void)StartDownloadByRecordData:(id)arg1 DataId:(id)arg2 thumb:(_Bool)arg3 data:(_Bool)arg4;
 - (void)StartDownloadByRecordData:(id)arg1 DataId:(id)arg2 prior:(_Bool)arg3;
 - (void)StartDownloadByRecordData:(id)arg1 DataId:(id)arg2;
-- (void)StartDownloadByRecordMsg:(id)arg1;
+- (_Bool)StartDownloadByRecordMsg:(id)arg1;
 - (void)StopUploadRecordMsgByUsername:(id)arg1;
 - (void)StopUploadRecordMsg:(id)arg1;
 - (void)ResendRecordMsg:(id)arg1 MsgWrap:(id)arg2;
@@ -221,8 +221,8 @@
 - (void)StopUploadVideoByChatName:(id)arg1;
 - (void)StopUploadVideo:(id)arg1 MsgWrap:(id)arg2;
 - (void)StartUploadVideo:(id)arg1 MsgWrap:(id)arg2;
-- (void)AddVideoMsg:(id)arg1 ToUsr:(id)arg2 VideoInfo:(id)arg3 MsgType:(unsigned int)arg4;
-- (void)ResendSightMsg:(id)arg1 MsgWrap:(id)arg2;
+- (id)AddVideoMsg:(id)arg1 ToUsr:(id)arg2 VideoInfo:(id)arg3 MsgType:(unsigned int)arg4;
+- (void)ResendVideoMsg:(id)arg1 MsgWrap:(id)arg2;
 - (void)AddShortVideoMsg:(id)arg1 ToUsr:(id)arg2 VideoInfo:(id)arg3;
 - (void)AddVideoMsg:(id)arg1 ToUsr:(id)arg2 VideoInfo:(id)arg3;
 - (void)UpdateMessage:(id)arg1 MsgWrap:(id)arg2;
@@ -282,6 +282,7 @@
 - (id)GetMsg:(id)arg1 FromID:(unsigned int)arg2 Limit:(int)arg3 LeftCount:(unsigned int *)arg4 LeftUnreadCount:(unsigned int *)arg5;
 - (void)AddMsgPattern:(id)arg1;
 - (void)HandleMsgList:(id)arg1 MsgList:(id)arg2;
+- (void)setUploadContinueFieldNewMsg:(id)arg1 OldMsg:(id)arg2;
 - (void)ResendMsg:(id)arg1 MsgWrap:(id)arg2;
 - (void)ModMsgByBitSet:(id)arg1 MsgWrap:(id)arg2 BitSet:(unsigned int)arg3;
 - (void)ModMsgWithoutNotify:(id)arg1 MsgWrap:(id)arg2;

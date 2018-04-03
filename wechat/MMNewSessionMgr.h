@@ -91,6 +91,7 @@
 - (_Bool)IsTopSessionCountExceed;
 - (void)UntopSessionByName:(id)arg1;
 - (void)TopSessionByName:(id)arg1;
+- (_Bool)IsSessionWithNullMsg:(id)arg1;
 - (void)temporaryTopSessionByContact:(id)arg1;
 - (_Bool)IsSessionNeedDelayLoad;
 - (unsigned int)GenSendMsgTime;

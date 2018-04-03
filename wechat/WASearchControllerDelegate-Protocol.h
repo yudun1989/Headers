@@ -12,6 +12,7 @@
 
 @optional
 - (void)didEndSearch;
+- (void)willEndSearch;
 - (void)willBeginSearch;
 - (UIView *)getBlurEffectView;
 @end

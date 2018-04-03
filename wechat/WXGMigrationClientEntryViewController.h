@@ -10,7 +10,7 @@
 #import "IMigrationClientExt-Protocol.h"
 #import "UIAlertViewDelegate-Protocol.h"
 
-@class CTRichTextView, MMUILabel, NSString, UIButton, UIImageView, UIView, WXGDotDotDotLabel;
+@class CTRichTextView, MMUILabel, NSString, UIButton, UIImageView, UILabel, UIView, WXGDotDotDotLabel;
 @protocol WXGMigrationClientEntryViewControllerDelegate;
 
 @interface WXGMigrationClientEntryViewController : MMWindowViewController <IMigrationClientExt, UIAlertViewDelegate, ILinkEventExt>
@@ -38,6 +38,7 @@
     unsigned long long m_totalSize;
     unsigned long long m_currentShowAlertViewTag;
     _Bool m_bUserCancelImport;
+    UILabel *m_debugInfoLabel;
     id <WXGMigrationClientEntryViewControllerDelegate> _delegate;
 }
 
@@ -63,6 +64,7 @@
 - (void)onClientMigrationNotifyProgressCurrent:(unsigned long long)arg1 totalProgress:(unsigned long long)arg2;
 - (void)onClientMigrationNotifyCode:(unsigned long long)arg1;
 - (void)onClientMigrationAlertCode:(unsigned long long)arg1;
+- (void)p_addDebugInfoView;
 - (void)p_addGreyButton;
 - (void)p_addGreenButton;
 - (void)p_addSmallTipsLabel;

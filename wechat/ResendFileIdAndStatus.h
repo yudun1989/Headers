@@ -22,9 +22,11 @@
     NSString *clientMsgId;
     NSString *fileUrl;
     NSString *fileAesKey;
+    NSString *streamId;
 }
 
 + (void)initialize;
+@property(retain, nonatomic) NSString *streamId; // @synthesize streamId;
 @property(retain, nonatomic) NSString *fileAesKey; // @synthesize fileAesKey;
 @property(retain, nonatomic) NSString *fileUrl; // @synthesize fileUrl;
 @property(retain, nonatomic) NSString *clientMsgId; // @synthesize clientMsgId;

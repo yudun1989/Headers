@@ -73,6 +73,7 @@
     GameIndexSettingControl *m_gameEntrySetting;
     WSLocalWebViewController *m_wsLocalWebViewController;
     MMTimer *m_wsLocalWebViewCacheTimer;
+    NSString *m_ffBrowseReddotMsgIdDuringSelect;
     WCWebSearchViewControllerNewH5 *m_FFWebSearchViewController;
     MMTimer *m_FFWebSearchViewCacheTimer;
     UIView *_allEntriesClosedHintView;
@@ -98,7 +99,7 @@
 - (void)closeWSLocalWebViewWithNeedPreload:(_Bool)arg1;
 - (void)onCloseWSLocalWebViewTimeOut;
 - (void)onForbidCacheWSLocalWebView;
-- (void)onWSLocalWebViewReturn;
+- (void)onWSLocalWebViewReturn:(id)arg1;
 - (void)onWebSearchRedPointChange;
 - (void)onLabAppSwitchChanged:(id)arg1;
 - (void)onSearchConfigDataUpdated;
@@ -148,6 +149,7 @@
 - (_Bool)shouldShowScanQRCodeEntry;
 - (_Bool)shouldShowSearchEntry;
 - (_Bool)shouldShowBrowseEntry;
+- (_Bool)isShowReddotForWebRecommend;
 - (id)preOpenWSLocalWebView;
 - (int)getHitTypeWhenEnterWithVCType:(int)arg1;
 - (void)openBrowseEntry;

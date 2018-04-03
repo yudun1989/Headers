@@ -63,6 +63,7 @@
 - (void)adjustTextViewFont;
 - (_Bool)textView:(id)arg1 shouldChangeTextInRange:(struct _NSRange)arg2 replacementText:(id)arg3;
 - (void)textViewDidEndEditing:(id)arg1;
+- (void)textViewDidBeginEditing:(id)arg1;
 - (void)textViewDidChange:(id)arg1;
 - (id)chartlet;
 - (id)shape;

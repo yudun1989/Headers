@@ -120,6 +120,7 @@
 - (void)onOfflinePayPatternLockBlockErrorOutOfLimit;
 - (void)OnContinueClickTransToBank;
 - (void)OnWCPayOfflinePayViewControllerClickTransToBankCardBtn;
+- (void)insideCallReportCurrentRecevieOfflineNewXmlMsg;
 - (void)insideCallReportCurrentOfflinePayMsgFromPull;
 - (void)insideCallOfflineGetMsg;
 - (void)StopOfflineGetMsg;
@@ -142,6 +143,7 @@
 - (void)tryExitCodeViewFullScreen;
 - (void)OnReCreateOfflinePay;
 - (void)OnCancelReCreateOfflinePay;
+- (void)OnAddCardAlertCancel;
 - (void)OnAddCardBtnDonw:(id)arg1;
 - (void)OnChangedLimitBtnDonw:(id)arg1;
 - (void)OnOfflinePayCancelPosNotification:(id)arg1;

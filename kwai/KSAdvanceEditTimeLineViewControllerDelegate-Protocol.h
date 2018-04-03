@@ -6,14 +6,15 @@
 
 #import "NSObject-Protocol.h"
 
-@class KSAdvanceEditTimeLineViewController;
+@class KSMediaEditTimeLineViewController;
 
 @protocol KSAdvanceEditTimeLineViewControllerDelegate <NSObject>
-- (void)timeLineViewController:(KSAdvanceEditTimeLineViewController *)arg1 didUpdateItemAtIndex:(unsigned long long)arg2;
-- (void)timeLineViewController:(KSAdvanceEditTimeLineViewController *)arg1 didAdjustEndTimeOfItemAtIndex:(unsigned long long)arg2 toNewValue:(double)arg3;
-- (double)timeLineViewController:(KSAdvanceEditTimeLineViewController *)arg1 willAdjustEndTimeOfItemAtIndex:(unsigned long long)arg2 toNewValue:(double)arg3;
-- (void)timeLineViewController:(KSAdvanceEditTimeLineViewController *)arg1 didAdjustStartTimeOfItemAtIndex:(unsigned long long)arg2 toNewValue:(double)arg3;
-- (double)timeLineViewController:(KSAdvanceEditTimeLineViewController *)arg1 willAdjustStartTimeOfItemAtIndex:(unsigned long long)arg2 toNewValue:(double)arg3;
-- (_Bool)timeLineViewController:(KSAdvanceEditTimeLineViewController *)arg1 shouldEditItemAtIndex:(unsigned long long)arg2;
+- (void)onTapPlayBtn:(_Bool)arg1;
+- (void)timeLineViewController:(KSMediaEditTimeLineViewController *)arg1 didUpdateItemAtIndex:(unsigned long long)arg2;
+- (void)timeLineViewController:(KSMediaEditTimeLineViewController *)arg1 didAdjustEndTimeOfItemAtIndex:(unsigned long long)arg2 toNewValue:(double)arg3;
+- (double)timeLineViewController:(KSMediaEditTimeLineViewController *)arg1 willAdjustEndTimeOfItemAtIndex:(unsigned long long)arg2 toNewValue:(double)arg3;
+- (void)timeLineViewController:(KSMediaEditTimeLineViewController *)arg1 didAdjustStartTimeOfItemAtIndex:(unsigned long long)arg2 toNewValue:(double)arg3;
+- (double)timeLineViewController:(KSMediaEditTimeLineViewController *)arg1 willAdjustStartTimeOfItemAtIndex:(unsigned long long)arg2 toNewValue:(double)arg3;
+- (_Bool)timeLineViewController:(KSMediaEditTimeLineViewController *)arg1 shouldEditItemAtIndex:(unsigned long long)arg2;
 @end
 

@@ -10,6 +10,7 @@
 {
 }
 
+- (void)report15378:(id)arg1;
 - (void)report15098:(id)arg1;
 - (void)reportSaveNoteImageWidth:(unsigned long long)arg1 Height:(unsigned long long)arg2 Length:(unsigned long long)arg3 errorCode:(unsigned long long)arg4 Editable:(unsigned long long)arg5;
 - (void)reportToolViewOperation:(unsigned long long)arg1;

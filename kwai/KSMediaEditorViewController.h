@@ -6,19 +6,22 @@
 
 #import "KSBaseViewController.h"
 
-#import "KSMediaPreviewViewController-Protocol.h"
+#import "KSMediaEditNavigatable-Protocol.h"
 #import "KSURLPortalAnnotation-Protocol.h"
 
-@class KSLocalAlbumPhoto, KSMediaEditComponent, KSMediaEditShareConfiguration, LYWStore, NSObject, NSString;
+@class KSLocalAlbumPhoto, KSMMediaProject, KSMediaEditComponent, KSMediaEditNavigationItem, KSMediaEditShareConfiguration, KSMediaEditorProxy, KSNavAlertView, KSVideoProduceStatistics, LYWStore, NSObject, NSString;
 @protocol KSMediaEditAsset;
 
-@interface KSMediaEditorViewController : KSBaseViewController <KSURLPortalAnnotation, KSMediaPreviewViewController>
+@interface KSMediaEditorViewController : KSBaseViewController <KSURLPortalAnnotation, KSMediaEditNavigatable>
 {
     _Bool _useLastFrameForCover;
     _Bool _beautifyEnabled;
-    _Bool _forSpringFestival2018;
+    KSMediaEditNavigationItem *_mediaEditNavigationItem;
+    CDUnknownBlockType _onCanceledBlock;
+    KSMMediaProject *_project;
+    KSNavAlertView *_navAlertView;
+    KSMediaEditorProxy *_mediaEditorProxy;
     KSMediaEditShareConfiguration *_shareConfiguration;
-    long long _magicFaceID;
     NSObject<KSMediaEditAsset> *_asset;
     LYWStore *_store;
     KSMediaEditComponent *_component;
@@ -31,40 +34,46 @@
 @property(retain, nonatomic) KSMediaEditComponent *component; // @synthesize component=_component;
 @property(retain, nonatomic) LYWStore *store; // @synthesize store=_store;
 @property(retain, nonatomic) NSObject<KSMediaEditAsset> *asset; // @synthesize asset=_asset;
-@property(nonatomic) long long magicFaceID; // @synthesize magicFaceID=_magicFaceID;
-@property(readonly, nonatomic) _Bool forSpringFestival2018; // @synthesize forSpringFestival2018=_forSpringFestival2018;
 @property(readonly, nonatomic) _Bool beautifyEnabled; // @synthesize beautifyEnabled=_beautifyEnabled;
 @property(retain, nonatomic) KSMediaEditShareConfiguration *shareConfiguration; // @synthesize shareConfiguration=_shareConfiguration;
+@property(retain, nonatomic) KSMediaEditorProxy *mediaEditorProxy; // @synthesize mediaEditorProxy=_mediaEditorProxy;
+@property(retain, nonatomic) KSNavAlertView *navAlertView; // @synthesize navAlertView=_navAlertView;
+@property(retain, nonatomic) KSMMediaProject *project; // @synthesize project=_project;
+@property(copy, nonatomic) CDUnknownBlockType onCanceledBlock; // @synthesize onCanceledBlock=_onCanceledBlock;
 @property(nonatomic) _Bool useLastFrameForCover; // @synthesize useLastFrameForCover=_useLastFrameForCover;
+@property(retain, nonatomic) KSMediaEditNavigationItem *mediaEditNavigationItem; // @synthesize mediaEditNavigationItem=_mediaEditNavigationItem;
 - (void).cxx_destruct;
-- (id)pageURL;
 @property(retain, nonatomic) NSString *initalCaption;
+- (_Bool)_ksIsTopViewController;
+- (void)didTapFinishBtnWithProject:(id)arg1 magicFace:(id)arg2 thiz:(id)arg3;
+- (void)fillCoverMovieInfo:(id)arg1 coverTimestamp:(id)arg2 coverTextStyle:(id)arg3;
+- (void)_addPageURLWithVC:(id)arg1 source:(id)arg2;
+- (void)_configShowMetaData:(id)arg1;
 - (void)_pushShareViewControllerVia:(id)arg1;
 - (void)onNextStep;
 - (void)onDismiss;
-- (id)statisticName;
-- (void)recoverWithMovieInfo:(id)arg1;
-- (void)recoverWithMusicEffect:(id)arg1;
-- (void)recoverWithFilterEffects:(id)arg1;
 - (_Bool)prefersStatusBarHidden;
-- (void)enableFinishButton:(_Bool)arg1;
-- (void)didTapFinishBtn;
-- (void)didTapBackBtn;
-- (void)didTapCancelBtn;
-- (void)configMenu;
+- (void)onPreviousStep;
+- (void)_configAlertView;
+- (void)configNavigationView;
 - (_Bool)ks_shouldHandleBackPanGestureRecognizer:(id)arg1;
+- (id)ksuShowMetaData;
 - (void)_setupInitialStates;
 - (void)viewWillDisappear:(_Bool)arg1;
 - (void)viewDidAppear:(_Bool)arg1;
 - (void)viewWillAppear:(_Bool)arg1;
+- (void)_showError:(id)arg1;
 - (void)viewDidLoad;
 - (void)dealloc;
+- (id)initWithKSMMediaProject:(id)arg1 beautifyEnabled:(_Bool)arg2 asset:(id)arg3;
 - (id)initWithMediaPreviewAsset:(id)arg1 beautifyEnabled:(_Bool)arg2;
+@property(retain, nonatomic) KSVideoProduceStatistics *produceStatistics;
 - (_Bool)ks_presentViewControllerWithContext:(id)arg1;
 - (id)initWithVideoPath:(id)arg1 videoType:(id)arg2 additionalInfo:(id)arg3 audioAttachedPath:(id)arg4;
 - (id)initWithVideoPath:(id)arg1 videoType:(id)arg2 additionalInfo:(id)arg3 maxTrimDuration:(double)arg4 audioAttachedPath:(id)arg5;
 - (id)initWithVideoPath:(id)arg1 videoType:(id)arg2 additionalInfo:(id)arg3 audioAttachedPath:(id)arg4 beautifyEnabled:(_Bool)arg5;
 - (id)initWithVideoPath:(id)arg1 videoType:(id)arg2 additionalInfo:(id)arg3 maxTrimDuration:(double)arg4 audioAttachedPath:(id)arg5 beautifyEnabled:(_Bool)arg6;
+- (id)initWithPhotos:(id)arg1 addionalInfo:(id)arg2;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

@@ -31,8 +31,7 @@
 - (void)viewDidLayoutSubviews;
 - (_Bool)useTransparentNavibar;
 - (void)viewDidBePoped:(_Bool)arg1;
-- (void)viewWillDisappear:(_Bool)arg1;
-- (void)viewWillAppear:(_Bool)arg1;
+- (_Bool)useBlackStatusbar;
 - (void)dealloc;
 
 // Remaining properties

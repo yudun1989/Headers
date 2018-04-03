@@ -6,20 +6,22 @@
 
 #import <objc/NSObject.h>
 
-@class KSLocalAlbumWorkspace, NSArray;
+@class KSLocalAlbumWorkspace, NSArray, NSString;
 
 @interface KSPostPicturesMakeResult : NSObject
 {
     KSLocalAlbumWorkspace *_workspace;
     NSArray *_filteredImageAssets;
+    NSString *_audioPath;
     NSArray *_tempAssets;
 }
 
 @property(readonly, nonatomic) NSArray *tempAssets; // @synthesize tempAssets=_tempAssets;
+@property(readonly, nonatomic) NSString *audioPath; // @synthesize audioPath=_audioPath;
 @property(readonly, nonatomic) NSArray *filteredImageAssets; // @synthesize filteredImageAssets=_filteredImageAssets;
 @property(readonly, nonatomic) KSLocalAlbumWorkspace *workspace; // @synthesize workspace=_workspace;
 - (void).cxx_destruct;
-- (id)initWithWorkspace:(id)arg1 filteredImageAssets:(id)arg2 tempAssets:(id)arg3;
+- (id)initWithWorkspace:(id)arg1 filteredImageAssets:(id)arg2 tempAssets:(id)arg3 audioPath:(id)arg4;
 
 @end
 

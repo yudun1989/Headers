@@ -59,19 +59,23 @@
     unsigned int _version;
     NSString *_deviceid;
     NSString *_favCheckId;
+    NSMutableArray *_arrManualDownloadSvrId;
     WCScheduleItem *_scheduleItem;
     NSString *_searchText;
 }
 
 + (id)xmlOfStreamVideo:(id)arg1;
 + (void)parseStreamVideoNode:(struct XmlReaderNode_t *)arg1 dataField:(id)arg2;
++ (id)FavoritesDataFieldToXML:(id)arg1 item:(id)arg2;
 + (id)FavritesItemToXML:(id)arg1;
 + (id)replacePathPrefix:(id)arg1;
 + (id)parseTagXml:(struct XmlReaderNode_t *)arg1;
++ (id)parseDataNodeFromXml:(struct XmlReaderNode_t *)arg1 deep:(int)arg2;
 + (_Bool)ParseItemXML:(id)arg1 ToItem:(id)arg2;
 @property(retain, nonatomic) NSString *searchText; // @synthesize searchText=_searchText;
 @property(retain, nonatomic) WCScheduleItem *scheduleItem; // @synthesize scheduleItem=_scheduleItem;
 @property(nonatomic) _Bool isFromFavToChat; // @synthesize isFromFavToChat=_isFromFavToChat;
+@property(retain, nonatomic) NSMutableArray *arrManualDownloadSvrId; // @synthesize arrManualDownloadSvrId=_arrManualDownloadSvrId;
 @property(retain, nonatomic) NSString *favCheckId; // @synthesize favCheckId=_favCheckId;
 @property(retain, nonatomic) NSString *deviceid; // @synthesize deviceid=_deviceid;
 @property(nonatomic) unsigned int version; // @synthesize version=_version;
@@ -135,6 +139,7 @@
 - (_Bool)canAutoUpload;
 - (void)changeToFavSearchItem:(id)arg1;
 - (id)changeToFavSearchString;
+- (_Bool)dataListHasBeenCopyedToTarget:(id)arg1;
 - (_Bool)dataHasBeenCopyedToTarget;
 - (void)addData:(id)arg1 Index:(int)arg2;
 - (id)copyWithZone:(struct _NSZone *)arg1;

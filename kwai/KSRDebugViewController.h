@@ -26,6 +26,7 @@
 - (void)hidden;
 - (void)show;
 - (void)addItem:(id)arg1;
+- (void)clear;
 - (id)init;
 
 @end

@@ -51,6 +51,7 @@
     NSObject<OS_dispatch_queue> *m_audioSessionQueue;
     _Bool m_isForPstn;
     _Bool bEnableRmIO;
+    _Bool _isUsingExternalAudioDevice;
     int audioDevErrCode;
     int audioRecordingCallbackNum;
     MMTimer *mMeterTimer;
@@ -59,6 +60,7 @@
 }
 
 @property(retain, nonatomic) NSRecursiveLock *m_audioPlayLock; // @synthesize m_audioPlayLock=_m_audioPlayLock;
+@property(nonatomic) _Bool isUsingExternalAudioDevice; // @synthesize isUsingExternalAudioDevice=_isUsingExternalAudioDevice;
 @property(nonatomic) _Bool bEnableRmIO; // @synthesize bEnableRmIO;
 @property(nonatomic) int audioRecordingCallbackNum; // @synthesize audioRecordingCallbackNum;
 @property(nonatomic) int audioDevErrCode; // @synthesize audioDevErrCode;
@@ -69,6 +71,7 @@
 @property(retain, nonatomic) MMTimer *mMeterTimer; // @synthesize mMeterTimer;
 - (id).cxx_construct;
 - (void).cxx_destruct;
+- (void)checkExternalAudioDeviceState;
 - (void)onWCAudioSessionOverride;
 - (void)onWCAudioSessionCategoryChange:(unsigned long long)arg1;
 - (void)onWCAudioSessionOldDeviceUnavailable;

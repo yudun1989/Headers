@@ -29,6 +29,8 @@
     NSString *m_nsAutoDownloadControl;
     NSString *m_nsMsgMd5;
     MessageExpItem *m_oMsgExpItem;
+    NSString *m_nsAttachFileKey;
+    unsigned int m_uiContinueUploadCount;
     _Bool m_isCanUpload;
     _Bool m_isForNewYear;
     _Bool _m_bIsForceUpdate;
@@ -52,6 +54,8 @@
 @property(nonatomic) _Bool m_bIsForceUpdate; // @synthesize m_bIsForceUpdate=_m_bIsForceUpdate;
 @property(nonatomic) unsigned int m_uiAppVersion; // @synthesize m_uiAppVersion=_m_uiAppVersion;
 @property(retain, nonatomic) NSString *m_nsAppName; // @synthesize m_nsAppName=_m_nsAppName;
+@property(nonatomic) unsigned int m_uiContinueUploadCount; // @synthesize m_uiContinueUploadCount;
+@property(retain, nonatomic) NSString *m_nsAttachFileKey; // @synthesize m_nsAttachFileKey;
 @property(retain, nonatomic) NSString *m_nsAppMessageAction; // @synthesize m_nsAppMessageAction;
 @property(retain, nonatomic) NSString *m_nsAppMessageExt; // @synthesize m_nsAppMessageExt;
 @property(retain, nonatomic) NSString *m_nsAppMediaTagName; // @synthesize m_nsAppMediaTagName;

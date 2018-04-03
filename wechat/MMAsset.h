@@ -6,9 +6,10 @@
 
 #import <MMCommon/MMObject.h>
 
+#import "NSCoding-Protocol.h"
 #import "NSCopying-Protocol.h"
 
-@interface MMAsset : MMObject <NSCopying>
+@interface MMAsset : MMObject <NSCopying, NSCoding>
 {
     _Bool _m_isNeedOriginImage;
     _Bool _m_isFailedFromIcloud;
@@ -63,6 +64,8 @@
 - (void)getDisplayImageWithCompressConfig:(id)arg1 ResultBlock:(CDUnknownBlockType)arg2 ErrorBlock:(CDUnknownBlockType)arg3;
 - (void)getBigImageWithCompressConfig:(id)arg1 ProcessBlock:(CDUnknownBlockType)arg2 ResultBlock:(CDUnknownBlockType)arg3 ErrorBlock:(CDUnknownBlockType)arg4;
 - (id)initWithUrl:(id)arg1 IsNeedOrigin:(_Bool)arg2;
+- (id)initWithCoder:(id)arg1;
+- (void)encodeWithCoder:(id)arg1;
 
 @end
 

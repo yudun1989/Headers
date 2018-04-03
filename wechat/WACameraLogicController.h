@@ -10,13 +10,14 @@
 #import "GPUImageVideoCameraDelegate-Protocol.h"
 #import "MMovieCompressorDelegate-Protocol.h"
 #import "UIAlertViewDelegate-Protocol.h"
+#import "WACameraQRCodeScannerDelegate-Protocol.h"
 #import "WCCameraPreviewDelegate-Protocol.h"
 #import "WCCameraWriterDelegate-Protocol.h"
 
-@class GPUImageCropFilter, NSMutableArray, NSMutableDictionary, NSString, UIImage, WAFilterLogic, WCCameraCapture, WCCameraPreview;
+@class GPUImageCropFilter, NSMutableArray, NSMutableDictionary, NSString, UIImage, WACameraScanScanner, WAFilterLogic, WCCameraCapture, WCCameraPreview;
 @protocol OS_dispatch_queue, WACameraLogicControllerDelegate;
 
-@interface WACameraLogicController : NSObject <UIAlertViewDelegate, MMovieCompressorDelegate, WCCameraWriterDelegate, WCCameraPreviewDelegate, AVCaptureMetadataOutputObjectsDelegate, GPUImageVideoCameraDelegate>
+@interface WACameraLogicController : NSObject <UIAlertViewDelegate, MMovieCompressorDelegate, WCCameraWriterDelegate, WCCameraPreviewDelegate, AVCaptureMetadataOutputObjectsDelegate, GPUImageVideoCameraDelegate, WACameraQRCodeScannerDelegate>
 {
     WCCameraPreview *_cameraPreview;
     WAFilterLogic *_filterLogic;
@@ -30,6 +31,7 @@
     _Bool isShowingPreview;
     _Bool isCameraAppear;
     _Bool bNeedOutputVideoBuffer;
+    _Bool _shouldHandleScan;
     _Bool _m_isTakingPicture;
     _Bool _m_shouldStart;
     _Bool _m_requestAuthAccess;
@@ -40,10 +42,12 @@
     UIImage *_m_thumbImage;
     UIImage *_m_originalImage;
     NSMutableDictionary *_recorderDict;
+    WACameraScanScanner *_cameraScanScanner;
 }
 
 + (_Bool)isAuthStatusOK;
 + (_Bool)needCheckRequestAuthAccess;
+@property(retain, nonatomic) WACameraScanScanner *cameraScanScanner; // @synthesize cameraScanScanner=_cameraScanScanner;
 @property(retain, nonatomic) NSMutableDictionary *recorderDict; // @synthesize recorderDict=_recorderDict;
 @property(nonatomic) _Bool m_requestAuthAccess; // @synthesize m_requestAuthAccess=_m_requestAuthAccess;
 @property(nonatomic) _Bool m_shouldStart; // @synthesize m_shouldStart=_m_shouldStart;
@@ -53,11 +57,13 @@
 @property(retain, nonatomic) UIImage *m_thumbImage; // @synthesize m_thumbImage=_m_thumbImage;
 @property(retain, nonatomic) NSString *m_videoPath; // @synthesize m_videoPath=_m_videoPath;
 @property(retain, nonatomic) WCCameraCapture *cameraCapture; // @synthesize cameraCapture=_cameraCapture;
+@property(nonatomic) _Bool shouldHandleScan; // @synthesize shouldHandleScan=_shouldHandleScan;
 @property(nonatomic) __weak id <WACameraLogicControllerDelegate> delegate; // @synthesize delegate=_delegate;
 @property(nonatomic) _Bool bNeedOutputVideoBuffer; // @synthesize bNeedOutputVideoBuffer;
 @property(nonatomic) _Bool isCameraAppear; // @synthesize isCameraAppear;
 @property(nonatomic) _Bool isShowingPreview; // @synthesize isShowingPreview;
 - (void).cxx_destruct;
+- (void)onGotBarcode:(id)arg1 Type:(id)arg2;
 - (void)willOutputSampleBuffer:(struct opaqueCMSampleBuffer *)arg1;
 - (void)filterType:(unsigned long long)arg1;
 - (void)setCameraPositon:(long long)arg1;
@@ -97,6 +103,8 @@
 - (void)pauseCamera;
 - (void)resumeCamera;
 - (void)removeCameraCropFilter;
+- (void)setScanFreq:(double)arg1;
+- (void)setScanCropRect:(struct CGRect)arg1;
 - (void)setCameraCropRect:(struct CGRect)arg1;
 - (void)updateCameraPreviewRect:(struct CGRect)arg1;
 - (void)loadCameraLogicWithContentView:(id)arg1;

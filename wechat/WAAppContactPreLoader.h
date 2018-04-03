@@ -41,7 +41,8 @@
 - (void)firstLoadWeAppContact;
 - (_Bool)isPagePathInvalid;
 - (_Bool)isContactExpired;
-- (_Bool)isNeedSyncUpdateContact;
+- (_Bool)isPkgExistForContact:(id)arg1;
+- (_Bool)isNeedSyncUpdateContact:(id)arg1 getReason:(unsigned long long *)arg2;
 - (void)reOpenApp:(id)arg1 taskExtInfo:(id)arg2 onSuccess:(CDUnknownBlockType)arg3 onFailed:(CDUnknownBlockType)arg4;
 - (void)openApp:(id)arg1 taskExtInfo:(id)arg2 onSuccess:(CDUnknownBlockType)arg3 onFailed:(CDUnknownBlockType)arg4;
 - (void)openAppWithJSONString:(id)arg1 fromScene:(unsigned long long)arg2 sourceContact:(id)arg3;

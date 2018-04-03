@@ -13,7 +13,6 @@
 + (_Bool)canCreateMessageViewModelWithMessageWrap:(id)arg1;
 - (id)additionalAccessibilityDescription;
 - (id)sourceTag;
-- (_Bool)souceIconBgIsShow;
 - (id)sourceIcon;
 - (id)sourceTitle;
 - (_Bool)isShowSourceView;

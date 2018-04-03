@@ -6,15 +6,15 @@
 
 #import "KSNewPlayerView.h"
 
-@class KSSimpleProgressView;
+@class DTProgressView;
 
 @interface KSProgressPlayerView : KSNewPlayerView
 {
     _Bool _needsMoveProgressBarToScreenBottom;
-    KSSimpleProgressView *_progressView;
+    DTProgressView *_progressView;
 }
 
-@property(retain, nonatomic) KSSimpleProgressView *progressView; // @synthesize progressView=_progressView;
+@property(retain, nonatomic) DTProgressView *progressView; // @synthesize progressView=_progressView;
 @property(nonatomic) _Bool needsMoveProgressBarToScreenBottom; // @synthesize needsMoveProgressBarToScreenBottom=_needsMoveProgressBarToScreenBottom;
 - (void).cxx_destruct;
 - (void)moveProgressBarToScreenBottom;

@@ -14,6 +14,7 @@
 - (_Bool)isTopHitFeatureReady;
 - (void)sortFeatures:(NSMutableArray *)arg1 matchTips:(NSMutableDictionary *)arg2;
 - (NSMutableDictionary *)getFeatureDictionary;
+- (_Bool)isTopHitContactActive:(NSString *)arg1;
 - (_Bool)isTopHitAddressBookReady;
 - (_Bool)isTopHitContactReady;
 - (void)sortAddressBookFriends:(NSMutableArray *)arg1 matchTips:(NSMutableDictionary *)arg2;

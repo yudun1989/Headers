@@ -7,13 +7,12 @@
 #import "WebviewJSEventHandlerBase.h"
 
 #import "IUiUtilExt-Protocol.h"
-#import "UIActionSheetDelegate-Protocol.h"
 #import "UIPickerViewDataSource-Protocol.h"
 #import "UIPickerViewDelegate-Protocol.h"
 
 @class JSEvent, NSMutableArray, NSString, UIPickerView, UIToolbar, UIView;
 
-@interface WebviewJSEventHandler_showDatePickerView : WebviewJSEventHandlerBase <UIActionSheetDelegate, UIPickerViewDelegate, UIPickerViewDataSource, IUiUtilExt>
+@interface WebviewJSEventHandler_showDatePickerView : WebviewJSEventHandlerBase <UIPickerViewDelegate, UIPickerViewDataSource, IUiUtilExt>
 {
     struct MMDates m_minDate;
     struct MMDates m_maxDate;

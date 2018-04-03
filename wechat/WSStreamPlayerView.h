@@ -39,6 +39,7 @@
     _Bool _resetPlayWhenEnd;
     _Bool _skipBottomViewAnimation;
     _Bool _needVideoFlowIDKey;
+    _Bool _needIPhoneXLayout;
     _Bool _isMute;
     _Bool _isShowReplayBtnStatus;
     _Bool _isTapForPlaying;
@@ -129,6 +130,7 @@
 @property(nonatomic) struct CGSize videoSize; // @synthesize videoSize=_videoSize;
 @property(retain, nonatomic) NSString *videoUrl; // @synthesize videoUrl=_videoUrl;
 @property(retain, nonatomic) WSVideoModel *videoModelForWSFlow; // @synthesize videoModelForWSFlow=_videoModelForWSFlow;
+@property(nonatomic) _Bool needIPhoneXLayout; // @synthesize needIPhoneXLayout=_needIPhoneXLayout;
 @property(nonatomic) unsigned int initialPlayTime; // @synthesize initialPlayTime=_initialPlayTime;
 @property(nonatomic) _Bool needVideoFlowIDKey; // @synthesize needVideoFlowIDKey=_needVideoFlowIDKey;
 @property(nonatomic) _Bool skipBottomViewAnimation; // @synthesize skipBottomViewAnimation=_skipBottomViewAnimation;
@@ -175,6 +177,7 @@
 - (void)onMaskViewTopBackBtnClick;
 - (void)clearPlayerMaskView;
 - (void)onCancelBtnClick;
+- (void)notifyClickMaskPlayButton;
 - (void)onTipBtnClickForRetryPlay;
 - (void)onTipBtnClickForContinuePlay;
 - (void)onTipBtnClickForReplay;
@@ -207,6 +210,7 @@
 - (void)enableFullScreen:(_Bool)arg1;
 - (void)onAutoRotateToFullScreen:(_Bool)arg1;
 - (long long)fullscreenOrientation;
+- (void)onDownloadVideoReturnCode:(int)arg1;
 - (void)startToPlayVideo;
 - (void)tryToPlayVideo;
 - (void)OnUpdateThumbImage:(id)arg1;

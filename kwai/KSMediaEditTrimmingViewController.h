@@ -10,20 +10,19 @@
 #import "UICollectionViewDataSource-Protocol.h"
 #import "UICollectionViewDelegate-Protocol.h"
 
-@class KSAdvanceEditFrameContainerViewController, KSAdvanceEditTimeLineSliderLayout, KSEThumbnailGenerator, KSMediaEditRuler, KSMediaEditTrimmingRevealViewController, KSPencilMediaProject, NSArray, NSString, UICollectionView, UIImageView, UIScrollView;
+@class KSAdvanceEditTimeLineSliderLayout, KSMMediaProject, KSMediaEditFrameContainerViewController, KSMediaEditRuler, KSMediaEditTrimmingRevealViewController, KSVideoFrameLoader, NSArray, NSString, UICollectionView, UIImageView, UILabel, UIScrollView;
 
 @interface KSMediaEditTrimmingViewController : UIViewController <UICollectionViewDelegate, UICollectionViewDataSource, KSAdvanceEditTimeLineSliderLayoutDataSource>
 {
     double _currentTime;
+    double _projectDuration;
     CDUnknownBlockType _onTrim;
-    KSAdvanceEditFrameContainerViewController *_frameContainerViewController;
+    KSMediaEditFrameContainerViewController *_frameContainerViewController;
     UIScrollView *_rulerScrollView;
     KSMediaEditRuler *_ruler;
-    KSEThumbnailGenerator *_generator;
     double _preferredTotalWidth;
     double _edge;
-    double _minThumbnailVisibleWidth;
-    KSPencilMediaProject *_project;
+    KSMMediaProject *_project;
     KSMediaEditTrimmingRevealViewController *_revealViewController;
     UICollectionView *_cutCollectionView;
     KSAdvanceEditTimeLineSliderLayout *_cutLayout;
@@ -31,9 +30,17 @@
     double _widthPerSecond;
     UIImageView *_trackerView;
     double _revealStart;
+    UILabel *_selectedTimeRangeLabel;
+    double _maxTrimmingDuration;
+    double _minThumbnailVisibleWidth;
+    KSVideoFrameLoader *_frameLoader;
     CDStruct_e83c9415 _revealRange;
 }
 
+@property(retain, nonatomic) KSVideoFrameLoader *frameLoader; // @synthesize frameLoader=_frameLoader;
+@property(readonly, nonatomic) double minThumbnailVisibleWidth; // @synthesize minThumbnailVisibleWidth=_minThumbnailVisibleWidth;
+@property(readonly, nonatomic) double maxTrimmingDuration; // @synthesize maxTrimmingDuration=_maxTrimmingDuration;
+@property(retain, nonatomic) UILabel *selectedTimeRangeLabel; // @synthesize selectedTimeRangeLabel=_selectedTimeRangeLabel;
 @property(nonatomic) double revealStart; // @synthesize revealStart=_revealStart;
 @property(retain, nonatomic) UIImageView *trackerView; // @synthesize trackerView=_trackerView;
 @property(nonatomic) double widthPerSecond; // @synthesize widthPerSecond=_widthPerSecond;
@@ -41,15 +48,14 @@
 @property(retain, nonatomic) KSAdvanceEditTimeLineSliderLayout *cutLayout; // @synthesize cutLayout=_cutLayout;
 @property(retain, nonatomic) UICollectionView *cutCollectionView; // @synthesize cutCollectionView=_cutCollectionView;
 @property(retain, nonatomic) KSMediaEditTrimmingRevealViewController *revealViewController; // @synthesize revealViewController=_revealViewController;
-@property(retain, nonatomic) KSPencilMediaProject *project; // @synthesize project=_project;
-@property(nonatomic) double minThumbnailVisibleWidth; // @synthesize minThumbnailVisibleWidth=_minThumbnailVisibleWidth;
+@property(retain, nonatomic) KSMMediaProject *project; // @synthesize project=_project;
 @property(nonatomic) double edge; // @synthesize edge=_edge;
 @property(nonatomic) double preferredTotalWidth; // @synthesize preferredTotalWidth=_preferredTotalWidth;
-@property(retain, nonatomic) KSEThumbnailGenerator *generator; // @synthesize generator=_generator;
 @property(retain, nonatomic) KSMediaEditRuler *ruler; // @synthesize ruler=_ruler;
 @property(retain, nonatomic) UIScrollView *rulerScrollView; // @synthesize rulerScrollView=_rulerScrollView;
-@property(retain, nonatomic) KSAdvanceEditFrameContainerViewController *frameContainerViewController; // @synthesize frameContainerViewController=_frameContainerViewController;
+@property(retain, nonatomic) KSMediaEditFrameContainerViewController *frameContainerViewController; // @synthesize frameContainerViewController=_frameContainerViewController;
 @property(copy, nonatomic) CDUnknownBlockType onTrim; // @synthesize onTrim=_onTrim;
+@property(readonly, nonatomic) double projectDuration; // @synthesize projectDuration=_projectDuration;
 @property(nonatomic) CDStruct_e83c9415 revealRange; // @synthesize revealRange=_revealRange;
 @property(nonatomic) double currentTime; // @synthesize currentTime=_currentTime;
 - (void).cxx_destruct;
@@ -62,11 +68,13 @@
 - (_Bool)isItemAtIndexPathHighlighted:(id)arg1 inLayout:(id)arg2;
 - (id)layoutItemForItemAtIndexPath:(id)arg1 inLayout:(id)arg2;
 - (double)totalDurationOfTimeLineInLayout:(id)arg1;
+- (void)updateSelectedTimeRangeLabelWithStart:(double)arg1 end:(double)arg2;
 - (void)reload;
+- (void)_reset;
 - (void)viewDidLayoutSubviews;
 - (void)viewDidLoad;
-- (id)initWithProject:(id)arg1 maxTrimmingDuration:(double)arg2 minThumbnailVisibleWidth:(double)arg3;
 - (void)dealloc;
+- (id)initWithProject:(id)arg1 maxTrimmingDuration:(double)arg2 minThumbnailVisibleWidth:(double)arg3;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

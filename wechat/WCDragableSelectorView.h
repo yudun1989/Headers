@@ -34,6 +34,7 @@
 - (void)collectionView:(id)arg1 didUnhighlightItemAtIndexPath:(id)arg2;
 - (void)collectionView:(id)arg1 didHighlightItemAtIndexPath:(id)arg2;
 - (_Bool)collectionView:(id)arg1 shouldHighlightItemAtIndexPath:(id)arg2;
+- (long long)numberOfSectionsInCollectionView:(id)arg1;
 - (long long)collectionView:(id)arg1 numberOfItemsInSection:(long long)arg2;
 - (struct CGSize)collectionView:(id)arg1 layout:(id)arg2 sizeForItemAtIndexPath:(id)arg3;
 - (id)collectionView:(id)arg1 cellForItemAtIndexPath:(id)arg2;

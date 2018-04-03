@@ -14,11 +14,12 @@
 #import "UIDocumentInteractionControllerDelegate-Protocol.h"
 #import "UIScrollViewDelegate-Protocol.h"
 #import "WCActionSheetDelegate-Protocol.h"
+#import "WKNavigationDelegate-Protocol.h"
 
 @class FavDataItemWrap, FavForwardLogicController, FavoritesBrowseDetailReportData, FavoritesItem, FavoritesItemDataField, ImageScrollView, MMProgressView, NSString, UIButton, UIDocumentInteractionController, UIImageView, UILabel, UITapGestureRecognizer, UIView;
 @protocol FavFileDetailDelegate;
 
-@interface FavFileDetailViewController : MMUIViewController <UIAlertViewDelegate, INetworkStatusMgrExt, IFavoritesExt, ImageScrollViewDelegate, FavForwardLogicDelegate, WCActionSheetDelegate, UIScrollViewDelegate, UIDocumentInteractionControllerDelegate>
+@interface FavFileDetailViewController : MMUIViewController <WKNavigationDelegate, UIAlertViewDelegate, INetworkStatusMgrExt, IFavoritesExt, ImageScrollViewDelegate, FavForwardLogicDelegate, WCActionSheetDelegate, UIScrollViewDelegate, UIDocumentInteractionControllerDelegate>
 {
     FavoritesItem *m_favItem;
     FavDataItemWrap *m_favDataWrap;
@@ -42,6 +43,7 @@
     _Bool m_bFileExit;
     _Bool m_bIsNaviBarHide;
     _Bool m_bIsDisableTapRec;
+    struct CGPoint m_lastContentOffset;
     UITapGestureRecognizer *m_singleTapRec;
     UITapGestureRecognizer *m_doubleTabRec;
     UIView *vPreview;
@@ -54,12 +56,14 @@
 @property(retain, nonatomic) FavoritesBrowseDetailReportData *reportData; // @synthesize reportData=_reportData;
 @property(nonatomic) __weak id <FavFileDetailDelegate> m_delegate; // @synthesize m_delegate;
 - (void).cxx_destruct;
+- (void)webView:(id)arg1 didFinishNavigation:(id)arg2;
 - (void)scrollViewWillEndDragging:(id)arg1 withVelocity:(struct CGPoint)arg2 targetContentOffset:(inout struct CGPoint *)arg3;
 - (id)getFavForawrdViewController;
 - (void)onDoubleTap:(id)arg1;
 - (void)onSingleTap:(id)arg1;
 - (_Bool)gestureRecognizer:(id)arg1 shouldBeRequiredToFailByGestureRecognizer:(id)arg2;
 - (_Bool)gestureRecognizer:(id)arg1 shouldRequireFailureOfGestureRecognizer:(id)arg2;
+- (_Bool)gestureRecognizer:(id)arg1 shouldReceiveTouch:(id)arg2;
 - (_Bool)gestureRecognizer:(id)arg1 shouldRecognizeSimultaneouslyWithGestureRecognizer:(id)arg2;
 - (void)documentInteractionController:(id)arg1 didEndSendingToApplication:(id)arg2;
 - (void)updateRightBtn;
@@ -86,17 +90,20 @@
 - (void)showNeedUpload;
 - (void)showIllegal;
 - (void)scrollViewDidScroll:(id)arg1;
+- (void)scrollViewWillBeginDragging:(id)arg1;
 - (void)applicationDidBecomeActive;
 - (void)viewDidAppear:(_Bool)arg1;
 - (void)viewWillAppear:(_Bool)arg1;
 - (void)viewWillDisappear:(_Bool)arg1;
 - (void)didRotateFromInterfaceOrientation:(long long)arg1;
 - (void)resetPdfViewFrame;
+- (_Bool)hasPdfView;
 - (void)setNaviBarHide:(_Bool)arg1 animation:(_Bool)arg2;
 - (void)updateBtns;
 - (void)updateStatus;
 - (void)initView;
 - (void)updateData;
+- (void)updateWebScrollViewInset;
 - (void)viewDidLayoutSubviews;
 - (void)viewDidBePoped:(_Bool)arg1;
 - (void)viewDidLoad;

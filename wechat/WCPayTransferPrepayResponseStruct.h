@@ -28,6 +28,7 @@
     unsigned int _amount;
     unsigned int _fee;
     unsigned int _scanScene;
+    unsigned int _get_dynamic_code_flag;
     WCPayAlertItem *_alertItem;
     NSString *_f2fId;
     NSString *_transId;
@@ -39,8 +40,17 @@
     NSString *_transferReceiverOpenId;
     NSString *_placeorderSucSign;
     NSString *_paySucExtend;
+    NSString *_get_dynamic_code_sign;
+    NSString *_get_dynamic_code_extend;
+    NSString *_show_paying_wording;
+    NSString *_dynamic_code_spam_wording;
 }
 
+@property(retain, nonatomic) NSString *dynamic_code_spam_wording; // @synthesize dynamic_code_spam_wording=_dynamic_code_spam_wording;
+@property(retain, nonatomic) NSString *show_paying_wording; // @synthesize show_paying_wording=_show_paying_wording;
+@property(retain, nonatomic) NSString *get_dynamic_code_extend; // @synthesize get_dynamic_code_extend=_get_dynamic_code_extend;
+@property(retain, nonatomic) NSString *get_dynamic_code_sign; // @synthesize get_dynamic_code_sign=_get_dynamic_code_sign;
+@property(nonatomic) unsigned int get_dynamic_code_flag; // @synthesize get_dynamic_code_flag=_get_dynamic_code_flag;
 @property(retain, nonatomic) NSString *paySucExtend; // @synthesize paySucExtend=_paySucExtend;
 @property(retain, nonatomic) NSString *placeorderSucSign; // @synthesize placeorderSucSign=_placeorderSucSign;
 @property(nonatomic) unsigned int scanScene; // @synthesize scanScene=_scanScene;

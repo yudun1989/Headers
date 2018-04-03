@@ -7,13 +7,14 @@
 #import <objc/NSObject.h>
 
 #import "ICdnComMgrExt-Protocol.h"
+#import "IFavCdnDownloadMgrExt-Protocol.h"
 #import "MsgDataDownloadDelegate-Protocol.h"
 #import "PBMessageObserverDelegate-Protocol.h"
 
-@class CMessageWrap, CdnRecordMediaInfo, CdnUploadTaskInfo, FavoritesItemDataField, MsgDataDownloadLogic, NSString;
+@class CMessageWrap, CdnFavMediaInfo, CdnRecordMediaInfo, CdnUploadTaskInfo, FavoritesItemDataField, MsgDataDownloadLogic, NSString;
 @protocol RecordUploadTaskDelegate;
 
-@interface RecordUploadTask : NSObject <ICdnComMgrExt, PBMessageObserverDelegate, MsgDataDownloadDelegate>
+@interface RecordUploadTask : NSObject <ICdnComMgrExt, PBMessageObserverDelegate, MsgDataDownloadDelegate, IFavCdnDownloadMgrExt>
 {
     _Bool m_hasDownload;
     _Bool m_enableHitCheck;
@@ -23,6 +24,7 @@
     CMessageWrap *m_sourceMsg;
     CMessageWrap *m_recordMsg;
     MsgDataDownloadLogic *m_downloadLogic;
+    CdnFavMediaInfo *m_downloadFavMediaInfo;
     _Bool _isMsgThumb;
     CdnRecordMediaInfo *_cdnInfo;
     CdnUploadTaskInfo *_uploadResult;
@@ -39,6 +41,9 @@
 - (void)convertHevcVideo;
 - (void)MessageReturn:(id)arg1 Event:(unsigned int)arg2;
 - (void)checkMd5:(id)arg1;
+- (void)OnFavCdnDownload:(id)arg1;
+- (void)OnFavCdnDownloadProgress:(id)arg1;
+- (void)OnFavCdnDownloadStartError:(id)arg1;
 - (void)onDownloadCancel:(id)arg1;
 - (void)onDownloadCommonFail:(id)arg1;
 - (void)onDownloadExpireFail:(id)arg1;

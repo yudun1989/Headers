@@ -10,10 +10,12 @@
 
 @interface MMMagnifiterView : UIView
 {
-    UIImageView *m_oImageView;
-    ScreenshotView *m_oScreenshotView;
+    UIImageView *_imageView;
+    ScreenshotView *_screenshotView;
 }
 
+@property(retain, nonatomic) ScreenshotView *screenshotView; // @synthesize screenshotView=_screenshotView;
+@property(retain, nonatomic) UIImageView *imageView; // @synthesize imageView=_imageView;
 - (void).cxx_destruct;
 - (void)setViewToMagnify:(id)arg1;
 - (void)setTouchPoint:(struct CGPoint)arg1;

@@ -34,10 +34,12 @@
     unsigned long long _businessType;
     NSString *_contentTitle;
     id <WSLocalWebViewControllerDelegate> _delegate;
+    NSString *_redDotMsgId;
     unsigned long long _enterTime;
 }
 
 @property(nonatomic) unsigned long long enterTime; // @synthesize enterTime=_enterTime;
+@property(retain, nonatomic) NSString *redDotMsgId; // @synthesize redDotMsgId=_redDotMsgId;
 @property(readonly, nonatomic) _Bool shouldForbidCache; // @synthesize shouldForbidCache=_shouldForbidCache;
 @property(nonatomic) int VCType; // @synthesize VCType=_VCType;
 @property(nonatomic) __weak id <WSLocalWebViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
@@ -72,7 +74,7 @@
 - (void)viewWillAppear:(_Bool)arg1;
 - (void)viewDidLoad;
 - (void)tryInitContainerView;
-- (void)tryParallelAsyncWebRecommend:(unsigned long long)arg1;
+- (_Bool)tryParallelAsyncWebRecommend:(unsigned long long)arg1 reddotMsgId:(id)arg2;
 - (_Bool)hasFirstWebviewJsbridgeReady;
 - (void)preInitContainerView;
 - (_Bool)useTransparentNavibar;

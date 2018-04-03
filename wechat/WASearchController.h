@@ -11,11 +11,12 @@
 #import "UIScrollViewDelegate-Protocol.h"
 #import "WAAppCanvasWrapperViewDelegate-Protocol.h"
 #import "WASearchActionDelegate-Protocol.h"
+#import "WAWidgetJSEventHandlerDelegate-Protocol.h"
 
-@class MMSearchBar, MMUIViewController, NSMutableDictionary, NSString, UIButton, UIImageView, UIView, WASearchResultLogic;
+@class MMSearchBar, MMUIViewController, NSMutableArray, NSMutableDictionary, NSString, UIButton, UIImageView, UIView, WASearchResultLogic;
 @protocol WASearchControllerDelegate, YYWebViewInterface;
 
-@interface WASearchController : MMObject <MMSearchBarDelegate, WASearchActionDelegate, UIScrollViewDelegate, WAAppCanvasWrapperViewDelegate, IWSViewControllerLifeCycleExt>
+@interface WASearchController : MMObject <MMSearchBarDelegate, WASearchActionDelegate, UIScrollViewDelegate, WAAppCanvasWrapperViewDelegate, IWSViewControllerLifeCycleExt, WAWidgetJSEventHandlerDelegate>
 {
     _Bool _isContainerInteractivePopEnabled;
     _Bool _webViewDidRegisterScrollNotify;
@@ -37,8 +38,12 @@
     double _moveCurOffset;
     UIImageView *_bottomViewShadow;
     NSMutableDictionary *_widgetViewCache;
+    NSMutableArray *_eventHandlerList;
+    NSString *_resultPageQuery;
 }
 
+@property(copy, nonatomic) NSString *resultPageQuery; // @synthesize resultPageQuery=_resultPageQuery;
+@property(retain, nonatomic) NSMutableArray *eventHandlerList; // @synthesize eventHandlerList=_eventHandlerList;
 @property(retain, nonatomic) NSMutableDictionary *widgetViewCache; // @synthesize widgetViewCache=_widgetViewCache;
 @property(retain, nonatomic) UIImageView *bottomViewShadow; // @synthesize bottomViewShadow=_bottomViewShadow;
 @property(nonatomic) double moveCurOffset; // @synthesize moveCurOffset=_moveCurOffset;
@@ -72,6 +77,9 @@
 - (id)urlParamsForDetailPage:(id)arg1 params:(id)arg2;
 - (void)loadLocalHtmlForDetailPage:(id)arg1 params:(id)arg2;
 - (id)makeNewDetailView:(id)arg1;
+- (void)onWAWidgetJSEventHandler:(id)arg1 wrapperView:(id)arg2 endWithResult:(id)arg3;
+- (void)onWrapperView:(id)arg1 showDatePickerView:(id)arg2;
+- (void)onWrapperView:(id)arg1 showPickerView:(id)arg2;
 - (void)onWrapperView:(id)arg1 dataUpdated:(id)arg2;
 - (void)onWrapperView:(id)arg1 viewStateChanged:(unsigned long long)arg2;
 - (void)onWrapperView:(id)arg1 authorizeSuccess:(id)arg2;
@@ -93,6 +101,7 @@
 - (void)hideKeyboardForSearchBar;
 - (void)hideSearchBarResultView;
 - (void)resetResultViewSuperView;
+- (void)presetResultViewSuperView;
 - (void)hideResultViewWithOffset:(_Bool)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)showResultViewWithOffset:(_Bool)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)clearDetailView;

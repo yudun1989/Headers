@@ -63,7 +63,6 @@
 - (void)dealloc;
 - (id)initWithSight:(id)arg1 originalCell:(id)arg2;
 - (id)initWithViewItems:(id)arg1 currentIndex:(unsigned long long)arg2 originalCell:(id)arg3;
-- (void)onTopBarFrameChanged;
 - (void)onMainWindowFrameChanged;
 - (struct CGPoint)contentOffsetForPageScrollView;
 - (struct CGSize)contentSizeForPageScrollView;

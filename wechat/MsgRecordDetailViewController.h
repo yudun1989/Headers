@@ -72,6 +72,7 @@
 - (void)OnRecordMessageDownloadOK:(id)arg1;
 - (void)OnMsgDownloadAppAttachSuccess:(id)arg1 MsgWrap:(id)arg2;
 - (void)OpenVideoFileByMsgRecordDataWrap:(id)arg1;
+- (void)selectWeAppData:(id)arg1;
 - (void)selectTVData:(id)arg1;
 - (void)selectRecordData:(id)arg1;
 - (void)selectMallProductData:(id)arg1;
@@ -98,6 +99,7 @@
 - (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;
 - (long long)tableView:(id)arg1 numberOfRowsInSection:(long long)arg2;
 - (long long)numberOfSectionsInTableView:(id)arg1;
+- (id)baseBackgroundColor;
 - (void)genContent:(id)arg1 indexPath:(id)arg2;
 - (void)genHeadCell:(id)arg1 indexPath:(id)arg2;
 - (double)getHeaderHeight;
@@ -111,6 +113,7 @@
 - (void)pulseAnimationDidStop:(id)arg1 finished:(id)arg2 context:(void *)arg3;
 - (void)viewDidAppear:(_Bool)arg1;
 - (void)viewWillDisappear:(_Bool)arg1;
+- (void)reloadFooterView;
 - (void)viewDidLoad;
 - (void)tryReloadMsg;
 - (void)updateChatDate;

@@ -47,7 +47,6 @@
 - (void)onActionSheetIconView:(id)arg1 didTapedWithItem:(id)arg2;
 - (void)setupScrollViews;
 - (void)setupContainerView;
-- (_Bool)isSupportVisualEffect;
 - (id)initWithItemsAndBtnDataAry:(id)arg1 desciption:(id)arg2 cancelButtonTitle:(id)arg3 bottomBtnDataAry:(id)arg4;
 - (void)dealloc;
 - (id)initWithItems:(id)arg1 desciption:(id)arg2 cancelButtonTitle:(id)arg3;

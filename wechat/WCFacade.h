@@ -77,6 +77,7 @@
     unsigned int m_clickCameraTime;
 }
 
++ (void)reportSnsPostDragPic:(int)arg1 snsPostSave:(int)arg2;
 - (void).cxx_destruct;
 - (id)dataItemWithId:(id)arg1;
 - (id)cdnGetSnsOperationsWithFeedId:(id)arg1;

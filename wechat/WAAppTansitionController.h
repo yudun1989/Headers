@@ -14,14 +14,17 @@
 @interface WAAppTansitionController : NSObject <UIViewControllerTransitioningDelegate>
 {
     _Bool _isSimulatedNativeWeApp;
+    _Bool _isInForceDismissAndPresentAnimationOnce;
     UINavigationController *_owerNav;
     id <WAAppTansitionControllerDelegate> _delegate;
 }
 
+@property(nonatomic) _Bool isInForceDismissAndPresentAnimationOnce; // @synthesize isInForceDismissAndPresentAnimationOnce=_isInForceDismissAndPresentAnimationOnce;
 @property(nonatomic) _Bool isSimulatedNativeWeApp; // @synthesize isSimulatedNativeWeApp=_isSimulatedNativeWeApp;
 @property(nonatomic) __weak id <WAAppTansitionControllerDelegate> delegate; // @synthesize delegate=_delegate;
 @property(nonatomic) __weak UINavigationController *owerNav; // @synthesize owerNav=_owerNav;
 - (void).cxx_destruct;
+- (void)markForceDissmissAndPresentAnimationOnce;
 - (id)presentationControllerForPresentedViewController:(id)arg1 presentingViewController:(id)arg2 sourceViewController:(id)arg3;
 - (id)interactionControllerForDismissal:(id)arg1;
 - (id)interactionControllerForPresentation:(id)arg1;

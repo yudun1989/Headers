@@ -4,39 +4,31 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-#import <objc/NSObject.h>
-
-#import "LYWStateType-Protocol.h"
+#import "LYWState.h"
 
 @class NSArray, NSString;
 
-@interface KSMediaEditFilterState : NSObject <LYWStateType>
+@interface KSMediaEditFilterState : LYWState
 {
     _Bool _beauty;
     _Bool _needScroll;
-    unsigned long long _editingIndex;
     unsigned long long _selectedNormalFilterIndex;
+    long long _editingIndex;
     NSArray *_filters;
     long long _indexNeedsUpdate;
+    NSString *_filterSelectType;
 }
 
+@property(retain, nonatomic) NSString *filterSelectType; // @synthesize filterSelectType=_filterSelectType;
 @property(nonatomic) _Bool needScroll; // @synthesize needScroll=_needScroll;
 @property(nonatomic) long long indexNeedsUpdate; // @synthesize indexNeedsUpdate=_indexNeedsUpdate;
 @property(retain, nonatomic) NSArray *filters; // @synthesize filters=_filters;
+@property(nonatomic) long long editingIndex; // @synthesize editingIndex=_editingIndex;
 @property(nonatomic) unsigned long long selectedNormalFilterIndex; // @synthesize selectedNormalFilterIndex=_selectedNormalFilterIndex;
-@property(nonatomic) unsigned long long editingIndex; // @synthesize editingIndex=_editingIndex;
 @property(nonatomic) _Bool beauty; // @synthesize beauty=_beauty;
 - (void).cxx_destruct;
-@property(readonly, copy) NSString *description;
-- (id)copyWithZone:(struct _NSZone *)arg1;
-@property(readonly) unsigned long long hash;
-- (_Bool)isEqualToState:(id)arg1;
-- (_Bool)isEqual:(id)arg1;
+- (id)makeSnapshot;
 - (id)init;
-
-// Remaining properties
-@property(readonly, copy) NSString *debugDescription;
-@property(readonly) Class superclass;
 
 @end
 

@@ -19,8 +19,10 @@
     NSString *_buttonWording;
     NSString *_deductRuleWording;
     NSString *_openDeductWording;
+    NSString *_open_deduct_wording_color;
 }
 
+@property(retain, nonatomic) NSString *open_deduct_wording_color; // @synthesize open_deduct_wording_color=_open_deduct_wording_color;
 @property(retain, nonatomic) NSString *openDeductWording; // @synthesize openDeductWording=_openDeductWording;
 @property(retain, nonatomic) NSString *deductRuleWording; // @synthesize deductRuleWording=_deductRuleWording;
 @property(retain, nonatomic) NSString *buttonWording; // @synthesize buttonWording=_buttonWording;

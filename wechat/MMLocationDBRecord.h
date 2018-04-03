@@ -12,8 +12,8 @@
 
 @interface MMLocationDBRecord : NSObject <WCTTableCoding>
 {
-    unsigned int _m_latitude;
-    unsigned int _m_longitude;
+    int _m_latitude;
+    int _m_longitude;
     NSString *_m_address;
 }
 
@@ -25,8 +25,8 @@
 + (const struct WCTPropertyList *)AllProperties;
 + (const struct WCTBinding *)objectRelationalMappingForWCDB;
 @property(retain, nonatomic) NSString *m_address; // @synthesize m_address=_m_address;
-@property(nonatomic) unsigned int m_longitude; // @synthesize m_longitude=_m_longitude;
-@property(nonatomic) unsigned int m_latitude; // @synthesize m_latitude=_m_latitude;
+@property(nonatomic) int m_longitude; // @synthesize m_longitude=_m_longitude;
+@property(nonatomic) int m_latitude; // @synthesize m_latitude=_m_latitude;
 - (void).cxx_destruct;
 
 // Remaining properties

@@ -13,11 +13,10 @@
 #import "IMsgExt-Protocol.h"
 #import "IStrangerContactMgrExt-Protocol.h"
 #import "LongPressImageViewDelegate-Protocol.h"
-#import "WCForceTouchTriggerLongPressProtocol-Protocol.h"
 
 @class MMUILongPressImageView, NSString, UIImage, UIImageView;
 
-@interface MMHeadImageView : MMUIView <IKFContactExt, IEnterpriseContactMgrExt, WCForceTouchTriggerLongPressProtocol, LongPressImageViewDelegate, IMsgExt, IHeadImageExt, IContactMgrExt, IStrangerContactMgrExt>
+@interface MMHeadImageView : MMUIView <IKFContactExt, IEnterpriseContactMgrExt, LongPressImageViewDelegate, IMsgExt, IHeadImageExt, IContactMgrExt, IStrangerContactMgrExt>
 {
     MMUILongPressImageView *_headImageView;
     UIImageView *_borderImageView;
@@ -53,7 +52,6 @@
 @property(retain, nonatomic) UIImage *borderImage; // @synthesize borderImage=_borderImage;
 @property(nonatomic) struct CGSize imageSize; // @synthesize imageSize=_imageSize;
 - (void).cxx_destruct;
-- (void)triggerLongPressFor3DTouchAtLocation:(struct CGPoint)arg1 inCoordinateView:(id)arg2;
 - (void)OnLongPress:(id)arg1;
 - (void)OnPress:(id)arg1;
 - (void)onModifyEnterpriseContact:(id)arg1;

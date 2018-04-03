@@ -39,6 +39,8 @@
 - (void)onGetLocationFailedWithReason:(unsigned int)arg1;
 - (void)onGetLocationSuccess:(id)arg1;
 - (id)preViewItems;
+- (_Bool)jumpWeapp;
+- (id)nearbyWeappInfo;
 - (id)nearByPageUrl;
 - (unsigned long long)nearByAppNumber;
 - (void)updateNearWeApp;

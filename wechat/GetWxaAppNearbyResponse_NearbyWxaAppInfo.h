@@ -19,6 +19,7 @@
 @property(retain, nonatomic) NSString *brandIconUrl; // @dynamic brandIconUrl;
 @property(retain, nonatomic) NSString *path; // @dynamic path;
 @property(retain, nonatomic) NSString *storeName; // @dynamic storeName;
+@property(nonatomic) unsigned int type; // @dynamic type;
 @property(retain, nonatomic) NSString *username; // @dynamic username;
 
 @end

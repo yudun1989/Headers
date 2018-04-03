@@ -13,11 +13,13 @@
 @interface WSRedPointCtrlInfo : NSObject <PBCoding>
 {
     unsigned int recommendClearedTimeStamps;
+    unsigned int searchClearedTimeStamps;
     WSRedPointInfo *searchRedPointInfo;
     WSRedPointInfo *recommendRedPointInfo;
 }
 
 + (void)initialize;
+@property(nonatomic) unsigned int searchClearedTimeStamps; // @synthesize searchClearedTimeStamps;
 @property(nonatomic) unsigned int recommendClearedTimeStamps; // @synthesize recommendClearedTimeStamps;
 @property(retain, nonatomic) WSRedPointInfo *recommendRedPointInfo; // @synthesize recommendRedPointInfo;
 @property(retain, nonatomic) WSRedPointInfo *searchRedPointInfo; // @synthesize searchRedPointInfo;

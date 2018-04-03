@@ -19,8 +19,12 @@
 - (void).cxx_destruct;
 - (id)description;
 - (id)init;
+- (_Bool)isTheSameTypeOfAudioItemWith:(id)arg1;
+- (id)audioWithMusic:(id)arg1 workspacePath:(id)arg2;
+- (id)metaMusic;
 - (void)next;
 - (id)currentAudio;
+- (id)init;
 
 @end
 

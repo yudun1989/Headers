@@ -27,6 +27,7 @@
 - (void).cxx_destruct;
 - (void)onCancel;
 - (void)onConfirm;
+- (long long)getItemNum;
 - (id)getValue;
 - (void)pickerView:(id)arg1 didSelectRow:(long long)arg2 inComponent:(long long)arg3;
 - (double)pickerView:(id)arg1 rowHeightForComponent:(long long)arg2;

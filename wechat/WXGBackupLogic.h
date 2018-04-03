@@ -30,6 +30,7 @@
 
 @property(nonatomic) __weak id <WXGBackupLogicDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
+- (id)getConnectDebugInfo;
 - (void)onHeartBeatAckIDWrong;
 - (void)onHeartBeatLate;
 - (void)onHeartBeatOK;

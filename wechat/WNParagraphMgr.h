@@ -46,6 +46,7 @@
 - (id)getMergeDatalistParagraphs:(id)arg1;
 - (id)genArticleDesc:(id)arg1;
 - (void)parseFavItem:(id)arg1 toParagraphs:(id)arg2 originMessage:(id)arg3 Editable:(_Bool)arg4;
+- (void)dealloc;
 - (id)init;
 
 @end

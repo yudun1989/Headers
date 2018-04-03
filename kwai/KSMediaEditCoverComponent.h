@@ -6,32 +6,42 @@
 
 #import "LYWComponent.h"
 
-@class KSMMediaProject, KSMediaCoverPickViewController, NSObject;
-@protocol KSMediaPreviewAsset;
+#import "KSMediaEditActivity-Protocol.h"
 
-@interface KSMediaEditCoverComponent : LYWComponent
+@class KSMPreviewPlayer, KSMediaEditActivityController, KSMediaEditCoverStateSnapshot, KSMediaEditCoverToolBarComponent, NSMutableArray, NSString;
+
+@interface KSMediaEditCoverComponent : LYWComponent <KSMediaEditActivity>
 {
-    KSMediaCoverPickViewController *_backendCoverVC;
-    id _filterValueChangeObserver;
-    NSObject<KSMediaPreviewAsset> *_asset;
-    KSMMediaProject *_project;
+    KSMediaEditCoverToolBarComponent *_coverToolBarComponent;
+    NSMutableArray *_cachedAudioAssets;
+    KSMediaEditActivityController *_activityController;
+    NSString *_mediaSource;
+    KSMPreviewPlayer *_player;
+    unsigned long long _selectedTab;
+    KSMediaEditCoverStateSnapshot *_snapshot;
 }
 
-@property(retain, nonatomic) KSMMediaProject *project; // @synthesize project=_project;
-@property(retain, nonatomic) NSObject<KSMediaPreviewAsset> *asset; // @synthesize asset=_asset;
-@property(readonly, nonatomic) id filterValueChangeObserver; // @synthesize filterValueChangeObserver=_filterValueChangeObserver;
-@property(readonly, nonatomic) KSMediaCoverPickViewController *backendCoverVC; // @synthesize backendCoverVC=_backendCoverVC;
+@property(retain, nonatomic) KSMediaEditCoverStateSnapshot *snapshot; // @synthesize snapshot=_snapshot;
+@property(nonatomic) unsigned long long selectedTab; // @synthesize selectedTab=_selectedTab;
+@property(retain, nonatomic) KSMPreviewPlayer *player; // @synthesize player=_player;
+@property(retain, nonatomic) NSString *mediaSource; // @synthesize mediaSource=_mediaSource;
+@property(nonatomic) __weak KSMediaEditActivityController *activityController; // @synthesize activityController=_activityController;
+@property(retain, nonatomic) NSMutableArray *cachedAudioAssets; // @synthesize cachedAudioAssets=_cachedAudioAssets;
+@property(retain, nonatomic) KSMediaEditCoverToolBarComponent *coverToolBarComponent; // @synthesize coverToolBarComponent=_coverToolBarComponent;
 - (void).cxx_destruct;
-- (id)bannerText;
-- (id)timestamp;
-- (_Bool)isEdited;
-- (id)renderCover;
-- (void)updateCover;
-- (void)setActivate:(_Bool)arg1;
-- (void)newState:(id)arg1 oldState:(id)arg2;
+- (void)activityDidFinish;
+- (void)activityDidCancel;
+- (double)activityHeight;
+- (void)activityDidAddedToController:(id)arg1;
+- (void)newState:(id)arg1;
 - (void)viewDidLoad;
-- (void)dealloc;
-- (id)initWithStore:(id)arg1 asset:(id)arg2 userLastFrame:(_Bool)arg3;
+- (id)initWithStore:(id)arg1;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly, copy) NSString *description;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
 
 @end
 

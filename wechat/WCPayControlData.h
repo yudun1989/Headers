@@ -6,7 +6,7 @@
 
 #import <objc/NSObject.h>
 
-@class BalanceMobileInfo, CContact, CMessageWrap, ExposureInfo, GetBanPayMobileInfoResponse, MenuItem, NSArray, NSDate, NSDictionary, NSError, NSMutableArray, NSString, OperationResp, QueryDetailResp, TenpayBindCardInfo, TenpayBindCardSubscribeAppInfo, WCPayAppAuthRequestStruct, WCPayAuthenticationPay, WCPayAuthenticationPayStatusStruct, WCPayAuthenticationPayVerifySMSStruct, WCPayBalanceInfo, WCPayBankPriority, WCPayBannerNotice, WCPayBindCardInfo, WCPayBindCardListApplyNewCardInfo, WCPayBindInfo, WCPayBindUserInfo, WCPayBizF2FControlData, WCPayCardBinInfo, WCPayControlDataGroupPayData, WCPayCreditCardInfo, WCPayECardControlData, WCPayFetchInfo, WCPayGetUserExInfoCgiResponse, WCPayHoneyPayControlData, WCPayIAPOrderDetail, WCPayLQTControlData, WCPayLQTInfo, WCPayLoanEntryInfo, WCPayMultiOrderDetail, WCPayNoticeInfo, WCPayOfflinePayChangeLimitFeeRequestStruct, WCPayOfflinePayQueryInfo, WCPayOfflinePayQueryInfoRequest, WCPayPayMenuArrayInfo, WCPayPayResponseRetryInfo, WCPayQRCodeRewardControlData, WCPayRealnameGuideInfo, WCPayResetPasswordInfo, WCPaySecurityControlData, WCPaySetUserExInfoCgiRequest, WCPaySwitchInfo, WCPayTransToBankCardData, WCPayTransferMoneyData, WCPayTransferPrepayRequestStruct, WCPayUserInfo, WCPayVirtualNoBindCard, WCPayWalletInfo;
+@class BalanceMobileInfo, CContact, CMessageWrap, CgiF2FQrcodeResp, ExposureInfo, GetBanPayMobileInfoResponse, MenuItem, NSArray, NSDate, NSDictionary, NSError, NSMutableArray, NSString, OperationResp, QueryDetailResp, TenpayBindCardInfo, TenpayBindCardSubscribeAppInfo, WCPayAppAuthRequestStruct, WCPayAuthenticationPay, WCPayAuthenticationPayStatusStruct, WCPayAuthenticationPayVerifySMSStruct, WCPayBalanceInfo, WCPayBankPriority, WCPayBannerNotice, WCPayBindCardInfo, WCPayBindCardListApplyNewCardInfo, WCPayBindInfo, WCPayBindUserInfo, WCPayBizF2FControlData, WCPayCardBinInfo, WCPayControlDataGroupPayData, WCPayCreditCardInfo, WCPayECardControlData, WCPayF2FControlData, WCPayFetchInfo, WCPayGetUserExInfoCgiResponse, WCPayHoneyPayControlData, WCPayIAPOrderDetail, WCPayLQTControlData, WCPayLQTInfo, WCPayLoanEntryInfo, WCPayMultiOrderDetail, WCPayNoticeInfo, WCPayOfflinePayChangeLimitFeeRequestStruct, WCPayOfflinePayQueryInfo, WCPayOfflinePayQueryInfoRequest, WCPayPayMenuArrayInfo, WCPayPayResponseRetryInfo, WCPayQRCodeRewardControlData, WCPayRealnameGuideInfo, WCPayResetPasswordInfo, WCPaySecurityControlData, WCPaySetUserExInfoCgiRequest, WCPaySwitchInfo, WCPayTransToBankCardData, WCPayTransferMoneyData, WCPayTransferPrepayRequestStruct, WCPayUserInfo, WCPayVirtualNoBindCard, WCPayWalletInfo;
 
 @interface WCPayControlData : NSObject
 {
@@ -174,7 +174,6 @@
     _Bool isAutoDeduct;
     WCPayRealnameGuideInfo *realnameInfo;
     int realnameScene;
-    CMessageWrap *m_oSelectedMessageWrap;
     _Bool bNeedInputNewTelToResetBalanceTel;
     _Bool _m_bTouchIDAuthOrder;
     _Bool _openChangeRealName;
@@ -183,6 +182,7 @@
     _Bool _bIsFreePayment;
     unsigned int m_pay_msg_type;
     int _m_enWCPayFacingReceiveMoneyRegion;
+    unsigned int _m_uiWeAppEnterScene;
     unsigned int _m_uiFetchChargeFee;
     int _realnameGuideType;
     unsigned int _scanScene;
@@ -241,6 +241,7 @@
     MenuItem *_m_f2fBottomDetailItem;
     NSString *_m_nsBottomIconUrl;
     WCPayBizF2FControlData *_bizF2FControlData;
+    WCPayF2FControlData *_m_f2fControlData;
     WCPayECardControlData *_eCardControlData;
     WCPayQRCodeRewardControlData *_qrcodeRewardData;
     WCPayTransferMoneyData *_transferMoneyData;
@@ -250,8 +251,10 @@
     OperationResp *_m_nsT2BCOperationResp;
     QueryDetailResp *_m_t2bcQueryDetailResp;
     WCPayPayResponseRetryInfo *_retry_pay_info;
+    CgiF2FQrcodeResp *_m_f2fQrcodeResp;
 }
 
+@property(retain, nonatomic) CgiF2FQrcodeResp *m_f2fQrcodeResp; // @synthesize m_f2fQrcodeResp=_m_f2fQrcodeResp;
 @property(nonatomic) _Bool bIsFreePayment; // @synthesize bIsFreePayment=_bIsFreePayment;
 @property(retain, nonatomic) WCPayPayResponseRetryInfo *retry_pay_info; // @synthesize retry_pay_info=_retry_pay_info;
 @property(retain, nonatomic) QueryDetailResp *m_t2bcQueryDetailResp; // @synthesize m_t2bcQueryDetailResp=_m_t2bcQueryDetailResp;
@@ -262,6 +265,7 @@
 @property(retain, nonatomic) WCPayTransferMoneyData *transferMoneyData; // @synthesize transferMoneyData=_transferMoneyData;
 @property(retain, nonatomic) WCPayQRCodeRewardControlData *qrcodeRewardData; // @synthesize qrcodeRewardData=_qrcodeRewardData;
 @property(retain, nonatomic) WCPayECardControlData *eCardControlData; // @synthesize eCardControlData=_eCardControlData;
+@property(retain, nonatomic) WCPayF2FControlData *m_f2fControlData; // @synthesize m_f2fControlData=_m_f2fControlData;
 @property(retain, nonatomic) WCPayBizF2FControlData *bizF2FControlData; // @synthesize bizF2FControlData=_bizF2FControlData;
 @property(nonatomic) _Bool m_isShowArrow; // @synthesize m_isShowArrow=_m_isShowArrow;
 @property(retain, nonatomic) NSString *m_nsBottomIconUrl; // @synthesize m_nsBottomIconUrl=_m_nsBottomIconUrl;
@@ -313,6 +317,7 @@
 @property(retain, nonatomic) NSDictionary *shareCardStatDic; // @synthesize shareCardStatDic=_shareCardStatDic;
 @property(copy, nonatomic) CDUnknownBlockType offlinePayReturnBlock; // @synthesize offlinePayReturnBlock=_offlinePayReturnBlock;
 @property(nonatomic) double expiredTimeToPopOfflinePayForCard; // @synthesize expiredTimeToPopOfflinePayForCard=_expiredTimeToPopOfflinePayForCard;
+@property(nonatomic) unsigned int m_uiWeAppEnterScene; // @synthesize m_uiWeAppEnterScene=_m_uiWeAppEnterScene;
 @property(nonatomic) _Bool m_bTouchIDAuthOrder; // @synthesize m_bTouchIDAuthOrder=_m_bTouchIDAuthOrder;
 @property(retain, nonatomic) NSString *m_nsFacingReceivePayerDesc; // @synthesize m_nsFacingReceivePayerDesc=_m_nsFacingReceivePayerDesc;
 @property(nonatomic) int m_enWCPayFacingReceiveMoneyRegion; // @synthesize m_enWCPayFacingReceiveMoneyRegion=_m_enWCPayFacingReceiveMoneyRegion;

@@ -4,24 +4,19 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-#import <objc/NSObject.h>
+#import "LYWBaseAction.h"
 
-#import "LYWAction-Protocol.h"
+@class NSArray;
 
-@class NSString;
-
-@interface KSSetTabsToDisplayAction : NSObject <LYWAction>
+@interface KSSetTabsToDisplayAction : LYWBaseAction
 {
-    int _tabs;
+    NSArray *_tabs;
+    NSArray *_moreDisplayTabs;
 }
 
-@property(nonatomic) int tabs; // @synthesize tabs=_tabs;
-@property(readonly, copy) NSString *description;
-
-// Remaining properties
-@property(readonly, copy) NSString *debugDescription;
-@property(readonly) unsigned long long hash;
-@property(readonly) Class superclass;
+@property(retain, nonatomic) NSArray *moreDisplayTabs; // @synthesize moreDisplayTabs=_moreDisplayTabs;
+@property(retain, nonatomic) NSArray *tabs; // @synthesize tabs=_tabs;
+- (void).cxx_destruct;
 
 @end
 

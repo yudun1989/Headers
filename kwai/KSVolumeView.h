@@ -17,23 +17,21 @@
     NSTimer *_timer;
 }
 
-+ (id)newInstance;
 + (void)deactivate;
 + (void)addOnController:(id)arg1 debug:(_Bool)arg2;
 @property(retain, nonatomic) NSTimer *timer; // @synthesize timer=_timer;
-@property(nonatomic) __weak UILabel *muteLabel; // @synthesize muteLabel=_muteLabel;
-@property(nonatomic) __weak UIImageView *icon; // @synthesize icon=_icon;
-@property(nonatomic) __weak KSVolumeProgressView *progressView; // @synthesize progressView=_progressView;
-@property(nonatomic) __weak UILabel *titleLabel; // @synthesize titleLabel=_titleLabel;
+@property(retain, nonatomic) UILabel *muteLabel; // @synthesize muteLabel=_muteLabel;
+@property(retain, nonatomic) UIImageView *icon; // @synthesize icon=_icon;
+@property(retain, nonatomic) KSVolumeProgressView *progressView; // @synthesize progressView=_progressView;
+@property(retain, nonatomic) UILabel *titleLabel; // @synthesize titleLabel=_titleLabel;
 - (void).cxx_destruct;
 - (_Bool)usingEarphone;
 - (id)localizedStringWithKey:(id)arg1;
 - (void)synStatusWithShow:(_Bool)arg1;
 - (void)hiddenView;
 - (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void *)arg4;
-- (void)awakeFromNib;
 - (void)dealloc;
-- (id)initWithCoder:(id)arg1;
+- (id)init;
 
 @end
 

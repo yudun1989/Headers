@@ -12,6 +12,7 @@
 
 + (double)heightForNodeWithDesc:(id)arg1;
 - (void)updateBkgImage:(_Bool)arg1;
+- (void)LongPressEvents;
 - (void)onTouchCancel;
 - (void)onTouchUpInside;
 - (void)onTouchDown;

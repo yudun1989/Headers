@@ -6,26 +6,28 @@
 
 #import <objc/NSObject.h>
 
-@class NSLock, NSMutableDictionary, NSOperationQueue;
-@protocol KSVideoFrameDisplaySource, KSVideoFrameLoaderDelegate, OS_dispatch_queue;
+@class KSWeakObjectSet, NSLock, NSMutableDictionary, NSOperationQueue;
+@protocol KSVideoFrameDisplaySource, OS_dispatch_queue;
 
 @interface KSVideoFrameLoader : NSObject
 {
     NSOperationQueue *_loadingQueue;
-    id <KSVideoFrameLoaderDelegate> _delegate;
     NSObject<OS_dispatch_queue> *_delegateQueue;
     id <KSVideoFrameDisplaySource> _displaySource;
     NSMutableDictionary *_statusDictionary;
     NSLock *_delegateLock;
+    KSWeakObjectSet *_delegates;
 }
 
+@property(retain, nonatomic) KSWeakObjectSet *delegates; // @synthesize delegates=_delegates;
 @property(retain, nonatomic) NSLock *delegateLock; // @synthesize delegateLock=_delegateLock;
 @property(readonly, nonatomic) NSMutableDictionary *statusDictionary; // @synthesize statusDictionary=_statusDictionary;
 @property(readonly, nonatomic) id <KSVideoFrameDisplaySource> displaySource; // @synthesize displaySource=_displaySource;
 @property(readonly, nonatomic) NSObject<OS_dispatch_queue> *delegateQueue; // @synthesize delegateQueue=_delegateQueue;
-@property(readonly, nonatomic) __weak id <KSVideoFrameLoaderDelegate> delegate; // @synthesize delegate=_delegate;
 @property(readonly, nonatomic) NSOperationQueue *loadingQueue; // @synthesize loadingQueue=_loadingQueue;
 - (void).cxx_destruct;
+- (struct CGSize)imageSize;
+- (unsigned long long)frameCount;
 - (void)invalidateAllFrames;
 - (void)cancelLoadingFrameAtIndex:(unsigned long long)arg1;
 - (id)loadFrameAtIndex:(unsigned long long)arg1;
@@ -33,7 +35,8 @@
 - (void)_enqueueFrameLoadingOperation:(id)arg1;
 - (void)didReceiveMemoryWarning;
 - (id)_statusForIndex:(unsigned long long)arg1;
-- (void)setDelegate:(id)arg1 delegateQueue:(id)arg2;
+- (void)removeDelegate:(id)arg1;
+- (void)addDelegate:(id)arg1 delegateQueue:(id)arg2;
 - (void)dealloc;
 - (id)initWithDisplaySource:(id)arg1 loadingQueue:(id)arg2;
 - (id)initWithDisplaySource:(id)arg1;

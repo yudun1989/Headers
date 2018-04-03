@@ -61,6 +61,7 @@
 - (_Bool)searchBarShouldEndEditing:(id)arg1;
 - (_Bool)searchBarShouldBeginEditing:(id)arg1;
 - (void)searchBar:(id)arg1 textDidChange:(id)arg2;
+- (void)didTapBackNagigationButton:(id)arg1;
 - (void)didTapRightNavigationButton:(id)arg1;
 - (void)model:(id)arg1 DidFailLoadWithError:(id)arg2;
 - (void)modelDidFinishLoad:(id)arg1;

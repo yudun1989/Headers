@@ -13,6 +13,7 @@
 @optional
 - (void)onDelayToHideControlViews;
 - (void)onShowControlViews;
+- (void)onMaskPlayButtonClick:(WSVideoModel *)arg1;
 - (_Bool)hasPlayAnyVideo;
 - (_Bool)isInteractiveVideo;
 - (WSVideoModel *)onPlayNextVideo:(_Bool)arg1 currentVideo:(WSVideoModel *)arg2;

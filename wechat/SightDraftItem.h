@@ -6,11 +6,12 @@
 
 #import <MMCommon/MMObject.h>
 
+#import "NSCoding-Protocol.h"
 #import "PBCoding-Protocol.h"
 
 @class EditVideoAttr, NSString, UIImage;
 
-@interface SightDraftItem : MMObject <PBCoding>
+@interface SightDraftItem : MMObject <PBCoding, NSCoding>
 {
     int mode;
     NSString *thumbPath;
@@ -33,6 +34,8 @@
 - (id)getVideoPath;
 - (void)dealloc;
 - (id)init;
+- (id)initWithCoder:(id)arg1;
+- (void)encodeWithCoder:(id)arg1;
 - (const map_490096f0 *)getValueTagIndexMap;
 - (id)getValueTypeTable;
 @property(retain, nonatomic) EditVideoAttr *editVideoAttr;

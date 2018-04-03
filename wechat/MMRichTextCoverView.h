@@ -6,60 +6,50 @@
 
 #import <UIKit/UIView.h>
 
-#import "ForwardMessageLogicDelegate-Protocol.h"
+#import "MMRTCMenuSelectDelegate-Protocol.h"
 #import "UIGestureRecognizerDelegate-Protocol.h"
 #import "UIScrollViewDelegate-Protocol.h"
 #import "WCActionSheetDelegate-Protocol.h"
 
-@class CMessageWrap, ForwardMessageLogicController, MMCursorView, MMMagnifiterView, MMUIViewController, NSArray, NSMutableArray, NSString, UIColor, UIImage, UILongPressGestureRecognizer, UIPanGestureRecognizer;
-@protocol MMRichTextCopyEventDelegate, MMRichTextCoverViewDelegate;
+@class MMCursorView, MMMagnifiterView, MMRTCMenuResponder, NSArray, NSMutableArray, NSString, UIColor, UIPanGestureRecognizer;
+@protocol MMRichTextCoverViewDelegate, MMRichTextSelectEventDelegate;
 
-@interface MMRichTextCoverView : UIView <WCActionSheetDelegate, UIGestureRecognizerDelegate, UIScrollViewDelegate, ForwardMessageLogicDelegate>
+@interface MMRichTextCoverView : UIView <WCActionSheetDelegate, UIGestureRecognizerDelegate, UIScrollViewDelegate, MMRTCMenuSelectDelegate>
 {
-    struct _NSRange _selectedRange;
-    UIImage *_magnifiterImage;
-    struct CGPoint m_TouchPoint;
-    _Bool m_bScrolling;
-    UIPanGestureRecognizer *m_oPanGestureRecognizer;
-    UILongPressGestureRecognizer *m_oLongPressGestureRecognizer;
-    ForwardMessageLogicController *m_forwardLogicController;
-    MMUIViewController *m_forwardFromViewController;
-    id <MMRichTextCopyEventDelegate> _textCopyEventDelegate;
-    UIView<MMRichTextCoverViewDelegate> *_delegate;
+    _Bool _bScrolling;
+    id <MMRichTextSelectEventDelegate> _textSelectEventDelegate;
+    id <MMRichTextCoverViewDelegate> _delegate;
     UIColor *_selectedColor;
     UIColor *_cursorColor;
-    CMessageWrap *_msgWrap;
     NSArray *_searchKeyWords;
-    NSArray *_originMenuItems;
-    unsigned long long _coverModel;
+    MMRTCMenuResponder *_menuResponder;
     NSMutableArray *_pathRects;
     MMCursorView *_leftCursor;
     MMCursorView *_rightCursor;
     MMMagnifiterView *_magnifiterView;
     NSString *_textString;
+    UIPanGestureRecognizer *_panGestureRecognizer;
+    struct _NSRange _selectedRange;
+    struct CGPoint _touchPoint;
 }
 
-+ (_Bool)resolveInstanceMethod:(SEL)arg1;
-+ (_Bool)canRespondsToMenuAction:(SEL)arg1 menusItems:(id)arg2;
-+ (void)setStaticMenuItems:(id)arg1;
+@property(nonatomic) _Bool bScrolling; // @synthesize bScrolling=_bScrolling;
+@property(nonatomic) struct CGPoint touchPoint; // @synthesize touchPoint=_touchPoint;
+@property(nonatomic) struct _NSRange selectedRange; // @synthesize selectedRange=_selectedRange;
+@property(retain, nonatomic) UIPanGestureRecognizer *panGestureRecognizer; // @synthesize panGestureRecognizer=_panGestureRecognizer;
 @property(retain, nonatomic) NSString *textString; // @synthesize textString=_textString;
 @property(retain, nonatomic) MMMagnifiterView *magnifiterView; // @synthesize magnifiterView=_magnifiterView;
 @property(retain, nonatomic) MMCursorView *rightCursor; // @synthesize rightCursor=_rightCursor;
 @property(retain, nonatomic) MMCursorView *leftCursor; // @synthesize leftCursor=_leftCursor;
 @property(retain, nonatomic) NSMutableArray *pathRects; // @synthesize pathRects=_pathRects;
-@property(nonatomic) unsigned long long coverModel; // @synthesize coverModel=_coverModel;
-@property(retain, nonatomic) NSArray *originMenuItems; // @synthesize originMenuItems=_originMenuItems;
+@property(retain, nonatomic) MMRTCMenuResponder *menuResponder; // @synthesize menuResponder=_menuResponder;
 @property(retain, nonatomic) NSArray *searchKeyWords; // @synthesize searchKeyWords=_searchKeyWords;
-@property(retain, nonatomic) CMessageWrap *msgWrap; // @synthesize msgWrap=_msgWrap;
 @property(retain, nonatomic) UIColor *cursorColor; // @synthesize cursorColor=_cursorColor;
 @property(retain, nonatomic) UIColor *selectedColor; // @synthesize selectedColor=_selectedColor;
-@property(nonatomic) __weak UIView<MMRichTextCoverViewDelegate> *delegate; // @synthesize delegate=_delegate;
-@property(nonatomic) __weak id <MMRichTextCopyEventDelegate> textCopyEventDelegate; // @synthesize textCopyEventDelegate=_textCopyEventDelegate;
+@property(nonatomic) __weak id <MMRichTextCoverViewDelegate> delegate; // @synthesize delegate=_delegate;
+@property(nonatomic) __weak id <MMRichTextSelectEventDelegate> textSelectEventDelegate; // @synthesize textSelectEventDelegate=_textSelectEventDelegate;
 - (void).cxx_destruct;
 - (void)onBecomeActive;
-- (void)OnForwardMessageCancel:(id)arg1;
-- (void)OnForwardMessageSend:(id)arg1;
-- (id)getCurrentViewController;
 - (void)scrollViewDidScroll:(id)arg1;
 - (void)scrollViewDidEndDragging:(id)arg1 willDecelerate:(_Bool)arg2;
 - (void)scrollViewWillBeginDragging:(id)arg1;
@@ -70,12 +60,18 @@
 - (void)removeMaginfierView;
 - (void)removeCursor;
 - (void)showCursor;
+- (void)clearSelectArea;
+- (id)getViewController;
+- (struct _NSRange)getSelectContentRange;
+- (id)getSelectContent;
 - (void)resetCursor:(id)arg1;
+- (struct CGRect)getSelectedRect;
+- (void)showMenuWithItems:(id)arg1;
+- (void)showSelectMenu;
+- (void)hideMenuUI;
+- (id)forwardingTargetForSelector:(SEL)arg1;
 - (_Bool)canBecomeFirstResponder;
 - (_Bool)canPerformAction:(SEL)arg1 withSender:(id)arg2;
-- (void)showTextMessageOriginMenu:(id)arg1;
-- (void)showMenuUI;
-- (void)hideMenuUI;
 - (_Bool)CTRectContainsPointError:(struct CGRect)arg1 point:(struct CGPoint)arg2 error:(double)arg3;
 - (_Bool)pointIsVisableInScreen:(struct CGPoint)arg1;
 - (struct CGPoint)getLongPressSelectCenter;
@@ -85,19 +81,13 @@
 - (void)longPressAction:(id)arg1;
 - (_Bool)touchPointInSelectPath:(struct CGPoint)arg1;
 - (_Bool)onClickPreViewWithPoint:(struct CGPoint)arg1 DoubleClick:(_Bool)arg2;
-- (void)richTextViewExit;
 - (void)onDoubleTap:(id)arg1;
 - (void)onPanAction:(id)arg1;
-- (void)selectAllTextWithShowMenu:(_Bool)arg1;
-- (void)onSelectAll:(id)arg1;
-- (void)onTextFavorite:(id)arg1;
-- (void)onTextCopy:(id)arg1;
-- (void)onTextForward:(id)arg1;
-- (id)forwardingTargetForSelector:(SEL)arg1;
-- (void)forwardingMenuAction:(id)arg1;
+- (void)selectAllText;
 - (_Bool)gestureRecognizer:(id)arg1 shouldRecognizeSimultaneouslyWithGestureRecognizer:(id)arg2;
 - (void)addGestureRecognizer;
 - (void)dealloc;
+- (id)initWithFrame:(struct CGRect)arg1 EventDelegate:(id)arg2 MenuResponder:(id)arg3;
 - (id)init;
 
 // Remaining properties

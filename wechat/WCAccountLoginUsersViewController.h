@@ -32,7 +32,6 @@
     UIView *m_curTipViewTip;
     UIView *m_loginTipView;
     UIButton *m_retryLogin;
-    unsigned int m_uiOriginCount;
     UIActivityIndicatorView *m_noPasswordLoading;
     MMUILabel *m_noPasswordErrorTip;
     UIButton *m_noPasswordRetryBtn;

@@ -10,6 +10,7 @@
 {
 }
 
+- (void)setTabBarBadge:(id)arg1 index:(long long)arg2 extraData:(id)arg3 webview:(id)arg4;
 - (void)handleJSEvent:(id)arg1;
 
 @end

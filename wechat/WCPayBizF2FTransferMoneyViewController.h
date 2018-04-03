@@ -142,6 +142,7 @@
 - (double)amountInputLabelFontSize;
 - (void)setupNavigationBar;
 - (void)viewDidLayoutSubviews;
+- (void)reportWithAction:(unsigned long long)arg1;
 - (void)viewDidLoad;
 - (_Bool)useTransparentNavibar;
 - (void)viewWillDisappear:(_Bool)arg1;

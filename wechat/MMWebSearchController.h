@@ -14,6 +14,7 @@
 #import "UISearchDisplayDelegate-Protocol.h"
 #import "WAAppCanvasWrapperViewDelegate-Protocol.h"
 #import "WASearchFromGlobalProxyDelegate-Protocol.h"
+#import "WAWidgetJSEventHandlerDelegate-Protocol.h"
 #import "WSContactSearchLogicDelegate-Protocol.h"
 #import "WSJSEventHandleDelegate-Protocol.h"
 #import "WSSuggestionLogicDelegate-Protocol.h"
@@ -23,7 +24,7 @@
 @class FTSWebSearchMgr, MMTagSearchBar, MMUIViewController, NSDictionary, NSMutableArray, NSMutableDictionary, NSString, UIButton, UIColor, UIImageView, UISearchDisplayController, UITextField, UIView, WASearchFromGlobalProxy, WSContactSearchLogic, WSJSEventHandler, WSResultViewLogic, WSSuggestionLogic, WSTagSearchLogic;
 @protocol MMWebSearchViewDelegate, YYWebViewInterface><WebSearchInterface;
 
-@interface MMWebSearchController : NSObject <WSVideoPlayerViewDelegate, UISearchBarDelegate, UISearchDisplayDelegate, UIScrollViewDelegate, WSJSEventHandleDelegate, FTSWebSearchDataSource, WSTagSearchDelegate, WSContactSearchLogicDelegate, WASearchFromGlobalProxyDelegate, WSSuggestionLogicDelegate, WAAppCanvasWrapperViewDelegate, IWSViewControllerLifeCycleExt, CNetworkStatusExt>
+@interface MMWebSearchController : NSObject <WSVideoPlayerViewDelegate, UISearchBarDelegate, UISearchDisplayDelegate, UIScrollViewDelegate, WSJSEventHandleDelegate, FTSWebSearchDataSource, WSTagSearchDelegate, WSContactSearchLogicDelegate, WASearchFromGlobalProxyDelegate, WSSuggestionLogicDelegate, WAAppCanvasWrapperViewDelegate, IWSViewControllerLifeCycleExt, CNetworkStatusExt, WAWidgetJSEventHandlerDelegate>
 {
     NSMutableDictionary *_videoPlayerCache;
     unsigned int _fullScreenVideoId;
@@ -77,6 +78,7 @@
     NSDictionary *_urlParams;
     UIView *_viewForBlur;
     UIColor *_luanchingWebViewBackgroundColor;
+    NSString *_redDotMsgId;
     UIView *_resultContainerView;
     UIView *_blurView;
     UISearchDisplayController *_searchDisplayController;
@@ -85,8 +87,10 @@
     UIImageView *_searchLeftIcon;
     UIView *_searchPromtLabel;
     NSMutableDictionary *_widgetViewCache;
+    NSMutableArray *_eventHandlerList;
 }
 
+@property(retain, nonatomic) NSMutableArray *eventHandlerList; // @synthesize eventHandlerList=_eventHandlerList;
 @property(retain, nonatomic) NSMutableDictionary *widgetViewCache; // @synthesize widgetViewCache=_widgetViewCache;
 @property(retain, nonatomic) UIView *searchPromtLabel; // @synthesize searchPromtLabel=_searchPromtLabel;
 @property(retain, nonatomic) UIImageView *searchLeftIcon; // @synthesize searchLeftIcon=_searchLeftIcon;
@@ -98,6 +102,7 @@
 @property(readonly, nonatomic) UIView *blurView; // @synthesize blurView=_blurView;
 @property(readonly, nonatomic) UIView *resultContainerView; // @synthesize resultContainerView=_resultContainerView;
 @property(readonly, nonatomic) UIView *searchBarWrap; // @synthesize searchBarWrap=_searchBarWrap;
+@property(retain, nonatomic) NSString *redDotMsgId; // @synthesize redDotMsgId=_redDotMsgId;
 @property(retain, nonatomic) UIColor *luanchingWebViewBackgroundColor; // @synthesize luanchingWebViewBackgroundColor=_luanchingWebViewBackgroundColor;
 @property(nonatomic) _Bool bNeedsLuanchingWebViewBackgroundColor; // @synthesize bNeedsLuanchingWebViewBackgroundColor=_bNeedsLuanchingWebViewBackgroundColor;
 @property(nonatomic) __weak UIView *viewForBlur; // @synthesize viewForBlur=_viewForBlur;
@@ -133,17 +138,21 @@
 - (void)onSearchInputBeginEditting:(id)arg1;
 - (void)onWAProxyCGISearch:(id)arg1;
 - (void)onWAProxyWillBeginDetailSearch:(id)arg1;
+- (void)onWAProxySetSearchPlaceHolder:(id)arg1;
 - (void)onWAProxySearchInputChanged:(id)arg1;
 - (void)onWAProxyHideKeyboard;
 - (void)onReturnWSContactResult:(id)arg1;
 - (void)onTagSearchBarInfoChangedToNotify:(id)arg1;
 - (void)tryAsyncSearchContact:(id)arg1;
-- (void)tryParallelAsyncWebRecommend:(unsigned long long)arg1;
+- (_Bool)tryParallelAsyncWebRecommend:(unsigned long long)arg1 reddotMsgId:(id)arg2;
 - (id)getLocalSessionId;
 - (_Bool)isCurrentSearchTypeSupportSuggestion;
 - (int)getCurrentShowViewType;
 - (unsigned int)getCorrectLevel:(id)arg1;
 - (void)pushToKeywordStack:(id)arg1;
+- (void)onWAWidgetJSEventHandler:(id)arg1 wrapperView:(id)arg2 endWithResult:(id)arg3;
+- (void)onWrapperView:(id)arg1 showDatePickerView:(id)arg2;
+- (void)onWrapperView:(id)arg1 showPickerView:(id)arg2;
 - (void)onWrapperView:(id)arg1 dataUpdated:(id)arg2;
 - (void)onWrapperView:(id)arg1 authorizeSuccess:(id)arg2;
 - (void)onWrapperView:(id)arg1 viewStateChanged:(unsigned long long)arg2;

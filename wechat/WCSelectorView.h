@@ -26,9 +26,11 @@
     _Bool _bHandleWholeView;
     _Bool _bAlighRight;
     _Bool _enableDrag;
+    long long _maxImageCount;
 }
 
 @property(nonatomic) _Bool enableDrag; // @synthesize enableDrag=_enableDrag;
+@property(nonatomic) long long maxImageCount; // @synthesize maxImageCount=_maxImageCount;
 @property(nonatomic) double stepWidth; // @synthesize stepWidth=_stepWidth;
 @property(nonatomic) _Bool bAlighRight; // @synthesize bAlighRight=_bAlighRight;
 @property(nonatomic) _Bool bHandelWholeView; // @synthesize bHandelWholeView=_bHandleWholeView;

@@ -6,7 +6,7 @@
 
 #import "GPBMessage.h"
 
-@class KSEProbedFile, KSETimeRange, NSString;
+@class KSEAudioFilterParam, KSEProbedFile, KSETimeRange, NSString;
 
 @interface KSEAudioAsset : GPBMessage
 {
@@ -15,11 +15,14 @@
 + (id)descriptor;
 
 // Remaining properties
+@property(nonatomic) unsigned int assetAudioFlag; // @dynamic assetAudioFlag;
 @property(nonatomic) unsigned long long assetId; // @dynamic assetId;
 @property(copy, nonatomic) NSString *assetPath; // @dynamic assetPath;
 @property(nonatomic) double assetSpeed; // @dynamic assetSpeed;
+@property(retain, nonatomic) KSEAudioFilterParam *audioFilterParam; // @dynamic audioFilterParam;
 @property(retain, nonatomic) KSETimeRange *clippedRange; // @dynamic clippedRange;
 @property(retain, nonatomic) KSETimeRange *displayRange; // @dynamic displayRange;
+@property(nonatomic) _Bool hasAudioFilterParam; // @dynamic hasAudioFilterParam;
 @property(nonatomic) _Bool hasClippedRange; // @dynamic hasClippedRange;
 @property(nonatomic) _Bool hasDisplayRange; // @dynamic hasDisplayRange;
 @property(nonatomic) _Bool hasProbedAssetFile; // @dynamic hasProbedAssetFile;

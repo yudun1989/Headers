@@ -25,10 +25,12 @@
     NSString *displayTranslatedText;
     _Bool canReTrans;
     _Bool _bAutoScrollUp;
+    int _autoScrollUpCount;
     NSData *cookie;
 }
 
 + (void)initialize;
+@property(nonatomic) int autoScrollUpCount; // @synthesize autoScrollUpCount=_autoScrollUpCount;
 @property(nonatomic) _Bool bAutoScrollUp; // @synthesize bAutoScrollUp=_bAutoScrollUp;
 @property(nonatomic) _Bool canReTrans; // @synthesize canReTrans;
 @property(retain, nonatomic) NSData *cookie; // @synthesize cookie;

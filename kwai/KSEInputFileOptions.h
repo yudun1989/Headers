@@ -17,6 +17,7 @@
 // Remaining properties
 @property(retain, nonatomic) KSERational *frameRate; // @dynamic frameRate;
 @property(nonatomic) _Bool hasFrameRate; // @dynamic hasFrameRate;
+@property(nonatomic) int loadImageFlags; // @dynamic loadImageFlags;
 
 @end
 

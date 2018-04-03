@@ -14,8 +14,10 @@
     NSString *_url;
     NSString *_appId;
     NSString *_statId;
+    CDUnknownBlockType _completion;
 }
 
+@property(copy, nonatomic) CDUnknownBlockType completion; // @synthesize completion=_completion;
 @property(nonatomic) unsigned int scene; // @synthesize scene=_scene;
 @property(retain, nonatomic) NSString *statId; // @synthesize statId=_statId;
 @property(retain, nonatomic) NSString *appId; // @synthesize appId=_appId;

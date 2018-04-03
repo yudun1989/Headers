@@ -6,7 +6,7 @@
 
 #import <objc/NSObject.h>
 
-@class NSString;
+@class NSDictionary, NSString;
 
 @interface FavLocationItem : NSObject
 {
@@ -15,8 +15,10 @@
     double _scale;
     NSString *_label;
     NSString *_poiname;
+    NSDictionary *_dicLocationName;
 }
 
+@property(retain, nonatomic) NSDictionary *dicLocationName; // @synthesize dicLocationName=_dicLocationName;
 @property(retain, nonatomic) NSString *poiname; // @synthesize poiname=_poiname;
 @property(retain, nonatomic) NSString *label; // @synthesize label=_label;
 @property(nonatomic) double scale; // @synthesize scale=_scale;

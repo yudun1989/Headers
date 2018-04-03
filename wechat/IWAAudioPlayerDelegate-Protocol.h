@@ -6,13 +6,14 @@
 
 #import "NSObject-Protocol.h"
 
-@class NSObject, NSString;
+@class NSData, NSObject, NSString;
 @protocol OS_dispatch_queue;
 
 @protocol IWAAudioPlayerDelegate <NSObject>
 
 @optional
-- (NSObject<OS_dispatch_queue> *)getBackgroundQueue;
+- (void)onDownloadAudioData:(NSData *)arg1 src:(NSString *)arg2;
+- (NSObject<OS_dispatch_queue> *)backgroundQueue;
 - (void)setCurrentContext;
 - (void)onPlayerStateChange:(long long)arg1 audioId:(NSString *)arg2 errCode:(long long)arg3 errMsg:(NSString *)arg4;
 @end

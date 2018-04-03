@@ -51,9 +51,11 @@
     NSString *m_c2cLocalLogoIcon;
     int m_redEnvelopeType;
     long long m_redEnvelopeReceiveAmount;
+    NSString *m_c2cLocalBubbleImage;
 }
 
 + (void)initialize;
+@property(retain, nonatomic) NSString *m_c2cLocalBubbleImage; // @synthesize m_c2cLocalBubbleImage;
 @property(retain, nonatomic) NSString *m_c2cLocalLogoIcon; // @synthesize m_c2cLocalLogoIcon;
 @property(nonatomic) long long m_redEnvelopeReceiveAmount; // @synthesize m_redEnvelopeReceiveAmount;
 @property(nonatomic) int m_redEnvelopeType; // @synthesize m_redEnvelopeType;

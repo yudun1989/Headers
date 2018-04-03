@@ -13,9 +13,9 @@
 @interface WAMsgNodeRequestData : NSObject <PBCoding>
 {
     _Bool _isSendingReq;
-    _Bool _shouldIgnoreReqLimitOnce;
     unsigned int intervalToNextReq;
     unsigned int scene;
+    unsigned int _coreId;
     unsigned int _lastReqTimestamp;
     NSString *appId;
     NSString *md5;
@@ -26,9 +26,9 @@
 
 + (void)initialize;
 @property(nonatomic) unsigned long long beginTime; // @synthesize beginTime=_beginTime;
-@property(nonatomic) _Bool shouldIgnoreReqLimitOnce; // @synthesize shouldIgnoreReqLimitOnce=_shouldIgnoreReqLimitOnce;
 @property(nonatomic) _Bool isSendingReq; // @synthesize isSendingReq=_isSendingReq;
 @property(nonatomic) unsigned int lastReqTimestamp; // @synthesize lastReqTimestamp=_lastReqTimestamp;
+@property(nonatomic) unsigned int coreId; // @synthesize coreId=_coreId;
 @property(nonatomic) unsigned int scene; // @synthesize scene;
 @property(nonatomic) unsigned int intervalToNextReq; // @synthesize intervalToNextReq;
 @property(retain, nonatomic) NSString *respData; // @synthesize respData;

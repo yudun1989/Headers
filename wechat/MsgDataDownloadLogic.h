@@ -8,11 +8,12 @@
 
 #import "IDownloadImageExt-Protocol.h"
 #import "IMsgExt-Protocol.h"
+#import "IRecordDownloadExt-Protocol.h"
 
 @class CMessageWrap, NSString;
 @protocol MsgDataDownloadDelegate;
 
-@interface MsgDataDownloadLogic : NSObject <IMsgExt, IDownloadImageExt>
+@interface MsgDataDownloadLogic : NSObject <IMsgExt, IDownloadImageExt, IRecordDownloadExt>
 {
     CMessageWrap *m_msgWrap;
     id <MsgDataDownloadDelegate> _delegate;
@@ -20,6 +21,9 @@
 
 @property(nonatomic) __weak id <MsgDataDownloadDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
+- (void)OnRecordMessageDownloadOK:(id)arg1;
+- (void)OnDownloadRecordMessageFail:(id)arg1 DataId:(id)arg2;
+- (void)OnDownloadRecordMessageExpired:(id)arg1 DataId:(id)arg2;
 - (void)OnDownloadForSaveAlbumFail:(id)arg1 Expired:(_Bool)arg2;
 - (void)OnDownloadImageStop:(id)arg1;
 - (void)OnDownloadImageStopByChatName:(id)arg1 FromDelMsg:(_Bool)arg2;

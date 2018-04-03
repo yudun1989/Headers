@@ -30,8 +30,6 @@
 + (char *)bitmapFromImage:(id)arg1;
 + (id)imageWithBits:(char *)arg1 withSize:(struct CGSize)arg2;
 + (id)imageFromView:(id)arg1;
-+ (id)convolveImageWithEdgeDetection:(id)arg1;
-+ (id)convolveImage:(id)arg1 withBlurRadius:(int)arg2;
 
 @end
 

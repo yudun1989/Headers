@@ -6,7 +6,7 @@
 
 #import <MMCommon/WXPBGeneratedMessage.h>
 
-@class BaseResponse, NSMutableArray, NSString, WxaAppBaseResponse;
+@class BaseResponse, GetWxaAppNearbyResponse_NearbyWxaAppInfo, NSMutableArray, NSString, WxaAppBaseResponse;
 
 @interface GetWxaAppNearbyResponse : WXPBGeneratedMessage
 {
@@ -22,10 +22,12 @@
 @property(nonatomic) unsigned int disappearOneClick; // @dynamic disappearOneClick;
 @property(nonatomic) unsigned int displayStrategyId; // @dynamic displayStrategyId;
 @property(nonatomic) unsigned int linkLifespan; // @dynamic linkLifespan;
+@property(retain, nonatomic) GetWxaAppNearbyResponse_NearbyWxaAppInfo *nearbyEntry; // @dynamic nearbyEntry;
 @property(retain, nonatomic) NSString *nearbyListId; // @dynamic nearbyListId;
 @property(retain, nonatomic) NSString *noticeBgColor; // @dynamic noticeBgColor;
 @property(retain, nonatomic) NSString *noticeWording; // @dynamic noticeWording;
 @property(nonatomic) unsigned int openThreshold; // @dynamic openThreshold;
+@property(nonatomic) unsigned int openWxa; // @dynamic openWxa;
 @property(retain, nonatomic) NSString *wording; // @dynamic wording;
 @property(retain, nonatomic) NSString *wordingColor; // @dynamic wordingColor;
 @property(retain, nonatomic) WxaAppBaseResponse *wxaappBaseresponse; // @dynamic wxaappBaseresponse;

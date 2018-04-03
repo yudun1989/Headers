@@ -6,21 +6,23 @@
 
 #import <objc/NSObject.h>
 
+#import "NSCoding-Protocol.h"
+
 @class NSString;
 
-@interface KSLocalAlbumWorkspaceFilter : NSObject
+@interface KSLocalAlbumWorkspaceFilter : NSObject <NSCoding>
 {
     float _value;
     NSString *_title;
 }
 
-+ (Class)effectClass;
++ (Class)filterClass;
 @property(retain, nonatomic) NSString *title; // @synthesize title=_title;
 @property(nonatomic) float value; // @synthesize value=_value;
 - (void).cxx_destruct;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
-- (id)effect;
+- (id)filter;
 
 @end
 

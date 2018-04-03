@@ -11,12 +11,12 @@
 #import "KSMusicInfoEditViewControllerDelegate-Protocol.h"
 
 @class KSLocalMusic, KSMusicUploadingManager, KSMyMusicsViewController, NSObject, NSString;
-@protocol KSAttachmentAudioMedia;
+@protocol KSGPUImageMedia;
 
 @interface KSVideoMusicPickViewController : KSMusicPickViewController <KSLocalMusicPickViewControllerDelegate, KSMusicInfoEditViewControllerDelegate, KSMakeVideoMusicPreviewLogServiceDelegate>
 {
     long long _trimDuration;
-    NSObject<KSAttachmentAudioMedia> *_media;
+    NSObject<KSGPUImageMedia> *_media;
     NSString *_source;
     KSMyMusicsViewController *_myMusicsViewController;
     KSMusicUploadingManager *_musicUploadingManager;
@@ -27,7 +27,7 @@
 @property(readonly, nonatomic) KSMusicUploadingManager *musicUploadingManager; // @synthesize musicUploadingManager=_musicUploadingManager;
 @property(retain, nonatomic) KSMyMusicsViewController *myMusicsViewController; // @synthesize myMusicsViewController=_myMusicsViewController;
 @property(retain, nonatomic) NSString *source; // @synthesize source=_source;
-@property(retain, nonatomic) NSObject<KSAttachmentAudioMedia> *media; // @synthesize media=_media;
+@property(retain, nonatomic) NSObject<KSGPUImageMedia> *media; // @synthesize media=_media;
 @property(nonatomic) long long trimDuration; // @synthesize trimDuration=_trimDuration;
 - (void).cxx_destruct;
 - (unsigned long long)_sceneType;
