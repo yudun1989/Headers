@@ -43,7 +43,7 @@
 - (void).cxx_destruct;
 - (id)toCMessageWrap;
 - (id)initFromCMessageWrap:(id)arg1;
-- (const map_490096f0 *)getValueTagIndexMap;
+- (const map_f8690629 *)getValueTagIndexMap;
 - (id)getValueTypeTable;
 
 // Remaining properties

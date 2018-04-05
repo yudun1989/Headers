@@ -10,7 +10,7 @@
 #import "UITableViewDataSource-Protocol.h"
 #import "UITableViewDelegate-Protocol.h"
 
-@class LeftHeadView, MBKAdoptionStatusModel, MBKMobikeCoinsView, NSDictionary, NSMutableArray, NSNumber, NSString, PersonalCenterBannerTableViewCell, PersonalCenterInfoView, UIButton, UITableView, UIView;
+@class LeftHeadView, MBKMobikeCoinsView, NSDictionary, NSMutableArray, NSNumber, NSString, PersonalCenterBannerTableViewCell, PersonalCenterInfoView, UIButton, UITableView, UIView;
 
 @interface PersonalCenterViewController : MBKBaseViewController <UITableViewDataSource, UITableViewDelegate, UINavigationControllerDelegate>
 {
@@ -31,10 +31,8 @@
     PersonalCenterBannerTableViewCell *_adBanner;
     UIView *_grayCoverView;
     double _tansitionWidth;
-    MBKAdoptionStatusModel *_adoptionStatusModel;
 }
 
-@property(retain, nonatomic) MBKAdoptionStatusModel *adoptionStatusModel; // @synthesize adoptionStatusModel=_adoptionStatusModel;
 @property(nonatomic) double tansitionWidth; // @synthesize tansitionWidth=_tansitionWidth;
 @property(retain, nonatomic) UIView *grayCoverView; // @synthesize grayCoverView=_grayCoverView;
 @property(retain, nonatomic) PersonalCenterBannerTableViewCell *adBanner; // @synthesize adBanner=_adBanner;
@@ -76,9 +74,6 @@
 - (void)setTableView;
 - (void)setSelfView;
 - (void)setupView;
-- (void)updateAdoptionStatusModel;
-- (id)getAdoptionString;
-- (void)updateDataArr;
 - (void)initData;
 - (void)addObserveNotification;
 - (double)getTansitionWidth;

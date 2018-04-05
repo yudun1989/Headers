@@ -10,6 +10,7 @@
 
 @interface MBKUnlockingMsgRequest : MBKMobikeRequest
 {
+    _Bool _bycode;
     NSString *_bikeid;
     NSString *_orderid;
     double _latitude;
@@ -20,6 +21,7 @@
 @property(retain, nonatomic) NSNumber *errorcode; // @synthesize errorcode=_errorcode;
 @property(nonatomic) double longitude; // @synthesize longitude=_longitude;
 @property(nonatomic) double latitude; // @synthesize latitude=_latitude;
+@property(nonatomic) _Bool bycode; // @synthesize bycode=_bycode;
 @property(copy, nonatomic) NSString *orderid; // @synthesize orderid=_orderid;
 @property(copy, nonatomic) NSString *bikeid; // @synthesize bikeid=_bikeid;
 - (void).cxx_destruct;

@@ -11,8 +11,10 @@
 - (_Bool)checkNetWork;
 - (void)checkNetWorkAndShowNotice;
 - (void)showTipsInWindow:(id)arg1;
+- (void)showTipsMsgWith:(id)arg1 image:(id)arg2;
 - (void)showTipsInView:(id)arg1 message:(id)arg2 offset:(double)arg3;
 - (void)showTipsInView:(id)arg1 message:(id)arg2;
+- (void)showTipsInScreenCenter:(id)arg1;
 - (void)showTipsMsgWith:(id)arg1 offset:(double)arg2;
 - (void)showTipsMsgWith:(id)arg1;
 @end

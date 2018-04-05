@@ -23,7 +23,7 @@
 @property(nonatomic) unsigned long long expiredTime; // @synthesize expiredTime;
 - (void).cxx_destruct;
 - (_Bool)isValid;
-- (const map_490096f0 *)getValueTagIndexMap;
+- (const map_f8690629 *)getValueTagIndexMap;
 - (id)getValueTypeTable;
 
 // Remaining properties

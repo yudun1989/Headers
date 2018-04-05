@@ -24,7 +24,7 @@
     unsigned int _eDeviceStorageLevel;
     _Bool _bTipsing;
     unsigned int _lastScanAppSizeTimeStamp;
-    basic_string_a490aa4c _statfsPath;
+    basic_string_90719d97 _statfsPath;
 }
 
 + (id)testFilePath;

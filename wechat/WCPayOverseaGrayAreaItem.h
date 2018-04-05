@@ -24,7 +24,7 @@
 @property(retain, nonatomic) NSData *logoUrl; // @synthesize logoUrl;
 @property(retain, nonatomic) NSData *name; // @synthesize name;
 - (void).cxx_destruct;
-- (const map_490096f0 *)getValueTagIndexMap;
+- (const map_f8690629 *)getValueTagIndexMap;
 - (id)getValueTypeTable;
 
 // Remaining properties

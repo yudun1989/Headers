@@ -62,7 +62,7 @@
     _Bool m_isPageLoadFail;
     _Bool m_bFullScreen;
     UILongPressGestureRecognizer *m_longPressGestureRecognizer;
-    vector_ecc2264a _pIDKeyList;
+    vector_2633e87e _pIDKeyList;
     _Bool _bIsDraggingScroll;
     NSMutableSet *m_jsTempAllowApiCalls;
     WebViewTimeProfileData *m_webTimeProfileData;

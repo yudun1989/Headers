@@ -30,7 +30,7 @@
     unsigned int m_uiUploadHeadEventID;
     _Bool m_bIsFirstIn;
     id <EditBottleProfileDelegate> m_delegate;
-    map_490096f0 m_map;
+    map_f8690629 m_map;
 }
 
 @property(nonatomic) _Bool m_bIsFirstIn; // @synthesize m_bIsFirstIn;

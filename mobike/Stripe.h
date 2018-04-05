@@ -10,13 +10,19 @@
 {
 }
 
++ (void)disableAnalytics;
 + (id)defaultPublishableKey;
 + (void)setDefaultPublishableKey:(id)arg1;
-+ (_Bool)handleStripeURLCallbackWithURL:(id)arg1;
++ (void)createTokenWithPayment:(id)arg1 completion:(CDUnknownBlockType)arg2;
 + (id)paymentRequestWithMerchantIdentifier:(id)arg1;
 + (_Bool)deviceSupportsApplePay;
 + (id)supportedPKPaymentNetworks;
 + (_Bool)canSubmitPaymentRequest:(id)arg1;
++ (void)createTokenWithBankAccount:(id)arg1 publishableKey:(id)arg2 completion:(CDUnknownBlockType)arg3;
++ (void)createTokenWithBankAccount:(id)arg1 completion:(CDUnknownBlockType)arg2;
++ (void)createTokenWithCard:(id)arg1 publishableKey:(id)arg2 completion:(CDUnknownBlockType)arg3;
++ (void)createTokenWithCard:(id)arg1 completion:(CDUnknownBlockType)arg2;
++ (id)alloc;
 
 @end
 

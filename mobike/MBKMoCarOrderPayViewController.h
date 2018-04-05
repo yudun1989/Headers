@@ -6,24 +6,24 @@
 
 #import "MBKBaseViewController.h"
 
-@class MBKMoCarOrderInfoModel, MBKMoCarOrderPayCardView, MBKMoCarPaySuccessView, MBKOnMyLocationButton;
+@class MBKMoCarOrderInfoModel, MBKMoCarOrderPayCardView, MBKMocarGetPayIDRequest, MBKOnMyLocationButton;
 
 @interface MBKMoCarOrderPayViewController : MBKBaseViewController
 {
     MBKMoCarOrderInfoModel *_dataModel;
     MBKMoCarOrderPayCardView *_payCardView;
-    MBKMoCarPaySuccessView *_paySuccessView;
     MBKOnMyLocationButton *_serviceBtn;
+    MBKMocarGetPayIDRequest *_getPayIDRequest;
 }
 
 + (void)load;
+@property(retain, nonatomic) MBKMocarGetPayIDRequest *getPayIDRequest; // @synthesize getPayIDRequest=_getPayIDRequest;
 @property(retain, nonatomic) MBKOnMyLocationButton *serviceBtn; // @synthesize serviceBtn=_serviceBtn;
-@property(retain, nonatomic) MBKMoCarPaySuccessView *paySuccessView; // @synthesize paySuccessView=_paySuccessView;
 @property(retain, nonatomic) MBKMoCarOrderPayCardView *payCardView; // @synthesize payCardView=_payCardView;
 @property(retain, nonatomic) MBKMoCarOrderInfoModel *dataModel; // @synthesize dataModel=_dataModel;
 - (void).cxx_destruct;
 - (void)addNavigationBar;
-- (void)goToRootCtl;
+- (void)goToderReviewCtl;
 - (void)showPriceSuccessView:(id)arg1;
 - (void)gotoPay:(id)arg1;
 - (void)setupSubViews;

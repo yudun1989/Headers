@@ -8,7 +8,7 @@
 
 #import "UIGestureRecognizerDelegate-Protocol.h"
 
-@class MBKCardConfigModel, NSString, UIButton, UIImageView, UILabel;
+@class NSString, UIButton, UIImageView, UILabel;
 @protocol reFundDelegate;
 
 @interface MBKRefundSure : UIView <UIGestureRecognizerDelegate>
@@ -21,10 +21,8 @@
     UIButton *_sure;
     UILabel *_donotLeave;
     id <reFundDelegate> _delegate;
-    MBKCardConfigModel *_cardConfigModel;
 }
 
-@property(retain, nonatomic) MBKCardConfigModel *cardConfigModel; // @synthesize cardConfigModel=_cardConfigModel;
 @property(retain, nonatomic) id <reFundDelegate> delegate; // @synthesize delegate=_delegate;
 @property(retain, nonatomic) UILabel *donotLeave; // @synthesize donotLeave=_donotLeave;
 @property(retain, nonatomic) UIButton *sure; // @synthesize sure=_sure;

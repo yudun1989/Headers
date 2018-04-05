@@ -11,7 +11,6 @@
 }
 
 + (id)safeImageNamed:(id)arg1;
-+ (id)errorImageForCardBrand:(long long)arg1;
 + (id)cvcImageForCardBrand:(long long)arg1;
 + (id)templatedBrandImageForCardBrand:(long long)arg1;
 + (id)brandImageForCardBrand:(long long)arg1;
@@ -27,7 +26,7 @@
 + (id)imageWithTintColor:(id)arg1 forImage:(id)arg2;
 + (id)brandImageForCardBrand:(long long)arg1 template:(_Bool)arg2;
 + (id)safeImageNamed:(id)arg1 templateIfAvailable:(_Bool)arg2;
-+ (id)largeShippingImage;
++ (id)largeCardApplePayImage;
 + (id)largeCardBackImage;
 + (id)largeCardFrontImage;
 + (id)checkmarkIcon;

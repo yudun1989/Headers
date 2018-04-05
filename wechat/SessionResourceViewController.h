@@ -26,7 +26,7 @@
     UIActivityIndicatorView *_loadingIndicatorView;
     _Bool _hasLookDetailed;
     unsigned int _curMaxDataCount;
-    vector_91fc892d _arrSelectedData;
+    vector_e4e608e5 _arrSelectedData;
 }
 
 - (id).cxx_construct;
@@ -38,8 +38,8 @@
 - (void)onDeleteSelectedData:(id)arg1;
 - (void)deleteSelectedSessionKeepMsg:(_Bool)arg1;
 - (void)onSelecteAll;
-- (id)getDataSizeShowString:(const vector_91fc892d *)arg1;
-- (unsigned long long)getDataSize:(const vector_91fc892d *)arg1;
+- (id)getDataSizeShowString:(const vector_e4e608e5 *)arg1;
+- (unsigned long long)getDataSize:(const vector_e4e608e5 *)arg1;
 - (id)getSelectButtonTitle;
 - (void)onCleanedOver3MonthFileSize:(unsigned long long)arg1;
 - (void)onLoadDataFinished;

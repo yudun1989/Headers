@@ -9,11 +9,10 @@
 #import "UITableViewDataSource-Protocol.h"
 #import "UITableViewDelegate-Protocol.h"
 
-@class MBKAbroadPaymentChannelModel, MBKAbroadPaymentHeaderModel, MBKAbroadPaymentHeaderView, MBKLocalPaymentPickerView, NSMutableArray, NSString, NSTimer, UIButton, UITableView, ricingstrategy;
+@class MBKAbroadPaymentChannelModel, MBKAbroadPaymentHeaderModel, MBKAbroadPaymentHeaderView, MBKIssuerPickerView, NSMutableArray, NSString, NSTimer, UIButton, UITableView, ricingstrategy;
 
 @interface MBKAbroadPaymentViewController : MBKTopupViewController <UITableViewDelegate, UITableViewDataSource>
 {
-    long long creditCardPlatformType;
     double utcTimestamp;
     _Bool _isRigister;
     _Bool _haveNoCard;
@@ -21,19 +20,18 @@
     unsigned long long _payType;
     long long _pricingstrategy;
     NSString *_cardId;
-    CDUnknownBlockType _payResultHandler;
-    CDUnknownBlockType _dismissBlock;
     long long _payStatus;
     ricingstrategy *_payStrategy;
     NSString *_productType;
-    UITableView *_tableView;
     NSMutableArray *_modelsArray;
+    NSString *_issuerId;
+    MBKAbroadPaymentChannelModel *_selectedChannelModel;
+    long long _creditCardPlatformType;
+    UITableView *_tableView;
     UIButton *_paymentButton;
     MBKAbroadPaymentHeaderView *_headerView;
     MBKAbroadPaymentHeaderModel *_headerModel;
-    MBKLocalPaymentPickerView *_pickerView;
-    NSString *_localIssuerId;
-    MBKAbroadPaymentChannelModel *_selectedChannelModel;
+    MBKIssuerPickerView *_pickerView;
     NSString *_hudText;
     NSTimer *_checkTimer;
     NSMutableArray *_issuersArray;
@@ -45,35 +43,27 @@
 @property(copy, nonatomic) NSString *hudText; // @synthesize hudText=_hudText;
 @property(nonatomic) _Bool needSelectNewCreditCard; // @synthesize needSelectNewCreditCard=_needSelectNewCreditCard;
 @property(nonatomic) _Bool haveNoCard; // @synthesize haveNoCard=_haveNoCard;
-@property(retain, nonatomic) MBKAbroadPaymentChannelModel *selectedChannelModel; // @synthesize selectedChannelModel=_selectedChannelModel;
-@property(copy, nonatomic) NSString *localIssuerId; // @synthesize localIssuerId=_localIssuerId;
-@property(retain, nonatomic) MBKLocalPaymentPickerView *pickerView; // @synthesize pickerView=_pickerView;
+@property(retain, nonatomic) MBKIssuerPickerView *pickerView; // @synthesize pickerView=_pickerView;
 @property(retain, nonatomic) MBKAbroadPaymentHeaderModel *headerModel; // @synthesize headerModel=_headerModel;
 @property(retain, nonatomic) MBKAbroadPaymentHeaderView *headerView; // @synthesize headerView=_headerView;
 @property(retain, nonatomic) UIButton *paymentButton; // @synthesize paymentButton=_paymentButton;
-@property(retain, nonatomic) NSMutableArray *modelsArray; // @synthesize modelsArray=_modelsArray;
 @property(retain, nonatomic) UITableView *tableView; // @synthesize tableView=_tableView;
+@property(nonatomic) long long creditCardPlatformType; // @synthesize creditCardPlatformType=_creditCardPlatformType;
+@property(retain, nonatomic) MBKAbroadPaymentChannelModel *selectedChannelModel; // @synthesize selectedChannelModel=_selectedChannelModel;
+@property(copy, nonatomic) NSString *issuerId; // @synthesize issuerId=_issuerId;
+@property(retain, nonatomic) NSMutableArray *modelsArray; // @synthesize modelsArray=_modelsArray;
 @property(copy, nonatomic) NSString *productType; // @synthesize productType=_productType;
 @property(retain, nonatomic) ricingstrategy *payStrategy; // @synthesize payStrategy=_payStrategy;
 @property(nonatomic) long long payStatus; // @synthesize payStatus=_payStatus;
 @property(nonatomic) _Bool isRigister; // @synthesize isRigister=_isRigister;
-@property(copy, nonatomic) CDUnknownBlockType dismissBlock; // @synthesize dismissBlock=_dismissBlock;
-@property(copy, nonatomic) CDUnknownBlockType payResultHandler; // @synthesize payResultHandler=_payResultHandler;
 @property(copy, nonatomic) NSString *cardId; // @synthesize cardId=_cardId;
 @property(nonatomic) long long pricingstrategy; // @synthesize pricingstrategy=_pricingstrategy;
 @property(nonatomic) unsigned long long payType; // @synthesize payType=_payType;
 - (void).cxx_destruct;
-- (void)goBackController;
-- (void)paymentResult:(_Bool)arg1;
-- (void)startCreditCardPaymentRequest;
-- (void)requestOnlinePaymentFailed:(id)arg1;
-- (void)requestOnlinePaymentSucc:(id)arg1;
-- (void)startOnlinePaymentRequest;
-- (void)startBalancePaymentRequest;
-- (void)startLocalPaymentRequest;
+- (void)paymentResult;
 - (void)paymentButtonTapped:(id)arg1;
 - (void)createCreditCardModelsWithArray:(id)arg1 cardPlatformType:(long long)arg2 paySource:(long long)arg3;
-- (void)addLocalIssuerSubData;
+- (void)addIssuerSubDataWithType:(long long)arg1;
 - (void)requestDelCreditFailed:(id)arg1;
 - (void)requestDelCreditSucc:(id)arg1 deletedModel:(id)arg2;
 - (void)tableView:(id)arg1 commitEditingStyle:(long long)arg2 forRowAtIndexPath:(id)arg3;
@@ -87,12 +77,10 @@
 - (void)stopCheckStatusLoop;
 - (void)startCheckStatusLoop;
 - (void)selectChannelWithModel:(id)arg1;
-- (long long)creditCardCountInModelsArray;
 - (id)cacheChannelFromDisk;
 - (void)saveCacheChannel:(id)arg1;
 - (void)selectFirstChannel;
 - (void)selectDefaultChannel;
-- (void)sortModelsArray;
 - (void)requestChannelFailed:(id)arg1;
 - (void)requestChannelSucc:(id)arg1;
 - (void)startChannelRequest;
@@ -100,7 +88,21 @@
 - (void)viewWillAppear:(_Bool)arg1;
 - (void)viewDidLoad;
 - (_Bool)shouldHideNavigationBarShadow;
+- (void)requestOfflinePaymentFailed:(id)arg1;
+- (void)requestOfflinePaymentSucc:(id)arg1;
+- (void)startOfflinePaymentRequest;
+- (void)requestOnlinePaymentFailed:(id)arg1;
+- (void)requestOnlinePaymentSucc:(id)arg1;
+- (void)startOnlinePaymentRequest;
+- (void)startCreditCardPaymentRequest;
 - (id)deaultIssuersArray;
+- (void)startBalancePaymentRequest;
+- (void)requestLocalPaymentFailed:(id)arg1;
+- (void)requestLocalPaymentSucc:(id)arg1;
+- (void)startLocalPaymentRequest;
+- (void)goBackController;
+- (long long)creditCardCountInModelsArray;
+- (void)sortModelsArray;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

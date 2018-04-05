@@ -13,9 +13,9 @@
 
 @interface SettingPluginsViewController : SettingBaseViewController <contactInfoDelegate, WCActionSheetDelegate>
 {
-    map_490096f0 m_mapCellToCellType;
-    map_490096f0 m_uninstallMapCellToCellType;
-    map_490096f0 m_mapSectionType;
+    map_f8690629 m_mapCellToCellType;
+    map_f8690629 m_uninstallMapCellToCellType;
+    map_f8690629 m_mapSectionType;
     NSMutableArray *m_nameArray;
     NSMutableArray *m_uninstallNameArray;
 }

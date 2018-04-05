@@ -105,8 +105,8 @@
 + (void)removePBEventObserverListItemByObject:(id)arg1;
 + (void)removePBEventObserverListItem:(unsigned int)arg1 andValue:(id)arg2;
 + (void)addPBEventObserverListItem:(unsigned int)arg1 andValue:(id)arg2;
-+ (void)removeMessageObserverListItemByList:(vector_a9c0768e)arg1 andValue:(id)arg2;
-+ (void)addMessageObserverListItemByList:(vector_a9c0768e)arg1 andValue:(id)arg2;
++ (void)removeMessageObserverListItemByList:(vector_12da65de)arg1 andValue:(id)arg2;
++ (void)addMessageObserverListItemByList:(vector_12da65de)arg1 andValue:(id)arg2;
 + (void)removeMessageObserverListItemByObject:(id)arg1;
 + (void)removeMessageObserverListItem:(unsigned int)arg1 andValue:(id)arg2;
 + (void)addMessageObserverListItem:(unsigned int)arg1 andValue:(id)arg2;

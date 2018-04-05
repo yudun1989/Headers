@@ -53,7 +53,6 @@
 @property(retain, nonatomic) NSString *locaCityName; // @synthesize locaCityName=_locaCityName;
 @property(readonly, nonatomic) _Bool treasureHunterFlag; // @synthesize treasureHunterFlag=_treasureHunterFlag;
 - (void).cxx_destruct;
-- (id)getCardConfigModelWithType:(id)arg1;
 - (void)clearCardListArray;
 - (id)getCardListArray;
 - (void)saveCardListArray:(id)arg1;

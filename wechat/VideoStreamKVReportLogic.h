@@ -46,7 +46,7 @@
 @property(nonatomic) struct C2CDownloadResult m_stResult; // @synthesize m_stResult;
 - (id).cxx_construct;
 - (void).cxx_destruct;
-- (id)getIplist:(vector_36fe4106)arg1;
+- (id)getIplist:(vector_ebb6ef3e)arg1;
 - (void)reportKVVideoArgsWithMessageWrap;
 - (void)reportKVVideoArgsWithMediaItem;
 - (void)reportKVVideoArgs;

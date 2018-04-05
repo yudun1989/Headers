@@ -46,7 +46,7 @@
 @property(nonatomic) unsigned int mesSvrId; // @synthesize mesSvrId;
 - (void).cxx_destruct;
 - (id)archivedWCTValue;
-- (const map_490096f0 *)getValueTagIndexMap;
+- (const map_f8690629 *)getValueTagIndexMap;
 - (id)getValueTypeTable;
 - (void)setFromCMessageWrap:(id)arg1;
 - (id)toCMessageWrap;

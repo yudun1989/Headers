@@ -6,7 +6,7 @@
 
 #import <objc/NSObject.h>
 
-@class MBKMvpUserConfig, NSString;
+@class MBKMvpCardDetail, MBKMvpUserConfig, NSString;
 
 @interface MBKMvpModel : NSObject
 {
@@ -20,17 +20,23 @@
     long long _expireTime;
     long long _renewDay;
     long long _renewFlag;
+    long long _ridingMoney;
+    long long _limitRidingCount;
     long long _showMvpBanner;
     long long _continueBuy;
     NSString *_continueBuyMoneyContent;
     MBKMvpUserConfig *_mvpUserConfig;
+    MBKMvpCardDetail *_cardDetail;
 }
 
 + (id)modelWithDic:(id)arg1;
+@property(retain, nonatomic) MBKMvpCardDetail *cardDetail; // @synthesize cardDetail=_cardDetail;
 @property(retain, nonatomic) MBKMvpUserConfig *mvpUserConfig; // @synthesize mvpUserConfig=_mvpUserConfig;
 @property(copy, nonatomic) NSString *continueBuyMoneyContent; // @synthesize continueBuyMoneyContent=_continueBuyMoneyContent;
 @property(nonatomic) long long continueBuy; // @synthesize continueBuy=_continueBuy;
 @property(nonatomic) long long showMvpBanner; // @synthesize showMvpBanner=_showMvpBanner;
+@property(nonatomic) long long limitRidingCount; // @synthesize limitRidingCount=_limitRidingCount;
+@property(nonatomic) long long ridingMoney; // @synthesize ridingMoney=_ridingMoney;
 @property(nonatomic) long long renewFlag; // @synthesize renewFlag=_renewFlag;
 @property(nonatomic) long long renewDay; // @synthesize renewDay=_renewDay;
 @property(nonatomic) long long expireTime; // @synthesize expireTime=_expireTime;

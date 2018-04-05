@@ -10,7 +10,7 @@
 {
 }
 
-+ (id)getResultToken;
++ (id)getTokenResult;
 + (void)initToken:(id)arg1 appKeyClient:(id)arg2 callback:(CDUnknownBlockType)arg3;
 
 @end

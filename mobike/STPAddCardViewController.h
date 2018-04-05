@@ -4,7 +4,7 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-#import "STPCoreTableViewController.h"
+#import <UIKit/UIViewController.h>
 
 #import "STPAddressFieldTableViewCellDelegate-Protocol.h"
 #import "STPAddressViewModelDelegate-Protocol.h"
@@ -15,25 +15,24 @@
 #import "UITableViewDataSource-Protocol.h"
 #import "UITableViewDelegate-Protocol.h"
 
-@class NSString, STPAPIClient, STPAddress, STPAddressFieldTableViewCell, STPAddressViewModel, STPCard, STPCheckoutAPIClient, STPCheckoutAccount, STPCheckoutAccountLookup, STPPaymentActivityIndicatorView, STPPaymentConfiguration, STPRememberMeEmailCell, STPRememberMePaymentCell, STPRememberMeTermsView, STPSectionHeaderView, STPSwitchTableViewCell, STPUserInformation, UIBarButtonItem, UIImageView, UIToolbar;
+@class NSString, STPAPIClient, STPAddressFieldTableViewCell, STPAddressViewModel, STPCard, STPCheckoutAPIClient, STPCheckoutAccount, STPCheckoutAccountLookup, STPPaymentActivityIndicatorView, STPPaymentConfiguration, STPRememberMeEmailCell, STPRememberMePaymentCell, STPRememberMeTermsView, STPSwitchTableViewCell, STPTheme, STPUserInformation, UIBarButtonItem, UIImageView, UITableView, UIToolbar;
 @protocol STPAddCardViewControllerDelegate;
 
-@interface STPAddCardViewController : STPCoreTableViewController <STPPaymentCardTextFieldDelegate, STPAddressViewModelDelegate, STPAddressFieldTableViewCellDelegate, STPSwitchTableViewCellDelegate, UITableViewDelegate, UITableViewDataSource, STPSMSCodeViewControllerDelegate, STPRememberMePaymentCellDelegate>
+@interface STPAddCardViewController : UIViewController <STPPaymentCardTextFieldDelegate, STPAddressViewModelDelegate, STPAddressFieldTableViewCellDelegate, STPSwitchTableViewCellDelegate, UITableViewDelegate, UITableViewDataSource, STPSMSCodeViewControllerDelegate, STPRememberMePaymentCellDelegate>
 {
-    _Bool _hasUsedShippingAddress;
     _Bool _loading;
     _Bool _lookupSucceeded;
-    _Bool _showingRememberMePhoneAndTerms;
     id <STPAddCardViewControllerDelegate> _delegate;
     STPUserInformation *_prefilledInformation;
     NSString *_managedAccountCurrency;
     STPPaymentConfiguration *_configuration;
-    STPAddress *_shippingAddress;
+    STPTheme *_theme;
     STPAPIClient *_apiClient;
+    UITableView *_tableView;
     UIImageView *_cardImageView;
     UIBarButtonItem *_doneItem;
-    STPSectionHeaderView *_cardHeaderView;
-    STPSectionHeaderView *_addressHeaderView;
+    UIBarButtonItem *_backItem;
+    UIBarButtonItem *_cancelItem;
     STPRememberMeEmailCell *_emailCell;
     STPSwitchTableViewCell *_rememberMeCell;
     STPAddressFieldTableViewCell *_rememberMePhoneCell;
@@ -49,7 +48,6 @@
     STPRememberMeTermsView *_rememberMeTermsView;
 }
 
-@property(nonatomic) _Bool showingRememberMePhoneAndTerms; // @synthesize showingRememberMePhoneAndTerms=_showingRememberMePhoneAndTerms;
 @property(retain, nonatomic) STPRememberMeTermsView *rememberMeTermsView; // @synthesize rememberMeTermsView=_rememberMeTermsView;
 @property(nonatomic) _Bool lookupSucceeded; // @synthesize lookupSucceeded=_lookupSucceeded;
 @property(retain, nonatomic) STPCard *checkoutAccountCard; // @synthesize checkoutAccountCard=_checkoutAccountCard;
@@ -65,19 +63,18 @@
 @property(retain, nonatomic) STPAddressFieldTableViewCell *rememberMePhoneCell; // @synthesize rememberMePhoneCell=_rememberMePhoneCell;
 @property(retain, nonatomic) STPSwitchTableViewCell *rememberMeCell; // @synthesize rememberMeCell=_rememberMeCell;
 @property(retain, nonatomic) STPRememberMeEmailCell *emailCell; // @synthesize emailCell=_emailCell;
-@property(retain, nonatomic) STPSectionHeaderView *addressHeaderView; // @synthesize addressHeaderView=_addressHeaderView;
-@property(retain, nonatomic) STPSectionHeaderView *cardHeaderView; // @synthesize cardHeaderView=_cardHeaderView;
+@property(retain, nonatomic) UIBarButtonItem *cancelItem; // @synthesize cancelItem=_cancelItem;
+@property(retain, nonatomic) UIBarButtonItem *backItem; // @synthesize backItem=_backItem;
 @property(retain, nonatomic) UIBarButtonItem *doneItem; // @synthesize doneItem=_doneItem;
 @property(nonatomic) __weak UIImageView *cardImageView; // @synthesize cardImageView=_cardImageView;
+@property(nonatomic) __weak UITableView *tableView; // @synthesize tableView=_tableView;
 @property(retain, nonatomic) STPAPIClient *apiClient; // @synthesize apiClient=_apiClient;
-@property(nonatomic) _Bool hasUsedShippingAddress; // @synthesize hasUsedShippingAddress=_hasUsedShippingAddress;
-@property(retain, nonatomic) STPAddress *shippingAddress; // @synthesize shippingAddress=_shippingAddress;
+@property(retain, nonatomic) STPTheme *theme; // @synthesize theme=_theme;
 @property(retain, nonatomic) STPPaymentConfiguration *configuration; // @synthesize configuration=_configuration;
 @property(copy, nonatomic) NSString *managedAccountCurrency; // @synthesize managedAccountCurrency=_managedAccountCurrency;
 @property(retain, nonatomic) STPUserInformation *prefilledInformation; // @synthesize prefilledInformation=_prefilledInformation;
 @property(nonatomic) __weak id <STPAddCardViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
-- (void)useShippingAddress:(id)arg1;
 - (id)tableView:(id)arg1 viewForFooterInSection:(long long)arg2;
 - (id)tableView:(id)arg1 viewForHeaderInSection:(long long)arg2;
 - (double)tableView:(id)arg1 heightForHeaderInSection:(long long)arg2;
@@ -87,7 +84,6 @@
 - (long long)tableView:(id)arg1 numberOfRowsInSection:(long long)arg2;
 - (long long)numberOfSectionsInTableView:(id)arg1;
 - (void)reloadRememberMeCellAnimated:(_Bool)arg1;
-- (_Bool)rememberMeCellIsDisabled;
 - (void)switchTableViewCell:(id)arg1 didToggleSwitch:(_Bool)arg2;
 - (void)addressFieldTableViewCellDidBackspaceOnEmpty:(id)arg1;
 - (void)lookupAndSendSMS:(id)arg1;
@@ -107,17 +103,20 @@
 - (void)handleCardTokenError:(id)arg1;
 - (void)handleCheckoutTokenError:(id)arg1;
 - (void)nextPressed:(id)arg1;
-- (void)handleBackOrCancelTapped:(id)arg1;
+- (void)cancel:(id)arg1;
+- (void)viewWillDisappear:(_Bool)arg1;
 - (id)firstEmptyField;
 - (void)viewDidAppear:(_Bool)arg1;
 - (void)viewWillAppear:(_Bool)arg1;
-- (void)reloadRememberMeSectionForFooterSizeChangeIfNecessary;
 - (void)viewDidLayoutSubviews;
+- (long long)preferredStatusBarStyle;
 - (void)updateAppearance;
 - (void)endEditing;
-- (void)createAndSetupViews;
-- (void)commonInitWithConfiguration:(id)arg1;
+- (void)viewDidLoad;
+- (void)commonInitWithConfiguration:(id)arg1 theme:(id)arg2;
 - (id)initWithConfiguration:(id)arg1 theme:(id)arg2;
+- (id)initWithCoder:(id)arg1;
+- (id)initWithNibName:(id)arg1 bundle:(id)arg2;
 - (id)init;
 
 // Remaining properties

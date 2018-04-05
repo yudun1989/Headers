@@ -146,7 +146,11 @@ struct AutoBuffer {
 };
 
 struct BankCardInfo {
-    basic_string_a490aa4c _field1;
+    struct basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char>> {
+        struct __compressed_pair<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char>>::__rep, std::__1::allocator<char>> {
+            struct __rep _field1;
+        } _field1;
+    } _field1;
     vector_e0f2bd7e _field2;
     vector_e0f2bd7e _field3;
     int _field4;
@@ -157,13 +161,13 @@ struct BankCardInfo {
 struct C2CDownloadResult {
     int error_code;
     int filetype;
-    basic_string_a490aa4c filekey;
+    basic_string_90719d97 filekey;
     void *user_context;
-    basic_string_a490aa4c arg_info;
+    basic_string_90719d97 arg_info;
     unsigned long long file_size;
-    basic_string_a490aa4c fileid;
-    basic_string_a490aa4c transfor_msg;
-    basic_string_a490aa4c filemd5;
+    basic_string_90719d97 fileid;
+    basic_string_90719d97 transfor_msg;
+    basic_string_90719d97 filemd5;
     int video_format;
     unsigned long long recvedBytes;
     unsigned long long enQueueTime;
@@ -183,20 +187,20 @@ struct C2CDownloadResult {
     _Bool moovCompleted;
     int moovFailReason;
     int httpStatusCode;
-    basic_string_a490aa4c httpResponseHeader;
-    basic_string_a490aa4c real_used_url;
+    basic_string_90719d97 httpResponseHeader;
+    basic_string_90719d97 real_used_url;
     unsigned int dns_cost_ms;
     unsigned int queue_wait_cost_ms;
     unsigned int connect_cost_ms;
     unsigned int response_wait_cost_ms;
     unsigned int response_all_cost_ms;
-    basic_string_a490aa4c client_ip;
-    basic_string_a490aa4c server_ip;
-    basic_string_a490aa4c xerrno;
+    basic_string_90719d97 client_ip;
+    basic_string_90719d97 server_ip;
+    basic_string_90719d97 xerrno;
     int cseq_result;
     _Bool crossNet;
     _Bool private_protocol;
-    vector_36fe4106 vUsedIp;
+    vector_ebb6ef3e vUsedIp;
     _Bool is_resumed;
 };
 
@@ -290,24 +294,68 @@ struct CNNDimension {
 
 struct CSGroupRecord {
     long long _field1;
-    basic_string_a490aa4c _field2;
+    struct basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char>> {
+        struct __compressed_pair<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char>>::__rep, std::__1::allocator<char>> {
+            struct __rep _field1;
+        } _field1;
+    } _field2;
     struct vector<MSensorInsight::ScenesUnit, std::__1::allocator<MSensorInsight::ScenesUnit>> _field3;
     int _field4;
-    basic_string_a490aa4c _field5;
+    struct basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char>> {
+        struct __compressed_pair<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char>>::__rep, std::__1::allocator<char>> {
+            struct __rep _field1;
+        } _field1;
+    } _field5;
     int _field6;
     int _field7;
-    basic_string_a490aa4c _field8;
-    basic_string_a490aa4c _field9;
-    basic_string_a490aa4c _field10;
-    basic_string_a490aa4c _field11;
-    basic_string_a490aa4c _field12;
-    basic_string_a490aa4c _field13;
+    struct basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char>> {
+        struct __compressed_pair<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char>>::__rep, std::__1::allocator<char>> {
+            struct __rep _field1;
+        } _field1;
+    } _field8;
+    struct basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char>> {
+        struct __compressed_pair<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char>>::__rep, std::__1::allocator<char>> {
+            struct __rep _field1;
+        } _field1;
+    } _field9;
+    struct basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char>> {
+        struct __compressed_pair<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char>>::__rep, std::__1::allocator<char>> {
+            struct __rep _field1;
+        } _field1;
+    } _field10;
+    struct basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char>> {
+        struct __compressed_pair<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char>>::__rep, std::__1::allocator<char>> {
+            struct __rep _field1;
+        } _field1;
+    } _field11;
+    struct basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char>> {
+        struct __compressed_pair<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char>>::__rep, std::__1::allocator<char>> {
+            struct __rep _field1;
+        } _field1;
+    } _field12;
+    struct basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char>> {
+        struct __compressed_pair<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char>>::__rep, std::__1::allocator<char>> {
+            struct __rep _field1;
+        } _field1;
+    } _field13;
     int _field14;
     int _field15;
-    basic_string_a490aa4c _field16;
+    struct basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char>> {
+        struct __compressed_pair<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char>>::__rep, std::__1::allocator<char>> {
+            struct __rep _field1;
+        } _field1;
+    } _field16;
     int _field17;
-    basic_string_a490aa4c _field18;
-    basic_string_a490aa4c _field19;
+    struct basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char>> {
+        struct __compressed_pair<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char>>::__rep, std::__1::allocator<char>> {
+            struct __rep _field1;
+        } _field1;
+    } _field18;
+    struct basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char>> {
+        struct __compressed_pair<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char>>::__rep, std::__1::allocator<char>> {
+            struct __rep _field1;
+        } _field1;
+    } _field19;
     int _field20;
     struct ClientInfo _field21;
     struct EmulatorInfo _field22;
@@ -347,8 +395,16 @@ struct ClearSessionItem;
 struct ClickableButton;
 
 struct ClientInfo {
-    basic_string_a490aa4c _field1;
-    basic_string_a490aa4c _field2;
+    struct basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char>> {
+        struct __compressed_pair<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char>>::__rep, std::__1::allocator<char>> {
+            struct __rep _field1;
+        } _field1;
+    } _field1;
+    struct basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char>> {
+        struct __compressed_pair<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char>>::__rep, std::__1::allocator<char>> {
+            struct __rep _field1;
+        } _field1;
+    } _field2;
 };
 
 struct ClientReport_t {
@@ -407,7 +463,11 @@ struct Config {
     int _field12;
     int _field13;
     int _field14;
-    basic_string_a490aa4c _field15;
+    struct basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char>> {
+        struct __compressed_pair<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char>>::__rep, std::__1::allocator<char>> {
+            struct __rep _field1;
+        } _field1;
+    } _field15;
     _Bool _field16;
     _Bool _field17;
 };
@@ -1020,15 +1080,15 @@ struct QBAR_QRCODE_INFO {
     float qrcodeAreaRatio;
     float possibleFix;
     int hasSquare;
-    vector_c080079c squareBorder;
+    vector_552c3471 squareBorder;
 };
 
 struct QBAR_REPORT_MSG {
     int qrcodeVersion;
     int pyramidLv;
-    basic_string_a490aa4c binaryMethod;
-    basic_string_a490aa4c ecLevel;
-    basic_string_a490aa4c charsetMode;
+    basic_string_90719d97 binaryMethod;
+    basic_string_90719d97 ecLevel;
+    basic_string_90719d97 charsetMode;
 };
 
 struct QBar {
@@ -1544,7 +1604,11 @@ struct WARecorderData {
 };
 
 struct WCTAnyProperty {
-    basic_string_a490aa4c _field1;
+    struct basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char>> {
+        struct __compressed_pair<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char>>::__rep, std::__1::allocator<char>> {
+            struct __rep _field1;
+        } _field1;
+    } _field1;
     Class _field2;
 };
 
@@ -1556,20 +1620,32 @@ struct WCTBinding {
     struct shared_ptr<std::__1::unordered_map<std::__1::basic_string<char>, std::__1::shared_ptr<WCTConstraintBindingBase>, std::__1::hash<std::__1::basic_string<char>>, std::__1::equal_to<std::__1::basic_string<char>>, std::__1::allocator<std::__1::pair<const std::__1::basic_string<char>, std::__1::shared_ptr<WCTConstraintBindingBase>>>>> _field5;
     struct shared_ptr<std::__1::list<std::__1::shared_ptr<WCTConstraintBindingBase>, std::__1::allocator<std::__1::shared_ptr<WCTConstraintBindingBase>>>> _field6;
     struct shared_ptr<std::__1::list<std::__1::pair<std::__1::basic_string<char>, std::__1::basic_string<char>>, std::__1::allocator<std::__1::pair<std::__1::basic_string<char>, std::__1::basic_string<char>>>>> _field7;
-    basic_string_a490aa4c _field8;
+    struct basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char>> {
+        struct __compressed_pair<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char>>::__rep, std::__1::allocator<char>> {
+            struct __rep _field1;
+        } _field1;
+    } _field8;
 };
 
 struct WCTColumnBinding;
 
 struct WCTExpr {
-    basic_string_a490aa4c _field1;
+    struct basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char>> {
+        struct __compressed_pair<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char>>::__rep, std::__1::allocator<char>> {
+            struct __rep _field1;
+        } _field1;
+    } _field1;
     Class _field2;
     struct shared_ptr<WCTColumnBinding> _field3;
     Class _field4;
 };
 
 struct WCTProperty {
-    basic_string_a490aa4c _field1;
+    struct basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char>> {
+        struct __compressed_pair<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char>>::__rep, std::__1::allocator<char>> {
+            struct __rep _field1;
+        } _field1;
+    } _field1;
     Class _field2;
     struct shared_ptr<WCTColumnBinding> _field3;
 };
@@ -1582,7 +1658,11 @@ struct WCTPropertyList {
 };
 
 struct WCTResult {
-    basic_string_a490aa4c _field1;
+    struct basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char>> {
+        struct __compressed_pair<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char>>::__rep, std::__1::allocator<char>> {
+            struct __rep _field1;
+        } _field1;
+    } _field1;
     Class _field2;
     struct shared_ptr<WCTColumnBinding> _field3;
 };
@@ -1590,7 +1670,11 @@ struct WCTResult {
 struct WXAPkg {
     struct WXAPkgHead _field1;
     struct WXAPkgInfo _field2;
-    basic_string_a490aa4c _field3;
+    struct basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char>> {
+        struct __compressed_pair<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char>>::__rep, std::__1::allocator<char>> {
+            struct __rep _field1;
+        } _field1;
+    } _field3;
 };
 
 struct WXAPkgHead {
@@ -1951,6 +2035,25 @@ struct __list_node_base<unsigned long long, void *> {
     struct __list_node_base<unsigned long long, void *> *__next_;
 };
 
+struct __rep {
+    union {
+        struct __long {
+            char *__data_;
+            unsigned long long __size_;
+            unsigned long long __cap_;
+        } __l;
+        struct __short {
+            char __data_[23];
+            struct {
+                unsigned char __size_;
+            } ;
+        } __s;
+        struct __raw {
+            unsigned long long __words[3];
+        } __r;
+    } ;
+};
+
 struct __sFILE {
     char *_field1;
     int _field2;
@@ -2003,29 +2106,6 @@ struct _opaque_pthread_mutex_t {
     char __opaque[56];
 };
 
-struct basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char>> {
-    struct __compressed_pair<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char>>::__rep, std::__1::allocator<char>> {
-        struct __rep {
-            union {
-                struct __long {
-                    char *__data_;
-                    unsigned long long __size_;
-                    unsigned long long __cap_;
-                } __l;
-                struct __short {
-                    char __data_[23];
-                    struct {
-                        unsigned char __size_;
-                    } ;
-                } __s;
-                struct __raw {
-                    unsigned long long __words[3];
-                } __r;
-            } ;
-        } __first_;
-    } __r_;
-};
-
 struct circle_buffer {
     unsigned long long m_read_pos;
     unsigned long long m_write_pos;
@@ -2056,7 +2136,11 @@ struct layer_param {
 
 struct layer_res {
     CDUnknownFunctionPointerType *_field1;
-    basic_string_a490aa4c _field2;
+    struct basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char>> {
+        struct __compressed_pair<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char>>::__rep, std::__1::allocator<char>> {
+            struct __rep _field1;
+        } _field1;
+    } _field2;
     int _field3;
 };
 
@@ -2072,7 +2156,7 @@ struct list<std::__1::pair<std::__1::basic_string<char>, std::__1::basic_string<
 struct list<std::__1::shared_ptr<POPAnimatorItem>, std::__1::allocator<std::__1::shared_ptr<POPAnimatorItem>>> {
     struct __list_node_base<std::__1::shared_ptr<POPAnimatorItem>, void *> __end_;
     struct __compressed_pair<unsigned long, std::__1::allocator<std::__1::__list_node<std::__1::shared_ptr<POPAnimatorItem>, void *>>> {
-        unsigned long long __first_;
+        unsigned long long __value_;
     } __size_alloc_;
 };
 
@@ -2088,7 +2172,7 @@ struct list<std::__1::shared_ptr<WCTConstraintBindingBase>, std::__1::allocator<
 struct list<unsigned long long, std::__1::allocator<unsigned long long>> {
     struct __list_node_base<unsigned long long, void *> __end_;
     struct __compressed_pair<unsigned long, std::__1::allocator<std::__1::__list_node<unsigned long long, void *>>> {
-        unsigned long long __first_;
+        unsigned long long __value_;
     } __size_alloc_;
 };
 
@@ -2106,10 +2190,10 @@ struct map<NSString *, NSString *, unicharCmp, std::__1::allocator<std::__1::pai
     struct __tree<std::__1::__value_type<NSString *, NSString *>, std::__1::__map_value_compare<NSString *, std::__1::__value_type<NSString *, NSString *>, unicharCmp, true>, std::__1::allocator<std::__1::__value_type<NSString *, NSString *>>> {
         struct __tree_end_node<std::__1::__tree_node_base<void *>*> *__begin_node_;
         struct __compressed_pair<std::__1::__tree_end_node<std::__1::__tree_node_base<void *>*>, std::__1::allocator<std::__1::__tree_node<std::__1::__value_type<NSString *, NSString *>, void *>>> {
-            struct __tree_end_node<std::__1::__tree_node_base<void *>*> __first_;
+            struct __tree_end_node<std::__1::__tree_node_base<void *>*> __value_;
         } __pair1_;
         struct __compressed_pair<unsigned long, std::__1::__map_value_compare<NSString *, std::__1::__value_type<NSString *, NSString *>, unicharCmp, true>> {
-            unsigned long long __first_;
+            unsigned long long __value_;
         } __pair3_;
     } __tree_;
 };
@@ -2118,10 +2202,10 @@ struct map<NSString *, bool, CompareNSString, std::__1::allocator<std::__1::pair
     struct __tree<std::__1::__value_type<NSString *, bool>, std::__1::__map_value_compare<NSString *, std::__1::__value_type<NSString *, bool>, CompareNSString, true>, std::__1::allocator<std::__1::__value_type<NSString *, bool>>> {
         struct __tree_end_node<std::__1::__tree_node_base<void *>*> *__begin_node_;
         struct __compressed_pair<std::__1::__tree_end_node<std::__1::__tree_node_base<void *>*>, std::__1::allocator<std::__1::__tree_node<std::__1::__value_type<NSString *, bool>, void *>>> {
-            struct __tree_end_node<std::__1::__tree_node_base<void *>*> __first_;
+            struct __tree_end_node<std::__1::__tree_node_base<void *>*> __value_;
         } __pair1_;
         struct __compressed_pair<unsigned long, std::__1::__map_value_compare<NSString *, std::__1::__value_type<NSString *, bool>, CompareNSString, true>> {
-            unsigned long long __first_;
+            unsigned long long __value_;
         } __pair3_;
     } __tree_;
 };
@@ -2130,10 +2214,10 @@ struct map<NSString *, std::__1::vector<std::__1::shared_ptr<ClearDataItem>, std
     struct __tree<std::__1::__value_type<NSString *, std::__1::vector<std::__1::shared_ptr<ClearDataItem>, std::__1::allocator<std::__1::shared_ptr<ClearDataItem>>>>, std::__1::__map_value_compare<NSString *, std::__1::__value_type<NSString *, std::__1::vector<std::__1::shared_ptr<ClearDataItem>, std::__1::allocator<std::__1::shared_ptr<ClearDataItem>>>>, std::__1::less<NSString *>, true>, std::__1::allocator<std::__1::__value_type<NSString *, std::__1::vector<std::__1::shared_ptr<ClearDataItem>, std::__1::allocator<std::__1::shared_ptr<ClearDataItem>>>>>> {
         struct __tree_end_node<std::__1::__tree_node_base<void *>*> *__begin_node_;
         struct __compressed_pair<std::__1::__tree_end_node<std::__1::__tree_node_base<void *>*>, std::__1::allocator<std::__1::__tree_node<std::__1::__value_type<NSString *, std::__1::vector<std::__1::shared_ptr<ClearDataItem>, std::__1::allocator<std::__1::shared_ptr<ClearDataItem>>>>, void *>>> {
-            struct __tree_end_node<std::__1::__tree_node_base<void *>*> __first_;
+            struct __tree_end_node<std::__1::__tree_node_base<void *>*> __value_;
         } __pair1_;
         struct __compressed_pair<unsigned long, std::__1::__map_value_compare<NSString *, std::__1::__value_type<NSString *, std::__1::vector<std::__1::shared_ptr<ClearDataItem>, std::__1::allocator<std::__1::shared_ptr<ClearDataItem>>>>, std::__1::less<NSString *>, true>> {
-            unsigned long long __first_;
+            unsigned long long __value_;
         } __pair3_;
     } __tree_;
 };
@@ -2142,10 +2226,10 @@ struct map<NSString *, std::__1::vector<std::__1::shared_ptr<ClearSessionItem>, 
     struct __tree<std::__1::__value_type<NSString *, std::__1::vector<std::__1::shared_ptr<ClearSessionItem>, std::__1::allocator<std::__1::shared_ptr<ClearSessionItem>>>>, std::__1::__map_value_compare<NSString *, std::__1::__value_type<NSString *, std::__1::vector<std::__1::shared_ptr<ClearSessionItem>, std::__1::allocator<std::__1::shared_ptr<ClearSessionItem>>>>, std::__1::less<NSString *>, true>, std::__1::allocator<std::__1::__value_type<NSString *, std::__1::vector<std::__1::shared_ptr<ClearSessionItem>, std::__1::allocator<std::__1::shared_ptr<ClearSessionItem>>>>>> {
         struct __tree_end_node<std::__1::__tree_node_base<void *>*> *__begin_node_;
         struct __compressed_pair<std::__1::__tree_end_node<std::__1::__tree_node_base<void *>*>, std::__1::allocator<std::__1::__tree_node<std::__1::__value_type<NSString *, std::__1::vector<std::__1::shared_ptr<ClearSessionItem>, std::__1::allocator<std::__1::shared_ptr<ClearSessionItem>>>>, void *>>> {
-            struct __tree_end_node<std::__1::__tree_node_base<void *>*> __first_;
+            struct __tree_end_node<std::__1::__tree_node_base<void *>*> __value_;
         } __pair1_;
         struct __compressed_pair<unsigned long, std::__1::__map_value_compare<NSString *, std::__1::__value_type<NSString *, std::__1::vector<std::__1::shared_ptr<ClearSessionItem>, std::__1::allocator<std::__1::shared_ptr<ClearSessionItem>>>>, std::__1::less<NSString *>, true>> {
-            unsigned long long __first_;
+            unsigned long long __value_;
         } __pair3_;
     } __tree_;
 };
@@ -2154,10 +2238,10 @@ struct map<double, NSMutableArray *, std::__1::less<double>, std::__1::allocator
     struct __tree<std::__1::__value_type<double, NSMutableArray *>, std::__1::__map_value_compare<double, std::__1::__value_type<double, NSMutableArray *>, std::__1::less<double>, true>, std::__1::allocator<std::__1::__value_type<double, NSMutableArray *>>> {
         struct __tree_end_node<std::__1::__tree_node_base<void *>*> *__begin_node_;
         struct __compressed_pair<std::__1::__tree_end_node<std::__1::__tree_node_base<void *>*>, std::__1::allocator<std::__1::__tree_node<std::__1::__value_type<double, NSMutableArray *>, void *>>> {
-            struct __tree_end_node<std::__1::__tree_node_base<void *>*> __first_;
+            struct __tree_end_node<std::__1::__tree_node_base<void *>*> __value_;
         } __pair1_;
         struct __compressed_pair<unsigned long, std::__1::__map_value_compare<double, std::__1::__value_type<double, NSMutableArray *>, std::__1::less<double>, true>> {
-            unsigned long long __first_;
+            unsigned long long __value_;
         } __pair3_;
     } __tree_;
 };
@@ -2166,10 +2250,10 @@ struct map<double, double, std::__1::less<double>, std::__1::allocator<std::__1:
     struct __tree<std::__1::__value_type<double, double>, std::__1::__map_value_compare<double, std::__1::__value_type<double, double>, std::__1::less<double>, true>, std::__1::allocator<std::__1::__value_type<double, double>>> {
         struct __tree_end_node<std::__1::__tree_node_base<void *>*> *__begin_node_;
         struct __compressed_pair<std::__1::__tree_end_node<std::__1::__tree_node_base<void *>*>, std::__1::allocator<std::__1::__tree_node<std::__1::__value_type<double, double>, void *>>> {
-            struct __tree_end_node<std::__1::__tree_node_base<void *>*> __first_;
+            struct __tree_end_node<std::__1::__tree_node_base<void *>*> __value_;
         } __pair1_;
         struct __compressed_pair<unsigned long, std::__1::__map_value_compare<double, std::__1::__value_type<double, double>, std::__1::less<double>, true>> {
-            unsigned long long __first_;
+            unsigned long long __value_;
         } __pair3_;
     } __tree_;
 };
@@ -2178,10 +2262,10 @@ struct map<int, WCDBCorruptReport *, std::__1::less<int>, std::__1::allocator<st
     struct __tree<std::__1::__value_type<int, WCDBCorruptReport *>, std::__1::__map_value_compare<int, std::__1::__value_type<int, WCDBCorruptReport *>, std::__1::less<int>, true>, std::__1::allocator<std::__1::__value_type<int, WCDBCorruptReport *>>> {
         struct __tree_end_node<std::__1::__tree_node_base<void *>*> *__begin_node_;
         struct __compressed_pair<std::__1::__tree_end_node<std::__1::__tree_node_base<void *>*>, std::__1::allocator<std::__1::__tree_node<std::__1::__value_type<int, WCDBCorruptReport *>, void *>>> {
-            struct __tree_end_node<std::__1::__tree_node_base<void *>*> __first_;
+            struct __tree_end_node<std::__1::__tree_node_base<void *>*> __value_;
         } __pair1_;
         struct __compressed_pair<unsigned long, std::__1::__map_value_compare<int, std::__1::__value_type<int, WCDBCorruptReport *>, std::__1::less<int>, true>> {
-            unsigned long long __first_;
+            unsigned long long __value_;
         } __pair3_;
     } __tree_;
 };
@@ -2202,10 +2286,10 @@ struct map<long, TimeLineSectionType, std::__1::less<long>, std::__1::allocator<
     struct __tree<std::__1::__value_type<long, TimeLineSectionType>, std::__1::__map_value_compare<long, std::__1::__value_type<long, TimeLineSectionType>, std::__1::less<long>, true>, std::__1::allocator<std::__1::__value_type<long, TimeLineSectionType>>> {
         struct __tree_end_node<std::__1::__tree_node_base<void *>*> *__begin_node_;
         struct __compressed_pair<std::__1::__tree_end_node<std::__1::__tree_node_base<void *>*>, std::__1::allocator<std::__1::__tree_node<std::__1::__value_type<long, TimeLineSectionType>, void *>>> {
-            struct __tree_end_node<std::__1::__tree_node_base<void *>*> __first_;
+            struct __tree_end_node<std::__1::__tree_node_base<void *>*> __value_;
         } __pair1_;
         struct __compressed_pair<unsigned long, std::__1::__map_value_compare<long, std::__1::__value_type<long, TimeLineSectionType>, std::__1::less<long>, true>> {
-            unsigned long long __first_;
+            unsigned long long __value_;
         } __pair3_;
     } __tree_;
 };
@@ -2214,10 +2298,10 @@ struct map<long, WCCardChooseViewSectionType, std::__1::less<long>, std::__1::al
     struct __tree<std::__1::__value_type<long, WCCardChooseViewSectionType>, std::__1::__map_value_compare<long, std::__1::__value_type<long, WCCardChooseViewSectionType>, std::__1::less<long>, true>, std::__1::allocator<std::__1::__value_type<long, WCCardChooseViewSectionType>>> {
         struct __tree_end_node<std::__1::__tree_node_base<void *>*> *__begin_node_;
         struct __compressed_pair<std::__1::__tree_end_node<std::__1::__tree_node_base<void *>*>, std::__1::allocator<std::__1::__tree_node<std::__1::__value_type<long, WCCardChooseViewSectionType>, void *>>> {
-            struct __tree_end_node<std::__1::__tree_node_base<void *>*> __first_;
+            struct __tree_end_node<std::__1::__tree_node_base<void *>*> __value_;
         } __pair1_;
         struct __compressed_pair<unsigned long, std::__1::__map_value_compare<long, std::__1::__value_type<long, WCCardChooseViewSectionType>, std::__1::less<long>, true>> {
-            unsigned long long __first_;
+            unsigned long long __value_;
         } __pair3_;
     } __tree_;
 };
@@ -2226,10 +2310,10 @@ struct map<long, WCProductBuyDetailViewSectionType, std::__1::less<long>, std::_
     struct __tree<std::__1::__value_type<long, WCProductBuyDetailViewSectionType>, std::__1::__map_value_compare<long, std::__1::__value_type<long, WCProductBuyDetailViewSectionType>, std::__1::less<long>, true>, std::__1::allocator<std::__1::__value_type<long, WCProductBuyDetailViewSectionType>>> {
         struct __tree_end_node<std::__1::__tree_node_base<void *>*> *__begin_node_;
         struct __compressed_pair<std::__1::__tree_end_node<std::__1::__tree_node_base<void *>*>, std::__1::allocator<std::__1::__tree_node<std::__1::__value_type<long, WCProductBuyDetailViewSectionType>, void *>>> {
-            struct __tree_end_node<std::__1::__tree_node_base<void *>*> __first_;
+            struct __tree_end_node<std::__1::__tree_node_base<void *>*> __value_;
         } __pair1_;
         struct __compressed_pair<unsigned long, std::__1::__map_value_compare<long, std::__1::__value_type<long, WCProductBuyDetailViewSectionType>, std::__1::less<long>, true>> {
-            unsigned long long __first_;
+            unsigned long long __value_;
         } __pair3_;
     } __tree_;
 };
@@ -2250,10 +2334,10 @@ struct map<std::__1::pair<int, int>, int, std::__1::less<std::__1::pair<int, int
     struct __tree<std::__1::__value_type<std::__1::pair<int, int>, int>, std::__1::__map_value_compare<std::__1::pair<int, int>, std::__1::__value_type<std::__1::pair<int, int>, int>, std::__1::less<std::__1::pair<int, int>>, true>, std::__1::allocator<std::__1::__value_type<std::__1::pair<int, int>, int>>> {
         struct __tree_end_node<std::__1::__tree_node_base<void *>*> *__begin_node_;
         struct __compressed_pair<std::__1::__tree_end_node<std::__1::__tree_node_base<void *>*>, std::__1::allocator<std::__1::__tree_node<std::__1::__value_type<std::__1::pair<int, int>, int>, void *>>> {
-            struct __tree_end_node<std::__1::__tree_node_base<void *>*> __first_;
+            struct __tree_end_node<std::__1::__tree_node_base<void *>*> __value_;
         } __pair1_;
         struct __compressed_pair<unsigned long, std::__1::__map_value_compare<std::__1::pair<int, int>, std::__1::__value_type<std::__1::pair<int, int>, int>, std::__1::less<std::__1::pair<int, int>>, true>> {
-            unsigned long long __first_;
+            unsigned long long __value_;
         } __pair3_;
     } __tree_;
 };
@@ -2262,10 +2346,10 @@ struct map<unsigned int, unsigned int, std::__1::less<unsigned int>, std::__1::a
     struct __tree<std::__1::__value_type<unsigned int, unsigned int>, std::__1::__map_value_compare<unsigned int, std::__1::__value_type<unsigned int, unsigned int>, std::__1::less<unsigned int>, true>, std::__1::allocator<std::__1::__value_type<unsigned int, unsigned int>>> {
         struct __tree_end_node<std::__1::__tree_node_base<void *>*> *__begin_node_;
         struct __compressed_pair<std::__1::__tree_end_node<std::__1::__tree_node_base<void *>*>, std::__1::allocator<std::__1::__tree_node<std::__1::__value_type<unsigned int, unsigned int>, void *>>> {
-            struct __tree_end_node<std::__1::__tree_node_base<void *>*> __first_;
+            struct __tree_end_node<std::__1::__tree_node_base<void *>*> __value_;
         } __pair1_;
         struct __compressed_pair<unsigned long, std::__1::__map_value_compare<unsigned int, std::__1::__value_type<unsigned int, unsigned int>, std::__1::less<unsigned int>, true>> {
-            unsigned long long __first_;
+            unsigned long long __value_;
         } __pair3_;
     } __tree_;
 };
@@ -2274,10 +2358,10 @@ struct map<unsigned int, unsigned long long, std::__1::less<unsigned int>, std::
     struct __tree<std::__1::__value_type<unsigned int, unsigned long long>, std::__1::__map_value_compare<unsigned int, std::__1::__value_type<unsigned int, unsigned long long>, std::__1::less<unsigned int>, true>, std::__1::allocator<std::__1::__value_type<unsigned int, unsigned long long>>> {
         struct __tree_end_node<std::__1::__tree_node_base<void *>*> *__begin_node_;
         struct __compressed_pair<std::__1::__tree_end_node<std::__1::__tree_node_base<void *>*>, std::__1::allocator<std::__1::__tree_node<std::__1::__value_type<unsigned int, unsigned long long>, void *>>> {
-            struct __tree_end_node<std::__1::__tree_node_base<void *>*> __first_;
+            struct __tree_end_node<std::__1::__tree_node_base<void *>*> __value_;
         } __pair1_;
         struct __compressed_pair<unsigned long, std::__1::__map_value_compare<unsigned int, std::__1::__value_type<unsigned int, unsigned long long>, std::__1::less<unsigned int>, true>> {
-            unsigned long long __first_;
+            unsigned long long __value_;
         } __pair3_;
     } __tree_;
 };
@@ -2286,10 +2370,10 @@ struct map<unsigned long long, NSString *, std::__1::less<unsigned long long>, s
     struct __tree<std::__1::__value_type<unsigned long long, NSString *>, std::__1::__map_value_compare<unsigned long long, std::__1::__value_type<unsigned long long, NSString *>, std::__1::less<unsigned long long>, true>, std::__1::allocator<std::__1::__value_type<unsigned long long, NSString *>>> {
         struct __tree_end_node<std::__1::__tree_node_base<void *>*> *__begin_node_;
         struct __compressed_pair<std::__1::__tree_end_node<std::__1::__tree_node_base<void *>*>, std::__1::allocator<std::__1::__tree_node<std::__1::__value_type<unsigned long long, NSString *>, void *>>> {
-            struct __tree_end_node<std::__1::__tree_node_base<void *>*> __first_;
+            struct __tree_end_node<std::__1::__tree_node_base<void *>*> __value_;
         } __pair1_;
         struct __compressed_pair<unsigned long, std::__1::__map_value_compare<unsigned long long, std::__1::__value_type<unsigned long long, NSString *>, std::__1::less<unsigned long long>, true>> {
-            unsigned long long __first_;
+            unsigned long long __value_;
         } __pair3_;
     } __tree_;
 };
@@ -2298,10 +2382,10 @@ struct map<unsigned long long, tagEmojiItem *, std::__1::less<unsigned long long
     struct __tree<std::__1::__value_type<unsigned long long, tagEmojiItem *>, std::__1::__map_value_compare<unsigned long long, std::__1::__value_type<unsigned long long, tagEmojiItem *>, std::__1::less<unsigned long long>, true>, std::__1::allocator<std::__1::__value_type<unsigned long long, tagEmojiItem *>>> {
         struct __tree_end_node<std::__1::__tree_node_base<void *>*> *__begin_node_;
         struct __compressed_pair<std::__1::__tree_end_node<std::__1::__tree_node_base<void *>*>, std::__1::allocator<std::__1::__tree_node<std::__1::__value_type<unsigned long long, tagEmojiItem *>, void *>>> {
-            struct __tree_end_node<std::__1::__tree_node_base<void *>*> __first_;
+            struct __tree_end_node<std::__1::__tree_node_base<void *>*> __value_;
         } __pair1_;
         struct __compressed_pair<unsigned long, std::__1::__map_value_compare<unsigned long long, std::__1::__value_type<unsigned long long, tagEmojiItem *>, std::__1::less<unsigned long long>, true>> {
-            unsigned long long __first_;
+            unsigned long long __value_;
         } __pair3_;
     } __tree_;
 };
@@ -2310,10 +2394,10 @@ struct map<unsigned long, NSMutableDictionary *, std::__1::less<unsigned long>, 
     struct __tree<std::__1::__value_type<unsigned long, NSMutableDictionary *>, std::__1::__map_value_compare<unsigned long, std::__1::__value_type<unsigned long, NSMutableDictionary *>, std::__1::less<unsigned long>, true>, std::__1::allocator<std::__1::__value_type<unsigned long, NSMutableDictionary *>>> {
         struct __tree_end_node<std::__1::__tree_node_base<void *>*> *__begin_node_;
         struct __compressed_pair<std::__1::__tree_end_node<std::__1::__tree_node_base<void *>*>, std::__1::allocator<std::__1::__tree_node<std::__1::__value_type<unsigned long, NSMutableDictionary *>, void *>>> {
-            struct __tree_end_node<std::__1::__tree_node_base<void *>*> __first_;
+            struct __tree_end_node<std::__1::__tree_node_base<void *>*> __value_;
         } __pair1_;
         struct __compressed_pair<unsigned long, std::__1::__map_value_compare<unsigned long, std::__1::__value_type<unsigned long, NSMutableDictionary *>, std::__1::less<unsigned long>, true>> {
-            unsigned long long __first_;
+            unsigned long long __value_;
         } __pair3_;
     } __tree_;
 };
@@ -2322,10 +2406,10 @@ struct map<unsigned long, unsigned int, std::__1::less<unsigned long>, std::__1:
     struct __tree<std::__1::__value_type<unsigned long, unsigned int>, std::__1::__map_value_compare<unsigned long, std::__1::__value_type<unsigned long, unsigned int>, std::__1::less<unsigned long>, true>, std::__1::allocator<std::__1::__value_type<unsigned long, unsigned int>>> {
         struct __tree_end_node<std::__1::__tree_node_base<void *>*> *__begin_node_;
         struct __compressed_pair<std::__1::__tree_end_node<std::__1::__tree_node_base<void *>*>, std::__1::allocator<std::__1::__tree_node<std::__1::__value_type<unsigned long, unsigned int>, void *>>> {
-            struct __tree_end_node<std::__1::__tree_node_base<void *>*> __first_;
+            struct __tree_end_node<std::__1::__tree_node_base<void *>*> __value_;
         } __pair1_;
         struct __compressed_pair<unsigned long, std::__1::__map_value_compare<unsigned long, std::__1::__value_type<unsigned long, unsigned int>, std::__1::less<unsigned long>, true>> {
-            unsigned long long __first_;
+            unsigned long long __value_;
         } __pair3_;
     } __tree_;
 };
@@ -2334,10 +2418,10 @@ struct map<unsigned long, unsigned long, std::__1::less<unsigned long>, std::__1
     struct __tree<std::__1::__value_type<unsigned long, unsigned long>, std::__1::__map_value_compare<unsigned long, std::__1::__value_type<unsigned long, unsigned long>, std::__1::less<unsigned long>, true>, std::__1::allocator<std::__1::__value_type<unsigned long, unsigned long>>> {
         struct __tree_end_node<std::__1::__tree_node_base<void *>*> *__begin_node_;
         struct __compressed_pair<std::__1::__tree_end_node<std::__1::__tree_node_base<void *>*>, std::__1::allocator<std::__1::__tree_node<std::__1::__value_type<unsigned long, unsigned long>, void *>>> {
-            struct __tree_end_node<std::__1::__tree_node_base<void *>*> __first_;
+            struct __tree_end_node<std::__1::__tree_node_base<void *>*> __value_;
         } __pair1_;
         struct __compressed_pair<unsigned long, std::__1::__map_value_compare<unsigned long, std::__1::__value_type<unsigned long, unsigned long>, std::__1::less<unsigned long>, true>> {
-            unsigned long long __first_;
+            unsigned long long __value_;
         } __pair3_;
     } __tree_;
 };
@@ -2365,8 +2449,16 @@ struct rpd_ctrl;
 
 struct rpd_layer_info {
     int _field1;
-    basic_string_a490aa4c _field2;
-    basic_string_a490aa4c _field3;
+    struct basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char>> {
+        struct __compressed_pair<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char>>::__rep, std::__1::allocator<char>> {
+            struct __rep _field1;
+        } _field1;
+    } _field2;
+    struct basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char>> {
+        struct __compressed_pair<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char>>::__rep, std::__1::allocator<char>> {
+            struct __rep _field1;
+        } _field1;
+    } _field3;
     vector_e0f2bd7e _field4;
     vector_e0f2bd7e _field5;
     struct layer_param *_field6;
@@ -2443,6 +2535,12 @@ struct sockaddr_storage {
     char __ss_pad1[6];
     long long __ss_align;
     char __ss_pad2[112];
+};
+
+struct stCmd {
+    unsigned int _field1;
+    unsigned int _field2;
+    unsigned int _field3;
 };
 
 struct stEntryRow {
@@ -2923,12 +3021,12 @@ struct timeval {
 
 struct unique_ptr<std::__1::__hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<int, EJFontGlyphInfo>, void *>*>*[], std::__1::__bucket_list_deallocator<std::__1::allocator<std::__1::__hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<int, EJFontGlyphInfo>, void *>*>*>>> {
     struct __compressed_pair<std::__1::__hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<int, EJFontGlyphInfo>, void *>*>**, std::__1::__bucket_list_deallocator<std::__1::allocator<std::__1::__hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<int, EJFontGlyphInfo>, void *>*>*>>> {
-        struct __hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<int, EJFontGlyphInfo>, void *>*> **__first_;
+        struct __hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<int, EJFontGlyphInfo>, void *>*> **__value_;
         struct __bucket_list_deallocator<std::__1::allocator<std::__1::__hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<int, EJFontGlyphInfo>, void *>*>*>> {
             struct __compressed_pair<unsigned long, std::__1::allocator<std::__1::__hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<int, EJFontGlyphInfo>, void *>*>*>> {
-                unsigned long long __first_;
+                unsigned long long __value_;
             } __data_;
-        } __second_;
+        } __value_;
     } __ptr_;
 };
 
@@ -2936,13 +3034,13 @@ struct unordered_map<int, EJFontGlyphInfo, std::__1::hash<int>, std::__1::equal_
     struct __hash_table<std::__1::__hash_value_type<int, EJFontGlyphInfo>, std::__1::__unordered_map_hasher<int, std::__1::__hash_value_type<int, EJFontGlyphInfo>, std::__1::hash<int>, true>, std::__1::__unordered_map_equal<int, std::__1::__hash_value_type<int, EJFontGlyphInfo>, std::__1::equal_to<int>, true>, std::__1::allocator<std::__1::__hash_value_type<int, EJFontGlyphInfo>>> {
         struct unique_ptr<std::__1::__hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<int, EJFontGlyphInfo>, void *>*>*[], std::__1::__bucket_list_deallocator<std::__1::allocator<std::__1::__hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<int, EJFontGlyphInfo>, void *>*>*>>> __bucket_list_;
         struct __compressed_pair<std::__1::__hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<int, EJFontGlyphInfo>, void *>*>, std::__1::allocator<std::__1::__hash_node<std::__1::__hash_value_type<int, EJFontGlyphInfo>, void *>>> {
-            struct __hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<int, EJFontGlyphInfo>, void *>*> __first_;
+            struct __hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<int, EJFontGlyphInfo>, void *>*> __value_;
         } __p1_;
         struct __compressed_pair<unsigned long, std::__1::__unordered_map_hasher<int, std::__1::__hash_value_type<int, EJFontGlyphInfo>, std::__1::hash<int>, true>> {
-            unsigned long long __first_;
+            unsigned long long __value_;
         } __p2_;
         struct __compressed_pair<float, std::__1::__unordered_map_equal<int, std::__1::__hash_value_type<int, EJFontGlyphInfo>, std::__1::equal_to<int>, true>> {
-            float __first_;
+            float __value_;
         } __p3_;
     } __table_;
 };
@@ -2955,7 +3053,7 @@ struct vector<EJVector2, std::__1::allocator<EJVector2>> {
     CDStruct_183601bc *__begin_;
     CDStruct_183601bc *__end_;
     struct __compressed_pair<EJVector2 *, std::__1::allocator<EJVector2>> {
-        CDStruct_183601bc *__first_;
+        CDStruct_183601bc *__value_;
     } __end_cap_;
 };
 
@@ -3003,7 +3101,7 @@ struct vector<QBAR_POINT, std::__1::allocator<QBAR_POINT>> {
     struct QBAR_POINT *__begin_;
     struct QBAR_POINT *__end_;
     struct __compressed_pair<QBAR_POINT *, std::__1::allocator<QBAR_POINT>> {
-        struct QBAR_POINT *__first_;
+        struct QBAR_POINT *__value_;
     } __end_cap_;
 };
 
@@ -3019,7 +3117,7 @@ struct vector<bool, std::__1::allocator<bool>> {
     unsigned long long *__begin_;
     unsigned long long __size_;
     struct __compressed_pair<unsigned long, std::__1::allocator<unsigned long>> {
-        unsigned long long __first_;
+        unsigned long long __value_;
     } __cap_alloc_;
 };
 
@@ -3043,7 +3141,7 @@ struct vector<mars::smc::STIDKeyInfo, std::__1::allocator<mars::smc::STIDKeyInfo
     struct STIDKeyInfo *__begin_;
     struct STIDKeyInfo *__end_;
     struct __compressed_pair<mars::smc::STIDKeyInfo *, std::__1::allocator<mars::smc::STIDKeyInfo>> {
-        struct STIDKeyInfo *__first_;
+        struct STIDKeyInfo *__value_;
     } __end_cap_;
 };
 
@@ -3056,10 +3154,10 @@ struct vector<ncv::Point2f, std::__1::allocator<ncv::Point2f>> {
 };
 
 struct vector<std::__1::basic_string<char>, std::__1::allocator<std::__1::basic_string<char>>> {
-    basic_string_a490aa4c *__begin_;
-    basic_string_a490aa4c *__end_;
+    struct basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char>> *__begin_;
+    struct basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char>> *__end_;
     struct __compressed_pair<std::__1::basic_string<char>*, std::__1::allocator<std::__1::basic_string<char>>> {
-        basic_string_a490aa4c *__first_;
+        struct basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char>> *__value_;
     } __end_cap_;
 };
 
@@ -3067,7 +3165,7 @@ struct vector<std::__1::shared_ptr<ClearDataItem>, std::__1::allocator<std::__1:
     shared_ptr_f9ca816a *__begin_;
     shared_ptr_f9ca816a *__end_;
     struct __compressed_pair<std::__1::shared_ptr<ClearDataItem>*, std::__1::allocator<std::__1::shared_ptr<ClearDataItem>>> {
-        shared_ptr_f9ca816a *__first_;
+        shared_ptr_f9ca816a *__value_;
     } __end_cap_;
 };
 
@@ -3075,7 +3173,7 @@ struct vector<std::__1::shared_ptr<ClearSessionItem>, std::__1::allocator<std::_
     shared_ptr_174ad120 *__begin_;
     shared_ptr_174ad120 *__end_;
     struct __compressed_pair<std::__1::shared_ptr<ClearSessionItem>*, std::__1::allocator<std::__1::shared_ptr<ClearSessionItem>>> {
-        shared_ptr_174ad120 *__first_;
+        shared_ptr_174ad120 *__value_;
     } __end_cap_;
 };
 
@@ -3083,7 +3181,7 @@ struct vector<subpath_t, std::__1::allocator<subpath_t>> {
     CDStruct_183601bc *__begin_;
     CDStruct_183601bc *__end_;
     struct __compressed_pair<subpath_t *, std::__1::allocator<subpath_t>> {
-        CDStruct_183601bc *__first_;
+        CDStruct_183601bc *__value_;
     } __end_cap_;
 };
 
@@ -3091,7 +3189,7 @@ struct vector<unsigned char, std::__1::allocator<unsigned char>> {
     char *__begin_;
     char *__end_;
     struct __compressed_pair<unsigned char *, std::__1::allocator<unsigned char>> {
-        char *__first_;
+        char *__value_;
     } __end_cap_;
 };
 
@@ -3099,7 +3197,7 @@ struct vector<unsigned int, std::__1::allocator<unsigned int>> {
     unsigned int *__begin_;
     unsigned int *__end_;
     struct __compressed_pair<unsigned int *, std::__1::allocator<unsigned int>> {
-        unsigned int *__first_;
+        unsigned int *__value_;
     } __end_cap_;
 };
 
@@ -3107,7 +3205,7 @@ struct vector<unsigned long, std::__1::allocator<unsigned long>> {
     unsigned long long *__begin_;
     unsigned long long *__end_;
     struct __compressed_pair<unsigned long *, std::__1::allocator<unsigned long>> {
-        unsigned long long *__first_;
+        unsigned long long *__value_;
     } __end_cap_;
 };
 
@@ -3127,6 +3225,36 @@ struct z_stream_s {
     unsigned long long adler;
     unsigned long long reserved;
 };
+
+#if 0
+// Names with conflicting types:
+typedef struct ?<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char>>::__rep, std::__1::allocator<char>> {
+    struct __rep __first_;
+} __compressed_pair_5b4d0e04;
+
+typedef struct ?<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char>>::__rep, std::__1::allocator<char>> {
+    struct __rep __value_;
+} __compressed_pair_96848e3b;
+
+typedef struct ?<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char>>::__rep, std::__1::allocator<char>> {
+    struct __rep _field1;
+} __compressed_pair_1d3f934a;
+
+typedef struct ?<char, std::__1::char_traits<char>, std::__1::allocator<char>> {
+    __compressed_pair_5b4d0e04 __r_;
+} basic_string_a490aa4c;
+
+typedef struct ?<char, std::__1::char_traits<char>, std::__1::allocator<char>> {
+    __compressed_pair_96848e3b __r_;
+} basic_string_90719d97;
+
+typedef struct ?<char, std::__1::char_traits<char>, std::__1::allocator<char>> {
+    struct __compressed_pair<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char>>::__rep, std::__1::allocator<char>> {
+        struct __rep _field1;
+    } _field1;
+} basic_string_f1844954;
+
+#endif
 
 #pragma mark Typedef'd Structures
 
@@ -3394,29 +3522,6 @@ typedef struct SpringSolver<POP::Vector4<double>> {
     _Bool _field10;
 } SpringSolver_fe820e75;
 
-typedef struct basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char>> {
-    struct __compressed_pair<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char>>::__rep, std::__1::allocator<char>> {
-        struct __rep {
-            union {
-                struct __long {
-                    char *__data_;
-                    unsigned long long __size_;
-                    unsigned long long __cap_;
-                } __l;
-                struct __short {
-                    char __data_[23];
-                    struct {
-                        unsigned char __size_;
-                    } ;
-                } __s;
-                struct __raw {
-                    unsigned long long __words[3];
-                } __r;
-            } ;
-        } __first_;
-    } __r_;
-} basic_string_a490aa4c;
-
 typedef struct list<const WCDB::Order, std::__1::allocator<const WCDB::Order>> {
     struct __list_node_base<const WCDB::Order, void *> _field1;
     struct __compressed_pair<unsigned long, std::__1::allocator<std::__1::__list_node<const WCDB::Order, void *>>> {
@@ -3427,69 +3532,69 @@ typedef struct list<const WCDB::Order, std::__1::allocator<const WCDB::Order>> {
 typedef struct list<std::__1::shared_ptr<POPAnimatorItem>, std::__1::allocator<std::__1::shared_ptr<POPAnimatorItem>>> {
     struct __list_node_base<std::__1::shared_ptr<POPAnimatorItem>, void *> __end_;
     struct __compressed_pair<unsigned long, std::__1::allocator<std::__1::__list_node<std::__1::shared_ptr<POPAnimatorItem>, void *>>> {
-        unsigned long long __first_;
+        unsigned long long __value_;
     } __size_alloc_;
-} list_670f5810;
+} list_20bec4f3;
 
 typedef struct map<NSString *, NSString *, unicharCmp, std::__1::allocator<std::__1::pair<NSString *const, NSString *>>> {
     struct __tree<std::__1::__value_type<NSString *, NSString *>, std::__1::__map_value_compare<NSString *, std::__1::__value_type<NSString *, NSString *>, unicharCmp, true>, std::__1::allocator<std::__1::__value_type<NSString *, NSString *>>> {
         struct __tree_end_node<std::__1::__tree_node_base<void *>*> *__begin_node_;
         struct __compressed_pair<std::__1::__tree_end_node<std::__1::__tree_node_base<void *>*>, std::__1::allocator<std::__1::__tree_node<std::__1::__value_type<NSString *, NSString *>, void *>>> {
-            struct __tree_end_node<std::__1::__tree_node_base<void *>*> __first_;
+            struct __tree_end_node<std::__1::__tree_node_base<void *>*> __value_;
         } __pair1_;
         struct __compressed_pair<unsigned long, std::__1::__map_value_compare<NSString *, std::__1::__value_type<NSString *, NSString *>, unicharCmp, true>> {
-            unsigned long long __first_;
+            unsigned long long __value_;
         } __pair3_;
     } __tree_;
-} map_c52e7b28;
+} map_8b25bdcc;
 
 typedef struct map<double, NSMutableArray *, std::__1::less<double>, std::__1::allocator<std::__1::pair<const double, NSMutableArray *>>> {
     struct __tree<std::__1::__value_type<double, NSMutableArray *>, std::__1::__map_value_compare<double, std::__1::__value_type<double, NSMutableArray *>, std::__1::less<double>, true>, std::__1::allocator<std::__1::__value_type<double, NSMutableArray *>>> {
         struct __tree_end_node<std::__1::__tree_node_base<void *>*> *__begin_node_;
         struct __compressed_pair<std::__1::__tree_end_node<std::__1::__tree_node_base<void *>*>, std::__1::allocator<std::__1::__tree_node<std::__1::__value_type<double, NSMutableArray *>, void *>>> {
-            struct __tree_end_node<std::__1::__tree_node_base<void *>*> __first_;
+            struct __tree_end_node<std::__1::__tree_node_base<void *>*> __value_;
         } __pair1_;
         struct __compressed_pair<unsigned long, std::__1::__map_value_compare<double, std::__1::__value_type<double, NSMutableArray *>, std::__1::less<double>, true>> {
-            unsigned long long __first_;
+            unsigned long long __value_;
         } __pair3_;
     } __tree_;
-} map_96d7b27b;
+} map_729765ba;
 
 typedef struct map<double, double, std::__1::less<double>, std::__1::allocator<std::__1::pair<const double, double>>> {
     struct __tree<std::__1::__value_type<double, double>, std::__1::__map_value_compare<double, std::__1::__value_type<double, double>, std::__1::less<double>, true>, std::__1::allocator<std::__1::__value_type<double, double>>> {
         struct __tree_end_node<std::__1::__tree_node_base<void *>*> *__begin_node_;
         struct __compressed_pair<std::__1::__tree_end_node<std::__1::__tree_node_base<void *>*>, std::__1::allocator<std::__1::__tree_node<std::__1::__value_type<double, double>, void *>>> {
-            struct __tree_end_node<std::__1::__tree_node_base<void *>*> __first_;
+            struct __tree_end_node<std::__1::__tree_node_base<void *>*> __value_;
         } __pair1_;
         struct __compressed_pair<unsigned long, std::__1::__map_value_compare<double, std::__1::__value_type<double, double>, std::__1::less<double>, true>> {
-            unsigned long long __first_;
+            unsigned long long __value_;
         } __pair3_;
     } __tree_;
-} map_104bc404;
+} map_a50a422b;
 
 typedef struct map<unsigned int, unsigned long long, std::__1::less<unsigned int>, std::__1::allocator<std::__1::pair<const unsigned int, unsigned long long>>> {
     struct __tree<std::__1::__value_type<unsigned int, unsigned long long>, std::__1::__map_value_compare<unsigned int, std::__1::__value_type<unsigned int, unsigned long long>, std::__1::less<unsigned int>, true>, std::__1::allocator<std::__1::__value_type<unsigned int, unsigned long long>>> {
         struct __tree_end_node<std::__1::__tree_node_base<void *>*> *__begin_node_;
         struct __compressed_pair<std::__1::__tree_end_node<std::__1::__tree_node_base<void *>*>, std::__1::allocator<std::__1::__tree_node<std::__1::__value_type<unsigned int, unsigned long long>, void *>>> {
-            struct __tree_end_node<std::__1::__tree_node_base<void *>*> __first_;
+            struct __tree_end_node<std::__1::__tree_node_base<void *>*> __value_;
         } __pair1_;
         struct __compressed_pair<unsigned long, std::__1::__map_value_compare<unsigned int, std::__1::__value_type<unsigned int, unsigned long long>, std::__1::less<unsigned int>, true>> {
-            unsigned long long __first_;
+            unsigned long long __value_;
         } __pair3_;
     } __tree_;
-} map_1b8cc407;
+} map_e6c8849e;
 
 typedef struct map<unsigned long, unsigned long, std::__1::less<unsigned long>, std::__1::allocator<std::__1::pair<const unsigned long, unsigned long>>> {
     struct __tree<std::__1::__value_type<unsigned long, unsigned long>, std::__1::__map_value_compare<unsigned long, std::__1::__value_type<unsigned long, unsigned long>, std::__1::less<unsigned long>, true>, std::__1::allocator<std::__1::__value_type<unsigned long, unsigned long>>> {
         struct __tree_end_node<std::__1::__tree_node_base<void *>*> *__begin_node_;
         struct __compressed_pair<std::__1::__tree_end_node<std::__1::__tree_node_base<void *>*>, std::__1::allocator<std::__1::__tree_node<std::__1::__value_type<unsigned long, unsigned long>, void *>>> {
-            struct __tree_end_node<std::__1::__tree_node_base<void *>*> __first_;
+            struct __tree_end_node<std::__1::__tree_node_base<void *>*> __value_;
         } __pair1_;
         struct __compressed_pair<unsigned long, std::__1::__map_value_compare<unsigned long, std::__1::__value_type<unsigned long, unsigned long>, std::__1::less<unsigned long>, true>> {
-            unsigned long long __first_;
+            unsigned long long __value_;
         } __pair3_;
     } __tree_;
-} map_490096f0;
+} map_f8690629;
 
 typedef struct rpd_blob<float> {
     int shape_[4];
@@ -3516,9 +3621,9 @@ typedef struct vector<QBAR_POINT, std::__1::allocator<QBAR_POINT>> {
     struct QBAR_POINT *__begin_;
     struct QBAR_POINT *__end_;
     struct __compressed_pair<QBAR_POINT *, std::__1::allocator<QBAR_POINT>> {
-        struct QBAR_POINT *__first_;
+        struct QBAR_POINT *__value_;
     } __end_cap_;
-} vector_c080079c;
+} vector_552c3471;
 
 typedef struct vector<int, std::__1::allocator<int>> {
     int *__begin_;
@@ -3532,41 +3637,41 @@ typedef struct vector<mars::smc::STIDKeyInfo, std::__1::allocator<mars::smc::STI
     struct STIDKeyInfo *__begin_;
     struct STIDKeyInfo *__end_;
     struct __compressed_pair<mars::smc::STIDKeyInfo *, std::__1::allocator<mars::smc::STIDKeyInfo>> {
-        struct STIDKeyInfo *__first_;
+        struct STIDKeyInfo *__value_;
     } __end_cap_;
-} vector_ecc2264a;
+} vector_2633e87e;
 
 typedef struct vector<std::__1::basic_string<char>, std::__1::allocator<std::__1::basic_string<char>>> {
-    basic_string_a490aa4c *__begin_;
-    basic_string_a490aa4c *__end_;
+    struct basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char>> *__begin_;
+    struct basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char>> *__end_;
     struct __compressed_pair<std::__1::basic_string<char>*, std::__1::allocator<std::__1::basic_string<char>>> {
-        basic_string_a490aa4c *__first_;
+        struct basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char>> *__value_;
     } __end_cap_;
-} vector_36fe4106;
+} vector_ebb6ef3e;
 
 typedef struct vector<std::__1::shared_ptr<ClearDataItem>, std::__1::allocator<std::__1::shared_ptr<ClearDataItem>>> {
     shared_ptr_f9ca816a *__begin_;
     shared_ptr_f9ca816a *__end_;
     struct __compressed_pair<std::__1::shared_ptr<ClearDataItem>*, std::__1::allocator<std::__1::shared_ptr<ClearDataItem>>> {
-        shared_ptr_f9ca816a *__first_;
+        shared_ptr_f9ca816a *__value_;
     } __end_cap_;
-} vector_3d478e4e;
+} vector_09444f17;
 
 typedef struct vector<std::__1::shared_ptr<ClearSessionItem>, std::__1::allocator<std::__1::shared_ptr<ClearSessionItem>>> {
     shared_ptr_174ad120 *__begin_;
     shared_ptr_174ad120 *__end_;
     struct __compressed_pair<std::__1::shared_ptr<ClearSessionItem>*, std::__1::allocator<std::__1::shared_ptr<ClearSessionItem>>> {
-        shared_ptr_174ad120 *__first_;
+        shared_ptr_174ad120 *__value_;
     } __end_cap_;
-} vector_91fc892d;
+} vector_e4e608e5;
 
 typedef struct vector<unsigned int, std::__1::allocator<unsigned int>> {
     unsigned int *__begin_;
     unsigned int *__end_;
     struct __compressed_pair<unsigned int *, std::__1::allocator<unsigned int>> {
-        unsigned int *__first_;
+        unsigned int *__value_;
     } __end_cap_;
-} vector_a9c0768e;
+} vector_12da65de;
 
 #pragma mark Named Unions
 

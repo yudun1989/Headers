@@ -19,6 +19,7 @@
 + (id)getGameCenterWebViewController:(_Bool)arg1 EntryScene:(id)arg2 Url:(id)arg3;
 + (id)getDefaultImage;
 + (id)parseUrlQuery:(id)arg1;
++ (id)getParseRegex;
 + (id)badgeFileNameWithLevel:(unsigned int)arg1;
 + (unsigned long long)actionTypeForGame:(id)arg1;
 + (id)parseHomepageDataWithResp:(id)arg1;

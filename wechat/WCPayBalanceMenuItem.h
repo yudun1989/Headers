@@ -28,7 +28,7 @@
 @property(retain, nonatomic) NSString *title; // @synthesize title;
 - (void).cxx_destruct;
 - (void)genFromDic:(id)arg1;
-- (const map_490096f0 *)getValueTagIndexMap;
+- (const map_f8690629 *)getValueTagIndexMap;
 - (id)getValueTypeTable;
 
 // Remaining properties

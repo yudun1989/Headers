@@ -14,7 +14,8 @@
 {
 }
 
-- (id)ApiLatency:(id)arg1;
+- (int)apiLatency:(id)arg1;
+- (id)formattedURLPath:(id)arg1;
 - (void)requestWillReceiveResponse:(id)arg1 response:(id)arg2;
 - (void)requestWillStart:(id)arg1;
 

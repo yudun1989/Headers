@@ -35,7 +35,7 @@
     unsigned int m_fontScale;
     UIView<YYWebViewInterface> *_webView;
     NSString *_payWalletFunctionID;
-    vector_ecc2264a _pIDKeyList;
+    vector_2633e87e _pIDKeyList;
     NSString *_currentShareUrl;
     _Bool _banIframeGetA8key;
     unsigned int _firstGetA8KeyOpcode;

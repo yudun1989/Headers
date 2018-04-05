@@ -36,6 +36,8 @@
 - (void)updateUpdateMessageTimestamp:(id)arg1;
 - (void)updateMemberLevel:(long long)arg1;
 - (void)updateProgress:(long long)arg1;
+- (void)setUserPassword:(id)arg1 verifyInfo:(id)arg2 verifyType:(long long)arg3 successBlock:(CDUnknownBlockType)arg4 failureBlock:(CDUnknownBlockType)arg5;
+- (void)setUserEmail:(id)arg1 successBlock:(CDUnknownBlockType)arg2 failureBlock:(CDUnknownBlockType)arg3;
 - (void)selectCountry:(id)arg1 successBlock:(CDUnknownBlockType)arg2 failureBlock:(CDUnknownBlockType)arg3;
 - (void)updateUserSex:(long long)arg1 successBlock:(CDUnknownBlockType)arg2 failureBlock:(CDUnknownBlockType)arg3;
 - (void)getUserSexSuccessBlock:(CDUnknownBlockType)arg1 failureBlock:(CDUnknownBlockType)arg2;

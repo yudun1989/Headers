@@ -32,8 +32,11 @@
     long long m_lastPreCreateCellIndex;
     MainFrameCellDataManager *m_cellDataMgr;
     WAContactGetter *m_contactGetter;
+    NSMutableArray *m_frontSessionArray;
 }
 
++ (id)getFakeCellDataFromCellData:(id)arg1;
++ (id)getPathOfLastFrontUserName;
 @property(retain, nonatomic) NSString *m_nsLastSearchText; // @synthesize m_nsLastSearchText;
 @property(readonly, nonatomic) _Bool m_bReadyToLoadData; // @synthesize m_bReadyToLoadData;
 @property(nonatomic) __weak id <mainFrameLogicControllerDelegate> m_delegate; // @synthesize m_delegate;
@@ -90,8 +93,11 @@
 - (id)updateCellData:(id)arg1;
 - (id)getCellDataForFilterSession:(unsigned int)arg1;
 - (id)getCellData:(unsigned int)arg1;
+- (id)getFakeCellData:(unsigned int)arg1;
 - (void)dealloc;
-- (id)initWithFromReg:(_Bool)arg1;
+- (id)init;
+- (void)asyncSaveFrontUserName;
+- (void)syncSaveFrontUserName;
 - (void)fixSelfHeadImage;
 - (void)removeNotificationCenterObservers;
 - (void)addNotificationCenterObservers;

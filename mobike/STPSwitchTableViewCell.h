@@ -22,7 +22,7 @@
 @property(nonatomic) __weak UILabel *captionLabel; // @synthesize captionLabel=_captionLabel;
 @property(retain, nonatomic) STPTheme *theme; // @synthesize theme=_theme;
 - (void).cxx_destruct;
-@property(nonatomic) _Bool on;
+@property(readonly, nonatomic) _Bool on;
 - (void)setSelected:(_Bool)arg1 animated:(_Bool)arg2;
 - (void)configureWithLabel:(id)arg1 delegate:(id)arg2;
 - (void)updateAppearance;

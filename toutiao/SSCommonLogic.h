@@ -508,6 +508,7 @@
 + (void)setFeedStartTabConfig:(id)arg1;
 + (long long)firstTabStyle;
 + (void)setCategoryTabAllConfig:(id)arg1;
++ (long long)imprRecycleTimeCaculateType;
 + (double)clientImprRecycleTimeLimit;
 + (_Bool)clientImprRecycleEnable;
 + (void)setClientImprRecycleSettings:(id)arg1;

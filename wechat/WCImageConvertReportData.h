@@ -12,7 +12,7 @@
 
 @interface WCImageConvertReportData : MMObject <PBCoding>
 {
-    vector_ecc2264a _idkeyList;
+    vector_2633e87e _idkeyList;
     struct timeval _stBigPicStart;
     struct timeval _stBigPicEnd;
     unsigned long long _bigPicCostTime;
@@ -70,7 +70,7 @@
 - (void)recordVcodec2PicFileReportData:(id)arg1 andMiddlePic:(id)arg2;
 - (void)recordJpgPicFileReportData:(id)arg1 andMiddlePic:(id)arg2;
 - (void)recordJpgPicBigQP:(int)arg1 andMiddleQP:(int)arg2;
-- (const map_490096f0 *)getValueTagIndexMap;
+- (const map_f8690629 *)getValueTagIndexMap;
 - (id)getValueTypeTable;
 
 // Remaining properties

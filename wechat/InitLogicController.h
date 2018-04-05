@@ -36,6 +36,7 @@
 - (void)onNewInitFail;
 - (void)onNewInitConnectFail;
 - (void)stopIniting:(unsigned int)arg1;
+- (void)appFirstBecomeActive;
 - (_Bool)startInit;
 - (void)stopPercentTimer;
 - (void)startPercentTimer;

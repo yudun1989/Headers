@@ -26,7 +26,7 @@
 @property(nonatomic) unsigned int m_lastLowerAlertTime; // @synthesize m_lastLowerAlertTime;
 @property(nonatomic) unsigned int m_lastLowAlertTime; // @synthesize m_lastLowAlertTime;
 @property(readonly, copy) NSString *description;
-- (const map_490096f0 *)getValueTagIndexMap;
+- (const map_f8690629 *)getValueTagIndexMap;
 - (id)getValueTypeTable;
 
 // Remaining properties

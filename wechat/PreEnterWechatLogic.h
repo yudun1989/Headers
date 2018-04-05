@@ -19,7 +19,7 @@
 
 @interface PreEnterWechatLogic : MMObject <IMMFacebookMgrExt, PreEnterStepDelegate, IAppViewControllerManagerExt, MMConfigMgrExt, MessageObserverDelegate, UIAlertViewDelegate, MMKernelExt, IMsgExt>
 {
-    vector_a9c0768e m_vecMesssageIdToListen;
+    vector_12da65de m_vecMesssageIdToListen;
     NSURL *m_nsFeedBackUrl;
     _Bool m_bCalledPreEnterWechatDone;
     _Bool m_bRunning;

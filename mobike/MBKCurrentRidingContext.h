@@ -33,6 +33,7 @@
 - (_Bool)isSpockBike;
 - (_Bool)isCurrentARedPacketBike;
 - (void)destroyInstance;
+@property(readonly, nonatomic) long long ridingDuration;
 @property(readonly, nonatomic) long long currentRidingTaskType;
 - (id)init;
 

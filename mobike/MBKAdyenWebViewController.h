@@ -16,11 +16,13 @@
     _Bool _isOrderCanceled;
     UIWebView *_webView;
     NSURLRequest *_request;
+    long long _payType;
 }
 
 + (void)load;
 @property(nonatomic) _Bool isOrderCanceled; // @synthesize isOrderCanceled=_isOrderCanceled;
 @property(nonatomic) _Bool isOnlyBindCard; // @synthesize isOnlyBindCard=_isOnlyBindCard;
+@property(nonatomic) long long payType; // @synthesize payType=_payType;
 @property(retain, nonatomic) NSURLRequest *request; // @synthesize request=_request;
 @property(retain, nonatomic) UIWebView *webView; // @synthesize webView=_webView;
 - (void).cxx_destruct;

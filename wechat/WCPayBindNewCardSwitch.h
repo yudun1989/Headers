@@ -22,7 +22,7 @@
 @property(nonatomic) long long forbid_bind_card; // @synthesize forbid_bind_card;
 - (void).cxx_destruct;
 - (void)genFromDic:(id)arg1;
-- (const map_490096f0 *)getValueTagIndexMap;
+- (const map_f8690629 *)getValueTagIndexMap;
 - (id)getValueTypeTable;
 
 // Remaining properties

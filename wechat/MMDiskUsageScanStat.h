@@ -67,7 +67,7 @@
 - (void)markStopTime:(_Bool)arg1;
 - (void)markStartTime;
 - (id)init;
-- (const map_490096f0 *)getValueTagIndexMap;
+- (const map_f8690629 *)getValueTagIndexMap;
 - (id)getValueTypeTable;
 
 // Remaining properties

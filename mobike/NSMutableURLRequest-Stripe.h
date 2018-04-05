@@ -4,10 +4,9 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-#import <CFNetwork/NSMutableURLRequest.h>
+#import <Foundation/NSMutableURLRequest.h>
 
 @interface NSMutableURLRequest (Stripe)
-- (void)stp_setMultipartFormData:(id)arg1 boundary:(id)arg2;
 - (void)stp_setFormPayload:(id)arg1;
 - (void)stp_addParametersToURL:(id)arg1;
 @end

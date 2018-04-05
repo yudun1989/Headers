@@ -20,7 +20,7 @@
 @property(retain, nonatomic) WCPayBindNewCardSwitch *bind_newcard_switch; // @synthesize bind_newcard_switch;
 - (void).cxx_destruct;
 - (void)genFromDic:(id)arg1;
-- (const map_490096f0 *)getValueTagIndexMap;
+- (const map_f8690629 *)getValueTagIndexMap;
 - (id)getValueTypeTable;
 
 // Remaining properties

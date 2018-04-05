@@ -8,7 +8,6 @@
 
 #import "ContactsItemViewDelegate-Protocol.h"
 #import "SayHelloDataLogicDelegate-Protocol.h"
-#import "SeePeopleNearByUIDelegate-Protocol.h"
 #import "UIAlertViewDelegate-Protocol.h"
 #import "UITableViewDataSource-Protocol.h"
 #import "UITableViewDelegate-Protocol.h"
@@ -18,7 +17,7 @@
 
 @class CPushContact, FindContactSearchViewCellInfo, MMNearByHeaderView, MMTableView, MMTableViewInfo, NSString, SayHelloDataLogic, SeePeopleNearByLogicController, SendVerifyMsgLogicController, UILabel, UIView;
 
-@interface SayHelloViewController : MMUIViewController <SeePeopleNearByUIDelegate, tableViewDelegate, UITableViewDelegate, UITableViewDataSource, SayHelloDataLogicDelegate, WCActionSheetDelegate, ContactsItemViewDelegate, VerifyPhoneDelegate, UIAlertViewDelegate>
+@interface SayHelloViewController : MMUIViewController <tableViewDelegate, UITableViewDelegate, UITableViewDataSource, SayHelloDataLogicDelegate, WCActionSheetDelegate, ContactsItemViewDelegate, VerifyPhoneDelegate, UIAlertViewDelegate>
 {
     MMTableView *m_tableView;
     MMTableViewInfo *m_tableViewInfoNoHello;
@@ -73,7 +72,6 @@
 - (id)makeNewFriendHeaderView;
 - (id)makeNearByHeaderView;
 - (_Bool)shouldShowNearByHeaderView;
-- (void)onClearMyLbsDataFinishedWithResult:(_Bool)arg1;
 - (void)onClearNearHeaderClicked:(id)arg1;
 - (void)initTableView;
 - (void)initData;

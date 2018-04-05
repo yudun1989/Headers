@@ -8,7 +8,7 @@
 
 #import "NSCoding-Protocol.h"
 
-@class NSString;
+@class NSDictionary, NSString;
 
 @interface MBKAdMetricsOpeningScreenModel : NSObject <NSCoding>
 {
@@ -22,8 +22,10 @@
     long long _flowPurpose;
     NSString *_image;
     NSString *_link;
+    NSDictionary *_recordInfo;
 }
 
+@property(copy, nonatomic) NSDictionary *recordInfo; // @synthesize recordInfo=_recordInfo;
 @property(copy, nonatomic) NSString *link; // @synthesize link=_link;
 @property(copy, nonatomic) NSString *image; // @synthesize image=_image;
 @property(nonatomic) long long flowPurpose; // @synthesize flowPurpose=_flowPurpose;

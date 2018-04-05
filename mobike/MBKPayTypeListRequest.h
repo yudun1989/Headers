@@ -11,8 +11,10 @@
 @interface MBKPayTypeListRequest : MBKMobikeRequest
 {
     NSString *_citycode;
+    NSString *_type;
 }
 
+@property(copy, nonatomic) NSString *type; // @synthesize type=_type;
 @property(copy, nonatomic) NSString *citycode; // @synthesize citycode=_citycode;
 - (void).cxx_destruct;
 - (id)init;

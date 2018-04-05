@@ -11,7 +11,7 @@
 #import "MBKNavigationTabSliderDelegate-Protocol.h"
 #import "MMMapContextDelegate-Protocol.h"
 
-@class MBKHomeViewControllerTab, MBKNavigationTabSlider, NSArray, NSDate, NSString, UIView, UIViewController;
+@class MBKHomeViewControllerTab, MBKNavigationTabSlider, NSArray, NSString, UIView, UIViewController;
 
 @interface MBKHomeViewController : MBKBaseViewController <MBKMainToScanQRTransitionAnimationProtocol, MMMapContextDelegate, MBKNavigationTabSliderDelegate, MBKNavigationTabSliderDataSource>
 {
@@ -20,10 +20,8 @@
     UIView *_naviBarGrayMask;
     UIView *_edgeView;
     MBKNavigationTabSlider *_navigationTabSlider;
-    NSDate *_lastSwitchTime;
 }
 
-@property(retain, nonatomic) NSDate *lastSwitchTime; // @synthesize lastSwitchTime=_lastSwitchTime;
 @property(retain, nonatomic) MBKNavigationTabSlider *navigationTabSlider; // @synthesize navigationTabSlider=_navigationTabSlider;
 @property(retain, nonatomic) UIView *edgeView; // @synthesize edgeView=_edgeView;
 @property(retain, nonatomic) UIView *naviBarGrayMask; // @synthesize naviBarGrayMask=_naviBarGrayMask;

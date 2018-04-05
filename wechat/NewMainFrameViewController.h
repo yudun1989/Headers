@@ -29,29 +29,28 @@
 #import "WAMainFrameTaskBarLogicDelegate-Protocol.h"
 #import "WCActionSheetDelegate-Protocol.h"
 #import "WCBarMessageWindowDelegate-Protocol.h"
+#import "WCLazyInitObjectProtocol-Protocol.h"
 #import "contactInfoDelegate-Protocol.h"
 #import "mainFrameLogicControllerDelegate-Protocol.h"
 
 @class CreateChatLogic, MFTitleView, MMLoadingView, MMMainTableView, MMSessionInfo, MainFrameHeaderLogic, MainFrameLogicController, NSString, UIDynamicAnimator, UIImageView, UIView, WAMainFrameTaskBarLogic, WAMainFrameTaskBarView, WCBarMessageWindow;
 @protocol UIViewControllerPreviewing;
 
-@interface NewMainFrameViewController : MMTabBarBaseViewController <WAMainFrameTaskBarLogicDelegate, SelectContactsViewControllerDelegate, IMMFacebookMgrExt, mainFrameLogicControllerDelegate, UITableViewDelegate, UITableViewDataSource, UISearchBarDelegate, UISearchDisplayDelegate, WCActionSheetDelegate, contactInfoDelegate, CreateChatLogicDelegate, MMVoiceSearchDelegate, MMSearchBarDelegate, MMVoiceSearchBarDelegate, MMKernelExt, IWXTalkPresentExt, IVOIPUILogicMgrExt, IAutoSetRemarkExt, UIGestureRecognizerDelegate, IAcctStorageMgrExt, UIAlertViewDelegate, WCBarMessageWindowDelegate, MainTableDelegate, IWCDeviceBrandMgrExt, MainFrameHeaderDelegate>
+@interface NewMainFrameViewController : MMTabBarBaseViewController <WAMainFrameTaskBarLogicDelegate, SelectContactsViewControllerDelegate, IMMFacebookMgrExt, mainFrameLogicControllerDelegate, UITableViewDelegate, UITableViewDataSource, UISearchBarDelegate, UISearchDisplayDelegate, WCActionSheetDelegate, contactInfoDelegate, CreateChatLogicDelegate, MMVoiceSearchDelegate, MMSearchBarDelegate, MMVoiceSearchBarDelegate, MMKernelExt, IWXTalkPresentExt, IVOIPUILogicMgrExt, IAutoSetRemarkExt, UIGestureRecognizerDelegate, IAcctStorageMgrExt, UIAlertViewDelegate, WCBarMessageWindowDelegate, MainTableDelegate, IWCDeviceBrandMgrExt, MainFrameHeaderDelegate, WCLazyInitObjectProtocol>
 {
     MainFrameLogicController *m_mainFrameLogicController;
     MMMainTableView *m_tableView;
-    UIImageView *logoImageView;
+    UIImageView *m_logoImageView;
     MFTitleView *m_titleView;
     MMLoadingView *m_loadingView;
     _Bool m_bSearching;
     struct CGPoint m_tableContentOffset;
-    _Bool m_bFromReg;
     unsigned int m_uiTipStatus;
     CreateChatLogic *m_createChatLogic;
     _Bool m_tableViewReady;
     MainFrameHeaderLogic *m_headerLogic;
     NSString *m_nsTitle;
     int m_voiceSearchLevelNumber;
-    _Bool m_bFirstInitView;
     _Bool m_bOnMemoryWarningToFinishedSearchBar;
     struct CGPoint m_tableViewOffset;
     _Bool m_bIsLastViewStatusBarHidden;
@@ -78,15 +77,17 @@
     long long m_lastRowNum;
     NSString *m_confirmingSessionName;
     MMSessionInfo *m_swipedSession;
+    _Bool m_firstDoMainLazyThing;
     unsigned int _startTime;
     id <UIViewControllerPreviewing> _previewingContext;
+    _Bool haveLazyInit;
     UIDynamicAnimator *_animator;
 }
 
 @property(retain, nonatomic) UIDynamicAnimator *animator; // @synthesize animator=_animator;
+@property(nonatomic) _Bool haveLazyInit; // @synthesize haveLazyInit;
 @property(retain, nonatomic) NSString *m_nsTitle; // @synthesize m_nsTitle;
 @property(retain, nonatomic) CreateChatLogic *m_createChatLogic; // @synthesize m_createChatLogic;
-@property(nonatomic) _Bool m_bFromReg; // @synthesize m_bFromReg;
 - (void).cxx_destruct;
 - (void)onLastChat;
 - (void)onNextChat;
@@ -222,9 +223,6 @@
 - (id)getVoiceSearchBar;
 - (_Bool)shouldTopRightMenuShowID:(id)arg1;
 - (_Bool)isTopRightMenuShowID:(id)arg1;
-- (void)initBarItem;
-- (void)reloadHeaderView;
-- (void)initSearchController;
 - (void)backToSplitViewEmptyViewController:(id)arg1;
 - (void)dealloc;
 - (void)setUIEventEnabled:(_Bool)arg1;
@@ -240,12 +238,9 @@
 - (void)viewDidAppear:(_Bool)arg1;
 - (void)viewWillDisappear:(_Bool)arg1;
 - (void)viewWillAppear:(_Bool)arg1;
-- (void)setTableViewContentInsetForSearchBar;
 - (void)initView;
 - (void)showInviteFriendList;
-- (void)initFooterView;
 - (void)initBarMessageWindow;
-- (void)initStatusBar;
 - (void)OpenContactInfo:(id)arg1;
 - (void)PopViewContoller;
 - (void)PushViewController:(id)arg1;
@@ -255,14 +250,11 @@
 - (_Bool)checkHeaderRowValid:(unsigned int)arg1;
 - (void)reloadAll;
 - (void)onShowPhoneFriend;
-- (void)resetHeaderView;
-- (void)initHeaderView;
+- (void)initFooterView;
+- (void)initHeaderLogicAndHeaderView;
 - (void)initTableView;
-- (void)initShadowLogo;
-- (double)getLogoContentInsetTop;
+- (void)initNavigationTitileView;
 - (void)initTitle;
-- (void)initTitleView;
-- (void)checkDelayLoadData;
 - (void)setReadyToLoadData;
 - (void)initData;
 - (void)viewDidLayoutSubviews;
@@ -274,6 +266,12 @@
 - (void)setNewMainFrameTableViewContentOffsetToTheFirstUnreadSessionAndOpen:(_Bool)arg1;
 - (void)setNewMainFrameTableViewContentOffset:(struct CGPoint)arg1;
 - (id)initWithNibName:(id)arg1 bundle:(id)arg2;
+- (void)fixMenuBug;
+- (void)appBecomeActive;
+- (void)doMainLazyThing;
+- (void)delayToLoadMainTableViewData;
+- (void)goToLazyInitObject;
+- (double)timeToLazyInitAfterOpenFirstView;
 - (void)onDeleteToEmptyTaskBar;
 - (void)onEndWhyPullMe;
 - (void)onReceiveWhyPullMeTick;
@@ -282,6 +280,7 @@
 - (void)checkTaskBarHiddenState;
 - (void)setTableViewContentInsetAndOffsetWithIsTopViewShow:(_Bool)arg1 fromScene:(unsigned long long)arg2 completion:(CDUnknownBlockType)arg3 canceled:(CDUnknownBlockType)arg4;
 - (void)showTableHeaderTopView:(_Bool)arg1 fromScene:(unsigned long long)arg2;
+- (void)notifyToLazyInit;
 - (void)setTableHeaderTopViewHidden:(_Bool)arg1;
 - (void)initTableHeaderTopView;
 - (void)notifyTaskBarOnShowWeappFirstQuitEducation;

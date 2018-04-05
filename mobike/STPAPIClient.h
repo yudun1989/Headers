@@ -8,16 +8,13 @@
 
 #import "FABKit-Protocol.h"
 
-@class NSMutableDictionary, NSString, NSURL, NSURLSession, STPPaymentConfiguration;
-@protocol OS_dispatch_queue;
+@class NSString, NSURL, NSURLSession, STPPaymentConfiguration;
 
 @interface STPAPIClient : NSObject <FABKit>
 {
     STPPaymentConfiguration *_configuration;
     NSURL *_apiURL;
     NSURLSession *_urlSession;
-    NSMutableDictionary *_sourcePollers;
-    NSObject<OS_dispatch_queue> *_sourcePollersQueue;
 }
 
 + (void)initializeIfNeeded;
@@ -27,31 +24,19 @@
 + (void)validateKey:(id)arg1;
 + (id)sharedClient;
 + (void)initialize;
-+ (id)parametersForPayment:(id)arg1;
-+ (id)addressParamsFromPKContact:(id)arg1;
-+ (id)addressParamsFromABRecord:(void *)arg1;
-@property(retain, nonatomic) NSObject<OS_dispatch_queue> *sourcePollersQueue; // @synthesize sourcePollersQueue=_sourcePollersQueue;
-@property(retain, nonatomic) NSMutableDictionary *sourcePollers; // @synthesize sourcePollers=_sourcePollers;
++ (id)formEncodedDataForPayment:(id)arg1;
 @property(retain, nonatomic) NSURLSession *urlSession; // @synthesize urlSession=_urlSession;
 @property(retain, nonatomic) NSURL *apiURL; // @synthesize apiURL=_apiURL;
 @property(copy, nonatomic) STPPaymentConfiguration *configuration; // @synthesize configuration=_configuration;
 - (void).cxx_destruct;
-- (void)createTokenWithParameters:(id)arg1 completion:(CDUnknownBlockType)arg2;
+- (void)createTokenWithData:(id)arg1 completion:(CDUnknownBlockType)arg2;
 @property(copy, nonatomic) NSString *publishableKey;
 - (id)initWithPublishableKey:(id)arg1 baseURL:(id)arg2;
 - (id)initWithConfiguration:(id)arg1;
 - (id)initWithPublishableKey:(id)arg1;
 - (id)init;
 - (void)createTokenWithBankAccount:(id)arg1 completion:(CDUnknownBlockType)arg2;
-- (void)createTokenWithPersonalIDNumber:(id)arg1 completion:(CDUnknownBlockType)arg2;
-- (void)uploadImage:(id)arg1 purpose:(long long)arg2 completion:(CDUnknownBlockType)arg3;
-- (id)dataForUploadedImage:(id)arg1 purpose:(long long)arg2;
 - (void)createTokenWithCard:(id)arg1 completion:(CDUnknownBlockType)arg2;
-- (void)stopPollingSourceWithId:(id)arg1;
-- (void)startPollingSourceWithId:(id)arg1 clientSecret:(id)arg2 timeout:(double)arg3 completion:(CDUnknownBlockType)arg4;
-- (id)retrieveSourceWithId:(id)arg1 clientSecret:(id)arg2 responseCompletion:(CDUnknownBlockType)arg3;
-- (void)retrieveSourceWithId:(id)arg1 clientSecret:(id)arg2 completion:(CDUnknownBlockType)arg3;
-- (void)createSourceWithParams:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)createTokenWithPayment:(id)arg1 completion:(CDUnknownBlockType)arg2;
 
 // Remaining properties

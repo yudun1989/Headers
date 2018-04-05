@@ -8,11 +8,11 @@
 
 @interface NSSimplifiedChineseConverter : NSObject
 {
-    map_c52e7b28 _t2sMap;
+    map_8b25bdcc _t2sMap;
 }
 
 + (id)sharedInstance;
-@property(nonatomic) map_c52e7b28 t2sMap; // @synthesize t2sMap=_t2sMap;
+@property(nonatomic) map_8b25bdcc t2sMap; // @synthesize t2sMap=_t2sMap;
 - (id).cxx_construct;
 - (void).cxx_destruct;
 - (void)loadMap;

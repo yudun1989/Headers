@@ -24,6 +24,7 @@
 @property(nonatomic) double duration;
 - (id)init;
 - (void)_initState;
+- (id)configWithHeight:(double)arg1 isDownward:(_Bool)arg2;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 
 @end

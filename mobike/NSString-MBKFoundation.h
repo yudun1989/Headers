@@ -14,6 +14,8 @@
 + (id)mbk_documentsPath;
 + (id)mbk_cachesPath;
 + (id)mbk_UUID;
+- (id)mbk_removeWhiteSpageAndNewLine;
+- (_Bool)mbk_isValidEmail;
 - (id)mbk_JSONObject;
 - (_Bool)mbk_match:(id)arg1;
 - (id)mobikeCode;

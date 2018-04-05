@@ -10,16 +10,20 @@
 + (id)currentVersion;
 + (void)saveTid:(id)arg1 clientKey:(id)arg2;
 + (id)tid;
-+ (id)platformStr;
 + (id)getPlatform;
 + (id)udid;
-+ (id)isJailbroken;
++ (id)isCutieSugar;
 + (id)virtualImsi;
 + (id)virtualImei;
-+ (id)networkDic;
++ (id)networkType:(_Bool)arg1;
++ (id)networkType;
++ (id)wifiInterface;
 + (id)kernelName;
 + (id)osVersion;
 + (id)clientKey;
++ (id)imsi;
++ (id)imei;
++ (id)getSafeString:(id)arg1;
 + (id)userAgent;
 @end
 

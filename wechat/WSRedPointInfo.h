@@ -42,7 +42,7 @@
 @property(nonatomic) _Bool bFFShowRedot; // @synthesize bFFShowRedot;
 @property(retain, nonatomic) NSString *msgid; // @synthesize msgid;
 - (void).cxx_destruct;
-- (const map_490096f0 *)getValueTagIndexMap;
+- (const map_f8690629 *)getValueTagIndexMap;
 - (id)getValueTypeTable;
 
 // Remaining properties

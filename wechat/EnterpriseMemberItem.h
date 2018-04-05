@@ -22,7 +22,7 @@
 @property(retain, nonatomic) NSString *m_nsContactDisplayName; // @synthesize m_nsContactDisplayName;
 @property(retain, nonatomic) NSString *m_nsUsrName; // @synthesize m_nsUsrName;
 - (void).cxx_destruct;
-- (const map_490096f0 *)getValueTagIndexMap;
+- (const map_f8690629 *)getValueTagIndexMap;
 - (id)getValueTypeTable;
 
 // Remaining properties

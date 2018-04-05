@@ -18,7 +18,7 @@
 + (void)initialize;
 @property(retain, nonatomic) NSMutableArray *m_messagePatternList; // @synthesize m_messagePatternList;
 - (void).cxx_destruct;
-- (const map_490096f0 *)getValueTagIndexMap;
+- (const map_f8690629 *)getValueTagIndexMap;
 - (id)getValueTypeTable;
 
 // Remaining properties

@@ -46,6 +46,8 @@
 - (id)logNext;
 - (id)logAll;
 - (_Bool)asynchronouslyWaitUntilCompleted:(id *)arg1;
+- (_Bool)asynchronouslyWaitUntilCompleted:(id *)arg1 timeout:(double)arg2;
+- (id)asynchronousFirstOrDefault:(id)arg1 success:(_Bool *)arg2 error:(id *)arg3 timeout:(double)arg4;
 - (id)asynchronousFirstOrDefault:(id)arg1 success:(_Bool *)arg2 error:(id *)arg3;
 - (id)reduceApply;
 - (id)or;

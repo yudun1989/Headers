@@ -12,8 +12,10 @@
 {
     NSString *_vkeyidToken;
     NSString *_clientKey;
+    NSString *_vkeyid;
 }
 
+@property(retain, nonatomic) NSString *vkeyid; // @synthesize vkeyid=_vkeyid;
 @property(retain, nonatomic) NSString *clientKey; // @synthesize clientKey=_clientKey;
 @property(retain, nonatomic) NSString *vkeyidToken; // @synthesize vkeyidToken=_vkeyidToken;
 - (void).cxx_destruct;

@@ -8,22 +8,23 @@
 
 #import "UITextFieldDelegate-Protocol.h"
 
-@class MBKTextField, NSString, UIButton, UILabel, UIView;
+@class MBKTypeOnlyTextField, NSString, UIButton, UILabel, UIView;
 
 @interface MBKInputActionSheet : MBKBaseTitleActionSheet <UITextFieldDelegate>
 {
+    _Bool isKeyboardManagerEnable;
     _Bool _placeholderTipsHidden;
     long long _maxValue;
     CDUnknownBlockType _inputCompletionBlock;
     UIView *_inputView;
-    MBKTextField *_inputTextField;
+    MBKTypeOnlyTextField *_inputTextField;
     UILabel *_leftMarkLabel;
     UIButton *_confirmButton;
 }
 
 @property(retain, nonatomic) UIButton *confirmButton; // @synthesize confirmButton=_confirmButton;
 @property(retain, nonatomic) UILabel *leftMarkLabel; // @synthesize leftMarkLabel=_leftMarkLabel;
-@property(retain, nonatomic) MBKTextField *inputTextField; // @synthesize inputTextField=_inputTextField;
+@property(retain, nonatomic) MBKTypeOnlyTextField *inputTextField; // @synthesize inputTextField=_inputTextField;
 @property(retain, nonatomic) UIView *inputView; // @synthesize inputView=_inputView;
 @property(copy, nonatomic) CDUnknownBlockType inputCompletionBlock; // @synthesize inputCompletionBlock=_inputCompletionBlock;
 @property(nonatomic, getter=isPlaceholderTipsHidden) _Bool placeholderTipsHidden; // @synthesize placeholderTipsHidden=_placeholderTipsHidden;

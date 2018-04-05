@@ -16,9 +16,9 @@
 
 + (id)serializeConfiguration:(id)arg1;
 + (id)commonPayload;
-+ (id)tokenTypeFromParameters:(id)arg1;
 + (id)timestampWithDate:(id)arg1;
 + (_Bool)shouldCollectAnalytics;
++ (void)disableAnalytics;
 + (void)initializeIfNeeded;
 + (void)initialize;
 + (id)sharedClient;
@@ -27,11 +27,8 @@
 - (void).cxx_destruct;
 - (void)logPayload:(id)arg1;
 - (void)logRUMWithToken:(id)arg1 configuration:(id)arg2 response:(id)arg3 start:(id)arg4 end:(id)arg5;
-- (void)logSourceCreationAttemptWithConfiguration:(id)arg1 sourceType:(id)arg2;
-- (void)logTokenCreationAttemptWithConfiguration:(id)arg1 tokenType:(id)arg2;
-- (id)productUsageDictionary;
-- (id)productUsage;
-- (void)logRememberMeConversion:(unsigned long long)arg1;
+- (void)logTokenCreationAttemptWithConfiguration:(id)arg1;
+- (void)logRememberMeConversion:(_Bool)arg1;
 - (id)init;
 
 @end

@@ -6,6 +6,7 @@
 
 #import "MBKBaseViewController.h"
 
+#import "CMPopTipViewDelegate-Protocol.h"
 #import "MBKAroundLinesTapedDelegate-Protocol.h"
 #import "MBKCarCodeUserSelectionDelegate-Protocol.h"
 #import "MBKCityOrQuestionsDelegate-Protocol.h"
@@ -15,11 +16,12 @@
 #import "MBKTransitPayViewDelegate-Protocol.h"
 #import "MBKTransitPurchasedViewDelegate-Protocol.h"
 
-@class MBKApplicationIDModel, MBKApplicationItemModel, MBKApplicationTypeItemModel, MBKAroundLinesView, MBKBubbleAnimationView, MBKBusQRCodeView, MBKCitySelectButton, MBKIconLable, MBKLunchCityAndCommonQuestionsView, MBKPanelCardView, MBKTicketsModel, MBKTransitHelpView, MBKTransitMainViewModel, MBKTransitPayView, MBKTransitTapButtonsView, NSString, UIScrollView;
+@class MBKApplicationIDModel, MBKApplicationItemModel, MBKApplicationTypeItemModel, MBKAroundLinesView, MBKBubbleAnimationView, MBKBusQRCodeView, MBKCitySelectButton, MBKIconLable, MBKLunchCityAndCommonQuestionsView, MBKPanelCardView, MBKPopTipView, MBKTicketsModel, MBKTransitHelpView, MBKTransitMainViewModel, MBKTransitPayView, MBKTransitStopModel, MBKTransitTapButtonsView, MBKpreferentialModel, NSString, UIButton, UIScrollView;
 
-@interface MBKTransitMainViewController : MBKBaseViewController <MBKTransitPurchasedViewDelegate, MBKTransitChoseStationViewDelegate, MBKTransitPayViewDelegate, MBKTapButtonsViewDelegate, MBKCityOrQuestionsDelegate, MBKAroundLinesTapedDelegate, MBKCarCodeUserSelectionDelegate, MBKScanTicketDelegate>
+@interface MBKTransitMainViewController : MBKBaseViewController <MBKTransitPurchasedViewDelegate, MBKTransitChoseStationViewDelegate, MBKTransitPayViewDelegate, MBKTapButtonsViewDelegate, MBKCityOrQuestionsDelegate, MBKAroundLinesTapedDelegate, MBKCarCodeUserSelectionDelegate, MBKScanTicketDelegate, CMPopTipViewDelegate>
 {
     _Bool _isGoToOpenWx;
+    _Bool _isViewDidLoad;
     UIScrollView *_backgroundScrollView;
     MBKPanelCardView *_bannerView;
     MBKPanelCardView *_transitPurchasedCardView;
@@ -44,10 +46,21 @@
     long long _busCodeServiceType;
     long long _serviceType;
     double _brightnessValue;
+    MBKPopTipView *_popTips;
+    MBKPopTipView *_ticketGuid;
+    UIButton *_startSTationTip;
+    MBKTransitStopModel *_nearStartStation;
+    MBKpreferentialModel *_preferentialModel;
 }
 
 + (void)setTransitStyleShadow:(id)arg1;
 + (void)load;
+@property(retain, nonatomic) MBKpreferentialModel *preferentialModel; // @synthesize preferentialModel=_preferentialModel;
+@property(retain, nonatomic) MBKTransitStopModel *nearStartStation; // @synthesize nearStartStation=_nearStartStation;
+@property(retain, nonatomic) UIButton *startSTationTip; // @synthesize startSTationTip=_startSTationTip;
+@property(retain, nonatomic) MBKPopTipView *ticketGuid; // @synthesize ticketGuid=_ticketGuid;
+@property(retain, nonatomic) MBKPopTipView *popTips; // @synthesize popTips=_popTips;
+@property(nonatomic) _Bool isViewDidLoad; // @synthesize isViewDidLoad=_isViewDidLoad;
 @property(nonatomic) _Bool isGoToOpenWx; // @synthesize isGoToOpenWx=_isGoToOpenWx;
 @property(nonatomic) double brightnessValue; // @synthesize brightnessValue=_brightnessValue;
 @property(nonatomic) long long serviceType; // @synthesize serviceType=_serviceType;
@@ -76,6 +89,7 @@
 - (void).cxx_destruct;
 - (void)gotoJourney;
 - (void)carCodeFresh;
+- (void)sendQrImage:(id)arg1;
 - (void)sendTicketsExpired;
 - (void)sendTicketsWith:(id)arg1 err:(id)arg2;
 - (void)goToWeChatFree:(id)arg1;
@@ -92,9 +106,15 @@
 - (void)getTicekts;
 - (void)unLogin;
 - (void)transitdidSelectTabButton:(long long)arg1 typeModel:(id)arg2;
+- (void)getDiscount;
+- (void)popStartStationTips:(double)arg1;
+- (id)parseStationsWith:(id)arg1;
+- (void)getNearStaions;
+- (void)popTipViewWasDismissedByUser:(id)arg1;
 - (void)didReceiveMemoryWarning;
 - (void)userUse;
 - (void)userCommon;
+- (void)startSTationTipClicked:(id)arg1;
 - (id)transitTicketPriceView;
 - (id)transitChoseStationView;
 - (id)transitPurchasedView;
@@ -120,6 +140,7 @@
 - (void)initTransitLineCacheManager;
 - (void)setupView;
 - (void)viewWillDisappear:(_Bool)arg1;
+- (void)viewDidAppear:(_Bool)arg1;
 - (void)viewWillAppear:(_Bool)arg1;
 - (void)parseApplicationsWith:(id)arg1;
 - (void)getApplications;

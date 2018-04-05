@@ -7,11 +7,11 @@
 #import <objc/NSObject.h>
 
 #import "STPAPIResponseDecodable-Protocol.h"
-#import "STPSourceProtocol-Protocol.h"
+#import "STPSource-Protocol.h"
 
 @class NSDate, NSDictionary, NSString, STPBankAccount, STPCard;
 
-@interface STPToken : NSObject <STPAPIResponseDecodable, STPSourceProtocol>
+@interface STPToken : NSObject <STPAPIResponseDecodable, STPSource>
 {
     _Bool _livemode;
     NSString *_tokenId;

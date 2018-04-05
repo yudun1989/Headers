@@ -6,13 +6,13 @@
 
 #import <objc/NSObject.h>
 
+#import "STPAddCardViewControllerDelegate-Protocol.h"
 #import "STPPaymentMethodsViewControllerDelegate-Protocol.h"
-#import "STPShippingAddressViewControllerDelegate-Protocol.h"
 
-@class NSArray, NSString, PKShippingMethod, STPAPIClient, STPAddress, STPPaymentConfiguration, STPPaymentContextAmountModel, STPPaymentMethodsViewController, STPPromise, STPTheme, STPUserInformation, STPVoidPromise, UIViewController;
+@class NSArray, NSString, STPAPIClient, STPPaymentConfiguration, STPPaymentContextAmountModel, STPPaymentMethodsViewController, STPPromise, STPTheme, STPUserInformation, STPVoidPromise, UIViewController;
 @protocol STPBackendAPIAdapter, STPPaymentContextDelegate, STPPaymentMethod;
 
-@interface STPPaymentContext : NSObject <STPPaymentMethodsViewControllerDelegate, STPShippingAddressViewControllerDelegate>
+@interface STPPaymentContext : NSObject <STPPaymentMethodsViewControllerDelegate, STPAddCardViewControllerDelegate>
 {
     id <STPBackendAPIAdapter> _apiAdapter;
     STPPaymentConfiguration *_configuration;
@@ -22,9 +22,6 @@
     id <STPPaymentContextDelegate> _delegate;
     id <STPPaymentMethod> _selectedPaymentMethod;
     NSArray *_paymentMethods;
-    PKShippingMethod *_selectedShippingMethod;
-    NSArray *_shippingMethods;
-    STPAddress *_shippingAddress;
     NSString *_paymentCurrency;
     long long _modalPresentationStyle;
     STPAPIClient *_apiClient;
@@ -32,13 +29,10 @@
     STPVoidPromise *_willAppearPromise;
     STPVoidPromise *_didAppearPromise;
     STPPaymentMethodsViewController *_paymentMethodsViewController;
-    unsigned long long _state;
     STPPaymentContextAmountModel *_paymentAmountModel;
 }
 
-+ (unsigned long long)pkShippingType:(unsigned long long)arg1;
 @property(retain, nonatomic) STPPaymentContextAmountModel *paymentAmountModel; // @synthesize paymentAmountModel=_paymentAmountModel;
-@property(nonatomic) unsigned long long state; // @synthesize state=_state;
 @property(nonatomic) __weak STPPaymentMethodsViewController *paymentMethodsViewController; // @synthesize paymentMethodsViewController=_paymentMethodsViewController;
 @property(retain, nonatomic) STPVoidPromise *didAppearPromise; // @synthesize didAppearPromise=_didAppearPromise;
 @property(retain, nonatomic) STPVoidPromise *willAppearPromise; // @synthesize willAppearPromise=_willAppearPromise;
@@ -46,9 +40,6 @@
 @property(retain, nonatomic) STPAPIClient *apiClient; // @synthesize apiClient=_apiClient;
 @property(nonatomic) long long modalPresentationStyle; // @synthesize modalPresentationStyle=_modalPresentationStyle;
 @property(copy, nonatomic) NSString *paymentCurrency; // @synthesize paymentCurrency=_paymentCurrency;
-@property(retain, nonatomic) STPAddress *shippingAddress; // @synthesize shippingAddress=_shippingAddress;
-@property(retain, nonatomic) NSArray *shippingMethods; // @synthesize shippingMethods=_shippingMethods;
-@property(retain, nonatomic) PKShippingMethod *selectedShippingMethod; // @synthesize selectedShippingMethod=_selectedShippingMethod;
 @property(retain, nonatomic) NSArray *paymentMethods; // @synthesize paymentMethods=_paymentMethods;
 @property(retain, nonatomic) id <STPPaymentMethod> selectedPaymentMethod; // @synthesize selectedPaymentMethod=_selectedPaymentMethod;
 @property(nonatomic) __weak id <STPPaymentContextDelegate> delegate; // @synthesize delegate=_delegate;
@@ -58,24 +49,16 @@
 @property(retain, nonatomic) STPPaymentConfiguration *configuration; // @synthesize configuration=_configuration;
 @property(retain, nonatomic) id <STPBackendAPIAdapter> apiAdapter; // @synthesize apiAdapter=_apiAdapter;
 - (void).cxx_destruct;
+- (void)addCardViewController:(id)arg1 didCreateToken:(id)arg2 completion:(CDUnknownBlockType)arg3;
+- (void)addCardViewControllerDidCancel:(id)arg1;
 - (void)artificiallyRetain:(id)arg1;
 - (id)buildPaymentRequest;
-- (void)didFinishWithStatus:(unsigned long long)arg1 error:(id)arg2;
 - (void)requestPayment;
-- (void)appropriatelyDismissViewController:(id)arg1 completion:(CDUnknownBlockType)arg2;
-- (void)shippingAddressViewController:(id)arg1 didFinishWithAddress:(id)arg2 shippingMethod:(id)arg3;
-- (void)shippingAddressViewController:(id)arg1 didEnterAddress:(id)arg2 completion:(CDUnknownBlockType)arg3;
-- (void)shippingAddressViewControllerDidCancel:(id)arg1;
-- (void)pushShippingViewController;
-- (void)presentShippingViewControllerWithNewState:(unsigned long long)arg1;
-- (void)presentShippingViewController;
 - (void)appropriatelyDismissPaymentMethodsViewController:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)paymentMethodsViewController:(id)arg1 didFailToLoadWithError:(id)arg2;
-- (void)paymentMethodsViewControllerDidCancel:(id)arg1;
 - (void)paymentMethodsViewControllerDidFinish:(id)arg1;
 - (void)paymentMethodsViewController:(id)arg1 didSelectPaymentMethod:(id)arg2;
 - (void)pushPaymentMethodsViewController;
-- (void)presentPaymentMethodsViewControllerWithNewState:(unsigned long long)arg1;
 - (void)presentPaymentMethodsViewController;
 @property(copy, nonatomic) NSArray *paymentSummaryItems;
 @property(nonatomic) long long paymentAmount;

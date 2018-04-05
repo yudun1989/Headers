@@ -22,7 +22,7 @@
 - (void).cxx_destruct;
 - (_Bool)isEqual:(id)arg1;
 - (id)initWithRootPage:(unsigned int)arg1 andTableName:(id)arg2;
-- (const map_490096f0 *)getValueTagIndexMap;
+- (const map_f8690629 *)getValueTagIndexMap;
 - (id)getValueTypeTable;
 
 // Remaining properties

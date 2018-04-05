@@ -20,7 +20,7 @@
 @property(nonatomic) int m_nDownloadCount; // @synthesize m_nDownloadCount;
 @property(nonatomic) double m_douLimitBegin; // @synthesize m_douLimitBegin;
 - (id)init;
-- (const map_490096f0 *)getValueTagIndexMap;
+- (const map_f8690629 *)getValueTagIndexMap;
 - (id)getValueTypeTable;
 
 // Remaining properties

@@ -24,6 +24,8 @@
 + (id)topWarningBannerForResident;
 + (id)topWarningBannerForID;
 + (id)topWarningBannerForDeposit;
++ (id)topWarningBannerForPassword;
++ (id)topWarningBannerForEmail;
 + (id)topWarningBannerForCountryCode;
 + (id)topWarningBannerForLogin;
 @property(retain, nonatomic) MBKLabel *actionLabel; // @synthesize actionLabel=_actionLabel;

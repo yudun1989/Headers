@@ -35,7 +35,7 @@
 - (id)genarateResAesKey;
 - (id)calcMP4IdentifyMD5WithFilePath:(id)arg1;
 - (id)calcFileMd5WithFilePath:(id)arg1;
-- (basic_string_a490aa4c)getClientMediaId:(id)arg1 enableHitCheck:(_Bool)arg2;
+- (struct basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char>>)getClientMediaId:(id)arg1 enableHitCheck:(_Bool)arg2;
 - (void)SetCdnHostIPFromNewDNS;
 - (void)onServiceEnterForeground;
 - (void)onServiceInit;

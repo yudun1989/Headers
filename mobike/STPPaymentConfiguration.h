@@ -12,13 +12,10 @@
 
 @interface STPPaymentConfiguration : NSObject <NSCopying>
 {
-    _Bool _ineligibleForSmsAutofill;
     _Bool _smsAutofillDisabled;
     NSString *_publishableKey;
     unsigned long long _additionalPaymentMethods;
     unsigned long long _requiredBillingAddressFields;
-    unsigned long long _requiredShippingAddressFields;
-    unsigned long long _shippingType;
     NSString *_companyName;
     NSString *_appleMerchantIdentifier;
 }
@@ -28,16 +25,13 @@
 @property(nonatomic) _Bool smsAutofillDisabled; // @synthesize smsAutofillDisabled=_smsAutofillDisabled;
 @property(copy, nonatomic) NSString *appleMerchantIdentifier; // @synthesize appleMerchantIdentifier=_appleMerchantIdentifier;
 @property(copy, nonatomic) NSString *companyName; // @synthesize companyName=_companyName;
-@property(nonatomic) unsigned long long shippingType; // @synthesize shippingType=_shippingType;
-@property(nonatomic) unsigned long long requiredShippingAddressFields; // @synthesize requiredShippingAddressFields=_requiredShippingAddressFields;
 @property(nonatomic) unsigned long long requiredBillingAddressFields; // @synthesize requiredBillingAddressFields=_requiredBillingAddressFields;
 @property(nonatomic) unsigned long long additionalPaymentMethods; // @synthesize additionalPaymentMethods=_additionalPaymentMethods;
 @property(copy, nonatomic) NSString *publishableKey; // @synthesize publishableKey=_publishableKey;
-@property(nonatomic) _Bool ineligibleForSmsAutofill; // @synthesize ineligibleForSmsAutofill=_ineligibleForSmsAutofill;
 - (void).cxx_destruct;
-@property(readonly, nonatomic) _Bool applePayEnabled;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)init;
+@property(readonly, nonatomic) _Bool applePayEnabled;
 
 @end
 

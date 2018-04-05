@@ -15,7 +15,7 @@
 @interface MsgResourceBrowseViewController : MMUIViewController <MsgFastBrowseViewDelegate, IClearDataMgrExt, WCActionSheetDelegate>
 {
     NSMutableArray *m_arrMsg;
-    vector_3d478e4e _arrSelectedData;
+    vector_09444f17 _arrSelectedData;
     shared_ptr_174ad120 m_sessionItem;
     MsgFastBrowseView *m_msgFastBrowseView;
     UIImageView *_footerView;
@@ -47,8 +47,8 @@
 - (void)hanleClickImageMessage:(id)arg1 msgView:(id)arg2;
 - (void)onCancel;
 - (void)willAnimateRotationToInterfaceOrientation:(long long)arg1 duration:(double)arg2;
-- (id)getDataSizeShowString:(const vector_3d478e4e *)arg1;
-- (unsigned int)getDataSize:(const vector_3d478e4e *)arg1;
+- (id)getDataSizeShowString:(const vector_09444f17 *)arg1;
+- (unsigned int)getDataSize:(const vector_09444f17 *)arg1;
 - (id)getSelectButtonTitle;
 - (void)updateFooterPannelView;
 - (void)initFooterPannelView;

@@ -11,13 +11,13 @@
 
 @interface MMTabBarController : UITabBarController
 {
+    double _lastScreenWidth;
+    MMUIView *m_maskView;
     unsigned long long _viewControllersCount;
     NSMutableArray *_tabBarBtns;
     NSMutableArray *_badgeViews;
     UITapGestureRecognizer *_doubleTapGesture;
     _Bool _hasDoubleTapGesture;
-    double _lastScreenWidth;
-    MMUIView *m_maskView;
 }
 
 - (void).cxx_destruct;
@@ -28,7 +28,9 @@
 - (void)setTabBarBadgeValue:(long long)arg1 forIndex:(long long)arg2;
 - (id)getViewControllerAtIndex:(unsigned int)arg1;
 - (id)currentViewController;
+- (void)clearTabBtns;
 - (id)getTabBarBtnForIndex:(long long)arg1;
+- (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void *)arg4;
 - (id)getTabBarBtnViews;
 - (void)bringBadgeViewsToFront;
 - (id)getBadgeViewForIndex:(long long)arg1;
@@ -45,23 +47,21 @@
 - (void)hideTabBar;
 - (void)setAllTabBarItemEnabled:(_Bool)arg1;
 - (int)getBadgeViewRightMarginPortrait;
-- (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void *)arg4;
 - (void)relayoutBadgeViewForIpadIOS8;
 - (void)reLayoutTabbarToOrientation:(long long)arg1;
-- (void)setViewControllers:(id)arg1 animated:(_Bool)arg2;
+- (void)fixBadgeViewLayout;
 - (void)setViewControllers:(id)arg1;
-- (void)setSelectedViewController:(id)arg1;
-- (void)setSelectedIndex:(unsigned long long)arg1;
 - (void)viewDidAppear:(_Bool)arg1;
 - (void)viewDidLoad;
 - (void)viewDidLayoutSubviews;
 - (void)viewWillLayoutSubviews;
 - (void)makeSureFrame;
 - (void)viewWillAppear:(_Bool)arg1;
+- (void)dealloc;
 - (id)init;
 
 // Remaining properties
-@property(nonatomic) __weak id <MMTabBarControllerDelegate> delegate;
+@property(nonatomic) __weak id <MMTabBarControllerDelegate> delegate; // @dynamic delegate;
 
 @end
 

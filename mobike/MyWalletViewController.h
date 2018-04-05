@@ -12,7 +12,7 @@
 #import "netNoneFreshDelegate-Protocol.h"
 #import "reFundDelegate-Protocol.h"
 
-@class MBKBalanceCellModel, MBKCarDeposit, MBKCardBannerCellModel, MBKCardCellModel, MBKCardConfigModel, MBKMembershipInfo, MBKMembershipInfoModel, MBKMvpBannerCellModel, MBKMvpRenewalCellModel, MBKRefundSure, MBKTitleCellModel, MBKUserPaymentBonus, MBKWalletCardBuyCellModel, MBKWalletCellModel, MBKWalletDisConnectCellModel, NSDictionary, NSMutableArray, NSNumber, NSString, NoNetWrokViewController, UIButton, UIImageView, UILabel, UITableView, UIView, reFundDepoistInfo;
+@class MBKBalanceCellModel, MBKCarDeposit, MBKCardBannerCellModel, MBKCardCellModel, MBKMembershipInfo, MBKMembershipInfoModel, MBKMvpBannerCellModel, MBKMvpRenewalCellModel, MBKRefundSure, MBKTitleCellModel, MBKUserPaymentBonus, MBKWalletCardBuyCellModel, MBKWalletCellModel, MBKWalletDisConnectCellModel, NSDictionary, NSMutableArray, NSNumber, NSString, NoNetWrokViewController, UIButton, UIImageView, UILabel, UITableView, UIView, reFundDepoistInfo;
 
 @interface MyWalletViewController : MBKMyWalletViewController <netNoneFreshDelegate, reFundDelegate, UITableViewDelegate, UITableViewDataSource, MBKMvpRenewalDelegate>
 {
@@ -44,7 +44,6 @@
     UIView *_cardFreeDayView;
     UIImageView *_cardFreeDayImageView;
     UILabel *_cardFreeDayLable;
-    MBKCardConfigModel *_cardConfigModel;
     NSString *_cardFreeDay;
     UITableView *_walletTableView;
     MBKMembershipInfo *_membershipInfo;
@@ -99,7 +98,6 @@
 @property(retain, nonatomic) MBKMembershipInfo *membershipInfo; // @synthesize membershipInfo=_membershipInfo;
 @property(retain, nonatomic) UITableView *walletTableView; // @synthesize walletTableView=_walletTableView;
 @property(retain, nonatomic) NSString *cardFreeDay; // @synthesize cardFreeDay=_cardFreeDay;
-@property(retain, nonatomic) MBKCardConfigModel *cardConfigModel; // @synthesize cardConfigModel=_cardConfigModel;
 @property(retain, nonatomic) UILabel *cardFreeDayLable; // @synthesize cardFreeDayLable=_cardFreeDayLable;
 @property(retain, nonatomic) UIImageView *cardFreeDayImageView; // @synthesize cardFreeDayImageView=_cardFreeDayImageView;
 @property(retain, nonatomic) UIView *cardFreeDayView; // @synthesize cardFreeDayView=_cardFreeDayView;
@@ -157,7 +155,6 @@
 - (void)showCloseWeChatFree;
 - (void)goToWeChatFree:(id)arg1;
 - (_Bool)checkUserStatus:(_Bool)arg1;
-- (void)updateAdoptionStatusModel:(id)arg1;
 - (void)removeCardFreeDayViewDisplay;
 - (void)updateCardFreeDayViewDisplay:(id)arg1;
 - (void)removeFreeRideTimeDisplay;
@@ -195,7 +192,6 @@
 - (void)showOpenSuccessed;
 - (void)showPaySuccAlert:(id)arg1;
 - (void)handleNotification:(id)arg1;
-- (void)setCardConfigModelWithCardType;
 - (void)setNetWorkView;
 - (void)registerTableViewCell;
 - (void)addRidingLoanCellModel;

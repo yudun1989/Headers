@@ -17,9 +17,13 @@
     NSString *_lastLoginTime;
     NSString *_errorMsg;
     NSString *_randomKey;
+    NSString *_appName;
+    NSString *_appKeyClient;
 }
 
 + (id)sharedInstance;
+@property(retain) NSString *appKeyClient; // @synthesize appKeyClient=_appKeyClient;
+@property(retain) NSString *appName; // @synthesize appName=_appName;
 @property(retain, nonatomic) NSString *randomKey; // @synthesize randomKey=_randomKey;
 @property(retain, nonatomic) NSString *errorMsg; // @synthesize errorMsg=_errorMsg;
 @property(retain, nonatomic) NSString *lastLoginTime; // @synthesize lastLoginTime=_lastLoginTime;

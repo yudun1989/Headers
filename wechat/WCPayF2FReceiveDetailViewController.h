@@ -15,6 +15,15 @@
 
 @interface WCPayF2FReceiveDetailViewController : WCPayBaseViewController <UITableViewDelegate, UITableViewDataSource, WCPayNoticeBannerDelegate>
 {
+    double kRecordTableCellHeight;
+    double kLeftMargin;
+    double kTopMargin;
+    double kSpeechSynthesizeViewTopMargin;
+    double kSpeechSynthesizeViewLeftMargin;
+    double kSpeechSynthesizeViewBottomMargin;
+    double kSpeechSynthesizeViewImageLabelMargin;
+    double kSpeechSynthesizeViewLabelSwitchMargin;
+    double kBottomMargin;
     _Bool _bIsLoadingMore;
     _Bool _bIsRecordLoadEnd;
     _Bool _bIsSpeechSwitchViewShow;
@@ -75,6 +84,7 @@
 - (void)viewDidLayoutSubviews;
 - (void)viewDidBePoped:(_Bool)arg1;
 - (void)dealloc;
+- (id)init;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

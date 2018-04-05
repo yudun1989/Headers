@@ -56,7 +56,7 @@
 - (void)ringSound;
 - (void)popToMainView;
 - (void)alertView:(id)arg1 clickedButtonAtIndex:(long long)arg2;
-- (void)callbackWithBikeID:(id)arg1;
+- (void)callbackWithBikeID:(id)arg1 isBycode:(_Bool)arg2;
 - (void)inputViewController:(id)arg1 didInputBikeID:(id)arg2;
 - (void)scanerBottomView:(id)arg1 didClickedInputBtn:(id)arg2;
 - (void)initScanSession;

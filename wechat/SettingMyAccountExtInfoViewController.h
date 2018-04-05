@@ -17,8 +17,8 @@
 
 @interface SettingMyAccountExtInfoViewController : SettingBaseViewController <settingModifySignDelegate, MMPickerViewDelegate, MMRegionPickerViewControllerDelegate, settingMyAccountExtInfoLogicDelegate, CSettingExt>
 {
-    map_490096f0 m_mapAccountCellToCellType;
-    map_490096f0 m_mapSessionType;
+    map_f8690629 m_mapAccountCellToCellType;
+    map_f8690629 m_mapSessionType;
     id <settingMyAccountExtInfoDelegate> m_delegate;
     unsigned int m_curPickerMode;
     MMPickerView *m_pickerView;

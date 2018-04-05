@@ -13,20 +13,16 @@
 
 @interface STPAddressViewModel : NSObject <STPAddressFieldTableViewCellDelegate>
 {
-    _Bool _isBillingAddress;
     _Bool _showingPostalCodeCell;
     NSString *_addressFieldTableViewCountryCode;
     NSArray *_addressCells;
     id <STPAddressViewModelDelegate> _delegate;
     UIResponder *_previousField;
     unsigned long long _requiredBillingAddressFields;
-    unsigned long long _requiredShippingAddressFields;
 }
 
 @property(nonatomic) _Bool showingPostalCodeCell; // @synthesize showingPostalCodeCell=_showingPostalCodeCell;
-@property(nonatomic) unsigned long long requiredShippingAddressFields; // @synthesize requiredShippingAddressFields=_requiredShippingAddressFields;
 @property(nonatomic) unsigned long long requiredBillingAddressFields; // @synthesize requiredBillingAddressFields=_requiredBillingAddressFields;
-@property(nonatomic) _Bool isBillingAddress; // @synthesize isBillingAddress=_isBillingAddress;
 @property(retain, nonatomic) UIResponder *previousField; // @synthesize previousField=_previousField;
 @property(nonatomic) __weak id <STPAddressViewModelDelegate> delegate; // @synthesize delegate=_delegate;
 @property(retain, nonatomic) NSArray *addressCells; // @synthesize addressCells=_addressCells;
@@ -40,10 +36,7 @@
 - (void)addressFieldTableViewCellDidBackspaceOnEmpty:(id)arg1;
 - (void)addressFieldTableViewCellDidReturn:(id)arg1;
 - (id)cellAtIndex:(long long)arg1;
-- (_Bool)containsStateAndPostalFields;
 - (void)updatePostalCodeCellIfNecessary;
-- (void)commonInit;
-- (id)initWithRequiredShippingFields:(unsigned long long)arg1;
 - (id)initWithRequiredBillingFields:(unsigned long long)arg1;
 
 // Remaining properties

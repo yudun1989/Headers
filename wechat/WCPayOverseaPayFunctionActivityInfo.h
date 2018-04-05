@@ -31,7 +31,7 @@
 @property(retain, nonatomic) NSString *m_activityMsgContent; // @synthesize m_activityMsgContent;
 @property(retain, nonatomic) NSString *m_activityId; // @synthesize m_activityId;
 - (void).cxx_destruct;
-- (const map_490096f0 *)getValueTagIndexMap;
+- (const map_f8690629 *)getValueTagIndexMap;
 - (id)getValueTypeTable;
 
 // Remaining properties

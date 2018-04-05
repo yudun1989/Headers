@@ -15,14 +15,14 @@
 - (id).cxx_construct;
 - (void).cxx_destruct;
 - (id)screenshotOfVideoStream:(struct __CVBuffer *)arg1;
-- (basic_string_a490aa4c)engineGetReadNumbers;
-- (basic_string_a490aa4c)engineGetData:(int)arg1;
+- (struct basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char>>)engineGetReadNumbers;
+- (struct basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char>>)engineGetData:(int)arg1;
 - (int)engineRelease;
-- (basic_string_a490aa4c)engineVersion;
+- (struct basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char>>)engineVersion;
 - (vector_e0f2bd7e)engineGetAllMotion;
 - (int)engineGetPoseMotion;
 - (int)engineGetCurrMotion;
-- (basic_string_a490aa4c)engineGetCurrMotionData;
+- (struct basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char>>)engineGetCurrMotionData;
 - (int)engineReleaseCurrMotion;
 - (int)engineNextMotion;
 - (void)engineSetVoiceData:(char *)arg1 withSize:(int)arg2;

@@ -35,7 +35,7 @@
 - (void)connection:(id)arg1 didReceiveAuthenticationChallenge:(id)arg2;
 - (_Bool)connection:(id)arg1 canAuthenticateAgainstProtectionSpace:(id)arg2;
 - (_Bool)Connect;
-- (id)EncodePack:(id)arg1 Key:(basic_string_a490aa4c *)arg2;
+- (id)EncodePack:(id)arg1 Key:(struct basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char>> *)arg2;
 - (_Bool)uploadCrash:(id)arg1 reportType:(unsigned long long)arg2;
 - (void)CancelUrlConnection;
 - (void)dealloc;

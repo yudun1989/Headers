@@ -20,7 +20,7 @@
 @property(retain, nonatomic) SequenceInfo *seqInfo; // @synthesize seqInfo;
 @property(retain, nonatomic) NSMutableArray *redPointList; // @synthesize redPointList;
 - (void).cxx_destruct;
-- (const map_490096f0 *)getValueTagIndexMap;
+- (const map_f8690629 *)getValueTagIndexMap;
 - (id)getValueTypeTable;
 
 // Remaining properties

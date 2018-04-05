@@ -24,7 +24,7 @@
 @property(copy, nonatomic) NSString *appNickname; // @synthesize appNickname;
 @property(copy, nonatomic) NSString *appUsername; // @synthesize appUsername;
 - (void).cxx_destruct;
-- (const map_490096f0 *)getValueTagIndexMap;
+- (const map_f8690629 *)getValueTagIndexMap;
 - (id)getValueTypeTable;
 
 // Remaining properties

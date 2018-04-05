@@ -33,7 +33,7 @@
 - (void)setTapHandler:(id)arg1 selector:(SEL)arg2;
 - (void)clearItems;
 - (void)removeItemWithID:(unsigned long long)arg1;
-- (unsigned long long)setIcon:(struct WrappedRectangle2D *)arg1 style:(id)arg2 tappable:(_Bool)arg3 priority:(unsigned int)arg4 itemID:(unsigned long long)arg5 name:(basic_string_a490aa4c *)arg6;
+- (unsigned long long)setIcon:(struct WrappedRectangle2D *)arg1 style:(id)arg2 tappable:(_Bool)arg3 priority:(unsigned int)arg4 itemID:(unsigned long long)arg5 name:(struct basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char>> *)arg6;
 - (unsigned long long)setPolygon:(id)arg1 style:(id)arg2 tappable:(_Bool)arg3 scaleMode:(int)arg4 priority:(unsigned int)arg5 itemID:(unsigned long long)arg6;
 - (unsigned long long)setPolyline:(id)arg1 fixedIndices:(const set_c08b4b4f *)arg2 style:(id)arg3 tappable:(_Bool)arg4 scaleMode:(int)arg5 priority:(unsigned int)arg6 itemID:(unsigned long long)arg7;
 - (unsigned long long)setPolyline:(const vector_aa37bc82 *)arg1 style:(const vector_6e37a17d *)arg2 textureImage:(id)arg3 width:(float)arg4 tappable:(_Bool)arg5 priority:(unsigned int)arg6 itemID:(unsigned long long)arg7;

@@ -20,7 +20,7 @@
 @property(retain, nonatomic) NSString *subject; // @synthesize subject;
 @property(nonatomic) unsigned int mailID; // @synthesize mailID;
 - (void).cxx_destruct;
-- (const map_490096f0 *)getValueTagIndexMap;
+- (const map_f8690629 *)getValueTagIndexMap;
 - (id)getValueTypeTable;
 
 // Remaining properties

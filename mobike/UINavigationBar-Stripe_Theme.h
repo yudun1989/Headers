@@ -6,13 +6,10 @@
 
 #import <UIKit/UINavigationBar.h>
 
-@class STPTheme;
-
 @interface UINavigationBar (Stripe_Theme)
 - (id)stp_hairlineImageView:(id)arg1;
 - (id)stp_hairlineImageView;
 - (id)stp_artificialHairlineView;
 - (void)stp_setTheme:(id)arg1;
-@property(retain, nonatomic) STPTheme *stp_theme;
 @end
 

@@ -16,7 +16,6 @@
     NSString *_cvc;
 }
 
-+ (id)keyPathsForValuesAffectingValid;
 @property(copy, nonatomic) NSString *cvc; // @synthesize cvc=_cvc;
 @property(readonly, nonatomic) NSString *expirationYear; // @synthesize expirationYear=_expirationYear;
 @property(readonly, nonatomic) NSString *expirationMonth; // @synthesize expirationMonth=_expirationMonth;
@@ -24,7 +23,7 @@
 - (void).cxx_destruct;
 - (id)numberWithoutLastDigits;
 - (id)defaultPlaceholder;
-@property(readonly, nonatomic) _Bool isValid;
+- (_Bool)isValid;
 - (long long)validationStateForField:(long long)arg1;
 @property(readonly, nonatomic) long long brand;
 - (void)setExpirationYear:(id)arg1;

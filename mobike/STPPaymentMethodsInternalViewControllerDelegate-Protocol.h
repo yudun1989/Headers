@@ -8,7 +8,6 @@
 @protocol STPPaymentMethod;
 
 @protocol STPPaymentMethodsInternalViewControllerDelegate
-- (void)internalViewControllerDidCancel;
 - (void)internalViewControllerDidCreateToken:(STPToken *)arg1 completion:(void (^)(NSError *))arg2;
 - (void)internalViewControllerDidSelectPaymentMethod:(id <STPPaymentMethod>)arg1;
 @end

@@ -37,7 +37,7 @@
 @property(retain, nonatomic) NSString *m_functionName; // @synthesize m_functionName;
 @property(nonatomic) unsigned int m_functionId; // @synthesize m_functionId;
 - (void).cxx_destruct;
-- (const map_490096f0 *)getValueTagIndexMap;
+- (const map_f8690629 *)getValueTagIndexMap;
 - (id)getValueTypeTable;
 
 // Remaining properties

@@ -15,6 +15,7 @@
 + (_Bool)stringIsValidLuhn:(id)arg1;
 + (long long)fragmentLengthForCardBrand:(long long)arg1;
 + (long long)maxLengthForCardBrand:(long long)arg1;
++ (long long)lengthForCardBrand:(long long)arg1;
 + (id)lengthsForCardBrand:(long long)arg1;
 + (id)possibleBrandsForNumber:(id)arg1;
 + (long long)brandForNumber:(id)arg1;

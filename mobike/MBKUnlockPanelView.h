@@ -6,10 +6,11 @@
 
 #import <UIKit/UIView.h>
 
-@class MBKRidingPanelUnlockLoadView, UIImageView, UILabel;
+@class MBKRidingPanelUnlockLoadView, NSString, UIImageView, UILabel;
 
 @interface MBKUnlockPanelView : UIView
 {
+    NSString *_errorString;
     CDUnknownBlockType _unlockFailBlock;
     UILabel *_statusLabel;
     UIImageView *_animateImageView;
@@ -21,6 +22,7 @@
 @property(retain, nonatomic) UIImageView *animateImageView; // @synthesize animateImageView=_animateImageView;
 @property(retain, nonatomic) UILabel *statusLabel; // @synthesize statusLabel=_statusLabel;
 @property(copy, nonatomic) CDUnknownBlockType unlockFailBlock; // @synthesize unlockFailBlock=_unlockFailBlock;
+@property(retain, nonatomic) NSString *errorString; // @synthesize errorString=_errorString;
 - (void).cxx_destruct;
 - (void)showFailureAnimationWithFailReason:(long long)arg1 failedBlock:(CDUnknownBlockType)arg2;
 - (void)setStateToSuccessWithCompletion:(CDUnknownBlockType)arg1;

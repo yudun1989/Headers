@@ -27,7 +27,7 @@
 
 @interface MoreViewController : MMTabBarBaseViewController <PayMenuRedDotHelperExt, MyFavoritesViewControllerDelegate, ISettingExtChange, IWCSettingRedPointMgrExt, IWCLabsMgrExt, IMsgExt, WCPayWalletLockVerifyLogicDelegate, INewSyncExt, IHeadImageExt, CSettingExt, WCPayLogicMgrExt, EmoticonRecommendMgrExt, MMKernelExt, WCMallLogicMgrExt, IWCCardPkgExt, WCActionSheetDelegate>
 {
-    vector_a9c0768e m_vecMesssageIdToListen;
+    vector_12da65de m_vecMesssageIdToListen;
     MMTableViewInfo *m_tableViewInfo;
     UpdateWechatRedDotConfig *m_oUpdateWechatRedDotConfig;
     MyFavoritesViewController *m_favViewController;

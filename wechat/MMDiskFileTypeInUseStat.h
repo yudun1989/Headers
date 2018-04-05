@@ -16,7 +16,7 @@
 + (void)initialize;
 @property(nonatomic) unsigned long long m_fileSize; // @synthesize m_fileSize;
 @property(nonatomic) unsigned int m_fileNum; // @synthesize m_fileNum;
-- (const map_490096f0 *)getValueTagIndexMap;
+- (const map_f8690629 *)getValueTagIndexMap;
 - (id)getValueTypeTable;
 
 @end

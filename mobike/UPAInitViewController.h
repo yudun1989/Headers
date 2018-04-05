@@ -25,6 +25,7 @@
 @property(retain, nonatomic) UPPayResult *mPayResult; // @synthesize mPayResult=_mPayResult;
 @property(copy, nonatomic) CDUnknownBlockType apCompletion; // @synthesize apCompletion=_apCompletion;
 - (void).cxx_destruct;
+- (void)dealloc;
 - (void)payFailedWithError:(id)arg1 type:(long long)arg2 response:(id)arg3;
 - (void)paySuccess;
 - (void)postCommonCmd:(id)arg1 pkPayment:(id)arg2;

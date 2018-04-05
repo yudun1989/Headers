@@ -8,7 +8,7 @@
 
 #import "MBKApplePayDelegate-Protocol.h"
 
-@class MBKCardConfigModel, NSMutableArray, NSString, UIButton, UIImageView, UILabel, UIScrollView, UIView;
+@class NSMutableArray, NSString, UIButton, UIImageView, UILabel, UIScrollView, UIView;
 
 @interface AttestationViewController : MBKBaseViewController <MBKApplePayDelegate>
 {
@@ -31,10 +31,8 @@
     UIScrollView *_bottomScrollView;
     NSMutableArray *_payMethodListArray;
     UILabel *_depositLine;
-    MBKCardConfigModel *_cardConfigModel;
 }
 
-@property(retain, nonatomic) MBKCardConfigModel *cardConfigModel; // @synthesize cardConfigModel=_cardConfigModel;
 @property(retain, nonatomic) UILabel *depositLine; // @synthesize depositLine=_depositLine;
 @property(retain, nonatomic) NSMutableArray *payMethodListArray; // @synthesize payMethodListArray=_payMethodListArray;
 @property(retain, nonatomic) UIScrollView *bottomScrollView; // @synthesize bottomScrollView=_bottomScrollView;

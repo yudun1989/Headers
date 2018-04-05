@@ -4,21 +4,23 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-#import "STPCoreScrollViewController.h"
+#import <UIKit/UIViewController.h>
 
 #import "STPSMSCodeTextFieldDelegate-Protocol.h"
 
-@class NSString, NSTimer, STPCheckoutAPIClient, STPCheckoutAPIVerification, STPPaymentActivityIndicatorView, STPSMSCodeTextField, UIButton, UILabel;
+@class NSString, NSTimer, STPCheckoutAPIClient, STPCheckoutAPIVerification, STPPaymentActivityIndicatorView, STPSMSCodeTextField, STPTheme, UIButton, UILabel, UIScrollView;
 @protocol STPSMSCodeViewControllerDelegate;
 
-@interface STPSMSCodeViewController : STPCoreScrollViewController <STPSMSCodeTextFieldDelegate>
+@interface STPSMSCodeViewController : UIViewController <STPSMSCodeTextFieldDelegate>
 {
     _Bool _loading;
+    STPTheme *_theme;
     id <STPSMSCodeViewControllerDelegate> _delegate;
     STPCheckoutAPIClient *_checkoutAPIClient;
     STPCheckoutAPIVerification *_verification;
     NSString *_redactedPhone;
     NSTimer *_hideSMSSentLabelTimer;
+    UIScrollView *_scrollView;
     UILabel *_topLabel;
     STPSMSCodeTextField *_codeField;
     UILabel *_bottomLabel;
@@ -38,24 +40,26 @@
 @property(nonatomic) __weak UILabel *bottomLabel; // @synthesize bottomLabel=_bottomLabel;
 @property(nonatomic) __weak STPSMSCodeTextField *codeField; // @synthesize codeField=_codeField;
 @property(nonatomic) __weak UILabel *topLabel; // @synthesize topLabel=_topLabel;
+@property(nonatomic) __weak UIScrollView *scrollView; // @synthesize scrollView=_scrollView;
 @property(retain, nonatomic) NSTimer *hideSMSSentLabelTimer; // @synthesize hideSMSSentLabelTimer=_hideSMSSentLabelTimer;
 @property(retain, nonatomic) NSString *redactedPhone; // @synthesize redactedPhone=_redactedPhone;
 @property(retain, nonatomic) STPCheckoutAPIVerification *verification; // @synthesize verification=_verification;
 @property(retain, nonatomic) STPCheckoutAPIClient *checkoutAPIClient; // @synthesize checkoutAPIClient=_checkoutAPIClient;
 @property(nonatomic) __weak id <STPSMSCodeViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
+@property(retain, nonatomic) STPTheme *theme; // @synthesize theme=_theme;
 - (void).cxx_destruct;
 - (void)pasteCodeFromClipboard;
 - (void)setPasteFromClipboardButtonVisible:(_Bool)arg1;
 - (void)cancel;
-- (void)handleBackOrCancelTapped:(id)arg1;
 - (void)codeTextField:(id)arg1 didEnterCode:(id)arg2;
 - (void)hideSMSSentLabel;
 - (void)viewDidAppear:(_Bool)arg1;
 - (double)contentMaxY;
 - (void)viewDidLayoutSubviews;
+- (long long)preferredStatusBarStyle;
 - (void)updateAppearance;
 - (void)applicationDidBecomeActive;
-- (void)createAndSetupViews;
+- (void)viewDidLoad;
 - (void)dealloc;
 - (id)initWithCheckoutAPIClient:(id)arg1 verification:(id)arg2 redactedPhone:(id)arg3;
 

@@ -26,7 +26,7 @@
 @property(nonatomic) unsigned int configVersion; // @synthesize configVersion;
 - (void).cxx_destruct;
 - (_Bool)isMatchSpecialPVPage:(id)arg1 prePage:(id)arg2;
-- (const map_490096f0 *)getValueTagIndexMap;
+- (const map_f8690629 *)getValueTagIndexMap;
 - (id)getValueTypeTable;
 
 @end

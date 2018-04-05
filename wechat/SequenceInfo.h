@@ -27,7 +27,7 @@
 @property(nonatomic) unsigned int Privacy_Seq; // @synthesize Privacy_Seq;
 @property(nonatomic) unsigned int Setting_Seq; // @synthesize Setting_Seq;
 @property(nonatomic) unsigned int MoreView_Seq; // @synthesize MoreView_Seq;
-- (const map_490096f0 *)getValueTagIndexMap;
+- (const map_f8690629 *)getValueTagIndexMap;
 - (id)getValueTypeTable;
 
 // Remaining properties

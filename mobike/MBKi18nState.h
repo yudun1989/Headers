@@ -23,6 +23,7 @@
     long long _depositFreeType;
     long long _depositState;
     long long _trialPeriodState;
+    long long _obEmailState;
 }
 
 + (id)jsonKeyToPropertyNameMap;
@@ -32,6 +33,7 @@
 @property(nonatomic) _Bool pendingRepayDeposit; // @synthesize pendingRepayDeposit=_pendingRepayDeposit;
 @property(nonatomic) _Bool pendingPayDeposit; // @synthesize pendingPayDeposit=_pendingPayDeposit;
 @property(nonatomic) _Bool isDepositFree; // @synthesize isDepositFree=_isDepositFree;
+@property(nonatomic) long long obEmailState; // @synthesize obEmailState=_obEmailState;
 @property(nonatomic) long long trialPeriodState; // @synthesize trialPeriodState=_trialPeriodState;
 @property(nonatomic) _Bool unlockPositiveBalanceSWState; // @synthesize unlockPositiveBalanceSWState=_unlockPositiveBalanceSWState;
 @property(nonatomic) _Bool unlockBlueToothSWState; // @synthesize unlockBlueToothSWState=_unlockBlueToothSWState;

@@ -6,13 +6,14 @@
 
 #import "APURLConnectionOperation.h"
 
-@class NSError, NSHTTPURLResponse, NSRecursiveLock, NSURLRequest;
+@class NSError, NSHTTPURLResponse, NSObject, NSRecursiveLock, NSURLRequest;
+@protocol OS_dispatch_queue;
 
 @interface APHTTPRequestOperation : APURLConnectionOperation
 {
     NSError *_HTTPError;
-    struct dispatch_queue_s *_successCallbackQueue;
-    struct dispatch_queue_s *_failureCallbackQueue;
+    NSObject<OS_dispatch_queue> *_successCallbackQueue;
+    NSObject<OS_dispatch_queue> *_failureCallbackQueue;
 }
 
 + (_Bool)canProcessRequest:(id)arg1;
@@ -20,8 +21,8 @@
 + (id)acceptableContentTypes;
 + (void)addAcceptableStatusCodes:(id)arg1;
 + (id)acceptableStatusCodes;
-@property(nonatomic) struct dispatch_queue_s *failureCallbackQueue; // @synthesize failureCallbackQueue=_failureCallbackQueue;
-@property(nonatomic) struct dispatch_queue_s *successCallbackQueue; // @synthesize successCallbackQueue=_successCallbackQueue;
+@property(nonatomic) NSObject<OS_dispatch_queue> *failureCallbackQueue; // @synthesize failureCallbackQueue=_failureCallbackQueue;
+@property(nonatomic) NSObject<OS_dispatch_queue> *successCallbackQueue; // @synthesize successCallbackQueue=_successCallbackQueue;
 @property(retain, nonatomic) NSError *HTTPError; // @synthesize HTTPError=_HTTPError;
 - (void).cxx_destruct;
 - (void)setCompletionBlockWithSuccess:(CDUnknownBlockType)arg1 failure:(CDUnknownBlockType)arg2;

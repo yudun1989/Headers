@@ -61,7 +61,7 @@
 @property(retain, nonatomic) NSString *appName; // @synthesize appName;
 @property(retain, nonatomic) NSString *appID; // @synthesize appID;
 - (void).cxx_destruct;
-- (const map_490096f0 *)getValueTagIndexMap;
+- (const map_f8690629 *)getValueTagIndexMap;
 - (id)getValueTypeTable;
 
 // Remaining properties

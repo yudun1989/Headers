@@ -46,7 +46,7 @@
 @property(nonatomic) unsigned int opType; // @synthesize opType;
 @property(nonatomic) unsigned int cmdid; // @synthesize cmdid;
 - (void).cxx_destruct;
-- (const map_490096f0 *)getValueTagIndexMap;
+- (const map_f8690629 *)getValueTagIndexMap;
 - (id)getValueTypeTable;
 
 // Remaining properties

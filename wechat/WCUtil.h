@@ -11,7 +11,7 @@
 }
 
 + (_Bool)isDownloadSnsImageByCustomProtocol;
-+ (id)tryConvertWCDownloadImageData:(id)arg1 withCdnTaskInfo:(id)arg2 keyVector:(vector_ecc2264a *)arg3;
++ (id)tryConvertWCDownloadImageData:(id)arg1 withCdnTaskInfo:(id)arg2 keyVector:(vector_2633e87e *)arg3;
 + (id)screenShotWithViewController:(id)arg1;
 + (id)getDocSnWithUrl:(id)arg1;
 + (id)rangesOfString:(id)arg1 inString:(id)arg2;

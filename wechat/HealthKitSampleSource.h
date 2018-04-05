@@ -28,7 +28,7 @@
 @property(retain, nonatomic) NSString *nsAppName; // @synthesize nsAppName;
 @property(retain, nonatomic) NSString *nsBundleId; // @synthesize nsBundleId;
 - (void).cxx_destruct;
-- (const map_490096f0 *)getValueTagIndexMap;
+- (const map_f8690629 *)getValueTagIndexMap;
 - (id)getValueTypeTable;
 
 // Remaining properties

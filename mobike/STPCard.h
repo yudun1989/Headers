@@ -8,16 +8,17 @@
 
 #import "STPAPIResponseDecodable-Protocol.h"
 #import "STPPaymentMethod-Protocol.h"
-#import "STPSourceProtocol-Protocol.h"
+#import "STPSource-Protocol.h"
 
-@class NSDictionary, NSString, STPAddress, UIImage;
+@class NSDictionary, NSString, UIImage;
 
-@interface STPCard : STPCardParams <STPAPIResponseDecodable, STPPaymentMethod, STPSourceProtocol>
+@interface STPCard : STPCardParams <STPAPIResponseDecodable, STPPaymentMethod, STPSource>
 {
     NSString *_dynamicLast4;
     NSString *_cardId;
     long long _brand;
     long long _funding;
+    NSString *_fingerprint;
     NSString *_country;
     NSString *_last4;
     NSDictionary *_allResponseFields;
@@ -26,11 +27,11 @@
 + (id)decodedObjectFromAPIResponse:(id)arg1;
 + (id)requiredFields;
 + (long long)fundingFromString:(id)arg1;
-+ (id)stringFromBrand:(long long)arg1;
 + (long long)brandFromString:(id)arg1;
 @property(copy, nonatomic) NSDictionary *allResponseFields; // @synthesize allResponseFields=_allResponseFields;
 @property(retain, nonatomic) NSString *last4; // @synthesize last4=_last4;
 @property(retain, nonatomic) NSString *country; // @synthesize country=_country;
+@property(retain, nonatomic) NSString *fingerprint; // @synthesize fingerprint=_fingerprint;
 @property(nonatomic) long long funding; // @synthesize funding=_funding;
 @property(nonatomic) long long brand; // @synthesize brand=_brand;
 @property(retain, nonatomic) NSString *cardId; // @synthesize cardId=_cardId;
@@ -40,10 +41,10 @@
 @property(readonly, nonatomic) UIImage *image;
 @property(readonly, nonatomic) NSString *label;
 @property(readonly, copy, nonatomic) NSString *stripeID;
-@property(copy, nonatomic) STPAddress *address; // @dynamic address;
 - (_Bool)isEqualToCard:(id)arg1;
 @property(readonly) unsigned long long hash;
 - (_Bool)isEqual:(id)arg1;
+@property(readonly, nonatomic) NSString *type;
 @property(readonly, nonatomic) _Bool isApplePayCard;
 - (id)init;
 - (id)initWithID:(id)arg1 brand:(long long)arg2 last4:(id)arg3 expMonth:(unsigned long long)arg4 expYear:(unsigned long long)arg5 funding:(long long)arg6;
@@ -56,11 +57,13 @@
 @property(copy, nonatomic) NSString *addressState; // @dynamic addressState;
 @property(copy, nonatomic) NSString *addressZip; // @dynamic addressZip;
 @property(copy, nonatomic) NSString *currency; // @dynamic currency;
+@property(copy, nonatomic) NSString *cvc; // @dynamic cvc;
 @property(readonly, copy) NSString *debugDescription;
 @property(readonly, copy) NSString *description;
 @property(nonatomic) unsigned long long expMonth; // @dynamic expMonth;
 @property(nonatomic) unsigned long long expYear; // @dynamic expYear;
 @property(copy, nonatomic) NSString *name; // @dynamic name;
+@property(copy, nonatomic) NSString *number; // @dynamic number;
 @property(readonly) Class superclass;
 
 @end

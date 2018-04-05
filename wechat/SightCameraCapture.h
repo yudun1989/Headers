@@ -59,7 +59,7 @@
 - (long long)flashMode;
 - (_Bool)supportFlashlightMode;
 - (void)initQRCodeScanner;
-- (void)onQRCodeScanSuccess:(id)arg1 atPoint:(vector_c080079c)arg2 originSize:(struct CGSize)arg3;
+- (void)onQRCodeScanSuccess:(id)arg1 atPoint:(vector_552c3471)arg2 originSize:(struct CGSize)arg3;
 - (void)onNoQRCode;
 - (_Bool)switchCameraToPosition:(long long)arg1;
 - (_Bool)switchCamera;

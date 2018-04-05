@@ -29,6 +29,8 @@
 
 + (id)propertyNamesToFormFieldNamesMapping;
 + (id)rootObjectName;
++ (id)createErrorWithMessage:(id)arg1 parameter:(id)arg2 cardErrorCode:(id)arg3 devErrorMessage:(id)arg4;
++ (_Bool)handleValidationErrorForParameter:(id)arg1 error:(id *)arg2;
 @property(copy, nonatomic) NSString *currency; // @synthesize currency=_currency;
 @property(copy, nonatomic) NSString *addressCountry; // @synthesize addressCountry=_addressCountry;
 @property(copy, nonatomic) NSString *addressZip; // @synthesize addressZip=_addressZip;
@@ -43,6 +45,11 @@
 @property(copy, nonatomic) NSString *number; // @synthesize number=_number;
 @property(copy, nonatomic) NSDictionary *additionalAPIParameters; // @synthesize additionalAPIParameters=_additionalAPIParameters;
 - (void).cxx_destruct;
+- (_Bool)validateCardReturningError:(id *)arg1;
+- (_Bool)validateExpYear:(id *)arg1 error:(id *)arg2;
+- (_Bool)validateExpMonth:(id *)arg1 error:(id *)arg2;
+- (_Bool)validateCvc:(id *)arg1 error:(id *)arg2;
+- (_Bool)validateNumber:(id *)arg1 error:(id *)arg2;
 @property(copy, nonatomic) STPAddress *address;
 - (id)last4;
 - (id)init;

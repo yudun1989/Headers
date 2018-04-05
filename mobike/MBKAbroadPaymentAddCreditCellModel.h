@@ -4,23 +4,14 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-#import <objc/NSObject.h>
+#import "MBKGrayTextFieldModel.h"
 
-@class NSString;
-
-@interface MBKAbroadPaymentAddCreditCellModel : NSObject
+@interface MBKAbroadPaymentAddCreditCellModel : MBKGrayTextFieldModel
 {
-    NSString *_labelTitle;
-    NSString *_placeholderText;
-    long long _maxTextLength;
     long long _cellType;
 }
 
 @property(nonatomic) long long cellType; // @synthesize cellType=_cellType;
-@property(nonatomic) long long maxTextLength; // @synthesize maxTextLength=_maxTextLength;
-@property(copy, nonatomic) NSString *placeholderText; // @synthesize placeholderText=_placeholderText;
-@property(copy, nonatomic) NSString *labelTitle; // @synthesize labelTitle=_labelTitle;
-- (void).cxx_destruct;
 
 @end
 

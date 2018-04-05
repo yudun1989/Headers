@@ -17,7 +17,7 @@
 @property(nonatomic) long long lastFullFSyncFailedTime; // @synthesize lastFullFSyncFailedTime;
 @property(nonatomic) long long lastFSyncFailedTime; // @synthesize lastFSyncFailedTime;
 @property(nonatomic) long long lastCorruptTime; // @synthesize lastCorruptTime;
-- (const map_490096f0 *)getValueTagIndexMap;
+- (const map_f8690629 *)getValueTagIndexMap;
 - (id)getValueTypeTable;
 
 @end

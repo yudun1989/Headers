@@ -36,7 +36,7 @@
 @property(retain, nonatomic) PBCMessageWrap *message; // @synthesize message;
 @property(retain, nonatomic) PBCContact *contact; // @synthesize contact;
 - (void).cxx_destruct;
-- (const map_490096f0 *)getValueTagIndexMap;
+- (const map_f8690629 *)getValueTagIndexMap;
 - (id)getValueTypeTable;
 - (void)setFromSessionInfo:(id)arg1;
 - (id)toSessionInfo;

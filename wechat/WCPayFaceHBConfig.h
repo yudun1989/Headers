@@ -22,7 +22,7 @@
 @property(nonatomic) unsigned long long uiTotalMount; // @synthesize uiTotalMount;
 @property(nonatomic) unsigned int resourceVersion; // @synthesize resourceVersion;
 - (id)init;
-- (const map_490096f0 *)getValueTagIndexMap;
+- (const map_f8690629 *)getValueTagIndexMap;
 - (id)getValueTypeTable;
 
 // Remaining properties

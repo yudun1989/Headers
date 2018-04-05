@@ -22,7 +22,7 @@
 @property(nonatomic) _Bool timerEnabled; // @synthesize timerEnabled;
 @property(nonatomic) unsigned int drawMinInterval; // @synthesize drawMinInterval;
 @property(readonly, copy) NSString *description;
-- (const map_490096f0 *)getValueTagIndexMap;
+- (const map_f8690629 *)getValueTagIndexMap;
 - (id)getValueTypeTable;
 
 // Remaining properties

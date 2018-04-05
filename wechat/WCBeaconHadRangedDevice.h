@@ -28,7 +28,7 @@
 @property(copy, nonatomic) NSString *major; // @synthesize major;
 @property(copy, nonatomic) NSString *uuid; // @synthesize uuid;
 - (void).cxx_destruct;
-- (const map_490096f0 *)getValueTagIndexMap;
+- (const map_f8690629 *)getValueTagIndexMap;
 - (id)getValueTypeTable;
 
 // Remaining properties

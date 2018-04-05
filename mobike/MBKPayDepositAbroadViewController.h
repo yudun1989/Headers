@@ -24,8 +24,6 @@
 @property(retain, nonatomic) UIView *topView; // @synthesize topView=_topView;
 @property(copy, nonatomic) CDUnknownBlockType dismissBlock; // @synthesize dismissBlock=_dismissBlock;
 - (void).cxx_destruct;
-- (void)dealloc;
-- (void)handleNotification:(id)arg1;
 - (void)onTapCommit:(id)arg1;
 - (void)setupView;
 - (void)viewWillAppear:(_Bool)arg1;

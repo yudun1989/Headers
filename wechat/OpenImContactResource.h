@@ -31,7 +31,7 @@
 @property(retain, nonatomic) NSString *acctType; // @synthesize acctType;
 - (void).cxx_destruct;
 @property(readonly, copy) NSString *description;
-- (const map_490096f0 *)getValueTagIndexMap;
+- (const map_f8690629 *)getValueTagIndexMap;
 - (id)getValueTypeTable;
 
 // Remaining properties

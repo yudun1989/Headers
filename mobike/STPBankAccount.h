@@ -39,6 +39,8 @@
 @property(copy, nonatomic) NSString *country; // @synthesize country;
 @property(copy, nonatomic) NSString *routingNumber; // @synthesize routingNumber;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) _Bool disabled;
+@property(readonly, nonatomic) _Bool validated;
 - (_Bool)isEqualToBankAccount:(id)arg1;
 @property(readonly) unsigned long long hash;
 - (_Bool)isEqual:(id)arg1;

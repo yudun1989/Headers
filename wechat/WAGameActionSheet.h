@@ -6,7 +6,7 @@
 
 #import <MMCommon/MMObject.h>
 
-@class CContact, NSArray, NSString, UIButton, UIView;
+@class CContact, NSArray, NSString, UIButton, UIColor, UIView;
 @protocol WAGameActionSheetDelegate;
 
 @interface WAGameActionSheet : MMObject
@@ -19,6 +19,25 @@
     NSString *m_cancelTitle;
     _Bool m_isLandScape;
     _Bool m_isNewGroup;
+    double kButtonFontSize;
+    double MENU_ICON_LRMARGIN;
+    double MENU_ICON_SIZE;
+    double MENU_FONT_SIZE;
+    double MENU_TO_TITLE;
+    double kButtonHeight;
+    double kHeaderButtonIconSize;
+    double WAActivityHeadHonrizonMargin;
+    UIColor *kMaskViewBGColor;
+    double kMaskViewBGAlpha;
+    UIColor *kContainerViewBGColor;
+    UIColor *kMenuButtonColor;
+    UIColor *kMenuButtonHighlightColor;
+    UIColor *kMenuBorderColor;
+    UIColor *kButtonTitleColor;
+    UIColor *kMenuTitleColor;
+    long long BLUR_EFFECT_TYPE;
+    double kActionSheetWidth;
+    double kBorderWidth;
     _Bool _isUseWeAppModule;
     _Bool _isDismissForbidAnimation;
     id <WAGameActionSheetDelegate> _delegate;
@@ -66,6 +85,8 @@
 - (void)showInView:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)dealloc;
 - (id)initWithUsrName:(id)arg1 orientation:(long long)arg2 appType:(unsigned long long)arg3 cancelButtonTitle:(id)arg4 buttonTitleArray:(id)arg5 delegate:(id)arg6;
+- (double)LANDSCAPEFLOAT:(id)arg1 withPortrait:(id)arg2;
+- (id)STYLECOLORWithLight:(id)arg1 ligthAlpha:(double)arg2 dark:(id)arg3 darkAlpha:(double)arg4;
 
 @end
 

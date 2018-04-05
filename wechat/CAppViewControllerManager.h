@@ -10,28 +10,25 @@
 #import "IMsgExt-Protocol.h"
 #import "IVoiceReminderExt-Protocol.h"
 #import "MMKernelExt-Protocol.h"
-#import "MMTabBarControllerDelegate-Protocol.h"
 #import "MMThemeManagerExt-Protocol.h"
+#import "MainTabBarControllerDelegate-Protocol.h"
 #import "UIAlertViewDelegate-Protocol.h"
 #import "UISplitViewControllerDelegate-Protocol.h"
 #import "UITabBarControllerDelegate-Protocol.h"
 #import "WCFacadeExt-Protocol.h"
-#import "WCPayThirdLaunchNotify-Protocol.h"
 #import "WCPayWalletLockVerifyLogicDelegate-Protocol.h"
 
-@class CMMVector, MMMainViewController, MMSplitViewController, MMTabBarController, NSMutableArray, NSString, PreEnterWechatLogic, SplitViewEmptyViewController, UIViewController, UIWindow;
+@class CMMVector, MMMainViewController, MMSplitViewController, MainTabBarViewController, NSMutableArray, NSString, PreEnterWechatLogic, SplitViewEmptyViewController, UIViewController, UIWindow;
 
-@interface CAppViewControllerManager : MMObject <WCPayThirdLaunchNotify, MMTabBarControllerDelegate, WCPayWalletLockVerifyLogicDelegate, UISplitViewControllerDelegate, AppUserInterfaceSizeDelegate, UITabBarControllerDelegate, MMThemeManagerExt, MMKernelExt, IMsgExt, IVoiceReminderExt, WCFacadeExt, UIAlertViewDelegate>
+@interface CAppViewControllerManager : MMObject <MainTabBarControllerDelegate, WCPayWalletLockVerifyLogicDelegate, UISplitViewControllerDelegate, AppUserInterfaceSizeDelegate, UITabBarControllerDelegate, MMThemeManagerExt, MMKernelExt, IMsgExt, IVoiceReminderExt, WCFacadeExt, UIAlertViewDelegate>
 {
     UIWindow *m_window;
-    NSMutableArray *m_arrViewController;
-    NSMutableArray *m_arrTabBarBaseViewController;
     unsigned int m_uCurrentTabViewIndex;
     CMMVector *m_vecViewController;
     _Bool m_bFromReg;
     _Bool m_isChangingTheme;
     PreEnterWechatLogic *m_PreEnterWechatLogic;
-    MMTabBarController *m_tabbarController;
+    MainTabBarViewController *m_tabbarController;
     MMMainViewController *m_mainViewController;
     MMSplitViewController *m_splitViewController;
     SplitViewEmptyViewController *m_emptyVc;
@@ -118,7 +115,6 @@
 - (void)openMainFrame:(_Bool)arg1 showStyle:(id)arg2;
 - (void)openMainFrameFirstStep:(_Bool)arg1;
 - (void)openFirstView;
-- (void)OnMainFrameDoubleClicked:(id)arg1;
 - (void)alertView:(id)arg1 clickedButtonAtIndex:(long long)arg2;
 - (void)setAllTabBarItemEnabled:(_Bool)arg1;
 - (void)newMessageByEnterpriseContact:(id)arg1 msgWrapToAdd:(id)arg2 showMainView:(_Bool)arg3 showSessionList:(_Bool)arg4 animated:(_Bool)arg5 extraInfo:(id)arg6;
@@ -132,8 +128,9 @@
 - (void)moveToRootViewController;
 - (void)dismissToRootViewControllerForIndex:(long long)arg1;
 - (void)dismissToRootViewController;
-- (void)tabBarController:(id)arg1 didSelectViewController:(id)arg2;
-- (_Bool)tabBarController:(id)arg1 shouldSelectViewController:(id)arg2;
+- (void)mainTabBarController:(id)arg1 didSelectViewController:(id)arg2;
+- (_Bool)mainTabBarController:(id)arg1 shouldSelectViewController:(id)arg2;
+- (void)onMainTabBarMainFrameDoubleClicked:(id)arg1;
 - (double)getLeftColumnWidthForSplitView;
 - (void)setRightViewControllerForSplitView:(id)arg1 forPush:(_Bool)arg2;
 - (void)setPrimaryShown;
@@ -163,11 +160,7 @@
 - (_Bool)shouldCreateSplitView;
 - (void)createTabbarController;
 - (void)replaceTwoFile:(id)arg1 desFile:(id)arg2;
-- (void)createMoreViewController;
-- (void)createFindFriendViewController;
 - (void)recreateFindFriendViewController;
-- (void)createContactsViewController;
-- (void)createNewMainFrameViewController;
 - (id)getTabBarBaseViewController:(unsigned long long)arg1;
 - (id)getNewMainFrameViewController;
 - (id)getPreEnterWechatLogic;
@@ -178,8 +171,6 @@
 - (void)resendAllFailMsgFromLocalNotification:(id)arg1;
 - (_Bool)checkResentFailMsgForNotification:(id)arg1 isFromLaunch:(_Bool)arg2;
 - (void)openView:(unsigned int)arg1 launchOptions:(id)arg2 isAppUpdated:(_Bool)arg3;
-- (void)onWCPayThirdLaunchEnd;
-- (void)onWCPayThirdLaunchComplete;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

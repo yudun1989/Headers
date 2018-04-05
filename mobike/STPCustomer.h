@@ -7,18 +7,18 @@
 #import <objc/NSObject.h>
 
 @class NSArray, NSString;
-@protocol STPSourceProtocol;
+@protocol STPSource;
 
 @interface STPCustomer : NSObject
 {
     NSString *_stripeID;
-    id <STPSourceProtocol> _defaultSource;
+    id <STPSource> _defaultSource;
     NSArray *_sources;
 }
 
 + (id)customerWithStripeID:(id)arg1 defaultSource:(id)arg2 sources:(id)arg3;
 @property(retain, nonatomic) NSArray *sources; // @synthesize sources=_sources;
-@property(retain, nonatomic) id <STPSourceProtocol> defaultSource; // @synthesize defaultSource=_defaultSource;
+@property(retain, nonatomic) id <STPSource> defaultSource; // @synthesize defaultSource=_defaultSource;
 @property(copy, nonatomic) NSString *stripeID; // @synthesize stripeID=_stripeID;
 - (void).cxx_destruct;
 

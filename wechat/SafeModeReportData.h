@@ -32,7 +32,7 @@
 - (void).cxx_destruct;
 - (id)initWithID:(int)arg1 ext:(id)arg2 isReportNow:(_Bool)arg3 isKeyLog:(_Bool)arg4;
 - (id)initWithID:(int)arg1 key:(int)arg2 value:(int)arg3;
-- (const map_490096f0 *)getValueTagIndexMap;
+- (const map_f8690629 *)getValueTagIndexMap;
 - (id)getValueTypeTable;
 
 // Remaining properties

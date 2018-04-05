@@ -195,9 +195,9 @@
 + (id)GetPathOfLocalUsrDirAsync;
 + (id)GetPathOfUsrWCBKSetting;
 + (id)GetPathOfUsrChatBKSetting;
-+ (basic_string_a490aa4c)GetMd5StrOfUsr:(id)arg1;
++ (struct basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char>>)GetMd5StrOfUsr:(id)arg1;
 + (id)GetMd5StrsOfOtherUsrs;
-+ (basic_string_a490aa4c)GetMd5StrOfLocalUsr;
++ (struct basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char>>)GetMd5StrOfLocalUsr;
 + (void)SetLocalUsrNameMD5:(id)arg1;
 + (id)GetHttpEndData;
 + (char *)NewStrFromNSStr:(id)arg1;

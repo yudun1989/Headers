@@ -23,9 +23,9 @@
     NSString *_resultData;
     NSString *_resultType;
     char *_sendImage;
-    basic_string_a490aa4c _decodeData;
-    basic_string_a490aa4c _decodeType;
-    basic_string_a490aa4c _decodeCharset;
+    basic_string_90719d97 _decodeData;
+    basic_string_90719d97 _decodeType;
+    basic_string_90719d97 _decodeCharset;
     struct QBAR_REPORT_MSG _reportMsg;
     struct QBar *_qbar;
     struct QBAR_QRCODE_INFO _qrcodeInfo;

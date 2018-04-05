@@ -6,14 +6,14 @@
 
 #import <objc/NSObject.h>
 
-@class MBKBikeRidingService, MBKBookingService, MBKMobikeRidingResponseObject, MBKUnlockService, NGEvent, NGMachine, NGState, NSMutableArray, NSNumber, RACDisposable, RACSignal;
+@class MBKBikeRidingService, MBKBookingService, MBKUnlockService, NGEvent, NGMachine, NGState, NSMutableArray, NSNumber, RACDisposable, RACSignal, RACTuple;
 @protocol OS_dispatch_queue;
 
 @interface MBKRidingStatusManager : NSObject
 {
     _Bool _isApiBusy;
     NSNumber *_lastRidingState;
-    MBKMobikeRidingResponseObject *_procedureResponse;
+    RACTuple *_procedureResponseTuple;
     NGState *_rdNoneState;
     NGState *_rdUnlockingState;
     NGState *_rdBookingState;
@@ -60,7 +60,7 @@
 @property(retain, nonatomic) NGState *rdBookingState; // @synthesize rdBookingState=_rdBookingState;
 @property(retain, nonatomic) NGState *rdUnlockingState; // @synthesize rdUnlockingState=_rdUnlockingState;
 @property(retain, nonatomic) NGState *rdNoneState; // @synthesize rdNoneState=_rdNoneState;
-@property(retain, nonatomic) MBKMobikeRidingResponseObject *procedureResponse; // @synthesize procedureResponse=_procedureResponse;
+@property(retain, nonatomic) RACTuple *procedureResponseTuple; // @synthesize procedureResponseTuple=_procedureResponseTuple;
 @property(nonatomic) NSNumber *lastRidingState; // @synthesize lastRidingState=_lastRidingState;
 - (void).cxx_destruct;
 - (void)dealloc;
@@ -84,7 +84,7 @@
 - (void)forceCancelBookingProcedure;
 - (id)cancelBookingProcedureWithBikeId:(id)arg1 userId:(id)arg2;
 - (id)startBookingProcedureWithBikeId:(id)arg1 userId:(id)arg2 bikeType:(id)arg3;
-- (id)startRidingProcedureWithBikeId:(id)arg1 bikeType:(long long)arg2 epdata:(id)arg3 time:(id)arg4 warnCodes:(id)arg5 userCoordinate:(struct CLLocationCoordinate2D)arg6;
+- (id)startRidingProcedureWithBikeId:(id)arg1 bikeType:(long long)arg2 epdata:(id)arg3 time:(id)arg4 bycode:(_Bool)arg5 warnCodes:(id)arg6 userCoordinate:(struct CLLocationCoordinate2D)arg7;
 - (void)startRidingProcedureFromRidingStatusWithCompletion:(CDUnknownBlockType)arg1;
 - (void)startRidingProcedureFromRidingStatus;
 - (void)startUnlock;

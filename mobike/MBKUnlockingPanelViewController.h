@@ -14,6 +14,7 @@
 {
     MBKRidingStatusSubscriber *_subscriber;
     long long unlockFailedType;
+    NSString *errorString;
     NSString *_bikeId;
     MBKUnlockPanelView *_panelView;
     MBKMPLInfoPanelView *_mplView;
@@ -24,6 +25,7 @@
 @property(retain, nonatomic) MBKMPLInfoPanelView *mplView; // @synthesize mplView=_mplView;
 @property(retain, nonatomic) MBKUnlockPanelView *panelView; // @synthesize panelView=_panelView;
 - (void).cxx_destruct;
+- (void)logUnlockedWithResult:(id)arg1 bikeID:(id)arg2;
 - (CDUnknownBlockType)pushAnimationFromViewController:(struct UIViewController *)arg1;
 - (id)getSnapShotOfLoadingBar;
 - (void)showErrorWithMessage:(id)arg1;

@@ -10,6 +10,8 @@
 {
 }
 
++ (void)logWithBuilder:(CDUnknownBlockType)arg1;
++ (void)logWithConvenience:(CDUnknownBlockType)arg1;
 + (void)log:(CDUnknownBlockType)arg1 withPriority:(long long)arg2;
 + (void)log:(CDUnknownBlockType)arg1;
 - (void)logPageLeaveWithPageName:(int)arg1;

@@ -15,7 +15,6 @@
 + (id)stp_cardErrorInvalidExpMonthUserMessage;
 + (id)stp_cardInvalidCVCUserMessage;
 + (id)stp_cardErrorInvalidNumberUserMessage;
-+ (id)stp_genericConnectionError;
 + (id)stp_genericFailedToParseResponseError;
 + (id)stp_errorFromStripeResponse:(id)arg1;
 - (_Bool)stp_isURLSessionCancellationError;

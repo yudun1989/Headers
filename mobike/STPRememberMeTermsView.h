@@ -14,18 +14,15 @@
 {
     UITextView *_textView;
     STPTheme *_theme;
-    CDUnknownBlockType _pushViewControllerBlock;
     struct UIEdgeInsets _insets;
 }
 
-@property(copy, nonatomic) CDUnknownBlockType pushViewControllerBlock; // @synthesize pushViewControllerBlock=_pushViewControllerBlock;
 @property(nonatomic) struct UIEdgeInsets insets; // @synthesize insets=_insets;
 @property(retain, nonatomic) STPTheme *theme; // @synthesize theme=_theme;
 @property(nonatomic) __weak UITextView *textView; // @synthesize textView=_textView;
 - (void).cxx_destruct;
 - (_Bool)textView:(id)arg1 shouldInteractWithURL:(id)arg2 inRange:(struct _NSRange)arg3;
 - (void)layoutSubviews;
-- (double)heightForWidth:(double)arg1;
 - (void)updateAppearance;
 - (id)buildAttributedString;
 - (id)initWithFrame:(struct CGRect)arg1;

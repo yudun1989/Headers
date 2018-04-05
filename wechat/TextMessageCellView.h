@@ -49,7 +49,6 @@
 - (void)onTranslateMessageFailed:(id)arg1 errTip:(id)arg2;
 - (void)onClickTipsBtn:(id)arg1 Index:(long long)arg2 tipTag:(long long)arg3;
 - (void)onWindowHide;
-- (void)onHide;
 - (void)onLongTouch:(struct CGPoint)arg1;
 - (void)onTouchDownRepeat;
 - (void)translateMsg;

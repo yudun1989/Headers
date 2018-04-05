@@ -6,7 +6,7 @@
 
 #import <objc/NSObject.h>
 
-@class NSString;
+@class NSDictionary, NSString;
 
 @interface MBKAdMetricsPopupModel : NSObject
 {
@@ -33,8 +33,10 @@
     NSString *_shareTitle;
     NSString *_shareBack;
     NSString *_wechatInfo;
+    NSDictionary *_recordInfo;
 }
 
+@property(copy, nonatomic) NSDictionary *recordInfo; // @synthesize recordInfo=_recordInfo;
 @property(copy, nonatomic) NSString *wechatInfo; // @synthesize wechatInfo=_wechatInfo;
 @property(copy, nonatomic) NSString *shareBack; // @synthesize shareBack=_shareBack;
 @property(copy, nonatomic) NSString *shareTitle; // @synthesize shareTitle=_shareTitle;

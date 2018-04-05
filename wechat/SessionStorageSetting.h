@@ -19,7 +19,7 @@
 + (void)initialize;
 @property(nonatomic) unsigned int sessionVersion; // @synthesize sessionVersion;
 @property(nonatomic) _Bool isHasRecord; // @synthesize isHasRecord;
-- (const map_490096f0 *)getValueTagIndexMap;
+- (const map_f8690629 *)getValueTagIndexMap;
 - (id)getValueTypeTable;
 
 // Remaining properties

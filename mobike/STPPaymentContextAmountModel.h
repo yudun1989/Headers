@@ -15,8 +15,8 @@
 }
 
 - (void).cxx_destruct;
-- (id)paymentSummaryItemsWithCurrency:(id)arg1 companyName:(id)arg2 shippingMethod:(id)arg3;
-- (long long)paymentAmountWithCurrency:(id)arg1 shippingMethod:(id)arg2;
+- (id)paymentSummaryItemsWithCurrency:(id)arg1 companyName:(id)arg2;
+- (long long)paymentAmountWithCurrency:(id)arg1;
 - (id)initWithPaymentSummaryItems:(id)arg1;
 - (id)initWithAmount:(long long)arg1;
 

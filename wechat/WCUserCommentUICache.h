@@ -11,8 +11,8 @@
 @interface WCUserCommentUICache : NSObject
 {
     WCUserComment *m_userComment;
-    map_104bc404 m_contentHeight;
-    map_96d7b27b m_userCommentLayoutStyles;
+    map_a50a422b m_contentHeight;
+    map_729765ba m_userCommentLayoutStyles;
 }
 
 @property(retain, nonatomic) WCUserComment *userComment; // @synthesize userComment=m_userComment;
@@ -20,8 +20,8 @@
 - (void).cxx_destruct;
 - (void)dealloc;
 - (_Bool)isEmpty;
-- (map_96d7b27b *)userCommentLayoutStyles;
-- (map_104bc404 *)contentHeight;
+- (map_729765ba *)userCommentLayoutStyles;
+- (map_a50a422b *)contentHeight;
 
 @end
 

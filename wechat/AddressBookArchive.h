@@ -20,7 +20,7 @@
 @property(retain, nonatomic) NSMutableSet *emails; // @synthesize emails;
 @property(retain, nonatomic) NSMutableSet *phones; // @synthesize phones;
 - (void).cxx_destruct;
-- (const map_490096f0 *)getValueTagIndexMap;
+- (const map_f8690629 *)getValueTagIndexMap;
 - (id)getValueTypeTable;
 
 // Remaining properties

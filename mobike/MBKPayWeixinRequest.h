@@ -6,6 +6,8 @@
 
 #import "MBKMobikeRequest.h"
 
+@class NSString;
+
 @interface MBKPayWeixinRequest : MBKMobikeRequest
 {
     long long _paytype;
@@ -13,13 +15,16 @@
     unsigned long long _payapproach;
     long long _index;
     long long _cardId;
+    NSString *_productType;
 }
 
+@property(copy, nonatomic) NSString *productType; // @synthesize productType=_productType;
 @property(nonatomic) long long cardId; // @synthesize cardId=_cardId;
 @property(nonatomic) long long index; // @synthesize index=_index;
 @property(nonatomic) unsigned long long payapproach; // @synthesize payapproach=_payapproach;
 @property(nonatomic) long long totalfee; // @synthesize totalfee=_totalfee;
 @property(nonatomic) long long paytype; // @synthesize paytype=_paytype;
+- (void).cxx_destruct;
 - (id)init;
 
 @end

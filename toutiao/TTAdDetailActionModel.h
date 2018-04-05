@@ -18,10 +18,12 @@
     NSString *_web_url;
     NSString *_open_url;
     NSString *_web_title;
+    NSArray *_open_url_list;
     NSDictionary *_extraDict;
 }
 
 @property(retain, nonatomic) NSDictionary *extraDict; // @synthesize extraDict=_extraDict;
+@property(retain, nonatomic) NSArray *open_url_list; // @synthesize open_url_list=_open_url_list;
 @property(copy, nonatomic) NSString *web_title; // @synthesize web_title=_web_title;
 @property(copy, nonatomic) NSString *open_url; // @synthesize open_url=_open_url;
 @property(copy, nonatomic) NSString *web_url; // @synthesize web_url=_web_url;
@@ -35,7 +37,6 @@
 @property(readonly, copy) NSString *debugDescription;
 @property(readonly, copy) NSString *description;
 @property(readonly) unsigned long long hash;
-@property(retain, nonatomic) NSArray *open_url_list;
 @property(readonly) Class superclass;
 
 @end

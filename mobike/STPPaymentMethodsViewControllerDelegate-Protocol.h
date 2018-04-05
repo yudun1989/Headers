@@ -10,7 +10,6 @@
 @protocol STPPaymentMethod;
 
 @protocol STPPaymentMethodsViewControllerDelegate <NSObject>
-- (void)paymentMethodsViewControllerDidCancel:(STPPaymentMethodsViewController *)arg1;
 - (void)paymentMethodsViewControllerDidFinish:(STPPaymentMethodsViewController *)arg1;
 - (void)paymentMethodsViewController:(STPPaymentMethodsViewController *)arg1 didFailToLoadWithError:(NSError *)arg2;
 - (void)paymentMethodsViewController:(STPPaymentMethodsViewController *)arg1 didSelectPaymentMethod:(id <STPPaymentMethod>)arg2;

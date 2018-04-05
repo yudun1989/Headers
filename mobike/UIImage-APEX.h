@@ -7,7 +7,6 @@
 #import <UIKit/UIImage.h>
 
 @interface UIImage (APEX)
-+ (id)imageFromBundleWithName:(id)arg1;
-+ (id)screenshot;
++ (id)apex_imageFromBundleWithName:(id)arg1;
 @end
 

@@ -16,6 +16,8 @@
     long long currentIndex;
     NSMutableArray *digitViews;
     NSMutableArray *bgImageViews;
+    _Bool isCustomPadding;
+    _Bool isCustomMargin;
     _Bool _matchNumberOfDigitsWithValueLength;
     long long _value;
     long long _numberOfDigits;
@@ -34,10 +36,24 @@
     UIColor *_digitViewShadowColor;
     UIColor *_digitViewHighlightedShadowColor;
     NSString *_activeString;
+    UIColor *_digitViewBorderColor;
+    double _digitViewBorderWidth;
+    double _digitViewCornerRadius;
+    UIColor *_digitViewHighlightedBorderColor;
+    double _digitViewHighlightedBorderWidth;
+    double _digitViewHighlightedCornerRadius;
+    double _margin;
     struct CGSize _digitViewShadowOffset;
     struct CGSize _digitViewHighlightedShadowOffset;
 }
 
+@property(nonatomic) double margin; // @synthesize margin=_margin;
+@property(nonatomic) double digitViewHighlightedCornerRadius; // @synthesize digitViewHighlightedCornerRadius=_digitViewHighlightedCornerRadius;
+@property(nonatomic) double digitViewHighlightedBorderWidth; // @synthesize digitViewHighlightedBorderWidth=_digitViewHighlightedBorderWidth;
+@property(retain, nonatomic) UIColor *digitViewHighlightedBorderColor; // @synthesize digitViewHighlightedBorderColor=_digitViewHighlightedBorderColor;
+@property(nonatomic) double digitViewCornerRadius; // @synthesize digitViewCornerRadius=_digitViewCornerRadius;
+@property(nonatomic) double digitViewBorderWidth; // @synthesize digitViewBorderWidth=_digitViewBorderWidth;
+@property(retain, nonatomic) UIColor *digitViewBorderColor; // @synthesize digitViewBorderColor=_digitViewBorderColor;
 @property(retain) NSString *activeString; // @synthesize activeString=_activeString;
 @property(nonatomic) struct CGSize digitViewHighlightedShadowOffset; // @synthesize digitViewHighlightedShadowOffset=_digitViewHighlightedShadowOffset;
 @property(retain, nonatomic) UIColor *digitViewHighlightedShadowColor; // @synthesize digitViewHighlightedShadowColor=_digitViewHighlightedShadowColor;

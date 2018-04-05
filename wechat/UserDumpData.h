@@ -18,7 +18,7 @@
 @property(retain, nonatomic) NSData *data; // @synthesize data;
 @property(nonatomic) unsigned int compressedBufSize; // @synthesize compressedBufSize;
 - (void).cxx_destruct;
-- (const map_490096f0 *)getValueTagIndexMap;
+- (const map_f8690629 *)getValueTagIndexMap;
 - (id)getValueTypeTable;
 
 @end

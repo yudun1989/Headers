@@ -13,10 +13,10 @@
     WCDataItem *m_dataItem;
     NSMutableDictionary *m_dicLayerIdShowTipView;
     _Bool m_isShowDetail;
-    map_104bc404 m_contentDescHeight;
-    map_96d7b27b m_contentDescLayoutStyles[4];
-    map_104bc404 m_likeUserHeight;
-    map_96d7b27b m_likeUserLayoutStyles;
+    map_a50a422b m_contentDescHeight;
+    map_729765ba m_contentDescLayoutStyles[4];
+    map_a50a422b m_likeUserHeight;
+    map_729765ba m_likeUserLayoutStyles;
 }
 
 @property(retain, nonatomic) NSMutableDictionary *dicLayerIdShowTipView; // @synthesize dicLayerIdShowTipView=m_dicLayerIdShowTipView;
@@ -26,10 +26,10 @@
 - (void).cxx_destruct;
 - (void)dealloc;
 - (_Bool)isEmpty;
-- (map_96d7b27b *)likeUserLayoutStyles;
-- (map_104bc404 *)likeUserHeight;
-- (map_96d7b27b *)contentDescLayoutStyles;
-- (map_104bc404 *)contentDescHeight;
+- (map_729765ba *)likeUserLayoutStyles;
+- (map_a50a422b *)likeUserHeight;
+- (map_729765ba *)contentDescLayoutStyles;
+- (map_a50a422b *)contentDescHeight;
 
 @end
 

@@ -17,6 +17,9 @@
 @property(readonly, nonatomic) NSObject<OS_dispatch_queue> *processQueue; // @synthesize processQueue=_processQueue;
 @property(nonatomic) __weak id <MBKNetworkExecutorDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
+- (void)cancelAllRequests;
+- (void)cancelRequest:(id)arg1;
+- (void)executeRequest:(id)arg1;
 - (id)init;
 - (id)initWithProcessQueue:(id)arg1;
 

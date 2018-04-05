@@ -18,6 +18,7 @@
 + (id)deepLinkByUrl:(id)arg1;
 + (id)getDeepLinkNameFromUrl:(id)arg1;
 + (id)deepLinkByName:(id)arg1;
++ (void)initialize;
 
 @end
 

@@ -6,25 +6,32 @@
 
 #import <objc/NSObject.h>
 
-@class AppLog_User, MBKAnalyticsManager;
+@class CA_User, MBKAnalyticsManager, NSString;
 
 @interface MBKCoreAnalyticsManager : NSObject
 {
-    AppLog_User *_user;
+    CA_User *_user;
+    NSString *_appName;
+    CDUnknownBlockType _getCitycodeBlock;
+    CDUnknownBlockType _getLocationBlock;
+    CDUnknownBlockType _getCountryCodeBlock;
     MBKAnalyticsManager *_manager;
 }
 
 + (void)triggerUploadManually;
-+ (void)setUseTestServer:(_Bool)arg1;
 + (void)destroySharedInstance;
 + (void)clearAllCachedLogs;
 + (void)recordLog:(id)arg1 withPriority:(long long)arg2;
-+ (void)initializeSharedIntance;
++ (void)initializeSharedIntanceWithUsingTestServer:(_Bool)arg1;
 + (id)sharedInstance;
 @property(retain, nonatomic) MBKAnalyticsManager *manager; // @synthesize manager=_manager;
-@property(retain, nonatomic) AppLog_User *user; // @synthesize user=_user;
+@property(copy, nonatomic) CDUnknownBlockType getCountryCodeBlock; // @synthesize getCountryCodeBlock=_getCountryCodeBlock;
+@property(copy, nonatomic) CDUnknownBlockType getLocationBlock; // @synthesize getLocationBlock=_getLocationBlock;
+@property(copy, nonatomic) CDUnknownBlockType getCitycodeBlock; // @synthesize getCitycodeBlock=_getCitycodeBlock;
+@property(retain, nonatomic) NSString *appName; // @synthesize appName=_appName;
+@property(retain, nonatomic) CA_User *user; // @synthesize user=_user;
 - (void).cxx_destruct;
-- (id)init;
+- (id)initWithTestServer:(_Bool)arg1;
 
 @end
 

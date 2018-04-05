@@ -8,10 +8,11 @@
 
 #import "IClearDataMgrExt-Protocol.h"
 #import "MMService-Protocol.h"
+#import "WCLazyInitObjectProtocol-Protocol.h"
 
-@class NSBundle, NSString;
+@class MMLanguageCache, NSBundle, NSString;
 
-@interface MMLanguageMgr : MMService <IClearDataMgrExt, MMService>
+@interface MMLanguageMgr : MMService <IClearDataMgrExt, WCLazyInitObjectProtocol, MMService>
 {
     NSString *m_nsCurSystemLanguage;
     NSString *m_curLanguage;
@@ -20,8 +21,12 @@
     NSBundle *m_backupBundle;
     NSBundle *m_updateBackupBundle;
     _Bool bDownloadPackageRightNow;
+    MMLanguageCache *m_lanCache;
+    _Bool m_firstInitLanguage;
+    _Bool haveLazyInit;
 }
 
+@property(nonatomic) _Bool haveLazyInit; // @synthesize haveLazyInit;
 - (void).cxx_destruct;
 - (void)onDiskStorageWarningCleanedSize:(unsigned long long *)arg1 subQueue:(id)arg2;
 - (void)onDiskStorageWarningCleanedSize:(unsigned long long *)arg1 CacheMask:(unsigned int)arg2;
@@ -45,6 +50,8 @@
 - (void)dealloc;
 - (id)init;
 - (void)initLanguage;
+- (id)getCacheString:(id)arg1;
+- (void)initCache;
 - (_Bool)isLanaguageValid;
 - (void)initBackUpLanguage;
 - (_Bool)ifNeedBackupBundle;
@@ -60,6 +67,8 @@
 - (id)getLangPackageFileForLang:(id)arg1;
 - (id)getLangPackagePathForLang:(id)arg1;
 - (id)getLangPackageRootPath;
+- (void)goToLazyInitObject;
+- (double)timeToLazyInitAfterOpenFirstView;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

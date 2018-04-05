@@ -105,7 +105,8 @@
 - (void)HandleAuthAtFirstTime;
 - (void)StopAllEvent;
 - (void)Stop;
-- (unsigned int)Start:(id)arg1;
+- (void)Start:(id)arg1;
+- (unsigned int)PreStart;
 - (void)LoadLastSvrID;
 - (void)dealloc;
 - (id)init;

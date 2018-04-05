@@ -35,7 +35,7 @@
 @property(retain, nonatomic) NSString *username; // @synthesize username;
 - (void).cxx_destruct;
 - (id)initWithSessionInfo:(id)arg1 withChatIndex:(unsigned int)arg2;
-- (const map_490096f0 *)getValueTagIndexMap;
+- (const map_f8690629 *)getValueTagIndexMap;
 - (id)getValueTypeTable;
 
 // Remaining properties

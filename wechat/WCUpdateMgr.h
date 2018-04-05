@@ -8,10 +8,12 @@
 
 #import "WCUpdateResourceExt-Protocol.h"
 
-@class WCUpdateInfo;
+@class NSBundle, WCUpdateInfo;
 
 @interface WCUpdateMgr : NSObject <WCUpdateResourceExt>
 {
+    NSBundle *_resourceBundle;
+    NSBundle *_languageBundle;
     WCUpdateInfo *_patchInfo;
 }
 
@@ -27,12 +29,15 @@
 - (void)onPatchResDeleteFinish;
 - (void)onPatchResUpdateFinish:(unsigned long long)arg1;
 - (void)dealloc;
-- (void)loadDiscoverEntranceView;
 - (void)forceUpdate:(unsigned int)arg1;
 - (void)registerExtension;
 - (_Bool)loadBundle:(id)arg1;
 - (void)loadAndExecute;
 - (id)init;
+- (id)getStringForCurLanguage:(id)arg1 defaultTo:(id)arg2;
+- (id)getBundleResource:(id)arg1 ext:(id)arg2;
+- (id)imageNamed:(id)arg1;
+- (_Bool)loadResource;
 
 @end
 

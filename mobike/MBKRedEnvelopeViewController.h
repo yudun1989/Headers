@@ -4,13 +4,13 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-#import "MBKBaseWebViewController.h"
+#import "MBKTransparentWebViewController.h"
 
 #import "UIWebViewDelegate-Protocol.h"
 
 @class MBKRedPacketPlaceholderView, NSString, UIButton, UIView;
 
-@interface MBKRedEnvelopeViewController : MBKBaseWebViewController <UIWebViewDelegate>
+@interface MBKRedEnvelopeViewController : MBKTransparentWebViewController <UIWebViewDelegate>
 {
     double _redEnvelopeRatio;
     long long _redEnvelopeType;
@@ -34,10 +34,7 @@
 - (void)moveDownEnvelope;
 - (void)onTapOpenBtn:(id)arg1;
 - (void)showRedEnvelope;
-- (void)dismiss;
-- (void)show;
 - (void)viewDidLoad;
-- (void)viewDidLayoutSubviews;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

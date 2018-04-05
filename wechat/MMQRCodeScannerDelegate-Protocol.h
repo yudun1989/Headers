@@ -7,7 +7,7 @@
 @class NSString;
 
 @protocol MMQRCodeScannerDelegate
-- (void)onQRCodeScanSuccess:(NSString *)arg1 atPoint:(vector_c080079c)arg2 originSize:(struct CGSize)arg3;
+- (void)onQRCodeScanSuccess:(NSString *)arg1 atPoint:(vector_552c3471)arg2 originSize:(struct CGSize)arg3;
 - (void)onNoQRCode;
 @end
 

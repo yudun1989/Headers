@@ -19,7 +19,7 @@
 + (void)initialize;
 @property(nonatomic) double channelInvalidTimestamp; // @synthesize channelInvalidTimestamp;
 @property(nonatomic) unsigned long long shopId; // @synthesize shopId;
-- (const map_490096f0 *)getValueTagIndexMap;
+- (const map_f8690629 *)getValueTagIndexMap;
 - (id)getValueTypeTable;
 
 // Remaining properties

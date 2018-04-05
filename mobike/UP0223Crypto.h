@@ -10,6 +10,12 @@
 {
 }
 
++ (id)decryptionUseAESToJSONObject:(id)arg1 withKey:(id)arg2;
++ (id)encryptionUseAESFormJSONObject:(id)arg1 withKey:(id)arg2;
++ (id)decryptionUseAESToString:(id)arg1 withKey:(id)arg2;
++ (id)encryptionUseAESFormString:(id)arg1 withKey:(id)arg2;
++ (id)decryptionUseAESToData:(id)arg1 withKey:(id)arg2;
++ (id)encryptionUseAESFormData:(id)arg1 withKey:(id)arg2;
 + (id)parseHexStringToByteArray:(id)arg1;
 + (id)parseByteArrayToHexString:(char *)arg1;
 + (id)decryptionUseDES:(id)arg1 withKey:(id)arg2;

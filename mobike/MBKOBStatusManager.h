@@ -12,6 +12,8 @@
 
 + (id)sharedInstance;
 @property(readonly, nonatomic) long long obStatusType;
+- (void)uploadOBCompleteSignal;
+- (id)init;
 
 @end
 

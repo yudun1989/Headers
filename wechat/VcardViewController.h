@@ -22,13 +22,13 @@
     MMVcardItem *_vcardItem;
     MMTableView *_tableView;
     NSString *_copyedText;
-    map_490096f0 _mapSectionToSectionType;
-    map_490096f0 _mapPersonCellToCellType;
-    map_490096f0 _mapUrlCellToCellType;
-    map_490096f0 _mapBirthdayCellToCellType;
-    map_490096f0 _mapNoteCellToCellType;
-    map_490096f0 _mapLogoCellToCellType;
-    map_490096f0 _mapSoundCellToCellType;
+    map_f8690629 _mapSectionToSectionType;
+    map_f8690629 _mapPersonCellToCellType;
+    map_f8690629 _mapUrlCellToCellType;
+    map_f8690629 _mapBirthdayCellToCellType;
+    map_f8690629 _mapNoteCellToCellType;
+    map_f8690629 _mapLogoCellToCellType;
+    map_f8690629 _mapSoundCellToCellType;
 }
 
 @property(retain, nonatomic) NSString *copyedText; // @synthesize copyedText=_copyedText;

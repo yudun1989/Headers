@@ -26,7 +26,7 @@
 @property(nonatomic) unsigned long long version; // @synthesize version;
 @property(nonatomic) long long msgSvrId; // @synthesize msgSvrId;
 - (void).cxx_destruct;
-- (const map_490096f0 *)getValueTagIndexMap;
+- (const map_f8690629 *)getValueTagIndexMap;
 - (id)getValueTypeTable;
 
 // Remaining properties

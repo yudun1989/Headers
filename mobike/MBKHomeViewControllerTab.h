@@ -12,16 +12,13 @@
 {
     unsigned long long _type;
     NSString *_tabName;
-    NSString *_eventName;
     UIViewController *_controller;
 }
 
 @property(retain, nonatomic) UIViewController *controller; // @synthesize controller=_controller;
-@property(copy, nonatomic) NSString *eventName; // @synthesize eventName=_eventName;
 @property(copy, nonatomic) NSString *tabName; // @synthesize tabName=_tabName;
-@property(readonly, nonatomic) unsigned long long type; // @synthesize type=_type;
+@property(nonatomic) unsigned long long type; // @synthesize type=_type;
 - (void).cxx_destruct;
-- (void)setType:(unsigned long long)arg1;
 - (id)initWithType:(unsigned long long)arg1 name:(id)arg2 controller:(id)arg3;
 
 @end

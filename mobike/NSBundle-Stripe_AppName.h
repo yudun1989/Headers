@@ -7,7 +7,6 @@
 #import <Foundation/NSBundle.h>
 
 @interface NSBundle (Stripe_AppName)
-+ (id)stp_applicationVersion;
 + (id)stp_applicationName;
 @end
 

@@ -40,7 +40,6 @@
 - (void)PushOtherBaseMsgControllerByContact:(id)arg1 navigationController:(id)arg2 animated:(_Bool)arg3 extraInfo:(id)arg4;
 - (void)PushOtherBaseMsgControllerByContact:(id)arg1 navigationController:(id)arg2 animated:(_Bool)arg3 searchScene:(int)arg4;
 - (void)PushOtherBaseMsgControllerByContact:(id)arg1 navigationController:(id)arg2 animated:(_Bool)arg3;
-- (void)PushLBSRoomLogicControllerByContact:(id)arg1 navigationController:(id)arg2 animated:(_Bool)arg3;
 - (void)PushLogicControllerByContact:(id)arg1 navigationController:(id)arg2 animated:(_Bool)arg3 jumpToLocationNode:(id)arg4 reuse:(_Bool)arg5 extraInfo:(id)arg6;
 - (void)cleanUnuseLogicController;
 - (void)PushLogicControllerByContact:(id)arg1 navigationController:(id)arg2 animated:(_Bool)arg3 jumpToLocationNode:(id)arg4;

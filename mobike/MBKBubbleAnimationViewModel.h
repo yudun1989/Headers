@@ -6,7 +6,7 @@
 
 #import <objc/NSObject.h>
 
-@class MBKPopupMarketing, NSString, shareInfoDetail;
+@class MBKPopupMarketing, NSDictionary, NSString, shareInfoDetail;
 
 @interface MBKBubbleAnimationViewModel : NSObject
 {
@@ -22,10 +22,12 @@
     NSString *_redirectUrl;
     shareInfoDetail *_shareInfo;
     NSString *_marketingId;
+    NSDictionary *_recordInfo;
     MBKPopupMarketing *_model;
 }
 
 @property(retain, nonatomic) MBKPopupMarketing *model; // @synthesize model=_model;
+@property(copy, nonatomic) NSDictionary *recordInfo; // @synthesize recordInfo=_recordInfo;
 @property(copy, nonatomic) NSString *marketingId; // @synthesize marketingId=_marketingId;
 @property(retain, nonatomic) shareInfoDetail *shareInfo; // @synthesize shareInfo=_shareInfo;
 @property(copy, nonatomic) NSString *redirectUrl; // @synthesize redirectUrl=_redirectUrl;

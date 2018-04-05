@@ -8,7 +8,7 @@
 
 #import "NSStreamDelegate-Protocol.h"
 
-@class NSArray, NSMutableData, NSString, NSThread;
+@class NSArray, NSMutableData, NSString, NSThread, NSTimer;
 
 @interface UP0223HttpRequest : NSObject <NSStreamDelegate>
 {
@@ -25,10 +25,11 @@
     id _delegate;
     unsigned long long _timeout;
     NSThread *_sourceThread;
+    NSTimer *_timer;
 }
 
-+ (id)pinnedCertificates;
 + (id)requestWithString:(id)arg1 httpMethod:(id)arg2;
+@property(retain, nonatomic) NSTimer *timer; // @synthesize timer=_timer;
 @property(nonatomic) __weak NSThread *sourceThread; // @synthesize sourceThread=_sourceThread;
 @property(nonatomic) unsigned long long timeout; // @synthesize timeout=_timeout;
 @property(nonatomic) __weak id delegate; // @synthesize delegate=_delegate;

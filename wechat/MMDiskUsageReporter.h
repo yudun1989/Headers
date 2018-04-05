@@ -24,8 +24,8 @@
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *m_workQueue; // @synthesize m_workQueue;
 @property(nonatomic) _Bool m_isRunning; // @synthesize m_isRunning;
 - (void).cxx_destruct;
-- (void)reportDelFileToIDKey:(id)arg1 vecIDKey:(vector_ecc2264a *)arg2;
-- (void)reportFileSize:(unsigned int)arg1 andFileNum:(unsigned int)arg2 toBizType:(int)arg3 vecIDKey:(vector_ecc2264a *)arg4;
+- (void)reportDelFileToIDKey:(id)arg1 vecIDKey:(vector_2633e87e *)arg2;
+- (void)reportFileSize:(unsigned int)arg1 andFileNum:(unsigned int)arg2 toBizType:(int)arg3 vecIDKey:(vector_2633e87e *)arg4;
 - (void)callReportFinishedOnMainThread;
 - (void)removeReportDataFile;
 - (void)reportOnThread:(id)arg1;

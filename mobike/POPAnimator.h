@@ -12,10 +12,10 @@
 @interface POPAnimator : NSObject
 {
     CADisplayLink *_displayLink;
-    list_670f5810 _list;
+    list_20bec4f3 _list;
     struct __CFDictionary *_dict;
     NSMutableArray *_observers;
-    list_670f5810 _pendingList;
+    list_20bec4f3 _pendingList;
     struct __CFRunLoopObserver *_pendingListObserver;
     double _slowMotionStartTime;
     double _slowMotionLastTime;
@@ -46,7 +46,7 @@
 - (void)addAnimation:(id)arg1 forObject:(id)arg2 key:(id)arg3;
 - (id)observers;
 - (void)_renderTime:(double)arg1 item:(shared_ptr_1553c9f8)arg2;
-- (void)_renderTime:(double)arg1 items:(list_670f5810)arg2;
+- (void)_renderTime:(double)arg1 items:(list_20bec4f3)arg2;
 - (void)_scheduleProcessPendingList;
 - (void)_clearPendingListObserver;
 - (void)_processPendingList;

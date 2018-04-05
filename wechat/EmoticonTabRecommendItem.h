@@ -33,7 +33,7 @@
 @property(readonly, copy) NSString *description;
 - (void)updateFromItem:(id)arg1;
 - (id)init;
-- (const map_490096f0 *)getValueTagIndexMap;
+- (const map_f8690629 *)getValueTagIndexMap;
 - (id)getValueTypeTable;
 
 // Remaining properties

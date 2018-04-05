@@ -8,7 +8,7 @@
 
 #import "MBKJsonModelObject-Protocol.h"
 
-@class NSString;
+@class NSDictionary, NSString;
 
 @interface MBKAdMetricsBannerModel : NSObject <MBKJsonModelObject>
 {
@@ -24,8 +24,10 @@
     NSString *_image2X;
     NSString *_image3X;
     NSString *_link;
+    NSDictionary *_recordInfo;
 }
 
+@property(copy, nonatomic) NSDictionary *recordInfo; // @synthesize recordInfo=_recordInfo;
 @property(copy, nonatomic) NSString *link; // @synthesize link=_link;
 @property(copy, nonatomic) NSString *image3X; // @synthesize image3X=_image3X;
 @property(copy, nonatomic) NSString *image2X; // @synthesize image2X=_image2X;

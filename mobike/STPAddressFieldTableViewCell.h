@@ -10,7 +10,7 @@
 #import "UIPickerViewDataSource-Protocol.h"
 #import "UIPickerViewDelegate-Protocol.h"
 
-@class NSArray, NSString, STPFormTextField, STPTheme, UIPickerView, UIToolbar;
+@class NSArray, NSString, STPFormTextField, STPTheme, UILabel, UIPickerView, UIToolbar;
 @protocol STPAddressFieldTableViewCellDelegate;
 
 @interface STPAddressFieldTableViewCell : UITableViewCell <STPFormTextFieldDelegate, UIPickerViewDelegate, UIPickerViewDataSource>
@@ -20,6 +20,7 @@
     STPFormTextField *_textField;
     NSString *_contents;
     STPTheme *_theme;
+    UILabel *_captionLabel;
     UIToolbar *_inputAccessoryToolbar;
     UIPickerView *_countryPickerView;
     NSArray *_countryCodes;
@@ -28,14 +29,14 @@
     long long _postalCodeType;
 }
 
-+ (id)stateFieldCaptionForCountryCode:(id)arg1;
+@property(nonatomic) _Bool lastInList; // @synthesize lastInList=_lastInList;
 @property(nonatomic) long long postalCodeType; // @synthesize postalCodeType=_postalCodeType;
 @property(retain, nonatomic) NSString *ourCountryCode; // @synthesize ourCountryCode=_ourCountryCode;
 @property(nonatomic) __weak id <STPAddressFieldTableViewCellDelegate> delegate; // @synthesize delegate=_delegate;
 @property(retain, nonatomic) NSArray *countryCodes; // @synthesize countryCodes=_countryCodes;
 @property(retain, nonatomic) UIPickerView *countryPickerView; // @synthesize countryPickerView=_countryPickerView;
 @property(retain, nonatomic) UIToolbar *inputAccessoryToolbar; // @synthesize inputAccessoryToolbar=_inputAccessoryToolbar;
-@property(nonatomic) _Bool lastInList; // @synthesize lastInList=_lastInList;
+@property(nonatomic) __weak UILabel *captionLabel; // @synthesize captionLabel=_captionLabel;
 @property(retain, nonatomic) STPTheme *theme; // @synthesize theme=_theme;
 @property(copy, nonatomic) NSString *contents; // @synthesize contents=_contents;
 @property(nonatomic) __weak STPFormTextField *textField; // @synthesize textField=_textField;
@@ -55,10 +56,11 @@
 - (void)nextTapped:(id)arg1;
 - (_Bool)becomeFirstResponder;
 - (void)layoutSubviews;
+- (id)longestPossibleCaption;
 - (_Bool)countryCodeIsUnitedStates;
 - (void)updateAppearance;
 - (void)delegateCountryCodeDidChange:(id)arg1;
-- (id)placeholderForAddressField:(long long)arg1;
+- (id)captionForAddressField:(long long)arg1;
 - (void)updateTextFieldsAndCaptions;
 - (id)initWithType:(long long)arg1 contents:(id)arg2 lastInList:(_Bool)arg3 delegate:(id)arg4;
 

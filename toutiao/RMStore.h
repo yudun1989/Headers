@@ -10,7 +10,7 @@
 #import "SKRequestDelegate-Protocol.h"
 
 @class NSMutableArray, NSMutableDictionary, NSMutableSet, NSString, SKReceiptRefreshRequest;
-@protocol RMStoreContentDownloader, RMStoreReceiptVerificator, RMStoreTransactionPersistor;
+@protocol RMStoreContentDownloader, RMStoreReceiptVerifier, RMStoreTransactionPersistor;
 
 @interface RMStore : NSObject <SKRequestDelegate, SKPaymentTransactionObserver>
 {
@@ -26,7 +26,7 @@
     CDUnknownBlockType _restoreTransactionsFailureBlock;
     CDUnknownBlockType _restoreTransactionsSuccessBlock;
     id <RMStoreContentDownloader> _contentDownloader;
-    id <RMStoreReceiptVerificator> _receiptVerificator;
+    id <RMStoreReceiptVerifier> _receiptVerifier;
     id <RMStoreTransactionPersistor> _transactionPersistor;
 }
 
@@ -36,7 +36,7 @@
 + (_Bool)canMakePayments;
 + (id)defaultStore;
 @property(nonatomic) __weak id <RMStoreTransactionPersistor> transactionPersistor; // @synthesize transactionPersistor=_transactionPersistor;
-@property(nonatomic) __weak id <RMStoreReceiptVerificator> receiptVerificator; // @synthesize receiptVerificator=_receiptVerificator;
+@property(nonatomic) __weak id <RMStoreReceiptVerifier> receiptVerifier; // @synthesize receiptVerifier=_receiptVerifier;
 @property(nonatomic) __weak id <RMStoreContentDownloader> contentDownloader; // @synthesize contentDownloader=_contentDownloader;
 - (void).cxx_destruct;
 - (void)removeProductsRequestDelegate:(id)arg1;

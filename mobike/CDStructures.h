@@ -136,6 +136,10 @@ struct AMapRouteAssetReader {
     CDUnknownFunctionPointerType *_field1;
 };
 
+struct APTaskInfoData {
+    unsigned char _field1[30];
+};
+
 struct AbsolutePosition;
 
 struct AdjustableTextureShaderState;
@@ -281,7 +285,11 @@ struct CalloutStrategy;
 struct Camera {
     CDUnknownFunctionPointerType *_field1;
     int _field2;
-    basic_string_a490aa4c _field3;
+    struct basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char>> {
+        struct __compressed_pair<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char>>::__rep, std::__1::allocator<char>> {
+            struct __rep _field1;
+        } _field1;
+    } _field3;
     int _field4;
     _Bool _field5;
     _Bool _field6;
@@ -872,7 +880,11 @@ struct LRUCache<gmscore::model::IndoorID, gmscore::model::IndoorID, std::__1::ha
 struct LRUCache<std::__1::basic_string<char>, gmscore::base::reffed_ptr<gmscore::renderer::TextureState>, std::__1::hash<std::__1::basic_string<char>>, false> {
     CDUnknownFunctionPointerType *_field1;
     unsigned long long _field2;
-    basic_string_a490aa4c _field3;
+    struct basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char>> {
+        struct __compressed_pair<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char>>::__rep, std::__1::allocator<char>> {
+            struct __rep _field1;
+        } _field1;
+    } _field3;
     struct Reservations<std::__1::basic_string<char>, std::__1::hash<std::__1::basic_string<char>>> _field4;
     struct unordered_map<std::__1::basic_string<char>, gmscore::utils::LRUCache<std::__1::basic_string<char>, gmscore::base::reffed_ptr<gmscore::renderer::TextureState>, std::__1::hash<std::__1::basic_string<char>>, false>::LRUCacheEntry *, std::__1::hash<std::__1::basic_string<char>>, std::__1::equal_to<std::__1::basic_string<char>>, std::__1::allocator<std::__1::pair<const std::__1::basic_string<char>, gmscore::utils::LRUCache<std::__1::basic_string<char>, gmscore::base::reffed_ptr<gmscore::renderer::TextureState>, std::__1::hash<std::__1::basic_string<char>>, false>::LRUCacheEntry *>>> _field5;
     struct LRUCacheEntry *_field6;
@@ -1183,11 +1195,23 @@ struct POPAnimatorItem;
 struct Package {
     short _field1;
     int _field2;
-    basic_string_a490aa4c _field3;
+    struct basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char>> {
+        struct __compressed_pair<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char>>::__rep, std::__1::allocator<char>> {
+            struct __rep _field1;
+        } _field1;
+    } _field3;
     int _field4;
     char _field5;
-    basic_string_a490aa4c _field6;
-    basic_string_a490aa4c _field7;
+    struct basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char>> {
+        struct __compressed_pair<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char>>::__rep, std::__1::allocator<char>> {
+            struct __rep _field1;
+        } _field1;
+    } _field6;
+    struct basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char>> {
+        struct __compressed_pair<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char>>::__rep, std::__1::allocator<char>> {
+            struct __rep _field1;
+        } _field1;
+    } _field7;
     struct vector<char, std::__1::allocator<char>> _field8;
     struct vector<char, std::__1::allocator<char>> _field9;
     struct vector<sosomap::Tag, std::__1::allocator<sosomap::Tag>> _field10;
@@ -1715,7 +1739,7 @@ struct WrappedRectangle2D {
 };
 
 struct WriteBatch {
-    basic_string_a490aa4c rep_;
+    basic_string_90719d97 rep_;
 };
 
 struct WriteOptions {
@@ -2045,6 +2069,25 @@ struct __list_node_base<std::__1::shared_ptr<POPAnimatorItem>, void *> {
     struct __list_node_base<std::__1::shared_ptr<POPAnimatorItem>, void *> *__next_;
 };
 
+struct __rep {
+    union {
+        struct __long {
+            char *__data_;
+            unsigned long long __size_;
+            unsigned long long __cap_;
+        } __l;
+        struct __short {
+            char __data_[23];
+            struct {
+                unsigned char __size_;
+            } ;
+        } __s;
+        struct __raw {
+            unsigned long long __words[3];
+        } __r;
+    } ;
+};
+
 struct __tree_const_iterator<gmscore::model::IndoorID, std::__1::__tree_node<gmscore::model::IndoorID, void *>*, long> {
     struct __tree_node<gmscore::model::IndoorID, void *> *_field1;
 };
@@ -2136,29 +2179,6 @@ struct array<gmscore::base::reffed_ptr<gmscore::renderer::StencilState>, 8> {
     reffed_ptr_b6b7b6c6 __elems_[8];
 };
 
-struct basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char>> {
-    struct __compressed_pair<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char>>::__rep, std::__1::allocator<char>> {
-        struct __rep {
-            union {
-                struct __long {
-                    char *__data_;
-                    unsigned long long __size_;
-                    unsigned long long __cap_;
-                } __l;
-                struct __short {
-                    char __data_[23];
-                    struct {
-                        unsigned char __size_;
-                    } ;
-                } __s;
-                struct __raw {
-                    unsigned long long __words[3];
-                } __r;
-            } ;
-        } __first_;
-    } __r_;
-};
-
 struct cameraEulerAngle {
     double yaw;
     double pitch;
@@ -2247,7 +2267,7 @@ struct list<gmscore::renderer::ProjectionChangeListener *, std::__1::allocator<g
 struct list<std::__1::shared_ptr<POPAnimatorItem>, std::__1::allocator<std::__1::shared_ptr<POPAnimatorItem>>> {
     struct __list_node_base<std::__1::shared_ptr<POPAnimatorItem>, void *> __end_;
     struct __compressed_pair<unsigned long, std::__1::allocator<std::__1::__list_node<std::__1::shared_ptr<POPAnimatorItem>, void *>>> {
-        unsigned long long __first_;
+        unsigned long long __value_;
     } __size_alloc_;
 };
 
@@ -4079,10 +4099,10 @@ struct vector<sosomap::Tag, std::__1::allocator<sosomap::Tag>> {
 };
 
 struct vector<std::__1::basic_string<char>, std::__1::allocator<std::__1::basic_string<char>>> {
-    basic_string_a490aa4c *_field1;
-    basic_string_a490aa4c *_field2;
+    struct basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char>> *_field1;
+    struct basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char>> *_field2;
     struct __compressed_pair<std::__1::basic_string<char>*, std::__1::allocator<std::__1::basic_string<char>>> {
-        basic_string_a490aa4c *_field1;
+        struct basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char>> *_field1;
     } _field3;
 };
 
@@ -4181,6 +4201,18 @@ typedef struct {
     vector_eef16772 _field4;
 } Drawable_0b4da0a6;
 
+typedef struct ?<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char>>::__rep, std::__1::allocator<char>> {
+    struct __rep __first_;
+} __compressed_pair_5b4d0e04;
+
+typedef struct ?<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char>>::__rep, std::__1::allocator<char>> {
+    struct __rep __value_;
+} __compressed_pair_96848e3b;
+
+typedef struct ?<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char>>::__rep, std::__1::allocator<char>> {
+    struct __rep _field1;
+} __compressed_pair_1d3f934a;
+
 typedef struct {
     CDUnknownFunctionPointerType *_field1;
     float _field2;
@@ -4208,6 +4240,20 @@ typedef struct {
     struct vector<float, std::__1::allocator<float>> _field7;
     struct vector<Vector4<float>, std::__1::allocator<Vector4<float>>> _field8;
 } MALineBuilder_129af350;
+
+typedef struct ?<char, std::__1::char_traits<char>, std::__1::allocator<char>> {
+    __compressed_pair_5b4d0e04 __r_;
+} basic_string_a490aa4c;
+
+typedef struct ?<char, std::__1::char_traits<char>, std::__1::allocator<char>> {
+    __compressed_pair_96848e3b __r_;
+} basic_string_90719d97;
+
+typedef struct ?<char, std::__1::char_traits<char>, std::__1::allocator<char>> {
+    struct __compressed_pair<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char>>::__rep, std::__1::allocator<char>> {
+        struct __rep _field1;
+    } _field1;
+} basic_string_f1844954;
 
 #endif
 
@@ -4596,35 +4642,12 @@ typedef struct SpringSolver<POP::Vector4<double>> {
     _Bool _field10;
 } SpringSolver_fe820e75;
 
-typedef struct basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char>> {
-    struct __compressed_pair<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char>>::__rep, std::__1::allocator<char>> {
-        struct __rep {
-            union {
-                struct __long {
-                    char *__data_;
-                    unsigned long long __size_;
-                    unsigned long long __cap_;
-                } __l;
-                struct __short {
-                    char __data_[23];
-                    struct {
-                        unsigned char __size_;
-                    } ;
-                } __s;
-                struct __raw {
-                    unsigned long long __words[3];
-                } __r;
-            } ;
-        } __first_;
-    } __r_;
-} basic_string_a490aa4c;
-
 typedef struct list<std::__1::shared_ptr<POPAnimatorItem>, std::__1::allocator<std::__1::shared_ptr<POPAnimatorItem>>> {
     struct __list_node_base<std::__1::shared_ptr<POPAnimatorItem>, void *> __end_;
     struct __compressed_pair<unsigned long, std::__1::allocator<std::__1::__list_node<std::__1::shared_ptr<POPAnimatorItem>, void *>>> {
-        unsigned long long __first_;
+        unsigned long long __value_;
     } __size_alloc_;
-} list_670f5810;
+} list_20bec4f3;
 
 typedef struct map<gmscore::model::StyleID, NSArray<GMSModelStyle *>*, std::__1::less<gmscore::model::StyleID>, std::__1::allocator<std::__1::pair<const gmscore::model::StyleID, NSArray<GMSModelStyle *>*>>> {
     struct __tree<std::__1::__value_type<gmscore::model::StyleID, NSArray<GMSModelStyle *>*>, std::__1::__map_value_compare<gmscore::model::StyleID, std::__1::__value_type<gmscore::model::StyleID, NSArray<GMSModelStyle *>*>, std::__1::less<gmscore::model::StyleID>, true>, std::__1::allocator<std::__1::__value_type<gmscore::model::StyleID, NSArray<GMSModelStyle *>*>>> {
@@ -5106,10 +5129,10 @@ typedef struct vector<long long, std::__1::allocator<long long>> {
 } vector_c1c297d2;
 
 typedef struct vector<std::__1::basic_string<char>, std::__1::allocator<std::__1::basic_string<char>>> {
-    basic_string_a490aa4c *_field1;
-    basic_string_a490aa4c *_field2;
+    struct basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char>> *_field1;
+    struct basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char>> *_field2;
     struct __compressed_pair<std::__1::basic_string<char>*, std::__1::allocator<std::__1::basic_string<char>>> {
-        basic_string_a490aa4c *_field1;
+        struct basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char>> *_field1;
     } _field3;
 } vector_9492931a;
 

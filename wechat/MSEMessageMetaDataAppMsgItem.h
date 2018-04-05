@@ -28,7 +28,7 @@
 @property(retain, nonatomic) NSString *title; // @synthesize title;
 @property(retain, nonatomic) NSString *toUsername; // @synthesize toUsername;
 - (void).cxx_destruct;
-- (const map_490096f0 *)getValueTagIndexMap;
+- (const map_f8690629 *)getValueTagIndexMap;
 - (id)getValueTypeTable;
 
 // Remaining properties

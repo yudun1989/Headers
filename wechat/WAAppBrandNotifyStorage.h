@@ -20,7 +20,7 @@
 + (void)initialize;
 @property(retain, nonatomic) NSMutableDictionary *dicAppNotify; // @synthesize dicAppNotify;
 - (void).cxx_destruct;
-- (const map_490096f0 *)getValueTagIndexMap;
+- (const map_f8690629 *)getValueTagIndexMap;
 - (id)getValueTypeTable;
 
 // Remaining properties

@@ -4,11 +4,11 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-#import "MBKBaseWebViewController.h"
+#import "MBKTransparentWebViewController.h"
 
 @class MBKRedPacketPlaceholderView, UIButton, UIImageView, UIView;
 
-@interface MBKRedGiftBoxViewController : MBKBaseWebViewController
+@interface MBKRedGiftBoxViewController : MBKTransparentWebViewController
 {
     _Bool _userHasSharing;
     _Bool _userHasAlreadyOpenBox;
@@ -41,10 +41,7 @@
 - (void)openBox;
 - (void)showTitleWithAnimation;
 - (void)showGiftBox;
-- (void)dismiss;
-- (void)show;
 - (void)webViewDidFinishLoad:(id)arg1;
-- (void)viewDidLayoutSubviews;
 - (void)viewDidLoad;
 
 @end

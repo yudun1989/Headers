@@ -31,7 +31,7 @@
     unsigned int m_uiLastReportTime;
     struct timeval m_tvLastGettingDataTime;
     CNetworkStatusReportArchive *m_reportArchive;
-    vector_a9c0768e m_vecMesssageIdToListen;
+    vector_12da65de m_vecMesssageIdToListen;
     int m_eNetworkStatusType;
     NSDate *m_dtLastReport;
     ReportInfo *m_oReportInfo;

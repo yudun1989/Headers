@@ -6,14 +6,14 @@
 
 #import <objc/NSObject.h>
 
-@protocol STPSourceProtocol;
+@protocol STPSource;
 
 @interface STPPaymentResult : NSObject
 {
-    id <STPSourceProtocol> _source;
+    id <STPSource> _source;
 }
 
-@property(retain, nonatomic) id <STPSourceProtocol> source; // @synthesize source=_source;
+@property(retain, nonatomic) id <STPSource> source; // @synthesize source=_source;
 - (void).cxx_destruct;
 - (id)initWithSource:(id)arg1;
 

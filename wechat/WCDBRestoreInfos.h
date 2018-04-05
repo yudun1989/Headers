@@ -23,7 +23,7 @@
 - (_Bool)isEqual:(id)arg1;
 - (void)addInfo:(id)arg1 withRootPage:(unsigned int)arg2;
 - (id)init;
-- (const map_490096f0 *)getValueTagIndexMap;
+- (const map_f8690629 *)getValueTagIndexMap;
 - (id)getValueTypeTable;
 
 // Remaining properties

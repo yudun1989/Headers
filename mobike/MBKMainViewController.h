@@ -6,24 +6,23 @@
 
 #import "MBKDeprecatedViewController.h"
 
-#import "MBKDataProviderDelegate-Protocol.h"
 #import "MBKHelpActionSheetDelegate-Protocol.h"
 #import "MBKHomeChildViewControllerProtocol-Protocol.h"
 #import "MBKMainToScanQRTransitionAnimationProtocol-Protocol.h"
 #import "MBKManhattanViewControllerDelegate-Protocol.h"
 #import "MBKRidingMapViewDelegate-Protocol.h"
 #import "MBKRidingStatusProtocol-Protocol.h"
+#import "MBKTakeScreenshotDelegate-Protocol.h"
 #import "NetworkStatusDelegate-Protocol.h"
 #import "UIActionSheetDelegate-Protocol.h"
 #import "UIAlertViewDelegate-Protocol.h"
 #import "activitionCardDelegate-Protocol.h"
 #import "closeHelpDelegate-Protocol.h"
-#import "mbkTakeNotificationDelegate-Protocol.h"
 #import "shareSelectDelegate-Protocol.h"
 
-@class ALAlertBanner, CardBackGroundView, CustomPointView, MBKAdoptionStatusManager, MBKBaseRidingMapViewController, MBKCardConfigManager, MBKHelpActionSheet, MBKManhattanViewController, MBKPaymentBannerConfig, MBKRidingStatusManager, MBKRidingStatusSubscriber, MBKUserPaymentBonus, NSString, PersonalCenterViewController, UIImage, takeScreenShotShare;
+@class ALAlertBanner, CardBackGroundView, CustomPointView, MBKBaseRidingMapViewController, MBKHelpActionSheet, MBKManhattanViewController, MBKPaymentBannerConfig, MBKRidingStatusManager, MBKRidingStatusSubscriber, MBKUserPaymentBonus, NSString, PersonalCenterViewController, UIImage, takeScreenShotShare;
 
-@interface MBKMainViewController : MBKDeprecatedViewController <MBKHomeChildViewControllerProtocol, UIAlertViewDelegate, NetworkStatusDelegate, UIActionSheetDelegate, closeHelpDelegate, activitionCardDelegate, MBKHelpActionSheetDelegate, mbkTakeNotificationDelegate, shareSelectDelegate, MBKDataProviderDelegate, MBKRidingStatusProtocol, MBKManhattanViewControllerDelegate, MBKRidingMapViewDelegate, MBKMainToScanQRTransitionAnimationProtocol>
+@interface MBKMainViewController : MBKDeprecatedViewController <MBKHomeChildViewControllerProtocol, UIAlertViewDelegate, NetworkStatusDelegate, UIActionSheetDelegate, closeHelpDelegate, activitionCardDelegate, MBKHelpActionSheetDelegate, MBKTakeScreenshotDelegate, shareSelectDelegate, MBKRidingStatusProtocol, MBKManhattanViewControllerDelegate, MBKRidingMapViewDelegate, MBKMainToScanQRTransitionAnimationProtocol>
 {
     ALAlertBanner *frzeenAlertBanner;
     _Bool isGetConfig;
@@ -42,16 +41,12 @@
     CustomPointView *currentPointView;
     PersonalCenterViewController *_PersonalCenterViewControllerr;
     CardBackGroundView *_cards;
-    MBKAdoptionStatusManager *_adoptionStatusManager;
-    MBKCardConfigManager *_cardConfigManager;
     MBKManhattanViewController *_panelVC;
     MBKRidingStatusManager *_ridingStateManager;
 }
 
 @property(retain, nonatomic) MBKRidingStatusManager *ridingStateManager; // @synthesize ridingStateManager=_ridingStateManager;
 @property(retain, nonatomic) MBKManhattanViewController *panelVC; // @synthesize panelVC=_panelVC;
-@property(retain, nonatomic) MBKCardConfigManager *cardConfigManager; // @synthesize cardConfigManager=_cardConfigManager;
-@property(retain, nonatomic) MBKAdoptionStatusManager *adoptionStatusManager; // @synthesize adoptionStatusManager=_adoptionStatusManager;
 @property(nonatomic) _Bool isPulledAdConfig; // @synthesize isPulledAdConfig=_isPulledAdConfig;
 @property(nonatomic) _Bool hasShownOpCard; // @synthesize hasShownOpCard=_hasShownOpCard;
 @property(retain) CardBackGroundView *cards; // @synthesize cards=_cards;
@@ -62,8 +57,6 @@
 - (void)showTipsWhenOperationAreaAppear;
 - (_Bool)shouldHideNavigationBarShadow;
 - (id)snapshotOfUnlockButtonView;
-- (void)requestFailured:(id)arg1 error:(id)arg2;
-- (void)requestSuccessed:(id)arg1;
 - (void)goToFeedBackView;
 - (_Bool)isRidingAppraiseVCInNaviStack;
 - (void)showOperationCardWith:(id)arg1;

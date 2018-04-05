@@ -34,7 +34,7 @@
 @property(nonatomic) double longitude; // @synthesize longitude;
 @property(nonatomic) double latitude; // @synthesize latitude;
 - (id)transferToCLLocation;
-- (const map_490096f0 *)getValueTagIndexMap;
+- (const map_f8690629 *)getValueTagIndexMap;
 - (id)getValueTypeTable;
 
 // Remaining properties

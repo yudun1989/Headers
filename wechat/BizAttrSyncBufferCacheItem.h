@@ -22,7 +22,7 @@
 @property(nonatomic) unsigned long long lastUpdateTime; // @synthesize lastUpdateTime;
 @property(retain, nonatomic) NSString *username; // @synthesize username;
 - (void).cxx_destruct;
-- (const map_490096f0 *)getValueTagIndexMap;
+- (const map_f8690629 *)getValueTagIndexMap;
 - (id)getValueTypeTable;
 
 // Remaining properties

@@ -11,7 +11,7 @@
 #import "UITextFieldDelegate-Protocol.h"
 #import "netNoneFreshDelegate-Protocol.h"
 
-@class MBKCardConfigModel, NSMutableArray, NSMutableDictionary, NSString, NoNetWrokViewController, PayListCustomView, PayMethodButton, UIButton, UILabel, UIView;
+@class NSMutableArray, NSMutableDictionary, NSString, NoNetWrokViewController, PayListCustomView, PayMethodButton, UIButton, UILabel, UIView;
 
 @interface DingViewController : MBKTopupViewController <UITextFieldDelegate, netNoneFreshDelegate, MBKApplePayDelegate, UIAlertViewDelegate>
 {
@@ -36,11 +36,9 @@
     UILabel *_rechargeTipLabel;
     NSMutableDictionary *_payListDict;
     UILabel *_depositLine;
-    MBKCardConfigModel *_cardConfigModel;
 }
 
 + (void)load;
-@property(retain, nonatomic) MBKCardConfigModel *cardConfigModel; // @synthesize cardConfigModel=_cardConfigModel;
 @property(retain, nonatomic) UILabel *depositLine; // @synthesize depositLine=_depositLine;
 @property(nonatomic) _Bool payMethodListReady; // @synthesize payMethodListReady=_payMethodListReady;
 @property(nonatomic) _Bool rechargeListReady; // @synthesize rechargeListReady=_rechargeListReady;

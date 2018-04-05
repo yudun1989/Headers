@@ -7,6 +7,6 @@
 #import <PassKit/PKPaymentAuthorizationViewController.h>
 
 @interface PKPaymentAuthorizationViewController (Stripe_Blocks)
-+ (id)stp_controllerWithPaymentRequest:(id)arg1 apiClient:(id)arg2 onShippingAddressSelection:(CDUnknownBlockType)arg3 onShippingMethodSelection:(CDUnknownBlockType)arg4 onPaymentAuthorization:(CDUnknownBlockType)arg5 onTokenCreation:(CDUnknownBlockType)arg6 onFinish:(CDUnknownBlockType)arg7;
++ (id)stp_controllerWithPaymentRequest:(id)arg1 apiClient:(id)arg2 onTokenCreation:(CDUnknownBlockType)arg3 onFinish:(CDUnknownBlockType)arg4;
 @end
 

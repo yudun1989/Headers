@@ -6,14 +6,15 @@
 
 #import <UIKit/UIView.h>
 
-@class MBKIconLable, NSString, UIButton, UIImageView, UILabel;
+@class MBKIconLable, NSString, UIButton, UIImage, UIImageView, UILabel;
 @protocol MBKCarCodeUserSelectionDelegate;
 
 @interface MBKBusQRCodeView : UIView
 {
     long long _viewType;
     id <MBKCarCodeUserSelectionDelegate> _delegate;
-    NSString *_iconImageBase64;
+    UIImage *_QrIcon;
+    NSString *_preferentialText;
     UIImageView *_icon;
     UILabel *_title;
     UILabel *_content;
@@ -26,7 +27,8 @@
 @property(retain, nonatomic) UILabel *content; // @synthesize content=_content;
 @property(retain, nonatomic) UILabel *title; // @synthesize title=_title;
 @property(retain, nonatomic) UIImageView *icon; // @synthesize icon=_icon;
-@property(copy, nonatomic) NSString *iconImageBase64; // @synthesize iconImageBase64=_iconImageBase64;
+@property(copy, nonatomic) NSString *preferentialText; // @synthesize preferentialText=_preferentialText;
+@property(retain, nonatomic) UIImage *QrIcon; // @synthesize QrIcon=_QrIcon;
 @property(nonatomic) id <MBKCarCodeUserSelectionDelegate> delegate; // @synthesize delegate=_delegate;
 @property(nonatomic) long long viewType; // @synthesize viewType=_viewType;
 - (void).cxx_destruct;

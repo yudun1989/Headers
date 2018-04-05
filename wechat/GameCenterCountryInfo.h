@@ -22,7 +22,7 @@
 @property(retain, nonatomic) NSString *countryCode; // @synthesize countryCode;
 @property(retain, nonatomic) NSString *productID; // @synthesize productID;
 - (void).cxx_destruct;
-- (const map_490096f0 *)getValueTagIndexMap;
+- (const map_f8690629 *)getValueTagIndexMap;
 - (id)getValueTypeTable;
 
 // Remaining properties

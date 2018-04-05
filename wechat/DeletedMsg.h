@@ -19,7 +19,7 @@
 + (void)initialize;
 @property(nonatomic) unsigned int createTime; // @synthesize createTime;
 @property(nonatomic) long long msgSvrId; // @synthesize msgSvrId;
-- (const map_490096f0 *)getValueTagIndexMap;
+- (const map_f8690629 *)getValueTagIndexMap;
 - (id)getValueTypeTable;
 
 // Remaining properties

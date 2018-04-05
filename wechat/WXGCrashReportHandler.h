@@ -22,7 +22,7 @@
 
 + (void)refreshKSCrashReportAppVersion;
 + (void)reportWithID:(int)arg1 ext:(id)arg2 isReportNow:(_Bool)arg3 isKeyLog:(_Bool)arg4;
-+ (void)reportIdKeyList:(vector_ecc2264a)arg1;
++ (void)reportIdKeyList:(vector_2633e87e)arg1;
 + (void)reportId:(int)arg1 key:(int)arg2 andValue:(int)arg3;
 + (id)getCurrentDateForCrashReportInfo;
 + (id)getCrashReportInfoPath;

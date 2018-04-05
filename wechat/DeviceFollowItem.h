@@ -22,7 +22,7 @@
 @property(nonatomic) unsigned int uiStep; // @synthesize uiStep;
 @property(copy, nonatomic) NSString *nsUserName; // @synthesize nsUserName;
 - (void).cxx_destruct;
-- (const map_490096f0 *)getValueTagIndexMap;
+- (const map_f8690629 *)getValueTagIndexMap;
 - (id)getValueTypeTable;
 
 // Remaining properties

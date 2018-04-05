@@ -32,7 +32,7 @@
 @property(retain, nonatomic) NSMutableArray *otherCityList; // @synthesize otherCityList;
 @property(retain, nonatomic) NSMutableArray *localCityList; // @synthesize localCityList;
 - (void).cxx_destruct;
-- (const map_490096f0 *)getValueTagIndexMap;
+- (const map_f8690629 *)getValueTagIndexMap;
 - (id)getValueTypeTable;
 
 // Remaining properties

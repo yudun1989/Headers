@@ -71,6 +71,7 @@
 + (id)getAllMacs;
 + (_Bool)isJailbroken;
 + (id)getTDUDID;
++ (id)getDataPath;
 + (id)dataByZlibCompressing:(id)arg1;
 + (id)uncompressGZippedData:(id)arg1;
 + (id)dataByGZipCompressing:(id)arg1;
@@ -80,6 +81,7 @@
 + (int)getTimeInterval:(long long)arg1;
 + (int)getTimeInterval:(long long)arg1 withEndTime:(long long)arg2;
 + (long long)getTimeStampByMiliSeconds;
++ (id)jsonStringFromArray:(id)arg1;
 + (id)jsonStringFromDictionary:(id)arg1;
 + (id)jsonStrintToMutableDictionary:(id)arg1;
 + (long long)releaseMode;

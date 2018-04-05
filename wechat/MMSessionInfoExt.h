@@ -25,7 +25,7 @@
 @property(nonatomic) unsigned int m_uUndeliverCount; // @synthesize m_uUndeliverCount;
 @property(nonatomic) unsigned int m_uLastNotifySeq; // @synthesize m_uLastNotifySeq;
 - (id)archivedWCTValue;
-- (const map_490096f0 *)getValueTagIndexMap;
+- (const map_f8690629 *)getValueTagIndexMap;
 - (id)getValueTypeTable;
 
 // Remaining properties

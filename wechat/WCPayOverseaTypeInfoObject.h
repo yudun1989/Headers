@@ -21,7 +21,7 @@
 @property(nonatomic) unsigned int m_typeId; // @synthesize m_typeId;
 @property(retain, nonatomic) NSString *m_typeName; // @synthesize m_typeName;
 - (void).cxx_destruct;
-- (const map_490096f0 *)getValueTagIndexMap;
+- (const map_f8690629 *)getValueTagIndexMap;
 - (id)getValueTypeTable;
 
 // Remaining properties

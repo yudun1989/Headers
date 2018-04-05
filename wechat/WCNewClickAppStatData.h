@@ -21,7 +21,7 @@
 @property(nonatomic) int interval; // @synthesize interval;
 @property(nonatomic) unsigned int lastQuitTS; // @synthesize lastQuitTS;
 @property(nonatomic) unsigned int firstEnterTS; // @synthesize firstEnterTS;
-- (const map_490096f0 *)getValueTagIndexMap;
+- (const map_f8690629 *)getValueTagIndexMap;
 - (id)getValueTypeTable;
 
 @end

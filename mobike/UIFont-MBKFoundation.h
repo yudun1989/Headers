@@ -11,6 +11,5 @@
 + (id)mediumSystemFontOfSize:(double)arg1;
 + (id)lightSystemFontOfSize:(double)arg1;
 + (id)thinSystemFontOfSize:(double)arg1;
-+ (_Bool)mbk_isMethodAvaliable;
 @end
 

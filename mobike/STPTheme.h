@@ -8,11 +8,10 @@
 
 #import "NSCopying-Protocol.h"
 
-@class NSNumber, UIColor, UIFont;
+@class UIColor, UIFont;
 
 @interface STPTheme : NSObject <NSCopying>
 {
-    _Bool _translucentNavigationBar;
     UIColor *_primaryBackgroundColor;
     UIColor *_secondaryBackgroundColor;
     UIColor *_primaryForegroundColor;
@@ -21,13 +20,10 @@
     UIColor *_errorColor;
     UIFont *_font;
     UIFont *_emphasisFont;
-    NSNumber *_internalBarStyle;
 }
 
 + (id)defaultTheme;
 + (void)initialize;
-@property(retain, nonatomic) NSNumber *internalBarStyle; // @synthesize internalBarStyle=_internalBarStyle;
-@property(nonatomic) _Bool translucentNavigationBar; // @synthesize translucentNavigationBar=_translucentNavigationBar;
 @property(copy, nonatomic) UIFont *emphasisFont; // @synthesize emphasisFont=_emphasisFont;
 @property(copy, nonatomic) UIFont *font; // @synthesize font=_font;
 @property(copy, nonatomic) UIColor *errorColor; // @synthesize errorColor=_errorColor;
@@ -38,8 +34,6 @@
 @property(copy, nonatomic) UIColor *primaryBackgroundColor; // @synthesize primaryBackgroundColor=_primaryBackgroundColor;
 - (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone *)arg1;
-@property(nonatomic) long long barStyle;
-- (long long)barStyleForColor:(id)arg1;
 @property(readonly, nonatomic) UIFont *largeFont;
 @property(readonly, nonatomic) UIFont *smallFont;
 @property(readonly, nonatomic) UIColor *quaternaryBackgroundColor;

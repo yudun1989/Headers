@@ -6,7 +6,7 @@
 
 #import <objc/NSObject.h>
 
-@class MBKTicketsModel, NSMutableArray, NSString, NSTimer;
+@class MBKApplicationTypeItemModel, MBKTicketsModel, NSMutableArray, NSString, NSTimer;
 @protocol MBKScanTicketDelegate;
 
 @interface MBKScanBusCodeManager : NSObject
@@ -16,15 +16,22 @@
     NSTimer *_timer;
     NSString *_applicationID;
     NSMutableArray *_tickets;
+    MBKApplicationTypeItemModel *_appModel;
 }
 
 + (id)sharedInstance;
+@property(retain, nonatomic) MBKApplicationTypeItemModel *appModel; // @synthesize appModel=_appModel;
 @property(retain, nonatomic) NSMutableArray *tickets; // @synthesize tickets=_tickets;
 @property(copy, nonatomic) NSString *applicationID; // @synthesize applicationID=_applicationID;
 @property(retain, nonatomic) NSTimer *timer; // @synthesize timer=_timer;
 @property(nonatomic) id <MBKScanTicketDelegate> delegate; // @synthesize delegate=_delegate;
 @property(retain, nonatomic) MBKTicketsModel *displayTickets; // @synthesize displayTickets=_displayTickets;
 - (void).cxx_destruct;
+- (id)mbkLocaseCRC:(id)arg1;
+- (id)crearQr:(id)arg1 size:(double)arg2 ticket:(id)arg3;
+- (id)createNonInterpolatedUIImageFormCIImage:(id)arg1 withSize:(double)arg2;
+- (id)generateQrData:(id)arg1;
+- (id)startGenerateWithData:(id)arg1 size:(double)arg2 ticket:(id)arg3;
 - (void)scanFailure:(id)arg1;
 - (void)parseBusCode:(id)arg1;
 - (void)scanBusCode;

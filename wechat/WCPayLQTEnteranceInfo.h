@@ -24,7 +24,7 @@
 @property(nonatomic) unsigned int lqt_state; // @synthesize lqt_state;
 @property(retain, nonatomic) NSString *lct_wording; // @synthesize lct_wording;
 - (void).cxx_destruct;
-- (const map_490096f0 *)getValueTagIndexMap;
+- (const map_f8690629 *)getValueTagIndexMap;
 - (id)getValueTypeTable;
 
 // Remaining properties

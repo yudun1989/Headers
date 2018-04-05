@@ -13,8 +13,10 @@
     NSString *_applicationId;
     NSString *_applicationType;
     NSString *_applicationName;
+    NSString *_codeSource;
 }
 
+@property(copy, nonatomic) NSString *codeSource; // @synthesize codeSource=_codeSource;
 @property(copy, nonatomic) NSString *applicationName; // @synthesize applicationName=_applicationName;
 @property(copy, nonatomic) NSString *applicationType; // @synthesize applicationType=_applicationType;
 @property(copy, nonatomic) NSString *applicationId; // @synthesize applicationId=_applicationId;

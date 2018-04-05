@@ -6,11 +6,9 @@
 
 #import <objc/NSObject.h>
 
-#import "STPAPIResponseDecodable-Protocol.h"
+@class NSString;
 
-@class NSDictionary, NSString;
-
-@interface STPAddress : NSObject <STPAPIResponseDecodable>
+@interface STPAddress : NSObject
 {
     NSString *_name;
     NSString *_line1;
@@ -21,17 +19,9 @@
     NSString *_country;
     NSString *_phone;
     NSString *_email;
-    NSDictionary *_allResponseFields;
-    NSString *_givenName;
-    NSString *_familyName;
 }
 
-+ (id)decodedObjectFromAPIResponse:(id)arg1;
-+ (id)requiredFields;
 + (unsigned long long)applePayAddressFieldsFromBillingAddressFields:(unsigned long long)arg1;
-@property(copy, nonatomic) NSString *familyName; // @synthesize familyName=_familyName;
-@property(copy, nonatomic) NSString *givenName; // @synthesize givenName=_givenName;
-@property(copy, nonatomic) NSDictionary *allResponseFields; // @synthesize allResponseFields=_allResponseFields;
 @property(copy, nonatomic) NSString *email; // @synthesize email=_email;
 @property(copy, nonatomic) NSString *phone; // @synthesize phone=_phone;
 @property(copy, nonatomic) NSString *country; // @synthesize country=_country;
@@ -43,24 +33,8 @@
 @property(copy, nonatomic) NSString *name; // @synthesize name=_name;
 - (void).cxx_destruct;
 - (_Bool)hasValidPostalAddress;
-- (_Bool)containsRequiredShippingAddressFields:(unsigned long long)arg1;
 - (_Bool)containsRequiredFields:(unsigned long long)arg1;
-- (id)street;
-- (id)lastName;
-- (id)firstName;
-- (id)PKContactValue;
-- (void)setAddressFromCNPostalAddress:(id)arg1;
-- (id)initWithPKContact:(id)arg1;
-- (id)initWithCNContact:(id)arg1;
-- (id)sanitizedPhoneStringFromCNPhoneNumber:(id)arg1;
-- (const void *)ABRecordValue;
 - (id)initWithABRecord:(void *)arg1;
-
-// Remaining properties
-@property(readonly, copy) NSString *debugDescription;
-@property(readonly, copy) NSString *description;
-@property(readonly) unsigned long long hash;
-@property(readonly) Class superclass;
 
 @end
 

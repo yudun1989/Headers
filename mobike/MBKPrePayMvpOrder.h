@@ -14,8 +14,10 @@
     long long _totalfee;
     long long _index;
     long long _cardId;
+    NSString *_productType;
 }
 
+@property(copy, nonatomic) NSString *productType; // @synthesize productType=_productType;
 @property(nonatomic) long long cardId; // @synthesize cardId=_cardId;
 @property(nonatomic) long long index; // @synthesize index=_index;
 @property(nonatomic) long long totalfee; // @synthesize totalfee=_totalfee;

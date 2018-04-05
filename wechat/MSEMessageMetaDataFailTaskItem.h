@@ -20,7 +20,7 @@
 @property(retain, nonatomic) NSString *taskID; // @synthesize taskID;
 @property(retain, nonatomic) NSString *sessionID; // @synthesize sessionID;
 - (void).cxx_destruct;
-- (const map_490096f0 *)getValueTagIndexMap;
+- (const map_f8690629 *)getValueTagIndexMap;
 - (id)getValueTypeTable;
 
 // Remaining properties

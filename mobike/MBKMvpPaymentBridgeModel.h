@@ -15,8 +15,10 @@
     long long _amount;
     NSString *_cashierDeskTitle;
     NSString *_returnUrl;
+    NSString *_productType;
 }
 
+@property(copy, nonatomic) NSString *productType; // @synthesize productType=_productType;
 @property(copy, nonatomic) NSString *returnUrl; // @synthesize returnUrl=_returnUrl;
 @property(copy, nonatomic) NSString *cashierDeskTitle; // @synthesize cashierDeskTitle=_cashierDeskTitle;
 @property(nonatomic) long long amount; // @synthesize amount=_amount;

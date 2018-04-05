@@ -22,7 +22,7 @@
 @property(nonatomic) unsigned int lastPidContiousSendTimes; // @synthesize lastPidContiousSendTimes;
 @property(retain, nonatomic) NSString *lastSendPid; // @synthesize lastSendPid;
 - (void).cxx_destruct;
-- (const map_490096f0 *)getValueTagIndexMap;
+- (const map_f8690629 *)getValueTagIndexMap;
 - (id)getValueTypeTable;
 
 // Remaining properties

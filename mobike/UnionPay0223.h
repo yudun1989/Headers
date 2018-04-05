@@ -29,6 +29,7 @@
 + (void)doCheckSession;
 + (void)initWithWatch:(id)arg1;
 + (void)sessionStarted:(id)arg1 withChannelId:(id)arg2;
++ (void)startExceptionCatch;
 + (void)setVersionWithCode:(id)arg1 name:(id)arg2;
 + (id)getDeviceID;
 + (void)setChannelId:(id)arg1;
@@ -46,6 +47,7 @@
 + (void)packActivities:(id)arg1 reservedDic:(id)arg2 currentItemCount:(int *)arg3;
 + (void)packAppEvents:(id)arg1 reservedDic:(id)arg2 currentItemCount:(int *)arg3;
 + (void)addProfile:(id)arg1;
++ (id)pinnedCertificates;
 + (void)sendData:(id)arg1 body:(id)arg2 userInfo:(id)arg3;
 + (id)compatibleDataDictionary;
 + (void)startPageTracking;

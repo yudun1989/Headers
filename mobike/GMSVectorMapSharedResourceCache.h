@@ -17,7 +17,7 @@
 @property(readonly, nonatomic) GMSVectorMapSharedResources *resources; // @synthesize resources=_resources;
 - (id).cxx_construct;
 - (void).cxx_destruct;
-- (reffed_ptr_eca42765)textureAtlasForName:(const basic_string_a490aa4c *)arg1 scale:(double)arg2 atlas1x:(const struct GMSTextureAtlas *)arg3 atlas2x:(const struct GMSTextureAtlas *)arg4 atlas3x:(const struct GMSTextureAtlas *)arg5;
+- (reffed_ptr_eca42765)textureAtlasForName:(const struct basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char>> *)arg1 scale:(double)arg2 atlas1x:(const struct GMSTextureAtlas *)arg3 atlas2x:(const struct GMSTextureAtlas *)arg4 atlas3x:(const struct GMSTextureAtlas *)arg5;
 - (vector_8e13786b)spritesForScale:(double)arg1;
 - (id)init;
 

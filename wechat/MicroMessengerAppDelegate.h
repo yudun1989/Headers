@@ -10,10 +10,11 @@
 #import "ResourceMonitorDelegate-Protocol.h"
 #import "UIAlertViewDelegate-Protocol.h"
 #import "UIApplicationDelegate-Protocol.h"
+#import "WCLazyInitObjectProtocol-Protocol.h"
 
 @class CAppObserverCenter, CAppViewControllerManager, CMainControll, MMSMStartViewController, MMServiceCenter, MMUIWindow, NSRecursiveLock, NSString, ResourceInfo, ResourceMonitor, UILabel, UIWindow, VoIPTokenRetriveObject;
 
-@interface MicroMessengerAppDelegate : MMUIResponder <MMCommonAdapterDelegate, UIApplicationDelegate, UIAlertViewDelegate, ResourceMonitorDelegate>
+@interface MicroMessengerAppDelegate : MMUIResponder <MMCommonAdapterDelegate, UIApplicationDelegate, UIAlertViewDelegate, ResourceMonitorDelegate, WCLazyInitObjectProtocol>
 {
     CAppObserverCenter *m_appObserverCenter;
     CMainControll *m_mainController;
@@ -28,6 +29,7 @@
     long long m_tLastActiveTime;
     long long m_appVerCompareWithLastRun;
     _Bool m_isActive;
+    _Bool m_firstActive;
     UILabel *m_changeValueLabel;
     UILabel *m_resourceLabel;
     MMUIWindow *m_resourceWindow;
@@ -43,6 +45,8 @@
     _Bool m_isFirstLaunching;
     _Bool m_isInSafeMode;
     MMSMStartViewController *m_safeModeViewController;
+    _Bool m_isNormalLaunch;
+    _Bool haveLazyInit;
     UIWindow *_window;
     CDUnknownBlockType _backgroundSessionCompletionHandler;
     VoIPTokenRetriveObject *_m_voipTokenRetriveObject;
@@ -50,9 +54,11 @@
 
 @property(retain, nonatomic) VoIPTokenRetriveObject *m_voipTokenRetriveObject; // @synthesize m_voipTokenRetriveObject=_m_voipTokenRetriveObject;
 @property(copy, nonatomic) CDUnknownBlockType backgroundSessionCompletionHandler; // @synthesize backgroundSessionCompletionHandler=_backgroundSessionCompletionHandler;
+@property(nonatomic) _Bool haveLazyInit; // @synthesize haveLazyInit;
 @property(retain, nonatomic) NSRecursiveLock *mActiveLock; // @synthesize mActiveLock;
 @property(nonatomic) unsigned long long m_ui64BackGroundFetchStopTime; // @synthesize m_ui64BackGroundFetchStopTime;
 @property(nonatomic) _Bool mInBackGroundFetch; // @synthesize mInBackGroundFetch;
+@property(nonatomic) _Bool m_firstActive; // @synthesize m_firstActive;
 @property(readonly, nonatomic) _Bool m_isActive; // @synthesize m_isActive;
 @property(readonly, nonatomic) CAppObserverCenter *m_appObserverCenter; // @synthesize m_appObserverCenter;
 @property(readonly, nonatomic) CAppViewControllerManager *m_appViewControllerMgr; // @synthesize m_appViewControllerMgr;
@@ -147,10 +153,15 @@
 - (void)didFinishLoad;
 - (void)mainUISetting;
 - (void)monitorResource;
-- (void)mainThreadMonitorStart;
-- (void)continueMainLaunching:(id)arg1;
+- (void)setupCrashBlockMonitor;
 - (void)tryProtectLaunchBeforeDeviceFirstUnlock;
-- (void)beforeMainLauching;
+- (void)continueMainLaunching:(id)arg1;
+- (void)beforeMainLaunching;
+- (void)logTheFontOfiPhone;
+- (void)lazylaunch;
+- (void)delayMainAppDelegateThing;
+- (void)goToLazyInitObject;
+- (double)timeToLazyInitAfterOpenFirstView;
 - (void)LogFeatureIdKey:(unsigned int)arg1 key:(unsigned int)arg2 value:(unsigned int)arg3 isKeyLog:(_Bool)arg4;
 - (void)LogFeatureExt:(unsigned int)arg1 logExt:(id)arg2 isReportNow:(_Bool)arg3 isImportant:(_Bool)arg4;
 - (void)NetworkLogOutput:(id)arg1;
@@ -166,6 +177,7 @@
 - (void)delayInitServiceObject;
 - (void)clearServiceObject;
 - (void)initServiceObject;
+- (void)lazyInitServiceObject;
 - (void)registerLazyExtensionListener;
 - (void)registerClsMethodObserver;
 - (void)releaseSeviceCenter;

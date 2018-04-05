@@ -39,7 +39,7 @@
 - (void)saveLoginInfo;
 - (void)setLogoutSwitch:(_Bool)arg1;
 - (_Bool)isLogoutSwitch;
-- (const map_490096f0 *)getValueTagIndexMap;
+- (const map_f8690629 *)getValueTagIndexMap;
 - (id)getValueTypeTable;
 
 // Remaining properties

@@ -9,12 +9,14 @@
 @interface MBKAdyenSafariViewController : SFSafariViewController
 {
     _Bool _isOnlyBindCard;
-    _Bool _isOrderCanceled;
+    _Bool _isOrderCancelled;
+    long long _payType;
 }
 
 + (void)load;
-@property(nonatomic) _Bool isOrderCanceled; // @synthesize isOrderCanceled=_isOrderCanceled;
+@property(nonatomic) _Bool isOrderCancelled; // @synthesize isOrderCancelled=_isOrderCancelled;
 @property(nonatomic) _Bool isOnlyBindCard; // @synthesize isOnlyBindCard=_isOnlyBindCard;
+@property(nonatomic) long long payType; // @synthesize payType=_payType;
 - (void)didReceiveNotification:(id)arg1;
 - (void)viewWillDisappear:(_Bool)arg1;
 - (void)viewWillAppear:(_Bool)arg1;

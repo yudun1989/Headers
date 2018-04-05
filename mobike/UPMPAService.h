@@ -54,7 +54,7 @@
 - (void)startQueryWithResponse:(id)arg1;
 - (void)postQueryRequest:(id)arg1;
 - (void)postSmsRequestWithFlag:(id)arg1 params:(id)arg2;
-- (void)postInitRequestWithTn:(id)arg1 uid:(id)arg2 locale:(id)arg3 terminalVersion:(id)arg4 terminalResolution:(id)arg5 osName:(id)arg6 osVersion:(id)arg7 deviceMode:(id)arg8 terminalType:(id)arg9 timeZone:(id)arg10 networkMode:(id)arg11 success:(CDUnknownBlockType)arg12 error:(CDUnknownBlockType)arg13;
+- (void)postInitRequestWithTn:(id)arg1 uid:(id)arg2 locale:(id)arg3 terminalVersion:(id)arg4 terminalResolution:(id)arg5 osName:(id)arg6 osVersion:(id)arg7 deviceMode:(id)arg8 terminalType:(id)arg9 systemType:(id)arg10 timeZone:(id)arg11 networkMode:(id)arg12 success:(CDUnknownBlockType)arg13 error:(CDUnknownBlockType)arg14;
 - (void)postRequestWithCmd:(id)arg1 elements:(id)arg2 success:(CDUnknownBlockType)arg3 error:(CDUnknownBlockType)arg4;
 - (void)postHttpsRequest:(id)arg1;
 - (void)sendFrontNotification:(id)arg1 to:(id)arg2;

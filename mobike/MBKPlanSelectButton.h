@@ -16,16 +16,16 @@
     unsigned long long _payType;
     NSString *_productType;
     MBKAbroadOBCardModel *_model;
-    UILabel *_nameLabel;
-    UILabel *_priceLabel;
+    UILabel *_cardTitleLabel;
+    UILabel *_subtitleLabel;
     NSMutableArray *_detailLabelArray;
     UIImageView *_picImageView;
 }
 
 @property(retain, nonatomic) UIImageView *picImageView; // @synthesize picImageView=_picImageView;
 @property(retain, nonatomic) NSMutableArray *detailLabelArray; // @synthesize detailLabelArray=_detailLabelArray;
-@property(retain, nonatomic) UILabel *priceLabel; // @synthesize priceLabel=_priceLabel;
-@property(retain, nonatomic) UILabel *nameLabel; // @synthesize nameLabel=_nameLabel;
+@property(retain, nonatomic) UILabel *subtitleLabel; // @synthesize subtitleLabel=_subtitleLabel;
+@property(retain, nonatomic) UILabel *cardTitleLabel; // @synthesize cardTitleLabel=_cardTitleLabel;
 @property(nonatomic) _Bool hasCheckBox; // @synthesize hasCheckBox=_hasCheckBox;
 @property(retain, nonatomic) MBKAbroadOBCardModel *model; // @synthesize model=_model;
 @property(copy, nonatomic) NSString *productType; // @synthesize productType=_productType;

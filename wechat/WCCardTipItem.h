@@ -26,7 +26,7 @@
 @property(nonatomic) unsigned int unreadCount; // @synthesize unreadCount;
 @property(nonatomic) unsigned int tipType; // @synthesize tipType;
 - (void).cxx_destruct;
-- (const map_490096f0 *)getValueTagIndexMap;
+- (const map_f8690629 *)getValueTagIndexMap;
 - (id)getValueTypeTable;
 
 // Remaining properties

@@ -24,7 +24,7 @@
 @property(retain, nonatomic) NSString *bindSerial; // @synthesize bindSerial;
 @property(retain, nonatomic) NSString *bankType; // @synthesize bankType;
 - (void).cxx_destruct;
-- (const map_490096f0 *)getValueTagIndexMap;
+- (const map_f8690629 *)getValueTagIndexMap;
 - (id)getValueTypeTable;
 
 // Remaining properties

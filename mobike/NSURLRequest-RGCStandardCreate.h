@@ -4,7 +4,7 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-#import <CFNetwork/NSURLRequest.h>
+#import <Foundation/NSURLRequest.h>
 
 @interface NSURLRequest (RGCStandardCreate)
 + (id)fromStandardRGCSearchRequest:(id)arg1 key:(id)arg2 usingEngishLanguage:(_Bool)arg3;

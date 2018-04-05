@@ -28,7 +28,7 @@
 @property(nonatomic) double longitude; // @synthesize longitude;
 @property(nonatomic) double latitude; // @synthesize latitude;
 - (void).cxx_destruct;
-- (const map_490096f0 *)getValueTagIndexMap;
+- (const map_f8690629 *)getValueTagIndexMap;
 - (id)getValueTypeTable;
 
 // Remaining properties

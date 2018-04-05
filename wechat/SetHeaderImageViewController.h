@@ -38,7 +38,7 @@
     _Bool m_bInContactsAfter;
     id <SetHeaderImageViewDelegate> m_delegate;
     unsigned int m_uEventId;
-    vector_a9c0768e m_vecMesssageIdToListen;
+    vector_12da65de m_vecMesssageIdToListen;
     MMLoadingView *m_loadingView;
     unsigned int m_uiUploadHeadEventID;
 }

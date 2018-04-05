@@ -140,7 +140,7 @@
 - (void)setNickNameWithoutEmojiChange:(id)arg1;
 @property(retain, nonatomic) NSString *m_nsNickName; // @synthesize m_nsNickName;
 - (unsigned int)realFriendScene;
-- (const map_490096f0 *)getValueTagIndexMap;
+- (const map_f8690629 *)getValueTagIndexMap;
 - (id)getValueTypeTable;
 
 // Remaining properties

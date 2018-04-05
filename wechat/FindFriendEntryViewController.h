@@ -161,7 +161,6 @@
 - (void)selectGameCenterVersion;
 - (void)handleGameCenterLongPress:(id)arg1;
 - (void)openCameraScan:(int)arg1;
-- (void)openLBS;
 - (void)didReceiveMemoryWarning;
 - (void)viewDidLayoutSubviews;
 - (void)viewDidDisappear:(_Bool)arg1;

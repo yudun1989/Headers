@@ -14,9 +14,6 @@
 {
     _Bool _didSucceed;
     STPAPIClient *_apiClient;
-    CDUnknownBlockType _onShippingAddressSelection;
-    CDUnknownBlockType _onShippingMethodSelection;
-    CDUnknownBlockType _onPaymentAuthorization;
     CDUnknownBlockType _onTokenCreation;
     CDUnknownBlockType _onFinish;
     NSError *_lastError;
@@ -26,15 +23,9 @@
 @property(retain, nonatomic) NSError *lastError; // @synthesize lastError=_lastError;
 @property(copy, nonatomic) CDUnknownBlockType onFinish; // @synthesize onFinish=_onFinish;
 @property(copy, nonatomic) CDUnknownBlockType onTokenCreation; // @synthesize onTokenCreation=_onTokenCreation;
-@property(copy, nonatomic) CDUnknownBlockType onPaymentAuthorization; // @synthesize onPaymentAuthorization=_onPaymentAuthorization;
-@property(copy, nonatomic) CDUnknownBlockType onShippingMethodSelection; // @synthesize onShippingMethodSelection=_onShippingMethodSelection;
-@property(copy, nonatomic) CDUnknownBlockType onShippingAddressSelection; // @synthesize onShippingAddressSelection=_onShippingAddressSelection;
 @property(retain, nonatomic) STPAPIClient *apiClient; // @synthesize apiClient=_apiClient;
 - (void).cxx_destruct;
 - (void)paymentAuthorizationViewControllerDidFinish:(id)arg1;
-- (void)paymentAuthorizationViewController:(id)arg1 didSelectShippingAddress:(void *)arg2 completion:(CDUnknownBlockType)arg3;
-- (void)paymentAuthorizationViewController:(id)arg1 didSelectShippingContact:(id)arg2 completion:(CDUnknownBlockType)arg3;
-- (void)paymentAuthorizationViewController:(id)arg1 didSelectShippingMethod:(id)arg2 completion:(CDUnknownBlockType)arg3;
 - (void)paymentAuthorizationViewController:(id)arg1 didAuthorizePayment:(id)arg2 completion:(CDUnknownBlockType)arg3;
 
 // Remaining properties

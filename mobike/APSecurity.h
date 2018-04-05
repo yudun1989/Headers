@@ -13,8 +13,8 @@
 + (id)sharedSecurity;
 - (void)savePublicKey:(id)arg1;
 - (id)publicKey;
-- (id)decryptResponse:(id)arg1;
-- (id)encryptPost:(id)arg1;
+- (id)decryptData:(id)arg1 withInfo:(struct APTaskInfoData)arg2;
+- (id)encryptData:(id)arg1 withInfo:(struct APTaskInfoData)arg2;
 
 @end
 

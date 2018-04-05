@@ -10,6 +10,8 @@
 
 @interface MBKMoCarOrderInfoModel : NSObject
 {
+    _Bool _isEvaluated;
+    _Bool _shortJourney;
     NSString *_carId;
     MBKMoCarCarInfoModel *_carInfo;
     NSString *_endTime;
@@ -23,11 +25,15 @@
     long long _chargingRuleId;
     NSString *_totalFee;
     MBKMoCarParkingInfoModel *_destinationParking;
+    MBKMoCarParkingInfoModel *_sourceParking;
     long long _destinationParkingId;
 }
 
 + (id)jsonKeyToClassNameMap;
+@property(nonatomic) _Bool shortJourney; // @synthesize shortJourney=_shortJourney;
+@property(nonatomic) _Bool isEvaluated; // @synthesize isEvaluated=_isEvaluated;
 @property(nonatomic) long long destinationParkingId; // @synthesize destinationParkingId=_destinationParkingId;
+@property(retain, nonatomic) MBKMoCarParkingInfoModel *sourceParking; // @synthesize sourceParking=_sourceParking;
 @property(retain, nonatomic) MBKMoCarParkingInfoModel *destinationParking; // @synthesize destinationParking=_destinationParking;
 @property(copy, nonatomic) NSString *totalFee; // @synthesize totalFee=_totalFee;
 @property(nonatomic) long long chargingRuleId; // @synthesize chargingRuleId=_chargingRuleId;

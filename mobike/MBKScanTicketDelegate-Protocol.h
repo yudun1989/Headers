@@ -6,9 +6,10 @@
 
 #import "NSObject-Protocol.h"
 
-@class NSArray, NSError;
+@class NSArray, NSError, UIImage;
 
 @protocol MBKScanTicketDelegate <NSObject>
+- (void)sendQrImage:(UIImage *)arg1;
 - (void)sendTicketsExpired;
 - (void)sendTicketsWith:(NSArray *)arg1 err:(NSError *)arg2;
 @end

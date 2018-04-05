@@ -10,6 +10,7 @@
 
 @interface MBKRidingUnlockRequest : MBKMobikeRequest
 {
+    _Bool _bycode;
     long long _biketype;
     NSString *_bikecode;
     NSString *_epdata;
@@ -28,6 +29,7 @@
 @property(nonatomic) double latitude; // @synthesize latitude=_latitude;
 @property(copy, nonatomic) NSString *warnCodes; // @synthesize warnCodes=_warnCodes;
 @property(nonatomic) long long btEnabled; // @synthesize btEnabled=_btEnabled;
+@property(nonatomic) _Bool bycode; // @synthesize bycode=_bycode;
 @property(copy, nonatomic) NSString *timestamp; // @synthesize timestamp=_timestamp;
 @property(copy, nonatomic) NSString *epdata; // @synthesize epdata=_epdata;
 @property(copy, nonatomic) NSString *bikecode; // @synthesize bikecode=_bikecode;

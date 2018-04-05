@@ -22,8 +22,6 @@
 @property(retain, nonatomic) NSMutableArray *buttonArray; // @synthesize buttonArray=_buttonArray;
 @property(retain, nonatomic) UIScrollView *scrollView; // @synthesize scrollView=_scrollView;
 - (void).cxx_destruct;
-- (void)dealloc;
-- (void)handleNotification:(id)arg1;
 - (id)depositModelWithMobikePlanStatus:(_Bool)arg1;
 - (void)saveTrialRecord;
 - (void)confirmButtonClicked:(id)arg1;

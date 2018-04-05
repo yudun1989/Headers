@@ -31,7 +31,7 @@
 @property(readonly, copy) NSString *description;
 - (id)generateNewTipsFilter;
 - (id)initWithTipsId:(unsigned int)arg1 FilterClass:(id)arg2 Path:(id)arg3;
-- (const map_490096f0 *)getValueTagIndexMap;
+- (const map_f8690629 *)getValueTagIndexMap;
 - (id)getValueTypeTable;
 
 // Remaining properties

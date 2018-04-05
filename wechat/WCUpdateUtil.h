@@ -20,6 +20,8 @@
 + (id)getRealPath:(id)arg1;
 + (_Bool)canExitOnEnteringBackground;
 + (id)getConfigFilePathForBundle:(id)arg1;
++ (id)getUpdateBundle:(id)arg1;
++ (id)getUpdateResDirPath;
 + (id)getUpdateInfoFile;
 + (id)getUpdateDataDirPath;
 + (id)getUpdateDataZipFilePath;

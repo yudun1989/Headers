@@ -13,7 +13,7 @@
 
 @interface CPushMailContactInfoAssist : PluginContactInfoAssist <PBMessageObserverDelegate, UIAlertViewDelegate>
 {
-    map_490096f0 m_mapPushMailCellToCellType;
+    map_f8690629 m_mapPushMailCellToCellType;
     UIAlertView *m_pwdAlertView;
 }
 

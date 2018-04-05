@@ -14,7 +14,7 @@
 + (id)stringByURLEncoding:(id)arg1;
 + (id)formEncodableValueForObject:(id)arg1;
 + (id)keyPairDictionaryForObject:(id)arg1;
-+ (id)dictionaryForObject:(id)arg1;
++ (id)formEncodedDataForObject:(id)arg1;
 + (id)stringByReplacingSnakeCaseWithCamelCase:(id)arg1;
 
 @end

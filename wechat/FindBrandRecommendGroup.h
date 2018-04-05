@@ -20,7 +20,7 @@
 @property(retain, nonatomic) NSMutableArray *m_contactList; // @synthesize m_contactList;
 @property(retain, nonatomic) NSString *m_groupName; // @synthesize m_groupName;
 - (void).cxx_destruct;
-- (const map_490096f0 *)getValueTagIndexMap;
+- (const map_f8690629 *)getValueTagIndexMap;
 - (id)getValueTypeTable;
 
 // Remaining properties

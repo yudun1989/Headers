@@ -26,7 +26,7 @@
 @property(nonatomic) unsigned int mainUnReadCount; // @synthesize mainUnReadCount;
 @property(retain, nonatomic) MMSessionInfo *mainSession; // @synthesize mainSession;
 - (void).cxx_destruct;
-- (const map_490096f0 *)getValueTagIndexMap;
+- (const map_f8690629 *)getValueTagIndexMap;
 - (id)getValueTypeTable;
 
 // Remaining properties

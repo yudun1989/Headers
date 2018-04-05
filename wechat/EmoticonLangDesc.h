@@ -20,7 +20,7 @@
 @property(retain, nonatomic) NSString *m_desc; // @synthesize m_desc;
 @property(retain, nonatomic) NSString *m_languageCode; // @synthesize m_languageCode;
 - (void).cxx_destruct;
-- (const map_490096f0 *)getValueTagIndexMap;
+- (const map_f8690629 *)getValueTagIndexMap;
 - (id)getValueTypeTable;
 
 // Remaining properties

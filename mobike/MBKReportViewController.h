@@ -82,6 +82,7 @@
 - (void)setUpViews;
 - (void)getFaultImages;
 - (void)getBikeType;
+- (void)viewDidDisappear:(_Bool)arg1;
 - (void)viewDidLoad;
 - (void)historyRequest;
 - (id)init;

@@ -7,17 +7,21 @@
 #import "MMUIView.h"
 
 #import "MMConfigMgrExt-Protocol.h"
+#import "WCLazyInitObjectProtocol-Protocol.h"
 #import "WCPayLogicMgrExt-Protocol.h"
 
-@class NSMutableDictionary, NSString, RightTopMenuData, UIImageView;
+@class NSMutableDictionary, NSString, RightTopMenuData, UIButton, UIImageView;
 
-@interface NewMainFrameRightTopMenuBtn : MMUIView <MMConfigMgrExt, WCPayLogicMgrExt>
+@interface NewMainFrameRightTopMenuBtn : MMUIView <MMConfigMgrExt, WCPayLogicMgrExt, WCLazyInitObjectProtocol>
 {
     UIImageView *m_showNewView;
     RightTopMenuData *m_data;
     NSMutableDictionary *m_dicItems;
+    UIButton *m_addButton;
+    _Bool haveLazyInit;
 }
 
+@property(nonatomic) _Bool haveLazyInit; // @synthesize haveLazyInit;
 - (void).cxx_destruct;
 - (void)ReloadWallet;
 - (void)OnGetReceiveOrPayReddotData;
@@ -32,6 +36,8 @@
 - (void)hideRightTopMenuBtn;
 - (void)onItemAction:(id)arg1;
 - (void)dealloc;
+- (void)goToLazyInitObject;
+- (double)timeToLazyInitAfterOpenFirstView;
 - (id)initWithFrame:(struct CGRect)arg1;
 
 // Remaining properties

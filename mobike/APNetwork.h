@@ -6,22 +6,22 @@
 
 #import <objc/NSObject.h>
 
-@class APayLoadView, NSOperationQueue, UIView;
+@class APLoadView, NSOperationQueue, UIView;
 
 @interface APNetwork : NSObject
 {
     NSOperationQueue *_operationQueue;
-    APayLoadView *_loadView;
+    APLoadView *_loadView;
     UIView *_maskView;
 }
 
 + (id)defaultClient;
 @property(retain, nonatomic) UIView *maskView; // @synthesize maskView=_maskView;
-@property(retain, nonatomic) APayLoadView *loadView; // @synthesize loadView=_loadView;
+@property(retain, nonatomic) APLoadView *loadView; // @synthesize loadView=_loadView;
 @property(retain, nonatomic) NSOperationQueue *operationQueue; // @synthesize operationQueue=_operationQueue;
 - (void).cxx_destruct;
-- (id)requestWithUrl:(id)arg1 parameters:(id)arg2 action:(id)arg3;
-- (void)postWithUrl:(id)arg1 parameter:(id)arg2 externParams:(id)arg3 action:(id)arg4 success:(CDUnknownBlockType)arg5 failure:(CDUnknownBlockType)arg6;
+- (id)requestWithUrl:(id)arg1 headerDict:(id)arg2 paramData:(id)arg3;
+- (void)postWithUrl:(id)arg1 headerDict:(id)arg2 paramData:(id)arg3 success:(CDUnknownBlockType)arg4 failure:(CDUnknownBlockType)arg5;
 - (void)setUrl:(id)arg1;
 - (id)init;
 

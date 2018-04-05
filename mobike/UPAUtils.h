@@ -16,7 +16,7 @@
 + (void)writeUserIdToFile:(id)arg1 Key:(id)arg2;
 + (id)readUserIdFromFile:(id)arg1;
 + (id)myToolBar:(id)arg1;
-+ (_Bool)isJailbroken;
++ (id)systemType;
 + (_Bool)iPadDevice;
 + (id)getFormatPhoneNum:(id)arg1;
 + (_Bool)checkCardId:(id)arg1;

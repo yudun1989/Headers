@@ -6,22 +6,17 @@
 
 #import <objc/NSObject.h>
 
-#import "NSCopying-Protocol.h"
+@class NSString;
 
-@class NSString, STPAddress;
-
-@interface STPUserInformation : NSObject <NSCopying>
+@interface STPUserInformation : NSObject
 {
     NSString *_email;
     NSString *_phone;
-    STPAddress *_billingAddress;
 }
 
-@property(retain, nonatomic) STPAddress *billingAddress; // @synthesize billingAddress=_billingAddress;
 @property(copy, nonatomic) NSString *phone; // @synthesize phone=_phone;
 @property(copy, nonatomic) NSString *email; // @synthesize email=_email;
 - (void).cxx_destruct;
-- (id)copyWithZone:(struct _NSZone *)arg1;
 
 @end
 

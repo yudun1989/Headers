@@ -22,7 +22,7 @@
 @property(nonatomic) unsigned int promptCycleTime; // @synthesize promptCycleTime;
 @property(nonatomic) unsigned int downloadInternal; // @synthesize downloadInternal;
 - (void)dealloc;
-- (const map_490096f0 *)getValueTagIndexMap;
+- (const map_f8690629 *)getValueTagIndexMap;
 - (id)getValueTypeTable;
 
 // Remaining properties

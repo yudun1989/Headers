@@ -17,6 +17,7 @@
     _Bool _needCollectConsent;
     _Bool _hasMonthcard;
     _Bool _needSelectCountry;
+    _Bool _isNew;
     _Bool _isLogin;
     NSArray *_thirdPartInfo;
     NSString *_authtoken;
@@ -49,6 +50,8 @@
     long long _sex;
     MBKThirdPartySocialInfo *_wechatInfo;
     MBKThirdPartySocialInfo *_qqInfo;
+    NSString *_email;
+    long long _passwordState;
 }
 
 + (id)jsonKeyToClassNameMap;
@@ -56,6 +59,9 @@
 + (id)mj_ignoredCodingPropertyNames;
 + (id)loginUser;
 @property(nonatomic) _Bool isLogin; // @synthesize isLogin=_isLogin;
+@property(nonatomic) _Bool isNew; // @synthesize isNew=_isNew;
+@property(nonatomic) long long passwordState; // @synthesize passwordState=_passwordState;
+@property(copy, nonatomic) NSString *email; // @synthesize email=_email;
 @property(nonatomic) _Bool needSelectCountry; // @synthesize needSelectCountry=_needSelectCountry;
 @property(readonly, copy, nonatomic) MBKThirdPartySocialInfo *qqInfo; // @synthesize qqInfo=_qqInfo;
 @property(readonly, copy, nonatomic) MBKThirdPartySocialInfo *wechatInfo; // @synthesize wechatInfo=_wechatInfo;

@@ -19,9 +19,6 @@
     UIColor *_textColor;
     UIColor *_textErrorColor;
     UIColor *_placeholderColor;
-    UIColor *_borderColor;
-    double _borderWidth;
-    double _cornerRadius;
     id <STPPaymentCardTextFieldDelegate> _delegate;
     NSString *_numberPlaceholder;
     NSString *_expirationPlaceholder;
@@ -38,8 +35,6 @@
     STPCardParams *_internalCardParams;
 }
 
-+ (id)keyPathsForValuesAffectingIsValid;
-+ (id)errorImageForCardBrand:(long long)arg1;
 + (id)brandImageForCardBrand:(long long)arg1;
 + (id)cvcImageForCardBrand:(long long)arg1;
 + (id)placeholderGrayColor;
@@ -63,10 +58,8 @@
 - (void)insertText:(id)arg1;
 @property(readonly, nonatomic) _Bool hasText;
 - (void)onChange;
-- (void)updateCVCPlaceholder;
-- (id)defaultCVCPlaceholder;
 - (void)updateImageForFieldType:(long long)arg1;
-- (id)brandImageForFieldType:(long long)arg1 validationState:(long long)arg2;
+- (id)brandImageForFieldType:(long long)arg1;
 @property(readonly, nonatomic) UIImage *brandImage;
 - (void)textFieldDidEndEditing:(id)arg1;
 - (_Bool)textFieldShouldEndEditing:(id)arg1;
@@ -88,6 +81,7 @@
 - (struct CGRect)brandImageRectForBounds:(struct CGRect)arg1;
 - (struct CGSize)intrinsicContentSize;
 - (void)setText:(id)arg1 inField:(long long)arg2;
+@property(retain, nonatomic) STPCardParams *card;
 @property(retain, nonatomic) STPCardParams *cardParams;
 @property(readonly, nonatomic) NSString *cvc;
 @property(readonly, nonatomic) NSString *formattedExpirationYear;
@@ -107,9 +101,9 @@
 - (_Bool)canBecomeFirstResponder;
 - (_Bool)isFirstResponder;
 @property(nonatomic, getter=isEnabled) _Bool enabled; // @dynamic enabled;
-@property(nonatomic) double borderWidth; // @synthesize borderWidth=_borderWidth;
-@property(nonatomic) double cornerRadius; // @synthesize cornerRadius=_cornerRadius;
-@property(copy, nonatomic) UIColor *borderColor; // @synthesize borderColor=_borderColor;
+@property(nonatomic) double borderWidth;
+@property(nonatomic) double cornerRadius;
+@property(copy, nonatomic) UIColor *borderColor;
 @property(copy, nonatomic) UIColor *cursorColor;
 @property(copy, nonatomic) UIColor *placeholderColor; // @synthesize placeholderColor=_placeholderColor;
 @property(copy, nonatomic) UIColor *textErrorColor; // @synthesize textErrorColor=_textErrorColor;
@@ -132,6 +126,9 @@
 @property(nonatomic) long long keyboardType;
 @property(nonatomic) long long returnKeyType;
 @property(nonatomic, getter=isSecureTextEntry) _Bool secureTextEntry;
+@property(nonatomic) long long smartDashesType;
+@property(nonatomic) long long smartInsertDeleteType;
+@property(nonatomic) long long smartQuotesType;
 @property(nonatomic) long long spellCheckingType;
 @property(readonly) Class superclass;
 @property(copy, nonatomic) NSString *textContentType;

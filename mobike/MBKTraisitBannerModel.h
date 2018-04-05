@@ -8,14 +8,16 @@
 
 #import "MBKJsonModelObject-Protocol.h"
 
-@class NSString;
+@class NSDictionary, NSString;
 
 @interface MBKTraisitBannerModel : NSObject <MBKJsonModelObject>
 {
     NSString *_url;
     NSString *_redirect;
+    NSDictionary *_recordInfo;
 }
 
+@property(copy, nonatomic) NSDictionary *recordInfo; // @synthesize recordInfo=_recordInfo;
 @property(retain, nonatomic) NSString *redirect; // @synthesize redirect=_redirect;
 @property(retain, nonatomic) NSString *url; // @synthesize url=_url;
 - (void).cxx_destruct;
